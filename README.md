@@ -5,8 +5,8 @@
 注：目前各文档顶部的超链接仅为 Placeholder，我们会在将来支持不同环境间的直接跳转。
 
 深度学习初学者教程系列：
-- [天元 MegEngine 零基础入门](./notebooks/getting-started/beginner.ipynb)
-- [一个稍微复杂些的线性回归模型](./notebooks/getting-started/boston-housing.ipynb)
+- [天元 MegEngine 零基础入门](./notebooks/getting-started/megengine-basic-concepts.ipynb)
+- [一个稍微复杂些的线性回归模型](./notebooks/getting-started/learning-from-linear-regression.ipynb)
 
 ## 版权说明
 
