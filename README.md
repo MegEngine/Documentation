@@ -10,4 +10,8 @@
 
 ## 版权说明
 
-本项目使用 [署名-相同方式共享 4.0 国际](./LICENSE) 许可协议。
+- Tutorial 中的内容采用 [署名-相同方式共享 4.0 国际](./LICENSE) 许可协议，欢迎合理分发；
+- Tutorial 中的代码（如 [examples](./examples) 目录下源代码）以如下优先级采用许可协议：
+  - 单个源代码文件（如 `.py` 文件）顶部注释部分 > 文件所在目录声明的许可协议 > Tutorial 内容许可协议
+- [MegEngine](https://github.com/MegEngine/MegEngine) 采用 [Apache 2.0](https://github.com/MegEngine/MegEngine/blob/master/LICENSE) 许可协议。
+
