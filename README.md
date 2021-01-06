@@ -5,6 +5,10 @@
 :school_satchel: [新手入门篇](#新手入门篇) ｜ :rainbow: [模型结构篇](#模型结构篇) ｜ :star: [任务实战篇](#任务实战篇) ｜ :hammer: [生产部署篇](#生产部署篇) 
 ｜:notebook: [用户手册](#用户手册) ｜ :books: [开发者手册](#开发者手册) 
 
+![megengine-logo](./assets/logo/megengine.jpg)
+
+------
+
 ## 新手入门篇
 
 适合从未使用过天元 MegEngine 深度学习框架，以及希望通过代码实践更好地理解深度学习理论的初学者。
