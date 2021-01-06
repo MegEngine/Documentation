@@ -1,11 +1,15 @@
-# 天元 MegEngine 使用教程
+# 天元 MegEngine 教程
 
-这是一个正在建设中的存储库，通过交互式实践的方式学习[天元 MegEngine](https://github.com/MegEngine/MegEngine) 的使用，欢迎大家以各种方式参与贡献。
+<p align="center">
+  <img height="128" src="./assets/logo/megengine.jpg">
+</p>
+
+通过交互式实践的方式学习「[天元 MegEngine](https://github.com/MegEngine/MegEngine) 」深度学习框架的使用和开发。
 
 :school_satchel: [新手入门篇](#新手入门篇) ｜ :rainbow: [模型结构篇](#模型结构篇) ｜ :star: [任务实战篇](#任务实战篇) ｜ :hammer: [生产部署篇](#生产部署篇) 
 ｜:notebook: [用户手册](#用户手册) ｜ :books: [开发者手册](#开发者手册) 
 
-![megengine-logo](./assets/logo/megengine.jpg)
+欢迎在 [天元 MegEngine 论坛](https://discuss.megengine.org.cn/)（我们的中文社区）进行交流反馈～
 
 ------
 
