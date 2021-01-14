@@ -19,7 +19,7 @@
 
 - [天元 MegEngine 零基础入门](./notebooks/getting-started/megengine-basic-concepts.ipynb)
 - [一个稍微复杂些的线性回归模型](./notebooks/getting-started/learning-from-linear-regression.ipynb)
-- 从线性模型到神经网络
+- [从线性回归到线性分类](./notebooks/getting-started/from-linear-regression-to-linear-classification.ipynb)
 
 ## 模型结构篇
 
