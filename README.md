@@ -108,8 +108,15 @@
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/xxr3376"><img src="https://avatars3.githubusercontent.com/u/2336311?v=4" width="100px;" alt=""/><br /><sub><b>Xinran Xu</b></sub></a></td>
+    <td align="center"><a href="https://github.com/MegChai"><img src="https://avatars2.githubusercontent.com/u/21091736?v=4" width="100px;" alt=""/><br /><sub><b>Chai</b></sub></a></td>
+  </tr>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
