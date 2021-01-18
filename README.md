@@ -9,7 +9,7 @@
 :school_satchel: [新手入门篇](#新手入门篇) ｜ :rainbow: [模型结构篇](#模型结构篇) ｜ :star: [任务实战篇](#任务实战篇) ｜ :hammer: [生产部署篇](#生产部署篇) 
 ｜:notebook: [用户手册](#用户手册) ｜ :books: [开发者手册](#开发者手册) 
 
-欢迎在 [天元 MegEngine 论坛](https://discuss.megengine.org.cn/)（我们的中文社区）进行交流反馈～
+欢迎在 [天元 MegEngine 论坛](https://discuss.megengine.org.cn/)（我们的中文社区）进行交流反馈～ :point_right: [成为贡献者](./CONTRIBUTING.md)
 
 ------
 
@@ -25,42 +25,9 @@
 
 可以帮助初涉深度学习领域的研究者快速了解经典模型结构，同时也能够提升相应的编程能力。
 
-- 如何使用 Paper With Code 与 MegEngine Hub 复现、分享和复用模型
-- 卷积神经网络（Convolutional Neural Network, CNN）
-  - AlexNet
-  - VGGNet
-  - GoogLeNet/Inception
-  - ResNet
-  - DenseNet
-  - SqueezeNet
-  - MobileNet
-  - ShuffleNet
-  - NasNet
-  - EfficientNet
-- 循环神经网络（Recurrent Neural Network, RNN）
-- 生成对抗网络（Generative Adversarial Network, GAN）
-- Transformer
-
 ## 任务实战篇
 
 为开源社区提供有趣的任务样例，有助于开发者做出有趣的实际应用。
-
-- 如何使用 Paper With Code 与 MegEngine Hub 复现、分享和复用模型
-- 计算机视觉（Computer Vision）
-  - 图像分类（Image Classification）
-  - 目标检测（Object Detection）
-  - 语义分割（Semantic Segmentation）
-  - 图像生成（Image Generation）
-  - 超分辨率（Super-Resolution）
-  - 姿态估计（Pose Estimation）
-- 自然语言处理（Natural Language Processing）
-  - 机器翻译（Machine Translation）
-  - 语言建模（Language Modelling）
-  - 问答系统（Quesiton Answering）
-  - 情感分析（Sentiment Analysis）
-  - 文本生成（Text Generation）
-  - 文本摘要（Text Summarization）
-- 更多内容欢迎贡献
 
 ## 生产部署篇
 
@@ -69,24 +36,6 @@
 ## 用户手册
 
 全面了解 MegEngine 的各种使用姿势。
-
-- MegEngine 的安装与环境配置
-- MegEngine 使用流程概览
-- MegEngine 模型建立与训练
-  - 并行分布式训练
-  - 量化训练
-- MegEngine 模型保存与加载
-- MegEngine 模块详解
-  - Tensor
-  - Functional
-  - GradManager
-  - Optimizer
-- MegEngine 模型优化与性能调试
-  - 超参数调整
-  - 如何使用 load_and_run
-  - 如何使用 Profiler
-- MegEngine 模型部署与优化
-  - 利用 midout 在端上裁剪
 
 ## 开发者手册
 
@@ -104,6 +53,8 @@
 - 感谢 [ML Visuals](https://github.com/dair-ai/ml-visuals)，我们使用它制作了大部分的可视化图形
 - 感谢 [天元 MegEngine 论坛](https://discuss.megengine.org.cn/) 的小伙伴们提供了非常多宝贵建议
 - 感谢 [MegStudio](https://studio.brainpp.com/) 提供交互式编程环境和云算力平台支持
+
+:sparkles: 以下是贡献者名单（[加入我们](./CONTRIBUTING.md)）：
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
