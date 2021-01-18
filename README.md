@@ -1,7 +1,7 @@
 # 天元 MegEngine 教程
 
 <p align="center">
-  <img height="128" src="./assets/logo/megengine.jpg">
+  <img height="128" src="./_static/logo/megengine.jpg">
 </p>
 
 通过交互式实践的方式学习「[天元 MegEngine](https://github.com/MegEngine/MegEngine) 」深度学习框架的使用和开发。
@@ -104,4 +104,18 @@
 - 感谢 [ML Visuals](https://github.com/dair-ai/ml-visuals)，我们使用它制作了大部分的可视化图形
 - 感谢 [天元 MegEngine 论坛](https://discuss.megengine.org.cn/) 的小伙伴们提供了非常多宝贵建议
 - 感谢 [MegStudio](https://studio.brainpp.com/) 提供交互式编程环境和云算力平台支持
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/MegChai"><img src="https://avatars2.githubusercontent.com/u/21091736?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chai</b></sub></a><br /><a href="https://github.com/MegEngine/Tutorials/commits?author=MegChai" title="Code">💻</a> <a href="#content-MegChai" title="Content">🖋</a> <a href="#ideas-MegChai" title="Ideas, Planning, & Feedback">🤔</a> <a href="#tutorial-MegChai" title="Tutorials">✅</a> <a href="https://github.com/MegEngine/Tutorials/commits?author=MegChai" title="Documentation">📖</a> <a href="#example-MegChai" title="Examples">💡</a> <a href="#design-MegChai" title="Design">🎨</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
