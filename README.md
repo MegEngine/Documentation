@@ -105,3 +105,11 @@
 - 感谢 [天元 MegEngine 论坛](https://discuss.megengine.org.cn/) 的小伙伴们提供了非常多宝贵建议
 - 感谢 [MegStudio](https://studio.brainpp.com/) 提供交互式编程环境和云算力平台支持
 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
