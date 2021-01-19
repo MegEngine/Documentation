@@ -1,7 +1,7 @@
 # 天元 MegEngine 教程
 
 <p align="center">
-  <img height="128" src="./_static/logo/megengine.jpg">
+  <img height="128" src="./source/_static/logo/megengine.jpg">
 </p>
 
 通过交互式实践的方式学习「[天元 MegEngine](https://github.com/MegEngine/MegEngine) 」深度学习框架的使用和开发。
@@ -17,9 +17,9 @@
 
 适合从未使用过天元 MegEngine 深度学习框架，以及希望通过代码实践更好地理解深度学习理论的初学者。
 
-- [天元 MegEngine 零基础入门](./notebooks/getting-started/megengine-basic-concepts.ipynb)
-- [一个稍微复杂些的线性回归模型](./notebooks/getting-started/learning-from-linear-regression.ipynb)
-- [从线性回归到线性分类](./notebooks/getting-started/from-linear-regression-to-linear-classification.ipynb)
+- [天元 MegEngine 零基础入门](./source/getting-started/megengine-basic-concepts.ipynb)
+- [一个稍微复杂些的线性回归模型](./source/getting-started/learning-from-linear-regression.ipynb)
+- [从线性回归到线性分类](./source/getting-started/from-linear-regression-to-linear-classification.ipynb)
 
 ## 模型结构篇
 
@@ -44,17 +44,18 @@
 ## 版权声明
 
 - Tutorial 中的内容采用 [署名-相同方式共享 4.0 国际](./LICENSE) 许可协议，欢迎合理分发；
-- Tutorial 中的代码（如 [examples](./examples) 目录下源代码）默认采用 BSD 许可协议；
+- Tutorial 中的代码默认采用 BSD 许可协议]；
 - [MegEngine](https://github.com/MegEngine/MegEngine) 采用 [Apache 2.0](https://github.com/MegEngine/MegEngine/blob/master/LICENSE) 许可协议。
 
 ## 致谢
 
 - 感谢 [Project Jupyter](https://jupyter.org/), Notebook 使得我们能够以如此灵活的方式进行学习和交流
+- 感谢 [Sphinx](https://www.sphinx-doc.org/en/master/), 我们使用它构建我们的静态网站
 - 感谢 [ML Visuals](https://github.com/dair-ai/ml-visuals)，我们使用它制作了大部分的可视化图形
 - 感谢 [天元 MegEngine 论坛](https://discuss.megengine.org.cn/) 的小伙伴们提供了非常多宝贵建议
 - 感谢 [MegStudio](https://studio.brainpp.com/) 提供交互式编程环境和云算力平台支持
 
-:sparkles: 以下是贡献者名单（[加入我们](./CONTRIBUTING.md)）：
+以下是贡献者名单（[加入我们](./CONTRIBUTING.md) :sparkles: ）：
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
