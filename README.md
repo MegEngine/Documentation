@@ -44,7 +44,7 @@
 ## 版权声明
 
 - Tutorial 中的内容采用 [署名-相同方式共享 4.0 国际](./LICENSE) 许可协议，欢迎合理分发；
-- Tutorial 中的代码默认采用 BSD 许可协议]；
+- Tutorial 中的代码默认采用 BSD 许可协议；
 - [MegEngine](https://github.com/MegEngine/MegEngine) 采用 [Apache 2.0](https://github.com/MegEngine/MegEngine/blob/master/LICENSE) 许可协议。
 
 ## 致谢
