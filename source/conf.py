@@ -40,7 +40,7 @@ source_suffix = {
 
 templates_path = ['_templates']
 
-exclude_patterns = ['_drafts', 'examples']
+exclude_patterns = ['_build', '_drafts', 'examples', '**.ipynb_checkpoints']
 
 
 # -- Options for HTML output -------------------------------------------------
