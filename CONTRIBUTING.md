@@ -24,7 +24,7 @@
 
 当代码需要找人审核时，可以从下面的人员名单中进行选择：
 
-- 架构：@MegChai
-- 主题：@MegChai
-- 教程：@MegChai
-- 文档：@MegChai
+- 架构：@[MegChai](https://github.com/MegChai)
+- 主题：@[MegChai](https://github.com/MegChai)
+- 教程：@[MegChai](https://github.com/MegChai)
+- 文档：@[MegChai](https://github.com/MegChai)
