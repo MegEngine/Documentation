@@ -1,0 +1,49 @@
+name: Github Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Pipline:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repsitory
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+
+      - name: Cache Python packages
+        id: cache-python
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}$-${{ hashFiles('requirements.txt') }}
+
+      - name: Install Python dependencies
+        if: steps.cache-python.outputs.cache-hit != 'true'
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Install pandoc and other dependencies
+        run: sudo apt-get install -y pandoc
+
+      - name: Generate HTML files
+        run: make html -W --keep-going
+
+      - name: Sync to gh-pages branch
+        run: |
+          mv build/html /tmp/
+          git checkout gh-pages
+          mv /tmp/html/* .
+          git add --all
+          git commit -m "bot: auto sync [skip ci]"
+          git push origin gh-pages:gh-pages
+        
+
