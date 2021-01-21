@@ -1,44 +1,25 @@
-.. MegEngine documentation master file, created by
-   sphinx-quickstart on Tue Jan 19 21:17:28 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-欢迎使用天元 MegEngine (๑•̀ㅂ•́)و✧
-================================
-
-新手入门篇
-----------
-
-适合从未使用过天元 MegEngine 深度学习框架，以及希望通过代码实践更好地理解深度学习理论的初学者。
+=================================
+欢迎使用天元 MegEngine  (๑•̀ㅂ•́)و✧
+=================================
 
 .. toctree::
-   :maxdepth: 1
+   :hidden:
 
-   getting-started/megengine-basic-concepts
-   getting-started/learning-from-linear-regression
-   getting-started/from-linear-regression-to-linear-classification
+   getting-started/index
+   user-guide/index
+   reference/index
+   developmet/index
 
-模型结构篇
-----------
+天元 Megengine 是一个快速、可拓展、易于使用且支持自动求导的深度学习框架。
 
-可以帮助初涉深度学习领域的研究者快速了解经典模型结构，同时也能够提升相应的编程能力。
+深度学习，简单开发，我们的旅程从这里开始～
 
-任务实战篇
-----------
+致谢
+----
 
-为开源社区提供有趣的任务样例，有助于开发者做出有趣的实际应用。
+- 主题：天元 MegEngine 文档使用了由 PyData 社区维护的 pydata-sphinx-theme_ 主题，
+  保证文档整体风格与 NumPy_, Pandas_ 等开源社区相似，提升用户浏览不同 Python 包文档时的体验。
 
-生产部署篇
-----------
-
-帮助开发者将模型部署到实际的生产环境中。
-
-用户手册
---------
-
-全面了解 MegEngine 的各种使用姿势。
-
-开发者手册
-----------
-
-加入 MegEngine 的研发队伍，让 MegEngine 变得更好用。
+.. _pydata-sphinx-theme: https://github.com/pydata/pydata-sphinx-theme
+.. _NumPy: https://numpy.org/doc/stable/
+.. _Pandas: https://pandas.pydata.org/docs/
