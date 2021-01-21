@@ -46,13 +46,8 @@ exclude_patterns = ['_build', '_drafts', 'examples', '**.ipynb_checkpoints']
 # -- Options for HTML output -------------------------------------------------
 
 html_theme = 'classic'
-html_theme_options = {
-    "rightsidebar": "true"
-}
-
 html_static_path = ['_static']
 html_sourcelink_suffix = ''
-
 html_sidebars = {
     '**': ['searchbox.html', 'localtoc.html', 'relations.html']
 }
