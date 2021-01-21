@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repsitory
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -37,13 +39,11 @@ jobs:
       - name: Generate HTML files
         run: make html -W --keep-going
 
-      - name: Sync to gh-pages branch
-        run: |
-          mv build/html /tmp/
-          git checkout gh-pages
-          mv /tmp/html/* .
-          git add --all
-          git commit -m "bot: auto sync [skip ci]"
-          git push origin gh-pages:gh-pages
-        
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
+          CLEAN: true
 
