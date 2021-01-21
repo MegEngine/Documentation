@@ -19,4 +19,4 @@ pip install -r requirementes.txt
 ```shell
 make html
 ```
-这将调用 `sphinx-build` 执行生成过程, 可在 `build/html/index.html` 找到主页。
+这将调用 `sphinx-build` 执行生成过程, 可在 `Actions` 中了解更多细节。
