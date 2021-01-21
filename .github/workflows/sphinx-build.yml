@@ -1,10 +1,13 @@
 name: Sphinx Build and Test
 
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   Build:
-    name: Sphinx-build html
+    name: Build html
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repsitory
