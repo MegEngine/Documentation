@@ -41,8 +41,7 @@
 #
 # This file has been modified by Megvii ("Megvii Modifications").
 # All Megvii Modifications are Copyright (C) 2014-2019 Megvii Inc. All rights reserved.
-# ------------------------------------------------------------------------------
-
+# ------------------------------------
 
 from __future__ import print_function
 from __future__ import division
@@ -183,10 +182,10 @@ class SplAtConv2d(M.Module):
         
         net = self.relu(net)
         #split from the channels
-        batch, rchannel = net.shape[:2]
+        batch = net.shape[0]
 
         if self.radix > 1:
-            splited = split(net, int(rchannel // self.radix) , axis=1)
+            splited = F.split(net, self.radix , axis=1)
             gap = sum(splited)
         #calculate the attention
         gap = F.adaptive_avg_pool2d(gap, 1)
@@ -199,7 +198,8 @@ class SplAtConv2d(M.Module):
         atten = self.rsoftmax(atten).reshape(batch, -1, 1, 1)
 
         if self.radix > 1:
-            attens = split(atten, rchannel // self.radix, axis=1)
+            attens = F.split(atten, self.radix, axis=1)
+            
             out = sum([att*split for (att, split) in zip(attens, splited)])
         else:
             out = atten * x
@@ -258,82 +258,13 @@ def kaiming_uniform_(tensor, a=0, mode='fan_in', nonlinearity='leaky_relu'):
     bound = math.sqrt(3.0) / math.sqrt(fan)
     return init.uniform_(tensor, -bound, bound) 
 
-def split(inp, nsplits_or_sections, axis=0):
-    """
-    Splits the input tensor into several smaller tensors.
-    When nsplits_or_sections is int, the last tensor may be smaller than others.
-
-    :param inp: input tensor.
-    :param nsplits_or_sections: number of sub tensors or sections information list.
-    :param axis: which axis will be splited.
-    :return: output tensor list.
-
-    Examples:
-
-    .. testcode::
-
-        import numpy as np
-        from megengine import tensor
-        import megengine.functional as F
-
-        x = tensor(np.random.random((2,3,4,5)), dtype=np.float32)
-        out = F.split(x, 2, axis=3)
-        print(out[0].numpy().shape, out[1].numpy().shape)
-
-    Outputs:
-
-    .. testoutput::
-
-        (2, 3, 4, 3) (2, 3, 4, 2)
-
-    """
-    sub_tensors = []
-    sections = []
-    
-    def swapaxis(inp, src, dst):
-        if src == dst:
-            return inp
-        shape = [i for i in range(inp.ndim)]
-        shape[src] = dst
-        shape[dst] = src
-        return inp.transpose(shape)
-        
-    inp = swapaxis(inp, 0, axis)
-    if isinstance(nsplits_or_sections, int)  :
-        incr_step =  nsplits_or_sections
-        nsplits = np.ceil(int(inp.shape[0]) / nsplits_or_sections)
-        while nsplits > 0:
-            nsplits -= 1
-            sections.append(incr_step)
-            incr_step += incr_step
-    else:
-        sections = nsplits_or_sections
-    st = 0
-    for se in sections:
-        sub_tensors.append(swapaxis(inp[st:se], axis, 0))
-        st = se
-
-    if st < inp.shape[0]:
-        sub_tensors.append(swapaxis(inp[st:], axis, 0))
-
-    return sub_tensors
-
-@trace
-def split_test(x):
-    y = M.Conv2d(64, 64*2, 3, 1, padding=1, groups=2*1, dilation=1)(x)
-    bs, rchannels = y.shape[:2]
-    splited = split(y, int(rchannels // 2), axis=1)
 
     return splited
 if __name__ == "__main__":
     import numpy as np
     dropout = Dropout2d(0.6, 3)
     
-    import megengine as mge
-    import megengine.module as M
-    import megengine.functional as F
-    import numpy as np
-    
     numpy_x = np.random.random((1, 64, 64, 64))
     x = mge.tensor(numpy_x, dtype=np.float32)
-    splited = split_test(x)
+    conv = SplAtConv2d(64, 128, 3, 2, padding=1)
+    out = conv(x)
