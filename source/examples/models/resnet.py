@@ -713,7 +713,7 @@ def resnest14(pretrained=False, progress=True, **kwargs):
     kwargs["avg_down"] = True
     kwargs["multi_grids"] = [1]
     kwargs["light_head"] = True
-    return _resnet("resnest269", Bottleneck, get_layers(269), pretrained, progress, **kwargs)
+    return _resnet("resnest14", Bottleneck, get_layers(269), pretrained, progress, **kwargs)
 
 def resnest26(pretrained=False, progress=True, **kwargs):
     r"""
@@ -730,7 +730,7 @@ def resnest26(pretrained=False, progress=True, **kwargs):
     kwargs["avg_down"] = True
     kwargs["multi_grids"] = [1] * 2
     kwargs["light_head"] = True
-    return _resnet("resnest269", Bottleneck, get_layers(269), pretrained, progress, **kwargs)
+    return _resnet("resnest26", Bottleneck, get_layers(269), pretrained, progress, **kwargs)
 
 def resnest50(pretrained=False, progress=True, **kwargs):
     r"""
