@@ -54,7 +54,7 @@ __all__ = ['ResNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101',
           'resnet152', 'resnext50_32x4d', 'resnext101_32x8d', 
           'wide_resnet50_2', 'wide_resnet101_2', 'seresnet18', 'seresnet34',
           'seresnet50', 'seresnet101', 'seresnet152', 'seresnext50_32x4d',
-          'seresnext101_32x8d', 'resnest50', 'resnest101', 'resnest200', 'resnet269'
+          'seresnext101_32x8d', 'resnest50', 'resnest101', 'resnest200', 'resnest269'
 ]
 
 model_urls = {
@@ -74,10 +74,12 @@ model_urls = {
     'seresnet152' : '',
     'seresnext50_32x4d' : '',
     'seresnext101_32x8d' : '',
+    'resnest14' : '',
+    'resnest26' : '',
     'resnest50' : '',
     'resnest101' : '',
     'resnest200' : '',
-    'resnet269' : ''
+    'resnest269' : ''
 }
 
 def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1):
@@ -263,7 +265,9 @@ def get_layers(num_layers):
             "Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>
     '''
     blocks = []
-    if num_layers == 18:
+    if num_layers == 14:
+        blocks = [1, 1, 1, 1]
+    elif num_layers == 18 or num_layers == 26:
         blocks = [2, 2, 2, 2]
     elif num_layers == 34 or num_layers == 50:
         blocks = [3, 4, 6, 3]
@@ -693,6 +697,40 @@ def seresnext101_32x8d(pretrained=False, progress=True, **kwargs):
     kwargs["width_per_group"] = 8
     kwargs["se_module"] = SEModule
     return _resnet("seresnext101_32x8d", Bottleneck, get_layers(50), pretrained, progress, **kwargs)
+
+def resnest14(pretrained=False, progress=True, **kwargs):
+    r"""
+    ReNeSt-14 model from
+    `"ResNeSt: Split-Attention Networks" <https://arxiv.org/pdf/2004.08955.pdf>`_
+
+    Args:
+        pretrained (bool): If True, returns a model pre-trained on ImageNet
+        progress (bool): If True, displays a progress bar of the download to stderr
+    """
+    kwargs["radix"] = 2
+    kwargs["avd"] = True
+    kwargs["avg_layer"] = True
+    kwargs["avg_down"] = True
+    kwargs["multi_grids"] = [1]
+    kwargs["light_head"] = True
+    return _resnet("resnest269", Bottleneck, get_layers(269), pretrained, progress, **kwargs)
+
+def resnest26(pretrained=False, progress=True, **kwargs):
+    r"""
+    ReNeSt-26 model from
+    `"ResNeSt: Split-Attention Networks" <https://arxiv.org/pdf/2004.08955.pdf>`_
+
+    Args:
+        pretrained (bool): If True, returns a model pre-trained on ImageNet
+        progress (bool): If True, displays a progress bar of the download to stderr
+    """
+    kwargs["radix"] = 2
+    kwargs["avd"] = True
+    kwargs["avg_layer"] = True
+    kwargs["avg_down"] = True
+    kwargs["multi_grids"] = [1] * 2
+    kwargs["light_head"] = True
+    return _resnet("resnest269", Bottleneck, get_layers(269), pretrained, progress, **kwargs)
 
 def resnest50(pretrained=False, progress=True, **kwargs):
     r"""
