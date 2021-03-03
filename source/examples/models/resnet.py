@@ -149,12 +149,12 @@ class BasicBlock(M.Module):
     def forward(self, x):
         identify = x
         
-
         net = self.relu(self.bn1(self.conv1(x)))
         net = self.bn2(self.conv2(net))
         if self.downsample is not None:
             identify = self.downsample(x)
-        
+        if self.se is not None:
+            net = net * self.se(net)
         net = identify + net #residual
         net = self.relu(net)
         return net
@@ -247,7 +247,7 @@ class Bottleneck(M.Module):
         
         #if semodule
         if self.se is not None:
-            net = self.se(net)
+            net = self.se(net) * net
         #if need downsample
         if self.downsample is not None:
             identify = self.downsample(x)
