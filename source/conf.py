@@ -88,6 +88,9 @@ mathjax_config = {
     'jax': ['input/TeX', 'output/HTML-CSS'],
 }
 
+# Setting for sphinxcontrib-mermaid
+mermaid_version = 'latest' # from CDN unpkg.com 
+
 # Setting for sphinx.ext.intersphinx
 # Useful for refenrece other projects, eg. :py:class:`zipfile.ZipFile`
 intersphinx_mapping = {
@@ -143,11 +146,14 @@ html_sidebars = {
     'index': ['sidebar-search-bs.html', 'homepage-sidebar.html']
 }
 
-html_logo = "_static/logo/logo.png"
-html_favicon = "_static/logo/megengine-48.png"
 html_static_path = ['_static']
+html_logo = "logo.png"
+html_favicon = "favicon.ico"
 html_css_files = [
     'css/custom.css'
+]
+html_js_files = [
+    'js/custom.js'
 ]
 
 html_search_language = 'zh'
