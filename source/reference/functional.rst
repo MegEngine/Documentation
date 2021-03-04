@@ -44,6 +44,8 @@ tensor 子模块
    transpose
    reshape
    flatten
+   repeat
+   tile
    expand_dims
    squeeze
 
@@ -134,18 +136,6 @@ elemwise 子模块
    greater
    greater_equal
 
-其它运算
-~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   sigmoid
-   hsigmoid
-   relu
-   relu6
-   hswish
-
 .. py:module:: megengine.functional.math
 .. currentmodule:: megengine.functional
 
@@ -182,7 +172,6 @@ math 子模块
    :toctree: api
    :nosignatures:
 
-   svd
    var
    std
    norm
@@ -202,7 +191,7 @@ math 子模块
    topk
 
 .. py:module:: megengine.functional.nn
-.. currentmodule:: megengine.functional.nn
+.. currentmodule:: megengine.functional
 
 nn 子模块
 ---------
@@ -232,15 +221,15 @@ nn 子模块
 非线性激活函数
 ~~~~~~~~~~~~~~
 
-.. note::
-
-   部分激活函数如 :py:func:`~.relu` 
-   实现在 :py:mod:`megengine.functional.elemwise` 模块中。
-
 .. autosummary::
    :toctree: api
    :nosignatures:
 
+   sigmoid
+   hsigmoid
+   hswish
+   relu
+   relu6
    prelu
    leaky_relu
    softplus
