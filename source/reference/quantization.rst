@@ -15,14 +15,14 @@
    :nosignatures:
 
    QConfig
-   calibration_qconfig
-   easyquant_qconfig
-   ema_fakequant_qconfig
-   ema_lowbit_fakequant_qconfig
    min_max_fakequant_qconfig
-   passive_qconfig
+   ema_fakequant_qconfig
    sync_ema_fakequant_qconfig
+   ema_lowbit_fakequant_qconfig
+   calibration_qconfig
    tqt_qconfig
+   passive_qconfig
+   easyquant_qconfig
 
 .. py:module:: megengine.quantization.observer
 .. currentmodule:: megengine.quantization
@@ -34,12 +34,19 @@
    :nosignatures:
 
    Observer
-   observer.MinMaxObserver
-   observer.SyncMinMaxObserver
-   observer.ExponentialMovingAverageObserver
-   observer.SyncExponentialMovingAverageObserver
+
+.. currentmodule:: megengine.quantization.observer
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   MinMaxObserver
+   SyncMinMaxObserver
+   ExponentialMovingAverageObserver
+   SyncExponentialMovingAverageObserver
    HistogramObserver
-   observer.PassiveObserver
+   PassiveObserver
 
 .. py:module:: megengine.quantization.fake_quant
 .. currentmodule:: megengine.quantization
@@ -51,10 +58,17 @@
    :nosignatures:
 
    FakeQuantize
-   fake_quant.TQT
+   
+.. currentmodule:: megengine.quantization.fake_quant
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   TQT
 
 .. py:module:: megengine.quantization.quantize
-.. currentmodule:: megengine.quantization.quantize
+.. currentmodule:: megengine.quantization
 
 量化操作
 --------
@@ -64,9 +78,16 @@
 
    quantize_qat
    quantize
+   apply_easy_quant
+   enable_fake_quant
+   disable_fake_quant
+   enable_observer
+   disable_observer
+   propagate_qconfig
+   reset_qconfig
 
 .. py:module:: megengine.quantization.utils
-.. currentmodule:: megengine.quantization.utils
+.. currentmodule:: megengine.quantization
 
 Utils
 -----
@@ -74,4 +95,8 @@ Utils
    :toctree: api
    :nosignatures:
 
+   QParams
    QuantMode
+   create_qparams
+   fake_quant_bias
+   fake_quant_tensor

@@ -21,7 +21,6 @@
 
    Tensor.dtype
    Tensor.astype
-   Tensor.q_dict
    Tensor.shape
    Tensor.reshape
    Tensor.ndim
@@ -74,6 +73,6 @@
 
 .. seealso::
    
-   - 创建张量的函数例如 :func:`~.ones`, :func:`~.arange` ，可在 :py:mod:`~.functional.tensor` 中找到。
-   - 处理张量的函数例如 :func:`~.transpose`, :func:`~.reshape` ，可在 :py:mod:`~.functional.tensor` 中找到。
+   - 创建张量的函数例如 :func:`~.ones`, :func:`~.arange` ，可在 :py:mod:`.functional.tensor` 中找到。
+   - 处理张量的函数例如 :func:`~.transpose`, :func:`~.reshape` ，可在 :py:mod:`.functional.tensor` 中找到。
 
