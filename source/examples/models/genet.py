@@ -200,29 +200,29 @@ class GENet(M.Module):
     def __init__(self, cfg, in_chs=3, num_classes=1000, norm_layer=M.BatchNorm2d,
                  activation=M.ReLU(), features_only=False):
         super(GENet, self).__init__()
-        self.current_chaMels = in_chs
+        self.current_channels = in_chs
         features = OrderedDict()
         for i in range(len(cfg)):
             features[f"layer_{i}"] = self._make_layer(cfg[i], norm_layer, activation)
         self.features = M.Sequential(features)
         self.global_avg = M.AdaptiveAvgPool2d(1)
-        self.classifier = M.Linear(self.current_chaMels, num_classes)
+        self.classifier = M.Linear(self.current_channels, num_classes)
         self.features_only = features_only
 
     def _make_layer(self, cfg, norm_layer=M.BatchNorm2d, activation=M.ReLU()):
         block_type = cfg[0]
         block = self._get_block(block_type)
         sub_layers = cfg[1]
-        out_chaMels = cfg[2]
+        out_channels = cfg[2]
         current_stride = cfg[3]
         ksize = cfg[4]
         expansion = cfg[5]
         layers = []
         for i in range(sub_layers):
             current_stride = current_stride if i < 1 else 1
-            layers.append(block(self.current_chaMels, out_chaMels, ksize, stride=current_stride,
+            layers.append(block(self.current_channels, out_channels, ksize, stride=current_stride,
                                 expansion=expansion, norm_layer=norm_layer, activation=activation))
-            self.current_chaMels = out_chaMels
+            self.current_channels = out_channels
         return M.Sequential(*layers)
 
     def _get_block(self, block_type):
@@ -240,7 +240,7 @@ class GENet(M.Module):
         if self.features_only:
             return net
         net = self.global_avg(net)
-        net = F.flatten(net)
+        net = F.flatten(net, 1)
         net = self.classifier(net)
         return net
 
