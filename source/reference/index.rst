@@ -1,5 +1,4 @@
 .. _reference:
-.. _megengine:
 .. py:module:: megengine
 .. currentmodule:: megengine
 
