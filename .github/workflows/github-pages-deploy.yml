@@ -8,12 +8,24 @@ on:
 jobs:
   Pipline:
     name: Build and Deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - name: Checkout repsitory
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+          lfs: true
+
+      - name: Checkout LFS objects
+        run: git lfs checkout
+
+      - name: Checkout theme repo
+        uses: actions/checkout@v2
+        with: 
+          repository: MegEngine/pydata-sphinx-theme
+          ref: dev
+          fetch-depth: 1
+          path: theme
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -27,11 +39,15 @@ jobs:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}$-${{ hashFiles('requirements.txt') }}
 
-      - name: Install Python dependencies
+      - name: Install MegEngine and Python dependencies
         if: steps.cache-python.outputs.cache-hit != 'true'
         run: |
-          python -m pip install --upgrade pip
+          python3 -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install megengine
+
+      - name: Install Pydata Sphinx theme
+        run: python3 -m pip install ./theme
 
       - name: Install pandoc and other dependencies
         run: sudo apt-get install -y pandoc
