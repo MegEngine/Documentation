@@ -1,13 +1,14 @@
-name: Deploy on Github Pages
+name: Build and Deploy
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
 jobs:
   Pipline:
-    name: Build and Deploy
+    name: Build and Deploy to OSS
+    if: ${{ github.event.label.name != 'no-build' }}
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout repsitory
@@ -53,14 +54,19 @@ jobs:
       - name: Install pandoc and other dependencies
         run: sudo apt-get install -y pandoc
 
-      - name: Generate HTML files
-        run: make html -W --keep-going
+      - name: Generate and Compress HTML files
+        run: |
+          make html -W --keep-going
+          cp -r build/html en
+          cp -r build/html zh
+          tar czf static.tgz en zh
 
-      - name: Deploy to gh-pages branch
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build/html
-          CLEAN: true
+      - name: Deploy on OSS
+        run: |
+          export GIT_HASH=$(git rev-parse --short HEAD) && echo $GIT_HASH
+          wget http://gosspublic.alicdn.com/ossutil/1.7.1/ossutil64
+          chmod 755 ossutil64
+          ./ossutil64 config -e ${{ secrets.OSS_PROD_ENDPOINT }} -i ${{ secrets.OSS_PROD_ACCESS_KEY_ID }} -k ${{ secrets.OSS_PROD_ACCESS_KEY_SECRET }}
+          ./ossutil64 mkdir oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/commit-$GIT_HASH
+          ./ossutil64 cp static.tgz oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/commit-$GIT_HASH/static.tgz
 
