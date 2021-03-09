@@ -1,0 +1,2122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.3.0.dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-08 18:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:9
+msgid "从线性回归到线性分类"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:20
+msgid "回归和分类问题在机器学习中十分常见，我们接触过了线性回归，那么线性模型是否可用于分类任务呢？本次教程中，我们将："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:22
+msgid "接触经典的 MNIST 数据集和对应的分类任务，对计算机视觉领域的图像编码有一个基础认知；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:23
+msgid "将线性回归经过“简单改造”，则可以用来解决分类问题——我们将接触到 Logistic 回归和 Softmax 回归；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:24
+msgid "结合之前的学习，\\ **实现一个最简单的线性分类器，并尝试用它来识别手写数字。**"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:26
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:30
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:26
+msgid ""
+"请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `访问官网安装教程 "
+"<https://megengine.org.cn/install>`__\\ ）："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:68
+msgid ""
+"接下来，我们将先了解一下这次要使用到的分类问题经典数据集：\\ `MNIST 手写数字数据集 "
+"<http://yann.lecun.com/exdb/mnist/>`__\\ 。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:71
+msgid "MNIST 手写数字数据集"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:73
+msgid "MNIST 的训练数据集中存在着 60000 张手写数字 0～9 的黑白图片样例，每张图片的长和宽均为 28 像素。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:75
+msgid "在 MegEngine 的 ``dataset`` 模块中内置了 MNIST 等经典数据集的接口，方便初学者进行相关调用："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:136
+msgid "以训练集为例，你最终将得到一个长度为 60000 的 ``train_dataset`` 列表，其中的每个元素是一个包含样本和标签的元组。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:138
+msgid "为了方便理解，我们这里选择将数据集拆分为样本和标签，处理成 Numpy 的 ndarray 格式："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:180
+msgid "经过上面的整理，我们得到了训练数据 ``train_data`` 和对应的标签 ``train_label``:"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:182
+msgid ""
+"可以发现此时的训练数据的形状是 :math:`(60000, 28, 28, 1)`, "
+"分别对应数据量（Number）、高度（Height）、宽度（Width）和通道数（Channel），简记为 NHWC；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:183
+msgid "其中通道（Channel）是图像领域常见的概念，对计算机而言，1 通道通常表示灰度图（Grayscale），即将黑色到白色之间分为 256 阶表示；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:184
+msgid "布局（Layout）表示了数据在内存中的表示方式，在 MegEngine 中，通常以 NCHW 作为默认的数据布局，我们在将来会接触到布局的转换。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:196
+msgid "理解图像数据"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:198
+msgid "我们先尝试对数据进行随机抽样，并进行可视化显示："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:242
+msgid "挑选出一张图片（下方的 ``idx`` 可修改），进行二维和三维视角的可视化："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:297
+msgid "在灰度图中，每个像素值用 0（黑色）~ 255（白色）进行表示，即一个 ``int8`` 所能表示的范围。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:300
+msgid "图像数据的特征向量表示"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:302
+msgid ""
+"回想一下我们在使用波士顿房价数据集时，单个样本的特征通常以特征向量 :math:`\\mathbf {x} \\in \\mathbb R^D` "
+"的形式进行表示，而图像的样本特征空间为 :math:`\\mathbf {x} \\in \\mathbb R ^{H \\times W "
+"\\times C}`\\ 。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:304
+msgid ""
+"对于图像类型的数据输入，在没有想到更好的特征抽取和表征形式时，不妨也粗线条一些，考虑直接将像素点“铺”成向量的形式，即 "
+":math:`\\mathbb R ^{H \\times W \\times C} \\mapsto \\mathbb R^D`\\ ："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:345
+msgid "上面是一个简单的例子，这种扁平化（Flatten）的操作同样也可以对整个 ``train_data`` 使用："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:387
+msgid "在 MegEngine 的 ``functional`` 模块中，提供了 ``flatten()`` 方法："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:435
+msgid ""
+"这样的话，就可以把问题和我们所了解的线性回归模型 :math:`f(\\mathbf {x}) = \\mathbf {w} \\cdot "
+"\\mathbf {x} + b` 联系起来了，但情况有那么一些不同："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:437
+msgid "线性回归的输出值在 :math:`\\mathbb R` 上连续，并不能很好的处理标签值离散的多分类问题，因此需要寻找新的解决思路。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:440
+msgid "线性分类模型"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:442
+msgid "我们先从较为简单的二分类问题，即标签 :math:`y \\in \\{0, 1\\}` 情况开始讨论，再将情况推广到多分类。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:444
+msgid "对于离散的标签，我们可以引入非线性的决策函数来预测输出类别（决策边界依然是线性超平面，依旧是线性模型）。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:446
+msgid ""
+"一个简单的思路是，考虑将 :math:`f(\\mathbf {x}) = \\mathbf {x} \\cdot \\mathbf {w} + "
+"b` 的输出以 0 为阈值做划分（即此时决策边界为 :math:`f(\\mathbf {x}) = 0`\\ ）："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:448
+msgid ""
+"\\hat {y} = g(f(\\mathbf {x}))=\\left\\{\\begin{array}{lll}\n"
+"1 & \\text {if} & f(\\mathbf {x})>0 \\\\\n"
+"0 & \\text {if} & f(\\mathbf {x})<0\n"
+"\\end{array}\\right."
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:456
+msgid "这种决策方法虽然简单直观，但缺点也很明显："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:458
+msgid "如果看成是一个优化问题，它的数学性质导致其不适合用于梯度下降算法；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:459
+msgid "如果数据集不同的类别之间没有明确的关系，分段决策在多分类的情况下不适用；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:460
+msgid "比如手写数字分类，将输出值平均到 0～9 附近，依据四舍五入分类，不同分类之间存在着“距离度量”；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:461
+msgid "这暗示着不同的分类之间也有相似度/连续性，则等同于假设图像 1 和图像 2 的相似度会比 1 和 7 的相似度更高"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:473
+msgid "Logistic 回归"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:475
+msgid ""
+"Logistic 回归是一种常见的处理二分类问题的线性模型，使用 Sigmoid 函数 :math:`\\sigma (\\cdot)` "
+"作为决策函数（其中 ``exp()`` 指以自然常数 :math:`e` 为底的指数函数）："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:477
+msgid "\\sigma (x) = \\frac{1}{1+\\exp( -x)}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:482
+msgid "Sigmoid 这样的 S 型函数最早被人们设计出来并使用，它有如下优点："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:484
+msgid ""
+"Sigmoid 函数的导数非常容易求出：\\ :math:`\\sigma '(x) = \\sigma (x)(1- \\sigma "
+"(x))`, 其处处可微的性质保证了在优化过程中梯度的可计算性；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:485
+msgid "Sigmoid 函数还可以将值压缩到 :math:`(0, 1)` 范围内，很适合用来表示预测结果是某个分类的概率："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:520
+msgid ""
+"Logistic 是比利时数学家 Pierre François Verhulst 在 1844 或 1845 年在研究人口增长的关系时命名的，和"
+" Sigmoid 一样指代 S 形函数："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:522
+msgid "起初阶段大致是指数增长；然后随着开始变得饱和，增加变慢最后，达到成熟时增加停止。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:524
+msgid "以下是 Verhulst 对命名的解释："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:526
+msgid ""
+"“We will give the name logistic [logistique] to the curve\" (1845 p.8). "
+"Though he does not explain this choice, there is a connection with the "
+"logarithmic basis of the function. Logarithm was coined by John Napier "
+"(1550-1617) from Greek logos (ratio, proportion, reckoning) and arithmos "
+"(number). Logistic comes from the Greek logistikos (computational). In "
+"the 1700's, logarithmic and logistic were synonymous. Since computation "
+"is needed to predict the supplies an army requires, logistics has come to"
+" be also used for the movement and supply of troops. So it appears the "
+"other meaning of \"logistics\" comes from the same logic as Verhulst "
+"terminology, but is independent (?). Verhulst paper is accessible; the "
+"definition is on page 8 (page 21 in the volume), and the picture is after"
+" the article (page 54 in the volume). ” —— `Why logistic (sigmoid) ogive "
+"and not autocatalytic curve? <https://rasch.org/rmt/rmt64k.htm>`__"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:529
+msgid "在 MegEngine 的 ``functional`` 模块中，提供了 ``sigmoid()`` 方法："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:575
+msgid ""
+"根据二分类问题 :math:`y \\in \\{0, 1\\}` 的特性，标签值不是 :math:`1` 即是 :math:`0`\\ "
+"，可以使用如下形式表示预测分类为 :math:`1` 或 :math:`0` 的概率："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:577
+msgid ""
+"\\begin{aligned}\n"
+"p(y=1 \\mid \\mathbf {x}) &= \\sigma (f(\\mathbf {x})) = "
+"\\frac{1}{1+\\exp \\left( -f(\\mathbf {x}) \\right)} \\\\\n"
+"p(y=0 \\mid \\mathbf {x}) &= 1 - p(y=1 \\mid \\mathbf {x})\n"
+"\\end{aligned}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:585
+msgid ""
+"在处理二分类问题时，我们进行优化的最终目的是，希望最终预测的概率值 :math:`\\hat{y}=\\sigma(f(\\mathbf x))`"
+" 尽可能地接近真实标签 :math:`y`;"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:587
+msgid "为了能够正确地优化我们的任务目标，需要选用合适的损失（目标）函数。有了线性回归的经验，不妨用均方误差 MSE 试一下："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:589
+msgid ""
+"\\begin{aligned}\n"
+"\\ell_{\\operatorname{MSE}} &= \\frac {1}{2} \\sum_{n} \\left( \\hat{y} -"
+" y \\right )^2 \\\\\n"
+"\\frac {\\partial (\\hat{y} - y)^2}{\\partial \\mathbf {w}} &=\n"
+"2 (\\hat{y} - y) \\cdot \\frac {\\partial \\hat{y}}{\\partial f(\\mathbf "
+"{x})}\n"
+"\\cdot \\frac {\\partial f(\\mathbf {x})}{\\partial w} \\\\\n"
+"&= 2 (\\hat{y} - y) \\cdot \\color{blue} {\\hat{y} \\cdot (1 - \\hat{y})}"
+" \\cdot \\color{black} {\\mathbf {x}}\n"
+"\\end{aligned}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:600
+msgid ""
+"虽然可以求得相应的梯度，但随着参数的更新，单样本上求得的梯度越来越接近 :math:`0`, 即出现了梯度消失（Gradient "
+"Vanishing）的情况；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:601
+msgid "另外使用 Sigmoid + MSE 得到的是一个非凸函数（可通过求二阶导证明），使用梯度下降算法容易收敛到局部最小值点，而非全局最优点。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:603
+msgid "所以应该设计什么样的损失函数，才是比较合理的呢？在揭晓答案之前，我们先直接将二分类问题推广到多分类的情况。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:615
+msgid "Softmax 回归"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:617
+msgid ""
+"Softmax 回归可以看成是 Logistic 回归在多分类问题上的推广，也称为多项（Multinomial）Logistic 回归，或多类"
+"（Muti-Class）Logistic 回归。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:619
+msgid ""
+"对于多分类问题，类别标签 :math:`y \\in \\{1, 2, \\ldots, C \\}` 可以有 :math:`C` 个取值 —— "
+"前面提到，如何将我们的输出和这几个值较好地对应起来，是需要解决的难题之一。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:621
+msgid ""
+"在处理二分类问题时，我们使用 Sigmoid 函数将输出变成了 :math:`(0,1)` "
+"范围内的值，将其视为概率。对于多分类问题的标签，我们也可以进行形式上的处理。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:623
+msgid "我们可以将真实的类别标签值 :math:`y` 处理成 One-hot 编码的形式进行表示：只在对应的类别标签位置为 1，其它位置为 0."
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:625
+msgid "在 MegEngine 的 ``functional`` 模块中，提供了 ``one_hot()`` 方法："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:673
+msgid "不难发现，One-hot 编码以向量 :math:`\\mathbf y` 的形式给出了样本属于每一个类别的概率。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:675
+msgid ""
+"自然地，我们希望线性分类器最终输出的预测值是一个形状为 :math:`(C,)` 的向量 :math:`\\hat {\\mathbf y}`\\"
+" ，这样方便设计和计算损失函数。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:677
+msgid ""
+"我们已经知道线性输出 :math:`\\hat y = f(\\mathbf x; \\mathbf w, b) = \\mathbf x "
+"\\cdot \\mathbf w + b \\in \\mathbb R` , 现在我们希望能够得到 :math:`\\hat "
+"{\\mathbf y} \\in \\mathbb R^C` 这样的输出;"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:678
+msgid ""
+"可以设计 :math:`C` 个不同的 :math:`f(\\mathbf x; \\mathbf w, b`) 分别进行计算得到 "
+":math:`C` 个输出，也可以直接利用矩阵 :math:`W` 和向量 :math:`b` 的形式直接计算："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:738
+msgid "得到的输出虽然有 :math:`C` 个值了，但仍然不是概率的形式，这时我们希望设计这样一个决策函数："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:740
+msgid ""
+"通过这个函数，可以将输出的 :math:`C` 个值转换为样本 :math:`\\mathbf{x}` 属于某一类别 :math:`c` 的概率 "
+":math:`p(y=c | \\mathbf{x}) \\in (0,1)`\\ ；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:741
+msgid "满足不同预测标签类别的概率和为 1."
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:743
+msgid "一个直接的想法是使用 :math:`\\operatorname{ArgMax}` 函数，将对应位置的概率设置为 1，其它位置为 0"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:745
+msgid "这样也可以得到作为最终预测的 One-hot 编码形式的向量，但问题在于："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:746
+msgid "和分段函数类似，此时的 :math:`\\operatorname{ArgMax}` 函数是不可导的，对梯度下降法不友好；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:747
+msgid "这种处理方式过于简单粗暴，没有考虑到在其它类别上预测的概率值所带来的影响。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:749
+msgid "在 MegEngine 的 ``functional`` 模块中，提供了 ``argmax()`` 方法："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:796
+msgid ""
+"为了解决上面的问题，人们设计出了 :math:`\\operatorname{Softmax}` 归一化指数函数（也叫 "
+":math:`\\operatorname{SoftArgmax}`, 即柔和版 :math:`\\operatorname{Argmax}`\\"
+" ）："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:798
+msgid ""
+"p(y=c | \\mathbf {x}) = \\operatorname {Softmax}(y_c)=\\frac{\\exp "
+"y_c}{\\sum_{i} \\exp y_i}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:803
+msgid ""
+"将线性输出 :math:`y_c = f(\\mathbf x)` 经过指数归一化计算后得到一个概率 :math:`p(y=c | "
+"\\mathbf{x})`, 我们通常经过类似处理后得到的分类概率值叫做 Logits."
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:804
+msgid ""
+"由于指数 :math:`e^x` 容易随着输入值 :math:`x` 的变大发生指数爆炸，真正的 :math:`\\operatorname "
+"{Softmax}` 实现中还会有一些额外处理来增加数值稳定性，我们不在这里介绍。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:806
+msgid "在 MegEngine 的 ``functional`` 模块中，提供了 ``softmax()`` 方法："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:852
+msgid ""
+"我们为什么不采用均值归一化或其它的的方法，而要引入指数的形式呢？可以这样解释： - "
+"指数函数具有“马太效应”：我们认为较大的原始值在归一化后得到的概率值也应该更大； - 与 "
+":math:`\\operatorname{ArgMax}` 相比，使用 :math:`\\operatorname{SoftMax}` "
+"还可以找到 Top-K 候选项，即前 :math:`k` 大概率的分类，有利于模型性能评估；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:854
+msgid "分类问题中 :math:`\\operatorname{SoftMax}` 函数的选用也和影响了所对应的损失函数的设计。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:866
+msgid "交叉熵（Cross Entropy）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:868
+msgid ""
+"我们已经得到了预测的类别标签向量 :math:`\\mathbf {\\hat{y}}`, 也已经使用 One-hot "
+"编码表示了真实的类别标签向量 :math:`\\mathbf{y}`. 二者各自代表一种概率分布。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:870
+msgid ""
+"在信息论中，如果对同一个随机变量 :math:`x` 有两个单独的概率分布 :math:`p(x)` 和 :math:`q(x)`\\ "
+"，可以使用相对熵（KL 散度）来表示两个分布的差异："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:872
+msgid ""
+"\\begin{aligned}\n"
+"\\mathrm{KL}(p \\| q) &=-\\int p(x) \\ln q(x) d x-\\left(-\\int p(x) \\ln"
+" p(x) d x\\right) \\\\\n"
+"&= H(p,q) - H(p)\n"
+"\\end{aligned}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:880
+msgid "相对熵的特点是，两个概率分布完全相同时，其值为零。二者分布之间的差异越大，相对熵值越大。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:881
+msgid ""
+"由公式可知，\\ :math:`\\mathrm{KL}(p \\| q) \\neq \\mathrm{KL}(q \\| p)`. "
+"不具对称性，所以其表示的不是严格意义上的“距离”，适合分类任务。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:882
+msgid "感兴趣的读者可以自行了解信息论中有关熵（Entropy）的概念，目前我们只要知道这些东西能做什么就行。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:884
+msgid ""
+"我们希望设计一个损失函数，可用来评估当前训练得到的概率分布 :math:`q(x)`\\ ，与真实分布 :math:`p(x)` "
+"之间有多么大的差异，同时整体要是凸函数。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:886
+msgid ""
+"而在训练的过程中，代表 :math:`p(x)` 的 One-hot 编码是一个确定的常数，其 :math:`H(p)` "
+"值不会随着训练而改变，也不会影响梯度计算，所以可省略。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:888
+msgid ""
+"剩下的 :math:`H(p,q)` 部分则被定义为我们常用的交叉熵（Cross Entropy, "
+"CE），用我们现在的例子中的离散概率值来表示则为："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:890
+msgid ""
+"\\ell_{\\operatorname{CE}} = H(\\mathbf{y}, "
+"\\hat{\\mathbf{y}})=-\\sum_{i=1}^C y_i \\ln \\hat{y}_i"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:895
+msgid "这即是 Softmax 分类器需要优化的损失函数，对应于 MegEngine 中的 ``cross_entropy()`` 损失函数："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:897
+msgid ""
+"在 MegEngine 的 ``cross_entropy()`` 函数中，会自动对原始标签 :math:`y` 进行 One-hot 编码得到 "
+":math:`\\mathbf{y}`\\ ，所以 ``pred`` 应该比 ``label`` 多一个 :math:`\\mathbb R^C`"
+" 维度；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:898
+msgid ""
+"设置 ``with_logits=True`` 时，将使用 Softmax 函数把分类输出标准化成概率分布，下面的代码示例中 ``pred`` "
+"已经为概率分布的形式；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:899
+msgid ""
+"二分类问题使用的 Sigmoid 函数其实是 Sotfmax 函数的一个特例（读者可尝试证明），对应 MegEngine 中的 "
+"``binary_cross_entropy()`` 方法。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:962
+msgid ""
+"我们还可以发现，使用 Softmax + Cross Entropy 结合的形式，二者的 :math:`\\exp` 和 :math:`\\ln`"
+" 计算一定程度上可以相互抵消，简化计算流程。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:964
+msgid "现在我们找到了 MNIST 手写图像分类任务的决策函数和损失函数，是时候尝试自己利用 MegEngine 构建一个线性分类器了。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:967
+msgid "练习：线性分类"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:969
+msgid "我们使用 MegEngine 对线性分类器进行实现："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1091
+msgid "接着我们要实现测试部分，分类问题可使用预测精度（Accuracy）来评估模型性能，即被正确预测的比例："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1188
+msgid "这意味着我们只训练了 5 个周期的线性分类器，在测试集的 10,000 张图片中，就有 9,170 张图片被正确地预测了分类。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1190
+msgid "你可以尝试增大上方的 ``epochs`` 超参数，最终结果不会提升很多，说明我们现在所实现的线性分类器存在一定的局限性，需要寻找更好的方法。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1202
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1446
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1688
+msgid "总结回顾"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1204
+msgid "我们依据对线性回归的认知发展衍生出了线性分类器，并完成了 MNIST 手写数字识别任务，请回忆一下整个探索的过程。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1206
+msgid "理解机器学习知识的角度有很多种，不同的角度之间存在着千丝万缕的联系："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1208
+msgid ""
+"预测（Predict）：线性回归输出的标量是 :math:`\\mathbb R` 连续值，使用 Sigmoid 将其映射到 :math:`(0,"
+" 1)`, 而 Softmax 可将 :math:`C` 个输出值变成对应分类上的概率；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1209
+msgid "优化（Optimize）：线性回归模型通常选择均方误差（MSE）作为损失（目标）函数，而线性分类模型通常使用交叉熵（CE）；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1210
+msgid "评估（Evaluate）：线性回归模型可以选者平均误差或总误差作为评估指标，而线性分类模型可以使用精度（Accuracy）；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1212
+msgid "对于特征的处理：我们接触了计算机领域的灰度栅格图，并尝试使用 ``flatten()`` 方法将每个样本的高维特征处理为特征向量。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1224
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1477
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1715
+msgid "问题思考"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1226
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1479
+msgid "旧问题的解决往往伴随着新问题的诞生，让我们一起来思考一下："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1228
+msgid "对于同样的任务（如 MNIST 手写数字识别），我们可以选用不同的模型和算法（比如 K 近邻算法）来解决，我们只接触了机器学习算法的冰山一角；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1229
+msgid "对于具有 HWC 属性的图像，教程中展平成特征向量的处理方式似乎有些直接（比如忽视掉了像素点在平面空间上的临接性），是否有更好的方法？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1230
+msgid "我们在处理分类问题的输出时使用了 Softmax 达到了归一化的效果，那么对于输入数据的特征，是否也可以进行归一化呢？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1231
+msgid ""
+"天元 MegEngine 的自动求导机制帮助我们省掉了很多计算，可以尝试推导 Softmax + Cross Entropy "
+"的反向传播过程，感受框架的便捷之处。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1233
+msgid "我们已经训练了一个识别手写数字的分类器，可以尝试用它在一些实际的数据上进行测试（而不仅仅是官方提供的测试集），可以尝试写代码测试一下："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1235
+msgid ""
+"如何将常见的 jpg, png, gif 等图像格式处理成 NumPy 的 ndarray 格式？（提示：可使用 OpenCV 或 Pillow "
+"等库）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1236
+msgid "我想要测试的图像的长和宽和 MNIST 所使用的 :math:`28 \\times 28` 形状不一致，此时要如何处理？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1237
+msgid "我想要测试的图像是一张三通道的彩色图片，MNIST 数据集中是黑白图，此时又要如何处理？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1249
+msgid "机器学习背后的数学知识"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1251
+msgid ""
+"天元 MegEngine "
+"教程内容以相关代码实践为主，为了避免引入过多的理论导致“学究”，我们对一些数学细节的介绍比较笼统，感兴趣读者可进行拓展性的阅读："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1253
+msgid ""
+"斯坦福 `CS 229 <http://cs229.stanford.edu/>`__ "
+"是非常好的机器学习课程，可以在课程主页找到有关广义线性模型、指数族分布和最大熵模型的讲义"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1254
+msgid ""
+"对于线性回归问题的最小二乘估计，可以尝试推导正规方程得到其解析解（Analytical solution）或者说闭式解（Close-form "
+"solution）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1255
+msgid "对于均方误差（MSE）和交叉熵（CE）的使用，可以用使用极大似然估计（Maximum likelihood estimation）进行推导和解释"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1256
+msgid ""
+"对支持向量机（Support Vector "
+"Machine）和感知机模型（Perceptron）等经典二分类模型，属于机器学习领域，本教程中也没有进行介绍"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1258
+msgid "至于统计机器学习的理论解释，也分为频率派和贝叶斯派两大类，二者探讨「不确定性」这件事时的出发点与立足点不同，均作了解有助于拓宽视野。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1260
+msgid ""
+"对于新知识，我们提倡先建立直觉性的解释，搞清楚它如何生效（How it works），优缺点在哪里（Why we use "
+"it），人们如何定义（What is it），从而建立共同的认知；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1261
+msgid "当你不断进步，达到当前阶段的认知边界后，自然会对更深层次的解释好奇，这个时候不妨利用数学的严谨性探索一番，最终恍然大悟：“原来如此。”；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1262
+msgid "数学的严谨性让人赞叹，对于解释性不够强的理论，我们要勇于质疑，大胆探索，就像前人从地心说到日心说所付出的一样，不懈追求。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1264
+msgid "在机器学习领域，线性模型比较适合初学者入门，过渡到神经网络模型也比较自然，接下来我们就要打开深度学习的大门。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1266
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1515
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1756
+msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/index.rst:5
+msgid "为深度学习新手准备的教程"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:9
+msgid "一个稍微复杂些的线性回归模型"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:20
+msgid "我们已经学习了如何去训练一个简单的线性回归模型 :math:`y = w * x + b`, 接下来我们将稍微升级一下难度："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:22
+msgid ""
+"线性回归由一元变为多元，我们对单个样本数据的表示形式将不再是简单的标量 :math:`x`, 而是升级为多维的向量 :math:`\\mathbf"
+" {x}` 表示；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:23
+msgid "我们将接触到更多不同形式的梯度下降策略，从而接触一个新的超参数 ``batch_size``;"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:24
+msgid "我们将尝试将数据集封装成 MegEngine 支持的 ``Dataset`` 类，方便在 ``Dataloader`` 中进行各种预处理操作；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:25
+msgid "同时，我们的前向计算过程将变成矩阵运算形式，能够帮助你更好地理解向量化实现的优点，以及由框架完成求梯度操作的好处；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:26
+msgid "在这个过程中，一些遗留问题会得到解答，同时我们将接触到一些新的机器学习概念。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:28
+msgid "本教程的话题将围绕着\\ **“数据（Data）”**\\ 进行，希望你能够有所收获～"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:72
+msgid ""
+"接下来，我们将对将要使用的数据集 `波士顿房价数据集 "
+"<https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html>`__ "
+"进行一定的了解。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:84
+msgid "原始数据集的获取和分析"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:86
+msgid "获取到真实的数据集原始文件后，往往需要做大量的数据格式处理工作，变成易于计算机理解的形式，才能被各种框架和库使用。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:88
+msgid ""
+"但目前我们的重心不在此处，使用 Python 机器学习库 `scikit-learn <https://scikit-"
+"learn.org/stable/index.html>`__\\ ，可以快速地获得波士顿房价数据集:"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:143
+msgid ""
+"我们已经认识过了数据 ``data`` 和标签 ``label``\\ （标签有时也叫目标 ``target`` ），那么 ``feature``"
+" 是什么？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:145
+msgid "我们在描述一个事物的时候，通常会寻找其属性（Attribute）或者说特征（Feature）："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:147
+msgid "比如我们描述一个人的长相，会说这个人的鼻子如何、眼睛如何、额头如何等等"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:148
+msgid "又比如在游戏角色的属性经常有生命值、魔法值、攻击力、防御力等属性"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:149
+msgid "类比到一些支持自定义角色的游戏，这些特征就变成许多可量化和调整的数据"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:151
+msgid "实际上，你并不需要在意波士顿房价数据集中选用了哪些特征，我们在本教程中关注的更多是“特征维度变多”这一情况。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:153
+msgid "为了方便后续的交流，我们需要引入一些数学符号来描述它们，不用害怕，理解起来非常简单："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:155
+msgid "波士顿房价数据集的样本容量为 506，记为 :math:`n`; （Number）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:156
+msgid "每个样本的特征有 13 个维度，包括住宅平均房间数、城镇师生比例等等，记为 :math:`d`. （Dimensionality）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:157
+msgid ""
+"单个的样本可以用一个向量 :math:`\\mathbf {x}=(x_{1}, x_{2}, \\ldots , x_{d})` "
+"来表示，称为“特征向量”，里面的每个元素对应着该样本的某一维特征；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:158
+msgid ""
+"数据集 ``data`` 由 :math:`n` 行特征向量组成，每个特征向量有 :math:`d` 维度特征，因此整个数据集可以用一个形状为 "
+":math:`(n, d)` 的数据矩阵 :math:`X` 来表示；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:159
+msgid ""
+"标签 ``label`` 的每个元素是一个标量值，记录着房价值，因此它本身是一个含有 :math:`n` 个元素的标签向量 "
+":math:`\\mathbf {y}`."
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:161
+msgid ""
+"X = \\begin{bmatrix}\n"
+"- \\mathbf {x}_1 - \\\\\n"
+"- \\mathbf {x}_2 - \\\\\n"
+"\\vdots \\\\\n"
+"- \\mathbf {x}_n -\n"
+"\\end{bmatrix}\n"
+"= \\begin{bmatrix}\n"
+"x_{1,1} & x_{1,2} & \\cdots & x_{1,d} \\\\\n"
+"x_{2,1} & x_{2,2} & \\cdots & x_{2,d} \\\\\n"
+"\\vdots  &         &        & \\vdots \\\\\n"
+"x_{n,1} & x_{n,2} & \\cdots & x_{n,d}\n"
+"\\end{bmatrix}\n"
+"\\quad\n"
+"\\mathbf {y} =  (y_{1}, y_{2}, \\ldots, y_{n})"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:179
+msgid ""
+"其中 :math:`x_{i,j}` 表示第 :math:`i` 个样本 :math:`\\mathbf {x}_i` 的第 :math:`j` "
+"维特征，\\ :math:`y_i` 为样本 :math:`\\mathbf {x}_i` 对应的标签。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:181
+msgid "**不同的人会对数学符号的使用有着不同的约定，一定需要搞清楚这些符号的定义，或者在交流时采用比较通用的定义方式**"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:182
+msgid ""
+"为了简洁美观，我们这里用粗体表示向量 :math:`\\mathbf {x}`; 而在手写时粗细体并不容易辨别，所以板书时常用上标箭头来表示向量 "
+":math:`\\vec {x}`."
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:228
+msgid "数据集的几种类型"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:230
+msgid ""
+"对于常见的机器学习任务，用作基准（Benchmark）的数据集通常会被分为训练集（Training dataset）和测试集（Test "
+"dataset）两部分；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:232
+msgid "我们利用训练集的数据，通过优化损失函数的形式将模型训练好，在测试集上对模型进行测试，根据选用的评估指标（Metrics）评价模型性能"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:233
+msgid "测试集的数据不能参与模型训练，因为我们希望测试集数据代表着将来会被用于预测的真实数据，它们现在是“不可见的”，当作标签未知"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:235
+msgid ""
+"训练模型时为了调整和选取合适的超参数，通常还会在训练集的基础上划分出验证集（Validation dataset）或者说开发集（Develop "
+"dataset）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:237
+msgid ""
+"在一些机器学习竞赛中，比赛方会将测试集中一部分拿出来做为 Public Leaderboard 评分和排名，剩下的部分作为 Private "
+"Leaderboard 的评分和排名。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:238
+msgid ""
+"选手可以根据 Public Leaderboard 上的评估结果及时地对算法和超参数进行调整优化，但最终的排名将以 Private "
+"Leaderboard 为准"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:239
+msgid ""
+"对应地，可以将 Public Leaderboard 所使用的数据集理解为验证集，将 Private Leaderboard "
+"所使用的数据集理解为测试集"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:240
+msgid "为了避免在短时间内引入过多密集的新知识，我们目前将不会进行验证集和开发集的代码实践和讨论"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:242
+msgid "数据集该如何划分是一个值得讨论与研究的话题，它是数据预处理的一个环节，目前我们只需要对它有一个基本概念，通过不断实践来加深理解。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:244
+msgid "对于波士顿房价数据集，我们可以将 506 张样本划分为 500 张训练样本，6 张测试样本："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:295
+msgid "模型定义、训练和测试"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:297
+msgid ""
+"对于单个的样本 :math:`\\mathbf {x}`, 想要预测输出 :math:`y`, 即尝试找到映射关系 :math:`f: "
+"\\mathbf {x} \\in \\mathbb {R}^{d} \\mapsto y`, 同样可以建立线性模型："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:299
+msgid ""
+"\\begin{aligned}\n"
+"y &= f(\\mathbf {x}) = \\mathbf {w} \\cdot \\mathbf {x} + b \\\\\n"
+"& = (w_{1}, w_{2}, \\ldots, w_{13}) \\cdot (x_{1}, x_{2}, \\ldots, "
+"x_{13}) + b\\\\\n"
+"& = w_{1} x_{1} + w_{2} x_{2} + \\ldots + w_{13} x_{13} + b\n"
+"\\end{aligned}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:308
+msgid "**注意在表示不同的乘积（Product）时，不仅使用的符号有所不同，数学概念和编程代码之间又有所区别：**"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:310
+msgid ""
+"上个教程中用的星乘 :math:`*` 符号指的是元素间相乘（有时用 :math:`\\odot` 表示），也适用于标量乘法，编程对应于 "
+"``np.multiply()`` 方法"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:311
+msgid ""
+"对于点乘我们用 :math:`\\cdot` 符号表示，编程对应于 ``np.dot()`` 方法，在作用于两个向量时它等同于内积 "
+"``np.inner()`` 方法"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:312
+msgid ""
+"根据传入参数的形状，\\ ``np.dot()`` 的行为也可以等同于矩阵乘法，对应于 ``numpy.matmul()`` 方法或 ``@`` "
+"运算符"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:313
+msgid "严谨地说，点积或者数量积只是内积的一种特例，\\ **但我们在编程时，应该习惯先查询文档中的说明，并进行简单验证**"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:315
+msgid ""
+"比如样本 :math:`\\mathbf {x}` 和参数 :math:`\\mathbf {w}` 都是 13 "
+"维的向量，二者的点积结果是一个标量："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:362
+msgid "我们之前已经实现过类似的训练过程，现在一起来看下面这份新实现的代码："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:445
+msgid ""
+"现在，我们可以使用训练得到的 ``w`` 和 ``b`` 在测试数据上进行评估，这里我们可以选择使用平均绝对误差（Mean Absolute "
+"Error, MAE）作为评估指标："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:447
+msgid ""
+"\\ell(y_{pred}, y_{real})= \\frac{1}{n }\\sum_{i=1}^{n}\\left | "
+"\\hat{y}_{i}-{y}_{i}\\right |"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:516
+msgid "不同的梯度下降形式"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:518
+msgid "我们可以发现：上面的代码中，我们每训练一个完整的 ``epoch``, 将根据所有样本的平均梯度进行一次参数更新。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:520
+msgid "这种通过对所有的样本的计算来求解梯度的方法叫做\\ **批梯度下降法(Batch Gradient Descent)**."
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:522
+msgid "当碰到样本容量特别大的情况时，可能会导致无法一次性将所有数据给读入内存，遇到内存用尽（Out of memory，OOM）的情况。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:524
+msgid "这时你可能会想：“其实我们完全可以在每个样本经过前向传播计算损失、反向传播计算得到梯度后时，就立即对参数进行更新呀！”"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:526
+msgid ""
+"Bingo~ 这种思路叫做\\ **随机梯度下降（Stochastic Gradient Descent，常缩写成 SGD)**\\ "
+"，动手改写后，整体代码实现如下："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:601
+msgid "可以看到，在同样的训练周期内，使用随机梯度下降得到的训练损失更低，即损失收敛得更快。这是因为参数的实际更新次数要多得多。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:603
+msgid "接下来我们用随机梯度下降得到的参数 ``w`` 和 ``b`` 进行测试："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:668
+msgid "可以看到，虽然我们在训练集上的损失远低于使用批梯度下降的损失，但测试时得到的损失反而略高于批梯度下降的测试结果。为什么会这样？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:670
+msgid "**抛开数据、模型、损失函数和评估指标本身的因素不谈，背后的原因可能是：**"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:672
+msgid "使用随机梯度下降时，考虑到噪声数据的存在，并不一定参数每次更新都是朝着模型整体最优化的方向；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:673
+msgid "若样本噪声较多，很容易陷入局部最优解而收敛到不理想的状态；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:674
+msgid "如果更新次数过多，还容易出现在训练数据过拟合的情况，导致泛化能力变差。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:676
+msgid ""
+"既然两种梯度下降策略各有千秋，因此有一种折衷的方式，即采用\\ **小批量梯度下降法（Mini-Batch Gradient "
+"Descent）**\\ ："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:678
+msgid ""
+"我们设定一个 ``batch_size`` 值，将数据划分为多个 ``batch``\\ ，每个 ``batch`` "
+"的数据采取批梯度下降策略来更新参数；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:679
+msgid "设置合适的 ``batch_size`` 值，既可以避免出现内存爆掉的情况，也使得损失可能更加平滑地收敛；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:680
+msgid "不难发现 ``batch_size`` 是一个超参数；当 ``batch_size=1`` 时，小批量梯度下降其实就等同于随机梯度下降"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:682
+msgid "注意：天元 MegEngine 的优化器 ``Optimizer`` 中实现的 ``SGD`` 优化策略，实际上就是对小批量梯度下降法逻辑的实现。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:684
+msgid "这种折衷方案的效果比“真”随机梯度下降要好得多，\\ **因为可以利用向量化加速批数据的运算，而不是分别计算每个样本。**"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:686
+msgid "在这里我们先卖个关子，把向量化的介绍放在更后面，因为我们的当务之急是：获取小批量数据（Mini-batch data）."
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:698
+msgid "采样器（Sampler）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:700
+msgid "想要从完整的数据集中获得小批量的数据，则需要对已有数据进行采样。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:702
+msgid "在 MegEngine 的 ``data`` 模块中，提供了多种采样器 ``Sampler``\\ ："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:704
+msgid "对于训练数据，通常使用顺序采样器 ``SequentialSampler``, 我们即将用到；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:705
+msgid "对于测试数据，通常使用 ``RandomSampler`` 进行随机采样，在本教程的测试部分就能见到；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:706
+msgid "对于 ``dataset`` 的样本容量不是 ``batch_size`` 整数倍的情况，采样器也能进行很好的处理"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:760
+msgid ""
+"但需要注意到，采样器 ``Sampler`` 返回的是索引值，要得到划分后的批数据，还需要结合使用 MegEngine 中的 "
+"``Dataloader`` 模块。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:762
+msgid "同时也要注意，如果想要使用 ``Dataloader``, 需要先将原始数据集变成 MegEngine 支持的 ``Dataset`` 对象。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:774
+msgid "利用 Dataset 封装一个数据集"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:776
+msgid ""
+"``Dataset`` 是 MegEngine 中表示数据集最原始的的抽象类，可被其它类继承（如 ``StreamDataset``\\ "
+"），可阅读 ``Dataset`` 模块的文档了解更多的细节。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:778
+msgid "通常我们自定义的数据集类应该继承 ``Dataset`` 类，并重写下列方法："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:780
+msgid "``__init__()`` ：一般在其中实现读取数据源文件的功能。也可以添加任何其它的必要功能；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:781
+msgid "``__getitem__()`` ：通过索引操作来获取数据集中某一个样本，使得可以通过 for 循环来遍历整个数据集；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:782
+msgid "``__len__()`` ：返回数据集大小"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:837
+msgid ""
+"其实，对于这种单个或多个 NumPy 数组构成的数据，在 MegEngine 中也可以使用 ``ArrayDataset`` "
+"对它进行初始化，它将自动完成以上方法的重写："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:881
+msgid "数据载入器（Dataloader）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:883
+msgid ""
+"接下来便可以通过 ``Dataloader`` 来生成批数据，每个元素由对应的 ``batch_data`` 和 ``batch_label`` "
+"组成："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:930
+msgid "接下来我们一起来看看，使用批数据为什么能够加速整体的运算效率。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:933
+msgid "通过向量化加速运算"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:935
+msgid "在 NumPy 内部，向量化运算的速度是优于 ``for`` 循环的，我们很容易验证这一点："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:993
+msgid ""
+"重新阅读模型训练的代码，不难发现，每个 ``epoch`` 内部存在着 ``for`` 循环，根据模型定义的 :math:`y_i = "
+"\\mathbf {w} \\cdot \\mathbf {x_i} + b` 进行了 :math:`n` 次计算。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:995
+msgid ""
+"我们在前面已经将数据集表示成了形状为 :math:`(n, d)` 的数据矩阵 :math:`X`, 将标签表示成了 :math:`y` "
+"向量，这启发我们一次性完成所有样本的前向计算过程："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:997
+msgid ""
+"(y_{1}, y_{2}, \\ldots, y_{n}) =\n"
+"\\begin{bmatrix}\n"
+"x_{1,1} & x_{1,2} & \\cdots & x_{1,d} \\\\\n"
+"x_{2,1} & x_{2,2} & \\cdots & x_{2,d} \\\\\n"
+"\\vdots  &         &        & \\vdots \\\\\n"
+"x_{n,1} & x_{n,2} & \\cdots & x_{n,d}\n"
+"\\end{bmatrix}\n"
+"\\cdot (w_{1}, w_{2}, \\ldots, w_{d}) +\n"
+"b"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1010
+msgid "一种比较容易理解的形式是将其看成是矩阵运算 :math:`Y=XW+B`\\ ："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1012
+msgid ""
+"\\begin{bmatrix}\n"
+"y_{1} \\\\\n"
+"y_{2} \\\\\n"
+"\\vdots \\\\\n"
+"y_{n}\n"
+"\\end{bmatrix} =\n"
+"\\begin{bmatrix}\n"
+"x_{1,1} & x_{1,2} & \\cdots & x_{1,d} \\\\\n"
+"x_{2,1} & x_{2,2} & \\cdots & x_{2,d} \\\\\n"
+"\\vdots  &         &        & \\vdots \\\\\n"
+"x_{n,1} & x_{n,2} & \\cdots & x_{n,d}\n"
+"\\end{bmatrix}\n"
+"\\begin{bmatrix}\n"
+"w_1 \\\\\n"
+"w_2 \\\\\n"
+"\\vdots \\\\\n"
+"w_d\n"
+"\\end{bmatrix} +\n"
+"\\begin{bmatrix}\n"
+"b \\\\\n"
+"b \\\\\n"
+"\\vdots \\\\\n"
+"b\n"
+"\\end{bmatrix}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1040
+msgid ""
+"形状为 :math:`(n,d)` 的矩阵 :math:`X` 和维度为 :math:`(d,)` 的向量 :math:`w` "
+"进行点乘，此时不妨理解成 :math:`w` 变成了一个形状为 :math:`(d, 1)` 的矩阵 :math:`W`"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1041
+msgid ""
+"两个矩阵进行乘法运算，此时的 ``np.dot(X, w)`` 等效于 ``np.matmul(X, W)``, 底层效率比 ``for`` "
+"循环快许多，得到形状为 :math:`(n, 1)` 的中间矩阵 :math:`P`"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1042
+msgid ""
+"中间矩阵 :math:`P` 和标量 :math:`b` 相加，此时标量 :math:`b` 广播成 :math:`(n, 1)` 的矩阵 "
+":math:`B` 进行矩阵加法，得到形状为 :math:`(n,1)` 的标签矩阵 :math:`Y`"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1043
+msgid "显然，这样的处理逻辑还需要将标签矩阵 :math:`Y` 去掉冗余的那一维，变成形状为 :math:`(n, )` 的标签向量 :math:`y`"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1045
+msgid "**矩阵/张量运算的思路在深度学习中十分常见，在后续会被反复提及。** NumPy 的官方文档中写着此时 ``np.dot()`` 的真实逻辑："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1047
+msgid ""
+"If a is an N-D array and b is a 1-D array, it is a sum product over the "
+"last axis of a and b."
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1048
+msgid "如果 ``a`` 是 N 维度数组且 ``b`` 是 1 维数组，将对 ``a`` 和 ``b`` 最后一轴上对元素进行乘积并求和。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1050
+msgid ""
+"这样的计算逻辑也可以由爱因斯坦求和约定 ``np.einsum('ij,j->i', X, w)`` 来实现，感兴趣的读者可查阅 "
+"``np.einsum()`` 文档。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1052
+msgid ""
+"我们可以设计一套简单的测试样例，来看一下 ``np.dot()``, ``np.einsum()`` 和 ``np.matmul()`` 相较于 "
+"``for`` 循环是否能得到同样的结果："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1110
+msgid "接下来加大数据规模，测试向量化是否起到了加速效果："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1186
+msgid ""
+"可以发现 ``dot()`` 和 ``matmul()`` 的向量化实现都有明显的加速效果，\\ ``einsum()`` "
+"虽然是全能型选手，但也以更多的开销作为了代价，一般不做考虑。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1189
+msgid "NumPy 实现"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1191
+msgid "我们先尝试使用 NumPy 的 ``dot()`` 实现一下向量化的批梯度下降的代码："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1260
+msgid ""
+"上面的 ``loss`` 收敛状况与我们最开始实现的 ``sum_grad`` 的数值一致，可以自行测试一下 ``for`` "
+"循环写法和向量化写法的用时差异。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1262
+msgid "同时我们也可以发现，当前向传播使用批数据变成矩阵计算带来极大加速的同时，也为我们的反向传播梯度计算提出了更高的要求："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1264
+msgid "尽管存在着链式法则，但是对于不熟悉矩阵求导的人来说，还是很难理解一些梯度公式推导的过程，比如为什么出现了转置 ``data.T``"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1265
+msgid "当前向传播的计算变得更加复杂，由框架实现自动求导 ``autograde`` 机制就显得更加必要和方便"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1268
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1569
+msgid "MegEngine 实现"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1270
+msgid "最后，让我们利用上小批量（Mini-batch）的数据把完整的训练流程代码在 MegEngine 中实现："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1272
+msgid ""
+"为了后续教程理解的连贯性，我们做一些改变，使用 ``F.matmul()`` 来代替 ``np.dot()``\\ "
+"，前面已经证明了这种情况下的计算结果值是等价的，但形状不同"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1273
+msgid ""
+"对应地，我们的 ``w`` 将由向量变为矩阵，\\ ``b`` 在进行加法操作时将自动进行广播变成矩阵，输出 ``pred`` 也是一个矩阵，即 "
+"2 维 Tensor"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1274
+msgid ""
+"在计算单个 ``batch`` 的 ``loss`` 时，内部通过 ``sum()`` 计算已经去掉了冗余的维度，最终得到的 ``loss`` "
+"是一个 0 维 Tensor"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1371
+msgid "对我们训练好的模型进行测试："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1434
+msgid "可以发现，使用小批量梯度下降策略更新参数，最终在测试时得到的平均绝对值损失比单独采用批梯度下降和随机梯度下降策略时还要好一些。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1448
+msgid "有些时候，添加一些额外的条件，看似简单的问题就变得更加复杂有趣起来了，启发我们进行更多的思考和探索。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1450
+msgid "我们需要及时总结学习过的知识，并在之后的时间内不断通过实践来强化记忆，这次的教程中出现了以下新的概念："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1452
+msgid ""
+"数据集（Dataset）：想要将现实中的数据集变成能够被 MegEngine 使用的格式，必须将其处理成 ``MapDataset`` 或者 "
+"``StreamDateset`` 类"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1453
+msgid "继承基类的同时，还需要实现 ``__init__()``, ``__getitem__`` 和 ``__len__()`` 三种内置方法"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1454
+msgid ""
+"我们对事物的抽象——特征（Feature）有了一定的认识，并接触了一些数学形式的表达如数据矩阵 :math:`X` 和标签向量 :math:`y`"
+" 等"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1455
+msgid ""
+"我们接触到了训练集（Trainining dataset）、测试集（Test dataset）和验证集（Validation dataset）/ "
+"开发集（Develop dataset）的概念"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1456
+msgid "除了训练时我们会设计一个损失函数外，在测试模型性能时，我们也需要设计一个评估指标（Metric），不同任务的指标不尽相同"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1457
+msgid ""
+"采样器（Sampler）：可以帮助我们自动地获得一个采样序列，常见的有顺序采样器 ``SequentialSampler`` 和随机采样器 "
+"``RandomSampler``"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1458
+msgid ""
+"数据载入器（Dataloader）：根据 ``Dataset`` 和 ``Sampler`` 来获得对应的小批量数据（Mini-batch "
+"data）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1459
+msgid "我们认识了一个新的超参数 ``batch_size``\\ ，并且对不同形式的梯度下降各自的优缺点有了一定的认识"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1460
+msgid "我们理解了批数据向量化计算带来的好处，能够大大加快计算效率；同时为了避免推导向量化的梯度，实现自动求导机制是相当必要的"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1462
+msgid "我们要养成及时查阅文档的好习惯，比如 NumPy 的 ``np.dot()`` 在接受的 ndarray 形状不同时，运算逻辑也将发生变化"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1464
+msgid "在写代码时，Tensor 的维度形状变化是尤其需要关注的地方，理清楚逻辑可以减少遇到相关报错的可能"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1465
+msgid "不同库和框架之间，相同 API 命名背后的实现可能完全不同"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1481
+msgid "我们在标记和收集数据的时候，特征的选取是否科学，数据集的规模应该要有多大？数据集的划分又应该选用什么样的比例？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1482
+msgid "这次见着了 ``batch_size``, 它的设定是否有经验可循？接触到的超参数越来越多了，验证集和开发集是如何帮助我们对合适的超参数进行选取的？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1483
+msgid "我们对 NumPy 支持的 ndarray 的数据如何导入 MegEngine 已经有了经验，更复杂的数据集（图片、视频、音频）要如何处理呢？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1484
+msgid "噪声数据会对参数的学习进行干扰，\\ ``Dataloader`` 中是否有对应的预处理方法来做一些统计意义上的处理？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1485
+msgid "我们知道了向量化可以加速运算，在硬件底层是如何实现“加速”这一效果的？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1488
+msgid "关于数学表示的习惯"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1490
+msgid ""
+"由于数据矩阵 :math:`X` 的形状排布为 :math:`(n, d)`, 因此 MegEngine 中实现的矩阵形式的线性回归为 "
+":math:`\\hat {Y} = f(X) = XW+B` （这里将 :math:`B` 视为 :math:`b` 广播后的矩阵）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1492
+msgid ""
+"然而在线性代数中为了方便运算表示，向量通常默认为列向量 :math:`\\mathbf {x} = (x_1; x_2; \\ldots "
+"x_n)`, 单样本线性回归为 :math:`f(\\mathbf {x};\\mathbf {w},b) = \\mathbf "
+"{w}^T\\mathbf {x} + b`\\ ，"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1494
+msgid "对应有形状为 :math:`(d, n)` 的数据矩阵："
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1496
+msgid ""
+"X = \\begin{bmatrix}\n"
+"| & | & & | \\\\\n"
+"\\mathbf {x}_1 & \\mathbf {x}_2 & \\cdots & \\mathbf {x}_n  \\\\\n"
+"| & | & & |\n"
+"\\end{bmatrix}\n"
+"= \\begin{bmatrix}\n"
+"x_{1,1} & x_{1,2} & \\cdots & x_{1,n} \\\\\n"
+"x_{2,1} & x_{2,2} & \\cdots & x_{2,n} \\\\\n"
+"\\vdots  &         &        & \\vdots \\\\\n"
+"x_{d,1} & x_{d,2} & \\cdots & x_{d,n}\n"
+"\\end{bmatrix}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1511
+msgid ""
+"因此可以得到 :math:`\\hat {Y} = f(X) = W^{T}X+B`, 这反而是比较常见的形式（类似于 "
+":math:`y=Ax+b`\\ ）。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1513
+msgid "为什么我们在教程中要使用 :math:`\\hat {Y} = f(X) = XW+B` 这种不常见的表述形式呢？数据布局不同会有什么影响？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:9
+msgid "天元 MegEngine 基础概念"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:20
+msgid "我们为第一次接触天元 MegEngine 框架的用户提供了此系列教程，通过本部分的学习，你将会："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:22
+msgid "对天元 MegEngine 框架中的 ``Tensor``, ``Operator``, ``GradManager`` 等基本概念有一定的了解；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:23
+msgid "对深度学习中的前向传播、反向传播和参数更新的具体过程有更加清晰的认识；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:24
+msgid "通过写代码训练一个线性回归模型，对上面提到的这些概念进行具体的实践，加深理解。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:68
+msgid "接下来，我们将学习框架中一些基本模块的使用，先从最基础的张量（Tensor）和算子（Operator）开始吧～"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:80
+msgid "张量（Tensor）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:82
+msgid "真实世界中的很多非结构化的数据，如文字、图片、音频、视频等，都可以表达成更容易被计算机理解的形式。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:84
+msgid ""
+"MegEngine 使用张量（Tensor）来表示数据。类似于 `NumPy <https://numpy.org/>`__ "
+"中的多维数组（ndarray），张量可以是标量、向量、矩阵或者多维数组。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:86
+msgid "在 MegEngine 中得到一个 Tensor 的方式有很多："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:88
+msgid ""
+"我们可以通过 ``megengine.functional.tensor`` 的 ``arange()``, ``ones()`` 等方法来生成 "
+"Tensor，\\ ``functional`` 模块我们会在后面介绍；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:89
+msgid ""
+"也可以通过 ``Tensor()`` 或 ``tensor()`` 方法，传入 Python list 或者 ndarray 来创建一个 "
+"Tensor"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:147
+msgid "通过 ``dtype`` 属性我们可以获取 Tensor 的数据类型，默认为 ``float32``\\ ："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:149
+msgid "为了方便，统一使用 NumPy 的 ``dtype`` 表示；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:150
+msgid "使用 ``type()`` 可以获取实际的类型，用来区分 ndarray 和 Tensor"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:193
+msgid "通过 ``astype()`` 方法我们可以拷贝创建一个指定数据类型的新 Tensor ，原 Tensor 不变："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:195
+msgid "MegEngine Tensor 目前不支持转化成 ``float64`` 类型；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:196
+msgid "``float64`` 类型的 ndarray 转化成 Tensor 时会变成 ``float32`` 类型"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:237
+msgid "通过 ``device`` 属性，我们可以获取 Tensor 当前所在的设备："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:239
+msgid ""
+"一般地，如果在创建 Tensor 时不指定 ``device``\\ ，其 ``device`` 属性默认为 ``xpux``\\ "
+"，表示当前任意一个可用的设备；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:240
+msgid ""
+"在 GPU 和 CPU 同时存在时，\\ **MegEngine 将自动使用 GPU 作为默认设备进行训练**\\ ，查看 ``device`` "
+"文档了解更多细节。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:242
+msgid "通过 Tensor 自带的 ``numpy()`` 方法，可以拷贝 Tensor 并转化对应的 ndarray，原 Tensor 不变：:"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:282
+msgid "可以发现，不同类型之间的转化比较灵活，但需要注意："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:284
+msgid "MegEngine Tensor 没有 ``mge.numpy(mge_tensor)`` 这种用法；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:285
+msgid "``tensor`` 是 ``Tensor`` 的一个别名（Alias），也可以尝试直接这样导入："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:331
+msgid "通过 ``shape`` 属性，我们可以获取 Tensor 的形状："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:373
+msgid "通过 ``size`` 属性，我们可以获取 Tensor 中元素的个数："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:413
+msgid "通过 ``item()`` 方法，我们可以获得对应的 Python 标量对象："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:455
+msgid "算子（Operator）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:457
+msgid "MegEngine 中通过算子 (Operator） 来表示运算。MegEngine 中的算子支持基于 Tensor 的常见数学运算和操作。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:468
+msgid "比如 Tensor 的元素间（Element-wise）加法、减法和乘法："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:530
+msgid "你也可以使用 MegEngine 中的 ``functional`` 模块中的各种方法来完成对应计算："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:589
+msgid "Tensor 支持 Python 中常见的切片（Slicing）操作："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:632
+msgid "使用 ``reshape()`` 方法，可以得到修改形状后的 Tensor:"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:679
+msgid "另外， ``reshape()`` 方法的参数允许存在单个维度的缺省值，用 -1 表示。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:681
+msgid "此时，\\ ``reshape()`` 会自动推理该维度的值："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:727
+msgid "在 ``functional`` 模块中提供了更多的算子，比如 Tensor 的矩阵乘可以使用 ``matmul()`` 方法："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:776
+msgid "我们可以使用 NumPy 的矩阵乘来验证一下这个结果："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:827
+msgid "更多算子可以参考 ``functional`` 模块的文档部分。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:829
+msgid "现在你可以适当休息一下，脑海中回想一下张量（Tensor）和算子（Operator）的概念，然后继续阅读教程后面的部分。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:841
+msgid "计算图（Computing Graph）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:852
+msgid ""
+"MegEngine 是基于计算图（Computing Graph）的深度神经网络学习框架，下面通过一个简单的数学表达式 :math:`y=(w *"
+" x)+b` 来介绍计算图的基本概念，如下图所示："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:854
+msgid "|Computing Graph|"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:856
+msgid "计算之间的各种流程依赖关系可以构成一张计算图，从中可以看到，计算图中存在："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:858
+msgid ""
+"数据节点（图中的实心圈）：如输入数据 :math:`x`\\ 、\\ **参数** :math:`w` 和 :math:`b`\\ "
+"，运算得到的中间数据 :math:`p`\\ ，以及最终的输出 :math:`y`\\ ；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:859
+msgid ""
+"计算节点（图中的空心圈）：图中 :math:`*` 和 :math:`+` 分别表示计算节点 **乘法** 和 **加法**\\ "
+"，是施加在数据节点上的运算；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:860
+msgid "边（图中的箭头）：表示数据的流向，体现了数据节点和计算节点之间的依赖关系"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:873
+msgid "**在深度学习领域，任何复杂的深度神经网络模型本质上都可以用一个计算图表示出来。**"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:875
+msgid "**MegEngine 用张量（Tensor）表示计算图中的数据节点，用算子（Operator）实现数据节点之间的运算。**"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:877
+msgid "我们可以理解成，神经网络模型的训练其实就是在重复以下过程："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:879
+msgid "**前向传播**\\ ：计算由计算图表示的数学表达式的值的过程。在上图中则是："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:880
+msgid "输入 :math:`x` 和参数 :math:`w` 首先经过乘法运算得到中间结果 :math:`p`\\ ，"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:881
+msgid "接着 :math:`p` 和参数 :math:`b` 经过加法运算，得到右侧最终的输出 :math:`y`\\ ，这就是一个完整的前向传播过程。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:882
+msgid ""
+"**反向传播**\\ ：根据需要优化的目标（假设这里就为 :math:`y`\\ ），通过链式求导法则，对所有的参数求梯度。在上图中，即计算 "
+":math:`\\frac{\\partial y}{\\partial w}` 和 :math:`\\frac{\\partial "
+"y}{\\partial b}`."
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:883
+msgid ""
+"**参数更新**\\ ：得到梯度后，需要使用梯度下降法（Gradient Descent）对参数做更新，从而达到模型优化的效果。在上图中，即对 "
+":math:`w` 和 :math:`b` 做更新。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:885
+msgid "模型训练完成后便可用于测试（或者说推理），此时我们不需要再对模型本身做任何更改，只需要将数据经过前向传播得到对应的输出即可。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:888
+msgid "链式法则计算梯度"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:890
+msgid "例如，为了得到上图中 :math:`y` 关于参数 :math:`w` 的梯度，反向传播的过程如下图所示："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:892
+msgid "|Backpropagation|"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:894
+msgid "首先 :math:`y = p + b`\\ ，因此 :math:`\\frac{\\partial y}{\\partial p} = 1`"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:895
+msgid ""
+"接着，反向追溯，\\ :math:`p = w * x` ，因此，\\ :math:`\\frac{\\partial p}{\\partial "
+"w}=x`"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:896
+msgid ""
+"根据链式求导法则，\\ :math:`\\frac{\\partial y}{\\partial w}=\\frac{\\partial "
+"y}{\\partial p} * \\frac{\\partial p}{\\partial w} = 1 * x`"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:897
+msgid "因此最终 :math:`y` 关于参数 :math:`w` 的梯度为 :math:`x`."
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:911
+msgid "求导器（GradManager）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:913
+msgid "推导梯度是件枯燥的事情，尤其是当模型的前向传播计算输出的过程变得相对复杂时，根据链式法则计算梯度会变得异常枯燥无味。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:915
+msgid "自动求导是深度学习框架对使用者而言最有用的特性之一，它自动地完成了反向传播过程中根据链式法则去推导参数梯度的过程。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:917
+msgid "MegEngine 的 ``autodiff`` 模块为计算图中的张量提供了自动求导功能，继续以上图的例子进行说明："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:972
+msgid ""
+"可以看到，求出的梯度本身也是 Tensor，\\ ``GradManager`` 负责管理和计算梯度（在默认情况下，Tensor "
+"是不需要计算梯度的）。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:973
+msgid ""
+"我们可以使用 ``attach()`` 来绑定需要计算梯度的变量（绑定后可使用 ``detach()`` 将其取消绑定），使用 "
+"``backward()`` 进行梯度的计算。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:975
+msgid "上面 ``with`` 代码段中的前向运算都会被求导器记录，有关求导器的原理，可以查看 ``GradManager`` 文档了解细节。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:987
+msgid "优化器（Optimizer）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:989
+msgid ""
+"你应该注意到了，我们使用参数（Parameter）来称呼张量（Tensor）\\ :math:`w` 和 :math:`b`, 因为与输入 "
+":math:`x` 不同，计算图中的 :math:`w` 和 :math:`b` 是需要进行更新/优化的变量。MegEngine 中使用 "
+"``Parameter`` 来表示参数（注意没有小写形式），Parameter 是 Tensor 的子类，其对象（即网络参数）可以被优化器更新。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:991
+msgid "显然，GradManager 支持对于 Parameter 的梯度计算："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1048
+msgid "前向传播和反向传播的过程完成后，我们得到了参数对应需要更新的梯度，如 ``w`` 相对于输出 :math:`y` 的梯度 ``w.grad``."
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1050
+msgid ""
+"根据梯度下降的思想，参数 :math:`w` 的更新规则为：\\ ``w = w - lr * w.grad``, 其中 ``lr`` "
+"是学习率（Learning Rate），控制参数更新速度。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1052
+msgid "P.S: 类似学习率这种，训练前人为进行设定的，而非由模型学得的参数，通常被称为超参数（Hyperparameter）。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1054
+msgid "MegEngine 的 ``Optimizer`` 模块提供了基于各种常见优化策略的优化器，如 Adam 和 SGD 等。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1056
+msgid "它们都继承自 Optimizer 基类，主要包含参数梯度的清空 ``clear_grad()`` 和参数更新 ``step()`` 这两个方法："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1102
+msgid ""
+"**提示：**\\ 多次实践表明，用户经常忘记在更新参数后做梯度清空操作，因此推荐使用这样的写法：\\ "
+"``optimizer.step().clear_grad()``"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1104
+msgid "我们使用 Numpy 来手动模拟一次参数 ``w`` 的更新过程："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1149
+msgid "这样我们便成功地进行了一次参数更新，在实际训练模型时，参数的更新会迭代进行很多次，迭代次数 ``epochs`` 也是一种超参数，需要人为设定。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1161
+msgid "损失函数（Loss Function）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1163
+msgid "深度神经网络模型的优化过程，实际上就是使用梯度下降算法来优化一个目标函数，从而更新网络模型中的参数。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1165
+msgid "但请注意，上面用于举例的表达式的输出值其实并不是需要被优化的对象，我们的目标是：模型预测的输出结果和真实标签尽可能一致。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1167
+msgid "我们已经知道了，通过前向传播可以得到模型预测的输出，此时我们用 **损失函数（Loss Function）** 来度量模型输出与真实结果之间的差距。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1169
+msgid "MegEngine 的 ``functional`` 模块提供了各种常见的损失函数，具体可见文档中的 ``loss`` 部分。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1171
+msgid ""
+"对于 :math:`w * x + b` 这样的范围在实数域 :math:`\\mathbb R` 上的输出，我们可以使用均方误差（Mean "
+"Squared Error, MSE）表示模型输出 :math:`y_{pred}` 和实际值 :math:`y_{real}` 的差距："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1173
+msgid ""
+"\\ell(y_{pred}, y_{real})= \\frac{1}{n "
+"}\\sum_{i=1}^{n}\\left(\\hat{y}_{i}-{y}_{i}\\right)^{2}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1178
+msgid ""
+"注：在上面的公式中 :math:`\\left(\\hat{y}_{i}-{y}_{i}\\right)^{2}` 计算的是单个样本 "
+":math:`x_{i}` 输入模型后得到的输出 :math:`\\hat{y}_{i}` 和实际标签值 :math:`{y}_{i}` "
+"的差异，数据集中有 :math:`n` 个样本。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1229
+msgid "选定损失函数作为优化目标后，我们便可在训练的过程中通过梯度下降不断地更新参数 :math:`w` 和 :math:`b`, 从而达到模型优化的效果："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1231
+msgid ""
+"w^{*}, b^{*}=\\underset{w, b}{\\operatorname{argmin}} \\ell\\left(w, "
+"b\\right) ."
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1246
+msgid "练习：线性回归"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1248
+msgid "接下来，我们用一个非常简单的例子，帮助你将前面提到的概念给联系起来。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1250
+msgid ""
+"假设有人提供给你一些包含数据 ``data`` 和标签 ``label`` 的样本集合 :math:`S` 用于训练模型，希望将来给出输入 "
+":math:`x`, 模型能对输出 :math:`y` 进行较好地预测："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1252
+msgid ""
+"\\begin{aligned}\n"
+"data &= [x_1, x_2, \\ldots , x_n] \\\\\n"
+"label &= [y_1, y_2, \\ldots , y_n] \\\\\n"
+"S &= \\{(x_1, y_1), (x_2, y_2), \\ldots (x_n, y_n)\\}\n"
+"\\end{aligned}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1261
+msgid "请运行下面的代码以随机生成包含 ``data`` 和 ``label`` 的样本:"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1335
+msgid "通过可视化观察样本的分布规律，不难发现，我们可以:"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1337
+msgid "尝试拟合 :math:`y = w * x + b` 这样一个线性模型（均为标量）；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1338
+msgid "选择使用均方误差损失作为优化目标；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1339
+msgid "通过梯度下降法来更新参数 :math:`w` 和 :math:`b`."
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1342
+msgid "Numpy 实现"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1344
+msgid "对于这种非常简单的模型，完全可以使用 Numpy 进行算法实现，我们借此了解一下整个模型训练的流程："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1566
+msgid "可以看到，在 5 个 ``epoch`` 的迭代训练中，已经得到了一个拟合状况不错的线性模型。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1571
+msgid "上面的流程，完全可以使用 MegEngine 来实现（有兴趣的读者可以参照上面的注释，先尝试自己实现）："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1653
+msgid "你应该会得到相同的 ``w``, ``b`` 以及 ``loss`` 值，下面直线的拟合程度也应该和 Numpy 实现一致："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1690
+msgid "祝贺你完成了入门教程的学习，现在是时候休息一下，做一个简单的回顾了："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1692
+msgid "到目前为止，我们已经掌握了天元 MegEngine 框架中的以下概念："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1694
+msgid "计算图（Computing Graph）：MegEngine 是基于计算图的框架，计算图中存在数据节点、计算节点和边"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1695
+msgid "前向传播：输入的数据在计算图中经过计算得到预测值，接着我们使用损失 ``loss`` 表示预测值和实际值的差异"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1696
+msgid ""
+"反向传播：根据链式法则，得到计算图中所有参数 w 关于 loss 的梯度 dw ，实现在 ``autodiff`` 模块，由 "
+"``GradManager`` 进行管理"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1697
+msgid "参数更新：根据梯度下降算法，更新图中参数，从而达到优化最终 loss 的效果，实现在 ``optimzer`` 模块"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1698
+msgid "张量（Tensor）：MegEngine 中的基础数据结构，用来表示计算图中的数据节点，可以灵活地与 Numpy 数据结构转化"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1699
+msgid "参数（Parameter）：用于和张量做概念上的区分，模型优化的过程实际上就是优化器对参数进行了更新"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1700
+msgid "超参数（Hype-parameter）：其值无法由模型直接经过训练学得，需要人为（或通过其它方法）设定"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1701
+msgid "算子（Operator）：基于 Tensor 的各种计算的实现（包括损失函数），实现在 ``functional`` 模块"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1703
+msgid "我们通过拟合 :math:`f(x) = w * x + b` 完成了一个最简单的线性回归模型的训练，干得漂亮！"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1717
+msgid "我们的 MegEngine 打怪升级之旅还没有结束，在前往下一关之前，尝试思考一些问题吧。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1719
+msgid "关于向量化实现："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1721
+msgid "当你发现 Python 代码运行较慢时，通常可以将数据处理移入 NumPy 并采用向量化（Vectorization）写法，实现最高速度的处理"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1722
+msgid ""
+"线性模型训练的 NumPy 写法中，单个 ``epoch`` 训练内出现了 ``for`` 循环，实际上可以采取向量化的实现（参考 "
+"MegEngine 实现的写法）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1723
+msgid "使用向量化的实现，通常计算的效率会更高，因此建议：代码中能够用向量化代替 ``for`` 循环的地方，就尽可能地使用向量化实现"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1725
+msgid "关于设备："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1727
+msgid "都说 GPU 训练神经网络模型速度会比 CPU 训练快非常多，为什么？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1728
+msgid ""
+"我们可以把 Tensor 指定计算设备为 GPU 或 CPU，而原生 NumPy 只支持 CPU 计算，Tensor 转化为 ndarray "
+"的过程是什么样的？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1729
+msgid "训练的速度是否会受到训练设备数量的影响呢？可不可以多个设备一起进行训练？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1731
+msgid "关于参数与超参数："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1733
+msgid "现在我们接触到了两个超参数 ``epochs`` 和 ``lr``, 调整它们的值是否会对模型的训练产生影响？（不妨自己动手调整试试）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1734
+msgid ""
+"更新参数所用的梯度 ``grad_w``\\ ，是所有样本的梯度之和 ``sum_grad_w`` "
+"求均值，为什么不在每个样本反向传播后立即更新参数 ``w``\\ ？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1735
+msgid "我们看上去得到了一条拟合得很不错的曲线，但是得到的 ``b`` 距离真实的 ``b`` 还比较遥远，为什么？如何解决这种情况？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1736
+msgid "如何选取合适的超参数，对于超参数的选取是否有一定的规律或者经验可寻？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1738
+msgid "关于数据集："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1740
+msgid "我们在线性模型中使用的是从 NumPy 代码生成的随机数据，修改数据集的样本数量 ``n`` 和噪声扰动程度 ``noise`` 会有什么影响？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1741
+msgid "对于现实中的数据集，如何转换成 MegEngine Tensor 的形式进行使用？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1742
+msgid "这中间需要经过什么样的预处理（Preprocessing）过程，有哪些流程是可以交由框架来完成的？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1744
+msgid "关于模型："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1746
+msgid "我们学会了定义了非常简单的线性模型 ``linear_model``, 更复杂的模型要如何去写？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1747
+msgid "既然任何神经网络模型本质上都可以用计算图来表示，那么神经网络模型的搭建流程是什么样的？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1749
+msgid "关于最佳实践："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1751
+msgid "在编写代码时，经常会有根据前人经验总结出的最佳实践（Best Practice）作为参考，例如："
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1752
+msgid "参数的更新和梯度的清空可以写在一起 ``optimizer.step().clear_grad()``"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1753
+msgid "在导入某些包的时候，通常有约定俗成的缩写如 ``import megengine as mge``"
+msgstr ""
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1754
+msgid "除此以外，还有什么样的编程习惯和最佳实践值得参考？如何将一份玩具代码整理变成工程化的代码？"
+msgstr ""
+
+#: ../../source/getting-started/index.rst:5
+msgid "新手入门"
+msgstr ""
+
+#: ../../source/getting-started/index.rst:17
+#: ../../source/getting-started/install.rst:5
+msgid "安装"
+msgstr ""
+
+#: ../../source/getting-started/index.rst:19
+msgid "天元 MegEngine 可以使用 Python 包管理器 pip 直接进行安装："
+msgstr ""
+
+#: ../../source/getting-started/index.rst:25
+msgid "如果想要安装特定的版本，或需要从源码进行编译？ :ref:`了解更多安装方式<install>` 。"
+msgstr ""
+
+#: ../../source/getting-started/index.rst:29
+msgid ""
+"MegEngine 安装包中集成了使用 GPU 运行代码所需的 CUDA 环境，不用区分 CPU 和 GPU 版。 如果想要运行 GPU "
+"程序，请确保机器本身配有 GPU 硬件设备并安装好驱动。"
+msgstr ""
+
+#: ../../source/getting-started/index.rst:32
+msgid ""
+"如果你想体验在云端 GPU 算力平台进行深度学习开发的感觉，欢迎访问 `MegStudio "
+"<https://studio.brainpp.com/>`_ 平台。"
+msgstr ""
+
+#: ../../source/getting-started/index.rst:35
+msgid "一个最简单的使用样例"
+msgstr ""
+
+#: ../../source/getting-started/index.rst:38
+msgid "接下来做什么"
+msgstr ""
+
+#: ../../source/getting-started/install.rst:7
+#: ../../source/getting-started/quick-start.rst:7
+msgid "内容正在建设中..."
+msgstr ""
+
+#: ../../source/getting-started/more-tutorials.rst:5
+msgid "更多教程资源"
+msgstr ""
+
+#: ../../source/getting-started/more-tutorials.rst:7
+msgid "我们的社区提供了非常多的教程作为参考，欢迎大家参与贡献教程。"
+msgstr ""
+
+#: ../../source/getting-started/quick-start.rst:5
+msgid "天元 MegEngine 快速上手"
+msgstr ""
+
