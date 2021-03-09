@@ -22,7 +22,6 @@ copyright = f'2020-{datetime.now().year}, The MegEngine Open Source Team'
 author = 'The MegEngine Open Source Team'
 version = megengine.__version__
 release = version
-language = 'zh_CN'
 
 # -- General configuration ---------------------------------------------------
 
@@ -55,12 +54,20 @@ source_encoding = "utf-8"
 master_doc = 'index'
 templates_path = ['_templates']
 exclude_patterns = [
-    '_build', 
-    '_drafts', 
+    '_build',
+    'build',
     'examples',
     '**/includes/**',
     '**.ipynb_checkpoints'
 ]
+
+# -- Options for internationalization ----------------------------------------
+
+language = 'zh_CN'
+
+# By default, the document `functional/loss.rst` ends up in the `functional` text domain. 
+# With this option set to False, it is `functional/loss`.
+gettext_compact = False
 
 # -- Options for Extensions -------------------------------------------------
 
