@@ -32,7 +32,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.6
+          python-version: 3.7
 
       - name: Cache Python packages
         id: cache-python
@@ -46,7 +46,7 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install megengine
+          pip install megengine -f https://megengine.org.cn/whl/mge.html
 
       - name: Install Pydata Sphinx theme
         run: python3 -m pip install ./theme
@@ -62,6 +62,7 @@ jobs:
           tar czf static.tgz en zh
 
       - name: Deploy on OSS
+        if: ${{ github.event.label.name != 'no-deploy' }}
         run: |
           export GIT_HASH=$(git rev-parse --short HEAD) && echo $GIT_HASH
           wget http://gosspublic.alicdn.com/ossutil/1.7.1/ossutil64

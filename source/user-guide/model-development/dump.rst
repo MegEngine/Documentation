@@ -7,7 +7,7 @@
 模型序列化
 ------------------------------
 
-MegEngine 依赖 trace 来序列化（:meth:`dump `）一个训练好的模型。并且为了把一些参数（比如卷积层的卷积核等）固化下来，需要在 trace 中多指定一项 ``capture_as_const = True``。之后调用 ``dump`` 函数即可把模型序列化到一个文件或者文件对象中。如：
+MegEngine 依赖 trace 来序列化（:meth:`~.jit.trace.dump` ）一个训练好的模型。并且为了把一些参数（比如卷积层的卷积核等）固化下来，需要在 trace 中多指定一项 ``capture_as_const = True``。之后调用 ``dump`` 函数即可把模型序列化到一个文件或者文件对象中。如：
 
 .. code-block::
 

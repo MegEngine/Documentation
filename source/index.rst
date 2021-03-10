@@ -8,7 +8,7 @@
    getting-started/index
    user-guide/index
    reference/index
-   developmet/index
+   development/index
 
 天元 Megengine 是一个快速、可拓展、易于使用且支持自动求导的深度学习框架。
 
