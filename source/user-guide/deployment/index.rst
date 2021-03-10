@@ -1,8 +1,16 @@
-.. _deploy-your-model:
+.. _deployment:
 
-============
-部署你的模型
-============
+========
+模型部署
+========
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   load-and-run
+   codegen
+   midout
 
 MegEngine 的一大核心优势是“训练推理一体化”，其中“训练”是在 Python 环境中进行的，
 而“推理”则特指在 C++ 环境下使用训练完成的模型进行推理。

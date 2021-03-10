@@ -1,6 +1,4 @@
-.. _reference:
-.. py:module:: megengine
-.. currentmodule:: megengine
+.. _megengine-reference:
 
 ========
 API 参考
@@ -9,6 +7,9 @@ API 参考
 :更新时间: |today|
 
 所有内容处于内测调整状态中，非最终版本。
+
+.. py:module:: megengine
+.. currentmodule:: megengine
 
 Python API
 ----------

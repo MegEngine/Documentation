@@ -9,9 +9,9 @@
    :toctree: api
    :nosignatures:
 
-   Tensor
-   tensor
-   Parameter 
+   tensor.Tensor
+   tensor.tensor
+   tensor.Parameter 
 
 张量的类型与形状
 ================
