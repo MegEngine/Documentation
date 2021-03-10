@@ -4,20 +4,16 @@
 用户指南
 ========
 
-
 .. toctree::
    :maxdepth: 1
 
-   distribution.rst
-   quantization.rst
-   advanced-parameter-optimization.rst
-   trace.rst
-   sublinear-memory.rst
-   dump.rst
-   deploy-your-model.rst
-   load-and-run.rst
-   codegen.rst
-   midout.rst
+   faq
+   install/index
+   basic-concepts/index
+   data-engineering/index
+   model-development/index
+   model-evaluation/index
+   deployment/index
 
 
 内容正在建设中...

@@ -33,6 +33,7 @@ tensor 子模块
    :toctree: api
    :nosignatures:
 
+   copy
    broadcast_to
    concat
    stack
@@ -165,6 +166,7 @@ math 子模块
    dot
    matinv
    matmul
+   svd
 
 概率统计
 ~~~~~~~~
@@ -204,8 +206,10 @@ nn 子模块
 
    conv1d
    conv2d
+   conv3d
    local_conv2d
    conv_transpose2d
+   deformable_conv2d
 
 池化函数
 ~~~~~~~~
@@ -217,6 +221,7 @@ nn 子模块
    max_pool2d
    adaptive_avg_pool2d
    adaptive_max_pool2d
+   deformable_psroi_pooling
 
 非线性激活函数
 ~~~~~~~~~~~~~~
@@ -273,23 +278,6 @@ nn 子模块
    indexing_one_hot
    embedding
 
-Vision 模块
-~~~~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   deformable_conv2d
-   deformable_psroi_pooling
-   interpolate
-   resize
-   remap
-   warp_affine
-   warp_perspective
-   roi_pooling
-   roi_align
-   nms
-
 .. py:module:: megengine.functional.loss
 .. currentmodule:: megengine.functional.loss
 
@@ -304,6 +292,17 @@ loss 子模块
    hinge_loss
    binary_cross_entropy
    cross_entropy
+
+.. py:module:: megengine.functional.metric
+.. currentmodule:: megengine.functional.metric
+
+metric 子模块
+-------------
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   topk_accuracy
 
 .. py:module:: megengine.functional.distributed
 .. currentmodule:: megengine.functional.distributed
@@ -327,14 +326,21 @@ distributed 子模块
    scatter
    reduce_scatter_sum
 
-.. py:module:: megengine.functional.utils
-.. currentmodule:: megengine.functional
+.. py:module:: megengine.functional.vision
+.. currentmodule:: megengine.functional.vision
 
-utils 子模块
-------------
+vision 模块
+-----------
 .. autosummary::
    :toctree: api
    :nosignatures:
 
-   copy
-   topk_accuracy
+   interpolate
+   remap
+   warp_affine
+   warp_perspective
+   roi_pooling
+   roi_align
+   nms
+
+

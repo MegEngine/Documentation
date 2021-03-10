@@ -20,7 +20,7 @@ import megengine
 project = 'MegEngine'
 copyright = f'2020-{datetime.now().year}, The MegEngine Open Source Team'
 author = 'The MegEngine Open Source Team'
-version = megengine.__version__ + ' (' + megengine.version.git_version + ')'
+version = megengine.__version__
 release = version
 
 # -- General configuration ---------------------------------------------------
@@ -111,7 +111,9 @@ intersphinx_mapping = {
 # Can use the alias name as a new role, e.g. :issue:`123`
 extlinks = {
     'issue': ('https://github.com/MegEngine/MegEngine/issues/%s', 'Issue #'),
-    'pull': ('https://github.com/MegEngine/MegEngine/pull/%s', 'Pull Requset #')
+    'pull': ('https://github.com/MegEngine/MegEngine/pull/%s', 'Pull Requset #'),
+    'duref': ('http://docutils.sourceforge.net/docs/ref/rst/'
+                      'restructuredtext.html#%s', ''),
 }
 
 # Setting for sphinx.ext.nbsphinx

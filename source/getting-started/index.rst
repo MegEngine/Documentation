@@ -8,7 +8,6 @@
    :maxdepth: 2
    :hidden:
 
-   install
    quick-start
    beginner/index
    more-tutorials
@@ -16,11 +15,11 @@
 安装
 ----
 
-天元 MegEngine 可以使用 Python 包管理器 pip 直接进行安装：
+天元 MegEngine 可以使用 Python 包管理器 ``pip`` 直接进行安装：
 
 .. code-block:: shell
 
-   pip3 install megengine
+   pip3 install megengine -f https://megengine.org.cn/whl/mge.html
 
 如果想要安装特定的版本，或需要从源码进行编译？ :ref:`了解更多安装方式<install>` 。
 
