@@ -410,33 +410,29 @@ load-and-run 可以进行 profiling 并产生一个 json 文件：
 
     ./load_and_run ./resnet50.mge --input cat.npy --iter 10 --profile model.json
 
-这个 model.json 文件可以后续用于 profile_analyze.py 分析。
+这个 model.json 文件可以后续用于 megengine.utils.profile_analyze 分析。
 
-profile_analyze.py 的示例用法：
+megengine.utils.profile_analyze 的示例用法：
 
     .. code-block:: bash
 
-        # MGE_ROOT 是 MegEngine 的安装目录
-        MGE_ROOT=`python3 -c "import os; \
-                            import megengine; \
-                            print(os.path.dirname(megengine.__file__))"`
         # 输出详细帮助信息
-        python3 $MGE_ROOT/utils/profile_analyze.py -h
+        python3 -m megengine.utils.profile_analyze -h
 
         # 输出前 5 慢的算子
-        python3 $MGE_ROOT/utils/profile_analyze.py ./profiling.json -t 5
+        python3 -m megengine.utils.profile_analyze ./profiling.json -t 5
 
         # 输出总耗时前 5 大的算子的类型
-        python3 $MGE_ROOT/utils/profile_analyze.py ./profiling.json -t 5 --aggregate-by type --aggregate sum
+        python3 -m megengine.utils.profile_analyze ./profiling.json -t 5 --aggregate-by type --aggregate sum
 
         # 按 memory 排序输出用时超过 0.1ms 的 ConvolutionForward 算子
-        python3 $MGE_ROOT/utils/profile_analyze.py ./profiling.json -t 5 --order-by memory --min-time 1e-4  --type ConvolutionForward
+        python3 -m megengine.utils.profile_analyze ./profiling.json -t 5 --order-by memory --min-time 1e-4  --type ConvolutionForward
 
 示例输出：
 
     .. code-block:: bash
 
-        > python3 $MGE_ROOT/imperative/python/megengine/utils/profile_analyze.py ./model.json -t 5
+        > python3 -m megengine.utils.profile_analyze ./model.json -t 5
         -----------------  ---------
         total device time  0.0118007
         total host time    0.012106
