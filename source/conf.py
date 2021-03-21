@@ -145,7 +145,11 @@ html_theme_options = {
     ],
     'use_edit_page_button': False,
     'navigation_with_keys': False,
-    'show_prev_next': False
+    'show_prev_next': False,
+    'use_version_switch': True,
+    'version_switch_json_url': '/doc/version.json',
+    'version_switch_enable_locale': True,
+    'version_switch_locates': ['zh', 'en']
 }
 
 html_sidebars = {
