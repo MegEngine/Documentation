@@ -69,8 +69,11 @@ MegEngine 文档对应的 Sphinx 配置文件位于 ``source/conf.py`` ，如需
 
    python3 -m pip install --editable pydata-sphinx-theme
 
-安装 Pandoc 转换工具
---------------------
+安装相关软件包
+--------------
+
+Pandoc 转换工具
+~~~~~~~~~~~~~~~
 
 nbsphinx_ 是 Sphinx 的一个插件，可以帮助我们对 ``.ipynb`` 格式的 Jupyter Notebook_ 文件进行解析。
 
@@ -87,9 +90,22 @@ nbsphinx_ 是 Sphinx 的一个插件，可以帮助我们对 ``.ipynb`` 格式�
 
    sudo apt install -y pandoc
 
-如果你使用的是其它操作系统，想要安装 Pandoc，请参考 Pandoc 官方的 `Installing`_ 页面。
+如果你使用的是其它操作系统，想要安装 Pandoc，请参考 Pandoc 官方的 `Installing <https://pandoc.org/installing.html>`_ 页面。
 
-.. _Installing: https://pandoc.org/installing.html
+Graphviz 绘图工具
+~~~~~~~~~~~~~~~~~
+
+Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经常会用他制作一些可视化图片。
+
+如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Pandoc：
+
+.. code-block:: shell
+
+   sudo apt install -y graphviz 
+
+如果你使用的是其它操作系统，想要安装 Graphviz，请参考 Graphviz 官方的 `Download <https://graphviz.org/download/>`_ 页面。
+
+.. _Graphviz: https://graphviz.org/
 
 使用 Sphinx 进行文档构建
 ------------------------
@@ -102,7 +118,7 @@ nbsphinx_ 是 Sphinx 的一个插件，可以帮助我们对 ``.ipynb`` 格式�
 
    Sphinx 支持增量构建，当你对源文件进行了更改并保存，只需再次执行 ``make html`` 即可。
 
-   如果发现一些页面的元素仍被缓存而没有被更新，请尝试先执行 ``make clean`` 指令。
+   **如果发现一些页面的元素仍被缓存而没有被更新** ，请尝试先执行 ``make clean`` 指令。
 
 文档生成成功后，打开 ``build/html/index.html`` 文件便可访问主页。
 
@@ -116,4 +132,6 @@ nbsphinx_ 是 Sphinx 的一个插件，可以帮助我们对 ``.ipynb`` 格式�
    python3 -m http.server 1124 --directory build/html
 
 运行上面的代码，可将本地的 build/html 下的 Web 服务映射到 1124 端口，你也可以选择使用其它 Web 服务器。
+
+如果你的 Python 版本低于 3.7, 将不支持 ``--directory`` 参数，请 ``cd`` 到对应目录执行上述命令。
 

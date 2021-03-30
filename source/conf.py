@@ -103,13 +103,13 @@ mermaid_version = 'latest' # from CDN unpkg.com
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
     'numpy': ('https://numpy.org/doc/stable/', None),
-    'matplotlib': ('https://matplotlib.org/', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/master/', None)
 }
 
 # Setting for sphinx.ext.extlinks
 # Can use the alias name as a new role, e.g. :issue:`123`
 extlinks = {
+    'src': ('https://github.com/MegEngine/MegEngine/blob/master/%s', ''),
+    'docs': ('https://github.com/MegEngine/Documentation/blob/master/%s', ''),  
     'issue': ('https://github.com/MegEngine/MegEngine/issues/%s', 'Issue #'),
     'pull': ('https://github.com/MegEngine/MegEngine/pull/%s', 'Pull Requset #'),
     'duref': ('http://docutils.sourceforge.net/docs/ref/rst/'

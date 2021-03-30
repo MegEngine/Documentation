@@ -11,8 +11,8 @@
    document-style-guide.rst
    restructuredtext.rst
    commit-message.rst
-   how-to-build-the-doc-locally.rst
-   how-to-translate-the-doc.rst
+   build-the-doc-locally.rst
+   translation.rst
 
 GitHub 地址：https://github.com/MegEngine/Documentation （欢迎 Star～）
 

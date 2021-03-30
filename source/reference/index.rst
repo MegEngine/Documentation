@@ -11,6 +11,7 @@ API 参考
 
 Python API
 ----------
+
 .. toctree::
    :maxdepth: 1
 
@@ -29,6 +30,7 @@ Python API
    logger
    device
    version
+   utils
 
 Index
 -----
