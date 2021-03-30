@@ -529,3 +529,24 @@ Mermaid 语法支持
       John-->Alice: Great!
       John->Bob: How about you?
       Bob-->John: Jolly good!
+
+GitHub URL 缩写
+---------------
+
+为了方面写文档时引用 GitHub 上的源代码，支持如下语法：
+
+.. code-block:: 
+   
+   * :src:`imperative/python/megengine/`
+   * :docs:`source/conf.py`
+   * :issue:`142`
+   * :pr:`148`
+
+* :src:`imperative/python/megengine/`
+* :docs:`source/conf.py`
+* :issue:`142`
+* :pull:`148`
+
+该功能通过 `sphinx.ext.extlinks 
+<https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html>`_ 插件支持。
+

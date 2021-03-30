@@ -197,6 +197,11 @@ math 子模块
 
 nn 子模块
 ---------
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   nn.nvof
 
 卷积函数
 ~~~~~~~~

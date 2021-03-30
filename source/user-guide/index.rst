@@ -5,16 +5,52 @@
 ========
 
 .. toctree::
+   :caption: 安装
+   :hidden:
    :maxdepth: 1
 
-   faq
    install/index
-   basic-concepts/index
-   data-engineering/index
-   model-development/index
-   model-evaluation/index
+
+.. toctree::
+   :caption: 模型开发
+   :hidden:
+   :maxdepth: 1
+
+   model-development/advanced-parameter-optimization
+   
+   model-development/trace
+   model-development/dump
+
+.. toctree::
+   :caption: 分布式训练
+   :hidden:
+   :maxdepth: 1
+
+   distributed-training
+
+.. toctree::
+   :caption: 模型压缩
+   :hidden:
+   :maxdepth: 1
+
+   model-compression/quantization
+
+.. toctree::
+   :caption: 模型部署
+   :hidden:
+   :maxdepth: 1
+
    deployment/index
+   deployment/midout
 
+.. toctree::
+   :caption: 各类工具
+   :hidden:
+   :maxdepth: 1
 
-内容正在建设中...
+   tools/module-stats
+   tools/runtimeopr
+   tools/graphsurgeon
+   tools/load-and-run
+   tools/load-and-run-py
 
