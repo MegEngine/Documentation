@@ -8,6 +8,10 @@
 
    quick-start
 
+对于初次接触天元 MegEngine 的用户，我们提供了新手入门材料。
+
+深度学习，简单开发，我们的学习从这里开始～
+
 .. toctree::
    :caption: 深度学习零基础 Learning-by-doing 
    :maxdepth: 2
