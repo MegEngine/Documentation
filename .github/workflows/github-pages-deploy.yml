@@ -51,7 +51,7 @@ jobs:
         run: python3 -m pip install ./theme
 
       - name: Install pandoc and other dependencies
-        run: sudo apt-get install -y pandoc
+        run: sudo apt install -y pandoc graphviz
 
       - name: Generate HTML files
         run: make html -W --keep-going

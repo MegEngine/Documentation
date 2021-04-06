@@ -18,12 +18,13 @@
    ArrayDataset
    StreamDataset
 
-计算机视觉经典数据集
-~~~~~~~~~~~~~~~~~~~~
+计算机视觉
+~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
+   VisionDataset
    ImageFolder 
    MNIST
    CIFAR10
@@ -61,9 +62,9 @@
    :nosignatures:
 
    VisionTransform
-   ToMode
    Compose
    TorchTransformCompose
+   ToMode
    Pad
    Resize
    ShortestEdgeResize
@@ -81,6 +82,8 @@
    HueTransform
    ColorJitter
    Lighting
+
+
 
 .. py:module:: megengine.data.collator
 .. currentmodule:: megengine.data
