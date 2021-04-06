@@ -35,7 +35,8 @@ GitHub Pages 访问地址：https://megengine.github.io/Documentation/
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/MegChai"><img src="https://avatars2.githubusercontent.com/u/21091736?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chai</b></sub></a><br /><a href="https://github.com/MegEngine/Tutorials/commits?author=MegChai" title="Code">💻</a> <a href="#content-MegChai" title="Content">🖋</a> <a href="#ideas-MegChai" title="Ideas, Planning, & Feedback">🤔</a> <a href="#tutorial-MegChai" title="Tutorials">✅</a> <a href="https://github.com/MegEngine/Tutorials/commits?author=MegChai" title="Documentation">📖</a> <a href="#example-MegChai" title="Examples">💡</a> <a href="#design-MegChai" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/MegChai"><img src="https://avatars2.githubusercontent.com/u/21091736?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chai</b></sub></a><br /><a href="https://github.com/MegEngine/Documentation/commits?author=MegChai" title="Code">💻</a> <a href="#content-MegChai" title="Content">🖋</a> <a href="#ideas-MegChai" title="Ideas, Planning, & Feedback">🤔</a> <a href="#tutorial-MegChai" title="Tutorials">✅</a> <a href="https://github.com/MegEngine/Documentation/commits?author=MegChai" title="Documentation">📖</a> <a href="#example-MegChai" title="Examples">💡</a> <a href="#design-MegChai" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/Randolph87xxx"><img src="https://avatars.githubusercontent.com/u/67140656?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Randolph87xxx</b></sub></a><br /><a href="#content-Randolph87xxx" title="Content">🖋</a></td>
   </tr>
 </table>
 
