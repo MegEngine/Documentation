@@ -47,6 +47,10 @@
 
     # ... 你的训练代码
 
+:class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function (默认根据机器上的 device 数量开启多进程)，
+每个进程会在最开始根据 rank 设定默认 deivce, 假如是一台 8 卡机器，那么就会开启 8 个进程，rank 分别为 0 到 8 ，device 为 gpu0 到 gpu7.
+
+
 数据处理流程
 ~~~~~~~~~~~~
 
@@ -145,8 +149,7 @@
 * 每个进程的 :class:`~.megengine.data.DataLoader` 还会自动调用分布式相关接口实现内存共享，
   避免不必要的内存占用，从而显著加速数据读取。
 
-总之，在分布式训练时，你无需对使用 :class:`~.megengine.data.DataLoader` 的方式进行任何修改，
-一切都能无缝地切换。完整的例子见 MegEngine/Models_ 存储库。
+总之，在分布式训练时，你无需对使用 :class:`~.megengine.data.DataLoader` 的方式进行任何修改，一切都能无缝地切换。
 
 .. _Models: https://github.com/MegEngine/Models
 
@@ -178,10 +181,9 @@
         # ... 你的训练代码
 
 其中 ``world_size`` 是你训练的用到的总卡数， ``n_gpus`` 是你运行时这台物理机的卡数， 
-``rank_start`` 是这台机器的 rank 起始值，``master_ip`` 是 rank 0 所在机器的 ip 地址，
-``port`` 是分布式训练 master server 使用的端口号
-
-其它部分与单机版本完全相同。最终只需在每个机器上执行相同的 Python 程序，即可实现多机多卡的分布式训练。
+``rank_start`` 是这台机器的 rank 起始值， ``master_ip`` 是 rank 0 所在机器的 IP 地址，
+``port`` 是分布式训练 master server 使用的端口号，其它部分与单机版本完全相同。
+最终只需在每个机器上执行相同的 Python 程序，即可实现多机多卡的分布式训练。
 
 模型并行
 --------
@@ -237,3 +239,19 @@
                 loss = layer2(feat)
                 gm.backward(loss)
                 opt.step().clear_grad()
+
+常见问题
+--------
+
+Q: 为什么在多机多卡训练开始前还正常，进入多卡训练之后就报错 ``cuda init error`` ?
+
+A: 请确保在进入多机多卡训练之前主进程没有进行 cuda 相关操作，cuda 在已经初始化的状态下进行 fork 操作会导致 fork 的进程中 cuda 不可用，
+参考 `这里 <https://stackoverflow.com/questions/22950047/cuda-initialization-error-after-fork>`_ . 建议用 numpy 数组作为输入输出来使用 launcher 包装的函数。
+
+Q: 为什么我自己用 ``multiprocess`` 写多机多卡训练总是卡住？
+
+A: 可以在函数结束前调用 :func:`~.distributed.group_barrier` 来避免卡死的情况:
+   * 在 MegEngine 中，为了保证性能，会异步执行相应的 cuda kernel，所以当 python 代码执行完毕时，相应的 kernel 执行还没有结束。
+   * 为了保证 kernel 全部执行完毕，MegEngine 初始化时在 :py:mod:`atexit` 里注册了全局的同步，但是 multiprocess 默认的 fork 模式在进程退出的时候，不会执行 :py:mod:`atexit` 注册的函数，导致 kernel 没有执行完。
+   * 如果有进程间需要通信的算子，而又有几个进程提前退出，那么剩下的进程就会一直等待其他进程导致卡死（如果你某个进程比如 rank0 需要取参数的值）。
+
