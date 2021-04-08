@@ -160,6 +160,7 @@ html_sidebars = {
 }
 
 html_static_path = ['_static']
+html_extra_path = ['google940c72af103ac75f.html']
 html_logo = "logo.png"
 html_favicon = "favicon.ico"
 html_css_files = [
