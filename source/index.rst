@@ -1,12 +1,10 @@
 ======================
 欢迎使用天元 MegEngine
 ======================
-
+:对应版本: |version|
+:更新时间: |today|
 
 天元 Megengine 是一个快速、可拓展、易于使用且支持自动求导的深度学习框架。
-
-（注：由于文档改版，很多内容还在重新组织中，敬请期待，
-同时 :ref:`欢迎大家参与贡献 <contribute-to-docs>` ～）
 
 目录
 ----
@@ -18,6 +16,10 @@
    reference/index
    development/index
 
+.. warning::
+
+   由于文档改版，很多内容还在重新组织中，敬请期待，
+   :ref:`欢迎大家参与贡献 <contribute-to-docs>` ～
 
 致谢
 ----
