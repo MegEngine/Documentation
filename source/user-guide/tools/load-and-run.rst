@@ -4,86 +4,23 @@
 如何使用 Load and Run（C++）
 ============================
 
-Load and Run  是 MegEngine 中的加载并运行模型的工具，主要用来做模型正确性验证，速度验证及性能调试。
-它具有以下功能：
+Load and Run （简称 LAR）是 MegEngine 中的加载并运行模型的工具，具有以下功能：
 
-#. 编译出对应各个平台的二进制文件，可对比相同模型的速度；
-#. 测试验证不同模型优化方法的效果，直接执行 ``./load_and_run`` 可得到对应的帮助文档；
-#. 支持 ``--input`` 选项直接设置 mge C++ 模型的输入，输入格式支持 .ppm/.pgm/.json/.npy 等文件格式和命令行。
+* 编译出对应各个平台的二进制文件，可对比相同模型的速度；
+* 测试验证不同模型优化方法的效果（直接执行 ``./load_and_run`` 显示相应帮助文档）；
 
 .. note::
 
-   二进制版本体积较大不利于 ``pip`` 用户使用，可选择使用 Load and Run 的 :ref:`Python 版本 <load-and-run-py>` 。
+   * 目前发布的版本我们开放了对 CPU（x86, x64, ARM, ARMv8.2）和 GPU（CUDA）平台的支持。
+   * 如二进制文件体积较大不利于使用，可选择使用 Load and Run 的 :ref:`Python 版本 <load-and-run-py>` 。
 
-模型准备
---------
-
-将 mge 模型序列化并导出到文件, 我们以 ``ResNet50`` 为例。
-因为 MegEngine 的模型训练都是动态图形式 ，所以我们需要先将模型转成静态图然后再部署。
-
-具体可参考如下代码片段:
-
-
-.. code-block:: python
-
-    import numpy as np
-
-    import megengine.functional as F
-    import megengine.hub
-    from megengine import jit, tensor
-
-    if __name__ == "__main__":
-        net = megengine.hub.load("megengine/models", "resnet50", pretrained=True)
-        net.eval()
-
-        @jit.trace(symbolic=True, capture_as_const=True)
-        def fun(data, *, net):
-            pred = net(data)
-            pred_normalized = F.softmax(pred)
-            return pred_normalized
-
-        data = tensor(np.random.random([1, 3, 224, 224]).astype(np.float32))
-
-        fun(data, net=net)
-        fun.dump("resnet50.mge", arg_names=["data"])
-
-执行脚本，并完成模型转换后，我们就获得了 MegEngine C++ API 可识别的预训练模型文件 ``resnet50.mge`` .
-
-输入准备
---------
-
-load_and_run 可以用 ``--input`` 选项直接设置模型文件的输入, 它支持 .ppm/.pgm/.json/.npy 等多种格式
-
-测试输入图片如下:
-
-.. image:: ../../_static/images/cat.jpg
-
-
-因为模型的输入是 float32, 且是 nchw, 需要先将图片转成 npy 格式。
-
-.. code-block:: python
-
-   import cv2
-   import numpy as np
-
-   cat = cv2.imread('./cat.jpg')
-   cat = cat[np.newaxis]  # 将cat的shape从(224,224,3) 变成 (1, 224, 224, 3)
-   cat = np.transpose(cat, (0, 3, 1, 2)) # nhwc -> nchw
-
-   np.save('cat.npy', np.float32(cat))
-
-编译 load_and_run
+编译 Load and Run
 -----------------
 
-.. note::
+我们以 x86 和 ARM 交叉编译为例进行说明：
 
-    目前发布的版本我们开放了对 cpu（x86, x64, arm, armv8.2）和 gpu（cuda）平台的支持。
-
-我们在这里以 x86 和 arm 交叉编译为例，来阐述一下如何编译一个 x86 和 arm 的 load_and_run。
-
-linux x86 平台编译
+Linux x86 平台编译
 ~~~~~~~~~~~~~~~~~~
-
 .. code-block:: bash
 
    git clone https://github.com/MegEngine/MegEngine.git
@@ -93,204 +30,121 @@ linux x86 平台编译
 
 编译完成后，我们可以在 ``build/sdk/load_and_run`` 目录找到 ``load_and_run`` .
 
-linux 下交叉编译 arm 版本
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Linux 交叉编译 ARM 版本
+~~~~~~~~~~~~~~~~~~~~~~~
+.. warning::
 
-在 ubuntu(16.04/18.04) 上进行 arm-android 的交叉编译:
+   请确保你的机器上已经设置好了 Android 所需开发环境：
 
-1. 到 android 的官网下载 ndk 的相关工具，这里推荐 android-ndk-r21 以上的版本
-2. 在 bash 中设置 NDK_ROOT 环境变量：``export NDK_ROOT=ndk_dir``
-3. 使用以下脚本进行 arm-android 的交叉编译
+   #. 到 Android 的官网下载 `NDK <https://developer.android.com/ndk/downloads>`_ 及相关工具，
+      这里推荐 android-ndk-r21 以上的版本；
+   #. 在 BASH 中设置 NDK_ROOT 环境变量：``export NDK_ROOT=ndk_dir``
+
+在 Ubuntu (16.04/18.04) 用以下脚本进行 ARM-Android 的交叉编译：
 
 .. code-block:: bash
 
    ./scripts/cmake-build/cross_build_android_arm_inference.sh
 
 编译完成后，我们可以在 ``build_dir/android/arm64-v8a/release/install/bin/load_and_run`` 
-目录下找到编译生成的可执行文件 ``load_and_run`` . 默认没有开启 armv8.2-a+dotprod 的新指令集支持，
-如果在一些支持的设备，如 cortex-a76 等设备，可以开启相关选项(更多选项开关，可以直接看该脚本文件)。
+目录下找到编译生成的可执行文件 ``load_and_run`` . 
 
-开启 armv8.2-a+dotprod 的代码如下:
+.. note::
+
+   * 上面的脚本默认没有开启 ARMv8.2-A+DotProd 的新指令集支持，
+     如果在一些支持的设备（如 Cortex-A76 等），可以开启相关选项：
+     
+   .. code-block:: bash
+
+        ./scripts/cmake-build/cross_build_android_arm_inference.sh -p
+
+   * :ref:`量化模型 <quantization>` 推荐开启 ARMv8.2+DotProd 支持，
+     能够充分利用 DotProd 指令集硬件加速。
+
+查看 ``cross_build_android_arm_inference.sh`` 脚本源码可以了解更多选项的设置方法。
+
+使用 Load and Run
+-----------------
+.. note::
+   
+   使用之前，需要先将模型文件的输入、:ref:`Dump <dump>` 出的预训练模型文件和 
+   load_and_run (以及依赖 ``.so`` 的文件) 传到手机，并设置好环境变量 ``LD_LIBRARY_PATH`` . 
+   示例代码如下：
+
+   .. code-block:: bash
+
+      adb push data.npy /data/local/tmp
+      adb push model.mge /data/local/tmp
+      adb push build_dir/android/arm64-v8a/release/install/bin/load_and_run /data/local/tmp
+      adb push build_dir/android/arm64-v8a/release/install/lib/libmegengine.so /data/local/tmp
+      adb shell && cd /data/local/tmp/ && export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+
+举例说明，使用 Load and Run 的基础语法如下:
 
 .. code-block:: bash
 
-    ./scripts/cmake-build/cross_build_android_arm_inference.sh -p
+   ./load_and_run ./model.mge --input data.npy --iter 10
 
-代码执行
---------
+其中有几个基础参数：
 
-下面的实验是在某 android 平台，未开启 armv8.2 指令集(当前测试模型为 float 模型，
-量化模型推荐开启 armv8.2+dotprod 支持，能够充分利用 dotprod 指令集硬件加速)。
+``net``
+  指定 mge graph 路径，例子中为 ``./model.mge``.
 
-用 ``load_and_run`` 加载之前 dump 好的 ``resnet50.mge`` 模型，可以看到类似这样的输出：
+``--input INPUT_DATA``
+  指定用作输入的 inputs data 路径，例子中为 ``./data.npy``.
+  
+  输入格式支持 ``.ppm/.pgm/.json/.npy`` 等文件格式和命令行。
 
-先将模型和 load_and_run (依赖 megengine.so )传到手机。
+``--iter ITER``
+  正式运行测速的迭代数，例子中为 ``10``.
 
-.. code-block:: bash
+进阶参数设置
+------------
 
-    adb push build_dir/android/arm64-v8a/release/install/bin/load_and_run /data/local/tmp
-    adb push build_dir/android/arm64-v8a/release/install/lib/libmegengine.so /data/local/tmp
-    adb push cat.npy /data/local/tmp
-    adb push resnet50.mge /data/local/tmp
-    adb shell && cd /data/local/tmp/ && export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+.. _layout-optimize:
 
-之后直接在手机上运行 load_and_run， 可以得到如下输出:
-
-.. code-block:: bash
-
-     ./load_and_run ./resnet50.mge --input cat.npy --iter 10
-     mgb load-and-run: using megbrain 8.4.1(0) and megdnn 9.3.0
-     load model: 198.030ms
-     === prepare: 5.846ms; going to warmup
-     warmup 0: 581.284ms
-     === going to run input for 10 times
-     iter 0/10: 245.185ms (exec=10.574,device=242.226)
-     iter 1/10: 236.910ms (exec=6.375,device=235.615)
-     iter 2/10: 236.811ms (exec=6.777,device=235.569)
-     iter 3/10: 236.921ms (exec=6.638,device=236.340)
-     iter 4/10: 236.321ms (exec=6.228,device=235.713)
-     iter 5/10: 236.975ms (exec=6.939,device=235.407)
-     iter 6/10: 237.215ms (exec=6.980,device=236.614)
-     iter 7/10: 236.335ms (exec=6.429,device=235.867)
-     iter 8/10: 236.702ms (exec=6.322,device=235.440)
-     iter 9/10: 236.964ms (exec=6.605,device=235.727)
-     === finished test #0: time=2376.339ms avg_time=237.634ms sd=2.668ms minmax=236.321,245.185
-
-平台相关 layout 优化
+平台相关 Layout 优化
 ~~~~~~~~~~~~~~~~~~~~
 
-目前 MegEngine 的网络是 nchw 的 layout，但是这种 layout 不利于充分利用 simd 特性，且边界处理异常复杂。
-为此，我们针对 arm 开发了 nchw44 的 layout。
+``--enable-nchw44``
+  目前 MegEngine 的网络是 NCHW 的 Layout, 但是这种 Layout 不利于充分利用 SIMD 特性，且边界处理异常复杂。
+  为此我们针对 ARM 开发了 NCHW44 的 Layout.
 
-这个命名主要是针对 conv 来定的。
+``--enable-nchw88``
+  如上所述，对于 x86 AVX 下，我们同样定义了 NCHW88 的 Layout 优化。
 
-1. nchw: conv 的 feature map 为 (n, c, h, w), weights 为 (oc, ic, fh, fw)。
-2. nchw44: conv 的 feature map 为 (n, c/4, h, w, 4), weights 为 (oc/4, ic/4, fh, fw, 4(ic), 4(oc))。
+.. _fastrun:
 
-这里从 channel 上取 4 个数排成连续主要方便利用 neon 优化，
-由于 neon 指令是 128 bit，刚好是 4 个 32 bit，所以定义 nchw44，
-对于 x86 avx 下，我们同样定义了 nchw88 的 layout 优化。
+开启 fastrun 模式
+~~~~~~~~~~~~~~~~~
 
-下面是开启 nchw44 的优化后的结果:
-
-.. code-block:: bash
-
-    ./load_and_run ./resnet50.mge --input cat.npy --iter 10 --enable-nchw44
-    mgb load-and-run: using megbrain 8.4.1(0) and megdnn 9.3.0
-    [19 00:26:10 from_argv@mgblar.cpp:1169][warn] enable nchw44 optimization
-    load model: 198.758ms
-    === prepare: 893.954ms; going to warmup
-    warmup 0: 470.390ms
-    === going to run input for 10 times
-    iter 0/10: 234.949ms (exec=6.705,device=232.806)
-    iter 1/10: 221.953ms (exec=5.086,device=220.651)
-    iter 2/10: 221.841ms (exec=5.098,device=220.585)
-    iter 3/10: 221.968ms (exec=5.292,device=220.742)
-    iter 4/10: 222.159ms (exec=4.778,device=221.564)
-    iter 5/10: 222.377ms (exec=5.143,device=221.772)
-    iter 6/10: 221.741ms (exec=5.135,device=220.662)
-    iter 7/10: 221.947ms (exec=4.554,device=220.948)
-    iter 8/10: 221.934ms (exec=4.903,device=221.352)
-    iter 9/10: 222.711ms (exec=4.715,device=222.109)
-    === finished test #0: time=2233.580ms avg_time=223.358ms sd=4.083ms minmax=221.741,234.949
-
-fastrun 模式
-~~~~~~~~~~~~
-
-目前在 MegEngine 中，针对某些 opr，尤其是 conv ，存在很多种不同的算法，如 direct, winograd, 或者 im2col 等。
-这些算法在不同的 shape 或者不同的硬件平台上，其性能表现差别极大，
+目前在 MegEngine 中，针对某些算子存在很多种不同的算法
+（如 conv 存在 direct, winograd 或者 im2col 等算法），
+而这些算法在不同的 shape 或者不同的硬件平台上，其性能表现差别极大，
 导致很难写出一个有效的搜索算法，在执行时选择到最快的执行方式。
-为此，我们 MegEngine 集成了 fastrun 模式，也就是在执行模型的时候会将每个 opr 的可选所有算法都执行一遍，
-然后选择一个最优的算法记录下来。
+为此在 MegEngine 中集成了 fastrun 模式，
+**在执行模型的时候会将每个算子的可选所有算法都执行一遍，然后选择一个最优的算法记录下来。**
 
-一般分为两个阶段，搜参和运行。
+.. note::
 
-1. 搜参阶段: 开启 fastrun 模式，同时将输出的结果存储到一个 cache 文件中
-2. 执行阶段: 带上 cache 再次执行
+   整体来讲大概有 10% 的性能提速。
 
-搜参阶段:
+使用 fastrun 一般分为两个阶段，**需要顺序执行。**
 
-.. code-block:: bash
+搜参阶段：
 
-    ./load_and_run ./resnet50.mge --input cat.npy --enable-nchw44 --fast-run --fast-run-algo-policy resnet50.cache
-    mgb load-and-run: using megbrain 8.4.1(0) and megdnn 9.3.0
-    [19 00:29:26 from_argv@mgblar.cpp:1169][warn] enable nchw44 optimization
-    load model: 64.370ms
-    === prepare: 846.677ms; going to warmup
-    warmup 0: 1801.133ms
-    === going to run input for 10 times
-    iter 0/10: 202.185ms (exec=5.958,device=199.600)
-    iter 1/10: 201.051ms (exec=4.358,device=200.491)
-    iter 2/10: 200.205ms (exec=4.023,device=199.627)
-    iter 3/10: 200.640ms (exec=4.314,device=199.393)
-    iter 4/10: 200.506ms (exec=4.382,device=199.376)
-    iter 5/10: 200.918ms (exec=4.129,device=200.333)
-    iter 6/10: 200.342ms (exec=4.318,device=199.750)
-    iter 7/10: 200.487ms (exec=4.301,device=199.287)
-    iter 8/10: 200.326ms (exec=4.306,device=199.290)
-    iter 9/10: 201.089ms (exec=4.454,device=200.511)
-    === finished test #0: time=2007.749ms avg_time=200.775ms sd=0.584ms minmax=200.205,202.185
+``--fast-run [--winograd-transform] --fast-run-algo-policy CACHE_FILE``
+  开启 fastrun 模式，同时将输出的结果存储到一个 cache 文件中
 
-执行阶段:
+  其中 ``--winograd-transform`` 为可选项目，
+  由于对于相同的卷积，多种 winograd 算法的理论加速比和实际性能表现有时会不一致，
+  开启该选项可使其基于 fastrun 模式搜索的结果来决定做哪种 winograd 变换。
 
-.. code-block:: bash
+运行阶段：
 
-    ./load_and_run ./resnet50.mge --input cat.npy --enable-nchw44 --fast-run-algo-policy resnet50.cache
-    mgb load-and-run: using megbrain 8.4.1(0) and megdnn 9.3.0
-    [19 00:29:35 from_argv@mgblar.cpp:1169][warn] enable nchw44 optimization
-    load model: 63.780ms
-    === prepare: 966.115ms; going to warmup
-    warmup 0: 370.681ms
-    === going to run input for 10 times
-    iter 0/10: 201.882ms (exec=5.648,device=199.450)
-    iter 1/10: 200.812ms (exec=4.324,device=199.593)
-    iter 2/10: 200.328ms (exec=4.318,device=199.737)
-    iter 3/10: 201.167ms (exec=4.063,device=200.566)
-    iter 4/10: 200.554ms (exec=4.368,device=199.398)
-    iter 5/10: 200.783ms (exec=4.401,device=199.536)
-    iter 6/10: 200.631ms (exec=4.419,device=200.037)
-    iter 7/10: 200.824ms (exec=4.481,device=200.493)
-    iter 8/10: 200.972ms (exec=4.220,device=199.852)
-    iter 9/10: 200.210ms (exec=4.295,device=199.351)
-    === finished test #0: time=2008.163ms avg_time=200.816ms sd=0.471ms minmax=200.210,201.882
+``--fast-run-algo-policy CACHE_FILE``
+  执行阶段: 带上之前的 cache 文件再次执行
 
-整体来讲 fastrun 大概有 10% 的性能提速。
-
-如何开 winograd 优化
-~~~~~~~~~~~~~~~~~~~~
-
-winograd 在 channel 较大的时候，能够有效提升卷积的计算速度，核心思想是加法换乘法。
-详细原理参考 `Fast Algorithms for Convolutional Neural Networks <https://arxiv.org/pdf/1509.09308.pdf>`_ .
-其在 ResNet 或者 VGG16 等网络, winograd 有非常大的加速效果。
-
-因为对于 3x3 的卷积，有多种 winograd 算法，如 f(2,3), f(4,3), f(6,3)，从理论加速比来讲，f(6,3) > f(4,3) > f(2,3)，
-但是 f(6, 3) 的预处理开销更大，因为 MegEngine 内部是基于分块来处理的，
-feature map 比较小的情况下，f(6,3) 可能会引入比较多的冗余计算，导致其性能不如 f(2,3)，
-所以可将 winograd 变换和 fastrun 模式结合，基于 fastrun 模式搜索的结果来决定做哪种 winograd 变换。
-
-具体命令如下:
-
-.. code-block:: bash
-
-    ./load_and_run ./resnet50.mge --input cat.npy --enable-nchw44 --fast-run --winograd-transform --fast-run-algo-policy resnet50.cache
-    mgb load-and-run: using megbrain 8.4.1(0) and megdnn 9.3.0
-    [19 00:32:52 from_argv@mgblar.cpp:1169][warn] enable nchw44 optimization
-    [19 00:32:52 from_argv@mgblar.cpp:1394][warn] enable winograd transform
-    load model: 65.021ms
-    === prepare: 1084.991ms; going to warmup
-    warmup 0: 382.357ms
-    === going to run input for 10 times
-    iter 0/10: 182.904ms (exec=5.767,device=180.191)
-    iter 1/10: 175.491ms (exec=3.972,device=174.429)
-    iter 2/10: 175.804ms (exec=4.193,device=174.548)
-    iter 3/10: 176.097ms (exec=4.383,device=175.536)
-    iter 4/10: 175.351ms (exec=4.200,device=174.775)
-    iter 5/10: 175.728ms (exec=4.525,device=174.517)
-    iter 6/10: 175.770ms (exec=4.052,device=174.541)
-    iter 7/10: 175.740ms (exec=4.251,device=175.568)
-    iter 8/10: 175.170ms (exec=3.938,device=174.595)
-    iter 9/10: 175.630ms (exec=4.216,device=174.409)
-    === finished test #0: time=1763.685ms avg_time=176.368ms sd=2.311ms minmax=175.170,182.904
 
 正确性验证
 ----------
@@ -305,183 +159,178 @@ MegEngine 内置了多种正确性验证的方法，方便检查网络计算正�
 
 .. code-block:: bash
 
-    python3 $MGE/sdk/load_and_run/dump_with_testcase_mge.py ./resnet50.mge --optimize -d cat.jpg -o resnet50.mdl
+    python3 $MGE/sdk/load_and_run/dump_with_testcase_mge.py ./model.mge --optimize -d data.jpg -o model.mdl
 
-在执行 load_and_run 的时候就不需要再带上 ``--input`` ，因为输入已经打包进 ``resnet50.mdl`` ,
-同时在执行 ``dump_with_testcase_mge.py`` 脚本的时候，会在 xpu (如果有 gpu，就在 gpu 上执行，
-如果没有就在 cpu 上执行)执行整个网络，将结果作为 ``ground-truth`` 写入模型中。
+在执行 load_and_run 的时候就不需要再带上 ``--input`` ，因为输入已经打包进 ``model.mdl`` ,
+同时在执行 ``dump_with_testcase_mge.py`` 脚本的时候，会在 XPU (如果有 GPU, 就在 GPU 上执行，
+如果没有就在 CPU 上执行) 执行整个网络，将结果作为 ``ground-truth`` 写入模型中。
 
-我们在执行 load_and_run 的时候会看到:
+该脚本可用参数如下：
 
-.. code-block:: bash
+``input``
+  **必须参数** ，执行需要添加输入的MegEngine模型文件地址
 
-    ./load_and_run ./resnet50.mdl --iter 10
-    mgb load-and-run: using megbrain 8.4.1(0) and megdnn 9.3.0
-    load model: 81.173ms
-    === going to run 1 testcases; output vars: assert_eq(true_div[5741]:expect,true_div[5741])[11077]{}
-    === prepare: 1.395ms; going to warmup
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    warmup 0: 544.946ms
-    === going to run test #0 for 10 times
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    iter 0/10: 243.277ms (exec=243.267,device=241.128)
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    iter 1/10: 241.532ms (exec=241.522,device=241.458)
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    iter 2/10: 240.386ms (exec=240.376,device=240.315)
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    iter 3/10: 242.542ms (exec=241.900,device=242.481)
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    iter 4/10: 241.534ms (exec=240.890,device=241.476)
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    iter 5/10: 241.036ms (exec=241.025,device=240.965)
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    iter 6/10: 241.657ms (exec=241.013,device=241.596)
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    iter 7/10: 241.663ms (exec=241.653,device=241.594)
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    iter 8/10: 241.520ms (exec=241.510,device=241.448)
-    assertequal: err=3.86273e-05 (name=assert_eq(true_div[5741]:expect,true_div[5741])[472] id=472)
-    iter 9/10: 241.766ms (exec=241.111,device=241.704)
-    === finished test #0: time=2416.913ms avg_time=241.691ms sd=0.779ms minmax=240.386,243.277
+``-d --data``
+  **必须参数** ，指定模型的输入数据，指定方法为：``<input0 name>:<data0>;<input1 name>:<data1>...`` 
+  当模型只有一个输入，则可以省略 input 的名字。数据支持以下三种类型——
 
-    === total time: 2416.913ms
+  #. 使用随机数据，以 "#rand" 开头：
 
-可以看到最大误差是 3.86273e-05.
+     - 仅指定输入数据的最大最小值，其中 shape 由输入模型推出：--data #rand(0,255) 
+     - 指定输入数据的最大最小值和 batchsize，其中 shape 由输入模型推出
+       （注意省略号不可省略）：–data #rand(0,255,1,...)
+     - 指定输入数据的全部维度：–data #rand(0,255,1,3,224,224)
+
+  #. 使用图片或者 ``npy`` 文件：
+
+     - 使用图片：--data image.png
+     - 使用 npy：--data image.npy
+
+  #. 使用包含多条数据的文本文件，以 "@" 开头，文件中的每一行都符合上面两种形式：--data image.txt
+
+     image.txt里面的内容可能是这样的：
+
+     .. code-block:: none
+
+        var0:image0.png;va1:image1.npy
+        var0:#rand(0,255);var1:image2.png
+
+``-o --output``
+  **必需参数** ，指定输出模型地址
+
+``--repeat``
+  默认值为 1，指定 -d 传递的输入数据会重复多少份，常用于性能测试。
+
+``--silent``
+  默认为 false，在启用推理正确性检查的时候，是否输出更加简洁的检查信息。比如说展示误差最大值。
+
+``--optimize-for-inference``
+  默认为 false，是否开启计算图优化，经过优化后的图结构可能会发生改变，但是可以获得更好地推理性能，
+  详见 :ref:`optimieze-for-inference-options` 。
+
+``--no-assert``
+  默认为 false，是否禁用推理正确性检查，常用于性能测试。
+  assert 比较的对象为：输入模型 + 输入数据的推理结果 VS 输出模型（此时数据已纳入模型中）的推理结果。
+
+``--maxerr``
+  默认为 1e-4，在开启推理正确性检查时允许的最大误差。
+
+``--resize-input``
+  默认为 false，是否采用 cv2 库把输入图片的尺寸 resize 到模型要求的输入尺寸。
+
+``--input-transform``
+  可选参数，有用户指定的一行 python 代码，用于操作输入数据。比如 ``data/np.std(data)`` .
+
+``--discard-var-name``
+  默认为 false，是否丢弃输入模型的变量 (varnode) 和参数 (param) 的名字。
+
+``--output-strip-info``
+  默认为 false，是否保存模型的输出信息到 JSON 文件，默认路径为输出模型名 + ".json" .
+  文件中包含模型 hash 码，所有输出的 opr 类型和计算数据类型。
 
 dump 输出结果
 ~~~~~~~~~~~~~
+``--bin-out-dump``
+  在指定的文件夹内保存输出结果，可以用 load-and-run 在目标设备上跑数据集
 
-同时，我们可以使用 ``--bin-out-dump`` 在指定的文件夹内保存输出结果。
-这样就可以用 load-and-run 在目标设备上跑数据集了：
+使用方式如下：
 
 .. code-block:: bash
 
     mkdir out
-    ./load_and_run ./resnet50.mge --input ./cat.npy --iter 2 --bin-out-dump out
+    ./load_and_run ./model.mge --input ./data.npy --iter 2 --bin-out-dump out
 
 然后可以在 python 里打开输出文件：
 
-.. code-block:: bash
+.. code-block:: python
 
-    in [21]: import megengine as mge
+   import megengine as mge
 
-    in [22]: v0 = mge.utils.load_tensor_binary('out/run0-var1602')
-
-    in [23]: v1 = mge.utils.load_tensor_binary('out/run1-var1602')
+   v0 = mge.utils.load_tensor_binary('out/run0-var1602')
+   v1 = mge.utils.load_tensor_binary('out/run1-var1602')
 
 dump 每层结果
 ~~~~~~~~~~~~~
-
 我们很多时候会遇到这种情况，就是模型输出结果不对，
 这个时候就需要打出网络每一层的结果作比对，看看是哪一层导致。
-目前有两中展现方式，一个是 io-dump, 另一个是 bin-io-dump.
+目前有两种展现方式，一个是 ``io-dump``, 另一个是 ``bin-io-dump``.
 
 为了对比结果，需要假定一个平台结果为 ``ground-truth`` ，
-下面假定以x86的结果为 ``ground-truth`` ，验证 x86 和 cuda 上的误差产生的原因
+下面假定以 x86 的结果为 ``ground-truth`` ，验证 x86 和 CUDA 上的误差产生的原因
 （下面会使用 ``host_build.sh`` 编译出来的 ``load_and_run`` 来演示）。
 
 文本形式对比结果：
 
 .. code-block:: bash
 
-    ./load_and_run ./resnet50.mge --input cat.npy --iter 10 --cpu --io-dump cpu.txt
-    ./load_and_run ./resnet50.mge --input cat.npy --iter 10 --io-dump cuda.txt # 默认跑在cuda上
+    ./load_and_run ./model.mge --input data.npy --iter 10 --cpu --io-dump cpu.txt
+    ./load_and_run ./model.mge --input data.npy --iter 10 --io-dump cuda.txt # 默认跑在cuda上
     vimdiff cpu.txt cuda.txt
 
-文档形式只是显示了部分信息，比如 tensor 的前几个输出结果，整个 tensor 的平均值，标准差之类的，如果需要具体到哪个值错误，需要用 bin-io-dump 会将每一层的结果都输出到一个文件。
+文档形式只是显示了部分信息，比如 Tensor 的前几个输出结果，整个 Tensor 的平均值、标准差之类，
+如果需要具体到哪个值错误，需要用 ``bin-io-dump`` 会将每一层的结果都输出到一个文件。
 
 raw 形式对比结果：
 
 .. code-block:: bash
 
     mkdir cpu && mkdir cuda
-    ./load_and_run ./resnet50.mge --input cat.npy --iter 10 --cpu --bin-io-dump cpu
-    ./load_and_run ./resnet50.mge --input cat.npy --iter 10 --bin-io-dump cuda
+    ./load_and_run ./model.mge --input data.npy --iter 10 --cpu --bin-io-dump cpu
+    ./load_and_run ./model.mge --input data.npy --iter 10 --bin-io-dump cuda
     $mge/tools/compare_binary_iodump.py cpu cuda
 
-性能调优
--------- 
+如何进行性能调优
+---------------- 
 
-load-and-run 可以进行 profiling 并产生一个 json 文件：
+Load and Run 支持传入 ``--profile`` 参数：
 
-.. code-block:: bash
+``--profile PROFILE``
+  开启后使用 GraphProfiler 记录 profile 信息并将结果的 json 内容写到 PROFILE 文件路径中
 
-    ./load_and_run ./resnet50.mge --input cat.npy --iter 10 --profile model.json
-
-这个 model.json 文件可以后续用于 megengine.utils.profile_analyze 分析。
+该 ``PROFILE`` 文件可后续用于 profile_analyze.py 分析
 
 megengine.utils.profile_analyze 的示例用法：
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        # 输出详细帮助信息
-        python3 -m megengine.utils.profile_analyze -h
+    # 输出详细帮助信息
+    python3 -m megengine.utils.profile_analyze -h
 
-        # 输出前 5 慢的算子
-        python3 -m megengine.utils.profile_analyze ./profiling.json -t 5
+    # 输出前 5 慢的算子
+    python3 -m megengine.utils.profile_analyze ./profiling.json -t 5
 
-        # 输出总耗时前 5 大的算子的类型
-        python3 -m megengine.utils.profile_analyze ./profiling.json -t 5 --aggregate-by type --aggregate sum
+    # 输出总耗时前 5 大的算子的类型
+    python3 -m megengine.utils.profile_analyze ./profiling.json -t 5 --aggregate-by type --aggregate sum
 
-        # 按 memory 排序输出用时超过 0.1ms 的 ConvolutionForward 算子
-        python3 -m megengine.utils.profile_analyze ./profiling.json -t 5 --order-by memory --min-time 1e-4  --type ConvolutionForward
+    # 按 memory 排序输出用时超过 0.1ms 的 ConvolutionForward 算子
+    python3 -m megengine.utils.profile_analyze ./profiling.json -t 5 --order-by memory --min-time 1e-4  --type ConvolutionForward
 
-示例输出：
+输出将是一张表格，每列的含义如下：
 
-    .. code-block:: bash
+``device self time``
+  算子在计算设备上（例如 GPU ）的运行时间
 
-        > python3 -m megengine.utils.profile_analyze ./model.json -t 5
-        -----------------  ---------
-        total device time  0.0118007
-        total host time    0.012106
-        -----------------  ---------
+``cumulative``
+  累加前面所有算子的时间
 
-        ╒════════════════════╤══════════════╤════════════════════════════════╤═══════════════╤═════════╤══════════╤═════════════╤═════════════════╤═══════════════╕
-        │ device self time   │ cumulative   │ operator info                  │ computation   │ FLOPS   │ memory   │ bandwidth   │ in_shapes       │ out_shapes    │
-        ╞════════════════════╪══════════════╪════════════════════════════════╪═══════════════╪═════════╪══════════╪═════════════╪═════════════════╪═══════════════╡
-        │ #0                 │ 0.000383     │ conv(FUSE_ADD_RELU[351],multi_ │ 231.21        │ 604.00  │ 9.48     │ 24.18       │ {1,512,14,14}   │ {1,512,7,7}   │
-        │ 0.000383           │ 3.2%         │ -  dv[0]:o89)[353]             │ MFLO          │ GFLOPS  │ MiB      │ GiB/s       │ {512,512,3,3}   │               │
-        │ 3.2%               │              │ ConvolutionForward             │               │         │          │             │                 │               │
-        │                    │              │ 353                            │               │         │          │             │                 │               │
-        ├────────────────────┼──────────────┼────────────────────────────────┼───────────────┼─────────┼──────────┼─────────────┼─────────────────┼───────────────┤
-        │ #1                 │ 0.000697     │ conv(FUSE_ADD_RELU[383],multi_ │ 102.76        │ 327.08  │ 4.48     │ 13.92       │ {1,2048,7,7}    │ {1,512,7,7}   │
-        │ 0.000314           │ 5.9%         │ -  dv[0]:o100)[385]            │ MFLO          │ GFLOPS  │ MiB      │ GiB/s       │ {512,2048,1,1}  │               │
-        │ 2.7%               │              │ ConvolutionForward             │               │         │          │             │                 │               │
-        │                    │              │ 385                            │               │         │          │             │                 │               │
-        ├────────────────────┼──────────────┼────────────────────────────────┼───────────────┼─────────┼──────────┼─────────────┼─────────────────┼───────────────┤
-        │ #2                 │ 0.000949     │ conv(FUSE_ADD_RELU[246],multi_ │ 231.21        │ 917.84  │ 3.21     │ 12.43       │ {1,256,28,28}   │ {1,256,14,14} │
-        │ 0.000252           │ 8.0%         │ -  dv[0]:o59)[248]             │ MFLO          │ GFLOPS  │ MiB      │ GiB/s       │ {256,256,3,3}   │               │
-        │ 2.1%               │              │ ConvolutionForward             │               │         │          │             │                 │               │
-        │                    │              │ 248                            │               │         │          │             │                 │               │
-        ├────────────────────┼──────────────┼────────────────────────────────┼───────────────┼─────────┼──────────┼─────────────┼─────────────────┼───────────────┤
-        │ #3                 │ 0.00119      │ conv(FUSE_ADD_RELU[366],multi_ │ 102.76        │ 417.64  │ 4.48     │ 17.78       │ {1,2048,7,7}    │ {1,512,7,7}   │
-        │ 0.000246           │ 10.1%        │ -  dv[0]:o95)[368]             │ MFLO          │ GFLOPS  │ MiB      │ GiB/s       │ {512,2048,1,1}  │               │
-        │ 2.1%               │              │ ConvolutionForward             │               │         │          │             │                 │               │
-        │                    │              │ 368                            │               │         │          │             │                 │               │
-        ├────────────────────┼──────────────┼────────────────────────────────┼───────────────┼─────────┼──────────┼─────────────┼─────────────────┼───────────────┤
-        │ #4                 │ 0.00143      │ conv(FUSE_ADD_RELU[346],multi_ │ 205.52        │ 881.88  │ 9.15     │ 38.34       │ {1,1024,14,14}  │ {1,2048,7,7}  │
-        │ 0.000233           │ 12.1%        │ -  dv[0]:o91)[361]             │ MFLO          │ GFLOPS  │ MiB      │ GiB/s       │ {2048,1024,1,1} │               │
-        │ 2.0%               │              │ ConvolutionForward             │               │         │          │             │                 │               │
-        │                    │              │ 361                            │               │         │          │             │                 │               │
-        ╘════════════════════╧══════════════╧════════════════════════════════╧═══════════════╧═════════╧══════════╧═════════════╧═════════════════╧═══════════════╛
+``operator info``
+  打印算子的基本信息
 
-这个表格打印了前五个耗时最多的算子。每列的含义如下：
+``computation``
+  算子需要的浮点数操作数目
 
-* ``device self time`` 是算子在计算设备上（例如 GPU ）的运行时间
+``FLOPS`` 
+  算子每秒执行的浮点操作数目，由 ``computation`` 除以 ``device self time`` 并转换单位得到
 
-* ``cumulative`` 累加前面所有算子的时间
+``memory``
+  算子使用的存储（例如 GPU 显存）大小
 
-* ``operator info`` 打印算子的基本信息
+``bandwidth``
+  算子的带宽，由 ``memory`` 除以 ``device self time`` 并转换单位得到
 
-* ``computation`` 是算子需要的浮点数操作数目
+``in_shapes``
+  算子输入张量的形状
 
-* ``FLOPS`` 是算子每秒执行的浮点操作数目，由 ``computation`` 除以 ``device self time`` 并转换单位得到
+``out_shapes``
+  算子输出张量的形状
 
-* ``memory`` 是算子使用的存储（例如 GPU 显存）大小
-
-* ``bandwidth`` 是算子的带宽，由 ``memory`` 除以 ``device self time`` 并转换单位得到
-
-* ``in_shapes`` 是算子输入张量的形状
-
-* ``out_shapes`` 是算子输出张量的形状

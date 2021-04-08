@@ -21,8 +21,6 @@
    beginner/learning-from-linear-regression
    beginner/from-linear-regression-to-linear-classification
 
-
-
 安装
 ----
 

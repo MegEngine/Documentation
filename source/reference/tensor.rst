@@ -4,14 +4,13 @@
 ==============
 张量（Tensor）
 ==============
-
 .. autosummary::
    :toctree: api
    :nosignatures:
 
-   tensor.Tensor
-   tensor.tensor
-   tensor.Parameter 
+   Tensor
+   tensor
+   Parameter
 
 张量的类型与形状
 ================

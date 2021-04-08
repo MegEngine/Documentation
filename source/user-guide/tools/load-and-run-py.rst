@@ -60,7 +60,7 @@ Python 版 Load and Run 的主要功能和用法与 :ref:`C++ 版本 <load-and-r
   影响 --fast-run 选项中的算法选择，开启后只选择带"reproducible"标签的算法进行比较
 
 ``--optimize-for-inference 以及配套的 --enable-xxx 参数``
-  对 mge graph 进行优化，会导致图节点被替换、修改，具体选项参考 MegEngine 的 megbrain_graph.optimizer_for_inference 接口
+  对 mge graph 进行优化，会导致图节点被替换、修改，可参考 :ref:`optimieze-for-inference-options` 。
 
 ``--embed-input``
   是否将 inputs data 作为 SharedDeviceTensor 嵌入网络中替换 Host2Device 节点，以兼容 C++ 版 load-and-run，
