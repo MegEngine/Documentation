@@ -6,7 +6,7 @@
 
 .. note::
 
-   * 序列化操作依赖于 :py:class:`~.jit.trace` 进行的 :ref:`将动态图转为静态图 <trace>` 操作
+   * 序列化操作依赖于 :py:class:`~.jit.trace` 进行的 :ref:`将动态图转为静态图 <trace>` 操作；
    * 与此同时，需要在 :py:class:`~.jit.trace` 中指定 ``capture_as_const = True`` 以将参数固化下来。
 
 考虑到推理部署需求，使用 :py:meth:`~.jit.trace.dump`, 即可将训练好的模型序列化到一个文件或文件对象中：

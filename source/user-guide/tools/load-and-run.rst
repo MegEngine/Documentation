@@ -47,7 +47,7 @@ Linux 交叉编译 ARM 版本
    ./scripts/cmake-build/cross_build_android_arm_inference.sh
 
 编译完成后，我们可以在 ``build_dir/android/arm64-v8a/release/install/bin/load_and_run`` 
-目录下找到编译生成的可执行文件 ``load_and_run`` . 
+目录下找到编译生成的可执行文件 ``load_and_run`` . 查看脚本源码可以了解更多选项的设置方法。
 
 .. note::
 
@@ -60,8 +60,6 @@ Linux 交叉编译 ARM 版本
 
    * :ref:`量化模型 <quantization>` 推荐开启 ARMv8.2+DotProd 支持，
      能够充分利用 DotProd 指令集硬件加速。
-
-查看 ``cross_build_android_arm_inference.sh`` 脚本源码可以了解更多选项的设置方法。
 
 使用 Load and Run
 -----------------
@@ -124,10 +122,7 @@ Linux 交叉编译 ARM 版本
 导致很难写出一个有效的搜索算法，在执行时选择到最快的执行方式。
 为此在 MegEngine 中集成了 fastrun 模式，
 **在执行模型的时候会将每个算子的可选所有算法都执行一遍，然后选择一个最优的算法记录下来。**
-
-.. note::
-
-   整体来讲大概有 10% 的性能提速。
+整体来讲大概有 10% 的性能提速。
 
 使用 fastrun 一般分为两个阶段，**需要顺序执行。**
 
@@ -150,83 +145,6 @@ Linux 交叉编译 ARM 版本
 ----------
 
 MegEngine 内置了多种正确性验证的方法，方便检查网络计算正确性。
-
-开启 asserteq 验证正确性
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-可以基于脚本 ``dump_with_testcase_mge.py`` 将输入数据和运行脚本时
-使用当前默认的计算设备计算出的模型结果都打包到模型里， 这样在不同平台下就方便比较结果差异了。
-
-.. code-block:: bash
-
-    python3 $MGE/sdk/load_and_run/dump_with_testcase_mge.py ./model.mge --optimize -d data.jpg -o model.mdl
-
-在执行 load_and_run 的时候就不需要再带上 ``--input`` ，因为输入已经打包进 ``model.mdl`` ,
-同时在执行 ``dump_with_testcase_mge.py`` 脚本的时候，会在 XPU (如果有 GPU, 就在 GPU 上执行，
-如果没有就在 CPU 上执行) 执行整个网络，将结果作为 ``ground-truth`` 写入模型中。
-
-该脚本可用参数如下：
-
-``input``
-  **必须参数** ，执行需要添加输入的MegEngine模型文件地址
-
-``-d --data``
-  **必须参数** ，指定模型的输入数据，指定方法为：``<input0 name>:<data0>;<input1 name>:<data1>...`` 
-  当模型只有一个输入，则可以省略 input 的名字。数据支持以下三种类型——
-
-  #. 使用随机数据，以 "#rand" 开头：
-
-     - 仅指定输入数据的最大最小值，其中 shape 由输入模型推出：--data #rand(0,255) 
-     - 指定输入数据的最大最小值和 batchsize，其中 shape 由输入模型推出
-       （注意省略号不可省略）：–data #rand(0,255,1,...)
-     - 指定输入数据的全部维度：–data #rand(0,255,1,3,224,224)
-
-  #. 使用图片或者 ``npy`` 文件：
-
-     - 使用图片：--data image.png
-     - 使用 npy：--data image.npy
-
-  #. 使用包含多条数据的文本文件，以 "@" 开头，文件中的每一行都符合上面两种形式：--data image.txt
-
-     image.txt里面的内容可能是这样的：
-
-     .. code-block:: none
-
-        var0:image0.png;va1:image1.npy
-        var0:#rand(0,255);var1:image2.png
-
-``-o --output``
-  **必需参数** ，指定输出模型地址
-
-``--repeat``
-  默认值为 1，指定 -d 传递的输入数据会重复多少份，常用于性能测试。
-
-``--silent``
-  默认为 false，在启用推理正确性检查的时候，是否输出更加简洁的检查信息。比如说展示误差最大值。
-
-``--optimize-for-inference``
-  默认为 false，是否开启计算图优化，经过优化后的图结构可能会发生改变，但是可以获得更好地推理性能，
-  详见 :ref:`optimieze-for-inference-options` 。
-
-``--no-assert``
-  默认为 false，是否禁用推理正确性检查，常用于性能测试。
-  assert 比较的对象为：输入模型 + 输入数据的推理结果 VS 输出模型（此时数据已纳入模型中）的推理结果。
-
-``--maxerr``
-  默认为 1e-4，在开启推理正确性检查时允许的最大误差。
-
-``--resize-input``
-  默认为 false，是否采用 cv2 库把输入图片的尺寸 resize 到模型要求的输入尺寸。
-
-``--input-transform``
-  可选参数，有用户指定的一行 python 代码，用于操作输入数据。比如 ``data/np.std(data)`` .
-
-``--discard-var-name``
-  默认为 false，是否丢弃输入模型的变量 (varnode) 和参数 (param) 的名字。
-
-``--output-strip-info``
-  默认为 false，是否保存模型的输出信息到 JSON 文件，默认路径为输出模型名 + ".json" .
-  文件中包含模型 hash 码，所有输出的 opr 类型和计算数据类型。
 
 dump 输出结果
 ~~~~~~~~~~~~~

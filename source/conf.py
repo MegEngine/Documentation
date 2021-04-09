@@ -137,6 +137,9 @@ else:
 
 html_theme = 'pydata_sphinx_theme'
 html_theme_path = ['_themes']
+
+# Configuration for pydata-sphinx-theme, the doc URL:
+# https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/configuring.html
 html_theme_options = {
     'search_bar_text': '输入搜索文本...',
     'search_bar_position': 'navbar',
@@ -145,13 +148,23 @@ html_theme_options = {
         { 'name': '论坛', 'url': 'https://discuss.megengine.org.cn/'}, 
         { 'name': '官网', 'url': 'https://megengine.org.cn/'}
     ],
-    'use_edit_page_button': False,
+    'use_edit_page_button': True,
     'navigation_with_keys': False,
-    'show_prev_next': False,
+    'show_prev_next': True,
     'use_version_switch': True,
     'version_switch_json_url': '/doc/version.json',
     'version_switch_enable_locale': True,
     'version_switch_locates': ['zh', 'en']
+}
+
+# Setting for Edit this Page button
+# Should reset for self-hosted GitHub/GitLab instance.
+html_context = {
+    'github_url': 'https://github.com',
+    'github_user': 'MegEngine',
+    'github_repo': 'Documentation',
+    'github_version': 'main',
+    'doc_path': 'source',
 }
 
 html_sidebars = {

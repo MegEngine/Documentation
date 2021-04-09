@@ -5,9 +5,6 @@
 量化（Quantization）
 ====================
 
-.. py:module:: megengine.quantization.qconfig
-.. currentmodule:: megengine.quantization
-
 量化配置
 --------
 .. autosummary::
@@ -24,23 +21,14 @@
    passive_qconfig
    easyquant_qconfig
 
-.. py:module:: megengine.quantization.observer
-.. currentmodule:: megengine.quantization
-
 观察
 ~~~~
+.. currentmodule:: megengine.quantization.observer
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    Observer
-
-.. currentmodule:: megengine.quantization.observer
-
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    MinMaxObserver
    SyncMinMaxObserver
    ExponentialMovingAverageObserver
@@ -48,30 +36,20 @@
    HistogramObserver
    PassiveObserver
 
-.. py:module:: megengine.quantization.fake_quant
-.. currentmodule:: megengine.quantization
-
 模拟
 ~~~~
+.. currentmodule:: megengine.quantization.fake_quant
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    FakeQuantize
-   
-.. currentmodule:: megengine.quantization.fake_quant
-
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    TQT
 
-.. py:module:: megengine.quantization.quantize
-.. currentmodule:: megengine.quantization
 
 量化操作
 --------
+.. currentmodule:: megengine.quantization
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -85,9 +63,6 @@
    disable_observer
    propagate_qconfig
    reset_qconfig
-
-.. py:module:: megengine.quantization.utils
-.. currentmodule:: megengine.quantization
 
 Utils
 -----
