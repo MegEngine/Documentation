@@ -9,7 +9,7 @@
 * 基于 :py:mod:`~.module` 的实现——
 
   * 优点：可以在 Python 代码中嵌入调用，随时可以看统计信息
-  * 缺点：只能统计 :py:mod:`~.module` 的信息，无法统计 :py:mod:`functional` 的调用
+  * 缺点：只能统计 :py:mod:`~.module` 的信息，无法统计 :py:mod:`~.functional` 的调用
 
 * 基于 :py:meth:`~.trace.dump` 的实现——
 
@@ -23,19 +23,22 @@
 
 .. code-block::
 
+   from megengine.hub import load
+   from megengine.utils.module_stats import module_stats
+
    # 构建一个 net module，这里从 model hub 中获取 resnet18 模型
    net = load("megengine/models", "resnet18", pretrained=True)
 
-   # 指定输入shape
+   # 指定输入 shape
    input_shape = (1, 3, 224, 224)
 
-   # float model.
+   # Float model.
    total_params, total_flops = module_stats(
        net, input_shape, log_params=True, log_flops=True
    )
    print("params {} flops {}".format(total_params, total_flops))
 
-可以通过 ``log_params`` 和 ``log_flops`` 来控制是否输出 parameter 和 flops 细节信息，返回总的参数量和计算量。
+可以通过 ``log_params`` 和 ``log_flops`` 参数来控制是否输出 parameter 和 flops 细节信息，返回总的参数量和计算量。
 
 基于 dump 图的可视化与统计
 --------------------------

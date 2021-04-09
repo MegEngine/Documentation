@@ -4,12 +4,17 @@
 RuntimeOpr 使用说明
 ===================
 
-RuntimeOpr 指的是：通过 MegEngine 将其它硬件厂商支持的离线模型作为一个算子嵌入到 MegEngine Graph 中，
+RuntimeOpr 指通过 MegEngine 将其它硬件厂商支持的离线模型作为一个算子嵌入到 MegEngine Graph 中，
 进而方便地使用 MegEngine 提供的各类 :ref:`图手术 <graphsurgeon>` 和推理工具。
 
-目前支持 RuntimeOpr 的类型有 TensorRT、Atlas 和 Cambricon 三种，包含 RuntimeOpr 的模型需要在对应的硬件平台上才能执行推理任务。
+.. warning::
 
-下面以 Atlas 为例展示用法，TensorRT、Cambricon 的接口与 Atlas 类似：
+   包含 RuntimeOpr 的模型无法通过 :py:func:`megengine.save` 保存权重，
+   只能通过 :py:meth:`.trace.dump` 直接保存为模型。用法见 :ref:`runtimeopr-dump` 。
+
+目前支持 RuntimeOpr 的类型有 TensorRT、Atlas 和 Cambricon 三种，
+包含 RuntimeOpr 的模型需要在对应的硬件平台上才能执行推理任务。
+下面以 Atlas 为例展示用法（TensorRT、Cambricon 的接口与之类似）：
 
 模型只包含一个 RuntimeOpr
 -------------------------
@@ -62,21 +67,22 @@ RuntimeOpr 作为模型的一部分
 
 .. note::
 
-   #. 在 RuntimeOpr 前后必须使用 :py:meth:`~.copy` 把 Tensor 从 CPU 拷贝到 Atlas,
-      或者从 Atlas 拷贝到 CPU, 不然会因为 CompNode 不符合规范而报错
-   #. 如果需要转变数据类型，请在 CPU 上完成（参考上面的代码）
-   #. 只能从 CPU 拷贝到其他设备或者反之，各类设备之间不能直接拷贝，比如 GPU 到 Atlas 就不太行
+   #. 在 RuntimeOpr 前后必须使用 :py:func:`~.copy` 把 Tensor 从 CPU 拷贝到 Atlas,
+      或者从 Atlas 拷贝到 CPU, 不然会因为 CompNode 不符合规范而报错；
+   #. 如果需要转变数据类型，请在 CPU 上完成（参考上面的代码）；
+   #. 只能从 CPU 拷贝到其他设备或者反之，各类设备之间不能直接拷贝，比如 GPU 到 Atlas.
+
+.. _runtimeopr-dump:
 
 序列化与反序列化
 ----------------
-
-包含 RuntimeOpr 的模型不可以通过 :py:func:`megengine.save` 保存权重，
-只能通过 :py:meth:`.trace.dump` 直接保存为模型，模型可以加载。
+参考下面的代码：
 
 .. code-block:: python
 
    import io
    from megengine.jit import trace
+   import megengine.utils.comp_graph_tools as cgtools
 
    def func(inp):
      feature = m(inp)
@@ -89,5 +95,5 @@ RuntimeOpr 作为模型的一部分
    file.seek(0)
    infer_cg = cgtools.GraphInference(file)
    y3 = list((infer_cg.run(inp.numpy())).values())[0]
-   np.testing.assert_almost_equal(y2.numpy() y3)
+   np.testing.assert_almost_equal(y2.numpy(), y3)
 

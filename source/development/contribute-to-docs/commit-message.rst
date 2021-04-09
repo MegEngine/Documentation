@@ -6,7 +6,8 @@ Commit message 书写指南
 
 .. note::
 
-   该指南中的规则不一定适用于除 MegEngine 文档以外的项目。
+   * 该指南中的规则不一定适用于除 MegEngine 文档以外的项目。
+   * 大部分情况下允许使用精简写法的 Commit Message.
 
 
 标准写法
@@ -97,7 +98,6 @@ Body
 ~~~~
 
 当需要对 commit 进行更加详细的描述时，通常会将其放在正文部分。
-
 更常见的情况是，在 Issue/Pull Request 中进行具体的讨论和更改，
 仅在有必要的情况下，会选择在 commit message 中说明原因和影响。
 
