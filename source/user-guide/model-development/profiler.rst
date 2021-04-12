@@ -85,7 +85,7 @@
 
   .. warning::
 
-     不要无脑使用 ``ALL``, 越多的配置将带来越大的 Profiling 开销。
+     尽量避免使用 ``ALL``, 越多的配置将带来越大的 Profiling 开销。
 
 ``align_time``
   将输出时间从相对变成绝对，方便对比多个 ``JSON`` 文件，默认为 ``True``.
@@ -183,16 +183,16 @@ gpu 线程上的事件密度明显比 channel 和 worker 高。
 .. code-block:: bash
 
     # 输出详细帮助信息
-    python3 profile_analyze.py -h
+    python3 -m megengine.tools.profile_analyze -h
 
     # 输出前 5 慢的算子
-    python3 profile_analyze.py ./profiling.json -t 5
+    python3 -m megengine.tools.profile_analyze ./profiling.json -t 5
 
     # 输出总耗时前 5 大的算子的类型
-    python3 profile_analyze.py ./profiling.json -t 5 --aggregate-by type --aggregate sum
+    python3 -m megengine.tools.profile_analyze ./profiling.json -t 5 --aggregate-by type --aggregate sum
 
     # 按 memory 排序输出用时超过 0.1ms 的 ConvolutionForward 算子
-    python3 profile_analyze.py ./profiling.json -t 5 --order-by memory --min-time 1e-4  --type ConvolutionForward
+    python3 -m megengine.tools.profile_analyze ./profiling.json -t 5 --order-by memory --min-time 1e-4  --type ConvolutionForward
 
 输出将是一张表格，每列的含义如下：
 
