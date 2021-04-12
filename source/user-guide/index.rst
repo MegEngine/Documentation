@@ -27,6 +27,7 @@
    model-development/advanced-parameter-optimization
    model-development/trace
    model-development/dump
+   model-development/profiler
 
 .. toctree::
    :caption: 分布式训练

@@ -16,6 +16,7 @@ Float Module
 
    Module
    Sequential
+   Module.forward
    Module.parameters
    Module.named_parameters
    Module.buffers
