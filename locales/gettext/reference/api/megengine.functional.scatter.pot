@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-14 14:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/reference/api/megengine.functional.scatter.rst:2
+msgid "megengine.functional.scatter"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:1
+msgid "Writes all values from the tensor source into input tensor at the indices specified in the index tensor."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:4
+msgid "For each value in source, its output index is specified by its index in source for ``axis != dimension`` and by the corresponding value in index for ``axis = dimension``."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:8
+msgid "For a 3-D tensor, input tensor is updated as::"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:14
+msgid "``inp``, ``index`` and ``source`` should have same number of dimensions."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:16
+msgid "It is also required that ``source.shape(d) <= inp.shape(d)`` and ``index.shape(d) == source.shape(d)`` for all dimensions ``d``."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:19
+msgid "Moreover, the values of index must be between ``0`` and ``inp.shape(axis) - 1`` inclusive."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:22
+msgid "Please notice that, due to performance issues, the result is uncertain on the GPU device if scattering different positions from source to the same destination position regard to index tensor."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:26
+msgid "Check the following examples, the oup[0][2] is maybe from source[0][2] which value is 0.2256 or source[1][2] which value is 0.5339 if set the index[1][2] from 1 to 0."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:31
+msgid "inp tensor which to be scattered."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:33
+msgid "axis along which to index."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:35
+msgid "indices of elements to scatter."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:37
+msgid "source element(s) to scatter."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:0
+msgid "返回类型"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:38
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:0
+msgid "返回"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:39
+msgid "output tensor."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:41
+msgid "Examples:"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/tensor.py:docstring of megengine.functional.tensor.scatter:55
+msgid "Outputs:"
+msgstr ""
