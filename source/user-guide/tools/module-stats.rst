@@ -29,12 +29,12 @@
    # 构建一个 net module，这里从 model hub 中获取 resnet18 模型
    net = load("megengine/models", "resnet18", pretrained=True)
 
-   # 指定输入 shape
-   input_shape = (1, 3, 224, 224)
+   # 指定输入shape list 
+   input_shape_list = ((1, 3, 224, 224))
 
    # Float model.
    total_params, total_flops = module_stats(
-       net, input_shape, log_params=True, log_flops=True
+       net, input_shape_list, log_params=True, log_flops=True
    )
    print("params {} flops {}".format(total_params, total_flops))
 
