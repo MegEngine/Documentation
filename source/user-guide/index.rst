@@ -24,6 +24,7 @@
    :hidden:
    :maxdepth: 1
 
+   model-development/data
    model-development/advanced-parameter-optimization
    model-development/trace
    model-development/dump
