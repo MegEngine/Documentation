@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-14 14:17+0800\n"
+"POT-Creation-Date: 2021-04-14 16:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,102 @@ msgid "如何帮助翻译文档内容"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/translation.rst:7
-msgid ""
-"MegEngine 文档使用 Sphinx 官方推荐的国际化方式实现多语言支持 （可参考 `Internationalization "
-"<https://www.sphinx-doc.org/en/master/usage/advanced/intl.html>`_ 一节）。"
+msgid "MegEngine 文档使用 Sphinx 官方推荐的 `国际化 <build-the-doc-locally>`_ 方式实现多语言支持。"
 msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:10
+msgid "目录结构"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:12
+msgid "对于参与文档翻译的人员，对以下目录结构有一定了解将有所帮助："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:25
+msgid "基本原理"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:27
+msgid "整个翻译内容的生成流程如下："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:29
+msgid "在 ``source`` 文件夹中存放着所有的文档内容，以 ``.rst`` 格式提供。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:30
+msgid "通过运行下面的命令，将从 ``.rst`` 文件中提取出可被翻译的消息（message）："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:36
+msgid "生成的 ``.pot`` 文件将被放在 ``locales/gettext`` 目录内。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:38
+msgid "根据需要支持的语言，生成对应的 ``.po`` 文件中提取出可被翻译的消息（message）："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:44
+msgid "上面的代码将为我们生成中文和英文两个版本的 ``.po`` 文件，分别位于："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:46
+msgid "``/locales/zh-CN/LC_MESSAGES/``"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:47
+msgid "``/locales/en/LC_MESSAGES/``"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:49
+msgid "翻译人员需要做的就是翻译 ``.po`` 文件中的内容。样例如下："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:57
+msgid "另一种情况是，msgid 是多行文本，包含 reStructuredText 语法："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:71
+msgid "请注意不要破坏 reST 语法，参考 :ref:`restructuredtext` 。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:73
+msgid "生成翻译后的文档（ ``LANGUAGE`` 参数默认为 ``zh-CN`` ）："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:81
+msgid ""
+"当用户在 GitHub 发起一个翻译相关的 Pull Request 时， 每次提交新的 commit 会自动触发临时文档的生成和更新。 "
+"但我们推荐用户首先 :ref:`在本地构建文档 <how-to-build-the-doc-locally>` 以确保格式和内容正确。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:86
+msgid "主要翻译需求"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:88
+msgid ""
+"与常见的软件文档 “以英文撰写原文，后续提供多语言翻译” 的逻辑不同， MegEngine 文档默认以中文作为原稿，后续提供其它语言的翻译版本。 "
+"但由于 Python Docstring 属于源代码注释的一部分，而代码注释提倡用英文撰写， 因此 MegEngine 的 Python API "
+"文档将先从源代码提取出英文 Docstring， 再通过翻译对应的 ``locales/zh-"
+"CN/LC_MESSAGES/reference/api/`` 中的 ``.po`` 文件变为中文。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:94
+msgid "官方翻译未必准确、完备，欢迎大家帮助天元 MegEngine 改进文档翻译～"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:96
+msgid "基本的 :ref:`commit message <commit-message>` 形式如下："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:102
+msgid "如果是对已有翻译内容进行了修改，请在 commit message 中详细说明修改原因。"
+msgstr ""
+
+#~ msgid ""
+#~ "MegEngine 文档使用 Sphinx 官方推荐的国际化方式实现多语言支持 （可参考"
+#~ " `Internationalization <https://www.sphinx-"
+#~ "doc.org/en/master/usage/advanced/intl.html>`_ 一节）。"
+#~ msgstr ""
 
