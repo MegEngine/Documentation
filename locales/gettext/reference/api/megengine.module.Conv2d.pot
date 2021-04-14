@@ -1,0 +1,306 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-14 14:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:2
+msgid "megengine.module.Conv2d"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:1
+msgid "基类：:class:`megengine.module.conv._ConvNd`"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:1
+msgid "Applies a 2D convolution over an input tensor."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:3
+msgid "For instance, given an input of the size :math:`(N, C_{\\text{in}}, H, W)`, this layer generates an output of the size :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` through the process described as below:"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:8
+msgid "\\text{out}(N_i, C_{\\text{out}_j}) = \\text{bias}(C_{\\text{out}_j}) +\n"
+"\\sum_{k = 0}^{C_{\\text{in}} - 1} \\text{weight}(C_{\\text{out}_j}, k) \\star \\text{input}(N_i, k)\n"
+"\n"
+""
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:12
+msgid "where :math:`\\star` is the valid 2D cross-correlation operator, :math:`N` is batch size, :math:`C` denotes number of channels, :math:`H` is height of input planes in pixels, and :math:`W` is width in pixels."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:17
+msgid "In general, output feature maps' shapes can be inferred as follows:"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:19
+msgid "input: :math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:21
+msgid "output: :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` where"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:23
+msgid "\\text{H}_{out} = \\lfloor \\frac{\\text{H}_{in} + 2 * \\text{padding[0]} -\n"
+"\\text{dilation[0]} * (\\text{kernel_size[0]} - 1) - 1}{\\text{stride[0]}} + 1 \\rfloor\n"
+"\n"
+""
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:27
+msgid "\\text{W}_{out} = \\lfloor \\frac{\\text{W}_{in} + 2 * \\text{padding[1]} -\n"
+"\\text{dilation[1]} * (\\text{kernel_size[1]} - 1) - 1}{\\text{stride[1]}} + 1 \\rfloor\n"
+"\n"
+""
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:31
+msgid "When `groups == in_channels` and `out_channels == K * in_channels`, where K is a positive integer, this operation is also known as depthwise convolution."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:35
+msgid "In other words, for an input of size :math:`(N, C_{in}, H_{in}, W_{in})`, a depthwise convolution with a depthwise multiplier `K`, can be constructed by arguments :math:`(in\\_channels=C_{in}, out\\_channels=C_{in} \\times K, ..., groups=C_{in})`."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:40
+msgid "number of input channels."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:42
+msgid "number of output channels."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:44
+msgid "size of weight on spatial dimensions. If kernel_size is an :class:`int`, the actual kernel size would be `(kernel_size, kernel_size)`. Default: 1"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:48
+msgid "stride of the 2D convolution operation. Default: 1"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:50
+msgid "size of the paddings added to the input on both sides of its spatial dimensions. Only zero-padding is supported. Default: 0"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:53
+msgid "dilation of the 2D convolution operation. Default: 1"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:55
+msgid "number of groups into which the input and output channels are divided, so as to perform a \"grouped convolution\". When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by ``groups``, and there would be an extra dimension at the beginning of the weight's shape. Specifically, the shape of weight would be `(groups, out_channel // groups, in_channels // groups, *kernel_size)`."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:62
+msgid "whether to add a bias onto the result of convolution. Default: True"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:65
+msgid "Supports `CROSS_CORRELATION`. Default: `CROSS_CORRELATION`"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:68
+msgid "When set to \"DEFAULT\", no special requirements will be placed on the precision of intermediate results. When set to \"FLOAT32\", \"Float32\" would be used for accumulator and intermediate result, but only effective when input and output are of float16 dtype."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:73
+msgid "Examples:"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/conv.py:docstring of megengine.module.conv.Conv2d:86
+msgid "Outputs:"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:11
+msgid "Methods"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`__init__ <megengine.module.Conv2d.__init__>`\\ \\(in\\_channels\\, out\\_channels\\, kernel\\_size\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:0
+msgid "param name"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "module's name, can be initialized by the ``kwargs`` parameter"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`apply <megengine.module.Conv2d.apply>`\\ \\(fn\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Applies function ``fn`` to all the modules within this module, including itself."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`buffers <megengine.module.Conv2d.buffers>`\\ \\(\\[recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Returns an iterable for the buffers of the module."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`calc_conv <megengine.module.Conv2d.calc_conv>`\\ \\(inp\\, weight\\, bias\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`children <megengine.module.Conv2d.children>`\\ \\(\\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Returns an iterable for all the submodules that are direct attributes of this module."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`disable_quantize <megengine.module.Conv2d.disable_quantize>`\\ \\(\\[value\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`eval <megengine.module.Conv2d.eval>`\\ \\(\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`forward <megengine.module.Conv2d.forward>`\\ \\(inp\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`load_state_dict <megengine.module.Conv2d.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Loads a given dictionary created by :func:`state_dict` into this module."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`modules <megengine.module.Conv2d.modules>`\\ \\(\\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Returns an iterable for all the modules within this module, including itself."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`named_buffers <megengine.module.Conv2d.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`named_children <megengine.module.Conv2d.named_children>`\\ \\(\\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`named_modules <megengine.module.Conv2d.named_modules>`\\ \\(\\[prefix\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`named_parameters <megengine.module.Conv2d.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`parameters <megengine.module.Conv2d.parameters>`\\ \\(\\[recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Returns an iterable for the :class:`~.Parameter` of the module."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`register_forward_hook <megengine.module.Conv2d.register_forward_hook>`\\ \\(hook\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Registers a hook to handle forward results."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`register_forward_pre_hook <megengine.module.Conv2d.register_forward_pre_hook>`\\ \\(hook\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Registers a hook to handle forward inputs."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`replace_param <megengine.module.Conv2d.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to speedup multimachine training."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`reset_parameters <megengine.module.Conv2d.reset_parameters>`\\ \\(\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:0
+msgid "rtype"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":py:obj:`None`"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`state_dict <megengine.module.Conv2d.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`train <megengine.module.Conv2d.train>`\\ \\(\\[mode\\, recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid ":obj:`zero_grad <megengine.module.Conv2d.zero_grad>`\\ \\(\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+msgid "Sets all parameters' grads to zero"
+msgstr ""

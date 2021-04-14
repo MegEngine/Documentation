@@ -1,0 +1,409 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-14 14:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:2
+msgid "megengine.module.Elemwise"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:1
+msgid "基类：:class:`megengine.module.module.Module`"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:1
+msgid "A :class:`~.Module` to do :mod:`~.functional.elemwise` operator. Could be replaced with :class:`~.QATModule` version :class:`~.qat.Elemwise` using :func:`~.quantize.quantize_qat`."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:4
+msgid "the elemwise method, support the following string. It will do the normal elemwise operator for float.  * \"ADD\": a + b * \"FUSE_ADD_RELU\": max(x+y, 0) * \"MUL\": x * y * \"MIN\": min(x, y) * \"MAX\": max(x, y) * \"SUB\": x - y * \"TRUE_DIV\": x / y * \"FUSE_ADD_SIGMOID\": sigmoid(x + y) * \"FUSE_ADD_TANH\": tanh(x + y) * \"RELU\": x > 0 ? x : 0 * \"ABS\": x > 0 ? x : -x * \"SIGMOID\": sigmoid(x) * \"EXP\": exp(x) * \"TANH\": tanh(x) * \"FUSE_MUL_ADD3\": x * y + z * \"FAST_TANH\": x * (27. + x * x) / (27. + 9. * x * x) * \"NEGATE\": -x * \"ACOS\": acos(x) * \"ASIN\": asin(x) * \"CEIL\": ceil(x) * \"COS\": cos(x) * \"EXPM1\": expm1(x) * \"FLOOR\": floor(x) * \"LOG\": log(x) * \"LOG1P\": log1p(x) * \"SIN\": sin(x) * \"ROUND\": round(x) * \"ERF\": erf(x) * \"ERFINV\": erfinv(x) * \"ERFC\": erfc(x) * \"ERFCINV\": erfcinv(x) * \"ABS_GRAD\": abs_grad * \"FLOOR_DIV\": floor_div * \"MOD\": mod * \"SIGMOID_GRAD\": sigmoid_grad * \"SWITCH_GT0\": switch_gt0 * \"TANH_GRAD\": tanh_grad * \"LT\": less * \"LEQ\": leq * \"EQ\": equal * \"POW\": pow * \"LOG_SUM_EXP\": log_sum_exp * \"FAST_TANH_GRAD\": fast_tanh_grad * \"ATAN2\": atan2 * \"COND_LEQ_MOV\": cond_leq_mov * \"H_SWISH\": h_swish * \"FUSE_ADD_H_SWISH\": h_swish(x+y) * \"H_SWISH_GRAD\": h_swish_grad * \"AND\": bool binary: x && y * \"OR\": bool binary: x || y * \"XOR\": bool binary: x ^ y * \"NOT\": bool unary: ~x"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:4
+msgid "the elemwise method, support the following string. It will do the normal elemwise operator for float."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:7
+msgid "\"ADD\": a + b"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:8
+msgid "\"FUSE_ADD_RELU\": max(x+y, 0)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:9
+msgid "\"MUL\": x * y"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:10
+msgid "\"MIN\": min(x, y)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:11
+msgid "\"MAX\": max(x, y)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:12
+msgid "\"SUB\": x - y"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:13
+msgid "\"TRUE_DIV\": x / y"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:14
+msgid "\"FUSE_ADD_SIGMOID\": sigmoid(x + y)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:15
+msgid "\"FUSE_ADD_TANH\": tanh(x + y)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:16
+msgid "\"RELU\": x > 0 ? x : 0"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:17
+msgid "\"ABS\": x > 0 ? x : -x"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:18
+msgid "\"SIGMOID\": sigmoid(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:19
+msgid "\"EXP\": exp(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:20
+msgid "\"TANH\": tanh(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:21
+msgid "\"FUSE_MUL_ADD3\": x * y + z"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:22
+msgid "\"FAST_TANH\": x * (27. + x * x) / (27. + 9. * x * x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:23
+msgid "\"NEGATE\": -x"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:24
+msgid "\"ACOS\": acos(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:25
+msgid "\"ASIN\": asin(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:26
+msgid "\"CEIL\": ceil(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:27
+msgid "\"COS\": cos(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:28
+msgid "\"EXPM1\": expm1(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:29
+msgid "\"FLOOR\": floor(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:30
+msgid "\"LOG\": log(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:31
+msgid "\"LOG1P\": log1p(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:32
+msgid "\"SIN\": sin(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:33
+msgid "\"ROUND\": round(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:34
+msgid "\"ERF\": erf(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:35
+msgid "\"ERFINV\": erfinv(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:36
+msgid "\"ERFC\": erfc(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:37
+msgid "\"ERFCINV\": erfcinv(x)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:38
+msgid "\"ABS_GRAD\": abs_grad"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:39
+msgid "\"FLOOR_DIV\": floor_div"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:40
+msgid "\"MOD\": mod"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:41
+msgid "\"SIGMOID_GRAD\": sigmoid_grad"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:42
+msgid "\"SWITCH_GT0\": switch_gt0"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:43
+msgid "\"TANH_GRAD\": tanh_grad"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:44
+msgid "\"LT\": less"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:45
+msgid "\"LEQ\": leq"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:46
+msgid "\"EQ\": equal"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:47
+msgid "\"POW\": pow"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:48
+msgid "\"LOG_SUM_EXP\": log_sum_exp"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:49
+msgid "\"FAST_TANH_GRAD\": fast_tanh_grad"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:50
+msgid "\"ATAN2\": atan2"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:51
+msgid "\"COND_LEQ_MOV\": cond_leq_mov"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:52
+msgid "\"H_SWISH\": h_swish"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:53
+msgid "\"FUSE_ADD_H_SWISH\": h_swish(x+y)"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:54
+msgid "\"H_SWISH_GRAD\": h_swish_grad"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:55
+msgid "\"AND\": bool binary: x && y"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:56
+msgid "\"OR\": bool binary: x || y"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:57
+msgid "\"XOR\": bool binary: x ^ y"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/module/elemwise.py:docstring of megengine.module.elemwise.Elemwise:58
+msgid "\"NOT\": bool unary: ~x"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:11
+msgid "Methods"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`__init__ <megengine.module.Elemwise.__init__>`\\ \\(method\\, \\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:0
+msgid "param name"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "module's name, can be initialized by the ``kwargs`` parameter"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`apply <megengine.module.Elemwise.apply>`\\ \\(fn\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Applies function ``fn`` to all the modules within this module, including itself."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`buffers <megengine.module.Elemwise.buffers>`\\ \\(\\[recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Returns an iterable for the buffers of the module."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`children <megengine.module.Elemwise.children>`\\ \\(\\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Returns an iterable for all the submodules that are direct attributes of this module."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`disable_quantize <megengine.module.Elemwise.disable_quantize>`\\ \\(\\[value\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`eval <megengine.module.Elemwise.eval>`\\ \\(\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`forward <megengine.module.Elemwise.forward>`\\ \\(\\*inps\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`load_state_dict <megengine.module.Elemwise.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Loads a given dictionary created by :func:`state_dict` into this module."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`modules <megengine.module.Elemwise.modules>`\\ \\(\\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Returns an iterable for all the modules within this module, including itself."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`named_buffers <megengine.module.Elemwise.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`named_children <megengine.module.Elemwise.named_children>`\\ \\(\\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`named_modules <megengine.module.Elemwise.named_modules>`\\ \\(\\[prefix\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`named_parameters <megengine.module.Elemwise.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`parameters <megengine.module.Elemwise.parameters>`\\ \\(\\[recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Returns an iterable for the :class:`~.Parameter` of the module."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`register_forward_hook <megengine.module.Elemwise.register_forward_hook>`\\ \\(hook\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Registers a hook to handle forward results."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`register_forward_pre_hook <megengine.module.Elemwise.register_forward_pre_hook>`\\ \\(hook\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Registers a hook to handle forward inputs."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`replace_param <megengine.module.Elemwise.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to speedup multimachine training."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`state_dict <megengine.module.Elemwise.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`train <megengine.module.Elemwise.train>`\\ \\(\\[mode\\, recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid ":obj:`zero_grad <megengine.module.Elemwise.zero_grad>`\\ \\(\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:33:<autosummary>:1
+msgid "Sets all parameters' grads to zero"
+msgstr ""

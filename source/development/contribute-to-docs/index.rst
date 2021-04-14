@@ -21,8 +21,8 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 * 在 MegEngine/Documentation Issues 或论坛中提供各种各样建设性的意见；
 * 更正文档中的拼写错误（Typographical error，简称 Typo）或格式错误（Format error）；
 * 更正文档中的其它类型错误，需要详细说明理由，方便进行讨论和采纳；
-* 帮助我们进行对 Python API 源码中 Docstring 的翻译，参考 :ref:`how-to-translate-the-doc` ；
-* 帮助我们将中文文档内容翻译成对应的英文版本，参考 :ref:`how-to-translate-the-doc` ；
+* 帮助我们进行对 Python API 源码中 Docstring 的翻译，参考 :ref:`translation` ；
+* 帮助我们将中文文档内容翻译成对应的英文版本，参考 :ref:`translation` ；
 * 帮助我们补充完善 :ref:`文档内容 <doc-content>` ，比如提供大家都需要的教程，不断追求更高的质量。
 
 你也可以浏览处于 Open 状态的 `Issues <https://github.com/MegEngine/Documentation/issues>`_ 
@@ -73,6 +73,7 @@ MegEngine 文档的源码结构如下：
    │   └── html
    ├── examples
    ├── locales               # Sphinx 多语言支持，内部结构和 source 高度对齐
+   │   ├── gettext           # 原始消息：提取 rst 文件所生成的模版目录
    │   ├── zh-CN             # 中文：主要需要翻译 API 的 Docstring 部分
    │   └── en                # 英文：需要翻译除 API Docstring 外的全部内容
    ├── Makefile

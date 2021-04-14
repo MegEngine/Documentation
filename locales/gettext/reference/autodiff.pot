@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-14 14:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/reference/autodiff.rst:6
+msgid "自动微分（Auto-diff）"
+msgstr ""
+
+#: ../../source/reference/autodiff.rst:9
+msgid "梯度管理器（GradManager）"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager:1
+msgid "基类：:class:`object`"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager:1
+msgid "GradManager computes gradients or more generally, vector-Jacobian product, by reverse mode automatic differentiation (a.k.a. back propagation)."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager:4
+msgid "Reverse mode autodiff normally reuses many intermediate tensors for best computation efficiency. In a read-eval-print-loop (REPL) environment however, it is impossible to known how the user would take gradients later thus which tensors to keep. To solve this problem, the user must somehow declare beforehand which gradient could possibly be taken. With GradManager, users are required to call the :meth:`attach` method on a tensor if they want to take gradients with respect to it later. Furthermore, any computation on a tensor before it is attached is completely ignored from the autodiff perspective, so :meth:`attach` must be called before any computation that needs differentiation."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager:13
+msgid "For example, the following symbolic differentiation code"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager:22
+msgid "can be rewriten using GradManager for REPL environment as"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager:34
+msgid "A more realistic example of training a neural network would be like"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager:47
+msgid "You can also use ``record()`` and ``release()`` method instead of ``with`` context:"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager:62
+msgid "For your convenience, GradManager may (not must) be reused. As shown in the examples, you only need to attach a tensor once and GradManager will remember it afterwards. However, a single GradManager can record only one computation history at a time. To run multiple differentiations simultaneously or perform high order differentiation, create as many GradManager as you need."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager:70
+msgid "Mutable tensors introduce ambiguities when doing symbolic differentiation: which version of the tensor are we referring to? For attached tensors, GradManager resolves this ambiguity by \"snapshoting\" them on first encounter, either on :meth:`record` (or entering with statement) if tensor is attached before :meth:`record`, or on :meth:`attach` if GradManager is already recording. Attached tensors will then be interpreted as their snapshotted version for differentiation purpose. The same ambiguity on the first parameter of :meth:`backward` is simply resolved by using the latest version."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager:78
+msgid "Typically, in data parallel, we would like to average the gradients across processes. Users will finally get the averaged gradients if an \"AllReduce\" callback is registered as follows:"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:1
+msgid "Instruct GradManager to track operations on tensors, so that gradients with respect to those tensors could be evaluated later."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:4
+msgid ":meth:`attach` also accepts a list of callbacks, which will be called with the tensor and its gradient during :meth:`backward`. The signature of callbacks should look like:"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:15
+msgid ":meth:`attach` calls with overlapping tensors will result in their callbacks concatenated, independently for each tensor. For example,"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:23
+msgid "is equivalent to"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:30
+msgid "The effect of :meth:`attach` will persist across multiple uses of the GradManager. When reusing a GradManager, it is likely a mistake to call :meth:`attach` on the same set of tensors and callbacks repeatedly, which may grow the callback list indefinitely."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:36
+msgid "When reusing a GradManager, it is sometimes desirable to attach temporary tensors each time, e.g. for computing gradients of inputs of a neural network. GradManager tries to accommodate such usages by holding weak references to attached tensors. Most of the times, this should be enough to prevent resource leak. Unfortunately, there are still some pitfalls left:"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:42
+msgid "Callbacks should not hold strong references, directly or indirectly, to attached tensors. Any strong reference, including those from callbacks, will prevent garbage collection (even by the cycle collector!) of a attached tensor, until the GradManager object is garbage collected."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:47
+msgid "Please also note that GradManager might hold additional strong references to attached tensors when it is in use. This note only covers potential resource leaks across multiple uses of a GradManager, which is unrelated to whether resources is timely released within a single use."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:0
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.backward:0
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.forward:0
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.backward:0
+msgid "参数"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:53
+msgid "tensor or list of tensors to track"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.attach:54
+msgid "callback or list of callbacks"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.backward:1
+msgid "Compute gradients (or vector-Jacobian product) for all attached tensors, accumulate to corresponding .grad attribute, and release resources along the way."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.backward:4
+msgid ":meth:`backward` computes the vector-Jacobian product :math:`dx_j = \\sum_{i} dy_i J_{ij}` where :math:`J_{ij} = ∂y_i/∂x_j` is the Jacobian matrix between vector variables :math:`y` and :math:`x`, with all vectors involved represented as a list of tensors, in the sense of direct sums (or flatten-and-concatenate). :math:`y` and :math:`dy` are passed as the first and second parameter respectively, whereas :math:`x` is directly taken from the list of all attached tensors. The result :math:`dx` is also not returned. Instead, it is directly accumulated into the .grad attribute of matching attached tensors (a.k.a. :math:`x`). This can be done unambiguously since :math:`dx` as a list of tensors has the same structure as :math:`x`."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.backward:14
+msgid "If :math:`y` is a scalar and :math:`dy` is chosen to be 1, the vector-Jacobian product yield gradient of :math:`y` with repect to :math:`x` as a special case. In that case, you will be able to omit the :math:`dy` parameter and :meth:`backward` will automatically use 1 for it and compute the gradient."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.backward:19
+msgid ":meth:`backward` consumes all resources held by this GradManager and releases them in the process of this call. When the call successfully finishes, the GradManager will be put back to an inactive state."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.backward:23
+msgid "tensor or list of tensors"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.backward:24
+msgid "tensor or list of tensors. Defaults to 1 if y is scalar"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.record:1
+msgid "Start recording operations"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.record:3
+msgid "After this call, you will be able to call :meth:`backward`."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.release:1
+msgid "Stop recording operations and release resources kept for gradient computation"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/autodiff/grad_manager.py:docstring of megengine.autodiff.grad_manager.GradManager.release:3
+msgid "After this call, you will not be able to call :meth:`backward`."
+msgstr ""
+
+#: ../../source/reference/autodiff.rst:15
+msgid "自定义函数（Function）"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function:1
+msgid "基类：:class:`megengine.core._imperative_rt.ops.PyOpBase`"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function:1
+msgid "Defines a block of operations with customizable differentiation."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function:3
+msgid "The computation should be defined in ``forward`` method, with gradient computation defined in ``backward`` method."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function:6
+msgid "Each instance of ``Function`` should be used only once during forwardding."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function:8
+msgid "Examples:"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.forward:1
+msgid "Applies operations to ``inputs`` and returns results. It must be overriden by all subclasses."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.forward:3
+msgid "input tensors."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.forward:0
+msgid "返回"
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.forward:4
+msgid "a tuple of Tensor or a single Tensor."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.forward:8
+msgid "This method should return a tuple of Tensor or a single Tensor representing the output of the function."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.backward:1
+msgid "Compute the gradient of the forward function. It must be overriden by all subclasses."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.backward:3
+msgid "gradients of outputs that are returned by :meth:`forward`."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.backward:7
+msgid "In case when some tensors of outputs are not related to loss function, the corresponding values in ``output_grads`` would be ``None``."
+msgstr ""
+
+#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/core/autodiff/grad.py:docstring of megengine.core.autodiff.grad.Function.backward:12
+msgid "This method should return a tuple which containing the gradients of all inputs, in the same order as the ``inputs`` argument of :meth:`forward` . A ``Tensor`` could be returned instead if there is only one input. If users want to stop the propagation of some gradients, the corresponding returned values should be set ``None`` ."
+msgstr ""
