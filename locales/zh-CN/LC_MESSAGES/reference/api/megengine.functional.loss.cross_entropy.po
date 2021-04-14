@@ -1,95 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version: MegEngine 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-14 16:51+0800\n"
-"PO-Revision-Date: 2021-04-14 11:33\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/gettext/reference/api/megengine.functional.loss.cross_entropy.pot\n"
-"X-Crowdin-File-ID: 344\n"
-"Language: zh_CN\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: ../../source/reference/api/megengine.functional.loss.cross_entropy.rst:2
 msgid "megengine.functional.loss.cross\\_entropy"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:1
+#: megengine.functional.loss.cross_entropy:1 of
 msgid "Computes the multi-class cross entropy loss (using logits by default)."
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:3
-msgid "By default(``with_logitis`` is True), ``pred`` is assumed to be logits, class probabilities are given by softmax."
+#: megengine.functional.loss.cross_entropy:3 of
+msgid ""
+"By default(``with_logitis`` is True), ``pred`` is assumed to be logits, "
+"class probabilities are given by softmax."
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:6
-msgid "It has better numerical stability compared with sequential calls to :func:`~.softmax` and :func:`~.cross_entropy`."
+#: megengine.functional.loss.cross_entropy:6 of
+msgid ""
+"It has better numerical stability compared with sequential calls to "
+":func:`~.softmax` and :func:`~.cross_entropy`."
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:8
+#: megengine.functional.loss.cross_entropy:8 of
 msgid "When using label smoothing, the label distribution is as follows:"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:10
-msgid "y^{LS}_{k}=y_{k}\\left(1-\\alpha\\right)+\\alpha/K\n\n"
+#: megengine.functional.loss.cross_entropy:10 of
+msgid ""
+"y^{LS}_{k}=y_{k}\\left(1-\\alpha\\right)+\\alpha/K\n"
+"\n"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:12
-msgid "where :math:`y^{LS}` and :math:`y` are new label distribution and origin label distribution respectively. k is the index of label distribution. :math:`\\alpha` is ``label_smooth`` and :math:`K` is the number of classes."
+#: megengine.functional.loss.cross_entropy:12 of
+msgid ""
+"where :math:`y^{LS}` and :math:`y` are new label distribution and origin "
+"label distribution respectively. k is the index of label distribution. "
+":math:`\\alpha` is ``label_smooth`` and :math:`K` is the number of "
+"classes."
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:0
+#: megengine.functional.loss.cross_entropy of
 msgid "Parameters"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:16
+#: megengine.functional.loss.cross_entropy:16 of
 msgid "input tensor representing the predicted probability."
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:18
+#: megengine.functional.loss.cross_entropy:18 of
 msgid "input tensor representing the classification label."
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:20
+#: megengine.functional.loss.cross_entropy:20 of
 msgid "an axis along which softmax will be applied. Default: 1"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:22
+#: megengine.functional.loss.cross_entropy:22 of
 msgid "whether to apply softmax first. Default: True"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:24
-msgid "a label smoothing of parameter that can re-distribute target distribution. Default: 0"
+#: megengine.functional.loss.cross_entropy:24 of
+msgid ""
+"a label smoothing of parameter that can re-distribute target "
+"distribution. Default: 0"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:0
+#: megengine.functional.loss.cross_entropy of
 msgid "Return type"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:25
+#: megengine.functional.loss.cross_entropy:25 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:0
+#: megengine.functional.loss.cross_entropy of
 msgid "Returns"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:26
+#: megengine.functional.loss.cross_entropy:26 of
 msgid "loss value."
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:28
+#: megengine.functional.loss.cross_entropy:28 of
 msgid "Examples:"
 msgstr ""
 
-#: ../../../../../home/caoxiaowei/.local/lib/python3.7/site-packages/megengine/functional/loss.py:docstring of megengine.functional.loss.cross_entropy:43
+#: megengine.functional.loss.cross_entropy:43 of
 msgid "Outputs:"
 msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
 
