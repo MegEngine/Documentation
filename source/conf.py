@@ -64,6 +64,7 @@ exclude_patterns = [
 # -- Options for internationalization ----------------------------------------
 
 language = 'zh_CN'
+locale_dirs = ['../locales/']
 
 # By default, the document `functional/loss.rst` ends up in the `functional` text domain. 
 # With this option set to False, it is `functional/loss`.
@@ -154,7 +155,7 @@ html_theme_options = {
     'use_version_switch': True,
     'version_switch_json_url': '/doc/version.json',
     'version_switch_enable_locale': True,
-    'version_switch_locates': ['zh', 'en']
+    'version_switch_locales': ['zh', 'en']
 }
 
 # Setting for Edit this Page button

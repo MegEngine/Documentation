@@ -56,9 +56,10 @@ jobs:
 
       - name: Generate and Compress HTML files
         run: |
-          make html -W --keep-going
-          cp -r build/html en
-          cp -r build/html zh
+          make LANGUAGE="zh_CN" html --keep-going
+          mv build/html zh
+          make LANGUAGE="en" html --keep-going
+          mv build/html en
           tar czf static.tgz en zh
 
       - name: Deploy on OSS
