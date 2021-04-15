@@ -155,7 +155,7 @@ html_theme_options = {
     'use_version_switch': True,
     'version_switch_json_url': '/doc/version.json',
     'version_switch_enable_locale': True,
-    'version_switch_locates': ['zh', 'en']
+    'version_switch_locales': ['zh', 'en']
 }
 
 # Setting for Edit this Page button
