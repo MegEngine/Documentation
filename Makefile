@@ -11,7 +11,7 @@ endif
 MEGENGINEPY   = `python3 -c "import os; \
                 import megengine; \
                 print(os.path.dirname(megengine.__file__))"`
-LANGUAGE      ?= zh-CN
+LANGUAGE      ?= zh_CN
 SPHINXOPTS    ?= -j$(NCORE) -D language='$(LANGUAGE)'
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
