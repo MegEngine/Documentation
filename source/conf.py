@@ -64,6 +64,7 @@ exclude_patterns = [
 # -- Options for internationalization ----------------------------------------
 
 language = 'zh_CN'
+locale_dirs = ['../locales/']
 
 # By default, the document `functional/loss.rst` ends up in the `functional` text domain. 
 # With this option set to False, it is `functional/loss`.
