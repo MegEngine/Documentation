@@ -4,13 +4,15 @@
   <img height="128" src="./source/_static/logo/megengine.jpg">
 </p>
 
-GitHub Pages 访问地址：https://megengine.github.io/Documentation/ ![Build Status](https://github.com/MegEngine/Documentation/actions/workflows/github-pages-deploy.yml/badge.svg)  
+[![language-zh](https://img.shields.io/badge/language-zh-brightgreen)](https://megengine.org.cn/doc/stable/zh/) [![Crowdin](https://badges.crowdin.net/megengine/localized.svg)](https://crowdin.com/project/megengine) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 通过交互式实践的方式学习「[天元 MegEngine](https://github.com/MegEngine/MegEngine) 」深度学习框架的使用和开发。
 
+访问地址：[官方中文](https://megengine.org.cn/doc/stable/zh/) | [GitHub Pages 镜像](https://megengine.github.io/Documentation/)
+
 欢迎在 [天元 MegEngine 论坛](https://discuss.megengine.org.cn/)（我们的中文社区）进行交流反馈～ 
 
-:point_right: [成为文档贡献者](./CONTRIBUTING.md) 或者[![帮助进行翻译](https://badges.crowdin.net/megengine/localized.svg)](https://crowdin.com/project/megengine)
+:point_right: [成为文档贡献者](./CONTRIBUTING.md) 或者 [帮助我们进行翻译](https://crowdin.com/project/megengine)
 
 ------
 
