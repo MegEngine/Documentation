@@ -4,7 +4,8 @@
 如何帮助翻译文档内容
 ====================
 
-MegEngine 文档使用 Sphinx 官方推荐的 `国际化 <build-the-doc-locally>`_ 方式实现多语言支持。
+MegEngine 文档使用 Sphinx 官方推荐的 
+`国际化 <https://www.sphinx-doc.org/en/master/usage/advanced/intl.html>`_ 方式实现多语言支持。
 
 目录结构
 --------
@@ -16,7 +17,6 @@ MegEngine 文档使用 Sphinx 官方推荐的 `国际化 <build-the-doc-locally>
    Documentation
    ├── source                
    ├── locales               # Sphinx 多语言支持，内部结构和 source 高度对齐
-   │   ├── gettext           # 原始消息：提取 rst 文件所生成的模版目录
    │   ├── zh-CN             # 中文：主要需要翻译 API 的 Docstring 部分
    │   └── en                # 英文：需要翻译除 API Docstring 外的全部内容
    ...
@@ -31,26 +31,26 @@ MegEngine 文档使用 Sphinx 官方推荐的 `国际化 <build-the-doc-locally>
 
    .. code-block:: shell
 
-      make gettext BUILDDIR=locales
+      make gettext
 
-   生成的 ``.pot`` 文件将被放在 ``locales/gettext`` 目录内。
+   生成的 ``.pot`` 文件将被放在 ``build/gettext`` 目录内。
 
 #. 根据需要支持的语言，生成对应的 ``.po`` 文件中提取出可被翻译的消息（message）：
 
    .. code-block:: shell
 
-      sphinx-intl update -p locales/gettext -l zh-CN -l en
+      sphinx-intl update -p build/gettext -l zh_CN -l en
 
    上面的代码将为我们生成中文和英文两个版本的 ``.po`` 文件，分别位于：
 
-   * ``/locales/zh-CN/LC_MESSAGES/``
+   * ``/locales/zh_CN/LC_MESSAGES/``
    * ``/locales/en/LC_MESSAGES/``
 
 #. 翻译人员需要做的就是翻译 ``.po`` 文件中的内容。样例如下：
 
    .. code-block:: shell
 
-      #: locales/zh-CN/LC_MESSAGES/example.rst:4
+      #: locales/zh_CN/LC_MESSAGES/example.rst:4
       msgid "Welcome to use MegEngine."
       msgstr "欢迎使用天元 MegEngine."
 
@@ -74,7 +74,7 @@ MegEngine 文档使用 Sphinx 官方推荐的 `国际化 <build-the-doc-locally>
 
    .. code-block::
 
-      make LANGUAGE="zh-CN" html
+      make LANGUAGE="zh_CN" html
 
 .. note::
 

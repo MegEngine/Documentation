@@ -73,7 +73,6 @@ MegEngine 文档的源码结构如下：
    │   └── html
    ├── examples
    ├── locales               # Sphinx 多语言支持，内部结构和 source 高度对齐
-   │   ├── gettext           # 原始消息：提取 rst 文件所生成的模版目录
    │   ├── zh-CN             # 中文：主要需要翻译 API 的 Docstring 部分
    │   └── en                # 英文：需要翻译除 API Docstring 外的全部内容
    ├── Makefile
