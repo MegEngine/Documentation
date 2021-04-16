@@ -7,8 +7,10 @@
 MegEngine 文档使用 Sphinx 官方推荐的 
 `国际化 <https://www.sphinx-doc.org/en/master/usage/advanced/intl.html>`_ 方式实现多语言支持。
 
-目录结构
---------
+.. note::
+
+  MegEngine 文档翻译工作目前通过 :ref:`Crowdin <crowdin-tr>` 平台进行协作，与 GitHub 自动集成。
+
 
 对于参与文档翻译的人员，对以下目录结构有一定了解将有所帮助：
 
@@ -24,10 +26,10 @@ MegEngine 文档使用 Sphinx 官方推荐的
 基本原理
 --------
 
-整个翻译内容的生成流程如下：
+整个翻译内容的生成流程如下（ **翻译人员通常只需要关注第 4 步** ）：
 
 #. 在 ``source`` 文件夹中存放着所有的文档内容，以 ``.rst`` 格式提供。
-#. 通过运行下面的命令，将从 ``.rst`` 文件中提取出可被翻译的消息（message）：
+#. 通过运行下面的命令，将从 ``.rst`` 文件中提取出可被翻译的消息（message）模版：
 
    .. code-block:: shell
 
@@ -35,7 +37,7 @@ MegEngine 文档使用 Sphinx 官方推荐的
 
    生成的 ``.pot`` 文件将被放在 ``build/gettext`` 目录内。
 
-#. 根据需要支持的语言，生成对应的 ``.po`` 文件中提取出可被翻译的消息（message）：
+#. 根据需要支持的语言，生成对应的 ``.po`` 文件：
 
    .. code-block:: shell
 
@@ -48,56 +50,96 @@ MegEngine 文档使用 Sphinx 官方推荐的
 
 #. 翻译人员需要做的就是翻译 ``.po`` 文件中的内容。样例如下：
 
-   .. code-block:: shell
+   .. code-block:: po
 
-      #: locales/zh_CN/LC_MESSAGES/example.rst:4
+      #: locales/zh_CN/LC_MESSAGES/example.rst:37
       msgid "Welcome to use MegEngine."
       msgstr "欢迎使用天元 MegEngine."
 
-   另一种情况是，msgid 是多行文本，包含 reStructuredText 语法：
+#. 生成翻译后的文档（ ``LANGUAGE`` 参数默认为 ``zh-CN`` ）：
 
    .. code-block:: shell
 
-      #: ../../builders.rst:9
-      msgid ""
-      "These are the built-in Sphinx builders. More builders can be added by "
-      ":ref:`extensions <extensions>`."
-      msgstr ""
-      "FILL HERE BY TARGET LANGUAGE FILL HERE BY TARGET LANGUAGE FILL HERE "
-      "BY TARGET LANGUAGE :ref:`EXTENSIONS <extensions>` FILL HERE."
+      make LANGUAGE="zh_CN" html  # 中文
+      make LANGUAGE="en" html     # 英文
 
-   .. warning::
+.. _crowdin-tr:
 
-      请注意不要破坏 reST 语法，参考 :ref:`restructuredtext` 。
+使用 Crowdin 进行翻译
+---------------------
 
-#. 生成翻译后的文档（ ``LANGUAGE`` 参数默认为 ``zh-CN`` ）：
+传统的软件翻译流程通常需要面临审核校对和信息同步等难题，
+通过 Crowdin 则可以享受到：
 
-   .. code-block::
+* 开放参与。任何人都可以注册账号，加入团队，翻译贡献。
+  每个人的翻译记录都会被记录下来，而不会被覆盖或丢弃。
+  贡献者之间相互审核建议，选择最优的翻译。
+* 透明运作。任何操作都会记录在活动日志当中，有不当翻译或者蓄意破坏很容易被发现并撤销。
+  翻译人员可以相互讨论提问，提供单独的讨论板块。
+* 进度清晰。当有新的内容需要翻译时，或对原始内容进行修改后，能在第一时间被监控到。
+* 记忆系统。可以根据已有翻译内容给出翻译建议，也可使用主流神经翻译接口辅助建议。
+* 自动集成。更新的翻译内容将自动通过集成系统同步到 GitHub 特定分支，再由人工进行合入。
 
-      make LANGUAGE="zh_CN" html
+更多特性请参考：https://crowdin.com/features
 
-.. note::
+加入翻译
+~~~~~~~~
 
-   当用户在 GitHub 发起一个翻译相关的 Pull Request 时，
-   每次提交新的 commit 会自动触发临时文档的生成和更新。
-   但我们推荐用户首先 :ref:`在本地构建文档 <how-to-build-the-doc-locally>` 以确保格式和内容正确。
+你需要注册一个 `Crowdin <https://crowdin.com/>`_ 账户，
+进入 `项目页面 <https://crowdin.com/project/megengine>`_ 后可以看到语言选项卡和整体进度：
 
-主要翻译需求
+Chinese Simplified
+  由于 Sphinx 生成文档时使用 Python Docstring 提取部分内容，
+  源代码是英文，因此这部分内容依旧为英文，我们需要将其翻译成中文。
+
+English （以及其它语言）
+  与上情况相反：除 Python Docstring 外，所有文档原文内容均为中文，
+  因此我们需要将这些内容翻译成指定语言。
+
+选择语言后，可以看到多个需要翻译的文件。每个翻译文件和文件夹都有一个翻译进度。
+蓝色条代表已经翻译，绿色条代表已经审核。同一条目可以有多条翻译建议（Suggestion）。
+翻译者和审核者可以通过投票来决定，最终导出被审核通过的翻译（如果没有审核，则会选择最近的翻译建议）。
+
+翻译注意事项
 ------------
 
-与常见的软件文档 “以英文撰写原文，后续提供多语言翻译” 的逻辑不同，
-MegEngine 文档默认以中文作为原稿，后续提供其它语言的翻译版本。
-但由于 Python Docstring 属于源代码注释的一部分，而代码注释提倡用英文撰写，
-因此 MegEngine 的 Python API 文档将先从源代码提取出英文 Docstring，
-再通过翻译对应的 ``locales/zh-CN/LC_MESSAGES/reference/api/`` 中的 ``.po`` 文件变为中文。
+* 语法和排版规范可参考 :ref:`megengine-document-style-guide` 。
+* 翻译的过程中不要破坏原有的 :ref:`rst 语法 <restructuredtext>` ，正确示范为：
 
-官方翻译未必准确、完备，欢迎大家帮助天元 MegEngine 改进文档翻译～
+  .. code-block:: po
 
-基本的 :ref:`commit message <commit-message>` 形式如下：
+     #: locales/zh_CN/LC_MESSAGES/example.rst:6
+     msgid "A :py:class:`~.megengine.Tensor` object"
+     msgstr "一个 :py:class:`~.megengine.Tensor` 对象"
 
-.. code-block:: shell
+* 翻译的过程中不要丢掉原有标点符号，正确示范为：
 
-   trans(funtional): add docstring translation for megengine.funtional.add
+  .. code-block:: po
 
-如果是对已有翻译内容进行了修改，请在 commit message 中详细说明修改原因。
+     #: locales/zh_CN/LC_MESSAGES/example.rst:6
+     msgid "Method:"
+     msgstr "方法："
 
+基本要领
+~~~~~~~~
+
+#. 简洁规范。
+#. 忠实原文。
+#. 用语一致。
+#. 易于使用
+
+补充细节说明
+~~~~~~~~~~~~
+
+* 中英文之间有且只能有一个空格作为分隔；
+* 优先使用全角标点符号（包括逗号、句号、冒号、分号和问号）；
+* 遇到特定英文（要求不译）结束，则后跟使用英文标点符号 —— 
+
+  * 绝大部分软件名字都是不翻译的，直接使用英文即可；
+  * 项目或组织名称，一般也不进行翻译；
+  * 通用的英文缩写，或没有正式中文译文的名词，不需要翻译；
+
+* 不论中英文，统一使用中文括号（）包裹；
+* 按回车造成的换行，是 PO 文件里代码换行。
+  Crowdin 都能很好地自动换行，因此手动去折行并不是必要的。
+  即使是翻译时看到英文是折行的，中文也不一定需要折行；
