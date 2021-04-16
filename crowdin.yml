@@ -1,5 +1,33 @@
 files:
   - source: /locales/zh_CN/**/api/*.po
-    translation: /locales/%locale%/LC_MESSAGES/reference/api/%original_file_name%
+    translation: >-
+      /locales/%locale_with_underscore%/LC_MESSAGES/reference/api/%original_file_name%
   - source: /locales/zh_CN/**/reference/*.po
-    translation: /locales/%locale%/LC_MESSAGES/reference/%original_file_name%
+    translation: >-
+      /locales/%locale_with_underscore%/LC_MESSAGES/reference/%original_file_name%
+  - source: locales/en/LC_MESSAGES/*.po
+    translation: /locales/%locale_with_underscore%/LC_MESSAGES/%original_file_name%
+  - source: locales/en/LC_MESSAGES/getting-started/*.po
+    translation: >-
+      /locales/%locale_with_underscore%/LC_MESSAGES/getting-started/%original_file_name%
+  - source: locales/en/LC_MESSAGES/getting-started/beginner/*.po
+    translation: >-
+      /locales/%locale_with_underscore%/LC_MESSAGES/getting-started/beginner/%original_file_name%
+  - source: locales/en/LC_MESSAGES/user-guide/*.po
+    translation: >-
+      /locales/%locale_with_underscore%/LC_MESSAGES/user-guide/%original_file_name%
+  - source: locales/en/LC_MESSAGES/user-guide/install/*.po
+    translation: >-
+      /locales/%locale_with_underscore%/LC_MESSAGES/user-guide/install/%original_file_name%
+  - source: locales/en/LC_MESSAGES/user-guide/model-development/*.po
+    translation: >-
+      /locales/%locale_with_underscore%/LC_MESSAGES/user-guide/model-development/%original_file_name%
+  - source: locales/en/LC_MESSAGES/user-guide/model-compression/*.po
+    translation: >-
+      /locales/%locale_with_underscore%/LC_MESSAGES/user-guide/model-compression/%original_file_name%
+  - source: locales/en/LC_MESSAGES/user-guide/deployment/*.po
+    translation: >-
+      /locales/%locale_with_underscore%/LC_MESSAGES/user-guide/deployment/%original_file_name%
+  - source: locales/en/LC_MESSAGES/user-guide/tools/*.po
+    translation: >-
+      /locales/%locale_with_underscore%/LC_MESSAGES/user-guide/tools/%original_file_name%
