@@ -1,30 +1,29 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.3.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-04-19 12:31\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/profiler.po\n"
+"X-Crowdin-File-ID: 2856\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/model-development/profiler.rst:5
 msgid "模型性能分析（Profiler）"
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:9
-msgid ""
-"由于实现限制，:ref:`动态图与静态图 <dynamic-and-static-graph>` 下的 Profiler 接口并不一致， "
-"侧重点也不相同，下面将分别介绍。"
+msgid "由于实现限制，:ref:`动态图与静态图 <dynamic-and-static-graph>` 下的 Profiler 接口并不一致， 侧重点也不相同，下面将分别介绍。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:13
@@ -49,9 +48,7 @@ msgid "想要使用 Profiler 生成性能数据，存在两种写法（任选其
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:34
-msgid ""
-"使用 :py:data:`~megengine.utils.profiler.profile` 装饰器 （profile 是 Profiler "
-"别名）"
+msgid "使用 :py:data:`~megengine.utils.profiler.profile` 装饰器 （profile 是 Profiler 别名）"
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:35
@@ -148,9 +145,7 @@ msgid "分析性能数据"
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:98
-msgid ""
-"可以使用 `Chrome Performance <https://developer.chrome.com/docs/devtools"
-"/evaluate-performance/>`_ 工具加载上一步生成的 ``JSON`` 文件："
+msgid "可以使用 `Chrome Performance <https://developer.chrome.com/docs/devtools/evaluate-performance/>`_ 工具加载上一步生成的 ``JSON`` 文件："
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:101
@@ -166,11 +161,7 @@ msgid "切换到 Performance 标签，点击 ⬆️  （load profile） 按钮�
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:105
-msgid ""
-"此时可以在窗口里看到数个线程，每个线程中都有一群堆叠的色块（代表着事件）。 横坐标是时间轴，色块的左右边缘即是事件的起始与终止时间。 "
-"纵坐标代表事件所属的线程（其中 channel 为 python 主线程）。 例如，当我们在模型源代码里的 ``self.conv1(x)`` "
-"被执行时， channel 线程上会有一个对应的 ``conv1`` 块，而其他线程上同样的 ``conv1`` 块会滞后一些。 而 worker"
-" 的主要工作是发送 kernel, 而真正执行计算的是 gpu  线程。 gpu 线程上的事件密度明显比 channel 和 worker 高。"
+msgid "此时可以在窗口里看到数个线程，每个线程中都有一群堆叠的色块（代表着事件）。 横坐标是时间轴，色块的左右边缘即是事件的起始与终止时间。 纵坐标代表事件所属的线程（其中 channel 为 python 主线程）。 例如，当我们在模型源代码里的 ``self.conv1(x)`` 被执行时， channel 线程上会有一个对应的 ``conv1`` 块，而其他线程上同样的 ``conv1`` 块会滞后一些。 而 worker 的主要工作是发送 kernel, 而真正执行计算的是 gpu  线程。 gpu 线程上的事件密度明显比 channel 和 worker 高。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:115
@@ -178,9 +169,7 @@ msgid "一般来说，GPU 线程越繁忙，说明模型的 GPU 利用率越高�
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:116
-msgid ""
-"频繁使用 :py:meth:`.Tensor.shape` , :py:meth:`.Tensor.numpy` "
-"操作都可能导致需要做数据同步，降低 GPU 的利用率。"
+msgid "频繁使用 :py:meth:`.Tensor.shape` , :py:meth:`.Tensor.numpy` 操作都可能导致需要做数据同步，降低 GPU 的利用率。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:119
@@ -204,10 +193,7 @@ msgid ":py:meth:`.Module.forward`"
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:126
-msgid ""
-"通过观察色块的长度，便可以得到对应操作的运行时间，从而评估模型的性能瓶颈。 特别地，在 worker 与 gpu 线程上，还能看到 op "
-"级别的（细粒度）事件。 比如，诸如 ``z = x + y`` 的表达式，在 channel 上看不到信息， 但是在 gpu "
-"线程上一般会有一个对应的 op 被记录下来，名字一般是 ``Elemwise``."
+msgid "通过观察色块的长度，便可以得到对应操作的运行时间，从而评估模型的性能瓶颈。 特别地，在 worker 与 gpu 线程上，还能看到 op 级别的（细粒度）事件。 比如，诸如 ``z = x + y`` 的表达式，在 channel 上看不到信息， 但是在 gpu 线程上一般会有一个对应的 op 被记录下来，名字一般是 ``Elemwise``."
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:133
@@ -219,9 +205,7 @@ msgid "假设我们写好了一份静态图代码，其中训练部分代码如�
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:149
-msgid ""
-"只需要在 :py:class:`~.jit.trace` 接口中传入 ``profiling=True``, 然后再调用 "
-":py:meth:`~.trace.get_profile` 方法即可得到性能数据。"
+msgid "只需要在 :py:class:`~.jit.trace` 接口中传入 ``profiling=True``, 然后再调用 :py:meth:`~.trace.get_profile` 方法即可得到性能数据。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:152
@@ -233,9 +217,7 @@ msgid "这样我们将获得一个 ``JSON`` 文件，可用于下面的性能分
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:180
-msgid ""
-"在前一步中保存的 ``JSON`` 文件可以使用 MegEngine 在 ``tools`` 目录下提供的 "
-"``profile_analyze.py`` 脚本进行分析，示例代码如下："
+msgid "在前一步中保存的 ``JSON`` 文件可以使用 MegEngine 在 ``tools`` 目录下提供的 ``profile_analyze.py`` 脚本进行分析，示例代码如下："
 msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:197
