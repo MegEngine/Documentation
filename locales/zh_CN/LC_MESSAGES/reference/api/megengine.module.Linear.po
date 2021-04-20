@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 08:46\n"
+"PO-Revision-Date: 2021-04-20 09:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -28,15 +28,15 @@ msgstr ""
 
 #: megengine.module.linear.Linear:1 of
 msgid "Applies a linear transformation to the input. For instance, if input is x, then output y is:"
-msgstr ""
+msgstr "对输入进行线性变换。例如，若有输入x，则输出y为："
 
 #: megengine.module.linear.Linear:4 of
 msgid "y = xW^T + b"
-msgstr ""
+msgstr "y = xW^T + b"
 
 #: megengine.module.linear.Linear:8 of
 msgid "where :math:`y_i= \\sum_j W_{ij} x_j + b_i`"
-msgstr ""
+msgstr "其中 :math:`y_i= \\sum_j W_{ij} x_j + b_i`"
 
 #: megengine.module.linear.Linear of
 msgid "参数"
@@ -44,23 +44,23 @@ msgstr ""
 
 #: megengine.module.linear.Linear:11 of
 msgid "size of each input sample."
-msgstr ""
+msgstr "各输入样本的大小。"
 
 #: megengine.module.linear.Linear:13 of
 msgid "size of each output sample."
-msgstr ""
+msgstr "各输出样本的大小。"
 
 #: megengine.module.linear.Linear:15 of
 msgid "if it's ``False``, the layer will not learn an additional ``bias``. Default: ``True``"
-msgstr ""
+msgstr "如果设置为 ``False`` ，则该层不会学习加性偏置。默认： ``True``"
 
 #: megengine.module.linear.Linear:18 of
 msgid "Examples:"
-msgstr ""
+msgstr "例如："
 
 #: megengine.module.linear.Linear:31 of
 msgid "Outputs:"
-msgstr ""
+msgstr "输出："
 
 #: ../../source/reference/api/megengine.module.Linear.rst:11
 msgid "Methods"
@@ -84,7 +84,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Applies function ``fn`` to all the modules within this module, including itself."
-msgstr ""
+msgstr "对当前模块中的所有模块应用函数 ``fn``，包括当前模块本身。"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`buffers <megengine.module.Linear.buffers>`\\ \\(\\[recursive\\]\\)"
@@ -92,7 +92,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Returns an iterable for the buffers of the module."
-msgstr ""
+msgstr "返回该模块中对于buffers的一个可迭代对象。"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`children <megengine.module.Linear.children>`\\ \\(\\*\\*kwargs\\)"
@@ -100,7 +100,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Returns an iterable for all the submodules that are direct attributes of this module."
-msgstr ""
+msgstr "返回一个可迭代对象，可遍历所有属于当前模块的直接属性的子模块。"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`disable_quantize <megengine.module.Linear.disable_quantize>`\\ \\(\\[value\\]\\)"
@@ -136,7 +136,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Returns an iterable for all the modules within this module, including itself."
-msgstr ""
+msgstr "返回一个可迭代对象，可以遍历当前模块中的所有模块，包括其本身。"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`named_buffers <megengine.module.Linear.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
@@ -144,7 +144,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
-msgstr ""
+msgstr "返回可遍历模块中 key 与 buffer 的键值对的可迭代对象，其中 ``key`` 为从该模块至 buffer 的点路径（dotted path）。"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`named_children <megengine.module.Linear.named_children>`\\ \\(\\*\\*kwargs\\)"
@@ -152,7 +152,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
-msgstr ""
+msgstr "返回可迭代对象，可以遍历属于当前模块的直接属性的所有子模块（submodule）与键（key）组成的”key-submodule”对，其中'key'是子模块对应的属性名。"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`named_modules <megengine.module.Linear.named_modules>`\\ \\(\\[prefix\\]\\)"
@@ -160,7 +160,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
-msgstr ""
+msgstr "返回可迭代对象，可以遍历当前模块包括自身在内的所有其内部模块所组成的key-module键-模块对，其中'key'是从当前模块到各子模块的点路径（dotted path）。"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`named_parameters <megengine.module.Linear.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
@@ -168,7 +168,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
-msgstr ""
+msgstr "返回一个可迭代对象，可以遍历当前模块中key与 :class:`~.Parameter` 组成的键值对。其中  ``key`` 是从模块到 :class:`~.Parameter` 的点路径（dotted path）。"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`parameters <megengine.module.Linear.parameters>`\\ \\(\\[recursive\\]\\)"
@@ -176,7 +176,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Returns an iterable for the :class:`~.Parameter` of the module."
-msgstr ""
+msgstr "返回一个可迭代对象，遍历当前模块中的所有 :class:`~.Parameter`"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`register_forward_hook <megengine.module.Linear.register_forward_hook>`\\ \\(hook\\)"
@@ -200,7 +200,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to speedup multimachine training."
-msgstr ""
+msgstr "用 `param` 替换模块的参数，被 :class:`~.ParamPack` 用来加速多机训练。"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`reset_parameters <megengine.module.Linear.reset_parameters>`\\ \\(\\)"
@@ -212,7 +212,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":py:obj:`None`"
-msgstr ""
+msgstr ":py:obj:`None`"
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid ":obj:`state_dict <megengine.module.Linear.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
@@ -232,5 +232,5 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Linear.rst:34:<autosummary>:1
 msgid "Sets all parameters' grads to zero"
-msgstr ""
+msgstr "将所有参数的梯度置0。"
 
