@@ -59,7 +59,6 @@
 
    tools/module-stats
    tools/runtimeopr
-   tools/graphsurgeon
    tools/load-and-run
    tools/load-and-run-py
 
