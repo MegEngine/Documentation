@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-16 02:13\n"
+"PO-Revision-Date: 2021-04-20 09:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid "Base Module class."
-msgstr ""
+msgstr "Module基类。"
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid ":obj:`Sequential <megengine.module.Sequential>`"
@@ -56,7 +56,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid "Returns an iterable for the :class:`~.Parameter` of the module."
-msgstr ""
+msgstr "返回一个可迭代对象，遍历当前模块中的所有 :class:`~.Parameter`"
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid ":obj:`Module.named_parameters <megengine.module.Module.named_parameters>`"
@@ -64,7 +64,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
-msgstr ""
+msgstr "返回一个可迭代对象，可以遍历当前模块中key与 :class:`~.Parameter` 组成的键值对。其中  ``key`` 是从模块到 :class:`~.Parameter` 的点路径（dotted path）。"
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid ":obj:`Module.buffers <megengine.module.Module.buffers>`"
@@ -72,7 +72,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid "Returns an iterable for the buffers of the module."
-msgstr ""
+msgstr "返回该模块中对于buffers的一个可迭代对象。"
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid ":obj:`Module.named_buffers <megengine.module.Module.named_buffers>`"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
-msgstr ""
+msgstr "返回可遍历模块中 key 与 buffer 的键值对的可迭代对象，其中 ``key`` 为从该模块至 buffer 的点路径（dotted path）。"
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid ":obj:`Module.children <megengine.module.Module.children>`"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid "Returns an iterable for all the submodules that are direct attributes of this module."
-msgstr ""
+msgstr "返回一个可迭代对象，可遍历所有属于当前模块的直接属性的子模块。"
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid ":obj:`Module.named_children <megengine.module.Module.named_children>`"
@@ -96,7 +96,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
-msgstr ""
+msgstr "返回可迭代对象，可以遍历属于当前模块的直接属性的所有子模块（submodule）与键（key）组成的”key-submodule”对，其中'key'是子模块对应的属性名。"
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid ":obj:`Module.modules <megengine.module.Module.modules>`"
@@ -104,7 +104,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid "Returns an iterable for all the modules within this module, including itself."
-msgstr ""
+msgstr "返回一个可迭代对象，可以遍历当前模块中的所有模块，包括其本身。"
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid ":obj:`Module.named_modules <megengine.module.Module.named_modules>`"
@@ -112,7 +112,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
-msgstr ""
+msgstr "返回可迭代对象，可以遍历当前模块包括自身在内的所有其内部模块所组成的key-module键-模块对，其中'key'是从当前模块到各子模块的点路径（dotted path）。"
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid ":obj:`Module.apply <megengine.module.Module.apply>`"
@@ -120,7 +120,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid "Applies function ``fn`` to all the modules within this module, including itself."
-msgstr ""
+msgstr "对当前模块中的所有模块应用函数 ``fn``，包括当前模块本身。"
 
 #: ../../source/reference/module.rst:34:<autosummary>:1
 msgid ":obj:`Module.train <megengine.module.Module.train>`"
@@ -168,7 +168,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Fills the given ``tensor`` with value ``val``."
-msgstr ""
+msgstr "将 ``val`` 填入到给定的 ``tensor``。"
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`zeros_ <megengine.module.init.zeros_>`"
@@ -176,7 +176,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Fills the given ``tensor`` with scalar value `0`."
-msgstr ""
+msgstr "使用标量值 `0` 填入给定 ``tensor``。"
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`ones_ <megengine.module.init.ones_>`"
@@ -184,7 +184,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Fills the given ``tensor`` with the scalar value `1`."
-msgstr ""
+msgstr "使用标量值 `1` 填入给定的 ``tensor``。"
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`uniform_ <megengine.module.init.uniform_>`"
@@ -192,7 +192,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Fills the given ``tensor`` with random value sampled from uniform distribution :math:`\\mathcal{U}(\\text{a}, \\text{b})`."
-msgstr ""
+msgstr "使用从均匀分布 :math:`\\mathcal{U}(\\text{a}, \\text{b})` 中的随机采样值填入给定的  ``tensor``。"
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`normal_ <megengine.module.init.normal_>`"
@@ -200,7 +200,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Fills the given ``tensor`` with random value sampled from normal distribution :math:`\\mathcal{N}(\\text{mean}, \\text{std}^2)`."
-msgstr ""
+msgstr "使用从正态分布 :math:`\\mathcal{N}(\\text{mean}, \\text{std}^2)` 中的随机采样值填入给定的 ``tensor``"
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`calculate_gain <megengine.module.init.calculate_gain>`"
@@ -208,7 +208,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Returns a recommended gain value (see the table below) for the given nonlinearity function."
-msgstr ""
+msgstr "对于给定的非线性函数返回一个推荐的增益值（见下表）。"
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`calculate_fan_in_and_fan_out <megengine.module.init.calculate_fan_in_and_fan_out>`"
@@ -224,7 +224,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Calculates fan_in / fan_out value for given weight tensor, depending on given ``mode``."
-msgstr ""
+msgstr "计算对于给定的权重张量fan_in或fan_out值，这取决于给定的 ``mode``。"
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`xavier_uniform_ <megengine.module.init.xavier_uniform_>`"
@@ -232,7 +232,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Fills tensor with random values sampled from :math:`\\mathcal{U}(-a, a)` where"
-msgstr ""
+msgstr "使用从 :math:`\\mathcal{U}(-a, a)` 中随机采样值填入 ``tensor`` 。其中，"
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`xavier_normal_ <megengine.module.init.xavier_normal_>`"
@@ -240,7 +240,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Fills tensor with random values sampled from :math:`\\mathcal{N}(0, \\text{std}^2)` where"
-msgstr ""
+msgstr "使用从 :math:`\\mathcal{N}(0, \\text{std}^2)` 中随机采样值填入  ``tensor`` 。其中，"
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`msra_uniform_ <megengine.module.init.msra_uniform_>`"
@@ -248,7 +248,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Fills tensor wilth random values sampled from :math:`\\mathcal{U}(-\\text{bound}, \\text{bound})` where"
-msgstr ""
+msgstr "使用 :math:`\\mathcal{U}(-\\text{bound}, \\text{bound})` 的随机采样值填入 ``tensor``"
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`msra_normal_ <megengine.module.init.msra_normal_>`"
@@ -256,7 +256,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Fills tensor wilth random values sampled from :math:`\\mathcal{N}(0, \\text{std}^2)` where"
-msgstr ""
+msgstr "从 :math:`\\mathcal{N}(0, \\text{std}^2)` 中随机采样得到值，填入 ``tensor`` ，式中，"
 
 #: ../../source/reference/module.rst:60 ../../source/reference/module.rst:188
 #: ../../source/reference/module.rst:217
@@ -289,7 +289,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:80:<autosummary>:1
 msgid "Applies a 1D convolution over an input tensor."
-msgstr ""
+msgstr "对输入张量进行一维卷积"
 
 #: ../../source/reference/module.rst:80:<autosummary>:1
 msgid ":obj:`Conv2d <megengine.module.Conv2d>`"
@@ -297,7 +297,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:80:<autosummary>:1
 msgid "Applies a 2D convolution over an input tensor."
-msgstr ""
+msgstr "对输入张量进行二维卷积"
 
 #: ../../source/reference/module.rst:80:<autosummary>:1
 msgid ":obj:`ConvRelu2d <megengine.module.ConvRelu2d>`"
@@ -313,7 +313,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:80:<autosummary>:1
 msgid "Applies a 2D transposed convolution over an input tensor."
-msgstr ""
+msgstr "对输入张量进行二维转置卷积。"
 
 #: ../../source/reference/module.rst:80:<autosummary>:1
 msgid ":obj:`LocalConv2d <megengine.module.LocalConv2d>`"
@@ -341,7 +341,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:92:<autosummary>:1
 msgid "Applies a 2D average pooling over an input."
-msgstr ""
+msgstr "对输入数据进行2D平均池化。"
 
 #: ../../source/reference/module.rst:92:<autosummary>:1
 msgid ":obj:`MaxPool2d <megengine.module.MaxPool2d>`"
@@ -349,7 +349,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:92:<autosummary>:1
 msgid "Applies a 2D max pooling over an input."
-msgstr ""
+msgstr "对输入数据进行2D最大值池化（max pooling）。"
 
 #: ../../source/reference/module.rst:92:<autosummary>:1
 msgid ":obj:`AdaptiveAvgPool2d <megengine.module.AdaptiveAvgPool2d>`"
@@ -361,7 +361,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:92:<autosummary>:1
 msgid "Applies a 2D max adaptive pooling over an input."
-msgstr ""
+msgstr "对输入数据进行2D最大池化。"
 
 #: ../../source/reference/module.rst:92:<autosummary>:1
 msgid ":obj:`DeformablePSROIPooling <megengine.module.DeformablePSROIPooling>`"
@@ -377,7 +377,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:104:<autosummary>:1
 msgid "Applies the element-wise function:"
-msgstr ""
+msgstr "对每个元素应用函数："
 
 #: ../../source/reference/module.rst:104:<autosummary>:1
 msgid ":obj:`Softmax <megengine.module.Softmax>`"
@@ -409,7 +409,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:117:<autosummary>:1
 msgid "Applies Batch Normalization over a 2D/3D tensor."
-msgstr ""
+msgstr "在2D/3D张量上进行批标准化（batch normalization）。"
 
 #: ../../source/reference/module.rst:117:<autosummary>:1
 msgid ":obj:`BatchNorm2d <megengine.module.BatchNorm2d>`"
@@ -417,7 +417,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:117:<autosummary>:1
 msgid "Applies Batch Normalization over a 4D tensor."
-msgstr ""
+msgstr "在四维张量上进行批标准化（Batch Normalization）。"
 
 #: ../../source/reference/module.rst:117:<autosummary>:1
 msgid ":obj:`SyncBatchNorm <megengine.module.SyncBatchNorm>`"
@@ -469,7 +469,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:126:<autosummary>:1
 msgid "A placeholder identity operator that will ignore any argument."
-msgstr ""
+msgstr "恒等占位符，输出和输入相等"
 
 #: ../../source/reference/module.rst:128
 msgid "随机失活层"
@@ -493,7 +493,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:142:<autosummary>:1
 msgid "A simple lookup table that stores embeddings of a fixed dictionary and size."
-msgstr ""
+msgstr "一个简单的查询表，存储具有固定大小的词向量（embedding）于固定的词典中。"
 
 #: ../../source/reference/module.rst:144
 msgid "融合操作"
@@ -557,7 +557,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid "Set quantization related configs with ``qconfig``, including observer and fake_quant for weight and activation."
-msgstr ""
+msgstr "使用 ``qconfig`` 更改量化相关配置。包含权重和激活值的 observer 和 fake_quant 。"
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid ":obj:`QATModule.set_fake_quant <megengine.module.qat.QATModule.set_fake_quant>`"
@@ -573,7 +573,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid "Apply weight's observer and fake_quant from ``qconfig`` on ``target``."
-msgstr ""
+msgstr "在 ``target`` 上根据 ``qconfig`` 应用权重observer以及fake_quant。"
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid ":obj:`QATModule.apply_quant_activation <megengine.module.qat.QATModule.apply_quant_activation>`"
@@ -593,7 +593,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid "Get weight's quantization dtype as the method from ``qconfig``."
-msgstr ""
+msgstr "从 ``qconfig`` 中获取权重的量化数据类型。"
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid ":obj:`QATModule.get_activation_dtype <megengine.module.qat.QATModule.get_activation_dtype>`"
@@ -601,7 +601,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid "Get activation's quantization dtype as the method from ``qconfig``."
-msgstr ""
+msgstr "按照qconfig指定的方法，从 ``qconfig`` 中获取激活值的量化数据类型。"
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid ":obj:`QATModule.get_weight_qparams <megengine.module.qat.QATModule.get_weight_qparams>`"
@@ -609,7 +609,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid "Get weight's quantization parameters."
-msgstr ""
+msgstr "获取权重的量化参数。"
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid ":obj:`QATModule.get_activation_qparams <megengine.module.qat.QATModule.get_activation_qparams>`"
@@ -617,7 +617,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid "Get activation's quantization parameters."
-msgstr ""
+msgstr "获取激活值的量化参数。"
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid ":obj:`QATModule.from_float_module <megengine.module.qat.QATModule.from_float_module>`"
@@ -625,7 +625,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:186:<autosummary>:1
 msgid "Return a :class:`~.QATModule` instance converted from a float :class:`~.Module` instance."
-msgstr ""
+msgstr "返回从浮点型 :class:`~.Module` 实例转换而来的 :class:`~.QATModule` 实例。"
 
 #: ../../source/reference/module.rst:203:<autosummary>:1
 msgid ":obj:`Linear <megengine.module.qat.Linear>`"
@@ -725,7 +725,7 @@ msgstr ""
 
 #: ../../source/reference/module.rst:215:<autosummary>:1
 msgid "Return a :class:`~.QuantizedModule` instance converted from a :class:`~.QATModule` instance."
-msgstr ""
+msgstr "返回从 :class:`~.QATModule` 实例转换而来的 :class:`~.QuantizedModule` 实例。"
 
 #: ../../source/reference/module.rst:232:<autosummary>:1
 msgid ":obj:`Linear <megengine.module.quantized.Linear>`"
