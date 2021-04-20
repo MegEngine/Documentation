@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
@@ -6,17 +7,17 @@ msgstr ""
 "PO-Revision-Date: 2021-04-16 02:03\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.logsumexp.po\n"
 "X-Crowdin-File-ID: 2190\n"
-"Language: zh_CN\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
 
 #: ../../source/reference/api/megengine.functional.logsumexp.rst:2
 msgid "megengine.functional.logsumexp"
@@ -24,28 +25,33 @@ msgstr ""
 
 #: megengine.functional.nn.logsumexp:1 of
 msgid "Calculates the logarithm of the inputs' exponential sum along the given :attr:`axis`."
-msgstr ""
+msgstr "计算输入数据沿给定维度 :attr:`axis` 的指数之和的对数。该计算是数值稳定的。"
 
 #: megengine.functional.nn.logsumexp:3 of
 msgid "\\text{logsumexp}(x)= \\log \\sum_{j=1}^{n} \\exp \\left(x_{j}\\right)"
-msgstr ""
+msgstr "\\text{logsumexp}(x)= \\log \\sum_{j=1}^{n} \\exp \\left(x_{j}\\right)"
 
 #: megengine.functional.nn.logsumexp:7 of
 msgid "For numerical stability, the implementation follows this transformation:"
-msgstr ""
+msgstr "为了提高数值稳定性，实现根据以下的变换："
 
 #: megengine.functional.nn.logsumexp:9 of
-msgid "\\text{logsumexp}(x)= \\log \\sum_{j=1}^{n} \\exp \\left(x_{j}\\right)\n"
+msgid ""
+"\\text{logsumexp}(x)= \\log \\sum_{j=1}^{n} \\exp \\left(x_{j}\\right)\n"
 "= \\text{logsumexp}(x)=b+\\log \\sum_{j=1}^{n} \\exp \\left(x_{j}-b\\right)"
 msgstr ""
+"\\text{logsumexp}(x)= \\log \\sum_{j=1}^{n} \\exp \\left(x_{j}\\right)\n"
+"= \\text{logsumexp}(x)=b+\\log \\sum_{j=1}^{n} \\exp \\left(x_{j}-b\\right)"
 
 #: megengine.functional.nn.logsumexp:14 of
 msgid "where"
-msgstr ""
+msgstr "式中，"
 
 #: megengine.functional.nn.logsumexp:16 of
-msgid "b = \\max(x_j)\n\n"
-msgstr ""
+msgid ""
+"b = \\max(x_j)\n"
+"\n"
+msgstr "b = \\max(x_j)"
 
 #: megengine.functional.nn.logsumexp of
 msgid "参数"
@@ -53,15 +59,15 @@ msgstr ""
 
 #: megengine.functional.nn.logsumexp:20 of
 msgid "input tensor."
-msgstr ""
+msgstr "输入张量。"
 
 #: megengine.functional.nn.logsumexp:22 of
 msgid "axis over which the sum is taken. It could be single axis or list of axes."
-msgstr ""
+msgstr "求和计算所在的维度。可以是单个维度或维度的列表。"
 
 #: megengine.functional.nn.logsumexp:24 of
 msgid "whether to retain :attr:`axis` or not for the output tensor."
-msgstr ""
+msgstr "输出张量是否保留 :attr:`axis` 。"
 
 #: megengine.functional.nn.logsumexp of
 msgid "返回类型"
@@ -69,13 +75,12 @@ msgstr ""
 
 #: megengine.functional.nn.logsumexp:26 of
 msgid "Examples:"
-msgstr ""
+msgstr "例如："
 
 #: megengine.functional.nn.logsumexp:38 of
 msgid "Outputs:"
-msgstr ""
+msgstr "输出："
 
 #: megengine.functional.nn.logsumexp:46 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr ""
-
+msgstr ":py:class:`~megengine.tensor.Tensor`"
