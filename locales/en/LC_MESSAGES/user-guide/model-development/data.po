@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-20 14:45+0800\n"
-"PO-Revision-Date: 2021-04-20 09:37\n"
+"PO-Revision-Date: 2021-04-20 11:02\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
@@ -20,65 +20,65 @@ msgstr ""
 
 #: ../../source/user-guide/model-development/data.rst:5
 msgid "加载与预处理数据集"
-msgstr ""
+msgstr "Load and preprocess the data set"
 
 #: ../../source/user-guide/model-development/data.rst:7
 msgid "数据集是一组数据的集合，例如 MNIST、Cifar10 等图像数据集。 :py:class:`~.data.dataset.Dataset` 是 MegEngine 中表示数据集的抽象类。 我们自定义的数据集类应该继承 :py:class:`~.data.dataset.Dataset` 并重写下列方法："
-msgstr ""
+msgstr "A data set is a collection of data, such as image data sets such as MNIST and Cifar10. :py:class:`~.data.dataset.Dataset` is an abstract class representing data set in MegEngine. Our data set from the class definition should inherit: py: class: `~ .data.dataset.Dataset` and override the following methods："
 
 #: ../../source/user-guide/model-development/data.rst:11
 msgid "``__init__``: 一般在其中实现读取数据源文件的功能。也可以添加任何其它的必要功能；"
-msgstr ""
+msgstr "``__init__``: Generally realize the function of reading the data source file in it. You can also add any other necessary functions;"
 
 #: ../../source/user-guide/model-development/data.rst:12
 msgid "``__getitem__``: 通过索引操作来获取数据集中某一个样本，使得可以通过 for 循环来遍历整个数据集；"
-msgstr ""
+msgstr "``__getitem__``: Obtain a sample in the data set through index operation, so that the entire data set can be traversed through a for loop;"
 
 #: ../../source/user-guide/model-development/data.rst:13
 msgid "``__len__``: 返回数据集大小"
-msgstr ""
+msgstr "``__len__``: Return the size of the data set"
 
 #: ../../source/user-guide/model-development/data.rst:16
 msgid "自定义数据集"
-msgstr ""
+msgstr "Custom data set"
 
 #: ../../source/user-guide/model-development/data.rst:18
 msgid "下面是一个简单示例。我们根据下图所示的二分类数据，创建一个 :py:class:`~.data.dataset.Dataset` 。 每个数据是一个二维平面上的点，横坐标和纵坐标在 [-1, 1] 之间。共有两个类别标签（图中的蓝色 * 和红色 +）， 标签为 0 的点处于一、三象限；标签为 1 的点处于二、四象限。"
-msgstr ""
+msgstr "Here is a simple example. We create a: py:class:`~.data.dataset.Dataset` based on the two-category data shown in the figure below. Each data is a point on a two-dimensional plane, and the abscissa and ordinate are between [-1, 1]. There are two category labels (blue* and red + in the figure). The point with label 0 is in the first and third quadrants; the point with label 1 is in the second and fourth quadrants."
 
 #: ../../source/user-guide/model-development/data.rst:25
 msgid "该数据集的创建过程如下："
-msgstr ""
+msgstr "The creation process of the data set is as："
 
 #: ../../source/user-guide/model-development/data.rst:27
 msgid "在 ``__init__`` 中利用 NumPy 随机生成 ndarray 作为数据；"
-msgstr ""
+msgstr "Use NumPy to randomly generate ndarray as data in ``__init__"
 
 #: ../../source/user-guide/model-development/data.rst:28
 msgid "在 ``__getitem__`` 中返回 ndarray 中的一个样本；"
-msgstr ""
+msgstr "Return a sample in ndarray in ``__getitem__"
 
 #: ../../source/user-guide/model-development/data.rst:29
 msgid "在 ``__len__`` 中返回整个数据集中样本的个数；"
-msgstr ""
+msgstr "Return the number of samples in the entire data set in ``__len__"
 
 #: ../../source/user-guide/model-development/data.rst:74
 msgid "输出："
-msgstr ""
+msgstr "Output："
 
 #: ../../source/user-guide/model-development/data.rst:82
 msgid "MegEngine 中也提供了一些已经继承自 :py:class:`~.data.dataset.Dataset` 的数据集类，方便我们使用， 比如 :py:class:`~.data.dataset.ArrayDataset` ，允许通过传入单个或多个 NumPy 数组，对它进行初始化。 其内部实现如下："
-msgstr ""
+msgstr "MegEngine also provides some data set classes that have been inherited from: py:class:`~.data.dataset.Dataset`, which is convenient for us to use, such as: py:class:`~.data.dataset.ArrayDataset`, which is allowed to pass Pass in single or multiple NumPy arrays and initialize them. Its internal implementation is as follows："
 
 #: ../../source/user-guide/model-development/data.rst:86
 msgid "``_init__``: 检查传入的多个 NumPy 数组的长度是否一致；不一致则无法成功创建；"
-msgstr ""
+msgstr "``_init__'': Check whether the lengths of multiple NumPy arrays passed in are consistent; if they are inconsistent, they cannot be successfully created;"
 
 #: ../../source/user-guide/model-development/data.rst:87
 msgid "``__getitem__``: 将多个 NumPy 数组相同索引位置的元素构成一个 tuple 并返回；"
-msgstr ""
+msgstr "``__getitem__``: The elements at the same index position of multiple NumPy arrays form a tuple and return;"
 
 #: ../../source/user-guide/model-development/data.rst:88
 msgid "``__len__``: 返回数据集的大小；"
-msgstr ""
+msgstr "``__len__``: returns the size of the data set;"
 
