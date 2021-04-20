@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 08:48\n"
+"PO-Revision-Date: 2021-04-20 09:34\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -24,18 +24,21 @@ msgstr ""
 
 #: megengine.functional.vision.warp_perspective:1 of
 msgid "Applies perspective transformation to batched 2D images."
-msgstr ""
+msgstr "对按批组织的二维图像进行透视变换。"
 
 #: megengine.functional.vision.warp_perspective:3 of
 msgid "The input images are transformed to the output images by the transformation matrix:"
-msgstr ""
+msgstr "输入图像通过变换矩阵变换为输出图像："
 
 #: megengine.functional.vision.warp_perspective:5 of
 msgid "\\text{output}(n, c, h, w) = \\text{input} \\left( n, c,\n"
 "    \\frac{M_{00}h + M_{01}w + M_{02}}{M_{20}h + M_{21}w + M_{22}},\n"
 "    \\frac{M_{10}h + M_{11}w + M_{12}}{M_{20}h + M_{21}w + M_{22}}\n"
 "    \\right)\n\n"
-msgstr ""
+msgstr "\\text{output}(n, c, h, w) = \\text{input} \\left( n, c,\n"
+"    \\frac{M_{00}h + M_{01}w + M_{02}}{M_{20}h + M_{21}w + M_{22}},\n"
+"    \\frac{M_{10}h + M_{11}w + M_{12}}{M_{20}h + M_{21}w + M_{22}}\n"
+"    \\right)"
 
 #: megengine.functional.vision.warp_perspective of
 msgid "参数"
@@ -43,27 +46,27 @@ msgstr ""
 
 #: megengine.functional.vision.warp_perspective:12 of
 msgid "input image."
-msgstr ""
+msgstr "输入图像。"
 
 #: megengine.functional.vision.warp_perspective:14 of
 msgid "`(batch, 3, 3)` transformation matrix."
-msgstr ""
+msgstr "(batch, 3, 3) 变换矩阵。"
 
 #: megengine.functional.vision.warp_perspective:16 of
 msgid "`(h, w)` size of the output image."
-msgstr ""
+msgstr "`(h, w)` 输出图像的大小。"
 
 #: megengine.functional.vision.warp_perspective:18 of
 msgid "pixel extrapolation method. Default: \"REPLICATE\". Currently also support \"CONSTANT\", \"REFLECT\", \"REFLECT_101\", \"WRAP\"."
-msgstr ""
+msgstr "像素外推方法。默认：\"REPLICATE\"。当前也支持\"CONSTANT\"， \"REFLECT\"， \"REFLECT_101\"， \"WRAP\"。"
 
 #: megengine.functional.vision.warp_perspective:22 of
 msgid "value used in case of a constant border. Default: 0"
-msgstr ""
+msgstr "边界填充值。 默认：0"
 
 #: megengine.functional.vision.warp_perspective:24 of
 msgid "interpolation methods. Default: \"LINEAR\". Currently only support \"LINEAR\" mode."
-msgstr ""
+msgstr "插值方法。默认：\"LINEAR\"。当前只支持 \"LINEAR\" 模式。"
 
 #: megengine.functional.vision.warp_perspective of
 msgid "返回类型"
@@ -71,7 +74,7 @@ msgstr ""
 
 #: megengine.functional.vision.warp_perspective:26 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr ""
+msgstr ":py:class:`~megengine.tensor.Tensor`"
 
 #: megengine.functional.vision.warp_perspective of
 msgid "返回"
@@ -79,21 +82,21 @@ msgstr ""
 
 #: megengine.functional.vision.warp_perspective:27 of
 msgid "output tensor."
-msgstr ""
+msgstr "输出张量。"
 
 #: megengine.functional.vision.warp_perspective:29 of
 msgid "Note:"
-msgstr ""
+msgstr "备注："
 
 #: megengine.functional.vision.warp_perspective:31 of
 msgid "The transformation matrix is the inverse of that used by `cv2.warpPerspective`."
-msgstr ""
+msgstr "转换矩阵是 `cv2.warpPerspective` 使用的矩阵的逆矩阵。"
 
 #: megengine.functional.vision.warp_perspective:33 of
 msgid "Examples:"
-msgstr ""
+msgstr "例如："
 
 #: megengine.functional.vision.warp_perspective:51 of
 msgid "Outputs:"
-msgstr ""
+msgstr "输出："
 
