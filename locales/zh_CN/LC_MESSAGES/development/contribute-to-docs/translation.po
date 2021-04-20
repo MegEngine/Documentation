@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
+"POT-Creation-Date: 2021-04-20 14:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,93 +27,242 @@ msgid ""
 "doc.org/en/master/usage/advanced/intl.html>`_ 方式实现多语言支持。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:11
-msgid "目录结构"
+#: ../../source/development/contribute-to-docs/translation.rst:12
+msgid "MegEngine 文档翻译工作目前通过 :ref:`Crowdin <crowdin-tr>` 平台进行协作，与 GitHub 自动集成。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:13
+#: ../../source/development/contribute-to-docs/translation.rst:15
 msgid "对于参与文档翻译的人员，对以下目录结构有一定了解将有所帮助："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:25
+#: ../../source/development/contribute-to-docs/translation.rst:27
 msgid "基本原理"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:27
-msgid "整个翻译内容的生成流程如下："
+#: ../../source/development/contribute-to-docs/translation.rst:29
+msgid "整个翻译内容的生成流程如下（ **翻译人员通常只需要关注第 4 步** ）："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:29
+#: ../../source/development/contribute-to-docs/translation.rst:31
 msgid "在 ``source`` 文件夹中存放着所有的文档内容，以 ``.rst`` 格式提供。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:30
-msgid "通过运行下面的命令，将从 ``.rst`` 文件中提取出可被翻译的消息（message）："
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/translation.rst:36
-msgid "生成的 ``.pot`` 文件将被放在 ``build/gettext`` 目录内。"
+#: ../../source/development/contribute-to-docs/translation.rst:32
+msgid "通过运行下面的命令，将从 ``.rst`` 文件中提取出可被翻译的消息（message）模版："
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/translation.rst:38
-msgid "根据需要支持的语言，生成对应的 ``.po`` 文件中提取出可被翻译的消息（message）："
+msgid "生成的 ``.pot`` 文件将被放在 ``build/gettext`` 目录内。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:44
-msgid "上面的代码将为我们生成中文和英文两个版本的 ``.po`` 文件，分别位于："
+#: ../../source/development/contribute-to-docs/translation.rst:40
+msgid "根据需要支持的语言，生成对应的 ``.po`` 文件："
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/translation.rst:46
+msgid "上面的代码将为我们生成中文和英文两个版本的 ``.po`` 文件，分别位于："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:48
 msgid "``/locales/zh_CN/LC_MESSAGES/``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:47
+#: ../../source/development/contribute-to-docs/translation.rst:49
 msgid "``/locales/en/LC_MESSAGES/``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:49
+#: ../../source/development/contribute-to-docs/translation.rst:51
 msgid "翻译人员需要做的就是翻译 ``.po`` 文件中的内容。样例如下："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:57
-msgid "另一种情况是，msgid 是多行文本，包含 reStructuredText 语法："
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/translation.rst:71
-msgid "请注意不要破坏 reST 语法，参考 :ref:`restructuredtext` 。"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/translation.rst:73
+#: ../../source/development/contribute-to-docs/translation.rst:59
 msgid "生成翻译后的文档（ ``LANGUAGE`` 参数默认为 ``zh-CN`` ）："
 msgstr ""
 
+#: ../../source/development/contribute-to-docs/translation.rst:69
+msgid "使用 Crowdin 进行翻译"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:71
+msgid "传统的软件翻译流程通常需要面临审核校对和信息同步等难题， 通过 Crowdin 则可以享受到："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:74
+msgid "开放参与。任何人都可以注册账号，加入团队，翻译贡献。 每个人的翻译记录都会被记录下来，而不会被覆盖或丢弃。 贡献者之间相互审核建议，选择最优的翻译。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:77
+msgid "透明运作。任何操作都会记录在活动日志当中，有不当翻译或者蓄意破坏很容易被发现并撤销。 翻译人员可以相互讨论提问，提供单独的讨论板块。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:79
+msgid "进度清晰。当有新的内容需要翻译时，或对原始内容进行修改后，能在第一时间被监控到。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:80
+msgid "记忆系统。可以根据已有翻译内容给出翻译建议，也可使用主流神经翻译接口辅助建议。"
+msgstr ""
+
 #: ../../source/development/contribute-to-docs/translation.rst:81
-msgid ""
-"当用户在 GitHub 发起一个翻译相关的 Pull Request 时， 每次提交新的 commit 会自动触发临时文档的生成和更新。 "
-"但我们推荐用户首先 :ref:`在本地构建文档 <how-to-build-the-doc-locally>` 以确保格式和内容正确。"
+msgid "自动集成。更新的翻译内容将自动通过集成系统同步到 GitHub 特定分支，再由人工进行合入。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:83
+msgid "更多特性请参考：https://crowdin.com/features"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/translation.rst:86
-msgid "主要翻译需求"
+msgid "加入翻译"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/translation.rst:88
 msgid ""
-"与常见的软件文档 “以英文撰写原文，后续提供多语言翻译” 的逻辑不同， MegEngine 文档默认以中文作为原稿，后续提供其它语言的翻译版本。 "
-"但由于 Python Docstring 属于源代码注释的一部分，而代码注释提倡用英文撰写， 因此 MegEngine 的 Python API "
-"文档将先从源代码提取出英文 Docstring， 再通过翻译对应的 ``locales/zh-"
-"CN/LC_MESSAGES/reference/api/`` 中的 ``.po`` 文件变为中文。"
+"你需要注册一个 `Crowdin <https://crowdin.com/>`_ 账户， 进入 `项目页面 "
+"<https://crowdin.com/project/megengine>`_ 后可以看到语言选项卡和整体进度："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:94
-msgid "官方翻译未必准确、完备，欢迎大家帮助天元 MegEngine 改进文档翻译～"
+#: ../../source/development/contribute-to-docs/translation.rst:93
+msgid "Chinese Simplified"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:92
+msgid ""
+"由于 Sphinx 生成文档时使用 Python Docstring 提取部分内容， "
+"源代码是英文，因此这部分内容依旧为英文，我们需要将其翻译成中文。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:97
+msgid "English （以及其它语言）"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/translation.rst:96
-msgid "基本的 :ref:`commit message <commit-message>` 形式如下："
+msgid "与上情况相反：除 Python Docstring 外，所有文档原文内容均为中文， 因此我们需要将这些内容翻译成指定语言。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/translation.rst:102
-msgid "如果是对已有翻译内容进行了修改，请在 commit message 中详细说明修改原因。"
+#: ../../source/development/contribute-to-docs/translation.rst:99
+msgid ""
+"选择语言后，可以看到多个需要翻译的文件。每个翻译文件和文件夹都有一个翻译进度。 "
+"蓝色条代表已经翻译，绿色条代表已经审核。同一条目可以有多条翻译建议（Suggestion）。 "
+"翻译者和审核者可以通过投票来决定，最终导出被审核通过的翻译（如果没有审核，则会选择最近的翻译建议）。"
 msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:104
+msgid "翻译注意事项"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:106
+msgid "语法和排版规范可参考 :ref:`megengine-document-style-guide` 。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:107
+msgid "翻译的过程中不要破坏原有的 :ref:`rst 语法 <restructuredtext>` ，正确示范为："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:115
+msgid "翻译的过程中不要丢掉原有标点符号，正确示范为："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:124
+msgid "基本要领"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:126
+msgid "简洁规范。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:127
+msgid "忠实原文。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:128
+msgid "用语一致。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:129
+msgid "易于使用"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:132
+msgid "补充细节说明"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:134
+msgid "中英文之间有且只能有一个空格作为分隔；"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:135
+msgid "优先使用全角标点符号（包括逗号、句号、冒号、分号和问号）；"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:136
+msgid "遇到特定英文（要求不译）结束，则后跟使用英文标点符号 ——"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:138
+msgid "绝大部分软件名字都是不翻译的，直接使用英文即可；"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:139
+msgid "项目或组织名称，一般也不进行翻译；"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:140
+msgid "通用的英文缩写，或没有正式中文译文的名词，不需要翻译；"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:142
+msgid "不论中英文，统一使用中文括号（）包裹；"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/translation.rst:143
+msgid ""
+"按回车造成的换行，是 PO 文件里代码换行。 Crowdin 都能很好地自动换行，因此手动去折行并不是必要的。 "
+"即使是翻译时看到英文是折行的，中文也不一定需要折行；"
+msgstr ""
+
+#~ msgid "目录结构"
+#~ msgstr ""
+
+#~ msgid "整个翻译内容的生成流程如下："
+#~ msgstr ""
+
+#~ msgid "通过运行下面的命令，将从 ``.rst`` 文件中提取出可被翻译的消息（message）："
+#~ msgstr ""
+
+#~ msgid "根据需要支持的语言，生成对应的 ``.po`` 文件中提取出可被翻译的消息（message）："
+#~ msgstr ""
+
+#~ msgid "另一种情况是，msgid 是多行文本，包含 reStructuredText 语法："
+#~ msgstr ""
+
+#~ msgid "请注意不要破坏 reST 语法，参考 :ref:`restructuredtext` 。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "当用户在 GitHub 发起一个翻译相关的 Pull Request 时，"
+#~ " 每次提交新的 commit 会自动触发临时文档的生成和更新。 但我们推荐用户首先 "
+#~ ":ref:`在本地构建文档 <how-to-build-the-doc-"
+#~ "locally>` 以确保格式和内容正确。"
+#~ msgstr ""
+
+#~ msgid "主要翻译需求"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "与常见的软件文档 “以英文撰写原文，后续提供多语言翻译” 的逻辑不同， MegEngine "
+#~ "文档默认以中文作为原稿，后续提供其它语言的翻译版本。 但由于 Python Docstring "
+#~ "属于源代码注释的一部分，而代码注释提倡用英文撰写， 因此 MegEngine 的 "
+#~ "Python API 文档将先从源代码提取出英文 Docstring， 再通过翻译对应的"
+#~ " ``locales/zh-CN/LC_MESSAGES/reference/api/`` 中的 "
+#~ "``.po`` 文件变为中文。"
+#~ msgstr ""
+
+#~ msgid "官方翻译未必准确、完备，欢迎大家帮助天元 MegEngine 改进文档翻译～"
+#~ msgstr ""
+
+#~ msgid "基本的 :ref:`commit message <commit-message>` 形式如下："
+#~ msgstr ""
+
+#~ msgid "如果是对已有翻译内容进行了修改，请在 commit message 中详细说明修改原因。"
+#~ msgstr ""
 
