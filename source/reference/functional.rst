@@ -340,6 +340,7 @@ vision 模块
    :toctree: api
    :nosignatures:
 
+   cvt_color
    interpolate
    remap
    warp_affine
