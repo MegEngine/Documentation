@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 09:25\n"
+"PO-Revision-Date: 2021-04-21 08:22\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid "A base class for Observer Module."
-msgstr ""
+msgstr "所有 Observer 的基类"
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid ":obj:`MinMaxObserver <megengine.quantization.observer.MinMaxObserver>`"
@@ -84,7 +84,7 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid "A Observer Module records input tensor's running min and max values to calc scale."
-msgstr ""
+msgstr "一个通过记录输入 Tensor 的滑动最小值、最大值来计算 scale 的 Observer。"
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid ":obj:`SyncMinMaxObserver <megengine.quantization.observer.SyncMinMaxObserver>`"
@@ -92,7 +92,7 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid "A distributed version of :class:`~.MinMaxObserver`."
-msgstr ""
+msgstr "一个分布式版本的 :class:`~.MinMaxObserver` 。"
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid ":obj:`ExponentialMovingAverageObserver <megengine.quantization.observer.ExponentialMovingAverageObserver>`"
@@ -100,7 +100,7 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid "A :class:`~.MinMaxObserver` with momentum support for min/max updating."
-msgstr ""
+msgstr "一个支持动量更新最小、最大值的 :class:`~.MinMaxObserver` 。"
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid ":obj:`SyncExponentialMovingAverageObserver <megengine.quantization.observer.SyncExponentialMovingAverageObserver>`"
@@ -108,7 +108,7 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid "A distributed version of :class:`~.ExponentialMovingAverageObserver`."
-msgstr ""
+msgstr "一个分布式版本的 :class:`~.ExponentialMovingAverageObserver` 。"
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid ":obj:`HistogramObserver <megengine.quantization.observer.HistogramObserver>`"
@@ -116,7 +116,7 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid "A :class:`~.MinMaxObserver` using running histogram of tensor values for min/max updating."
-msgstr ""
+msgstr "一个使用滑动直方图统计算法更新最小、最大值的 :class:`~.MinMaxObserver` 。"
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid ":obj:`PassiveObserver <megengine.quantization.observer.PassiveObserver>`"
@@ -124,11 +124,11 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:38:<autosummary>:1
 msgid "An Observer that supports setting :attr:`scale` directly."
-msgstr ""
+msgstr "一个支持直接设置 :attr:`scale` 而非通过统计得到的 Observer。"
 
 #: ../../source/reference/quantization.rst:40
 msgid "模拟"
-msgstr ""
+msgstr "假量化"
 
 #: ../../source/reference/quantization.rst:49:<autosummary>:1
 msgid ":obj:`FakeQuantize <megengine.quantization.fake_quant.FakeQuantize>`"
@@ -172,7 +172,7 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:66:<autosummary>:1
 msgid "Implementation of ``EasyQuant``: https://arxiv.org/pdf/2006.16669."
-msgstr ""
+msgstr "应用 ``EasyQuant`` 算法（https://arxiv.org/pdf/2006.16669）更新 scale。"
 
 #: ../../source/reference/quantization.rst:66:<autosummary>:1
 msgid ":obj:`enable_fake_quant <megengine.quantization.enable_fake_quant>`"
@@ -232,7 +232,7 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:77:<autosummary>:1
 msgid "To standardize FakeQuant, Observer and Tensor's qparams format."
-msgstr ""
+msgstr "一个辅助类用于标准化 FakeQuant、Observer 和 Tensor 的 ``qparams`` 格式。"
 
 #: ../../source/reference/quantization.rst:77:<autosummary>:1
 msgid ":obj:`QuantMode <megengine.quantization.QuantMode>`"
@@ -248,7 +248,7 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:77:<autosummary>:1
 msgid "Return :class:`~.QParams` according to the mode."
-msgstr ""
+msgstr "根据给定的量化模式返回对应的 :class:`~.QParams` 。"
 
 #: ../../source/reference/quantization.rst:77:<autosummary>:1
 msgid ":obj:`fake_quant_bias <megengine.quantization.fake_quant_bias>`"
@@ -256,7 +256,7 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:77:<autosummary>:1
 msgid "Apply fake quantization to bias, with the special scale from input tensor and weight tensor, the quantized type set to qint32 also."
-msgstr "根据输入张量和权值张量的特殊的数值范围，对偏置张量进行假量化，并把量化类型设置为qint32。"
+msgstr "根据给定输入和权重的 scale 属性，对给定的偏置进行假量化，目前仅支持输入类型为 qint8，偏置类型为 qint32。"
 
 #: ../../source/reference/quantization.rst:77:<autosummary>:1
 msgid ":obj:`fake_quant_tensor <megengine.quantization.fake_quant_tensor>`"
@@ -264,5 +264,5 @@ msgstr ""
 
 #: ../../source/reference/quantization.rst:77:<autosummary>:1
 msgid "Apply fake quantization to the inp tensor."
-msgstr "对 ``inp`` 张量做假量化。"
+msgstr "对输入 Tensor 进行假量化操作。"
 
