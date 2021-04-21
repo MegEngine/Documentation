@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-21 03:36\n"
+"PO-Revision-Date: 2021-04-21 08:22\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -60,7 +60,7 @@ msgstr "每个参数都是一个 ``class`` 而不是一个实例。 我们建议
 
 #: megengine.quantization.qconfig.QConfig:27 of
 msgid "Usually we choose narrow version dtype (like ``qint8_narrow``) for weight related paramters and normal version for activation related ones. For the result of multiplication and addition as ``a * b + c * d``, if four variables are all -128 of dtype ``qint8``, then the result will be ``2^15`` and cause overflow. Weights are commonly calculated in this way, so need to narrow qmin to -127."
-msgstr ""
+msgstr "通常我们给权重设置“窄”范围版本 (比如“qint8_narrow”) 的数值类型，给激活值设置普通版本的类型。比如对以下乘加操作的结果 ``a * b + c * d`` ，如果四个变量都是数值类型为 ``qint8`` 的 -128，那么乘加之后的结果是 ``2^15`` ，而这会超出 ``qint32`` 的表示范围。而权重的计算方式一般都是这种形式，所以需要将最小值缩窄到 -127 以避免溢出。"
 
 #: ../../source/reference/api/megengine.quantization.QConfig.rst:11
 msgid "Methods"
