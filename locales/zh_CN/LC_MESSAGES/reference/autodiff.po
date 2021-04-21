@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-21 06:38\n"
+"PO-Revision-Date: 2021-04-21 07:56\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -32,11 +32,11 @@ msgstr "基类：:class:`object`"
 
 #: megengine.autodiff.grad_manager.GradManager:1 of
 msgid "GradManager computes gradients or more generally, vector-Jacobian product, by reverse mode automatic differentiation (a.k.a. back propagation)."
-msgstr ""
+msgstr "GradManager 负责计算梯度，或更一般地，矢量-雅可比积，通过反向模式做自动微分（又称为反向传播）。"
 
 #: megengine.autodiff.grad_manager.GradManager:4 of
 msgid "Reverse mode autodiff normally reuses many intermediate tensors for best computation efficiency. In a read-eval-print-loop (REPL) environment however, it is impossible to known how the user would take gradients later thus which tensors to keep. To solve this problem, the user must somehow declare beforehand which gradient could possibly be taken. With GradManager, users are required to call the :meth:`attach` method on a tensor if they want to take gradients with respect to it later. Furthermore, any computation on a tensor before it is attached is completely ignored from the autodiff perspective, so :meth:`attach` must be called before any computation that needs differentiation."
-msgstr ""
+msgstr "反向模式自动微分为了最佳计算效率通常会重用许多中间张量。然而在交互式（REPL）环境中，很难知道用户之后将如何使用梯度从而预先保存某些张量。要解决此问题，用户必须以某种方式事先声明什么梯度需要被保留。在 GradManager 中，用户如果希望后续计算张量的梯度，则需要在该张量上调用 :meth:`~.attach` 方法。此外，在张量被 ``attach`` 之前对张量的任何计算都会从 ``autodiff`` 的角度完全被忽略，所以 :meth:`~.attach` 必须在需要微分的任何计算之前被调用。"
 
 #: megengine.autodiff.grad_manager.GradManager:13 of
 msgid "For example, the following symbolic differentiation code"
