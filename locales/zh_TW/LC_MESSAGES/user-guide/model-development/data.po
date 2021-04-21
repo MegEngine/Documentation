@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: megengine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-20 14:45+0800\n"
+"PO-Revision-Date: 2021-04-21 03:41\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Traditional\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/data.po\n"
+"X-Crowdin-File-ID: 2876\n"
+"Language: zh_TW\n"
+
+#: ../../source/user-guide/model-development/data.rst:5
+msgid "加载与预处理数据集"
+msgstr "crwdns46502:0crwdne46502:0"
+
+#: ../../source/user-guide/model-development/data.rst:7
+msgid "数据集是一组数据的集合，例如 MNIST、Cifar10 等图像数据集。 :py:class:`~.data.dataset.Dataset` 是 MegEngine 中表示数据集的抽象类。 我们自定义的数据集类应该继承 :py:class:`~.data.dataset.Dataset` 并重写下列方法："
+msgstr "crwdns46504:0crwdne46504:0"
+
+#: ../../source/user-guide/model-development/data.rst:11
+msgid "``__init__``: 一般在其中实现读取数据源文件的功能。也可以添加任何其它的必要功能；"
+msgstr "crwdns46506:0__init__crwdne46506:0"
+
+#: ../../source/user-guide/model-development/data.rst:12
+msgid "``__getitem__``: 通过索引操作来获取数据集中某一个样本，使得可以通过 for 循环来遍历整个数据集；"
+msgstr "crwdns46508:0__getitem__crwdne46508:0"
+
+#: ../../source/user-guide/model-development/data.rst:13
+msgid "``__len__``: 返回数据集大小"
+msgstr "crwdns46510:0__len__crwdne46510:0"
+
+#: ../../source/user-guide/model-development/data.rst:16
+msgid "自定义数据集"
+msgstr "crwdns46512:0crwdne46512:0"
+
+#: ../../source/user-guide/model-development/data.rst:18
+msgid "下面是一个简单示例。我们根据下图所示的二分类数据，创建一个 :py:class:`~.data.dataset.Dataset` 。 每个数据是一个二维平面上的点，横坐标和纵坐标在 [-1, 1] 之间。共有两个类别标签（图中的蓝色 * 和红色 +）， 标签为 0 的点处于一、三象限；标签为 1 的点处于二、四象限。"
+msgstr "crwdns46514:0crwdne46514:0"
+
+#: ../../source/user-guide/model-development/data.rst:25
+msgid "该数据集的创建过程如下："
+msgstr "crwdns46516:0crwdne46516:0"
+
+#: ../../source/user-guide/model-development/data.rst:27
+msgid "在 ``__init__`` 中利用 NumPy 随机生成 ndarray 作为数据；"
+msgstr "crwdns46518:0__init__crwdne46518:0"
+
+#: ../../source/user-guide/model-development/data.rst:28
+msgid "在 ``__getitem__`` 中返回 ndarray 中的一个样本；"
+msgstr "crwdns46520:0__getitem__crwdne46520:0"
+
+#: ../../source/user-guide/model-development/data.rst:29
+msgid "在 ``__len__`` 中返回整个数据集中样本的个数；"
+msgstr "crwdns46522:0__len__crwdne46522:0"
+
+#: ../../source/user-guide/model-development/data.rst:74
+msgid "输出："
+msgstr "crwdns46524:0crwdne46524:0"
+
+#: ../../source/user-guide/model-development/data.rst:82
+msgid "MegEngine 中也提供了一些已经继承自 :py:class:`~.data.dataset.Dataset` 的数据集类，方便我们使用， 比如 :py:class:`~.data.dataset.ArrayDataset` ，允许通过传入单个或多个 NumPy 数组，对它进行初始化。 其内部实现如下："
+msgstr "crwdns46526:0crwdne46526:0"
+
+#: ../../source/user-guide/model-development/data.rst:86
+msgid "``_init__``: 检查传入的多个 NumPy 数组的长度是否一致；不一致则无法成功创建；"
+msgstr "crwdns46528:0crwdne46528:0"
+
+#: ../../source/user-guide/model-development/data.rst:87
+msgid "``__getitem__``: 将多个 NumPy 数组相同索引位置的元素构成一个 tuple 并返回；"
+msgstr "crwdns46530:0__getitem__crwdne46530:0"
+
+#: ../../source/user-guide/model-development/data.rst:88
+msgid "``__len__``: 返回数据集的大小；"
+msgstr "crwdns46532:0__len__crwdne46532:0"
+
