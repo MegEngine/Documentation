@@ -1,56 +1,45 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-22 01:14+0800\n"
-"PO-Revision-Date: 2021-04-21 03:24+0000\n"
+"PO-Revision-Date: 2021-04-22 02:18\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.logsoftmax.po\n"
+"X-Crowdin-File-ID: 2188\n"
 
 #: ../../source/reference/api/megengine.functional.logsoftmax.rst:2
 msgid "megengine.functional.logsoftmax"
 msgstr "megengine.functional.logsoftmax"
 
 #: megengine.functional.nn.logsoftmax:1 of
-msgid ""
-"Applies the :math:`\\log(\\text{softmax}(x))` function to an "
-"n-dimensional input tensor. The :math:`\\text{logsoftmax}(x)` formulation"
-" can be simplified as:"
-msgstr ""
-"对一个n维的输入张量做 :math:`\\log(\\text{softmax}(x))` 函数 "
-":math:`\\text{logsoftmax}(x)` 的公式可以简化为："
+msgid "Applies the :math:`\\log(\\text{softmax}(x))` function to an n-dimensional input tensor. The :math:`\\text{logsoftmax}(x)` formulation can be simplified as:"
+msgstr "对一个n维的输入张量做 :math:`\\log(\\text{softmax}(x))` 函数 :math:`\\text{logsoftmax}(x)` 的公式可以简化为："
 
 #: megengine.functional.nn.logsoftmax:4 of
-#, fuzzy
-msgid ""
-"\\text{logsoftmax}(x_{i}) = \\log(\\frac{\\exp(x_i) }{ \\sum_j "
-"\\exp(x_j)} )\n"
-"\n"
-msgstr ""
-"\\text{logsoftmax}(x_{i}) = \\log(\\frac{\\exp(x_i) }{ \\sum_j "
-"\\exp(x_j)} )"
+msgid "\\text{logsoftmax}(x_{i}) = \\log(\\frac{\\exp(x_i) }{ \\sum_j \\exp(x_j)} )\n\n"
+msgstr "\\text{logsoftmax}(x_{i}) = \\log(\\frac{\\exp(x_i) }{ \\sum_j \\exp(x_j)} )"
 
 #: megengine.functional.nn.logsoftmax:7 of
 msgid "For numerical stability the implementation follows this transformation:"
 msgstr "为了提高数值稳定性，实现根据以下的变换："
 
 #: megengine.functional.nn.logsoftmax:9 of
-#, fuzzy
-msgid ""
-"\\text{logsoftmax}(x)\n"
+msgid "\\text{logsoftmax}(x)\n"
 "= \\log (\\frac{\\exp (x)}{\\sum_{i}(\\exp (x_{i}))})\n"
 "= x - \\log (\\sum_{i}(\\exp (x_{i})))\n"
-"= x - \\text{logsumexp}(x)\n"
-"\n"
-msgstr ""
-"\\text{logsoftmax}(x)\n"
+"= x - \\text{logsumexp}(x)\n\n"
+msgstr "\\text{logsoftmax}(x)\n"
 "= \\log (\\frac{\\exp (x)}{\\sum_{i}(\\exp (x_{i}))})\n"
 "= x - \\log (\\sum_{i}(\\exp (x_{i})))\n"
 "= x - \\text{logsumexp}(x)"
