@@ -73,6 +73,7 @@ Float Module
 
    Conv1d
    Conv2d
+   Conv3d
    ConvRelu2d
    ConvTranspose2d
    LocalConv2d
