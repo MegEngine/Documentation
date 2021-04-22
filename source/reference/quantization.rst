@@ -12,18 +12,36 @@
    :nosignatures:
 
    QConfig
-   min_max_fakequant_qconfig
-   ema_fakequant_qconfig
-   sync_ema_fakequant_qconfig
-   ema_lowbit_fakequant_qconfig
-   calibration_qconfig
-   tqt_qconfig
-   passive_qconfig
-   easyquant_qconfig
+   
+可用预设配置如下：
+
+``min_max_fakequant_qconfig``
+  使用 :class:`~.MinMaxObserver` 和 :class:`~.FakeQuant` 预设。
+
+``ema_fakequant_qconfig``
+  使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuant` 预设。
+
+``sync_ema_fakequant_qconfig``
+  使用 :class:`~.SyncExponentialMovingAverageObserver` 和 :class:`~.FakeQuant` 的预设。
+ 
+``ema_lowbit_fakequant_qconfig``
+  使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuant` 且数值类型为 ``qint4`` 的预设。
+
+``calibration_qconfig``
+  对激活值使用 :class:`~.HistogramObserver` 进行后量化（无 :class:`~.FakeQuant` ）的预设。
+
+``tqt_qconfig``
+  使用 :class:`~.TQT` 进行假量化的预设。
+
+``passive_qconfig``
+  使用 :class:`~.PassiveObserver` 和 :class:`~.FakeQuant` 的预设。
+
+``easyquant_qconfig``
+  用于 easyquant 算法的 QConfig，等价于 ``passive_qconfig``.
+
 
 观察
 ~~~~
-.. currentmodule:: megengine.quantization.observer
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -38,7 +56,7 @@
 
 模拟
 ~~~~
-.. currentmodule:: megengine.quantization.fake_quant
+.. currentmodule:: megengine.quantization
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -49,7 +67,6 @@
 
 量化操作
 --------
-.. currentmodule:: megengine.quantization
 .. autosummary::
    :toctree: api
    :nosignatures:

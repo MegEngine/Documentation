@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-21 03:25\n"
+"POT-Creation-Date: 2021-04-22 01:14+0800\n"
+"PO-Revision-Date: 2021-04-21 03:25+0000\n"
 "Last-Translator: \n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.loss.cross_entropy.po\n"
-"X-Crowdin-File-ID: 2194\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
 
 #: ../../source/reference/api/megengine.functional.loss.cross_entropy.rst:2
 msgid "megengine.functional.loss.cross\\_entropy"
@@ -27,11 +23,15 @@ msgid "Computes the multi-class cross entropy loss (using logits by default)."
 msgstr "计算 multi-class cross entropy loss（默认使用 logits）。"
 
 #: megengine.functional.loss.cross_entropy:3 of
-msgid "By default(``with_logitis`` is True), ``pred`` is assumed to be logits, class probabilities are given by softmax."
+msgid ""
+"By default(``with_logitis`` is True), ``pred`` is assumed to be logits, "
+"class probabilities are given by softmax."
 msgstr "默认情况下（``with_logitis`` 为真），``pred`` 被认为是 logits，类的概率将由 softmax 计算得出。"
 
 #: megengine.functional.loss.cross_entropy:6 of
-msgid "It has better numerical stability compared with sequential calls to :func:`~.softmax` and :func:`~.cross_entropy`."
+msgid ""
+"It has better numerical stability compared with sequential calls to "
+":func:`~.softmax` and :func:`~.cross_entropy`."
 msgstr "与顺序调用 :func:`~.softmax` 和  :func:`~.cross_entropy` 相比，具有更好的数值稳定性。"
 
 #: megengine.functional.loss.cross_entropy:8 of
@@ -39,12 +39,21 @@ msgid "When using label smoothing, the label distribution is as follows:"
 msgstr "当使用标签平滑 (label smoothing) 时，标签的分布情况如下:"
 
 #: megengine.functional.loss.cross_entropy:10 of
-msgid "y^{LS}_{k}=y_{k}\\left(1-\\alpha\\right)+\\alpha/K\n\n"
+#, fuzzy
+msgid ""
+"y^{LS}_{k}=y_{k}\\left(1-\\alpha\\right)+\\alpha/K\n"
+"\n"
 msgstr "y^{LS}_{k}=y_{k}\\left(1-\\alpha\\right)+\\alpha/K"
 
 #: megengine.functional.loss.cross_entropy:12 of
-msgid "where :math:`y^{LS}` and :math:`y` are new label distribution and origin label distribution respectively. k is the index of label distribution. :math:`\\alpha` is ``label_smooth`` and :math:`K` is the number of classes."
-msgstr "其中 :math:`y^{LS}` 和 :math:`y` 分别是新的标签分布和原始的标签分布。 k是标签分布的索引。:math:`\\alpha` 是 label_smooth， :math:`K` 是类的数量。"
+msgid ""
+"where :math:`y^{LS}` and :math:`y` are new label distribution and origin "
+"label distribution respectively. k is the index of label distribution. "
+":math:`\\alpha` is ``label_smooth`` and :math:`K` is the number of "
+"classes."
+msgstr ""
+"其中 :math:`y^{LS}` 和 :math:`y` 分别是新的标签分布和原始的标签分布。 "
+"k是标签分布的索引。:math:`\\alpha` 是 label_smooth， :math:`K` 是类的数量。"
 
 #: megengine.functional.loss.cross_entropy of
 msgid "参数"
@@ -67,7 +76,9 @@ msgid "whether to apply softmax first. Default: True"
 msgstr "是否先应用 sigmoid。默认：True"
 
 #: megengine.functional.loss.cross_entropy:24 of
-msgid "a label smoothing of parameter that can re-distribute target distribution. Default: 0"
+msgid ""
+"a label smoothing of parameter that can re-distribute target "
+"distribution. Default: 0"
 msgstr "用于对原始标签分布进行标签平滑的参数。默认：0。"
 
 #: megengine.functional.loss.cross_entropy of
