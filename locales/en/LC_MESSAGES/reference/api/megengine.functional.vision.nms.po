@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-23 11:09\n"
+"PO-Revision-Date: 2021-04-23 11:44\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
 "Language: en_US\n"
@@ -24,7 +24,7 @@ msgstr "megengine.functional.vision.nms"
 
 #: megengine.functional.vision.nms:1 of
 msgid "Performs non-maximum suppression (NMS) on the boxes according to their intersection-over-union(IoU)."
-msgstr "根据小方框的 IoU 值执行非最大值抑制（NMS）。"
+msgstr "根据框的 IoU 值执行非最大值抑制（NMS）。"
 
 #: megengine.functional.vision.nms of
 msgid "参数"
@@ -32,7 +32,7 @@ msgstr "参数"
 
 #: megengine.functional.vision.nms:4 of
 msgid "tensor of shape `(N, 4)`; the boxes to perform nms on; each box is expected to be in `(x1, y1, x2, y2)` format."
-msgstr "形状为 `(N, 4)` 的 tensor；表示用于计算 nms 的小方框；每个小方框期望的格式为 `(x1, y1, x2, y2)`。"
+msgstr "形状为 `(N, 4)` 的 tensor；表示用于计算 nms 的框；每个框期望的格式为 `(x1, y1, x2, y2)`。"
 
 #: megengine.functional.vision.nms:6 of
 msgid "IoU threshold for overlapping."
@@ -40,33 +40,33 @@ msgstr "IoU 阈值。"
 
 #: megengine.functional.vision.nms:8 of
 msgid "tensor of shape `(N,)`, the score of boxes."
-msgstr "形状为 `(N,)` 的 tensor，为每个小方块预测的分值。"
+msgstr "形状为 `(N,)` 的 tensor，为每个框预测的分值。"
 
 #: megengine.functional.vision.nms:10 of
 msgid "the maximum number of boxes to keep; it is optional if this operator is not traced otherwise it required to be specified; if it is not specified, all boxes are kept."
-msgstr ""
+msgstr "将要保留的框的最大数目；如果这个算子未被 trace 则此参数是可选的，否则必须指定；如果没有指定，所有的框都会被保留。"
 
 #: megengine.functional.vision.nms of
 msgid "返回类型"
-msgstr ""
+msgstr "返回类型"
 
 #: megengine.functional.vision.nms:12 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr ""
+msgstr ":py:class:`~megengine.tensor.Tensor`"
 
 #: megengine.functional.vision.nms of
 msgid "返回"
-msgstr ""
+msgstr "返回"
 
 #: megengine.functional.vision.nms:13 of
 msgid "indices of the elements that have been kept by NMS."
-msgstr ""
+msgstr "被 NMS 保留的元素的索引。"
 
 #: megengine.functional.vision.nms:15 of
 msgid "Examples:"
-msgstr ""
+msgstr "例如："
 
 #: megengine.functional.vision.nms:32 of
 msgid "Outputs:"
-msgstr ""
+msgstr "输出："
 
