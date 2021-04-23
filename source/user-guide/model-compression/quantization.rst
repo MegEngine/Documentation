@@ -133,26 +133,26 @@ FakeQuantize 在前向时会根据传入的 scale 和 zero_point 对输入 Tenso
         act_fake_quant=None,
     )
 
-除了使用在 :mod:`~.quantization.Qconfig` 里提供的预设 QConfig，
+除了使用在 :class:`~.quantization.Qconfig` 里提供的预设 QConfig，
 也可以根据需要灵活选择 Observer 和 FakeQuantize  实现自己的 QConfig。目前提供的 Observer 包括：
 
-* :class:`~.quantization.observer.MinMaxObserver` ，
+* :class:`~.quantization.MinMaxObserver` ，
   使用最简单的算法统计 min/max，对见到的每批数据取 min/max 跟当前存的值比较并替换，
   基于 min/max 得到 scale 和 zero_point；
-* :class:`~.quantization.observer.ExponentialMovingAverageObserver` ，
+* :class:`~.quantization.ExponentialMovingAverageObserver` ，
   引入动量的概念，对每批数据的 min/max 与现有 min/max 的加权和跟现有值比较；
-* :class:`~.quantization.observer.HistogramObserver` ，
+* :class:`~.quantization.HistogramObserver` ，
   更加复杂的基于直方图分布的 min/max 统计算法，且在 forward 时持续更新该分布，
   并根据该分布计算得到 scale 和 zero_point。
 
-对于 FakeQuantize，目前还提供了 :class:`~.quantization.fake_quant.TQT` 算子，
+对于 FakeQuantize，目前还提供了 :class:`~.quantization.TQT` 算子，
 另外还可以继承 ``_FakeQuant`` 基类实现自定义的假量化算子。
 
 在实际使用过程中，可能需要在训练时让 Observer 统计并更新参数，但是在推理时则停止更新。
-Observer 和 FakeQuantize 都支持 :meth:`~.quantization.observer.Observer.enable` 
-和 :meth:`~.quantization.observer.Observer.disable` 功能，
-且 Observer 会在 :meth:`~.module.module.Module.train` 
-和 :meth:`~.module.module.Module.train` 时自动分别调用 enable/disable。
+Observer 和 FakeQuantize 都支持 :meth:`~.quantization.Observer.enable` 
+和 :meth:`~.quantization.Observer.disable` 功能，
+且 Observer 会在 :meth:`~module.Module.train` 
+和 :meth:`~module.Module.eval` 时自动分别调用 enable/disable。
 
 所以一般在 Calibration 时，会先执行 ``net.eval()`` 保证网络的参数不被更新，
 然后再执行 :``enable_observer(net)`` 来手动开启 Observer 的统计修改功能。
