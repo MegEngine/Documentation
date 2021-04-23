@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-20 14:45+0800\n"
-"PO-Revision-Date: 2021-04-21 09:35\n"
+"PO-Revision-Date: 2021-04-23 12:38\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:6
 msgid "Utils 模块"
-msgstr ""
+msgstr "Utils 模块"
 
 #: ../../source/reference/utils.rst:12
 msgid "Computing Graph Tools"
@@ -134,7 +134,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid "Loads a computing graph as a Network object."
-msgstr ""
+msgstr "加载模型并生成一个:class:`Network`对象。"
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid ":obj:`Network.dump <megengine.utils.network.Network.dump>`"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid "Serializes graph to file."
-msgstr ""
+msgstr "把该网络保存为文件。"
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid ":obj:`Network.make_const <megengine.utils.network.Network.make_const>`"
@@ -150,7 +150,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid "Makes an ImmutableTensor OpNode to provide a parameter for the network."
-msgstr ""
+msgstr "创建一个:class:`.ImmutableTensor`对象，为该网络提供参数。"
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid ":obj:`Network.make_input_node <megengine.utils.network.Network.make_input_node>`"
@@ -158,7 +158,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid "Makes a Host2DeviceCopy OpNode to provide an input varnode for the network."
-msgstr ""
+msgstr "创建一个:class:`.Host2DeviceCopy`对象，为该网络提供输入。"
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid ":obj:`Network.add_output <megengine.utils.network.Network.add_output>`"
@@ -166,7 +166,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid "Adds vars into the network output node list"
-msgstr ""
+msgstr "把:attr:`vars`加入到网络的输出列表中。"
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid ":obj:`Network.remove_output <megengine.utils.network.Network.remove_output>`"
@@ -174,7 +174,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid "Removes vars from the network output node list."
-msgstr ""
+msgstr "把:attr:`vars`从网络的输出列表中删除。"
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid ":obj:`Network.add_dep_oprs <megengine.utils.network.Network.add_dep_oprs>`"
@@ -186,7 +186,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid "Modifies names of operators **inplace**; useful for merging loaded network into another network"
-msgstr ""
+msgstr "**原地**修改算子名称，用于在把一个网络合并入另一个网络时。"
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid ":obj:`Network.reset_batch_size <megengine.utils.network.Network.reset_batch_size>`"
@@ -194,7 +194,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid "Helper for reset batch size; first dimension of all data providers not in blacklist are assumed to be the batch size"
-msgstr ""
+msgstr "重置批大小，该操作会作用于网络中除attr:`blacklist`外的所有变量。"
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid ":obj:`Network.replace_vars <megengine.utils.network.Network.replace_vars>`"
@@ -222,7 +222,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid "Gets all oprs which use var as input"
-msgstr ""
+msgstr "得到所有使用:attr:`var`作为输入的算子。"
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid ":obj:`Network.get_dep_oprs <megengine.utils.network.Network.get_dep_oprs>`"
@@ -230,7 +230,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:71:<autosummary>:1
 msgid "Gets dependent oprs of var"
-msgstr ""
+msgstr "得到:attr:`var`依赖的算子集合。"
 
 #: ../../source/reference/utils.rst:72
 msgid "属性"
@@ -242,7 +242,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:86:<autosummary>:1
 msgid "Filter on all opnodes of the Network."
-msgstr ""
+msgstr "返回一个筛选所有算子的:class:`NodeFilter`"
 
 #: ../../source/reference/utils.rst:86:<autosummary>:1
 msgid ":obj:`Network.var_filter <megengine.utils.network.Network.var_filter>`"
@@ -250,7 +250,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:86:<autosummary>:1
 msgid "Filter on all varnode of the Network."
-msgstr ""
+msgstr "返回一个筛选器:class:`NodeFilter`，它会作用于网络中的所有变量。"
 
 #: ../../source/reference/utils.rst:86:<autosummary>:1
 msgid ":obj:`Network.params_filter <megengine.utils.network.Network.params_filter>`"
@@ -258,7 +258,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:86:<autosummary>:1
 msgid "Filter on all parameters (ImmutableTensor Opr) of the Network"
-msgstr ""
+msgstr "筛选出网络的所有参数。"
 
 #: ../../source/reference/utils.rst:86:<autosummary>:1
 msgid ":obj:`Network.data_providers_filter <megengine.utils.network.Network.data_providers_filter>`"
@@ -266,7 +266,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:86:<autosummary>:1
 msgid "Filter on all input nodes (Host2DeviceCopy Opr) of the Network"
-msgstr ""
+msgstr "筛选网络中的所有变量，找到输入变量并返回。"
 
 #: ../../source/reference/utils.rst:86:<autosummary>:1
 msgid ":obj:`Network.dest_vars <megengine.utils.network.Network.dest_vars>`"
@@ -274,7 +274,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:86:<autosummary>:1
 msgid "Output varnodes of the Network."
-msgstr ""
+msgstr "返回该网络的输出变量。"
 
 #: ../../source/reference/utils.rst:86:<autosummary>:1
 msgid ":obj:`Network.all_oprs <megengine.utils.network.Network.all_oprs>`"
@@ -302,7 +302,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:94:<autosummary>:1
 msgid "convert a :class:`.VarNode` compatible object to :class:`.VarNode`."
-msgstr ""
+msgstr "得到一个:class:`.VarNode`对象。"
 
 #: ../../source/reference/utils.rst:94:<autosummary>:1
 msgid ":obj:`as_oprnode <megengine.utils.network.as_oprnode>`"
@@ -310,7 +310,8 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:94:<autosummary>:1
 msgid "convert a :class:`.OpNode` compatible object to :class:`.OpNode`; it works like :func:`as_varnode`."
-msgstr ""
+msgstr "根据输入类型得到一个:class:`OpNode`对象，输入可以是:class:`VarNode`、:class:`OpNode`以及由他们组成的长度为一的容器。\n"
+"该函数与:func:`as_varnode`的行为类似。"
 
 #: ../../source/reference/utils.rst:96
 msgid "NodeFilter"
@@ -422,7 +423,7 @@ msgstr ""
 
 #: ../../source/reference/utils.rst:126:<autosummary>:1
 msgid "see :meth:`NodeFilter.type`"
-msgstr ""
+msgstr "参考:meth:`NodeFilter.type`。"
 
 #: ../../source/reference/utils.rst:126:<autosummary>:1
 msgid ":obj:`NodeFilterNotType <megengine.utils.network.NodeFilterNotType>`"
