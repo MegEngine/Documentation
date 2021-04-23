@@ -16,25 +16,25 @@
 可用预设配置如下：
 
 ``min_max_fakequant_qconfig``
-  使用 :class:`~.MinMaxObserver` 和 :class:`~.FakeQuant` 预设。
+  使用 :class:`~.MinMaxObserver` 和 :class:`~.FakeQuantize` 预设。
 
 ``ema_fakequant_qconfig``
-  使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuant` 预设。
+  使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 预设。
 
 ``sync_ema_fakequant_qconfig``
-  使用 :class:`~.SyncExponentialMovingAverageObserver` 和 :class:`~.FakeQuant` 的预设。
+  使用 :class:`~.SyncExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 的预设。
  
 ``ema_lowbit_fakequant_qconfig``
-  使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuant` 且数值类型为 ``qint4`` 的预设。
+  使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 且数值类型为 ``qint4`` 的预设。
 
 ``calibration_qconfig``
-  对激活值使用 :class:`~.HistogramObserver` 进行后量化（无 :class:`~.FakeQuant` ）的预设。
+  对激活值使用 :class:`~.HistogramObserver` 进行后量化（无 :class:`~.FakeQuantize` ）的预设。
 
 ``tqt_qconfig``
   使用 :class:`~.TQT` 进行假量化的预设。
 
 ``passive_qconfig``
-  使用 :class:`~.PassiveObserver` 和 :class:`~.FakeQuant` 的预设。
+  使用 :class:`~.PassiveObserver` 和 :class:`~.FakeQuantize` 的预设。
 
 ``easyquant_qconfig``
   用于 easyquant 算法的 QConfig，等价于 ``passive_qconfig``.
@@ -47,6 +47,8 @@
    :nosignatures:
 
    Observer
+   Observer.enable
+   Observer.disable
    MinMaxObserver
    SyncMinMaxObserver
    ExponentialMovingAverageObserver
@@ -62,6 +64,8 @@
    :nosignatures:
 
    FakeQuantize
+   FakeQuantize.enable
+   FakeQuantize.disable
    TQT
 
 
