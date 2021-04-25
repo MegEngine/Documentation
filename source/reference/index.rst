@@ -36,6 +36,13 @@ Python API
 
 .. note::
 
+   * 如果你是 Pycharm 用户，可如下配置 
+     `External Documentation <External Documentation>`_ URL Pattern:
+
+     https://megengine.org.cn/doc/stable/{language}/reference/api/{element.qname}.html
+
+     其中 {language} 替换成你希望访问文档的语言，如 ``zh`` .
+
    * 为了方便用户调用，在一些 ``__init__.py`` 文件中导入了一些子模块或常用对象和方法。
      如在调用 :py:func:`.functional.add` 时，实际调用的是 ``functional.elemwise.add`` 接口。
    * MegEngine 在 GitHub 上的 Python 包源码：:src:`imperative/python/megengine`
