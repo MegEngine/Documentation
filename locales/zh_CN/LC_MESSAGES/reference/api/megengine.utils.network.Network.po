@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-20 14:45+0800\n"
-"PO-Revision-Date: 2021-04-23 13:31\n"
+"PO-Revision-Date: 2021-04-25 10:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -48,7 +48,7 @@ msgstr ":obj:`add_output <megengine.utils.network.Network.add_output>`\\ \\(\\*v
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid "Adds vars into the network output node list"
-msgstr "把:attr:`vars`加入到网络的输出列表中。"
+msgstr "把 :attr:`vars` 添加到网络的输出列表中。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid ":obj:`dump <megengine.utils.network.Network.dump>`\\ \\(file\\, \\*\\[\\, keep\\_var\\_name\\, ...\\]\\)"
@@ -56,7 +56,7 @@ msgstr ":obj:`dump <megengine.utils.network.Network.dump>`\\ \\(file\\, \\*\\[\\
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid "Serializes graph to file."
-msgstr "把该网络保存为文件。"
+msgstr "把网络保存为模型文件。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid ":obj:`get_dep_oprs <megengine.utils.network.Network.get_dep_oprs>`\\ \\(var\\)"
@@ -64,7 +64,7 @@ msgstr ":obj:`get_dep_oprs <megengine.utils.network.Network.get_dep_oprs>`\\ \\(
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid "Gets dependent oprs of var"
-msgstr "得到:attr:`var`依赖的算子集合。"
+msgstr "返回 :attr:`var` 所依赖的计算节点的集合。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid ":obj:`get_opr_by_name <megengine.utils.network.Network.get_opr_by_name>`\\ \\(name\\[\\, unique\\]\\)"
@@ -84,7 +84,7 @@ msgstr ":obj:`get_var_receive_oprs <megengine.utils.network.Network.get_var_rece
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid "Gets all oprs which use var as input"
-msgstr "得到所有使用:attr:`var`作为输入的算子。"
+msgstr "返回所有以 :attr:`var` 为输入的计算节点。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid ":obj:`load <megengine.utils.network.Network.load>`\\ \\(model\\_path\\[\\, outspec\\]\\)"
@@ -100,7 +100,7 @@ msgstr ":obj:`make_const <megengine.utils.network.Network.make_const>`\\ \\(data
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid "Makes an ImmutableTensor OpNode to provide a parameter for the network."
-msgstr "创建一个:class:`.ImmutableTensor`对象，为该网络提供参数。"
+msgstr "创建一个 :class:`.ImmutableTensor` 对象，为网络提供计算参数。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid ":obj:`make_input_node <megengine.utils.network.Network.make_input_node>`\\ \\(shape\\, dtype\\[\\, name\\, device\\]\\)"
@@ -108,7 +108,7 @@ msgstr ":obj:`make_input_node <megengine.utils.network.Network.make_input_node>`
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid "Makes a Host2DeviceCopy OpNode to provide an input varnode for the network."
-msgstr "创建一个:class:`.Host2DeviceCopy`对象，为该网络提供输入。"
+msgstr "创建一个 :class:`.Host2DeviceCopy` 对象，为网络提供输入。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid ":obj:`modify_opr_names <megengine.utils.network.Network.modify_opr_names>`\\ \\(modifier\\)"
@@ -116,7 +116,7 @@ msgstr ":obj:`modify_opr_names <megengine.utils.network.Network.modify_opr_names
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid "Modifies names of operators **inplace**; useful for merging loaded network into another network"
-msgstr "**原地**修改算子名称，用于在把一个网络合并入另一个网络时。"
+msgstr "**原地**修改计算节点的名称，通常用于在把一个网络合并入另一个网络时。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:36:<autosummary>:1
 msgid ":obj:`optimize_for_inference <megengine.utils.network.Network.optimize_for_inference>`\\ \\(dest\\_vars\\, \\*\\*kwargs\\)"
@@ -184,7 +184,7 @@ msgstr ":obj:`data_providers_filter <megengine.utils.network.Network.data_provid
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:49:<autosummary>:1
 msgid "Filter on all input nodes (Host2DeviceCopy Opr) of the Network"
-msgstr "筛选网络中的所有变量，找到输入变量并返回。"
+msgstr "返回网络的输入。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:49:<autosummary>:1
 msgid ":obj:`dest_vars <megengine.utils.network.Network.dest_vars>`\\"
@@ -192,7 +192,7 @@ msgstr ":obj:`dest_vars <megengine.utils.network.Network.dest_vars>`\\"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:49:<autosummary>:1
 msgid "Output varnodes of the Network."
-msgstr "返回该网络的输出变量。"
+msgstr "返回网络的输出。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:49:<autosummary>:1
 msgid ":obj:`opr_filter <megengine.utils.network.Network.opr_filter>`\\"
@@ -200,7 +200,7 @@ msgstr ":obj:`opr_filter <megengine.utils.network.Network.opr_filter>`\\"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:49:<autosummary>:1
 msgid "Filter on all opnodes of the Network."
-msgstr "返回一个筛选所有算子的:class:`NodeFilter`"
+msgstr "创建并返回一个包含网络中所有计算节点的筛选器 :class:`NodeFilter` 。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:49:<autosummary>:1
 msgid ":obj:`params_filter <megengine.utils.network.Network.params_filter>`\\"
@@ -208,7 +208,7 @@ msgstr ":obj:`params_filter <megengine.utils.network.Network.params_filter>`\\"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:49:<autosummary>:1
 msgid "Filter on all parameters (ImmutableTensor Opr) of the Network"
-msgstr "筛选出网络的所有参数。"
+msgstr "筛选出网络中的所有参数，也就是 :class:`ImmutableTensor` 类型的计算节点。"
 
 #: ../../source/reference/api/megengine.utils.network.Network.rst:49:<autosummary>:1
 msgid ":obj:`var_filter <megengine.utils.network.Network.var_filter>`\\"
