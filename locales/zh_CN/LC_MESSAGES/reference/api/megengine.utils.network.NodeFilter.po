@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-25 02:58\n"
+"PO-Revision-Date: 2021-04-25 03:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -28,7 +28,7 @@ msgstr "基类：:class:`object`"
 
 #: megengine.utils.network.NodeFilter:1 of
 msgid "Filter on node iterator. This class is an iterator of :class:`.NetworkNode` objects and multiple filtering conditions and mappers can be chained."
-msgstr ""
+msgstr "作用于网络节点（包括算子节点和变量节点）的过滤器，其本质是一个封装特定筛选功能的迭代器。"
 
 #: megengine.utils.network.NodeFilter:5 of
 msgid "Example::"
@@ -96,7 +96,7 @@ msgstr ":obj:`data_provider <megengine.utils.network.NodeFilter.data_provider>`\
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid "get :class:`.DataProvider` oprs; shorthand for ``.type(DataProvider)``"
-msgstr ""
+msgstr "返回所有:class:`.DataProvider`算子节点，该方法是``.type(DataProvider)``的简写。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid ":obj:`has_input <megengine.utils.network.NodeFilter.has_input>`\\ \\(var\\)"
@@ -104,7 +104,7 @@ msgstr ":obj:`has_input <megengine.utils.network.NodeFilter.has_input>`\\ \\(var
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid "an opr is kept if it has given var as one of its inputs"
-msgstr ""
+msgstr "遍历过滤器中的算子节点，返回所有以给定变量节点为输入的对象集合。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid ":obj:`make_all_deps <megengine.utils.network.NodeFilter.make_all_deps>`\\ \\(\\*dest\\_vars\\)"
@@ -112,7 +112,7 @@ msgstr ":obj:`make_all_deps <megengine.utils.network.NodeFilter.make_all_deps>`\
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid "make a :class:`NodeFilter` that contains all deps of given vars"
-msgstr ""
+msgstr "啦啦啦"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid ":obj:`name <megengine.utils.network.NodeFilter.name>`\\ \\(pattern\\[\\, ignorecase\\]\\)"
@@ -120,7 +120,7 @@ msgstr ":obj:`name <megengine.utils.network.NodeFilter.name>`\\ \\(pattern\\[\\,
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid "filter by node name"
-msgstr ""
+msgstr "通过节点名称过滤。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid ":obj:`not_type <megengine.utils.network.NodeFilter.not_type>`\\ \\(node\\_type\\)"
@@ -128,7 +128,7 @@ msgstr ":obj:`not_type <megengine.utils.network.NodeFilter.not_type>`\\ \\(node\
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid "remove oprs of specific type"
-msgstr ""
+msgstr "返回过滤器中非指定类型的算子节点。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid ":obj:`param_provider <megengine.utils.network.NodeFilter.param_provider>`\\ \\(\\)"
@@ -136,7 +136,7 @@ msgstr ":obj:`param_provider <megengine.utils.network.NodeFilter.param_provider>
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid "get :class:`.ParamProvider` oprs; shorthand for ``.type(ParamProvider)``"
-msgstr ""
+msgstr "返回过滤器中所有类型为:class:`.ParamProvider`的算子节点，此方法是 ``.type(ParamProvider)`` 的简写。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid ":obj:`type <megengine.utils.network.NodeFilter.type>`\\ \\(node\\_type\\)"
@@ -144,5 +144,5 @@ msgstr ":obj:`type <megengine.utils.network.NodeFilter.type>`\\ \\(node\\_type\\
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilter.rst:26:<autosummary>:1
 msgid "filter by specific node type"
-msgstr ""
+msgstr "通过指定的节点类型过滤。"
 
