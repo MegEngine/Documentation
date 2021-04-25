@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-22 01:14+0800\n"
-"PO-Revision-Date: 2021-04-23 06:56\n"
+"PO-Revision-Date: 2021-04-25 06:45\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -50,21 +50,23 @@ msgstr "通常，输出的特征图的形状可以被下面的方式推导出来
 
 #: megengine.module.conv.Conv2d:19 of
 msgid "input: :math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`"
-msgstr ""
+msgstr "输入：:math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`"
 
 #: megengine.module.conv.Conv2d:21 of
 msgid "output: :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` where"
-msgstr ""
+msgstr "输出：:math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})`"
 
 #: megengine.module.conv.Conv2d:23 of
 msgid "\\text{H}_{out} = \\lfloor \\frac{\\text{H}_{in} + 2 * \\text{padding[0]} -\n"
 "\\text{dilation[0]} * (\\text{kernel_size[0]} - 1) - 1}{\\text{stride[0]}} + 1 \\rfloor\n\n"
-msgstr ""
+msgstr "\\text{H}_{out} = \\lfloor \\frac{\\text{H}_{in} + 2 * \\text{padding[0]} -\n"
+"\\text{dilation[0]} * (\\text{kernel_size[0]} - 1) - 1}{\\text{stride[0]}} + 1 \\rfloor\n\n"
 
 #: megengine.module.conv.Conv2d:27 of
 msgid "\\text{W}_{out} = \\lfloor \\frac{\\text{W}_{in} + 2 * \\text{padding[1]} -\n"
 "\\text{dilation[1]} * (\\text{kernel_size[1]} - 1) - 1}{\\text{stride[1]}} + 1 \\rfloor\n\n"
-msgstr ""
+msgstr "\\text{W}_{out} = \\lfloor \\frac{\\text{W}_{in} + 2 * \\text{padding[1]} -\n"
+"\\text{dilation[1]} * (\\text{kernel_size[1]} - 1) - 1}{\\text{stride[1]}} + 1 \\rfloor\n\n"
 
 #: megengine.module.conv.Conv2d:31 of
 msgid "When `groups == in_channels` and `out_channels == K * in_channels`, where K is a positive integer, this operation is also known as depthwise convolution."
@@ -76,7 +78,7 @@ msgstr "换句话说，对于形状为 :math:`(N, C_{in}, H_{in}, W_{in})` 的�
 
 #: megengine.module.conv.Conv2d of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.conv.Conv2d:40 of
 msgid "number of input channels."
@@ -140,7 +142,7 @@ msgstr "参数名称"
 
 #: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
 msgid "module's name, can be initialized by the ``kwargs`` parameter"
-msgstr ""
+msgstr "模块名称，子类的 ``kwargs`` 将会保存和传递此关键字参数。"
 
 #: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
 msgid ":obj:`apply <megengine.module.Conv2d.apply>`\\ \\(fn\\)"
@@ -196,7 +198,7 @@ msgstr ":obj:`load_state_dict <megengine.module.Conv2d.load_state_dict>`\\ \\(st
 
 #: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
 msgid "Loads a given dictionary created by :func:`state_dict` into this module."
-msgstr ""
+msgstr "加载一个参数字典，这个字典通常使用:func:`state_dict`得到。"
 
 #: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
 msgid ":obj:`modules <megengine.module.Conv2d.modules>`\\ \\(\\*\\*kwargs\\)"
@@ -252,7 +254,7 @@ msgstr ":obj:`register_forward_hook <megengine.module.Conv2d.register_forward_ho
 
 #: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
 msgid "Registers a hook to handle forward results."
-msgstr ""
+msgstr "给模块输出注册一个回调函数。"
 
 #: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
 msgid ":obj:`register_forward_pre_hook <megengine.module.Conv2d.register_forward_pre_hook>`\\ \\(hook\\)"
@@ -260,7 +262,7 @@ msgstr ":obj:`register_forward_pre_hook <megengine.module.Conv2d.register_forwar
 
 #: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
 msgid "Registers a hook to handle forward inputs."
-msgstr ""
+msgstr "给模块输入注册一个回调函数。"
 
 #: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
 msgid ":obj:`replace_param <megengine.module.Conv2d.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"

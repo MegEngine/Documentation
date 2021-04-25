@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 07:07\n"
+"POT-Creation-Date: 2021-04-23 21:44+0800\n"
+"PO-Revision-Date: 2021-04-23 16:44\n"
 "Last-Translator: \n"
+"Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-compression/quantization.po\n"
 "X-Crowdin-File-ID: 2860\n"
-"Language: zh_TW\n"
 
 #: ../../source/user-guide/model-compression/quantization.rst:5
 msgid "量化"
@@ -127,28 +127,28 @@ msgid "如果是后量化，或者说 Calibration，由于无需进行 FakeQuant
 msgstr "crwdns45848:0crwdne45848:0"
 
 #: ../../source/user-guide/model-compression/quantization.rst:136
-msgid "除了使用在 :mod:`~.quantization.Qconfig` 里提供的预设 QConfig， 也可以根据需要灵活选择 Observer 和 FakeQuantize  实现自己的 QConfig。目前提供的 Observer 包括："
-msgstr "crwdns45850:0:mod:crwdne45850:0"
+msgid "除了使用在 :class:`~.quantization.Qconfig` 里提供的预设 QConfig， 也可以根据需要灵活选择 Observer 和 FakeQuantize  实现自己的 QConfig。目前提供的 Observer 包括："
+msgstr "crwdns47798:0:class:crwdne47798:0"
 
 #: ../../source/user-guide/model-compression/quantization.rst:139
-msgid ":class:`~.quantization.observer.MinMaxObserver` ， 使用最简单的算法统计 min/max，对见到的每批数据取 min/max 跟当前存的值比较并替换， 基于 min/max 得到 scale 和 zero_point；"
-msgstr "crwdns45852:0:class:crwdne45852:0"
+msgid ":class:`~.quantization.MinMaxObserver` ， 使用最简单的算法统计 min/max，对见到的每批数据取 min/max 跟当前存的值比较并替换， 基于 min/max 得到 scale 和 zero_point；"
+msgstr "crwdns47800:0:class:crwdne47800:0"
 
 #: ../../source/user-guide/model-compression/quantization.rst:142
-msgid ":class:`~.quantization.observer.ExponentialMovingAverageObserver` ， 引入动量的概念，对每批数据的 min/max 与现有 min/max 的加权和跟现有值比较；"
-msgstr "crwdns45854:0:class:crwdne45854:0"
+msgid ":class:`~.quantization.ExponentialMovingAverageObserver` ， 引入动量的概念，对每批数据的 min/max 与现有 min/max 的加权和跟现有值比较；"
+msgstr "crwdns47802:0:class:crwdne47802:0"
 
 #: ../../source/user-guide/model-compression/quantization.rst:144
-msgid ":class:`~.quantization.observer.HistogramObserver` ， 更加复杂的基于直方图分布的 min/max 统计算法，且在 forward 时持续更新该分布， 并根据该分布计算得到 scale 和 zero_point。"
-msgstr "crwdns45856:0:class:crwdne45856:0"
+msgid ":class:`~.quantization.HistogramObserver` ， 更加复杂的基于直方图分布的 min/max 统计算法，且在 forward 时持续更新该分布， 并根据该分布计算得到 scale 和 zero_point。"
+msgstr "crwdns47804:0:class:crwdne47804:0"
 
 #: ../../source/user-guide/model-compression/quantization.rst:148
-msgid "对于 FakeQuantize，目前还提供了 :class:`~.quantization.fake_quant.TQT` 算子， 另外还可以继承 ``_FakeQuant`` 基类实现自定义的假量化算子。"
-msgstr "crwdns45858:0:class:crwdne45858:0"
+msgid "对于 FakeQuantize，目前还提供了 :class:`~.quantization.TQT` 算子， 另外还可以继承 ``_FakeQuant`` 基类实现自定义的假量化算子。"
+msgstr "crwdns47806:0:class:crwdne47806:0"
 
 #: ../../source/user-guide/model-compression/quantization.rst:151
-msgid "在实际使用过程中，可能需要在训练时让 Observer 统计并更新参数，但是在推理时则停止更新。 Observer 和 FakeQuantize 都支持 :meth:`~.quantization.observer.Observer.enable` 和 :meth:`~.quantization.observer.Observer.disable` 功能， 且 Observer 会在 :meth:`~.module.module.Module.train` 和 :meth:`~.module.module.Module.train` 时自动分别调用 enable/disable。"
-msgstr "crwdns45860:0:meth:crwdnd45860:0:meth:crwdnd45860:0:meth:crwdnd45860:0:meth:crwdne45860:0"
+msgid "在实际使用过程中，可能需要在训练时让 Observer 统计并更新参数，但是在推理时则停止更新。 Observer 和 FakeQuantize 都支持 :meth:`~.quantization.Observer.enable` 和 :meth:`~.quantization.Observer.disable` 功能， 且 Observer 会在 :meth:`~module.Module.train` 和 :meth:`~module.Module.eval` 时自动分别调用 enable/disable。"
+msgstr "crwdns47808:0:meth:crwdnd47808:0:meth:crwdnd47808:0:meth:crwdnd47808:0:meth:crwdne47808:0"
 
 #: ../../source/user-guide/model-compression/quantization.rst:157
 msgid "所以一般在 Calibration 时，会先执行 ``net.eval()`` 保证网络的参数不被更新， 然后再执行 :``enable_observer(net)`` 来手动开启 Observer 的统计修改功能。"
