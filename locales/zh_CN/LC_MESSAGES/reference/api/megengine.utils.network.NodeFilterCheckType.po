@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-25 03:25\n"
+"PO-Revision-Date: 2021-04-25 07:56\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -28,7 +28,7 @@ msgstr "基类：:class:`megengine.utils.network.NodeFilterType`"
 
 #: megengine.utils.network.NodeFilterCheckType:1 of
 msgid "see :meth:`NodeFilter.check_type`"
-msgstr ""
+msgstr " 参考 :meth:`NodeFilter.check_type`。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:11
 msgid "Methods"
@@ -40,11 +40,11 @@ msgstr ":obj:`__init__ <megengine.utils.network.NodeFilterCheckType.__init__>`\\
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>
 msgid "param node_iter"
-msgstr ""
+msgstr " "
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid "iterator to :class:`.NetworkNode`, or a"
-msgstr ""
+msgstr "由 :class:`.NetworkNode` 组成的迭代器，或者一个 :class:`.VarNode` 兼容的对象。如果是后面这种情况，则该变量依赖的所有计算节点都会被加入到此过滤器中。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid ":obj:`as_count <megengine.utils.network.NodeFilterCheckType.as_count>`\\ \\(\\)"
@@ -60,7 +60,7 @@ msgstr ":obj:`as_dict <megengine.utils.network.NodeFilterCheckType.as_dict>`\\ \
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid "construct an ordered dict to map from node names to objects in this iterator"
-msgstr "遍历迭代器并返回一个有序字典，其键为节点名称，值为节点对象。"
+msgstr "遍历过滤器并返回一个有序字典，其键为节点名称，值为节点对象。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid ":obj:`as_list <megengine.utils.network.NodeFilterCheckType.as_list>`\\ \\(\\)"
@@ -68,7 +68,7 @@ msgstr ":obj:`as_list <megengine.utils.network.NodeFilterCheckType.as_list>`\\ \
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid "consume this iterator and return its content as a list"
-msgstr "将迭代器中的内容以列表的形式表示并返回。"
+msgstr "将过滤器中的内容以列表的形式表示并返回。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid ":obj:`as_unique <megengine.utils.network.NodeFilterCheckType.as_unique>`\\ \\(\\)"
@@ -76,7 +76,7 @@ msgstr ":obj:`as_unique <megengine.utils.network.NodeFilterCheckType.as_unique>`
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid "assert that this iterator yields only one node and return it"
-msgstr "如果过滤器中只包含一个元素，那么返回该元素，否则报错。"
+msgstr "断言过滤器中只包含单个元素，并返回该元素。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid ":obj:`check_type <megengine.utils.network.NodeFilterCheckType.check_type>`\\ \\(node\\_type\\)"
@@ -84,7 +84,7 @@ msgstr ":obj:`check_type <megengine.utils.network.NodeFilterCheckType.check_type
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid "assert that all oprs produced by this iterator are instances of certain type"
-msgstr "检查过滤器中的所有算子节点是否都属于给定类型。"
+msgstr "断言过滤器中的所有计算节点都属于给定类型。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid ":obj:`data_provider <megengine.utils.network.NodeFilterCheckType.data_provider>`\\ \\(\\)"
@@ -92,7 +92,7 @@ msgstr ":obj:`data_provider <megengine.utils.network.NodeFilterCheckType.data_pr
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid "get :class:`.DataProvider` oprs; shorthand for ``.type(DataProvider)``"
-msgstr "返回所有:class:`.DataProvider`算子节点，该方法是``.type(DataProvider)``的简写。"
+msgstr "返回所有类型为 :class:`.DataProvider` 的计算节点，该方法是 ``.type(DataProvider)`` 的简写。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid ":obj:`has_input <megengine.utils.network.NodeFilterCheckType.has_input>`\\ \\(var\\)"
@@ -100,7 +100,7 @@ msgstr ":obj:`has_input <megengine.utils.network.NodeFilterCheckType.has_input>`
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid "an opr is kept if it has given var as one of its inputs"
-msgstr "遍历过滤器中的所有算子节点，返回以给定变量节点为输入的对象集合。"
+msgstr "返回过滤器中所有以 :attr:`var` 为输入的计算节点。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid ":obj:`make_all_deps <megengine.utils.network.NodeFilterCheckType.make_all_deps>`\\ \\(\\*dest\\_vars\\)"
@@ -108,7 +108,7 @@ msgstr ":obj:`make_all_deps <megengine.utils.network.NodeFilterCheckType.make_al
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid "make a :class:`NodeFilter` that contains all deps of given vars"
-msgstr "啦啦啦"
+msgstr "创建并返回一个过滤器，其中包含给定变量依赖的所有节点。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid ":obj:`name <megengine.utils.network.NodeFilterCheckType.name>`\\ \\(pattern\\[\\, ignorecase\\]\\)"
@@ -124,7 +124,7 @@ msgstr ":obj:`not_type <megengine.utils.network.NodeFilterCheckType.not_type>`\\
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid "remove oprs of specific type"
-msgstr "返回过滤器中非指定类型的算子节点。"
+msgstr "移除过滤器中所有指定类型的计算节点。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid ":obj:`param_provider <megengine.utils.network.NodeFilterCheckType.param_provider>`\\ \\(\\)"
@@ -132,7 +132,7 @@ msgstr ":obj:`param_provider <megengine.utils.network.NodeFilterCheckType.param_
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid "get :class:`.ParamProvider` oprs; shorthand for ``.type(ParamProvider)``"
-msgstr "返回过滤器中所有类型为:class:`.ParamProvider`的算子节点，此方法是 ``.type(ParamProvider)`` 的简写。"
+msgstr "返回过滤器中所有类型为 :class:`.ParamProvider` 的计算节点，此方法是 ``.type(ParamProvider)`` 的简写。"
 
 #: ../../source/reference/api/megengine.utils.network.NodeFilterCheckType.rst:26:<autosummary>:1
 msgid ":obj:`type <megengine.utils.network.NodeFilterCheckType.type>`\\ \\(node\\_type\\)"
