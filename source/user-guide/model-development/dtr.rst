@@ -9,7 +9,7 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
 
 
 单卡训练
---------------------
+--------
 
 使用方式十分简单，在训练代码之前添加两行代码：
 
@@ -25,9 +25,9 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
 
 
 分布式训练
---------------------
+----------
 
-关于分布式训练的开启，请参考 :ref:`分布式训练<_distribution>`
+关于分布式训练的开启，请参考 :ref:`分布式训练 <distribution>`
 
 :class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function，你需要在这个 function 中定义 DTR 的参数：
 
