@@ -54,7 +54,7 @@ MegEngine 文档使用 Sphinx 官方推荐的
 
       #: locales/zh_CN/LC_MESSAGES/example.rst:37
       msgid "Welcome to use MegEngine."
-      msgstr "欢迎使用天元 MegEngine."
+      msgstr "欢迎使用 MegEngine."
 
 #. 生成翻译后的文档（ ``LANGUAGE`` 参数默认为 ``zh-CN`` ）：
 
