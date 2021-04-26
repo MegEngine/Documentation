@@ -8,7 +8,7 @@
 
    quick-start
 
-对于初次接触天元 MegEngine 的用户，我们提供了新手入门材料。
+对于初次接触 MegEngine 的用户，我们提供了新手入门材料。
 
 深度学习，简单开发，我们的学习从这里开始～
 
@@ -43,8 +43,8 @@
 接下来做什么
 ------------
 
-* 如果你有其它深度学习框架使用经验，请参考 `天元 MegEngine 快速上手 <./quick-start.html>`_ 教程，以便快速熟悉 :ref:`API <reference>` .
-* 如果你是机器学习/深度学习领域的初学者，想要通过学习天元 MegEngine 的使用加深对基础知识的理解，
+* 如果你有其它深度学习框架使用经验，请参考 `MegEngine 快速上手 <./quick-start.html>`_ 教程，以便快速熟悉 :ref:`API <reference>` .
+* 如果你是机器学习/深度学习领域的初学者，想要通过学习 MegEngine 的使用加深对基础知识的理解，
   我们为你准备了一系列特别基础的 Learning-by-doing 教程，
-  请从 `天元 MegEngine 基础概念 <./beginner/megengine-basic-concepts.html>`_ 耐心顺序阅读下去，一定会有所收获。
+  请从 `MegEngine 基础概念 <./beginner/megengine-basic-concepts.html>`_ 耐心顺序阅读下去，一定会有所收获。
   
