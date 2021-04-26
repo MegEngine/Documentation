@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-20 14:45+0800\n"
-"PO-Revision-Date: 2021-04-21 03:41\n"
+"POT-Creation-Date: 2021-04-26 18:42+0800\n"
+"PO-Revision-Date: 2021-04-26 10:57\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -19,386 +19,394 @@ msgstr ""
 "X-Crowdin-File-ID: 2844\n"
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:9
-msgid "天元 MegEngine 基础概念"
-msgstr "crwdns44960:0crwdne44960:0"
+msgid "MegEngine 基础概念"
+msgstr "crwdns47828:0crwdne47828:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:20
-msgid "我们为第一次接触天元 MegEngine 框架的用户提供了此系列教程，通过本部分的学习，你将会："
-msgstr "crwdns44962:0crwdne44962:0"
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:12
+msgid "|image0| `在官网查看 <https://megengine.org.cn/doc/stable/zh/getting-started/beginner/megengine-basic-concepts.html>`__"
+msgstr "crwdns47830:0crwdne47830:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:22
-msgid "对天元 MegEngine 框架中的 ``Tensor``, ``Operator``, ``GradManager`` 等基本概念有一定的了解；"
-msgstr "crwdns44964:0crwdne44964:0"
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:12
+msgid "|image1| `在 MegStudio 运行 <https://studio.brainpp.com/project/2>`__"
+msgstr "crwdns47832:0crwdne47832:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:23
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:12
+msgid "|image2| `在 GitHub 查看 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/megengine-basic-concepts.ipynb>`__"
+msgstr "crwdns47834:0crwdne47834:0"
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:29
+msgid "我们为第一次接触 MegEngine 框架的用户提供了此系列教程，通过本部分的学习，你将会："
+msgstr "crwdns47836:0crwdne47836:0"
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:31
+msgid "对 MegEngine 框架中的 ``Tensor``, ``Operator``, ``GradManager`` 等基本概念有一定的了解；"
+msgstr "crwdns47838:0crwdne47838:0"
+
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:32
 msgid "对深度学习中的前向传播、反向传播和参数更新的具体过程有更加清晰的认识；"
 msgstr "crwdns44966:0crwdne44966:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:24
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:33
 msgid "通过写代码训练一个线性回归模型，对上面提到的这些概念进行具体的实践，加深理解。"
 msgstr "crwdns44968:0crwdne44968:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:26
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:35
 msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `访问官网安装教程 <https://megengine.org.cn/install>`__\\ ）："
 msgstr "crwdns44970:0crwdne44970:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:68
-msgid "或者你可以前往 **MegStudio** fork 公开项目，无需本地安装，直接线上体验（\\ `开始学习 <https://studio.brainpp.com/project/2>`__\\ ）"
-msgstr "crwdns44972:0crwdne44972:0"
-
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:70
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:77
 msgid "接下来，我们将学习框架中一些基本模块的使用，先从最基础的张量（Tensor）和算子（Operator）开始吧～"
 msgstr "crwdns44974:0crwdne44974:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:82
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:89
 msgid "张量（Tensor）"
 msgstr "crwdns44976:0crwdne44976:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:84
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:91
 msgid "真实世界中的很多非结构化的数据，如文字、图片、音频、视频等，都可以表达成更容易被计算机理解的形式。"
 msgstr "crwdns44978:0crwdne44978:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:86
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:93
 msgid "MegEngine 使用张量（Tensor）来表示数据。类似于 `NumPy <https://numpy.org/>`__ 中的多维数组（ndarray），张量可以是标量、向量、矩阵或者多维数组。 在 MegEngine 中得到一个 Tensor 的方式有很多："
 msgstr "crwdns46490:0crwdne46490:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:88
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:95
 msgid "我们可以通过 ``megengine.functional.tensor`` 的 ``arange()``, ``ones()`` 等方法来生成 Tensor，\\ ``functional`` 模块我们会在后面介绍；"
 msgstr "crwdns44984:0crwdne44984:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:89
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:96
 msgid "也可以通过 ``Tensor()`` 或 ``tensor()`` 方法，传入 Python list 或者 ndarray 来创建一个 Tensor"
 msgstr "crwdns44986:0crwdne44986:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:147
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:154
 msgid "通过 ``dtype`` 属性我们可以获取 Tensor 的数据类型，默认为 ``float32``\\ ："
 msgstr "crwdns44988:0crwdne44988:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:149
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:156
 msgid "为了方便，统一使用 NumPy 的 ``dtype`` 表示；"
 msgstr "crwdns44990:0crwdne44990:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:150
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:157
 msgid "使用 ``type()`` 可以获取实际的类型，用来区分 ndarray 和 Tensor"
 msgstr "crwdns44992:0crwdne44992:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:193
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:200
 msgid "通过 ``astype()`` 方法我们可以拷贝创建一个指定数据类型的新 Tensor ，原 Tensor 不变："
 msgstr "crwdns44994:0crwdne44994:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:195
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:202
 msgid "MegEngine Tensor 目前不支持转化成 ``float64`` 类型；"
 msgstr "crwdns44996:0crwdne44996:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:196
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:203
 msgid "``float64`` 类型的 ndarray 转化成 Tensor 时会变成 ``float32`` 类型"
 msgstr "crwdns44998:0crwdne44998:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:237
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:244
 msgid "通过 ``device`` 属性，我们可以获取 Tensor 当前所在的设备："
 msgstr "crwdns45000:0crwdne45000:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:239
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:246
 msgid "一般地，如果在创建 Tensor 时不指定 ``device``\\ ，其 ``device`` 属性默认为 ``xpux``\\ ，表示当前任意一个可用的设备；"
 msgstr "crwdns45002:0crwdne45002:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:240
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:247
 msgid "在 GPU 和 CPU 同时存在时，\\ **MegEngine 将自动使用 GPU 作为默认设备进行训练** ."
 msgstr "crwdns45004:0crwdne45004:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:241
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:248
 msgid "如果需要查询 Tensor 所在设备，可以使用 `Tensor.device <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.device.html>`__ ;"
 msgstr "crwdns45006:0crwdne45006:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:242
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:249
 msgid "如果需要改变 Tensor 所在设备，可以使用 `Tensor.to <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.to.html>`__ 或 `functional.copy <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.functional.copy.html>`__ ."
 msgstr "crwdns45008:0crwdne45008:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:244
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:251
 msgid "通过 Tensor 自带的 ``numpy()`` 方法，可以拷贝 Tensor 并转化对应的 ndarray，原 Tensor 不变：:"
 msgstr "crwdns45010:0crwdne45010:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:284
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:291
 msgid "可以发现，不同类型之间的转化比较灵活，但需要注意："
 msgstr "crwdns45012:0crwdne45012:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:286
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:293
 msgid "MegEngine Tensor 没有 ``mge.numpy(mge_tensor)`` 这种用法；"
 msgstr "crwdns45014:0crwdne45014:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:287
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:294
 msgid "``tensor`` 是 ``Tensor`` 的一个别名（Alias），也可以尝试直接这样导入："
 msgstr "crwdns45016:0crwdne45016:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:333
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:340
 msgid "通过 ``shape`` 属性，我们可以获取 Tensor 的形状："
 msgstr "crwdns45018:0crwdne45018:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:375
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:382
 msgid "通过 ``size`` 属性，我们可以获取 Tensor 中元素的个数："
 msgstr "crwdns45020:0crwdne45020:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:415
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:422
 msgid "通过 ``item()`` 方法，我们可以获得对应的 Python 标量对象："
 msgstr "crwdns45022:0crwdne45022:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:457
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:464
 msgid "算子（Operator）"
 msgstr "crwdns45024:0crwdne45024:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:459
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:466
 msgid "MegEngine 中通过算子 (Operator） 来表示运算。MegEngine 中的算子支持基于 Tensor 的常见数学运算和操作。 比如 Tensor 的元素间（Element-wise）加法、减法和乘法："
 msgstr "crwdns46492:0crwdne46492:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:521
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:528
 msgid "你也可以使用 MegEngine 中的 ``functional`` 模块中的各种方法来完成对应计算："
 msgstr "crwdns45030:0crwdne45030:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:580
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:587
 msgid "Tensor 支持 Python 中常见的切片（Slicing）操作："
 msgstr "crwdns45032:0crwdne45032:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:623
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:630
 msgid "使用 ``reshape()`` 方法，可以得到修改形状后的 Tensor:"
 msgstr "crwdns45034:0crwdne45034:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:670
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:677
 msgid "另外， ``reshape()`` 方法的参数允许存在单个维度的缺省值，用 -1 表示。"
 msgstr "crwdns45036:0crwdne45036:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:672
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:679
 msgid "此时，\\ ``reshape()`` 会自动推理该维度的值："
 msgstr "crwdns45038:0crwdne45038:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:718
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:725
 msgid "在 ``functional`` 模块中提供了更多的算子，比如 Tensor 的矩阵乘可以使用 ``matmul()`` 方法："
 msgstr "crwdns45040:0crwdne45040:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:767
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:774
 msgid "我们可以使用 NumPy 的矩阵乘来验证一下这个结果："
 msgstr "crwdns45042:0crwdne45042:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:818
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:825
 msgid "更多算子可以参考 ``functional`` 模块的 `文档 <https://megengine.org.cn/doc/stable/zh/reference/functional.html>`__ 部分。"
 msgstr "crwdns46494:0crwdne46494:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:820
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:827
 msgid "现在你可以适当休息一下，脑海中回想一下张量（Tensor）和算子（Operator）的概念，然后继续阅读教程后面的部分。"
 msgstr "crwdns45046:0crwdne45046:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:832
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:839
 msgid "计算图（Computing Graph）"
 msgstr "crwdns45048:0crwdne45048:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:843
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:850
 msgid "MegEngine 是基于计算图（Computing Graph）的深度神经网络学习框架，下面通过一个简单的数学表达式 :math:`y=(w * x)+b` 来介绍计算图的基本概念，如下图所示："
 msgstr "crwdns45050:0:math:crwdne45050:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:845
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:852
 msgid "|Computing Graph|"
 msgstr "crwdns45052:0crwdne45052:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:847
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:854
 msgid "计算之间的各种流程依赖关系可以构成一张计算图，从中可以看到，计算图中存在："
 msgstr "crwdns45054:0crwdne45054:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:849
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:856
 msgid "数据节点（图中的实心圈）：如输入数据 :math:`x`\\ 、\\ **参数** :math:`w` 和 :math:`b`\\ ，运算得到的中间数据 :math:`p`\\ ，以及最终的输出 :math:`y`\\ ；"
 msgstr "crwdns45056:0:math:crwdnd45056:0:math:crwdnd45056:0:math:crwdnd45056:0:math:crwdnd45056:0:math:crwdne45056:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:850
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:857
 msgid "计算节点（图中的空心圈）：图中 :math:`*` 和 :math:`+` 分别表示计算节点 **乘法** 和 **加法**\\ ，是施加在数据节点上的运算；"
 msgstr "crwdns45058:0:math:crwdnd45058:0:math:crwdne45058:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:851
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:858
 msgid "边（图中的箭头）：表示数据的流向，体现了数据节点和计算节点之间的依赖关系"
 msgstr "crwdns45060:0crwdne45060:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:864
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:871
 msgid "**在深度学习领域，任何复杂的深度神经网络模型本质上都可以用一个计算图表示出来。**"
 msgstr "crwdns45062:0crwdne45062:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:866
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:873
 msgid "**MegEngine 用张量（Tensor）表示计算图中的数据节点，用算子（Operator）实现数据节点之间的运算。**"
 msgstr "crwdns45064:0crwdne45064:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:868
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:875
 msgid "我们可以理解成，神经网络模型的训练其实就是在重复以下过程："
 msgstr "crwdns45066:0crwdne45066:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:870
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:877
 msgid "**前向传播**\\ ：计算由计算图表示的数学表达式的值的过程。在上图中则是："
 msgstr "crwdns45068:0crwdne45068:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:871
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:878
 msgid "输入 :math:`x` 和参数 :math:`w` 首先经过乘法运算得到中间结果 :math:`p`\\ ，"
 msgstr "crwdns45070:0:math:crwdnd45070:0:math:crwdnd45070:0:math:crwdne45070:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:872
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:879
 msgid "接着 :math:`p` 和参数 :math:`b` 经过加法运算，得到右侧最终的输出 :math:`y`\\ ，这就是一个完整的前向传播过程。"
 msgstr "crwdns45072:0:math:crwdnd45072:0:math:crwdnd45072:0:math:crwdne45072:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:873
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:880
 msgid "**反向传播**\\ ：根据需要优化的目标（假设这里就为 :math:`y`\\ ），通过链式求导法则，对所有的参数求梯度。在上图中，即计算 :math:`\\frac{\\partial y}{\\partial w}` 和 :math:`\\frac{\\partial y}{\\partial b}`."
 msgstr "crwdns45074:0:math:crwdnd45074:0:math:crwdnd45074:0:math:crwdne45074:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:874
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:881
 msgid "**参数更新**\\ ：得到梯度后，需要使用梯度下降法（Gradient Descent）对参数做更新，从而达到模型优化的效果。在上图中，即对 :math:`w` 和 :math:`b` 做更新。"
 msgstr "crwdns45076:0:math:crwdnd45076:0:math:crwdne45076:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:876
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:883
 msgid "模型训练完成后便可用于测试（或者说推理），此时我们不需要再对模型本身做任何更改，只需要将数据经过前向传播得到对应的输出即可。"
 msgstr "crwdns45078:0crwdne45078:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:879
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:886
 msgid "链式法则计算梯度"
 msgstr "crwdns45080:0crwdne45080:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:881
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:888
 msgid "例如，为了得到上图中 :math:`y` 关于参数 :math:`w` 的梯度，反向传播的过程如下图所示："
 msgstr "crwdns45082:0:math:crwdnd45082:0:math:crwdne45082:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:883
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:890
 msgid "|Backpropagation|"
 msgstr "crwdns45084:0crwdne45084:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:885
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:892
 msgid "首先 :math:`y = p + b`\\ ，因此 :math:`\\frac{\\partial y}{\\partial p} = 1`"
 msgstr "crwdns45086:0:math:crwdnd45086:0:math:crwdne45086:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:886
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:893
 msgid "接着，反向追溯，\\ :math:`p = w * x` ，因此，\\ :math:`\\frac{\\partial p}{\\partial w}=x`"
 msgstr "crwdns45088:0:math:crwdnd45088:0:math:crwdne45088:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:887
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:894
 msgid "根据链式求导法则，\\ :math:`\\frac{\\partial y}{\\partial w}=\\frac{\\partial y}{\\partial p} * \\frac{\\partial p}{\\partial w} = 1 * x`"
 msgstr "crwdns45090:0:math:crwdne45090:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:888
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:895
 msgid "因此最终 :math:`y` 关于参数 :math:`w` 的梯度为 :math:`x`."
 msgstr "crwdns45092:0:math:crwdnd45092:0:math:crwdnd45092:0:math:crwdne45092:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:902
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:909
 msgid "求导器（GradManager）"
 msgstr "crwdns45094:0crwdne45094:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:904
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:911
 msgid "推导梯度是件枯燥的事情，尤其是当模型的前向传播计算输出的过程变得相对复杂时，根据链式法则计算梯度会变得异常枯燥无味。 自动求导是深度学习框架对使用者而言最有用的特性之一，它自动地完成了反向传播过程中根据链式法则去推导参数梯度的过程。"
 msgstr "crwdns46496:0crwdne46496:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:906
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:913
 msgid "MegEngine 的 ``autodiff`` 模块为计算图中的张量提供了自动求导功能，继续以上图的例子进行说明："
 msgstr "crwdns45100:0crwdne45100:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:961
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:968
 msgid "可以看到，求出的梯度本身也是 Tensor，\\ ``GradManager`` 负责管理和计算梯度（在默认情况下，Tensor 是不需要计算梯度的）。"
 msgstr "crwdns45102:0crwdne45102:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:962
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:969
 msgid "我们可以使用 ``attach()`` 来绑定需要计算梯度的变量（绑定后可使用 ``detach()`` 将其取消绑定），使用 ``backward()`` 进行梯度的计算。"
 msgstr "crwdns45104:0crwdne45104:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:964
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:971
 msgid "上面 ``with`` 代码段中的前向运算都会被求导器记录，有关求导器的原理，可以查看 ``GradManager`` 文档了解细节。"
 msgstr "crwdns45106:0crwdne45106:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:976
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:983
 msgid "优化器（Optimizer）"
 msgstr "crwdns45108:0crwdne45108:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:978
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:985
 msgid "你应该注意到了，我们使用参数（Parameter）来称呼张量（Tensor）\\ :math:`w` 和 :math:`b`, 因为与输入 :math:`x` 不同，计算图中的 :math:`w` 和 :math:`b` 是需要进行更新/优化的变量。MegEngine 中使用 ``Parameter`` 来表示参数（注意没有小写形式），Parameter 是 Tensor 的子类，其对象（即网络参数）可以被优化器更新。"
 msgstr "crwdns45110:0:math:crwdnd45110:0:math:crwdnd45110:0:math:crwdnd45110:0:math:crwdnd45110:0:math:crwdne45110:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:980
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:987
 msgid "显然，GradManager 支持对于 Parameter 的梯度计算："
 msgstr "crwdns45112:0crwdne45112:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1037
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1044
 msgid "前向传播和反向传播的过程完成后，我们得到了参数对应需要更新的梯度，如 ``w`` 相对于输出 :math:`y` 的梯度 ``w.grad``."
 msgstr "crwdns45114:0:math:crwdne45114:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1039
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1046
 msgid "根据梯度下降的思想，参数 :math:`w` 的更新规则为：\\ ``w = w - lr * w.grad``, 其中 ``lr`` 是学习率（Learning Rate），控制参数更新速度。"
 msgstr "crwdns45116:0:math:crwdne45116:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1041
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1048
 msgid "P.S: 类似学习率这种，训练前人为进行设定的，而非由模型学得的参数，通常被称为超参数（Hyperparameter）。"
 msgstr "crwdns45118:0crwdne45118:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1043
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1050
 msgid "MegEngine 的 ``Optimizer`` 模块提供了基于各种常见优化策略的优化器，如 Adam 和 SGD 等。"
 msgstr "crwdns45120:0crwdne45120:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1045
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1052
 msgid "它们都继承自 Optimizer 基类，主要包含参数梯度的清空 ``clear_grad()`` 和参数更新 ``step()`` 这两个方法："
 msgstr "crwdns45122:0crwdne45122:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1091
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1098
 msgid "**提示：**\\ 多次实践表明，用户经常忘记在更新参数后做梯度清空操作，因此推荐使用这样的写法：\\ ``optimizer.step().clear_grad()``"
 msgstr "crwdns45124:0crwdne45124:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1093
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1100
 msgid "我们使用 Numpy 来手动模拟一次参数 ``w`` 的更新过程："
 msgstr "crwdns45126:0crwdne45126:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1138
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1145
 msgid "这样我们便成功地进行了一次参数更新，在实际训练模型时，参数的更新会迭代进行很多次，迭代次数 ``epochs`` 也是一种超参数，需要人为设定。"
 msgstr "crwdns45128:0crwdne45128:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1150
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1157
 msgid "损失函数（Loss Function）"
 msgstr "crwdns45130:0crwdne45130:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1152
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1159
 msgid "深度神经网络模型的优化过程，实际上就是使用梯度下降算法来优化一个目标函数，从而更新网络模型中的参数。"
 msgstr "crwdns45132:0crwdne45132:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1154
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1161
 msgid "但请注意，上面用于举例的表达式的输出值其实并不是需要被优化的对象，我们的目标是：模型预测的输出结果和真实标签尽可能一致。"
 msgstr "crwdns45134:0crwdne45134:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1156
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1163
 msgid "我们已经知道了，通过前向传播可以得到模型预测的输出，此时我们用 **损失函数（Loss Function）** 来度量模型输出与真实结果之间的差距。"
 msgstr "crwdns45136:0crwdne45136:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1158
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1165
 msgid "MegEngine 的 ``functional`` 模块提供了各种常见的损失函数，具体可见 `文档 <https://megengine.org.cn/doc/stable/zh/reference/functional.html#loss>`__ 中的 ``loss`` 部分。"
 msgstr "crwdns46498:0crwdne46498:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1160
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1167
 msgid "对于 :math:`w * x + b` 这样的范围在实数域 :math:`\\mathbb R` 上的输出，我们可以使用均方误差（Mean Squared Error, MSE）表示模型输出 :math:`y_{pred}` 和实际值 :math:`y_{real}` 的差距："
 msgstr "crwdns45140:0:math:crwdnd45140:0:math:crwdnd45140:0:math:crwdnd45140:0{pred}crwdnd45140:0:math:crwdnd45140:0{real}crwdne45140:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1162
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1169
 msgid "\\ell(y_{pred}, y_{real})= \\frac{1}{n }\\sum_{i=1}^{n}\\left(\\hat{y}_{i}-{y}_{i}\\right)^{2}"
 msgstr "crwdns45142:0{pred}crwdnd45142:0{real}crwdnd45142:0{1}crwdnd45142:0{n }crwdnd45142:0{n}crwdnd45142:0{y}crwdnd45142:0{i}crwdnd45142:0{y}crwdnd45142:0{i}crwdnd45142:0{2}crwdne45142:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1167
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1174
 msgid "注：在上面的公式中 :math:`\\left(\\hat{y}_{i}-{y}_{i}\\right)^{2}` 计算的是单个样本 :math:`x_{i}` 输入模型后得到的输出 :math:`\\hat{y}_{i}` 和实际标签值 :math:`{y}_{i}` 的差异，数据集中有 :math:`n` 个样本。"
 msgstr "crwdns45144:0:math:crwdnd45144:0{y}crwdnd45144:0{i}crwdnd45144:0{y}crwdnd45144:0{i}crwdnd45144:0{2}crwdnd45144:0:math:crwdnd45144:0{i}crwdnd45144:0:math:crwdnd45144:0{y}crwdnd45144:0{i}crwdnd45144:0:math:crwdnd45144:0{y}crwdnd45144:0{i}crwdnd45144:0:math:crwdne45144:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1218
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1225
 msgid "选定损失函数作为优化目标后，我们便可在训练的过程中通过梯度下降不断地更新参数 :math:`w` 和 :math:`b`, 从而达到模型优化的效果："
 msgstr "crwdns45146:0:math:crwdnd45146:0:math:crwdne45146:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1220
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1227
 msgid "w^{*}, b^{*}=\\underset{w, b}{\\operatorname{argmin}} \\ell\\left(w, b\\right) ."
 msgstr "crwdns45148:0{w, b}crwdnd45148:0{argmin}crwdne45148:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1235
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1242
 msgid "练习：线性回归"
 msgstr "crwdns45150:0crwdne45150:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1237
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1244
 msgid "接下来，我们用一个非常简单的例子，帮助你将前面提到的概念给联系起来。"
 msgstr "crwdns45152:0crwdne45152:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1239
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1246
 msgid "假设有人提供给你一些包含数据 ``data`` 和标签 ``label`` 的样本集合 :math:`S` 用于训练模型，希望将来给出输入 :math:`x`, 模型能对输出 :math:`y` 进行较好地预测："
 msgstr "crwdns45154:0:math:crwdnd45154:0:math:crwdnd45154:0:math:crwdne45154:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1241
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1248
 msgid "\\begin{aligned}\n"
 "data &= [x_1, x_2, \\ldots , x_n] \\\\\n"
 "label &= [y_1, y_2, \\ldots , y_n] \\\\\n"
@@ -406,207 +414,207 @@ msgid "\\begin{aligned}\n"
 "\\end{aligned}"
 msgstr "crwdns45156:0{aligned}crwdnd45156:0{aligned}crwdne45156:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1250
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1257
 msgid "请运行下面的代码以随机生成包含 ``data`` 和 ``label`` 的样本:"
 msgstr "crwdns45158:0crwdne45158:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1324
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1331
 msgid "通过可视化观察样本的分布规律，不难发现，我们可以:"
 msgstr "crwdns45160:0crwdne45160:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1326
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1333
 msgid "尝试拟合 :math:`y = w * x + b` 这样一个线性模型（均为标量）；"
 msgstr "crwdns45162:0:math:crwdne45162:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1327
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1334
 msgid "选择使用均方误差损失作为优化目标；"
 msgstr "crwdns45164:0crwdne45164:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1328
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1335
 msgid "通过梯度下降法来更新参数 :math:`w` 和 :math:`b`."
 msgstr "crwdns45166:0:math:crwdnd45166:0:math:crwdne45166:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1331
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1338
 msgid "Numpy 实现"
 msgstr "crwdns45168:0crwdne45168:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1333
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1340
 msgid "对于这种非常简单的模型，完全可以使用 Numpy 进行算法实现，我们借此了解一下整个模型训练的流程："
 msgstr "crwdns45170:0crwdne45170:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1555
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1562
 msgid "可以看到，在 5 个 ``epoch`` 的迭代训练中，已经得到了一个拟合状况不错的线性模型。"
 msgstr "crwdns45172:0crwdne45172:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1558
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1565
 msgid "MegEngine 实现"
 msgstr "crwdns45174:0crwdne45174:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1560
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1567
 msgid "上面的流程，完全可以使用 MegEngine 来实现（有兴趣的读者可以参照上面的注释，先尝试自己实现）："
 msgstr "crwdns45176:0crwdne45176:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1642
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1649
 msgid "你应该会得到相同的 ``w``, ``b`` 以及 ``loss`` 值，下面直线的拟合程度也应该和 Numpy 实现一致："
 msgstr "crwdns45178:0crwdne45178:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1677
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1684
 msgid "总结回顾"
 msgstr "crwdns45180:0crwdne45180:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1679
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1686
 msgid "祝贺你完成了入门教程的学习，现在是时候休息一下，做一个简单的回顾了："
 msgstr "crwdns45182:0crwdne45182:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1681
-msgid "到目前为止，我们已经掌握了天元 MegEngine 框架中的以下概念："
-msgstr "crwdns45184:0crwdne45184:0"
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1688
+msgid "到目前为止，我们已经掌握了 MegEngine 框架中的以下概念："
+msgstr "crwdns47840:0crwdne47840:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1683
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1690
 msgid "计算图（Computing Graph）：MegEngine 是基于计算图的框架，计算图中存在数据节点、计算节点和边"
 msgstr "crwdns45186:0crwdne45186:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1684
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1691
 msgid "前向传播：输入的数据在计算图中经过计算得到预测值，接着我们使用损失 ``loss`` 表示预测值和实际值的差异"
 msgstr "crwdns45188:0crwdne45188:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1685
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1692
 msgid "反向传播：根据链式法则，得到计算图中所有参数 w 关于 loss 的梯度 dw ，实现在 ``autodiff`` 模块，由 ``GradManager`` 进行管理"
 msgstr "crwdns45190:0crwdne45190:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1686
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1693
 msgid "参数更新：根据梯度下降算法，更新图中参数，从而达到优化最终 loss 的效果，实现在 ``optimzer`` 模块"
 msgstr "crwdns45192:0crwdne45192:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1687
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1694
 msgid "张量（Tensor）：MegEngine 中的基础数据结构，用来表示计算图中的数据节点，可以灵活地与 Numpy 数据结构转化"
 msgstr "crwdns45194:0crwdne45194:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1688
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1695
 msgid "参数（Parameter）：用于和张量做概念上的区分，模型优化的过程实际上就是优化器对参数进行了更新"
 msgstr "crwdns45196:0crwdne45196:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1689
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1696
 msgid "超参数（Hype-parameter）：其值无法由模型直接经过训练学得，需要人为（或通过其它方法）设定"
 msgstr "crwdns45198:0crwdne45198:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1690
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1697
 msgid "算子（Operator）：基于 Tensor 的各种计算的实现（包括损失函数），实现在 ``functional`` 模块"
 msgstr "crwdns45200:0crwdne45200:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1692
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1699
 msgid "我们通过拟合 :math:`f(x) = w * x + b` 完成了一个最简单的线性回归模型的训练，干得漂亮！"
 msgstr "crwdns45202:0:math:crwdne45202:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1704
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1711
 msgid "问题思考"
 msgstr "crwdns45204:0crwdne45204:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1706
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1713
 msgid "我们的 MegEngine 打怪升级之旅还没有结束，在前往下一关之前，尝试思考一些问题吧。"
 msgstr "crwdns45206:0crwdne45206:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1708
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1715
 msgid "关于向量化实现："
 msgstr "crwdns45208:0crwdne45208:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1710
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1717
 msgid "当你发现 Python 代码运行较慢时，通常可以将数据处理移入 NumPy 并采用向量化（Vectorization）写法，实现最高速度的处理"
 msgstr "crwdns45210:0crwdne45210:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1711
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1718
 msgid "线性模型训练的 NumPy 写法中，单个 ``epoch`` 训练内出现了 ``for`` 循环，实际上可以采取向量化的实现（参考 MegEngine 实现的写法）"
 msgstr "crwdns45212:0crwdne45212:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1712
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1719
 msgid "使用向量化的实现，通常计算的效率会更高，因此建议：代码中能够用向量化代替 ``for`` 循环的地方，就尽可能地使用向量化实现"
 msgstr "crwdns45214:0crwdne45214:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1714
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1721
 msgid "关于设备："
 msgstr "crwdns45216:0crwdne45216:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1716
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1723
 msgid "都说 GPU 训练神经网络模型速度会比 CPU 训练快非常多，为什么？"
 msgstr "crwdns45218:0crwdne45218:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1717
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1724
 msgid "我们可以把 Tensor 指定计算设备为 GPU 或 CPU，而原生 NumPy 只支持 CPU 计算，Tensor 转化为 ndarray 的过程是什么样的？"
 msgstr "crwdns45220:0crwdne45220:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1718
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1725
 msgid "训练的速度是否会受到训练设备数量的影响呢？可不可以多个设备一起进行训练？"
 msgstr "crwdns45222:0crwdne45222:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1720
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1727
 msgid "关于参数与超参数："
 msgstr "crwdns45224:0crwdne45224:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1722
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1729
 msgid "现在我们接触到了两个超参数 ``epochs`` 和 ``lr``, 调整它们的值是否会对模型的训练产生影响？（不妨自己动手调整试试）"
 msgstr "crwdns45226:0crwdne45226:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1723
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1730
 msgid "更新参数所用的梯度 ``grad_w``\\ ，是所有样本的梯度之和 ``sum_grad_w`` 求均值，为什么不在每个样本反向传播后立即更新参数 ``w``\\ ？"
 msgstr "crwdns45228:0crwdne45228:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1724
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1731
 msgid "我们看上去得到了一条拟合得很不错的曲线，但是得到的 ``b`` 距离真实的 ``b`` 还比较遥远，为什么？如何解决这种情况？"
 msgstr "crwdns45230:0crwdne45230:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1725
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1732
 msgid "如何选取合适的超参数，对于超参数的选取是否有一定的规律或者经验可寻？"
 msgstr "crwdns45232:0crwdne45232:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1727
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1734
 msgid "关于数据集："
 msgstr "crwdns45234:0crwdne45234:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1729
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1736
 msgid "我们在线性模型中使用的是从 NumPy 代码生成的随机数据，修改数据集的样本数量 ``n`` 和噪声扰动程度 ``noise`` 会有什么影响？"
 msgstr "crwdns45236:0crwdne45236:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1730
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1737
 msgid "对于现实中的数据集，如何转换成 MegEngine Tensor 的形式进行使用？"
 msgstr "crwdns45238:0crwdne45238:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1731
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1738
 msgid "这中间需要经过什么样的预处理（Preprocessing）过程，有哪些流程是可以交由框架来完成的？"
 msgstr "crwdns45240:0crwdne45240:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1733
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1740
 msgid "关于模型："
 msgstr "crwdns45242:0crwdne45242:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1735
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1742
 msgid "我们学会了定义了非常简单的线性模型 ``linear_model``, 更复杂的模型要如何去写？"
 msgstr "crwdns45244:0crwdne45244:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1736
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1743
 msgid "既然任何神经网络模型本质上都可以用计算图来表示，那么神经网络模型的搭建流程是什么样的？"
 msgstr "crwdns45246:0crwdne45246:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1738
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1745
 msgid "关于最佳实践："
 msgstr "crwdns45248:0crwdne45248:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1740
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1747
 msgid "在编写代码时，经常会有根据前人经验总结出的最佳实践（Best Practice）作为参考，例如："
 msgstr "crwdns45250:0crwdne45250:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1741
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1748
 msgid "参数的更新和梯度的清空可以写在一起 ``optimizer.step().clear_grad()``"
 msgstr "crwdns45252:0crwdne45252:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1742
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1749
 msgid "在导入某些包的时候，通常有约定俗成的缩写如 ``import megengine as mge``"
 msgstr "crwdns45254:0crwdne45254:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1743
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1750
 msgid "除此以外，还有什么样的编程习惯和最佳实践值得参考？如何将一份玩具代码整理变成工程化的代码？"
 msgstr "crwdns45256:0crwdne45256:0"
 
-#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1745
+#: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1752
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
 msgstr "crwdns45258:0crwdne45258:0"
 
