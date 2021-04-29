@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-29 09:33\n"
+"PO-Revision-Date: 2021-04-29 09:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -119,7 +119,7 @@ msgstr "对所有被 :meth:`attach` 的 Tensor 计算梯度 (或向量-雅可比
 
 #: megengine.autodiff.grad_manager.GradManager.backward:4 of
 msgid ":meth:`backward` computes the vector-Jacobian product :math:`dx_j = \\sum_{i} dy_i J_{ij}` where :math:`J_{ij} = ∂y_i/∂x_j` is the Jacobian matrix between vector variables :math:`y` and :math:`x`, with all vectors involved represented as a list of tensors, in the sense of direct sums (or flatten-and-concatenate). :math:`y` and :math:`dy` are passed as the first and second parameter respectively, whereas :math:`x` is directly taken from the list of all attached tensors. The result :math:`dx` is also not returned. Instead, it is directly accumulated into the .grad attribute of matching attached tensors (a.k.a. :math:`x`). This can be done unambiguously since :math:`dx` as a list of tensors has the same structure as :math:`x`."
-msgstr ""
+msgstr ":meth:`backward` 计算向量-雅可比积 :math:`dx_j = \\sum_{i} dy_i J_{ij}` ，其中 :math:`J_{ij} = ∂y_i/∂x_j` 是向量变量 :math:`y` 和 :math:`x` 的雅可比矩阵，涉及的所有向量都在向量空间直和 (或展平并拼接) 的意义下表示为 Tensor 的列表。:math:`y` and :math:`dy` 分别是第一和第二个参数，:math:`x` 则由所有被 :meth:`attach` 的 Tensor 的列表形成。计算的结果 :math:`dx` 不作为返回值，而是直接积累到对应 Tensor (即 :math:`x`) 的 .grad 属性上。这个对应可以无歧义地完成，因为 :math:`dx` 作为 Tensor 的列表和 :math:`x` 有着相同的结构。"
 
 #: megengine.autodiff.grad_manager.GradManager.backward:14 of
 msgid "If :math:`y` is a scalar and :math:`dy` is chosen to be 1, the vector-Jacobian product yield gradient of :math:`y` with repect to :math:`x` as a special case. In that case, you will be able to omit the :math:`dy` parameter and :meth:`backward` will automatically use 1 for it and compute the gradient."
