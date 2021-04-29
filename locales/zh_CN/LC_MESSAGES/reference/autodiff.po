@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-29 08:25\n"
+"PO-Revision-Date: 2021-04-29 09:33\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -84,19 +84,19 @@ msgstr "等价于"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:30 of
 msgid "The effect of :meth:`attach` will persist across multiple uses of the GradManager. When reusing a GradManager, it is likely a mistake to call :meth:`attach` on the same set of tensors and callbacks repeatedly, which may grow the callback list indefinitely."
-msgstr ""
+msgstr "调用 :meth:`attach` 之后，不仅会在当此求导中生效，也会同一个 GradManager 之后的所有求导中生效。在用同一个 GradManager 进行多次求导时，用相同的参数反复调用 :meth:`attach` 很可能是一个错误，这会导致回调函数的列表的长度一直增长。"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:36 of
 msgid "When reusing a GradManager, it is sometimes desirable to attach temporary tensors each time, e.g. for computing gradients of inputs of a neural network. GradManager tries to accommodate such usages by holding weak references to attached tensors. Most of the times, this should be enough to prevent resource leak. Unfortunately, there are still some pitfalls left:"
-msgstr ""
+msgstr "在重复使用同一个 GradManager 的同时，您可能会希望对一些临时的 Tensor 求导，例如对神经网络的输入求导。考虑到这种用法，GradManager 会对被 :meth:`attach` 的 Tensor 持有弱引用。在大多数时候，这已经可以避免资源泄漏。但是，仍然有少数情况需要您注意："
 
 #: megengine.autodiff.grad_manager.GradManager.attach:42 of
 msgid "Callbacks should not hold strong references, directly or indirectly, to attached tensors. Any strong reference, including those from callbacks, will prevent garbage collection (even by the cycle collector!) of a attached tensor, until the GradManager object is garbage collected."
-msgstr ""
+msgstr "回调函数不应该持有被 :meth:`attach` 的 Tensor 的强引用，无论是直接地还是间接地。任何强引用，包括来自回调函数的强引用，都会导致被 :meth:`attach` 的 Tensor 无法被垃圾回收（即使运行可回收引用循环的完整垃圾回收！），直到 GradManager 对象本身被垃圾回收为止。"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:47 of
 msgid "Please also note that GradManager might hold additional strong references to attached tensors when it is in use. This note only covers potential resource leaks across multiple uses of a GradManager, which is unrelated to whether resources is timely released within a single use."
-msgstr ""
+msgstr "还需注意的一点是 GradManager 如果正在进行求导，可能会持有对被 :meth:`attach` 的 Tensor 的强引用。本注解仅针对将一个 GradManager 用于多次求导可能引发的资源泄漏，并不涉及在进行一次求导时资源是否被第一时间释放的问题。"
 
 #: megengine.autodiff.grad_manager.GradManager.attach
 #: megengine.autodiff.grad_manager.GradManager.backward
@@ -107,15 +107,15 @@ msgstr "参数"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:53 of
 msgid "tensor or list of tensors to track"
-msgstr ""
+msgstr "需要跟踪的 Tensor 或者 Tensor 列表"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:54 of
 msgid "callback or list of callbacks"
-msgstr ""
+msgstr "回调函数或回调函数的列表"
 
 #: megengine.autodiff.grad_manager.GradManager.backward:1 of
 msgid "Compute gradients (or vector-Jacobian product) for all attached tensors, accumulate to corresponding .grad attribute, and release resources along the way."
-msgstr ""
+msgstr "对所有被 :meth:`attach` 的 Tensor 计算梯度 (或向量-雅可比积)，并将其积累到对应 Tensor 的 .grad 属性中，在过程中释放资源。"
 
 #: megengine.autodiff.grad_manager.GradManager.backward:4 of
 msgid ":meth:`backward` computes the vector-Jacobian product :math:`dx_j = \\sum_{i} dy_i J_{ij}` where :math:`J_{ij} = ∂y_i/∂x_j` is the Jacobian matrix between vector variables :math:`y` and :math:`x`, with all vectors involved represented as a list of tensors, in the sense of direct sums (or flatten-and-concatenate). :math:`y` and :math:`dy` are passed as the first and second parameter respectively, whereas :math:`x` is directly taken from the list of all attached tensors. The result :math:`dx` is also not returned. Instead, it is directly accumulated into the .grad attribute of matching attached tensors (a.k.a. :math:`x`). This can be done unambiguously since :math:`dx` as a list of tensors has the same structure as :math:`x`."
