@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-21 08:22\n"
+"PO-Revision-Date: 2021-04-29 08:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -72,11 +72,11 @@ msgstr "指示 GradManager 跟踪张量上的操作，以便那些张量上的�
 
 #: megengine.autodiff.grad_manager.GradManager.attach:4 of
 msgid ":meth:`attach` also accepts a list of callbacks, which will be called with the tensor and its gradient during :meth:`backward`. The signature of callbacks should look like:"
-msgstr ""
+msgstr ":meth:`attach` 也接受一个回调函数的列表，在 :meth:`backward` 的过程中，这些回调函数会被以 Tensor 和其梯度作为参数调用 。回调函数的签名应该如下："
 
 #: megengine.autodiff.grad_manager.GradManager.attach:15 of
 msgid ":meth:`attach` calls with overlapping tensors will result in their callbacks concatenated, independently for each tensor. For example,"
-msgstr ""
+msgstr "多次 :meth:`attach` 调用的 Tensor 列表如果有重叠，那么这些 Tensor 对应的回调函数列表会被拼接，此操作对每个 Tensor 独立作用。例如，"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:23 of
 msgid "is equivalent to"
