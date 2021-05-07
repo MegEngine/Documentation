@@ -20,7 +20,7 @@ import megengine
 project = 'MegEngine'
 copyright = f'2020-{datetime.now().year}, The MegEngine Open Source Team'
 author = 'The MegEngine Open Source Team'
-version = megengine.__version__
+version = '1.4.0rc'
 release = version
 
 # -- General configuration ---------------------------------------------------

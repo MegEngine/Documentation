@@ -1,4 +1,4 @@
-.. _distribution.rst:
+.. _distribution:
 
 ==========
 分布式训练
