@@ -1,4 +1,4 @@
-name: Deploy on Github Pages
+name: Deploy
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  Pipline:
-    name: Build and Deploy
+  Pipeline:
+    name: Build and Deploy 
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout repsitory
@@ -54,13 +54,21 @@ jobs:
         run: sudo apt install -y pandoc graphviz
 
       - name: Generate HTML files
-        run: make html -W --keep-going
+        run: |
+          make LANGUAGE="zh_CN" html --keep-going && mv build/html zh
+          make LANGUAGE="en" html --keep-going && mv build/html en
+         
+      - name: Deploy on OSS
+        run: |
+          tar czf static.tgz zh en
+          export GIT_HASH=$(git rev-parse --short HEAD) && echo $GIT_HASH
+          wget http://gosspublic.alicdn.com/ossutil/1.7.1/ossutil64
+          chmod 755 ossutil64
+          ./ossutil64 config -e ${{ secrets.OSS_PROD_ENDPOINT }} -i ${{ secrets.OSS_PROD_ACCESS_KEY_ID }} -k ${{ secrets.OSS_PROD_ACCESS_KEY_SECRET }}
+          ./ossutil64 mkdir oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/commit-$GIT_HASH
+          ./ossutil64 cp static.tgz oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/commit-$GIT_HASH/static.tgz
 
-      - name: Deploy to gh-pages branch
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build/html
-          CLEAN: true
 
+
+ 
+ 
