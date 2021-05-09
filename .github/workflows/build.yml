@@ -1,0 +1,88 @@
+name: Build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  Prepare:
+    name: Setup environment
+    if: ${{ github.event.label.name != 'no-build' }}
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Cache Python packages
+        id: cache-python
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}$-${{ hashFiles('requirements.txt') }}
+
+      - name: Install MegEngine and Python dependencies
+        if: steps.cache-python.outputs.cache-hit != 'true'
+        run: |
+          python3 -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install megengine -f https://megengine.org.cn/whl/mge.html
+
+  Generate:
+    name: Build HTML files
+    needs: Prepare
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        language: ["zh_CN", "en"]
+    steps:
+      - name: Checkout repsitory
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          lfs: true
+
+      - name: Checkout LFS objects
+        run: git lfs checkout
+
+      - name: Checkout theme repo
+        uses: actions/checkout@v2
+        with: 
+          repository: MegEngine/pydata-sphinx-theme
+          ref: dev
+          fetch-depth: 1
+          path: theme
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Get cached Python packages
+        id: cache-python
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}$-${{ hashFiles('requirements.txt') }}
+
+      - name: Install Pydata Sphinx theme
+        run: python3 -m pip install ./theme
+
+      - name: Install pandoc and other dependencies
+        run: sudo apt install -y pandoc graphviz
+
+      - name: Generate HTML files
+        run: |
+          make LANGUAGE=${{ matrix.language }} html --keep-going
+          mv build/html ${{ matrix.language }}
+          tar czf ${{ matrix.language }}.tgz ${{ matrix.language }}
+
+      - name: Upload aritifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: HTML
+          path: ${{ matrix.language }}.tgz
+
