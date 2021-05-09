@@ -29,6 +29,7 @@
    model-development/trace
    model-development/dump
    model-development/profiler
+   model-development/gpu-memory
 
 .. toctree::
    :caption: 分布式训练
