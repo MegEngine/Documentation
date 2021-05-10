@@ -24,6 +24,8 @@ version = megengine.__version__
 release = version
 
 # -- General configuration ---------------------------------------------------
+add_function_parentheses = False
+add_module_names = False
 
 extensions = [
     'nbsphinx',
@@ -39,7 +41,6 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.graphviz',
     'sphinxcontrib.mermaid',
-    'sphinx_autodoc_typehints',
     'sphinx_copybutton'
 ]
 
@@ -62,7 +63,6 @@ exclude_patterns = [
 ]
 
 # -- Options for internationalization ----------------------------------------
-
 language = 'zh_CN'
 locale_dirs = ['../locales/']
 
@@ -84,17 +84,12 @@ autodoc_default_options = {
 autoclass_content = 'class'
 autodoc_typehints = 'description'
 autodoc_docstring_signature = True
-add_function_parentheses = False
-add_module_names = False
+autodoc_typehints_description_target = "documented"
+autodoc_preserve_defaults = True
 
 # Setting for sphinx.ext.mathjax
 # The path to the JavaScript file to include in the HTML files in order to load MathJax.
 mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
-
-mathjax_config = {
-    'extensions': ['tex2jax.js'],
-    'jax': ['input/TeX', 'output/HTML-CSS'],
-}
 
 # Setting for sphinxcontrib-mermaid
 mermaid_version = 'latest' # from CDN unpkg.com 
@@ -185,3 +180,13 @@ html_js_files = [
 ]
 
 html_search_language = 'zh'
+
+# -- Patch for extensions not adapt to Sphinx 4.0 APIs --------------------------
+# TODO: remove the following hack codes while correspond extensions adapted
+
+# sphinxcontrib-mermaid
+# Issues: https://github.com/mgaitan/sphinxcontrib-mermaid/issues/72
+import errno
+import sphinx.util.osutil
+sphinx.util.osutil.ENOENT = errno.ENOENT
+
