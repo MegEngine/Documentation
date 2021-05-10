@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-23 21:44+0800\n"
-"PO-Revision-Date: 2021-04-23 16:45\n"
+"PO-Revision-Date: 2021-05-10 02:05\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -128,27 +128,27 @@ msgstr "If it is post-quantization, or Calibration, since FakeQuantize is not re
 
 #: ../../source/user-guide/model-compression/quantization.rst:136
 msgid "除了使用在 :class:`~.quantization.Qconfig` 里提供的预设 QConfig， 也可以根据需要灵活选择 Observer 和 FakeQuantize  实现自己的 QConfig。目前提供的 Observer 包括："
-msgstr ""
+msgstr "In addition to using :class:`~.quantization.Qconfig`, you can also flexibly choose Observer and FakeQuantize to implement your own QConfig according to your needs. The Observer currently provided includes："
 
 #: ../../source/user-guide/model-compression/quantization.rst:139
 msgid ":class:`~.quantization.MinMaxObserver` ， 使用最简单的算法统计 min/max，对见到的每批数据取 min/max 跟当前存的值比较并替换， 基于 min/max 得到 scale 和 zero_point；"
-msgstr ""
+msgstr ":class:`~.quantization.MinMaxObserver`, use the simplest algorithm to count min/max, take min/max for each batch of data seen, compare and replace with the current stored value, and get scale and zero_point based on min/max;"
 
 #: ../../source/user-guide/model-compression/quantization.rst:142
 msgid ":class:`~.quantization.ExponentialMovingAverageObserver` ， 引入动量的概念，对每批数据的 min/max 与现有 min/max 的加权和跟现有值比较；"
-msgstr ""
+msgstr ":class:`~.quantization.ExponentialMovingAverageObserver`, introduces the concept of momentum, and compares the weighted sum of min/max and the existing min/max of each batch of data with the existing value;"
 
 #: ../../source/user-guide/model-compression/quantization.rst:144
 msgid ":class:`~.quantization.HistogramObserver` ， 更加复杂的基于直方图分布的 min/max 统计算法，且在 forward 时持续更新该分布， 并根据该分布计算得到 scale 和 zero_point。"
-msgstr ""
+msgstr ":class:`~.quantization.HistogramObserver`, a more complex min/max statistical algorithm based on histogram distribution, and continuously update the distribution during forward, and calculate the scale and zero_point according to the distribution."
 
 #: ../../source/user-guide/model-compression/quantization.rst:148
 msgid "对于 FakeQuantize，目前还提供了 :class:`~.quantization.TQT` 算子， 另外还可以继承 ``_FakeQuant`` 基类实现自定义的假量化算子。"
-msgstr ""
+msgstr "For FakeQuantize, the :class:`~.quantization.TQT` operator is currently provided, and the ``_FakeQuant`` base class can also be inherited to implement custom false quantization operators."
 
 #: ../../source/user-guide/model-compression/quantization.rst:151
 msgid "在实际使用过程中，可能需要在训练时让 Observer 统计并更新参数，但是在推理时则停止更新。 Observer 和 FakeQuantize 都支持 :meth:`~.quantization.Observer.enable` 和 :meth:`~.quantization.Observer.disable` 功能， 且 Observer 会在 :meth:`~module.Module.train` 和 :meth:`~module.Module.eval` 时自动分别调用 enable/disable。"
-msgstr ""
+msgstr "In actual use, it may be necessary to let Observer count and update parameters during training, but stop updating during inference. Observer and FakeQuantize both support :meth:`~.quantization.Observer.enable` and :meth:`~.quantization.Observer.disable` functions, and Observer will be in :meth:`~module.Module.train` and :meth:`~module.Module.eval `Automatically call enable/disable respectively."
 
 #: ../../source/user-guide/model-compression/quantization.rst:157
 msgid "所以一般在 Calibration 时，会先执行 ``net.eval()`` 保证网络的参数不被更新， 然后再执行 :``enable_observer(net)`` 来手动开启 Observer 的统计修改功能。"
