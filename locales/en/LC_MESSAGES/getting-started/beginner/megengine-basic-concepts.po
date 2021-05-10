@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-06 13:12+0800\n"
-"PO-Revision-Date: 2021-05-06 05:31\n"
+"PO-Revision-Date: 2021-05-10 01:58\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -20,23 +20,23 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:9
 msgid "MegEngine 基础概念"
-msgstr ""
+msgstr "MegEngine basic concepts"
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:12
 msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/2>`__"
-msgstr ""
+msgstr "|image0| `Run <https://studio.brainpp.com/project/2>in MegStudio `__"
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:12
 msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/megengine-basic-concepts.ipynb>`__"
-msgstr ""
+msgstr "|image1| `View source file <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/megengine-basic-concepts.ipynb>`__"
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:28
 msgid "我们为第一次接触 MegEngine 框架的用户提供了此系列教程，通过本部分的学习，你将会："
-msgstr ""
+msgstr "We provide this series of tutorials for users who are new to the MegEngine framework. Through this part of the study, you will be："
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:30
 msgid "对 MegEngine 框架中的 ``Tensor``, ``Operator``, ``GradManager`` 等基本概念有一定的了解；"
-msgstr ""
+msgstr "Have a certain understanding of basic concepts such as ``Tensor``, ``Operator``, ``GradManager'' in the MegEngine framework;"
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:31
 msgid "对深度学习中的前向传播、反向传播和参数更新的具体过程有更加清晰的认识；"
@@ -64,7 +64,7 @@ msgstr "Many unstructured data in the real world, such as text, pictures, audio,
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:92
 msgid "MegEngine 使用张量（Tensor）来表示数据。类似于 `NumPy <https://numpy.org/>`__ 中的多维数组（ndarray），张量可以是标量、向量、矩阵或者多维数组。 在 MegEngine 中得到一个 Tensor 的方式有很多："
-msgstr ""
+msgstr "MegEngine uses Tensor to represent data. Similar to the multi-dimensional array (ndarray) in `NumPy <https://numpy.org/>`__, the tensor can be a scalar, vector, matrix or multi-dimensional array. There are many ways to get a Tensor in MegEngine："
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:94
 msgid "我们可以通过 ``megengine.functional.tensor`` 的 ``arange()``, ``ones()`` 等方法来生成 Tensor，\\ ``functional`` 模块我们会在后面介绍；"
@@ -152,7 +152,7 @@ msgstr "Operator"
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:465
 msgid "MegEngine 中通过算子 (Operator） 来表示运算。MegEngine 中的算子支持基于 Tensor 的常见数学运算和操作。 比如 Tensor 的元素间（Element-wise）加法、减法和乘法："
-msgstr ""
+msgstr "In MegEngine, operations are represented by operators. The operators in MegEngine support common mathematical operations and operations based on Tensor. Tensor for instance between the elements (Element-wise) addition, subtraction and multiplication："
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:527
 msgid "你也可以使用 MegEngine 中的 ``functional`` 模块中的各种方法来完成对应计算："
@@ -184,7 +184,7 @@ msgstr "We can use NumPy matrix multiplication to verify this result："
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:824
 msgid "更多算子可以参考 ``functional`` 模块的 `文档 <https://megengine.org.cn/doc/stable/zh/reference/functional.html>`__ 部分。"
-msgstr ""
+msgstr "For more operators, please refer to the `document <https://megengine.org.cn/doc/stable/zh/reference/functional.html>`__ part of the ``functional`` module."
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:826
 msgid "现在你可以适当休息一下，脑海中回想一下张量（Tensor）和算子（Operator）的概念，然后继续阅读教程后面的部分。"
@@ -288,7 +288,7 @@ msgstr "Differentiator (GradManager)"
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:910
 msgid "推导梯度是件枯燥的事情，尤其是当模型的前向传播计算输出的过程变得相对复杂时，根据链式法则计算梯度会变得异常枯燥无味。 自动求导是深度学习框架对使用者而言最有用的特性之一，它自动地完成了反向传播过程中根据链式法则去推导参数梯度的过程。"
-msgstr ""
+msgstr "Deriving the gradient is a boring thing, especially when the process of calculating the output of the forward propagation of the model becomes relatively complicated, calculating the gradient according to the chain rule will become very boring. Automatic derivation is one of the most useful features of the deep learning framework for users. It automatically completes the process of deriving parameter gradients according to the chain rule in the back propagation process."
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:912
 msgid "MegEngine 的 ``autodiff`` 模块为计算图中的张量提供了自动求导功能，继续以上图的例子进行说明："
@@ -368,7 +368,7 @@ msgstr "We already know that the output of the model prediction can be obtained 
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1164
 msgid "MegEngine 的 ``functional`` 模块提供了各种常见的损失函数，具体可见 `文档 <https://megengine.org.cn/doc/stable/zh/reference/functional.html#loss>`__ 中的 ``loss`` 部分。"
-msgstr ""
+msgstr "The ``functional`` module of MegEngine provides various common loss functions. For details, see the ``loss`` section in <https://megengine.org.cn/doc/stable/zh/reference/functional.html#loss>"
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1166
 msgid "对于 :math:`w * x + b` 这样的范围在实数域 :math:`\\mathbb R` 上的输出，我们可以使用均方误差（Mean Squared Error, MSE）表示模型输出 :math:`y_{pred}` 和实际值 :math:`y_{real}` 的差距："
@@ -468,7 +468,7 @@ msgstr "Congratulations you have completed the introductory tutorial, now is the
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1687
 msgid "到目前为止，我们已经掌握了 MegEngine 框架中的以下概念："
-msgstr ""
+msgstr "So far, we have mastered the following concepts MegEngine frame："
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1689
 msgid "计算图（Computing Graph）：MegEngine 是基于计算图的框架，计算图中存在数据节点、计算节点和边"
