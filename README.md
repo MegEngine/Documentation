@@ -1,18 +1,16 @@
-# 天元 MegEngine 文档
+# MegEngine 官方文档
 
 <p align="center">
   <img height="128" src="./source/_static/logo/megengine.jpg">
 </p>
 
-[![language-zh](https://img.shields.io/badge/language-zh-brightgreen)](https://megengine.org.cn/doc/stable/zh/) [![Crowdin](https://badges.crowdin.net/megengine/localized.svg)](https://crowdin.com/project/megengine) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![language-zh](https://img.shields.io/badge/language-zh-brightgreen)](https://megengine.org.cn/doc/stable/zh/) [![language-en](https://img.shields.io/badge/language-en-brightgreen)](https://megengine.org.cn/doc/stable/en/) [![Crowdin](https://badges.crowdin.net/megengine/localized.svg)](https://crowdin.com/project/megengine) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-通过交互式实践的方式学习「[天元 MegEngine](https://github.com/MegEngine/MegEngine) 」深度学习框架的使用和开发。
+根据官方文档学习旷视天元「[MegEngine](https://github.com/MegEngine/MegEngine) 」深度学习框架的使用和开发。
 
-访问地址：[官方中文](https://megengine.org.cn/doc/stable/zh/) | [GitHub Pages 镜像](https://megengine.github.io/Documentation/)
+欢迎在 [MegEngine 论坛](https://discuss.megengine.org.cn/)（我们的中文社区）进行交流反馈～ 
 
-欢迎在 [天元 MegEngine 论坛](https://discuss.megengine.org.cn/)（我们的中文社区）进行交流反馈～ 
-
-:point_right: [成为文档贡献者](./CONTRIBUTING.md) 或者 [帮助我们进行翻译](https://crowdin.com/project/megengine)
+:point_right: 你也可以选择 [成为文档贡献者](./CONTRIBUTING.md) 或者 [帮助我们进行翻译](https://crowdin.com/project/megengine)
 
 
 ------
@@ -30,7 +28,7 @@
 - 感谢 [Sphinx](https://www.sphinx-doc.org/en/master/), 我们使用它构建我们的静态网站
 - 感谢 [PyData](https://github.com/pydata), 我们使用了该社区成员制作的 [pydata-sphinx-theme](https://github.com/pydata/pydata-sphinx-theme) 主题
 - 感谢 [ML Visuals](https://github.com/dair-ai/ml-visuals)，我们使用它制作了大部分的可视化图形
-- 感谢 [天元 MegEngine 论坛](https://discuss.megengine.org.cn/) 的小伙伴们提供了非常多宝贵建议
+- 感谢 [MegEngine 论坛](https://discuss.megengine.org.cn/) 的小伙伴们提供了非常多宝贵建议
 - 感谢 [MegStudio](https://studio.brainpp.com/) 提供交互式编程环境和云算力平台支持
 
 以下是贡献者名单（[加入我们](./CONTRIBUTING.md) :sparkles: ）：

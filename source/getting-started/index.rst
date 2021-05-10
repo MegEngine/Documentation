@@ -24,7 +24,7 @@
 安装
 ----
 
-天元 MegEngine 可以使用 Python 包管理器 ``pip`` 直接进行安装：
+MegEngine 可以使用 Python 包管理器 ``pip`` 直接进行安装：
 
 .. code-block:: shell
 
