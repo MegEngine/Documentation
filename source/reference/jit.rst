@@ -10,8 +10,6 @@
    :nosignatures:
 
    trace
-   trace.get_profile
-   trace.dump
    exclude_from_trace
    SublinearMemoryConfig
 

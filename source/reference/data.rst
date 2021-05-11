@@ -13,16 +13,18 @@
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Dataset
    ArrayDataset
    StreamDataset
 
-计算机视觉
-~~~~~~~~~~
+计算机视觉数据集
+~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    VisionDataset
    ImageFolder 
@@ -43,6 +45,7 @@
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Sampler
    MapSampler
@@ -60,6 +63,7 @@
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    VisionTransform
    Compose
@@ -83,8 +87,6 @@
    ColorJitter
    Lighting
 
-
-
 .. py:module:: megengine.data.collator
 .. currentmodule:: megengine.data
 
@@ -92,7 +94,8 @@
 ----------------------
 .. autosummary::
    :toctree: api
-   :nosignatures:
+   :nosignatures:   
+   :template: autosummary/api-class.rst
 
    Collator
 
@@ -104,6 +107,7 @@
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    DataLoader
 
