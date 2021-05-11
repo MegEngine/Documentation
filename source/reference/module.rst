@@ -13,24 +13,10 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Module
    Sequential
-   Module.forward
-   Module.parameters
-   Module.named_parameters
-   Module.buffers
-   Module.named_buffers
-   Module.children
-   Module.named_children
-   Module.modules
-   Module.named_modules
-   Module.apply
-   Module.train
-   Module.eval
-   Module.disable_quantize
-   Module.state_dict
-   Module.load_state_dict
 
 .. py:module:: megengine.module.init
 .. currentmodule:: megengine.module.init
@@ -61,6 +47,7 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Elemwise
    Concat
@@ -70,6 +57,7 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Conv1d
    Conv2d
@@ -84,6 +72,7 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    AvgPool2d
    MaxPool2d
@@ -96,6 +85,7 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Sigmoid
    Softmax
@@ -108,6 +98,7 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    BatchNorm1d
    BatchNorm2d
@@ -121,6 +112,7 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Linear
    Identity
@@ -130,6 +122,7 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Dropout
 
@@ -138,6 +131,7 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Embedding
 
@@ -146,6 +140,7 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    ConvBn2d
    ConvBnRelu2d
@@ -156,6 +151,7 @@ Float Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    QuantStub
    DequantStub
@@ -171,25 +167,16 @@ QAT Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    QATModule
-   QATModule.set_qconfig
-   QATModule.set_fake_quant
-   QATModule.set_observer
-   QATModule.apply_quant_weight
-   QATModule.apply_quant_activation
-   QATModule.apply_quant_bias
-   QATModule.get_weight_dtype
-   QATModule.get_activation_dtype
-   QATModule.get_weight_qparams
-   QATModule.get_activation_qparams
-   QATModule.from_float_module
 
 算子支持
 ~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Linear
    Elemwise
@@ -210,15 +197,16 @@ Quantized Module
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    QuantizedModule
-   QuantizedModule.from_qat_module
 
 算子支持
 ~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Linear
    Elemwise

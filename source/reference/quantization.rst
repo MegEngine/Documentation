@@ -10,6 +10,7 @@
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    QConfig
    
@@ -45,10 +46,9 @@
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Observer
-   Observer.enable
-   Observer.disable
    MinMaxObserver
    SyncMinMaxObserver
    ExponentialMovingAverageObserver
@@ -62,10 +62,9 @@
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    FakeQuantize
-   FakeQuantize.enable
-   FakeQuantize.disable
    TQT
 
 
@@ -90,9 +89,15 @@ Utils
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    QParams
    QuantMode
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
    create_qparams
    fake_quant_bias
    fake_quant_tensor

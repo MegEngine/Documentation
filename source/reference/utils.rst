@@ -33,6 +33,7 @@ Hook
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    HookHandler
 
@@ -44,46 +45,10 @@ Network
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Network
 
-.. rubric:: 方法
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   Network.load
-   Network.dump
-   Network.make_const
-   Network.make_input_node
-   Network.add_output
-   Network.remove_output
-   Network.add_dep_oprs
-   Network.modify_opr_names
-   Network.reset_batch_size
-   Network.replace_vars
-   Network.replace_oprs
-   Network.get_opr_by_type
-   Network.get_opr_by_name
-   Network.get_var_by_name
-   Network.get_var_receive_oprs
-   Network.get_dep_oprs
-
-.. rubric:: 属性
-.. autosummary::
-   :toctree: api
-   :nosignatures:
- 
-   Network.opr_filter
-   Network.var_filter
-   Network.params_filter
-   Network.data_providers_filter
-   Network.dest_vars
-   Network.all_oprs
-   Network.all_vars
-   Network.all_oprs_dict
-   Network.all_vars_dict
-   
 .. rubric:: Convert 
 .. autosummary::
    :toctree: api
@@ -98,25 +63,16 @@ NodeFilter
 .. autosummary::
    :toctree: api
    :nosignatures:
- 
-   NodeFilter
-   NodeFilter.type
-   NodeFilter.check_type
-   NodeFilter.not_type
-   NodeFilter.param_provider
-   NodeFilter.data_provider
-   NodeFilter.name
-   NodeFilter.has_input
-   NodeFilter.as_list
-   NodeFilter.as_unique
-   NodeFilter.as_dict
-   NodeFilter.as_count
+   :template: autosummary/api-class.rst
 
+   NodeFilter
+ 
 Others
 ~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    NodeFilterType
    NodeFilterNotType
@@ -125,7 +81,7 @@ Others
    NodeFilterName
 
 .. py:module:: megengine.utils.network_node
-.. currentmodule:: megengine.utils.network_node
+.. currentmodule:: megengine.utils
 
 Network Node
 ------------
@@ -133,11 +89,7 @@ Network Node
    :toctree: api
    :nosignatures:
 
-   NetworkNode
-   VarNode
-   OpNode
-
-更多 Network Node 请查看源码。
+   network_node
 
 .. py:module:: megengine.utils.module_stats
 .. currentmodule:: megengine.utils.module_stats
@@ -150,7 +102,6 @@ Module Stats
 
    module_stats
 
-
 .. py:module:: megengine.utils.profiler
 .. currentmodule:: megengine.utils.profiler
 
@@ -159,18 +110,6 @@ Profiler
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Profiler
-   profile
-
-默认常量
-~~~~~~~~
-.. autoattribute:: Profiler.CHROME_TIMELINE
-.. autoattribute:: Profiler.COMMAND
-.. autoattribute:: Profiler.OPERATOR
-.. autoattribute:: Profiler.TENSOR_LIFETIME
-.. autoattribute:: Profiler.TENSOR_PROP
-.. autoattribute:: Profiler.SYNC
-.. autoattribute:: Profiler.SCOPE
-.. autoattribute:: Profiler.ALL
-
