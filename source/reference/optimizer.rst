@@ -19,6 +19,7 @@
    :template: autosummary/api-class.rst
 
    SGD
+   AdamW
    Adam
    Adagrad
    Adadelta
