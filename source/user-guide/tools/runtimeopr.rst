@@ -4,8 +4,7 @@
 RuntimeOpr 使用说明
 ===================
 
-RuntimeOpr 指通过 MegEngine 将其它硬件厂商支持的离线模型作为一个算子嵌入到 MegEngine Graph 中，
-进而方便地使用 MegEngine 提供的各类 :ref:`图手术 <graphsurgeon>` 和推理工具。
+RuntimeOpr 指通过 MegEngine 将其它硬件厂商支持的离线模型作为一个算子嵌入到 MegEngine Graph 中。
 
 .. warning::
 
