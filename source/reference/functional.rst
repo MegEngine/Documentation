@@ -5,11 +5,8 @@
 函数式（Functional）
 ====================
 
-.. py:module:: megengine.functional.tensor
-.. currentmodule:: megengine.functional
-
-tensor 子模块
--------------
+基础算子
+--------
 
 创建张量
 ~~~~~~~~
@@ -17,15 +14,22 @@ tensor 子模块
    :toctree: api
    :nosignatures:
 
+   eye
    zeros
    zeros_like
    ones
    ones_like
    full
    full_like
+
+数值范围 
+^^^^^^^^
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+  
    arange
    linspace
-   eye
 
 处理张量
 ~~~~~~~~
@@ -34,29 +38,71 @@ tensor 子模块
    :nosignatures:
 
    copy
-   broadcast_to
-   concat
-   stack
-   split
-   gather
-   scatter
-   where
-   cond_take
-   transpose
+
+改变张量形状
+^^^^^^^^^^^^
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
    reshape
    flatten
-   repeat
-   tile
+
+转置操作
+^^^^^^^^
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   transpose
+
+改变张量维度
+^^^^^^^^^^^^
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   broadcast_to
    expand_dims
    squeeze
+   
+拼接张量
+^^^^^^^^
+.. autosummary::
+   :toctree: api
+   :nosignatures:
 
-.. py:module:: megengine.functional.elemwise
-.. currentmodule:: megengine.functional
+   concat
+   stack
 
-elemwise 子模块
----------------
+切割张量
+^^^^^^^^
+.. autosummary::
+   :toctree: api
+   :nosignatures:
 
-基本运算
+   split
+
+存取张量
+^^^^^^^^
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   gather
+   scatter
+   cond_take
+
+重复张量
+^^^^^^^^
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   tile
+   repeat
+
+算术运算
 ~~~~~~~~
 .. autosummary::
    :toctree: api
@@ -70,19 +116,28 @@ elemwise 子模块
    neg
    pow
    mod
-   abs
+
+舍入运算
+~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   round
+   ceil
+   floor
+   clip
+
+指数与对数运算
+~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
    exp
    expm1
    log
    log1p
-   sqrt
-   square
-   round
-   ceil
-   floor
-   maximum
-   minimum
-   clip
 
 三角运算
 ~~~~~~~~
@@ -90,15 +145,22 @@ elemwise 子模块
    :toctree: api
    :nosignatures:
 
-   cos
    sin
+   cos
    tan
-   acos
    asin
+   acos
    atan
    atan2
-   cosh
+
+双曲函数
+~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
    sinh
+   cosh
    tanh
    acosh
    asinh
@@ -119,6 +181,8 @@ elemwise 子模块
    :toctree: api
    :nosignatures:
 
+   isnan
+   isinf
    logical_and
    logical_not
    logical_or
@@ -137,12 +201,6 @@ elemwise 子模块
    greater
    greater_equal
 
-.. py:module:: megengine.functional.math
-.. currentmodule:: megengine.functional
-
-math 子模块
------------
-
 归约计算
 ~~~~~~~~
 .. autosummary::
@@ -154,8 +212,6 @@ math 子模块
    mean
    min
    max
-   argmin
-   argmax
 
 线性代数
 ~~~~~~~~
@@ -179,29 +235,37 @@ math 子模块
    norm
    normalize
 
-条件计算
-~~~~~~~~
+排序与搜索
+~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
-   isnan
-   isinf
-   sign
+   topk
    sort
    argsort
-   topk
+   argmin
+   argmax
+   where
 
-.. py:module:: megengine.functional.nn
-.. currentmodule:: megengine.functional
-
-nn 子模块
----------
+杂项
+~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
-   nn.nvof
+   sqrt
+   square
+   abs
+   sign
+   maximum
+   minimum
+
+.. py:module:: megengine.functional.nn
+.. currentmodule:: megengine.functional.nn
+
+神经网络算子
+------------
 
 卷积函数
 ~~~~~~~~
@@ -230,7 +294,6 @@ nn 子模块
 
 非线性激活函数
 ~~~~~~~~~~~~~~
-
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -283,11 +346,10 @@ nn 子模块
    indexing_one_hot
    embedding
 
-.. py:module:: megengine.functional.loss
 .. currentmodule:: megengine.functional.loss
 
-loss 子模块
------------
+损失函数
+~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -298,22 +360,39 @@ loss 子模块
    binary_cross_entropy
    cross_entropy
 
-.. py:module:: megengine.functional.metric
 .. currentmodule:: megengine.functional.metric
 
-metric 子模块
--------------
+评估指标
+~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    topk_accuracy
 
+.. currentmodule:: megengine.functional.vision
+
+计算机视觉
+~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   cvt_color
+   interpolate
+   remap
+   warp_affine
+   warp_perspective
+   roi_pooling
+   roi_align
+   nms
+   nvof
+
 .. py:module:: megengine.functional.distributed
 .. currentmodule:: megengine.functional.distributed
 
-distributed 子模块
-------------------
+分布式算子
+----------
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -330,23 +409,3 @@ distributed 子模块
    gather
    scatter
    reduce_scatter_sum
-
-.. py:module:: megengine.functional.vision
-.. currentmodule:: megengine.functional.vision
-
-vision 模块
------------
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   cvt_color
-   interpolate
-   remap
-   warp_affine
-   warp_perspective
-   roi_pooling
-   roi_align
-   nms
-
-

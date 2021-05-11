@@ -14,7 +14,8 @@
 
    QConfig
    
-可用预设配置如下：
+可用预设配置
+~~~~~~~~~~~~
 
 ``min_max_fakequant_qconfig``
   使用 :class:`~.MinMaxObserver` 和 :class:`~.FakeQuantize` 预设。
