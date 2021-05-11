@@ -78,8 +78,7 @@ autosummary_generate = True
 
 # Setting for sphinx.ext.auotdoc 
 autodoc_default_options = {
-    'member-order': 'bysource', # Need developer organize the source code
-    'show-inheritance': True,  # But it can not refer the short module path
+    'member-order': 'bysource' 
 }
 autoclass_content = 'class'
 autodoc_typehints = 'description'
