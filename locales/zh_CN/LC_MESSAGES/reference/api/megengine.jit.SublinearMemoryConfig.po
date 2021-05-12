@@ -1,30 +1,22 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-23 05:59\n"
+"POT-Creation-Date: 2021-05-12 09:02+0800\n"
+"PO-Revision-Date: 2021-04-23 05:59+0000\n"
 "Last-Translator: \n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.jit.SublinearMemoryConfig.po\n"
-"X-Crowdin-File-ID: 2348\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
 
 #: ../../source/reference/api/megengine.jit.SublinearMemoryConfig.rst:2
 msgid "megengine.jit.SublinearMemoryConfig"
 msgstr "megengine.jit.SublinearMemoryConfig"
-
-#: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:1 of
-msgid "基类：:class:`object`"
-msgstr "基类：:class:`object`"
 
 #: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:1 of
 msgid "Configuration for sublinear memory optimization."
@@ -34,39 +26,82 @@ msgstr "亚线性内存优化的配置。"
 msgid "参数"
 msgstr "参数"
 
-#: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:4 of
-msgid "number of samples both for searching in linear space and around current thresh in sublinear memory optimization. Default: 10. It can also be set through the environmental variable 'MGB_SUBLINEAR_MEMORY_THRESH_NR_TRY'."
-msgstr "线性空间以及亚线性内存优化的当前范围搜索的样本数目。默认：10。也可以通过环境变量 'MGB_SUBLINEAR_MEMORY_THRESH_NR_TRY' 进行设置。"
+#: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:3 of
+msgid ""
+"number of samples both for searching in linear space and around current "
+"thresh in sublinear memory optimization. Default: 10. It can also be set "
+"through the environmental variable 'MGB_SUBLINEAR_MEMORY_THRESH_NR_TRY'."
+msgstr ""
+"线性空间以及亚线性内存优化的当前范围搜索的样本数目。默认：10。也可以通过环境变量 "
+"'MGB_SUBLINEAR_MEMORY_THRESH_NR_TRY' 进行设置。"
 
-#: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:8 of
-msgid "number of iterations to find the best checkpoints in genetic algorithm. Default: 0. It can also be set through the environmental variable 'MGB_SUBLINEAR_MEMORY_GENETIC_NR_ITER'."
-msgstr "使用遗传算法寻找最优切分策略时的迭代轮数。默认：0。也可以通过环境变量 'MGB_SUBLINEAR_MEMORY_GENETIC_NR_ITER' 进行设置。"
+#: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:6 of
+msgid ""
+"number of iterations to find the best checkpoints in genetic algorithm. "
+"Default: 0. It can also be set through the environmental variable "
+"'MGB_SUBLINEAR_MEMORY_GENETIC_NR_ITER'."
+msgstr ""
+"使用遗传算法寻找最优切分策略时的迭代轮数。默认：0。也可以通过环境变量 "
+"'MGB_SUBLINEAR_MEMORY_GENETIC_NR_ITER' 进行设置。"
+
+#: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:9 of
+msgid ""
+"number of samples for the crossover random selection during genetic "
+"optimization. Default: 20. It can also be set through the environmental "
+"variable 'MGB_SUBLINEAR_MEMORY_GENETIC_POOL_SIZE'."
+msgstr ""
+"遗传优化算法进行交叉随机选择（crossover）时所使用的样本数。默认：20。也可以通过环境变量 "
+"'MGB_SUBLINEAR_MEMORY_GENETIC_POOL_SIZE' 进行设置。"
 
 #: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:12 of
-msgid "number of samples for the crossover random selection during genetic optimization. Default: 20. It can also be set through the environmental variable 'MGB_SUBLINEAR_MEMORY_GENETIC_POOL_SIZE'."
-msgstr "遗传优化算法进行交叉随机选择（crossover）时所使用的样本数。默认：20。也可以通过环境变量 'MGB_SUBLINEAR_MEMORY_GENETIC_POOL_SIZE' 进行设置。"
+msgid ""
+"memory lower bound of bottleneck size in MB for sublinear memory "
+"optimization. It can be used to perform manual tradeoff between memory "
+"and speed. Default: 0. It can also be set through the environmental "
+"variable 'MGB_SUBLINEAR_MEMORY_LOWER_BOUND_MB'."
+msgstr ""
+"次线性内存优化瓶颈大小的下界（以MB为单位）。它可用于在内存和速度之间进行手动权衡。默认：0。也可以通过设置环境变量 "
+"'MGB_SUBLINEAR_MEMORY_LOWER_BOUND_MB' 来实现。"
 
-#: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:16 of
-msgid "memory lower bound of bottleneck size in MB for sublinear memory optimization. It can be used to perform manual tradeoff between memory and speed. Default: 0. It can also be set through the environmental variable 'MGB_SUBLINEAR_MEMORY_LOWER_BOUND_MB'."
-msgstr "次线性内存优化瓶颈大小的下界（以MB为单位）。它可用于在内存和速度之间进行手动权衡。默认：0。也可以通过设置环境变量 'MGB_SUBLINEAR_MEMORY_LOWER_BOUND_MB' 来实现。"
+#: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:15 of
+msgid ""
+"number of thread workers to search the optimum checkpoints in sublinear "
+"memory optimization. Default: half of cpu number in the system. Note: the"
+" value must be greater or equal to one. It can also be set through the "
+"environmental variable 'MGB_SUBLINEAR_MEMORY_WORKERS'."
+msgstr ""
+"搜索次线性内存优化最优切分策略时使用的线程数。默认：当前系统中CPU数目的一半。注意：该参数值需要大于等于1。也可以通过设置环境变量 "
+"'MGB_SUBLINEAR_MEMORY_WORKERS'来实现。"
 
 #: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:20 of
-msgid "number of thread workers to search the optimum checkpoints in sublinear memory optimization. Default: half of cpu number in the system. Note: the value must be greater or equal to one. It can also be set through the environmental variable 'MGB_SUBLINEAR_MEMORY_WORKERS'."
-msgstr "搜索次线性内存优化最优切分策略时使用的线程数。默认：当前系统中CPU数目的一半。注意：该参数值需要大于等于1。也可以通过设置环境变量 'MGB_SUBLINEAR_MEMORY_WORKERS'来实现。"
+msgid ""
+"Note that the environmental variable MGB_COMP_GRAPH_OPT must be set to "
+"'enable_sublinear_memory_opt=1' in order for the above environmental "
+"variable to be effective."
+msgstr ""
+"注意，为了使上述环境变量生效，需要将环境变量 MGB_COMP_GRAPH_OPT 设置为 "
+"'enable_sublinear_memory_opt=1' 。"
 
-#: megengine.jit.sublinear_memory_config.SublinearMemoryConfig:25 of
-msgid "Note that the environmental variable MGB_COMP_GRAPH_OPT must be set to 'enable_sublinear_memory_opt=1' in order for the above environmental variable to be effective."
-msgstr "注意，为了使上述环境变量生效，需要将环境变量 MGB_COMP_GRAPH_OPT 设置为 'enable_sublinear_memory_opt=1' 。"
+#: megengine.jit.sublinear_memory_config.SublinearMemoryConfig.__init__:1 of
+msgid "Initialize self.  See help(type(self)) for accurate signature."
+msgstr ""
 
-#: ../../source/reference/api/megengine.jit.SublinearMemoryConfig.rst:11
+#: ../../source/reference/api/megengine.jit.SublinearMemoryConfig.rst:13
 msgid "Methods"
 msgstr "方法"
 
-#: ../../source/reference/api/megengine.jit.SublinearMemoryConfig.rst:14:<autosummary>:1
-msgid ":obj:`__init__ <megengine.jit.SublinearMemoryConfig.__init__>`\\ \\(\\[thresh\\_nr\\_try\\, genetic\\_nr\\_iter\\, ...\\]\\)"
-msgstr ":obj:`__init__ <megengine.jit.SublinearMemoryConfig.__init__>`\\ \\(\\[thresh\\_nr\\_try\\, genetic\\_nr\\_iter\\, ...\\]\\)"
+#: ../../source/reference/api/megengine.jit.SublinearMemoryConfig.rst:16:<autosummary>:1
+msgid ""
+":obj:`__init__ <megengine.jit.SublinearMemoryConfig.__init__>`\\ "
+"\\(\\[thresh\\_nr\\_try\\, genetic\\_nr\\_iter\\, ...\\]\\)"
+msgstr ""
+":obj:`__init__ <megengine.jit.SublinearMemoryConfig.__init__>`\\ "
+"\\(\\[thresh\\_nr\\_try\\, genetic\\_nr\\_iter\\, ...\\]\\)"
 
-#: ../../source/reference/api/megengine.jit.SublinearMemoryConfig.rst:14:<autosummary>:1
+#: ../../source/reference/api/megengine.jit.SublinearMemoryConfig.rst:16:<autosummary>:1
 msgid "Initialize self."
 msgstr "初始化方法。"
+
+#~ msgid "基类：:class:`object`"
+#~ msgstr "基类：:class:`object`"
 

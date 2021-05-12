@@ -1,72 +1,80 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-19 12:31\n"
+"POT-Creation-Date: 2021-05-12 09:02+0800\n"
+"PO-Revision-Date: 2021-04-19 12:31+0000\n"
 "Last-Translator: \n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/runtimeopr.po\n"
-"X-Crowdin-File-ID: 2874\n"
-"Language: zh_CN\n"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:5
 msgid "RuntimeOpr 使用说明"
 msgstr ""
 
 #: ../../source/user-guide/tools/runtimeopr.rst:7
-msgid "RuntimeOpr 指通过 MegEngine 将其它硬件厂商支持的离线模型作为一个算子嵌入到 MegEngine Graph 中， 进而方便地使用 MegEngine 提供的各类 :ref:`图手术 <graphsurgeon>` 和推理工具。"
+msgid "RuntimeOpr 指通过 MegEngine 将其它硬件厂商支持的离线模型作为一个算子嵌入到 MegEngine Graph 中。"
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:12
-msgid "包含 RuntimeOpr 的模型无法通过 :py:func:`megengine.save` 保存权重， 只能通过 :py:meth:`.trace.dump` 直接保存为模型。用法见 :ref:`runtimeopr-dump` 。"
+#: ../../source/user-guide/tools/runtimeopr.rst:11
+msgid ""
+"包含 RuntimeOpr 的模型无法通过 :py:func:`megengine.save` 保存权重， 只能通过 "
+":py:meth:`.trace.dump` 直接保存为模型。用法见 :ref:`runtimeopr-dump` 。"
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:15
-msgid "目前支持 RuntimeOpr 的类型有 TensorRT、Atlas 和 Cambricon 三种， 包含 RuntimeOpr 的模型需要在对应的硬件平台上才能执行推理任务。 下面以 Atlas 为例展示用法（TensorRT、Cambricon 的接口与之类似）："
+#: ../../source/user-guide/tools/runtimeopr.rst:14
+msgid ""
+"目前支持 RuntimeOpr 的类型有 TensorRT、Atlas 和 Cambricon 三种， 包含 RuntimeOpr "
+"的模型需要在对应的硬件平台上才能执行推理任务。 下面以 Atlas 为例展示用法（TensorRT、Cambricon 的接口与之类似）："
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:20
+#: ../../source/user-guide/tools/runtimeopr.rst:19
 msgid "模型只包含一个 RuntimeOpr"
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:38
+#: ../../source/user-guide/tools/runtimeopr.rst:37
 msgid "硬件厂商的模型文件需要以字节流形式打开"
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:39
+#: ../../source/user-guide/tools/runtimeopr.rst:38
 msgid "RuntimeOpr 输入的所属设备应该是该类设备，本例中 inp 的 device 为 “atlas0”"
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:42
+#: ../../source/user-guide/tools/runtimeopr.rst:41
 msgid "RuntimeOpr 作为模型的一部分"
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:70
-msgid "在 RuntimeOpr 前后必须使用 :py:func:`~.copy` 把 Tensor 从 CPU 拷贝到 Atlas, 或者从 Atlas 拷贝到 CPU, 不然会因为 CompNode 不符合规范而报错；"
+#: ../../source/user-guide/tools/runtimeopr.rst:69
+msgid ""
+"在 RuntimeOpr 前后必须使用 :py:func:`~.copy` 把 Tensor 从 CPU 拷贝到 Atlas, 或者从 Atlas"
+" 拷贝到 CPU, 不然会因为 CompNode 不符合规范而报错；"
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:72
+#: ../../source/user-guide/tools/runtimeopr.rst:71
 msgid "如果需要转变数据类型，请在 CPU 上完成（参考上面的代码）；"
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:73
+#: ../../source/user-guide/tools/runtimeopr.rst:72
 msgid "只能从 CPU 拷贝到其他设备或者反之，各类设备之间不能直接拷贝，比如 GPU 到 Atlas."
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:78
+#: ../../source/user-guide/tools/runtimeopr.rst:77
 msgid "序列化与反序列化"
 msgstr ""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:79
+#: ../../source/user-guide/tools/runtimeopr.rst:78
 msgid "参考下面的代码："
 msgstr ""
+
+#~ msgid ""
+#~ "RuntimeOpr 指通过 MegEngine 将其它硬件厂商支持的离线模型作为一个算子嵌入到 "
+#~ "MegEngine Graph 中， 进而方便地使用 MegEngine "
+#~ "提供的各类 :ref:`图手术 <graphsurgeon>` 和推理工具。"
+#~ msgstr ""
 
