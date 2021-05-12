@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.4.0.dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-14 14:18+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/reference/megengine.rst:6
+msgid "megengine"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:17
+msgid "``MGE`` 或 ``mge`` 是 ``MegEngine`` 的官方缩写，我们建议相关衍生库将其作为前缀。"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:21
+msgid "不要尝试 [ ``import megengine as torch`` ] 这是行不通的！ ( /ω＼)"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:23
+msgid "MegEngine 的部分 API 设计借鉴了 PyTorch, 我们相信这对开发者而言会更加友好；"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:24
+msgid "但二者的底层设计完全不同，MegEngine is just MegEngine."
+msgstr ""
+
+#: ../../source/reference/megengine.rst:27
+msgid "Tensor"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:33
+msgid ""
+"MegEngine 中提供了一种名为 “张量” （:class:`Tensor` ）的数据结构， 区别于物理学中的定义，其概念与 NumPy_ "
+"中的 :class:`~numpy.ndarray` 更加相似， 即张量是一类多维数组，其中每个元素的数据类型和空间大小一致，仅数据值有所不同。"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:39
+msgid ""
+"与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效计算。 当 GPU 和 CPU "
+"设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:42
+msgid "如果有查看/改变默认计算设备的需求，请参考 :mod:`megengine.device` 中提供的接口。"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:43
+msgid "通过 :meth:`.Tensor.to` 和 :func:`.functional.copy` 可将 Tensor 拷贝到指定设备。"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:56:<autosummary>:1
+msgid ":obj:`Tensor <megengine.Tensor>`"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:56:<autosummary>:1
+msgid ""
+"A tensor object represents a multidimensional, homogeneous array of "
+"fixed-size items."
+msgstr ""
+
+#: ../../source/reference/megengine.rst:56:<autosummary>:1
+msgid ":obj:`Parameter <megengine.Parameter>`"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:56:<autosummary>:1
+msgid "A kind of Tensor that is to be considered a module parameter."
+msgstr ""
+
+#: ../../source/reference/megengine.rst:59
+msgid "对于 Tensor 的各种操作，绝大部分都实现在 :mod:`megengine.functional` 中。"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:62
+msgid "Tensor 数据类型"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:64
+msgid "MegEngine 中使用 :class:`numpy.dtype` 来表示数据类型，目前支持的数据类型如下："
+msgstr ""
+
+#: ../../source/reference/megengine.rst:67
+msgid "数据类型"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:67
+msgid "numpy.dtype"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:69
+msgid "32-bit floating-point"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:69
+msgid ":any:`numpy.float32` a alias of :class:`numpy.single`"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:70
+msgid "16-bit floating-point"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:70
+msgid ":any:`numpy.float16` a alias of :class:`numpy.half`"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:71
+msgid "8-bit integer (unsigned)"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:71
+msgid ":any:`numpy.uint8`"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:72
+msgid "8-bit integer (signed)"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:72
+msgid ":any:`numpy.int8`"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:73
+msgid "16-bit integer (signed)"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:73
+msgid ":any:`numpy.int16`"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:74
+msgid "32-bit integer (signed)"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:74
+msgid ":any:`numpy.int32`"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:75
+msgid "Boolean"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:75
+msgid ":any:`numpy.bool8` a alias of :class:`numpy.bool_`"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:80
+msgid "单精度浮点 ``float32`` 是 MegEngine 中默认的（也是最通用的）Tensor 数据类型。"
+msgstr ""
+
+#: ../../source/reference/megengine.rst:84
+msgid "并不是所有的已有算子都支持上述任意数据类型的计算，还有一些情况尚未实现。"
+msgstr ""
+
