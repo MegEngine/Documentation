@@ -32,18 +32,13 @@
    model-development/gpu-memory
 
 .. toctree::
-   :caption: 分布式训练
+   :caption: 进阶特性
    :hidden:
    :maxdepth: 1
 
    distributed-training
-
-.. toctree::
-   :caption: 模型压缩
-   :hidden:
-   :maxdepth: 1
-
    model-compression/quantization
+   dtr
 
 .. toctree::
    :caption: 模型部署
