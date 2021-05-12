@@ -1,72 +1,99 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-19 17:48\n"
+"POT-Creation-Date: 2021-05-12 09:02+0800\n"
+"PO-Revision-Date: 2021-04-19 17:48+0000\n"
 "Last-Translator: \n"
+"Language: en_US\n"
 "Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/runtimeopr.po\n"
-"X-Crowdin-File-ID: 2874\n"
-"Language: en_US\n"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:5
 msgid "RuntimeOpr 使用说明"
 msgstr "RuntimeOpr instructions"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:7
-msgid "RuntimeOpr 指通过 MegEngine 将其它硬件厂商支持的离线模型作为一个算子嵌入到 MegEngine Graph 中， 进而方便地使用 MegEngine 提供的各类 :ref:`图手术 <graphsurgeon>` 和推理工具。"
-msgstr "RuntimeOpr offline model refers MegEngine other hardware vendors as a support embedded MegEngine Graph operator in turn be conveniently used to provide various types of MegEngine :ref:`view of a surgical <graphsurgeon>'and reasoning tools."
+#, fuzzy
+msgid "RuntimeOpr 指通过 MegEngine 将其它硬件厂商支持的离线模型作为一个算子嵌入到 MegEngine Graph 中。"
+msgstr ""
+"RuntimeOpr offline model refers MegEngine other hardware vendors as a "
+"support embedded MegEngine Graph operator in turn be conveniently used to"
+" provide various types of MegEngine :ref:`view of a surgical "
+"<graphsurgeon>'and reasoning tools."
 
-#: ../../source/user-guide/tools/runtimeopr.rst:12
-msgid "包含 RuntimeOpr 的模型无法通过 :py:func:`megengine.save` 保存权重， 只能通过 :py:meth:`.trace.dump` 直接保存为模型。用法见 :ref:`runtimeopr-dump` 。"
-msgstr "Models containing RuntimeOpr cannot save weights through:py:func:`megengine.save`, but can only be directly saved as models through :py:meth:`.trace.dump`. See :ref:`runtimeopr-dump` for usage."
+#: ../../source/user-guide/tools/runtimeopr.rst:11
+msgid ""
+"包含 RuntimeOpr 的模型无法通过 :py:func:`megengine.save` 保存权重， 只能通过 "
+":py:meth:`.trace.dump` 直接保存为模型。用法见 :ref:`runtimeopr-dump` 。"
+msgstr ""
+"Models containing RuntimeOpr cannot save weights "
+"through:py:func:`megengine.save`, but can only be directly saved as "
+"models through :py:meth:`.trace.dump`. See :ref:`runtimeopr-dump` for "
+"usage."
 
-#: ../../source/user-guide/tools/runtimeopr.rst:15
-msgid "目前支持 RuntimeOpr 的类型有 TensorRT、Atlas 和 Cambricon 三种， 包含 RuntimeOpr 的模型需要在对应的硬件平台上才能执行推理任务。 下面以 Atlas 为例展示用法（TensorRT、Cambricon 的接口与之类似）："
-msgstr "Currently, there are three types of RuntimeOpr supported: TensorRT, Atlas, and Cambricon. The model that includes RuntimeOpr needs to perform inference tasks on the corresponding hardware platform. Let's take Atlas as an example to show the usage (the interfaces of TensorRT and Cambricon are similar to it)："
+#: ../../source/user-guide/tools/runtimeopr.rst:14
+msgid ""
+"目前支持 RuntimeOpr 的类型有 TensorRT、Atlas 和 Cambricon 三种， 包含 RuntimeOpr "
+"的模型需要在对应的硬件平台上才能执行推理任务。 下面以 Atlas 为例展示用法（TensorRT、Cambricon 的接口与之类似）："
+msgstr ""
+"Currently, there are three types of RuntimeOpr supported: TensorRT, "
+"Atlas, and Cambricon. The model that includes RuntimeOpr needs to perform"
+" inference tasks on the corresponding hardware platform. Let's take Atlas"
+" as an example to show the usage (the interfaces of TensorRT and "
+"Cambricon are similar to it)："
 
-#: ../../source/user-guide/tools/runtimeopr.rst:20
+#: ../../source/user-guide/tools/runtimeopr.rst:19
 msgid "模型只包含一个 RuntimeOpr"
 msgstr "The model contains only one RuntimeOpr"
 
-#: ../../source/user-guide/tools/runtimeopr.rst:38
+#: ../../source/user-guide/tools/runtimeopr.rst:37
 msgid "硬件厂商的模型文件需要以字节流形式打开"
-msgstr "The model file of the hardware manufacturer needs to be opened as a byte stream"
+msgstr ""
+"The model file of the hardware manufacturer needs to be opened as a byte "
+"stream"
 
-#: ../../source/user-guide/tools/runtimeopr.rst:39
+#: ../../source/user-guide/tools/runtimeopr.rst:38
 msgid "RuntimeOpr 输入的所属设备应该是该类设备，本例中 inp 的 device 为 “atlas0”"
-msgstr "The belonging device entered by RuntimeOpr should be this type of device. In this example, the device of inp is \"atlas0\""
+msgstr ""
+"The belonging device entered by RuntimeOpr should be this type of device."
+" In this example, the device of inp is \"atlas0\""
 
-#: ../../source/user-guide/tools/runtimeopr.rst:42
+#: ../../source/user-guide/tools/runtimeopr.rst:41
 msgid "RuntimeOpr 作为模型的一部分"
 msgstr "RuntimeOpr as part of the model"
 
-#: ../../source/user-guide/tools/runtimeopr.rst:70
-msgid "在 RuntimeOpr 前后必须使用 :py:func:`~.copy` 把 Tensor 从 CPU 拷贝到 Atlas, 或者从 Atlas 拷贝到 CPU, 不然会因为 CompNode 不符合规范而报错；"
-msgstr "Before and after RuntimeOpr, you must use: py:func:`~.copy` to copy Tensor from CPU to Atlas, or from Atlas to CPU, otherwise an error will be reported because CompNode does not meet the specifications;"
+#: ../../source/user-guide/tools/runtimeopr.rst:69
+msgid ""
+"在 RuntimeOpr 前后必须使用 :py:func:`~.copy` 把 Tensor 从 CPU 拷贝到 Atlas, 或者从 Atlas"
+" 拷贝到 CPU, 不然会因为 CompNode 不符合规范而报错；"
+msgstr ""
+"Before and after RuntimeOpr, you must use: py:func:`~.copy` to copy "
+"Tensor from CPU to Atlas, or from Atlas to CPU, otherwise an error will "
+"be reported because CompNode does not meet the specifications;"
+
+#: ../../source/user-guide/tools/runtimeopr.rst:71
+msgid "如果需要转变数据类型，请在 CPU 上完成（参考上面的代码）；"
+msgstr ""
+"If you need to change the data type, please complete it on the CPU (refer"
+" to the code above);"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:72
-msgid "如果需要转变数据类型，请在 CPU 上完成（参考上面的代码）；"
-msgstr "If you need to change the data type, please complete it on the CPU (refer to the code above);"
-
-#: ../../source/user-guide/tools/runtimeopr.rst:73
 msgid "只能从 CPU 拷贝到其他设备或者反之，各类设备之间不能直接拷贝，比如 GPU 到 Atlas."
-msgstr "You can only copy from the CPU to other devices or vice versa. You cannot directly copy between various devices, such as GPU to Atlas."
+msgstr ""
+"You can only copy from the CPU to other devices or vice versa. You cannot"
+" directly copy between various devices, such as GPU to Atlas."
 
-#: ../../source/user-guide/tools/runtimeopr.rst:78
+#: ../../source/user-guide/tools/runtimeopr.rst:77
 msgid "序列化与反序列化"
 msgstr "Serialization and deserialization"
 
-#: ../../source/user-guide/tools/runtimeopr.rst:79
+#: ../../source/user-guide/tools/runtimeopr.rst:78
 msgid "参考下面的代码："
 msgstr "Refer to the code below："
 
