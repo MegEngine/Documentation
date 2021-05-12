@@ -11,6 +11,13 @@ jobs:
     if: ${{ github.event.label.name != 'no-build' }}
     runs-on: ubuntu-18.04
     steps:
+      - name: Checkout repsitory
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          lfs: true
+
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
