@@ -2,14 +2,14 @@
 .. currentmodule:: megengine.module
 
 ================
-模块式（Module）
+megengine.module
 ================
 
 Float Module
 ------------
 
-基础容器
-~~~~~~~~
+Containers
+~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -21,8 +21,8 @@ Float Module
 .. py:module:: megengine.module.init
 .. currentmodule:: megengine.module.init
 
-初始化
-~~~~~~
+Initialization
+~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -42,8 +42,8 @@ Float Module
 
 .. currentmodule:: megengine.module
 
-算子支持
-~~~~~~~~
+General operations
+~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -52,8 +52,8 @@ Float Module
    Elemwise
    Concat
 
-卷积层
-~~~~~~
+Convolution Layers
+~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -67,8 +67,8 @@ Float Module
    LocalConv2d
    DeformableConv2d
 
-池化层
-~~~~~~
+Pooling layers
+~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -80,8 +80,8 @@ Float Module
    AdaptiveMaxPool2d
    DeformablePSROIPooling
 
-非线性激活层
-~~~~~~~~~~~~
+Non-linear Activations
+~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -93,8 +93,8 @@ Float Module
    LeakyReLU
    PReLU
 
-归一化层
-~~~~~~~~
+Normalization Layers
+~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -107,18 +107,18 @@ Float Module
    InstanceNorm
    LayerNorm
 
-线性层
-~~~~~~
+Linear Layers
+~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
    :template: autosummary/api-class.rst
 
-   Linear
    Identity
+   Linear
 
-随机失活层
-~~~~~~~~~~
+Dropout Layers
+~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -126,8 +126,8 @@ Float Module
 
    Dropout
 
-稀疏层
-~~~~~~
+Sparse Layers
+~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -135,8 +135,8 @@ Float Module
 
    Embedding
 
-融合操作
-~~~~~~~~
+Fused operations
+~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -146,8 +146,8 @@ Float Module
    ConvBnRelu2d
    BatchMatMulActivation
 
-量化支持
-~~~~~~~~
+Quantization
+~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -162,8 +162,8 @@ Float Module
 QAT Module
 ----------
 
-基础容器
-~~~~~~~~
+Containers
+~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -171,8 +171,8 @@ QAT Module
 
    QATModule
 
-算子支持
-~~~~~~~~
+Operations
+~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -201,8 +201,8 @@ Quantized Module
 
    QuantizedModule
 
-算子支持
-~~~~~~~~
+Operations
+~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:

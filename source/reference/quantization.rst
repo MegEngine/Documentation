@@ -1,9 +1,9 @@
 .. py:module:: megengine.quantization
 .. currentmodule:: megengine.quantization
 
-====================
-量化（Quantization）
-====================
+======================
+megengine.quantization
+======================
 
 量化配置
 --------
