@@ -2,7 +2,7 @@
 .. currentmodule:: megengine.optimizer
 
 ===================
-优化器（Optimizer）
+megengine.optimizer
 ===================
 .. autosummary::
    :toctree: api

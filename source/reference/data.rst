@@ -1,15 +1,15 @@
 .. py:module:: megengine.data
 .. currentmodule:: megengine.data
 
-============
-数据（Data）
-============
+==============
+megengine.data
+==============
 
 .. py:module:: megengine.data.dataset
 .. currentmodule:: megengine.data.dataset
 
-自定义数据集（Dataset）
------------------------
+Dataset
+-------
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -19,8 +19,8 @@
    ArrayDataset
    StreamDataset
 
-计算机视觉数据集
-~~~~~~~~~~~~~~~~
+Vision Dataset
+~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -40,8 +40,8 @@
 .. py:module:: megengine.data.sampler
 .. currentmodule:: megengine.data
 
-采样器（Sampler）
------------------
+Sampler
+-------
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -58,8 +58,8 @@
 .. py:module:: megengine.data.transform
 .. currentmodule:: megengine.data.transform
 
-常见变换（Transform）
----------------------
+Transform
+---------
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -90,8 +90,8 @@
 .. py:module:: megengine.data.collator
 .. currentmodule:: megengine.data
 
-数据合并器（Collator）
-----------------------
+Collator
+--------
 .. autosummary::
    :toctree: api
    :nosignatures:   
@@ -102,8 +102,8 @@
 .. py:module:: megengine.data.dataloader
 .. currentmodule:: megengine.data
 
-数据加载器（DataLoader）
-------------------------
+DataLoader
+----------
 .. autosummary::
    :toctree: api
    :nosignatures:

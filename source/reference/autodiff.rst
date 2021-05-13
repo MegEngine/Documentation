@@ -1,9 +1,9 @@
 .. py:module:: megengine.autodiff
 .. currentmodule:: megengine.autodiff
 
-=====================
-自动微分（Auto-diff）
-=====================
+==================
+megengine.autodiff
+==================
 
 梯度管理器（GradManager）
 -------------------------

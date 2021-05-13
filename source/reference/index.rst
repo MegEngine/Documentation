@@ -9,16 +9,13 @@ API 参考
 Python API
 ----------
 
-.. py:module:: megengine
-.. currentmodule:: megengine
-
 .. toctree::
    :caption: Python API
    :hidden:
    :maxdepth: 1
 
+   megengine
    data
-   tensor
    functional
    module
    autodiff
@@ -36,9 +33,8 @@ Python API
 
 .. note::
 
-   * MegEngine 在 GitHub 上的 Python 包源码：:src:`imperative/python/megengine`
-   * 为了方便用户调用，在一些 ``__init__.py`` 文件中导入了一些子模块或常用对象和方法。
-     如在调用 :py:func:`.functional.add` 时，实际调用的是 ``functional.elemwise.add`` 接口。
+   - MegEngine 在 GitHub 上的 Python 包源码：:src:`imperative/python/megengine`
+   - 我们为有顺序阅读 API 习惯的用户改善了组织逻辑，希望这本字典能够让你满意～
 
 Index
 -----
