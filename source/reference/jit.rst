@@ -1,9 +1,9 @@
 .. py:module:: megengine.jit
 .. currentmodule:: megengine.jit
 
-===============
-即时编译（JIT）
-===============
+=============
+megengine.jit
+=============
 
 .. autosummary::
    :toctree: api

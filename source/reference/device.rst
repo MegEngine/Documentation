@@ -1,9 +1,9 @@
 .. py:module:: megengine.device
 .. currentmodule:: megengine
 
-==============
-设备（Device）
-==============
+================
+megengine.device
+================
 
 常用设置选项
 ------------

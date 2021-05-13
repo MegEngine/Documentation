@@ -1,4 +1,3 @@
-{% extends "!autosummary/class.rst" %}
 {{ fullname | escape | underline}}
 
 .. currentmodule:: {{ module }}

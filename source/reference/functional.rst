@@ -2,14 +2,14 @@
 .. currentmodule:: megengine.functional
 
 ====================
-函数式（Functional）
+megengine.functional
 ====================
 
-基础算子
---------
+General Operations
+------------------
 
-创建张量
-~~~~~~~~
+Tensor creation
+~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -21,26 +21,19 @@
    ones_like
    full
    full_like
-
-数值范围 
-^^^^^^^^
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-  
    arange
    linspace
 
-处理张量
-~~~~~~~~
+Tensor manipulation
+~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    copy
 
-改变张量形状
-^^^^^^^^^^^^
+Changing tensor shape
+^^^^^^^^^^^^^^^^^^^^^
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -48,16 +41,16 @@
    reshape
    flatten
 
-转置操作
-^^^^^^^^
+Transpose-like
+^^^^^^^^^^^^^^
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    transpose
 
-改变张量维度
-^^^^^^^^^^^^
+Changing number of dimensions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -66,44 +59,23 @@
    expand_dims
    squeeze
    
-拼接张量
-^^^^^^^^
+Joining, Splitting, Tiling and others
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    concat
    stack
-
-切割张量
-^^^^^^^^
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    split
-
-存取张量
-^^^^^^^^
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
+   tile
+   repeat
    gather
    scatter
    cond_take
 
-重复张量
-^^^^^^^^
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   tile
-   repeat
-
-算术运算
-~~~~~~~~
+Arithmetic operations
+~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -116,8 +88,14 @@
    neg
    pow
    mod
+   sqrt
+   square
+   abs
+   sign
+   maximum
+   minimum
 
-舍入运算
+Rounding
 ~~~~~~~~
 .. autosummary::
    :toctree: api
@@ -128,8 +106,8 @@
    floor
    clip
 
-指数与对数运算
-~~~~~~~~~~~~~~
+Exponents and logarithms
+~~~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -139,8 +117,8 @@
    log
    log1p
 
-三角运算
-~~~~~~~~
+Trigonometric functions
+~~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -153,8 +131,8 @@
    atan
    atan2
 
-双曲函数
-~~~~~~~~
+Hyperbolic functions
+~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -166,8 +144,8 @@
    asinh
    atanh
 
-位运算
-~~~~~~
+Bit operations
+~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -175,25 +153,25 @@
    left_shift
    right_shift
 
-逻辑运算
-~~~~~~~~
+Logic functions
+~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   logical_and
+   logical_not
+   logical_or
+   logical_xor
+
+Comparison
+~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    isnan
    isinf
-   logical_and
-   logical_not
-   logical_or
-   logical_xor
-
-比较运算
-~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    equal
    not_equal
    less
@@ -201,8 +179,8 @@
    greater
    greater_equal
 
-归约计算
-~~~~~~~~
+Sums, products and others
+~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -213,8 +191,8 @@
    min
    max
 
-线性代数
-~~~~~~~~
+Matrix operations
+~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -224,8 +202,8 @@
    matmul
    svd
 
-概率统计
-~~~~~~~~
+Statistics
+~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -235,8 +213,8 @@
    norm
    normalize
 
-排序与搜索
-~~~~~~~~~~
+Sorting and searching
+~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -248,27 +226,14 @@
    argmax
    where
 
-杂项
-~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   sqrt
-   square
-   abs
-   sign
-   maximum
-   minimum
-
 .. py:module:: megengine.functional.nn
 .. currentmodule:: megengine.functional.nn
 
-神经网络算子
-------------
+Neural network operations
+-------------------------
 
-卷积函数
-~~~~~~~~
+Convolution functions
+~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -280,8 +245,8 @@
    conv_transpose2d
    deformable_conv2d
 
-池化函数
-~~~~~~~~
+Pooling functions
+~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -292,8 +257,8 @@
    adaptive_max_pool2d
    deformable_psroi_pooling
 
-非线性激活函数
-~~~~~~~~~~~~~~
+Non-linear activation functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -311,8 +276,8 @@
    logsigmoid
    logsumexp
 
-归一化函数
-~~~~~~~~~~
+Normalization functions
+~~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -320,24 +285,24 @@
    batch_norm
    sync_batch_norm
 
-线性函数
-~~~~~~~~
+Linear functions
+~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    linear
 
-随机失活函数
-~~~~~~~~~~~~
+Dropout functions
+~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    dropout
 
-稀疏函数
-~~~~~~~~
+Sparse functions
+~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -346,10 +311,20 @@
    indexing_one_hot
    embedding
 
+.. currentmodule:: megengine.functional.metric
+
+Metric functions
+~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   topk_accuracy
+
 .. currentmodule:: megengine.functional.loss
 
-损失函数
-~~~~~~~~
+Loss functions
+~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -360,20 +335,10 @@
    binary_cross_entropy
    cross_entropy
 
-.. currentmodule:: megengine.functional.metric
-
-评估指标
-~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   topk_accuracy
-
 .. currentmodule:: megengine.functional.vision
 
-计算机视觉
-~~~~~~~~~~
+Vision functions
+~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -391,8 +356,8 @@
 .. py:module:: megengine.functional.distributed
 .. currentmodule:: megengine.functional.distributed
 
-分布式算子
-----------
+Distributed functions
+---------------------
 .. autosummary::
    :toctree: api
    :nosignatures:

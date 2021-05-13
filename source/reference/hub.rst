@@ -1,9 +1,9 @@
 .. py:module:: megengine.hub
 .. currentmodule:: megengine.hub
 
-===============
-模型中心（Hub）
-===============
+=============
+megengine.hub
+=============
 
 查询/使用预训练模型
 -------------------
