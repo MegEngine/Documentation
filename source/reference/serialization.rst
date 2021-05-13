@@ -2,7 +2,7 @@
 .. currentmodule:: megengine
 
 =======================
-序列化（Serialization）
+megengine.serialization
 =======================
 
 保存与加载

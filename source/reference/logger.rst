@@ -1,9 +1,9 @@
 .. py:module:: megengine.logger
 .. currentmodule:: megengine
 
-==============
-日志（Logger）
-==============
+================
+megengine.logger
+================
 
 常用设置选项
 ------------
