@@ -1,9 +1,9 @@
 .. py:module:: megengine.random
 .. currentmodule:: megengine.random
 
-==============
-随机（Random）
-==============
+================
+megengine.random
+================
 
 分布（Distribution）
 --------------------

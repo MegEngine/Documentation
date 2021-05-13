@@ -1,15 +1,16 @@
 .. py:module:: megengine.distributed
 .. currentmodule:: megengine.distributed
 
-=========================
-分布式训练（Distributed）
-=========================
+=====================
+megengine.distributed
+=====================
 
 分组（Group）
 -------------
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Group
    init_process_group
@@ -27,6 +28,7 @@
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    launcher
 
@@ -35,7 +37,8 @@
 .. autosummary::
    :toctree: api
    :nosignatures:
-  
+   :template: autosummary/api-class.rst
+
    Client
    Server
 

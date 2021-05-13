@@ -1,9 +1,9 @@
 .. py:module:: megengine.utils
 .. currentmodule:: megengine.utils
 
-==========
-Utils 模块
-==========
+===============
+megengine.utils
+===============
 
 .. py:module:: megengine.utils.comp_graph_tools
 .. currentmodule:: megengine.utils.comp_graph_tools
