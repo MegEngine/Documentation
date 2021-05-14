@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-14 14:18+0800\n"
-"PO-Revision-Date: 2021-04-20 07:18+0000\n"
+"PO-Revision-Date: 2021-05-14 08:27\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/utils.po\n"
+"X-Crowdin-File-ID: 2810\n"
 
 #: ../../source/reference/utils.rst:6
 msgid "megengine.utils"
@@ -27,15 +31,11 @@ msgid ":obj:`get_dep_vars <megengine.utils.comp_graph_tools.get_dep_vars>`"
 msgstr ""
 
 #: ../../source/reference/utils.rst:27:<autosummary>:1
-msgid ""
-"Returns :class:`.tensor.core.megbrain_graph.VarNode` of type ``var_type``"
-" that input ``var`` depands on."
+msgid "Returns :class:`.tensor.core.megbrain_graph.VarNode` of type ``var_type`` that input ``var`` depands on."
 msgstr ""
 
 #: ../../source/reference/utils.rst:27:<autosummary>:1
-msgid ""
-":obj:`get_owner_opr_inputs "
-"<megengine.utils.comp_graph_tools.get_owner_opr_inputs>`"
+msgid ":obj:`get_owner_opr_inputs <megengine.utils.comp_graph_tools.get_owner_opr_inputs>`"
 msgstr ""
 
 #: ../../source/reference/utils.rst:27:<autosummary>:1
@@ -43,9 +43,7 @@ msgid "Gets the inputs of owner opr of a variable."
 msgstr ""
 
 #: ../../source/reference/utils.rst:27:<autosummary>:1
-msgid ""
-":obj:`get_owner_opr_type "
-"<megengine.utils.comp_graph_tools.get_owner_opr_type>`"
+msgid ":obj:`get_owner_opr_type <megengine.utils.comp_graph_tools.get_owner_opr_type>`"
 msgstr ""
 
 #: ../../source/reference/utils.rst:27:<autosummary>:1
@@ -65,9 +63,7 @@ msgid ":obj:`graph_traversal <megengine.utils.comp_graph_tools.graph_traversal>`
 msgstr ""
 
 #: ../../source/reference/utils.rst:27:<autosummary>:1
-msgid ""
-"Helper function to traverse the computing graph and return enough useful "
-"information."
+msgid "Helper function to traverse the computing graph and return enough useful information."
 msgstr ""
 
 #: ../../source/reference/utils.rst:27:<autosummary>:1
@@ -95,9 +91,7 @@ msgid "Replaces operators in the graph."
 msgstr ""
 
 #: ../../source/reference/utils.rst:27:<autosummary>:1
-msgid ""
-":obj:`set_priority_to_id "
-"<megengine.utils.comp_graph_tools.set_priority_to_id>`"
+msgid ":obj:`set_priority_to_id <megengine.utils.comp_graph_tools.set_priority_to_id>`"
 msgstr ""
 
 #: ../../source/reference/utils.rst:27:<autosummary>:1
@@ -109,9 +103,7 @@ msgid ":obj:`GraphInference <megengine.utils.comp_graph_tools.GraphInference>`"
 msgstr ""
 
 #: ../../source/reference/utils.rst:27:<autosummary>:1
-msgid ""
-"Loads a serialized computing graph as a GraphInference object which can "
-"be used to execute the computing graph."
+msgid "Loads a serialized computing graph as a GraphInference object which can be used to execute the computing graph."
 msgstr ""
 
 #: ../../source/reference/utils.rst:32
@@ -147,9 +139,7 @@ msgid ":obj:`as_oprnode <megengine.utils.network.as_oprnode>`"
 msgstr ""
 
 #: ../../source/reference/utils.rst:59:<autosummary>:1
-msgid ""
-"convert a :class:`.OpNode` compatible object to :class:`.OpNode`; it "
-"works like :func:`as_varnode`."
+msgid "convert a :class:`.OpNode` compatible object to :class:`.OpNode`; it works like :func:`as_varnode`."
 msgstr ""
 
 #: ../../source/reference/utils.rst:61
@@ -225,9 +215,7 @@ msgid ":obj:`module_stats <megengine.utils.module_stats.module_stats>`"
 msgstr ""
 
 #: ../../source/reference/utils.rst:104:<autosummary>:1
-msgid ""
-"Calculate and print ``model``'s statistics by adding hook and record "
-"Module's inputs outputs size."
+msgid "Calculate and print ``model``'s statistics by adding hook and record Module's inputs outputs size."
 msgstr ""
 
 #: ../../source/reference/utils.rst:109
@@ -252,19 +240,19 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Loads a computing graph as a Network object."
-#~ msgstr ""
+#~ msgstr "加载模型并生成一个:class:`Network`对象。"
 
 #~ msgid ":obj:`Network.dump <megengine.utils.network.Network.dump>`"
 #~ msgstr ""
 
 #~ msgid "Serializes graph to file."
-#~ msgstr ""
+#~ msgstr "把网络保存为模型文件。"
 
 #~ msgid ":obj:`Network.make_const <megengine.utils.network.Network.make_const>`"
 #~ msgstr ""
 
 #~ msgid "Makes an ImmutableTensor OpNode to provide a parameter for the network."
-#~ msgstr ""
+#~ msgstr "创建一个 :class:`.ImmutableTensor` 对象，为网络提供计算参数。"
 
 #~ msgid ""
 #~ ":obj:`Network.make_input_node "
@@ -275,13 +263,13 @@ msgstr ""
 #~ "Makes a Host2DeviceCopy OpNode to "
 #~ "provide an input varnode for the "
 #~ "network."
-#~ msgstr ""
+#~ msgstr "创建一个 :class:`.Host2DeviceCopy` 对象，为网络提供输入。"
 
 #~ msgid ":obj:`Network.add_output <megengine.utils.network.Network.add_output>`"
 #~ msgstr ""
 
 #~ msgid "Adds vars into the network output node list"
-#~ msgstr ""
+#~ msgstr "把 :attr:`vars` 添加到网络的输出列表中。"
 
 #~ msgid ""
 #~ ":obj:`Network.remove_output "
@@ -289,7 +277,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Removes vars from the network output node list."
-#~ msgstr ""
+#~ msgstr "把:attr:`vars`从网络的输出列表中删除。"
 
 #~ msgid ""
 #~ ":obj:`Network.add_dep_oprs "
@@ -305,7 +293,7 @@ msgstr ""
 #~ "Modifies names of operators **inplace**; "
 #~ "useful for merging loaded network into"
 #~ " another network"
-#~ msgstr ""
+#~ msgstr "**原地**修改计算节点的名称，通常用于在把一个网络合并入另一个网络时。"
 
 #~ msgid ""
 #~ ":obj:`Network.reset_batch_size "
@@ -317,7 +305,7 @@ msgstr ""
 #~ "dimension of all data providers not "
 #~ "in blacklist are assumed to be the"
 #~ " batch size"
-#~ msgstr ""
+#~ msgstr "重置批大小，该操作会作用于网络中除attr:`blacklist`外的所有变量。"
 
 #~ msgid ""
 #~ ":obj:`Network.replace_vars "
@@ -350,7 +338,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Gets all oprs which use var as input"
-#~ msgstr ""
+#~ msgstr "返回所有以 :attr:`var` 为输入的计算节点。"
 
 #~ msgid ""
 #~ ":obj:`Network.get_dep_oprs "
@@ -358,7 +346,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Gets dependent oprs of var"
-#~ msgstr ""
+#~ msgstr "返回 :attr:`var` 所依赖的计算节点的集合。"
 
 #~ msgid "属性"
 #~ msgstr ""
@@ -367,13 +355,13 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Filter on all opnodes of the Network."
-#~ msgstr ""
+#~ msgstr "创建并返回一个包含网络中所有计算节点的筛选器 :class:`NodeFilter` 。"
 
 #~ msgid ":obj:`Network.var_filter <megengine.utils.network.Network.var_filter>`"
 #~ msgstr ""
 
 #~ msgid "Filter on all varnode of the Network."
-#~ msgstr ""
+#~ msgstr "返回一个筛选器:class:`NodeFilter`，它会作用于网络中的所有变量。"
 
 #~ msgid ""
 #~ ":obj:`Network.params_filter "
@@ -381,7 +369,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Filter on all parameters (ImmutableTensor Opr) of the Network"
-#~ msgstr ""
+#~ msgstr "筛选出网络中的所有参数，也就是 :class:`ImmutableTensor` 类型的计算节点。"
 
 #~ msgid ""
 #~ ":obj:`Network.data_providers_filter "
@@ -389,13 +377,13 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Filter on all input nodes (Host2DeviceCopy Opr) of the Network"
-#~ msgstr ""
+#~ msgstr "返回网络的输入。"
 
 #~ msgid ":obj:`Network.dest_vars <megengine.utils.network.Network.dest_vars>`"
 #~ msgstr ""
 
 #~ msgid "Output varnodes of the Network."
-#~ msgstr ""
+#~ msgstr "返回网络的输出。"
 
 #~ msgid ":obj:`Network.all_oprs <megengine.utils.network.Network.all_oprs>`"
 #~ msgstr ""
@@ -417,7 +405,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "filter by specific node type"
-#~ msgstr ""
+#~ msgstr "通过节点类型过滤。"
 
 #~ msgid ""
 #~ ":obj:`NodeFilter.check_type "
@@ -428,7 +416,7 @@ msgstr ""
 #~ "assert that all oprs produced by "
 #~ "this iterator are instances of certain"
 #~ " type"
-#~ msgstr ""
+#~ msgstr "断言过滤器中的所有计算节点都属于给定类型。"
 
 #~ msgid ""
 #~ ":obj:`NodeFilter.not_type "
@@ -436,7 +424,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "remove oprs of specific type"
-#~ msgstr ""
+#~ msgstr "移除过滤器中所有指定类型的计算节点。"
 
 #~ msgid ""
 #~ ":obj:`NodeFilter.param_provider "
@@ -447,6 +435,8 @@ msgstr ""
 #~ "get :class:`.ParamProvider` oprs; shorthand "
 #~ "for ``.type(ParamProvider)``"
 #~ msgstr ""
+#~ "返回过滤器中所有类型为 :class:`.ParamProvider` 的计算节点，此方法是 "
+#~ "``.type(ParamProvider)`` 的简写。"
 
 #~ msgid ""
 #~ ":obj:`NodeFilter.data_provider "
@@ -454,13 +444,13 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "get :class:`.DataProvider` oprs; shorthand for ``.type(DataProvider)``"
-#~ msgstr ""
+#~ msgstr "返回所有类型为 :class:`.DataProvider` 的计算节点，该方法是 ``.type(DataProvider)`` 的简写。"
 
 #~ msgid ":obj:`NodeFilter.name <megengine.utils.network.NodeFilter.name>`"
 #~ msgstr ""
 
 #~ msgid "filter by node name"
-#~ msgstr ""
+#~ msgstr "通过节点名称过滤。"
 
 #~ msgid ""
 #~ ":obj:`NodeFilter.has_input "
@@ -468,13 +458,13 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "an opr is kept if it has given var as one of its inputs"
-#~ msgstr ""
+#~ msgstr "返回过滤器中所有以 :attr:`var` 为输入的计算节点。"
 
 #~ msgid ":obj:`NodeFilter.as_list <megengine.utils.network.NodeFilter.as_list>`"
 #~ msgstr ""
 
 #~ msgid "consume this iterator and return its content as a list"
-#~ msgstr ""
+#~ msgstr "将过滤器中的内容以列表的形式表示并返回。"
 
 #~ msgid ""
 #~ ":obj:`NodeFilter.as_unique "
@@ -482,7 +472,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "assert that this iterator yields only one node and return it"
-#~ msgstr ""
+#~ msgstr "断言过滤器中只包含单个元素，并返回该元素。"
 
 #~ msgid ":obj:`NodeFilter.as_dict <megengine.utils.network.NodeFilter.as_dict>`"
 #~ msgstr ""
@@ -491,7 +481,7 @@ msgstr ""
 #~ "construct an ordered dict to map "
 #~ "from node names to objects in this"
 #~ " iterator"
-#~ msgstr ""
+#~ msgstr "遍历过滤器并返回一个有序字典，其键为节点名称，值为节点对象。"
 
 #~ msgid ""
 #~ ":obj:`NodeFilter.as_count "
@@ -499,7 +489,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "consume this iterator and get the number of elements"
-#~ msgstr ""
+#~ msgstr "返回迭代器的长度。"
 
 #~ msgid ":obj:`NetworkNode <megengine.utils.network_node.NetworkNode>`"
 #~ msgstr ""
@@ -523,5 +513,5 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Utils 模块"
-#~ msgstr ""
+#~ msgstr "Utils 模块"
 
