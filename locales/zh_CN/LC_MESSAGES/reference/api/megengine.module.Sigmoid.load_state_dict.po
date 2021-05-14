@@ -1,52 +1,44 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0.dev\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-12 09:02+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-05-14 08:21\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.Sigmoid.load_state_dict.po\n"
+"X-Crowdin-File-ID: 4566\n"
+"Language: zh_CN\n"
 
 #: ../../source/reference/api/megengine.module.Sigmoid.load_state_dict.rst:2
 msgid "megengine.module.Sigmoid.load\\_state\\_dict"
 msgstr ""
 
 #: megengine.module.module.Module.load_state_dict:1 of
-msgid ""
-"Loads a given dictionary created by :func:`state_dict` into this module. "
-"If ``strict`` is ``True``, the keys of :func:`state_dict` must exactly "
-"match the keys returned by :func:`state_dict`."
-msgstr ""
+msgid "Loads a given dictionary created by :func:`state_dict` into this module. If ``strict`` is ``True``, the keys of :func:`state_dict` must exactly match the keys returned by :func:`state_dict`."
+msgstr "向当前模块中加载由 :func:`state_dict` 创建的给定字典。若 ``strict`` 为 ``True`` ， :func:`state_dict` 的键则必须与 :func:`state_dict` 返回的键准确匹配。"
 
 #: megengine.module.module.Module.load_state_dict:5 of
-msgid ""
-"Users can also pass a closure: ``Function[key: str, var: Tensor] -> "
-"Optional[np.ndarray]`` as a `state_dict`, in order to handle complex "
-"situations. For example, load everything except for the final linear "
-"classifier:"
-msgstr ""
+msgid "Users can also pass a closure: ``Function[key: str, var: Tensor] -> Optional[np.ndarray]`` as a `state_dict`, in order to handle complex situations. For example, load everything except for the final linear classifier:"
+msgstr "为了处理复杂情况，用户可以传入闭包 `Function[key: str, var: Tensor] -> Optional[np.ndarray]` 作为 `state_dict` 。例如，欲加载除了最后线性分类器外的所有部分："
 
 #: megengine.module.module.Module.load_state_dict:17 of
 msgid "Here returning ``None`` means skipping parameter ``k``."
-msgstr ""
+msgstr "这里返回 ``None`` 意味着忽略参数 `k` 。"
 
 #: megengine.module.module.Module.load_state_dict:19 of
-msgid ""
-"To prevent shape mismatch (e.g. load PyTorch weights), we can reshape "
-"before loading:"
-msgstr ""
+msgid "To prevent shape mismatch (e.g. load PyTorch weights), we can reshape before loading:"
+msgstr "为了防止形状不匹配（例如加载PyTorch权重），我们可以在加载之前重塑（reshape）："
 
 #: megengine.module.module.Module.load_state_dict:28 of
 msgid "We can also perform inplace re-initialization or pruning:"
-msgstr ""
+msgstr "我们还可以进行原位重初始化或修剪（pruning）："
 

@@ -1,31 +1,29 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0.dev\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-12 09:37+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-05-14 08:36\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/dtr.po\n"
+"X-Crowdin-File-ID: 6572\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/dtr.rst:5
 msgid "动态图 Sublinear 显存优化（DTR）"
 msgstr ""
 
 #: ../../source/user-guide/dtr.rst:7
-msgid ""
-"MegEngine 通过引入 `Dynamic Tensor Rematerialization "
-"<https://arxiv.org/pdf/2006.09616.pdf>`_ （简称 "
-"DTR）技术，进一步工程化地解决了动态图显存优化的问题，从而享受到大 Batchsize 训练带来的收益。"
+msgid "MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/2006.09616.pdf>`_ （简称 DTR）技术，进一步工程化地解决了动态图显存优化的问题，从而享受到大 Batchsize 训练带来的收益。"
 msgstr ""
 
 #: ../../source/user-guide/dtr.rst:11
@@ -49,9 +47,7 @@ msgid "关于分布式训练的开启，请参考 :ref:`分布式训练 <distrib
 msgstr ""
 
 #: ../../source/user-guide/dtr.rst:28
-msgid ""
-":class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function，你需要在这个 "
-"function 中定义 DTR 的参数："
+msgid ":class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function，你需要在这个 function 中定义 DTR 的参数："
 msgstr ""
 
 #: ../../source/user-guide/dtr.rst:41
@@ -59,9 +55,7 @@ msgid "关于参数设置"
 msgstr ""
 
 #: ../../source/user-guide/dtr.rst:43
-msgid ""
-"``memory_budget`` 表示显存阈值，它是一个软限制。当活跃的显存大小超过该阈值时，动态图显存优化会生效， 根据 DTR "
-"的策略找出最优的 tensor 并释放其显存，直到活跃的显存大小不超过该阈值。因此实际运行时的活跃显存峰值比该阈值高一些属于正常现象。"
+msgid "``memory_budget`` 表示显存阈值，它是一个软限制。当活跃的显存大小超过该阈值时，动态图显存优化会生效， 根据 DTR 的策略找出最优的 tensor 并释放其显存，直到活跃的显存大小不超过该阈值。因此实际运行时的活跃显存峰值比该阈值高一些属于正常现象。"
 msgstr ""
 
 #: ../../source/user-guide/dtr.rst:46
@@ -69,10 +63,7 @@ msgid "一般情况下，显存阈值设得越小，显存峰值就越低，训�
 msgstr ""
 
 #: ../../source/user-guide/dtr.rst:48
-msgid ""
-"值得注意的是，当显存阈值接近显卡容量时，容易引发碎片问题。因为 DTR 是根据活跃的显存大小来执行释放操作的，释放掉的 tensor "
-"在显卡上的物理地址很可能不连续。 例如：释放了两个物理位置不相邻的 100MB 的 tensor，仍然无法满足一次 200MB "
-"显存的申请。此时就会自动触发碎片整理操作，对性能造成巨大影响。"
+msgid "值得注意的是，当显存阈值接近显卡容量时，容易引发碎片问题。因为 DTR 是根据活跃的显存大小来执行释放操作的，释放掉的 tensor 在显卡上的物理地址很可能不连续。 例如：释放了两个物理位置不相邻的 100MB 的 tensor，仍然无法满足一次 200MB 显存的申请。此时就会自动触发碎片整理操作，对性能造成巨大影响。"
 msgstr ""
 
 #: ../../source/user-guide/dtr.rst:51
@@ -80,9 +71,7 @@ msgid "下图是 ResNet50（batch size=200）在2080Ti（显存：11GB）上设�
 msgstr ""
 
 #: ../../source/user-guide/dtr.rst:56
-msgid ""
-"可以看到，当显存阈值从 2 增长到 7 的时候，训练耗时是越来越低的，因为随着显存阈值升高，释放掉的 tensor 数量变少，重计算的开销降低； "
-"当显存阈值增长到 8 和 9 的时候，可供申请的空闲显存总和已经不多，并且大概率地址不连续，导致需要不断地进行碎片整理，造成训练耗时显著增长。"
+msgid "可以看到，当显存阈值从 2 增长到 7 的时候，训练耗时是越来越低的，因为随着显存阈值升高，释放掉的 tensor 数量变少，重计算的开销降低； 当显存阈值增长到 8 和 9 的时候，可供申请的空闲显存总和已经不多，并且大概率地址不连续，导致需要不断地进行碎片整理，造成训练耗时显著增长。"
 msgstr ""
 
 #: ../../source/user-guide/dtr.rst:59
