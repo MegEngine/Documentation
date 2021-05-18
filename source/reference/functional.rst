@@ -5,8 +5,28 @@
 megengine.functional
 ====================
 
-General Operations
-------------------
+.. code-block:: python
+
+   import megengine.functional as F
+
+   tensor_c = F.add(tensor_a, tensor_b)  # tensor_c = tensor_a + tensor_b
+
+   loss = F.nn.square_loss(pred, label)  # Equals to: F.loss.square_loss()
+
+.. note::
+
+   顾名思义，:mod:`megengine.functional` 模块中包含着所有与 Tensor 有关的计算接口：
+
+   * 与神经网络（Neural Network）相关的算子统一封装在 :mod:`megengine.functional.nn` 中；
+   * 分布式算子统一封装在 :mod:`megengine.functional.distributed` 中，方便调用；
+   * 其它的常见算子均可在 :mod:`megengine.functional` 中直接调用；
+
+.. _general-tensor-operations:
+
+General tensor operations
+-------------------------
+
+.. _tensor-creation:
 
 Tensor creation
 ~~~~~~~~~~~~~~~
@@ -24,6 +44,8 @@ Tensor creation
    arange
    linspace
 
+.. _tensor-manipulation:
+
 Tensor manipulation
 ~~~~~~~~~~~~~~~~~~~
 .. autosummary::
@@ -31,6 +53,8 @@ Tensor manipulation
    :nosignatures:
 
    copy
+
+.. _changing-tensor-shape:
 
 Changing tensor shape
 ^^^^^^^^^^^^^^^^^^^^^
@@ -41,6 +65,8 @@ Changing tensor shape
    reshape
    flatten
 
+.. _transpose-like:
+
 Transpose-like
 ^^^^^^^^^^^^^^
 .. autosummary::
@@ -48,6 +74,8 @@ Transpose-like
    :nosignatures:
 
    transpose
+
+.. _changing-number-of-dimensions:
 
 Changing number of dimensions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -58,6 +86,8 @@ Changing number of dimensions
    broadcast_to
    expand_dims
    squeeze
+
+.. _joining-splitting-tiling-and-others:
    
 Joining, Splitting, Tiling and others
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -73,6 +103,8 @@ Joining, Splitting, Tiling and others
    gather
    scatter
    cond_take
+
+.. _arithmetic-operations:
 
 Arithmetic operations
 ~~~~~~~~~~~~~~~~~~~~~
@@ -95,6 +127,8 @@ Arithmetic operations
    maximum
    minimum
 
+.. _rounding:
+
 Rounding
 ~~~~~~~~
 .. autosummary::
@@ -106,6 +140,8 @@ Rounding
    floor
    clip
 
+.. _exponents-and-logarithms:
+
 Exponents and logarithms
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
@@ -116,6 +152,8 @@ Exponents and logarithms
    expm1
    log
    log1p
+
+.. _trigonometric-functions:
 
 Trigonometric functions
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -131,6 +169,8 @@ Trigonometric functions
    atan
    atan2
 
+.. _hyperbolic-functions:
+
 Hyperbolic functions
 ~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
@@ -144,6 +184,8 @@ Hyperbolic functions
    asinh
    atanh
 
+.. _bit-operations:
+
 Bit operations
 ~~~~~~~~~~~~~~
 .. autosummary::
@@ -152,6 +194,9 @@ Bit operations
 
    left_shift
    right_shift
+
+
+.. _logic-functions:
 
 Logic functions
 ~~~~~~~~~~~~~~~
@@ -163,6 +208,8 @@ Logic functions
    logical_not
    logical_or
    logical_xor
+
+.. _comparison:
 
 Comparison
 ~~~~~~~~~~
@@ -179,6 +226,8 @@ Comparison
    greater
    greater_equal
 
+.. _sums-products-and-others:
+
 Sums, products and others
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
@@ -191,6 +240,8 @@ Sums, products and others
    min
    max
 
+.. _matrix-operations:
+
 Matrix operations
 ~~~~~~~~~~~~~~~~~
 .. autosummary::
@@ -202,6 +253,8 @@ Matrix operations
    matmul
    svd
 
+.. _statistics:
+
 Statistics
 ~~~~~~~~~~
 .. autosummary::
@@ -212,6 +265,8 @@ Statistics
    std
    norm
    normalize
+
+.. _sorting-and-searching:
 
 Sorting and searching
 ~~~~~~~~~~~~~~~~~~~~~
@@ -229,8 +284,12 @@ Sorting and searching
 .. py:module:: megengine.functional.nn
 .. currentmodule:: megengine.functional.nn
 
+.. _neural-network-operations:
+
 Neural network operations
 -------------------------
+
+.. _convolution-functions:
 
 Convolution functions
 ~~~~~~~~~~~~~~~~~~~~~
@@ -243,7 +302,11 @@ Convolution functions
    conv3d
    local_conv2d
    conv_transpose2d
+   conv_transpose3d
    deformable_conv2d
+
+
+.. _pooling-functions:
 
 Pooling functions
 ~~~~~~~~~~~~~~~~~
@@ -256,6 +319,8 @@ Pooling functions
    adaptive_avg_pool2d
    adaptive_max_pool2d
    deformable_psroi_pooling
+
+.. _non-linear-activation-functions:
 
 Non-linear activation functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -276,6 +341,8 @@ Non-linear activation functions
    logsigmoid
    logsumexp
 
+.. _normalization-functions:
+
 Normalization functions
 ~~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
@@ -285,6 +352,8 @@ Normalization functions
    batch_norm
    sync_batch_norm
 
+.. _linear-functions:
+
 Linear functions
 ~~~~~~~~~~~~~~~~
 .. autosummary::
@@ -293,6 +362,8 @@ Linear functions
 
    linear
 
+.. _dropout-functions:
+
 Dropout functions
 ~~~~~~~~~~~~~~~~~
 .. autosummary::
@@ -300,6 +371,8 @@ Dropout functions
    :nosignatures:
 
    dropout
+
+.. _sparse-functions:
 
 Sparse functions
 ~~~~~~~~~~~~~~~~
@@ -313,6 +386,8 @@ Sparse functions
 
 .. currentmodule:: megengine.functional.metric
 
+.. _metric-functions:
+
 Metric functions
 ~~~~~~~~~~~~~~~~
 .. autosummary::
@@ -322,6 +397,8 @@ Metric functions
    topk_accuracy
 
 .. currentmodule:: megengine.functional.loss
+
+.. _loss-functions:
 
 Loss functions
 ~~~~~~~~~~~~~~
@@ -336,6 +413,8 @@ Loss functions
    cross_entropy
 
 .. currentmodule:: megengine.functional.vision
+
+.. _vision-functions:
 
 Vision functions
 ~~~~~~~~~~~~~~~~
@@ -355,6 +434,8 @@ Vision functions
 
 .. py:module:: megengine.functional.distributed
 .. currentmodule:: megengine.functional.distributed
+
+.. _distributed-functions:
 
 Distributed functions
 ---------------------

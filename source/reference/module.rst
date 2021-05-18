@@ -64,6 +64,7 @@ Convolution Layers
    Conv3d
    ConvRelu2d
    ConvTranspose2d
+   ConvTranspose3d
    LocalConv2d
    DeformableConv2d
 
