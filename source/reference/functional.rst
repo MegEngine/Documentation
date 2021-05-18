@@ -195,6 +195,7 @@ Bit operations
    left_shift
    right_shift
 
+
 .. _logic-functions:
 
 Logic functions
@@ -303,6 +304,7 @@ Convolution functions
    conv_transpose2d
    conv_transpose3d
    deformable_conv2d
+
 
 .. _pooling-functions:
 
