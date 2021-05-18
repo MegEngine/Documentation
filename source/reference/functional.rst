@@ -301,6 +301,7 @@ Convolution functions
    conv3d
    local_conv2d
    conv_transpose2d
+   conv_transpose3d
    deformable_conv2d
 
 .. _pooling-functions:
