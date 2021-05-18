@@ -132,13 +132,18 @@ Tensor 创建与处理
 
 Core
 ----
+.. toctree::
+   :maxdepth: 2
+   
+   core
+
+在 :mod:`megengine.core` 模块中实现了 MegEngine 的核心功能，包括 Tensor 和 Operators 组成的计算图，自动求导机制等等。
+MegEngine 用户在日常使用中无需直接调用这个模块，因为里面的功能实现已经被其它常用模块进行了封装。
+但出于方便 MegEngine 开发者检索的目的，我们也将 core 中的 API 列举在此处。
+
 .. warning::
 
    我们不承诺 core 模块中 API 的兼容性和稳定性。
-
-Core 模块中实现了 MegEngine 的核心功能，包括 Tensor 和 Operators 组成的计算图，自动求导机制等等。
-MegEngine 用户在日常使用中无需直接调用这个模块，因为里面的功能实现已经被其它常用模块进行了封装。
-但出于方便 MegEngine 开发者检索的目的，我们也将 Core API 列举在此处。
 
 .. note::
 
@@ -151,10 +156,5 @@ MegEngine 用户在日常使用中无需直接调用这个模块，因为里面�
 
    你可能在 MegEngine 源代码中经常会看到诸如 MegBrain, MGB 等字样。
    不用担心，MegBrain 是 MegEngine 的内部代号，二者某种程度上是等价的。
-
-.. toctree::
-   :maxdepth: 3
-   
-   core
 
 
