@@ -17,7 +17,7 @@ megengine.core
    我们不承诺 core 模块中 API 的兼容性和稳定性。
 
 tesnor
-~~~~~~
+------
 .. currentmodule:: megengine.core.tensor
 
 .. autosummary::
@@ -29,6 +29,14 @@ tesnor
    core.TensorBase
    core.TensorWrapperBase
    array_method.ArrayMethodMixin
+
+dtype
+~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
    dtype.QuantDtypeMeta
    dtype.get_dtype_bit
    dtype.is_lowbit
@@ -49,12 +57,30 @@ tesnor
    dtype.convert_to_qint4
    dtype.convert_from_qint4
    dtype.convert_from_quint8
+
+indexing
+~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
+
    indexing.remove_ellipsis
    indexing.check_bool_index
    indexing.unpack_getitem
    indexing.try_condtake
    indexing.getitem
    indexing.setitem
+
+mgebrain_graph
+~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
+
    megbrain_graph.set_priority_to_id
    megbrain_graph.Graph
    megbrain_graph.VarNode
@@ -75,7 +101,7 @@ tesnor
    megbrain_graph.VirtualDepNode
 
 ops
-~~~
+---
 .. currentmodule:: megengine.core.ops
 
 .. autosummary::
@@ -86,7 +112,7 @@ ops
    special.Const
 
 autodiff
-~~~~~~~~
+--------
 .. currentmodule:: megengine.core.autodiff
 
 .. autosummary::
