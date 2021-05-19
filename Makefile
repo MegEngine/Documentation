@@ -1,18 +1,11 @@
 # Minimal makefile for Sphinx documentation
-
-ifeq ($(OS), Darwin)
-    NCORE=$(shell sysctl -n hw.logicalcpu)
-else
-    NCORE=$(shell nproc)
-endif
-
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 MEGENGINEPY   = `python3 -c "import os; \
                 import megengine; \
                 print(os.path.dirname(megengine.__file__))"`
 LANGUAGE      ?= zh_CN
-SPHINXOPTS    ?= -j$(NCORE) -D language='$(LANGUAGE)'
+SPHINXOPTS    ?= -j auto -D language='$(LANGUAGE)'
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
