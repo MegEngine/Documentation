@@ -29,16 +29,13 @@ add_module_names = False
 
 extensions = [
     "nbsphinx",
-    "recommonmark",
     "sphinx.ext.napoleon",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
-    "sphinx.ext.doctest",
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
-    "sphinx.ext.githubpages",
     "sphinx.ext.graphviz",
     "sphinxcontrib.mermaid",
     "sphinx_copybutton"
@@ -162,7 +159,7 @@ html_theme_options = {
     "navbar_end": ["navbar-icon-links.html", "version-switcher.html"],
     "use_edit_page_button": True,
     "navigation_with_keys": False,
-    "show_prev_next": True,
+    "show_prev_next": False,
     "use_version_switch": True,
     "version_switch_json_url": "/doc/version.json",
     "version_switch_enable_locale": True,
