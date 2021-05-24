@@ -32,6 +32,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
+    "sphinx.ext.doctest",
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
@@ -80,8 +81,7 @@ autodoc_default_options = {
 autoclass_content = "class"
 autodoc_docstring_signature = True
 autodoc_preserve_defaults = True
-autodoc_typehints = "description"
-autodoc_typehints_description_target = "documented"
+autodoc_typehints = "none"
 
 # Setting for sphinx.ext.mathjax
 # The path to the JavaScript file to include in the HTML files in order to load MathJax.

@@ -41,7 +41,6 @@ megengine.quantization
 ``easyquant_qconfig``
   用于 easyquant 算法的 QConfig，等价于 ``passive_qconfig``.
 
-
 观察
 ~~~~
 .. autosummary::
