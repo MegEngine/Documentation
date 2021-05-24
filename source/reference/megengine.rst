@@ -22,11 +22,10 @@ megengine
 
 .. _PyTorch: https://pytorch.org/
 
+.. _tensor:
+
 Tensor
 ------
-
-.. py:module:: megengine.tensor
-.. currentmodule:: megengine
 
 .. code-block:: python
 
@@ -63,7 +62,7 @@ Tensor 举例：三阶魔方
    与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效的计算。
    当 GPU 和 CPU 设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。
    
-   * 如果有查看/改变默认计算设备的需求，请参考 :mod:`megengine.device` 中提供的接口。
+   * 如果有查看/改变默认计算设备的需求，请参考 :ref:`device` 中提供的接口。
    * 通过 :meth:`.Tensor.to` 和 :func:`.functional.copy` 可将 Tensor 拷贝到指定设备。
 
 .. _Numpy: https://numpy.org
@@ -130,16 +129,19 @@ Tensor 创建与处理
    一种普遍的方法是将其转化为 :class:`~numpy.ndarray` 后传入 :class:`Tensor` 来创建实例；
    还可以利用 MegEngine 中封装好的接口，方便进行一些预处理操作，参考 :mod:`megengine.data` 模块。
 
+.. _core:
+
 Core
 ----
-.. toctree::
-   :maxdepth: 2
-   
-   core
 
 在 :mod:`megengine.core` 模块中实现了 MegEngine 的核心功能，包括 Tensor 和 Operators 组成的计算图，自动求导机制等等。
 MegEngine 用户在日常使用中无需直接调用这个模块，因为里面的功能实现已经被其它常用模块进行了封装。
 但出于方便 MegEngine 开发者检索的目的，我们也将 core 中的 API 列举在此处。
+
+.. toctree::
+   :hidden:
+   
+   core
 
 .. warning::
 
@@ -156,5 +158,49 @@ MegEngine 用户在日常使用中无需直接调用这个模块，因为里面�
 
    你可能在 MegEngine 源代码中经常会看到诸如 MegBrain, MGB 等字样。
    不用担心，MegBrain 是 MegEngine 的内部代号，二者某种程度上是等价的。
+
+模型保存与加载
+--------------
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   save
+   load
+
+.. _device:
+
+设备相关
+--------
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   is_cuda_available
+   get_device_count
+   get_default_device
+   set_default_device
+   get_mem_status_bytes
+   set_prealloc_config
+
+.. _logger:
+
+日志相关
+--------
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   enable_debug_log
+   get_logger
+   set_log_file
+   set_log_level
+
+.. _version:
+
+查询版本信息
+------------
+.. py:data:: __version__
+   :annotation: （MegEngine 版本号）
 
 

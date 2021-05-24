@@ -5,13 +5,12 @@
 megengine.autodiff
 ==================
 
-梯度管理器（GradManager）
--------------------------
-.. autoclass:: GradManager
-   :members:
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
+   Function
+   GradManager
 
 
-自定义函数（Function）
-----------------------
-.. autoclass:: Function
-   :members:

@@ -67,6 +67,7 @@ Convolution Layers
    ConvTranspose3d
    LocalConv2d
    DeformableConv2d
+   SlidingWindow
 
 Pooling layers
 ~~~~~~~~~~~~~~

@@ -5,6 +5,19 @@
 megengine.random
 ================
 
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
+   RNG
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   seed
+
 分布（Distribution）
 --------------------
 .. autosummary::
@@ -14,10 +27,4 @@ megengine.random
    normal
    uniform
 
-种子（Seed）
-------------
-.. autosummary::
-   :toctree: api
-   :nosignatures:
 
-   seed

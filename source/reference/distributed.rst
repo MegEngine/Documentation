@@ -13,6 +13,11 @@ megengine.distributed
    :template: autosummary/api-class.rst
 
    Group
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
    init_process_group
    new_group
    is_distributed

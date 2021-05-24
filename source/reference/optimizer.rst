@@ -34,3 +34,12 @@ megengine.optimizer
    LRScheduler
    MultiStepLR
 
+梯度处理
+--------
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   clip_grad_norm
+   clip_grad_value
+
