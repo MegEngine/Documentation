@@ -65,6 +65,16 @@ Transform
    :nosignatures:
    :template: autosummary/api-class.rst
 
+   Transform
+   PseudoTransform
+
+Vision Transform
+~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
    VisionTransform
    Compose
    TorchTransformCompose

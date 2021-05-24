@@ -9,10 +9,6 @@ megengine.functional
 
    import megengine.functional as F
 
-   tensor_c = F.add(tensor_a, tensor_b)  # tensor_c = tensor_a + tensor_b
-
-   loss = F.nn.square_loss(pred, label)  # Equals to: F.loss.square_loss()
-
 .. note::
 
    顾名思义，:mod:`megengine.functional` 模块中包含着所有与 Tensor 有关的计算接口：
@@ -21,19 +17,26 @@ megengine.functional
    * 分布式算子统一封装在 :mod:`megengine.functional.distributed` 中，方便调用；
    * 其它的常见算子均可在 :mod:`megengine.functional` 中直接调用；
 
-.. _general-tensor-operations:
+.. _standard-tensor-operations:
 
-General tensor operations
--------------------------
+Standard tensor operations
+--------------------------
+
+.. note::
+
+   该部分的 API 设计接纳了 `Python 数据 API 标准联盟 <https://data-apis.org/>`_ 中的倡导,
+   尽可能地向 NumPy API 靠拢。 
 
 .. _tensor-creation:
 
-Tensor creation
-~~~~~~~~~~~~~~~
+Creation Functions
+~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
+   arange
+   linspace
    eye
    zeros
    zeros_like
@@ -41,60 +44,21 @@ Tensor creation
    ones_like
    full
    full_like
-   arange
-   linspace
 
 .. _tensor-manipulation:
 
-Tensor manipulation
-~~~~~~~~~~~~~~~~~~~
+Manipulation Functions
+~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    copy
-
-.. _changing-tensor-shape:
-
-Changing tensor shape
-^^^^^^^^^^^^^^^^^^^^^
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    reshape
    flatten
-
-.. _transpose-like:
-
-Transpose-like
-^^^^^^^^^^^^^^
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   transpose
-
-.. _changing-number-of-dimensions:
-
-Changing number of dimensions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    broadcast_to
    expand_dims
    squeeze
-
-.. _joining-splitting-tiling-and-others:
-   
-Joining, Splitting, Tiling and others
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    concat
    stack
    split
@@ -126,28 +90,10 @@ Arithmetic operations
    sign
    maximum
    minimum
-
-.. _rounding:
-
-Rounding
-~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    round
    ceil
    floor
    clip
-
-.. _exponents-and-logarithms:
-
-Exponents and logarithms
-~~~~~~~~~~~~~~~~~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    exp
    expm1
    log
@@ -195,7 +141,6 @@ Bit operations
    left_shift
    right_shift
 
-
 .. _logic-functions:
 
 Logic functions
@@ -209,10 +154,10 @@ Logic functions
    logical_or
    logical_xor
 
-.. _comparison:
+.. _comparison-functions:
 
-Comparison
-~~~~~~~~~~
+Comparison functions
+~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -226,10 +171,10 @@ Comparison
    greater
    greater_equal
 
-.. _sums-products-and-others:
+.. _statistical-functions:
 
-Sums, products and others
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Statistical Functions
+~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -239,37 +184,41 @@ Sums, products and others
    mean
    min
    max
-
-.. _matrix-operations:
-
-Matrix operations
-~~~~~~~~~~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   dot
-   matinv
-   matmul
-   svd
-
-.. _statistics:
-
-Statistics
-~~~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    var
    std
    norm
    normalize
 
-.. _sorting-and-searching:
+.. _linear-algebra-functions:
 
-Sorting and searching
-~~~~~~~~~~~~~~~~~~~~~
+Linear Algebra Functions
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   transpose
+   dot
+   matinv
+   matmul
+   svd
+
+.. _searching-functions:
+
+Searching Functions
+~~~~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   argmin
+   argmax
+   where
+
+.. _sorting-functions:
+
+Sorting Functions
+~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -277,9 +226,6 @@ Sorting and searching
    topk
    sort
    argsort
-   argmin
-   argmax
-   where
 
 .. py:module:: megengine.functional.nn
 .. currentmodule:: megengine.functional.nn
@@ -304,7 +250,7 @@ Convolution functions
    conv_transpose2d
    conv_transpose3d
    deformable_conv2d
-
+   sliding_window
 
 .. _pooling-functions:
 
@@ -430,6 +376,7 @@ Vision functions
    roi_pooling
    roi_align
    nms
+   correlation
    nvof
 
 .. py:module:: megengine.functional.distributed
@@ -455,3 +402,16 @@ Distributed functions
    gather
    scatter
    reduce_scatter_sum
+
+.. currentmodule:: megengine.functional.debug_param
+
+Debug Setting
+-------------
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   get_execution_strategy
+   set_execution_strategy
+
+

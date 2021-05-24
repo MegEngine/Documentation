@@ -38,6 +38,11 @@ dtype
    :template: autosummary/api-class.rst
 
    dtype.QuantDtypeMeta
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
    dtype.get_dtype_bit
    dtype.is_lowbit
    dtype.is_bfloat16
@@ -63,8 +68,6 @@ indexing
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
-
 
    indexing.remove_ellipsis
    indexing.check_bool_index
@@ -80,11 +83,21 @@ mgebrain_graph
    :nosignatures:
    :template: autosummary/api-class.rst
 
-
-   megbrain_graph.set_priority_to_id
    megbrain_graph.Graph
    megbrain_graph.VarNode
    megbrain_graph.OpNode
+   megbrain_graph.InputNode
+   megbrain_graph.OutputNode
+   megbrain_graph.ValueOutputNode
+   megbrain_graph.TensorAttr
+   megbrain_graph.AttrOutputNode
+   megbrain_graph.VirtualDepNode
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   megbrain_graph.set_priority_to_id
    megbrain_graph.optimize_for_inference
    megbrain_graph.modify_opr_algo_strategy_inplace
    megbrain_graph.dump_graph
@@ -92,14 +105,8 @@ mgebrain_graph
    megbrain_graph.apply_normal_varnode
    megbrain_graph.apply_backward_varnode
    megbrain_graph.input_callback
-   megbrain_graph.InputNode
    megbrain_graph.output_callback
-   megbrain_graph.OutputNode
-   megbrain_graph.ValueOutputNode
-   megbrain_graph.TensorAttr
-   megbrain_graph.AttrOutputNode
-   megbrain_graph.VirtualDepNode
-
+  
 ops
 ---
 .. currentmodule:: megengine.core.ops
@@ -120,8 +127,13 @@ autodiff
    :nosignatures:
    :template: autosummary/api-class.rst
 
-   grad.get_grad_managers
    grad.GradKey
    grad.Grad
    grad.Function
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   grad.get_grad_managers
 
