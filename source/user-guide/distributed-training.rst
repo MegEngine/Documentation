@@ -21,8 +21,6 @@
 本节我们按照以下顺序进行介绍：
 
 #. 如何启动一个单机多卡的训练
-#. 数据处理流程
-#. 进程间训练状态如何同步
 #. 如何在多进程环境中将模型保存与加载
 
 如何启动一个单机多卡的训练
@@ -32,73 +30,125 @@
 
 .. code-block::
 
+    import numpy as np
+    import megengine as mge
     import megengine.autodiff as ad
     import megengine.distributed as dist
     import megengine.optimizer as optim
+    from megengine.data.dataset.vision import MNIST
+    from megengine.data.dataloader import DataLoader
+    from megengine.data.sampler import SequentialSampler
+    from megengine import functional as F
+
+    # pre download MNIST data
+    MNIST()
 
     @dist.launcher
     def main():
+        rank = dist.get_rank()
 
-    # ... 模型初始化
+        # 设置超参数
+        bs = 100
+        lr = 1e-6
+        epochs = 5
 
-    dist.bcast_list_(net.parameters())
-    gm = ad.GradManager().attach(net.parameters(), callbacks=[dist.make_allreduce_cb("sum")])
-    opt = optim.SGD(net.parameters(), lr=0.01, momentum=0.9, weight_decay=5e-4)
+        num_features = 784   # (28, 28, 1) Flatten -> 784
+        num_classes = 10
 
-    # ... 你的训练代码
+        # 初始化参数
+        W = mge.Parameter(np.zeros((num_features, num_classes)))
+        b = mge.Parameter(np.zeros((num_classes,)))
+        params=[W, b]
+
+        # 定义单层线性分类网络
+        def linear_cls(data):
+            data = F.flatten(data, 1)
+            return F.matmul(data, W) + b
+
+        # 同步模型参数，默认全局同步，可以给bcast_list_加上group参数在指定group之间同步
+        dist.bcast_list_(params)
+
+        gm = ad.GradManager()
+        gm.attach(params, callbacks=[dist.make_allreduce_cb("sum")])
+        opt = optim.SGD(params, lr=lr)
+
+        data = MNIST()
+        sampler = SequentialSampler(data, batch_size=bs)
+        data_loader = DataLoader(data, sampler=sampler)
+
+        for epoch in range(epochs):
+            total_loss = 0
+            for data, label in data_loader:
+                data = mge.tensor(data)
+                label = mge.tensor(label)
+                with gm:
+                    pred = linear_cls(data)
+                    loss = F.nn.cross_entropy(pred, label)
+                    gm.backward(loss)
+                opt.step().clear_grad()
+                loss = dist.functional.all_reduce_sum(loss) / dist.get_world_size()
+                total_loss +=  loss.item()
+            if rank == 0:
+                print("epoch = {}, loss = {:.3f}".format(epoch, total_loss / len(data_loader)))
+
+    main()
+
+    # 期望结果
+    # epoch = 0, loss = 0.618
+    # epoch = 1, loss = 0.392
+    # epoch = 2, loss = 0.358
+    # epoch = 3, loss = 0.341
+    # epoch = 4, loss = 0.330
+
+
+和单卡训练相比，单机多卡的训练代码只有几行代码的不同
+
+* @dist.launcher
+* dist.bcast_list_(params)
+* gm.attach(params, callbacks=[dist.make_allreduce_cb("sum")])
+
+下面我会逐一解释这几句话分别有什么含义
+
+.. code-block::
+
+    @dist.launcher
 
 :class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function (默认根据机器上的 device 数量开启多进程)，
 每个进程会在最开始根据 rank 设定默认 deivce, 假如是一台 8 卡机器，那么就会开启 8 个进程，rank 分别为 0 到 8 ，device 为 gpu0 到 gpu7.
 
+.. code-block::
 
-数据处理流程
-~~~~~~~~~~~~
+    dist.bcast_list_(params)
 
-用 :class:`~.distributed.launcher` 启动之后，我们便可以按照正常的流程进行训练了，
-但是由于需要每个进程处理不同的数据，我们还需要在数据部分做一些额外的操作。
+:func:`~.distributed.bcast_list_` 用于同步各个进程之间的参数，默认在全局范围（所有计算设备）同步，可以设置group参数在特定的group之间同步
 
-在这里我们以载入 MNIST 数据为例，展示如何对数据做切分，使得每个进程拿到不重叠的数据。
-此处我们将整个数据集载入内存后再进行切分。
-这种方式比较低效，仅作为原理示意，更加高效的方式见 :ref:`dist_dataloader` 。
+.. warning::
+
+    注意，有些情况下不仅要同步参数，还需要同步统计量，比如 :class:`~module.BatchNorm2d` 的均值和方差统计量
 
 .. code-block::
 
-    mnist_datasets = load_mnist_datasets() # 下载并读取 MNIST 数据集，见“数据加载”文档
-    data_train, label_train = mnist_datasets['train'] # 得到训练集的数据和标签
+    gm.attach(params, callbacks=[dist.make_allreduce_cb("sum")])
 
-    size = ceil(len(data_train) / num_devices) # 将所有数据划分为 num_devices 份
-    l = size * rank # 得到本进程负责的数据段的起始索引
-    r = min(size * (rank + 1), len(data_train)) # 得到本进程负责的数据段的终点索引
-    data_train = data_train[l:r, :, :, :] # 得到本进程的数据
-    label_train = label_train[l:r] # 得到本进程的标签
+在数据并行的情况下，由于每张卡只负责一部分数据，所以求导之后只会有部分导数，
+在GradManager中注册对于梯度的回调函数，在对应参数的导数求完之后，
+做一个 :func:`~.distributed.all_reduce_sum` 操作进行全局求和，这样同步各个计算设备的导数来保证参数更新的一致性
 
-至此我们便得到了每个进程各自负责的、互不重叠的数据部分。
+.. note::
 
-参数同步
-~~~~~~~~
+    在 :class:`~.data.dataloader.DataLoader` 内部对多机训练有特殊支持，会自动给每个进程分配不重叠的数据进行训练，所以在数据供给方面没有做特殊处理，
+    如果没有使用 :class:`~.data.dataloader.DataLoader` ，则需要自己手动给不同 rank 的设备分配不重叠的数据进行训练
+    就像下面这样
 
-初始化模型的参数之后，我们可以调用 :func:`~.distributed.bcast_list_` 对进程间模型的参数进行广播同步：
+    .. code-block::
 
-.. code-block::
+        mnist_datasets = MNIST() # 下载并读取 MNIST 数据集
 
-    import megengine.distributed as dist
-
-    net = Le_Net()
-    dist.bcast_list_(net.parameters())
-
-在反向传播求梯度的步骤中，我们通过插入 callback 函数的形式，
-对各个进程计算出的梯度进行累加，各个进程都拿到的是累加后的梯度。代码示例：
-
-.. code-block::
-
-    import megengine.autodiff as ad
-    import megengine.distributed as dist
-
-    net = Le_Net()
-    gm = ad.GradManager()
-    # sum 表示累加方式是直接相加 ，如果填写 mean 就是相加后求平均
-    # dist.WORLD 表示梯度累加的范围，默认是 dist.WORLD 表示所有进程间都进行同步
-    gm.attach(net.parameters(), callbacks=[dist.make_allreduce_cb("sum", dist.WORLD)])
+        size = ceil(len(mnist_datasets) / num_devices) # 将所有数据划分为 num_devices 份
+        l = size * rank # 得到本进程负责的数据段的起始索引
+        r = min(size * (rank + 1), len(mnist_datasets)) # 得到本进程负责的数据段的终点索引
+        data, label = mnist_datasets[l:r] # 得到本进程的数据和标签
+        data = np.concatenate([*data]).reshape(r-l, 28, 28, 1) # data 的数据类型为 list of nparray，需要拼接起来作为模型的输入
 
 模型保存与加载
 ~~~~~~~~~~~~~~
@@ -123,7 +173,16 @@
     opt = SGD(net.parameters(), lr=0.01, momentum=0.9, weight_decay=5e-4)
     gm = GradManager().attach(net.parameters, callbacks=[dist.make_allreduce_cb("sum")])
 
-    # ... 训练代码
+    # 训练
+    for epoch in range(epochs):
+        for data, label in data_loader:
+            data = mge.tensor(data)
+            label = mge.tensor(label)
+            with gm:
+                pred = net(data)
+                loss = F.nn.cross_entropy(pred, label)
+                gm.backward(loss)
+            opt.step().clear_grad()
 
     # 保存模型参数
     if rank == 0:
@@ -135,64 +194,53 @@
 
 .. _dist_dataloader:
 
-使用 DataLoader 进行数据加载
-----------------------------
-
-在上一节，为了简单起见，我们将整个数据集全部载入内存。
-实际中，我们可以通过 :class:`~.megengine.data.DataLoader` 来更高效地加载数据。
-
-:class:`~.megengine.data.DataLoader` 会自动帮我们处理分布式训练时数据相关的问题，
-可以实现使用单卡训练时一样的数据加载代码，具体来说：
-
-* 所有采样器 :class:`~.megengine.data.Sampler` 都会自动地做类似上文中数据切分的操作，
-  使得所有进程都能获取互不重复的数据。
-* 每个进程的 :class:`~.megengine.data.DataLoader` 还会自动调用分布式相关接口实现内存共享，
-  避免不必要的内存占用，从而显著加速数据读取。
-
-总之，在分布式训练时，你无需对使用 :class:`~.megengine.data.DataLoader` 的方式进行任何修改，一切都能无缝地切换。
-
-.. _Models: https://github.com/MegEngine/Models
-
 多机多卡
 --------
 
 在 MegEngine 中，我们能很方便地将上面单机多卡的代码修改为多机多卡，
-只需修改传给 :func:`~.megengine.distributed.launcher` 的参数就可以进行多机多卡训练
+只需修改传给 :class:`~.megengine.distributed.launcher` 的参数就可以进行多机多卡训练，其他部分和单机多卡一样。
 
 .. code-block::
-
-    import megengine.autodiff as ad
-    import megengine.distributed as dist
-    import megengine.optimizer as optim
 
     @dist.launcher(world_size=world_size, 
                    n_gpus=n_gpus, 
                    rank_start=rank_start, 
                    master_ip=master_ip, 
                    port=port)
-    def main():
 
-        # ... 模型初始化
+参数含义
 
-        dist.bcast_list_(net.parameters())
-        gm = ad.GradManager().attach(net.parameters(), callbacks=[dist.make_allreduce_cb("sum")])
-        opt = optim.SGD(net.parameters(), lr=0.01, momentum=0.9, weight_decay=5e-4)
+.. list-table::
+    :widths: 10 10 35
+    :header-rows: 1
 
-        # ... 你的训练代码
+    * - 参数名
+      - 数据类型
+      - 实际含义
+    * - world_size
+      - int
+      - 训练的用到的总卡数
+    * - n_gpus
+      - int
+      - 运行时这台物理机的卡数
+    * - rank_start
+      - int
+      - 这台机器的 rank 起始值
+    * - master_ip
+      - str
+      - rank 0 所在机器的 IP 地址
+    * - port
+      - int
+      - 分布式训练 master server 使用的端口号
 
-其中 ``world_size`` 是你训练的用到的总卡数， ``n_gpus`` 是你运行时这台物理机的卡数， 
-``rank_start`` 是这台机器的 rank 起始值， ``master_ip`` 是 rank 0 所在机器的 IP 地址，
-``port`` 是分布式训练 master server 使用的端口号，其它部分与单机版本完全相同。
-最终只需在每个机器上执行相同的 Python 程序，即可实现多机多卡的分布式训练。
+流水线并行
+----------
 
-模型并行
---------
+在 MegEngine 中，也支持流水线的方式来做训练。
 
-在 MegEngine 中，也支持模型并行的方式来做训练。
+最简单的流水线并行就是把一个模型拆分成上下两个部分来做，在 MegEngine 中可以简单的实现。
 
-最简单的模型并行就是把一个模型拆分成上下两个部分来做，在 MegEngine 中可以简单的实现。
-
-下面是一个简单的例子来展示怎么写一个模型并行的训练：
+下面是一个简单的例子来展示怎么写一个流水线的训练：
 
 .. code-block::
 
@@ -219,11 +267,9 @@
 
             with gm:
                 feat = layer1(x)
-                client.user_set("shape", feat.shape)
-                # 因为 numpy.dtype 类型不能直接发送，所以转化为 str 类型
-                client.user_set("dtype", np.dtype(feat.dtype).name)
                 dist.functional.remote_send(feat, dest_rank=1)
                 gm.backward([])
+                print("layer1 grad:", layer1.weight.grad)
                 opt.step().clear_grad()
         else:
             layer2 = M.Linear(1, 1) # 模型下半部分
@@ -233,24 +279,30 @@
             gm.attach(layer2.parameters())
 
             with gm:
-                shape = client.user_get("shape")
-                dtype = client.user_get("dtype")
-                feat = dist.functional.remote_recv(src_rank=0, shape=shape, dtype=dtype)
+                feat = dist.functional.remote_recv(src_rank=0)
                 loss = layer2(feat)
                 gm.backward(loss)
+                print("layer2 grad:", layer2.weight.grad)
                 opt.step().clear_grad()
+
+    main()
+
+    # 期望输出
+    # layer2 grad: Tensor([[-2.4756]], device=gpu1:0)
+    # layer1 grad: Tensor([[-0.7784]], device=gpu0:0)
 
 常见问题
 --------
 
-Q: 为什么在多机多卡训练开始前还正常，进入多卡训练之后就报错 ``cuda init error`` ?
+Q：为什么在多机多卡训练开始前还正常，进入多卡训练之后就报错 ``cuda init error`` ?
 
-A: 请确保在进入多机多卡训练之前主进程没有进行 cuda 相关操作，cuda 在已经初始化的状态下进行 fork 操作会导致 fork 的进程中 cuda 不可用，
+A：请确保在进入多机多卡训练之前主进程没有进行 cuda 相关操作，cuda 在已经初始化的状态下进行 fork 操作会导致 fork 的进程中 cuda 不可用，
 参考 `这里 <https://stackoverflow.com/questions/22950047/cuda-initialization-error-after-fork>`_ . 建议用 numpy 数组作为输入输出来使用 launcher 包装的函数。
 
-Q: 为什么我自己用 ``multiprocess`` 写多机多卡训练总是卡住？
+Q：为什么我自己用 :py:mod:`multiprocessing` 写多机多卡训练总是卡住？
 
-A: 可以在函数结束前调用 :func:`~.distributed.group_barrier` 来避免卡死的情况:
+A：可以在函数结束前调用 :func:`~.distributed.group_barrier` 来避免卡死的情况
+
    * 在 MegEngine 中，为了保证性能，会异步执行相应的 cuda kernel，所以当 python 代码执行完毕时，相应的 kernel 执行还没有结束。
    * 为了保证 kernel 全部执行完毕，MegEngine 初始化时在 :py:mod:`atexit` 里注册了全局的同步，但是 multiprocess 默认的 fork 模式在进程退出的时候，不会执行 :py:mod:`atexit` 注册的函数，导致 kernel 没有执行完。
    * 如果有进程间需要通信的算子，而又有几个进程提前退出，那么剩下的进程就会一直等待其他进程导致卡死（如果你某个进程比如 rank0 需要取参数的值）。
