@@ -141,6 +141,7 @@ html_search_language = "zh"
 # Configuration for pydata-sphinx-theme, the doc URL:
 # https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/configuring.html
 html_theme_options = {
+    "search_bar_text": "输入搜索文本...",
     "icon_links": [
         {
             "name": "GitHub",
@@ -157,6 +158,7 @@ html_theme_options = {
         { "name": "官网", "url": "https://megengine.org.cn/"}
     ],
     "navbar_end": ["navbar-icon-links.html", "version-switcher.html"],
+    "collapse_navigation": True,
     "use_edit_page_button": True,
     "navigation_with_keys": False,
     "show_prev_next": False,
