@@ -13,11 +13,12 @@
 我们会根据社区的反馈，不断丰富指南内容，改进指南质量。
 
 .. toctree::
-   :caption: 安装
+   :caption: 安装与配置
    :hidden:
    :maxdepth: 1
 
    install/index
+   environment-variables
 
 .. toctree::
    :caption: 模型开发
@@ -26,10 +27,18 @@
 
    model-development/data
    model-development/advanced-parameter-optimization
-   model-development/trace
-   model-development/dump
    model-development/profiler
    model-development/gpu-memory
+
+.. toctree::
+   :caption: 模型部署
+   :hidden:
+   :maxdepth: 1
+
+   model-development/trace
+   model-development/dump
+   deployment/index
+   deployment/midout
 
 .. toctree::
    :caption: 进阶特性
@@ -41,15 +50,7 @@
    dtr
 
 .. toctree::
-   :caption: 模型部署
-   :hidden:
-   :maxdepth: 1
-
-   deployment/index
-   deployment/midout
-
-.. toctree::
-   :caption: 各类工具
+   :caption: 工具与插件
    :hidden:
    :maxdepth: 1
 
@@ -57,5 +58,4 @@
    tools/runtimeopr
    tools/load-and-run
    tools/load-and-run-py
-
 
