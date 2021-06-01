@@ -7,30 +7,17 @@
    :hidden:
 
    quick-start
-
-对于初次接触 MegEngine 的用户，我们提供了新手入门材料。
-
-深度学习，简单开发，我们的学习从这里开始～
-
-.. toctree::
-   :caption: 深度学习零基础 Learning-by-doing 
-   :maxdepth: 2
-   :hidden:
-
-   beginner/megengine-basic-concepts
-   beginner/learning-from-linear-regression
-   beginner/from-linear-regression-to-linear-classification
+   beginner/intro
 
 安装
 ----
-
 MegEngine 可以使用 Python 包管理器 ``pip`` 直接进行安装：
 
 .. code-block:: shell
 
    pip3 install megengine -f https://megengine.org.cn/whl/mge.html
 
-如果想要安装特定的版本，或需要从源码进行编译？ :ref:`了解更多安装方式<install>` 。
+如果想要安装特定的版本，或需要从源码进行编译？ :ref:`了解更多安装方式 <install>` 。
 
 .. note::
 
@@ -45,6 +32,5 @@ MegEngine 可以使用 Python 包管理器 ``pip`` 直接进行安装：
 
 * 如果你有其它深度学习框架使用经验，请参考 `MegEngine 快速上手 <./quick-start.html>`_ 教程，以便快速熟悉 :ref:`API <reference>` .
 * 如果你是机器学习/深度学习领域的初学者，想要通过学习 MegEngine 的使用加深对基础知识的理解，
-  我们为你准备了一系列特别基础的 Learning-by-doing 教程，
-  请从 `MegEngine 基础概念 <./beginner/megengine-basic-concepts.html>`_ 耐心顺序阅读下去，一定会有所收获。
-  
+  我们为你准备了一系列 :ref:`deep-learning` ，希望能有所帮助！
+
