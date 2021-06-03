@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: megengine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
+"PO-Revision-Date: 2021-06-03 15:56\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Traditional\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.autodiff.GradManager.attach.po\n"
+"X-Crowdin-File-ID: 6584\n"
+"Language: zh_TW\n"
+
+#: ../../source/reference/api/megengine.autodiff.GradManager.attach.rst:2
+msgid "megengine.autodiff.GradManager.attach"
+msgstr "crwdns61464:0crwdne61464:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach:1 of
+msgid "Instruct GradManager to track operations on tensors, so that gradients with respect to those tensors could be evaluated later."
+msgstr "crwdns61466:0crwdne61466:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach:4 of
+msgid ":meth:`attach` also accepts a list of callbacks, which will be called with the tensor and its gradient during :meth:`backward`. The signature of callbacks should look like:"
+msgstr "crwdns61468:0:meth:crwdnd61468:0:meth:crwdne61468:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach:15 of
+msgid ":meth:`attach` calls with overlapping tensors will result in their callbacks concatenated, independently for each tensor. For example,"
+msgstr "crwdns61470:0:meth:crwdne61470:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach:23 of
+msgid "is equivalent to"
+msgstr "crwdns61472:0crwdne61472:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach:30 of
+msgid "The effect of :meth:`attach` will persist across multiple uses of the GradManager. When reusing a GradManager, it is likely a mistake to call :meth:`attach` on the same set of tensors and callbacks repeatedly, which may grow the callback list indefinitely."
+msgstr "crwdns61474:0:meth:crwdnd61474:0:meth:crwdne61474:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach:36 of
+msgid "When reusing a GradManager, it is sometimes desirable to attach temporary tensors each time, e.g. for computing gradients of inputs of a neural network. GradManager tries to accommodate such usages by holding weak references to attached tensors. Most of the times, this should be enough to prevent resource leak. Unfortunately, there are still some pitfalls left:"
+msgstr "crwdns61476:0crwdne61476:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach:42 of
+msgid "Callbacks should not hold strong references, directly or indirectly, to attached tensors. Any strong reference, including those from callbacks, will prevent garbage collection (even by the cycle collector!) of a attached tensor, until the GradManager object is garbage collected."
+msgstr "crwdns61478:0crwdne61478:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach:47 of
+msgid "Please also note that GradManager might hold additional strong references to attached tensors when it is in use. This note only covers potential resource leaks across multiple uses of a GradManager, which is unrelated to whether resources is timely released within a single use."
+msgstr "crwdns61480:0crwdne61480:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach of
+msgid "参数"
+msgstr "crwdns61482:0crwdne61482:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach:52 of
+msgid "tensor or list of tensors to track"
+msgstr "crwdns61484:0crwdne61484:0"
+
+#: megengine.autodiff.grad_manager.GradManager.attach:53 of
+msgid "callback or list of callbacks"
+msgstr "crwdns61486:0crwdne61486:0"
+
