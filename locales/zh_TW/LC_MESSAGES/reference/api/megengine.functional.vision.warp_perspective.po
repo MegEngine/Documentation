@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-06 13:12+0800\n"
-"PO-Revision-Date: 2021-05-06 05:33\n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
+"PO-Revision-Date: 2021-06-03 03:51\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -34,18 +34,22 @@ msgstr "crwdns32390:0crwdne32390:0"
 msgid "\\text{output}(n, c, h, w) = \\text{input} \\left( n, c,\n"
 "    \\frac{M_{00}h + M_{01}w + M_{02}}{M_{20}h + M_{21}w + M_{22}},\n"
 "    \\frac{M_{10}h + M_{11}w + M_{12}}{M_{20}h + M_{21}w + M_{22}}\n"
-"    \\right)"
-msgstr "crwdns47916:0{output}crwdnd47916:0{input}crwdnd47916:0{00}crwdnd47916:0{01}crwdnd47916:0{02}crwdnd47916:0{20}crwdnd47916:0{21}crwdnd47916:0{22}crwdnd47916:0{10}crwdnd47916:0{11}crwdnd47916:0{12}crwdnd47916:0{20}crwdnd47916:0{21}crwdnd47916:0{22}crwdne47916:0"
+"    \\right)\n\n"
+msgstr "crwdns62950:0{output}crwdnd62950:0{input}crwdnd62950:0{00}crwdnd62950:0{01}crwdnd62950:0{02}crwdnd62950:0{20}crwdnd62950:0{21}crwdnd62950:0{22}crwdnd62950:0{10}crwdnd62950:0{11}crwdnd62950:0{12}crwdnd62950:0{20}crwdnd62950:0{21}crwdnd62950:0{22}crwdne62950:0"
+
+#: megengine.functional.vision.warp_perspective:11 of
+msgid "Optionally, we can set `mat_idx` to assign different transformations to the same image, otherwise the input images and transformations should be one-to-one correnspondence."
+msgstr "crwdns49268:0crwdne49268:0"
 
 #: megengine.functional.vision.warp_perspective of
 msgid "参数"
-msgstr "crwdns32394:0crwdne32394:0"
+msgstr "crwdns62952:0crwdne62952:0"
 
-#: megengine.functional.vision.warp_perspective:12 of
+#: megengine.functional.vision.warp_perspective:14 of
 msgid "input image."
 msgstr "crwdns32396:0crwdne32396:0"
 
-#: megengine.functional.vision.warp_perspective:14 of
+#: megengine.functional.vision.warp_perspective:15 of
 msgid "`(batch, 3, 3)` transformation matrix."
 msgstr "crwdns32398:0crwdne32398:0"
 
@@ -53,47 +57,114 @@ msgstr "crwdns32398:0crwdne32398:0"
 msgid "`(h, w)` size of the output image."
 msgstr "crwdns32400:0crwdne32400:0"
 
-#: megengine.functional.vision.warp_perspective:18 of
-msgid "pixel extrapolation method. Default: \"REPLICATE\". Currently also support \"CONSTANT\", \"REFLECT\", \"REFLECT_101\", \"WRAP\"."
-msgstr "crwdns32402:0crwdne32402:0"
+#: megengine.functional.vision.warp_perspective:17 of
+msgid "`(batch, )` image batch idx assigned to each matrix. Default: None"
+msgstr "crwdns49278:0crwdne49278:0"
 
-#: megengine.functional.vision.warp_perspective:22 of
+#: megengine.functional.vision.warp_perspective:18 of
+msgid "pixel extrapolation method. Default: \"replicate\". Currently also support \"constant\", \"reflect\", \"reflect_101\", \"wrap\"."
+msgstr "crwdns49282:0crwdne49282:0"
+
+#: megengine.functional.vision.warp_perspective:21 of
 msgid "value used in case of a constant border. Default: 0"
 msgstr "crwdns32404:0crwdne32404:0"
 
-#: megengine.functional.vision.warp_perspective:24 of
-msgid "interpolation methods. Default: \"LINEAR\". Currently only support \"LINEAR\" mode."
-msgstr "crwdns32406:0crwdne32406:0"
+#: megengine.functional.vision.warp_perspective:22 of
+msgid "\"NHWC\" is also supported. Default: \"NCHW\"."
+msgstr "crwdns49288:0crwdne49288:0"
 
-#: megengine.functional.vision.warp_perspective of
-msgid "返回类型"
-msgstr "crwdns32408:0crwdne32408:0"
-
-#: megengine.functional.vision.warp_perspective:26 of
-msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr "crwdns32410:0crwdne32410:0"
+#: megengine.functional.vision.warp_perspective:23 of
+msgid "interpolation methods. Default: \"linear\". Currently only support \"linear\" mode."
+msgstr "crwdns49292:0crwdne49292:0"
 
 #: megengine.functional.vision.warp_perspective of
 msgid "返回"
-msgstr "crwdns32412:0crwdne32412:0"
+msgstr "crwdns62954:0crwdne62954:0"
 
-#: megengine.functional.vision.warp_perspective:27 of
+#: megengine.functional.vision.warp_perspective:25 of
 msgid "output tensor."
 msgstr "crwdns32414:0crwdne32414:0"
 
 #: megengine.functional.vision.warp_perspective:29 of
-msgid "Note:"
-msgstr "crwdns32416:0crwdne32416:0"
-
-#: megengine.functional.vision.warp_perspective:31 of
 msgid "The transformation matrix is the inverse of that used by `cv2.warpPerspective`."
 msgstr "crwdns32418:0crwdne32418:0"
 
-#: megengine.functional.vision.warp_perspective:33 of
+#: megengine.functional.vision.warp_perspective:31 of
 msgid "Examples:"
 msgstr "crwdns32420:0crwdne32420:0"
 
-#: megengine.functional.vision.warp_perspective:51 of
+#: megengine.functional.vision.warp_perspective:49 of
 msgid "Outputs:"
 msgstr "crwdns32422:0crwdne32422:0"
+
+#~ msgid ""
+#~ "\\text{output}(n, c, h, w) = \\text{input} \\left( n, c,\n"
+#~ "    \\frac{M_{00}h + M_{01}w + M_{02}}{M_{20}h + M_{21}w + M_{22}},\n"
+#~ "    \\frac{M_{10}h + M_{11}w + M_{12}}{M_{20}h + M_{21}w + M_{22}}\n"
+#~ "    \\right)"
+#~ msgstr ""
+
+#~ msgid ":py:class:`~megengine.tensor.Tensor`"
+#~ msgstr ":py:class:`~megengine.tensor.Tensor`"
+
+#~ msgid "Note:"
+#~ msgstr "备注："
+
+#~ msgid ""
+#~ "\\text{output}(n, c, h, w) = \\text{input} \\left( n, c,\n"
+#~ "    \\frac{M_{00}h + M_{01}w + M_{02}}{M_{20}h + M_{21}w + M_{22}},\n"
+#~ "    \\frac{M_{10}h + M_{11}w + M_{12}}{M_{20}h + M_{21}w + M_{22}}\n"
+#~ "    \\right)\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr "返回类型"
+
+#~ msgid ""
+#~ "ext{output}(n, c, h, w) =       ext{input} \\left( n, c,\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "rac{M_{00}h + M_{01}w + M_{02}}{M_{20}h + M_{21}w + M_{22}},"
+#~ msgstr ""
+
+#~ msgid "rac{M_{10}h + M_{11}w + M_{12}}{M_{20}h + M_{21}w + M_{22}}"
+#~ msgstr ""
+
+#~ msgid "ight)"
+#~ msgstr ""
+
+#~ msgid "param inp"
+#~ msgstr ""
+
+#~ msgid "param mat"
+#~ msgstr ""
+
+#~ msgid "param out_shape"
+#~ msgstr ""
+
+#~ msgid "param mat_idx"
+#~ msgstr ""
+
+#~ msgid "param border_mode"
+#~ msgstr ""
+
+#~ msgid "param border_val"
+#~ msgstr ""
+
+#~ msgid "param format"
+#~ msgstr ""
+
+#~ msgid "param interp_mode"
+#~ msgstr ""
+
+#~ msgid "return"
+#~ msgstr ""
 
