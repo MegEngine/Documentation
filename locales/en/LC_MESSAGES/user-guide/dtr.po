@@ -1,172 +1,150 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0.dev\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-06-03 16:04\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/dtr.po\n"
+"X-Crowdin-File-ID: 6572\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/dtr.rst:5
 msgid "动态图 Sublinear 显存优化（DTR）"
-msgstr ""
+msgstr "Reduce GPU memory usage by Dyanmic Tensor Rematerialization (DTR)"
 
 #: ../../source/user-guide/dtr.rst:7
-msgid ""
-"MegEngine 通过引入 `Dynamic Tensor Rematerialization "
-"<https://arxiv.org/pdf/2006.09616.pdf>`_ （简称 "
-"DTR）技术，进一步工程化地解决了动态图显存优化的问题，从而享受到大 Batchsize 训练带来的收益。"
-msgstr ""
+msgid "MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/2006.09616.pdf>`_ （简称 DTR）技术，进一步工程化地解决了动态图显存优化的问题，从而享受到大 Batchsize 训练带来的收益。"
+msgstr "MegEngine provides a way to reduce the GPU memory usage by additional computation using `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/2006.09616.pdf>`_ technique and further engineering optimization, which makes large batch size training on a single GPU possible."
 
 #: ../../source/user-guide/dtr.rst:11
 msgid "单卡训练"
-msgstr ""
+msgstr "Single GPU Training"
 
 #: ../../source/user-guide/dtr.rst:13
 msgid "使用方式十分简单，在训练代码之前添加两行代码："
-msgstr ""
+msgstr "Add a few lines of code before the training code:"
 
 #: ../../source/user-guide/dtr.rst:24
 msgid "即可启用动态图的 Sublinear 显存优化。"
-msgstr ""
+msgstr "Then you can enable the DTR memory optimization for dynamic graphs."
 
 #: ../../source/user-guide/dtr.rst:27
 msgid "分布式训练"
-msgstr ""
+msgstr "Distributed training"
 
 #: ../../source/user-guide/dtr.rst:29
 msgid "关于分布式训练的开启，请参考 :ref:`分布式训练 <distribution>` 。"
-msgstr ""
+msgstr "For a tutorial on how to start distributed training, refer to :ref:`Distributed Training <distribution>` ."
 
 #: ../../source/user-guide/dtr.rst:31
-msgid ""
-":class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function，你需要在这个 "
-"function 中定义 DTR 的参数："
-msgstr ""
+msgid ":class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function，你需要在这个 function 中定义 DTR 的参数："
+msgstr ":class:`~.distributed.launcher` wraps a function into a multi-process running function where the parameters of DTR should be defined:"
 
 #: ../../source/user-guide/dtr.rst:47
 msgid "参数设置"
-msgstr ""
+msgstr "Parameter Settings"
 
 #: ../../source/user-guide/dtr.rst:49
-msgid ""
-"``eviction_threshold`` 表示开始释放 tensor 的显存阈值。当被使用的显存大小超过该阈值时，动态图显存优化会生效， 根据"
-" DTR 的策略找出最优的 tensor 并释放其显存，直到活跃的显存大小不超过该阈值。因此实际运行时的活跃显存峰值比该阈值高一些属于正常现象。"
-msgstr ""
+msgid "``eviction_threshold`` 表示开始释放 tensor 的显存阈值。当被使用的显存大小超过该阈值时，动态图显存优化会生效， 根据 DTR 的策略找出最优的 tensor 并释放其显存，直到活跃的显存大小不超过该阈值。因此实际运行时的活跃显存峰值比该阈值高一些属于正常现象。"
+msgstr "``eviction_threshold`` represents the threshold of the GPU memory usage. The DTR is activated to evict some tensors when the GPU memory usage reaches this threshold. Therefore, it is normal for the peak value of GPU memory usage to be higher than this threshold."
 
 #: ../../source/user-guide/dtr.rst:52
 msgid "一般情况下，显存阈值设得越小，显存峰值就越低，训练耗时也会越大；显存阈值设得越大，显存峰值就越高，训练耗时也会越小。"
-msgstr ""
+msgstr "In general, the smaller the threshold is set, the lower the peak value of GPU memory usage will be, and the longer the training time will be. The larger the threshold is set, the higher the peak value of GPU memory usage will be, and the smaller the training time will be."
 
 #: ../../source/user-guide/dtr.rst:54
-msgid ""
-"值得注意的是，当显存阈值接近显卡容量时，容易引发碎片问题。因为 DTR 是根据活跃的显存大小来执行释放操作的，释放掉的 tensor "
-"在显卡上的物理地址很可能不连续。 例如：释放了两个物理位置不相邻的 100MB 的 tensor，仍然无法满足一次 200MB "
-"显存的申请。此时就会自动触发碎片整理操作，对性能造成巨大影响。"
-msgstr ""
+msgid "值得注意的是，当显存阈值接近显卡容量时，容易引发碎片问题。因为 DTR 是根据活跃的显存大小来执行释放操作的，释放掉的 tensor 在显卡上的物理地址很可能不连续。 例如：释放了两个物理位置不相邻的 100MB 的 tensor，仍然无法满足一次 200MB 显存的申请。此时就会自动触发碎片整理操作，对性能造成巨大影响。"
+msgstr "It is worth noting that when the threshold is close to the GPU memory capacity, it is easy to cause fragmentation problems. Because the DTR performs tensor eviction based on the GPU memory usage, the physical address of the evicted tensors on the GPU is likely to be discontinuous. For instance, two 100MB tensors that are not physically adjacent to each other are evicted and still cannot satisfy an allocation request for 200MB. Although defragmentation maintenance helps, it sometimes has a significant impact on overall performance."
 
 #: ../../source/user-guide/dtr.rst:57
 msgid "下图是 ResNet50（batch size=200）在2080Ti（显存：11GB）上设定不同显存阈值后的性能表现。"
-msgstr ""
+msgstr "Below is the performance of ResNet50 (batch size=200) with different eviction thresholds set on 2080Ti (memory: 11GB)."
 
 #: ../../source/user-guide/dtr.rst:63
 msgid "性能表现"
-msgstr ""
+msgstr "Performance"
 
 #: ../../source/user-guide/dtr.rst:65
 msgid "如上图（左）所示，"
-msgstr ""
+msgstr "As shown in the figure above (left),"
 
 #: ../../source/user-guide/dtr.rst:67
 msgid "当显存阈值从 2 增长到 7 的时候，训练耗时是越来越低的，因为随着显存阈值升高，释放掉的 tensor 数量变少，重计算的开销降低；"
-msgstr ""
+msgstr "When the threshold increases from 2 to 7, the training time becomes lower because as the threshold increases, the number of evicted tensors decreases, and the overhead of recomputing decreases."
 
 #: ../../source/user-guide/dtr.rst:68
 msgid "当显存阈值增长到 8 和 9 的时候，可供申请的空闲显存总和已经不多，并且地址大概率不连续，导致需要不断地进行碎片整理，造成训练耗时显著增长，"
-msgstr ""
+msgstr "When the threshold increases to 8 and 9, the total amount of idle memory available for allocation is not much, and the addresses are likely to be discontinuous, leading to the need for continuous defragmentation, resulting in a significant increase in training time."
 
 #: ../../source/user-guide/dtr.rst:69
 msgid "当显存阈值增长到 10 之后，空闲的显存甚至无法支持一次 kernel 的计算，导致 OOM."
-msgstr ""
+msgstr "When the threshold increases to 10, idle memory cannot even support a kernel calculation, resulting in out-of-memory error."
 
 #: ../../source/user-guide/dtr.rst:72
 msgid "显存峰值"
-msgstr ""
+msgstr "Peak Memory"
 
 #: ../../source/user-guide/dtr.rst:74
 msgid "如上图（右）所示，可以看出显存阈值和显存峰值之间有很大的差距。"
-msgstr ""
+msgstr "As shown in the figure above (right), there is a gap between the eviction threshold and the peak memory."
 
 #: ../../source/user-guide/dtr.rst:76
 msgid "当显存阈值在 2 到 5 之间时，显存峰值都在 8 左右；"
-msgstr ""
+msgstr "When the threshold is between 2 and 5, the peak memory is around 8."
 
 #: ../../source/user-guide/dtr.rst:77
 msgid "当显存阈值在 6 到 9 之间时，显存峰值更是逼近显存总容量。"
-msgstr ""
+msgstr "When the threshold is between 6 and 9, the peak memory is close to the GPU memory capacity."
 
 #: ../../source/user-guide/dtr.rst:79
-msgid ""
-"前者的原因是，DTR 只能保证在任意时刻，被使用的显存总和在显存阈值附近，但是这些被使用的显存的地址不一定连续。 被释放掉的空闲块会被 "
-"MegEngine 收集起来，当最大的空闲块大小也满足不了一次申请时, MegEngine 会从 CUDA 申请一段新的显存， "
-"虽然被使用的显存总量在显存阈值附近，但是显存峰值上升了； 后者的原因是显存容量总共只有 "
-"11G，如果最大的空闲块大小也无法满足申请时只能靠碎片整理来满足申请，峰值不会变得更大。"
-msgstr ""
+msgid "前者的原因是，DTR 只能保证在任意时刻，被使用的显存总和在显存阈值附近，但是这些被使用的显存的地址不一定连续。 被释放掉的空闲块会被 MegEngine 收集起来，当最大的空闲块大小也满足不了一次申请时, MegEngine 会从 CUDA 申请一段新的显存， 虽然被使用的显存总量在显存阈值附近，但是显存峰值上升了； 后者的原因是显存容量总共只有 11G，如果最大的空闲块大小也无法满足申请时只能靠碎片整理来满足申请，峰值不会变得更大。"
+msgstr "The reason for the former is that DTR can only guarantee that the sum of used memory is around the threshold at any given time, but the addresses of these used memories are not necessarily contiguous. The free blocks will be collected by Megengine. When the maximum free block size is not enough for a single allocation, MegEngine will allocate memory from CUDA. Although the total amount of used memory is near the threshold, the peak memory value increases. The reason for the latter is that the GPU memory capacity is 11G, and if the maximum free block size is not enough to satisfy the allocation, only defragmentation can help, the peak memory value will not become larger."
 
 #: ../../source/user-guide/dtr.rst:84
 msgid "所以从 ``nvidia-smi`` 上看到的显存峰值会显著高于显存阈值。"
-msgstr ""
+msgstr "Therefore, the peak memory value seen from ``nvidia-smi`` will be significantly higher than the threshold."
 
 #: ../../source/user-guide/dtr.rst:86
 msgid "综上所述，在实际训练过程中，显存阈值需要用户根据模型和显卡的具体情况设定。"
-msgstr ""
+msgstr "To sum up, in the actual training process, the threshold needs to be set by the user according to the model and the specific situation of the GPU."
 
 #: ../../source/user-guide/dtr.rst:89
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #: ../../source/user-guide/dtr.rst:91
-msgid ""
-"Q：为什么 ``eviction_threshold=2GB`` 的时候训练耗时远高于 ``eviction_threshold=3GB`` "
-"的训练耗时？"
-msgstr ""
+msgid "Q：为什么 ``eviction_threshold=2GB`` 的时候训练耗时远高于 ``eviction_threshold=3GB`` 的训练耗时？"
+msgstr "Q: Why is the training time when ``eviction_threshold=2GB`` much longer than that when ``eviction_threshold=3GB``?"
 
 #: ../../source/user-guide/dtr.rst:93
-msgid ""
-"A：因为在该模型中，不可被释放的 tensor（例如：参数、执行当前算子需要用到的输入 tensor 和产生的输出 tensor "
-"等等）的大小之和一直保持在 2GB 以上，所以几乎所有的 tensor 都会在不被用到的时刻立即被释放，所以会产生非常可观的重计算时间开销。"
-msgstr ""
+msgid "A：因为在该模型中，不可被释放的 tensor（例如：参数、执行当前算子需要用到的输入 tensor 和产生的输出 tensor 等等）的大小之和一直保持在 2GB 以上，所以几乎所有的 tensor 都会在不被用到的时刻立即被释放，所以会产生非常可观的重计算时间开销。"
+msgstr "A: Because in this model, the non-evictable tensor (e.g. The parameter tensors, input tensors required by the current operator, output tensors generated, etc.) is always above 2GB, so almost all tensor is released immediately when it is not being used, resulting in a very significant recalculating time overhead."
 
 #: ../../source/user-guide/dtr.rst:95
-msgid ""
-"Q：为什么 ``eviction_threshold=2GB`` 的时候显存峰值高于 ``eviction_threshold=3GB`` "
-"的显存峰值？"
-msgstr ""
+msgid "Q：为什么 ``eviction_threshold=2GB`` 的时候显存峰值高于 ``eviction_threshold=3GB`` 的显存峰值？"
+msgstr "Q: Why is the peak memory value when ``eviction_threshold=2GB`` higher than that when ``eviction_threshold=3GB``?"
 
 #: ../../source/user-guide/dtr.rst:97
-msgid ""
-"A：原因同上，由于 ``eviction_threshold=2GB`` 时重计算次数远多于 ``eviction_threshold=3GB``"
-" ，需要频繁地申请和释放显存， 一旦某次空闲块大小不能满足申请，显存峰值就会增加，所以 ``eviction_threshold=2GB`` "
-"时显存峰值大概率更高。"
-msgstr ""
+msgid "A：原因同上，由于 ``eviction_threshold=2GB`` 时重计算次数远多于 ``eviction_threshold=3GB`` ，需要频繁地申请和释放显存， 一旦某次空闲块大小不能满足申请，显存峰值就会增加，所以 ``eviction_threshold=2GB`` 时显存峰值大概率更高。"
+msgstr "A: The same reason as above. Since ``eviction_threshold=2GB`` has far more recomputing times than ``eviction_threshold=3GB``, memory needs to be allocated and freed frequently. Once the free block size cannot satisfy the allocation, the peak memory value will increase, so the peak memory value is higher when ``eviction_threshold=2GB``."
 
 #: ../../source/user-guide/dtr.rst:100
 msgid "Q：用不同的 ``eviction_threshold`` 训练模型时的显存峰值可以估算吗？"
-msgstr ""
+msgstr "Q: Can the peak memory value be estimated when training models using different ``eviction_threshold``?"
 
 #: ../../source/user-guide/dtr.rst:102
 msgid "A：很难。这取决于 DTR 策略释放和重计算了哪些 tensor，以及具体到某次显存申请时空闲块大小能否满足要求，这些都会影响最终的显存峰值。"
-msgstr ""
+msgstr "A: It's difficult. This depends on which tensors are evicted and recomputed according to the DTR strategy, as well as whether the free block size is sufficient at the time of a specific memory allocation, which will affect the final peak memory value."
 
 #~ msgid "关于分布式训练的开启，请参考 :ref:`分布式训练 <distribution>`"
 #~ msgstr ""
