@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-06 13:12+0800\n"
-"PO-Revision-Date: 2021-05-06 05:44\n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
+"PO-Revision-Date: 2021-06-03 03:56\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -23,21 +23,17 @@ msgid "megengine.module.Conv2d"
 msgstr "crwdns33652:0crwdne33652:0"
 
 #: megengine.module.conv.Conv2d:1 of
-msgid "基类：:class:`megengine.module.conv._ConvNd`"
-msgstr "crwdns33654:0:class:crwdne33654:0"
-
-#: megengine.module.conv.Conv2d:1 of
 msgid "Applies a 2D convolution over an input tensor."
 msgstr "crwdns33656:0crwdne33656:0"
 
 #: megengine.module.conv.Conv2d:3 of
 msgid "For instance, given an input of the size :math:`(N, C_{\\text{in}}, H, W)`, this layer generates an output of the size :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` through the process described as below:"
-msgstr "crwdns33658:0:math:crwdnd33658:0{in}crwdnd33658:0:math:crwdnd33658:0{out}crwdnd33658:0{out}crwdnd33658:0{out}crwdne33658:0"
+msgstr "crwdns62996:0:math:crwdnd62996:0{in}crwdnd62996:0:math:crwdnd62996:0{out}crwdnd62996:0{out}crwdnd62996:0{out}crwdne62996:0"
 
 #: megengine.module.conv.Conv2d:8 of
 msgid "\\text{out}(N_i, C_{\\text{out}_j}) = \\text{bias}(C_{\\text{out}_j}) +\n"
-"\\sum_{k = 0}^{C_{\\text{in}} - 1} \\text{weight}(C_{\\text{out}_j}, k) \\star \\text{input}(N_i, k)"
-msgstr "crwdns47922:0{out}crwdnd47922:0{out}crwdnd47922:0{bias}crwdnd47922:0{out}crwdnd47922:0{in}crwdnd47922:0{weight}crwdnd47922:0{out}crwdnd47922:0{input}crwdne47922:0"
+"\\sum_{k = 0}^{C_{\\text{in}} - 1} \\text{weight}(C_{\\text{out}_j}, k) \\star \\text{input}(N_i, k)\n\n"
+msgstr "crwdns62998:0{out}crwdnd62998:0{out}crwdnd62998:0{bias}crwdnd62998:0{out}crwdnd62998:0{in}crwdnd62998:0{weight}crwdnd62998:0{out}crwdnd62998:0{input}crwdne62998:0"
 
 #: megengine.module.conv.Conv2d:12 of
 msgid "where :math:`\\star` is the valid 2D cross-correlation operator, :math:`N` is batch size, :math:`C` denotes number of channels, :math:`H` is height of input planes in pixels, and :math:`W` is width in pixels."
@@ -49,21 +45,21 @@ msgstr "crwdns33664:0crwdne33664:0"
 
 #: megengine.module.conv.Conv2d:19 of
 msgid "input: :math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`"
-msgstr "crwdns33666:0:math:crwdnd33666:0{in}crwdnd33666:0{in}crwdnd33666:0{in}crwdne33666:0"
+msgstr "crwdns63000:0:math:crwdnd63000:0{in}crwdnd63000:0{in}crwdnd63000:0{in}crwdne63000:0"
 
 #: megengine.module.conv.Conv2d:21 of
 msgid "output: :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` where"
-msgstr "crwdns33668:0:math:crwdnd33668:0{out}crwdnd33668:0{out}crwdnd33668:0{out}crwdne33668:0"
+msgstr "crwdns63002:0:math:crwdnd63002:0{out}crwdnd63002:0{out}crwdnd63002:0{out}crwdne63002:0"
 
 #: megengine.module.conv.Conv2d:23 of
 msgid "\\text{H}_{out} = \\lfloor \\frac{\\text{H}_{in} + 2 * \\text{padding[0]} -\n"
 "\\text{dilation[0]} * (\\text{kernel_size[0]} - 1) - 1}{\\text{stride[0]}} + 1 \\rfloor\n\n"
-msgstr "crwdns33670:0{H}crwdnd33670:0{out}crwdnd33670:0{H}crwdnd33670:0{in}crwdnd33670:0[0]crwdnd33670:0[0]crwdnd33670:0[0]crwdnd33670:0[0]crwdne33670:0"
+msgstr "crwdns63004:0{H}crwdnd63004:0{out}crwdnd63004:0{H}crwdnd63004:0{in}crwdnd63004:0[0]crwdnd63004:0[0]crwdnd63004:0[0]crwdnd63004:0[0]crwdne63004:0"
 
 #: megengine.module.conv.Conv2d:27 of
 msgid "\\text{W}_{out} = \\lfloor \\frac{\\text{W}_{in} + 2 * \\text{padding[1]} -\n"
 "\\text{dilation[1]} * (\\text{kernel_size[1]} - 1) - 1}{\\text{stride[1]}} + 1 \\rfloor\n\n"
-msgstr "crwdns33672:0{W}crwdnd33672:0{out}crwdnd33672:0{W}crwdnd33672:0{in}crwdnd33672:0[1]crwdnd33672:0[1]crwdnd33672:0[1]crwdnd33672:0[1]crwdne33672:0"
+msgstr "crwdns63006:0{W}crwdnd63006:0{out}crwdnd63006:0{W}crwdnd63006:0{in}crwdnd63006:0[1]crwdnd63006:0[1]crwdnd63006:0[1]crwdnd63006:0[1]crwdne63006:0"
 
 #: megengine.module.conv.Conv2d:31 of
 msgid "When `groups == in_channels` and `out_channels == K * in_channels`, where K is a positive integer, this operation is also known as depthwise convolution."
@@ -71,233 +67,396 @@ msgstr "crwdns33674:0crwdne33674:0"
 
 #: megengine.module.conv.Conv2d:35 of
 msgid "In other words, for an input of size :math:`(N, C_{in}, H_{in}, W_{in})`, a depthwise convolution with a depthwise multiplier `K`, can be constructed by arguments :math:`(in\\_channels=C_{in}, out\\_channels=C_{in} \\times K, ..., groups=C_{in})`."
-msgstr "crwdns33676:0:math:crwdnd33676:0{in}crwdnd33676:0{in}crwdnd33676:0{in}crwdnd33676:0:math:crwdnd33676:0{in}crwdnd33676:0{in}crwdnd33676:0{in}crwdne33676:0"
+msgstr "crwdns63008:0:math:crwdnd63008:0{in}crwdnd63008:0{in}crwdnd63008:0{in}crwdnd63008:0:math:crwdnd63008:0{in}crwdnd63008:0{in}crwdnd63008:0{in}crwdne63008:0"
 
 #: megengine.module.conv.Conv2d of
 msgid "参数"
-msgstr "crwdns33678:0crwdne33678:0"
+msgstr "crwdns63010:0crwdne63010:0"
 
-#: megengine.module.conv.Conv2d:40 of
+#: megengine.module.conv.Conv2d:39 of
 msgid "number of input channels."
 msgstr "crwdns33680:0crwdne33680:0"
 
-#: megengine.module.conv.Conv2d:42 of
+#: megengine.module.conv.Conv2d:40 of
 msgid "number of output channels."
 msgstr "crwdns33682:0crwdne33682:0"
 
-#: megengine.module.conv.Conv2d:44 of
-msgid "size of weight on spatial dimensions. If kernel_size is an :class:`int`, the actual kernel size would be `(kernel_size, kernel_size)`. Default: 1"
-msgstr "crwdns33684:0:class:crwdne33684:0"
+#: megengine.module.conv.Conv2d:41 of
+msgid "size of weight on spatial dimensions. If kernel_size is an :class:`int`, the actual kernel size would be ``(kernel_size, kernel_size)``."
+msgstr "crwdns63012:0:class:crwdne63012:0"
 
-#: megengine.module.conv.Conv2d:48 of
+#: megengine.module.conv.Conv2d:44 of
 msgid "stride of the 2D convolution operation. Default: 1"
 msgstr "crwdns33686:0crwdne33686:0"
 
-#: megengine.module.conv.Conv2d:50 of
+#: megengine.module.conv.Conv2d:45 of
 msgid "size of the paddings added to the input on both sides of its spatial dimensions. Only zero-padding is supported. Default: 0"
 msgstr "crwdns33688:0crwdne33688:0"
 
-#: megengine.module.conv.Conv2d:53 of
+#: megengine.module.conv.Conv2d:47 of
 msgid "dilation of the 2D convolution operation. Default: 1"
 msgstr "crwdns33690:0crwdne33690:0"
 
-#: megengine.module.conv.Conv2d:55 of
-msgid "number of groups into which the input and output channels are divided, so as to perform a \"grouped convolution\". When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by ``groups``, and there would be an extra dimension at the beginning of the weight's shape. Specifically, the shape of weight would be `(groups, out_channel // groups, in_channels // groups, *kernel_size)`."
-msgstr "crwdns33692:0crwdne33692:0"
+#: megengine.module.conv.Conv2d:48 of
+msgid "number of groups into which the input and output channels are divided, so as to perform a \"grouped convolution\". When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by ``groups``, and there would be an extra dimension at the beginning of the weight's shape. Default: 1"
+msgstr "crwdns63014:0crwdne63014:0"
 
-#: megengine.module.conv.Conv2d:62 of
+#: megengine.module.conv.Conv2d:53 of
 msgid "whether to add a bias onto the result of convolution. Default: True"
 msgstr "crwdns33694:0crwdne33694:0"
 
+#: megengine.module.conv.Conv2d:55 of
+msgid "Supports `cross_correlation`. Default: `cross_correlation`"
+msgstr "crwdns50560:0crwdne50560:0"
+
+#: megengine.module.conv.Conv2d:57 of
+msgid "When set to \"default\", no special requirements will be placed on the precision of intermediate results. When set to \"float32\", \"float32\" would be used for accumulator and intermediate result, but only effective when input and output are of float16 dtype."
+msgstr "crwdns50564:0crwdne50564:0"
+
+#: megengine.module.conv.Conv2d:64 of
+msgid ":attr:`weight` usually has shape ``(out_channels, in_channels, height, width)``,"
+msgstr "crwdns63016:0:attr:crwdne63016:0"
+
 #: megengine.module.conv.Conv2d:65 of
-msgid "Supports `CROSS_CORRELATION`. Default: `CROSS_CORRELATION`"
-msgstr "crwdns33696:0crwdne33696:0"
+msgid "if groups is not 1, shape will be ``(groups, out_channels // groups, in_channels // groups, height, width)``"
+msgstr "crwdns63018:0crwdne63018:0"
+
+#: megengine.module.conv.Conv2d:66 of
+msgid ":attr:`bias` usually has shape ``(1, out_channels, *1)``"
+msgstr "crwdns63020:0:attr:crwdne63020:0"
 
 #: megengine.module.conv.Conv2d:68 of
-msgid "When set to \"DEFAULT\", no special requirements will be placed on the precision of intermediate results. When set to \"FLOAT32\", \"Float32\" would be used for accumulator and intermediate result, but only effective when input and output are of float16 dtype."
-msgstr "crwdns33698:0crwdne33698:0"
-
-#: megengine.module.conv.Conv2d:73 of
 msgid "Examples:"
 msgstr "crwdns33700:0crwdne33700:0"
 
-#: megengine.module.conv.Conv2d:86 of
+#: megengine.module.conv.Conv2d:81 of
 msgid "Outputs:"
 msgstr "crwdns33702:0crwdne33702:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:11
+#: ../../source/reference/api/megengine.module.Conv2d.rst:15
 msgid "Methods"
 msgstr "crwdns33704:0crwdne33704:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
-msgid ":obj:`__init__ <megengine.module.Conv2d.__init__>`\\ \\(in\\_channels\\, out\\_channels\\, kernel\\_size\\)"
-msgstr "crwdns33706:0:obj:crwdnd33706:0__init__crwdnd33706:0__init__crwdne33706:0"
-
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>
-msgid "param name"
-msgstr "crwdns33708:0crwdne33708:0"
-
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
-msgid "module's name, can be initialized by the ``kwargs`` parameter"
-msgstr "crwdns33710:0crwdne33710:0"
-
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`apply <megengine.module.Conv2d.apply>`\\ \\(fn\\)"
 msgstr "crwdns33712:0:obj:crwdne33712:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Applies function ``fn`` to all the modules within this module, including itself."
 msgstr "crwdns33714:0crwdne33714:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`buffers <megengine.module.Conv2d.buffers>`\\ \\(\\[recursive\\]\\)"
 msgstr "crwdns33716:0:obj:crwdne33716:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Returns an iterable for the buffers of the module."
 msgstr "crwdns33718:0crwdne33718:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`calc_conv <megengine.module.Conv2d.calc_conv>`\\ \\(inp\\, weight\\, bias\\)"
 msgstr "crwdns33720:0:obj:crwdne33720:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`children <megengine.module.Conv2d.children>`\\ \\(\\*\\*kwargs\\)"
 msgstr "crwdns33722:0:obj:crwdne33722:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Returns an iterable for all the submodules that are direct attributes of this module."
 msgstr "crwdns33724:0crwdne33724:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`disable_quantize <megengine.module.Conv2d.disable_quantize>`\\ \\(\\[value\\]\\)"
 msgstr "crwdns33726:0:obj:crwdne33726:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
 msgstr "crwdns33728:0crwdne33728:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`eval <megengine.module.Conv2d.eval>`\\ \\(\\)"
 msgstr "crwdns33730:0:obj:crwdne33730:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
 msgstr "crwdns33732:0crwdne33732:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`forward <megengine.module.Conv2d.forward>`\\ \\(inp\\)"
 msgstr "crwdns33734:0:obj:crwdne33734:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`load_state_dict <megengine.module.Conv2d.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
 msgstr "crwdns33736:0:obj:crwdne33736:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Loads a given dictionary created by :func:`state_dict` into this module."
 msgstr "crwdns33738:0:func:crwdne33738:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`modules <megengine.module.Conv2d.modules>`\\ \\(\\*\\*kwargs\\)"
 msgstr "crwdns33740:0:obj:crwdne33740:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Returns an iterable for all the modules within this module, including itself."
 msgstr "crwdns33742:0crwdne33742:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`named_buffers <megengine.module.Conv2d.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
 msgstr "crwdns33744:0:obj:crwdne33744:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
 msgstr "crwdns33746:0crwdne33746:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`named_children <megengine.module.Conv2d.named_children>`\\ \\(\\*\\*kwargs\\)"
 msgstr "crwdns33748:0:obj:crwdne33748:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
 msgstr "crwdns33750:0crwdne33750:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`named_modules <megengine.module.Conv2d.named_modules>`\\ \\(\\[prefix\\]\\)"
 msgstr "crwdns33752:0:obj:crwdne33752:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
 msgstr "crwdns33754:0crwdne33754:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`named_parameters <megengine.module.Conv2d.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
 msgstr "crwdns33756:0:obj:crwdne33756:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
 msgstr "crwdns33758:0:class:crwdnd33758:0:class:crwdne33758:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`parameters <megengine.module.Conv2d.parameters>`\\ \\(\\[recursive\\]\\)"
 msgstr "crwdns33760:0:obj:crwdne33760:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Returns an iterable for the :class:`~.Parameter` of the module."
 msgstr "crwdns33762:0:class:crwdne33762:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`register_forward_hook <megengine.module.Conv2d.register_forward_hook>`\\ \\(hook\\)"
 msgstr "crwdns33764:0:obj:crwdne33764:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Registers a hook to handle forward results."
 msgstr "crwdns33766:0crwdne33766:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`register_forward_pre_hook <megengine.module.Conv2d.register_forward_pre_hook>`\\ \\(hook\\)"
 msgstr "crwdns33768:0:obj:crwdne33768:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Registers a hook to handle forward inputs."
 msgstr "crwdns33770:0crwdne33770:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`replace_param <megengine.module.Conv2d.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
 msgstr "crwdns33772:0:obj:crwdne33772:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to speedup multimachine training."
 msgstr "crwdns33774:0:class:crwdne33774:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`reset_parameters <megengine.module.Conv2d.reset_parameters>`\\ \\(\\)"
 msgstr "crwdns33776:0:obj:crwdne33776:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>
-msgid "rtype"
-msgstr "crwdns33778:0crwdne33778:0"
-
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
-msgid ":py:obj:`None`"
-msgstr "crwdns33780:0crwdne33780:0"
-
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`state_dict <megengine.module.Conv2d.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
 msgstr "crwdns33782:0:obj:crwdne33782:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`train <megengine.module.Conv2d.train>`\\ \\(\\[mode\\, recursive\\]\\)"
 msgstr "crwdns33784:0:obj:crwdne33784:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
 msgstr "crwdns33786:0crwdne33786:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid ":obj:`zero_grad <megengine.module.Conv2d.zero_grad>`\\ \\(\\)"
 msgstr "crwdns33788:0:obj:crwdne33788:0"
 
-#: ../../source/reference/api/megengine.module.Conv2d.rst:35:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv2d.rst:81:<autosummary>:1
 msgid "Sets all parameters' grads to zero"
 msgstr "crwdns33790:0crwdne33790:0"
+
+#~ msgid "基类：:class:`megengine.module.conv._ConvNd`"
+#~ msgstr "基类：:class:`megengine.module.conv._ConvNd`"
+
+#~ msgid ""
+#~ "\\text{out}(N_i, C_{\\text{out}_j}) = "
+#~ "\\text{bias}(C_{\\text{out}_j}) +\n"
+#~ "\\sum_{k = 0}^{C_{\\text{in}} - 1} "
+#~ "\\text{weight}(C_{\\text{out}_j}, k) \\star "
+#~ "\\text{input}(N_i, k)"
+#~ msgstr ""
+
+#~ msgid "Supports `CROSS_CORRELATION`. Default: `CROSS_CORRELATION`"
+#~ msgstr "支持 `CROSS_CORRELATION`。默认：`CROSS_CORRELATION`"
+
+#~ msgid ""
+#~ ":obj:`__init__ <megengine.module.Conv2d.__init__>`\\ "
+#~ "\\(in\\_channels\\, out\\_channels\\, kernel\\_size\\)"
+#~ msgstr ""
+#~ ":obj:`__init__ <megengine.module.Conv2d.__init__>`\\ "
+#~ "\\(in\\_channels\\, out\\_channels\\, kernel\\_size\\)"
+
+#~ msgid "param name"
+#~ msgstr "参数名称"
+
+#~ msgid "module's name, can be initialized by the ``kwargs`` parameter"
+#~ msgstr "模块名称，子类的 ``kwargs`` 将会保存和传递此关键字参数。"
+
+#~ msgid "rtype"
+#~ msgstr "返回类型"
+
+#~ msgid ":py:obj:`None`"
+#~ msgstr ":py:obj:`None`"
+
+#~ msgid ""
+#~ "\\text{out}(N_i, C_{\\text{out}_j}) = "
+#~ "\\text{bias}(C_{\\text{out}_j}) +\n"
+#~ "\\sum_{k = 0}^{C_{\\text{in}} - 1} "
+#~ "\\text{weight}(C_{\\text{out}_j}, k) \\star "
+#~ "\\text{input}(N_i, k)\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{H}_{out} = \\lfloor \\frac{\\text{H}_{in} "
+#~ "+ 2 * \\text{padding[0]} -\n"
+#~ "\\text{dilation[0]} * (\\text{kernel_size[0]} - "
+#~ "1) - 1}{\\text{stride[0]}} + 1 \\rfloor"
+#~ "\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\\text{H}_{out} = \\lfloor \\frac{\\text{H}_{in} "
+#~ "+ 2 * \\text{padding[0]} -\n"
+#~ "\\text{dilation[0]} * (\\text{kernel_size[0]} - "
+#~ "1) - 1}{\\text{stride[0]}} + 1 \\rfloor"
+#~ "\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "\\text{W}_{out} = \\lfloor \\frac{\\text{W}_{in} "
+#~ "+ 2 * \\text{padding[1]} -\n"
+#~ "\\text{dilation[1]} * (\\text{kernel_size[1]} - "
+#~ "1) - 1}{\\text{stride[1]}} + 1 \\rfloor"
+#~ "\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\\text{W}_{out} = \\lfloor \\frac{\\text{W}_{in} "
+#~ "+ 2 * \\text{padding[1]} -\n"
+#~ "\\text{dilation[1]} * (\\text{kernel_size[1]} - "
+#~ "1) - 1}{\\text{stride[1]}} + 1 \\rfloor"
+#~ "\n"
+#~ "\n"
+
+#~ msgid "参数"
+#~ msgstr "参数"
+
+#~ msgid ""
+#~ "For instance, given an input of "
+#~ "the size :math:`(N, C_{     ext{in}}, H,"
+#~ " W)`, this layer generates an output"
+#~ " of the size :math:`(N, C_{      "
+#~ "ext{out}}, H_{  ext{out}}, W_{  ext{out}})`"
+#~ " through the process described as "
+#~ "below:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ext{out}(N_i, C_{       ext{out}_j}) =  "
+#~ "ext{bias}(C_{   ext{out}_j}) +\n"
+#~ "\\sum_{k = 0}^{C_{       ext{in}} - 1}"
+#~ "   ext{weight}(C_{ ext{out}_j}, k) \\star   "
+#~ "ext{input}(N_i, k)\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "input: :math:`(N, C_{       ext{in}}, H_{   ext{in}}, W_{   ext{in}})`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "output: :math:`(N, C_{      ext{out}}, H_{"
+#~ "  ext{out}}, W_{  ext{out}})` where"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ext{H}_{out} = \\lfloor\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "rac{    ext{H}_{in} + 2 *       ext{padding[0]} -"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ext{dilation[0]} * (    ext{kernel_size[0]} -"
+#~ " 1) - 1}{  ext{stride[0]}} + 1"
+#~ msgstr ""
+
+#~ msgid "floor"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ext{W}_{out} = \\lfloor\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "rac{    ext{W}_{in} + 2 *       ext{padding[1]} -"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ext{dilation[1]} * (    ext{kernel_size[1]} -"
+#~ " 1) - 1}{  ext{stride[1]}} + 1"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In other words, for an input of"
+#~ " size :math:`(N, C_{in}, H_{in}, W_{in})`,"
+#~ " a depthwise convolution with a "
+#~ "depthwise multiplier `K`, can be "
+#~ "constructed by arguments "
+#~ ":math:`(in\\_channels=C_{in}, out\\_channels=C_{in}      "
+#~ "imes K, ..., groups=C_{in})`."
+#~ msgstr ""
+
+#~ msgid "param in_channels"
+#~ msgstr ""
+
+#~ msgid "param out_channels"
+#~ msgstr ""
+
+#~ msgid "param kernel_size"
+#~ msgstr ""
+
+#~ msgid "param stride"
+#~ msgstr ""
+
+#~ msgid "param padding"
+#~ msgstr ""
+
+#~ msgid "param dilation"
+#~ msgstr ""
+
+#~ msgid "param groups"
+#~ msgstr ""
+
+#~ msgid "param bias"
+#~ msgstr ""
+
+#~ msgid "param conv_mode"
+#~ msgstr ""
+
+#~ msgid "param compute_mode"
+#~ msgstr ""
 
