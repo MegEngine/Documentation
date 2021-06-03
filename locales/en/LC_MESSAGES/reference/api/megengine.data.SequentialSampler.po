@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 09:02+0800\n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
 "PO-Revision-Date: 2021-04-20 08:36+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
@@ -22,31 +22,63 @@ msgstr ""
 msgid "Sample elements sequentially."
 msgstr ""
 
-#: ../../source/reference/api/megengine.data.SequentialSampler.rst:11
+#: megengine.data.sampler.SequentialSampler of
+msgid "参数"
+msgstr ""
+
+#: megengine.data.sampler.SequentialSampler:3 of
+msgid "dataset to sample from."
+msgstr ""
+
+#: megengine.data.sampler.SequentialSampler:4 of
+msgid "batch size for batch method."
+msgstr ""
+
+#: megengine.data.sampler.SequentialSampler:5 of
+msgid ""
+"set ``True`` to drop the last incomplete batch, if the dataset size is "
+"not divisible by the batch size. If ``False`` and the size of dataset is "
+"not divisible by the batch_size, then the last batch will be smaller. "
+"Default: False"
+msgstr ""
+
+#: megengine.data.sampler.SequentialSampler:9 of
+msgid "indice of samples."
+msgstr ""
+
+#: megengine.data.sampler.SequentialSampler:10 of
+msgid "number of ranks."
+msgstr ""
+
+#: megengine.data.sampler.SequentialSampler:11 of
+msgid "rank id, non-negative interger within 0 and ``world_size``."
+msgstr ""
+
+#: ../../source/reference/api/megengine.data.SequentialSampler.rst:15
 msgid "Methods"
 msgstr ""
 
-#: ../../source/reference/api/megengine.data.SequentialSampler.rst:23:<autosummary>:1
+#: ../../source/reference/api/megengine.data.SequentialSampler.rst:27:<autosummary>:1
 msgid ":obj:`batch <megengine.data.SequentialSampler.batch>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.data.SequentialSampler.rst:23:<autosummary>:1
+#: ../../source/reference/api/megengine.data.SequentialSampler.rst:27:<autosummary>:1
 msgid "Batch method provides a batch indices generator."
 msgstr ""
 
-#: ../../source/reference/api/megengine.data.SequentialSampler.rst:23:<autosummary>:1
+#: ../../source/reference/api/megengine.data.SequentialSampler.rst:27:<autosummary>:1
 msgid ":obj:`sample <megengine.data.SequentialSampler.sample>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.data.SequentialSampler.rst:23:<autosummary>:1
+#: ../../source/reference/api/megengine.data.SequentialSampler.rst:27:<autosummary>:1
 msgid "Return a generator."
 msgstr ""
 
-#: ../../source/reference/api/megengine.data.SequentialSampler.rst:23:<autosummary>:1
+#: ../../source/reference/api/megengine.data.SequentialSampler.rst:27:<autosummary>:1
 msgid ":obj:`scatter <megengine.data.SequentialSampler.scatter>`\\ \\(indices\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.data.SequentialSampler.rst:23:<autosummary>:1
+#: ../../source/reference/api/megengine.data.SequentialSampler.rst:27:<autosummary>:1
 msgid ""
 "Scatter method is used for splitting indices into subset, each subset "
 "will be assigned to a rank."

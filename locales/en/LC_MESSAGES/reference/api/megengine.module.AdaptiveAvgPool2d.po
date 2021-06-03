@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-14 14:18+0800\n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
 "PO-Revision-Date: 2021-04-20 08:52+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
@@ -30,29 +30,25 @@ msgid ""
 msgstr ""
 
 #: megengine.module.adaptive_pooling.AdaptiveAvgPool2d:7 of
-msgid "out(N_i, C_j, h, w)  ="
+msgid ""
+"out(N_i, C_j, h, w)  = \\frac{1}{kH * kW} \\sum_{m=0}^{kH-1} "
+"\\sum_{n=0}^{kW-1}\n"
+"                       input(N_i, C_j, stride[0] \\times h + m, stride[1]"
+" \\times w + n)"
 msgstr ""
 
-#: megengine.module.adaptive_pooling.AdaptiveAvgPool2d:38 of
-msgid "rac{1}{kH * kW} \\sum_{m=0}^{kH-1} \\sum_{n=0}^{kW-1}"
-msgstr ""
-
-#: megengine.module.adaptive_pooling.AdaptiveAvgPool2d:11 of
-msgid "input(N_i, C_j, stride[0]        imes h + m, stride[1]   imes w + n)"
-msgstr ""
-
-#: megengine.module.adaptive_pooling.AdaptiveAvgPool2d:13 of
+#: megengine.module.adaptive_pooling.AdaptiveAvgPool2d:12 of
 msgid ""
 "``kernel_size`` and ``stride`` can be inferred from input shape and out "
 "shape: * padding: (0, 0) * stride: (floor(IH / OH), floor(IW / OW)) * "
 "kernel_size: (IH - (OH - 1) * stride_h, IW - (OW - 1) * stride_w)"
 msgstr ""
 
-#: megengine.module.adaptive_pooling.AdaptiveAvgPool2d:18 of
+#: megengine.module.adaptive_pooling.AdaptiveAvgPool2d:17 of
 msgid "Examples:"
 msgstr ""
 
-#: megengine.module.adaptive_pooling.AdaptiveAvgPool2d:31 of
+#: megengine.module.adaptive_pooling.AdaptiveAvgPool2d:30 of
 msgid "Outputs:"
 msgstr ""
 
@@ -281,5 +277,14 @@ msgstr ""
 #~ "                       input(N_i, C_j, stride[0] "
 #~ "\\times h + m, stride[1] \\times w"
 #~ " + n)"
+#~ msgstr ""
+
+#~ msgid "out(N_i, C_j, h, w)  ="
+#~ msgstr ""
+
+#~ msgid "rac{1}{kH * kW} \\sum_{m=0}^{kH-1} \\sum_{n=0}^{kW-1}"
+#~ msgstr ""
+
+#~ msgid "input(N_i, C_j, stride[0]        imes h + m, stride[1]   imes w + n)"
 #~ msgstr ""
 
