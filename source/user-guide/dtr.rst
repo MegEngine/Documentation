@@ -16,10 +16,10 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
 
    import megengine as mge
 
-   mge.dtr.eviction_threshold = "5GB" # 设置显存阈值为 5 GB
-   mge.dtr.enable()                   # 开启 DTR
+   mge.dtr.eviction_threshold = "5GB" # set the eviction threshold to 5 GB
+   mge.dtr.enable()                   # enable the DTR optimization
 
-   # ... 你的训练代码
+   # ... your training code
 
 即可启用动态图的 Sublinear 显存优化。
 
@@ -38,10 +38,10 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
    @dist.launcher
    def main():
 
-       mge.dtr.eviction_threshold = "5GB" # 设置显存阈值为 5 GB
-       mge.dtr.enable()                   # 开启 DTR
+       mge.dtr.eviction_threshold = "5GB" # set the eviction threshold to 5 GB
+       mge.dtr.enable()                   # enable the DTR optimization
 
-       # ... 你的训练代码
+       # ... your training code
 
 参数设置
 --------
