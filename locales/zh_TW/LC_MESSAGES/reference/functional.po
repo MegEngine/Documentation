@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-22 00:58+0800\n"
-"PO-Revision-Date: 2021-04-22 02:46\n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
+"PO-Revision-Date: 2021-06-03 16:03\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -19,1298 +19,1567 @@ msgstr ""
 "X-Crowdin-File-ID: 2788\n"
 
 #: ../../source/reference/functional.rst:6
-msgid "函数式（Functional）"
-msgstr "crwdns42572:0crwdne42572:0"
+msgid "megengine.functional"
+msgstr "crwdns61076:0crwdne61076:0"
 
-#: ../../source/reference/functional.rst:12
-msgid "tensor 子模块"
-msgstr "crwdns42574:0crwdne42574:0"
+#: ../../source/reference/functional.rst:14
+msgid "顾名思义，:mod:`megengine.functional` 模块中包含着所有与 Tensor 有关的计算接口："
+msgstr "crwdns63868:0:mod:crwdne63868:0"
 
-#: ../../source/reference/functional.rst:15
-msgid "创建张量"
-msgstr "crwdns42576:0crwdne42576:0"
+#: ../../source/reference/functional.rst:16
+msgid "与神经网络（Neural Network）相关的算子统一封装在 :mod:`megengine.functional.nn` 中；"
+msgstr "crwdns63870:0:mod:crwdne63870:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid ":obj:`zeros <megengine.functional.zeros>`"
-msgstr "crwdns42578:0:obj:crwdne42578:0"
+#: ../../source/reference/functional.rst:17
+msgid "分布式算子统一封装在 :mod:`megengine.functional.distributed` 中，方便调用；"
+msgstr "crwdns63872:0:mod:crwdne63872:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid "Returns a zero tensor with given shape."
-msgstr "crwdns42580:0crwdne42580:0"
+#: ../../source/reference/functional.rst:18
+msgid "其它的常见算子均可在 :mod:`megengine.functional` 中直接调用；"
+msgstr "crwdns63874:0:mod:crwdne63874:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid ":obj:`zeros_like <megengine.functional.zeros_like>`"
-msgstr "crwdns42582:0:obj:crwdne42582:0"
+#: ../../source/reference/functional.rst:23
+msgid "Standard tensor operations"
+msgstr "crwdns63876:0crwdne63876:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid "Returns a zero tensor with the same shape as input tensor."
-msgstr "crwdns42584:0crwdne42584:0"
+#: ../../source/reference/functional.rst:27
+msgid "该部分的 API 设计接纳了 `Python 数据 API 标准联盟 <https://data-apis.org/>`_ 中的倡导, 尽可能地向 NumPy API 靠拢。"
+msgstr "crwdns63878:0crwdne63878:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid ":obj:`ones <megengine.functional.ones>`"
-msgstr "crwdns42586:0:obj:crwdne42586:0"
+#: ../../source/reference/functional.rst:33
+msgid "Creation Functions"
+msgstr "crwdns63880:0crwdne63880:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid "Returns a ones tensor with given shape."
-msgstr "crwdns42588:0crwdne42588:0"
-
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid ":obj:`ones_like <megengine.functional.ones_like>`"
-msgstr "crwdns42590:0:obj:crwdne42590:0"
-
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid "Returns a ones tensor with the same shape as input tensor."
-msgstr "crwdns42592:0crwdne42592:0"
-
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid ":obj:`full <megengine.functional.full>`"
-msgstr "crwdns42594:0:obj:crwdne42594:0"
-
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid "Returns a tensor with given shape and value."
-msgstr "crwdns42596:0crwdne42596:0"
-
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid ":obj:`full_like <megengine.functional.full_like>`"
-msgstr "crwdns42598:0:obj:crwdne42598:0"
-
-#: ../../source/reference/functional.rst:29:<autosummary>:1
-msgid "Returns a tensor filled with given value with the same shape as input tensor."
-msgstr "crwdns42600:0crwdne42600:0"
-
-#: ../../source/reference/functional.rst:29:<autosummary>:1
+#: ../../source/reference/functional.rst:47:<autosummary>:1
 msgid ":obj:`arange <megengine.functional.arange>`"
 msgstr "crwdns42602:0:obj:crwdne42602:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
+#: ../../source/reference/functional.rst:47:<autosummary>:1
 msgid "Returns a tensor with values from start to stop with adjacent interval step."
 msgstr "crwdns42604:0crwdne42604:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
+#: ../../source/reference/functional.rst:47:<autosummary>:1
 msgid ":obj:`linspace <megengine.functional.linspace>`"
 msgstr "crwdns42606:0:obj:crwdne42606:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
+#: ../../source/reference/functional.rst:47:<autosummary>:1
 msgid "Returns equally spaced numbers over a specified interval."
 msgstr "crwdns42608:0crwdne42608:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
+#: ../../source/reference/functional.rst:47:<autosummary>:1
 msgid ":obj:`eye <megengine.functional.eye>`"
 msgstr "crwdns42610:0:obj:crwdne42610:0"
 
-#: ../../source/reference/functional.rst:29:<autosummary>:1
+#: ../../source/reference/functional.rst:47:<autosummary>:1
 msgid "Returns a 2D tensor with ones on the diagonal and zeros elsewhere."
 msgstr "crwdns42612:0crwdne42612:0"
 
-#: ../../source/reference/functional.rst:31
-msgid "处理张量"
-msgstr "crwdns42614:0crwdne42614:0"
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid ":obj:`zeros <megengine.functional.zeros>`"
+msgstr "crwdns42578:0:obj:crwdne42578:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid "Returns a zero tensor with given shape."
+msgstr "crwdns42580:0crwdne42580:0"
+
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid ":obj:`zeros_like <megengine.functional.zeros_like>`"
+msgstr "crwdns42582:0:obj:crwdne42582:0"
+
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid "Returns a zero tensor with the same shape as input tensor."
+msgstr "crwdns42584:0crwdne42584:0"
+
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid ":obj:`ones <megengine.functional.ones>`"
+msgstr "crwdns42586:0:obj:crwdne42586:0"
+
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid "Returns a ones tensor with given shape."
+msgstr "crwdns42588:0crwdne42588:0"
+
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid ":obj:`ones_like <megengine.functional.ones_like>`"
+msgstr "crwdns42590:0:obj:crwdne42590:0"
+
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid "Returns a ones tensor with the same shape as input tensor."
+msgstr "crwdns42592:0crwdne42592:0"
+
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid ":obj:`full <megengine.functional.full>`"
+msgstr "crwdns42594:0:obj:crwdne42594:0"
+
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid "Returns a tensor with given shape and value."
+msgstr "crwdns42596:0crwdne42596:0"
+
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid ":obj:`full_like <megengine.functional.full_like>`"
+msgstr "crwdns42598:0:obj:crwdne42598:0"
+
+#: ../../source/reference/functional.rst:47:<autosummary>:1
+msgid "Returns a tensor filled with given value with the same shape as input tensor."
+msgstr "crwdns42600:0crwdne42600:0"
+
+#: ../../source/reference/functional.rst:51
+msgid "Manipulation Functions"
+msgstr "crwdns63882:0crwdne63882:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
 msgid ":obj:`copy <megengine.functional.copy>`"
 msgstr "crwdns42616:0:obj:crwdne42616:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
+#: ../../source/reference/functional.rst:70:<autosummary>:1
 msgid "Copies tensor to another device."
 msgstr "crwdns42618:0crwdne42618:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`broadcast_to <megengine.functional.broadcast_to>`"
-msgstr "crwdns42620:0:obj:crwdne42620:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Broadcasts a tensor to given shape."
-msgstr "crwdns42622:0crwdne42622:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`concat <megengine.functional.concat>`"
-msgstr "crwdns42624:0:obj:crwdne42624:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Concat some tensors"
-msgstr "crwdns42626:0crwdne42626:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`stack <megengine.functional.stack>`"
-msgstr "crwdns42628:0:obj:crwdne42628:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Concats a sequence of tensors along a new axis."
-msgstr "crwdns42630:0crwdne42630:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`split <megengine.functional.split>`"
-msgstr "crwdns42632:0:obj:crwdne42632:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Splits the input tensor into several smaller tensors."
-msgstr "crwdns42634:0crwdne42634:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`gather <megengine.functional.gather>`"
-msgstr "crwdns42636:0:obj:crwdne42636:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Gathers data from input tensor on axis using index."
-msgstr "crwdns42638:0crwdne42638:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`scatter <megengine.functional.scatter>`"
-msgstr "crwdns42640:0:obj:crwdne42640:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Writes all values from the tensor source into input tensor at the indices specified in the index tensor."
-msgstr "crwdns42642:0crwdne42642:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`where <megengine.functional.where>`"
-msgstr "crwdns42644:0:obj:crwdne42644:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Selects elements either from Tensor x or Tensor y, according to mask."
-msgstr "crwdns42646:0crwdne42646:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`cond_take <megengine.functional.cond_take>`"
-msgstr "crwdns42648:0:obj:crwdne42648:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Takes elements from data if specific condition is satisfied on mask."
-msgstr "crwdns42650:0crwdne42650:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`transpose <megengine.functional.transpose>`"
-msgstr "crwdns42652:0:obj:crwdne42652:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Swaps shapes and strides according to given pattern."
-msgstr "crwdns42654:0crwdne42654:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
+#: ../../source/reference/functional.rst:70:<autosummary>:1
 msgid ":obj:`reshape <megengine.functional.reshape>`"
 msgstr "crwdns42656:0:obj:crwdne42656:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
+#: ../../source/reference/functional.rst:70:<autosummary>:1
 msgid "Reshapes a tensor to given target shape; total number of logical elements must remain unchanged"
 msgstr "crwdns42658:0crwdne42658:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
+#: ../../source/reference/functional.rst:70:<autosummary>:1
 msgid ":obj:`flatten <megengine.functional.flatten>`"
 msgstr "crwdns42660:0:obj:crwdne42660:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
+#: ../../source/reference/functional.rst:70:<autosummary>:1
 msgid "Reshapes the tensor by flattening the sub-tensor from dimension ``start_axis`` to dimension ``end_axis``."
 msgstr "crwdns42662:0crwdne42662:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`repeat <megengine.functional.repeat>`"
-msgstr "crwdns42664:0:obj:crwdne42664:0"
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid ":obj:`broadcast_to <megengine.functional.broadcast_to>`"
+msgstr "crwdns42620:0:obj:crwdne42620:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Repeat elements of an array."
-msgstr "crwdns42666:0crwdne42666:0"
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid "Broadcasts a tensor to given shape."
+msgstr "crwdns42622:0crwdne42622:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid ":obj:`tile <megengine.functional.tile>`"
-msgstr "crwdns42668:0:obj:crwdne42668:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
-msgid "Construct an array by repeating ``inp`` the number of times given by ``reps``."
-msgstr "crwdns42670:0crwdne42670:0"
-
-#: ../../source/reference/functional.rst:52:<autosummary>:1
+#: ../../source/reference/functional.rst:70:<autosummary>:1
 msgid ":obj:`expand_dims <megengine.functional.expand_dims>`"
 msgstr "crwdns42672:0:obj:crwdne42672:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
+#: ../../source/reference/functional.rst:70:<autosummary>:1
 msgid "Adds dimension before given axis."
 msgstr "crwdns42674:0crwdne42674:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
+#: ../../source/reference/functional.rst:70:<autosummary>:1
 msgid ":obj:`squeeze <megengine.functional.squeeze>`"
 msgstr "crwdns42676:0:obj:crwdne42676:0"
 
-#: ../../source/reference/functional.rst:52:<autosummary>:1
+#: ../../source/reference/functional.rst:70:<autosummary>:1
 msgid "Removes dimension of shape 1."
 msgstr "crwdns42678:0crwdne42678:0"
 
-#: ../../source/reference/functional.rst:57
-msgid "elemwise 子模块"
-msgstr "crwdns42680:0crwdne42680:0"
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid ":obj:`concat <megengine.functional.concat>`"
+msgstr "crwdns42624:0:obj:crwdne42624:0"
 
-#: ../../source/reference/functional.rst:60
-msgid "基本运算"
-msgstr "crwdns42682:0crwdne42682:0"
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid "Concat some tensors"
+msgstr "crwdns42626:0crwdne42626:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid ":obj:`stack <megengine.functional.stack>`"
+msgstr "crwdns42628:0:obj:crwdne42628:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid "Concats a sequence of tensors along a new axis."
+msgstr "crwdns42630:0crwdne42630:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid ":obj:`split <megengine.functional.split>`"
+msgstr "crwdns42632:0:obj:crwdne42632:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid "Splits the input tensor into several smaller tensors."
+msgstr "crwdns42634:0crwdne42634:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid ":obj:`tile <megengine.functional.tile>`"
+msgstr "crwdns42668:0:obj:crwdne42668:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid "Construct an array by repeating ``inp`` the number of times given by ``reps``."
+msgstr "crwdns42670:0crwdne42670:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid ":obj:`repeat <megengine.functional.repeat>`"
+msgstr "crwdns42664:0:obj:crwdne42664:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid "Repeat elements of an array."
+msgstr "crwdns42666:0crwdne42666:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid ":obj:`gather <megengine.functional.gather>`"
+msgstr "crwdns42636:0:obj:crwdne42636:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid "Gathers data from input tensor on axis using index."
+msgstr "crwdns42638:0crwdne42638:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid ":obj:`scatter <megengine.functional.scatter>`"
+msgstr "crwdns42640:0:obj:crwdne42640:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid "Writes all values from the tensor source into input tensor at the indices specified in the index tensor."
+msgstr "crwdns42642:0crwdne42642:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid ":obj:`cond_take <megengine.functional.cond_take>`"
+msgstr "crwdns42648:0:obj:crwdne42648:0"
+
+#: ../../source/reference/functional.rst:70:<autosummary>:1
+msgid "Takes elements from data if specific condition is satisfied on mask."
+msgstr "crwdns42650:0crwdne42650:0"
+
+#: ../../source/reference/functional.rst:74
+msgid "Arithmetic operations"
+msgstr "crwdns61092:0crwdne61092:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`add <megengine.functional.add>`"
 msgstr "crwdns42684:0:obj:crwdne42684:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Element-wise `addition`."
 msgstr "crwdns42686:0crwdne42686:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`sub <megengine.functional.sub>`"
 msgstr "crwdns42688:0:obj:crwdne42688:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Element-wise `subtraction`."
 msgstr "crwdns42690:0crwdne42690:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`mul <megengine.functional.mul>`"
 msgstr "crwdns42692:0:obj:crwdne42692:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Element-wise `multiplication`."
 msgstr "crwdns42694:0crwdne42694:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`div <megengine.functional.div>`"
 msgstr "crwdns42696:0:obj:crwdne42696:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Element-wise `(x / y)`."
 msgstr "crwdns42698:0crwdne42698:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`floor_div <megengine.functional.floor_div>`"
 msgstr "crwdns42700:0:obj:crwdne42700:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Element-wise `floor(x / y)`."
 msgstr "crwdns42702:0crwdne42702:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`neg <megengine.functional.neg>`"
 msgstr "crwdns42704:0:obj:crwdne42704:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Element-wise `negation`."
 msgstr "crwdns42706:0crwdne42706:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`pow <megengine.functional.pow>`"
 msgstr "crwdns42708:0:obj:crwdne42708:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Element-wise `power`."
 msgstr "crwdns42710:0crwdne42710:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`mod <megengine.functional.mod>`"
 msgstr "crwdns42712:0:obj:crwdne42712:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Element-wise `remainder of division`."
 msgstr "crwdns42714:0crwdne42714:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`abs <megengine.functional.abs>`"
-msgstr "crwdns42716:0:obj:crwdne42716:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Element-wise `absolute value`."
-msgstr "crwdns42718:0crwdne42718:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`exp <megengine.functional.exp>`"
-msgstr "crwdns42720:0:obj:crwdne42720:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Element-wise `exponential`."
-msgstr "crwdns42722:0crwdne42722:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`expm1 <megengine.functional.expm1>`"
-msgstr "crwdns42724:0:obj:crwdne42724:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Element-wise `exp(x)-1`."
-msgstr "crwdns42726:0crwdne42726:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`log <megengine.functional.log>`"
-msgstr "crwdns42728:0:obj:crwdne42728:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Element-wise `logarithm (base e)`."
-msgstr "crwdns42730:0crwdne42730:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`log1p <megengine.functional.log1p>`"
-msgstr "crwdns42732:0:obj:crwdne42732:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Element-wise `log(x+1) (base e)`."
-msgstr "crwdns42734:0crwdne42734:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`sqrt <megengine.functional.sqrt>`"
 msgstr "crwdns42736:0:obj:crwdne42736:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Element-wise `sqrt`."
 msgstr "crwdns42738:0crwdne42738:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`square <megengine.functional.square>`"
 msgstr "crwdns42740:0:obj:crwdne42740:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Returns a new tensor with the square of the elements of input tensor."
 msgstr "crwdns42742:0crwdne42742:0"
 
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`round <megengine.functional.round>`"
-msgstr "crwdns42744:0:obj:crwdne42744:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Element-wise `rounding to int`."
-msgstr "crwdns42746:0crwdne42746:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`ceil <megengine.functional.ceil>`"
-msgstr "crwdns42748:0:obj:crwdne42748:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Element-wise `ceiling`."
-msgstr "crwdns42750:0crwdne42750:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`floor <megengine.functional.floor>`"
-msgstr "crwdns42752:0:obj:crwdne42752:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Element-wise `floor`."
-msgstr "crwdns42754:0crwdne42754:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`maximum <megengine.functional.maximum>`"
-msgstr "crwdns42756:0:obj:crwdne42756:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Element-wise `maximum of array elements`."
-msgstr "crwdns42758:0crwdne42758:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`minimum <megengine.functional.minimum>`"
-msgstr "crwdns42760:0:obj:crwdne42760:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Element-wise `minimum of array elements`."
-msgstr "crwdns42762:0crwdne42762:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid ":obj:`clip <megengine.functional.clip>`"
-msgstr "crwdns42764:0:obj:crwdne42764:0"
-
-#: ../../source/reference/functional.rst:86:<autosummary>:1
-msgid "Clamps all elements in input tensor into the range `[` :attr:`lower`, :attr:`upper` `]` and returns a resulting tensor:"
-msgstr "crwdns42766:0:attr:crwdnd42766:0:attr:crwdne42766:0"
-
-#: ../../source/reference/functional.rst:88
-msgid "三角运算"
-msgstr "crwdns42768:0crwdne42768:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`cos <megengine.functional.cos>`"
-msgstr "crwdns42770:0:obj:crwdne42770:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `cosine`."
-msgstr "crwdns42772:0crwdne42772:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`sin <megengine.functional.sin>`"
-msgstr "crwdns42774:0:obj:crwdne42774:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `sine`."
-msgstr "crwdns42776:0crwdne42776:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`tan <megengine.functional.tan>`"
-msgstr "crwdns42778:0:obj:crwdne42778:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `tangent`."
-msgstr "crwdns42780:0crwdne42780:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`acos <megengine.functional.acos>`"
-msgstr "crwdns42782:0:obj:crwdne42782:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `inverse cosine`."
-msgstr "crwdns42784:0crwdne42784:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`asin <megengine.functional.asin>`"
-msgstr "crwdns42786:0:obj:crwdne42786:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `inverse sine`."
-msgstr "crwdns42788:0crwdne42788:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`atan <megengine.functional.atan>`"
-msgstr "crwdns42790:0:obj:crwdne42790:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `inverse tangent`."
-msgstr "crwdns42792:0crwdne42792:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`atan2 <megengine.functional.atan2>`"
-msgstr "crwdns42794:0:obj:crwdne42794:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `2-argument arctangent`."
-msgstr "crwdns42796:0crwdne42796:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`cosh <megengine.functional.cosh>`"
-msgstr "crwdns42798:0:obj:crwdne42798:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `hyperbolic cosine`."
-msgstr "crwdns42800:0crwdne42800:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`sinh <megengine.functional.sinh>`"
-msgstr "crwdns42802:0:obj:crwdne42802:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `hyperbolic sine`."
-msgstr "crwdns42804:0crwdne42804:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`tanh <megengine.functional.tanh>`"
-msgstr "crwdns42806:0:obj:crwdne42806:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `hyperbolic tangent`."
-msgstr "crwdns42808:0crwdne42808:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`acosh <megengine.functional.acosh>`"
-msgstr "crwdns42810:0:obj:crwdne42810:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `inverse hyperbolic cosine`."
-msgstr "crwdns42812:0crwdne42812:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`asinh <megengine.functional.asinh>`"
-msgstr "crwdns42814:0:obj:crwdne42814:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `inverse hyperbolic sine`."
-msgstr "crwdns42816:0crwdne42816:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid ":obj:`atanh <megengine.functional.atanh>`"
-msgstr "crwdns42818:0:obj:crwdne42818:0"
-
-#: ../../source/reference/functional.rst:106:<autosummary>:1
-msgid "Element-wise `inverse hyperbolic tangent`."
-msgstr "crwdns42820:0crwdne42820:0"
-
-#: ../../source/reference/functional.rst:108
-msgid "位运算"
-msgstr "crwdns42822:0crwdne42822:0"
-
-#: ../../source/reference/functional.rst:115:<autosummary>:1
-msgid ":obj:`left_shift <megengine.functional.left_shift>`"
-msgstr "crwdns42824:0:obj:crwdne42824:0"
-
-#: ../../source/reference/functional.rst:115:<autosummary>:1
-msgid "Element-wise `bitwise binary: x << y`."
-msgstr "crwdns42826:0crwdne42826:0"
-
-#: ../../source/reference/functional.rst:115:<autosummary>:1
-msgid ":obj:`right_shift <megengine.functional.right_shift>`"
-msgstr "crwdns42828:0:obj:crwdne42828:0"
-
-#: ../../source/reference/functional.rst:115:<autosummary>:1
-msgid "Element-wise `bitwise binary: x >> y`."
-msgstr "crwdns42830:0crwdne42830:0"
-
-#: ../../source/reference/functional.rst:117
-msgid "逻辑运算"
-msgstr "crwdns42832:0crwdne42832:0"
-
-#: ../../source/reference/functional.rst:126:<autosummary>:1
-msgid ":obj:`logical_and <megengine.functional.logical_and>`"
-msgstr "crwdns42834:0:obj:crwdne42834:0"
-
-#: ../../source/reference/functional.rst:126:<autosummary>:1
-msgid "Element-wise `logical and: x && y`."
-msgstr "crwdns42836:0crwdne42836:0"
-
-#: ../../source/reference/functional.rst:126:<autosummary>:1
-msgid ":obj:`logical_not <megengine.functional.logical_not>`"
-msgstr "crwdns42838:0:obj:crwdne42838:0"
-
-#: ../../source/reference/functional.rst:126:<autosummary>:1
-msgid "Element-wise `logical not: ~x`."
-msgstr "crwdns42840:0crwdne42840:0"
-
-#: ../../source/reference/functional.rst:126:<autosummary>:1
-msgid ":obj:`logical_or <megengine.functional.logical_or>`"
-msgstr "crwdns42842:0:obj:crwdne42842:0"
-
-#: ../../source/reference/functional.rst:126:<autosummary>:1
-msgid "Element-wise `logical or: x || y`."
-msgstr "crwdns42844:0crwdne42844:0"
-
-#: ../../source/reference/functional.rst:126:<autosummary>:1
-msgid ":obj:`logical_xor <megengine.functional.logical_xor>`"
-msgstr "crwdns42846:0:obj:crwdne42846:0"
-
-#: ../../source/reference/functional.rst:126:<autosummary>:1
-msgid "Element-wise `logical xor: x ^ y`."
-msgstr "crwdns42848:0crwdne42848:0"
-
-#: ../../source/reference/functional.rst:128
-msgid "比较运算"
-msgstr "crwdns42850:0crwdne42850:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid ":obj:`equal <megengine.functional.equal>`"
-msgstr "crwdns42852:0:obj:crwdne42852:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid "Element-wise `(x == y)`."
-msgstr "crwdns42854:0crwdne42854:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid ":obj:`not_equal <megengine.functional.not_equal>`"
-msgstr "crwdns42856:0:obj:crwdne42856:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid "Element-wise `(x != y)`."
-msgstr "crwdns42858:0crwdne42858:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid ":obj:`less <megengine.functional.less>`"
-msgstr "crwdns42860:0:obj:crwdne42860:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid "Element-wise `(x < y)`."
-msgstr "crwdns42862:0crwdne42862:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid ":obj:`less_equal <megengine.functional.less_equal>`"
-msgstr "crwdns42864:0:obj:crwdne42864:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid "Element-wise `(x <= y)`."
-msgstr "crwdns42866:0crwdne42866:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid ":obj:`greater <megengine.functional.greater>`"
-msgstr "crwdns42868:0:obj:crwdne42868:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid "Element-wise `(x > y)`."
-msgstr "crwdns42870:0crwdne42870:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid ":obj:`greater_equal <megengine.functional.greater_equal>`"
-msgstr "crwdns42872:0:obj:crwdne42872:0"
-
-#: ../../source/reference/functional.rst:139:<autosummary>:1
-msgid "Element-wise `(x >= y)`."
-msgstr "crwdns42874:0crwdne42874:0"
-
-#: ../../source/reference/functional.rst:144
-msgid "math 子模块"
-msgstr "crwdns42876:0crwdne42876:0"
-
-#: ../../source/reference/functional.rst:147
-msgid "归约计算"
-msgstr "crwdns42878:0crwdne42878:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid ":obj:`sum <megengine.functional.sum>`"
-msgstr "crwdns42880:0:obj:crwdne42880:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid "Returns the sum of input tensor along given axis."
-msgstr "crwdns42882:0crwdne42882:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid ":obj:`prod <megengine.functional.prod>`"
-msgstr "crwdns42884:0:obj:crwdne42884:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid "Returns the product of input tensor along given axis."
-msgstr "crwdns42886:0crwdne42886:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid ":obj:`mean <megengine.functional.mean>`"
-msgstr "crwdns42888:0:obj:crwdne42888:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid "Returns the mean value of input tensor along given axis."
-msgstr "crwdns42890:0crwdne42890:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid ":obj:`min <megengine.functional.min>`"
-msgstr "crwdns42892:0:obj:crwdne42892:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid "Returns the min value of input tensor along given axis."
-msgstr "crwdns42894:0crwdne42894:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid ":obj:`max <megengine.functional.max>`"
-msgstr "crwdns42896:0:obj:crwdne42896:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid "Returns the max value of the input tensor along given axis."
-msgstr "crwdns42898:0crwdne42898:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid ":obj:`argmin <megengine.functional.argmin>`"
-msgstr "crwdns42900:0:obj:crwdne42900:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid "Returns the indices of the minimum values along given axis."
-msgstr "crwdns42902:0crwdne42902:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid ":obj:`argmax <megengine.functional.argmax>`"
-msgstr "crwdns42904:0:obj:crwdne42904:0"
-
-#: ../../source/reference/functional.rst:159:<autosummary>:1
-msgid "Returns the indices of the maximum values along given axis."
-msgstr "crwdns42906:0crwdne42906:0"
-
-#: ../../source/reference/functional.rst:161
-msgid "线性代数"
-msgstr "crwdns42908:0crwdne42908:0"
-
-#: ../../source/reference/functional.rst:170:<autosummary>:1
-msgid ":obj:`dot <megengine.functional.dot>`"
-msgstr "crwdns42910:0:obj:crwdne42910:0"
-
-#: ../../source/reference/functional.rst:170:<autosummary>:1
-msgid "Computes dot-product of two vectors ``inp1`` and ``inp2``."
-msgstr "crwdns42912:0crwdne42912:0"
-
-#: ../../source/reference/functional.rst:170:<autosummary>:1
-msgid ":obj:`matinv <megengine.functional.matinv>`"
-msgstr "crwdns42914:0:obj:crwdne42914:0"
-
-#: ../../source/reference/functional.rst:170:<autosummary>:1
-msgid "Computes the inverse of a batch of matrices; input must has shape [..., n, n]."
-msgstr "crwdns42916:0crwdne42916:0"
-
-#: ../../source/reference/functional.rst:170:<autosummary>:1
-msgid ":obj:`matmul <megengine.functional.matmul>`"
-msgstr "crwdns42918:0:obj:crwdne42918:0"
-
-#: ../../source/reference/functional.rst:170:<autosummary>:1
-msgid "Performs a matrix multiplication of the matrices ``inp1`` and ``inp2``."
-msgstr "crwdns42920:0crwdne42920:0"
-
-#: ../../source/reference/functional.rst:170:<autosummary>:1
-msgid ":obj:`svd <megengine.functional.svd>`"
-msgstr "crwdns42922:0:obj:crwdne42922:0"
-
-#: ../../source/reference/functional.rst:170:<autosummary>:1
-msgid "Computes the singular value decompositions of input matrix."
-msgstr "crwdns42924:0crwdne42924:0"
-
-#: ../../source/reference/functional.rst:172
-msgid "概率统计"
-msgstr "crwdns42926:0crwdne42926:0"
-
-#: ../../source/reference/functional.rst:181:<autosummary>:1
-msgid ":obj:`var <megengine.functional.var>`"
-msgstr "crwdns42928:0:obj:crwdne42928:0"
-
-#: ../../source/reference/functional.rst:181:<autosummary>:1
-msgid "Returns the variance value of input tensor along given axis."
-msgstr "crwdns42930:0crwdne42930:0"
-
-#: ../../source/reference/functional.rst:181:<autosummary>:1
-msgid ":obj:`std <megengine.functional.std>`"
-msgstr "crwdns42932:0:obj:crwdne42932:0"
-
-#: ../../source/reference/functional.rst:181:<autosummary>:1
-msgid "Returns the standard deviation of input tensor along given axis."
-msgstr "crwdns42934:0crwdne42934:0"
-
-#: ../../source/reference/functional.rst:181:<autosummary>:1
-msgid ":obj:`norm <megengine.functional.norm>`"
-msgstr "crwdns42936:0:obj:crwdne42936:0"
-
-#: ../../source/reference/functional.rst:181:<autosummary>:1
-msgid "Calculates ``p``-norm of input tensor along given axis."
-msgstr "crwdns42938:0crwdne42938:0"
-
-#: ../../source/reference/functional.rst:181:<autosummary>:1
-msgid ":obj:`normalize <megengine.functional.normalize>`"
-msgstr "crwdns42940:0:obj:crwdne42940:0"
-
-#: ../../source/reference/functional.rst:181:<autosummary>:1
-msgid "Performs :math:`L_p` normalization of input tensor along given axis."
-msgstr "crwdns42942:0:math:crwdne42942:0"
-
-#: ../../source/reference/functional.rst:183
-msgid "条件计算"
-msgstr "crwdns42944:0crwdne42944:0"
-
-#: ../../source/reference/functional.rst:194:<autosummary>:1
-msgid ":obj:`isnan <megengine.functional.isnan>`"
-msgstr "crwdns42946:0:obj:crwdne42946:0"
-
-#: ../../source/reference/functional.rst:194:<autosummary>:1
-msgid "Returns a new tensor representing if each element is ``NaN`` or not."
-msgstr "crwdns42948:0crwdne42948:0"
-
-#: ../../source/reference/functional.rst:194:<autosummary>:1
-msgid ":obj:`isinf <megengine.functional.isinf>`"
-msgstr "crwdns42950:0:obj:crwdne42950:0"
-
-#: ../../source/reference/functional.rst:194:<autosummary>:1
-msgid "Returns a new tensor representing if each element is ``Inf`` or not."
-msgstr "crwdns42952:0crwdne42952:0"
-
-#: ../../source/reference/functional.rst:194:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`abs <megengine.functional.abs>`"
+msgstr "crwdns42716:0:obj:crwdne42716:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Element-wise `absolute value`."
+msgstr "crwdns42718:0crwdne42718:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid ":obj:`sign <megengine.functional.sign>`"
 msgstr "crwdns42954:0:obj:crwdne42954:0"
 
-#: ../../source/reference/functional.rst:194:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
 msgid "Returns a new tensor representing the sign of each element in input tensor."
 msgstr "crwdns42956:0crwdne42956:0"
 
-#: ../../source/reference/functional.rst:194:<autosummary>:1
-msgid ":obj:`sort <megengine.functional.sort>`"
-msgstr "crwdns42958:0:obj:crwdne42958:0"
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`maximum <megengine.functional.maximum>`"
+msgstr "crwdns42756:0:obj:crwdne42756:0"
 
-#: ../../source/reference/functional.rst:194:<autosummary>:1
-msgid "Returns sorted tensor and the indices would sort the input tensor."
-msgstr "crwdns42960:0crwdne42960:0"
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Element-wise `maximum of array elements`."
+msgstr "crwdns42758:0crwdne42758:0"
 
-#: ../../source/reference/functional.rst:194:<autosummary>:1
-msgid ":obj:`argsort <megengine.functional.argsort>`"
-msgstr "crwdns42962:0:obj:crwdne42962:0"
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`minimum <megengine.functional.minimum>`"
+msgstr "crwdns42760:0:obj:crwdne42760:0"
 
-#: ../../source/reference/functional.rst:194:<autosummary>:1
-msgid "Returns the indices that would sort the input tensor."
-msgstr "crwdns42964:0crwdne42964:0"
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Element-wise `minimum of array elements`."
+msgstr "crwdns42762:0crwdne42762:0"
 
-#: ../../source/reference/functional.rst:194:<autosummary>:1
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`round <megengine.functional.round>`"
+msgstr "crwdns42744:0:obj:crwdne42744:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Element-wise `rounding to int`."
+msgstr "crwdns42746:0crwdne42746:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`ceil <megengine.functional.ceil>`"
+msgstr "crwdns42748:0:obj:crwdne42748:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Element-wise `ceiling`."
+msgstr "crwdns42750:0crwdne42750:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`floor <megengine.functional.floor>`"
+msgstr "crwdns42752:0:obj:crwdne42752:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Element-wise `floor`."
+msgstr "crwdns42754:0crwdne42754:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`clip <megengine.functional.clip>`"
+msgstr "crwdns42764:0:obj:crwdne42764:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Clamps all elements in input tensor into the range `[` :attr:`lower`, :attr:`upper` `]` and returns a resulting tensor:"
+msgstr "crwdns42766:0:attr:crwdnd42766:0:attr:crwdne42766:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`exp <megengine.functional.exp>`"
+msgstr "crwdns42720:0:obj:crwdne42720:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Element-wise `exponential`."
+msgstr "crwdns42722:0crwdne42722:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`expm1 <megengine.functional.expm1>`"
+msgstr "crwdns42724:0:obj:crwdne42724:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Element-wise `exp(x)-1`."
+msgstr "crwdns42726:0crwdne42726:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`log <megengine.functional.log>`"
+msgstr "crwdns42728:0:obj:crwdne42728:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Element-wise `logarithm (base e)`."
+msgstr "crwdns42730:0crwdne42730:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid ":obj:`log1p <megengine.functional.log1p>`"
+msgstr "crwdns42732:0:obj:crwdne42732:0"
+
+#: ../../source/reference/functional.rst:101:<autosummary>:1
+msgid "Element-wise `log(x+1) (base e)`."
+msgstr "crwdns42734:0crwdne42734:0"
+
+#: ../../source/reference/functional.rst:105
+msgid "Trigonometric functions"
+msgstr "crwdns61098:0crwdne61098:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid ":obj:`sin <megengine.functional.sin>`"
+msgstr "crwdns42774:0:obj:crwdne42774:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid "Element-wise `sine`."
+msgstr "crwdns42776:0crwdne42776:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid ":obj:`cos <megengine.functional.cos>`"
+msgstr "crwdns42770:0:obj:crwdne42770:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid "Element-wise `cosine`."
+msgstr "crwdns42772:0crwdne42772:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid ":obj:`tan <megengine.functional.tan>`"
+msgstr "crwdns42778:0:obj:crwdne42778:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid "Element-wise `tangent`."
+msgstr "crwdns42780:0crwdne42780:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid ":obj:`asin <megengine.functional.asin>`"
+msgstr "crwdns42786:0:obj:crwdne42786:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid "Element-wise `inverse sine`."
+msgstr "crwdns42788:0crwdne42788:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid ":obj:`acos <megengine.functional.acos>`"
+msgstr "crwdns42782:0:obj:crwdne42782:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid "Element-wise `inverse cosine`."
+msgstr "crwdns42784:0crwdne42784:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid ":obj:`atan <megengine.functional.atan>`"
+msgstr "crwdns42790:0:obj:crwdne42790:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid "Element-wise `inverse tangent`."
+msgstr "crwdns42792:0crwdne42792:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid ":obj:`atan2 <megengine.functional.atan2>`"
+msgstr "crwdns42794:0:obj:crwdne42794:0"
+
+#: ../../source/reference/functional.rst:117:<autosummary>:1
+msgid "Element-wise `2-argument arctangent`."
+msgstr "crwdns42796:0crwdne42796:0"
+
+#: ../../source/reference/functional.rst:121
+msgid "Hyperbolic functions"
+msgstr "crwdns61100:0crwdne61100:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid ":obj:`sinh <megengine.functional.sinh>`"
+msgstr "crwdns42802:0:obj:crwdne42802:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid "Element-wise `hyperbolic sine`."
+msgstr "crwdns42804:0crwdne42804:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid ":obj:`cosh <megengine.functional.cosh>`"
+msgstr "crwdns42798:0:obj:crwdne42798:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid "Element-wise `hyperbolic cosine`."
+msgstr "crwdns42800:0crwdne42800:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid ":obj:`tanh <megengine.functional.tanh>`"
+msgstr "crwdns42806:0:obj:crwdne42806:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid "Element-wise `hyperbolic tangent`."
+msgstr "crwdns42808:0crwdne42808:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid ":obj:`acosh <megengine.functional.acosh>`"
+msgstr "crwdns42810:0:obj:crwdne42810:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid "Element-wise `inverse hyperbolic cosine`."
+msgstr "crwdns42812:0crwdne42812:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid ":obj:`asinh <megengine.functional.asinh>`"
+msgstr "crwdns42814:0:obj:crwdne42814:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid "Element-wise `inverse hyperbolic sine`."
+msgstr "crwdns42816:0crwdne42816:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid ":obj:`atanh <megengine.functional.atanh>`"
+msgstr "crwdns42818:0:obj:crwdne42818:0"
+
+#: ../../source/reference/functional.rst:132:<autosummary>:1
+msgid "Element-wise `inverse hyperbolic tangent`."
+msgstr "crwdns42820:0crwdne42820:0"
+
+#: ../../source/reference/functional.rst:136
+msgid "Bit operations"
+msgstr "crwdns61102:0crwdne61102:0"
+
+#: ../../source/reference/functional.rst:143:<autosummary>:1
+msgid ":obj:`left_shift <megengine.functional.left_shift>`"
+msgstr "crwdns42824:0:obj:crwdne42824:0"
+
+#: ../../source/reference/functional.rst:143:<autosummary>:1
+msgid "Element-wise `bitwise binary: x << y`."
+msgstr "crwdns42826:0crwdne42826:0"
+
+#: ../../source/reference/functional.rst:143:<autosummary>:1
+msgid ":obj:`right_shift <megengine.functional.right_shift>`"
+msgstr "crwdns42828:0:obj:crwdne42828:0"
+
+#: ../../source/reference/functional.rst:143:<autosummary>:1
+msgid "Element-wise `bitwise binary: x >> y`."
+msgstr "crwdns42830:0crwdne42830:0"
+
+#: ../../source/reference/functional.rst:147
+msgid "Logic functions"
+msgstr "crwdns61104:0crwdne61104:0"
+
+#: ../../source/reference/functional.rst:156:<autosummary>:1
+msgid ":obj:`logical_and <megengine.functional.logical_and>`"
+msgstr "crwdns42834:0:obj:crwdne42834:0"
+
+#: ../../source/reference/functional.rst:156:<autosummary>:1
+msgid "Element-wise `logical and: x && y`."
+msgstr "crwdns42836:0crwdne42836:0"
+
+#: ../../source/reference/functional.rst:156:<autosummary>:1
+msgid ":obj:`logical_not <megengine.functional.logical_not>`"
+msgstr "crwdns42838:0:obj:crwdne42838:0"
+
+#: ../../source/reference/functional.rst:156:<autosummary>:1
+msgid "Element-wise `logical not: ~x`."
+msgstr "crwdns42840:0crwdne42840:0"
+
+#: ../../source/reference/functional.rst:156:<autosummary>:1
+msgid ":obj:`logical_or <megengine.functional.logical_or>`"
+msgstr "crwdns42842:0:obj:crwdne42842:0"
+
+#: ../../source/reference/functional.rst:156:<autosummary>:1
+msgid "Element-wise `logical or: x || y`."
+msgstr "crwdns42844:0crwdne42844:0"
+
+#: ../../source/reference/functional.rst:156:<autosummary>:1
+msgid ":obj:`logical_xor <megengine.functional.logical_xor>`"
+msgstr "crwdns42846:0:obj:crwdne42846:0"
+
+#: ../../source/reference/functional.rst:156:<autosummary>:1
+msgid "Element-wise `logical xor: x ^ y`."
+msgstr "crwdns42848:0crwdne42848:0"
+
+#: ../../source/reference/functional.rst:160
+msgid "Comparison functions"
+msgstr "crwdns63884:0crwdne63884:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid ":obj:`isnan <megengine.functional.isnan>`"
+msgstr "crwdns42946:0:obj:crwdne42946:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid "Returns a new tensor representing if each element is ``NaN`` or not."
+msgstr "crwdns42948:0crwdne42948:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid ":obj:`isinf <megengine.functional.isinf>`"
+msgstr "crwdns42950:0:obj:crwdne42950:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid "Returns a new tensor representing if each element is ``Inf`` or not."
+msgstr "crwdns42952:0crwdne42952:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid ":obj:`equal <megengine.functional.equal>`"
+msgstr "crwdns42852:0:obj:crwdne42852:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid "Element-wise `(x == y)`."
+msgstr "crwdns42854:0crwdne42854:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid ":obj:`not_equal <megengine.functional.not_equal>`"
+msgstr "crwdns42856:0:obj:crwdne42856:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid "Element-wise `(x != y)`."
+msgstr "crwdns42858:0crwdne42858:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid ":obj:`less <megengine.functional.less>`"
+msgstr "crwdns42860:0:obj:crwdne42860:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid "Element-wise `(x < y)`."
+msgstr "crwdns42862:0crwdne42862:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid ":obj:`less_equal <megengine.functional.less_equal>`"
+msgstr "crwdns42864:0:obj:crwdne42864:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid "Element-wise `(x <= y)`."
+msgstr "crwdns42866:0crwdne42866:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid ":obj:`greater <megengine.functional.greater>`"
+msgstr "crwdns42868:0:obj:crwdne42868:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid "Element-wise `(x > y)`."
+msgstr "crwdns42870:0crwdne42870:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid ":obj:`greater_equal <megengine.functional.greater_equal>`"
+msgstr "crwdns42872:0:obj:crwdne42872:0"
+
+#: ../../source/reference/functional.rst:173:<autosummary>:1
+msgid "Element-wise `(x >= y)`."
+msgstr "crwdns42874:0crwdne42874:0"
+
+#: ../../source/reference/functional.rst:177
+msgid "Statistical Functions"
+msgstr "crwdns63886:0crwdne63886:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid ":obj:`sum <megengine.functional.sum>`"
+msgstr "crwdns42880:0:obj:crwdne42880:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid "Returns the sum of input tensor along given axis."
+msgstr "crwdns42882:0crwdne42882:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid ":obj:`prod <megengine.functional.prod>`"
+msgstr "crwdns42884:0:obj:crwdne42884:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid "Returns the product of input tensor along given axis."
+msgstr "crwdns42886:0crwdne42886:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid ":obj:`mean <megengine.functional.mean>`"
+msgstr "crwdns42888:0:obj:crwdne42888:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid "Returns the mean value of input tensor along given axis."
+msgstr "crwdns42890:0crwdne42890:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid ":obj:`min <megengine.functional.min>`"
+msgstr "crwdns42892:0:obj:crwdne42892:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid "Returns the min value of input tensor along given axis."
+msgstr "crwdns42894:0crwdne42894:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid ":obj:`max <megengine.functional.max>`"
+msgstr "crwdns42896:0:obj:crwdne42896:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid "Returns the max value of the input tensor along given axis."
+msgstr "crwdns42898:0crwdne42898:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid ":obj:`var <megengine.functional.var>`"
+msgstr "crwdns42928:0:obj:crwdne42928:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid "Returns the variance value of input tensor along given axis."
+msgstr "crwdns42930:0crwdne42930:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid ":obj:`std <megengine.functional.std>`"
+msgstr "crwdns42932:0:obj:crwdne42932:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid "Returns the standard deviation of input tensor along given axis."
+msgstr "crwdns42934:0crwdne42934:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid ":obj:`norm <megengine.functional.norm>`"
+msgstr "crwdns42936:0:obj:crwdne42936:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid "Calculates ``p``-norm of input tensor along given axis."
+msgstr "crwdns42938:0crwdne42938:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid ":obj:`normalize <megengine.functional.normalize>`"
+msgstr "crwdns42940:0:obj:crwdne42940:0"
+
+#: ../../source/reference/functional.rst:191:<autosummary>:1
+msgid "Performs :math:`L_p` normalization of input tensor along given axis."
+msgstr "crwdns63888:0:math:crwdne63888:0"
+
+#: ../../source/reference/functional.rst:195
+msgid "Linear Algebra Functions"
+msgstr "crwdns63890:0crwdne63890:0"
+
+#: ../../source/reference/functional.rst:205:<autosummary>:1
+msgid ":obj:`transpose <megengine.functional.transpose>`"
+msgstr "crwdns42652:0:obj:crwdne42652:0"
+
+#: ../../source/reference/functional.rst:205:<autosummary>:1
+msgid "Swaps shapes and strides according to given pattern."
+msgstr "crwdns42654:0crwdne42654:0"
+
+#: ../../source/reference/functional.rst:205:<autosummary>:1
+msgid ":obj:`dot <megengine.functional.dot>`"
+msgstr "crwdns42910:0:obj:crwdne42910:0"
+
+#: ../../source/reference/functional.rst:205:<autosummary>:1
+msgid "Computes dot-product of two vectors ``inp1`` and ``inp2``."
+msgstr "crwdns42912:0crwdne42912:0"
+
+#: ../../source/reference/functional.rst:205:<autosummary>:1
+msgid ":obj:`matinv <megengine.functional.matinv>`"
+msgstr "crwdns42914:0:obj:crwdne42914:0"
+
+#: ../../source/reference/functional.rst:205:<autosummary>:1
+msgid "Computes the inverse of a batch of matrices; input must has shape [..., n, n]."
+msgstr "crwdns42916:0crwdne42916:0"
+
+#: ../../source/reference/functional.rst:205:<autosummary>:1
+msgid ":obj:`matmul <megengine.functional.matmul>`"
+msgstr "crwdns42918:0:obj:crwdne42918:0"
+
+#: ../../source/reference/functional.rst:205:<autosummary>:1
+msgid "Performs a matrix multiplication of the matrices ``inp1`` and ``inp2``."
+msgstr "crwdns42920:0crwdne42920:0"
+
+#: ../../source/reference/functional.rst:205:<autosummary>:1
+msgid ":obj:`svd <megengine.functional.svd>`"
+msgstr "crwdns42922:0:obj:crwdne42922:0"
+
+#: ../../source/reference/functional.rst:205:<autosummary>:1
+msgid "Computes the singular value decompositions of input matrix."
+msgstr "crwdns42924:0crwdne42924:0"
+
+#: ../../source/reference/functional.rst:209
+msgid "Searching Functions"
+msgstr "crwdns63892:0crwdne63892:0"
+
+#: ../../source/reference/functional.rst:217:<autosummary>:1
+msgid ":obj:`argmin <megengine.functional.argmin>`"
+msgstr "crwdns42900:0:obj:crwdne42900:0"
+
+#: ../../source/reference/functional.rst:217:<autosummary>:1
+msgid "Returns the indices of the minimum values along given axis."
+msgstr "crwdns42902:0crwdne42902:0"
+
+#: ../../source/reference/functional.rst:217:<autosummary>:1
+msgid ":obj:`argmax <megengine.functional.argmax>`"
+msgstr "crwdns42904:0:obj:crwdne42904:0"
+
+#: ../../source/reference/functional.rst:217:<autosummary>:1
+msgid "Returns the indices of the maximum values along given axis."
+msgstr "crwdns42906:0crwdne42906:0"
+
+#: ../../source/reference/functional.rst:217:<autosummary>:1
+msgid ":obj:`where <megengine.functional.where>`"
+msgstr "crwdns42644:0:obj:crwdne42644:0"
+
+#: ../../source/reference/functional.rst:217:<autosummary>:1
+msgid "Selects elements either from Tensor x or Tensor y, according to mask."
+msgstr "crwdns42646:0crwdne42646:0"
+
+#: ../../source/reference/functional.rst:221
+msgid "Sorting Functions"
+msgstr "crwdns63894:0crwdne63894:0"
+
+#: ../../source/reference/functional.rst:229:<autosummary>:1
 msgid ":obj:`topk <megengine.functional.topk>`"
 msgstr "crwdns42966:0:obj:crwdne42966:0"
 
-#: ../../source/reference/functional.rst:194:<autosummary>:1
+#: ../../source/reference/functional.rst:229:<autosummary>:1
 msgid "Selects the ``Top-K`` (by default) smallest elements of 2d matrix by row."
 msgstr "crwdns42968:0crwdne42968:0"
 
-#: ../../source/reference/functional.rst:199
-msgid "nn 子模块"
-msgstr "crwdns42970:0crwdne42970:0"
+#: ../../source/reference/functional.rst:229:<autosummary>:1
+msgid ":obj:`sort <megengine.functional.sort>`"
+msgstr "crwdns42958:0:obj:crwdne42958:0"
 
-#: ../../source/reference/functional.rst:205:<autosummary>:1
-msgid ":obj:`nn.nvof <megengine.functional.nn.nvof>`"
-msgstr "crwdns42972:0:obj:crwdne42972:0"
+#: ../../source/reference/functional.rst:229:<autosummary>:1
+msgid "Returns sorted tensor and the indices would sort the input tensor."
+msgstr "crwdns42960:0crwdne42960:0"
 
-#: ../../source/reference/functional.rst:205:<autosummary>:1
-msgid "Implements NVIDIA Optical Flow SDK."
-msgstr "crwdns42974:0crwdne42974:0"
+#: ../../source/reference/functional.rst:229:<autosummary>:1
+msgid ":obj:`argsort <megengine.functional.argsort>`"
+msgstr "crwdns42962:0:obj:crwdne42962:0"
 
-#: ../../source/reference/functional.rst:207
-msgid "卷积函数"
-msgstr "crwdns42976:0crwdne42976:0"
+#: ../../source/reference/functional.rst:229:<autosummary>:1
+msgid "Returns the indices that would sort the input tensor."
+msgstr "crwdns42964:0crwdne42964:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
-msgid ":obj:`conv1d <megengine.functional.conv1d>`"
-msgstr "crwdns42978:0:obj:crwdne42978:0"
+#: ../../source/reference/functional.rst:236
+msgid "Neural network operations"
+msgstr "crwdns61118:0crwdne61118:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
+#: ../../source/reference/functional.rst:241
+msgid "Convolution functions"
+msgstr "crwdns61120:0crwdne61120:0"
+
+#: ../../source/reference/functional.rst:254:<autosummary>:1
+msgid ":obj:`conv1d <megengine.functional.nn.conv1d>`"
+msgstr "crwdns61122:0:obj:crwdne61122:0"
+
+#: ../../source/reference/functional.rst:254:<autosummary>:1
 msgid "1D convolution operation."
 msgstr "crwdns42980:0crwdne42980:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
-msgid ":obj:`conv2d <megengine.functional.conv2d>`"
-msgstr "crwdns42982:0:obj:crwdne42982:0"
+#: ../../source/reference/functional.rst:254:<autosummary>:1
+msgid ":obj:`conv2d <megengine.functional.nn.conv2d>`"
+msgstr "crwdns61124:0:obj:crwdne61124:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
+#: ../../source/reference/functional.rst:254:<autosummary>:1
 msgid "2D convolution operation."
 msgstr "crwdns42984:0crwdne42984:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
-msgid ":obj:`conv3d <megengine.functional.conv3d>`"
-msgstr "crwdns42986:0:obj:crwdne42986:0"
+#: ../../source/reference/functional.rst:254:<autosummary>:1
+msgid ":obj:`conv3d <megengine.functional.nn.conv3d>`"
+msgstr "crwdns61126:0:obj:crwdne61126:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
+#: ../../source/reference/functional.rst:254:<autosummary>:1
 msgid "3D convolution operation."
 msgstr "crwdns42988:0crwdne42988:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
-msgid ":obj:`local_conv2d <megengine.functional.local_conv2d>`"
-msgstr "crwdns42990:0:obj:crwdne42990:0"
+#: ../../source/reference/functional.rst:254:<autosummary>:1
+msgid ":obj:`local_conv2d <megengine.functional.nn.local_conv2d>`"
+msgstr "crwdns61128:0:obj:crwdne61128:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
+#: ../../source/reference/functional.rst:254:<autosummary>:1
 msgid "Applies spatial 2D convolution over an groupped channeled image with untied kernels."
 msgstr "crwdns42992:0crwdne42992:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
-msgid ":obj:`conv_transpose2d <megengine.functional.conv_transpose2d>`"
-msgstr "crwdns42994:0:obj:crwdne42994:0"
+#: ../../source/reference/functional.rst:254:<autosummary>:1
+msgid ":obj:`conv_transpose2d <megengine.functional.nn.conv_transpose2d>`"
+msgstr "crwdns61130:0:obj:crwdne61130:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
+#: ../../source/reference/functional.rst:254:<autosummary>:1
 msgid "2D transposed convolution operation."
 msgstr "crwdns42996:0crwdne42996:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
-msgid ":obj:`deformable_conv2d <megengine.functional.deformable_conv2d>`"
-msgstr "crwdns42998:0:obj:crwdne42998:0"
+#: ../../source/reference/functional.rst:254:<autosummary>:1
+msgid ":obj:`conv_transpose3d <megengine.functional.nn.conv_transpose3d>`"
+msgstr "crwdns63896:0:obj:crwdne63896:0"
 
-#: ../../source/reference/functional.rst:218:<autosummary>:1
+#: ../../source/reference/functional.rst:254:<autosummary>:1
+msgid "3D transposed convolution operation."
+msgstr "crwdns63898:0crwdne63898:0"
+
+#: ../../source/reference/functional.rst:254:<autosummary>:1
+msgid ":obj:`deformable_conv2d <megengine.functional.nn.deformable_conv2d>`"
+msgstr "crwdns61132:0:obj:crwdne61132:0"
+
+#: ../../source/reference/functional.rst:254:<autosummary>:1
 msgid "Deformable Convolution."
 msgstr "crwdns43000:0crwdne43000:0"
 
-#: ../../source/reference/functional.rst:220
-msgid "池化函数"
-msgstr "crwdns43002:0crwdne43002:0"
+#: ../../source/reference/functional.rst:254:<autosummary>:1
+msgid ":obj:`sliding_window <megengine.functional.nn.sliding_window>`"
+msgstr "crwdns63900:0:obj:crwdne63900:0"
 
-#: ../../source/reference/functional.rst:230:<autosummary>:1
-msgid ":obj:`avg_pool2d <megengine.functional.avg_pool2d>`"
-msgstr "crwdns43004:0:obj:crwdne43004:0"
+#: ../../source/reference/functional.rst:254:<autosummary>:1
+msgid "Extracts sliding local blocks from a batched input tensor."
+msgstr "crwdns63902:0crwdne63902:0"
 
-#: ../../source/reference/functional.rst:230:<autosummary>:1
+#: ../../source/reference/functional.rst:258
+msgid "Pooling functions"
+msgstr "crwdns61134:0crwdne61134:0"
+
+#: ../../source/reference/functional.rst:268:<autosummary>:1
+msgid ":obj:`avg_pool2d <megengine.functional.nn.avg_pool2d>`"
+msgstr "crwdns61136:0:obj:crwdne61136:0"
+
+#: ../../source/reference/functional.rst:268:<autosummary>:1
 msgid "Applies 2D average pooling over an input tensor."
 msgstr "crwdns43006:0crwdne43006:0"
 
-#: ../../source/reference/functional.rst:230:<autosummary>:1
-msgid ":obj:`max_pool2d <megengine.functional.max_pool2d>`"
-msgstr "crwdns43008:0:obj:crwdne43008:0"
+#: ../../source/reference/functional.rst:268:<autosummary>:1
+msgid ":obj:`max_pool2d <megengine.functional.nn.max_pool2d>`"
+msgstr "crwdns61138:0:obj:crwdne61138:0"
 
-#: ../../source/reference/functional.rst:230:<autosummary>:1
+#: ../../source/reference/functional.rst:268:<autosummary>:1
 msgid "Applies a 2D max pooling over an input tensor."
 msgstr "crwdns43010:0crwdne43010:0"
 
-#: ../../source/reference/functional.rst:230:<autosummary>:1
-msgid ":obj:`adaptive_avg_pool2d <megengine.functional.adaptive_avg_pool2d>`"
-msgstr "crwdns43012:0:obj:crwdne43012:0"
+#: ../../source/reference/functional.rst:268:<autosummary>:1
+msgid ":obj:`adaptive_avg_pool2d <megengine.functional.nn.adaptive_avg_pool2d>`"
+msgstr "crwdns61140:0:obj:crwdne61140:0"
 
-#: ../../source/reference/functional.rst:230:<autosummary>:1
+#: ../../source/reference/functional.rst:268:<autosummary>:1
 msgid "Applies a 2D average adaptive pooling over an input."
 msgstr "crwdns43014:0crwdne43014:0"
 
-#: ../../source/reference/functional.rst:230:<autosummary>:1
-msgid ":obj:`adaptive_max_pool2d <megengine.functional.adaptive_max_pool2d>`"
-msgstr "crwdns43016:0:obj:crwdne43016:0"
+#: ../../source/reference/functional.rst:268:<autosummary>:1
+msgid ":obj:`adaptive_max_pool2d <megengine.functional.nn.adaptive_max_pool2d>`"
+msgstr "crwdns61142:0:obj:crwdne61142:0"
 
-#: ../../source/reference/functional.rst:230:<autosummary>:1
+#: ../../source/reference/functional.rst:268:<autosummary>:1
 msgid "Applies a 2D max adaptive pooling over an input."
 msgstr "crwdns43018:0crwdne43018:0"
 
-#: ../../source/reference/functional.rst:230:<autosummary>:1
-msgid ":obj:`deformable_psroi_pooling <megengine.functional.deformable_psroi_pooling>`"
-msgstr "crwdns43020:0:obj:crwdne43020:0"
+#: ../../source/reference/functional.rst:268:<autosummary>:1
+msgid ":obj:`deformable_psroi_pooling <megengine.functional.nn.deformable_psroi_pooling>`"
+msgstr "crwdns61144:0:obj:crwdne61144:0"
 
-#: ../../source/reference/functional.rst:230:<autosummary>:1
+#: ../../source/reference/functional.rst:268:<autosummary>:1
 msgid "Deformable PSROI(Position Sensitive Region of Interest) Pooling."
 msgstr "crwdns43022:0crwdne43022:0"
 
-#: ../../source/reference/functional.rst:232
-msgid "非线性激活函数"
-msgstr "crwdns43024:0crwdne43024:0"
+#: ../../source/reference/functional.rst:272
+msgid "Non-linear activation functions"
+msgstr "crwdns61146:0crwdne61146:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`sigmoid <megengine.functional.sigmoid>`"
-msgstr "crwdns43026:0:obj:crwdne43026:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`sigmoid <megengine.functional.nn.sigmoid>`"
+msgstr "crwdns61148:0:obj:crwdne61148:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Element-wise `1 / ( 1 + exp( -x ) )`."
 msgstr "crwdns43028:0crwdne43028:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`hsigmoid <megengine.functional.hsigmoid>`"
-msgstr "crwdns43030:0:obj:crwdne43030:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`hsigmoid <megengine.functional.nn.hsigmoid>`"
+msgstr "crwdns61150:0:obj:crwdne61150:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Element-wise `relu6(x + 3) / 6`."
 msgstr "crwdns43032:0crwdne43032:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`hswish <megengine.functional.hswish>`"
-msgstr "crwdns43034:0:obj:crwdne43034:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`hswish <megengine.functional.nn.hswish>`"
+msgstr "crwdns61152:0:obj:crwdne61152:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Element-wise `x * relu6(x + 3) / 6`."
 msgstr "crwdns43036:0crwdne43036:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`relu <megengine.functional.relu>`"
-msgstr "crwdns43038:0:obj:crwdne43038:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`relu <megengine.functional.nn.relu>`"
+msgstr "crwdns61154:0:obj:crwdne61154:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Element-wise `max(x, 0)`."
 msgstr "crwdns43040:0crwdne43040:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`relu6 <megengine.functional.relu6>`"
-msgstr "crwdns43042:0:obj:crwdne43042:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`relu6 <megengine.functional.nn.relu6>`"
+msgstr "crwdns61156:0:obj:crwdne61156:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Element-wise `min(max(x, 0), 6)`."
 msgstr "crwdns43044:0crwdne43044:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`prelu <megengine.functional.prelu>`"
-msgstr "crwdns43046:0:obj:crwdne43046:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`prelu <megengine.functional.nn.prelu>`"
+msgstr "crwdns61158:0:obj:crwdne61158:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Applies the element-wise PReLU function."
 msgstr "crwdns43048:0crwdne43048:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`leaky_relu <megengine.functional.leaky_relu>`"
-msgstr "crwdns43050:0:obj:crwdne43050:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`leaky_relu <megengine.functional.nn.leaky_relu>`"
+msgstr "crwdns61160:0:obj:crwdne61160:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Applies the element-wise leaky_relu function"
 msgstr "crwdns43052:0crwdne43052:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`softplus <megengine.functional.softplus>`"
-msgstr "crwdns43054:0:obj:crwdne43054:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`softplus <megengine.functional.nn.softplus>`"
+msgstr "crwdns61162:0:obj:crwdne61162:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Applies the element-wise function:"
 msgstr "crwdns43056:0crwdne43056:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`softmax <megengine.functional.softmax>`"
-msgstr "crwdns43058:0:obj:crwdne43058:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`softmax <megengine.functional.nn.softmax>`"
+msgstr "crwdns61164:0:obj:crwdne61164:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Applies a :math:`\\text{softmax}(x)` function."
-msgstr "crwdns43060:0:math:crwdnd43060:0{softmax}crwdne43060:0"
+msgstr "crwdns63904:0:math:crwdnd63904:0{softmax}crwdne63904:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`logsoftmax <megengine.functional.logsoftmax>`"
-msgstr "crwdns43062:0:obj:crwdne43062:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`logsoftmax <megengine.functional.nn.logsoftmax>`"
+msgstr "crwdns61168:0:obj:crwdne61168:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Applies the :math:`\\log(\\text{softmax}(x))` function to an n-dimensional input tensor."
-msgstr "crwdns43064:0:math:crwdnd43064:0{softmax}crwdne43064:0"
+msgstr "crwdns63906:0:math:crwdnd63906:0{softmax}crwdne63906:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`logsigmoid <megengine.functional.logsigmoid>`"
-msgstr "crwdns43066:0:obj:crwdne43066:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`logsigmoid <megengine.functional.nn.logsigmoid>`"
+msgstr "crwdns61172:0:obj:crwdne61172:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
-msgid ":obj:`logsumexp <megengine.functional.logsumexp>`"
-msgstr "crwdns43068:0:obj:crwdne43068:0"
+#: ../../source/reference/functional.rst:289:<autosummary>:1
+msgid ":obj:`logsumexp <megengine.functional.nn.logsumexp>`"
+msgstr "crwdns61174:0:obj:crwdne61174:0"
 
-#: ../../source/reference/functional.rst:250:<autosummary>:1
+#: ../../source/reference/functional.rst:289:<autosummary>:1
 msgid "Calculates the logarithm of the inputs' exponential sum along the given :attr:`axis`."
 msgstr "crwdns43070:0:attr:crwdne43070:0"
 
-#: ../../source/reference/functional.rst:252
-msgid "归一化函数"
-msgstr "crwdns43072:0crwdne43072:0"
+#: ../../source/reference/functional.rst:293
+msgid "Normalization functions"
+msgstr "crwdns61176:0crwdne61176:0"
 
-#: ../../source/reference/functional.rst:259:<autosummary>:1
-msgid ":obj:`batch_norm <megengine.functional.batch_norm>`"
-msgstr "crwdns43074:0:obj:crwdne43074:0"
+#: ../../source/reference/functional.rst:300:<autosummary>:1
+msgid ":obj:`batch_norm <megengine.functional.nn.batch_norm>`"
+msgstr "crwdns61178:0:obj:crwdne61178:0"
 
-#: ../../source/reference/functional.rst:259:<autosummary>:1
+#: ../../source/reference/functional.rst:300:<autosummary>:1
 msgid "Applies batch normalization to the input."
 msgstr "crwdns43076:0crwdne43076:0"
 
-#: ../../source/reference/functional.rst:259:<autosummary>:1
-msgid ":obj:`sync_batch_norm <megengine.functional.sync_batch_norm>`"
-msgstr "crwdns43078:0:obj:crwdne43078:0"
+#: ../../source/reference/functional.rst:300:<autosummary>:1
+msgid ":obj:`sync_batch_norm <megengine.functional.nn.sync_batch_norm>`"
+msgstr "crwdns61180:0:obj:crwdne61180:0"
 
-#: ../../source/reference/functional.rst:259:<autosummary>:1
+#: ../../source/reference/functional.rst:300:<autosummary>:1
 msgid "Applies synchronized batch normalization to the input."
 msgstr "crwdns43080:0crwdne43080:0"
 
-#: ../../source/reference/functional.rst:261
-msgid "线性函数"
-msgstr "crwdns43082:0crwdne43082:0"
+#: ../../source/reference/functional.rst:304
+msgid "Linear functions"
+msgstr "crwdns61182:0crwdne61182:0"
 
-#: ../../source/reference/functional.rst:267:<autosummary>:1
-msgid ":obj:`linear <megengine.functional.linear>`"
-msgstr "crwdns43084:0:obj:crwdne43084:0"
+#: ../../source/reference/functional.rst:310:<autosummary>:1
+msgid ":obj:`linear <megengine.functional.nn.linear>`"
+msgstr "crwdns61184:0:obj:crwdne61184:0"
 
-#: ../../source/reference/functional.rst:267:<autosummary>:1
+#: ../../source/reference/functional.rst:310:<autosummary>:1
 msgid "Applies a linear transformation to the input tensor."
 msgstr "crwdns43086:0crwdne43086:0"
 
-#: ../../source/reference/functional.rst:269
-msgid "随机失活函数"
-msgstr "crwdns43088:0crwdne43088:0"
+#: ../../source/reference/functional.rst:314
+msgid "Dropout functions"
+msgstr "crwdns61186:0crwdne61186:0"
 
-#: ../../source/reference/functional.rst:275:<autosummary>:1
-msgid ":obj:`dropout <megengine.functional.dropout>`"
-msgstr "crwdns43090:0:obj:crwdne43090:0"
+#: ../../source/reference/functional.rst:320:<autosummary>:1
+msgid ":obj:`dropout <megengine.functional.nn.dropout>`"
+msgstr "crwdns61188:0:obj:crwdne61188:0"
 
-#: ../../source/reference/functional.rst:275:<autosummary>:1
+#: ../../source/reference/functional.rst:320:<autosummary>:1
 msgid "Returns a new tensor where each of the elements are randomly set to zero with probability P = ``drop_prob``."
 msgstr "crwdns43092:0crwdne43092:0"
 
-#: ../../source/reference/functional.rst:277
-msgid "稀疏函数"
-msgstr "crwdns43094:0crwdne43094:0"
+#: ../../source/reference/functional.rst:324
+msgid "Sparse functions"
+msgstr "crwdns61190:0crwdne61190:0"
 
-#: ../../source/reference/functional.rst:285:<autosummary>:1
-msgid ":obj:`one_hot <megengine.functional.one_hot>`"
-msgstr "crwdns43096:0:obj:crwdne43096:0"
+#: ../../source/reference/functional.rst:332:<autosummary>:1
+msgid ":obj:`one_hot <megengine.functional.nn.one_hot>`"
+msgstr "crwdns61192:0:obj:crwdne61192:0"
 
-#: ../../source/reference/functional.rst:285:<autosummary>:1
+#: ../../source/reference/functional.rst:332:<autosummary>:1
 msgid "Performs one-hot encoding for the input tensor."
 msgstr "crwdns43098:0crwdne43098:0"
 
-#: ../../source/reference/functional.rst:285:<autosummary>:1
-msgid ":obj:`indexing_one_hot <megengine.functional.indexing_one_hot>`"
-msgstr "crwdns43100:0:obj:crwdne43100:0"
+#: ../../source/reference/functional.rst:332:<autosummary>:1
+msgid ":obj:`indexing_one_hot <megengine.functional.nn.indexing_one_hot>`"
+msgstr "crwdns61194:0:obj:crwdne61194:0"
 
-#: ../../source/reference/functional.rst:285:<autosummary>:1
+#: ../../source/reference/functional.rst:332:<autosummary>:1
 msgid "One-hot indexing for some axes."
 msgstr "crwdns43102:0crwdne43102:0"
 
-#: ../../source/reference/functional.rst:285:<autosummary>:1
-msgid ":obj:`embedding <megengine.functional.embedding>`"
-msgstr "crwdns43104:0:obj:crwdne43104:0"
+#: ../../source/reference/functional.rst:332:<autosummary>:1
+msgid ":obj:`embedding <megengine.functional.nn.embedding>`"
+msgstr "crwdns61196:0:obj:crwdne61196:0"
 
-#: ../../source/reference/functional.rst:285:<autosummary>:1
+#: ../../source/reference/functional.rst:332:<autosummary>:1
 msgid "Applies lookup table for embedding."
 msgstr "crwdns43106:0crwdne43106:0"
 
-#: ../../source/reference/functional.rst:290
-msgid "loss 子模块"
-msgstr "crwdns43108:0crwdne43108:0"
+#: ../../source/reference/functional.rst:338
+msgid "Metric functions"
+msgstr "crwdns61198:0crwdne61198:0"
 
-#: ../../source/reference/functional.rst:300:<autosummary>:1
-msgid ":obj:`l1_loss <megengine.functional.loss.l1_loss>`"
-msgstr "crwdns43110:0:obj:crwdne43110:0"
-
-#: ../../source/reference/functional.rst:300:<autosummary>:1
-msgid "Calculates the mean absolute error (MAE) between each element in the pred :math:`x` and label :math:`y`."
-msgstr "crwdns43112:0:math:crwdnd43112:0:math:crwdne43112:0"
-
-#: ../../source/reference/functional.rst:300:<autosummary>:1
-msgid ":obj:`square_loss <megengine.functional.loss.square_loss>`"
-msgstr "crwdns43114:0:obj:crwdne43114:0"
-
-#: ../../source/reference/functional.rst:300:<autosummary>:1
-msgid "Calculates the mean squared error (squared L2 norm) between each element in the pred :math:`x` and label :math:`y`."
-msgstr "crwdns43116:0:math:crwdnd43116:0:math:crwdne43116:0"
-
-#: ../../source/reference/functional.rst:300:<autosummary>:1
-msgid ":obj:`hinge_loss <megengine.functional.loss.hinge_loss>`"
-msgstr "crwdns43118:0:obj:crwdne43118:0"
-
-#: ../../source/reference/functional.rst:300:<autosummary>:1
-msgid "Caculates the hinge loss which is often used in SVM."
-msgstr "crwdns43120:0crwdne43120:0"
-
-#: ../../source/reference/functional.rst:300:<autosummary>:1
-msgid ":obj:`binary_cross_entropy <megengine.functional.loss.binary_cross_entropy>`"
-msgstr "crwdns43122:0:obj:crwdne43122:0"
-
-#: ../../source/reference/functional.rst:300:<autosummary>:1
-msgid "Computes the binary cross entropy loss (using logits by default)."
-msgstr "crwdns43124:0crwdne43124:0"
-
-#: ../../source/reference/functional.rst:300:<autosummary>:1
-msgid ":obj:`cross_entropy <megengine.functional.loss.cross_entropy>`"
-msgstr "crwdns43126:0:obj:crwdne43126:0"
-
-#: ../../source/reference/functional.rst:300:<autosummary>:1
-msgid "Computes the multi-class cross entropy loss (using logits by default)."
-msgstr "crwdns43128:0crwdne43128:0"
-
-#: ../../source/reference/functional.rst:305
-msgid "metric 子模块"
-msgstr "crwdns43130:0crwdne43130:0"
-
-#: ../../source/reference/functional.rst:311:<autosummary>:1
+#: ../../source/reference/functional.rst:344:<autosummary>:1
 msgid ":obj:`topk_accuracy <megengine.functional.metric.topk_accuracy>`"
 msgstr "crwdns43132:0:obj:crwdne43132:0"
 
-#: ../../source/reference/functional.rst:311:<autosummary>:1
+#: ../../source/reference/functional.rst:344:<autosummary>:1
 msgid "Calculates the classification accuracy given predicted logits and ground-truth labels."
 msgstr "crwdns43134:0crwdne43134:0"
 
-#: ../../source/reference/functional.rst:316
-msgid "distributed 子模块"
-msgstr "crwdns43136:0crwdne43136:0"
+#: ../../source/reference/functional.rst:350
+msgid "Loss functions"
+msgstr "crwdns61200:0crwdne61200:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`all_reduce_max <megengine.functional.distributed.all_reduce_max>`"
-msgstr "crwdns43138:0:obj:crwdne43138:0"
+#: ../../source/reference/functional.rst:360:<autosummary>:1
+msgid ":obj:`l1_loss <megengine.functional.loss.l1_loss>`"
+msgstr "crwdns43110:0:obj:crwdne43110:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Create all_reduce_max operator for collective communication."
-msgstr "crwdns43140:0crwdne43140:0"
+#: ../../source/reference/functional.rst:360:<autosummary>:1
+msgid "Calculates the mean absolute error (MAE) between each element in the pred :math:`x` and label :math:`y`."
+msgstr "crwdns63908:0:math:crwdnd63908:0:math:crwdne63908:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`all_reduce_min <megengine.functional.distributed.all_reduce_min>`"
-msgstr "crwdns43142:0:obj:crwdne43142:0"
+#: ../../source/reference/functional.rst:360:<autosummary>:1
+msgid ":obj:`square_loss <megengine.functional.loss.square_loss>`"
+msgstr "crwdns43114:0:obj:crwdne43114:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Create all_reduce_min operator for collective communication."
-msgstr "crwdns43144:0crwdne43144:0"
+#: ../../source/reference/functional.rst:360:<autosummary>:1
+msgid "Calculates the mean squared error (squared L2 norm) between each element in the pred :math:`x` and label :math:`y`."
+msgstr "crwdns63910:0:math:crwdnd63910:0:math:crwdne63910:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`all_reduce_sum <megengine.functional.distributed.all_reduce_sum>`"
-msgstr "crwdns43146:0:obj:crwdne43146:0"
+#: ../../source/reference/functional.rst:360:<autosummary>:1
+msgid ":obj:`hinge_loss <megengine.functional.loss.hinge_loss>`"
+msgstr "crwdns43118:0:obj:crwdne43118:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Create all_reduce_sum operator for collective communication."
-msgstr "crwdns43148:0crwdne43148:0"
+#: ../../source/reference/functional.rst:360:<autosummary>:1
+msgid "Caculates the hinge loss which is often used in SVM."
+msgstr "crwdns43120:0crwdne43120:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`broadcast <megengine.functional.distributed.broadcast>`"
-msgstr "crwdns43150:0:obj:crwdne43150:0"
+#: ../../source/reference/functional.rst:360:<autosummary>:1
+msgid ":obj:`binary_cross_entropy <megengine.functional.loss.binary_cross_entropy>`"
+msgstr "crwdns43122:0:obj:crwdne43122:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Create broadcast operator for collective communication."
-msgstr "crwdns43152:0crwdne43152:0"
+#: ../../source/reference/functional.rst:360:<autosummary>:1
+msgid "Computes the binary cross entropy loss (using logits by default)."
+msgstr "crwdns43124:0crwdne43124:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`remote_send <megengine.functional.distributed.remote_send>`"
-msgstr "crwdns43154:0:obj:crwdne43154:0"
+#: ../../source/reference/functional.rst:360:<autosummary>:1
+msgid ":obj:`cross_entropy <megengine.functional.loss.cross_entropy>`"
+msgstr "crwdns43126:0:obj:crwdne43126:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Send a Tensor to a remote process."
-msgstr "crwdns43156:0crwdne43156:0"
+#: ../../source/reference/functional.rst:360:<autosummary>:1
+msgid "Computes the multi-class cross entropy loss (using logits by default)."
+msgstr "crwdns43128:0crwdne43128:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`remote_recv <megengine.functional.distributed.remote_recv>`"
-msgstr "crwdns43158:0:obj:crwdne43158:0"
+#: ../../source/reference/functional.rst:366
+msgid "Vision functions"
+msgstr "crwdns61206:0crwdne61206:0"
 
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Receive a Tensor from a remote process."
-msgstr "crwdns43160:0crwdne43160:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`all_gather <megengine.functional.distributed.all_gather>`"
-msgstr "crwdns43162:0:obj:crwdne43162:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Create all_gather operator for collective communication."
-msgstr "crwdns43164:0crwdne43164:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`all_to_all <megengine.functional.distributed.all_to_all>`"
-msgstr "crwdns43166:0:obj:crwdne43166:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Create all_to_all operator for collective communication."
-msgstr "crwdns43168:0crwdne43168:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`reduce_sum <megengine.functional.distributed.reduce_sum>`"
-msgstr "crwdns43170:0:obj:crwdne43170:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Create reduce_sum operator for collective communication."
-msgstr "crwdns43172:0crwdne43172:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`gather <megengine.functional.distributed.gather>`"
-msgstr "crwdns43174:0:obj:crwdne43174:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Create gather operator for collective communication."
-msgstr "crwdns43176:0crwdne43176:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`scatter <megengine.functional.distributed.scatter>`"
-msgstr "crwdns43178:0:obj:crwdne43178:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Create scatter operator for collective communication."
-msgstr "crwdns43180:0crwdne43180:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid ":obj:`reduce_scatter_sum <megengine.functional.distributed.reduce_scatter_sum>`"
-msgstr "crwdns43182:0:obj:crwdne43182:0"
-
-#: ../../source/reference/functional.rst:333:<autosummary>:1
-msgid "Create reduce_scatter_sum operator for collective communication."
-msgstr "crwdns43184:0crwdne43184:0"
-
-#: ../../source/reference/functional.rst:338
-msgid "vision 模块"
-msgstr "crwdns43186:0crwdne43186:0"
-
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid ":obj:`cvt_color <megengine.functional.vision.cvt_color>`"
 msgstr "crwdns47582:0:obj:crwdne47582:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid "Convert images from one format to another"
 msgstr "crwdns47584:0crwdne47584:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid ":obj:`interpolate <megengine.functional.vision.interpolate>`"
 msgstr "crwdns43188:0:obj:crwdne43188:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid "Down/up samples the input tensor to either the given size or with the given scale_factor."
 msgstr "crwdns43190:0crwdne43190:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid ":obj:`remap <megengine.functional.vision.remap>`"
 msgstr "crwdns43192:0:obj:crwdne43192:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid "Applies remap transformation to batched 2D images."
 msgstr "crwdns43194:0crwdne43194:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid ":obj:`warp_affine <megengine.functional.vision.warp_affine>`"
 msgstr "crwdns43196:0:obj:crwdne43196:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid "Batched affine transform on 2D images."
 msgstr "crwdns43198:0crwdne43198:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid ":obj:`warp_perspective <megengine.functional.vision.warp_perspective>`"
 msgstr "crwdns43200:0:obj:crwdne43200:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid "Applies perspective transformation to batched 2D images."
 msgstr "crwdns43202:0crwdne43202:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid ":obj:`roi_pooling <megengine.functional.vision.roi_pooling>`"
 msgstr "crwdns43204:0:obj:crwdne43204:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid "Applies roi pooling on input feature."
 msgstr "crwdns43206:0crwdne43206:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid ":obj:`roi_align <megengine.functional.vision.roi_align>`"
 msgstr "crwdns43208:0:obj:crwdne43208:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid "Applies roi align on input feature."
 msgstr "crwdns43210:0crwdne43210:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid ":obj:`nms <megengine.functional.vision.nms>`"
 msgstr "crwdns43212:0:obj:crwdne43212:0"
 
-#: ../../source/reference/functional.rst:352:<autosummary>:1
+#: ../../source/reference/functional.rst:381:<autosummary>:1
 msgid "Performs non-maximum suppression (NMS) on the boxes according to their intersection-over-union(IoU)."
 msgstr "crwdns43214:0crwdne43214:0"
+
+#: ../../source/reference/functional.rst:381:<autosummary>:1
+msgid ":obj:`correlation <megengine.functional.vision.correlation>`"
+msgstr "crwdns63912:0:obj:crwdne63912:0"
+
+#: ../../source/reference/functional.rst:381:<autosummary>:1
+msgid "Applies correlation to inputs."
+msgstr "crwdns63914:0crwdne63914:0"
+
+#: ../../source/reference/functional.rst:381:<autosummary>:1
+msgid ":obj:`nvof <megengine.functional.vision.nvof>`"
+msgstr "crwdns61208:0:obj:crwdne61208:0"
+
+#: ../../source/reference/functional.rst:381:<autosummary>:1
+msgid "Implements NVIDIA Optical Flow SDK."
+msgstr "crwdns42974:0crwdne42974:0"
+
+#: ../../source/reference/functional.rst:388
+msgid "Distributed functions"
+msgstr "crwdns61210:0crwdne61210:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`all_reduce_max <megengine.functional.distributed.all_reduce_max>`"
+msgstr "crwdns43138:0:obj:crwdne43138:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Create all_reduce_max operator for collective communication."
+msgstr "crwdns43140:0crwdne43140:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`all_reduce_min <megengine.functional.distributed.all_reduce_min>`"
+msgstr "crwdns43142:0:obj:crwdne43142:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Create all_reduce_min operator for collective communication."
+msgstr "crwdns43144:0crwdne43144:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`all_reduce_sum <megengine.functional.distributed.all_reduce_sum>`"
+msgstr "crwdns43146:0:obj:crwdne43146:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Create all_reduce_sum operator for collective communication."
+msgstr "crwdns43148:0crwdne43148:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`broadcast <megengine.functional.distributed.broadcast>`"
+msgstr "crwdns43150:0:obj:crwdne43150:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Create broadcast operator for collective communication."
+msgstr "crwdns43152:0crwdne43152:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`remote_send <megengine.functional.distributed.remote_send>`"
+msgstr "crwdns43154:0:obj:crwdne43154:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Send a Tensor to a remote process."
+msgstr "crwdns43156:0crwdne43156:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`remote_recv <megengine.functional.distributed.remote_recv>`"
+msgstr "crwdns43158:0:obj:crwdne43158:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Receive a Tensor from a remote process."
+msgstr "crwdns43160:0crwdne43160:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`all_gather <megengine.functional.distributed.all_gather>`"
+msgstr "crwdns43162:0:obj:crwdne43162:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Create all_gather operator for collective communication."
+msgstr "crwdns43164:0crwdne43164:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`all_to_all <megengine.functional.distributed.all_to_all>`"
+msgstr "crwdns43166:0:obj:crwdne43166:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Create all_to_all operator for collective communication."
+msgstr "crwdns43168:0crwdne43168:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`reduce_sum <megengine.functional.distributed.reduce_sum>`"
+msgstr "crwdns43170:0:obj:crwdne43170:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Create reduce_sum operator for collective communication."
+msgstr "crwdns43172:0crwdne43172:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`gather <megengine.functional.distributed.gather>`"
+msgstr "crwdns43174:0:obj:crwdne43174:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Create gather operator for collective communication."
+msgstr "crwdns43176:0crwdne43176:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`scatter <megengine.functional.distributed.scatter>`"
+msgstr "crwdns43178:0:obj:crwdne43178:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Create scatter operator for collective communication."
+msgstr "crwdns43180:0crwdne43180:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid ":obj:`reduce_scatter_sum <megengine.functional.distributed.reduce_scatter_sum>`"
+msgstr "crwdns43182:0:obj:crwdne43182:0"
+
+#: ../../source/reference/functional.rst:405:<autosummary>:1
+msgid "Create reduce_scatter_sum operator for collective communication."
+msgstr "crwdns43184:0crwdne43184:0"
+
+#: ../../source/reference/functional.rst:409
+msgid "Debug Setting"
+msgstr "crwdns63916:0crwdne63916:0"
+
+#: ../../source/reference/functional.rst:417:<autosummary>:1
+msgid ":obj:`get_execution_strategy <megengine.functional.debug_param.get_execution_strategy>`"
+msgstr "crwdns63918:0:obj:crwdne63918:0"
+
+#: ../../source/reference/functional.rst:417:<autosummary>:1
+msgid "Returns the execution strategy of :class:`~.Conv2d` and :func:'~.matmul'"
+msgstr "crwdns63920:0:class:crwdnd63920:0:func:crwdne63920:0"
+
+#: ../../source/reference/functional.rst:417:<autosummary>:1
+msgid ":obj:`set_execution_strategy <megengine.functional.debug_param.set_execution_strategy>`"
+msgstr "crwdns63922:0:obj:crwdne63922:0"
+
+#: ../../source/reference/functional.rst:417:<autosummary>:1
+msgid "Sets the execution strategy of :class:`~.Conv2d` and :func:'~.matmul'"
+msgstr "crwdns63924:0:class:crwdnd63924:0:func:crwdne63924:0"
+
+#~ msgid "tensor 子模块"
+#~ msgstr "tensor 子模块"
+
+#~ msgid "elemwise 子模块"
+#~ msgstr "elemwise 子模块"
+
+#~ msgid "基本运算"
+#~ msgstr "基本运算"
+
+#~ msgid "math 子模块"
+#~ msgstr "math 子模块"
+
+#~ msgid "条件计算"
+#~ msgstr "条件计算"
+
+#~ msgid "nn 子模块"
+#~ msgstr "nn 子模块"
+
+#~ msgid "loss 子模块"
+#~ msgstr "loss 子模块"
+
+#~ msgid "metric 子模块"
+#~ msgstr "metric 子模块"
+
+#~ msgid "distributed 子模块"
+#~ msgstr "distributed 子模块"
+
+#~ msgid "vision 模块"
+#~ msgstr "vision 模块"
+
+#~ msgid "函数式（Functional）"
+#~ msgstr "函数式（Functional）"
+
+#~ msgid "基础算子"
+#~ msgstr ""
+
+#~ msgid "创建张量"
+#~ msgstr "创建张量"
+
+#~ msgid "数值范围"
+#~ msgstr ""
+
+#~ msgid "处理张量"
+#~ msgstr "处理张量"
+
+#~ msgid "改变张量形状"
+#~ msgstr ""
+
+#~ msgid "转置操作"
+#~ msgstr ""
+
+#~ msgid "改变张量维度"
+#~ msgstr ""
+
+#~ msgid "拼接张量"
+#~ msgstr ""
+
+#~ msgid "切割张量"
+#~ msgstr ""
+
+#~ msgid "存取张量"
+#~ msgstr ""
+
+#~ msgid "重复张量"
+#~ msgstr ""
+
+#~ msgid "算术运算"
+#~ msgstr ""
+
+#~ msgid "舍入运算"
+#~ msgstr ""
+
+#~ msgid "指数与对数运算"
+#~ msgstr ""
+
+#~ msgid "三角运算"
+#~ msgstr "三角运算"
+
+#~ msgid "双曲函数"
+#~ msgstr ""
+
+#~ msgid "位运算"
+#~ msgstr "位运算"
+
+#~ msgid "逻辑运算"
+#~ msgstr "逻辑运算"
+
+#~ msgid "比较运算"
+#~ msgstr "比较运算"
+
+#~ msgid "归约计算"
+#~ msgstr "归约计算"
+
+#~ msgid "线性代数"
+#~ msgstr "线性代数"
+
+#~ msgid "概率统计"
+#~ msgstr "概率统计"
+
+#~ msgid "排序与搜索"
+#~ msgstr ""
+
+#~ msgid "杂项"
+#~ msgstr ""
+
+#~ msgid "神经网络算子"
+#~ msgstr ""
+
+#~ msgid "卷积函数"
+#~ msgstr "卷积函数"
+
+#~ msgid "池化函数"
+#~ msgstr "池化函数"
+
+#~ msgid "非线性激活函数"
+#~ msgstr "非线性激活函数"
+
+#~ msgid "归一化函数"
+#~ msgstr "归一化函数"
+
+#~ msgid "线性函数"
+#~ msgstr "线性函数"
+
+#~ msgid "随机失活函数"
+#~ msgstr "随机失活函数"
+
+#~ msgid "稀疏函数"
+#~ msgstr "稀疏函数"
+
+#~ msgid "损失函数"
+#~ msgstr "随机失活函数"
+
+#~ msgid ""
+#~ "Calculates the mean absolute error (MAE)"
+#~ " between each element in the pred "
+#~ ":math:`x` and label :math:`y`."
+#~ msgstr "计算预测值 :math:`x` 和标签值 :math:`y` 的每个元素之间的平均绝对误差(MAE)。"
+
+#~ msgid "评估指标"
+#~ msgstr ""
+
+#~ msgid "计算机视觉"
+#~ msgstr ""
+
+#~ msgid "分布式算子"
+#~ msgstr ""
+
+#~ msgid "General Operations"
+#~ msgstr ""
+
+#~ msgid "Tensor creation"
+#~ msgstr ""
+
+#~ msgid "Tensor manipulation"
+#~ msgstr ""
+
+#~ msgid "Changing tensor shape"
+#~ msgstr ""
+
+#~ msgid "Transpose-like"
+#~ msgstr ""
+
+#~ msgid "Changing number of dimensions"
+#~ msgstr ""
+
+#~ msgid "Joining, Splitting, Tiling and others"
+#~ msgstr ""
+
+#~ msgid "Rounding"
+#~ msgstr ""
+
+#~ msgid "Exponents and logarithms"
+#~ msgstr ""
+
+#~ msgid "Comparison"
+#~ msgstr ""
+
+#~ msgid "Sums, products and others"
+#~ msgstr ""
+
+#~ msgid "Matrix operations"
+#~ msgstr ""
+
+#~ msgid "Statistics"
+#~ msgstr ""
+
+#~ msgid "Performs :math:`L_p` normalization of input tensor along"
+#~ msgstr ""
+
+#~ msgid "Sorting and searching"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Applies a :math:`   ext{softmax}(x)` function."
+#~ " :math:`      ext{softmax}(x)` is defined "
+#~ "as:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Applies the :math:`\\log(    ext{softmax}(x))` "
+#~ "function to an n-dimensional"
+#~ msgstr ""
+
+#~ msgid "Calculates the mean absolute error (MAE) between"
+#~ msgstr ""
+
+#~ msgid "Calculates the mean squared error (squared L2 norm) between"
+#~ msgstr ""
 
