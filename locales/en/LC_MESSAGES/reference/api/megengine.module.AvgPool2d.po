@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-14 14:18+0800\n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
 "PO-Revision-Date: 2021-04-20 08:52+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
@@ -30,52 +30,40 @@ msgid ""
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d:7 of
-msgid "out(N_i, C_j, h, w)  ="
+msgid ""
+"out(N_i, C_j, h, w)  = \\frac{1}{kH * kW} \\sum_{m=0}^{kH-1} "
+"\\sum_{n=0}^{kW-1}\n"
+"                       input(N_i, C_j, stride[0] \\times h + m, stride[1]"
+" \\times w + n)"
 msgstr ""
 
-#: megengine.module.pooling.AvgPool2d:40 of
-msgid "rac{1}{kH * kW} \\sum_{m=0}^{kH-1} \\sum_{n=0}^{kW-1}"
-msgstr ""
-
-#: megengine.module.pooling.AvgPool2d:11 of
-msgid "input(N_i, C_j, stride[0]        imes h + m, stride[1]   imes w + n)"
-msgstr ""
-
-#: megengine.module.pooling.AvgPool2d:13 of
+#: megengine.module.pooling.AvgPool2d:12 of
 msgid ""
 "If :attr:`padding` is non-zero, then the input is implicitly zero-padded "
 "on both sides for :attr:`padding` number of points."
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d of
-msgid "param kernel_size"
+msgid "参数"
 msgstr ""
 
-#: megengine.module.pooling.AvgPool2d:16 of
+#: megengine.module.pooling.AvgPool2d:15 of
 msgid "the size of the window."
 msgstr ""
 
-#: megengine.module.pooling.AvgPool2d of
-msgid "param stride"
-msgstr ""
-
-#: megengine.module.pooling.AvgPool2d:17 of
+#: megengine.module.pooling.AvgPool2d:16 of
 msgid "the stride of the window. Default value is kernel_size。"
 msgstr ""
 
-#: megengine.module.pooling.AvgPool2d of
-msgid "param padding"
-msgstr ""
-
-#: megengine.module.pooling.AvgPool2d:18 of
+#: megengine.module.pooling.AvgPool2d:17 of
 msgid "implicit zero padding to be added on both sides."
 msgstr ""
 
-#: megengine.module.pooling.AvgPool2d:20 of
+#: megengine.module.pooling.AvgPool2d:19 of
 msgid "Examples:"
 msgstr ""
 
-#: megengine.module.pooling.AvgPool2d:33 of
+#: megengine.module.pooling.AvgPool2d:32 of
 msgid "Outputs:"
 msgstr ""
 
@@ -299,5 +287,23 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "out(N_i, C_j, h, w)  ="
+#~ msgstr ""
+
+#~ msgid "rac{1}{kH * kW} \\sum_{m=0}^{kH-1} \\sum_{n=0}^{kW-1}"
+#~ msgstr ""
+
+#~ msgid "input(N_i, C_j, stride[0]        imes h + m, stride[1]   imes w + n)"
+#~ msgstr ""
+
+#~ msgid "param kernel_size"
+#~ msgstr ""
+
+#~ msgid "param stride"
+#~ msgstr ""
+
+#~ msgid "param padding"
 #~ msgstr ""
 
