@@ -1,28 +1,29 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-05-14 08:00+0000\n"
+"PO-Revision-Date: 2021-06-03 10:19\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/distributed-training.po\n"
+"X-Crowdin-File-ID: 2846\n"
 
 #: ../../source/user-guide/distributed-training.rst:5
 msgid "分布式训练（Distributed Training）"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:7
-msgid ""
-"本章我们将介绍如何在 MegEngine 中高效地利用多 GPU 进行分布式训练。 分布式训练是指同时利用一台或者多台机器上的 GPU "
-"进行并行计算。 在深度学习领域，最常见的并行计算方式是在数据层面进行的， 即每个 GPU 各自负责一部分数据，并需要跑通整个训练和推理流程。 "
-"这种方式叫做 **数据并行** 。"
+msgid "本章我们将介绍如何在 MegEngine 中高效地利用多 GPU 进行分布式训练。 分布式训练是指同时利用一台或者多台机器上的 GPU 进行并行计算。 在深度学习领域，最常见的并行计算方式是在数据层面进行的， 即每个 GPU 各自负责一部分数据，并需要跑通整个训练和推理流程。 这种方式叫做 **数据并行** 。"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:13
@@ -75,16 +76,11 @@ msgid "下面我会逐一解释这几句话分别有什么含义"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:116
-msgid ""
-":class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function "
-"(默认根据机器上的 device 数量开启多进程)， 每个进程会在最开始根据 rank 设定默认 deivce, 假如是一台 8 "
-"卡机器，那么就会开启 8 个进程，rank 分别为 0 到 8 ，device 为 gpu0 到 gpu7."
+msgid ":class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function (默认根据机器上的 device 数量开启多进程)， 每个进程会在最开始根据 rank 设定默认 deivce, 假如是一台 8 卡机器，那么就会开启 8 个进程，rank 分别为 0 到 8 ，device 为 gpu0 到 gpu7."
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:123
-msgid ""
-":func:`~.distributed.bcast_list_` "
-"用于同步各个进程之间的参数，默认在全局范围（所有计算设备）同步，可以设置group参数在特定的group之间同步"
+msgid ":func:`~.distributed.bcast_list_` 用于同步各个进程之间的参数，默认在全局范围（所有计算设备）同步，可以设置group参数在特定的group之间同步"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:127
@@ -92,18 +88,11 @@ msgid "注意，有些情况下不仅要同步参数，还需要同步统计量�
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:133
-msgid ""
-"在数据并行的情况下，由于每张卡只负责一部分数据，所以求导之后只会有部分导数， "
-"在GradManager中注册对于梯度的回调函数，在对应参数的导数求完之后， 做一个 "
-":func:`~.distributed.all_reduce_sum` 操作进行全局求和，这样同步各个计算设备的导数来保证参数更新的一致性"
+msgid "在数据并行的情况下，由于每张卡只负责一部分数据，所以求导之后只会有部分导数， 在GradManager中注册对于梯度的回调函数，在对应参数的导数求完之后， 做一个 :func:`~.distributed.all_reduce_sum` 操作进行全局求和，这样同步各个计算设备的导数来保证参数更新的一致性"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:139
-msgid ""
-"在 :class:`~.data.dataloader.DataLoader` "
-"内部对多机训练有特殊支持，会自动给每个进程分配不重叠的数据进行训练，所以在数据供给方面没有做特殊处理， 如果没有使用 "
-":class:`~.data.dataloader.DataLoader` ，则需要自己手动给不同 rank 的设备分配不重叠的数据进行训练 "
-"就像下面这样"
+msgid "在 :class:`~.data.dataloader.DataLoader` 内部对多机训练有特殊支持，会自动给每个进程分配不重叠的数据进行训练，所以在数据供给方面没有做特殊处理， 如果没有使用 :class:`~.data.dataloader.DataLoader` ，则需要自己手动给不同 rank 的设备分配不重叠的数据进行训练 就像下面这样"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:154
@@ -115,9 +104,7 @@ msgid "在 MegEngine 中，依赖于上面提到的状态同步机制，我们�
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:159
-msgid ""
-"对于加载，我们只要在主进程（rank 0 进程）中加载模型参数， 然后调用 :func:`~.distributed.bcast_list_` "
-"对各个进程的参数进行同步，就保持了各个进程的状态一致。"
+msgid "对于加载，我们只要在主进程（rank 0 进程）中加载模型参数， 然后调用 :func:`~.distributed.bcast_list_` 对各个进程的参数进行同步，就保持了各个进程的状态一致。"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:162
@@ -133,9 +120,7 @@ msgid "多机多卡"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:200
-msgid ""
-"在 MegEngine 中，我们能很方便地将上面单机多卡的代码修改为多机多卡， 只需修改传给 "
-":class:`~.megengine.distributed.launcher` 的参数就可以进行多机多卡训练，其他部分和单机多卡一样。"
+msgid "在 MegEngine 中，我们能很方便地将上面单机多卡的代码修改为多机多卡， 只需修改传给 :class:`~.megengine.distributed.launcher` 的参数就可以进行多机多卡训练，其他部分和单机多卡一样。"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:211
@@ -230,11 +215,7 @@ msgid "Q：为什么在多机多卡训练开始前还正常，进入多卡训练
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:299
-msgid ""
-"A：请确保在进入多机多卡训练之前主进程没有进行 cuda 相关操作，cuda 在已经初始化的状态下进行 fork 操作会导致 fork 的进程中 "
-"cuda 不可用， 参考 `这里 <https://stackoverflow.com/questions/22950047/cuda-"
-"initialization-error-after-fork>`_ . 建议用 numpy 数组作为输入输出来使用 launcher "
-"包装的函数。"
+msgid "A：请确保在进入多机多卡训练之前主进程没有进行 cuda 相关操作，cuda 在已经初始化的状态下进行 fork 操作会导致 fork 的进程中 cuda 不可用， 参考 `这里 <https://stackoverflow.com/questions/22950047/cuda-initialization-error-after-fork>`_ . 建议用 numpy 数组作为输入输出来使用 launcher 包装的函数。"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:302
@@ -246,16 +227,11 @@ msgid "A：可以在函数结束前调用 :func:`~.distributed.group_barrier` �
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:306
-msgid ""
-"在 MegEngine 中，为了保证性能，会异步执行相应的 cuda kernel，所以当 python 代码执行完毕时，相应的 kernel "
-"执行还没有结束。"
+msgid "在 MegEngine 中，为了保证性能，会异步执行相应的 cuda kernel，所以当 python 代码执行完毕时，相应的 kernel 执行还没有结束。"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:307
-msgid ""
-"为了保证 kernel 全部执行完毕，MegEngine 初始化时在 :py:mod:`atexit` 里注册了全局的同步，但是 "
-"multiprocess 默认的 fork 模式在进程退出的时候，不会执行 :py:mod:`atexit` 注册的函数，导致 kernel "
-"没有执行完。"
+msgid "为了保证 kernel 全部执行完毕，MegEngine 初始化时在 :py:mod:`atexit` 里注册了全局的同步，但是 multiprocess 默认的 fork 模式在进程退出的时候，不会执行 :py:mod:`atexit` 注册的函数，导致 kernel 没有执行完。"
 msgstr ""
 
 #: ../../source/user-guide/distributed-training.rst:308
@@ -266,68 +242,121 @@ msgstr ""
 #~ msgstr "Distributed training"
 
 #~ msgid "数据处理流程"
-#~ msgstr ""
+#~ msgstr "Data processing flow"
 
 #~ msgid "进程间训练状态如何同步"
-#~ msgstr ""
+#~ msgstr "How to synchronize the training status between processes"
 
 #~ msgid ""
 #~ "用 :class:`~.distributed.launcher` 启动之后，我们便可以按照正常的流程进行训练了，"
 #~ " 但是由于需要每个进程处理不同的数据，我们还需要在数据部分做一些额外的操作。"
 #~ msgstr ""
+#~ "After starting with :class:`~.distributed.launcher`,"
+#~ " we can follow the normal process "
+#~ "for training, but because each process"
+#~ " needs to process different data, we"
+#~ " need to do some additional "
+#~ "operations in the data section."
 
 #~ msgid ""
 #~ "在这里我们以载入 MNIST 数据为例，展示如何对数据做切分，使得每个进程拿到不重叠的数据。 "
 #~ "此处我们将整个数据集载入内存后再进行切分。 这种方式比较低效，仅作为原理示意，更加高效的方式见 "
 #~ ":ref:`dist_dataloader` 。"
 #~ msgstr ""
+#~ "Here we take the loading of MNIST"
+#~ " data as an example to show how"
+#~ " to segment the data so that "
+#~ "each process can get non-overlapping "
+#~ "data. Here we load the entire data"
+#~ " set into memory and then perform "
+#~ "segmentation. This method is relatively "
+#~ "inefficient and is only used as a"
+#~ " schematic illustration. For a more "
+#~ "efficient method, see :ref:`dist_dataloader`."
 
 #~ msgid "至此我们便得到了每个进程各自负责的、互不重叠的数据部分。"
 #~ msgstr ""
+#~ "At this point, we have obtained "
+#~ "the non-overlapping part of the "
+#~ "data that each process is responsible"
+#~ " for."
 
 #~ msgid "参数同步"
-#~ msgstr ""
+#~ msgstr "Parameter synchronization"
 
 #~ msgid "初始化模型的参数之后，我们可以调用 :func:`~.distributed.bcast_list_` 对进程间模型的参数进行广播同步："
 #~ msgstr ""
+#~ "After initializing the parameters of the"
+#~ " model, we can call "
+#~ ":func:`~.distributed.bcast_list_` to broadcast and"
+#~ " synchronize the parameters of the "
+#~ "inter-process model："
 
 #~ msgid ""
 #~ "在反向传播求梯度的步骤中，我们通过插入 callback 函数的形式， "
 #~ "对各个进程计算出的梯度进行累加，各个进程都拿到的是累加后的梯度。代码示例："
 #~ msgstr ""
+#~ "In the step of backpropagation to "
+#~ "find the gradient, we accumulate the "
+#~ "gradient calculated by each process by"
+#~ " inserting the callback function, and "
+#~ "each process gets the accumulated "
+#~ "gradient. Code example："
 
 #~ msgid "使用 DataLoader 进行数据加载"
-#~ msgstr ""
+#~ msgstr "Use DataLoader for data loading"
 
 #~ msgid ""
 #~ "在上一节，为了简单起见，我们将整个数据集全部载入内存。 实际中，我们可以通过 "
 #~ ":class:`~.megengine.data.DataLoader` 来更高效地加载数据。"
 #~ msgstr ""
+#~ "In the previous section, for the "
+#~ "sake of simplicity, we loaded the "
+#~ "entire data set into memory. In "
+#~ "practice, we can use "
+#~ ":class:`~.megengine.data.DataLoader` to load data"
+#~ " more efficiently."
 
 #~ msgid ""
 #~ ":class:`~.megengine.data.DataLoader` 会自动帮我们处理分布式训练时数据相关的问题， "
 #~ "可以实现使用单卡训练时一样的数据加载代码，具体来说："
 #~ msgstr ""
+#~ ":class:`~.megengine.data.DataLoader` will automatically"
+#~ " help us deal with data-related "
+#~ "issues during distributed training, and "
+#~ "can achieve the same data loading "
+#~ "code when using single-card training,"
+#~ " specifically："
 
 #~ msgid ""
 #~ "所有采样器 :class:`~.megengine.data.Sampler` "
 #~ "都会自动地做类似上文中数据切分的操作， 使得所有进程都能获取互不重复的数据。"
 #~ msgstr ""
+#~ "All samplers :class:`~.megengine.data.Sampler` will"
+#~ " automatically do the operation similar "
+#~ "to the above data segmentation, so "
+#~ "that all processes can obtain non-"
+#~ "duplicate data."
 
 #~ msgid ""
 #~ "每个进程的 :class:`~.megengine.data.DataLoader` "
 #~ "还会自动调用分布式相关接口实现内存共享， 避免不必要的内存占用，从而显著加速数据读取。"
 #~ msgstr ""
+#~ ":class:`~.megengine.data.DataLoader` of each process"
+#~ " will also automatically call distributed"
+#~ " related interfaces to realize memory "
+#~ "sharing, avoid unnecessary memory occupation,"
+#~ " and significantly speed up data "
+#~ "reading."
 
 #~ msgid ""
 #~ "总之，在分布式训练时，你无需对使用 :class:`~.megengine.data.DataLoader` "
 #~ "的方式进行任何修改，一切都能无缝地切换。"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "在 MegEngine 中，我们能很方便地将上面单机多卡的代码修改为多机多卡， 只需修改传给 "
-#~ ":func:`~.megengine.distributed.launcher` 的参数就可以进行多机多卡训练"
-#~ msgstr ""
+#~ "In short, in distributed training, you"
+#~ " don't need to "
+#~ ":class:`~.megengine.data.DataLoader`, everything can "
+#~ "be switched seamlessly."
 
 #~ msgid ""
 #~ "其中 ``world_size`` 是你训练的用到的总卡数， ``n_gpus`` "
@@ -337,34 +366,24 @@ msgstr ""
 #~ "使用的端口号，其它部分与单机版本完全相同。 最终只需在每个机器上执行相同的 Python "
 #~ "程序，即可实现多机多卡的分布式训练。"
 #~ msgstr ""
+#~ "Where ``world_size'' is the total number"
+#~ " of cards used in your training, "
+#~ "``n_gpus`` is the number of cards "
+#~ "of this physical machine when you "
+#~ "are running, ``rank_start`` is the "
+#~ "starting value of the machine's rank,"
+#~ " ` `master_ip`` is the IP address "
+#~ "of the machine where rank 0 is "
+#~ "located, ``port`` is the port number "
+#~ "used by the distributed training master"
+#~ " server, and the other parts are "
+#~ "exactly the same as the stand-"
+#~ "alone version. In the end, you "
+#~ "only need to execute the same "
+#~ "Python program on each machine to "
+#~ "realize the distributed training of "
+#~ "multiple machines and multiple cards."
 
 #~ msgid "模型并行"
-#~ msgstr ""
-
-#~ msgid "在 MegEngine 中，也支持模型并行的方式来做训练。"
-#~ msgstr ""
-
-#~ msgid "最简单的模型并行就是把一个模型拆分成上下两个部分来做，在 MegEngine 中可以简单的实现。"
-#~ msgstr ""
-
-#~ msgid "下面是一个简单的例子来展示怎么写一个模型并行的训练："
-#~ msgstr ""
-
-#~ msgid "Q: 为什么在多机多卡训练开始前还正常，进入多卡训练之后就报错 ``cuda init error`` ?"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "A: 请确保在进入多机多卡训练之前主进程没有进行 cuda 相关操作，cuda "
-#~ "在已经初始化的状态下进行 fork 操作会导致 fork 的进程中 cuda"
-#~ " 不可用， 参考 `这里 "
-#~ "<https://stackoverflow.com/questions/22950047/cuda-"
-#~ "initialization-error-after-fork>`_ . 建议用"
-#~ " numpy 数组作为输入输出来使用 launcher 包装的函数。"
-#~ msgstr ""
-
-#~ msgid "Q: 为什么我自己用 ``multiprocess`` 写多机多卡训练总是卡住？"
-#~ msgstr ""
-
-#~ msgid "A: 可以在函数结束前调用 :func:`~.distributed.group_barrier` 来避免卡死的情况:"
-#~ msgstr ""
+#~ msgstr "Model parallelism"
 
