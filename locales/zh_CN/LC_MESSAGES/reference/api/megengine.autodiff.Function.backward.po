@@ -1,31 +1,30 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-06-03 10:19\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.autodiff.Function.backward.po\n"
+"X-Crowdin-File-ID: 6576\n"
+"Language: zh_CN\n"
 
 #: ../../source/reference/api/megengine.autodiff.Function.backward.rst:2
 msgid "megengine.autodiff.Function.backward"
 msgstr ""
 
 #: megengine.core.autodiff.grad.Function.backward:1 of
-msgid ""
-"Compute the gradient of the forward function. It must be overriden by all"
-" subclasses."
-msgstr ""
+msgid "Compute the gradient of the forward function. It must be overriden by all subclasses."
+msgstr "计算前向函数的梯度。此方法需要被所有派生类重写。"
 
 #: megengine.core.autodiff.grad.Function.backward of
 msgid "参数"
@@ -33,20 +32,13 @@ msgstr ""
 
 #: megengine.core.autodiff.grad.Function.backward:3 of
 msgid "gradients of outputs that are returned by :meth:`forward`."
-msgstr ""
+msgstr ":meth:`forward` 的输出的梯度。"
 
 #: megengine.core.autodiff.grad.Function.backward:7 of
-msgid ""
-"In case when some tensors of outputs are not related to loss function, "
-"the corresponding values in ``output_grads`` would be ``None``."
-msgstr ""
+msgid "In case when some tensors of outputs are not related to loss function, the corresponding values in ``output_grads`` would be ``None``."
+msgstr "如果一些输出 Tensor 不影响 loss 函数，那么 ``output_grads`` 中的对应值会是 ``None``。"
 
 #: megengine.core.autodiff.grad.Function.backward:12 of
-msgid ""
-"This method should return a tuple which containing the gradients of all "
-"inputs, in the same order as the ``inputs`` argument of :meth:`forward` ."
-" A ``Tensor`` could be returned instead if there is only one input. If "
-"users want to stop the propagation of some gradients, the corresponding "
-"returned values should be set ``None`` ."
-msgstr ""
+msgid "This method should return a tuple which containing the gradients of all inputs, in the same order as the ``inputs`` argument of :meth:`forward` . A ``Tensor`` could be returned instead if there is only one input. If users want to stop the propagation of some gradients, the corresponding returned values should be set ``None`` ."
+msgstr "此方法应该返回一个包含所有输入的梯度的元组，其顺序应该和 :meth:`forward` 的 ``inputs`` 参数一致。如果只有一个输入，那么返回值也可以是单个 ``Tensor``。如果用户希望组织某些梯度的传播，相应的返回值可以被设为 ``None``。"
 

@@ -1,656 +1,596 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-06-03 10:21\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/how-to-build-a-better-model.po\n"
+"X-Crowdin-File-ID: 7056\n"
+"Language: en_US\n"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:9
 msgid "构建更好的模型：神经网络"
-msgstr ""
+msgstr "Build a better model：Neural Network"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:12
 msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/#>`__"
-msgstr ""
+msgstr "|image0| `Run <https://studio.brainpp.com/project/#>in MegStudio `__"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:16
 msgid "image0"
-msgstr ""
+msgstr "image0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:12
-msgid ""
-"|image1| `查看源文件 "
-"<https://github.com/MegEngine/Documentation/blob/main/source/getting-"
-"started/beginner/from-linear-regression-to-linear-"
-"classification.ipynb>`__"
-msgstr ""
+msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb>`__"
+msgstr "|image1| `View source file <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb>`__"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:17
 msgid "image1"
-msgstr ""
+msgstr "image1"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:28
 msgid "我们已经对机器学习的基础流程有了一定的印象，并尝试用线性模型分别在 “新手级别” 的房价回归和手写数字分类任务上取得了不错的效果。"
-msgstr ""
+msgstr "We already have a certain impression of the basic process of machine learning, and we have tried to use linear models to achieve good results on the \"novice-level\" housing price regression and handwritten digit classification tasks."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:30
 msgid "打怪升级的道路还在继续，我们的任务依旧是图像分类，但本次教程较之前又确实有所不同："
-msgstr ""
+msgstr "Daguai upgrade the road continues, our task is still image classification, but this tutorial is different than before, and indeed："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:32
 msgid "我们将回收上一个教程埋下的伏笔，了解另一个计算机视觉领域的经典数据集 CIFAR10, 一起看看数据特征的变化会带来什么样的挑战；"
-msgstr ""
+msgstr "We will recycle the foreshadowing of the previous tutorial, learn about another classic data set CIFAR10 in the field of computer vision, and take a look at the challenges that changes in data characteristics will bring;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:33
 msgid "我们还将开动脑筋，分析已有局面，尝试去构建更好的模型——"
-msgstr ""
+msgstr "We will also use our brains to analyze the existing situation and try to build a better model——"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:34
 msgid "思路一：改变模型的结构，这意味着我们要认知到线性模型在结构上的局限性；"
-msgstr ""
+msgstr "Idea One：changes the structure of the model, which means that we have to recognize the structural limitations of the linear model;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:35
 msgid "思路二：改变特征提取的方式，此时我们更多地要从数据的角度去思考，看看传统计算机视觉方法带来了什么样的启发；"
-msgstr ""
+msgstr "Idea 20：Change the method of feature extraction. At this time, we have to think more from the perspective of data to see what kind of inspiration traditional computer vision methods bring;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:36
 msgid "我们将接触除了 ``functional`` 之外的另外一种更加优雅的搭建网络模型的方式，即使用 ``module`` 模块。"
-msgstr ""
+msgstr "We will come into contact with another more elegant way to build a network model besides ``functional``, that is, using the ``module`` module."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:38
-msgid ""
-"请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `访问官网安装教程 "
-"<https://megengine.org.cn/install>`__\\ ）："
-msgstr ""
+msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `访问官网安装教程 <https://megengine.org.cn/install>`__\\ ）："
+msgstr "Please run the following code first to verify whether MegEngine has been installed in your environment (\\ `Visit the official website installation tutorial <https://megengine.org.cn/install>`__\\)："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:80
-msgid ""
-"接下来，我们将先了解一下这次要使用到的经典数据集：\\ `CIFAR-10 数据集 "
-"<https://www.cs.toronto.edu/~kriz/cifar.html>`__\\ 。"
-msgstr ""
+msgid "接下来，我们将先了解一下这次要使用到的经典数据集：\\ `CIFAR-10 数据集 <https://www.cs.toronto.edu/~kriz/cifar.html>`__\\ 。"
+msgstr "Next, we will first understand the classic data set：\\ `CIFAR-10 data set <https://www.cs.toronto.edu/~kriz/cifar.html>`__\\ to be used this time."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:83
 msgid "CIFAR-10 数据集"
-msgstr ""
+msgstr "CIFAR-10 data set"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:85
-msgid ""
-"CIFAR-10 数据集包含共计 10 个类别的 60000 张 32x32 彩色图像，每个类别包含 6000 个图像，对应有 50000 "
-"张训练图像和 10000 张测试图像。"
-msgstr ""
+msgid "CIFAR-10 数据集包含共计 10 个类别的 60000 张 32x32 彩色图像，每个类别包含 6000 个图像，对应有 50000 张训练图像和 10000 张测试图像。"
+msgstr "The CIFAR-10 data set contains a total of 60,000 32x32 color images in 10 categories. Each category contains 6,000 images, corresponding to 50,000 training images and 10,000 test images."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:87
 msgid "同样地，在 MegEngine 的 dataset 模块中内置了 CIFAR-10 数据集的相关接口，方便初学者进行相关调用："
-msgstr ""
+msgstr "Similarly, the built-in dataset MegEngine module interfaces the data set CIFAR-10, easy for beginners related calls："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:156
 msgid "以训练集为例，你最终将得到一个长度为 50000 的 ``train_dataset`` 列表，其中的每个元素是一个包含样本和标签的元组："
-msgstr ""
+msgstr "Taking the training set as an example, you will end up with a ``train_dataset'' list with a length of 50000, each element of which is a tuple containing samples and labels.："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:202
 msgid "为了方便理解，我们这里选择将数据集拆分为样本和标签，处理成 Numpy 的 ndarray 格式："
-msgstr ""
+msgstr "To facilitate understanding, we choose here to split the data set as a sample and label format processed into Numpy of ndarray："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:244
 msgid "经过上面的整理，我们得到了训练数据 ``train_data`` 和对应的标签 ``train_label``:"
-msgstr ""
+msgstr "After the above sorting, we got the training data ``train_data`` and the corresponding label ``train_label``:"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:246
-msgid ""
-"可以发现此时的训练数据的形状是 :math:`(50000, 32, 32, 3)`, "
-"分别对应数据量（Number）、高度（Height）、宽度（Width）和通道数（Channel），简记为 NHWC；"
-msgstr ""
+msgid "可以发现此时的训练数据的形状是 :math:`(50000, 32, 32, 3)`, 分别对应数据量（Number）、高度（Height）、宽度（Width）和通道数（Channel），简记为 NHWC；"
+msgstr "It can be found that the shape of the training data at this time is :math:`(50000, 32, 32, 3)`, corresponding to the data amount (Number), height (Height), width (Width) and the number of channels (Channel), abbreviated as NHWC;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:247
-msgid ""
-"你应该发现了，MNIST 数据集中的通道数为 1, 均为灰度图；而 CIFAR-10 数据集的通道数为 3, "
-"数据集中的图像是彩色的；通道数和颜色之间有什么关系呢？"
-msgstr ""
+msgid "你应该发现了，MNIST 数据集中的通道数为 1, 均为灰度图；而 CIFAR-10 数据集的通道数为 3, 数据集中的图像是彩色的；通道数和颜色之间有什么关系呢？"
+msgstr "You should have discovered that the number of channels in the MNIST data set is 1, and they are all grayscale images; while the number of channels in the CIFAR-10 data set is 3, the images in the data set are colored; what is the relationship between the number of channels and color? ?"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:259
 msgid "理解彩色图像数据"
-msgstr ""
+msgstr "Understanding color image data"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:261
 msgid "我们先尝试对数据进行随机抽样，并进行可视化显示："
-msgstr ""
+msgstr "Let's try a random sample of data, and visual display："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:308
 msgid "挑选出一张图片（下方的 idx 可修改），进行可视化："
-msgstr ""
+msgstr "Pick out a picture (idx below can be modified), visualization："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:340
 msgid "你是否会觉得有一些奇怪，为什么这张图片的颜色给人感觉有些奇怪呢？"
-msgstr ""
+msgstr "Do you find it strange? Why is the color of this picture strange?"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:342
 msgid "出于历史原因， OpenCV(cv2) 图像库默认使用 BGR 的颜色通道，而不是一般约定的 RGB 格式。"
-msgstr ""
+msgstr "For historical reasons, the OpenCV(cv2) image library uses the BGR color channel by default instead of the generally agreed RGB format."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:343
 msgid "这就导致当 ``plt.imgshow()`` 尝试以 RGB 顺序去读取一张 BGR 格式的图片时，显示的内容会不如预期。"
-msgstr ""
+msgstr "As a result, when ``plt.imgshow()'' tries to read a picture in BGR format in RGB order, the displayed content will not be as expected."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:344
 msgid "好在 ``cv2`` 中也提供了 ``cvtColor`` 功能，能够改变图像的通道排序。"
-msgstr ""
+msgstr "Fortunately, ``cv2`` also provides the ``cvtColor`` function, which can change the order of the channels of the image."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:346
-msgid ""
-"如果你使用过老前辈级别的深度学习框架 `Caffe <https://caffe.berkeleyvision.org/>`__, "
-"应该会对此颇有感触。在 MegEngine 的 ``funtional.vision`` 模块中也实现了 ``cvt_color``, "
-"区别在于要求输入的数据类型是 Tensor, 毕竟 MegEngine 不是计算机视觉库，\\ ``funtional`` 模块中的接口是为 "
-"Tensor 操作而设计的。"
-msgstr ""
+msgid "如果你使用过老前辈级别的深度学习框架 `Caffe <https://caffe.berkeleyvision.org/>`__, 应该会对此颇有感触。在 MegEngine 的 ``funtional.vision`` 模块中也实现了 ``cvt_color``, 区别在于要求输入的数据类型是 Tensor, 毕竟 MegEngine 不是计算机视觉库，\\ ``funtional`` 模块中的接口是为 Tensor 操作而设计的。"
+msgstr "If you have used the old-fashioned deep learning framework `Caffe <https://caffe.berkeleyvision.org/>`__, you should be quite impressed with this. ``cvt_color'' is also implemented in the ``funtional.vision'' module of MegEngine. The difference is that the input data type is Tensor. After all, MegEngine is not a computer vision library. The interface in the ``funtional'' module is Designed for Tensor operation."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:378
 msgid "我们可以分别对三个颜色通道进行可视化（下面的代码看不懂也没关系，看图）："
-msgstr ""
+msgstr "We can visualize the three color channels separately (it doesn’t matter if the code below doesn’t understand, see the picture)："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:427
 msgid "数字图像基础和背后的历史知识可有趣啦，一时半会儿也讲不完。在这次的教程中，我们目前只需要明白："
-msgstr ""
+msgstr "The basics of digital imagery and the historical knowledge behind it are interesting, and I won’t be able to finish it for a while. In this tutorial, we only need to understand："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:429
 msgid "可见光谱中的大部分颜色可以由三种基本色光按不同的比例混合而成，这三种基本色光的颜色就是红、绿、 蓝三原色光。"
-msgstr ""
+msgstr "Most of the colors in the visible spectrum can be formed by mixing three basic colors in different proportions. The colors of these three basic colors are the three primary colors of red, green, and blue."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:430
-msgid ""
-"这意味着相较于灰度图，RGB 图中的每个像素都是由 :math:`3` 个在 :math:`[0, 256)` "
-"的值进行颜色组合表示的，对应十六进制范围 ``#000000`` ~ ``#FFFFFFF``."
-msgstr ""
+msgid "这意味着相较于灰度图，RGB 图中的每个像素都是由 :math:`3` 个在 :math:`[0, 256)` 的值进行颜色组合表示的，对应十六进制范围 ``#000000`` ~ ``#FFFFFFF``."
+msgstr "This means that compared to the grayscale image, each pixel in the RGB image is represented by :math:`3` :math:`[0, 256)`, corresponding to the hexadecimal range`` #000000`` ~ ``#FFFFFFF``."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:432
 msgid "不妨先自己想一想，这样的数据给我们带来了什么样的挑战？线性模型存在着什么样的局限性，我们又该如何去解决它们。"
-msgstr ""
+msgstr "Why not think about it for yourself first, what kind of challenges does such data bring to us? What are the limitations of linear models, and how do we solve them?"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:444
 msgid "更复杂的计算图结构"
-msgstr ""
+msgstr "More complex computational graph structure"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:446
 msgid "我们曾提到任何一个神经网络结构都可以用计算图来表示，而在神经网络中应该有非常多的节点（神经元），以下图为例："
-msgstr ""
+msgstr "We have mentioned that any neural network structure can be represented by a computational graph, and there should be a lot of nodes (neurons) in the neural network, the following figure is an example："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:448
 msgid "|linear-classifier-nn.svg|"
-msgstr ""
+msgstr "|linear-classifier-nn.svg|"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:462
 msgid "linear-classifier-nn.svg"
-msgstr ""
+msgstr "linear-classifier-nn.svg"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:450
-msgid ""
-"上图中的左图可以表示一张 :math:`4\\times 4` 的单通道图像经过线性分类器输出 10 个值的过程——只有输入和输出两层，似乎和 "
-"“深度” 学习没什么关系。"
-msgstr ""
+msgid "上图中的左图可以表示一张 :math:`4\\times 4` 的单通道图像经过线性分类器输出 10 个值的过程——只有输入和输出两层，似乎和 “深度” 学习没什么关系。"
+msgstr "The left image in the above figure can represent a :math:`4\\times 4` through a linear classifier to output 10 values-only two layers of input and output, which seem to have nothing to do with \"deep\" learning."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:452
 msgid "输入层（Input layer）：顾名思义，即我们在一开始输入模型的数据，比如被展平后的灰度图像，每个像素数据点就是输入层的一个神经元；"
-msgstr ""
+msgstr "Input layer：As the name implies, we input the data of the model at the beginning, such as a flattened grayscale image. Each pixel data point is a neuron in the input layer;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:453
 msgid "输出层（Output layer）：对于二分类任务，输出一个概率值，可以用一个神经元来表示；对于多分类任务，则需要用多个神经元表示；"
-msgstr ""
+msgstr "Output layer：For two classification tasks, output a probability value, which can be represented by one neuron; for multi-classification tasks, it needs to be represented by multiple neurons;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:454
 msgid "假设我们现在希望有一个更多层的网络结构——"
-msgstr ""
+msgstr "Suppose we now want to have a more layered network structure-"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:455
 msgid "此时需要引入中间层，隐含在输入和输出之间，因此通常也称为隐藏层（Hidden layer）；"
-msgstr ""
+msgstr "At this time, it is necessary to introduce an intermediate layer, which is hidden between the input and output, so it is usually called the hidden layer (Hidden layer);"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:456
 msgid "在不做任何处理的情况下，每一层的输入都会是上一层线性函数的输出。"
-msgstr ""
+msgstr "Without any processing, the input of each layer will be the output of the linear function of the previous layer."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:458
 msgid "但请注意，如果仅仅是简单堆叠神经元之间的全连接层的话，将导致网络最终的输出依旧是输入特征值的线性组合。"
-msgstr ""
+msgstr "But please note that if you simply stack the fully connected layers between neurons, the final output of the network will still be a linear combination of input eigenvalues."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:460
 msgid "仅用语言描述可能有些抽象，我们用代码验证一下："
-msgstr ""
+msgstr "It may be a little abstract to describe in language only, let's verify it with code："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:529
 msgid "上面的例子展示了：在假定模型参数已经训练收敛的情况下，单层的线性模型和双层的线性模型有着一样的预测效果（显然，更多层也一样）。"
-msgstr ""
+msgstr "The above example shows a：on the assumption that the model parameters have been trained convergence, the linear model of a single layer and double linear prediction model has the same effect (Obviously, more layers as well)."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:531
-msgid ""
-"对于双层模型，\\ :math:`\\hat{y} = W2 \\cdot (W1 \\cdot \\mathbf{x} + b1) + b2`,"
-" 其中 :math:`W1, W2, b1, b2` 是最终学得的参数；"
-msgstr ""
+msgid "对于双层模型，\\ :math:`\\hat{y} = W2 \\cdot (W1 \\cdot \\mathbf{x} + b1) + b2`, 其中 :math:`W1, W2, b1, b2` 是最终学得的参数；"
+msgstr "For the two-layer model, \\ :math:`\\hat{y} = W2 \\cdot (W1 \\cdot \\mathbf{x} + b1) + b2`, where :math:`W1, W2, b1, b2` are the final learned parameters;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:532
 msgid "对于单层模型，\\ :math:`\\hat{y} = W \\cdot x + b`, 其中 :math:`W, b` 是最终学得的参数；"
-msgstr ""
+msgstr "For a single-layer model, \\ :math:`\\hat{y} = W \\cdot x + b`, where :math:`W, b` are the final learned parameters;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:533
-msgid ""
-"真相是，在理想情况下，我们最终学到的参数将满足 :math:`W = W2 \\cdot W1`, :math:`b = W2 \\cdot b1"
-" + b2`, 因此两个模型预测能力一致。"
-msgstr ""
+msgid "真相是，在理想情况下，我们最终学到的参数将满足 :math:`W = W2 \\cdot W1`, :math:`b = W2 \\cdot b1 + b2`, 因此两个模型预测能力一致。"
+msgstr "The truth is that, under ideal circumstances, the parameters we finally learn will satisfy :math:`W = W2 \\cdot W1`, :math:`b = W2 \\cdot b1 + b2`, so the predictive abilities of the two models are the same."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:535
 msgid "可见线性层的叠加不但没有带来预测效果上的变化，还额外引入了更多需要被学习和优化的参数，加大了训练过程中的计算量。"
-msgstr ""
+msgstr "It can be seen that the superposition of the linear layer not only does not bring about changes in the prediction effect, but also introduces more parameters that need to be learned and optimized, which increases the amount of calculation in the training process."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:547
 msgid "非线性激活函数"
-msgstr ""
+msgstr "Nonlinear activation function"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:549
 msgid "人们期望神经网络可以模拟任意的函数，而线性模型表达能力不够，因此光靠线性计算是不足以解决问题；"
-msgstr ""
+msgstr "People expect that neural networks can simulate arbitrary functions, but linear models have insufficient expressive power, so linear calculation alone is not enough to solve the problem;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:550
 msgid "受到生物学启发，人脑神经元的树突多呈树状分支，它可接受刺激并将冲动传向胞体；"
-msgstr ""
+msgstr "Inspired by biology, the dendrites of human brain neurons are mostly tree-like branches, which can receive stimulation and transmit impulses to the cell body;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:551
 msgid "为了模拟这一机制，人们需要向神经网络模型中引入非线性因素作为“刺激”。"
-msgstr ""
+msgstr "In order to simulate this mechanism, people need to introduce nonlinear factors into the neural network model as a \"stimulus\"."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:553
 msgid "回忆一下，在二分类任务中常常会使用 Sigmoid 函数作为决策函数进行分类，这是我们对它的第一印象。"
-msgstr ""
+msgstr "Recall that the Sigmoid function is often used as a decision function for classification in binary classification tasks. This is our first impression of it."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:555
-msgid ""
-"但仔细想想，Sigmoid 函数将前面的线性计算所得到的输出以 **非线性** 的形式映射到了 :math:`(0, 1)` "
-"区间，这个特性可以给我们带来什么启发呢？"
-msgstr ""
+msgid "但仔细想想，Sigmoid 函数将前面的线性计算所得到的输出以 **非线性** 的形式映射到了 :math:`(0, 1)` 区间，这个特性可以给我们带来什么启发呢？"
+msgstr "But think about it carefully. The Sigmoid function maps the output obtained from the previous linear calculation to the :math:`(0, 1)` interval in the form of **non-linear**. What inspiration can this feature give us?"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:590
 msgid "这显然让人联想到，Sigmoid 函数非常适合用来当作神经网络中的激活函数，给整个模型引入非线性。"
-msgstr ""
+msgstr "This is obviously reminiscent of the fact that the Sigmoid function is very suitable as an activation function in a neural network to introduce nonlinearity to the entire model."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:592
 msgid "MegEngine 中实现了非常多常见的非线性激活函数，至于究竟选取哪一个激活函数，亦或是设计新的激活函数来使用，没有特别的规定。"
-msgstr ""
+msgstr "Many common non-linear activation functions are implemented in MegEngine. As to which activation function to choose or to design a new activation function to use, there are no special regulations."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:594
 msgid "将激活函数加在每一层的线性计算之后，这一改动使得神经网络模型理论上可以逼近任意的非线性模型。"
-msgstr ""
+msgstr "After adding the activation function to the linear calculation of each layer, this change allows the neural network model to theoretically approximate any nonlinear model."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:597
 msgid "前馈神经网络"
-msgstr ""
+msgstr "Feedforward neural network"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:599
-msgid ""
-"前馈神经网络（Feedforward neural "
-"network）是一种最简单的人工神经网络（ANN），完全由全连接层构成。除了输入节点，每个节点都是一个带有非线性激活函数的神经元（或称处理单元），克服了感知器不能对线性不可分数据进行识别的弱点。这里我们需要提到一个术语"
-" “多层感知机”（Multilayer perceptron, 简称 "
-"MLP），它的使用有些含糊不清：有的时候被模糊地认为是前馈神经网络的指代；有时严格指代由多层感知器（类似二分类阈值进行激活）所组成的网络。为了避免歧义，我们在本次教程中只使用"
-" “前馈神经网络” 这种说法，但你应该知道 MLP 在具体的上下文中的指代。"
-msgstr ""
+msgid "前馈神经网络（Feedforward neural network）是一种最简单的人工神经网络（ANN），完全由全连接层构成。除了输入节点，每个节点都是一个带有非线性激活函数的神经元（或称处理单元），克服了感知器不能对线性不可分数据进行识别的弱点。这里我们需要提到一个术语 “多层感知机”（Multilayer perceptron, 简称 MLP），它的使用有些含糊不清：有的时候被模糊地认为是前馈神经网络的指代；有时严格指代由多层感知器（类似二分类阈值进行激活）所组成的网络。为了避免歧义，我们在本次教程中只使用 “前馈神经网络” 这种说法，但你应该知道 MLP 在具体的上下文中的指代。"
+msgstr "Feedforward neural network (Feedforward neural network) is the simplest artificial neural network (ANN), which is composed entirely of fully connected layers. Except for the input node, each node is a neuron (or processing unit) with a nonlinear activation function, which overcomes the weakness that the perceptron cannot recognize linear inseparable data. Here we need to mention a term \"MLP\" (Multilayer perceptron, referred to as MLP), its use is somewhat ambiguous：sometimes vaguely considered to be a feed-forward neural networks refer to; sometimes referred to by the strict A network composed of multi-layer perceptrons (similar to a two-class threshold for activation). In order to avoid ambiguity, we only use the term \"feedforward neural network\" in this tutorial, but you should know what MLP refers to in a specific context."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:602
 msgid "我们现在就可以尝试写出一个糙版本的前馈神经网络，在 MNIST 数据集上进行测试："
-msgstr ""
+msgstr "We can now try to write a rough version of the feed-forward neural network was tested on a data set MNIST："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:798
 msgid "我们欣喜地发现，经过 5 个周期的学习，我们的预测精度已经超过了单层的线性分类模型。"
-msgstr ""
+msgstr "We are delighted to find that after 5 cycles of learning, our prediction accuracy has surpassed the single-layer linear classification model."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:800
 msgid "你可能已经注意到了一些细节（有一些相当关键！）："
-msgstr ""
+msgstr "You may have noticed some details (some of them are quite critical!)："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:802
 msgid "使用全连接层时，每层的参数量是非常大的，这会导致很大的计算和时间开销；"
-msgstr ""
+msgstr "When using a fully connected layer, the amount of parameters in each layer is very large, which will lead to a large calculation and time overhead;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:803
 msgid "两个隐藏层的神经元个数也是需要人为设计的超参数，并且直接影响到整个网络模型的参数量；"
-msgstr ""
+msgstr "The number of neurons in the two hidden layers is also a hyperparameter that needs to be artificially designed, and it directly affects the amount of parameters of the entire network model;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:804
 msgid "**我们的参数初始化选择了随机初始化而不是零初始化策略，** 这是为什么呢？"
-msgstr ""
+msgstr "**Our parameter initialization chooses random initialization instead of zero initialization strategy.** Why is this?"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:805
 msgid "我们还对输入的数据进行了归一化处理，原始值位于 :math:`(0, 255)`, 归一化后统一到 :math:`(0,1)`;"
-msgstr ""
+msgstr "We also normalized the input data, the original value is located at :math:`(0, 255)`, after normalization, it is unified to :math:`(0,1)`;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:806
 msgid "我们选用的激活函数似乎并不是 Sigmoid, 而是一个叫做 ReLU 的家伙。"
-msgstr ""
+msgstr "The activation function we chose does not seem to be Sigmoid, but a guy called ReLU."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:808
 msgid "**请尝试修改各种超参数或网络的隐藏层数，看看会得到什么不同的结果。**"
-msgstr ""
+msgstr "**Please try to modify various hyperparameters or the number of hidden layers of the network to see what different results will be obtained. **"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:811
 msgid "请停下来看看这个"
-msgstr ""
+msgstr "Please stop and look at this"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:813
 msgid "有了前面的理论和实践积累，现在是时候对神经网络的基本结构有更加直观而清晰的认知了。"
-msgstr ""
+msgstr "With the previous accumulation of theory and practice, it is time to have a more intuitive and clear understanding of the basic structure of neural networks."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:815
 msgid "我强烈推荐你看一看这个系列的视频作为阶段性的总结，绝对会受益匪浅："
-msgstr ""
+msgstr "I highly recommend you take a look at this video as a series of summary stage, will definitely benefit："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:833
-msgid ""
-"`3Blue1Brown 深度学习之神经网络的结构 "
-"<https://www.bilibili.com/video/BV1bx411M7Zx>`__ (对于当前教程而言，这个视频是必须观看的)"
-msgstr ""
+msgid "`3Blue1Brown 深度学习之神经网络的结构 <https://www.bilibili.com/video/BV1bx411M7Zx>`__ (对于当前教程而言，这个视频是必须观看的)"
+msgstr "`3Blue1Brown The structure of deep learning neural network <https://www.bilibili.com/video/BV1bx411M7Zx>`__ (For the current tutorial, this video is a must-watch)"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:834
 msgid "`3Blue1Brown 深度学习之梯度下降法 <https://www.bilibili.com/video/BV1Ux411j7ri>`__"
-msgstr ""
+msgstr "`3Blue1Brown gradient descent method for deep learning <https://www.bilibili.com/video/BV1Ux411j7ri>`__"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:835
-msgid ""
-"`3Blue1Brown 深度学习之直观理解反向传播 "
-"<https://www.bilibili.com/video/BV16x411V7Qg?p=1>`__"
-msgstr ""
+msgid "`3Blue1Brown 深度学习之直观理解反向传播 <https://www.bilibili.com/video/BV16x411V7Qg?p=1>`__"
+msgstr "`3Blue1Brown Intuitive understanding of deep learning backpropagation <https://www.bilibili.com/video/BV16x411V7Qg?p=1>`__"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:836
-msgid ""
-"`3Blue1Brown 深度学习之反向传播的微积分原理 "
-"<https://www.bilibili.com/video/BV16x411V7Qg?p=2>`__"
-msgstr ""
+msgid "`3Blue1Brown 深度学习之反向传播的微积分原理 <https://www.bilibili.com/video/BV16x411V7Qg?p=2>`__"
+msgstr "`3Blue1Brown deep learning back propagation principle of calculus <https://www.bilibili.com/video/BV16x411V7Qg?p=2>`__"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:838
 msgid "完整看完第一个视频后，你应该能回答 “为什么要用 ReLU 代替 Sigmoid 作为激活函数” 这个问题了。"
-msgstr ""
+msgstr "After watching the first video in full, you should be able to answer the question \"Why use ReLU instead of Sigmoid as the activation function\"."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:850
 msgid "更巧妙的计算图算子"
-msgstr ""
+msgstr "More clever computational graph operators"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:852
-msgid ""
-"我们在上一小节没有测试前馈神经网络在 CIFAR10 "
-"数据集上的效果，你可以自己修改代码测试一下，但预测精度恐怕仍不容乐观。究竟是哪个环节出问题了呢？"
-msgstr ""
+msgid "我们在上一小节没有测试前馈神经网络在 CIFAR10 数据集上的效果，你可以自己修改代码测试一下，但预测精度恐怕仍不容乐观。究竟是哪个环节出问题了呢？"
+msgstr "We did not test the effect of the feedforward neural network on the CIFAR10 data set in the previous section. You can modify the code to test it yourself, but the prediction accuracy is still not optimistic. Which link is the problem?"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:854
 msgid "回顾一下计算图的基本结构，其中有数据节点（数据和参数）和计算节点（算子）；"
-msgstr ""
+msgstr "Recall the basic structure of the calculation graph, which includes data nodes (data and parameters) and calculation nodes (operators);"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:855
 msgid "前馈神经网络的隐藏层设计可看作是对图结构的宏观调整，而参数的初始化策略也可以被人为控制；"
-msgstr ""
+msgstr "The hidden layer design of the feedforward neural network can be regarded as a macro adjustment of the graph structure, and the initialization strategy of the parameters can also be controlled artificially;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:856
 msgid "我们似乎忽略了算子对整个模型预测性能所带来的影响。"
-msgstr ""
+msgstr "We seem to ignore the influence of the operator on the prediction performance of the entire model."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:868
 msgid "从传统领域知识中学习"
-msgstr ""
+msgstr "Learn from traditional domain knowledge"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:870
 msgid "如今深度学习能够在很多领域大放异彩，离不开其与传统领域知识的结合。"
-msgstr ""
+msgstr "Nowadays, deep learning can shine in many fields, and it is inseparable from its combination with traditional domain knowledge."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:872
 msgid "在数字图像处理领域（准确来说是数字信号处理领域），存在着一种名为 “卷积” （Convolution）的操作；"
-msgstr ""
+msgstr "In the field of digital image processing (digital signal processing to be precise), there is an operation called \"Convolution\";"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:873
 msgid "以下面的代码为例子，对于左边的原图，我们定义了两个 :math:`3\\times3` 卷积核（Filter）对原图进行卷积运算；"
-msgstr ""
+msgstr "The following code is an example. For the original image on the left, we define two :math:`3\\times3` convolution kernels (Filter) to perform convolution operations on the original image;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:874
 msgid "可以理解成对于原图中的每个像素，都根据卷积核中给定的参数对周围九宫格的像素值进行加权求和，作为更新后的像素值。"
-msgstr ""
+msgstr "It can be understood that for each pixel in the original image, the pixel values of the surrounding nine-square grid are weighted and summed according to the parameters given in the convolution kernel as the updated pixel value."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:924
 msgid "背后的细节我们暂时不用深究，直观上给人的感觉是：\\ **卷积运算能够对原始图像的空间信息加以利用。**"
-msgstr ""
+msgstr "We don't need to go into the details for the time being. The intuitive feeling is that the：\\ ** convolution operation can make use of the spatial information of the original image. **"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:926
 msgid "我们在处理图像的时候，使用了 Flatten 算子将一张图片中的像素展平成一个特征向量，结果效果不佳。"
-msgstr ""
+msgstr "When we processed the image, we used the Flatten operator to flatten the pixels in a picture into a feature vector, and the result was not good."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:928
 msgid "有了对卷积的基本了解，这自然地启发我们在神经网络模型中定义一种卷积算子，来作为对图像特征的处理方式。"
-msgstr ""
+msgstr "With a basic understanding of convolution, this naturally inspired us to define a convolution operator in the neural network model as a way of processing image features."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:931
 msgid "在 MegEngine 使用卷积计算"
-msgstr ""
+msgstr "Use convolution calculation in MegEngine"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:933
-msgid ""
-"在 MegEngine 的 ``funtional.nn`` 模块中，实现了卷积相关的算子，我们以 ``funtional.nn.conv2d``"
-" 为例子："
-msgstr ""
+msgid "在 MegEngine 的 ``funtional.nn`` 模块中，实现了卷积相关的算子，我们以 ``funtional.nn.conv2d`` 为例子："
+msgstr "In MegEngine of `` funtional.nn`` module implements convolution relevant operator, we have an example to `` funtional.nn.conv2d``："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:935
-msgid ""
-"假设有一张 :math:`5 \\times 5` 大小的 2D 单通道图像 ``input_2d``, 像素值分别为 :math:`0` 到 "
-":math:`24`;"
-msgstr ""
+msgid "假设有一张 :math:`5 \\times 5` 大小的 2D 单通道图像 ``input_2d``, 像素值分别为 :math:`0` 到 :math:`24`;"
+msgstr "Suppose there is a 2D single-channel image ``input_2d'' with a size of :math:`5 \\t :math:`0` to :math:`24`;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:936
-msgid ""
-"我们定义了 :math:`3 \\times 3` 大小的卷积核 ``filter_2d`` 并应用在这张原始图像上，得到了输出图像 "
-"``output_2d`` ;"
-msgstr ""
+msgid "我们定义了 :math:`3 \\times 3` 大小的卷积核 ``filter_2d`` 并应用在这张原始图像上，得到了输出图像 ``output_2d`` ;"
+msgstr "We defined a :math:`3 \\times 3` and applied it to this original image to get the output image ``output_2d``;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:937
-msgid ""
-"从原始图像中值为 :math:`6` 至 :math:`18` 的像素，对应值都更新为其上下左右像素值之和（即原始值的 4 倍，对应 "
-":math:`24` 到 :math:`72`\\ ）。"
-msgstr ""
+msgid "从原始图像中值为 :math:`6` 至 :math:`18` 的像素，对应值都更新为其上下左右像素值之和（即原始值的 4 倍，对应 :math:`24` 到 :math:`72`\\ ）。"
+msgstr "From the original image with a value of :math:`6` to :math:`18`, the corresponding values are updated to the sum of the upper, lower, left, and right pixel values (ie 4 times the original value, corresponding to :math:`24` to :math:`72`\\) ."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:998
-msgid ""
-"相信你又有了新的疑惑——由于图像边缘的像素存在着 “没有邻居” 的情况，导致卷积计算后舍弃了这些原本位于边缘的像素点，直观来看图像的形状似乎 "
-"“小了一圈”，这个情况不是我们所希望的。处理办法是，在计算卷积操作时，先给边缘像素周围补上一圈像素（最常见的操作是补值为 0 "
-"的像素点），这样在进行卷积计算的时候，就能利用上原图中的所有像素信息了："
-msgstr ""
+msgid "相信你又有了新的疑惑——由于图像边缘的像素存在着 “没有邻居” 的情况，导致卷积计算后舍弃了这些原本位于边缘的像素点，直观来看图像的形状似乎 “小了一圈”，这个情况不是我们所希望的。处理办法是，在计算卷积操作时，先给边缘像素周围补上一圈像素（最常见的操作是补值为 0 的像素点），这样在进行卷积计算的时候，就能利用上原图中的所有像素信息了："
+msgstr "I believe you have new doubts-because the pixels at the edge of the image have \"no neighbors\", these pixels originally located at the edge are discarded after the convolution calculation. Intuitively, the shape of the image seems to be \"smaller\" Circle\", this situation is not what we hoped for. The solution is to add a circle of pixels around the edge pixels when calculating the convolution operation (the most common operation is the pixel with a value of 0), so that the original image can be used when performing the convolution calculation All the pixels in the information are："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1063
-msgid ""
-"用到了卷积算子的神经网络又被人们称为 “卷积神经网络”（Convolutional Neural Network, "
-"CNN），从结构上看，它也是前馈神经网络的一种。卷积神经网络常用于计算机视觉领域，上面的 ``padding`` "
-"操作也是计算机视觉中常见的图像处理手段，类似的操作还有 ``max_pooling``, "
-"可以认为是一种降采样策略。不过我们的教程目前还不打算涉及到太多关于计算机视觉相关的内容，因此不打算进行更多这方面的解释。我们需要关注的是："
-msgstr ""
+msgid "用到了卷积算子的神经网络又被人们称为 “卷积神经网络”（Convolutional Neural Network, CNN），从结构上看，它也是前馈神经网络的一种。卷积神经网络常用于计算机视觉领域，上面的 ``padding`` 操作也是计算机视觉中常见的图像处理手段，类似的操作还有 ``max_pooling``, 可以认为是一种降采样策略。不过我们的教程目前还不打算涉及到太多关于计算机视觉相关的内容，因此不打算进行更多这方面的解释。我们需要关注的是："
+msgstr "Neural networks that use convolution operators are also called \"convolutional neural networks\" (Convolutional Neural Network, CNN). From a structural point of view, it is also a kind of feedforward neural network. Convolutional neural networks are often used in the field of computer vision. The above ``padding'' operation is also a common image processing method in computer vision. Similar operations include ``max_pooling'', which can be considered as a downsampling strategy. However, our tutorial does not intend to cover too much computer vision-related content, so we do not intend to explain more in this regard. What we need to focus on is："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1065
 msgid "相较于简单粗暴的 ``flatten`` 操作， ``conv`` 操作更能够利用图像的空间局部信息；"
-msgstr ""
+msgstr "Compared with the simple and rude ``flatten`` operation, the ``conv`` operation is more able to use the spatial local information of the image;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1066
 msgid "卷积核中的参数其实和全连接层中的参数类似，都是 “可学习的” ，这意味着我们可以使用深度学习框架来优化卷积神经网络模型；"
-msgstr ""
+msgstr "The parameters in the convolution kernel are actually similar to the parameters in the fully connected layer, and they are all \"learnable\", which means that we can use the deep learning framework to optimize the convolutional neural network model;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1067
 msgid "但与卷积有关的算子，需要在计算的过程中需要关注不同层形状的变化，否则容易报错。"
-msgstr ""
+msgstr "However, operators related to convolution need to pay attention to changes in the shape of different layers in the calculation process, otherwise it is easy to report errors."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1070
 msgid "卷积神经网络"
-msgstr ""
+msgstr "Convolutional Neural Network"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1072
 msgid "结合前面提到的知识，现在我们将构建一个多层的卷积神经网络模型！"
-msgstr ""
+msgstr "Combining the previously mentioned knowledge, now we will build a multi-layer convolutional neural network model!"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1074
-msgid ""
-"由于 MegEngine 默认 Tensor 的数据排布是 :math:`(N,C,H,W)` 格式，而我们的 CIFAR10 数据集图片是 "
-":math:`(N,H,W,C)` 格式，所以我们在下面的代码中进行了一些数据预处理："
-msgstr ""
+msgid "由于 MegEngine 默认 Tensor 的数据排布是 :math:`(N,C,H,W)` 格式，而我们的 CIFAR10 数据集图片是 :math:`(N,H,W,C)` 格式，所以我们在下面的代码中进行了一些数据预处理："
+msgstr "Since MegEngine default Tensor data arrangement is :math:`(N,C,H,W)` format, and our CIFAR10 data set picture is :math:`(N,H,W,C)` format, so we are in the following Some data preprocessing in the code："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1076
 msgid "在 ``megengine.data.transform`` 中实现了一些常见的预处理操作，比如旋转、平移、翻转等等，当然也包括数据格式的转换；"
-msgstr ""
+msgstr "Some common preprocessing operations are implemented in ``megengine.data.transform``, such as rotation, translation, flipping, etc., of course, including data format conversion;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1077
 msgid "在进行数据格式转换的同时，我们也使用 ``Normalize`` 对数据进行了归一化操作，至于为什么这样做，我们以后会进行解释。"
-msgstr ""
+msgstr "While performing the data format conversion, we also use ``Normalize`` to normalize the data. As for why we do this, we will explain later."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1238
 msgid "可以看到，经过 50 个周期的训练，模型在 CIFAR10 图片分类上已经能够达到 50% 上下的预测准确率。"
-msgstr ""
+msgstr "It can be seen that after 50 cycles of training, the model has been able to achieve a prediction accuracy of up to 50% in CIFAR10 image classification."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1240
 msgid "实际上，我们这里定义的模型结构是非常经典的 `LeNet <http://yann.lecun.com/exdb/lenet/>`__\\ ；"
-msgstr ""
+msgstr "In fact, the model structure we defined here is a very classic `LeNet <http://yann.lecun.com/exdb/lenet/>`__\\;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1241
 msgid "这只是我们对卷积神经网络模型的初体验，我们会慢慢地接触到更多的经典模型！"
-msgstr ""
+msgstr "This is just our first experience of the convolutional neural network model, we will gradually come into contact with more classic models!"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1253
 msgid "使用模块化方式建模"
-msgstr ""
+msgstr "Use modular modeling"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1255
 msgid "到目前为止，我们一直都在使用 MegEngine 的 ``functional`` 模块中的算子来定义我们的模型，一些问题已经初见端倪："
-msgstr ""
+msgstr "So far, we have been using operator MegEngine of `` functional`` module to define our model, some problems are already visible："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1257
 msgid "当模型结构开始变得越来越复杂，代码组织工作会变得非常繁杂；"
-msgstr ""
+msgstr "When the model structure becomes more and more complex, the code organization work will become very complicated;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1258
 msgid "依赖 ``functional`` 的定义方式不够灵活，难以精细控制，更难以进行拓展。"
-msgstr ""
+msgstr "Relying on the definition of ``functional'' is not flexible enough, difficult to finely control, and even more difficult to expand."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1260
 msgid "深度学习框架已经为用户简化了梯度的自动求导和参数优化等流程，自然也可以提供一种更加方便的模式来定义我们的模型。"
-msgstr ""
+msgstr "The deep learning framework has simplified the process of automatic gradient derivation and parameter optimization for users. Naturally, it can also provide a more convenient mode to define our model."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1263
 msgid "megengine.module"
-msgstr ""
+msgstr "megengine.module"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1265
 msgid "在 MegEngine 中提供了 ``module`` 模块，可以方便用户进行模型定义和参数管理。我们现在就来改写 LeNet 模型："
-msgstr ""
+msgstr "The ``module`` module is provided in MegEngine, which is convenient for users to carry out model definition and parameter management. Let's rewrite the LeNet model now.："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1267
 msgid "每一个神经网络模型都需要继承自 ``Module`` 基类并且调用\\ ``super().__init__()``;"
-msgstr ""
+msgstr "Every neural network model needs to inherit from the ``Module'' base class and call \\ ``super().__init__()'';"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1268
 msgid "我们需要在 ``__init__`` 方法中定义模块结构，也可以做一些其它处理如初始化权重；"
-msgstr ""
+msgstr "We need to define the module structure in the ``__init__`` method, and we can also do some other processing such as initializing weights;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1269
 msgid "我们需要定义 ``forward()`` 方法，即前向传播的计算过程，"
-msgstr ""
+msgstr "We need to define the ``forward()'' method, which is the calculation process of forward propagation,"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1352
 msgid "同样地，我们需要在测试集上评估一下模型性能："
-msgstr ""
+msgstr "Similarly, we need to evaluate the model's performance on the test set："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1354
 msgid "需要注意的是，使用 Module 建模得到的模型可以分为训练和测试两种模式；"
-msgstr ""
+msgstr "It should be noted that the model obtained by using Module modeling can be divided into two modes: training and testing;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1355
 msgid "这是因为一些神经网络算子的行为在不同的模式下也需要不同（尽管我们目前可能还没有用到这些算子）；"
-msgstr ""
+msgstr "This is because the behavior of some neural network operators needs to be different in different modes (although we may not use these operators yet);"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1356
 msgid "默认情况下启用训练模式 ``.train()``, 但在进行模型测试时，需要执行 ``.eval()`` 切换到测试/评估模式。"
-msgstr ""
+msgstr "The training mode ``.train()'' is enabled by default, but during model testing, you need to execute ``.eval()'' to switch to the test/evaluation mode."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1410
 msgid "总结回顾"
-msgstr ""
+msgstr "Summary review"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1412
 msgid "基于线性模型的局限性，我们从不同的角度出发尝试对模型进行了改进，最终取得了不错的效果："
-msgstr ""
+msgstr "Based on the limitations of linear models, we set out to try the model was improved from a different perspective, and ultimately achieved good results："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1414
 msgid "模型结构变得更加复杂，由单层变成多层，为了解决非线性可分问题，我们引入了激活函数这一概念，最终认识了什么是前馈神经网络；"
-msgstr ""
+msgstr "The model structure has become more complex, changing from a single layer to multiple layers. In order to solve the non-linear separability problem, we introduced the concept of activation function, and finally realized what a feedforward neural network is;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1415
 msgid "模型算子变得更加精妙，我们借助对传统计算机视觉领域的卷积操作的了解，将隐藏层由简单的全连接层升级成卷积层，卷积神经网络便诞生了。"
-msgstr ""
+msgstr "The model operator has become more sophisticated. With the help of our understanding of the convolution operation in the traditional computer vision field, we upgraded the hidden layer from a simple fully connected layer to a convolutional layer, and the convolutional neural network was born."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1417
 msgid "接下来请在脑中尝试构建出一张完整的计算图，再次回想一下神经网络学习的整个过程："
-msgstr ""
+msgstr "Then please in the brain trying to build out a complete computing map, look at the whole process again recall neural network learning："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1419
 msgid "我们将数据集中的样本经过处理后变为 Tensor 格式，每个样本作为输入层的各个神经节点，开始在图中流动；"
-msgstr ""
+msgstr "We process the samples in the data set into Tensor format, and each sample is used as each neural node of the input layer and starts to flow in the graph;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1420
 msgid "在隐藏层中有着许许多多的计算节点，连接着不同节点之间的是需要被学习和优化的参数，也被叫做权重；"
-msgstr ""
+msgstr "There are many computing nodes in the hidden layer, and the parameters that connect different nodes are the parameters that need to be learned and optimized, also called weights;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1421
 msgid "前向传播往往会经历特征提取和计算的过程，最终我们会根据任务类型来设计一个损失函数，用来评估训练过程中的模型表现；"
-msgstr ""
+msgstr "Forward propagation often goes through the process of feature extraction and calculation. Finally, we will design a loss function according to the task type to evaluate the performance of the model during the training process;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1422
 msgid "反向传播就好像一层层的浪花，根据链式法则去一层一层地计算当前层梯度，然后更新参数，又将梯度信息传给下一层..."
-msgstr ""
+msgstr "Backpropagation is like a layer of waves. According to the chain rule, the current layer gradient is calculated layer by layer, then the parameters are updated, and the gradient information is passed to the next layer..."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1434
 msgid "问题思考"
-msgstr ""
+msgstr "Problem thinking"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1436
 msgid "CIFAR10 图片分类任务的准确率还有很大的提升空间，是不是意味着只要不断加大模型的深度，加上精细的超参数调整，就总是能够取得更好的效果呢？"
-msgstr ""
+msgstr "There is still a lot of room for improvement in the accuracy of CIFAR10 image classification tasks. Does it mean that as long as the depth of the model is continuously increased, and fine hyperparameter adjustments are added, better results can always be achieved?"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1438
 msgid "如果你尝试自己实现过上面的几个模型，修改过不同的超参数方案组合，可能会遇到如下一些情况："
-msgstr ""
+msgstr "If you have tried to implement the above models yourself and modified different hyperparameter scheme combinations, you may encounter some of the following situations:："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1440
 msgid "我的 Loss 在训练几个 epoch 之后就不下降了，有时甚至从来没有下降过！"
-msgstr ""
+msgstr "My Loss didn't drop after a few epochs, and sometimes it never dropped!"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1441
 msgid "我的 Loss 从第一个 epoch 开始就显示为 NaN, 发生什么事了？"
-msgstr ""
+msgstr "My Loss has been displayed as NaN since the first epoch, what happened?"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1442
 msgid "训练一个 epoch 的成本比之前高了很多，寻找合适的超参数会花掉很多时间..."
-msgstr ""
+msgstr "The cost of training an epoch is much higher than before, and finding the right hyperparameters will take a lot of time..."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1444
-msgid ""
-"除此以外，在不改变模型结构的情况下，我们还在代码中进行了一些修改，比如我们改变了超参数，对输入数据进行了预处理，模型参数使用了除零值之外其它的初始化策略，我还在训练卷积神经网络时偷偷地换用了"
-" Adam 优化器，因为似乎在这个任务上用 Adam 的效果会比 SGD "
-"要好一些。这些修改背后的直觉是什么，当我们需要用神经网络解决不同的任务时，有没有什么经验可循？"
-msgstr ""
+msgid "除此以外，在不改变模型结构的情况下，我们还在代码中进行了一些修改，比如我们改变了超参数，对输入数据进行了预处理，模型参数使用了除零值之外其它的初始化策略，我还在训练卷积神经网络时偷偷地换用了 Adam 优化器，因为似乎在这个任务上用 Adam 的效果会比 SGD 要好一些。这些修改背后的直觉是什么，当我们需要用神经网络解决不同的任务时，有没有什么经验可循？"
+msgstr "In addition, without changing the structure of the model, we also made some modifications in the code. For example, we changed the hyperparameters, preprocessed the input data, and used initializations other than zero for the model parameters. Strategy, I also secretly switched to the Adam optimizer when training the convolutional neural network, because it seems that the effect of using Adam on this task will be better than SGD. What is the intuition behind these modifications, and is there any experience to follow when we need to use neural networks to solve different tasks?"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1446
 msgid "恭喜你 🎉 ，我们已经开始接触到深度学习炼丹师再熟悉不过的一些 “玄学” 现象，如果能分析出问题背后可能的原因，一定会很有成就感。"
-msgstr ""
+msgstr "Congratulations 🎉, we have already begun to come into contact with some \"metaphysics\" phenomena that deep learning alchemists are not familiar with. If we can analyze the possible reasons behind the problem, we will definitely feel a sense of accomplishment."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1448
 msgid "我们在接下来的教程中，将会一起探索现象背后的原因，总结出一些神经网络模型训练中的常见技巧。"
-msgstr ""
+msgstr "In the next tutorial, we will explore the reasons behind the phenomenon together and sum up some common techniques in neural network model training."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1450
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
-msgstr ""
+msgstr "Deep learning, simple development. We encourage you to keep thinking in practice and inspire yourself to explore intuitive or theoretical explanations."
 

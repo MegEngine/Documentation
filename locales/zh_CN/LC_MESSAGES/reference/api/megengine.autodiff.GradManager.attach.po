@@ -1,82 +1,58 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-06-03 10:19\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.autodiff.GradManager.attach.po\n"
+"X-Crowdin-File-ID: 6584\n"
+"Language: zh_CN\n"
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.attach.rst:2
 msgid "megengine.autodiff.GradManager.attach"
 msgstr ""
 
 #: megengine.autodiff.grad_manager.GradManager.attach:1 of
-msgid ""
-"Instruct GradManager to track operations on tensors, so that gradients "
-"with respect to those tensors could be evaluated later."
-msgstr ""
+msgid "Instruct GradManager to track operations on tensors, so that gradients with respect to those tensors could be evaluated later."
+msgstr "指示 GradManager 跟踪张量上的操作，以便那些张量上的梯度，可以在之后进行计算。"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:4 of
-msgid ""
-":meth:`attach` also accepts a list of callbacks, which will be called "
-"with the tensor and its gradient during :meth:`backward`. The signature "
-"of callbacks should look like:"
-msgstr ""
+msgid ":meth:`attach` also accepts a list of callbacks, which will be called with the tensor and its gradient during :meth:`backward`. The signature of callbacks should look like:"
+msgstr ":meth:`attach` 也接受一个回调函数的列表，在 :meth:`backward` 的过程中，这些回调函数会被以 Tensor 和其梯度作为参数调用 。回调函数的签名应该如下："
 
 #: megengine.autodiff.grad_manager.GradManager.attach:15 of
-msgid ""
-":meth:`attach` calls with overlapping tensors will result in their "
-"callbacks concatenated, independently for each tensor. For example,"
-msgstr ""
+msgid ":meth:`attach` calls with overlapping tensors will result in their callbacks concatenated, independently for each tensor. For example,"
+msgstr "多次 :meth:`attach` 调用的 Tensor 列表如果有重叠，那么这些 Tensor 对应的回调函数列表会被拼接，此操作对每个 Tensor 独立作用。例如，"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:23 of
 msgid "is equivalent to"
-msgstr ""
+msgstr "等价于"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:30 of
-msgid ""
-"The effect of :meth:`attach` will persist across multiple uses of the "
-"GradManager. When reusing a GradManager, it is likely a mistake to call "
-":meth:`attach` on the same set of tensors and callbacks repeatedly, which"
-" may grow the callback list indefinitely."
-msgstr ""
+msgid "The effect of :meth:`attach` will persist across multiple uses of the GradManager. When reusing a GradManager, it is likely a mistake to call :meth:`attach` on the same set of tensors and callbacks repeatedly, which may grow the callback list indefinitely."
+msgstr "调用 :meth:`attach` 之后，不仅会在当此求导中生效，也会同一个 GradManager 之后的所有求导中生效。在用同一个 GradManager 进行多次求导时，用相同的参数反复调用 :meth:`attach` 很可能是一个错误，这会导致回调函数的列表的长度一直增长。"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:36 of
-msgid ""
-"When reusing a GradManager, it is sometimes desirable to attach temporary"
-" tensors each time, e.g. for computing gradients of inputs of a neural "
-"network. GradManager tries to accommodate such usages by holding weak "
-"references to attached tensors. Most of the times, this should be enough "
-"to prevent resource leak. Unfortunately, there are still some pitfalls "
-"left:"
-msgstr ""
+msgid "When reusing a GradManager, it is sometimes desirable to attach temporary tensors each time, e.g. for computing gradients of inputs of a neural network. GradManager tries to accommodate such usages by holding weak references to attached tensors. Most of the times, this should be enough to prevent resource leak. Unfortunately, there are still some pitfalls left:"
+msgstr "在重复使用同一个 GradManager 的同时，您可能会希望对一些临时的 Tensor 求导，例如对神经网络的输入求导。考虑到这种用法，GradManager 会对被 :meth:`attach` 的 Tensor 持有弱引用。在大多数时候，这已经可以避免资源泄漏。但是，仍然有少数情况需要您注意："
 
 #: megengine.autodiff.grad_manager.GradManager.attach:42 of
-msgid ""
-"Callbacks should not hold strong references, directly or indirectly, to "
-"attached tensors. Any strong reference, including those from callbacks, "
-"will prevent garbage collection (even by the cycle collector!) of a "
-"attached tensor, until the GradManager object is garbage collected."
-msgstr ""
+msgid "Callbacks should not hold strong references, directly or indirectly, to attached tensors. Any strong reference, including those from callbacks, will prevent garbage collection (even by the cycle collector!) of a attached tensor, until the GradManager object is garbage collected."
+msgstr "回调函数不应该持有被 :meth:`attach` 的 Tensor 的强引用，无论是直接地还是间接地。任何强引用，包括来自回调函数的强引用，都会导致被 :meth:`attach` 的 Tensor 无法被垃圾回收（即使运行可回收引用循环的完整垃圾回收！），直到 GradManager 对象本身被垃圾回收为止。"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:47 of
-msgid ""
-"Please also note that GradManager might hold additional strong references"
-" to attached tensors when it is in use. This note only covers potential "
-"resource leaks across multiple uses of a GradManager, which is unrelated "
-"to whether resources is timely released within a single use."
-msgstr ""
+msgid "Please also note that GradManager might hold additional strong references to attached tensors when it is in use. This note only covers potential resource leaks across multiple uses of a GradManager, which is unrelated to whether resources is timely released within a single use."
+msgstr "还需注意的一点是 GradManager 如果正在进行求导，可能会持有对被 :meth:`attach` 的 Tensor 的强引用。本注解仅针对将一个 GradManager 用于多次求导可能引发的资源泄漏，并不涉及在进行一次求导时资源是否被第一时间释放的问题。"
 
 #: megengine.autodiff.grad_manager.GradManager.attach of
 msgid "参数"
@@ -84,9 +60,9 @@ msgstr ""
 
 #: megengine.autodiff.grad_manager.GradManager.attach:52 of
 msgid "tensor or list of tensors to track"
-msgstr ""
+msgstr "需要跟踪的 Tensor 或者 Tensor 列表"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:53 of
 msgid "callback or list of callbacks"
-msgstr ""
+msgstr "回调函数或回调函数的列表"
 
