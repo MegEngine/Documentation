@@ -55,7 +55,7 @@ Tensor 举例：三阶魔方
 事实上，除了魔方以外，还有很多东西可以抽象成 Tensor 数据结构，意味着 MegEngine 也许能派上用场。
 
 尽管 MegEngine 不是用来教你 `解魔方 <https://rubiks-cube-solver.com/>`_ 的... 😆 
-但尝试做一下 :ref:`Tensor 计算 <general-tensor-operations>` 吧，它比魔方还要更加神奇。
+但尝试做一下 :ref:`Tensor 计算 <standard-tensor-operations>` 吧，它比魔方还要更加神奇。
 
 .. note::
 

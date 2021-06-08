@@ -82,12 +82,12 @@ Arithmetic operations
    div
    floor_div
    neg
+   abs
+   sign
    pow
    mod
    sqrt
    square
-   abs
-   sign
    maximum
    minimum
    round
@@ -186,8 +186,6 @@ Statistical Functions
    max
    var
    std
-   norm
-   normalize
 
 .. _linear-algebra-functions:
 
@@ -202,30 +200,23 @@ Linear Algebra Functions
    matinv
    matmul
    svd
+   norm
+   normalize
 
-.. _searching-functions:
+.. _searching-and-sorting-functions:
 
-Searching Functions
-~~~~~~~~~~~~~~~~~~~
+Searching and Sorting Functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    argmin
    argmax
-   where
-
-.. _sorting-functions:
-
-Sorting Functions
-~~~~~~~~~~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   topk
-   sort
    argsort
+   where
+   sort
+   topk
 
 .. py:module:: megengine.functional.nn
 .. currentmodule:: megengine.functional.nn

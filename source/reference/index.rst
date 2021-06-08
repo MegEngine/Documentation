@@ -12,6 +12,11 @@ Python API
 
    MegEngine 在 GitHub 上的 Python 包源码位置在：:src:`imperative/python/megengine`
 
+.. warning::
+
+   * 对于具有 NumPy / Pytorch 等框架使用经验的用户，推荐参考 :ref:`comparison` 页面；
+   * 如果你正在从旧版本的 MegEngine 迁移到最新版本，请务必阅读 :ref:`deprecated` 页面。
+
 .. toctree::
    :maxdepth: 1
 
@@ -28,6 +33,14 @@ Python API
    random
    hub
    utils
+
+.. toctree::
+   :caption: API 相关说明
+   :maxdepth: 1
+   :hidden:
+
+   comparison
+   deprecated
 
 Index
 -----
