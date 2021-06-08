@@ -95,6 +95,7 @@ mermaid_version = "latest" # from CDN unpkg.com
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
+    "pytorch": ("https://pytorch.org/docs/stable/", None),
 }
 
 # Setting for sphinx.ext.extlinks
@@ -106,6 +107,11 @@ extlinks = {
     "pull": ("https://github.com/MegEngine/MegEngine/pull/%s", "Pull Requset #"),
     "duref": ("http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#%s", ""),
 }
+
+# Setting for sphinx_copybutton 
+copybutton_selector = 'div:not(.no-copy)>div.highlight pre'
+copybutton_prompt_text = r'>>> |\.\.\. |(?:\(.*\) )?\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: '
+copybutton_prompt_is_regexp = True
 
 # Setting for sphinx.ext.nbsphinx
 # nbsphinx do not use requirejs (breaks bootstrap)
@@ -126,6 +132,8 @@ else:
 
 # -- Options for HTML output -------------------------------------------------
 
+panels_add_bootstrap_css = False  # pydata-sphinx-theme already loads this
+
 html_logo = "logo.png"
 html_favicon = "favicon.ico"
 html_theme = "pydata_sphinx_theme"
@@ -140,6 +148,9 @@ html_search_language = "zh"
 
 # Configuration for pydata-sphinx-theme, the doc URL:
 # https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/configuring.html
+
+panels_add_bootstrap_css = False
+
 html_theme_options = {
     "search_bar_text": "输入搜索文本...",
     "icon_links": [

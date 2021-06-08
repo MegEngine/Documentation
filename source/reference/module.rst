@@ -62,7 +62,6 @@ Convolution Layers
    Conv1d
    Conv2d
    Conv3d
-   ConvRelu2d
    ConvTranspose2d
    ConvTranspose3d
    LocalConv2d
@@ -144,6 +143,7 @@ Fused operations
    :nosignatures:
    :template: autosummary/api-class.rst
 
+   ConvRelu2d
    ConvBn2d
    ConvBnRelu2d
    BatchMatMulActivation
