@@ -12,7 +12,7 @@ MegEngine 增强提案（MEPs）
 
 * Meta-MEPs
 
-  * :ref:`mep-0000`
+  * :ref:`mep-0001`
 
 * 信息类
 
