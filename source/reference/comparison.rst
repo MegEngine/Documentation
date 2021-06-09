@@ -22,6 +22,12 @@ NumPy                                     Pytorch                               
    Pytorch 的 Tensor 类中提供了许多操作/计算方法，而在 MegEngine 中这些方法被统一实现在 functional 模块中，
    意味着类似 ``functional.add()`` 等操作并不一定存在着对应的 ``Tensor.add()`` 实现，这是设计上的历史决定。
 
+.. warning::
+
+   Pytorch 中默认所有 Tensor 都需要被求导，因此提供了 :py:class:`torch.no_grad` 来禁用梯度计算。
+   而在 MegEngine 中 Tensor 默认不需要被求导，需要通过 :py:meth:`megengine.autodiff.GradManager.attach` 来进行绑定，
+   被绑定后的 Tensor 可以通过 :py:meth:`megengine.Tensor.detach` 来解除绑定。
+
 Creation Functions
 ~~~~~~~~~~~~~~~~~~
 ========================================  ========================================  ============================================== ========================================
@@ -44,7 +50,7 @@ Manipulation Functions
 NumPy                                     Pytorch                                   MegEngine                                      Comment
 ========================================  ========================================  ============================================== ========================================
 :py:func:`numpy.reshape`                  :py:func:`torch.reshape`                  :py:func:`megengine.functional.reshape`
-:py:func:`numpy.flatten`                  :py:func:`torch.flatten`                  :py:func:`megengine.functional.flatten`
+:py:meth:`numpy.ndarray.flatten`          :py:func:`torch.flatten`                  :py:func:`megengine.functional.flatten`
 :py:func:`numpy.broadcast_to`             :py:func:`torch.broadcast_to`             :py:func:`megengine.functional.broadcast_to`
 :py:func:`numpy.expand_dims`              :py:func:`torch.unsqueeze`                :py:func:`megengine.functional.expand_dims`     NumPy Style
 :py:func:`numpy.squeeze`                  :py:func:`torch.squeeze`                  :py:func:`megengine.functional.squeeze`
@@ -63,28 +69,28 @@ Arithmetic operations
 ========================================  ========================================  ============================================== ========================================
 NumPy                                     Pytorch                                   MegEngine                                      Comment
 ========================================  ========================================  ============================================== ========================================
-:py:func:`numpy.add`                      :py:func:`torch.add`                      :py:func:`megengine.functional.add`
-:py:func:`numpy.subtract`                 :py:func:`torch.sub`                      :py:func:`megengine.functional.sub`
-:py:func:`numpy.multiply`                 :py:func:`torch.mul`                      :py:func:`megengine.functional.mul`
-:py:func:`numpy.divide`                   :py:func:`torch.div`                      :py:func:`megengine.functional.div`
-:py:func:`numpy.floor_divide`             :py:func:`torch.floor_divide`             :py:func:`megengine.functional.floor_div`
-:py:func:`numpy.negative`                 :py:func:`torch.neg`                      :py:func:`megengine.functional.neg`
-:py:func:`numpy.absolute`                 :py:func:`torch.abs`                      :py:func:`megengine.functional.abs`
-:py:func:`numpy.power`                    :py:func:`torch.pow`                      :py:func:`megengine.functional.pow`
-:py:func:`numpy.mod`                      :py:func:`torch.remainder`                :py:func:`megengine.functional.mod`
-:py:func:`numpy.sqrt`                     :py:func:`torch.sqrt`                     :py:func:`megengine.functional.sqrt`
-:py:func:`numpy.square`                   :py:func:`torch.square`                   :py:func:`megengine.functional.square`
-:py:func:`numpy.sign`                     :py:func:`torch.sign`                     :py:func:`megengine.functional.sign`
-:py:func:`numpy.maximum`                  :py:func:`torch.maximum`                  :py:func:`megengine.functional.maximum`
-:py:func:`numpy.minimum`                  :py:func:`torch.minimum`                  :py:func:`megengine.functional.minimum`
-:py:func:`numpy.round`                    :py:func:`torch.round`                    :py:func:`megengine.functional.round`
-:py:func:`numpy.ceil`                     :py:func:`torch.ceil`                     :py:func:`megengine.functional.ceil`
-:py:func:`numpy.floor`                    :py:func:`torch.floor`                    :py:func:`megengine.functional.floor`
+:py:data:`numpy.add`                           :py:func:`torch.add`                      :py:func:`megengine.functional.add`
+:py:data:`numpy.subtract`                 :py:func:`torch.sub`                      :py:func:`megengine.functional.sub`
+:py:data:`numpy.multiply`                 :py:func:`torch.mul`                      :py:func:`megengine.functional.mul`
+:py:data:`numpy.divide`                   :py:func:`torch.div`                      :py:func:`megengine.functional.div`
+:py:data:`numpy.floor_divide`             :py:func:`torch.floor_divide`             :py:func:`megengine.functional.floor_div`
+:py:data:`numpy.negative`                 :py:func:`torch.neg`                      :py:func:`megengine.functional.neg`
+:py:data:`numpy.absolute`                 :py:func:`torch.abs`                      :py:func:`megengine.functional.abs`
+:py:data:`numpy.power`                    :py:func:`torch.pow`                      :py:func:`megengine.functional.pow`
+:py:data:`numpy.mod`                      :py:func:`torch.remainder`                :py:func:`megengine.functional.mod`
+:py:data:`numpy.sqrt`                     :py:func:`torch.sqrt`                     :py:func:`megengine.functional.sqrt`
+:py:data:`numpy.square`                   :py:func:`torch.square`                   :py:func:`megengine.functional.square`
+:py:data:`numpy.sign`                     :py:func:`torch.sign`                     :py:func:`megengine.functional.sign`
+:py:data:`numpy.maximum`                  :py:func:`torch.maximum`                  :py:func:`megengine.functional.maximum`
+:py:data:`numpy.minimum`                  :py:func:`torch.minimum`                  :py:func:`megengine.functional.minimum`
+:py:meth:`numpy.ndarray.round`            :py:func:`torch.round`                    :py:func:`megengine.functional.round`
+:py:data:`numpy.ceil`                     :py:func:`torch.ceil`                     :py:func:`megengine.functional.ceil`
+:py:data:`numpy.floor`                    :py:func:`torch.floor`                    :py:func:`megengine.functional.floor`
 :py:func:`numpy.clip`                     :py:func:`torch.clamp`                    :py:func:`megengine.functional.clip`
-:py:func:`numpy.exp`                      :py:func:`torch.exp`                      :py:func:`megengine.functional.exp`
-:py:func:`numpy.expm1`                    :py:func:`torch.expm1`                    :py:func:`megengine.functional.expm1`
-:py:func:`numpy.log`                      :py:func:`torch.log`                      :py:func:`megengine.functional.log`
-:py:func:`numpy.log1p`                    :py:func:`torch.log1p`                    :py:func:`megengine.functional.log1p`
+:py:data:`numpy.exp`                      :py:func:`torch.exp`                      :py:func:`megengine.functional.exp`
+:py:data:`numpy.expm1`                    :py:func:`torch.expm1`                    :py:func:`megengine.functional.expm1`
+:py:data:`numpy.log`                      :py:func:`torch.log`                      :py:func:`megengine.functional.log`
+:py:data:`numpy.log1p`                    :py:func:`torch.log1p`                    :py:func:`megengine.functional.log1p`
 ========================================  ========================================  ============================================== ========================================
 
 Trigonometric functions
@@ -92,12 +98,12 @@ Trigonometric functions
 ========================================  ========================================  ============================================== ========================================
 NumPy                                     Pytorch                                   MegEngine                                      Comment
 ========================================  ========================================  ============================================== ========================================
-:py:func:`numpy.sin`                      :py:func:`torch.sin`                      :py:func:`megengine.functional.sin`
-:py:func:`numpy.cos`                      :py:func:`torch.cos`                      :py:func:`megengine.functional.cos`
-:py:func:`numpy.tan`                      :py:func:`torch.tan`                      :py:func:`megengine.functional.tan`
-:py:func:`numpy.arcsin`                   :py:func:`torch.asin`                     :py:func:`megengine.functional.asin`           Pytorch Style
-:py:func:`numpy.arccos`                   :py:func:`torch.acos`                     :py:func:`megengine.functional.acos`           Pytorch Style
-:py:func:`numpy.arctan`                   :py:func:`torch.atan`                     :py:func:`megengine.functional.atan`           Pytorch Style
+:py:data:`numpy.sin`                      :py:func:`torch.sin`                      :py:func:`megengine.functional.sin`
+:py:data:`numpy.cos`                      :py:func:`torch.cos`                      :py:func:`megengine.functional.cos`
+:py:data:`numpy.tan`                      :py:func:`torch.tan`                      :py:func:`megengine.functional.tan`
+:py:data:`numpy.arcsin`                   :py:func:`torch.asin`                     :py:func:`megengine.functional.asin`           Pytorch Style
+:py:data:`numpy.arccos`                   :py:func:`torch.acos`                     :py:func:`megengine.functional.acos`           Pytorch Style
+:py:data:`numpy.arctan`                   :py:func:`torch.atan`                     :py:func:`megengine.functional.atan`           Pytorch Style
 ========================================  ========================================  ============================================== ========================================
 
 Hyperbolic functions
@@ -105,12 +111,12 @@ Hyperbolic functions
 ========================================  ========================================  ============================================== ========================================
 NumPy                                     Pytorch                                   MegEngine                                      Comment
 ========================================  ========================================  ============================================== ========================================
-:py:func:`numpy.sinh`                     :py:func:`torch.sinh`                     :py:func:`megengine.functional.sinh`
-:py:func:`numpy.cosh`                     :py:func:`torch.cosh`                     :py:func:`megengine.functional.cosh`
-:py:func:`numpy.tanh`                     :py:func:`torch.tanh`                     :py:func:`megengine.functional.tanh`
-:py:func:`numpy.arcsinh`                  :py:func:`torch.asinh`                    :py:func:`megengine.functional.asinh`          Pytorch Style
-:py:func:`numpy.arccosh`                  :py:func:`torch.acosh`                    :py:func:`megengine.functional.acosh`          Pytorch Style
-:py:func:`numpy.arctanh`                  :py:func:`torch.atanh`                    :py:func:`megengine.functional.atanh`          Pytorch Style
+:py:data:`numpy.sinh`                     :py:func:`torch.sinh`                     :py:func:`megengine.functional.sinh`
+:py:data:`numpy.cosh`                     :py:func:`torch.cosh`                     :py:func:`megengine.functional.cosh`
+:py:data:`numpy.tanh`                     :py:func:`torch.tanh`                     :py:func:`megengine.functional.tanh`
+:py:data:`numpy.arcsinh`                  :py:func:`torch.asinh`                    :py:func:`megengine.functional.asinh`          Pytorch Style
+:py:data:`numpy.arccosh`                  :py:func:`torch.acosh`                    :py:func:`megengine.functional.acosh`          Pytorch Style
+:py:data:`numpy.arctanh`                  :py:func:`torch.atanh`                    :py:func:`megengine.functional.atanh`          Pytorch Style
 ========================================  ========================================  ============================================== ========================================
 
 Bit operations
@@ -118,8 +124,8 @@ Bit operations
 ========================================  ========================================  ============================================== ========================================
 NumPy                                     Pytorch                                   MegEngine                                      Comment
 ========================================  ========================================  ============================================== ========================================
-:py:func:`numpy.left_shift`               Not Found                                 :py:func:`megengine.functional.left_shift`
-:py:func:`numpy.right_shift`              Not Found                                 :py:func:`megengine.functional.right_shift`
+:py:data:`numpy.left_shift`               Not Found                                 :py:func:`megengine.functional.left_shift`
+:py:data:`numpy.right_shift`              Not Found                                 :py:func:`megengine.functional.right_shift`
 ========================================  ========================================  ============================================== ========================================
 
 Logic functions
@@ -127,10 +133,10 @@ Logic functions
 ========================================  ========================================  ============================================== ========================================
 NumPy                                     Pytorch                                   MegEngine                                      Comment
 ========================================  ========================================  ============================================== ========================================
-:py:func:`numpy.logical_and`              Not Found                                 :py:func:`megengine.functional.logical_and`
-:py:func:`numpy.logical_not`              Not Found                                 :py:func:`megengine.functional.logical_not`
-:py:func:`numpy.logical_or`               Not Found                                 :py:func:`megengine.functional.logical_or`
-:py:func:`numpy.logical_xor`              Not Found                                 :py:func:`megengine.functional.logical_xor`
+:py:data:`numpy.logical_and`              Not Found                                 :py:func:`megengine.functional.logical_and`
+:py:data:`numpy.logical_not`              Not Found                                 :py:func:`megengine.functional.logical_not`
+:py:data:`numpy.logical_or`               Not Found                                 :py:func:`megengine.functional.logical_or`
+:py:data:`numpy.logical_xor`              Not Found                                 :py:func:`megengine.functional.logical_xor`
 ========================================  ========================================  ============================================== ========================================
 
 Comparison functions
@@ -138,14 +144,14 @@ Comparison functions
 ========================================  ========================================  ============================================== ========================================
 NumPy                                     Pytorch                                   MegEngine                                      Comment
 ========================================  ========================================  ============================================== ========================================
-:py:func:`numpy.isnan`                    :py:func:`torch.isnan`                    :py:func:`megengine.functional.isnan`
-:py:func:`numpy.isinf`                    :py:func:`torch.isinf`                    :py:func:`megengine.functional.isinf`
-:py:func:`numpy.equal`                    :py:func:`torch.equal`                    :py:func:`megengine.functional.equal`
-:py:func:`numpy.not_equal`                :py:func:`torch.not_equal`                :py:func:`megengine.functional.not_equal`
-:py:func:`numpy.less`                     :py:func:`torch.less`                     :py:func:`megengine.functional.less`
-:py:func:`numpy.less_equal`               :py:func:`torch.less_equal`               :py:func:`megengine.functional.less_equal`
-:py:func:`numpy.greater`                  :py:func:`torch.greater`                  :py:func:`megengine.functional.greater`
-:py:func:`numpy.greater_equal`            :py:func:`torch.greater_equal`            :py:func:`megengine.functional.greater_equal`
+:py:data:`numpy.isnan`                    :py:func:`torch.isnan`                    :py:func:`megengine.functional.isnan`
+:py:data:`numpy.isinf`                    :py:func:`torch.isinf`                    :py:func:`megengine.functional.isinf`
+:py:data:`numpy.equal`                    :py:func:`torch.equal`                    :py:func:`megengine.functional.equal`
+:py:data:`numpy.not_equal`                :py:func:`torch.not_equal`                :py:func:`megengine.functional.not_equal`
+:py:data:`numpy.less`                     :py:func:`torch.less`                     :py:func:`megengine.functional.less`
+:py:data:`numpy.less_equal`               :py:func:`torch.less_equal`               :py:func:`megengine.functional.less_equal`
+:py:data:`numpy.greater`                  :py:func:`torch.greater`                  :py:func:`megengine.functional.greater`
+:py:data:`numpy.greater_equal`            :py:func:`torch.greater_equal`            :py:func:`megengine.functional.greater_equal`
 ========================================  ========================================  ============================================== ========================================
 
 Statistical Functions
@@ -156,8 +162,8 @@ NumPy                                     Pytorch                               
 :py:func:`numpy.sum`                      :py:func:`torch.sum`                      :py:func:`megengine.functional.sum`
 :py:func:`numpy.prod`                     :py:func:`torch.prod`                     :py:func:`megengine.functional.prod`
 :py:func:`numpy.mean`                     :py:func:`torch.mean`                     :py:func:`megengine.functional.mean`
-:py:func:`numpy.min`                      :py:func:`torch.min`                      :py:func:`megengine.functional.min`
-:py:func:`numpy.max`                      :py:func:`torch.max`                      :py:func:`megengine.functional.max`
+:py:meth:`numpy.ndarray.min`              :py:func:`torch.min`                      :py:func:`megengine.functional.min`
+:py:meth:`numpy.ndarray.max`              :py:func:`torch.max`                      :py:func:`megengine.functional.max`
 :py:func:`numpy.var`                      :py:func:`torch.var`                      :py:func:`megengine.functional.var`
 :py:func:`numpy.std`                      :py:func:`torch.std`                      :py:func:`megengine.functional.std`
 ========================================  ========================================  ============================================== ========================================
@@ -170,7 +176,7 @@ NumPy                                     Pytorch                               
 :py:func:`numpy.transpose`                :py:func:`torch.transpose`                :py:func:`megengine.functional.transpose`
 :py:func:`numpy.dot`                      :py:func:`torch.dot`                      :py:func:`megengine.functional.dot`
 :py:func:`numpy.linalg.inv`               :py:func:`torch.linalg.inv`               :py:func:`megengine.functional.matinv`
-:py:func:`numpy.matmul`                   :py:func:`torch.matmul`                   :py:func:`megengine.functional.matmul`
+:py:data:`numpy.matmul`                   :py:func:`torch.matmul`                   :py:func:`megengine.functional.matmul`
 :py:func:`numpy.linalg.svd`               :py:func:`torch.linalg.svd`               :py:func:`megengine.functional.svd`
 :py:func:`numpy.linalg.norm`              :py:func:`torch.norm`                     :py:func:`megengine.functional.norm`
 ========================================  ========================================  ============================================== ========================================
@@ -368,22 +374,22 @@ Initialization
 ================================================================================ ================================================================================
 Pytorch                                                                          MegEngine
 ================================================================================ ================================================================================
-:py:class:`torch.nn.init.calculate_gain`                                         :py:class:`megengine.module.init.calculate_gain`
+:py:func:`torch.nn.init.calculate_gain`                                          :py:class:`megengine.module.init.calculate_gain`
 _calculate_fan_in_and_fan_out                                                    :py:class:`megengine.module.init.calculate_fan_in_and_fan_out`
-calculate_correct_fan                                                            :py:class:`megengine.module.init.calculate_correct_fan`
-:py:class:`torch.nn.init.uniform_`                                               :py:class:`megengine.module.init.uniform_`
-:py:class:`torch.nn.init.normal_`                                                :py:class:`megengine.module.init.normal_`
-:py:class:`torch.nn.init.constant_`                                              :py:class:`megengine.module.init.fill_`
-:py:class:`torch.nn.init.ones_`                                                  :py:class:`megengine.module.init.ones_`
-:py:class:`torch.nn.init.zeros_`                                                 :py:class:`megengine.module.init.zeros_`
-:py:class:`torch.nn.init.eye_`                                                   :ref:`not-implemented`
-:py:class:`torch.nn.init.dirac_`                                                 :ref:`not-implemented`
-:py:class:`torch.nn.init.xavier_uniform_`                                        :py:class:`megengine.module.init.xavier_uniform_`
-:py:class:`torch.nn.init.xavier_normal_`                                         :py:class:`megengine.module.init.xavier_normal_`
-:py:class:`torch.nn.init.kaiming_uniform_`                                       :py:class:`megengine.module.init.msra_uniform_`
-:py:class:`torch.nn.init.kaiming_normal_`                                        :py:class:`megengine.module.init.msra_normal_`
-:py:class:`torch.nn.init.orthogonal_`                                            :ref:`not-implemented`
-:py:class:`torch.nn.init.sparse_`                                                :ref:`not-implemented`
+_calculate_correct_fan                                                           :py:class:`megengine.module.init.calculate_correct_fan`
+:py:func:`torch.nn.init.uniform_`                                                :py:class:`megengine.module.init.uniform_`
+:py:func:`torch.nn.init.normal_`                                                 :py:class:`megengine.module.init.normal_`
+:py:func:`torch.nn.init.constant_`                                               :py:class:`megengine.module.init.fill_`
+:py:func:`torch.nn.init.ones_`                                                   :py:class:`megengine.module.init.ones_`
+:py:func:`torch.nn.init.zeros_`                                                  :py:class:`megengine.module.init.zeros_`
+:py:func:`torch.nn.init.eye_`                                                    :ref:`not-implemented`
+:py:func:`torch.nn.init.dirac_`                                                  :ref:`not-implemented`
+:py:func:`torch.nn.init.xavier_uniform_`                                         :py:class:`megengine.module.init.xavier_uniform_`
+:py:func:`torch.nn.init.xavier_normal_`                                          :py:class:`megengine.module.init.xavier_normal_`
+:py:func:`torch.nn.init.kaiming_uniform_`                                        :py:class:`megengine.module.init.msra_uniform_`
+:py:func:`torch.nn.init.kaiming_normal_`                                         :py:class:`megengine.module.init.msra_normal_`
+:py:func:`torch.nn.init.orthogonal_`                                             :ref:`not-implemented`
+:py:func:`torch.nn.init.sparse_`                                                 :ref:`not-implemented`
 ================================================================================ ================================================================================
 
 Convolution Layers
@@ -604,8 +610,6 @@ Pytorch                                                                         
 :py:func:`torchvision.ops.nms`                                                   :py:func:`megengine.functional.vision.nms`
 :py:func:`torchvision.ops.roi_align`                                             :py:func:`megengine.functional.vision.roi_align`
 :py:func:`torchvision.ops.roi_pool`                                              :py:func:`megengine.functional.vision.roi_pooling`
-:py:func:`torchvision.ops.nms`                                                   :py:func:`megengine.functional.vision.nms`
-:py:func:`torchvision.ops.nms`                                                   :py:func:`megengine.functional.vision.nms`
 ================================================================================ ================================================================================
 
 OpenCV Python Package
