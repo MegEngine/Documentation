@@ -9,26 +9,67 @@ MegEngine 增强提案（MEPs）
 分类索引
 --------
 
+.. note::
 
-* Meta-MEPs
+   MEP 类型：
 
-  * :ref:`mep-0001`
+   * I - Informational, 信息类型
+   * P - Process, 流程类型（包括 Meta-MEPs 在内）
+   * S - Standards Track, 标准追踪类型
 
-* 信息类
+   MEP 状态：
 
-* 临时实现，接口可能改动
+   * A - Accepted or Active, 接受或生效的提案
+   * D - Deferred, 推迟的提案
+   * F - Final, 完成的提案
+   * P - Provisional, 临时的提案
+   * R - Rejected, 拒绝的提案
+   * S - Superseded, 被取代的提案
+   * W - Withdrawn, 撤销的提案
 
-* 已经接受，但可能还没实现
+   不带状态缩写的 MEP 统一表示为草稿状态。
 
-* 正在考虑是否接受
+Meta 与流程类 MEPs
+~~~~~~~~~~~~~~~~~~
 
-* 已经实现，有稳定的接口
+信息类型 MEPs
+~~~~~~~~~~~~~
 
-* 旧的 Meta-MEPs 和信息类 MEPs
+草稿状态 MEPs
+~~~~~~~~~~~~~
 
-* 决定推迟，等待进一步研究更新
+.. list-table:: 
+   :header-rows: 1
+   :widths: 5, 55, 40
 
-* 已被废弃、撤销或拒绝
+   * - 
+     - 编号与标题 
+     - 作者
+
+   * - P
+     - :ref:`mep-0001`
+     - The MegEngine Open Source Team
+
+临时状态 MEPs
+~~~~~~~~~~~~~
+.. warning::
+
+   设计和接口将来可能更改，也可能整个提案最终被拒绝。
+   
+接受状态 MEPs
+~~~~~~~~~~~~~
+
+延期状态 MEPs
+~~~~~~~~~~~~~
+
+完成状态 MEPs
+~~~~~~~~~~~~~
+
+过时的 Meta 和信息类 MEPs
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+已被废弃、撤回或拒绝的 MEPs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 顺序索引
 --------
