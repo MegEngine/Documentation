@@ -13,7 +13,7 @@ Deprecated APIs
 
 
 不推荐使用的接口
-================
+----------------
 
 .. tabularcolumns:: |>{\raggedright}\Y{.4}|>{\centering}\Y{.1}|>{\centering}\Y{.12}|>{\raggedright\arraybackslash}\Y{.38}|
 
@@ -76,6 +76,6 @@ Deprecated APIs
 .. _deprecation-policy:
 
 弃用政策
-========
+--------
 
 我们正在制定相关政策中。
