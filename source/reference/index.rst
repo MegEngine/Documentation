@@ -12,6 +12,12 @@ Python API
 
    MegEngine 在 GitHub 上的 Python 包源码位置在：:src:`imperative/python/megengine`
 
+.. note::
+
+   如果你发现部分 API 内容未被及时更新成中文，欢迎通过 Crowdin_ 平台协助翻译。
+
+.. _Crowdin: https://crowdin.com/project/megengine/zh-CN#/Documentation/main/locales/zh_CN/LC_MESSAGES/reference/api
+
 .. warning::
 
    * 对于具有 NumPy / Pytorch 等框架使用经验的用户，推荐参考 :ref:`comparison` 页面；
