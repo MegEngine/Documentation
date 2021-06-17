@@ -21,12 +21,14 @@
 
 .. code-block:: shell
 
+   python3 -m pip install --upgrade pip  # 将 pip 更新到最新版本
    python3 -m pip install megengine -f https://megengine.org.cn/whl/mge.html
 
 .. note::
 
-   对于 ``conda`` 用户, 可以选择通过在环境中先安装 ``pip``,
+   * 对于 ``conda`` 用户, 可以选择通过在环境中先安装 ``pip``,
    再按照上述方式进行 MegEngine 的安装。
+
 
 通过源码编译安装
 ----------------
