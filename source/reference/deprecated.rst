@@ -9,11 +9,14 @@ Deprecated APIs
 
 （更多详细信息，请参考 :ref:`deprecation-policy` ）
 
+.. note::
 
+   如果你想要阅读 <=0.6 版本的 MegEngine API 文档，请访问：
 
+   https://megengine.org.cn/api/0.6/zh/api.html
 
-不推荐使用的接口
-----------------
+不推荐使用/弃用的接口
+---------------------
 
 .. tabularcolumns:: |>{\raggedright}\Y{.4}|>{\centering}\Y{.1}|>{\centering}\Y{.12}|>{\raggedright\arraybackslash}\Y{.38}|
 
@@ -66,7 +69,6 @@ Deprecated APIs
      - 1.3
      - 待定
      - megengine.functional.vision.warp_affine
-
 
    * - megengine.funtional.nn.warp_perspective
      - 1.3
