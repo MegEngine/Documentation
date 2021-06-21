@@ -189,12 +189,3 @@ html_context = {
     "doc_path": "source",
 }
 
-# -- Patch for extensions not adapt to Sphinx 4.0 APIs --------------------------
-# TODO: remove the following hack codes while correspond extensions adapted
-
-# sphinxcontrib-mermaid
-# Issues: https://github.com/mgaitan/sphinxcontrib-mermaid/issues/72
-import errno
-import sphinx.util.osutil
-sphinx.util.osutil.ENOENT = errno.ENOENT
-
