@@ -8,11 +8,12 @@
    :hidden:
    :maxdepth: 1
  
-   document-style-guide.rst
-   restructuredtext.rst
-   commit-message.rst
-   build-the-doc-locally.rst
-   translation.rst
+   document-style-guide
+   restructuredtext
+   commit-message
+   build-the-doc-locally
+   translation
+   maintainer-responsibility
 
 GitHub 地址：https://github.com/MegEngine/Documentation （欢迎 Star～）
 
@@ -31,6 +32,8 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 .. warning::
 
    请勿将对文档（Documentation）的 Issues 提交到 MegEngine/MegEngine 存储库。
+
+.. _doc-co-author:
 
 如果你发现了文档中一些很容易改正的细节错误（比如错字、格式不正确等），
 但不熟悉 MegEngine 文档的 :ref:`github-collaborate` ，觉得提 Pull Request 太麻烦，
@@ -123,6 +126,26 @@ Git 协作流程
 
 我们还提供了更加详细的 :ref:`pull-request-guide` （里面的规则适用于 MegEngine ）。
 
+借助 CI 预览更新后的文档
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+如果你对文档的内容修改较多，建议你在本地完整地构建文档，参考 :ref:`how-to-build-the-doc-locally` 。
+这样可以确保你的改动对文档的其它地方没有影响（尽管你可能笃定不会发生这样的事情），以便于整体进行合并。
+
+**当你在本地的修改已经完成后** ，可以通过发起 Pull Request 来触发 GitHub Actions.
+借助于 `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ 工作流，
+我们可以对整个文档的构建过程进行检查，确保能够正常生成整个文档网站。
+当整个工作流成功执行完，你会在 `Actions <https://github.com/MegEngine/Documentation/actions>`_
+对应的 workflow runs 结果页面中找到临时生成的构件（Artifacts），
+里面是 HTML 形式生成的整个文档网站的压缩包，你可以下载到本地后解压并进行预览。
+
+这种方式适合于那些不希望在本地进行构建文档所需环境配置的人员，前提是： **他们对文档的改动幅度较小** 。
+
+.. warning::
+
+   不要频繁地向 Pull Request 中进行新的提交，每次提交都会占用一台 CI 机器资源。
+   如果你确定某次构建工作流是不理想的，可以手动地取消整个流程以节省 CI 资源。
+
 Pull Request 如何被合并
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -130,12 +153,9 @@ Pull Request 如何被合并
 
 * 必须签署贡献者协议（Contributor License Agreement，简称 CLA）；
 * 必须至少有一位官方维护人员审核（Review）完成并批准（Approve）了你的所有代码
-* 必须通过 Actions 中触发的状态检查（Status check），如 Sphinx Build and Test.
+* 必须通过 Actions 中触发的状态检查（Status check），如 
+  `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ .
 * 必须将你的 Commits 历史记录整理为线性，消息内容符合 `规范 <commit-message>`_.
-
-当 Pull Request 被成功合入 ``main`` 分支，将自动触发 ``gh-pages`` 分支上的部署流程。
-``gh-pages`` 分支将被用于 GitHub Pages 静态网站服务的部署，
-可作为 MegEngine 官网由于不可抗力等因素无法访问时的镜像站点。
 
 官网文档页面的更新将会有一定的处理流程延迟，请耐心等待官网服务器更新文档内容。
 
@@ -145,7 +165,7 @@ Pull Request 如何被合并
 当代码需要找人审核时，可以从下面的人员名单中进行选择：
 
 * 架构相关：Chai_
-* 主题相关：Chai_ （上游主题 Pydata 的研发请直接向上游负责人员反馈）
+* 主题相关：Chai_ （上游主题 Pydata 相关问题请直接向上游库开发者反馈）
 * 教程相关：Chai_
 * 文档相关：Chai_
 
