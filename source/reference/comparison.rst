@@ -51,16 +51,16 @@ NumPy                                     Pytorch                               
 ========================================  ========================================  ============================================== ========================================
 :py:func:`numpy.reshape`                  :py:func:`torch.reshape`                  :py:func:`megengine.functional.reshape`
 :py:meth:`numpy.ndarray.flatten`          :py:func:`torch.flatten`                  :py:func:`megengine.functional.flatten`
-:py:func:`numpy.broadcast_to`             :py:func:`torch.broadcast_to`             :py:func:`megengine.functional.broadcast_to`
-:py:func:`numpy.expand_dims`              :py:func:`torch.unsqueeze`                :py:func:`megengine.functional.expand_dims`     NumPy Style
+:py:func:`numpy.broadcast_to`             :py:func:`torch.broadcast_to`             :py:func:`megengine.functional.broadcast_to`   aka. ``expand()``
+:py:func:`numpy.expand_dims`              :py:func:`torch.unsqueeze`                :py:func:`megengine.functional.expand_dims`    NumPy Style
 :py:func:`numpy.squeeze`                  :py:func:`torch.squeeze`                  :py:func:`megengine.functional.squeeze`
-:py:func:`numpy.concatenate`              :py:func:`torch.cat`                      :py:func:`megengine.functional.concat`          NumPy Style
+:py:func:`numpy.concatenate`              :py:func:`torch.cat`                      :py:func:`megengine.functional.concat`         NumPy Style
 :py:func:`numpy.stack`                    :py:func:`torch.stack`                    :py:func:`megengine.functional.stack`
 :py:func:`numpy.split`                    :py:func:`torch.split`                    :py:func:`megengine.functional.split`
 :py:func:`numpy.tile`                     :py:func:`torch.tile`                     :py:func:`megengine.functional.tile`
 :py:func:`numpy.repeat`                   :py:func:`torch.repeat_interleave`        :py:func:`megengine.functional.repeat`
-:py:func:`numpy.take_along_axis`          :py:func:`torch.gather`                   :py:func:`megengine.functional.gather`          Pytorch Style
-:py:func:`numpy.put_along_axis`           :py:func:`torch.scatter`                  :py:func:`megengine.functional.scatter`         Pytorch Style
+:py:func:`numpy.take_along_axis`          :py:func:`torch.gather`                   :py:func:`megengine.functional.gather`         Pytorch Style
+:py:func:`numpy.put_along_axis`           :py:func:`torch.scatter`                  :py:func:`megengine.functional.scatter`        Pytorch Style
 :py:func:`numpy.compress`                 :py:func:`torch.take`                     :py:func:`megengine.functional.cond_take`
 ========================================  ========================================  ============================================== ========================================
 
@@ -69,7 +69,7 @@ Arithmetic operations
 ========================================  ========================================  ============================================== ========================================
 NumPy                                     Pytorch                                   MegEngine                                      Comment
 ========================================  ========================================  ============================================== ========================================
-:py:data:`numpy.add`                           :py:func:`torch.add`                      :py:func:`megengine.functional.add`
+:py:data:`numpy.add`                      :py:func:`torch.add`                      :py:func:`megengine.functional.add`
 :py:data:`numpy.subtract`                 :py:func:`torch.sub`                      :py:func:`megengine.functional.sub`
 :py:data:`numpy.multiply`                 :py:func:`torch.mul`                      :py:func:`megengine.functional.mul`
 :py:data:`numpy.divide`                   :py:func:`torch.div`                      :py:func:`megengine.functional.div`
