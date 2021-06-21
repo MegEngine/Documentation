@@ -329,14 +329,24 @@ reST 支持图像指令，用法如下：
 .. code-block::
 
    .. image:: gnu.png
-      (options)
+      :height: 100px (length)
+      :width: 200px (length or percentage of the current line width)
+      :scale: integer percentage (the "%" symbol is optional)
+      :alt: alternate text
+      :align: "top", "middle", "bottom", "left", "center", or "right"
+      :target: text (URI or reference name)
 
-当在 Sphinx 中使用时，给定的文件名（在此处为 ``gnu.png`` ）必须相对于源文件。
+   当在 Sphinx 中使用时，给定的文件名（在此处为 ``gnu.png`` ）必须相对于源文件。
 
-* MegEngine 文档中所使用的图片请统一放置在 ``source/_static/images`` 目录内。
-* 一般情况下请优先使用 SVG 格式的矢量图，使用位图请权衡好图片体积和清晰度。
-* 尽可能使用 Graphviz 或 Mermaid 语法绘制示意图（后续章节有说明）。
-* 图片文件名需要有相应的语义信息，不可使用完全随机生成的字符。
+.. warning::
+
+   * MegEngine 文档中所使用的图片请统一放置在 ``source/_static/images`` 目录内。
+   * 一般情况下请优先使用 SVG 格式的矢量图，使用位图请权衡好图片体积和清晰度。
+   * 尽可能使用 Graphviz 或 Mermaid 语法绘制示意图（后续章节有说明）。
+   * 图片文件名需要有相应的语义信息，不可使用完全随机生成的字符。
+
+绝对不允许直接将图片放在和文本文件相同的文件夹内，这样虽然方便了写作时进行引用，
+但却给整个文档的维护引入了技术债务，将形成潜在的风险。
 
 交叉引用（Cross-reference）
 ---------------------------

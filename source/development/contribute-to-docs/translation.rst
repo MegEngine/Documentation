@@ -4,13 +4,9 @@
 如何帮助翻译文档内容
 ====================
 
-MegEngine 文档使用 Sphinx 官方推荐的 
-`国际化 <https://www.sphinx-doc.org/en/master/usage/advanced/intl.html>`_ 方式实现多语言支持。
-
 .. note::
 
   MegEngine 文档翻译工作目前通过 :ref:`Crowdin <crowdin-tr>` 平台进行协作，与 GitHub 自动集成。
-
 
 对于参与文档翻译的人员，对以下目录结构有一定了解将有所帮助：
 
@@ -25,6 +21,9 @@ MegEngine 文档使用 Sphinx 官方推荐的
 
 基本原理
 --------
+
+MegEngine 文档使用 Sphinx 官方推荐的 
+`国际化 <https://www.sphinx-doc.org/en/master/usage/advanced/intl.html>`_ 方式实现多语言支持。
 
 整个翻译内容的生成流程如下（ **翻译人员通常只需要关注第 4 步** ）：
 
@@ -63,6 +62,8 @@ MegEngine 文档使用 Sphinx 官方推荐的
       make LANGUAGE="zh_CN" html  # 中文
       make LANGUAGE="en" html     # 英文
 
+现在你可以通过下面提到的 Crowdin 平台来完成对 ``.po`` 文件的翻译，而不需要通过 GitHub.
+
 .. _crowdin-tr:
 
 使用 Crowdin 进行翻译
@@ -82,29 +83,51 @@ MegEngine 文档使用 Sphinx 官方推荐的
 
 更多特性请参考：https://crowdin.com/features
 
-加入翻译
-~~~~~~~~
+加入 MegEngine 翻译项目
+~~~~~~~~~~~~~~~~~~~~~~~
 
 你需要注册一个 `Crowdin <https://crowdin.com/>`_ 账户，
-进入 `项目页面 <https://crowdin.com/project/megengine>`_ 后可以看到语言选项卡和整体进度：
+进入 `MegEngine 项目页面 <https://crowdin.com/project/megengine>`_ 后可以看到语言选项卡和整体进度：
 
 Chinese Simplified
-  由于 Sphinx 生成文档时使用 Python Docstring 提取部分内容，
-  源代码是英文，因此这部分内容依旧为英文，我们需要将其翻译成中文。
+  由于 Sphinx 生成网站时使用 Python Docstring 提取 API 文档内容，
+  源代码均为英文，因此这部分内容依旧为英文，我们需要将其翻译成中文。
 
 English （以及其它语言）
   与上情况相反：除 Python Docstring 外，所有文档原文内容均为中文，
-  因此我们需要将这些内容翻译成指定语言。
+  因此我们需要将这些内容翻译成指定语言。（通常我们会提供机器翻译版本作为参考）
 
 选择语言后，可以看到多个需要翻译的文件。每个翻译文件和文件夹都有一个翻译进度。
 蓝色条代表已经翻译，绿色条代表已经审核。同一条目可以有多条翻译建议（Suggestion）。
-翻译者和审核者可以通过投票来决定，最终导出被审核通过的翻译（如果没有审核，则会选择最近的翻译建议）。
+翻译者和审核者可以通过投票来表态，最终导出被审核通过的翻译（如果没有审核，则会选择最近的翻译建议）。
+
+Crowdin 不可用时的做法
+~~~~~~~~~~~~~~~~~~~~~~
+
+当遇到 Crowdin 平台不可用时，我们可以使用最原始的方式来直接维护 ``.po`` 文件。
+
+假设你发现 `reference/api/megengine.functional.add.html 
+<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.functional.add.html>`_
+对应的 API Docstring 部分内容翻译有误/没有翻译，标准的处理流程应该如下： 
+
+1. 判断 ``.po`` 文件位置（在这个例子中，属于 API Docstring 英文翻译中文的情况）：
+   `locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.add.po 
+   <https://github.com/MegEngine/Documentation/blob/main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.add.po>`_
+
+2. 根据 ``msgstr`` 找到对应位置，根据 ``msgid`` 原文修改 ``msgstr`` 为正确内容；
+3. 按照 Git 工作流向 Documentation 库发起 Pull Request.
+
+更多细节请参考 :ref:`contribute-to-docs` 和 :ref:`commit-message` 。
+
+.. note::
+
+   如果不熟悉 Git 操作，你可以通过任何官方渠道与文档维护人员联系并进行反馈，亦可作为 :ref:`共同作者 <doc-co-author>` 。
 
 翻译注意事项
 ------------
 
-* 语法和排版规范可参考 :ref:`megengine-document-style-guide` 。
-* 翻译的过程中不要破坏原有的 :ref:`rst 语法 <restructuredtext>` ，正确示范为：
+* 语法和排版规范可参考 :ref:`restructuredtext` 和 :ref:`megengine-document-style-guide` 。
+* 不要破坏原有的语法格式，正确示范为：
 
   .. code-block:: po
 
@@ -112,13 +135,23 @@ English （以及其它语言）
      msgid "A :py:class:`~.megengine.Tensor` object"
      msgstr "一个 :py:class:`~.megengine.Tensor` 对象"
 
-* 翻译的过程中不要丢掉原有标点符号，正确示范为：
+  .. warning::
+
+     Sphinx reStructuredText 语法与周围文本内容之间的空格是 **必需的** ，不然会以文本形式进行渲染 。
+     而在 reStructuredText 语法内部，**不该出现空格的地方绝对不能出现空格** ，谨记格式的重要性。
+     在对 API 相关内容进行翻译时尤其需要注重这一点，否则将牵一发而动全身。
+
+* 不要自行加入新的 Sphinx reStructuredText 语法，翻译程序将会检测到前后数量不一致。
+
+* 不要丢掉原有标点符号，正确示范为：
 
   .. code-block:: po
 
      #: locales/zh_CN/LC_MESSAGES/example.rst:6
      msgid "Method:"
      msgstr "方法："
+
+  当然，多出奇怪的符号也是不允许的。
 
 基本要领
 ~~~~~~~~

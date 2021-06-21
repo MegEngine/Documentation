@@ -25,7 +25,7 @@
 
 * 如果你是框架用户，不需要改动 MegEngine 源码，只需在本地构建和预览文档的内容，
   或对进行简单的增删查改，建议安装最新发布的 MegEngine 稳定版 Wheel 包构建文档。
-  可以直接使用对应的 ``pip intall`` 命令 将已经打包好的 MegEngine 安装到当前的 Python 环境中。
+  可以直接使用对应的 ``pip intall`` 命令将已经打包好的 MegEngine 安装到当前的 Python 环境中。
 * 如果你是研发人员，需要在指定的 MegEngine 分支源代码上生成对应文档，则需要克隆对应分支进行编译构建。
   通过 ``export PYTHONPATH`` 的形式来临时指定特定的 MegEngine 源代码路径，
   这种方式适合开发者需要同时对源码和文档进行维护的情况。:ref:`了解如何进行从源码构建。<install>` 
