@@ -1,0 +1,389 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: megengine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-21 15:57+0800\n"
+"PO-Revision-Date: 2021-06-21 14:59\n"
+"Last-Translator: \n"
+"Language: zh_TW\n"
+"Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/megengine.po\n"
+"X-Crowdin-File-ID: 6570\n"
+
+#: ../../source/reference/megengine.rst:6
+msgid "megengine"
+msgstr "crwdns61220:0crwdne61220:0"
+
+#: ../../source/reference/megengine.rst:14
+msgid "``MGE`` 或 ``mge`` 是 ``MegEngine`` 的官方缩写，我们建议相关衍生库将其作为前缀。"
+msgstr "crwdns61222:0crwdne61222:0"
+
+#: ../../source/reference/megengine.rst:18
+msgid "不要尝试 [ ``import megengine as torch`` ] 这是行不通的！ ( /ω＼)"
+msgstr "crwdns61224:0crwdne61224:0"
+
+#: ../../source/reference/megengine.rst:20
+msgid "MegEngine 的部分 API 设计借鉴了 PyTorch_, 我们相信这对开发者而言会更加友好；"
+msgstr "crwdns63934:0crwdne63934:0"
+
+#: ../../source/reference/megengine.rst:21
+msgid "但二者的底层设计完全不同，MegEngine is just MegEngine."
+msgstr "crwdns61228:0crwdne61228:0"
+
+#: ../../source/reference/megengine.rst:28
+msgid "Tensor"
+msgstr "crwdns61230:0crwdne61230:0"
+
+#: ../../source/reference/megengine.rst:35
+msgid "MegEngine 中提供了一种名为 “张量” （:class:`Tensor` ）的数据结构， 区别于物理学中的定义，其概念与 NumPy_ 中的 :class:`~numpy.ndarray` 更加相似， 即张量是一类多维数组，其中每个元素的数据类型和空间大小一致，而数据值可以不同。"
+msgstr "crwdns63936:0:class:crwdnd63936:0:class:crwdne63936:0"
+
+#: ../../source/reference/megengine.rst:40
+msgid "Tensor 举例：三阶魔方"
+msgstr "crwdns63938:0crwdne63938:0"
+
+#: ../../source/reference/megengine.rst:46
+msgid "我们可以借助上面这张魔方（ `图片来源 <https://commons.wikimedia.org/wiki/File:Rubiks_cube.jpg>`_ ）来直观地理解 Tensor:"
+msgstr "crwdns63940:0crwdne63940:0"
+
+#: ../../source/reference/megengine.rst:48
+msgid "首先，我们假设这个魔方是“实心同质”的，是一个存在于现实世界中的 Tensor;"
+msgstr "crwdns63942:0crwdne63942:0"
+
+#: ../../source/reference/megengine.rst:49
+msgid "这个 Tensor 里面的每个元素的类型（:attr:`~Tensor.dtype` ）都是一致的（方方正正的形状、外加一样的做工）；"
+msgstr "crwdns63944:0:attr:crwdne63944:0"
+
+#: ../../source/reference/megengine.rst:50
+msgid "而且这是一个维度（:attr:`~Tensor.ndim` ）为 :math:`3` 的结构，形状（:attr:`~Tensor.shape` ）为 :math:`(3, 3, 3)` ;"
+msgstr "crwdns63946:0:attr:crwdnd63946:0:math:crwdnd63946:0:attr:crwdnd63946:0:math:crwdne63946:0"
+
+#: ../../source/reference/megengine.rst:51
+msgid "对应地，该 Tensor 的总元素个数（:attr:`~Tensor.size` ）是 :math:`3*3*3=27`."
+msgstr "crwdns63948:0:attr:crwdnd63948:0:math:crwdne63948:0"
+
+#: ../../source/reference/megengine.rst:53
+msgid "如果你将每种颜色代表一个值，而每个魔方块的值可以用其具有的颜色值之和来表示（中间块只好为零了）， 那么不同的魔方块就具有了各自的取值，就好像 Tensor 中的每个元素可以有自己的取值一样。 事实上，除了魔方以外，还有很多东西可以抽象成 Tensor 数据结构，意味着 MegEngine 也许能派上用场。"
+msgstr "crwdns63950:0crwdne63950:0"
+
+#: ../../source/reference/megengine.rst:57
+msgid "尽管 MegEngine 不是用来教你 `解魔方 <https://rubiks-cube-solver.com/>`_ 的... 😆 但尝试做一下 :ref:`Tensor 计算 <standard-tensor-operations>` 吧，它比魔方还要更加神奇。"
+msgstr "crwdns66594:0:ref:crwdne66594:0"
+
+#: ../../source/reference/megengine.rst:62
+msgid "与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效的计算。 当 GPU 和 CPU 设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。"
+msgstr "crwdns63954:0crwdne63954:0"
+
+#: ../../source/reference/megengine.rst:65
+msgid "如果有查看/改变默认计算设备的需求，请参考 :ref:`device` 中提供的接口。"
+msgstr "crwdns63956:0:ref:crwdne63956:0"
+
+#: ../../source/reference/megengine.rst:66
+msgid "通过 :meth:`.Tensor.to` 和 :func:`.functional.copy` 可将 Tensor 拷贝到指定设备。"
+msgstr "crwdns61238:0:meth:crwdnd61238:0:func:crwdne61238:0"
+
+#: ../../source/reference/megengine.rst:70
+msgid "Tensor 类中还有其他的属性和方法，我们将在恰当的位置进行更具体的介绍："
+msgstr "crwdns63958:0crwdne63958:0"
+
+#: ../../source/reference/megengine.rst:79:<autosummary>:1
+msgid ":obj:`Tensor <megengine.Tensor>`"
+msgstr "crwdns61240:0:obj:crwdne61240:0"
+
+#: ../../source/reference/megengine.rst:79:<autosummary>:1
+msgid "A tensor object represents a multidimensional, homogeneous array of fixed-size items."
+msgstr "crwdns61242:0crwdne61242:0"
+
+#: ../../source/reference/megengine.rst:79:<autosummary>:1
+msgid ":obj:`Parameter <megengine.Parameter>`"
+msgstr "crwdns61244:0:obj:crwdne61244:0"
+
+#: ../../source/reference/megengine.rst:79:<autosummary>:1
+msgid "A kind of Tensor that is to be considered a module parameter."
+msgstr "crwdns61246:0crwdne61246:0"
+
+#: ../../source/reference/megengine.rst:81
+msgid "Tensor 数据类型"
+msgstr "crwdns61250:0crwdne61250:0"
+
+#: ../../source/reference/megengine.rst:83
+msgid "MegEngine 中使用 :class:`numpy.dtype` 来表示数据类型，目前支持的数据类型如下："
+msgstr "crwdns61252:0:class:crwdne61252:0"
+
+#: ../../source/reference/megengine.rst:86
+msgid "数据类型"
+msgstr "crwdns61254:0crwdne61254:0"
+
+#: ../../source/reference/megengine.rst:86
+msgid "numpy.dtype"
+msgstr "crwdns61256:0crwdne61256:0"
+
+#: ../../source/reference/megengine.rst:88
+msgid "32-bit floating-point"
+msgstr "crwdns61258:0crwdne61258:0"
+
+#: ../../source/reference/megengine.rst:88
+msgid ":any:`numpy.float32` a alias of :class:`numpy.single`"
+msgstr "crwdns61260:0:any:crwdnd61260:0:class:crwdne61260:0"
+
+#: ../../source/reference/megengine.rst:89
+msgid "16-bit floating-point"
+msgstr "crwdns61262:0crwdne61262:0"
+
+#: ../../source/reference/megengine.rst:89
+msgid ":any:`numpy.float16` a alias of :class:`numpy.half`"
+msgstr "crwdns61264:0:any:crwdnd61264:0:class:crwdne61264:0"
+
+#: ../../source/reference/megengine.rst:90
+msgid "8-bit integer (unsigned)"
+msgstr "crwdns61266:0crwdne61266:0"
+
+#: ../../source/reference/megengine.rst:90
+msgid ":any:`numpy.uint8`"
+msgstr "crwdns61268:0:any:crwdne61268:0"
+
+#: ../../source/reference/megengine.rst:91
+msgid "8-bit integer (signed)"
+msgstr "crwdns61270:0crwdne61270:0"
+
+#: ../../source/reference/megengine.rst:91
+msgid ":any:`numpy.int8`"
+msgstr "crwdns61272:0:any:crwdne61272:0"
+
+#: ../../source/reference/megengine.rst:92
+msgid "16-bit integer (signed)"
+msgstr "crwdns61274:0crwdne61274:0"
+
+#: ../../source/reference/megengine.rst:92
+msgid ":any:`numpy.int16`"
+msgstr "crwdns61276:0:any:crwdne61276:0"
+
+#: ../../source/reference/megengine.rst:93
+msgid "32-bit integer (signed)"
+msgstr "crwdns61278:0crwdne61278:0"
+
+#: ../../source/reference/megengine.rst:93
+msgid ":any:`numpy.int32`"
+msgstr "crwdns61280:0:any:crwdne61280:0"
+
+#: ../../source/reference/megengine.rst:94
+msgid "Boolean"
+msgstr "crwdns61282:0crwdne61282:0"
+
+#: ../../source/reference/megengine.rst:94
+msgid ":any:`numpy.bool8` a alias of :class:`numpy.bool_`"
+msgstr "crwdns61284:0:any:crwdnd61284:0:class:crwdne61284:0"
+
+#: ../../source/reference/megengine.rst:97
+msgid "要获取指定数据类型的 Tensor, 可以使用 :meth:`~Tensor.astype` 方法进行转化。"
+msgstr "crwdns63960:0:meth:crwdne63960:0"
+
+#: ../../source/reference/megengine.rst:101
+msgid "单精度浮点 ``float32`` 是 MegEngine 中默认的（也是最通用的）Tensor 数据类型。"
+msgstr "crwdns61286:0crwdne61286:0"
+
+#: ../../source/reference/megengine.rst:105
+msgid "我们会在 :mod:`megengine.quantization` 模块中提到对量化数据类型的支持。"
+msgstr "crwdns63962:0:mod:crwdne63962:0"
+
+#: ../../source/reference/megengine.rst:109
+msgid "并不是所有的已有算子都支持上述任意数据类型的计算，还有一些情况尚未实现。"
+msgstr "crwdns61288:0crwdne61288:0"
+
+#: ../../source/reference/megengine.rst:112
+msgid "Tensor 创建与处理"
+msgstr "crwdns63964:0crwdne63964:0"
+
+#: ../../source/reference/megengine.rst:114
+msgid "创建 Tensor 的方式有很多种，常见操作如下："
+msgstr "crwdns63966:0crwdne63966:0"
+
+#: ../../source/reference/megengine.rst:116
+msgid "如果想要使用已经存在的数据创建 Tensor, 可以将其传入 :class:`Tensor` 的构造函数： 支持传入标量（Scalar）、Python :class:`list` 以及 NumPy :class:`~numpy.ndarray` （当然也包括 Tensor 自己）；"
+msgstr "crwdns63968:0:class:crwdnd63968:0:class:crwdnd63968:0:class:crwdne63968:0"
+
+#: ../../source/reference/megengine.rst:118
+msgid "对应地，Tensor 也支持通过 :meth:`~Tensor.item` , :meth:`~Tensor.tolist` 和 :meth:`~Tensor.numpy` 变成其它类型。"
+msgstr "crwdns63970:0:meth:crwdnd63970:0:meth:crwdnd63970:0:meth:crwdne63970:0"
+
+#: ../../source/reference/megengine.rst:119
+msgid "如果想要根据某些规则生成特定的 Tensor, 请参考 :mod:`megengine.functional` 中的 :ref:`tensor-creation` 部分。"
+msgstr "crwdns63972:0:mod:crwdnd63972:0:ref:crwdne63972:0"
+
+#: ../../source/reference/megengine.rst:123
+msgid "Tensor 中重载了 Python 中常见的运算符，支持直接进行 ``+`` ``-`` ``*`` ``/`` 等操作。 但请注意，与 Tensor 相关的绝大多数计算接口，都封装在 :mod:`megengine.functional` 模块中。"
+msgstr "crwdns63974:0:mod:crwdne63974:0"
+
+#: ../../source/reference/megengine.rst:128
+msgid "更多时候，我们希望能够将现实中的数据（或数据集）在 MegEngine 中进行处理。 一种普遍的方法是将其转化为 :class:`~numpy.ndarray` 后传入 :class:`Tensor` 来创建实例； 还可以利用 MegEngine 中封装好的接口，方便进行一些预处理操作，参考 :mod:`megengine.data` 模块。"
+msgstr "crwdns63976:0:class:crwdnd63976:0:class:crwdnd63976:0:mod:crwdne63976:0"
+
+#: ../../source/reference/megengine.rst:135
+msgid "Core"
+msgstr "crwdns63978:0crwdne63978:0"
+
+#: ../../source/reference/megengine.rst:137
+msgid "在 :mod:`megengine.core` 模块中实现了 MegEngine 的核心功能，包括 Tensor 和 Operators 组成的计算图，自动求导机制等等。 MegEngine 用户在日常使用中无需直接调用这个模块，因为里面的功能实现已经被其它常用模块进行了封装。 但出于方便 MegEngine 开发者检索的目的，我们也将 core 中的 API 列举在此处。"
+msgstr "crwdns63980:0:mod:crwdne63980:0"
+
+#: ../../source/reference/megengine.rst:148
+msgid "我们不承诺 core 模块中 API 的兼容性和稳定性。"
+msgstr "crwdns63982:0crwdne63982:0"
+
+#: ../../source/reference/megengine.rst:152
+msgid "任何 MegEngine 的用户都可以尝试成为我们的开发人员，就好像你理解了 Tensor 和 Core 之后， 便可以尝试去理解 NVIDIA 的 TensorCore_ 了。冷笑话 +1 (￣▽￣)\""
+msgstr "crwdns63984:0crwdne63984:0"
+
+#: ../../source/reference/megengine.rst:159
+msgid "你可能在 MegEngine 源代码中经常会看到诸如 MegBrain, MGB 等字样。 不用担心，MegBrain 是 MegEngine 的内部代号，二者某种程度上是等价的。"
+msgstr "crwdns63986:0crwdne63986:0"
+
+#: ../../source/reference/megengine.rst:163
+msgid "模型保存与加载"
+msgstr "crwdns63988:0crwdne63988:0"
+
+#: ../../source/reference/megengine.rst:170:<autosummary>:1
+msgid ":obj:`save <megengine.save>`"
+msgstr "crwdns63990:0:obj:crwdne63990:0"
+
+#: ../../source/reference/megengine.rst:170:<autosummary>:1
+msgid "Save an object to disk file."
+msgstr "crwdns63992:0crwdne63992:0"
+
+#: ../../source/reference/megengine.rst:170:<autosummary>:1
+msgid ":obj:`load <megengine.load>`"
+msgstr "crwdns63994:0:obj:crwdne63994:0"
+
+#: ../../source/reference/megengine.rst:170:<autosummary>:1
+msgid "Load an object saved with save() from a file."
+msgstr "crwdns63996:0crwdne63996:0"
+
+#: ../../source/reference/megengine.rst:174
+msgid "设备相关"
+msgstr "crwdns63998:0crwdne63998:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid ":obj:`is_cuda_available <megengine.is_cuda_available>`"
+msgstr "crwdns64000:0:obj:crwdne64000:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid "Returns whether cuda device is available on this system."
+msgstr "crwdns64002:0crwdne64002:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid ":obj:`get_device_count <megengine.get_device_count>`"
+msgstr "crwdns64004:0:obj:crwdne64004:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid "Gets number of devices installed on this system."
+msgstr "crwdns64006:0crwdne64006:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid ":obj:`get_default_device <megengine.get_default_device>`"
+msgstr "crwdns64008:0:obj:crwdne64008:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid "Gets default computing node."
+msgstr "crwdns64010:0crwdne64010:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid ":obj:`set_default_device <megengine.set_default_device>`"
+msgstr "crwdns64012:0:obj:crwdne64012:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid "Sets default computing node."
+msgstr "crwdns64014:0crwdne64014:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid ":obj:`get_mem_status_bytes <megengine.get_mem_status_bytes>`"
+msgstr "crwdns64016:0:obj:crwdne64016:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid "Get total and free memory on the computing device in bytes."
+msgstr "crwdns64018:0crwdne64018:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid ":obj:`set_prealloc_config <megengine.set_prealloc_config>`"
+msgstr "crwdns64020:0:obj:crwdne64020:0"
+
+#: ../../source/reference/megengine.rst:185:<autosummary>:1
+msgid "Specifies how to pre-allocate from raw device allocator."
+msgstr "crwdns64022:0crwdne64022:0"
+
+#: ../../source/reference/megengine.rst:189
+msgid "日志相关"
+msgstr "crwdns64024:0crwdne64024:0"
+
+#: ../../source/reference/megengine.rst:198:<autosummary>:1
+msgid ":obj:`enable_debug_log <megengine.enable_debug_log>`"
+msgstr "crwdns64026:0:obj:crwdne64026:0"
+
+#: ../../source/reference/megengine.rst:198:<autosummary>:1
+msgid "Sets logging level to debug for all components."
+msgstr "crwdns64028:0crwdne64028:0"
+
+#: ../../source/reference/megengine.rst:198:<autosummary>:1
+msgid ":obj:`get_logger <megengine.get_logger>`"
+msgstr "crwdns64030:0:obj:crwdne64030:0"
+
+#: ../../source/reference/megengine.rst:198:<autosummary>:1
+msgid "Gets megengine logger with given name."
+msgstr "crwdns64032:0crwdne64032:0"
+
+#: ../../source/reference/megengine.rst:198:<autosummary>:1
+msgid ":obj:`set_log_file <megengine.set_log_file>`"
+msgstr "crwdns64034:0:obj:crwdne64034:0"
+
+#: ../../source/reference/megengine.rst:198:<autosummary>:1
+msgid "Sets log output file."
+msgstr "crwdns64036:0crwdne64036:0"
+
+#: ../../source/reference/megengine.rst:198:<autosummary>:1
+msgid ":obj:`set_log_level <megengine.set_log_level>`"
+msgstr "crwdns64038:0:obj:crwdne64038:0"
+
+#: ../../source/reference/megengine.rst:198:<autosummary>:1
+msgid "Sets default logging level."
+msgstr "crwdns64040:0crwdne64040:0"
+
+#: ../../source/reference/megengine.rst:202
+msgid "查询版本信息"
+msgstr "crwdns64042:0crwdne64042:0"
+
+#~ msgid "MegEngine 的部分 API 设计借鉴了 PyTorch, 我们相信这对开发者而言会更加友好；"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "MegEngine 中提供了一种名为 “张量” （:class:`Tensor` "
+#~ "）的数据结构， 区别于物理学中的定义，其概念与 NumPy_ 中的 "
+#~ ":class:`~numpy.ndarray` 更加相似， "
+#~ "即张量是一类多维数组，其中每个元素的数据类型和空间大小一致，仅数据值有所不同。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU "
+#~ "设备进行更加高效计算。 当 GPU 和 CPU 设备都可用时，MegEngine"
+#~ " 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。"
+#~ msgstr ""
+
+#~ msgid "如果有查看/改变默认计算设备的需求，请参考 :mod:`megengine.device` 中提供的接口。"
+#~ msgstr ""
+
+#~ msgid "对于 Tensor 的各种操作，绝大部分都实现在 :mod:`megengine.functional` 中。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "尽管 MegEngine 不是用来教你 `解魔方 <https://rubiks-"
+#~ "cube-solver.com/>`_ 的... 😆 但尝试做一下 "
+#~ ":ref:`Tensor 计算 <general-tensor-operations>`"
+#~ " 吧，它比魔方还要更加神奇。"
+#~ msgstr ""
+
