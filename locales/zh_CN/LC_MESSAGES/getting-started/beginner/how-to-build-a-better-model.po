@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-21 15:57+0800\n"
-"PO-Revision-Date: 2021-06-03 10:19+0000\n"
+"PO-Revision-Date: 2021-06-21 14:05\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/how-to-build-a-better-model.po\n"
+"X-Crowdin-File-ID: 7056\n"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:9
 msgid "构建更好的模型：神经网络"
@@ -27,10 +31,7 @@ msgid "image0"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:12
-msgid ""
-"|image1| `查看源文件 "
-"<https://github.com/MegEngine/Documentation/blob/main/source/getting-"
-"started/beginner/how-to-build-a-better-model.ipynb>`__"
+msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/how-to-build-a-better-model.ipynb>`__"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:17
@@ -62,15 +63,11 @@ msgid "思路二：改变特征提取的方式，此时我们更多地要从数�
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:37
-msgid ""
-"请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `访问官网安装教程 "
-"<https://megengine.org.cn/install>`__\\ ）："
+msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `访问官网安装教程 <https://megengine.org.cn/install>`__\\ ）："
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:79
-msgid ""
-"接下来，我们将先了解一下这次要使用到的经典数据集：\\ `CIFAR-10 数据集 "
-"<https://www.cs.toronto.edu/~kriz/cifar.html>`__\\ 。"
+msgid "接下来，我们将先了解一下这次要使用到的经典数据集：\\ `CIFAR-10 数据集 <https://www.cs.toronto.edu/~kriz/cifar.html>`__\\ 。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:82
@@ -78,9 +75,7 @@ msgid "CIFAR-10 数据集"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:84
-msgid ""
-"CIFAR-10 数据集包含共计 10 个类别的 60000 张 32x32 彩色图像，每个类别包含 6000 个图像，对应有 50000 "
-"张训练图像和 10000 张测试图像。"
+msgid "CIFAR-10 数据集包含共计 10 个类别的 60000 张 32x32 彩色图像，每个类别包含 6000 个图像，对应有 50000 张训练图像和 10000 张测试图像。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:86
@@ -100,15 +95,11 @@ msgid "经过上面的整理，我们得到了训练数据 ``train_data`` 和对
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:234
-msgid ""
-"可以发现此时的训练数据的形状是 :math:`(50000, 32, 32, 3)`, "
-"分别对应数据量（Number）、高度（Height）、宽度（Width）和通道数（Channel），简记为 NHWC；"
+msgid "可以发现此时的训练数据的形状是 :math:`(50000, 32, 32, 3)`, 分别对应数据量（Number）、高度（Height）、宽度（Width）和通道数（Channel），简记为 NHWC；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:235
-msgid ""
-"你应该发现了，MNIST 数据集中的通道数为 1, 均为灰度图；而 CIFAR-10 数据集的通道数为 3, "
-"数据集中的图像是彩色的；通道数和颜色之间有什么关系呢？"
+msgid "你应该发现了，MNIST 数据集中的通道数为 1, 均为灰度图；而 CIFAR-10 数据集的通道数为 3, 数据集中的图像是彩色的；通道数和颜色之间有什么关系呢？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:247
@@ -140,11 +131,7 @@ msgid "好在 ``cv2`` 中也提供了 ``cvtColor`` 功能，能够改变图像�
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:334
-msgid ""
-"如果你使用过老前辈级别的深度学习框架 `Caffe <https://caffe.berkeleyvision.org/>`__, "
-"应该会对此颇有感触。在 MegEngine 的 ``funtional.vision`` 模块中也实现了 ``cvt_color``, "
-"区别在于要求输入的数据类型是 Tensor, 毕竟 MegEngine 不是计算机视觉库，\\ ``funtional`` 模块中的接口是为 "
-"Tensor 操作而设计的。"
+msgid "如果你使用过老前辈级别的深度学习框架 `Caffe <https://caffe.berkeleyvision.org/>`__, 应该会对此颇有感触。在 MegEngine 的 ``funtional.vision`` 模块中也实现了 ``cvt_color``, 区别在于要求输入的数据类型是 Tensor, 毕竟 MegEngine 不是计算机视觉库，\\ ``funtional`` 模块中的接口是为 Tensor 操作而设计的。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:366
@@ -160,9 +147,7 @@ msgid "可见光谱中的大部分颜色可以由三种基本色光按不同的�
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:418
-msgid ""
-"这意味着相较于灰度图，RGB 图中的每个像素都是由 :math:`3` 个在 :math:`[0, 256)` "
-"的值进行颜色组合表示的，对应十六进制范围 ``#000000`` ~ ``#FFFFFFF``."
+msgid "这意味着相较于灰度图，RGB 图中的每个像素都是由 :math:`3` 个在 :math:`[0, 256)` 的值进行颜色组合表示的，对应十六进制范围 ``#000000`` ~ ``#FFFFFFF``."
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:420
@@ -186,9 +171,7 @@ msgid "linear-classifier-nn.svg"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:438
-msgid ""
-"上图中的左图可以表示一张 :math:`4\\times 4` 的单通道图像经过线性分类器输出 10 个值的过程——只有输入和输出两层，似乎和 "
-"“深度” 学习没什么关系。"
+msgid "上图中的左图可以表示一张 :math:`4\\times 4` 的单通道图像经过线性分类器输出 10 个值的过程——只有输入和输出两层，似乎和 “深度” 学习没什么关系。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:440
@@ -224,9 +207,7 @@ msgid "上面的例子展示了：在假定模型参数已经训练收敛的情�
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:520
-msgid ""
-"对于双层模型，\\ :math:`\\hat{y} = W2 \\cdot (W1 \\cdot \\mathbf{x} + b1) + b2`,"
-" 其中 :math:`W1, W2, b1, b2` 是最终学得的参数；"
+msgid "对于双层模型，\\ :math:`\\hat{y} = W2 \\cdot (W1 \\cdot \\mathbf{x} + b1) + b2`, 其中 :math:`W1, W2, b1, b2` 是最终学得的参数；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:521
@@ -234,9 +215,7 @@ msgid "对于单层模型，\\ :math:`\\hat{y} = W \\cdot x + b`, 其中 :math:`
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:522
-msgid ""
-"真相是，在理想情况下，我们最终学到的参数将满足 :math:`W = W2 \\cdot W1`, :math:`b = W2 \\cdot b1"
-" + b2`, 因此两个模型预测能力一致。"
+msgid "真相是，在理想情况下，我们最终学到的参数将满足 :math:`W = W2 \\cdot W1`, :math:`b = W2 \\cdot b1 + b2`, 因此两个模型预测能力一致。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:524
@@ -264,9 +243,7 @@ msgid "回忆一下，在二分类任务中常常会使用 Sigmoid 函数作为�
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:544
-msgid ""
-"但仔细想想，Sigmoid 函数将前面的线性计算所得到的输出以 **非线性** 的形式映射到了 :math:`(0, 1)` "
-"区间，这个特性可以给我们带来什么启发呢？"
+msgid "但仔细想想，Sigmoid 函数将前面的线性计算所得到的输出以 **非线性** 的形式映射到了 :math:`(0, 1)` 区间，这个特性可以给我们带来什么启发呢？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:579
@@ -286,12 +263,7 @@ msgid "前馈神经网络"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:588
-msgid ""
-"前馈神经网络（Feedforward neural "
-"network）是一种最简单的人工神经网络（ANN），完全由全连接层构成。除了输入节点，每个节点都是一个带有非线性激活函数的神经元（或称处理单元），克服了感知器不能对线性不可分数据进行识别的弱点。这里我们需要提到一个术语"
-" “多层感知机”（Multilayer perceptron, 简称 "
-"MLP），它的使用有些含糊不清：有的时候被模糊地认为是前馈神经网络的指代；有时严格指代由多层感知器（类似二分类阈值进行激活）所组成的网络。为了避免歧义，我们在本次教程中只使用"
-" “前馈神经网络” 这种说法，但你应该知道 MLP 在具体的上下文中的指代。"
+msgid "前馈神经网络（Feedforward neural network）是一种最简单的人工神经网络（ANN），完全由全连接层构成。除了输入节点，每个节点都是一个带有非线性激活函数的神经元（或称处理单元），克服了感知器不能对线性不可分数据进行识别的弱点。这里我们需要提到一个术语 “多层感知机”（Multilayer perceptron, 简称 MLP），它的使用有些含糊不清：有的时候被模糊地认为是前馈神经网络的指代；有时严格指代由多层感知器（类似二分类阈值进行激活）所组成的网络。为了避免歧义，我们在本次教程中只使用 “前馈神经网络” 这种说法，但你应该知道 MLP 在具体的上下文中的指代。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:591
@@ -343,9 +315,7 @@ msgid "我强烈推荐你看一看这个系列的视频作为阶段性的总结�
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:821
-msgid ""
-"`3Blue1Brown 深度学习之神经网络的结构 "
-"<https://www.bilibili.com/video/BV1bx411M7Zx>`__ (对于当前教程而言，这个视频是必须观看的)"
+msgid "`3Blue1Brown 深度学习之神经网络的结构 <https://www.bilibili.com/video/BV1bx411M7Zx>`__ (对于当前教程而言，这个视频是必须观看的)"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:822
@@ -353,15 +323,11 @@ msgid "`3Blue1Brown 深度学习之梯度下降法 <https://www.bilibili.com/vid
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:823
-msgid ""
-"`3Blue1Brown 深度学习之直观理解反向传播 "
-"<https://www.bilibili.com/video/BV16x411V7Qg?p=1>`__"
+msgid "`3Blue1Brown 深度学习之直观理解反向传播 <https://www.bilibili.com/video/BV16x411V7Qg?p=1>`__"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:824
-msgid ""
-"`3Blue1Brown 深度学习之反向传播的微积分原理 "
-"<https://www.bilibili.com/video/BV16x411V7Qg?p=2>`__"
+msgid "`3Blue1Brown 深度学习之反向传播的微积分原理 <https://www.bilibili.com/video/BV16x411V7Qg?p=2>`__"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:826
@@ -377,9 +343,7 @@ msgid "更巧妙的计算图算子"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:842
-msgid ""
-"我们在上一小节没有测试前馈神经网络在 CIFAR10 "
-"数据集上的效果，你可以自己修改代码测试一下，但预测精度恐怕仍不容乐观。究竟是哪个环节出问题了呢？"
+msgid "我们在上一小节没有测试前馈神经网络在 CIFAR10 数据集上的效果，你可以自己修改代码测试一下，但预测精度恐怕仍不容乐观。究竟是哪个环节出问题了呢？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:844
@@ -431,42 +395,27 @@ msgid "在 MegEngine 中使用卷积计算"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:923
-msgid ""
-"在 MegEngine 的 ``funtional.nn`` 模块中，实现了卷积相关的算子，我们以 ``funtional.nn.conv2d``"
-" 为例子："
+msgid "在 MegEngine 的 ``funtional.nn`` 模块中，实现了卷积相关的算子，我们以 ``funtional.nn.conv2d`` 为例子："
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:925
-msgid ""
-"假设有一张 :math:`5 \\times 5` 大小的 2D 单通道图像 ``input_2d``, 像素值分别为 :math:`0` 到 "
-":math:`24`;"
+msgid "假设有一张 :math:`5 \\times 5` 大小的 2D 单通道图像 ``input_2d``, 像素值分别为 :math:`0` 到 :math:`24`;"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:926
-msgid ""
-"我们定义了 :math:`3 \\times 3` 大小的卷积核 ``filter_2d`` 并应用在这张原始图像上，得到了输出图像 "
-"``output_2d`` ;"
+msgid "我们定义了 :math:`3 \\times 3` 大小的卷积核 ``filter_2d`` 并应用在这张原始图像上，得到了输出图像 ``output_2d`` ;"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:927
-msgid ""
-"从原始图像中值为 :math:`6` 至 :math:`18` 的像素，对应值都更新为其上下左右像素值之和（即原始值的 4 倍，对应 "
-":math:`24` 到 :math:`72`\\ ）。"
+msgid "从原始图像中值为 :math:`6` 至 :math:`18` 的像素，对应值都更新为其上下左右像素值之和（即原始值的 4 倍，对应 :math:`24` 到 :math:`72`\\ ）。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:988
-msgid ""
-"相信你又有了新的疑惑——由于图像边缘的像素存在着 “没有邻居” 的情况，导致卷积计算后舍弃了这些原本位于边缘的像素点，直观来看图像的形状似乎 "
-"“小了一圈”，这个情况不是我们所希望的。处理办法是，在计算卷积操作时，先给边缘像素周围补上一圈像素（最常见的操作是补值为 0 "
-"的像素点），这样在进行卷积计算的时候，就能利用上原图中的所有像素信息了："
+msgid "相信你又有了新的疑惑——由于图像边缘的像素存在着 “没有邻居” 的情况，导致卷积计算后舍弃了这些原本位于边缘的像素点，直观来看图像的形状似乎 “小了一圈”，这个情况不是我们所希望的。处理办法是，在计算卷积操作时，先给边缘像素周围补上一圈像素（最常见的操作是补值为 0 的像素点），这样在进行卷积计算的时候，就能利用上原图中的所有像素信息了："
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1053
-msgid ""
-"用到了卷积算子的神经网络又被人们称为 “卷积神经网络”（Convolutional Neural Network, "
-"CNN），从结构上看，它也是前馈神经网络的一种。卷积神经网络常用于计算机视觉领域，上面的 ``padding`` "
-"操作也是计算机视觉中常见的图像处理手段，常见的一起搭配使用的算子还有 ``max_pooling``, "
-"可以认为是一种降采样策略。不过我们的教程目前还不打算涉及到太多关于计算机视觉相关的内容，因此不打算进行更多这方面的解释。我们需要关注的是："
+msgid "用到了卷积算子的神经网络又被人们称为 “卷积神经网络”（Convolutional Neural Network, CNN），从结构上看，它也是前馈神经网络的一种。卷积神经网络常用于计算机视觉领域，上面的 ``padding`` 操作也是计算机视觉中常见的图像处理手段，常见的一起搭配使用的算子还有 ``max_pooling``, 可以认为是一种降采样策略。不过我们的教程目前还不打算涉及到太多关于计算机视觉相关的内容，因此不打算进行更多这方面的解释。我们需要关注的是："
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1055
@@ -490,9 +439,7 @@ msgid "结合前面提到的知识，现在我们将构建一个多层的卷积�
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1064
-msgid ""
-"由于 MegEngine 默认 Tensor 的数据排布是 :math:`(N,C,H,W)` 格式，而我们的 CIFAR10 数据集图片是 "
-":math:`(N,H,W,C)` 格式，所以我们在下面的代码中进行了一些数据预处理："
+msgid "由于 MegEngine 默认 Tensor 的数据排布是 :math:`(N,C,H,W)` 格式，而我们的 CIFAR10 数据集图片是 :math:`(N,H,W,C)` 格式，所以我们在下面的代码中进行了一些数据预处理："
 msgstr ""
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1066
@@ -579,96 +526,143 @@ msgstr ""
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
 msgstr ""
 
-#~ msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/#>`__"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "|image1| `查看源文件 "
-#~ "<https://github.com/MegEngine/Documentation/blob/main/source"
-#~ "/getting-started/beginner/from-linear-regression-"
-#~ "to-linear-classification.ipynb>`__"
-#~ msgstr ""
-
 #~ msgid "我们将接触除了 ``functional`` 之外的另外一种更加优雅的搭建网络模型的方式，即使用 ``module`` 模块。"
 #~ msgstr ""
-
-#~ msgid "我们似乎忽略了算子对整个模型预测性能所带来的影响。"
-#~ msgstr ""
-
-#~ msgid "在 MegEngine 使用卷积计算"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "用到了卷积算子的神经网络又被人们称为 “卷积神经网络”（Convolutional Neural "
-#~ "Network, CNN），从结构上看，它也是前馈神经网络的一种。卷积神经网络常用于计算机视觉领域，上面的 "
-#~ "``padding`` 操作也是计算机视觉中常见的图像处理手段，类似的操作还有 ``max_pooling``,"
-#~ " "
-#~ "可以认为是一种降采样策略。不过我们的教程目前还不打算涉及到太多关于计算机视觉相关的内容，因此不打算进行更多这方面的解释。我们需要关注的是："
-#~ msgstr ""
-
-#~ msgid "但与卷积有关的算子，需要在计算的过程中需要关注不同层形状的变化，否则容易报错。"
-#~ msgstr ""
+#~ "We will come into contact with "
+#~ "another more elegant way to build "
+#~ "a network model besides ``functional``, "
+#~ "that is, using the ``module`` module."
 
 #~ msgid "使用模块化方式建模"
-#~ msgstr ""
-
-#~ msgid "当模型结构开始变得越来越复杂，代码组织工作会变得非常繁杂；"
-#~ msgstr ""
-
-#~ msgid "依赖 ``functional`` 的定义方式不够灵活，难以精细控制，更难以进行拓展。"
-#~ msgstr ""
+#~ msgstr "Use modular modeling"
 
 #~ msgid "megengine.module"
-#~ msgstr ""
+#~ msgstr "megengine.module"
 
 #~ msgid "在 MegEngine 中提供了 ``module`` 模块，可以方便用户进行模型定义和参数管理。我们现在就来改写 LeNet 模型："
 #~ msgstr ""
+#~ "The ``module`` module is provided in "
+#~ "MegEngine, which is convenient for users"
+#~ " to carry out model definition and"
+#~ " parameter management. Let's rewrite the"
+#~ " LeNet model now.："
 
 #~ msgid "每一个神经网络模型都需要继承自 ``Module`` 基类并且调用\\ ``super().__init__()``;"
 #~ msgstr ""
+#~ "Every neural network model needs to "
+#~ "inherit from the ``Module'' base class"
+#~ " and call \\ ``super().__init__()'';"
 
 #~ msgid "我们需要在 ``__init__`` 方法中定义模块结构，也可以做一些其它处理如初始化权重；"
 #~ msgstr ""
+#~ "We need to define the module "
+#~ "structure in the ``__init__`` method, "
+#~ "and we can also do some other "
+#~ "processing such as initializing weights;"
 
 #~ msgid "我们需要定义 ``forward()`` 方法，即前向传播的计算过程，"
 #~ msgstr ""
+#~ "We need to define the ``forward()'' "
+#~ "method, which is the calculation process"
+#~ " of forward propagation,"
 
 #~ msgid "同样地，我们需要在测试集上评估一下模型性能："
-#~ msgstr ""
+#~ msgstr "Similarly, we need to evaluate the model's performance on the test set："
 
 #~ msgid "需要注意的是，使用 Module 建模得到的模型可以分为训练和测试两种模式；"
 #~ msgstr ""
+#~ "It should be noted that the model"
+#~ " obtained by using Module modeling "
+#~ "can be divided into two modes: "
+#~ "training and testing;"
 
 #~ msgid "这是因为一些神经网络算子的行为在不同的模式下也需要不同（尽管我们目前可能还没有用到这些算子）；"
 #~ msgstr ""
+#~ "This is because the behavior of "
+#~ "some neural network operators needs to"
+#~ " be different in different modes "
+#~ "(although we may not use these "
+#~ "operators yet);"
 
 #~ msgid "默认情况下启用训练模式 ``.train()``, 但在进行模型测试时，需要执行 ``.eval()`` 切换到测试/评估模式。"
 #~ msgstr ""
+#~ "The training mode ``.train()'' is "
+#~ "enabled by default, but during model "
+#~ "testing, you need to execute ``.eval()''"
+#~ " to switch to the test/evaluation "
+#~ "mode."
 
 #~ msgid "CIFAR10 图片分类任务的准确率还有很大的提升空间，是不是意味着只要不断加大模型的深度，加上精细的超参数调整，就总是能够取得更好的效果呢？"
 #~ msgstr ""
+#~ "There is still a lot of room "
+#~ "for improvement in the accuracy of "
+#~ "CIFAR10 image classification tasks. Does "
+#~ "it mean that as long as the "
+#~ "depth of the model is continuously "
+#~ "increased, and fine hyperparameter adjustments"
+#~ " are added, better results can always"
+#~ " be achieved?"
 
 #~ msgid "如果你尝试自己实现过上面的几个模型，修改过不同的超参数方案组合，可能会遇到如下一些情况："
 #~ msgstr ""
+#~ "If you have tried to implement the"
+#~ " above models yourself and modified "
+#~ "different hyperparameter scheme combinations, "
+#~ "you may encounter some of the "
+#~ "following situations:："
 
 #~ msgid "我的 Loss 在训练几个 epoch 之后就不下降了，有时甚至从来没有下降过！"
-#~ msgstr ""
+#~ msgstr "My Loss didn't drop after a few epochs, and sometimes it never dropped!"
 
 #~ msgid "我的 Loss 从第一个 epoch 开始就显示为 NaN, 发生什么事了？"
-#~ msgstr ""
+#~ msgstr "My Loss has been displayed as NaN since the first epoch, what happened?"
 
 #~ msgid "训练一个 epoch 的成本比之前高了很多，寻找合适的超参数会花掉很多时间..."
 #~ msgstr ""
+#~ "The cost of training an epoch is"
+#~ " much higher than before, and finding"
+#~ " the right hyperparameters will take "
+#~ "a lot of time..."
 
 #~ msgid ""
 #~ "除此以外，在不改变模型结构的情况下，我们还在代码中进行了一些修改，比如我们改变了超参数，对输入数据进行了预处理，模型参数使用了除零值之外其它的初始化策略，我还在训练卷积神经网络时偷偷地换用了"
 #~ " Adam 优化器，因为似乎在这个任务上用 Adam 的效果会比 SGD "
 #~ "要好一些。这些修改背后的直觉是什么，当我们需要用神经网络解决不同的任务时，有没有什么经验可循？"
 #~ msgstr ""
+#~ "In addition, without changing the "
+#~ "structure of the model, we also "
+#~ "made some modifications in the code. "
+#~ "For example, we changed the "
+#~ "hyperparameters, preprocessed the input data,"
+#~ " and used initializations other than "
+#~ "zero for the model parameters. Strategy,"
+#~ " I also secretly switched to the "
+#~ "Adam optimizer when training the "
+#~ "convolutional neural network, because it "
+#~ "seems that the effect of using "
+#~ "Adam on this task will be better"
+#~ " than SGD. What is the intuition "
+#~ "behind these modifications, and is there"
+#~ " any experience to follow when we "
+#~ "need to use neural networks to "
+#~ "solve different tasks?"
 
 #~ msgid "恭喜你 🎉 ，我们已经开始接触到深度学习炼丹师再熟悉不过的一些 “玄学” 现象，如果能分析出问题背后可能的原因，一定会很有成就感。"
 #~ msgstr ""
+#~ "Congratulations 🎉, we have already begun"
+#~ " to come into contact with some "
+#~ "\"metaphysics\" phenomena that deep learning"
+#~ " alchemists are not familiar with. If"
+#~ " we can analyze the possible reasons"
+#~ " behind the problem, we will "
+#~ "definitely feel a sense of "
+#~ "accomplishment."
 
 #~ msgid "我们在接下来的教程中，将会一起探索现象背后的原因，总结出一些神经网络模型训练中的常见技巧。"
 #~ msgstr ""
+#~ "In the next tutorial, we will "
+#~ "explore the reasons behind the "
+#~ "phenomenon together and sum up some "
+#~ "common techniques in neural network "
+#~ "model training."
 
