@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-06 13:12+0800\n"
-"PO-Revision-Date: 2021-05-06 05:33\n"
+"POT-Creation-Date: 2021-06-21 15:57+0800\n"
+"PO-Revision-Date: 2021-06-21 14:59\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -26,9 +26,17 @@ msgstr "crwdns44656:0crwdne44656:0"
 msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/4642>`__"
 msgstr "crwdns47874:0crwdne47874:0"
 
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:16
+msgid "image0"
+msgstr "crwdns47954:0crwdne47954:0"
+
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:12
 msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/learning-from-linear-regression.ipynb>`__"
 msgstr "crwdns47876:0crwdne47876:0"
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:17
+msgid "image1"
+msgstr "crwdns47956:0crwdne47956:0"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:28
 msgid "我们已经学习了如何去训练一个简单的线性回归模型 :math:`y = w * x + b`, 接下来我们将稍微升级一下难度："
@@ -479,190 +487,194 @@ msgid "显然，这样的处理逻辑还需要将标签矩阵 :math:`Y` 去掉�
 msgstr "crwdns44858:0:math:crwdnd44858:0:math:crwdnd44858:0:math:crwdne44858:0"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1053
-msgid "**矩阵/张量运算的思路在深度学习中十分常见，在后续会被反复提及。** NumPy 的官方文档中写着此时 ``np.dot()`` 的真实逻辑："
-msgstr "crwdns44860:0crwdne44860:0"
+msgid "**矩阵/张量运算的思路在深度学习中十分常见，在后续会被反复提及。**"
+msgstr "crwdns66576:0crwdne66576:0"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1055
+msgid "NumPy 的官方文档中写着此时 ``np.dot()`` 的真实逻辑："
+msgstr "crwdns66578:0crwdne66578:0"
+
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1057
 msgid "If a is an N-D array and b is a 1-D array, it is a sum product over the last axis of a and b."
 msgstr "crwdns44862:0crwdne44862:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1056
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1058
 msgid "如果 ``a`` 是 N 维度数组且 ``b`` 是 1 维数组，将对 ``a`` 和 ``b`` 最后一轴上对元素进行乘积并求和。"
 msgstr "crwdns44864:0crwdne44864:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1058
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1060
 msgid "这样的计算逻辑也可以由爱因斯坦求和约定 ``np.einsum('ij,j->i', X, w)`` 来实现，感兴趣的读者可查阅 ``np.einsum()`` 文档。"
 msgstr "crwdns44866:0crwdne44866:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1060
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1062
 msgid "我们可以设计一套简单的测试样例，来看一下 ``np.dot()``, ``np.einsum()`` 和 ``np.matmul()`` 相较于 ``for`` 循环是否能得到同样的结果："
 msgstr "crwdns44868:0crwdne44868:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1118
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1120
 msgid "接下来加大数据规模，测试向量化是否起到了加速效果："
 msgstr "crwdns44870:0crwdne44870:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1194
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1196
 msgid "可以发现 ``dot()`` 和 ``matmul()`` 的向量化实现都有明显的加速效果，\\ ``einsum()`` 虽然是全能型选手，但也以更多的开销作为了代价，一般不做考虑。"
 msgstr "crwdns44872:0crwdne44872:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1197
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1199
 msgid "NumPy 实现"
 msgstr "crwdns44874:0crwdne44874:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1199
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1201
 msgid "我们先尝试使用 NumPy 的 ``dot()`` 实现一下向量化的批梯度下降的代码："
 msgstr "crwdns44876:0crwdne44876:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1268
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1270
 msgid "上面的 ``loss`` 收敛状况与我们最开始实现的 ``sum_grad`` 的数值一致，可以自行测试一下 ``for`` 循环写法和向量化写法的用时差异。"
 msgstr "crwdns44878:0crwdne44878:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1270
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1272
 msgid "同时我们也可以发现，当前向传播使用批数据变成矩阵计算带来极大加速的同时，也为我们的反向传播梯度计算提出了更高的要求："
 msgstr "crwdns44880:0crwdne44880:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1272
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1274
 msgid "尽管存在着链式法则，但是对于不熟悉矩阵求导的人来说，还是很难理解一些梯度公式推导的过程，比如为什么出现了转置 ``data.T``"
 msgstr "crwdns44882:0crwdne44882:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1273
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1275
 msgid "当前向传播的计算变得更加复杂，由框架实现自动求导 ``autograde`` 机制就显得更加必要和方便"
 msgstr "crwdns44884:0crwdne44884:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1276
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1278
 msgid "MegEngine 实现"
 msgstr "crwdns44886:0crwdne44886:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1278
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1280
 msgid "最后，让我们利用上小批量（Mini-batch）的数据把完整的训练流程代码在 MegEngine 中实现："
 msgstr "crwdns44888:0crwdne44888:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1280
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1282
 msgid "为了后续教程理解的连贯性，我们做一些改变，使用 ``F.matmul()`` 来代替 ``np.dot()``\\ ，前面已经证明了这种情况下的计算结果值是等价的，但形状不同"
 msgstr "crwdns44890:0crwdne44890:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1281
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1283
 msgid "对应地，我们的 ``w`` 将由向量变为矩阵，\\ ``b`` 在进行加法操作时将自动进行广播变成矩阵，输出 ``pred`` 也是一个矩阵，即 2 维 Tensor"
 msgstr "crwdns44892:0crwdne44892:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1282
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1284
 msgid "在计算单个 ``batch`` 的 ``loss`` 时，内部通过 ``sum()`` 计算已经去掉了冗余的维度，最终得到的 ``loss`` 是一个 0 维 Tensor"
 msgstr "crwdns44894:0crwdne44894:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1379
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1381
 msgid "对我们训练好的模型进行测试："
 msgstr "crwdns44896:0crwdne44896:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1442
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1444
 msgid "可以发现，使用小批量梯度下降策略更新参数，最终在测试时得到的平均绝对值损失比单独采用批梯度下降和随机梯度下降策略时还要好一些。"
 msgstr "crwdns44898:0crwdne44898:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1454
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1456
 msgid "总结回顾"
 msgstr "crwdns44900:0crwdne44900:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1456
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1458
 msgid "有些时候，添加一些额外的条件，看似简单的问题就变得更加复杂有趣起来了，启发我们进行更多的思考和探索。"
 msgstr "crwdns44902:0crwdne44902:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1458
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1460
 msgid "我们需要及时总结学习过的知识，并在之后的时间内不断通过实践来强化记忆，这次的教程中出现了以下新的概念："
 msgstr "crwdns44904:0crwdne44904:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1460
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1462
 msgid "数据集（Dataset）：想要将现实中的数据集变成能够被 MegEngine 使用的格式，必须将其处理成 ``MapDataset`` 或者 ``StreamDateset`` 类"
 msgstr "crwdns44906:0crwdne44906:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1461
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1463
 msgid "继承基类的同时，还需要实现 ``__init__()``, ``__getitem__`` 和 ``__len__()`` 三种内置方法"
 msgstr "crwdns44908:0__init__crwdnd44908:0__getitem__crwdnd44908:0__len__crwdne44908:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1462
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1464
 msgid "我们对事物的抽象——特征（Feature）有了一定的认识，并接触了一些数学形式的表达如数据矩阵 :math:`X` 和标签向量 :math:`y` 等"
 msgstr "crwdns44910:0:math:crwdnd44910:0:math:crwdne44910:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1463
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1465
 msgid "我们接触到了训练集（Trainining dataset）、测试集（Test dataset）和验证集（Validation dataset）/ 开发集（Develop dataset）的概念"
 msgstr "crwdns44912:0crwdne44912:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1464
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1466
 msgid "除了训练时我们会设计一个损失函数外，在测试模型性能时，我们也需要设计一个评估指标（Metric），不同任务的指标不尽相同"
 msgstr "crwdns44914:0crwdne44914:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1465
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1467
 msgid "采样器（Sampler）：可以帮助我们自动地获得一个采样序列，常见的有顺序采样器 ``SequentialSampler`` 和随机采样器 ``RandomSampler``"
 msgstr "crwdns44916:0crwdne44916:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1466
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1468
 msgid "数据载入器（Dataloader）：根据 ``Dataset`` 和 ``Sampler`` 来获得对应的小批量数据（Mini-batch data）"
 msgstr "crwdns44918:0crwdne44918:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1467
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1469
 msgid "我们认识了一个新的超参数 ``batch_size``\\ ，并且对不同形式的梯度下降各自的优缺点有了一定的认识"
 msgstr "crwdns44920:0crwdne44920:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1468
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1470
 msgid "我们理解了批数据向量化计算带来的好处，能够大大加快计算效率；同时为了避免推导向量化的梯度，实现自动求导机制是相当必要的"
 msgstr "crwdns44922:0crwdne44922:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1470
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1472
 msgid "我们要养成及时查阅文档的好习惯，比如 NumPy 的 ``np.dot()`` 在接受的 ndarray 形状不同时，运算逻辑也将发生变化"
 msgstr "crwdns44924:0crwdne44924:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1472
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1474
 msgid "在写代码时，Tensor 的维度形状变化是尤其需要关注的地方，理清楚逻辑可以减少遇到相关报错的可能"
 msgstr "crwdns44926:0crwdne44926:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1473
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1475
 msgid "不同库和框架之间，相同 API 命名背后的实现可能完全不同"
 msgstr "crwdns44928:0crwdne44928:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1485
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1487
 msgid "问题思考"
 msgstr "crwdns44930:0crwdne44930:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1487
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1489
 msgid "旧问题的解决往往伴随着新问题的诞生，让我们一起来思考一下："
 msgstr "crwdns44932:0crwdne44932:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1489
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1491
 msgid "我们在标记和收集数据的时候，特征的选取是否科学，数据集的规模应该要有多大？数据集的划分又应该选用什么样的比例？"
 msgstr "crwdns44934:0crwdne44934:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1490
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1492
 msgid "这次见着了 ``batch_size``, 它的设定是否有经验可循？接触到的超参数越来越多了，验证集和开发集是如何帮助我们对合适的超参数进行选取的？"
 msgstr "crwdns44936:0crwdne44936:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1491
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1493
 msgid "我们对 NumPy 支持的 ndarray 的数据如何导入 MegEngine 已经有了经验，更复杂的数据集（图片、视频、音频）要如何处理呢？"
 msgstr "crwdns44938:0crwdne44938:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1492
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1494
 msgid "噪声数据会对参数的学习进行干扰，\\ ``Dataloader`` 中是否有对应的预处理方法来做一些统计意义上的处理？"
 msgstr "crwdns44940:0crwdne44940:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1493
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1495
 msgid "我们知道了向量化可以加速运算，在硬件底层是如何实现“加速”这一效果的？"
 msgstr "crwdns44942:0crwdne44942:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1496
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1498
 msgid "关于数学表示的习惯"
 msgstr "crwdns44944:0crwdne44944:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1498
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1500
 msgid "由于数据矩阵 :math:`X` 的形状排布为 :math:`(n, d)`, 因此 MegEngine 中实现的矩阵形式的线性回归为 :math:`\\hat {Y} = f(X) = XW+B` （这里将 :math:`B` 视为 :math:`b` 广播后的矩阵）"
 msgstr "crwdns44946:0:math:crwdnd44946:0:math:crwdnd44946:0:math:crwdnd44946:0{Y}crwdnd44946:0:math:crwdnd44946:0:math:crwdne44946:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1500
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1502
 msgid "然而在线性代数中为了方便运算表示，向量通常默认为列向量 :math:`\\mathbf {x} = (x_1; x_2; \\ldots x_n)`, 单样本线性回归为 :math:`f(\\mathbf {x};\\mathbf {w},b) = \\mathbf {w}^T\\mathbf {x} + b`\\ ，"
 msgstr "crwdns44948:0:math:crwdnd44948:0{x}crwdnd44948:0:math:crwdnd44948:0{x}crwdnd44948:0{w}crwdnd44948:0{w}crwdnd44948:0{x}crwdne44948:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1502
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1504
 msgid "对应有形状为 :math:`(d, n)` 的数据矩阵："
 msgstr "crwdns44950:0:math:crwdne44950:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1504
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1506
 msgid "X = \\begin{bmatrix}\n"
 "| & | & & | \\\\\n"
 "\\mathbf {x}_1 & \\mathbf {x}_2 & \\cdots & \\mathbf {x}_n  \\\\\n"
@@ -676,15 +688,15 @@ msgid "X = \\begin{bmatrix}\n"
 "\\end{bmatrix}"
 msgstr "crwdns44952:0{bmatrix}crwdnd44952:0{x}crwdnd44952:0{x}crwdnd44952:0{x}crwdnd44952:0{bmatrix}crwdnd44952:0{bmatrix}crwdnd44952:0{1,1}crwdnd44952:0{1,2}crwdnd44952:0{1,n}crwdnd44952:0{2,1}crwdnd44952:0{2,2}crwdnd44952:0{2,n}crwdnd44952:0{d,1}crwdnd44952:0{d,2}crwdnd44952:0{d,n}crwdnd44952:0{bmatrix}crwdne44952:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1519
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1521
 msgid "因此可以得到 :math:`\\hat {Y} = f(X) = W^{T}X+B`, 这反而是比较常见的形式（类似于 :math:`y=Ax+b`\\ ）。"
 msgstr "crwdns44954:0:math:crwdnd44954:0{Y}crwdnd44954:0{T}crwdnd44954:0:math:crwdne44954:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1521
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1523
 msgid "为什么我们在教程中要使用 :math:`\\hat {Y} = f(X) = XW+B` 这种不常见的表述形式呢？数据布局不同会有什么影响？"
 msgstr "crwdns44956:0:math:crwdnd44956:0{Y}crwdne44956:0"
 
-#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1523
+#: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1525
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
 msgstr "crwdns44958:0crwdne44958:0"
 
