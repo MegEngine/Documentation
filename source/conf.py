@@ -38,6 +38,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_togglebutton",
     "sphinx_panels",
+    "sphinx_tabs.tabs",
 ]
 
 source_suffix = {
