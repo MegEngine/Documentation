@@ -36,6 +36,8 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinxcontrib.mermaid",
     "sphinx_copybutton",
+    "sphinx_togglebutton",
+    "sphinx_panels",
 ]
 
 source_suffix = {
