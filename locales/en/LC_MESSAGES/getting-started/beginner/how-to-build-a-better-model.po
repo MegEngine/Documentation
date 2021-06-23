@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-21 15:57+0800\n"
-"PO-Revision-Date: 2021-06-21 14:07\n"
+"PO-Revision-Date: 2021-06-23 03:24\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -24,7 +24,7 @@ msgstr "Build a better model：Neural Network"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:12
 msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/7237>`__"
-msgstr ""
+msgstr "|image0| `Run <https://studio.brainpp.com/project/7237>in MegStudio `__"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:16
 msgid "image0"
@@ -32,7 +32,7 @@ msgstr "image0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:12
 msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/how-to-build-a-better-model.ipynb>`__"
-msgstr ""
+msgstr "|image1| `View source file <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/how-to-build-a-better-model.ipynb>`__"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:17
 msgid "image1"
@@ -336,7 +336,7 @@ msgstr "After watching the first video in full, you should be able to answer the
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:828
 msgid "而当你将所有的视频看完，你也能更加深刻地体会到 Optimizer 和 GradManager 的魅力～"
-msgstr ""
+msgstr "And when you watch all the videos, you can also deeply appreciate the charm of Optimizer and GradManager~"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:840
 msgid "更巧妙的计算图算子"
@@ -356,7 +356,7 @@ msgstr "The hidden layer design of the feedforward neural network can be regarde
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:846
 msgid "全连接神经网络的各个层之间使用的均为线性算子，我们似乎忽略了算子对整个模型预测性能所带来的影响。"
-msgstr ""
+msgstr "Each layer of the fully connected neural network uses linear operators, and we seem to ignore the impact of operators on the prediction performance of the entire model."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:858
 msgid "从传统领域知识中学习"
@@ -392,7 +392,7 @@ msgstr "With a basic understanding of convolution, this naturally inspired us to
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:921
 msgid "在 MegEngine 中使用卷积计算"
-msgstr ""
+msgstr "Use convolution calculation in MegEngine"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:923
 msgid "在 MegEngine 的 ``funtional.nn`` 模块中，实现了卷积相关的算子，我们以 ``funtional.nn.conv2d`` 为例子："
@@ -416,7 +416,7 @@ msgstr "I believe you have new doubts-because the pixels at the edge of the imag
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1053
 msgid "用到了卷积算子的神经网络又被人们称为 “卷积神经网络”（Convolutional Neural Network, CNN），从结构上看，它也是前馈神经网络的一种。卷积神经网络常用于计算机视觉领域，上面的 ``padding`` 操作也是计算机视觉中常见的图像处理手段，常见的一起搭配使用的算子还有 ``max_pooling``, 可以认为是一种降采样策略。不过我们的教程目前还不打算涉及到太多关于计算机视觉相关的内容，因此不打算进行更多这方面的解释。我们需要关注的是："
-msgstr ""
+msgstr "Neural networks that use convolution operators are also called \"convolutional neural networks\" (Convolutional Neural Network, CNN). From a structural point of view, it is also a kind of feedforward neural network. Convolutional neural networks are often used in the field of computer vision. The above ``padding'' operation is also a common image processing method in computer vision. The common operators used together are ``max_pooling'', which can be considered as a drop Sampling strategy. However, our tutorial does not intend to cover too much computer vision-related content, so we do not intend to explain more in this regard. What we need to focus on is："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1055
 msgid "相较于简单粗暴的 ``flatten`` 操作， ``conv`` 操作更能够利用图像的空间局部信息；"
@@ -428,7 +428,7 @@ msgstr "The parameters in the convolution kernel are actually similar to the par
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1057
 msgid "但请注意：\\ **与卷积有关的算子，需要在计算的过程中需要关注不同层形状的变化，否则容易由于形状对不上导致程序报错。**"
-msgstr ""
+msgstr "But please note that：\\ ** operators related to convolution need to pay attention to the changes in the shape of different layers in the calculation process, otherwise it is easy to cause the program to report errors due to the incorrect shape. **"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1060
 msgid "卷积神经网络"
@@ -508,11 +508,11 @@ msgstr "So far, we have been using operator MegEngine of `` functional`` module 
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1271
 msgid "当模型结构开始变得越来越复杂，计算图结构的组织工作会变得非常繁杂；"
-msgstr ""
+msgstr "When the model structure becomes more and more complex, the organization of the computational graph structure will become very complicated;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1272
 msgid "依赖 ``functional`` 的定义方式不够灵活，难以精细控制，更难以进行拓展，对业务不友好。"
-msgstr ""
+msgstr "Relying on the definition of ``functional'' is not flexible enough, difficult to finely control, more difficult to expand, and unfriendly to business."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1274
 msgid "深度学习框架已经为用户简化了梯度的自动求导和参数优化等流程，自然也可以提供一种更加方便的模式来定义我们的模型。"
@@ -520,7 +520,7 @@ msgstr "The deep learning framework has simplified the process of automatic grad
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1276
 msgid "工欲善其事，必先利其器。在下一个教程中，我们将接触到一种更加灵活高效的模型构建方式，这是我们与其它开发者进行沟通的桥梁。"
-msgstr ""
+msgstr "If a worker wants to do his job well, he must first sharpen his tools. In the next tutorial, we will be exposed to a more flexible and efficient model building method, which is a bridge for us to communicate with other developers."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1278
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
