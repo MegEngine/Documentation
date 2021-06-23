@@ -47,6 +47,7 @@ Python API
 
    comparison
    deprecated
+   environment-variables
 
 Index
 -----

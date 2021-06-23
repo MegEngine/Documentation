@@ -13,12 +13,11 @@
 我们会根据社区的反馈，不断丰富指南内容，改进指南质量。
 
 .. toctree::
-   :caption: 安装与配置
    :hidden:
    :maxdepth: 1
 
+   what-is-megengine
    install/index
-   environment-variables
 
 .. toctree::
    :caption: 模型开发
@@ -29,6 +28,7 @@
    model-development/advanced-parameter-optimization
    model-development/profiler
    model-development/gpu-memory
+   model-development/reproducibility
 
 .. toctree::
    :caption: 模型部署

@@ -13,7 +13,10 @@ Sphinx reStructuredText 语法入门
 
 .. note::
 
-   如果你有 MarkDown 语法经验，学习 RST 语法会更加简单。
+   * 如果你有 MarkDown 语法经验，学习 RST 语法会更加简单。
+   * 文档编写人员一定要对 :ref:`交叉引用 <cross-reference-rst>` 的用法烂熟于心。
+
+.. _sections-rst:
 
 章节（Sections）
 ----------------
@@ -35,6 +38,8 @@ Sphinx reStructuredText 语法入门
    ~~~~~~~~
 
 你可以采用更深的嵌套级别，但在文档中应当避免出现四级甚至更深的标题。
+
+.. _paragraphs-rst:
 
 段落（Paragraphs）
 ------------------
@@ -67,6 +72,8 @@ Sphinx reStructuredText 语法入门
 | 第一段内容的第一部分，
 | 第一段内容的第二部分，将会进行换行。
 
+.. _inlnie-markup-rst:
+
 内联标记（Inline markup）
 -------------------------
 
@@ -91,6 +98,8 @@ Sphinx reStructuredText 语法入门
    * 内联标记不支持嵌套语法
    * 内容不能以空格开头或结尾，如 ``* 文本*`` 这样的用法是错误的
    * 必须用非单词字符将其和周围的文本分开
+
+.. _list-rst:
 
 列表（List）
 ------------
@@ -178,6 +187,8 @@ Sphinx reStructuredText 语法入门
 下一个术语
   下一个术语对应的定义。
 
+.. _tables-rst:
+
 表格（Tables）
 --------------
 
@@ -240,21 +251,21 @@ CSV 表格可以根据 CSV（逗号分隔值）数据创建表。
 .. code-block::
 
    .. csv-table:: Frozen Delights!
-   :header: "Treat", "Quantity", "Description"
-   :widths: 15, 10, 30
+      :header: "Treat", "Quantity", "Description"
+      :widths: 15, 10, 30
 
-   "Albatross", 2.99, "On a stick!"
-   "Crunchy Frog", 1.49, "If we took the bones out, it wouldn't be
-   crunchy, now would it?"
-   "Gannet Ripple", 1.99, "On a stick!"
+      "Albatross", 2.99, "On a stick!"
+      "Crunchy Frog", 1.49, "If we took the bones out, 
+      it wouldn't becrunchy, now would it?"
+      "Gannet Ripple", 1.99, "On a stick!"
 
 .. csv-table:: Frozen Delights!
    :header: "Treat", "Quantity", "Description"
    :widths: 15, 10, 30
 
    "Albatross", 2.99, "On a stick!"
-   "Crunchy Frog", 1.49, "If we took the bones out, it wouldn't be
-   crunchy, now would it?"
+   "Crunchy Frog", 1.49, "If we took the bones out, 
+   it wouldn't becrunchy, now would it?"
    "Gannet Ripple", 1.99, "On a stick!"
 
 List 表
@@ -300,6 +311,8 @@ List 表可以根据两级无序列表来生成表格：
      - 1.99
      - On a stick!
 
+.. _hyperlinks-rst:
+
 超链接（Hyperlinks）
 --------------------
 
@@ -321,6 +334,8 @@ List 表可以根据两级无序列表来生成表格：
 
 .. _超链接: https://domain.invalid/
 
+.. _images-rst:
+
 图片（Images）
 --------------
 
@@ -341,12 +356,13 @@ reST 支持图像指令，用法如下：
 .. warning::
 
    * MegEngine 文档中所使用的图片请统一放置在 ``source/_static/images`` 目录内。
+     **绝对不允许** 直接将图片放在和文本文件相同的文件夹内，这样虽然方便了写作时进行引用，
+     但却给整个文档的维护引入了技术债务，将形成潜在的风险。
    * 一般情况下请优先使用 SVG 格式的矢量图，使用位图请权衡好图片体积和清晰度。
-   * 尽可能使用 Graphviz 或 Mermaid 语法绘制示意图（后续章节有说明）。
+   * 尽可能使用 :ref:`Graphviz <graphviz-ext>` 或 :ref:`Mermaid <mermaid-ext>` 语法绘制示意图。
    * 图片文件名需要有相应的语义信息，不可使用完全随机生成的字符。
 
-绝对不允许直接将图片放在和文本文件相同的文件夹内，这样虽然方便了写作时进行引用，
-但却给整个文档的维护引入了技术债务，将形成潜在的风险。
+.. _cross-reference-rst:
 
 交叉引用（Cross-reference）
 ---------------------------
@@ -419,16 +435,14 @@ MegEngine 文档按照 Sphinx `Python Domain <https://www.sphinx-doc.org/en/mast
    MegEngine 文档列举出的 Python API 有些是使用 import 得到的较短的路径。
    比如 ``add`` 的实际路径是 ``megengine.functional.elemwise.add`` ，
    但在文档中能够搜索到的路径只有 ``megengine.functional.add`` .
-   
-   可以参考文档中 ``functional`` 模块的结构进行理解：
-
-   .. code-block::
-
-      .. py:module:: megengine.functional.elemwise
-      .. currentmodule:: megengine.functional
-
    因此在引用时应当使用 ``:py:func:`~.functional.add``` 而不是 ``:py:func:`~.functional.elemwise.add``` 
    （后者会因为匹配失败而无法生成超链接），前者是我们推荐 MegEngine 用户的 API 调用方式。
+
+.. warning::
+
+   对于 ``Conv2d`` 这种存在多个前缀的 API, 请补全部分前缀以防止冲突，比如 ``:py:class:.module.Conv2d``.
+
+.. _footnotes-rst:
 
 脚注（Footnotes）
 -----------------
@@ -453,6 +467,8 @@ Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
 
 你可以显式使用 ``[1]_`` 来编号，否则使用 ``[#]_`` 进行自动编号。
 
+.. _citation-rst:
+
 引用（Citation）
 ----------------
 
@@ -468,6 +484,8 @@ Lorem ipsum [Ref]_ dolor sit amet.
 
 .. [Ref] Book or article reference, URL or whatever.
 
+.. _math-rst:
+
 数学公式（Math）
 ----------------
 
@@ -480,6 +498,8 @@ Lorem ipsum [Ref]_ dolor sit amet.
 就会得到由 `MathJax <https://www.mathjax.org/>`_ 渲染得到的数学公式：
 
 Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`.
+
+.. _graphviz-ext:
 
 Graphviz 语法支持
 -----------------
@@ -502,6 +522,8 @@ Graphviz 语法支持
    digraph foo {
       "bar" -> "baz";
    }
+
+.. _mermaid-ext:
 
 Mermaid 语法支持
 ----------------
@@ -539,6 +561,107 @@ Mermaid 语法支持
       John-->Alice: Great!
       John->Bob: How about you?
       Bob-->John: Jolly good!
+
+.. _toggle-ext:
+
+Toggle 语法支持
+---------------
+
+文档已经通过 `sphinx-togglebutton 
+<https://sphinx-togglebutton.readthedocs.io/en/latest/>`_ 插件支持常见 Toggle 功能，样例如下：
+
+.. code-block::
+
+   .. admonition:: Here's my title
+      :class: dropdown, warning
+
+      My note
+
+.. admonition:: Here's my title
+   :class: dropdown, warning
+   
+   My note
+
+以上展示的为基础用法，更多用法请参考文档。
+
+.. _pannels-ext:
+
+Pannels 语法支持
+----------------
+
+文档已经通过 `sphinx-panels 
+<https://sphinx-panels.readthedocs.io/en/latest/>`_ 插件支持常见 Pannels 功能，样例如下：
+
+.. code-block::
+
+   .. panels::
+
+      :container: container-lg pb-3
+      :column: col-lg-4 col-md-4 col-sm-6 col-xs-12 p-2
+
+      panel1
+      ---
+      panel2
+      ---
+      panel3
+      ---
+      :column: col-lg-12 p-2
+      panel4
+
+.. panels::
+
+   :container: container-lg pb-3
+   :column: col-lg-4 col-md-4 col-sm-6 col-xs-12 p-2
+
+   panel1
+   ---
+   panel2
+   ---
+   panel3
+   ---
+   :column: col-lg-12 p-2
+   panel4
+
+以上展示的为 Grid Layout 用法，Card Layout, Image Caps 等用法请参考文档。
+
+.. _tabs-ext:
+
+Tabs 语法支持
+-------------
+文档已经通过 `sphinx-tabs 
+<https://sphinx-tabs.readthedocs.io/en/latest/>`_ 插件支持常见 Tabs 功能，样例如下：
+
+.. code-block::
+
+   .. tabs::
+
+      .. tab:: Apples
+
+         Apples are green, or sometimes red.
+
+      .. tab:: Pears
+
+         Pears are green.
+
+      .. tab:: Oranges
+
+         Oranges are orange.
+
+.. tabs::
+
+   .. tab:: Apples
+
+      Apples are green, or sometimes red.
+
+   .. tab:: Pears
+
+      Pears are green.
+
+   .. tab:: Oranges
+
+      Oranges are orange.
+
+以上展示的为 Basic 用法，Nested / Group / Code Tabs 用法请参考文档。
 
 GitHub URL 缩写
 ---------------

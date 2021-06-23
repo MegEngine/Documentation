@@ -36,6 +36,8 @@ MegEngine 中提供了一种名为 “张量” （:class:`Tensor` ）的数据�
 区别于物理学中的定义，其概念与 NumPy_ 中的 :class:`~numpy.ndarray` 更加相似，
 即张量是一类多维数组，其中每个元素的数据类型和空间大小一致，而数据值可以不同。
 
+.. _tensor-example:
+
 Tensor 举例：三阶魔方
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -77,6 +79,8 @@ Tensor 类中还有其他的属性和方法，我们将在恰当的位置进行�
    Tensor
    Parameter
 
+.. _tensor-dtype:
+
 Tensor 数据类型
 ~~~~~~~~~~~~~~~
 
@@ -107,6 +111,8 @@ Boolean                   :any:`numpy.bool8` a alias of :class:`numpy.bool_`
 .. warning::
 
    并不是所有的已有算子都支持上述任意数据类型的计算，还有一些情况尚未实现。
+
+.. _tesnor-creation-and-manipulation:
 
 Tensor 创建与处理
 ~~~~~~~~~~~~~~~~~
