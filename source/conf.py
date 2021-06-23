@@ -1,18 +1,14 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+"""Configuration file for the Sphinx documentation builder.
 
+This file only contains a selection of the most common options. For a full
+list see the documentation:
+https://www.sphinx-doc.org/en/master/usage/configuration.html
+"""
+
+import logging
 # -- Path setup --------------------------------------------------------------
 from datetime import datetime
-import re
-import importlib
-import inspect
-import logging
-import os
-import sys
-import sphinx
+
 import megengine
 
 # -- Project information -----------------------------------------------------
@@ -39,7 +35,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.graphviz",
     "sphinxcontrib.mermaid",
-    "sphinx_copybutton"
+    "sphinx_copybutton",
 ]
 
 source_suffix = {
@@ -57,27 +53,25 @@ exclude_patterns = [
     "build",
     "examples",
     "**/includes/**",
-    "**.ipynb_checkpoints"
+    "**.ipynb_checkpoints",
 ]
 
 # -- Options for internationalization ----------------------------------------
 language = "zh_CN"
 locale_dirs = ["../locales/"]
 
-# By default, the document `functional/loss.rst` ends up in the `functional` text domain. 
+# By default, the document `functional/loss.rst` ends up in the `functional` text domain.
 # With this option set to False, it is `functional/loss`.
 gettext_compact = False
 
 # -- Options for Extensions -------------------------------------------------
 
-# Setting for sphinx.ext.autosummary to auto-generate single html pages 
+# Setting for sphinx.ext.autosummary to auto-generate single html pages
 # Please makesure all api pages are stored in `/refenrece/api/` directory
 autosummary_generate = True
 
-# Setting for sphinx.ext.auotdoc 
-autodoc_default_options = {
-    "member-order": "bysource" 
-}
+# Setting for sphinx.ext.auotdoc
+autodoc_default_options = {"member-order": "bysource"}
 autoclass_content = "class"
 autodoc_docstring_signature = True
 autodoc_preserve_defaults = True
@@ -88,7 +82,7 @@ autodoc_typehints = "none"
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
 # Setting for sphinxcontrib-mermaid
-mermaid_version = "latest" # from CDN unpkg.com 
+mermaid_version = "latest"  # from CDN unpkg.com
 
 # Setting for sphinx.ext.intersphinx
 # Useful for refenrece other projects, eg. :py:class:`zipfile.ZipFile`
@@ -102,20 +96,25 @@ intersphinx_mapping = {
 # Can use the alias name as a new role, e.g. :issue:`123`
 extlinks = {
     "src": ("https://github.com/MegEngine/MegEngine/blob/master/%s", ""),
-    "docs": ("https://github.com/MegEngine/Documentation/blob/master/%s", ""),  
+    "docs": ("https://github.com/MegEngine/Documentation/blob/master/%s", ""),
     "issue": ("https://github.com/MegEngine/MegEngine/issues/%s", "Issue #"),
     "pull": ("https://github.com/MegEngine/MegEngine/pull/%s", "Pull Requset #"),
-    "duref": ("http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#%s", ""),
+    "duref": (
+        "http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#%s",
+        "",
+    ),
 }
 
-# Setting for sphinx_copybutton 
-copybutton_selector = 'div:not(.no-copy)>div.highlight pre'
-copybutton_prompt_text = r'>>> |\.\.\. |(?:\(.*\) )?\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: '
+# Setting for sphinx_copybutton
+copybutton_selector = "div:not(.no-copy)>div.highlight pre"
+copybutton_prompt_text = (
+    r">>> |\.\.\. |(?:\(.*\) )?\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
+)
 copybutton_prompt_is_regexp = True
 
 # Setting for sphinx.ext.nbsphinx
 # nbsphinx do not use requirejs (breaks bootstrap)
-nbsphinx_requirejs_path = ""    
+nbsphinx_requirejs_path = ""
 logger = logging.getLogger(__name__)
 
 try:
@@ -140,9 +139,7 @@ html_theme = "pydata_sphinx_theme"
 html_theme_path = ["_themes"]
 html_static_path = ["_static"]
 html_extra_path = ["google940c72af103ac75f.html"]
-html_css_files = [
-    "css/custom.css"
-]
+html_css_files = ["css/custom.css"]
 
 html_search_language = "zh"
 
@@ -158,15 +155,16 @@ html_theme_options = {
             "name": "GitHub",
             "url": "https://github.com/MegEngine/MegEngine",
             "icon": "fab fa-github-square",
-        },{
+        },
+        {
             "name": "Bilibili",
             "url": "https://space.bilibili.com/649674679",
             "icon": "fas fa-play-circle",
         },
     ],
     "external_links": [
-        { "name": "论坛", "url": "https://discuss.megengine.org.cn/"}, 
-        { "name": "官网", "url": "https://megengine.org.cn/"}
+        {"name": "论坛", "url": "https://discuss.megengine.org.cn/"},
+        {"name": "官网", "url": "https://megengine.org.cn/"},
     ],
     "navbar_end": ["navbar-icon-links.html", "version-switcher.html"],
     "collapse_navigation": True,
@@ -176,7 +174,7 @@ html_theme_options = {
     "use_version_switch": True,
     "version_switch_json_url": "/doc/version.json",
     "version_switch_enable_locale": True,
-    "version_switch_locales": ["zh", "en"]
+    "version_switch_locales": ["zh", "en"],
 }
 
 # Setting for Edit this Page button
@@ -188,4 +186,3 @@ html_context = {
     "github_version": "main",
     "doc_path": "source",
 }
-
