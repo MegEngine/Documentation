@@ -440,7 +440,7 @@ MegEngine 文档按照 Sphinx `Python Domain <https://www.sphinx-doc.org/en/mast
 
 .. warning::
 
-   对于 ``Conv2d`` 这种存在多个前缀的 API, 请补全部分前缀以防止冲突，比如 ``:py:class:.module.Conv2d``.
+   对于 ``Conv2d`` 这种存在多个前缀的 API, 请补全部分前缀以防止冲突，比如 ``:py:class:`.module.Conv2d```.
 
 .. _footnotes-rst:
 
