@@ -23,6 +23,7 @@ release = version
 add_function_parentheses = False
 add_module_names = False
 
+# WARNING: Do not modify loading order unless you know the dependencies
 extensions = [
     "nbsphinx",
     "sphinx.ext.napoleon",
@@ -148,6 +149,9 @@ html_search_language = "zh"
 
 # Configuration for pydata-sphinx-theme, the doc URL:
 # https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/configuring.html
+#
+# WARNING: MegEngine Doc used a forked version here:
+# https://github.com/MegEngine/pydata-sphinx-theme/tree/dev
 
 panels_add_bootstrap_css = False
 
@@ -169,11 +173,15 @@ html_theme_options = {
         {"name": "论坛", "url": "https://discuss.megengine.org.cn/"},
         {"name": "官网", "url": "https://megengine.org.cn/"},
     ],
+    # Note: If you only want to show current version information
+    # Please replace "version-switcher.html" with "current-version.html"
+    # These two templates only work in MegEngine forked dev branch
     "navbar_end": ["navbar-icon-links.html", "version-switcher.html"],
     "collapse_navigation": True,
     "use_edit_page_button": True,
     "navigation_with_keys": False,
     "show_prev_next": False,
+    # The following settings just work in MegEngine forked dev branch
     "use_version_switch": True,
     "version_switch_json_url": "/doc/version.json",
     "version_switch_enable_locale": True,
