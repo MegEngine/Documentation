@@ -25,6 +25,7 @@ megengine.distributed
    get_client
    get_mm_server_addr
    get_py_server_addr
+   get_rank
    get_world_size
    group_barrier
 
