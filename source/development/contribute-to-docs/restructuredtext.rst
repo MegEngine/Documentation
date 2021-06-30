@@ -14,7 +14,7 @@ Sphinx reStructuredText 语法入门
 .. note::
 
    * 如果你有 MarkDown 语法经验，学习 RST 语法会更加简单。
-   * 文档编写人员一定要对 :ref:`交叉引用 <cross-reference-rst>` 的用法烂熟于心。
+   * API 维护人员一定要对 :ref:`超链接 <hyperlinks-rst>` 和 :ref:`交叉引用 <cross-reference-rst>` 的用法烂熟于心。
 
 .. _sections-rst:
 
@@ -23,7 +23,7 @@ Sphinx reStructuredText 语法入门
 
 通过使用标点符号对节标题加下划线（并可选地对它们进行加上划线）来创建节标题（:duref:`参考 <sections>` ），
 
-节标题需要与文本一样长。MegEngine 采用如下的章节结构语法规范：
+MegEngine 采用如下的章节结构语法规范：
 
 .. code-block::
 
@@ -37,7 +37,10 @@ Sphinx reStructuredText 语法入门
    三级标题
    ~~~~~~~~
 
-你可以采用更深的嵌套级别，但在文档中应当避免出现四级甚至更深的标题。
+.. warning::
+
+   * **标记符必须与文本长度一致。** 
+   * 你可以采用更深的嵌套级别，但在文档中应当避免出现四级甚至更深的标题。
 
 .. _paragraphs-rst:
 
@@ -276,22 +279,22 @@ List 表可以根据两级无序列表来生成表格：
 .. code-block::
    
    .. list-table:: Frozen Delights!
-   :widths: 15 10 30
-   :header-rows: 1
+      :widths: 15 10 30
+      :header-rows: 1
 
-   * - Treat
-     - Quantity
-     - Description
-   * - Albatross
-     - 2.99
-     - On a stick!
-   * - Crunchy Frog
-     - 1.49
-     - If we took the bones out, it wouldn't be
-       crunchy, now would it?
-   * - Gannet Ripple
-     - 1.99
-     - On a stick!
+      * - Treat
+        - Quantity
+        - Description
+      * - Albatross
+        - 2.99
+        - On a stick!
+      * - Crunchy Frog
+        - 1.49
+        - If we took the bones out, it wouldn't be
+          crunchy, now would it?
+      * - Gannet Ripple
+        - 1.99
+        - On a stick!
 
 .. list-table:: Frozen Delights!
    :widths: 15 10 30
@@ -432,7 +435,7 @@ MegEngine 文档按照 Sphinx `Python Domain <https://www.sphinx-doc.org/en/mast
 
 .. warning::
 
-   MegEngine 文档列举出的 Python API 有些是使用 import 得到的较短的路径。
+   MegEngine 文档列举出的 Python API 通常是最短调用路径。
    比如 ``add`` 的实际路径是 ``megengine.functional.elemwise.add`` ，
    但在文档中能够搜索到的路径只有 ``megengine.functional.add`` .
    因此在引用时应当使用 ``:py:func:`~.functional.add``` 而不是 ``:py:func:`~.functional.elemwise.add``` 
@@ -499,10 +502,108 @@ Lorem ipsum [Ref]_ dolor sit amet.
 
 Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`.
 
+.. note::
+
+   这个用法适合显示行内公式，如果想要使用行间公式，请参考下面的拓展指令。
+
+.. _sphinx-directives:
+
+Sphinx 拓展指令
+---------------
+
+.. warning::
+
+   以下语法非原生 ReStructuredText 语法，需要使用 Sphinx 进行支持。
+
+``.. toctree::`` 
+  Table of contents tree. 用于组织文档结构。
+
+``.. note::`` 
+  用于添加提示性信息，用户忽视这些信息可能出错。
+  
+``.. warning::``
+  用于添加警告性信息，用户忽视这些信息一定出错。
+
+``.. versionadded:: version``
+  描述 API 添加版本，如果用于单个模块, 则必须放在显式文本内容顶部。
+
+``.. versionchanged:: version``
+  描述 API 变更版本，指出以何种方式（新参数）进行了更改以及可能的副作用。
+
+``.. deprecated:: version``
+  描述 API 弃用版本，简要地告知替代使用方式。
+
+``.. seealso::``
+  包括对模块文档或外部文档的引用列表，内容应该是一个 reST 定义列表，比如：
+  
+  .. code-block::
+
+     .. seealso::
+
+     Module :py:mod:`zipfile`
+        Documentation of the :py:mod:`zipfile` standard module.
+
+     `GNU tar manual, Basic Tar Format <http://link>`_
+        Documentation for tar archive files, including GNU tar extensions.
+
+  也可以使用简略写法，如下所示：
+
+  .. code-block::
+     
+     .. seealso:: modules :py:mod:`zipfile`, :py:mod:`tarfile`
+
+``.. rubric:: title``
+  用于创建一个不会产生导航锚点的标题。
+
+``.. centered::``
+  创建居中文本
+
+``.. math::``
+  LaTeX 标记的数学公式，相较于 ``:math:`` 语法提供了更干净的阅读空间。
+
+  .. code-block::
+
+     .. math::
+
+      (a + b)^2 = a^2 + 2ab + b^2
+
+      (a - b)^2 = a^2 - 2ab + b^2
+
+  .. math::
+
+   (a + b)^2 = a^2 + 2ab + b^2
+
+   (a - b)^2 = a^2 - 2ab + b^2
+
+  .. warning::
+
+     用于 Python 文档字符串中时，必须将所有反斜杠加倍，或者使用 Python 原始字符串 ``r"raw"``.
+
+代码示例
+~~~~~~~~
+
+``.. highlight:: language``
+  使用指定语言（Pygments 支持）的语法高亮，直到再次被定义。
+
+``.. code-block:: [language]``
+  展示代码块，如果未设置 ``language``, highlight_language 将被使用。
+  
+想要了解完整的指令和配置项，请访问 `Directives
+<https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html>`_ 页面。
+
+.. _sphinx-ext:
+
+Sphinx 插件语法
+---------------
+
+.. note::
+
+   下面的语法通过 Sphinx Extensions 支持，同样可以用于 Python 文档字符串。
+
 .. _graphviz-ext:
 
 Graphviz 语法支持
------------------
+~~~~~~~~~~~~~~~~~
 
 文档已经通过 `sphinx.ext.graphviz 
 <https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html>`_ 插件支持
@@ -526,7 +627,7 @@ Graphviz 语法支持
 .. _mermaid-ext:
 
 Mermaid 语法支持
-----------------
+~~~~~~~~~~~~~~~~
 
 文档已经通过 `sphinxcontrib-mermaid 
 <https://sphinxcontrib-mermaid-demo.readthedocs.io/en/latest/>`_ 插件支持
@@ -565,7 +666,7 @@ Mermaid 语法支持
 .. _toggle-ext:
 
 Toggle 语法支持
----------------
+~~~~~~~~~~~~~~~
 
 文档已经通过 `sphinx-togglebutton 
 <https://sphinx-togglebutton.readthedocs.io/en/latest/>`_ 插件支持常见 Toggle 功能，样例如下：
@@ -587,7 +688,7 @@ Toggle 语法支持
 .. _pannels-ext:
 
 Pannels 语法支持
-----------------
+~~~~~~~~~~~~~~~~
 
 文档已经通过 `sphinx-panels 
 <https://sphinx-panels.readthedocs.io/en/latest/>`_ 插件支持常见 Pannels 功能，样例如下：
@@ -627,7 +728,8 @@ Pannels 语法支持
 .. _tabs-ext:
 
 Tabs 语法支持
--------------
+~~~~~~~~~~~~~
+
 文档已经通过 `sphinx-tabs 
 <https://sphinx-tabs.readthedocs.io/en/latest/>`_ 插件支持常见 Tabs 功能，样例如下：
 
@@ -664,7 +766,7 @@ Tabs 语法支持
 以上展示的为 Basic 用法，Nested / Group / Code Tabs 用法请参考文档。
 
 GitHub URL 缩写
----------------
+~~~~~~~~~~~~~~~
 
 为了方面写文档时引用 GitHub 上的源代码，支持如下语法：
 
