@@ -9,6 +9,7 @@
    :maxdepth: 1
  
    document-style-guide
+   python-docstring-style-guide
    restructuredtext
    commit-message
    build-the-doc-locally
@@ -102,25 +103,35 @@ MegEngine 文档的源码结构如下：
 
 MegEngine 的文档主要包括以下方面的内容：
 
-* 教程（Tutorial）：可从零开始完整跑通的教学性材料，适合快速上手
-* 指南（Guide）：针对特定情景/特定功能进行详细说明的操作手册
-* 参考（Reference）：用于 API 查询和浏览，方便网络引擎检索的字典
+* 教程（Tutorial）：指导读者通过一系列步骤完成项目（或有意义的练习）的课程；
+* 指南（Guide）：引导读者完成解决常见问题所需步骤的指南（How-to 系列）；
+* 参考（Reference）：用于 API 查询和浏览，方便网络引擎检索的百科全书；
+* 解释（Explaination）：对于特定主题、特性的概念性说明。
+
+下面这张表格有助于我们理解它们之间的区别：
+
++------------------------+------------+----------+
+|                        |  学习阶段  | 使用阶段 |
++========================+============+==========+
+| 实践步骤               |  教程 🤔   |  指南 📖 |
++------------------------+------------+----------+
+| 理论知识               |  解释 📝   |  参考 📚 | 
++------------------------+------------+----------+
+
+
+更多细节请参考 :ref:`megengine-document-style-guide` 。
 
 .. _github-collaborate:
 
 Git 协作流程
 ------------
 
-.. warning::
-
-   **请不要突然直接发起一个 Pull Request!!!** 
-
 高效清晰的沟通是合作的前提，标准的 MegEngine 文档协作流程如下：
 
 #. 创建一个 Issue，讨论接下来你打算进行什么样的尝试，交流想法；
 #. 一旦确定了初步方案，Fork 并 Clone 存储库，创建一个新的本地分支；
-#. 修改代码，:ref:`提交 Commit <commit-message>` 并 Push 到你 Fork 的远端分支（Origin）；
-#. 在 GitHub 创建一个 Pull Request 并向上游（Upstream）申请将其合并；
+#. 修改代码，记录 :ref:`Commit <commit-message>` 并 Push 到你 Fork 的远端分支（Origin）；
+#. 在 GitHub 创建一个 Pull Request 并向上游（Upstream）发起合并申请；
 #. 根据 Review 意见进行交流，如有需要则修改你的代码；
 #. 当你的分支被合并了，便可以删除对应的本地和远程分支。
 
@@ -129,8 +140,10 @@ Git 协作流程
 借助 CI 预览更新后的文档
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-如果你对文档的内容修改较多，建议你在本地完整地构建文档，参考 :ref:`how-to-build-the-doc-locally` 。
-这样可以确保你的改动对文档的其它地方没有影响（尽管你可能笃定不会发生这样的事情），以便于整体进行合并。
+.. note::
+
+   * 如果你对文档的内容修改较多，建议参考 :ref:`how-to-build-the-doc-locally` 。
+   * CI 默认使用 pip 安装的 Wheel 包来构建文档，所以不适用于 :ref:`Python 文档字符串 <python-docstring-style-guide>` 更新。
 
 **当你在本地的修改已经完成后** ，可以通过发起 Pull Request 来触发 GitHub Actions.
 借助于 `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ 工作流，
@@ -139,12 +152,6 @@ Git 协作流程
 对应的 workflow runs 结果页面中找到临时生成的构件（Artifacts），
 里面是 HTML 形式生成的整个文档网站的压缩包，你可以下载到本地后解压并进行预览。
 
-这种方式适合于那些不希望在本地进行构建文档所需环境配置的人员，前提是： **他们对文档的改动幅度较小** 。
-
-.. warning::
-
-   不要频繁地向 Pull Request 中进行新的提交，每次提交都会占用一台 CI 机器资源。
-   如果你确定某次构建工作流是不理想的，可以手动地取消整个流程以节省 CI 资源。
 
 Pull Request 如何被合并
 ~~~~~~~~~~~~~~~~~~~~~~~

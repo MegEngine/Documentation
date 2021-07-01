@@ -30,6 +30,16 @@
   通过 ``export PYTHONPATH`` 的形式来临时指定特定的 MegEngine 源代码路径，
   这种方式适合开发者需要同时对源码和文档进行维护的情况。:ref:`了解如何进行从源码构建。<install>` 
 
+.. warning::
+   
+   为了支持内容的自定义排序，MegEngine 的 API 参考是通过列举而非自动生成的形式添加到文档中的，
+   如果你需要在文档中预览新增 API, 则需要手动将他们添加到对应的 ``source/reference/*.rst`` 文件中。
+
+   比如 ``funtional.add`` 位于 ``source/reference/functional.rst`` 的 Arithmetic operations 分类。
+
+   新增 API 不应该出现在当前版本的文档中，所以在验证无误后，请提交到文档的 dev 分支，
+   与 MegEngine 的 master 分支对应。（如果更新了对应的使用教程或用户指南，同理。）
+
 安装 Sphinx 与 Pydata 主题
 --------------------------
 
@@ -50,7 +60,6 @@ MegEngine 文档对应的 Sphinx 配置文件位于 ``source/conf.py`` ，如需
 .. note::
 
    Sphinx 在应用配置时将通过执行上面脚本中的 ``import megengine`` 来尝试寻找 MegEngine 包路径。
-   使用 ``make info`` 指令，可以看到当前的 ``MegEngine`` 路径和构建参数等信息。
 
    * 使用 ``pip`` 安装的路径应该类似于：``/.../lib/.../site-packages/megengine``
    * 从源码编译构建的路径应该类似于： ``/.../MegEngine/imperative/python/megengine``
@@ -80,7 +89,7 @@ nbsphinx_ 是 Sphinx 的一个插件，可以帮助我们对 ``.ipynb`` 格式�
 .. _nbsphinx: https://nbsphinx.readthedocs.io/
 .. _Notebook: https://jupyter.org/
 
-我们在上一小节已经安装好了 nbsphinx, 但 nbsphinx 还需要通过依赖项目 Pandoc_ 来支持转换 Markdown 格式。
+我们在安装依赖环境时已经安装好了 nbsphinx, 但还需要通过依赖项目 Pandoc_ 来支持转换 Markdown 格式。
 
 .. _Pandoc: https://pandoc.org/
 
@@ -110,15 +119,17 @@ Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经�
 使用 Sphinx 进行文档构建
 ------------------------
 
-在文档目录下使用 ``make html`` 指令，可根据 ``BUILDDIR`` 路径（默认为 ``build`` ）生成 HTML 文件夹。
+在文档目录下使用 ``make help`` 指令，可看到相应的帮助信息。
 
-在文档目录下使用 ``make help`` 指令，可看到对应的帮助信息。
+在文档目录下使用 ``make html`` 指令，可根据 ``BUILDDIR`` 路径（默认为 ``build`` ）生成 HTML 文件夹。
 
 .. note::
 
    * Sphinx 支持增量构建，当你对源文件进行了更改并保存，只需再次执行 ``make html`` 即可。
    * **如果发现一些页面的元素仍被缓存而没有被更新** ，请尝试先执行 ``make clean`` 指令。
-   * 阅读 ``Makefile`` 文件源代码，可以了解更多细节
+   * 本质上所有的指令通过 sphinx-build_ 执行，阅读 ``Makefile`` 文件源代码，可以了解更多细节。
+
+.. _sphinx-build: https://www.sphinx-doc.org/en/master/man/sphinx-build.html
 
 文档生成成功后，打开 ``build/html/index.html`` 文件便可访问主页。
 
@@ -134,4 +145,6 @@ Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经�
 运行上面的代码，可将本地的 build/html 下的 Web 服务映射到 1124 端口，你也可以选择使用其它 Web 服务器。
 
 如果你的 Python 版本低于 3.7, 将不支持 ``--directory`` 参数，请 ``cd`` 到对应目录执行上述命令。
+
+通常你可以选择将 Web 服务挂在后台，这样在重新 build HTML 文件后只需要刷新页面即可。
 

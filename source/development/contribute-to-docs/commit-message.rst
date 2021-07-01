@@ -25,7 +25,7 @@ Commit message 书写指南
    // 空一行
    <footer>
 
-样例如下：
+模版如下：
 
 .. code-block:: 
 
@@ -56,6 +56,7 @@ Commit message 书写指南
    Resolves: #123
    See also: #456, #789
 
+参考样例： `33aaf43 <https://github.com/MegEngine/Documentation/commit/33aaf430848be409ab46e19733be40a3bfc6abb8>`_
 
 Header
 ~~~~~~
@@ -68,8 +69,7 @@ Header 通常也称为 Subject，是查看 ``git log`` 时必需的信息：
  
 其中类型（Type）主要有以下几类：
 
-* 文档（docs）：最主要也是最常见的类型，所有文档内容的增删查改都归于此类
-* 勘误（errata）：顾名思义，即对文档中错误内容的更正，改动幅度往往较小
+* 文档（docs）：**最主要也是最常见的类型，** 所有文档内容的增删查改都归于此类
 * 样式（style）：对文档格式的修改，通常是为了让内容看起来更清晰美观
 * 重构（refactor）：对文档内容的结构性调整，可以是多个文件结构的重构
 * 翻译（trans）：翻译英文 API docstring 或者将中文文档翻译成英文
@@ -77,10 +77,6 @@ Header 通常也称为 Subject，是查看 ``git log`` 时必需的信息：
 * 持续集成（ci）：在这个项目中专指 GitHub Actions 中的一些工作流改动
 * 特性（feat）：专指文档功能特性的变化，比如使用新的 Sphinx 插件等等
 * 修复（fix）：对导致文档无法正常显示的一类 Bug 的修复
-
-.. warning::
-
-   请不要将对文档内容的勘误当作 Bug 修复从而归类于 fix 类型。
 
 范围（Scope）是可选项，根据修改所影响的内容而定，常见类型有：
 
@@ -116,7 +112,7 @@ Footer
 
 .. code-block:: shell
 
-   errata(tutorial): correct the xxx typo (#123)
+   docs(tutorial): correct the xxx typo (#123)
 
 其中 # 后跟着的数字是对应的 Issue/Pull Request ID.
 
