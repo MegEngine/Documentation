@@ -14,7 +14,8 @@ Sphinx reStructuredText 语法入门
 .. note::
 
    * 如果你有 MarkDown 语法经验，学习 RST 语法会更加简单。
-   * API 维护人员一定要对 :ref:`超链接 <hyperlinks-rst>` 和 :ref:`交叉引用 <cross-reference-rst>` 的用法烂熟于心。
+   * MegEngine 文档维护人员一定要对 :ref:`超链接 <hyperlinks-rst>` 和 :ref:`交叉引用 <cross-reference-rst>` 的用法烂熟于心。
+   * 即使是在 Python 文档字符串中也可以使用 :ref:`sphinx-directives` 和 :ref:`sphinx-ext`.
 
 .. _sections-rst:
 
@@ -578,9 +579,6 @@ Sphinx 拓展指令
   .. warning::
 
      用于 Python 文档字符串中时，必须将所有反斜杠加倍，或者使用 Python 原始字符串 ``r"raw"``.
-
-代码示例
-~~~~~~~~
 
 ``.. highlight:: language``
   使用指定语言（Pygments 支持）的语法高亮，直到再次被定义。

@@ -13,17 +13,20 @@ HTTPPORT      ?= 1124
 HTMLAPI       ?= reference/api
 
 # Put it first so that "make" without argument is like "make help".
-help: info
+help:
+	@echo "============================================== Target ======================================================"
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-	@echo "You can use\033[31m export PYTHONPATH=\"/path/to/megengine\"\033[0m to specify megengine python package path."
-	@echo "You can use\033[31m make clean\033[0m to clean all build and generated api files."
-
-info:
-	@echo "Current MEGENGINEPY path: ${MEGENGINEPY}"
-	@echo "Current SOURCEDIR relative path: ${SOURCEDIR}"
-	@echo "Current BUILDDIR  relative path: ${BUILDDIR}"
-	@echo "Current HTMLAPI   relative path: ${HTMLAPI}"
-	@echo "Current SPHINXOPTS: ${SPHINXOPTS}"
+	@echo "============================================= Variables ===================================================="
+	@echo "Default variables in makefile:"
+	@echo "MEGENGINEPY: ${MEGENGINEPY}"
+	@echo "SOURCEDIR: ${SOURCEDIR}"
+	@echo "BUILDDIR: ${BUILDDIR}"
+	@echo "HTMLAPI: ${HTMLAPI}"
+	@echo "SPHINXOPTS: ${SPHINXOPTS}"
+	@echo "=============================================== Notes ======================================================"
+	@echo "1. You can use\033[36m export PYTHONPATH=\"/path/to/megengine\"\033[0m to specify megengine python package path."
+	@echo "2. You can use\033[36m make LANGUAGE=\"[ zh_CN | en ]\" html\033[0m to specify the language displayed in documentation."
+	@echo "For more details, please read the source code in\033[36m Makefile\033[0m."
 
 clean:
 	rm -rf $(BUILDDIR)
@@ -33,7 +36,7 @@ http: html
 	cd $(BUILDDIR)/html
 	python3 -m http.server $(HTTPPORT)
 
-.PHONY: info help clean http Makefile
+.PHONY: help clean http Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
