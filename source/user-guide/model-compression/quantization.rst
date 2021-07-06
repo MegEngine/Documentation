@@ -191,7 +191,7 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
 实例讲解
 --------
 
-下面我们以 ResNet18 为例来讲解量化的完整流程，完整代码见 ``MegEngine/Models`` . 主要分为以下几步：
+下面我们以 ResNet18 为例来讲解量化的完整流程，完整代码见 `MegEngine/Models <https://github.com/MegEngine/Models/tree/master/official/quantization>`_ . 主要分为以下几步：
 
 1. 修改网络结构，使用已经 Fuse 好的 ConvBn2d、ConvBnRelu2d、ElementWise 代替原先的 Module；
 2. 在正常模式下预训练模型，并在每轮迭代保存网络检查点；
