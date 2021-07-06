@@ -6,7 +6,9 @@
 环境变量（Env）设置
 ===================
 
-通常无需对环境变量进行更改，即可正常使用 MegEngine 框架。
+默认情况下，无需对环境变量进行更改，即可正常使用 MegEngine 框架。
+
+如果你需要进行一定的改动，请确保你完全了解可能产生的影响。👻 👻 👻
 
 注意事项
 --------
@@ -43,13 +45,10 @@
 
 编译相关
 --------
-``CUDA_BIN_PATH`` （ :ref:`nd-environ` ）
-  设置 CUDA 编译器 nvcc 的路径，用于编译 fuse kernel.
+.. note::
 
-  默认从 ``PATH``, ``LIBRARY_PATH`` 环境变量中寻找，也可人为指定路径如 ``"/data/opt/cuda/bin/"``.
-
-``MGB_JIT_BACKEND`` 
-  jit fuse kernel 的编译后端选项，可设置为 ``HALIDE``, ``NVRTC``, ``MLIR``.
+   * 你可以在 :src:`CMakeLists.txt` 文件中找到 MegEngine 基本的 ``option`` 配置；
+   * 第三方库的 cmake 配置文件可以在 :src:`cmake` 中找到。
 
 设备相关
 --------
@@ -112,10 +111,9 @@
 
 Sublinear 相关
 ~~~~~~~~~~~~~~
-
 .. note::
 
-   参考 :py:class:`SublinearMemoryConfig` API 了解更多信息。
+   参考 :py:class:`~.SublinearMemoryConfig` API 了解更多信息。
 
 ``MGB_SUBLINEAR_MEMORY_THRESH_NR_TRY``
   线性空间以及亚线性内存优化的当前范围搜索的样本数目，默认为 ``10``.
@@ -197,6 +195,14 @@ DTR 相关
 
 ``MGB_PROFILE_ONLY_WAIT`` （ :ref:`nd-environ` ）
   Prifile 时只选择有 wait 行为的算子，默认为空，不开启。
+
+``CUDA_BIN_PATH`` （ :ref:`nd-environ` ）
+  设置 CUDA 编译器 nvcc 的路径，用于编译 fuse kernel.
+
+  默认从 ``PATH``, ``LIBRARY_PATH`` 环境变量中寻找，也可人为指定路径如 ``"/data/opt/cuda/bin/"``.
+
+``MGB_JIT_BACKEND`` 
+  jit fuse kernel 的编译后端选项，可设置为 ``HALIDE``, ``NVRTC``, ``MLIR``.
 
 ``MGB_JIT_KEEP_INTERM`` （ :ref:`nd-environ` ）
   是否保存 jit 产生的临时文件，默认为空，不保存。
