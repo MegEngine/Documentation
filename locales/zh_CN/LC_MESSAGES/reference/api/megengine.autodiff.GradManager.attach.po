@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-06-03 10:19\n"
+"PO-Revision-Date: 2021-07-07 17:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -44,15 +44,15 @@ msgstr "调用 :meth:`attach` 之后，不仅会在当此求导中生效，也�
 
 #: megengine.autodiff.grad_manager.GradManager.attach:36 of
 msgid "When reusing a GradManager, it is sometimes desirable to attach temporary tensors each time, e.g. for computing gradients of inputs of a neural network. GradManager tries to accommodate such usages by holding weak references to attached tensors. Most of the times, this should be enough to prevent resource leak. Unfortunately, there are still some pitfalls left:"
-msgstr "在重复使用同一个 GradManager 的同时，您可能会希望对一些临时的 Tensor 求导，例如对神经网络的输入求导。考虑到这种用法，GradManager 会对被 :meth:`attach` 的 Tensor 持有弱引用。在大多数时候，这已经可以避免资源泄漏。但是，仍然有少数情况需要您注意："
+msgstr "在重复使用同一个 GradManager 的同时，您可能会希望对一些临时的 Tensor 求导，例如对神经网络的输入求导。考虑到这种用法，GradManager 会对 attached Tensor 持有弱引用。在大多数时候，这已经可以避免资源泄漏。但是，仍然有少数情况需要您注意："
 
 #: megengine.autodiff.grad_manager.GradManager.attach:42 of
 msgid "Callbacks should not hold strong references, directly or indirectly, to attached tensors. Any strong reference, including those from callbacks, will prevent garbage collection (even by the cycle collector!) of a attached tensor, until the GradManager object is garbage collected."
-msgstr "回调函数不应该持有被 :meth:`attach` 的 Tensor 的强引用，无论是直接地还是间接地。任何强引用，包括来自回调函数的强引用，都会导致被 :meth:`attach` 的 Tensor 无法被垃圾回收（即使运行可回收引用循环的完整垃圾回收！），直到 GradManager 对象本身被垃圾回收为止。"
+msgstr "回调函数不应该持有被 attached  Tensor 的强引用，无论是直接地还是间接地。任何强引用，包括来自回调函数的强引用，都会导致 attached Tensor 无法被垃圾回收（即使运行可回收引用循环的完整垃圾回收！），直到 GradManager 对象本身被垃圾回收为止。"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:47 of
 msgid "Please also note that GradManager might hold additional strong references to attached tensors when it is in use. This note only covers potential resource leaks across multiple uses of a GradManager, which is unrelated to whether resources is timely released within a single use."
-msgstr "还需注意的一点是 GradManager 如果正在进行求导，可能会持有对被 :meth:`attach` 的 Tensor 的强引用。本注解仅针对将一个 GradManager 用于多次求导可能引发的资源泄漏，并不涉及在进行一次求导时资源是否被第一时间释放的问题。"
+msgstr "还需注意的一点是 GradManager 如果正在进行求导，可能会持有对被 attached Tensor 的强引用。本注解仅针对将一个 GradManager 用于多次求导可能引发的资源泄漏，并不涉及在进行一次求导时资源是否被第一时间释放的问题。"
 
 #: megengine.autodiff.grad_manager.GradManager.attach of
 msgid "参数"
