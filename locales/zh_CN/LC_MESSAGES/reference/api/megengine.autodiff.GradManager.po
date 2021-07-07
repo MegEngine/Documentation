@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-06-03 10:19\n"
+"PO-Revision-Date: 2021-07-07 03:46\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "训练神经网络的一个更现实的例子是"
 
 #: megengine.autodiff.grad_manager.GradManager:47 of
 msgid "You can also use ``record()`` and ``release()`` method instead of ``with`` context:"
-msgstr "你也可以使用 :meth:`~.record` 和:meth:`~.release` 而不使用 ``with`` 语义："
+msgstr "你也可以使用 :meth:`~.record` 和 :meth:`~.release` 而不使用 ``with`` 语义："
 
 #: megengine.autodiff.grad_manager.GradManager:62 of
 msgid "For your convenience, GradManager may (not must) be reused. As shown in the examples, you only need to attach a tensor once and GradManager will remember it afterwards. However, a single GradManager can record only one computation history at a time. To run multiple differentiations simultaneously or perform high order differentiation, create as many GradManager as you need."
@@ -52,7 +52,7 @@ msgstr "为方便起见，可以（并非必须）重用 GradManager 。如在�
 
 #: megengine.autodiff.grad_manager.GradManager:70 of
 msgid "Mutable tensors introduce ambiguities when doing symbolic differentiation: which version of the tensor are we referring to? For attached tensors, GradManager resolves this ambiguity by \"snapshoting\" them on first encounter, either on :meth:`record` (or entering with statement) if tensor is attached before :meth:`record`, or on :meth:`attach` if GradManager is already recording. Attached tensors will then be interpreted as their snapshotted version for differentiation purpose. The same ambiguity on the first parameter of :meth:`backward` is simply resolved by using the latest version."
-msgstr "可变张量在执行符号微分时引入歧义：我们指的是 Tensor 的哪个版本？对于 attched 的张量，GradManager 通过在第一次遇见张量时 ‘snapshoting’ 它们来解决这种歧义，要么通过 :meth:`~.record`（或者输入 ‘statement’），若张量是在 :meth:`~.record` 之前就被 :meth:`~.attach`，要么通过 :meth:`~.attach` 如果 GradManager 已经在记录。attched 的张量将会被解释为它们的快照版本以进行区分。对 meth:`~.backward` 的第一个参数的相同歧义是只需使用最新版本即可解决。"
+msgstr "可变张量在执行符号微分时引入歧义：我们指的是 Tensor 的哪个版本？对于 attched 的张量，GradManager 通过在第一次遇见张量时 ‘snapshoting’ 它们来解决这种歧义，要么通过 :meth:`~.record`（或者输入 ‘statement’），若张量是在 :meth:`~.record` 之前就被 :meth:`~.attach`，要么通过 :meth:`~.attach` 如果 GradManager 已经在记录。attched 的张量将会被解释为它们的快照版本以进行区分。对 :meth:`~.backward` 的第一个参数的相同歧义是只需使用最新版本即可解决。"
 
 #: megengine.autodiff.grad_manager.GradManager:78 of
 msgid "Typically, in data parallel, we would like to average the gradients across processes. Users will finally get the averaged gradients if an \"AllReduce\" callback is registered as follows:"
