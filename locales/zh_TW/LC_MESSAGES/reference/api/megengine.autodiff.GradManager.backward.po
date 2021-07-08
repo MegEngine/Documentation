@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: megengine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
+"PO-Revision-Date: 2021-07-07 18:35\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Traditional\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.autodiff.GradManager.backward.po\n"
+"X-Crowdin-File-ID: 6586\n"
+"Language: zh_TW\n"
+
+#: ../../source/reference/api/megengine.autodiff.GradManager.backward.rst:2
+msgid "megengine.autodiff.GradManager.backward"
+msgstr "crwdns61488:0crwdne61488:0"
+
+#: megengine.autodiff.grad_manager.GradManager.backward:1 of
+msgid "Compute gradients (or vector-Jacobian product) for all attached tensors, accumulate to corresponding .grad attribute, and release resources along the way."
+msgstr "crwdns61490:0crwdne61490:0"
+
+#: megengine.autodiff.grad_manager.GradManager.backward:4 of
+msgid ":meth:`backward` computes the vector-Jacobian product :math:`dx_j = \\sum_{i} dy_i J_{ij}` where :math:`J_{ij} = ∂y_i/∂x_j` is the Jacobian matrix between vector variables :math:`y` and :math:`x`, with all vectors involved represented as a list of tensors, in the sense of direct sums (or flatten-and-concatenate). :math:`y` and :math:`dy` are passed as the first and second parameter respectively, whereas :math:`x` is directly taken from the list of all attached tensors. The result :math:`dx` is also not returned. Instead, it is directly accumulated into the .grad attribute of matching attached tensors (a.k.a. :math:`x`). This can be done unambiguously since :math:`dx` as a list of tensors has the same structure as :math:`x`."
+msgstr "crwdns61492:0:meth:crwdnd61492:0:math:crwdnd61492:0{i}crwdnd61492:0{ij}crwdnd61492:0:math:crwdnd61492:0{ij}crwdnd61492:0:math:crwdnd61492:0:math:crwdnd61492:0:math:crwdnd61492:0:math:crwdnd61492:0:math:crwdnd61492:0:math:crwdnd61492:0:math:crwdnd61492:0:math:crwdnd61492:0:math:crwdne61492:0"
+
+#: megengine.autodiff.grad_manager.GradManager.backward:14 of
+msgid "If :math:`y` is a scalar and :math:`dy` is chosen to be 1, the vector-Jacobian product yield gradient of :math:`y` with repect to :math:`x` as a special case. In that case, you will be able to omit the :math:`dy` parameter and :meth:`backward` will automatically use 1 for it and compute the gradient."
+msgstr "crwdns61494:0:math:crwdnd61494:0:math:crwdnd61494:0:math:crwdnd61494:0:math:crwdnd61494:0:math:crwdnd61494:0:meth:crwdne61494:0"
+
+#: megengine.autodiff.grad_manager.GradManager.backward:19 of
+msgid ":meth:`backward` consumes all resources held by this GradManager and releases them in the process of this call. When the call successfully finishes, the GradManager will be put back to an inactive state."
+msgstr "crwdns61496:0:meth:crwdne61496:0"
+
+#: megengine.autodiff.grad_manager.GradManager.backward of
+msgid "参数"
+msgstr "crwdns61498:0crwdne61498:0"
+
+#: megengine.autodiff.grad_manager.GradManager.backward:23 of
+msgid "tensor or list of tensors"
+msgstr "crwdns61500:0crwdne61500:0"
+
+#: megengine.autodiff.grad_manager.GradManager.backward:24 of
+msgid "tensor or list of tensors. Defaults to 1 if y is scalar"
+msgstr "crwdns61502:0crwdne61502:0"
+
