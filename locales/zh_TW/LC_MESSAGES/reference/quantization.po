@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-23 21:44+0800\n"
-"PO-Revision-Date: 2021-04-23 16:44\n"
+"POT-Creation-Date: 2021-05-14 14:18+0800\n"
+"PO-Revision-Date: 2021-07-07 18:42\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -19,158 +19,150 @@ msgstr ""
 "X-Crowdin-File-ID: 2802\n"
 
 #: ../../source/reference/quantization.rst:6
-msgid "量化（Quantization）"
-msgstr "crwdns43748:0crwdne43748:0"
+msgid "megengine.quantization"
+msgstr "crwdns61338:0crwdne61338:0"
 
 #: ../../source/reference/quantization.rst:9
 msgid "量化配置"
 msgstr "crwdns43750:0crwdne43750:0"
 
-#: ../../source/reference/quantization.rst:15:<autosummary>:1
+#: ../../source/reference/quantization.rst:16:<autosummary>:1
 msgid ":obj:`QConfig <megengine.quantization.QConfig>`"
 msgstr "crwdns43752:0:obj:crwdne43752:0"
 
-#: ../../source/reference/quantization.rst:15:<autosummary>:1
+#: ../../source/reference/quantization.rst:16:<autosummary>:1
 msgid "A config class indicating how to do quantize toward :class:`~.QATModule`'s ``activation`` and ``weight``."
 msgstr "crwdns43754:0:class:crwdne43754:0"
 
-#: ../../source/reference/quantization.rst:16
-msgid "可用预设配置如下："
-msgstr "crwdns47586:0crwdne47586:0"
+#: ../../source/reference/quantization.rst:18
+msgid "可用预设配置"
+msgstr "crwdns61340:0crwdne61340:0"
 
-#: ../../source/reference/quantization.rst:19
+#: ../../source/reference/quantization.rst:21
 msgid "``min_max_fakequant_qconfig``"
 msgstr "crwdns47588:0crwdne47588:0"
 
-#: ../../source/reference/quantization.rst:19
+#: ../../source/reference/quantization.rst:21
 msgid "使用 :class:`~.MinMaxObserver` 和 :class:`~.FakeQuantize` 预设。"
 msgstr "crwdns47778:0:class:crwdnd47778:0:class:crwdne47778:0"
 
-#: ../../source/reference/quantization.rst:22
+#: ../../source/reference/quantization.rst:24
 msgid "``ema_fakequant_qconfig``"
 msgstr "crwdns47592:0crwdne47592:0"
 
-#: ../../source/reference/quantization.rst:22
+#: ../../source/reference/quantization.rst:24
 msgid "使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 预设。"
 msgstr "crwdns47780:0:class:crwdnd47780:0:class:crwdne47780:0"
 
-#: ../../source/reference/quantization.rst:25
+#: ../../source/reference/quantization.rst:27
 msgid "``sync_ema_fakequant_qconfig``"
 msgstr "crwdns47596:0crwdne47596:0"
 
-#: ../../source/reference/quantization.rst:25
+#: ../../source/reference/quantization.rst:27
 msgid "使用 :class:`~.SyncExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 的预设。"
 msgstr "crwdns47782:0:class:crwdnd47782:0:class:crwdne47782:0"
 
-#: ../../source/reference/quantization.rst:28
+#: ../../source/reference/quantization.rst:30
 msgid "``ema_lowbit_fakequant_qconfig``"
 msgstr "crwdns47600:0crwdne47600:0"
 
-#: ../../source/reference/quantization.rst:28
+#: ../../source/reference/quantization.rst:30
 msgid "使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 且数值类型为 ``qint4`` 的预设。"
 msgstr "crwdns47784:0:class:crwdnd47784:0:class:crwdne47784:0"
 
-#: ../../source/reference/quantization.rst:31
+#: ../../source/reference/quantization.rst:33
 msgid "``calibration_qconfig``"
 msgstr "crwdns47604:0crwdne47604:0"
 
-#: ../../source/reference/quantization.rst:31
+#: ../../source/reference/quantization.rst:33
 msgid "对激活值使用 :class:`~.HistogramObserver` 进行后量化（无 :class:`~.FakeQuantize` ）的预设。"
 msgstr "crwdns47786:0:class:crwdnd47786:0:class:crwdne47786:0"
 
-#: ../../source/reference/quantization.rst:34
+#: ../../source/reference/quantization.rst:36
 msgid "``tqt_qconfig``"
 msgstr "crwdns47608:0crwdne47608:0"
 
-#: ../../source/reference/quantization.rst:34
+#: ../../source/reference/quantization.rst:36
 msgid "使用 :class:`~.TQT` 进行假量化的预设。"
 msgstr "crwdns47610:0:class:crwdne47610:0"
 
-#: ../../source/reference/quantization.rst:37
+#: ../../source/reference/quantization.rst:39
 msgid "``passive_qconfig``"
 msgstr "crwdns47612:0crwdne47612:0"
 
-#: ../../source/reference/quantization.rst:37
+#: ../../source/reference/quantization.rst:39
 msgid "使用 :class:`~.PassiveObserver` 和 :class:`~.FakeQuantize` 的预设。"
 msgstr "crwdns47788:0:class:crwdnd47788:0:class:crwdne47788:0"
 
-#: ../../source/reference/quantization.rst:41
+#: ../../source/reference/quantization.rst:43
 msgid "``easyquant_qconfig``"
 msgstr "crwdns47616:0crwdne47616:0"
 
-#: ../../source/reference/quantization.rst:40
+#: ../../source/reference/quantization.rst:42
 msgid "用于 easyquant 算法的 QConfig，等价于 ``passive_qconfig``."
 msgstr "crwdns47618:0crwdne47618:0"
 
-#: ../../source/reference/quantization.rst:44
+#: ../../source/reference/quantization.rst:46
 msgid "观察"
 msgstr "crwdns43772:0crwdne43772:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`Observer <megengine.quantization.Observer>`"
 msgstr "crwdns47620:0:obj:crwdne47620:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "A base class for Observer Module."
 msgstr "crwdns43776:0crwdne43776:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
-msgid ":obj:`Observer.enable <megengine.quantization.Observer.enable>`"
-msgstr "crwdns47790:0:obj:crwdne47790:0"
-
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
-msgid ":obj:`Observer.disable <megengine.quantization.Observer.disable>`"
-msgstr "crwdns47792:0:obj:crwdne47792:0"
-
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`MinMaxObserver <megengine.quantization.MinMaxObserver>`"
 msgstr "crwdns47622:0:obj:crwdne47622:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "A Observer Module records input tensor's running min and max values to calc scale."
 msgstr "crwdns43780:0crwdne43780:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`SyncMinMaxObserver <megengine.quantization.SyncMinMaxObserver>`"
 msgstr "crwdns47624:0:obj:crwdne47624:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "A distributed version of :class:`~.MinMaxObserver`."
 msgstr "crwdns43784:0:class:crwdne43784:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`ExponentialMovingAverageObserver <megengine.quantization.ExponentialMovingAverageObserver>`"
 msgstr "crwdns47626:0:obj:crwdne47626:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "A :class:`~.MinMaxObserver` with momentum support for min/max updating."
 msgstr "crwdns43788:0:class:crwdne43788:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`SyncExponentialMovingAverageObserver <megengine.quantization.SyncExponentialMovingAverageObserver>`"
 msgstr "crwdns47628:0:obj:crwdne47628:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "A distributed version of :class:`~.ExponentialMovingAverageObserver`."
 msgstr "crwdns43792:0:class:crwdne43792:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`HistogramObserver <megengine.quantization.HistogramObserver>`"
 msgstr "crwdns47630:0:obj:crwdne47630:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "A :class:`~.MinMaxObserver` using running histogram of tensor values for min/max updating."
 msgstr "crwdns43796:0:class:crwdne43796:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`PassiveObserver <megengine.quantization.PassiveObserver>`"
 msgstr "crwdns47632:0:obj:crwdne47632:0"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "An Observer that supports setting :attr:`scale` directly."
 msgstr "crwdns43800:0:attr:crwdne43800:0"
 
-#: ../../source/reference/quantization.rst:60
+#: ../../source/reference/quantization.rst:61
 msgid "模拟"
 msgstr "crwdns43802:0crwdne43802:0"
 
@@ -181,14 +173,6 @@ msgstr "crwdns47634:0:obj:crwdne47634:0"
 #: ../../source/reference/quantization.rst:71:<autosummary>:1
 msgid "A module to do quant and dequant according to observer's scale and zero_point."
 msgstr "crwdns43806:0crwdne43806:0"
-
-#: ../../source/reference/quantization.rst:71:<autosummary>:1
-msgid ":obj:`FakeQuantize.enable <megengine.quantization.FakeQuantize.enable>`"
-msgstr "crwdns47794:0:obj:crwdne47794:0"
-
-#: ../../source/reference/quantization.rst:71:<autosummary>:1
-msgid ":obj:`FakeQuantize.disable <megengine.quantization.FakeQuantize.disable>`"
-msgstr "crwdns47796:0:obj:crwdne47796:0"
 
 #: ../../source/reference/quantization.rst:71:<autosummary>:1
 msgid ":obj:`TQT <megengine.quantization.TQT>`"
@@ -278,43 +262,43 @@ msgstr "crwdns43848:0:class:crwdnd43848:0:class:crwdne43848:0"
 msgid "Utils"
 msgstr "crwdns43850:0crwdne43850:0"
 
-#: ../../source/reference/quantization.rst:98:<autosummary>:1
+#: ../../source/reference/quantization.rst:97:<autosummary>:1
 msgid ":obj:`QParams <megengine.quantization.QParams>`"
 msgstr "crwdns43852:0:obj:crwdne43852:0"
 
-#: ../../source/reference/quantization.rst:98:<autosummary>:1
+#: ../../source/reference/quantization.rst:97:<autosummary>:1
 msgid "To standardize FakeQuant, Observer and Tensor's qparams format."
 msgstr "crwdns43854:0crwdne43854:0"
 
-#: ../../source/reference/quantization.rst:98:<autosummary>:1
+#: ../../source/reference/quantization.rst:97:<autosummary>:1
 msgid ":obj:`QuantMode <megengine.quantization.QuantMode>`"
 msgstr "crwdns43856:0:obj:crwdne43856:0"
 
-#: ../../source/reference/quantization.rst:98:<autosummary>:1
+#: ../../source/reference/quantization.rst:97:<autosummary>:1
 msgid "Quantization mode enumerate class."
 msgstr "crwdns43858:0crwdne43858:0"
 
-#: ../../source/reference/quantization.rst:98:<autosummary>:1
+#: ../../source/reference/quantization.rst:104:<autosummary>:1
 msgid ":obj:`create_qparams <megengine.quantization.create_qparams>`"
 msgstr "crwdns43860:0:obj:crwdne43860:0"
 
-#: ../../source/reference/quantization.rst:98:<autosummary>:1
+#: ../../source/reference/quantization.rst:104:<autosummary>:1
 msgid "Return :class:`~.QParams` according to the mode."
 msgstr "crwdns43862:0:class:crwdne43862:0"
 
-#: ../../source/reference/quantization.rst:98:<autosummary>:1
+#: ../../source/reference/quantization.rst:104:<autosummary>:1
 msgid ":obj:`fake_quant_bias <megengine.quantization.fake_quant_bias>`"
 msgstr "crwdns43864:0:obj:crwdne43864:0"
 
-#: ../../source/reference/quantization.rst:98:<autosummary>:1
+#: ../../source/reference/quantization.rst:104:<autosummary>:1
 msgid "Apply fake quantization to bias, with the special scale from input tensor and weight tensor, the quantized type set to qint32 also."
 msgstr "crwdns43866:0crwdne43866:0"
 
-#: ../../source/reference/quantization.rst:98:<autosummary>:1
+#: ../../source/reference/quantization.rst:104:<autosummary>:1
 msgid ":obj:`fake_quant_tensor <megengine.quantization.fake_quant_tensor>`"
 msgstr "crwdns43868:0:obj:crwdne43868:0"
 
-#: ../../source/reference/quantization.rst:98:<autosummary>:1
+#: ../../source/reference/quantization.rst:104:<autosummary>:1
 msgid "Apply fake quantization to the inp tensor."
 msgstr "crwdns43870:0crwdne43870:0"
 
@@ -410,4 +394,24 @@ msgstr "crwdns43870:0crwdne43870:0"
 
 #~ msgid "使用 :class:`~.PassiveObserver` 和 :class:`~.FakeQuant` 的预设。"
 #~ msgstr ""
+
+#~ msgid "可用预设配置如下："
+#~ msgstr ""
+
+#~ msgid ":obj:`Observer.enable <megengine.quantization.Observer.enable>`"
+#~ msgstr ""
+
+#~ msgid ":obj:`Observer.disable <megengine.quantization.Observer.disable>`"
+#~ msgstr ""
+
+#~ msgid ":obj:`FakeQuantize.enable <megengine.quantization.FakeQuantize.enable>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`FakeQuantize.disable "
+#~ "<megengine.quantization.FakeQuantize.disable>`"
+#~ msgstr ""
+
+#~ msgid "量化（Quantization）"
+#~ msgstr "量化（Quantization）"
 
