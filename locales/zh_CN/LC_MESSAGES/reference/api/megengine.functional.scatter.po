@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-07-07 17:27\n"
+"PO-Revision-Date: 2021-07-08 04:35\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -32,7 +32,7 @@ msgstr "对于 ``source`` 中的每个值，它的输出索引在 ``axis != dime
 
 #: megengine.functional.tensor.scatter:8 of
 msgid "For a 3-D tensor, input tensor is updated as::"
-msgstr "对于三维张量， :attr:`inp` 将更新为::"
+msgstr "对于三维张量， ``inp`` 张量将更新为："
 
 #: megengine.functional.tensor.scatter:14 of
 msgid "``inp``, ``index`` and ``source`` should have same number of dimensions."
@@ -44,7 +44,7 @@ msgstr "在所有维度上需要满足 ``source.shape(d) <= inp.shape(d)`` 以�
 
 #: megengine.functional.tensor.scatter:19 of
 msgid "Moreover, the values of index must be between ``0`` and ``inp.shape(axis) - 1`` inclusive."
-msgstr "此外， :attr:`index` 的值必须介于 ``0`` 和 ``inp.shape(axis) - 1`` 之间(包含边界)。"
+msgstr "此外， ``index`` 的值必须介于 ``0`` 和 ``inp.shape(axis) - 1`` 之间（包含边界）。"
 
 #: megengine.functional.tensor.scatter:22 of
 msgid "Please notice that, due to performance issues, the result is uncertain on the GPU device if scattering different positions from source to the same destination position regard to index tensor."
@@ -52,7 +52,7 @@ msgstr "请注意，在GPU设备上，由于性能原因，若多个源数据被
 
 #: megengine.functional.tensor.scatter:26 of
 msgid "Check the following examples, the oup[0][2] is maybe from source[0][2] which value is 0.2256 or source[1][2] which value is 0.5339 if set the index[1][2] from 1 to 0."
-msgstr "使用以下例子展示案例，如果将index[1][2]设置为1到0，则oup[0][2]可能来自值为0.2256的source[0][2]，或值为0.5339的source[1][2]。"
+msgstr "使用以下例子展示案例，如果将 index[1][2] 设置为 1 到 0, 则 oup[0][2] 可能来自值为 0.2256 的 source[0][2], 或值为 0.5339 的source[1][2]."
 
 #: megengine.functional.tensor.scatter of
 msgid "参数"
@@ -60,7 +60,7 @@ msgstr "参数"
 
 #: megengine.functional.tensor.scatter:30 of
 msgid "inp tensor which to be scattered."
-msgstr "将要进行scatter操作的inp张量。"
+msgstr "将要进行 scatter 操作的 ``inp`` 张量。"
 
 #: megengine.functional.tensor.scatter:31 of
 msgid "axis along which to index."
@@ -68,11 +68,11 @@ msgstr "将要进行索引的轴。"
 
 #: megengine.functional.tensor.scatter:32 of
 msgid "indices of elements to scatter."
-msgstr "将要进行scatter操作的元素的索引。"
+msgstr "将要进行 scatter 操作的元素的索引。"
 
 #: megengine.functional.tensor.scatter:33 of
 msgid "source element(s) to scatter."
-msgstr "将要进行scatter操作的inp张量一个或多个源元素。"
+msgstr "将要进行 scatter 操作的一个或多个元素。"
 
 #: megengine.functional.tensor.scatter of
 msgid "返回"
