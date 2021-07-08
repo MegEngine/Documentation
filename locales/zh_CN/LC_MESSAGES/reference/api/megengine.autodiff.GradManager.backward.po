@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-06-03 10:19\n"
+"PO-Revision-Date: 2021-07-08 02:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: megengine.autodiff.grad_manager.GradManager.backward:1 of
 msgid "Compute gradients (or vector-Jacobian product) for all attached tensors, accumulate to corresponding .grad attribute, and release resources along the way."
-msgstr "对所有被 :meth:`attach` 的 Tensor 计算梯度 (或向量-雅可比积)，并将其积累到对应 Tensor 的 .grad 属性中，在过程中释放资源。"
+msgstr "对所有 attached Tensor 计算梯度 (或向量-雅可比积)，并将其积累到对应 Tensor 的 .grad 属性中，在过程中释放资源。"
 
 #: megengine.autodiff.grad_manager.GradManager.backward:4 of
 msgid ":meth:`backward` computes the vector-Jacobian product :math:`dx_j = \\sum_{i} dy_i J_{ij}` where :math:`J_{ij} = ∂y_i/∂x_j` is the Jacobian matrix between vector variables :math:`y` and :math:`x`, with all vectors involved represented as a list of tensors, in the sense of direct sums (or flatten-and-concatenate). :math:`y` and :math:`dy` are passed as the first and second parameter respectively, whereas :math:`x` is directly taken from the list of all attached tensors. The result :math:`dx` is also not returned. Instead, it is directly accumulated into the .grad attribute of matching attached tensors (a.k.a. :math:`x`). This can be done unambiguously since :math:`dx` as a list of tensors has the same structure as :math:`x`."
