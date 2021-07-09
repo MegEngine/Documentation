@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{%- block htmltitle -%}
+<title>{{ shorttitle }}</title>
+{%- endblock -%}
+{% block body %}
+  <h1>{{ docstitle|e }}</h1>
+  <p>
+  {% trans %}Woooooh. 你发现了一份奇妙的 MegEngine 官方文档！ {% endtrans %}
+  </p>
+  <p><strong>{% trans %}经常被访问的页面：{% endtrans %}</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p clas="biglink"><a class="biglink" href="{{ pathto("user-guide/what-is-megengine") }}">{% trans %}什么是 MegEngine{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}很高兴认识你，还请多多指教{% endtrans %}</span></p>
+      <p clas="biglink"><a class="biglink" href="{{ pathto("getting-started/index") }}">{% trans %}新手入门{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}这是我们旅途的起点{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("user-guide/index") }}">{% trans %}用户指南{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}碰到常见问题，先查阅指南准没错{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("reference/index") }}">{% trans %}API 参考{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}适合放在枕边的百科全书{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("glossary") }}">{% trans %}术语表{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}解释最重要的术语{% endtrans %}</span></p>
+    </td><td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("user-guide/install/index") }}">{% trans %}安装 MegEngine{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}使用 Wheel 包或者从源码编译{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("user-guide/faq/index") }}">{% trans %}常见问题汇总{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}经常被问到的问题（以及答案！）{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("development/index") }}">{% trans %}开发者指南{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}了解藏在 MegEngine 内部的秘密{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("development/meps") }}">{% trans %}MegEngine 增强提案{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}《MEP -- 昨天，今天与明天》{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("user-guide/ecosystem") }}">{% trans %}MegEngine 生态{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}认识 MegEngine 大家庭中的其它成员{% endtrans %}</span></p>
+    </td></tr>
+  </table>
+  </br>
+  <p><strong>{% trans %}索引和表格：{% endtrans %}</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("py-modindex") }}">{% trans %}全局模块索引{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}快速查看所有的模块{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("genindex") }}">{% trans %}总体索引{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}所有的方法、类、术语{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("search") }}">{% trans %}搜索页面{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}在文档中进行搜索{% endtrans %}</span></p>
+    </td><td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("reference/comparison") }}">{% trans %}与其它框架 API 进行对比{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}如果你是从隔壁 NumPy, Pytorch 家来观光的...{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("reference/deprecated") }}">{% trans %}Deprecated APIs{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}切换 MegEngine 版本前，一定要读读它！{% endtrans %}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("reference/environment-variables") }}">{% trans %}环境变量{% endtrans %}</a><br/>
+         <span class="linkdescr">{% trans %}生长在合适的土壤，才能茁壮地成长，Skr~{% endtrans %}</span></p>
+    </td></tr>
+  </table>
+  </br>
+  <p><strong>{% trans %}Meta 信息：{% endtrans %}</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("bugs") }}">{% trans %}报告 bugs{% endtrans %}</a></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("development/contribute-to-docs/index") }}">{% trans %}为文档做贡献{% endtrans %}</a></p>
+    </td><td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("license") }}">{% trans %}MegEngine 许可{% endtrans %}</a></p>
+      <p class="biglink"><a class="biglink" href="https://github.com/MegEngine/MegEngine/releases">{% trans %}Release Notes{% endtrans %}</a></p>
+    </td></tr>
+  </table>
+{% endblock %}s
