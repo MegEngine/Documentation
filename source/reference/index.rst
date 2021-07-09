@@ -3,7 +3,10 @@
 ========
 API 参考
 ========
-在各个页面中详细列举了 MegEngine 中包含的模块、对象和方法，描述了它们的功能和作用，以便于检索和浏览。
+:对应版本: |version|
+:更新时间: |today|
+
+当前板块详细列举了 MegEngine 中包含的模块、对象和方法，描述了它们的功能和作用，以便于检索和浏览。
 想要了解如何使用 MegEngine, 请参阅 :ref:`getting-started` 和 :ref:`user-guide` 页面。
 
 Python API

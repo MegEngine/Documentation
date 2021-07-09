@@ -18,6 +18,7 @@
 
    what-is-megengine
    install/index
+   faq/index
 
 .. toctree::
    :caption: 模型开发
@@ -27,8 +28,6 @@
    model-development/data
    model-development/advanced-parameter-optimization
    model-development/profiler
-   model-development/gpu-memory
-   model-development/reproducibility
 
 .. toctree::
    :caption: 模型部署
