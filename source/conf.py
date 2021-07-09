@@ -144,6 +144,9 @@ html_theme_path = ["_themes"]
 html_static_path = ["_static"]
 html_extra_path = ["google940c72af103ac75f.html"]
 html_css_files = ["css/custom.css"]
+html_additional_pages = {
+    'index': 'indexcontent.html'
+}
 
 html_search_language = "zh"
 
