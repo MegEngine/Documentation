@@ -14,3 +14,5 @@
    model-construction
    neural-network-traning-tricks
 
+
+需要你具有最基础的数学和 Python 编程知识。
