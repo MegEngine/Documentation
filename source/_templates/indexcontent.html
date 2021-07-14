@@ -5,12 +5,12 @@
 {% block body %}
   <h1>{{ docstitle|e }}</h1>
   <p>
-  {% trans %}Woooooh. 你发现了一份奇妙的 MegEngine 官方文档！ {% endtrans %}
+  {% trans %}深度学习，简单开发。欢迎使用 MegEngine 官方文档。{% endtrans %}
   </p>
   <p><strong>{% trans %}经常被访问的页面：{% endtrans %}</strong></p>
   <table class="contentstable" align="center"><tr>
     <td width="50%">
-      <p clas="biglink"><a class="biglink" href="{{ pathto("user-guide/what-is-megengine") }}">{% trans %}什么是 MegEngine{% endtrans %}</a><br/>
+      <p clas="biglink"><a class="biglink" href="{{ pathto("user-guide/about-megengine") }}">{% trans %}关于 MegEngine{% endtrans %}</a><br/>
          <span class="linkdescr">{% trans %}很高兴认识你，还请多多指教{% endtrans %}</span></p>
       <p clas="biglink"><a class="biglink" href="{{ pathto("getting-started/index") }}">{% trans %}新手入门{% endtrans %}</a><br/>
          <span class="linkdescr">{% trans %}这是我们旅途的起点{% endtrans %}</span></p>
@@ -29,7 +29,7 @@
          <span class="linkdescr">{% trans %}了解藏在 MegEngine 内部的秘密{% endtrans %}</span></p>
       <p class="biglink"><a class="biglink" href="{{ pathto("development/meps") }}">{% trans %}MegEngine 增强提案{% endtrans %}</a><br/>
          <span class="linkdescr">{% trans %}《MEP -- 昨天，今天与明天》{% endtrans %}</span></p>
-      <p class="biglink"><a class="biglink" href="{{ pathto("user-guide/ecosystem") }}">{% trans %}MegEngine 生态{% endtrans %}</a><br/>
+      <p class="biglink"><a class="biglink" href="{{ pathto("user-guide/about/ecosystem") }}">{% trans %}MegEngine 生态{% endtrans %}</a><br/>
          <span class="linkdescr">{% trans %}认识 MegEngine 大家庭中的其它成员{% endtrans %}</span></p>
     </td></tr>
   </table>

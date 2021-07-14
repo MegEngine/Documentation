@@ -694,7 +694,6 @@ Pannels 语法支持
 .. code-block::
 
    .. panels::
-
       :container: container-lg pb-3
       :column: col-lg-4 col-md-4 col-sm-6 col-xs-12 p-2
 
@@ -708,7 +707,6 @@ Pannels 语法支持
       panel4
 
 .. panels::
-
    :container: container-lg pb-3
    :column: col-lg-4 col-md-4 col-sm-6 col-xs-12 p-2
 
@@ -722,6 +720,10 @@ Pannels 语法支持
    panel4
 
 以上展示的为 Grid Layout 用法，Card Layout, Image Caps 等用法请参考文档。
+
+.. note::
+
+   该插件也实现了 Toggle, Tabs 语法功能。
 
 .. _tabs-ext:
 
