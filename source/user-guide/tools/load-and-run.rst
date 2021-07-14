@@ -58,7 +58,7 @@ Linux 交叉编译 ARM 版本
 
         ./scripts/cmake-build/cross_build_android_arm_inference.sh -p
 
-   * :ref:`量化模型 <quantization>` 推荐开启 ARMv8.2+DotProd 支持，
+   * :ref:`量化模型 <quantization-guide>` 推荐开启 ARMv8.2+DotProd 支持，
      能够充分利用 DotProd 指令集硬件加速。
 
 使用 Load and Run

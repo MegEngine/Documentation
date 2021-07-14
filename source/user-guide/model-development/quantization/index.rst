@@ -1,4 +1,4 @@
-.. _quantization:
+.. _quantization-guide:
 
 ====================
 量化（Quantization）
@@ -17,7 +17,7 @@
 
 一般来说，得到量化模型的转换过程按代价从低到高可以分为以下 4 种：
 
-.. image:: ../../_static/images/quant_cls.png
+.. image:: ../../../_static/images/quant_cls.png
    :align: center
 
 * Type1 和 Type2 由于是在模型浮点模型训练之后介入，无需大量训练数据，
@@ -42,7 +42,7 @@
 
 典型的三种模型在三个阶段的精度变化如下：
 
-.. image:: ../../_static/images/float-qfloat-q.jpg
+.. image:: ../../../_static/images/float-qfloat-q.jpg
    :align: center
 
 对应到具体的 MegEngine 接口中，三阶段如下：

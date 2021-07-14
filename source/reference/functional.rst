@@ -27,7 +27,7 @@ Standard tensor operations
    该部分的 API 设计接纳了 `Python 数据 API 标准联盟 <https://data-apis.org/>`_ 中的倡导,
    尽可能地向 NumPy API 靠拢。 
 
-.. _tensor-creation:
+.. _creation:
 
 Creation Functions
 ~~~~~~~~~~~~~~~~~~
@@ -45,7 +45,7 @@ Creation Functions
    full
    full_like
 
-.. _tensor-manipulation:
+.. _manipulation:
 
 Manipulation Functions
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -27,6 +27,7 @@ Python API
    * 如果你正在从旧版本的 MegEngine 迁移到最新版本，请务必阅读 :ref:`deprecated` 页面。
 
 .. toctree::
+   :hidden:
    :maxdepth: 1
 
    megengine

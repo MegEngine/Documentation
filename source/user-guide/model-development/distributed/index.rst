@@ -1,4 +1,4 @@
-.. _distribution:
+.. _distributed-guide:
 
 ==================================
 分布式训练（Distributed Training）
