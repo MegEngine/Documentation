@@ -1,4 +1,4 @@
-.. _dtr:
+.. _dtr-guide:
 
 ================================
 动态图 Sublinear 显存优化（DTR）
@@ -26,7 +26,7 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
 分布式训练
 ----------
 
-关于分布式训练的开启，请参考 :ref:`分布式训练 <distribution>` 。
+关于分布式训练的开启，请参考 :ref:`分布式训练 <distributed-guide>` 。
 
 :class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function，你需要在这个 function 中定义 DTR 的参数：
 
@@ -56,7 +56,7 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
 
 下图是 ResNet50（batch size=200）在2080Ti（显存：11GB）上设定不同显存阈值后的性能表现。
 
-.. image:: ../_static/images/resnet50_wrt_mb.png
+.. image:: ../../../_static/images/resnet50_wrt_mb.png
    :align: center
 
 性能表现

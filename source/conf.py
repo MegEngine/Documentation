@@ -116,6 +116,9 @@ copybutton_prompt_text = (
 )
 copybutton_prompt_is_regexp = True
 
+# Setting for sphinx_panels
+panels_add_bootstrap_css = False
+
 # Setting for sphinx.ext.nbsphinx
 # nbsphinx do not use requirejs (breaks bootstrap)
 nbsphinx_requirejs_path = ""
@@ -155,8 +158,6 @@ html_search_language = "zh"
 #
 # WARNING: MegEngine Doc used a forked version here:
 # https://github.com/MegEngine/pydata-sphinx-theme/tree/dev
-
-panels_add_bootstrap_css = False
 
 html_theme_options = {
     "search_bar_text": "输入搜索文本...",
