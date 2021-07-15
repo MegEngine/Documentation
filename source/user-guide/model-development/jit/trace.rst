@@ -183,13 +183,14 @@ MegEngine 在编译静态图时有 “动态构造” 和 “静态构造” 两
 亚线性内（显）存优化
 ~~~~~~~~~~~~~~~~~~~~
 
+
 亚线性内存优化技术的直观好处是能节省显存，换来更大的 Batch size, 
 但在编译计算图和训练模型时有少量的额外时间开销（以时间换空间）。
-其基本原理是：基于 `Gradient Checkpointing <https://arxiv.org/abs/1604.06174>`_ 算法，
-通过事先搜索最优的计算图节点作为前向传播和反向传播检查点（checkpoints），省去其它中间结果存储。
+MegEngine 提供了两种具体的亚线性内存优化的算法，分别是 `Sublinear <https://arxiv.org/abs/1604.06174>`_ 和 `DTR <https://arxiv.org/abs/2006.09616>`_ 算法。它们的基本原理都是通过事先搜索最优的计算图节点作为前向传播和反向传播检查点（checkpoints），
+省去其它中间结果存储。
 
 用户在编译静态图时使用 :class:`~.jit.SublinearMemoryConfig` 设置 :class:`~.jit.trace` 
-的参数 ``sublinear_memory_config`` ，就可以打开亚线性内存优化：
+的参数 ``sublinear_memory_config`` ，就可以打开 Sublinear 优化：
 
 .. code-block:: python
 
@@ -201,9 +202,27 @@ MegEngine 在编译静态图时有 “动态构造” 和 “静态构造” 两
    def train_func(data, label, * , net, optimizer, gm):
         ...
 
+用户在编译静态图时使用 :class:`~.jit.DTRConfig` 设置 :class:`~.jit.trace` 
+的参数 ``dtr_config`` ，就可以打开 DTR 优化：
+
+.. code-block:: python
+
+   from megengine.jit import trace, DTRConfig
+
+   config = DTRConfig(eviction_threshold=8*1024**3)
+
+   @trace(symbolic=True, dtr_config=config)
+   def train_func(data, label, * , net, optimizer, gm):
+        ...
+
+.. note::
+
+   关于 ``eviction_threshold`` 的含义与设置，请参考 :ref:`动态图 Sublinear 显存优化 <dtr-guide>`
+
 经过测试，在 2080Ti GPU （显存容量为 11GB 左右）训练 ResNet50 模型，
 不使用亚线性内存优化，可用的 ``batch_size`` 最大为 100 左右；
-使用亚线性内存优化，可用的 ``batch_size`` 最大为 200 左右，效果十分明显。
+使用 Sublinear 优化，可用的 ``batch_size`` 最大为 300 左右；
+使用 DTR 优化，可用的 ``batch_size`` 最大为 450 左右，效果十分明显。
 
 .. _codegen:
 
