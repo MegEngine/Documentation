@@ -29,16 +29,22 @@
    # 构建一个 net module，这里从 model hub 中获取 resnet18 模型
    net = load("megengine/models", "resnet18", pretrained=True)
 
-   # 指定输入 shape
-   input_shape = (1, 3, 224, 224)
+   # 指定输入
+   input_data = np.random.rand(1, 3, 224, 224).astype("float32")
 
    # Float model.
-   total_params, total_flops = module_stats(
-       net, input_shape, log_params=True, log_flops=True
+   total_stats, stats_details = module_stats(
+       model,
+       inputs=input_data,
+       cal_params=True,
+       cal_flops=True,
+       cal_activations=True,
+       logging_to_stdout=True,
    )
-   print("params {} flops {}".format(total_params, total_flops))
+   print("params {} flops {} acts {}".format(total_stats.param_dims, total_stats.flops, total_stats.act_dims))
 
-可以通过 ``log_params`` 和 ``log_flops`` 参数来控制是否输出 parameter 和 flops 细节信息，返回总的参数量和计算量。
+可以通过 ``cal_params`` 、 ``cal_flops`` 和 ``cal_activations`` 来控制是否计算parameter、flops和activations信息，
+通过 ``logging_to_stdout`` 来控制是否将计算的细节信息打印出来，返回总的统计信息和详细统计信息的namedtuple，可以查看每个统计量的总量和每个模块的分量。
 
 基于 dump 图的可视化与统计
 --------------------------
@@ -53,7 +59,7 @@
 
 .. code-block:: shell
 
-   python3 -m megengine.tools.network_visualize ./resnet18.mge ./log --log_flops --log_params
+   python -m megengine.tools.network_visualize ./resnet18.mge --log_path ./log --load_input_data data.pkl --cal_flops --cal_params --cal_activations --logging_to_stdout
 
 其中各个参数说明如下：
 
@@ -63,11 +69,20 @@
 ``./log`` （第二个参数）
   **必填参数** ，指定 log 存储目录。
 
-``--log_flops``
-   指定当前屏打印出 FLOPs 信息。
+``--load_input_data``
+   指定输入数据文件路径，文件内容应该为 pickle 化的 numpy array 或者含 numpy array 的 dict，key 为 inputs 节点名。
+
+``--cal_flops``
+   指定统计 FLOPs 信息。
   
-``--log_params``
-   指定当前屏打印出 Parameters 信息。
+``--cal_params``
+   指定统计 Parameters 信息。
+
+``--cal_activations``
+   指定统计 activations 信息。
+
+``--logging_to_stdout``
+   指定当前屏打印出所有统计量的信息。
 
 Python 中调用
 ~~~~~~~~~~~~~
@@ -78,10 +93,17 @@ Python 中调用
 
    from megengine.tools.network_visualize import visualize
 
-   total_params, total_flops = visualize(
-       "./resnet18.mge", "./log"
+   input_data = np.random.rand(1, 3, 224, 224).astype("float32")
+   total_stats, stats_details = visualize(
+       "./resnet18.mge", 
+       "./log",
+       input=input_data,
+       cal_flops=True,
+       cal_params=True,
+       cal_activations=True,
+       logging_to_stdout=True
    )
-   print("params {} flops {}".format(total_params, total_flops))
+   print("params {} flops {} acts {}".format(total_stats.param_dims, total_stats.flops, total_stats.act_dims))
 
 进行可视化
 ~~~~~~~~~~
