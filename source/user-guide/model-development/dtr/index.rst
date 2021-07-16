@@ -7,6 +7,7 @@
 MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/2006.09616.pdf>`_
 （简称 DTR）技术，进一步工程化地解决了动态图显存优化的问题，从而享受到大 Batchsize 训练带来的收益。
 
+
 单卡训练
 --------
 
@@ -22,6 +23,10 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
    # ... your training code
 
 即可启用动态图的 Sublinear 显存优化。
+
+.. note::
+
+   从 MegEngine V1.5 开始，在开启 DTR 优化时不设置 ``eviction_threshold`` 也是被允许的。此时动态图显存优化将会在空闲的显存无法满足一次申请时生效，根据 DTR 的策略找出最优的 tensor 并释放其显存，直到该次显存申请成功。
 
 分布式训练
 ----------
@@ -43,8 +48,29 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
 
        # ... your training code
 
-参数设置
+更多设置
 --------
+
+参数介绍
+~~~~~~~~~
+
+.. list-table::
+    :widths: 20 40
+    :header-rows: 1
+
+    * - 参数名
+      - 实际含义
+    * - ``eviction_threshold``
+      - 显存阈值（单位：字节）。当被使用的显存总和超过该阈值后，显存优化会生效，根据 DTR 的策略找出最优的 tensor 并释放其显存，直到被使用的显存总和低于该阈值。默认值：0
+    * - ``evictee_minimum_size``
+      - 被释放显存的 tensor 的大小下限（单位：字节）。只有当 tensor 的大小不小于该下限时，才有可能被 DTR 策略选中释放其显存。默认值：1048576
+    * - ``enable_sqrt_sampling``
+      - 是否开启根号采样。设当前候选 tensor 集合的大小为 :math:`n`，开启该设置后，每次需要释放 tensor 时只会遍历 :math:`\sqrt{n}` 个候选 tensor。默认值：False
+
+设置方法请参考 :py:mod:`~.dtr`
+
+显存阈值的设置技巧
+~~~~~~~~
 
 ``eviction_threshold`` 表示开始释放 tensor 的显存阈值。当被使用的显存大小超过该阈值时，动态图显存优化会生效，
 根据 DTR 的策略找出最优的 tensor 并释放其显存，直到活跃的显存大小不超过该阈值。因此实际运行时的活跃显存峰值比该阈值高一些属于正常现象。
@@ -60,7 +86,7 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
    :align: center
 
 性能表现
-~~~~~~~~
+''''''''
 
 如上图（左）所示，
 
@@ -69,7 +95,7 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
 * 当显存阈值增长到 10 之后，空闲的显存甚至无法支持一次 kernel 的计算，导致 OOM.
 
 显存峰值
-~~~~~~~~
+''''''''
 
 如上图（右）所示，可以看出显存阈值和显存峰值之间有很大的差距。
 
