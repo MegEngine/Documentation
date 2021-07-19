@@ -4,6 +4,14 @@
 MegEngine 架构设计
 ==================
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   megdnn
+   graph-runtime
+   imperative-runtime
+
 ------------------
 MegEngine 整体架构
 ------------------

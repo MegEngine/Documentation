@@ -7,11 +7,12 @@
 .. toctree::
    :maxdepth: 1
 
-   architecture-design
+   architecture-design/index
    roadmap/index
    meps
    environment/index
    workflow
+   how-to/index
    debugging-tools
    benchmark
    governance
