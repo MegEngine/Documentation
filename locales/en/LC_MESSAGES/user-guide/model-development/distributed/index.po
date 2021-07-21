@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/user-guide/model-development/distributed/index.rst:5
+msgid "分布式训练（Distributed Training）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:7
+msgid ""
+"本章我们将介绍如何在 MegEngine 中高效地利用多 GPU 进行分布式训练。 分布式训练是指同时利用一台或者多台机器上的 GPU "
+"进行并行计算。 在深度学习领域，最常见的并行计算方式是在数据层面进行的， 即每个 GPU 各自负责一部分数据，并需要跑通整个训练和推理流程。 "
+"这种方式叫做 **数据并行** 。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:13
+msgid "目前 MegEngine 开放的接口支持单机多卡和多机多卡的数据并行方式。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:17
+msgid "单机多卡"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:19
+msgid "单机多卡是最为常用的方式，比如单机四卡、单机八卡，足以支持我们完成大部分模型的训练。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:21
+msgid "本节我们按照以下顺序进行介绍："
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:23
+#: ../../source/user-guide/model-development/distributed/index.rst:27
+msgid "如何启动一个单机多卡的训练"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:24
+msgid "如何在多进程环境中将模型保存与加载"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:29
+msgid "我们提供了一个单机多卡的启动器。代码示例："
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:104
+msgid "和单卡训练相比，单机多卡的训练代码只有几行代码的不同"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:106
+msgid "@dist.launcher"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:107
+msgid "dist.bcast_list_(params)"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:108
+msgid "gm.attach(params, callbacks=[dist.make_allreduce_cb(\"sum\")])"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:110
+msgid "下面我会逐一解释这几句话分别有什么含义"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:116
+msgid ""
+":class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function "
+"(默认根据机器上的 device 数量开启多进程)， 每个进程会在最开始根据 rank 设定默认 deivce, 假如是一台 8 "
+"卡机器，那么就会开启 8 个进程，rank 分别为 0 到 8 ，device 为 gpu0 到 gpu7."
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:123
+msgid ""
+":func:`~.distributed.bcast_list_` "
+"用于同步各个进程之间的参数，默认在全局范围（所有计算设备）同步，可以设置group参数在特定的group之间同步"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:127
+msgid "注意，有些情况下不仅要同步参数，还需要同步统计量，比如 :class:`~module.BatchNorm2d` 的均值和方差统计量"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:133
+msgid ""
+"在数据并行的情况下，由于每张卡只负责一部分数据，所以求导之后只会有部分导数， "
+"在GradManager中注册对于梯度的回调函数，在对应参数的导数求完之后， 做一个 "
+":func:`~.distributed.all_reduce_sum` 操作进行全局求和，这样同步各个计算设备的导数来保证参数更新的一致性"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:139
+msgid ""
+"在 :class:`~.data.dataloader.DataLoader` "
+"内部对多机训练有特殊支持，会自动给每个进程分配不重叠的数据进行训练，所以在数据供给方面没有做特殊处理， 如果没有使用 "
+":class:`~.data.dataloader.DataLoader` ，则需要自己手动给不同 rank 的设备分配不重叠的数据进行训练 "
+"就像下面这样"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:154
+msgid "模型保存与加载"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:156
+msgid "在 MegEngine 中，依赖于上面提到的状态同步机制，我们保持了各个进程状态的一致， 因此可以很容易地实现模型的保存和加载。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:159
+msgid ""
+"对于加载，我们只要在主进程（rank 0 进程）中加载模型参数， 然后调用 :func:`~.distributed.bcast_list_` "
+"对各个进程的参数进行同步，就保持了各个进程的状态一致。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:162
+msgid "对于保存，由于我们在梯度计算中插入了 callback 函数对各个进程的梯度进行累加， 所以我们进行参数更新后的参数还是一致的，可以直接保存。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:165
+msgid "可以参考以下示例代码实现："
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:198
+msgid "多机多卡"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:200
+msgid ""
+"在 MegEngine 中，我们能很方便地将上面单机多卡的代码修改为多机多卡， 只需修改传给 "
+":class:`~.megengine.distributed.launcher` 的参数就可以进行多机多卡训练，其他部分和单机多卡一样。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:211
+msgid "参数含义"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:217
+msgid "参数名"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:218
+msgid "数据类型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:219
+msgid "实际含义"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:220
+msgid "world_size"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:221
+#: ../../source/user-guide/model-development/distributed/index.rst:224
+#: ../../source/user-guide/model-development/distributed/index.rst:227
+#: ../../source/user-guide/model-development/distributed/index.rst:233
+msgid "int"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:222
+msgid "训练的用到的总卡数"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:223
+msgid "n_gpus"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:225
+msgid "运行时这台物理机的卡数"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:226
+msgid "rank_start"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:228
+msgid "这台机器的 rank 起始值"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:229
+msgid "master_ip"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:230
+msgid "str"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:231
+msgid "rank 0 所在机器的 IP 地址"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:232
+msgid "port"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:234
+msgid "分布式训练 master server 使用的端口号"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:237
+msgid "流水线并行"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:239
+msgid "在 MegEngine 中，也支持流水线的方式来做训练。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:241
+msgid "最简单的流水线并行就是把一个模型拆分成上下两个部分来做，在 MegEngine 中可以简单的实现。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:243
+msgid "下面是一个简单的例子来展示怎么写一个流水线的训练："
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:295
+msgid "常见问题"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:297
+msgid "Q：为什么在多机多卡训练开始前还正常，进入多卡训练之后就报错 ``cuda init error`` ?"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:299
+msgid ""
+"A：请确保在进入多机多卡训练之前主进程没有进行 cuda 相关操作，cuda 在已经初始化的状态下进行 fork 操作会导致 fork 的进程中 "
+"cuda 不可用， 参考 `这里 <https://stackoverflow.com/questions/22950047/cuda-"
+"initialization-error-after-fork>`_ . 建议用 numpy 数组作为输入输出来使用 launcher "
+"包装的函数。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:302
+msgid "Q：为什么我自己用 :py:mod:`multiprocessing` 写多机多卡训练总是卡住？"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:304
+msgid "A：可以在函数结束前调用 :func:`~.distributed.group_barrier` 来避免卡死的情况"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:306
+msgid ""
+"在 MegEngine 中，为了保证性能，会异步执行相应的 cuda kernel，所以当 python 代码执行完毕时，相应的 kernel "
+"执行还没有结束。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:307
+msgid ""
+"为了保证 kernel 全部执行完毕，MegEngine 初始化时在 :py:mod:`atexit` 里注册了全局的同步，但是 "
+"multiprocess 默认的 fork 模式在进程退出的时候，不会执行 :py:mod:`atexit` 注册的函数，导致 kernel "
+"没有执行完。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/distributed/index.rst:308
+msgid "如果有进程间需要通信的算子，而又有几个进程提前退出，那么剩下的进程就会一直等待其他进程导致卡死（如果你某个进程比如 rank0 需要取参数的值）。"
+msgstr ""
+

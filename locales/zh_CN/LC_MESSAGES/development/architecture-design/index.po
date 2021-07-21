@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/development/architecture-design/index.rst:5
+msgid "MegEngine 架构设计"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:15
+msgid "MegEngine 整体由两部分 Runtime 加上底层的公共组件组成："
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:17
+msgid "其中静态图部分（又称 :ref:`graph-runtime` ）主要提供 C++ 推理接口；"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:18
+msgid "动态图部分（又称 :ref:`imperative-runtime` ）主要提供 Python 接口供动态训练使用；"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:78
+msgid "接口层"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:80
+msgid "MegEngine Imperative Runtime: 动态解释执行接口"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:81
+msgid "MegEngine Lite: C++ 静态图推理接口"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:82
+msgid "Load and run: 一份用于调试性能的工具（可看做一种推理代码的样例）"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:87
+msgid "核心模块层"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:85
+msgid ""
+"Computing Graph: 一张以 OpNode 和 VarNode 依次相连的 "
+"DAG，用以表达全部计算依赖，是静态图的模式的核心。模块内部包含了图优化、静态推导、自动求导的各类功能。通过 compile 可以产生 "
+"Computing Sequence 以用于实际执行"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:86
+msgid ""
+"Computing Sequence: 一个带有依赖关系的执行序列，是 Computing Graph "
+"的一种拓扑排序结果，其中包含了内存分配策略等资源信息，可以通过 execute 执行其中的全部 Op"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:87
+msgid ""
+"Tensor Interpreter: Tensor 解释器，用于解释执行动态模式下的计算操作；其中部分操作是通过构建一张临时的 "
+"Computing Graph 来复用原有操作，另一部分通过直接调用底层实现（以获得更高的性能）"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:92
+msgid "工具模块"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:90
+msgid "Shape 推导器: 用于静态推导 shape"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:91
+msgid "Algo Chooser: 同一 Op 不同 kernel 的选择器，用以挑选在当前参数下最快的 kernel，是 Fastrun 机制的核心"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:92
+msgid ""
+"Serialization Manager: 对 Computing Graph 进行序列化 / 反序列化，提供无限向后兼容性 (backward"
+" compatible)"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:94
+msgid "硬件抽象层（HAL）"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:96
+msgid "MegDNN kernel: 包含各类平台下的计算算子实现（部分简单算子直接在 megengine src 目录下实现，未包含在 dnn 中）"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:97
+msgid "Extern C Opr / Runtime Opr: 用于包装 DSA / TRT 等子图，对上层抽象为一个 Op"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:98
+msgid ""
+"CompNode: 对硬件的基本操作进行抽象，包括 执行计算、同步机制、内存分配、跨设备拷贝 等原语。一个 CompNode 对应一个 GPU "
+"stream 或 CPU 线程，部分硬件上实现了内存池以进一步提高性能"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:99
+msgid "MegRay: 对训练场景下的集合通讯、点对点通信进行了设备无关的抽象，底层对应了 nccl / rccl / ucx / 自研方案 等不同实现"
+msgstr ""
+
+#: ../../source/development/architecture-design/index.rst:101
+msgid "硬件层"
+msgstr ""
+

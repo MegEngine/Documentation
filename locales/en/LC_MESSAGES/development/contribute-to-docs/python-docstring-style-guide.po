@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:5
+msgid "Python 文档字符串风格指南"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:7
+msgid "如果你对 Python 文档字符串（Docstring）的概念不是很清楚，可以参考以下材料："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:9
+msgid ""
+"`PEP 257 <https://www.python.org/dev/peps/pep-0257>`_ - Docstring "
+"Conventions"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:10
+msgid ""
+"`PEP 287 <https://www.python.org/dev/peps/pep-0287>`_ - reStructuredText "
+"Docstring Format"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:11
+msgid "`PEP 484 <https://www.python.org/dev/peps/pep-0484>`_ - Type Hints"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:12
+msgid ""
+"`Google Python Style guides "
+"<https://google.github.io/styleguide/pyguide.html#381-docstrings>`_ - "
+"Docstrings"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:16
+msgid "在 MegEngine 源码中鼓励使用 Google Style 风格的 Docstring. (必须带上 Type Hints)"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:20
+msgid "由于历史原因，MegEngine 曾选择了使用 reStructuredText Docstring 代码风格。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:21
+msgid "在 >=1.6 版本的 MegEngine, 所有 Docstring 将统一迁移成 Google Style."
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:25
+msgid "Docstring 发光发热！"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:27
+msgid "一些开发者的 Python 开发环境中，可以根据 Docstring 进行更加智能的内容提示。但这还不是全部，"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:29
+msgid "在 MegEngine 文档宇宙中，Docstring 肩负着重要的使命——"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:32
+msgid "API 参考页面自动生成"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:34
+msgid ""
+"我们借助 Sphinx 来构建整个 MegEngine 文档（参考 :ref:`how-to-build-the-doc-locally` ）， "
+"而 Sphinx 在根据 Docstring 生成 API 页面时，默认只支持 reStructuredText 语法。 因此我们用到了 "
+"`sphinx.ext.napoleon <https://www.sphinx-"
+"doc.org/en/master/usage/extensions/napoleon.html>`_ 插件， 它能够在生成文档前临时将所有的 "
+"Google Style 语法解析成 reStructureText 语法。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:40
+msgid ""
+"这也意味着我们依旧可以使用 :ref:`restructuredtext` 中提到的各种语法来编辑 Docstring 内容， 包括 API "
+"之间的交叉引用、超链接、插入图片，甚至加入一些高级的 HTML 视觉样式。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:42
+msgid ""
+"但我们也要考虑到习惯直接阅读源码（以及使用 ``help()`` / ``print(*.__doc__)`` 语法）的用户， "
+"使用过多的衍生语法将打破纯文本样式的约定，降低 Python 源码的阅读体验。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:46
+msgid "We need Chinese!"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:48
+msgid ""
+"MegEngine 文档的特点之一是提供了中文 API 翻译，而 Docstring 作为源代码的一部分，当然是用英文撰写的。 因此在 "
+"MegEngine 源代码中修改 Docstring 后我们还需要在 Documentation 文档中更新对应 ``.po`` 文件， "
+"Sphinx 在生成文档时会先检索匹配到的文本，接着自动地将原文替换成对应的英文，这和 WordPress 国际化原理类似， "
+"相关细节和翻译流程请参考 :ref:`translation` 。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:56
+msgid "Docstring Google Style 模版"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:58
+msgid ""
+"我们建议所有刚开始尝试 Docstring 编写的开发者看一看下面这个模版文件 （ `源文件地址 <https://github.com"
+"/sphinx-contrib/napoleon/blob/master/docs/source/example_google.rst>`_ ）："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:364
+msgid "Docstring 最佳实践"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:366
+msgid "内容正在建设中......"
+msgstr ""
+
