@@ -103,7 +103,6 @@ mgebrain_graph
    megbrain_graph.dump_graph
    megbrain_graph.load_graph
    megbrain_graph.apply_normal_varnode
-   megbrain_graph.apply_backward_varnode
    megbrain_graph.input_callback
    megbrain_graph.output_callback
   

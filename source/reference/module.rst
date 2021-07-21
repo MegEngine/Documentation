@@ -147,6 +147,8 @@ Fused operations
    ConvBn2d
    ConvBnRelu2d
    BatchMatMulActivation
+   SlidingWindow
+   SlidingWindowTranspose
 
 Quantization
 ~~~~~~~~~~~~

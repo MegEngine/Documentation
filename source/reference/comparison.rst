@@ -59,6 +59,7 @@ NumPy                                     Pytorch                               
 :py:func:`numpy.split`                    :py:func:`torch.split`                    :py:func:`megengine.functional.split`
 :py:func:`numpy.tile`                     :py:func:`torch.tile`                     :py:func:`megengine.functional.tile`
 :py:func:`numpy.repeat`                   :py:func:`torch.repeat_interleave`        :py:func:`megengine.functional.repeat`
+:py:func:`numpy.roll`                     :py:func:`torch.roll`                     :py:func:`megengine.functional.roll`
 :py:func:`numpy.take_along_axis`          :py:func:`torch.gather`                   :py:func:`megengine.functional.gather`         Pytorch Style
 :py:func:`numpy.put_along_axis`           :py:func:`torch.scatter`                  :py:func:`megengine.functional.scatter`        Pytorch Style
 :py:func:`numpy.compress`                 :py:func:`torch.take`                     :py:func:`megengine.functional.cond_take`
@@ -208,7 +209,7 @@ Pytorch                                                                         
 :py:func:`torch.nn.functional.conv_transpose3d`                                  :py:func:`megengine.functional.nn.conv_transpose3d`
 local_conv2d                                                                     :py:func:`megengine.functional.nn.local_conv2d`
 deformable_conv2d                                                                :py:func:`megengine.functional.nn.deformable_conv2d`
-:py:func:`torch.nn.functional.unfold`                                            :ref:`not-implemented`
+:py:func:`torch.nn.functional.unfold`                                            :py:func:`megengine.functional.nn.sliding_window_transpose` 
 :py:func:`torch.nn.functional.fold`                                              :py:func:`megengine.functional.nn.sliding_window`
 ================================================================================ ================================================================================
 
@@ -406,7 +407,7 @@ Pytorch                                                                         
 LocalConv2d                                                                      :py:class:`megengine.module.LocalConv2d`
 DeformableConv2d                                                                 :py:class:`megengine.module.DeformableConv2d`
 :py:class:`torch.nn.Conv1d`                                                      :py:class:`megengine.module.Conv1d`
-:py:class:`torch.nn.Unfold`                                                      :ref:`not-implemented`
+:py:class:`torch.nn.Unfold`                                                      :py:class:`megengine.module.SlidingWindowTranspose`
 :py:class:`torch.nn.Fold`                                                        :py:class:`megengine.module.SlidingWindow`
 ================================================================================ ================================================================================
 

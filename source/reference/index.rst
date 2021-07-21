@@ -37,6 +37,7 @@ Python API
    autodiff
    optimizer
    jit
+   amp
    dtr
    distributed
    quantization
