@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-06-21 14:25+0000\n"
+"PO-Revision-Date: 2021-07-21 03:56\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/model-construction.po\n"
+"X-Crowdin-File-ID: 7062\n"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:9
 msgid "使用 Module 构造模型结构"
@@ -27,10 +31,7 @@ msgid "image0"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:12
-msgid ""
-"|image1| `查看源文件 "
-"<https://github.com/MegEngine/Documentation/blob/main/source/getting-"
-"started/beginner/model-construction.ipynb>`__"
+msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/model-construction.ipynb>`__"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:28
@@ -38,15 +39,11 @@ msgid "image1"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:16
-msgid ""
-"在本次教程中，你将会学习到在实际开发中我们更加常用的 ``Module`` 建模方式与工程化技巧，通过实现几个比 LeNet 更复杂的经典 CNN"
-" 模型结构，感受一下其优点。"
+msgid "在本次教程中，你将会学习到在实际开发中我们更加常用的 ``Module`` 建模方式与工程化技巧，通过实现几个比 LeNet 更复杂的经典 CNN 模型结构，感受一下其优点。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:18
-msgid ""
-"我们将尝试使用面向对象的思想，通过自定义 ``Module`` 类来构建 LeNet 模型，并灵活地取得内部结构信息，同时完成对 "
-"``Parameters`` 的相关处理；"
+msgid "我们将尝试使用面向对象的思想，通过自定义 ``Module`` 类来构建 LeNet 模型，并灵活地取得内部结构信息，同时完成对 ``Parameters`` 的相关处理；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:19
@@ -66,9 +63,7 @@ msgid "与之前的教程不同，这次的教程需要你 **花费更多的时�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:25
-msgid ""
-"请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 "
-"<https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
+msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:78
@@ -80,9 +75,7 @@ msgid "在神经网络模型中，经常存在着许多非常相似的结构，�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:82
-msgid ""
-"与 ``add()``, ``sub()``... 等通用的 ``functional`` 算子不同，网络层结构中通常存在着需要被管理的参数 "
-"``Parameter``, 包括初始化和更新等操作；"
+msgid "与 ``add()``, ``sub()``... 等通用的 ``functional`` 算子不同，网络层结构中通常存在着需要被管理的参数 ``Parameter``, 包括初始化和更新等操作；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:83
@@ -90,9 +83,7 @@ msgid "我们此前一直关注于“单个”的概念，即计算图中的“�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:84
-msgid ""
-"当模型结构变得越来越复杂，如果依旧通过枚举的方式来初始化和绑定参数，依靠 ``funtional`` API "
-"写出完整的结构，代码非常不优雅，且和工程化的理念不符；"
+msgid "当模型结构变得越来越复杂，如果依旧通过枚举的方式来初始化和绑定参数，依靠 ``funtional`` API 写出完整的结构，代码非常不优雅，且和工程化的理念不符；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:86
@@ -120,9 +111,7 @@ msgid "MegEngine 中实现的所有层都继承了 ``Module`` 基类中的内置
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:136
-msgid ""
-"我们需要建立这样一个观念，一个神经网络模型可以由多个小的层（Layer）级别的 ``Module`` "
-"构成，与此同时它的子结构（甚至是它本身）也可以被视作是一个大的 ``Module``."
+msgid "我们需要建立这样一个观念，一个神经网络模型可以由多个小的层（Layer）级别的 ``Module`` 构成，与此同时它的子结构（甚至是它本身）也可以被视作是一个大的 ``Module``."
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:147
@@ -174,9 +163,7 @@ msgid "在 LeNet 内部发生了什么呢？目前我们需要知道："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:201
-msgid ""
-"LeNet 模型内部的每一层（如 ``conv1``\\ ）也是一个 ``Module``, 在它们的内部各自封装好了 ``forward`` "
-"实现和需要用到的参数；"
+msgid "LeNet 模型内部的每一层（如 ``conv1``\\ ）也是一个 ``Module``, 在它们的内部各自封装好了 ``forward`` 实现和需要用到的参数；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:202
@@ -196,9 +183,7 @@ msgid "在 MegEngine 中也提供了 ``Module`` 的有序容器 ``Sequential``, 
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:316
-msgid ""
-"你应该发现了，我们可以直接使用 ``Sequential`` 定义的模型处理数据，而无需在内部指定 ``forward()`` "
-"流程（默认顺序完成）。"
+msgid "你应该发现了，我们可以直接使用 ``Sequential`` 定义的模型处理数据，而无需在内部指定 ``forward()`` 流程（默认顺序完成）。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:318
@@ -206,15 +191,11 @@ msgid "接下来我们用 ``Sequential`` 来实现 LeNet 模型："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:320
-msgid ""
-"由于是 ``Module`` 容器，对内部元素类型有要求，因此 ``relu`` 等算子也存在着 ``ReLU`` 这样的 ``Module`` "
-"实现；"
+msgid "由于是 ``Module`` 容器，对内部元素类型有要求，因此 ``relu`` 等算子也存在着 ``ReLU`` 这样的 ``Module`` 实现；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:321
-msgid ""
-"默认情况下，\\ ``Sequential`` 将以 :math:`0, 1, 2, 3, \\ldots` 顺序对内部的 ``Module`` "
-"进行命名；"
+msgid "默认情况下，\\ ``Sequential`` 将以 :math:`0, 1, 2, 3, \\ldots` 顺序对内部的 ``Module`` 进行命名；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:322
@@ -246,9 +227,7 @@ msgid "``modules()``: 返回一个可迭代对象，可以遍历当前模块中�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:539
-msgid ""
-"``named_modules()``: 返回一个可迭代对象，可以遍历当前模块包括自身在内的 ``key`` 与 ``Module`` "
-"键值对，其中 ``key`` 是从当前模块到各子模块的点路径。"
+msgid "``named_modules()``: 返回一个可迭代对象，可以遍历当前模块包括自身在内的 ``key`` 与 ``Module`` 键值对，其中 ``key`` 是从当前模块到各子模块的点路径。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:540
@@ -256,9 +235,7 @@ msgid "``parameters()``: 返回一个可迭代对象，遍历当前模块中的�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:541
-msgid ""
-"``named_parameters()``: 返回一个可迭代对象，可以遍历当前模块中 ``key`` 与 ``Parameter`` "
-"组成的键值对。其中 ``key`` 是从模块到 ``Parameter`` 的点路径。"
+msgid "``named_parameters()``: 返回一个可迭代对象，可以遍历当前模块中 ``key`` 与 ``Parameter`` 组成的键值对。其中 ``key`` 是从模块到 ``Parameter`` 的点路径。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:542
@@ -266,15 +243,11 @@ msgid "``state_dict()``: 返回一个有序字典，其键值对是每个网络�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:544
-msgid ""
-"``Module`` 可以直接作为 Python List 或者 Dict 等数据结构中的元素进行组合使用，一个父 ``Module`` "
-"会自动地将子 ``Module`` 中存在的 ``Parameter`` 进行注册。"
+msgid "``Module`` 可以直接作为 Python List 或者 Dict 等数据结构中的元素进行组合使用，一个父 ``Module`` 会自动地将子 ``Module`` 中存在的 ``Parameter`` 进行注册。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:546
-msgid ""
-"除此以外还提供了 ``buffers()``, ``children()`` 等方法，通过在文档中搜索和阅读 Module API, "
-"可以了解更多细节。"
+msgid "除此以外还提供了 ``buffers()``, ``children()`` 等方法，通过在文档中搜索和阅读 Module API, 可以了解更多细节。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:549
@@ -322,9 +295,7 @@ msgid "我们也可以通过使用 ``named_parameters()`` 来取得同样的效�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:896
-msgid ""
-"另外，在 ``Optimizer`` 中也提供了 ``state_dict()`` "
-"方法，可以用来获取学习率等超参数信息，这在需要保存和加载状态信息时能派上用场。"
+msgid "另外，在 ``Optimizer`` 中也提供了 ``state_dict()`` 方法，可以用来获取学习率等超参数信息，这在需要保存和加载状态信息时能派上用场。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:899
@@ -336,9 +307,7 @@ msgid "有时候我们需要对模型的相同结构部分参数进行共享，�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:912
-msgid ""
-"由于 ``Parameters`` 其实就是一个 ``Tensor`` 的子类，如果要共享某一层的参数，只需要在 ``Module`` 类的 "
-"``forward()`` 函数里多次调用这个层；"
+msgid "由于 ``Parameters`` 其实就是一个 ``Tensor`` 的子类，如果要共享某一层的参数，只需要在 ``Module`` 类的 ``forward()`` 函数里多次调用这个层；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:913
@@ -346,9 +315,7 @@ msgid "使用 ``Sequantial`` 多次传入同一个 ``Module`` 对象，也可以
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1020
-msgid ""
-"可以发现，对于 ``shared_net`` 和 ``sequential_shared_net``, "
-"虽然实际进行了四次线性层运算，但显示出的模型结构却只有一层，表明参数进行了共享。"
+msgid "可以发现，对于 ``shared_net`` 和 ``sequential_shared_net``, 虽然实际进行了四次线性层运算，但显示出的模型结构却只有一层，表明参数进行了共享。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1022
@@ -400,9 +367,7 @@ msgid "常见 ``Module`` 的基类实现中会有一个默认的参数初始化�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1115
-msgid ""
-"比如 ``Conv1d`` 和 ``Conv2d`` 其实都继承自 ``_ConvNd``, 而在 ``_ConvNd`` 的 "
-"``__init__()`` 方法中进行了参数初始化；"
+msgid "比如 ``Conv1d`` 和 ``Conv2d`` 其实都继承自 ``_ConvNd``, 而在 ``_ConvNd`` 的 ``__init__()`` 方法中进行了参数初始化；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1116
@@ -438,15 +403,11 @@ msgid "我们重新定义一个 ``CustomInitLeNet`` 类，并且在里面完成�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1246
-msgid ""
-"我们可以直观地感受到，上面的代码根据 ``module`` 的类型对 ``Conv2d`` 和 ``Linear`` "
-"层进行了区分，采取了不同的初始化策略。 针对参数是 ``weight`` 还是 ``bias``, 所执行的初始化策略也有所不同。"
+msgid "我们可以直观地感受到，上面的代码根据 ``module`` 的类型对 ``Conv2d`` 和 ``Linear`` 层进行了区分，采取了不同的初始化策略。 针对参数是 ``weight`` 还是 ``bias``, 所执行的初始化策略也有所不同。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1248
-msgid ""
-"究竟什么样的初始化策略是最优的呢？目前不用搞清楚背后的原因，我们只需要明白通过 ``module`` 和方式来定义模型，比 "
-"``funtional`` 更加灵活高效。"
+msgid "究竟什么样的初始化策略是最优的呢？目前不用搞清楚背后的原因，我们只需要明白通过 ``module`` 和方式来定义模型，比 ``funtional`` 更加灵活高效。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1260
@@ -454,9 +415,7 @@ msgid "经典 CNN 结构实现"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1262
-msgid ""
-"研究和工程人员所需要具备的一个重要能力是将通过实验想法转变为现实进行验证，有了 ``Module`` "
-"这样强有力的工具，我们要能够做到将想到的模型结构进行高效的实现。但正所谓巧妇难为无米之炊，想要一下子蹦出一个有意思的模型结构是比较困难的。为了避免工程能力成为自己的短板，目前我们需要积累更多的神经网络模型设计的代码经验，一种有效的方式就是根据已有的经典科研文献中的网络模型结构进行实现，学习更多的代码范式，这样在将来才能够放飞自我的想象力。"
+msgid "研究和工程人员所需要具备的一个重要能力是将通过实验想法转变为现实进行验证，有了 ``Module`` 这样强有力的工具，我们要能够做到将想到的模型结构进行高效的实现。但正所谓巧妇难为无米之炊，想要一下子蹦出一个有意思的模型结构是比较困难的。为了避免工程能力成为自己的短板，目前我们需要积累更多的神经网络模型设计的代码经验，一种有效的方式就是根据已有的经典科研文献中的网络模型结构进行实现，学习更多的代码范式，这样在将来才能够放飞自我的想象力。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1264
@@ -472,9 +431,7 @@ msgid "LeNet 通过引入卷积运算成功证明了 CNN 模型的有效性，�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1271
-msgid ""
-"接下来，我们利用 ``Module`` 来实现一个比 LeNet 更加深的卷积神经网络模型结构，常被称为 `AlexNet "
-"<https://paperswithcode.com/method/alexnet>`__:"
+msgid "接下来，我们利用 ``Module`` 来实现一个比 LeNet 更加深的卷积神经网络模型结构，常被称为 `AlexNet <https://paperswithcode.com/method/alexnet>`__:"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1273
@@ -486,9 +443,7 @@ msgid "由于不同数据集输入的数据形状不一致，我们如果想要�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1275
-msgid ""
-"一种思路是在 ``Dataloader`` 中对输入图片进行 ``Resize`` 预处理，比如将原本 :math:`32 \\times 32`"
-" 的图片缩放成 :math:`224 \\times 224` 的图片；"
+msgid "一种思路是在 ``Dataloader`` 中对输入图片进行 ``Resize`` 预处理，比如将原本 :math:`32 \\times 32` 的图片缩放成 :math:`224 \\times 224` 的图片；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1276
@@ -508,9 +463,7 @@ msgid "使用重复层级结构的 VGGNet"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1346
-msgid ""
-"我们已经将模型结构显式地分为了特征提取部分 ``feature`` 和线性分类 ``classifier`` "
-"部分。但有的时候我们会遇到这样一种情况："
+msgid "我们已经将模型结构显式地分为了特征提取部分 ``feature`` 和线性分类 ``classifier`` 部分。但有的时候我们会遇到这样一种情况："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1348
@@ -538,9 +491,7 @@ msgid "请欣赏下面一段代码，尝试看出其作用："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1444
-msgid ""
-"可以发现在 ``make_layers`` 中产生的序列会是 ``Conv2d(->BatchNorm2d)->ReLU->MaxPool2d``"
-" 的重复；"
+msgid "可以发现在 ``make_layers`` 中产生的序列会是 ``Conv2d(->BatchNorm2d)->ReLU->MaxPool2d`` 的重复；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1445
@@ -564,9 +515,7 @@ msgid "AlexNet 和 VGGNet 都是在基于 LeNet 的背景下，选择对模型�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1495
-msgid ""
-"现在我们将要介绍由 Google 提出的 `GoogLeNet(Inception) "
-"<https://paperswithcode.com/method/googlenet>`__ 模型结构，看其如何处理多分支的块状结构。"
+msgid "现在我们将要介绍由 Google 提出的 `GoogLeNet(Inception) <https://paperswithcode.com/method/googlenet>`__ 模型结构，看其如何处理多分支的块状结构。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1497
@@ -582,15 +531,11 @@ msgid "inception"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1501
-msgid ""
-"如上图所示（图片来自 `原论文 <https://research.google.com/pubs/archive/43022.pdf>`__\\"
-" ），Inception 块由 :math:`4` 条分支（Branch）组成："
+msgid "如上图所示（图片来自 `原论文 <https://research.google.com/pubs/archive/43022.pdf>`__\\ ），Inception 块由 :math:`4` 条分支（Branch）组成："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1503
-msgid ""
-"前三条分支使用大小为 :math:`1 \\times 1` 、\\ :math:`3 \\times 3` 和 :math:`5 \\times"
-" 5` 的卷积层，负责从不同空间大小中提取信息；"
+msgid "前三条分支使用大小为 :math:`1 \\times 1` 、\\ :math:`3 \\times 3` 和 :math:`5 \\times 5` 的卷积层，负责从不同空间大小中提取信息；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1504
@@ -614,9 +559,7 @@ msgid "我们的任务不在于理解当前模型设计的优点，而是要 “
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1596
-msgid ""
-"在完整的 GoogLeNet 中多次使用了 Inception "
-"块来作为整体模型结构的一部分，这种将采用多分支以及重复结构抽象为块（Block）的思路值得我们借鉴。"
+msgid "在完整的 GoogLeNet 中多次使用了 Inception 块来作为整体模型结构的一部分，这种将采用多分支以及重复结构抽象为块（Block）的思路值得我们借鉴。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1608
@@ -628,9 +571,7 @@ msgid "通常在一份工程化的代码中，我们会以带参数的命令行�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1612
-msgid ""
-"例如你在阅读 MegEngine 官方提供的 `Models <https://github.com/MegEngine/Models>`__ "
-"模型库代码时，可能会看到这样的目录结构："
+msgid "例如你在阅读 MegEngine 官方提供的 `Models <https://github.com/MegEngine/Models>`__ 模型库代码时，可能会看到这样的目录结构："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1626
@@ -666,9 +607,7 @@ msgid "inference: 模型的推理代码，用于实际数据，比如你自己�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1636
-msgid ""
-"一个比较好的例子是 MegEngine/Models 中官方实现的 `ResNet "
-"<https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`__."
+msgid "一个比较好的例子是 MegEngine/Models 中官方实现的 `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`__."
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1638
@@ -684,9 +623,7 @@ msgid "在调试模型的过程中，我们需要频繁地改变超参数的值�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1645
-msgid ""
-"而到目前为止，为了便于交互式学习，我们都是通过 Jupyter Notebook 的形式（\\ ``.ipynb`` "
-"格式文件）来交互式地修改每个单元格中的代码；"
+msgid "而到目前为止，为了便于交互式学习，我们都是通过 Jupyter Notebook 的形式（\\ ``.ipynb`` 格式文件）来交互式地修改每个单元格中的代码；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1646
@@ -694,9 +631,7 @@ msgid "重新运行某个单元格，可以使得新的配置生效；重新跑�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1647
-msgid ""
-"如果你点开了 ResNet 模型的 ``train.py`` 源代码，就会发现我们会借助 ``argparse`` "
-"模块，使用命令行的形式将参数传入程序中。"
+msgid "如果你点开了 ResNet 模型的 ``train.py`` 源代码，就会发现我们会借助 ``argparse`` 模块，使用命令行的形式将参数传入程序中。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1649
@@ -704,9 +639,7 @@ msgid "在本次教程中，我们可以假设通过命令行传递的参数跑�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1684
-msgid ""
-"用一个简单的例子进行说明，我们在获取数据集的时候，就可以利用到 ``args.datapath``, ``args.train_bs``, "
-"``args.test_bs`` 作为参数："
+msgid "用一个简单的例子进行说明，我们在获取数据集的时候，就可以利用到 ``args.datapath``, ``args.train_bs``, ``args.test_bs`` 作为参数："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1733
@@ -774,9 +707,7 @@ msgid "你可以再多多调教我们的 AlexNet 模型，看能否达到更高�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1902
-msgid ""
-"我们经常会在科研文献中看到一个模型在某个 Benchmark 上所取得的最优效果，前沿论文的实验结果通常能达到当前最优（State-of-the-"
-"art, SOTA），也容易被后来居上；"
+msgid "我们经常会在科研文献中看到一个模型在某个 Benchmark 上所取得的最优效果，前沿论文的实验结果通常能达到当前最优（State-of-the-art, SOTA），也容易被后来居上；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1903
@@ -816,21 +747,15 @@ msgid "最简单的办法是，使用 MegEngine 中提供的 ``save`` 和 ``load
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1971
-msgid ""
-"在上面的代码执行过程中 ``megengine.save()`` 负责把对象保存成磁盘文件，而 ``megengine.load()`` "
-"负责从文件中加载用 ``save()`` 所保存的对象。"
+msgid "在上面的代码执行过程中 ``megengine.save()`` 负责把对象保存成磁盘文件，而 ``megengine.load()`` 负责从文件中加载用 ``save()`` 所保存的对象。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1973
-msgid ""
-"文件的后缀名其实可以随意选取，比如 ``.mge``, ``.megengine``, ``.pkl``... "
-"等，关键是要让使用的人从后缀名中能判断出加载方式。"
+msgid "文件的后缀名其实可以随意选取，比如 ``.mge``, ``.megengine``, ``.pkl``... 等，关键是要让使用的人从后缀名中能判断出加载方式。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1975
-msgid ""
-"我们回顾一下教程开始提到的一个知识点，在每个 ``Module``/``Optimizer`` 对象中，都提供了 ``state_dict()``"
-" 方法来获取内部的状态信息："
+msgid "我们回顾一下教程开始提到的一个知识点，在每个 ``Module``/``Optimizer`` 对象中，都提供了 ``state_dict()`` 方法来获取内部的状态信息："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1977
@@ -838,9 +763,7 @@ msgid "``Module`` 的 ``state_dict()`` 获取到的是一个有序字典，其�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1978
-msgid ""
-"``Optimizer`` 的 ``state_dict()`` 获取到的是无序字典，内部有包含优化器参数的 ``param_groups`` 和"
-" ``state`` 信息。"
+msgid "``Optimizer`` 的 ``state_dict()`` 获取到的是无序字典，内部有包含优化器参数的 ``param_groups`` 和 ``state`` 信息。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2021
@@ -864,9 +787,7 @@ msgid "由于我们保存的是 ``state_dict()``, 在加载时也需要调用模
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2030
-msgid ""
-"``load_state_dict()`` 方法必须传入一个状态字典，而不是对象的保存路径，也就是说必须先调用 ``load()``, "
-"然后再调用该方法。"
+msgid "``load_state_dict()`` 方法必须传入一个状态字典，而不是对象的保存路径，也就是说必须先调用 ``load()``, 然后再调用该方法。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2058
@@ -890,9 +811,7 @@ msgid "使用检查点（Checkpoint）"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2148
-msgid ""
-"我们知道了 ``model`` 和 ``optimizer`` 都能够提供 ``state_dict`` "
-"信息，因此一种更加精细的做法是将它们和更多的信息组合起来存储："
+msgid "我们知道了 ``model`` 和 ``optimizer`` 都能够提供 ``state_dict`` 信息，因此一种更加精细的做法是将它们和更多的信息组合起来存储："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2160
@@ -912,9 +831,7 @@ msgid "MegEngine 中的 ``Module`` 类为开发者提供了足够程度的抽象
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2189
-msgid ""
-"我们能够借助 ``Module.parameters()`` 方法，快速地获取所有参数的迭代，并且作为 Optimizer 和 "
-"GradManager 的输入参数统一管理；"
+msgid "我们能够借助 ``Module.parameters()`` 方法，快速地获取所有参数的迭代，并且作为 Optimizer 和 GradManager 的输入参数统一管理；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2190
@@ -922,9 +839,7 @@ msgid "通过 ``Module.init`` 子模块，模型参数的初始化变得十分�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2191
-msgid ""
-"通过 ``megengine.save()`` 和 ``megengine.load()`` 可以方便地完成状态信息的保存和加载，\\ "
-"``state_dict`` 信息可以灵活组合使用。"
+msgid "通过 ``megengine.save()`` 和 ``megengine.load()`` 可以方便地完成状态信息的保存和加载，\\ ``state_dict`` 信息可以灵活组合使用。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2193
@@ -952,9 +867,7 @@ msgid "在工程化方面，我们见识到了标准的深度学习工程模型�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2203
-msgid ""
-"另外我们在举例的过程中提到了 ResNet, 这是再经典不过的 CNN 模型了！当你能够自己实现完整的 ResNet 中 ``model.py``"
-" 内部的各种结构时，即意味着你可以从初学者教程“毕业”，以后遇到奇怪的模型结构也能游刃有余。"
+msgid "另外我们在举例的过程中提到了 ResNet, 这是再经典不过的 CNN 模型了！当你能够自己实现完整的 ResNet 中 ``model.py`` 内部的各种结构时，即意味着你可以从初学者教程“毕业”，以后遇到奇怪的模型结构也能游刃有余。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2205
@@ -978,15 +891,11 @@ msgid "大模型即是正义？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2226
-msgid ""
-"CIFAR10 "
-"图片预测的准确率还有很大的提升空间，是不是意味着只要不断加大模型的深度/宽度，让它变得更复杂，加上精细的超参数调整，就总是能够取得更好的效果呢？"
+msgid "CIFAR10 图片预测的准确率还有很大的提升空间，是不是意味着只要不断加大模型的深度/宽度，让它变得更复杂，加上精细的超参数调整，就总是能够取得更好的效果呢？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2228
-msgid ""
-"你是否思考过这样一个明显的问题：VGG 论文中设计出了 VGG11, VGG13, VGG16, VGG19... 为什么不搞出一个 VGG100"
-" 模型呢？直接 VGG6666 岂不是无敌？"
+msgid "你是否思考过这样一个明显的问题：VGG 论文中设计出了 VGG11, VGG13, VGG16, VGG19... 为什么不搞出一个 VGG100 模型呢？直接 VGG6666 岂不是无敌？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2230
@@ -1002,9 +911,7 @@ msgid "实际上，不使用 VGG6666 模型的背后还有着其他的原因，�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2234
-msgid ""
-"这个教程中也给你留下了一个挑战，我们没有完整地写出 GoogLeNet 模型，请你试试能否独立地实现出 GoogLeNet, 甚至是整个 "
-"Inception Net 系列的网络结构。"
+msgid "这个教程中也给你留下了一个挑战，我们没有完整地写出 GoogLeNet 模型，请你试试能否独立地实现出 GoogLeNet, 甚至是整个 Inception Net 系列的网络结构。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2237
@@ -1028,17 +935,11 @@ msgid "训练一个 epoch 的成本比之前高了很多，寻找合适的超参
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2245
-msgid ""
-"除此以外，在不改变模型结构的情况下，我们还在代码中进行了一些修改，比如我们改变了超参数，对输入数据进行了预处理，模型参数使用了除零值之外其它的初始化策略。这些修改背后的直觉是什么，当我们需要用神经网络解决不同的任务时，有没有什么经验可循？对于这些深度学习炼丹老师傅们再熟悉不过的一些"
-" “玄学” 现象，如果能分析出问题背后可能的原因，一定会很有成就感。"
+msgid "除此以外，在不改变模型结构的情况下，我们还在代码中进行了一些修改，比如我们改变了超参数，对输入数据进行了预处理，模型参数使用了除零值之外其它的初始化策略。这些修改背后的直觉是什么，当我们需要用神经网络解决不同的任务时，有没有什么经验可循？对于这些深度学习炼丹老师傅们再熟悉不过的一些 “玄学” 现象，如果能分析出问题背后可能的原因，一定会很有成就感。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2247
-msgid ""
-"对于深度学习初学者来说，经典论文的复现是一个比较有趣的练习方式，我们在介绍 AlexNet 和 VGGNet 时给出了 `Paper with "
-"Code <https://paperswithcode.com/>`__ "
-"的网站链接，里面是一个巨大的宝库。你可以尝试参照着一些其他人复现过的模型代码，实现自己的 MegEngine "
-"版本，看看是否能达到一样的效果，我们鼓励你以开源的方式将它们分享出来。最有效的实践方式就是：多看，多写，多想。我们在接下来的教程中，将会一起探索一些炼丹玄学现象背后的原因，总结出一些神经网络模型训练中的常见技巧。"
+msgid "对于深度学习初学者来说，经典论文的复现是一个比较有趣的练习方式，我们在介绍 AlexNet 和 VGGNet 时给出了 `Paper with Code <https://paperswithcode.com/>`__ 的网站链接，里面是一个巨大的宝库。你可以尝试参照着一些其他人复现过的模型代码，实现自己的 MegEngine 版本，看看是否能达到一样的效果，我们鼓励你以开源的方式将它们分享出来。最有效的实践方式就是：多看，多写，多想。我们在接下来的教程中，将会一起探索一些炼丹玄学现象背后的原因，总结出一些神经网络模型训练中的常见技巧。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2249
@@ -1046,182 +947,97 @@ msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，�
 msgstr ""
 
 #~ msgid ""
-#~ "在本次教程中，你将会学习到在实际开发中我们更加常用的 ``module`` 建模方式与工程化技巧，通过实现几个比"
-#~ " LeNet 更复杂的经典 CNN 模型结构，感受一下其优点。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "我们将尝试使用 ``module`` 模块中的实现来构建 LeNet "
-#~ "模型，并灵活地取得内部结构信息，同时完成对 ``Parameters`` 的相关处理；"
-#~ msgstr ""
-
-#~ msgid "与之前的教程不同，这次的教程需要你花费更多的时间去理解不同的代码，将抽象的概念变为具体的代码实践。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `访问官网安装教程 "
-#~ "<https://megengine.org.cn/install>`__\\ ）："
-#~ msgstr ""
-
-#~ msgid ""
-#~ "与 ``add()`` 等通常作用于 ``Tensor`` 的 "
-#~ "``functional`` 算子不同，网络层结构中通常存在着需要被管理的参数 ``Parameter``, "
-#~ "包括初始化和更新等操作；"
-#~ msgstr ""
-
-#~ msgid "我们此前一直关注于“单个”的概念，即计算图中的“单个”计算节点/数据节点，神经网络中“单个”神经元；现在我们需要想一想复杂规模下的情景；"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "当模型结构变得越来越复杂，如果依旧通过人工的方式来管理参数，依靠 ``funtional`` API "
-#~ "写出完整的结构，代码非常不优雅，且和工程化的理念不符；"
-#~ msgstr ""
-
-#~ msgid ""
 #~ "在 MegEngine 中提供了 ``module`` 模块，实现了包括 "
 #~ "``Conv2d`` 等在内的基本结构，可以为层（Layer）的概念提供足够的抽象，方便用户进行模型定义和参数管理。"
 #~ msgstr ""
+#~ "The ``module'' module is provided in "
+#~ "MegEngine, which implements the basic "
+#~ "structure including ``Conv2d'', etc., which"
+#~ " can provide sufficient abstraction for "
+#~ "the concept of layer, which is "
+#~ "convenient for users to carry out "
+#~ "model definition and parameter management."
 
 #~ msgid "我们现在就来改写 LeNet 模型："
-#~ msgstr ""
-
-#~ msgid "我们需要在 ``__init__`` 方法中定义模块结构，也可以做一些其它处理如初始化权重；"
-#~ msgstr ""
-
-#~ msgid "我们需要定义 ``forward()`` 方法，即前向传播的计算过程；"
-#~ msgstr ""
-
-#~ msgid "``module`` 模块中也提供了 ``Module`` 的有序容器 ``Sequential``, 具体用法如下："
-#~ msgstr ""
-
-#~ msgid ""
-#~ "``Sequential`` 除了本身可以用来定义模型之外，它还可以包装层，把几个层包装起来像一个块一样，我们在 "
-#~ "VGG 等模型中会见到更加高级的用法。"
-#~ msgstr ""
+#~ msgstr "Let's rewrite the LeNet model now.："
 
 #~ msgid ""
 #~ "可以发现，我们能够通过 ``print`` 打印输出模型内部的结构信息，实际上它调用了 "
 #~ "``Module`` 类中的一些内部实现（感兴趣的话可阅读源代码）。"
 #~ msgstr ""
+#~ "It can be found that we can "
+#~ "print out the internal structure "
+#~ "information of the model through "
+#~ "``print``. In fact, it calls some "
+#~ "internal implementations in the ``Module`` "
+#~ "class (you can read the source "
+#~ "code if you are interested)."
 
 #~ msgid "以下是 ``Module`` 类中常见的方法（但不是全部）："
 #~ msgstr ""
-
-#~ msgid ""
-#~ "``named_modules()``: 返回一个迭代对象，可以遍历当前模块包括自身在内的所有其内部模块所组成的 "
-#~ "``key`` 与 ``Parameter`` 键值对，其中 ``key`` "
-#~ "是从当前模块到各子模块的点路径（dotted path）."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "``named_parameters()``: 返回一个可迭代对象，可以遍历当前模块中 ``key`` "
-#~ "与 ``Parameter`` 组成的键值对。其中 ``key`` 是从模块到 "
-#~ "``Parameter`` 的点路径（dotted path）."
-#~ msgstr ""
+#~ "The following are the common methods "
+#~ "in the ``Module`` class (but not "
+#~ "all)："
 
 #~ msgid ""
 #~ "可以发现，一个 Model 本质上也是一个 ``Module``, "
 #~ "彼此之间有明显的父子关系，这种设计也有利于在 ``Module`` 之间实现嵌套，设计出复用程度高的复杂结构。"
 #~ msgstr ""
-
-#~ msgid "已知 ``state_dict()`` 是一个有序字典，因此我们可以先看看内部的键有什么："
-#~ msgstr ""
-
-#~ msgid "另外，在 ``Optimizer`` 中也提供了 ``state_dict()`` 方法，可以用来获取学习率等超参数信息。"
-#~ msgstr ""
+#~ "It can be found that a Model "
+#~ "is essentially a ``Module'', and there"
+#~ " is an obvious parent-child "
+#~ "relationship between each other. This "
+#~ "design is also conducive to the "
+#~ "realization of nesting between ``Module'', "
+#~ "and the design is highly complex "
+#~ "structure."
 
 #~ msgid "注意：我们在本次教程中，没有介绍过 ``buffers()``, ``children()`` 的用法，感兴趣的话你可以亲自试一试。"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "由于 ``Parameters`` 其实就是一个 ``Tensor`` "
-#~ "的子类，如果要共享某一层的参数，只需要在 ``Module`` 类的 ``forward()`` "
-#~ "函数里多次调用这个层。因为调用同一个层，计算的时候就是使用的这个层代表的张量，所以多次调用同一个层相当于共享了模型参数。"
-#~ msgstr ""
+#~ "Note：In this tutorial, we have not "
+#~ "introduced the usage of ``buffers()``, "
+#~ "``children()``. If you are interested, "
+#~ "you can try it yourself."
 
 #~ msgid "更多实用的编码技巧"
-#~ msgstr ""
-
-#~ msgid "对于一些更加细节的操作（比如训练过程中对学习率的更改、固定部分参数不优化等等），可以参考文档用户指南中的《参数优化进阶配置》部分。"
-#~ msgstr ""
-
-#~ msgid "在默认情况下，一些 ``Module`` 的基类实现中会有一个默认的参数初始化策略："
-#~ msgstr ""
-
-#~ msgid "阅读源代码是我们了解程序本质的好方法，源码面前，了无秘密，欢迎在 MegEngine 的源代码中进行探索～"
-#~ msgstr ""
-
-#~ msgid "在实际的模型设计中，默认的初始化策略可能无法满足需求（或者由于没有阅读源代码，不清楚默认初始化策略），因此总会有需要自己定义初始化策略的时候。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "我们可以直观地感受到，上面的代码根据 ``module`` 的类型对 ``Conv2d`` "
-#~ "和 ``Linear`` 模块进行了区分，采取了不同的初始化策略。"
-#~ msgstr ""
+#~ msgstr "More practical coding skills"
 
 #~ msgid "针对参数是 ``weight`` 还是 ``bias``, 所执行的初始化策略也有所不同。"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "研究和工程人员的一个重要能力是将通过实验想法转变为现实进行验证，有了 ``Module`` "
-#~ "这样强有力的工具，我们要能够做到将想到的模型结构进行高效的实现。但所谓巧妇难为无米之炊，想要一下子蹦出一个有趣的结构是比较困难的。目前我们需要积累更多的神经网络模型设计的代码经验，一种有效的方式就是根据已有的经典科研文献中的网络模型结构进行实现，这样在将来才能够胸有成竹地选择放飞自我的想象力。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "接下来，我们利用 ``module`` 来实现一个比 LeNet "
-#~ "更加深的卷积神经网络模型结构，常被称为 `AlexNet "
-#~ "<https://paperswithcode.com/method/alexnet>`__:"
-#~ msgstr ""
-
-#~ msgid "原始的 AlexNet 论文将模型使用于 ImageNet 数据集，而我们用于 CIFAR10 数据集；"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "一种思路是对输入图片进行 ``Resize`` 预处理，比如将原本 :math:`32 "
-#~ "\\times 32` 的图片缩放成 :math:`224 \\times "
-#~ "224` 的图片；"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "对应地，分类的数量也要从原本 ImageNet 数据集的 :math:`1000` 修改为"
-#~ " CIFAR10 数据集的 :math:`10` 类；"
-#~ msgstr ""
+#~ "Regarding whether the parameter is "
+#~ "``weight`` or ``bias``, the initialization "
+#~ "strategy performed is also different."
 
 #~ msgid "我们使用到了 ``module.Sequential`` 来作为顺序容器，可以作为对顺序 ``Module`` 结构的封装。"
 #~ msgstr ""
-
-#~ msgid "AlexNet 模型中引入了 Dropout 的概念，我们会在下个教程中描述它的作用。"
-#~ msgstr ""
+#~ "We have used ``module.Sequential`` as a"
+#~ " sequential container, which can be "
+#~ "used as an encapsulation of the "
+#~ "sequential ``Module`` structure."
 
 #~ msgid ""
 #~ "MegEngine 通过 ``module`` 实现了层（Layer）层面的抽象，也提供了顺序容器"
 #~ " ``Sequential``, 有利于开发者写出更加简洁优雅的代码。"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "上面的 AlexNet 中，我们将模型结构显式地分为了特征提取部分 ``feature`` "
-#~ "和线性分类 ``classifier`` 部分。但有的时候我们会遇到这样一种情况："
-#~ msgstr ""
-
-#~ msgid "问题在于，这些模块的 ``channel`` 参数在不同的层之间会发生变化，因此不能直接复制粘贴；"
-#~ msgstr ""
+#~ "MegEngine implements layer-level abstraction"
+#~ " through ``module'', and also provides "
+#~ "a sequential container ``Sequential'', which"
+#~ " is helpful for developers to write"
+#~ " more concise and elegant code."
 
 #~ msgid "在上面的代码中实现了最基本的 ``VGG`` 类，注意：我们的特征提取序列 ``features`` 需要被指定。"
 #~ msgstr ""
+#~ "Achieve the most basic type `` "
+#~ "VGG`` In the above code, note：our "
+#~ "sequence `` features`` feature extraction "
+#~ "needs to be specified."
 
 #~ msgid "注意：下面这段代码中的 VGGNet 模型中使用了 BatchNorm 层，我们会在下个教程中解释它的用途；"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "现在我们将要介绍由 Google 提出的 `GoogLeNet(Inception) "
-#~ "<https://paperswithcode.com/method/googlenet>`__ "
-#~ "模型结构，看其如何处理块状结构。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "第四条分支使用 $3 :nbsphinx-math:`\\times`3 $ "
-#~ "最大池化层，然后使用 :math:`1 \\times 1` 卷积层来改变通道数。"
-#~ msgstr ""
+#~ "Note：The BatchNorm layer is used in "
+#~ "the VGGNet model in the code "
+#~ "below, and we will explain its use"
+#~ " in the next tutorial;"
 
 #~ msgid ""
 #~ "在训练模型的过程中，我们需要频繁地改变超参数的值以尝试得到最优的配置，甚至会用表格来记录不同的配置组合所取得的效果，一种比较高级的技术是"
@@ -1233,160 +1049,180 @@ msgstr ""
 #~ " <https://github.com/MegEngine/Models>`__ "
 #~ "模型库代码时，可能会看到这样的目录结构："
 #~ msgstr ""
-
-#~ msgid "顾名思义，不同的 ``.py`` 脚本文件负责机器学习流水线中不同的环节："
-#~ msgstr ""
+#~ "In the process of training the "
+#~ "model, we need to frequently change "
+#~ "the value of hyperparameters to try "
+#~ "to get the optimal configuration, and"
+#~ " even use a table to record the"
+#~ " effect of different configuration "
+#~ "combinations. A more advanced technology "
+#~ "is AutoML, which can automatically To"
+#~ " find the optimal hyperparameter "
+#~ "configuration, but this is not the "
+#~ "focus of our attention. The problem "
+#~ "is：So far, in order to facilitate "
+#~ "learning, we have used the form of"
+#~ " Jupyter Notebook (\\ ``.ipynb`` format "
+#~ "file) to interactively modify the code"
+#~ " in each cell, and rerun them "
+#~ "to make the new The configuration "
+#~ "takes effect-this is not what we"
+#~ " would take in actual engineering "
+#~ "projects. Usually in an engineered code,"
+#~ " we will run the ``.py`` script "
+#~ "in the form of a command line "
+#~ "with parameters. For example, you read"
+#~ " MegEngine official Models of ` "
+#~ "<https://github.com/MegEngine/Models>` __ when the"
+#~ " model library code, you might see"
+#~ " such a directory structure："
 
 #~ msgid "model: 定义你的模型结构，我们即将看到 VGG 模型会具有多种不同的结构；"
 #~ msgstr ""
-
-#~ msgid "train: 模型的训练代码，用于训练数据；"
-#~ msgstr ""
-
-#~ msgid "test: 模型的测试代码，用于测试数据；"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "比如 `ResNet "
-#~ "<https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`__"
-#~ " 的 ``train.py`` 提供了灵活的命令行选项，包括："
-#~ msgstr ""
+#~ "model: Define your model structure, we"
+#~ " will see that the VGG model "
+#~ "will have a variety of different "
+#~ "structures;"
 
 #~ msgid "``--data``, ImageNet 数据集的根目录，默认 /data/datasets/imagenet;"
 #~ msgstr ""
+#~ "``--data``, the root directory of the"
+#~ " ImageNet data set, default "
+#~ "/data/datasets/imagenet;"
 
 #~ msgid "``--arch``, 需要训练的网络结构，默认 resnet50；"
-#~ msgstr ""
+#~ msgstr "``--arch``, the network structure to be trained, the default resnet50;"
 
 #~ msgid "``--batch-size``\\ ，训练时每张卡采用的 batch size, 默认 64；"
 #~ msgstr ""
+#~ "``--batch-size``\\, the batch size used"
+#~ " by each card during training, the"
+#~ " default is 64;"
 
 #~ msgid ""
 #~ "``--ngpus``, 训练时每个节点采用的 GPU 数量，默认 None，即使用全部"
 #~ " GPU；当使用多张 GPU 时，将自动切换为分布式训练模式；"
 #~ msgstr ""
+#~ "``--ngpus``, the number of GPUs used "
+#~ "by each node during training, the "
+#~ "default is None, that is, all GPUs"
+#~ " are used; when multiple GPUs are "
+#~ "used, it will automatically switch to"
+#~ " distributed training mode;"
 
 #~ msgid "``--save``, 模型以及 log 存储的目录，默认 output;"
 #~ msgstr ""
+#~ "``--save``, the directory where the "
+#~ "model and log are stored, the "
+#~ "default output;"
 
 #~ msgid "``--learning-rate``, 训练时的初始学习率，默认 0.025, 在分布式训练下，实际学习率等于初始学习率乘以总 GPU 数；"
 #~ msgstr ""
+#~ "``--learning-rate``, the initial learning "
+#~ "rate during training, the default is "
+#~ "0.025, in distributed training, the "
+#~ "actual learning rate is equal to "
+#~ "the initial learning rate multiplied by"
+#~ " the total number of GPUs;"
 
 #~ msgid "``--epochs``, 训练多少个 epoch, 默认90；"
-#~ msgstr ""
+#~ msgstr "``--epochs``, how many epochs to train, the default is 90;"
 
 #~ msgid "这些参数的传递通过 Python 的命令行选项、参数和子命令解析器 ``argparse`` 模块完成，可以让人轻松编写用户友好的命令行接口。"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "在本次教程中，我们可以假设通过命令行传递的参数跑到了 ``args`` 对象中（\\ "
-#~ "``argparse`` 模块的真正用法比这复杂一些），看其如何发挥作用。"
-#~ msgstr ""
-
-#~ msgid "对一些常见功能进行适当的封装，通过参数进行控制，将更有利于进行代码复用。"
-#~ msgstr ""
-
-#~ msgid "随着我们阅读过的代码越来越多，我们也会见到更多有利于工程化的代码设计，这些经验将极大提升我们的开发效率。"
-#~ msgstr ""
-
-#~ msgid "模型训练和测试"
-#~ msgstr ""
+#~ "These parameters are passed through the"
+#~ " Python command line option, parameter "
+#~ "and sub-command parser ``argparse`` "
+#~ "module, which allows people to easily"
+#~ " write a user-friendly command line"
+#~ " interface."
 
 #~ msgid "注意：由于使用深层的（计算量更大的）模型结构，\\ **训练会占用掉比较多的时间，**\\ 请自行选择是否要进行模型训练。"
 #~ msgstr ""
-
-#~ msgid "我们以 AlexNet 为例来测试一下最终的效果（你可以自行将下面的代码替换成 VGG 模型）。"
-#~ msgstr ""
-
-#~ msgid "需要注意的是，使用 Module 建模得到的模型 ``model`` 可以分为训练和测试两种模式："
-#~ msgstr ""
+#~ "Note：Because of the use of a deep"
+#~ " (more computationally intensive) model "
+#~ "structure, \\ **training will take up"
+#~ " a lot of time, **\\ please "
+#~ "choose whether you want to perform "
+#~ "model training."
 
 #~ msgid ""
 #~ "虽然我们在 10 个 ``epochs`` 内损失就收敛到了不错的范围，但每个 "
 #~ "``epoch`` 的计算量/用时也变多了。这之间的权衡取舍，则是见仁见智了。"
 #~ msgstr ""
+#~ "Although our loss has converged to "
+#~ "a good range within 10 ``epochs'', "
+#~ "the amount of calculation/time used for"
+#~ " each ``epoch'' has also increased. "
+#~ "The trade-off between this is a"
+#~ " matter of opinion."
 
 #~ msgid "接下来我们对训练好的模型进行测试："
-#~ msgstr ""
-
-#~ msgid "你预计需要训练超过 1000 个迭代周期的模型，但时间不足，你希望能够将途中模型参数临时保存起来，下次有时间再继续基于保存的参数进行训练；"
-#~ msgstr ""
-
-#~ msgid "你需要将训练的模型部署到其它的设备上进行使用..."
-#~ msgstr ""
+#~ msgstr "Next we test the trained model.："
 
 #~ msgid "state\\_dict() 回顾"
-#~ msgstr ""
+#~ msgstr "state\\_dict() review"
 
 #~ msgid "因此我们有几种不同的思路来保存和加载我们的模型，现在分别进行介绍。"
 #~ msgstr ""
+#~ "So we have several different ideas "
+#~ "to save and load our model, now"
+#~ " we will introduce them separately."
 
 #~ msgid "保存/加载模型中的参数"
-#~ msgstr ""
+#~ msgstr "Save/load parameters in the model"
 
 #~ msgid "这是比较推荐的做法。但是注意："
-#~ msgstr ""
-
-#~ msgid "**在进行预测之前，必须调用 ``.eval()`` 将一些算子设置成验证状态，** 否则会生成前后不一致的预测结果；"
-#~ msgstr ""
-
-#~ msgid "``load_state_dict()`` 方法必须传入一个字典对象，而不是对象的保存路径，也就是说必须先反序列化字典对象，然后再调用该方法。"
-#~ msgstr ""
-
-#~ msgid "保存/加载整个模型"
-#~ msgstr ""
+#~ msgstr "This is the recommended practice. But pay attention to："
 
 #~ msgid "你也可以选择将整个模型采用 Python 的 ``pickle`` 模块来进行保存，缺点在于："
 #~ msgstr ""
+#~ "You can also choose to save the"
+#~ " entire model using Python's ``pickle`` "
+#~ "module, but the disadvantage is："
 
 #~ msgid "由于没有 ``state_dict()`` 信息，序列化后的数据只属于特定模型的字典结构；"
 #~ msgstr ""
+#~ "Since there is no ``state_dict()'' "
+#~ "information, the serialized data only "
+#~ "belongs to the dictionary structure of"
+#~ " the specific model;"
 
 #~ msgid "如果对模型的原有实现进行了修改和重构，极有可能导致错误。"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "我们知道了 ``model`` 和 ``optimizer`` 都能够提供 "
-#~ "``state_dict`` 信息，因此一种推荐的做法是将它们和更多的信息组合起来存储："
-#~ msgstr ""
-
-#~ msgid "你会在一些工程化的代码中看到这样的用法。"
-#~ msgstr ""
-
-#~ msgid "MegEngine 中的 ``module`` 为开发者提供了足够程度的抽象，使得我们能够灵活高效地实现各种神经网络的模型结构："
-#~ msgstr ""
-
-#~ msgid "与此同时，我们也接触到了一些超出深度学习框架服务范围的编程知识（“授人以鱼，不如授人以渔”），我们见识到了更多的经典 CNN 结构设计："
-#~ msgstr ""
-
-#~ msgid ""
-#~ "在工程化方面，我们见识到了标准的深度学习工程模型代码长什么样子，这有利于我们将来去阅读其他人复现好的模型代码，或者是将自己的代码组织得更加优雅。另外我们在举例的过程中提到了"
-#~ " ResNet, 这是再经典不过的 CNN 模型了！当你能够自己实现完整的 "
-#~ "ResNet 中 ``model.py`` "
-#~ "内部的各种结构时，即意味着你可以从初学者教程“毕业”啦，遇到奇怪的模型结构也不再慌张～ "
-#~ "不过心急吃不了热豆腐，在抵达这个小目标之前，我们还有一段路要走。"
-#~ msgstr ""
+#~ "If the original implementation of the"
+#~ " model is modified and reconstructed, "
+#~ "it is very likely to cause errors."
 
 #~ msgid ""
 #~ "我们在这个教程中引入了许多新的概念没有解释，比如什么是 ``Dropout`` 算子，什么又是 "
 #~ "``BatchNorm2d`` 算子，它和预处理中的 ``Normalize`` "
 #~ "又有着什么样的关系呢？以及我们一直都没有解释为什么神经网络模型不应该使用零值初始化策略？如果你始终留有疑惑，这是件好事，耐心完成后面的教程，终究会守得云开见月明。"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "除此以外，在不改变模型结构的情况下，我们还在代码中进行了一些修改，比如我们改变了超参数，对输入数据进行了预处理，模型参数使用了除零值之外其它的初始化策略，我还在训练卷积神经网络时偷偷地换用了"
-#~ " Adam 优化器，因为似乎在这个任务上用 Adam 的效果会比 SGD "
-#~ "要好一些。这些修改背后的直觉是什么，当我们需要用神经网络解决不同的任务时，有没有什么经验可循？"
-#~ msgstr ""
+#~ "We have introduced many new concepts "
+#~ "in this tutorial without explanation, "
+#~ "such as what is the ``Dropout'' "
+#~ "operator, what is the ``BatchNorm2d'' "
+#~ "operator, and what does it have "
+#~ "with the ``Normalize'' in the "
+#~ "preprocessing What kind of relationship? "
+#~ "And we have never explained why "
+#~ "the neural network model should not "
+#~ "use the zero-value initialization "
+#~ "strategy? If you always have doubts, "
+#~ "this is a good thing. After "
+#~ "completing the following tutorials patiently,"
+#~ " you will be able to see the"
+#~ " moonlight in the end."
 
 #~ msgid "恭喜你 🎉 ，我们已经开始接触到深度学习炼丹师再熟悉不过的一些 “玄学” 现象，如果能分析出问题背后可能的原因，一定会很有成就感。"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "对于深度学习初学者来说，经典论文的复现是一个比较有趣的练习方式，我们在介绍 AlexNet 和 "
-#~ "VGGNet 时给出了 `Paper with Code "
-#~ "<https://paperswithcode.com/>`__ "
-#~ "的网站链接，里面是一个巨大的宝库。你可以尝试参照着一些其他人复现过的模型代码，实现自己的 MegEngine "
-#~ "版本，看看是否能写得更加优雅，鼓励你以开源的方式将它们分享出来。多看，多写，多想。我们在接下来的教程中，将会一起探索一些炼丹玄学现象背后的原因，总结出一些神经网络模型训练中的常见技巧。你也许会觉得奇怪，似乎这些内容没有必要在一个“深度学习框架的文档”中进行提供，可以在网络上找到许多类似的学习材料，但我们总是在不断探索自己的认知边界，无限进步！"
-#~ msgstr ""
+#~ "Congratulations 🎉, we have already begun"
+#~ " to come into contact with some "
+#~ "\"metaphysics\" phenomena that deep learning"
+#~ " alchemists are not familiar with. If"
+#~ " we can analyze the possible reasons"
+#~ " behind the problem, we will "
+#~ "definitely feel a sense of "
+#~ "accomplishment."
 

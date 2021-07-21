@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-06-21 14:25+0000\n"
+"PO-Revision-Date: 2021-07-21 03:56\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/comparison.po\n"
+"X-Crowdin-File-ID: 7066\n"
 
 #: ../../source/reference/comparison.rst:5
 msgid "与其它框架 API 进行对比"
@@ -159,17 +163,11 @@ msgid "Basic N-dimensional array type"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:22
-msgid ""
-"Pytorch 的 Tensor 类中提供了许多操作/计算方法，而在 MegEngine 中这些方法被统一实现在 functional 模块中， "
-"意味着类似 ``functional.add()`` 等操作并不一定存在着对应的 ``Tensor.add()`` 实现，这是设计上的历史决定。"
+msgid "Pytorch 的 Tensor 类中提供了许多操作/计算方法，而在 MegEngine 中这些方法被统一实现在 functional 模块中， 意味着类似 ``functional.add()`` 等操作并不一定存在着对应的 ``Tensor.add()`` 实现，这是设计上的历史决定。"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:27
-msgid ""
-"Pytorch 中默认所有 Tensor 都需要被求导，因此提供了 :py:class:`torch.no_grad` 来禁用梯度计算。 而在 "
-"MegEngine 中 Tensor 默认不需要被求导，需要通过 "
-":py:meth:`megengine.autodiff.GradManager.attach` 来进行绑定， 被绑定后的 Tensor 可以通过"
-" :py:meth:`megengine.Tensor.detach` 来解除绑定。"
+msgid "Pytorch 中默认所有 Tensor 都需要被求导，因此提供了 :py:class:`torch.no_grad` 来禁用梯度计算。 而在 MegEngine 中 Tensor 默认不需要被求导，需要通过 :py:meth:`megengine.autodiff.GradManager.attach` 来进行绑定， 被绑定后的 Tensor 可以通过 :py:meth:`megengine.Tensor.detach` 来解除绑定。"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:32
@@ -2896,15 +2894,11 @@ msgid "Not Implemeted"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:643
-msgid ""
-"一些 API 在 MegEngine 中可能还没有实现，但所有的 API 并不是一开始就被设计出来的。 我们可以像搭积木一样，利用已经存在的基础 "
-"API 来组合出 MegEngine 中尚未提供的接口。"
+msgid "一些 API 在 MegEngine 中可能还没有实现，但所有的 API 并不是一开始就被设计出来的。 我们可以像搭积木一样，利用已经存在的基础 API 来组合出 MegEngine 中尚未提供的接口。"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:646
-msgid ""
-"比如 “如何实现 :py:func:`torch.roll` ” 这个问题，可以使用 :py:func:`~.functional.split` "
-"和 :py:func:`~.functional.concat` 拼接出来："
+msgid "比如 “如何实现 :py:func:`torch.roll` ” 这个问题，可以使用 :py:func:`~.functional.split` 和 :py:func:`~.functional.concat` 拼接出来："
 msgstr ""
 
 #: ../../source/reference/comparison.rst:680

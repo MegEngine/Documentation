@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-06-03 10:19+0000\n"
+"PO-Revision-Date: 2021-07-21 03:30\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/megengine-basic-concepts.po\n"
+"X-Crowdin-File-ID: 2844\n"
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:9
 msgid "MegEngine 基础概念"
@@ -27,10 +31,7 @@ msgid "image0"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:12
-msgid ""
-"|image1| `查看源文件 "
-"<https://github.com/MegEngine/Documentation/blob/main/source/getting-"
-"started/beginner/megengine-basic-concepts.ipynb>`__"
+msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/megengine-basic-concepts.ipynb>`__"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:17
@@ -42,9 +43,7 @@ msgid "我们为第一次接触 MegEngine 框架的用户提供了此系列教�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:30
-msgid ""
-"对 MegEngine 框架中的 ``Tensor``, ``Operator``, ``GradManager``, ``Optimizer``"
-" 等基本概念有一定的了解；"
+msgid "对 MegEngine 框架中的 ``Tensor``, ``Operator``, ``GradManager``, ``Optimizer`` 等基本概念有一定的了解；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:31
@@ -56,9 +55,7 @@ msgid "通过写代码训练一个线性回归模型，对上面提到的这些�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:34
-msgid ""
-"请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 "
-"<https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
+msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:76
@@ -74,43 +71,27 @@ msgid "真实世界中的很多非结构化的数据，如文字、图片、音�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:92
-msgid ""
-"MegEngine 使用 `张量（Tensor） "
-"<https://megengine.org.cn/doc/stable/zh/reference/megengine.html#tensor>`__\\"
-" 来表示数据。类似于 `NumPy <https://numpy.org/>`__ 中的多维数组（\\ `ndarray "
-"<https://numpy.org/doc/stable/reference/arrays.ndarray.html>`__\\ "
-"），张量可以是标量、向量、矩阵或者多维数组（取决于有几个维度）。"
+msgid "MegEngine 使用 `张量（Tensor） <https://megengine.org.cn/doc/stable/zh/reference/megengine.html#tensor>`__\\ 来表示数据。类似于 `NumPy <https://numpy.org/>`__ 中的多维数组（\\ `ndarray <https://numpy.org/doc/stable/reference/arrays.ndarray.html>`__\\ ），张量可以是标量、向量、矩阵或者多维数组（取决于有几个维度）。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:94
-msgid ""
-"0 维 Tensor 代表着标量，即一个最朴素的表示数值的元素，没有形状，我们可以用来抽象表示物体的类别，比如 1 表示狗，2 "
-"表示猫，也可以表示分数、概率等概念；"
+msgid "0 维 Tensor 代表着标量，即一个最朴素的表示数值的元素，没有形状，我们可以用来抽象表示物体的类别，比如 1 表示狗，2 表示猫，也可以表示分数、概率等概念；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:95
-msgid ""
-"1 维 Tensor 代表着向量，如 :math:`[1 \\ 2 \\ 3 \\ \\ldots n]` 就是一个含有 n "
-"个元素的向量，形状表示为 :math:`(n,)`, 注意此处的向量没有行、列等方向的概念；"
+msgid "1 维 Tensor 代表着向量，如 :math:`[1 \\ 2 \\ 3 \\ \\ldots n]` 就是一个含有 n 个元素的向量，形状表示为 :math:`(n,)`, 注意此处的向量没有行、列等方向的概念；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:96
-msgid ""
-"2 维 Tensor 代表着矩阵，比如我们经常看到的表格中会分为行（row）和列（column）两个维度，对应地其形状为 :math:`(R, "
-"C)`;"
+msgid "2 维 Tensor 代表着矩阵，比如我们经常看到的表格中会分为行（row）和列（column）两个维度，对应地其形状为 :math:`(R, C)`;"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:97
-msgid ""
-"3 维 Tensor 可以表示的常见数据有 RGB "
-"图片，每张图片是由红、绿、蓝三个颜色通道组成的，每个颜色通道的高度（Height）和宽度（Weight）是一致的，即 :math:`(H, W, "
-"C), C=3`;"
+msgid "3 维 Tensor 可以表示的常见数据有 RGB 图片，每张图片是由红、绿、蓝三个颜色通道组成的，每个颜色通道的高度（Height）和宽度（Weight）是一致的，即 :math:`(H, W, C), C=3`;"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:99
-msgid ""
-"注意：不要把这些概念和物理学中的 Tensor 定义搞混，物理学中超过 2 维时才被称为 Tensor, 而教程中出现的 Tensor 指代 "
-"MegEngine 中提供的一种数据结构。"
+msgid "注意：不要把这些概念和物理学中的 Tensor 定义搞混，物理学中超过 2 维时才被称为 Tensor, 而教程中出现的 Tensor 指代 MegEngine 中提供的一种数据结构。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:101
@@ -118,22 +99,15 @@ msgid "如果你对这些抽象表示现实数据的方法感到陌生，不用�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:103
-msgid ""
-"在 MegEngine 的 Python 接口中，实现了 `Tensor 类 "
-"<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.html>`__"
-" 作为最基础的数据结构。"
+msgid "在 MegEngine 的 Python 接口中，实现了 `Tensor 类 <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.html>`__ 作为最基础的数据结构。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:105
-msgid ""
-"我们可以通过将 Python ``List`` 或者 NumPy ``ndarray`` 作为 ``Tensor`` 类初始化时的 "
-"``data`` 参数传入，来创建一个 Tensor 对象；"
+msgid "我们可以通过将 Python ``List`` 或者 NumPy ``ndarray`` 作为 ``Tensor`` 类初始化时的 ``data`` 参数传入，来创建一个 Tensor 对象；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:106
-msgid ""
-"也可以通过 ``megengine.functional`` 中提供的 ``arange()``, ``ones()`` 等方法来生成 "
-"Tensor，\\ ``functional`` 子包我们会在后面介绍；"
+msgid "也可以通过 ``megengine.functional`` 中提供的 ``arange()``, ``ones()`` 等方法来生成 Tensor，\\ ``functional`` 子包我们会在后面介绍；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:164
@@ -165,32 +139,19 @@ msgid "我们可以发现，在打印一个 Tensor 时，除了输出元素的�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:266
-msgid ""
-"通过 ``device`` 属性，我们可以获取 Tensor 当前所在的 `设备 "
-"<https://megengine.org.cn/doc/stable/zh/reference/megengine.html#device>`__\\"
-" ："
+msgid "通过 ``device`` 属性，我们可以获取 Tensor 当前所在的 `设备 <https://megengine.org.cn/doc/stable/zh/reference/megengine.html#device>`__\\ ："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:268
-msgid ""
-"一般地，如果在创建 Tensor 时不指定 ``device``\\ ，其 ``device`` 属性默认为 ``xpux``\\ "
-"，表示当前任意一个可用设备；"
+msgid "一般地，如果在创建 Tensor 时不指定 ``device``\\ ，其 ``device`` 属性默认为 ``xpux``\\ ，表示当前任意一个可用设备；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:269
-msgid ""
-"如果需要查询 Tensor 所在设备，可以使用 `Tensor.device "
-"<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.device.html>`__"
-" ;"
+msgid "如果需要查询 Tensor 所在设备，可以使用 `Tensor.device <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.device.html>`__ ;"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:270
-msgid ""
-"如果需要改变 Tensor 所在设备，可以使用 `Tensor.to "
-"<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.to.html>`__"
-" 或 `functional.copy "
-"<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.functional.copy.html>`__"
-" ."
+msgid "如果需要改变 Tensor 所在设备，可以使用 `Tensor.to <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.to.html>`__ 或 `functional.copy <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.functional.copy.html>`__ ."
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:272
@@ -198,10 +159,7 @@ msgid "注意：在 GPU 和 CPU 同时存在时，\\ **MegEngine 将自动使用
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:283
-msgid ""
-"通过 ``dtype`` 属性我们可以获取 Tensor 的 `数据类型 "
-"<https://megengine.org.cn/doc/stable/zh/reference/megengine.html#tensor-"
-"dtype>`__\\ ，默认使用 ``float32`` 类型："
+msgid "通过 ``dtype`` 属性我们可以获取 Tensor 的 `数据类型 <https://megengine.org.cn/doc/stable/zh/reference/megengine.html#tensor-dtype>`__\\ ，默认使用 ``float32`` 类型："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:285
@@ -225,10 +183,7 @@ msgid "通过 ``size`` 属性，我们可以获取 Tensor 中元素的个数："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:416
-msgid ""
-"更多的对 Tensor 属性的介绍会随着我们对 MegEngine 的使用程度加深渐渐地浮出水面，你也可以通过 `Tensor API "
-"<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.html>`__"
-" 进行完整的查询。"
+msgid "更多的对 Tensor 属性的介绍会随着我们对 MegEngine 的使用程度加深渐渐地浮出水面，你也可以通过 `Tensor API <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.html>`__ 进行完整的查询。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:428
@@ -272,16 +227,11 @@ msgid "这种灵活性有利于我们使用 Python 内置数据结构或 Scipy, 
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:699
-msgid ""
-"同样地，你也可以通过 `Tensor API "
-"<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.html>`__"
-" 查询更多的 Tensor 内置的方法；"
+msgid "同样地，你也可以通过 `Tensor API <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.html>`__ 查询更多的 Tensor 内置的方法；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:700
-msgid ""
-"但是实际上，在 MegEngine 中，绝大部分对于 Tensor 的操作都是通过 ``funtional`` "
-"子包中的算子进行的，这即是我们接下来需要了解的内容。"
+msgid "但是实际上，在 MegEngine 中，绝大部分对于 Tensor 的操作都是通过 ``funtional`` 子包中的算子进行的，这即是我们接下来需要了解的内容。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:712
@@ -289,9 +239,7 @@ msgid "算子（Operator）"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:714
-msgid ""
-"MegEngine 中通过算子 (Operator） 来表示基于 Tensor 的运算，这意味着我们需要保证输入数据为 Tensor "
-"格式，计算得到的输出也会是 Tensor 格式。"
+msgid "MegEngine 中通过算子 (Operator） 来表示基于 Tensor 的运算，这意味着我们需要保证输入数据为 Tensor 格式，计算得到的输出也会是 Tensor 格式。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:716
@@ -303,15 +251,11 @@ msgid "你也可以通过调用 ``functional`` 子包中的对应方法来实现
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:837
-msgid ""
-"我们前面提到了 Tensor 对象可以通过自身的 ``reshape()`` 方法返回改变形状后的 Tensor, 在 "
-"``functional`` 子包中也提供了对应的实现："
+msgid "我们前面提到了 Tensor 对象可以通过自身的 ``reshape()`` 方法返回改变形状后的 Tensor, 在 ``functional`` 子包中也提供了对应的实现："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:887
-msgid ""
-"除此之外，在 ``functional`` 子包中提供了更多的算子（但不保证提供了对应的 Tensor 方法），比如 Tensor "
-"的矩阵乘可以使用 ``matmul()`` 方法："
+msgid "除此之外，在 ``functional`` 子包中提供了更多的算子（但不保证提供了对应的 Tensor 方法），比如 Tensor 的矩阵乘可以使用 ``matmul()`` 方法："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:936
@@ -319,10 +263,7 @@ msgid "我们可以使用 NumPy 的矩阵乘来验证一下这个结果："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:987
-msgid ""
-"更多算子可以参考 ``functional`` 子包的 `文档 "
-"<https://megengine.org.cn/doc/stable/zh/reference/functional.html>`__ "
-"，你可以尝试自己玩一下各种算子，看看输入输出是什么。"
+msgid "更多算子可以参考 ``functional`` 子包的 `文档 <https://megengine.org.cn/doc/stable/zh/reference/functional.html>`__ ，你可以尝试自己玩一下各种算子，看看输入输出是什么。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:989
@@ -354,15 +295,11 @@ msgid "计算之间的各种流程依赖关系可以构成一张计算图，从�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1020
-msgid ""
-"数据节点（图中的实心圈）：如输入数据 :math:`x`\\ 、\\ **参数** :math:`w` 和 :math:`b`\\ "
-"，运算得到的中间数据 :math:`p`\\ ，以及最终的输出 :math:`y`\\ ；"
+msgid "数据节点（图中的实心圈）：如输入数据 :math:`x`\\ 、\\ **参数** :math:`w` 和 :math:`b`\\ ，运算得到的中间数据 :math:`p`\\ ，以及最终的输出 :math:`y`\\ ；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1021
-msgid ""
-"计算节点（图中的空心圈）：图中 :math:`*` 和 :math:`+` 分别表示计算节点 **乘法** 和 **加法**\\ "
-"，是施加在数据节点上的运算；"
+msgid "计算节点（图中的空心圈）：图中 :math:`*` 和 :math:`+` 分别表示计算节点 **乘法** 和 **加法**\\ ，是施加在数据节点上的运算；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1022
@@ -398,16 +335,11 @@ msgid "接着 :math:`p` 和参数 :math:`b` 经过加法运算，得到右侧最
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1047
-msgid ""
-"**反向传播**\\ ：根据需要优化的目标（假设这里就为 :math:`y`\\ ），通过链式求导法则，对所有的参数求梯度。在上图中，即计算 "
-":math:`\\frac{\\partial y}{\\partial w}` 和 :math:`\\frac{\\partial "
-"y}{\\partial b}`."
+msgid "**反向传播**\\ ：根据需要优化的目标（假设这里就为 :math:`y`\\ ），通过链式求导法则，对所有的参数求梯度。在上图中，即计算 :math:`\\frac{\\partial y}{\\partial w}` 和 :math:`\\frac{\\partial y}{\\partial b}`."
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1048
-msgid ""
-"**参数更新**\\ ：得到梯度后，需要使用梯度下降法（Gradient Descent）对参数做更新，从而达到模型优化的效果。在上图中，即对 "
-":math:`w` 和 :math:`b` 做更新。"
+msgid "**参数更新**\\ ：得到梯度后，需要使用梯度下降法（Gradient Descent）对参数做更新，从而达到模型优化的效果。在上图中，即对 :math:`w` 和 :math:`b` 做更新。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1050
@@ -439,15 +371,11 @@ msgid "首先 :math:`y = p + b`\\ ，因此 :math:`\\frac{\\partial y}{\\partial
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1062
-msgid ""
-"接着，反向追溯，\\ :math:`p = w * x` ，因此，\\ :math:`\\frac{\\partial p}{\\partial "
-"w}=x`"
+msgid "接着，反向追溯，\\ :math:`p = w * x` ，因此，\\ :math:`\\frac{\\partial p}{\\partial w}=x`"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1063
-msgid ""
-"根据链式求导法则，\\ :math:`\\frac{\\partial y}{\\partial w}=\\frac{\\partial "
-"y}{\\partial p} \\cdot \\frac{\\partial p}{\\partial w} = 1 \\cdot x`"
+msgid "根据链式求导法则，\\ :math:`\\frac{\\partial y}{\\partial w}=\\frac{\\partial y}{\\partial p} \\cdot \\frac{\\partial p}{\\partial w} = 1 \\cdot x`"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1064
@@ -475,9 +403,7 @@ msgid "为了解决这问题，深度学习框架实现了对用户而言最有�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1087
-msgid ""
-"这个时候你会发现我们要用到 Tensor 的另一个属性 ``grad``, 即梯度（Gradient）的缩写，这个属性正是由 "
-"``GradManager`` 进行管理的。"
+msgid "这个时候你会发现我们要用到 Tensor 的另一个属性 ``grad``, 即梯度（Gradient）的缩写，这个属性正是由 ``GradManager`` 进行管理的。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1089
@@ -501,10 +427,7 @@ msgid "对应地，Tensor 对象中也提供了 ``Tensor.detach()`` 方法来解
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1149
-msgid ""
-"上面 ``with`` 代码段内的前向运算都会被记录，可以查看 ``autodiff`` 子包 `文档 "
-"<https://megengine.org.cn/doc/stable/zh/reference/autodiff.html>`__ "
-"了解相关原理。"
+msgid "上面 ``with`` 代码段内的前向运算都会被记录，可以查看 ``autodiff`` 子包 `文档 <https://megengine.org.cn/doc/stable/zh/reference/autodiff.html>`__ 了解相关原理。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1161
@@ -512,9 +435,7 @@ msgid "参数（Parameter）"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1163
-msgid ""
-"你可能注意到了这样一个细节：我们在前面的介绍中，使用 **参数（Parameter）** 来称呼张量（Tensor）\\ :math:`w` 和 "
-":math:`b`."
+msgid "你可能注意到了这样一个细节：我们在前面的介绍中，使用 **参数（Parameter）** 来称呼张量（Tensor）\\ :math:`w` 和 :math:`b`."
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1165
@@ -530,9 +451,7 @@ msgid "Parameter 实际上是一种特殊的 Tensor, 故显然，\\ ``GradManage
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1227
-msgid ""
-"前向传播和反向传播的过程完成后，我们得到了参数对应需要更新的梯度，如 ``w`` 相对于输出 :math:`y` 的梯度 ``w.grad``. "
-"如何用梯度来进行优化呢？"
+msgid "前向传播和反向传播的过程完成后，我们得到了参数对应需要更新的梯度，如 ``w`` 相对于输出 :math:`y` 的梯度 ``w.grad``. 如何用梯度来进行优化呢？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1229
@@ -540,15 +459,11 @@ msgid "这个时候，我们用一个例子简单回顾一下梯度下降的概�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1231
-msgid ""
-"采取梯度下降的策略，则要求我们每次都环顾四周， **看哪个方向是最陡峭的，** "
-"然后向下迈出一步，这样的话每次迈步下降的高度都是最低的，我们认为这样能更快地下山。"
+msgid "采取梯度下降的策略，则要求我们每次都环顾四周， **看哪个方向是最陡峭的，** 然后向下迈出一步，这样的话每次迈步下降的高度都是最低的，我们认为这样能更快地下山。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1233
-msgid ""
-"根据梯度下降的思想，参数 :math:`w` 的更新规则为：\\ ``w = w - lr * w.grad``, 其中 ``lr`` "
-"是学习率（Learning Rate），控制参数更新的幅度；"
+msgid "根据梯度下降的思想，参数 :math:`w` 的更新规则为：\\ ``w = w - lr * w.grad``, 其中 ``lr`` 是学习率（Learning Rate），控制参数更新的幅度；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1234
@@ -580,15 +495,11 @@ msgid "优化器（Optimizer）"
 msgstr "优化器（Optimizer）"
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1299
-msgid ""
-"MegEngine 的 ``optimizer`` 子包提供了基于各种常见优化策略的优化器，如 SGD 和 Adam 等，其中 SGD "
-"对应随机梯度下降算法。"
+msgid "MegEngine 的 ``optimizer`` 子包提供了基于各种常见优化策略的优化器，如 SGD 和 Adam 等，其中 SGD 对应随机梯度下降算法。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1301
-msgid ""
-"它们都继承自 ``Optimizer`` 基类，主要包含参数更新 ``step()`` 和参数梯度的清空 ``clear_grad()`` "
-"这两个方法："
+msgid "它们都继承自 ``Optimizer`` 基类，主要包含参数更新 ``step()`` 和参数梯度的清空 ``clear_grad()`` 这两个方法："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1357
@@ -596,9 +507,7 @@ msgid "我们得到的结果应当和上面 NumPy 模拟得到的结果一致。
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1359
-msgid ""
-"多次实践表明，用户经常忘记在更新参数后做梯度清空操作，因此推荐使用这样的写法：\\ "
-"``optimizer.step().clear_grad()``;"
+msgid "多次实践表明，用户经常忘记在更新参数后做梯度清空操作，因此推荐使用这样的写法：\\ ``optimizer.step().clear_grad()``;"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1360
@@ -622,15 +531,11 @@ msgid "但请注意，上面用于举例的表达式的输出值 :math:`y` 其�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1379
-msgid ""
-"实际情境可能是，你得到了一堆 :math:`(x, y)` 二维数据点，并被告知它们之间的映射关系满足形如 :math:`y = w^{*} "
-"\\cdot x + b^{*}` 的关系；"
+msgid "实际情境可能是，你得到了一堆 :math:`(x, y)` 二维数据点，并被告知它们之间的映射关系满足形如 :math:`y = w^{*} \\cdot x + b^{*}` 的关系；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1380
-msgid ""
-"因此我们设计出了一个线性模型 :math:`f: x \\mapsto y`\\ ，希望利用梯度下降法去不断更新模型里面的参数 :math:`w`"
-" 和 :math:`b`;"
+msgid "因此我们设计出了一个线性模型 :math:`f: x \\mapsto y`\\ ，希望利用梯度下降法去不断更新模型里面的参数 :math:`w` 和 :math:`b`;"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1381
@@ -638,9 +543,7 @@ msgid "这个过程中参数一直在变，相同的输入与不同的参数组�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1382
-msgid ""
-"由于我们实际上并不知道 :math:`w^{*}` 和 :math:`b^{*}` "
-"的值是多少，无法直接比较参数，要怎么判断当前的参数组合是比较好的呢？"
+msgid "由于我们实际上并不知道 :math:`w^{*}` 和 :math:`b^{*}` 的值是多少，无法直接比较参数，要怎么判断当前的参数组合是比较好的呢？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1384
@@ -652,53 +555,35 @@ msgid "我们可以用 **损失函数（Loss Function）** 来度量模型输出
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1388
-msgid ""
-"MegEngine 的 ``functional.loss`` 子包提供了各种常见的损失函数，具体可见 `Loss Funtions "
-"<https://megengine.org.cn/doc/stable/zh/reference/functional.html#loss-"
-"functions>`__ API."
+msgid "MegEngine 的 ``functional.loss`` 子包提供了各种常见的损失函数，具体可见 `Loss Funtions <https://megengine.org.cn/doc/stable/zh/reference/functional.html#loss-functions>`__ API."
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1390
-msgid ""
-"对于 :math:`w * x + b` 这样的范围在实数域 :math:`\\mathbb R` 上的输出，我们可以使用均方误差（Mean "
-"Squared Error, MSE）表示模型输出 :math:`y_{pred}` 和实际值 :math:`y_{real}` 的差距："
+msgid "对于 :math:`w * x + b` 这样的范围在实数域 :math:`\\mathbb R` 上的输出，我们可以使用均方误差（Mean Squared Error, MSE）表示模型输出 :math:`y_{pred}` 和实际值 :math:`y_{real}` 的差距："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1392
-msgid ""
-"\\ell(y_{pred}, y_{real})= \\frac{1}{n "
-"}\\sum_{i=1}^{n}\\left(\\hat{y}_{i}-{y}_{i}\\right)^{2}"
+msgid "\\ell(y_{pred}, y_{real})= \\frac{1}{n }\\sum_{i=1}^{n}\\left(\\hat{y}_{i}-{y}_{i}\\right)^{2}"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1397
-msgid ""
-"注：在上面的公式中 :math:`\\left(\\hat{y}_{i}-{y}_{i}\\right)^{2}` 计算的是单个样本 "
-":math:`x_{i}` 输入模型后得到的输出 :math:`\\hat{y}_{i}` 和实际标签值 :math:`{y}_{i}` "
-"的差异，数据集中有 :math:`n` 个样本。"
+msgid "注：在上面的公式中 :math:`\\left(\\hat{y}_{i}-{y}_{i}\\right)^{2}` 计算的是单个样本 :math:`x_{i}` 输入模型后得到的输出 :math:`\\hat{y}_{i}` 和实际标签值 :math:`{y}_{i}` 的差异，数据集中有 :math:`n` 个样本。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1399
-msgid ""
-"损失的计算只发生在预测值输出后，与模型内部计算无关，因此我们可以假设现在已经通过某个模型得到了预测结果 ``pred``, 计算它与真实结果 "
-"``real`` 之间的差异；"
+msgid "损失的计算只发生在预测值输出后，与模型内部计算无关，因此我们可以假设现在已经通过某个模型得到了预测结果 ``pred``, 计算它与真实结果 ``real`` 之间的差异；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1450
-msgid ""
-"我们利用梯度下降算法去优化 ``loss`` 的值，使之尽可能的小，这就意味着我们的 ``pred`` 和 ``real`` "
-"值会更加接近，代表着预测效果越好。"
+msgid "我们利用梯度下降算法去优化 ``loss`` 的值，使之尽可能的小，这就意味着我们的 ``pred`` 和 ``real`` 值会更加接近，代表着预测效果越好。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1452
-msgid ""
-"这样我们便可在训练的过程中通过不断地更新参数 :math:`w` 和 :math:`b`, 并认为它们在向理想的 :math:`w^{*}` 和 "
-":math:`b^{*}` 不断地接近，从而达到模型优化的效果："
+msgid "这样我们便可在训练的过程中通过不断地更新参数 :math:`w` 和 :math:`b`, 并认为它们在向理想的 :math:`w^{*}` 和 :math:`b^{*}` 不断地接近，从而达到模型优化的效果："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1454
-msgid ""
-"w^{*}, b^{*}=\\underset{w, b}{\\operatorname{argmin}} \\ell\\left(w, "
-"b\\right) ."
+msgid "w^{*}, b^{*}=\\underset{w, b}{\\operatorname{argmin}} \\ell\\left(w, b\\right) ."
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1459
@@ -726,14 +611,11 @@ msgid "接下来，我们用一个非常简单的例子，帮助你将前面提�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1479
-msgid ""
-"假设有人提供给你一些包含数据 ``data`` 和标签 ``label`` 的样本集合 :math:`S` 用于训练模型 :math:`f: x "
-"\\mapsto y` ，希望将来给出输入 :math:`x`, 模型 :math:`f` 能对输出 :math:`y` 进行较好地预测："
+msgid "假设有人提供给你一些包含数据 ``data`` 和标签 ``label`` 的样本集合 :math:`S` 用于训练模型 :math:`f: x \\mapsto y` ，希望将来给出输入 :math:`x`, 模型 :math:`f` 能对输出 :math:`y` 进行较好地预测："
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1481
-msgid ""
-"\\begin{aligned}\n"
+msgid "\\begin{aligned}\n"
 "\\text{data} &= [x_1, x_2, \\ldots , x_n] \\\\\n"
 "\\text{label} &= [y_1, y_2, \\ldots , y_n] \\\\\n"
 "S &= \\{(x_1, y_1), (x_2, y_2), \\ldots (x_n, y_n)\\}\n"
@@ -813,9 +695,7 @@ msgid "前向传播：输入的数据在计算图中经过计算得到预测值�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1932
-msgid ""
-"反向传播：根据链式法则，得到计算图中所有参数关于 loss 的梯度，实现在 ``autodiff`` 子包，由 ``GradManager`` "
-"进行管理"
+msgid "反向传播：根据链式法则，得到计算图中所有参数关于 loss 的梯度，实现在 ``autodiff`` 子包，由 ``GradManager`` 进行管理"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1933
@@ -859,9 +739,7 @@ msgid "当你发现 Python 代码运行较慢时，通常可以将数据处理�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1958
-msgid ""
-"线性模型训练的 NumPy 写法中，单个 ``epoch`` 训练内出现了 ``for`` "
-"循环，实际上可以采取向量化的实现，我们在下个教程中会进行演示"
+msgid "线性模型训练的 NumPy 写法中，单个 ``epoch`` 训练内出现了 ``for`` 循环，实际上可以采取向量化的实现，我们在下个教程中会进行演示"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1959
@@ -877,9 +755,7 @@ msgid "为什么一个 Tensor 需要具有 ``device`` 属性？都说 GPU 训练
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1964
-msgid ""
-"我们可以把 Tensor 指定计算设备为 GPU 或 CPU，而原生 NumPy 只支持 CPU 计算，\\ ``Tensor.numpy()``"
-" 的过程是什么样的？"
+msgid "我们可以把 Tensor 指定计算设备为 GPU 或 CPU，而原生 NumPy 只支持 CPU 计算，\\ ``Tensor.numpy()`` 的过程是什么样的？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1965
@@ -895,9 +771,7 @@ msgid "现在我们接触到了两个超参数 ``epochs`` 和 ``lr``, 调整它�
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1970
-msgid ""
-"更新参数所用的梯度 ``grad_w``\\ ，是所有样本的梯度之和 ``sum_grad_w`` "
-"求均值，为什么不在每个样本反向传播后立即更新参数 ``w``\\ ？"
+msgid "更新参数所用的梯度 ``grad_w``\\ ，是所有样本的梯度之和 ``sum_grad_w`` 求均值，为什么不在每个样本反向传播后立即更新参数 ``w``\\ ？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:1971
@@ -990,10 +864,7 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basic-concepts.ipynb:2004
 #, python-format
-msgid ""
-"如果对教程内容有任何的建议和意见，欢迎在 MegEngine 论坛的 `官方教程 "
-"<https://discuss.megengine.org.cn/tag/%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B>`__"
-" 主题下发帖或留言～"
+msgid "如果对教程内容有任何的建议和意见，欢迎在 MegEngine 论坛的 `官方教程 <https://discuss.megengine.org.cn/tag/%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B>`__ 主题下发帖或留言～"
 msgstr ""
 
 #~ msgid "在 MegEngine 中得到一个 Tensor 的方式有很多："
@@ -1044,150 +915,134 @@ msgstr ""
 #~ "concepts.ipynb>`__"
 #~ msgstr ""
 
-#~ msgid "对 MegEngine 框架中的 ``Tensor``, ``Operator``, ``GradManager`` 等基本概念有一定的了解；"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `访问官网安装教程 "
-#~ "<https://megengine.org.cn/install>`__\\ ）："
-#~ msgstr ""
-
 #~ msgid "接下来，我们将学习框架中一些基本模块的使用，先从最基础的张量（Tensor）和算子（Operator）开始吧～"
 #~ msgstr ""
+#~ "Next, we will learn the use of "
+#~ "some basic modules in the framework, "
+#~ "starting with the most basic tensors "
+#~ "(Tensor) and operators (Operator)~"
 
 #~ msgid ""
 #~ "MegEngine 使用张量（Tensor）来表示数据。类似于 `NumPy "
 #~ "<https://numpy.org/>`__ 中的多维数组（ndarray），张量可以是标量、向量、矩阵或者多维数组。 "
 #~ "在 MegEngine 中得到一个 Tensor 的方式有很多："
 #~ msgstr ""
-
-#~ msgid ""
-#~ "我们可以通过 ``megengine.functional.tensor`` 的 "
-#~ "``arange()``, ``ones()`` 等方法来生成 Tensor，\\ "
-#~ "``functional`` 模块我们会在后面介绍；"
-#~ msgstr ""
+#~ "MegEngine uses Tensor to represent data."
+#~ " Similar to the multi-dimensional "
+#~ "array (ndarray) in `NumPy "
+#~ "<https://numpy.org/>`__, the tensor can be "
+#~ "a scalar, vector, matrix or multi-"
+#~ "dimensional array. There are many ways"
+#~ " to get a Tensor in MegEngine："
 
 #~ msgid ""
 #~ "也可以通过 ``Tensor()`` 或 ``tensor()`` 方法，传入 "
 #~ "Python list 或者 ndarray 来创建一个 Tensor"
 #~ msgstr ""
+#~ "You can also use the ``Tensor()'' "
+#~ "or ``tensor()'' method to create a "
+#~ "Tensor by passing in a Python list"
+#~ " or ndarray"
 
 #~ msgid "通过 ``dtype`` 属性我们可以获取 Tensor 的数据类型，默认为 ``float32``\\ ："
 #~ msgstr ""
-
-#~ msgid "为了方便，统一使用 NumPy 的 ``dtype`` 表示；"
-#~ msgstr ""
-
-#~ msgid "使用 ``type()`` 可以获取实际的类型，用来区分 ndarray 和 Tensor"
-#~ msgstr ""
-
-#~ msgid "通过 ``astype()`` 方法我们可以拷贝创建一个指定数据类型的新 Tensor ，原 Tensor 不变："
-#~ msgstr ""
+#~ "Through the ``dtype'' attribute we can"
+#~ " get the data type of Tensor, "
+#~ "the default is ``float32''\\ ："
 
 #~ msgid "MegEngine Tensor 目前不支持转化成 ``float64`` 类型；"
 #~ msgstr ""
+#~ "MegEngine Tensor currently does not "
+#~ "support conversion to ``float64'' type;"
 
 #~ msgid "``float64`` 类型的 ndarray 转化成 Tensor 时会变成 ``float32`` 类型"
 #~ msgstr ""
+#~ "``float64`` type ndarray will become "
+#~ "``float32'' type when converted to "
+#~ "Tensor"
 
 #~ msgid "通过 ``device`` 属性，我们可以获取 Tensor 当前所在的设备："
 #~ msgstr ""
-
-#~ msgid ""
-#~ "一般地，如果在创建 Tensor 时不指定 ``device``\\ ，其 "
-#~ "``device`` 属性默认为 ``xpux``\\ ，表示当前任意一个可用的设备；"
-#~ msgstr ""
-
-#~ msgid "在 GPU 和 CPU 同时存在时，\\ **MegEngine 将自动使用 GPU 作为默认设备进行训练** ."
-#~ msgstr ""
+#~ "Through the ``device`` attribute, we can"
+#~ " get the device where the Tensor "
+#~ "is currently located："
 
 #~ msgid "可以发现，不同类型之间的转化比较灵活，但需要注意："
 #~ msgstr ""
+#~ "It can be found that the "
+#~ "conversion between different types is "
+#~ "more flexible, but you need to pay"
+#~ " attention to："
 
 #~ msgid "MegEngine Tensor 没有 ``mge.numpy(mge_tensor)`` 这种用法；"
-#~ msgstr ""
-
-#~ msgid "``tensor`` 是 ``Tensor`` 的一个别名（Alias），也可以尝试直接这样导入："
-#~ msgstr ""
-
-#~ msgid "通过 ``shape`` 属性，我们可以获取 Tensor 的形状："
-#~ msgstr ""
+#~ msgstr "MegEngine Tensor does not have the usage of ``mge.numpy(mge_tensor)'';"
 
 #~ msgid ""
 #~ "MegEngine 中通过算子 (Operator） 来表示运算。MegEngine "
 #~ "中的算子支持基于 Tensor 的常见数学运算和操作。 比如 Tensor "
 #~ "的元素间（Element-wise）加法、减法和乘法："
 #~ msgstr ""
+#~ "In MegEngine, operations are represented "
+#~ "by operators. The operators in MegEngine"
+#~ " support common mathematical operations and"
+#~ " operations based on Tensor. Tensor "
+#~ "for instance between the elements "
+#~ "(Element-wise) addition, subtraction and "
+#~ "multiplication："
 
 #~ msgid "你也可以使用 MegEngine 中的 ``functional`` 模块中的各种方法来完成对应计算："
 #~ msgstr ""
+#~ "You can also be calculated using "
+#~ "various methods MegEngine in `` "
+#~ "functional`` completed module corresponds to："
 
 #~ msgid "Tensor 支持 Python 中常见的切片（Slicing）操作："
-#~ msgstr ""
-
-#~ msgid "使用 ``reshape()`` 方法，可以得到修改形状后的 Tensor:"
-#~ msgstr ""
-
-#~ msgid "另外， ``reshape()`` 方法的参数允许存在单个维度的缺省值，用 -1 表示。"
-#~ msgstr ""
+#~ msgstr "Tensor support Python common slice (Slicing) operations："
 
 #~ msgid "此时，\\ ``reshape()`` 会自动推理该维度的值："
 #~ msgstr ""
-
-#~ msgid "在 ``functional`` 模块中提供了更多的算子，比如 Tensor 的矩阵乘可以使用 ``matmul()`` 方法："
-#~ msgstr ""
-
-#~ msgid ""
-#~ "更多算子可以参考 ``functional`` 模块的 `文档 "
-#~ "<https://megengine.org.cn/doc/stable/zh/reference/functional.html>`__"
-#~ " 部分。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "MegEngine 是基于计算图（Computing "
-#~ "Graph）的深度神经网络学习框架，下面通过一个简单的数学表达式 :math:`y=(w * x)+b`"
-#~ " 来介绍计算图的基本概念，如下图所示："
-#~ msgstr ""
-
-#~ msgid "我们可以理解成，神经网络模型的训练其实就是在重复以下过程："
-#~ msgstr ""
-
-#~ msgid "**前向传播**\\ ：计算由计算图表示的数学表达式的值的过程。在上图中则是："
-#~ msgstr ""
-
-#~ msgid "模型训练完成后便可用于测试（或者说推理），此时我们不需要再对模型本身做任何更改，只需要将数据经过前向传播得到对应的输出即可。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "根据链式求导法则，\\ :math:`\\frac{\\partial y}{\\partial "
-#~ "w}=\\frac{\\partial y}{\\partial p} * "
-#~ "\\frac{\\partial p}{\\partial w} = 1 *"
-#~ " x`"
-#~ msgstr ""
-
-#~ msgid "求导器（GradManager）"
-#~ msgstr ""
+#~ "At this time, \\ ``reshape()'' will "
+#~ "automatically infer the value of the "
+#~ "dimension："
 
 #~ msgid ""
 #~ "推导梯度是件枯燥的事情，尤其是当模型的前向传播计算输出的过程变得相对复杂时，根据链式法则计算梯度会变得异常枯燥无味。 "
 #~ "自动求导是深度学习框架对使用者而言最有用的特性之一，它自动地完成了反向传播过程中根据链式法则去推导参数梯度的过程。"
 #~ msgstr ""
-
-#~ msgid "MegEngine 的 ``autodiff`` 模块为计算图中的张量提供了自动求导功能，继续以上图的例子进行说明："
-#~ msgstr ""
+#~ "Deriving the gradient is a boring "
+#~ "thing, especially when the process of"
+#~ " calculating the output of the "
+#~ "forward propagation of the model becomes"
+#~ " relatively complicated, calculating the "
+#~ "gradient according to the chain rule "
+#~ "will become very boring. Automatic "
+#~ "derivation is one of the most "
+#~ "useful features of the deep learning "
+#~ "framework for users. It automatically "
+#~ "completes the process of deriving "
+#~ "parameter gradients according to the "
+#~ "chain rule in the back propagation "
+#~ "process."
 
 #~ msgid ""
 #~ "可以看到，求出的梯度本身也是 Tensor，\\ ``GradManager`` "
 #~ "负责管理和计算梯度（在默认情况下，Tensor 是不需要计算梯度的）。"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "我们可以使用 ``attach()`` 来绑定需要计算梯度的变量（绑定后可使用 ``detach()``"
-#~ " 将其取消绑定），使用 ``backward()`` 进行梯度的计算。"
-#~ msgstr ""
+#~ "As you can see, the obtained "
+#~ "gradient itself is also a Tensor, "
+#~ "and \\ ``GradManager`` is responsible "
+#~ "for managing and calculating the "
+#~ "gradient (by default, Tensor does not"
+#~ " need to calculate the gradient)."
 
 #~ msgid "上面 ``with`` 代码段中的前向运算都会被求导器记录，有关求导器的原理，可以查看 ``GradManager`` 文档了解细节。"
 #~ msgstr ""
+#~ "The forward operations in the above "
+#~ "``with`` code segment will be recorded"
+#~ " by the differentiator. For the "
+#~ "principle of the differentiator, please "
+#~ "refer to the ``GradManager`` document "
+#~ "for details."
 
 #~ msgid ""
 #~ "你应该注意到了，我们使用参数（Parameter）来称呼张量（Tensor）\\ :math:`w` 和 "
@@ -1196,132 +1051,52 @@ msgstr ""
 #~ "``Parameter`` 来表示参数（注意没有小写形式），Parameter 是 Tensor "
 #~ "的子类，其对象（即网络参数）可以被优化器更新。"
 #~ msgstr ""
-
-#~ msgid "显然，GradManager 支持对于 Parameter 的梯度计算："
-#~ msgstr ""
-
-#~ msgid ""
-#~ "前向传播和反向传播的过程完成后，我们得到了参数对应需要更新的梯度，如 ``w`` 相对于输出 "
-#~ ":math:`y` 的梯度 ``w.grad``."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "根据梯度下降的思想，参数 :math:`w` 的更新规则为：\\ ``w = w"
-#~ " - lr * w.grad``, 其中 ``lr`` "
-#~ "是学习率（Learning Rate），控制参数更新速度。"
-#~ msgstr ""
-
-#~ msgid "P.S: 类似学习率这种，训练前人为进行设定的，而非由模型学得的参数，通常被称为超参数（Hyperparameter）。"
-#~ msgstr ""
-
-#~ msgid "MegEngine 的 ``Optimizer`` 模块提供了基于各种常见优化策略的优化器，如 Adam 和 SGD 等。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "它们都继承自 Optimizer 基类，主要包含参数梯度的清空 ``clear_grad()`` "
-#~ "和参数更新 ``step()`` 这两个方法："
-#~ msgstr ""
-
-#~ msgid ""
-#~ "**提示：**\\ 多次实践表明，用户经常忘记在更新参数后做梯度清空操作，因此推荐使用这样的写法：\\ "
-#~ "``optimizer.step().clear_grad()``"
-#~ msgstr ""
+#~ "You should have noticed that we "
+#~ "use Parameter to call Tensor \\ "
+#~ ":math:`w` and :math:`b`, because it is"
+#~ " :math: :math:`w` and :math:`b in the"
+#~ " figure are calculated `Is the "
+#~ "variable that needs to be "
+#~ "updated/optimized. MegEngine uses ``Parameter'' "
+#~ "to represent parameters (note that there"
+#~ " is no lowercase form). Parameter is"
+#~ " a subclass of Tensor, and its "
+#~ "object (ie, network parameters) can be"
+#~ " updated by the optimizer."
 
 #~ msgid ""
 #~ "这样我们便成功地进行了一次参数更新，在实际训练模型时，参数的更新会迭代进行很多次，迭代次数 ``epochs`` "
 #~ "也是一种超参数，需要人为设定。"
 #~ msgstr ""
+#~ "In this way, we successfully performed"
+#~ " a parameter update. In the actual"
+#~ " training of the model, the parameter"
+#~ " update will be iterated many times."
+#~ " The number of iterations ``epochs'' "
+#~ "is also a kind of hyperparameter, "
+#~ "which needs to be set manually."
 
 #~ msgid "深度神经网络模型的优化过程，实际上就是使用梯度下降算法来优化一个目标函数，从而更新网络模型中的参数。"
 #~ msgstr ""
+#~ "The optimization process of the deep "
+#~ "neural network model is actually to "
+#~ "use the gradient descent algorithm to"
+#~ " optimize an objective function, thereby"
+#~ " updating the parameters in the "
+#~ "network model."
 
 #~ msgid "但请注意，上面用于举例的表达式的输出值其实并不是需要被优化的对象，我们的目标是：模型预测的输出结果和真实标签尽可能一致。"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "我们已经知道了，通过前向传播可以得到模型预测的输出，此时我们用 **损失函数（Loss Function）**"
-#~ " 来度量模型输出与真实结果之间的差距。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "MegEngine 的 ``functional`` 模块提供了各种常见的损失函数，具体可见 "
-#~ "`文档 "
-#~ "<https://megengine.org.cn/doc/stable/zh/reference/functional.html#loss>`__"
-#~ " 中的 ``loss`` 部分。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "选定损失函数作为优化目标后，我们便可在训练的过程中通过梯度下降不断地更新参数 :math:`w` 和 "
-#~ ":math:`b`, 从而达到模型优化的效果："
-#~ msgstr ""
-
-#~ msgid ""
-#~ "假设有人提供给你一些包含数据 ``data`` 和标签 ``label`` 的样本集合"
-#~ " :math:`S` 用于训练模型，希望将来给出输入 :math:`x`, 模型能对输出 "
-#~ ":math:`y` 进行较好地预测："
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\\begin{aligned}\n"
-#~ "data &= [x_1, x_2, \\ldots , x_n] \\\\\n"
-#~ "label &= [y_1, y_2, \\ldots , y_n] \\\\\n"
-#~ "S &= \\{(x_1, y_1), (x_2, y_2), \\ldots (x_n, y_n)\\}\n"
-#~ "\\end{aligned}"
-#~ msgstr ""
-
-#~ msgid "请运行下面的代码以随机生成包含 ``data`` 和 ``label`` 的样本:"
-#~ msgstr ""
-
-#~ msgid "尝试拟合 :math:`y = w * x + b` 这样一个线性模型（均为标量）；"
-#~ msgstr ""
-
-#~ msgid "可以看到，在 5 个 ``epoch`` 的迭代训练中，已经得到了一个拟合状况不错的线性模型。"
-#~ msgstr ""
-
-#~ msgid "上面的流程，完全可以使用 MegEngine 来实现（有兴趣的读者可以参照上面的注释，先尝试自己实现）："
-#~ msgstr ""
-
-#~ msgid ""
-#~ "反向传播：根据链式法则，得到计算图中所有参数 w 关于 loss 的梯度 dw"
-#~ " ，实现在 ``autodiff`` 模块，由 ``GradManager`` "
-#~ "进行管理"
-#~ msgstr ""
-
-#~ msgid "参数更新：根据梯度下降算法，更新图中参数，从而达到优化最终 loss 的效果，实现在 ``optimzer`` 模块"
-#~ msgstr ""
-
-#~ msgid "算子（Operator）：基于 Tensor 的各种计算的实现（包括损失函数），实现在 ``functional`` 模块"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "线性模型训练的 NumPy 写法中，单个 ``epoch`` 训练内出现了 "
-#~ "``for`` 循环，实际上可以采取向量化的实现（参考 MegEngine 实现的写法）"
-#~ msgstr ""
+#~ "But please note that the output "
+#~ "value of the expression used in "
+#~ "the example above is not actually "
+#~ "the object that needs to be "
+#~ "optimized. Our goal is：model with the"
+#~ " real label as much as possible."
 
 #~ msgid "都说 GPU 训练神经网络模型速度会比 CPU 训练快非常多，为什么？"
 #~ msgstr ""
-
-#~ msgid ""
-#~ "我们可以把 Tensor 指定计算设备为 GPU 或 CPU，而原生 "
-#~ "NumPy 只支持 CPU 计算，Tensor 转化为 ndarray "
-#~ "的过程是什么样的？"
-#~ msgstr ""
-
-#~ msgid "我们看上去得到了一条拟合得很不错的曲线，但是得到的 ``b`` 距离真实的 ``b`` 还比较遥远，为什么？如何解决这种情况？"
-#~ msgstr ""
-
-#~ msgid "如何选取合适的超参数，对于超参数的选取是否有一定的规律或者经验可寻？"
-#~ msgstr ""
-
-#~ msgid "对于现实中的数据集，如何转换成 MegEngine Tensor 的形式进行使用？"
-#~ msgstr ""
-
-#~ msgid "我们学会了定义了非常简单的线性模型 ``linear_model``, 更复杂的模型要如何去写？"
-#~ msgstr ""
-
-#~ msgid "在导入某些包的时候，通常有约定俗成的缩写如 ``import megengine as mge``"
-#~ msgstr ""
-
-#~ msgid "除此以外，还有什么样的编程习惯和最佳实践值得参考？如何将一份玩具代码整理变成工程化的代码？"
-#~ msgstr ""
+#~ "It is said that GPU training "
+#~ "neural network model speed is much "
+#~ "faster than CPU training. Why?"
 
