@@ -70,7 +70,7 @@ MegEngine 通过引入 `Dynamic Tensor Rematerialization <https://arxiv.org/pdf/
 设置方法请参考 :py:mod:`~.dtr`
 
 显存阈值的设置技巧
-~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 ``eviction_threshold`` 表示开始释放 tensor 的显存阈值。当被使用的显存大小超过该阈值时，动态图显存优化会生效，
 根据 DTR 的策略找出最优的 tensor 并释放其显存，直到活跃的显存大小不超过该阈值。因此实际运行时的活跃显存峰值比该阈值高一些属于正常现象。
