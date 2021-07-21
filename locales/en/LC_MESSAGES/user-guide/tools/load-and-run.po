@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-06-03 10:21\n"
+"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"PO-Revision-Date: 2021-06-03 10:21+0000\n"
 "Last-Translator: \n"
+"Language: en_US\n"
 "Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/load-and-run.po\n"
-"X-Crowdin-File-ID: 2870\n"
-"Language: en_US\n"
 
 #: ../../source/user-guide/tools/load-and-run.rst:5
 msgid "如何使用 Load and Run（C++）"
@@ -24,23 +20,34 @@ msgstr "How to use Load and Run (C++)"
 
 #: ../../source/user-guide/tools/load-and-run.rst:7
 msgid "Load and Run （简称 LAR）是 MegEngine 中的加载并运行模型的工具，具有以下功能："
-msgstr "Load and Run (LAR for short) is a tool for loading and running models in MegEngine. It has the following functions："
+msgstr ""
+"Load and Run (LAR for short) is a tool for loading and running models in "
+"MegEngine. It has the following functions："
 
 #: ../../source/user-guide/tools/load-and-run.rst:9
 msgid "编译出对应各个平台的二进制文件，可对比相同模型的速度；"
-msgstr "Compile binary files corresponding to each platform, and compare the speed of the same model;"
+msgstr ""
+"Compile binary files corresponding to each platform, and compare the "
+"speed of the same model;"
 
 #: ../../source/user-guide/tools/load-and-run.rst:10
 msgid "测试验证不同模型优化方法的效果（直接执行 ``./load_and_run`` 显示相应帮助文档）；"
-msgstr "Test and verify the effects of different model optimization methods (directly execute ``./load_and_run`` to display the corresponding help files);"
+msgstr ""
+"Test and verify the effects of different model optimization methods "
+"(directly execute ``./load_and_run`` to display the corresponding help "
+"files);"
 
 #: ../../source/user-guide/tools/load-and-run.rst:14
 msgid "目前发布的版本我们开放了对 CPU（x86, x64, ARM, ARMv8.2）和 GPU（CUDA）平台的支持。"
-msgstr "In the currently released version, we have opened support for CPU (x86, x64, ARM, ARMv8.2) and GPU (CUDA) platforms."
+msgstr ""
+"In the currently released version, we have opened support for CPU (x86, "
+"x64, ARM, ARMv8.2) and GPU (CUDA) platforms."
 
 #: ../../source/user-guide/tools/load-and-run.rst:15
 msgid "如二进制文件体积较大不利于使用，可选择使用 Load and Run 的 :ref:`Python 版本 <load-and-run-py>` 。"
-msgstr "The binary file is not conducive to the use of bulky, can choose to use the Load and Run :ref:`the Python version <load-and-run-py>'."
+msgstr ""
+"The binary file is not conducive to the use of bulky, can choose to use "
+"the Load and Run :ref:`the Python version <load-and-run-py>'."
 
 #: ../../source/user-guide/tools/load-and-run.rst:18
 msgid "编译 Load and Run"
@@ -56,7 +63,9 @@ msgstr "Linux x86 platform compilation"
 
 #: ../../source/user-guide/tools/load-and-run.rst:31
 msgid "编译完成后，我们可以在 ``build/sdk/load_and_run`` 目录找到 ``load_and_run`` ."
-msgstr "After the compilation is complete, we can find ``load_and_run`` in the ``build/sdk/load_and_run`` directory."
+msgstr ""
+"After the compilation is complete, we can find ``load_and_run`` in the "
+"``build/sdk/load_and_run`` directory."
 
 #: ../../source/user-guide/tools/load-and-run.rst:34
 msgid "Linux 交叉编译 ARM 版本"
@@ -64,11 +73,18 @@ msgstr "Linux cross-compile ARM version"
 
 #: ../../source/user-guide/tools/load-and-run.rst:37
 msgid "请确保你的机器上已经设置好了 Android 所需开发环境："
-msgstr "Please make sure that the Android required development environment has been set up on your machine："
+msgstr ""
+"Please make sure that the Android required development environment has "
+"been set up on your machine："
 
 #: ../../source/user-guide/tools/load-and-run.rst:39
-msgid "到 Android 的官网下载 `NDK <https://developer.android.com/ndk/downloads>`_ 及相关工具， 这里推荐 android-ndk-r21 以上的版本；"
-msgstr "To the official website to download Android NDK ` <https://developer.android.com/ndk/downloads>` _ and tools recommended here more than android-ndk-r21 version;"
+msgid ""
+"到 Android 的官网下载 `NDK <https://developer.android.com/ndk/downloads>`_ "
+"及相关工具， 这里推荐 android-ndk-r21 以上的版本；"
+msgstr ""
+"To the official website to download Android NDK ` "
+"<https://developer.android.com/ndk/downloads>` _ and tools recommended "
+"here more than android-ndk-r21 version;"
 
 #: ../../source/user-guide/tools/load-and-run.rst:41
 msgid "在 BASH 中设置 NDK_ROOT 环境变量：``export NDK_ROOT=ndk_dir``"
@@ -76,27 +92,53 @@ msgstr "Set the NDK_ROOT environment variable in BASH：``export NDK_ROOT=ndk_di
 
 #: ../../source/user-guide/tools/load-and-run.rst:43
 msgid "在 Ubuntu (16.04/18.04) 用以下脚本进行 ARM-Android 的交叉编译："
-msgstr "(16.04 / 18.04) cross-compile ARM-Android with the following script in the Ubuntu："
+msgstr ""
+"(16.04 / 18.04) cross-compile ARM-Android with the following script in "
+"the Ubuntu："
 
 #: ../../source/user-guide/tools/load-and-run.rst:49
-msgid "编译完成后，我们可以在 ``build_dir/android/arm64-v8a/release/install/bin/load_and_run`` 目录下找到编译生成的可执行文件 ``load_and_run`` . 查看脚本源码可以了解更多选项的设置方法。"
-msgstr "After the compilation is complete, we can find the compiled executable file ``load_and_run`` in the ``build_dir/android/arm64-v8a/release/install/bin/load_and_run'' directory. View the script source code for more options Setting method."
+msgid ""
+"编译完成后，我们可以在 "
+"``build_dir/android/arm64-v8a/release/install/bin/load_and_run`` "
+"目录下找到编译生成的可执行文件 ``load_and_run`` . 查看脚本源码可以了解更多选项的设置方法。"
+msgstr ""
+"After the compilation is complete, we can find the compiled executable "
+"file ``load_and_run`` in the "
+"``build_dir/android/arm64-v8a/release/install/bin/load_and_run'' "
+"directory. View the script source code for more options Setting method."
 
 #: ../../source/user-guide/tools/load-and-run.rst:54
-msgid "上面的脚本默认没有开启 ARMv8.2-A+DotProd 的新指令集支持， 如果在一些支持的设备（如 Cortex-A76 等），可以开启相关选项："
-msgstr "The above script does not enable the new instruction set support of ARMv8.2-A+DotProd by default. If you are in some supported devices (such as Cortex-A76, etc.), you can enable related options："
+msgid ""
+"上面的脚本默认没有开启 ARMv8.2-A+DotProd 的新指令集支持， 如果在一些支持的设备（如 Cortex-A76 "
+"等），可以开启相关选项："
+msgstr ""
+"The above script does not enable the new instruction set support of "
+"ARMv8.2-A+DotProd by default. If you are in some supported devices (such "
+"as Cortex-A76, etc.), you can enable related options："
 
 #: ../../source/user-guide/tools/load-and-run.rst:61
-msgid ":ref:`量化模型 <quantization>` 推荐开启 ARMv8.2+DotProd 支持， 能够充分利用 DotProd 指令集硬件加速。"
-msgstr ":ref:`quantitative model <quantization>'recommendation turned ARMv8.2 + DotProd support, to take advantage of DotProd instruction set hardware acceleration."
+#, fuzzy
+msgid ""
+":ref:`量化模型 <quantization-guide>` 推荐开启 ARMv8.2+DotProd 支持， 能够充分利用 DotProd "
+"指令集硬件加速。"
+msgstr ""
+":ref:`quantitative model <quantization>'recommendation turned ARMv8.2 + "
+"DotProd support, to take advantage of DotProd instruction set hardware "
+"acceleration."
 
 #: ../../source/user-guide/tools/load-and-run.rst:65
 msgid "使用 Load and Run"
 msgstr "Use Load and Run"
 
 #: ../../source/user-guide/tools/load-and-run.rst:68
-msgid "使用之前，需要先将模型文件的输入、:ref:`Dump <dump>` 出的预训练模型文件和 load_and_run (以及依赖 ``.so`` 的文件) 传到手机，并设置好环境变量 ``LD_LIBRARY_PATH`` . 示例代码如下："
-msgstr "Prior to use, you need to first enter the model file,:ref:`Dump <dump>` a pre-training model files and load_and_run (and dependent on `` .so`` file) reached the cell phone, and set the environment variable `` LD_LIBRARY_PATH`` . The sample code is as follows："
+msgid ""
+"使用之前，需要先将模型文件的输入、:ref:`Dump <dump>` 出的预训练模型文件和 load_and_run (以及依赖 ``.so``"
+" 的文件) 传到手机，并设置好环境变量 ``LD_LIBRARY_PATH`` . 示例代码如下："
+msgstr ""
+"Prior to use, you need to first enter the model file,:ref:`Dump <dump>` a"
+" pre-training model files and load_and_run (and dependent on `` .so`` "
+"file) reached the cell phone, and set the environment variable `` "
+"LD_LIBRARY_PATH`` . The sample code is as follows："
 
 #: ../../source/user-guide/tools/load-and-run.rst:80
 msgid "举例说明，使用 Load and Run 的基础语法如下:"
@@ -124,7 +166,9 @@ msgstr "Specify the input data path, which is ``./data.npy'' in the example."
 
 #: ../../source/user-guide/tools/load-and-run.rst:94
 msgid "输入格式支持 ``.ppm/.pgm/.json/.npy`` 等文件格式和命令行。"
-msgstr "The input format supports ``.ppm/.pgm/.json/.npy`` and other file formats and command lines."
+msgstr ""
+"The input format supports ``.ppm/.pgm/.json/.npy`` and other file formats"
+" and command lines."
 
 #: ../../source/user-guide/tools/load-and-run.rst:97
 msgid "``--iter ITER``"
@@ -132,7 +176,9 @@ msgstr "``--iter ITER``"
 
 #: ../../source/user-guide/tools/load-and-run.rst:97
 msgid "正式运行测速的迭代数，例子中为 ``10``."
-msgstr "The number of iterations of the official running speed test, in the example is ``10''."
+msgstr ""
+"The number of iterations of the official running speed test, in the "
+"example is ``10''."
 
 #: ../../source/user-guide/tools/load-and-run.rst:100
 msgid "进阶参数设置"
@@ -147,8 +193,14 @@ msgid "``--enable-nchw44``"
 msgstr "``--enable-nchw44''"
 
 #: ../../source/user-guide/tools/load-and-run.rst:108
-msgid "目前 MegEngine 的网络是 NCHW 的 Layout, 但是这种 Layout 不利于充分利用 SIMD 特性，且边界处理异常复杂。 为此我们针对 ARM 开发了 NCHW44 的 Layout."
-msgstr "At present, the network of MegEngine is the layout of NCHW, but this layout is not conducive to making full use of SIMD features, and the boundary processing is extremely complicated. For this reason, we developed the NCHW44 Layout for ARM."
+msgid ""
+"目前 MegEngine 的网络是 NCHW 的 Layout, 但是这种 Layout 不利于充分利用 SIMD 特性，且边界处理异常复杂。 "
+"为此我们针对 ARM 开发了 NCHW44 的 Layout."
+msgstr ""
+"At present, the network of MegEngine is the layout of NCHW, but this "
+"layout is not conducive to making full use of SIMD features, and the "
+"boundary processing is extremely complicated. For this reason, we "
+"developed the NCHW44 Layout for ARM."
 
 #: ../../source/user-guide/tools/load-and-run.rst:112
 msgid "``--enable-nchw88``"
@@ -156,19 +208,36 @@ msgstr "``--enable-nchw88''"
 
 #: ../../source/user-guide/tools/load-and-run.rst:112
 msgid "如上所述，对于 x86 AVX 下，我们同样定义了 NCHW88 的 Layout 优化。"
-msgstr "As mentioned above, for x86 AVX, we also define the Layout optimization of NCHW88."
+msgstr ""
+"As mentioned above, for x86 AVX, we also define the Layout optimization "
+"of NCHW88."
 
 #: ../../source/user-guide/tools/load-and-run.rst:117
 msgid "开启 fastrun 模式"
 msgstr "Turn on fastrun mode"
 
 #: ../../source/user-guide/tools/load-and-run.rst:119
-msgid "目前在 MegEngine 中，针对某些算子存在很多种不同的算法 （如 conv 存在 direct, winograd 或者 im2col 等算法）， 而这些算法在不同的 shape 或者不同的硬件平台上，其性能表现差别极大， 导致很难写出一个有效的搜索算法，在执行时选择到最快的执行方式。 为此在 MegEngine 中集成了 fastrun 模式， **在执行模型的时候会将每个算子的可选所有算法都执行一遍，然后选择一个最优的算法记录下来。** 整体来讲大概有 10% 的性能提速。"
-msgstr "Currently in MegEngine, there are many different algorithms for certain operators (for example, conv has direct, winograd or im2col algorithms), and these algorithms have very different performances on different shapes or different hardware platforms. It is difficult to write an effective search algorithm and choose the fastest execution method during execution. For this reason, the fastrun mode is integrated in MegEngine. **When executing the model, all optional algorithms for each operator will be executed once, and then an optimal algorithm will be selected and recorded. ** Overall, there is about a 10% performance increase."
+msgid ""
+"目前在 MegEngine 中，针对某些算子存在很多种不同的算法 （如 conv 存在 direct, winograd 或者 im2col "
+"等算法）， 而这些算法在不同的 shape 或者不同的硬件平台上，其性能表现差别极大， "
+"导致很难写出一个有效的搜索算法，在执行时选择到最快的执行方式。 为此在 MegEngine 中集成了 fastrun 模式， "
+"**在执行模型的时候会将每个算子的可选所有算法都执行一遍，然后选择一个最优的算法记录下来。** 整体来讲大概有 10% 的性能提速。"
+msgstr ""
+"Currently in MegEngine, there are many different algorithms for certain "
+"operators (for example, conv has direct, winograd or im2col algorithms), "
+"and these algorithms have very different performances on different shapes"
+" or different hardware platforms. It is difficult to write an effective "
+"search algorithm and choose the fastest execution method during "
+"execution. For this reason, the fastrun mode is integrated in MegEngine. "
+"**When executing the model, all optional algorithms for each operator "
+"will be executed once, and then an optimal algorithm will be selected and"
+" recorded. ** Overall, there is about a 10% performance increase."
 
 #: ../../source/user-guide/tools/load-and-run.rst:127
 msgid "使用 fastrun 一般分为两个阶段，**需要顺序执行。**"
-msgstr "The use of fastrun is generally divided into two stages, ** need to be executed sequentially. **"
+msgstr ""
+"The use of fastrun is generally divided into two stages, ** need to be "
+"executed sequentially. **"
 
 #: ../../source/user-guide/tools/load-and-run.rst:129
 msgid "搜参阶段："
@@ -180,11 +249,20 @@ msgstr "``--fast-run [--winograd-transform] --fast-run-algo-policy CACHE_FILE''"
 
 #: ../../source/user-guide/tools/load-and-run.rst:132
 msgid "开启 fastrun 模式，同时将输出的结果存储到一个 cache 文件中"
-msgstr "Turn on fastrun mode and store the output result in a cache file at the same time"
+msgstr ""
+"Turn on fastrun mode and store the output result in a cache file at the "
+"same time"
 
 #: ../../source/user-guide/tools/load-and-run.rst:134
-msgid "其中 ``--winograd-transform`` 为可选项目， 由于对于相同的卷积，多种 winograd 算法的理论加速比和实际性能表现有时会不一致， 开启该选项可使其基于 fastrun 模式搜索的结果来决定做哪种 winograd 变换。"
-msgstr "Among them, ``--winograd-transform'' is an optional item. Due to the same convolution, the theoretical speedup and actual performance of multiple winograd algorithms are sometimes inconsistent. Turning on this option can make it based on the search results of the fastrun mode. To decide which winograd transformation to do."
+msgid ""
+"其中 ``--winograd-transform`` 为可选项目， 由于对于相同的卷积，多种 winograd "
+"算法的理论加速比和实际性能表现有时会不一致， 开启该选项可使其基于 fastrun 模式搜索的结果来决定做哪种 winograd 变换。"
+msgstr ""
+"Among them, ``--winograd-transform'' is an optional item. Due to the same"
+" convolution, the theoretical speedup and actual performance of multiple "
+"winograd algorithms are sometimes inconsistent. Turning on this option "
+"can make it based on the search results of the fastrun mode. To decide "
+"which winograd transformation to do."
 
 #: ../../source/user-guide/tools/load-and-run.rst:138
 msgid "运行阶段："
@@ -204,7 +282,9 @@ msgstr "Correctness verification"
 
 #: ../../source/user-guide/tools/load-and-run.rst:147
 msgid "MegEngine 内置了多种正确性验证的方法，方便检查网络计算正确性。"
-msgstr "MegEngine has built-in multiple correctness verification methods to facilitate checking the correctness of network calculations."
+msgstr ""
+"MegEngine has built-in multiple correctness verification methods to "
+"facilitate checking the correctness of network calculations."
 
 #: ../../source/user-guide/tools/load-and-run.rst:150
 msgid "dump 输出结果"
@@ -216,7 +296,9 @@ msgstr "``--bin-out-dump''"
 
 #: ../../source/user-guide/tools/load-and-run.rst:152
 msgid "在指定的文件夹内保存输出结果，可以用 load-and-run 在目标设备上跑数据集"
-msgstr "Save the output results in the specified folder, you can use load-and-run to run the data set on the target device"
+msgstr ""
+"Save the output results in the specified folder, you can use load-and-run"
+" to run the data set on the target device"
 
 #: ../../source/user-guide/tools/load-and-run.rst:154
 msgid "使用方式如下："
@@ -231,20 +313,41 @@ msgid "dump 每层结果"
 msgstr "dump the results of each layer"
 
 #: ../../source/user-guide/tools/load-and-run.rst:172
-msgid "我们很多时候会遇到这种情况，就是模型输出结果不对， 这个时候就需要打出网络每一层的结果作比对，看看是哪一层导致。 目前有两种展现方式，一个是 ``io-dump``, 另一个是 ``bin-io-dump``."
-msgstr "We often encounter this situation, that is, the output of the model is incorrect. At this time, we need to compare the results of each layer of the network to see which layer is causing it. There are currently two ways to display, one is ``io-dump``, the other is ``bin-io-dump``."
+msgid ""
+"我们很多时候会遇到这种情况，就是模型输出结果不对， 这个时候就需要打出网络每一层的结果作比对，看看是哪一层导致。 目前有两种展现方式，一个是 "
+"``io-dump``, 另一个是 ``bin-io-dump``."
+msgstr ""
+"We often encounter this situation, that is, the output of the model is "
+"incorrect. At this time, we need to compare the results of each layer of "
+"the network to see which layer is causing it. There are currently two "
+"ways to display, one is ``io-dump``, the other is ``bin-io-dump``."
 
 #: ../../source/user-guide/tools/load-and-run.rst:176
-msgid "为了对比结果，需要假定一个平台结果为 ``ground-truth`` ， 下面假定以 x86 的结果为 ``ground-truth`` ，验证 x86 和 CUDA 上的误差产生的原因 （下面会使用 ``host_build.sh`` 编译出来的 ``load_and_run`` 来演示）。"
-msgstr "In order to compare the results, it is necessary to assume that the result of a platform is ``ground-truth``, the following assumes that the result of x86 is ``ground-truth``, to verify the cause of the error on x86 and CUDA (the following will use ``host_build .sh, ``load_and_run`` compiled to demonstrate)."
+msgid ""
+"为了对比结果，需要假定一个平台结果为 ``ground-truth`` ， 下面假定以 x86 的结果为 ``ground-truth`` ，验证"
+" x86 和 CUDA 上的误差产生的原因 （下面会使用 ``host_build.sh`` 编译出来的 ``load_and_run`` "
+"来演示）。"
+msgstr ""
+"In order to compare the results, it is necessary to assume that the "
+"result of a platform is ``ground-truth``, the following assumes that the "
+"result of x86 is ``ground-truth``, to verify the cause of the error on "
+"x86 and CUDA (the following will use ``host_build .sh, ``load_and_run`` "
+"compiled to demonstrate)."
 
 #: ../../source/user-guide/tools/load-and-run.rst:180
 msgid "文本形式对比结果："
 msgstr "Text comparison results："
 
 #: ../../source/user-guide/tools/load-and-run.rst:188
-msgid "文档形式只是显示了部分信息，比如 Tensor 的前几个输出结果，整个 Tensor 的平均值、标准差之类， 如果需要具体到哪个值错误，需要用 ``bin-io-dump`` 会将每一层的结果都输出到一个文件。"
-msgstr "The document form only shows part of the information, such as the first few output results of Tensor, the average value and standard deviation of the entire Tensor, etc. If you need to find out which value is wrong, you need to use ``bin-io-dump'' to change every The results of the first layer are all output to a file."
+msgid ""
+"文档形式只是显示了部分信息，比如 Tensor 的前几个输出结果，整个 Tensor 的平均值、标准差之类， 如果需要具体到哪个值错误，需要用 "
+"``bin-io-dump`` 会将每一层的结果都输出到一个文件。"
+msgstr ""
+"The document form only shows part of the information, such as the first "
+"few output results of Tensor, the average value and standard deviation of"
+" the entire Tensor, etc. If you need to find out which value is wrong, "
+"you need to use ``bin-io-dump'' to change every The results of the first "
+"layer are all output to a file."
 
 #: ../../source/user-guide/tools/load-and-run.rst:191
 msgid "raw 形式对比结果："
@@ -264,7 +367,9 @@ msgstr "``--profile PROFILE``"
 
 #: ../../source/user-guide/tools/load-and-run.rst:206
 msgid "记录信息并将结果的 ``JSON`` 内容写到 ``PROFILE`` 文件路径中"
-msgstr "Record the information and write the ``JSON'' content of the result into the ``PROFILE`` file path"
+msgstr ""
+"Record the information and write the ``JSON'' content of the result into "
+"the ``PROFILE`` file path"
 
 #: ../../source/user-guide/tools/load-and-run.rst:208
 msgid "该 ``PROFILE`` 文件可后续用于 :ref:`profile-analyze` 。"

@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:5
+msgid "如何在 Imperative Runtime 中添加算子"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:7
+msgid "我们以添加 ``add`` 算子为例进行说明。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:12
+msgid "注册 Op Trait"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:14
+msgid "在 :src:`imperative/src/impl/ops/` 目录下对应的文件中（例如 ``misc.cpp`` ）："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:16
+msgid "定义好 ``apply_on_var_node`` 方法；"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:17
+msgid "调用宏 ``OP_TRAIT_REG``."
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:35
+msgid "可以参考 :src:`dnn/src/common` 中的文件组织，确定对应的文件。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:37
+msgid "在 :src:`src/core/include/megbrain/ir/ops.td` 中添加你新写的算子。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:46
+msgid "添加算子"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:50
+msgid ""
+"下面的流程中使用 ``add_example.py`` 文件作为举例，然而在实际开发时， 新增算子（以及测试）最好按照对应的分类放在指定文件（如 "
+"``elemwise.py`` ）中。 可以参考已有的分类逻辑进行判断，如果依旧不清楚如何分类，可以向核心开发人员进行询问。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:56
+msgid "文档字符串写法请参考 :ref:`python-docstring-style-guide` 。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:61
+msgid "Functional 实现"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:63
+msgid "向 :src:`imperative/python/megengine/functional` 目录添加文件 ``add_example.py``:"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:81
+msgid "在 :src:`imperative/python/megengine/functional/__init__.py` 文件中进行导入："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:87
+msgid "在 :src:`imperative/python/test/unit/functional/` 对应文件中添加测试："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:100
+msgid "如果有需要，还应该提供对应的 Module 实现。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:105
+msgid "Module 实现"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:107
+msgid "向 :src:`imperative/python/megengine/module` 目录添加文件 ``add_example.py``:"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:129
+msgid "在 :src:`imperative/python/megengine/module/__init__.py` 文件中进行导入："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:135
+msgid "在 :src:`imperative/python/test/unit/module/` 对应文件中添加测试。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:140
+msgid "编译和测试"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:142
+msgid ""
+"假设我们需要对 :src:`imperative/python/test/unit/functional/test_functional.py` "
+"中的 ``test_add_example`` 进行测试。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:144
+msgid "确保执行了 ``make develop`` 命令："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:156
+msgid "设置 ``DMGE_WITH_CUDA=ON`` 将开启 CUDA 来进行测试。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:158
+msgid "设置 ``PYTHONPATH``:"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:164
+msgid "使用 ``pytest`` 进行测试："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:172
+msgid "需要按照 :src:`imperative/python` 下的各个 ``requires`` 文件中的要求安装所需要的对应版本软件；"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:173
+msgid "编辑完 ``.py`` 文件之后请使用 :src:`imperative/python/scripts/format.sh` 进行格式化;"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-imperative-runtime.rst:174
+msgid "想要执行 CUDA 测试，请确保你已经配置好了 CUDA 环境。"
+msgstr ""
+

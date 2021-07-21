@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:5
+msgid "如何在 Graph Runtime 中添加算子"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:6
+msgid ""
+"Graph Runtime 算子与 MegDNN 算子的区别之处在于它维护了内存资源， 是 Graph 的一个节点，而 MegDNN "
+"算子只是描述计算语义； 对于有的 Graph Runtime 算子而言，它将 MegDNN 的算子包装了一层， 同时隐去后端硬件信息，继承通用的 "
+"``MegDNNOprWrapperFwd`` 的接口类。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:12
+msgid "如何添加一个算子"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:14
+msgid "我们以添加一个 ``Add`` 算子为例。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:17
+msgid "添加算子定义"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:19
+msgid "在 :src:`src/opr/include/megbrain/opr` 文件夹下，添加对应算子声明。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:23
+msgid "里面有一些头文件，按照分类将一些算子组织到一起："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:25
+msgid "比如 ``basic_arith.h`` 存放着 ``elemwise``, ``typecvt`` 等基础算术运算算子"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:26
+msgid "又比如 ``imgproc.h`` 存放着 ``warp_affine``, ``resize`` 等图像处理算子"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:27
+msgid "作为举例，这里我们将 ``Add`` 放到 ``misc.h`` 里面"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:29
+msgid "src/opr/include/megbrain/opr/misc.h"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:44
+msgid "每个 Graph Runtime 的 ``Operator`` 都继承自 ``mgb::cg::OperatorNodeBase``."
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:45
+msgid ""
+"对于 “是否有 MegDNN 算子”，“是否可以根据 input 推导 output shape” 等情况，Graph Runtime 定义了很多"
+" ``Mixin``. 你可以让你的 Operator 直接继承自 Graph Runtime 提供的一些基类，来简化你的代码。 "
+"例如上面的代码继承自 ``intl::MegDNNOprWrapperFwd``."
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:48
+msgid ""
+"你可以仔细阅读 :src:`src/opr/include/megbrain/opr/internal` 中的代码，选择一个合适的基类， "
+"然后覆盖基类的虚函数，实现你的 Operator 完整的功能。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:52
+msgid "添加算子实现"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:54
+msgid "在 :src:`src/opr/impl/misc.cpp` 文件下（与上一步的 ``misc.h`` 对应），添加这个算子的实现："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:79
+msgid ""
+"``MGB_DYN_TYPE_OBJ_FINAL_IMPL`` 用来实现 RTTI 的功能，用以记录算子的类型信息。 因为这里的 ``Add`` "
+"继承自 ``intl::MegDNNOprWrapperFwd``, 大部分接口都在这个基类中定义了。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:83
+msgid "按需支持求导"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:85
+msgid "如果你的算子需要支持求导，那么需要添加这个算子的导数，还需要为它添加求导。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:87
+msgid "对于 ``Add`` 算子来讲，它的导数很简单，就是 ``grad``, 其中 ``wrt_idx`` 表示第几个输入的导数。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:88
+msgid ""
+"如果对于比较复杂的算子如 ``Conv``, 它需要定义 ``convforward``, ``convbackwarddata``, "
+"``convbackwardfilter`` 算子， 需要分别在 MegDNN 和 Graph Runtime 中添加。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:91
+msgid "对于 ``Add`` 算子而言，在 :src:`src/opr/impl/misc.cpp` 文件下，添加导数："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:106
+msgid ""
+"关于宏 ``MGB_IMPL_OPR_GRAD`` 可以阅读 "
+":src:`src/core/include/megbrain/graph/grad_impl.h#L167` 。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:109
+msgid "添加序列化功能"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:111
+msgid "在 :src:`src/opr/impl/misc.sereg.h` 文件中添加算子序列化代码。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:113
+msgid "对于 ``Add`` 算子而言，只需要序列化 Param, 所以可以直接用一行代码；"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:114
+msgid "如果需要序列化额外信息，需要特化 ``OprLoadDumpImpl`` 或者 ``OprMaker`` ."
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:120
+msgid "同时需要在 :src:`src/serialization/impl/schema.fbs` 中添加对应算子的 Param:"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:128
+msgid "这个值是递增的，新加算子需要加到 union ``OperatorParam`` 最底部"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:131
+msgid "添加测试"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:133
+msgid "Graph Runtime 提供了 ``AutoOprChecker`` 来实现算子的测试。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:137
+msgid "参考 :src:`test/src/autocheck.cpp` 中的实现。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:139
+msgid ""
+"我们可以参照已有测试的实现（如 :src:`src/opr/test/dnn/roi_align.cpp` ）， 在 "
+":src:`src/opr/test/misc.cpp` 文件夹下，为 ``Add`` 添加测试："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:142
+msgid "第一个测试是单纯测试 ``Add`` 算子的正确性；"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:143
+msgid ""
+"第二个测试会测求导，组一个子图加 loss 来求 delta y / delta x, 即将数学定义作为正确结果，将 MegDNN 的 "
+"backward 算子的结果作为被比较对象，具体见 ``AutoOprChecker`` 中的代码"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:193
+msgid "编译和测试"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:195
+msgid "跑 CMake 命令时设置 ``MGE_WITH_TEST=ON`` 以支持 Graph Runtime 与 MegDNN 测试。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:199
+msgid "编译方法请参考 :ref:`install` 。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:219
+msgid "常见问题"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:223
+msgid "忘记添加 ``MGB_DYN_TYPE_OBJ_FINAL_IMPL``"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-graph-runtime.rst:227
+msgid "可以看一下是不是 MegDNN 添加算子的时候出现了遗漏。"
+msgstr ""
+

@@ -1,0 +1,316 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/user-guide/model-development/profiler/index.rst:5
+msgid "模型性能数据生成与分析（Profiler）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:9
+msgid ""
+"由于实现限制，:ref:`动态图与静态图 <dynamic-and-static-graph>` 下的 Profiler 接口并不一致， "
+"侧重点也不相同，下面将分别介绍。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:13
+msgid "动态图下的性能分析"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:14
+msgid "假设我们写好了一份动态图代码，其中训练部分代码如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:27
+#: ../../source/user-guide/model-development/profiler/index.rst:148
+msgid "生成性能数据"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:30
+msgid "挂载 Profiler 会拖慢模型的运行速度（大概在 8% 左右）。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:32
+msgid "想要使用 Profiler 生成性能数据，存在两种写法（任选其一即可）："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:34
+msgid ""
+"使用 :py:data:`~megengine.utils.profiler.profile` 装饰器 （profile 是 Profiler "
+"别名）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:35
+msgid "使用 with :py:class:`~.utils.profiler.Profiler` 语法"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:37
+msgid "示例代码如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:63
+msgid "这样在每次进到对应代码块里时，MegEngine 会对区域里的代码单独做一次 Profiling."
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:65
+msgid "代码跑完后，将会在运行目录下生成 ``JSON`` 文件，用于接下来的性能分析。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:68
+msgid "参数说明"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:70
+msgid ":py:class:`~.utils.profiler.Profiler` 的构造函数支持如下参数："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:73
+msgid "``path``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:73
+msgid "数据的存储路径前缀，默认为 ``profile``, 后面将自动加上 ``.chrome_timeline.json`` 后缀。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:88
+msgid "``topic``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:76
+msgid "接受预设的主题组合，Profiler 将只记录对应的信息，默认为 ``OPERATOR|SCOPE`` . 可选配置如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:78
+msgid "``ALL``: 包含下面所有主题"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:79
+msgid "``OPERATOR``: 记录算子执行时间以及算子参数"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:80
+msgid "``TENSOR_LIFETIME``: 记录 Tensor 的生命周期"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:81
+msgid "``SYNC``: 记录内部线程之间的同步事件"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:82
+msgid "``SCOPE``: 记录 module forward 前后的边界（类似调用栈形式）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:83
+msgid "``MEMORY``: 记录显存使用情况"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:84
+msgid "``SHAPE_INFER``: 记录模型运行过程中 shape 推导的情况"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:88
+msgid "尽量避免使用 ``ALL``, 越多的配置将带来越大的 Profiling 开销。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:91
+msgid "``align_time``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:91
+msgid "将输出时间从相对变成绝对，方便对比多个 ``JSON`` 文件，默认为 ``True``."
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:94
+msgid "``show_operator_name``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:94
+msgid "是否显示算子类型名称，默认为 ``True``. 设置为 ``False`` 则所有算子均显示为 ``Operator``."
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:97
+#: ../../source/user-guide/model-development/profiler/index.rst:179
+msgid "分析性能数据"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:98
+msgid ""
+"可以使用 `Chrome Performance <https://developer.chrome.com/docs/devtools"
+"/evaluate-performance/>`_ 工具加载上一步生成的 ``JSON`` 文件："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:101
+msgid "打开 `Chrome 浏览器 <https://www.google.com/intl/zh-CN/chrome/>`_ ；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:102
+msgid "按下 ``F12`` （更多工具->开发者工具）打开开发者工具页面；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:103
+msgid "切换到 Performance 标签，点击 ⬆️  （load profile） 按钮加载数据。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:105
+msgid ""
+"此时可以在窗口里看到数个线程，每个线程中都有一群堆叠的色块（代表着事件）。 横坐标是时间轴，色块的左右边缘即是事件的起始与终止时间。 "
+"纵坐标代表事件所属的线程（其中 channel 为 python 主线程）。 例如，当我们在模型源代码里的 ``self.conv1(x)`` "
+"被执行时， channel 线程上会有一个对应的 ``conv1`` 块，而其他线程上同样的 ``conv1`` 块会滞后一些。 而 worker"
+" 的主要工作是发送 kernel, 而真正执行计算的是 gpu  线程。 gpu 线程上的事件密度明显比 channel 和 worker 高。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:115
+msgid "一般来说，GPU 线程越繁忙，说明模型的 GPU 利用率越高。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:116
+msgid ""
+"频繁使用 :py:meth:`.Tensor.shape` , :py:meth:`.Tensor.numpy` "
+"操作都可能导致需要做数据同步，降低 GPU 的利用率。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:119
+msgid "以下操作会在 Performance 界面里默认以色块的形式呈现："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:121
+msgid ":py:meth:`.GradManager.backward`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:122
+msgid ":py:meth:`.Optimizer.step`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:123
+msgid ":py:meth:`.Optimizer.clear_grad`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:124
+msgid ":py:meth:`.Module.forward`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:126
+msgid ""
+"通过观察色块的长度，便可以得到对应操作的运行时间，从而评估模型的性能瓶颈。 特别地，在 worker 与 gpu 线程上，还能看到 op "
+"级别的（细粒度）事件。 比如，诸如 ``z = x + y`` 的表达式，在 channel 上看不到信息， 但是在 gpu "
+"线程上一般会有一个对应的 op 被记录下来，名字一般是 ``Elemwise``."
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:133
+msgid "静态图下的性能分析"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:134
+msgid "假设我们写好了一份静态图代码，其中训练部分代码如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:149
+msgid ""
+"只需要在 :py:class:`~.jit.trace` 接口中传入 ``profiling=True``, 然后再调用 "
+":py:meth:`~.trace.get_profile` 方法即可得到性能数据。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:152
+msgid "修改后的代码如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:174
+msgid "这样我们将获得一个 ``JSON`` 文件，可用于下面的性能分析。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:180
+msgid ""
+"在前一步中保存的 ``JSON`` 文件可以使用 MegEngine 在 ``tools`` 目录下提供的 "
+"``profile_analyze.py`` 脚本进行分析，示例代码如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:197
+msgid "输出将是一张表格，每列的含义如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:200
+msgid "``device self time``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:200
+msgid "算子在计算设备上（例如 GPU ）的运行时间"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:203
+msgid "``cumulative``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:203
+msgid "累加前面所有算子的时间"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:206
+msgid "``operator info``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:206
+msgid "打印算子的基本信息"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:209
+msgid "``computation``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:209
+msgid "算子需要的浮点数操作数目"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:212
+msgid "``FLOPS``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:212
+msgid "算子每秒执行的浮点操作数目，由 ``computation`` 除以 ``device self time`` 并转换单位得到"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:215
+msgid "``memory``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:215
+msgid "算子使用的存储（例如 GPU 显存）大小"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:218
+msgid "``bandwidth``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:218
+msgid "算子的带宽，由 ``memory`` 除以 ``device self time`` 并转换单位得到"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:221
+msgid "``in_shapes``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:221
+msgid "算子输入张量的形状"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:224
+msgid "``out_shapes``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/profiler/index.rst:224
+msgid "算子输出张量的形状"
+msgstr ""
+

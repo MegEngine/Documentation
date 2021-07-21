@@ -1,0 +1,366 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:5
+msgid "如何在 MegDNN 中添加算子"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:7
+msgid ""
+"MegDNN 是算子（Operator）级别的 DNN 库，存放于 :src:`dnn` 下， 类似于 MKL-DNN、OpenBlas "
+"等库，提供了包括卷积、池化、矩阵乘法、点乘等在内的基本算术运算和神经网络原语。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:14
+msgid "对使用者可见的统一接口"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:22
+msgid "MegDNN 为上层提供了对使用者可见的统一接口， 而在底层针对 CUDA、ARM、x86 等不同平台做了针对性实现，是一个跨平台的计算库。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:25
+msgid "MegDNN API 内部实现"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:61
+msgid "MegDNN 组织架构"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:82
+msgid "以上文件位于 :src:`dnn/src` 目录内。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:86
+msgid "Interface Class"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:86
+msgid "定义算子的接口"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:93
+msgid "common"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:89
+msgid "定义各个平台的公共代码，比如各个算子的"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:91
+msgid "``deduce_layout`` 方法"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:92
+msgid "``OperatorBase`` 方法"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:93
+msgid "``Handle`` 方法"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:96
+msgid "naive"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:96
+msgid "简单粗暴的算子实现，不考虑性能、内存效率等，仅仅用于正确性验证。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:99
+msgid "fallback"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:99
+msgid "通用的代码实现，适合那些使用 SSE 或 NEON 等技术后并没有加速效果的算子。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:102
+msgid "arm_common"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:102
+msgid "针对 ARMv7  和 AArch64 的通用代码优化。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:105
+msgid "armv7/aarch64/x86/CUDA/..."
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:105
+msgid "针对特定平台的代码优化，可能包含底层汇编代码等。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:108
+msgid "更详细的说明请参考 :ref:`megdnn-organize` 。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:112
+msgid ""
+"MegDNN 中对于同一算子可能包含不同的算法实现。 例如卷积实现，在 MegDNN 中包含直接卷积、im2col-"
+"gemm、winograd、FFT 等。 因此在 MegDNN 中，可以采用指定或者启发式方法选择算法。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:117
+msgid "如何添加一个算子"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:119
+msgid "以添加一个 ``C = A + B + m`` 加法算子 ``Add`` 的 naive 的实现为例。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:121
+msgid "其中 A、B 为输入 tensor, C 为输出 tensor, 而 m 为输入参数。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:124
+msgid "添加参数定义"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:126
+msgid "在 :src:`dnn/scripts/opr_param_defs.py` 中添加相关参数的定义："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:134
+msgid "这段代码的作用是：添加了名为 ``Add`` 的 算子，输入参数为 ``m``, 默认值为 3."
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:138
+msgid "``add_fields`` 目前支持的数据类型可参考 :src:`dnn/scripts/gen_param_defs.py` ."
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:141
+msgid "添加算子定义"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:143
+msgid "在 :src:`dnn/include/megdnn/oprs/` 的对应文件中定义这个算子（假设定义在 ``general.h`` 中）："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:168
+msgid ""
+"此处 ``exec`` 为包含计算逻辑的接口，接受输入 ``A``, ``B`` 输出 ``C`` 以及 ``workspace``. 其中 "
+"``workspace`` 表明计算中需要使用的临时空间大小，是一个字节数组。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:172
+msgid "添加 common 定义"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:174
+msgid "在 :src:`dnn/src/common` 中添加所有平台的共有类，在该目录下创建 ``add.cpp`` 文件。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:176
+msgid ""
+"接着实现刚才在 ``include/megdnn/oprs/`` 定义的虚函数， 比如 ``deduce_layout_fwd`` "
+"推断前向结果时的 layout."
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:179
+msgid "dnn/src/common/add.cpp"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:212
+msgid "添加 common callback"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:214
+msgid ""
+"在 :src:`dnn/src/common/handle_impl.h` 文件的 ``#define "
+"MEGDNN_FOREACH_OPR_CLASS(cb)`` 中添加 ``cb(Add)``. 这样 common 下面的各个平台中可以 "
+"include 这个文件，定义算子需要使用的通用功能。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:219
+msgid "参考 :src:`dnn/src/common/handle.cpp`"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:222
+msgid "添加平台实现"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:224
+msgid "接下来定义各个平台的函数，以 naive 版本为例："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:226
+msgid "在 :src:`dnn/src/naive/` 中创建文件夹 ``add``, 在其中实现以下文件："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:228
+msgid "opr_impl.h"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:251
+msgid "opr_impl.cpp"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:297
+msgid ""
+"功能很简单：在 ``exec`` 中写实际的执行，每种 type 都生成一个执行， 然后通过 "
+"MEGDNN_DISPATCH_CPU_KERN_OPR 把将算子的执行 kernel 放到 handle 上执行。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:301
+msgid "添加 Handle"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:303
+msgid ""
+"最后，在 :src:`dnn/src/naive/handle.cpp` 头部添加 ``#include "
+"\"src/naive/add/opr_impl.h\"``, 里面调用了之前 ``handle_impl.cpp`` 中定义的宏。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:308
+msgid "如果是 CUDA 平台，则是在 :src:`dnn/src/cuda/handle_create.cpp` 中添加。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:310
+msgid "为 ``HandleImpl`` 添加函数 ``create_opr<>``, 通过这个函数，创建平台的算子。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:312
+msgid "实际操作为：在 ``handle_impl.h`` 里添加 ``cb(Add)``."
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:314
+msgid "至此， ``Add`` 算子创建完成。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:317
+msgid "添加测试"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:319
+msgid "下面为上面的 ``Add`` 算子添加测试。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:323
+msgid "一般 naive 实现不必测试，此处只是展现下。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:324
+msgid "在提供其他平台如 arm/x86/cuda 的实现时，测试结果应当和 naive 版本保持一致。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:326
+msgid "在 :src:`dnn/test/common/` 下创建 ``add.h``, 其中构造所需要测试的参数："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:360
+msgid "修改 :src:`dnn/src/common/opr_trait.h`, 添加该算子的 traits:"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:366
+msgid ""
+"其中 3 表示其有 3 个参数（假设分别是 A, B, C ）， 第三个参数表示是否需要有 workspace, 第四个参数表示是否可以 "
+"deduce_layout. 其描述这个算子，为 ``exec_proxy.h`` 和 ``deduce_layout_proxy.h`` "
+"导向正确的实现。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:370
+msgid "在 :src:`dnn/test/naive` 下创建 ``add.cpp`` 文件，添加详细的测试代码。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:372
+msgid ""
+"其中 ``ADD`` 这个测试用例本质上没有额外的意义，因为目前只有 naive 实现， 如果有其它后端的优化实现，可以基于 "
+"``Checker`` 类来做正确性验证。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:374
+msgid ""
+"``ADD2`` 这个测试用例基于用户指定的输入输出来验证结果， 即用户跑指定输入，然后得到的输出与用户给定的输出对比，一般用来检测 naive "
+"正确性。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:418
+msgid ""
+"其它 device 的测试（比如 CUDA）可以直接用 ``execs`` （而非 ``exect`` ） 测试指定 shape "
+"输入的结果，会自动和 naive 的结果做对比。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:422
+msgid "编译和测试"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:426
+msgid ""
+"测试带 CUDA 后端的算子时，需要注意是否编译了对应显卡的代码， 显卡型号对应编译选项可以通过脚本 "
+":src:`third_party/getcudacap.sh` 来获取 CUDA 信息。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:431
+msgid "编译方法请参考 :ref:`install` 。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:433
+msgid "我们需要在跑 CMake 命令时设置 ``MGE_WITH_TEST=ON`` 以支持测试。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:436
+msgid "执行测试"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:456
+msgid "常见问题"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:460
+msgid ""
+"这里的精度指要测试的 backend(cuda, arm, OpenCL) 等和 naive 结果精度对不上，目前默认的误差是 1e-4. "
+"常见原因："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:463
+msgid "cuda 的 float 精度计算与 naive 有误差，多次累加容易导致误差逐步放大"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:464
+msgid ""
+"int8 round 的问题：比如 armv7 上的除法是牛顿除法，1/2 的结果不是 0.5, 而是 0.49998 等； cuda "
+"上也常见这些问题，导致在 round 时 naive 向上 round, arm 或 cuda 向下 round, 结果相差 1. "
+"这种误差暂时没找到很好的解决办法，只能调大 epsilon. 对于量化类型，我们需要保证计算结果是无偏的即可，可以通过 "
+"``checker.set_max_avg_biased_error`` 来调节。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:469
+msgid "调试方法："
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:471
+msgid "选择一个最小复现，根据 test 的 index 来选择性打印一些中间结果来看。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:475
+msgid ""
+"由于对于 CPU 后端，MegDNN 直接通过 ``handle`` 的 ``dispatch`` 接口将具体描述 kernel 语义的 "
+"``function`` 对象发给 Graph, 也就是上面的 ``exec_internal<float>`` "
+"函数指针；有时候可能忘记在调用的地方包宏 ``MEGDNN_DISPATCH_CPU_KERN_OPR``, 导致这个 kernel 未发给 "
+"Graph, 这种错误无法在 MegDNN 测出来，因为 MegDNN 默认的 ``dispatcher`` 是 inplace 的， "
+"而且这种错误是某种 race, 可能导致随机错误，所以 MegDNN 定义 ``CPUDispatchChecker`` 来检测这个行为。"
+msgstr ""
+
+#: ../../source/development/how-to/add-an-operator-in-megdnn.rst:482
+msgid ""
+"这种错误是对应设备的 device 函数不存在，一般是你没有编译测试用的 GPU 对应的代码导致的。 可以参考编译与测试的注意事项，编译对应 "
+"GPU 的代码，重跑 megdnn_test."
+msgstr ""
+
