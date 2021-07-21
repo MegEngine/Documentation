@@ -5,9 +5,25 @@ list see the documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
 
-import logging
-# -- Path setup --------------------------------------------------------------
+# -- Monkey patch for `mprop` package ----------------------------------------
+# It will make some module to be a instance for getting or setting property
+# That is good for improving user experience but Sphinx can not handle with it
+# So we add a monkey patch then mprop will do nothing while building the doc.
+
+def doNothing(*args):
+    return
+
+import mprop
+mprop.init = doNothing
+mprop.mproperty = property
+mprop.auto_init = doNothing
+
+# -- Package setup -----------------------------------------------------------
+
 from datetime import datetime
+import logging
+
+# -- Path setup --------------------------------------------------------------
 
 import megengine
 
@@ -80,6 +96,7 @@ autoclass_content = "class"
 autodoc_docstring_signature = True
 autodoc_preserve_defaults = True
 autodoc_typehints = "none"
+autodoc_mock_imports = ["mprop"]
 
 # Setting for sphinx.ext.mathjax
 # The path to the JavaScript file to include in the HTML files in order to load MathJax.

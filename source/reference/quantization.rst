@@ -66,6 +66,7 @@ megengine.quantization
 
    FakeQuantize
    TQT
+   LSQ
 
 
 量化操作

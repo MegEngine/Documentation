@@ -64,6 +64,7 @@ Manipulation Functions
    split
    tile
    repeat
+   roll
    gather
    scatter
    cond_take
@@ -242,6 +243,7 @@ Convolution functions
    conv_transpose3d
    deformable_conv2d
    sliding_window
+   sliding_window_transpose
 
 .. _pooling-functions:
 

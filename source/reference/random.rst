@@ -17,6 +17,7 @@ megengine.random
    :nosignatures:
 
    seed
+   permutation
 
 分布（Distribution）
 --------------------
@@ -26,5 +27,8 @@ megengine.random
 
    normal
    uniform
+   beta
+   gamma
+   poisson
 
 

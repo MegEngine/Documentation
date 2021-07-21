@@ -4,6 +4,12 @@
 =====================
 megengine.distributed
 =====================
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/mprop.rst
+
+   backend
 
 分组（Group）
 -------------
