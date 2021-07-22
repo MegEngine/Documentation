@@ -1,7 +1,7 @@
 .. _tensor-creation:
 
 ===========
-Tensor 创建
+创建 Tensor
 ===========
 
 创建 Tensor 的方式有很多种，常见操作如下：
