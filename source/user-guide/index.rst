@@ -17,6 +17,7 @@
    :maxdepth: 1
 
    model-development/tensor/index
+   model-development/functional/index
    model-development/data/index
    model-development/module/index
    model-development/autodiff/index

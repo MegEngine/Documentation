@@ -14,8 +14,6 @@
    dtype
    device
    examples
-   creation
-   manipulation
 
 MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数据结构，
 区别于数学中的定义，其概念与 NumPy_ 中的 :py:class:`~numpy.ndarray` 更加相似，
