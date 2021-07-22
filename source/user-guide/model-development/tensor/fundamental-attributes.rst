@@ -65,9 +65,47 @@ Tensor 的秩（Rank）指 Tensor 的维数（维度的数量，the number of di
 Tensor 的轴
 -----------
 
-在笛卡尔平面坐标系中，存在着 :math:`X, Y` 轴，想要知道平面中某个点的位置，就需要知道坐标 :math:`(x, y)`.
+Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）。
 
-同样地，对于一个高维 Tensor, 我们可以借助轴（Axes）的概念，用来表明 Tensor 某个维度可操作的方向。
+* 在笛卡尔平面坐标系中，存在着 :math:`X, Y` 轴，想要知道平面中某个点的位置，就需要知道坐标 :math:`(x, y)`.
+* 同样地，想要知道三维空间中的一个点，就需要知道坐标 :math:`(x, y, z)`, 推广到更高维也是如此。
+
+.. panels::
+   :container: +full-width text-center
+   :card:
+
+   二维平面坐标系
+   ^^^^^^^^^^^^^^
+   .. figure:: ../../../_static/images/cartesian-coordinate-system.svg
+      :align: center
+
+      via `Cartesian coordinate system <https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`_
+
+   ---
+   三维空间坐标系
+   ^^^^^^^^^^^^^^
+   .. figure:: ../../../_static/images/coord_planes_color.svg
+      :align: center
+      
+      via `Three-dimensional_space <https://en.wikipedia.org/wiki/Three-dimensional_space>`_
+
+.. dropdown:: :fa:`eye,mr-1` Tensor 元素索引方向 vs 空间坐标的单位向量方向
+
+   借助坐标系，高维空间中的任何一点 :math:`P` 都可以用向量来表示（其起点在原点，终点在点 :math:`P` ）。
+
+   以 3 维空间为例，如果点 :math:`P` 的向量是 :math:`\mathbf{r}`, 直角坐标是 :math:`(x, y, z)`, 那么：
+
+   .. math::
+
+      \mathbf{r}=
+      x {\color{red}\hat{\mathbf{i}}} +
+      y {\color{green}\hat{\mathbf{j}}} +
+      z {\color{blue}\hat{\mathbf{k}}}
+
+   其中单位向量 :math:`\hat{\mathbf{i}}, \hat{\mathbf{j}}, \hat{\mathbf{k}}` 分别指向 :math:`X, Y, Z` 轴的正无穷方向。
+   与 Tensor 索引特定元素类似，整个过程就像是沿着轴从原点位置出发开始寻找该维度的坐标，接着前往下一个轴...
+
+同样地，对于一个高维 Tensor, 我们可以借助轴的概念，用来表明 Tensor 某个维度可操作的方向。
 
 对初学者来说，Tensor 的轴是最难理解的概念之一，你需要明白：
 
@@ -132,7 +170,7 @@ Tensor 的轴
 
 .. note::
 
-   Tensor 的轴是一个抽象的概念，它不是一个单独的属性，而被用作 Tensor 计算的参数。
+   Tensor 的轴是一个抽象的概念，它不是一个单独的属性，通常是操作某些 Tensor 时的参数。
 
 .. _axis-argument:
 
@@ -142,7 +180,7 @@ Tensor 的轴
 有了轴的概念，我们便可以定义一些沿着轴的操作，比如求和 :py:func:`~.functional.sum` :
 
 .. panels::
-   :container: +full-width text-center
+   :container: +full-width
    :card:
 
    沿着 ``axis=0`` 方向
@@ -193,7 +231,7 @@ Tensor 的轴
 
 我们将位于同一个 ``axis`` 方向上的元素用颜色进行了区分，来更好地理解沿着轴计算的本质。
 在进行类似 ``sum()`` 这样的统计性质的计算（多个数据统计得到单个统计值）时，
-``axis`` 参数将控制对哪个轴上的元素进行聚合（Aggregat）或折叠（Collapse）。
+``axis`` 参数将控制对哪个轴上的元素进行聚合（Aggregat），或者说折叠（Collapse）。
 
 实际上，计算后的返回的 Tensor 的 ``ndim`` 已经由 2 变成了 1.
 
@@ -209,18 +247,18 @@ Tensor 的轴
 
    更多统计性质的计算请参考 :py:func:`~.functional.prod`, :py:func:`~.functional.mean`,
    :py:func:`~.functional.min`, :py:func:`~.functional.max`,
-   :py:func:`~.functional.var`, :py:func:`~.functional.std`
+   :py:func:`~.functional.var`, :py:func:`~.functional.std` ...
 
 .. note::
 
-   * 这种统计某条轴上的元素使得 Tensor 维数减 1 的操作也叫做归约计算（Reduction）。
+   * 这种对某个轴上的元素进行统计，使得 Tensor 维数减 1 的操作也叫做归约计算（Reduction）。
    * 除了归约计算，Tensor 的拼接、拓展等操作也可以指定在特定的轴上进行，参考 :ref:`tensor-manipulation` 。
 
 .. note::
 
-   * ``ndim`` 为 3 的 Tensor 进行沿轴操作时，可以想象成空间坐标系中的 :math:`X, Y, Z` 坐标轴；
+   * ``ndim`` 为 3 的 Tensor 进行沿轴操作时，可以借助空间坐标系中存在的 :math:`X, Y, Z` 坐标轴理解；
    * 更高维 Tensor 的沿轴操作不好借助视觉想象，我们可以通过元素索引的角度来理解， 
-     :math:`T_{[a_0][a_1]\ldots [a_{n-1}]}` 中的 :math:`i` 轴方向即对应下标运算符中 :math:`a_i \quad i \in [0, n)` 变化的方向。
+     :math:`T_{[a_0][a_1]\ldots [a_{n-1}]}` 中的 :math:`i \in [0, n)` 轴方向即对应索引 :math:`a_i` 变化的方向。
 
 .. _tensor-shape:
 
@@ -270,25 +308,29 @@ Tensor 具有形状 :py:attr:`~.Tensor.shape` 属性，它是一个元组 :py:cl
 * :math:`M` 是一个秩为 2 的 Tensor, 也即 2 维 Tensor, 对应有两个轴；
 * 第 0 轴有 3 个索引值可用，第 1 轴有 4 个索引值可用。
 
-.. note::
-
-   我们在进行 Tensor 有关的计算时，尤其需要关注形状的变化。
-
-.. _more-tensor-attributes:
-
-接下来：更多的 Tensor 属性
---------------------------
-
-Tensor 还具备名为 :py:attr:`~.Tensor.size` 的属性，表示 Tensor 中元素的个数：
+Tensor 还具备名为 :py:attr:`~.Tensor.size` 的属性，用来表示 Tensor 中元素的个数：
 
 .. code-block:: python
 
    >>> M.size
    12
 
-上面这些概念在使用 NumPy, Pandas 等基于多维数组的科学计算库时也会被用到。
 
-掌握 Tensor 的基本属性后，我们便可以进行一些 :ref:`tensor-manipulation`.
+我们借助下面这张图，将这几个 Tensor 基础属性的关系直观地展示出来：
+
+.. image:: ../../../_static/images/ndim-axis-shape.png
+   :align: center
+
+.. note::
+
+   * 知道了形状信息，我们就可以推导出其它基础的属性值；
+   * 我们在进行 Tensor 有关的计算时，尤其需要关注形状的变化。
+
+.. _more-tensor-attributes:
+
+接下来：更多的 Tensor 属性
+--------------------------
+掌握 Tensor 的基本属性后，我们便可以进行一些 :ref:`tensor-manipulation` ，或者了解 :ref:`tensor-advanced-indexing` 。
 
 另外一个 NumPy 多维数组也具备的属性是数据类型，请参考 :ref:`tensor-dtype` 了解细节。
 
@@ -301,4 +343,7 @@ MegEngine 中实现的 Tensor 还具备有更多的属性，它们与 MegEngine 
 
    :py:attr:`.Tensor.grad`
       Tensor 的梯度是神经网络编程中很重要的一个属性，在反向传播的过程中被频繁使用。
+
+   The N-dimensional array ( :class:`~numpy.ndarray` ) 
+     通过 NumPy 官方文档了解与多维数组有关的知识，与 MegEngine 的 Tensor 联想对比。
 
