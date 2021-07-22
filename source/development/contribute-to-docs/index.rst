@@ -8,7 +8,7 @@
    :hidden:
    :maxdepth: 1
  
-   document-style-guide
+   document-style-guide/index
    python-docstring-style-guide
    restructuredtext
    commit-message
