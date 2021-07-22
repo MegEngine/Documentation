@@ -52,6 +52,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.graphviz",
     "sphinxcontrib.mermaid",
+    "sphinx_autodoc_typehints",
     "sphinx_copybutton",
     "sphinx_togglebutton",
     "sphinx_panels",
@@ -95,7 +96,6 @@ autodoc_default_options = {"member-order": "bysource"}
 autoclass_content = "class"
 autodoc_docstring_signature = True
 autodoc_preserve_defaults = True
-autodoc_typehints = "none"
 autodoc_mock_imports = ["mprop"]
 
 # Setting for sphinx.ext.mathjax
@@ -125,6 +125,9 @@ extlinks = {
         "",
     ),
 }
+
+# Setting for sphinx_autodoc_typehints
+typehints_fully_qualified = False
 
 # Setting for sphinx_copybutton
 copybutton_selector = "div:not(.no-copy)>div.highlight pre"
