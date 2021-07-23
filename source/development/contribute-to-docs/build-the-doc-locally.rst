@@ -1,7 +1,11 @@
 .. _how-to-build-the-doc-locally:
 
-如何在本地构建文档
-==================
+如何在本地构建与预览文档
+========================
+
+除了 :ref:`doc-ci-preview` 外，在某些时候，我们需要在本地构建与预览文档。
+
+我们以 Ubuntu 18.04 环境为例，向你展示从无到有构建 MegEngine 文档的过程。
 
 克隆文档源码到本地
 ------------------
@@ -10,11 +14,12 @@
 
 .. code-block:: shell
 
+   git lfs install
    git clone https://github.com/MegEngine/Documentation
 
 .. note::
 
-   为确保正常克隆，请确保本地 Git 已经安装 LFS_ (Large File Storage) 插件。
+   为确保正常克隆，上面的命令将安装 LFS_ (Large File Storage) 插件。
 
 .. _LFS: https://git-lfs.github.com/
 
@@ -26,19 +31,10 @@
 * 如果你是框架用户，不需要改动 MegEngine 源码，只需在本地构建和预览文档的内容，
   或对进行简单的增删查改，建议安装最新发布的 MegEngine 稳定版 Wheel 包构建文档。
   可以直接使用对应的 ``pip intall`` 命令将已经打包好的 MegEngine 安装到当前的 Python 环境中。
+  :ref:`了解如何进行使用 pip 安装。<install>`
 * 如果你是研发人员，需要在指定的 MegEngine 分支源代码上生成对应文档，则需要克隆对应分支进行编译构建。
   通过 ``export PYTHONPATH`` 的形式来临时指定特定的 MegEngine 源代码路径，
   这种方式适合开发者需要同时对源码和文档进行维护的情况。:ref:`了解如何进行从源码构建。<install>` 
-
-.. warning::
-   
-   为了支持内容的自定义排序，MegEngine 的 API 参考是通过列举而非自动生成的形式添加到文档中的，
-   如果你需要在文档中预览新增 API, 则需要手动将他们添加到对应的 ``source/reference/*.rst`` 文件中。
-
-   比如 ``funtional.add`` 位于 ``source/reference/functional.rst`` 的 Arithmetic operations 分类。
-
-   新增 API 不应该出现在当前版本的文档中，所以在验证无误后，请提交到文档的 dev 分支，
-   与 MegEngine 的 master 分支对应。（如果更新了对应的使用教程或用户指南，同理。）
 
 安装 Sphinx 与 Pydata 主题
 --------------------------
@@ -51,20 +47,31 @@ MegEngine 文档使用 Sphinx_ 进行整个网站的构建，请运行下面的�
 
    python3 -m pip install -r requirements.txt
 
-MegEngine 文档对应的 Sphinx 配置文件位于 ``source/conf.py`` ，如需修改请参考官方的 Configuration_ 页面。
+.. dropdown:: :fa:`eye,mr-1` 编辑 Sphinx 文档的配置文件
 
-.. _Configuration: https://www.sphinx-doc.org/en/master/usage/configuration.html
+   通常情况下，你无需对已有配置文件进行任何改动，即可继续进行后面的流程。
+   MegEngine 文档对应的 Sphinx 配置文件位于 :docs:`source/conf.py`,
+   如需修改请参考官方的 Configuration_ 页面。
 
-通常情况下，你无需对已有配置文件进行任何改动，即可继续进行后面的流程。
+   .. _Configuration: https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-.. note::
+   .. note::
 
-   Sphinx 在应用配置时将通过执行上面脚本中的 ``import megengine`` 来尝试寻找 MegEngine 包路径。
+      Sphinx 通过 ``conf.py`` 中的 ``import megengine`` 来尝试寻找 MegEngine 包路径，
+      你也可以通过其它方式比如人为将 MegEngine 路径添加到 ``sys.path`` 来达到同样的效果。
 
-   * 使用 ``pip`` 安装的路径应该类似于：``/.../lib/.../site-packages/megengine``
-   * 从源码编译构建的路径应该类似于： ``/.../MegEngine/imperative/python/megengine``
+      * 使用 ``pip`` 安装的路径应该类似于：``/.../lib/.../site-packages/megengine``
+      * 从源码编译构建的路径应该类似于： ``/.../MegEngine/imperative/python/megengine``
 
-接下来我们需要从 MegEngine/pydata-sphinx-theme 安装 Fork 版 PyData_ 主题：
+   .. warning::
+
+      如果你未经过编译，想要直接使用 MegEngine 源码进行文档的构建，
+      则将因会缺少编译构建出的动态链接库而无法正常执行 ``import``.
+
+安装文档所用主题
+~~~~~~~~~~~~~~~~
+
+接下来我们需要从 MegEngine/pydata-sphinx-theme 克隆 Fork 版 PyData_ 主题：
 
 .. _Pydata: https://github.com/pydata/pydata-sphinx-theme
 
@@ -119,32 +126,49 @@ Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经�
 使用 Sphinx 进行文档构建
 ------------------------
 
-在文档目录下使用 ``make help`` 指令，可看到相应的帮助信息。
 
-在文档目录下使用 ``make html`` 指令，可根据 ``BUILDDIR`` 路径（默认为 ``build`` ）生成 HTML 文件夹。
-
-.. note::
-
-   * Sphinx 支持增量构建，当你对源文件进行了更改并保存，只需再次执行 ``make html`` 即可。
-   * **如果发现一些页面的元素仍被缓存而没有被更新** ，请尝试先执行 ``make clean`` 指令。
-   * 本质上所有的指令通过 sphinx-build_ 执行，阅读 ``Makefile`` 文件源代码，可以了解更多细节。
-
-.. _sphinx-build: https://www.sphinx-doc.org/en/master/man/sphinx-build.html
+在文档目录下使用 ``make html`` 指令，会在 ``build`` 目录下生成 HTML 文件夹。
 
 文档生成成功后，打开 ``build/html/index.html`` 文件便可访问主页。
 
-启动本地 Web 服务器（可选）
----------------------------
+.. note::
 
-如果你有在本地启动 Web 服务器的需求，一种比较简单的方法是使用 Python 自带的 ``http`` 模块：
+   Sphinx 默认支持增量构建，当你再次执行 ``make html`` 时将仅对变化的文件进行更新；
+
+.. warning::
+
+   Sphinx 不会检测增量模式下非文档文件的更改，例如主题文件、静态文件和与 autodoc 一起使用的源代码；
+   如果发现一些页面的元素仍被缓存而没有被更新，请尝试通过传入 ``-a`` 参数禁用增量模式（但构建速度会相应地变慢），
+   或者通过 ``make clean`` 指令清除掉已经构建出的内容。
+
+.. note::
+
+   * 运行 ``make help`` 指令，可看到相应的帮助和参数信息，比如显示当前 MegEngine 路径等；
+   * ``make html`` 本质上调用了 sphinx-build_ 工具（参考 :docs:`Makefile` 了解更多细节）。 
+
+自动构建和实时预览页面
+----------------------
+
+你也可以使用 ``make livehtml`` 指令，在监测到文件变化时自动重新构建，
+而且可以通过浏览器进行实时的预览。
+``HOST`` 默认为 ``127.0.0.1`` 和 ``PORT`` 默认为 ``8000``, 可人为指定：
 
 .. code-block:: shell
 
-   python3 -m http.server 1124 --directory build/html
+   make livehtml AUTOBUILDOPTS="--host 0.0.0.0 --port 1124"
 
-运行上面的代码，可将本地的 build/html 下的 Web 服务映射到 1124 端口，你也可以选择使用其它 Web 服务器。
+运行上面这个代码将得到类似的实时监控输出：
 
-如果你的 Python 版本低于 3.7, 将不支持 ``--directory`` 参数，请 ``cd`` 到对应目录执行上述命令。
+.. code-block:: shell
 
-通常你可以选择将 Web 服务挂在后台，这样在重新 build HTML 文件后只需要刷新页面即可。
+   [I 210723 15:35:07 server:335] Serving on http://0.0.0.0:1124
+   [I 210723 15:35:07 handlers:62] Start watching changes
+   [I 210723 15:35:07 handlers:64] Start detecting changes
+
+.. note::
+
+   背后的原理是：我们使用了 sphinx-autobuild_ 对原有 sphinx-build_ 进行了增强。
+
+.. _sphinx-build: https://www.sphinx-doc.org/en/master/man/sphinx-build.html
+.. _sphinx-autobuild: https://github.com/executablebooks/sphinx-autobuild
 
