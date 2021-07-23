@@ -93,6 +93,17 @@ MegEngine 文档的源码结构如下：
    因此 MegEngine 的 Python API 文档将先从源代码提取出英文 Docstring，
    再通过翻译对应的 ``locales/zh-CN/LC_MESSAGES/reference/api/*.po`` 文件变为中文。
 
+.. warning::
+   
+   为了支持内容的自定义排序，MegEngine 的 API 参考是通过列举而非自动生成的形式添加到文档中的，
+   如果你需要在文档中预览新增 API, 则需要手动将他们添加到对应的 ``source/reference/*.rst`` 文件中。
+
+   比如 ``funtional.add`` 位于 ``source/reference/functional.rst`` 的 Arithmetic operations 分类。
+
+   新增 API 不应该出现在当前版本的文档中，所以在验证无误后，请提交到文档的 dev 分支，
+   与 MegEngine 的 master 分支对应。（如果更新了对应的使用教程或用户指南，同理。）
+
+
 如果你曾经使用 Sphinx 构建过 Python 项目的文档，想必会对上面的源码结构非常熟悉。
 有的时候，为了在本地预览自己的改动效果，我们需要学会 :ref:`how-to-build-the-doc-locally` 。
 
@@ -136,6 +147,8 @@ Git 协作流程
 #. 当你的分支被合并了，便可以删除对应的本地和远程分支。
 
 我们还提供了更加详细的 :ref:`pull-request-guide` （里面的规则适用于 MegEngine ）。
+
+.. _doc-ci-preview:
 
 借助 CI 预览更新后的文档
 ~~~~~~~~~~~~~~~~~~~~~~~~
