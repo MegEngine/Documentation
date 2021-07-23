@@ -24,6 +24,10 @@ from datetime import datetime
 import logging
 
 # -- Path setup --------------------------------------------------------------
+# Generally we use `os.path` and `sys.path` to tell Sphinx where to find code
+#   of our project, which can be used in the sphinx.autodoc extension.
+# But MegEngine source code and documentation are stored in two different 
+#   repository and it's recommended to import megengine package to match.
 
 import megengine
 
@@ -39,7 +43,7 @@ release = version
 add_function_parentheses = False
 add_module_names = False
 
-# WARNING: Do not modify loading order unless you know the dependencies
+# WARNING: Do not modify the order unless you know what will happen
 extensions = [
     "nbsphinx",
     "sphinx.ext.napoleon",
@@ -80,15 +84,13 @@ exclude_patterns = [
 # -- Options for internationalization ----------------------------------------
 language = "zh_CN"
 locale_dirs = ["../locales/"]
-
-# By default, the document `functional/loss.rst` ends up in the `functional` text domain.
-# With this option set to False, it is `functional/loss`.
 gettext_compact = False
 
 # -- Options for Extensions -------------------------------------------------
 
 # Setting for sphinx.ext.autosummary to auto-generate single html pages
 # Please makesure all api pages are stored in `/refenrece/api/` directory
+# See `Makefile` for more detail.
 autosummary_generate = True
 
 # Setting for sphinx.ext.auotdoc
@@ -117,7 +119,7 @@ intersphinx_mapping = {
 # Can use the alias name as a new role, e.g. :issue:`123`
 extlinks = {
     "src": ("https://github.com/MegEngine/MegEngine/blob/master/%s", ""),
-    "docs": ("https://github.com/MegEngine/Documentation/blob/master/%s", ""),
+    "docs": ("https://github.com/MegEngine/Documentation/blob/main/%s", ""),
     "issue": ("https://github.com/MegEngine/MegEngine/issues/%s", "Issue #"),
     "pull": ("https://github.com/MegEngine/MegEngine/pull/%s", "Pull Requset #"),
     "duref": (

@@ -9,8 +9,8 @@ SPHINXOPTS    ?= -j auto -D language='$(LANGUAGE)'
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
-HTTPPORT      ?= 1124
 HTMLAPI       ?= reference/api
+AUTOBUILDOPTS ?= ''
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -23,6 +23,7 @@ help:
 	@echo "BUILDDIR: ${BUILDDIR}"
 	@echo "HTMLAPI: ${HTMLAPI}"
 	@echo "SPHINXOPTS: ${SPHINXOPTS}"
+	@echo "AUTOBUILDOPTS: ${AUTOBUILDOPTS}"
 	@echo "=============================================== Notes ======================================================"
 	@echo "1. You can use\033[36m export PYTHONPATH=\"/path/to/megengine\"\033[0m to specify megengine python package path."
 	@echo "2. You can use\033[36m make LANGUAGE=\"[ zh_CN | en ]\" html\033[0m to specify the language displayed in documentation."
@@ -32,11 +33,10 @@ clean:
 	rm -rf $(BUILDDIR)
 	rm -rf $(SOURCEDIR)/$(HTMLAPI)
 
-http: html
-	cd $(BUILDDIR)/html
-	python3 -m http.server $(HTTPPORT)
+livehtml:
+	sphinx-autobuild $(AUTOBUILDOPTS) "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help clean http Makefile
+.PHONY: help clean Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

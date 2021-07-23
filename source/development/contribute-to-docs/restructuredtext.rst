@@ -13,9 +13,41 @@ Sphinx reStructuredText 语法入门
 
 .. note::
 
-   * 如果你有 MarkDown 语法经验，学习 RST 语法会更加简单。
+   * 如果你有 MarkDown 语法经验，学习 reST 语法会更加简单。
    * MegEngine 文档维护人员一定要对 :ref:`超链接 <hyperlinks-rst>` 和 :ref:`交叉引用 <cross-reference-rst>` 的用法烂熟于心。
    * 即使是在 Python 文档字符串中也可以使用 :ref:`sphinx-directives` 和 :ref:`sphinx-ext`.
+
+.. note::
+
+   * 对于简单的文本编辑，可以先在 MarkDown 编辑器中撰写，再通过 Pandoc 转换成 reST 格式；
+   * 如果你习惯使用 Visual Studio Code, 可以考虑安装 `reStructuredText Language Support for Visual Studio Code
+     <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_ 拓展，所见即所得。
+
+.. warning::
+   
+   这些指令和自己的可选参数之间不能存在空行，但和被渲染的内容之间必须有空行。
+
+.. _indentation-rst:
+
+缩进（Indentation）
+-------------------
+
+.. warning::
+
+   * reST 语法要求使用 3 格缩进（有的是 2 格），错误的缩进将导致无法正确渲染样式。
+   * 如果在 Sphinx reST 内使用代码块，其缩进要求不受影响（如 Python）。
+
+对于不同的编辑器，都有着对应的调整缩进宽度的办法（以 Vim 为例子）：
+
+.. code-block:: text
+
+   :set shiftwidth=3
+   :set autoindent
+   :set smartindent
+   :20, 37 >
+
+上面的命令可以快速对 20 至 37 行的内容进行向右缩进。
+
 
 .. _sections-rst:
 
@@ -40,8 +72,27 @@ MegEngine 采用如下的章节结构语法规范：
 
 .. warning::
 
-   * **标记符必须与文本长度一致。** 
+   * **标记符必须与文本长度一致，否则会导致 Warning （无法通过 CI）。** 
    * 你可以采用更深的嵌套级别，但在文档中应当避免出现四级甚至更深的标题。
+
+.. panels::
+
+  正确示范
+  ^^^^^^^^
+  .. code-block::
+
+     ========
+     一级标题
+     ========
+
+  ---
+  错误示范
+  ^^^^^^^^
+  .. code-block::
+
+     ======================
+     一级标题
+     ======================
 
 .. _paragraphs-rst:
 
@@ -51,17 +102,28 @@ MegEngine 采用如下的章节结构语法规范：
 段落（:duref:`参考 <paragraphs>` ）即一个或多个空白行分隔的文本块，是 reST 文档中最基本的部分。
 缩进在 reST 语法中很重要（与 Python 一样），因此同一段落的所有行都必须左对齐到相同的缩进级别。
 
-.. code-block::
+.. panels::
 
-   第一段内容的第一部分，
-   第一段内容的第二部分，将与前一句话连续（即不会换行）。
-   
-   第二段内容。
+   没有空行的情况
+   ^^^^^^^^^^^^^^
+   .. code-block::
 
-第一段内容的第一部分，
-第一段内容的第二部分，将与前一句话连续（即不会换行）。
+      第一部分，
+      第二部分。
+
+   第一部分，第二部分。
+   ---
+   存在空行的情况
+   ^^^^^^^^^^^^^^
+   .. code-block::
+
+      第一部分，
+
+      第二部分。
+
+   第一部分，
    
-第二段内容。
+   第二部分。
 
 保留换行特性
 ~~~~~~~~~~~~
@@ -70,103 +132,84 @@ MegEngine 采用如下的章节结构语法规范：
 
 .. code-block::
 
-   | 第一段内容的第一部分，
-   | 第一段内容的第二部分，将会进行换行。
+   | 第一部分，
+   | 第二部分。
 
-| 第一段内容的第一部分，
-| 第一段内容的第二部分，将会进行换行。
+| 第一部分，
+| 第二部分。
 
 .. _inlnie-markup-rst:
 
 内联标记（Inline markup）
 -------------------------
 
-标准的 reST 内联标记用法十分简单：
+包裹使用，标准的 reST 内联标记用法十分简单：
 
-.. code-block::
 
-   *使用单个星号表示标记重点。（粗体）*
+单个星号表示 ``<em>``
+  .. code-block:: text
 
-   **使用两个星号表示强调重点。（斜体）**
+     *HTML 着重元素 (<em>) 标记出需要用户着重阅读的内容*
+  
+  *HTML 着重元素 (<em>) 标记出需要用户着重阅读的内容*
 
-   ``使用两个反引号表示代码示例。``
+两个星号表示 ``<strong>``
+  .. code-block:: text
 
-*使用单个星号表示标记重点。（粗体）*
+     **Strong 元素 (<strong>)表示文本十分重要，一般用粗体显示。**
 
-**使用两个星号表示强调重点。（斜体）**
+  **Strong 元素 (<strong>)表示文本十分重要，一般用粗体显示。**
 
-``使用两个反引号表示代码示例。``
+单个反引号表示 ``<cite>``
+  .. code-block:: text
 
-.. warning::
+     `HTML引用（ Citation）标签 (<cite>) 表示一个作品的引用，且必须包含作品的标题。`
 
-   * 内联标记不支持嵌套语法
-   * 内容不能以空格开头或结尾，如 ``* 文本*`` 这样的用法是错误的
-   * 必须用非单词字符将其和周围的文本分开
+  `HTML引用（ Citation）标签 (<cite>) 表示一个作品的引用，且必须包含作品的标题。`
+   
+两个反引号表示 ``<pre>``
+  .. code-block:: text
+
+     ``HTML <pre> 元素表示预定义格式文本``
+
+  ``HTML <pre> 元素表示预定义格式文本``
+
+.. dropdown:: :fa:`eye,mr-1` 使用注意事项
+
+   .. warning::
+
+      标记符号与被包裹的文本内容之间不能存在空格，与外部文本之间必须存在空格。
+
+   .. panels::
+
+     正确示范
+     ^^^^^^^^
+     .. code-block:: text
+
+        这些文本 **表示强调** 作用
+
+     这些文本 **表示强调** 作用
+     ---
+     错误示范
+     ^^^^^^^^
+     .. code-block:: text
+
+        这些文本 ** 表示强调** 作用
+        这些文本 **表示强调 ** 作用
+        这些文本**表示强调** 作用
+
+     这些文本 ** 表示强调** 作用
+     这些文本 **表示强调 ** 作用
+     这些文本**表示强调** 作用
 
 .. _list-rst:
 
 列表（List）
 ------------
 
-无序列表
-~~~~~~~~
+.. warning::
 
-无序列表（:duref:`参考 <bullet-lists>` ）的用法很自然。
-只需要在段落开头放置星号，然后正确地缩进：
-
-.. code-block::
-
-   * 这是一个无序列表。
-   * 它有两个元素，
-     第二个元素占据两行源码，实际上视作同一个段落。
-
-* 这是一个无序列表。
-* 它有两个元素，
-  第二个元素占据两行源码，实际上视作同一个段落。
-
-有序列表
-~~~~~~~~
-
-对于有序列表，可以自己编号，也可以使用 # 来自动编号：
-
-.. code-block::
-
-   1. 这是一个有序列表。
-   2. 它也有两个元素。
-
-1. 这是一个有序列表。
-2. 它也有两个元素。
-
-.. code-block::
-
-   #. 这又是一个有序列表。
-   #. 但是它能够自动编号～
-
-#. 这又是一个有序列表。
-#. 但是它能够自动编号～
-
-考虑到内容修改的方便，推荐使用自动编号的有序列表。
-
-嵌套列表
-~~~~~~~~
-
-嵌套列表必须使用空白行和父列表项目隔开：
-
-.. code-block::
-
-   * 这是一个列表。
-
-     * 它嵌套了一个子列表，
-     * 并且有自己的子元素。
-
-   * 这里是父列表的后续元素。
-
-* 这是一个列表。
-
-  * 它嵌套了一个子列表，
-  * 并且有自己的子元素。
-
-* 这里是父列表的后续元素。
+   列表语法是最容易被用错的地方，在文档中也极为常见。
 
 定义列表
 ~~~~~~~~
@@ -190,6 +233,99 @@ MegEngine 采用如下的章节结构语法规范：
 
 下一个术语
   下一个术语对应的定义。
+
+无序列表
+~~~~~~~~
+
+无序列表（:duref:`参考 <bullet-lists>` ）的用法很自然。
+只需要在段落开头放置星号，然后正确地缩进：
+
+.. panels::
+
+   正确的示范（2 格缩进）
+   ^^^^^^^^^^^^^^^^^^^^^^
+   .. code-block::
+
+      * 这是一个无序列表。
+      * 它有两个元素，
+        第二个元素占据两行源码，视作同一个段落。
+
+   * 这是一个无序列表。
+   * 它有两个元素，
+     第二个元素占据两行源码，视作同一个段落。
+   ---
+   错误的示范（4 格缩进）
+   ^^^^^^^^^^^^^^^^^^^^^^
+   .. code-block::
+
+      * 这是一个无序列表。
+      * 它有两个元素，
+          第二个元素被解析成定义列表。
+
+   * 这是一个无序列表。
+   * 它有两个元素，
+       第二个元素被解析成定义列表。
+
+有序列表
+~~~~~~~~
+
+对于有序列表，可以自己编号，也可以使用 # 来自动编号：
+
+.. code-block::
+
+   1. 这是一个有序列表。
+   2. 它也有两个元素。
+
+1. 这是一个有序列表。
+2. 它也有两个元素。
+
+.. code-block::
+
+   #. 这又是一个有序列表。
+   #. 但是它能够自动编号～
+
+#. 这又是一个有序列表。
+#. 但是它能够自动编号～
+
+
+嵌套列表
+~~~~~~~~
+
+嵌套列表必须使用空白行和父列表项目隔开：
+
+.. panels::
+
+   正确示范
+   ^^^^^^^^
+   .. code-block::
+
+      * 这是一个列表。
+
+        * 它嵌套了一个子列表，
+        * 并且有自己的子元素。
+
+      * 这里是父列表的后续元素。
+
+   * 这是一个列表。
+
+     * 它嵌套了一个子列表，
+     * 并且有自己的子元素。
+
+   * 这里是父列表的后续元素。
+   ---
+   错误示范
+   ^^^^^^^^
+   .. code-block::
+
+      * 这并不是嵌套列表，
+        * 前面三行被看作是同一个元素，
+        * 其中星号被解析成普通的文本。
+      * 这是列表的第二个元素。
+
+   * 这并不是嵌套列表，
+     * 前面三行被看作是同一个元素，
+     * 其中星号被解析成普通的文本。
+   * 这是列表的第二个元素。
 
 .. _tables-rst:
 
@@ -322,10 +458,6 @@ List 表可以根据两级无序列表来生成表格：
 
 使用 ```链接文本 <https://domain.invalid>`_`` 来插入内联网页链接。
 
-.. warning::
-
-   在链接文本和 ``<`` 符号之间必须有一个空格。
-
 你也可以使用目标定义（:duref:`参考 <hyperlink-targets>` ）的形式分离文本和链接：
 
 .. code-block::
@@ -337,6 +469,14 @@ List 表可以根据两级无序列表来生成表格：
 这个段落包含一个 `超链接`_.
 
 .. _超链接: https://domain.invalid/
+
+.. warning::
+
+   * 在链接文本和 ``<`` 符号之间必须至少有一个空格。
+   * 同 :ref:`inlnie-markup-rst` ，
+     标记符和被包裹的文本之间不能有空格，
+     而标记符和外部文本之间至少需要有一个空格。
+
 
 .. _images-rst:
 
@@ -366,6 +506,11 @@ reST 支持图像指令，用法如下：
    * 尽可能使用 :ref:`Graphviz <graphviz-ext>` 或 :ref:`Mermaid <mermaid-ext>` 语法绘制示意图。
    * 图片文件名需要有相应的语义信息，不可使用完全随机生成的字符。
 
+.. note::
+
+   如果你想要给图片添加描述性文字，请使用 ``figure`` 代替 ``image``,
+   接着使用 ``:caption: text`` 作为传入的参数，其它参数用法一致。
+
 .. _cross-reference-rst:
 
 交叉引用（Cross-reference）
@@ -373,11 +518,9 @@ reST 支持图像指令，用法如下：
 
 使用 ``:role:`target``` 语法，就会创造一个 ``role`` 类型的指向 ``target`` 的链接。
 
-* 显示的链接文本会和 ``target`` 一致
-* 你也可以使用 ``:role:`title <target>``` 来将链接文本指定为 ``title``
-* 如果使用前缀 ``~`` , 链接文本将会只显示 ``target`` 的最后一部分。
-  例如 ``:py:func:`~megengine.functional.add``` 将会指向 ``megengine.functional.add``
-  但显示为 :py:func:`~megengine.functional.add` .
+* 最常见的使用情景是文档内部页面的相互引用（尤其是引用 API 参考内容时）。
+* 显示的链接文本会和 ``target`` 一致，
+  你也可以使用 ``:role:`title <target>``` 来将链接文本指定为 ``title``
 
 通过 ref 进行引用
 ~~~~~~~~~~~~~~~~~
@@ -401,7 +544,7 @@ reST 支持图像指令，用法如下：
 
   这种方法将自动获取章节标题作为链接文本，且对图片和表格也一样有效。
 
-* 如果标签没有放在标题之前，则需要使用 ``:ref:`Link title <label-name>``` 在其它地方引用。
+* 如果标签没有放在标题之前，则需要使用 ``:ref:`Link title <label-name>``` 来指定名称。
 
 交叉引用 Python 对象
 ~~~~~~~~~~~~~~~~~~~~
@@ -424,11 +567,21 @@ MegEngine 文档按照 Sphinx `Python Domain <https://www.sphinx-doc.org/en/mast
 * ``:py:exc:`` 引用一个异常（Exception）；可以使用点名。
 * ``:py:obj:`` 引用未指定类型的对象。
 
-默认情况下，将在 `当前的模块 <https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#directive-py-currentmodule>`_ 中进行搜索。
-比如 ``:py:func:`add``` 可以指向当前模块名为 ``add`` 的一个函数或者 built-in 的函数。
+默认情况下，将在 `当前的模块 
+<https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#directive-py-currentmodule>`_ 中进行搜索。
+
+.. code-block::
+
+   .. currentmodule:: megengine.functional
+
+比如 ``:py:func:`add``` 可以指向当前 ``funtional`` 模块内名为 ``add`` 的一个函数或者 Python Built-in 的函数。
 如果使用 ``:py:func:`functional.add``` 则可以明确指向到 ``functional`` 模块中的 ``add`` 函数。
 
-如果使用点名，在没有找到完全匹配的内容时，会将点名作为后缀，
+如果使用前缀 ``~`` , 链接文本将会只显示 ``target`` 的最后一部分。
+例如 ``:py:func:`~megengine.functional.add``` 将会指向 ``megengine.functional.add``
+但显示为 :py:func:`~megengine.functional.add` .
+
+如果使用 ``.`` 点名，在没有找到完全匹配的内容时，会将点名作为后缀，
 并开始搜索和匹配带有该后缀的所有对象的名称（即使匹配到的结果不在当前模块）。
 例如在已知当前模块为 ``data`` 时，使用 ``:py:func:`.functional.add``` 
 会找到 :py:func:`.functional.add` . 我们也可以结合使用 ``~`` 和 ``.`` ，
@@ -440,7 +593,7 @@ MegEngine 文档按照 Sphinx `Python Domain <https://www.sphinx-doc.org/en/mast
    比如 ``add`` 的实际路径是 ``megengine.functional.elemwise.add`` ，
    但在文档中能够搜索到的路径只有 ``megengine.functional.add`` .
    因此在引用时应当使用 ``:py:func:`~.functional.add``` 而不是 ``:py:func:`~.functional.elemwise.add``` 
-   （后者会因为匹配失败而无法生成超链接），前者是我们推荐 MegEngine 用户的 API 调用方式。
+   （后者会因为匹配失败而无法生成超链接）。
 
 .. warning::
 
@@ -455,19 +608,19 @@ MegEngine 文档按照 Sphinx `Python Domain <https://www.sphinx-doc.org/en/mast
 
 .. code-block::
 
-   Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
+   Lorem ipsum [1]_ dolor sit amet ... [2]_
 
    .. rubric:: Footnotes
 
-   .. [#f1] Text of the first footnote.
-   .. [#f2] Text of the second footnote.
+   .. [1] Text of the first footnote.
+   .. [2] Text of the second footnote.
 
-Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
+Lorem ipsum [1]_ dolor sit amet ... [2]_
 
 .. rubric:: Footnotes
 
-.. [#f1] Text of the first footnote.
-.. [#f2] Text of the second footnote.
+.. [1] Text of the first footnote.
+.. [2] Text of the second footnote.
 
 你可以显式使用 ``[1]_`` 来编号，否则使用 ``[#]_`` 进行自动编号。
 
@@ -499,14 +652,6 @@ Lorem ipsum [Ref]_ dolor sit amet.
 
    Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`.
 
-就会得到由 `MathJax <https://www.mathjax.org/>`_ 渲染得到的数学公式：
-
-Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`.
-
-.. note::
-
-   这个用法适合显示行内公式，如果想要使用行间公式，请参考下面的拓展指令。
-
 .. _sphinx-directives:
 
 Sphinx 拓展指令
@@ -514,7 +659,7 @@ Sphinx 拓展指令
 
 .. warning::
 
-   以下语法非原生 ReStructuredText 语法，需要使用 Sphinx 进行支持。
+   以下语法非原生 ReStructuredText 语法，需要通过 Sphinx 进行支持。
 
 ``.. toctree::`` 
   Table of contents tree. 用于组织文档结构。
@@ -586,8 +731,10 @@ Sphinx 拓展指令
 ``.. code-block:: [language]``
   展示代码块，如果未设置 ``language``, highlight_language 将被使用。
   
-想要了解完整的指令和配置项，请访问 `Directives
-<https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html>`_ 页面。
+.. note::
+
+   想要了解完整的指令和配置项，请访问 `Directives
+   <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html>`_ 页面。
 
 .. _sphinx-ext:
 
