@@ -5,12 +5,12 @@ MEGENGINEPY   = `python3 -c "import os; \
                 import megengine; \
                 print(os.path.dirname(megengine.__file__))"`
 LANGUAGE      ?= zh_CN
-SPHINXOPTS    ?= -j auto -D language='$(LANGUAGE)'
+SPHINXOPTS    ?= -j auto -D language='$(LANGUAGE)' $(AUTOBUILDOPTS)
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 HTMLAPI       ?= reference/api
-AUTOBUILDOPTS ?= ''
+AUTOBUILDOPTS ?= 
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -34,7 +34,7 @@ clean:
 	rm -rf $(SOURCEDIR)/$(HTMLAPI)
 
 livehtml:
-	sphinx-autobuild $(AUTOBUILDOPTS) "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 .PHONY: help clean Makefile
 
