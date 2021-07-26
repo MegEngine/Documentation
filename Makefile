@@ -10,7 +10,7 @@ SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 HTMLAPI       ?= reference/api
-AUTOBUILDOPTS ?= ''
+AUTOBUILDOPTS ?= 
 
 # Put it first so that "make" without argument is like "make help".
 help:

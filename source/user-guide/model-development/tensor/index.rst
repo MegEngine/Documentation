@@ -29,7 +29,7 @@ MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数�
    与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效的计算。
    当 GPU 和 CPU 设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。
    
-   * 如果有查看/改变默认计算设备的需求，请参考 :ref:`device` 中提供的接口。
+   * 如果有查看/改变默认计算设备的需求，请参考 :ref:`tensor-device` 中的说明。
    * 通过 :meth:`.Tensor.to` 和 :func:`.functional.copy` 可将 Tensor 拷贝到指定设备。
 
 .. _specific-concepts:

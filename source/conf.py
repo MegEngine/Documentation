@@ -29,14 +29,22 @@ import logging
 # But MegEngine source code and documentation are stored in two different 
 #   repository and it's recommended to import megengine package to match.
 
-import megengine
+# Setting for documentation editors who do not want to install megengine.
+# This will remove some pages and configurations to keep the doc slim.
+mini_doc = False
+
+try:
+    import megengine
+except ImportError:
+    print("MegEngine not found. Using mini-doc mode.")
+    mini_doc = True
 
 # -- Project information -----------------------------------------------------
 
 project = "MegEngine"
 copyright = f"2020-{datetime.now().year}, The MegEngine Open Source Team"
 author = "The MegEngine Open Source Team"
-version = megengine.__version__
+version = "1.5"
 release = version
 
 # -- General configuration ---------------------------------------------------
@@ -77,9 +85,13 @@ exclude_patterns = [
     "_build",
     "build",
     "examples",
-    "**/includes/**",
+    "**/includes",
     "**.ipynb_checkpoints",
 ]
+
+# If users do not install MegEngine in system, exclude APIs from the document.
+if mini_doc:
+    exclude_patterns.append("reference")
 
 # -- Options for internationalization ----------------------------------------
 language = "zh_CN"
@@ -89,7 +101,7 @@ gettext_compact = False
 # -- Options for Extensions -------------------------------------------------
 
 # Setting for sphinx.ext.autosummary to auto-generate single html pages
-# Please makesure all api pages are stored in `/refenrece/api/` directory
+# Please makesure all api pages are stored in `/reference/api/` directory
 # See `Makefile` for more detail.
 autosummary_generate = True
 
