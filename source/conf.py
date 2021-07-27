@@ -5,6 +5,10 @@ list see the documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
 
+# Setting for documentation editors who do not want to install megengine.
+# This will remove some pages and configurations to keep the doc slim.
+mini_doc = False
+
 # -- Monkey patch for `mprop` package ----------------------------------------
 # It will make some module to be a instance for getting or setting property
 # That is good for improving user experience but Sphinx can not handle with it
@@ -13,10 +17,14 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html
 def doNothing(*args):
     return
 
-import mprop
-mprop.init = doNothing
-mprop.mproperty = property
-mprop.auto_init = doNothing
+try:
+    import mprop
+except ImportError:
+    pass
+else:
+    mprop.init = doNothing
+    mprop.mproperty = property
+    mprop.auto_init = doNothing
 
 # -- Package setup -----------------------------------------------------------
 
@@ -28,10 +36,6 @@ import logging
 #   of our project, which can be used in the sphinx.autodoc extension.
 # But MegEngine source code and documentation are stored in two different 
 #   repository and it's recommended to import megengine package to match.
-
-# Setting for documentation editors who do not want to install megengine.
-# This will remove some pages and configurations to keep the doc slim.
-mini_doc = False
 
 try:
     import megengine
