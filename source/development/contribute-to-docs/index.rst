@@ -35,8 +35,8 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 
 .. _doc-co-author:
 
-面向非开发人员的贡献方法
-------------------------
+非开发人员的贡献方式
+--------------------
 
 如果你发现了文档中一些很容易改正的细节错误（比如错字、格式不正确等），
 但没有 GitHub 账号，或者不熟悉 MegEngine 文档的 :ref:`github-collaborate` ，
@@ -60,8 +60,21 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 
    请勿将对文档（Documentation）的 Issues 提交到 MegEngine/MegEngine 存储库。
 
+开发者的贡献方式
+----------------
+
+开发环境设置
+~~~~~~~~~~~~
+
+.. note:: 
+
+   * 如果你曾经使用 Sphinx 构建过 Python 项目的文档，想必会对下面展示的源码结构非常熟悉。
+     有的时候，为了在本地预览自己的改动效果，我们需要学会 :ref:`how-to-build-the-doc-locally` 。
+   * 你也可以根据自身情况，选择使用 `Gitpod <https://gitpod.io/#https://github.com/MegEngine/Documentation>`_ 
+     等类型的云 IDE 来创建一个临时的文档开发环境，但这需要连接到 GitHub 帐户，且会对你的网络环境有一定的要求。
+
 源码组织逻辑
-------------
+~~~~~~~~~~~~
 
 MegEngine 文档的源码结构如下：
 
@@ -113,17 +126,10 @@ MegEngine 文档的源码结构如下：
       新增 API 不应该出现在当前版本的文档中，所以在验证无误后，请提交到文档的 dev 分支，
       与 MegEngine 的 master 分支对应。（如果更新了适用于新版本的教程或用户指南，方法同理。）
 
-.. note:: 
-
-   * 如果你曾经使用 Sphinx 构建过 Python 项目的文档，想必会对上面的源码结构非常熟悉。
-     有的时候，为了在本地预览自己的改动效果，我们需要学会 :ref:`how-to-build-the-doc-locally` 。
-   * 你也可以根据自身情况，选择使用 `Gitpod <https://gitpod.io/#https://github.com/MegEngine/Documentation>`_ 
-     等类型的云 IDE 来创建一个临时的文档开发环境，但这需要连接到 GitHub 帐户，且会对你的网络环境有一定的要求。
-
 .. _doc-content:
 
 内容分类逻辑
-------------
+~~~~~~~~~~~~
 
 MegEngine 的文档主要包括以下方面的内容：
 
@@ -147,8 +153,8 @@ MegEngine 的文档主要包括以下方面的内容：
 
 .. _github-collaborate:
 
-Git 协作流程
-------------
+GitHub 协作流程
+~~~~~~~~~~~~~~~
 
 高效清晰的沟通是合作的前提，标准的 MegEngine 文档协作流程如下：
 
@@ -161,19 +167,26 @@ Git 协作流程
 
 我们还提供了更加详细的 :ref:`pull-request-guide` （里面的规则适用于 MegEngine ）。
 
+.. note::
+
+   要求首先创建 Issue 进行讨论的原因是希望避免一些突如其来的 Pull Request 做无用功；
+   而具备一定经验的核心开发者可以直接提供一个草稿版本的 Pull Request 直接进行后续的讨论。
+
 .. _doc-ci-preview:
 
 GitHub Actions CI 逻辑
 ~~~~~~~~~~~~~~~~~~~~~~
 
-**当你在本地的修改已经完成后** ，可以通过发起 Pull Request 来触发 GitHub Actions.
-借助于 `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ 工作流，
-我们可以对整个文档的构建过程进行检查，确保能够正常生成整个文档网站。
-当整个工作流成功执行完，你会在 `Actions <https://github.com/MegEngine/Documentation/actions>`_
-对应的 workflow runs 结果页面中找到临时生成的构件（Artifacts），
-里面是 HTML 形式生成的整个文档网站的压缩包，你可以下载到本地后解压并进行预览。
+.. note::
 
-当你的 Pull Request 被合并后（参考下一小节），CI 会完成后续的部署，在下一次官网更新时能看到你的改动。
+   当你在本地的修改已经完成后，可以通过发起 Pull Request 来触发 GitHub Actions.
+
+* 借助于 `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ 工作流，
+  我们可以对整个文档的构建过程进行检查，确保能够正常生成整个文档网站。
+* 当整个工作流成功执行完，你会在 `Actions <https://github.com/MegEngine/Documentation/actions>`_
+  对应的 workflow runs 结果页面中找到临时生成的构件（Artifacts），
+  里面是 HTML 形式生成的整个文档网站的压缩包，你可以下载到本地后解压并进行预览。
+* 当你的 Pull Request 被合并后，CI 会完成后续的部署，在下一次官网更新时能看到你的改动。
 
 Pull Request 如何被合并
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -193,9 +206,9 @@ Pull Request 如何被合并
 
 当代码需要找人审核时，可以从下面的人员名单中进行选择：
 
-* 架构相关：Chai_
-* 主题相关：Chai_ （上游主题 Pydata 相关问题请直接向上游库开发者反馈）
-* 教程相关：Chai_
-* 文档相关：Chai_
+* 整体内容：Chai_ , xxr_ , `Dash Chen`_
+* 文档架构：Chai_
 
 .. _Chai: https://github.com/MegChai
+.. _xxr: https://github.com/xxr3376
+.. _Dash chen: https://github.com/dc3671
