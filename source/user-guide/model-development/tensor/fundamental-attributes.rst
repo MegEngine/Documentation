@@ -31,6 +31,11 @@ Tensor 的秩（Rank）指 Tensor 的维数（维度的数量，the number of di
 * 我们有一个 2 维数组（2d-array）
 * 我们有一个 2 维张量（2d-tensor）
 
+.. _tensor-ndim:
+
+维度的个数
+~~~~~~~~~~
+
 但在 MegEngine 中并没有为 Tensor 设计 ``rank`` 这个属性，而是使用了字面上更容易理解的 :py:attr:`~.Tensor.ndim`,
 即 `the number of dimensions` 的缩写。这也是 NumPy 中用来表示多维数组 :py:class:`~numpy.ndarray` 维度的数量所设计的属性。
 
