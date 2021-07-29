@@ -1,0 +1,99 @@
+.. _mep-0001:
+
+=================================
+MEP 9999 -- 实验性 API 管理方式
+=================================
+:编号: 9999
+:标题: 实验性 API 管理方式
+:作者: 许欣然
+:状态: 草稿
+:类型: 流程
+:创建时间: 2021-07-29
+
+简介
+----
+
+
+动机
+----
+随着 MegEngine 开发速度的加快以及新功能的添加，我们不断地看到两种不同的情况：
+
+* 情况1：「一个新功能被引入」 -> 『用户反馈意见』 -> 『对 API 进行调整』
+* 情况2：一份功能在 Merge Request 中被反复讨论细节，无法对于何种使用方式更优达成一致，长时间无法合入主线
+
+以上两种情况均会给 MegEngine 的使用者带来不好的体验
+
+* 情况1 使得 API 变动成为一件非常大的负担，要么由开发者对于一切历史上提供过的 API 进行兼容，要么频繁发生 API breaking change，导致用户无法确认自己的代码是否在未来仍然是能够运行的
+* 情况 2 使得代码长期脱离主线，难以合并；并使功能长期难以获得反馈，只能依靠少数几个相关开发者能自行构建，难以获得更广泛的反馈
+
+因此我们希望建立一种实验性 API 的管理方式，达成以下三个目的
+
+* 通过降低开发者对 API Breaking Change 的担忧，鼓励新 API 的快速添加、快速合入
+* 希望增强 API 在接口层面与用户使用的互动，通过真实的使用获取反馈
+* 希望通过划分 API 的稳定程度，进一步增强被认定是「正式 API」的接口稳定性
+
+基本设计
+--------
+
+在管理机制的设计过程中，我们希望着重避免以下三种情况的发生
+
+1. API 长期呆在 experimental 中（例如：超过3个月），这会使得用户的大量代码必须长期依赖不稳定的 API
+2. 由于允许发生 Breaking Change，导致 Experimental API 设计的过分随意
+3. API 灵活变动后，对 Traced Module 方案产生严重负面影响
+
+因此，我们设计如下机制
+
+1. 允许整个 module 层面，通过文档标明自己是实验性的，英文版：`This module is in BETA, API may change.`，中文版：`此模块处于公测阶段，API 可能会发生改变`
+2. 当一个模块宣称自己是 BETA 状态时，需要向 API 委员会确认
+3. 一个 BETA 模块的 API Review 与正常 API 流程一致，但允许遗留「对于用户行为不了解而带来的争议」，由代码作者决定方案
+4. 同时处于实验性状态的 Module 的数量应该进行控制，由定期 MegEngine 发改委会议决策是否应该集中人力将某个 module 尽快毕业或删除
+5. 不接受某个稳定 module 中单个 API 声明 BETA，在设计 API 时需要尽可能考虑未来的兼容性问题
+
+不引入 X 的理由
+~~~~~~~~~~~~~~~~
+
+* X = 设计单独的 experimental 目录：experimental 模块的内部组织结构可能会过于复杂、当 API 移出时用户的 import 路径需要发生改变
+* X = 硬性限制实验性 module 数量：因为对于新功能的需求和旧功能的完善可能难以同时完成，面对新功能的需求时，限定实验性 module 的总数量将难以被实际执行
+* X = 在用户使用实验性 API 时 warning：分散用户关注，但用户无法对于这个 warning 做任何事情
+* X = 允许单个 API 独自声明 BETA：粒度过细，用户难以区分，并且发改委难以实际管理或进行讨论；另外必要性不足，单个 API 往往是可以通过尽量设计的更保守来保证未来的兼容性
+
+其他框架的参考做法
+--------------------
+
+* TensorFlow
+
+  * tf.experimental、tf.data.experimental、tf.keras.experimental
+  * 在文件摆放上，仍然是正常的摆放方式（例如 `tf/dlpack/to_dlpack`），但是通过 `@tf_export("experimental.dlpack.to_dlpack", v1=[])` 来挪到特定 namespace 里，无法通过非 experimental 方式访问到
+  * experimental namespace 下的东西相对少
+
+* PyTorch
+  
+  * 在 module doc 上贴一条表示不稳定，例如以下 module
+
+    * fx: This feature is under a Beta release and its API may change.
+    * special: This module is in BETA. New functions are still being added, and some functions may change in future PyTorch releases. See the documentation of each function for details.
+    * complex, quantityzation: 文档上有行 warning
+    * autograd: This API is in beta. Even though the function signatures are very unlikely to change, major improvements to performances are planned before we consider this stable.
+
+  * 全部 BETA 标示均是 module level 的，没看到任何 API level 的 BETA 标示
+  * 会把所有历史上删掉的 API 添加一个修改说明，告知用户这个东西没了，但是你可以这么改成最新的，例如：https://pytorch.org/docs/stable/autograd.html
+  * 使用时不会提供任何的提示 & 代码上没有任何的 decorator
+  * 大量的 module 都处于 BETA 状态
+
+* Paddle / OneFlow / MindSpore：没有相关内容
+
+
+
+被拒绝的想法
+---------
+
+
+未解决的问题
+-----------
+
+* 我们是否真的需要一个实验性管理机制？这是否只是开发者单纯的一个免责声明？
+* 一个只基于 module level 的 BETA 标记是否就已经足够了？
+* 当一个 API 从 experimental 毕业时，用户代码不必要进行修改是否是一个用户的刚需？
+
+引用或致谢
+---------
