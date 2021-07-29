@@ -174,19 +174,23 @@ GitHub 协作流程
 
 .. _doc-ci-preview:
 
-GitHub Actions CI 逻辑
-~~~~~~~~~~~~~~~~~~~~~~
+持续集成 & 部署逻辑
+~~~~~~~~~~~~~~~~~~~
+
+当你在本地的修改已经完成后，可以通过发起 Pull Request 来触发持续集成。
+
+.. image:: ../../_static/images/megengine-ci.png
+   :align: center
 
 .. note::
 
-   当你在本地的修改已经完成后，可以通过发起 Pull Request 来触发 GitHub Actions.
-
-* 借助于 `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ 工作流，
-  我们可以对整个文档的构建过程进行检查，确保能够正常生成整个文档网站。
-* 当整个工作流成功执行完，你会在 `Actions <https://github.com/MegEngine/Documentation/actions>`_
-  对应的 workflow runs 结果页面中找到临时生成的构件（Artifacts），
-  里面是 HTML 形式生成的整个文档网站的压缩包，你可以下载到本地后解压并进行预览。
-* 当你的 Pull Request 被合并后，CI 会完成后续的部署，在下一次官网更新时能看到你的改动。
+   * 借助于 `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ 工作流，
+     我们可以对整个文档的构建过程进行检查，确保能够正常生成整个文档网站。
+   * 如果整个工作流成功执行完，你会在 `Actions <https://github.com/MegEngine/Documentation/actions>`_
+     对应的 workflow runs 结果页面中找到临时生成的构件（Artifacts），
+     里面是 HTML 形式生成的整个文档网站的压缩包，可以下载到本地后解压预览。
+   * 同时，Gitpod Bot 也会为你的 Pull Request 提供一个云端 IDE 环境，并自动完成初始化和预览。
+   * Pull Request 被合并到主分支后，将完成后续的部署，在下一次官网更新时能看到你的改动。
 
 Pull Request 如何被合并
 ~~~~~~~~~~~~~~~~~~~~~~~
