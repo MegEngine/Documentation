@@ -70,7 +70,7 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 
    * 如果你曾经使用 Sphinx 构建过 Python 项目的文档，想必会对下面展示的源码结构非常熟悉。
      有的时候，为了在本地预览自己的改动效果，我们需要学会 :ref:`how-to-build-the-doc-locally` 。
-   * 你也可以根据自身情况，选择使用 `Gitpod <https://gitpod.io/#https://github.com/MegEngine/Documentation>`_ 
+   * 你也可以根据自身情况，选择使用 `Gitpod <https://gitpod.io/#prebuild/https://github.com/MegEngine/Documentation>`_ 
      等类型的云 IDE 来创建一个临时的文档开发环境，但这需要连接到 GitHub 帐户，且会对你的网络环境有一定的要求。
 
 源码组织逻辑
