@@ -85,10 +85,10 @@ MegEngine 和 NumPy 在进行切片时，都不会改变对象 :ref:`tensor-ndim
    * 切片的作用是从整体中取出一部分，因此不会产生降低维度的行为。
    * 如果你希望切片操作后能去掉冗余的维度，可以使用 :func:`~.squeeze` .
 
-都可以使用列表索引
+都可以使用数组索引
 ~~~~~~~~~~~~~~~~~~
 
-实际上除了切片索引，我们还可以使用列表进行索引：
+实际上除了切片索引，我们还可以使用数组（列表）进行索引：
 
 .. panels::
    :container: +full-width
@@ -107,6 +107,8 @@ MegEngine 和 NumPy 在进行切片时，都不会改变对象 :ref:`tensor-ndim
    >>> y = x[[0, 2]]
    >>> y
    array([1., 3.]) 
+
+此时列表的长度对应了被索引的元素的个数，在一些情况下这种机制十分有帮助。
 
 此时 NumPy 将不会生成原始数组的视图，与 MegEngine 的逻辑一致。
 
@@ -156,6 +158,35 @@ Tensor(6, dtype=int32, device=xpux:0)
    T_{[i_1, i_2, \ldots i_n]}
 
 即我们要提供 :math:`i_1, i_2, \ldots ,i_n` 共 n 个索引值，此时不需要层层降维索引，而是直接得到对应元素。
+
+如果提供的索引数组个数不足 n, 则需要了解 :ref:`default-indexing` 。
+
+.. _multi-dim-array-indexing:
+
+结合数组索引使用
+~~~~~~~~~~~~~~~~
+
+对于有 n 个维度的 Tensor, 我们可以传入 n 个列表来进行索引：
+
+>>> M = tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+>>> M[[0, 1], [1, 2]]
+Tensor([2 6], dtype=int32, device=xpux:0)
+>>> M[[0, 1]] 
+Tensor([[1 2 3]
+ [4 5 6]], dtype=int32, device=xpux:0)
+
+需要注意的是，数组的长度需要一致，数组长度表示需要被索引的元素个数；
+
+如果提供的索引个数不足 n, 则需要了解 :ref:`default-indexing` 。
+
+.. seealso::
+
+   * NumPy 官网文档中对 `整数列表索引（Integer array indexing）
+     <https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-array-indexing>`_ 
+     进行了更详细的说明；
+   * 除了整数列表索引外，MegEngine 还支持和 NumPy 一致的 `布尔列表索引
+     <https://numpy.org/doc/stable/reference/arrays.indexing.html#boolean-array-indexing>`_ 。
+
 
 .. _multi-dim-slicing:
 
@@ -228,7 +259,7 @@ Tensor([[4 5 6]
 
    如果你不清楚 axis 的概念，可以参考 :ref:`tensor-axes` 。
 
-正确的做法是像 :ref:`multi-dim-indexing` 一样：
+正确的做法是像 :ref:`multi-dim-indexing` 一样，使用 ``,`` 对维度进行区分：
 
 >>> M[1:3,0:2]
 Tensor([[4 5]
@@ -266,6 +297,8 @@ Tensor([[4 5]
 
 即我们要提供 :math:`s_1, s_2, \ldots ,s_n` 共 n 个切片，每个切片针对特定第维度。
 
+如果提供的切片个数不足 n, 则需要了解 :ref:`default-indexing` 。
+
 .. note::
 
    多维切片时， ``x[obj]`` 内部的 ``obj`` 由给定的不同维度的切片组成。
@@ -275,6 +308,8 @@ Tensor([[4 5]
    * 对于 ``ndim`` 特别大的 Tensor （假设超过 1000 维）， 有些时候我们只想对某一个轴进行索引，
      或进行特定操作，此时我们可以使用 :py:func:`~.functional.gather` 或 :py:func:`~.functional.scatter`
    * 这两个方法分别对应于 :py:func:`numpy.take_along_axis` 和 :py:func:`numpy.put_along_axis`
+
+.. _default-indexing:
 
 多维索引的缺省情况
 ------------------
@@ -288,6 +323,7 @@ Tensor([7 8 9], dtype=int32, device=xpux:0)
 >>> M[:,2]
 Tensor([3 6 9], dtype=int32, device=xpux:0)
 
-* 此时其它维度的元素将被完整地保留，等同于使用 ``:`` 作为默认值；
+* 此时其它维度的元素将被完整地保留，等同于使用 ``:`` 作为缺省维度的默认索引；
 * 根据给定的明确索引数，得到的子 Tensor 维度个数将对应地减少。
+
 
