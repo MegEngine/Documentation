@@ -14,6 +14,8 @@
    其中 MacOS 只支持 Intel x86 CPU；
    此外，MegEngine 也支持在很多其它平台上进行推理运算。
 
+.. _install-with-pip:
+
 通过包管理器安装
 ----------------
 
