@@ -252,3 +252,11 @@ Python 嵌套列表并不支持这种语法，你能猜测出在 ``[]`` 运算�
    具象化举例
      如果你目前对于 Tensor 的概念不够直观，可以参考 :ref:`tensor-examples` 。
 
+
+.. admonition:: Python 数据 API 标准联盟协会
+   :class: note 
+
+   MegEngine 中的许多 Tensor 标准 API 设计遵循了 Python 数据 API 标准联盟协会的倡导，
+   一些常见的实现尽可能地向 NumPy 靠近，更多细节可以参考 `Consortium for Python Data API Standards 
+   <https://data-apis.org/>`_ .
+
