@@ -42,6 +42,8 @@
    :maxdepth: 1
 
    deployment/index
+   deployment/lite.rst
+   deployment/lite_rknn.rst
    deployment/midout
 
 .. toctree::
