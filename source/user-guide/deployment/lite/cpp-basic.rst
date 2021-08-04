@@ -1,4 +1,4 @@
-.. _megengine-lite-cpp-basic-example:
+.. _cpp-basic:
 
 =================================
 MegEngine Lite C++ 基础功能介绍
@@ -7,7 +7,7 @@ MegEngine Lite C++ 基础功能介绍
 
 在CPU上做推理的一个例子
 -----------------------
-接下来，我们将逐步讲解一个使用MegEngine Lite在CPU上做推理的简单例子，即：basic.cpp中的 **basic_load_from_path** 函数（完整代码在 lite/example/mge/basic.cpp 里）。 
+接下来，我们将逐步讲解一个使用MegEngine Lite在CPU上做推理的简单例子，即：:src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``basic_load_from_path()`` 函数。 
 
 
 1. 一些配置
@@ -25,7 +25,7 @@ MegEngine Lite C++ 基础功能介绍
 2. 加载模型
 ~~~~~~~~~~~~~
 
-模型文件将被作为参数，传给 **Network** 类的 **load_model** 方法。**Network** 类包含了加载、初始化、推理模型和显示模型信息的功能。详情请参考lite/include/lite/network.h
+模型文件将被作为参数，传给 **Network** 类的 ``load_model`` 方法。**Network** 类包含了加载、初始化、推理模型和显示模型信息的功能。详情请参考 :src:`network.h <lite/include/lite/network.h>`
 
 .. code-block:: cpp
 
@@ -36,7 +36,7 @@ MegEngine Lite C++ 基础功能介绍
 3. 加载输入数据
 ~~~~~~~~~~~~~~~~
 
-加载前，先要构建Tensor实体，需要注意与之相关的 **LiteBackend** 、 **LiteDeviceType** Enum和 **Layout** 类。 **Layout** 类的实体是 **Tensor** 类的成员之一，用于描述 **Tensor** 的维度和数据类型，而 **LiteBackend** 、 **LiteDeviceType** 的实现如下：
+加载前，先要构建 **Tensor** 实体，需要注意与之相关的 **LiteBackend** 、 **LiteDeviceType** Enum和 **Layout** 类。 **Layout** 类的实体是 **Tensor** 类的成员之一，用于描述 **Tensor** 的维度和数据类型，而 **LiteBackend** 、 **LiteDeviceType** 的实现如下：
 
 .. code-block:: cpp
 
@@ -58,7 +58,7 @@ MegEngine Lite C++ 基础功能介绍
 	    LITE_DEVICE_DEFAULT = 5,
 	} LiteDeviceType;
 
-本例中，输入数据是从某npy文件加载进来的，具体的加载方式详见lite/example/main.cpp中关于 **parse_npy** 函数的实现。本例通过 **parse_npy** 加载数据并构建src_tensor。然后把src_tensor的数据拷贝到network的输入tensor中。
+本例中，输入数据是从某npy文件加载进来的，具体的加载方式详见 :src:`main.cpp <lite/example/main.cpp>` 中关于 ``parse_npy()`` 函数的实现。本例通过 ``parse_npy()`` 加载数据并构建src_tensor。然后把src_tensor的数据拷贝到network的输入tensor中。
 
 .. code-block:: cpp
 
@@ -85,7 +85,7 @@ MegEngine Lite C++ 基础功能介绍
 4. 推理
 ~~~~~~~~~~~~
 
-网络的推理是通过调用 **Network** 的 **forward()** 方法和 **wait()** 方法完成的。如果想记录运行时间，可以使用 **lite\:\:Timer** 。本例中相关代码入下：
+网络的推理是通过调用 **Network** 的 ``forward()`` 方法和 ``wait()`` 方法完成的。如果想记录运行时间，可以使用 **lite\:\:Timer** 。本例中相关代码如下：
 
 .. code-block:: cpp
 
@@ -107,14 +107,14 @@ MegEngine Lite C++ 基础功能介绍
 5. 获取输出数据
 ~~~~~~~~~~~~~~~~~
 
-推理完成后，网络的输出数据可通过 **Network** 的 **get_output_tensor()** 函数获取。具体用法可参看basic.cpp中的 **output_info** 函数代码。
+推理完成后，网络的输出数据可通过 **Network** 的 ``get_output_tensor()`` 函数获取。具体用法可参看 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``output_info()`` 函数代码。
 
 
 
 对于在N卡设备上的推理
 ----------------------
 
-如果用N卡设备做推理，需要在上面例子的基础上稍作修改：把输入Tensor需要构造为 **LiteDeviceType\:\:LITE_CUDA** 类型。即 **load_from_path_run_cuda** 函数中的如下部分（完整代码在 lite/example/mge/basic.cpp 里）：
+如果用N卡设备做推理，需要在上面例子的基础上稍作修改：把输入Tensor需要构造为 **LiteDeviceType\:\:LITE_CUDA** 类型。即 ``load_from_path_run_cuda()`` 函数中的如下部分（完整代码在 :src:`basic.cpp <lite/example/mge/basic.cpp>` 里）：
 
 .. code-block:: cpp
 
@@ -131,18 +131,19 @@ MegEngine Lite C++ 基础功能介绍
 
 在以OpenCL为后端的设备上，有两种加载并推理模型的方式：
 
-- 首次推理的同时搜索最优算法并将搜索结果存为文件（ **load_from_path_use_opencl_tuning** 函数）
+- 首次推理的同时搜索最优算法并将搜索结果存为文件（ ``load_from_path_use_opencl_tuning()`` 函数）
 
-- 以算法搜索结果文件中的算法推理模型（ **load_from_path_run_opencl_cache_and_policy** 函数）。
+- 以算法搜索结果文件中的算法推理模型（ ``load_from_path_run_opencl_cache_and_policy()`` 函数）。
 
-前者首次推理的速度较慢，可以看做是为后者做的准备。后者的运行效率才是更贴近工程应用水平的。两者的详细实现都在文件 basic.cpp 中。
+前者首次推理的速度较慢，可以看做是为后者做的准备。后者的运行效率才是更贴近工程应用水平的。两者的详细实现都在文件 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中。
 
 
 
 用异步执行模式进行推理
 ------------------------
 
-实现在 **basic.cpp** 中，函数名为： **async_forward** 。用户通过接口注册异步回调函数将设置 Network 的 Forward 模式为异步执行模式，目前异步执行模式只有在 CPU 和 CUDA 10.0 以上才支持，在inference时异步模式，主线程可以在工作线程正在执行计算的同时做一些其他的运算，避免长时间等待，但是在一些单核处理器上没有收益。
+实现在 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``async_forward()`` 函数 。用户通过接口注册异步回调函数将设置 Network 的 Forward 模式为异步执行模式，目前异步执行模式只有在 CPU 和 CUDA 10.0 以上才支持，在inference时异步模式，主线程可以在工作线程正在执行计算的同时做一些其他的运算，避免长时间等待，但是在一些单核处理器上没有收益。
+
 
 
 

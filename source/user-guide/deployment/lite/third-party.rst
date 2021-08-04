@@ -1,4 +1,4 @@
-.. _megengine-lite-third-party:
+.. _third-party:
 
 =============================
 MegEngine Lite 第三方硬件支持
