@@ -274,6 +274,8 @@ Non-linear activation functions
    relu6
    prelu
    leaky_relu
+   silu
+   gelu
    softplus
    softmax
    logsoftmax
