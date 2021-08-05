@@ -93,6 +93,8 @@ Non-linear Activations
    ReLU
    LeakyReLU
    PReLU
+   SiLU
+   GELU
 
 Normalization Layers
 ~~~~~~~~~~~~~~~~~~~~
