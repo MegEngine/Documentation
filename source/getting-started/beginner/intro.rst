@@ -13,6 +13,6 @@
    how-to-build-a-better-model
    model-construction
    neural-network-traning-tricks
-
+   pretrained-model-and-deployment
 
 需要你具有最基础的数学和 Python 编程知识。
