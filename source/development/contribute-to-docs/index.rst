@@ -201,7 +201,7 @@ Pull Request 如何被合并
 * 必须至少有一位官方维护人员审核（Review）完成并批准（Approve）了你的所有代码
 * 必须通过 Actions 中触发的状态检查（Status check），如 
   `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ .
-* 必须将你的 Commits 历史记录整理为线性，消息内容符合 `规范 <commit-message>`_.
+* 必须将你的 Commits 历史记录整理为线性，消息内容符合 :ref:`commit-message` 。
 
 官网文档页面的更新将会有一定的处理流程延迟，请耐心等待官网服务器更新文档内容。
 
