@@ -9,6 +9,7 @@
 
    about/index
    install/index
+   transfer-from/index
    faq/index
 
 .. toctree::
