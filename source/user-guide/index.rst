@@ -33,6 +33,7 @@
    model-development/dtr/index
    model-development/distributed/index
    model-development/quantization/index
+   model-development/amp/index
    model-development/profiler/index
    model-development/jit/index
 
@@ -121,7 +122,7 @@ MegEngine Cookbook
 ------------
 
 对于一些非常见问题（即使用情景比较冷门时），其解决方案可能不会被整理到 MegEngine 用户指南中。
-你可以通过 `MegEngine 官方论坛 <https://discuss.megengine.org.cn/>`_ 或者 
+你可以通过 `MegEngine 官方论坛 <https://discuss.megengine.org.cn/>`_ 或者
 `GitHub Issues <https://github.com/MegEngine/MegEngine/issues>`_ 进行交流讨论。
 当某一类问题被提及的频率明显上升了，我们会开始考虑将其和对应的解决方案放入用户指南作为必要的参考。
 
