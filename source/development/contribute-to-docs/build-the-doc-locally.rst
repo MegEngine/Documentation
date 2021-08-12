@@ -5,11 +5,25 @@
 
 除了 :ref:`doc-ci-preview` 外，在某些时候，我们需要在本地构建与预览文档。
 
-我们以 Ubuntu 18.04 + Python 3.8 环境为例，向你展示从无到有构建 MegEngine 文档的过程。
+.. warning::
+
+   文档构建有 FULL 和 MINI 两种不同的模式，可以通过配置环境变量 ``MGE_DOC_MODE`` 来决定具体的行为，
+   该环境变量提供以下三种选项：
+
+   ``AUTO`` （默认）
+     自动探测 MegEngine 包是否可用，如可用则进入 FULL 模式，否则进入 MINI 模式；
+   
+   ``MINI``
+     构建除 MegEngine API Reference 外的文档，不依赖于 MegEngine 本身，能节约大量构建时间；
+
+   ``FULL``
+     构建全部文档，包括 MegEngine API Reference, 需要设置好 MegEngine 路径。
 
 .. note::
 
-   可以选择使用 :docs:`scripts/bootstrap.sh` 脚本自动完成初始化流程。
+   可以使用 :docs:`scripts/bootstrap.sh` 脚本自动完成初始化流程，但该脚本不会自动安装 MegEngine 包。
+
+下面我们以 Ubuntu 18.04 + Python 3.8 环境为例，向你展示从无到有构建 MegEngine 文档的过程。
 
 克隆文档源码到本地
 ------------------
@@ -34,15 +48,14 @@
 
   git submodule update --init --progress --depth=1 --recursive
 
-这一步将会拉取文档所依赖的第三方子模块，比如主题（后续会进行安装）。
+这一步将会拉取文档所依赖的第三方子模块，比如主题（在后面的步骤中会进行安装）。
+
+.. _megengine-path:
 
 设置 MegEngine 路径（可选）
 ---------------------------
 
-.. warning::
-
-   如果你的本地环境并没有 MegEngine 源码，并不会影响整个文档的构建流程。
-   但在这个时候会启动 Mini-doc 模式，所有 API Reference 页面将被排除（因为它们依赖源码进行内容生成）。
+使用 FULL 模式构建文档，环境内必须要安装有 MegEngine. 
 
 根据不同的需求，有两种方式将用于构建文档的 MegEngine 导入当前 Python 环境（任选其一即可）：
 
@@ -53,9 +66,6 @@
 * 如果你是研发人员，需要在指定的 MegEngine 分支源代码上生成对应文档，则需要克隆对应分支进行编译构建。
   通过 ``export PYTHONPATH`` 的形式来临时指定特定的 MegEngine 源代码路径，
   这种方式适合开发者需要同时对源码和文档进行维护的情况。:ref:`了解如何进行从源码构建。<install>`
-
-如果你正在维护 MegEngine 的特性分支，需要添加新的 API 到文档中进行预览验证，此时一定需要使用人为编译版本。
-并且在文档的 ``source/reference/*.rst`` 将新增 API 添加到合适的位置。 
 
 安装 Sphinx 与 Pydata 主题
 --------------------------

@@ -12,9 +12,9 @@
 
 :point_right: 你也可以选择 [成为文档贡献者](./CONTRIBUTING.md) 或者 [帮助我们进行翻译](https://crowdin.com/project/megengine)
 
+## 如何在本地构建与预览文档
 
-------
-
+参考 [这个文件](./source/development/contribute-to-docs/build-the-doc-locally.rst)
 
 ## 版权声明
 

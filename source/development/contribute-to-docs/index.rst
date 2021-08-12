@@ -72,6 +72,7 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
      有的时候，为了在本地预览自己的改动效果，我们需要学会 :ref:`how-to-build-the-doc-locally` 。
    * 你也可以根据自身情况，选择使用 `Gitpod <https://gitpod.io/#prebuild/https://github.com/MegEngine/Documentation>`_ 
      等类型的云 IDE 来创建一个临时的文档开发环境，但这需要连接到 GitHub 帐户，且会对你的网络环境有一定的要求。
+     另外由于空间限制，将不会安装 MegEngine 包，因此仅支持使用 MINI 模式来生成除 API Reference 外的文档。
 
 源码组织逻辑
 ~~~~~~~~~~~~
