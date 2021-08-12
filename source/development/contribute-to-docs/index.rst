@@ -160,7 +160,9 @@ GitHub 协作流程
 
 #. 创建一个 Issue，讨论接下来你打算进行什么样的尝试，交流想法；
 #. 一旦确定了初步方案，Fork 并 Clone 存储库，创建一个新的本地分支；
-#. 修改代码，记录 :ref:`Commit <commit-message>` 并 Push 到你 Fork 的远端分支（Origin）；
+#. 修改代码或文本，:ref:`在本地构建与预览文档 <how-to-build-the-doc-locally>` ；
+#. 按照要求记录 :ref:`Commit <commit-message>` 信息（需要使用 GitHub 账号）；
+#. 确认无误后，Push 到你 Fork 的远端分支（Origin）；
 #. 在 GitHub 创建一个 Pull Request 并向上游（Upstream）发起合并申请；
 #. 根据 Review 意见进行交流，如有需要则修改你的代码；
 #. 当你的分支被合并了，便可以删除对应的本地和远程分支。
@@ -202,6 +204,11 @@ Pull Request 如何被合并
 * 必须通过 Actions 中触发的状态检查（Status check），如 
   `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ .
 * 必须将你的 Commits 历史记录整理为线性，消息内容符合 :ref:`commit-message` 。
+
+.. warning::
+
+   签署 CLA 协议要求 commit 中所记录的 Author 账户都是 GitHub 上的账户。
+   如果你默认使用了非 GitHub 账户，需要使用 ``git config`` 命令单独配置。
 
 官网文档页面的更新将会有一定的处理流程延迟，请耐心等待官网服务器更新文档内容。
 

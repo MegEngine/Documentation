@@ -7,6 +7,10 @@
 
 我们以 Ubuntu 18.04 + Python 3.8 环境为例，向你展示从无到有构建 MegEngine 文档的过程。
 
+.. note::
+
+   可以选择使用 :docs:`scripts/bootstrap.sh` 脚本自动完成初始化流程。
+
 克隆文档源码到本地
 ------------------
 
@@ -16,12 +20,21 @@
 
    git lfs install
    git clone https://github.com/MegEngine/Documentation
+   cd Documentation
 
 .. note::
 
    为确保正常克隆，上面的命令将安装 LFS_ (Large File Storage) 插件。
 
 .. _LFS: https://git-lfs.github.com/
+
+初始化第三方依赖
+----------------
+.. code-block:: shell
+
+  git submodule update --init --progress --depth=1 --recursive
+
+这一步将会拉取文档所依赖的第三方子模块，比如主题（后续会进行安装）。
 
 设置 MegEngine 路径（可选）
 ---------------------------
@@ -55,6 +68,12 @@ MegEngine 文档使用 Sphinx_ 进行整个网站的构建，请运行下面的�
 
    python3 -m pip install -r requirements.txt
 
+.. warning::
+
+   MegEgnine 文档使用了 Fork 后修改过的 
+   `pydata-sphinx-theme <https://github.com/MegEngine/pydata-sphinx-theme/tree/dev>`_ 主题，
+   如果你的本地环境已经存在该主题，可能需要提前删除该主题或使用额外的 Python 虚拟环境。
+
 .. dropdown:: :fa:`eye,mr-1` 编辑 Sphinx 文档的配置文件
 
    通常情况下，你无需对已有配置文件进行任何改动，即可继续进行后面的流程。
@@ -75,23 +94,6 @@ MegEngine 文档使用 Sphinx_ 进行整个网站的构建，请运行下面的�
 
       如果你未经过编译，想要直接使用 MegEngine 源码进行文档的构建，
       则将因会缺少编译构建出的动态链接库而无法正常执行 ``import``.
-
-安装文档所用主题
-~~~~~~~~~~~~~~~~
-
-接下来我们需要从 MegEngine/pydata-sphinx-theme 克隆 Fork 版 PyData_ 主题：
-
-.. _Pydata: https://github.com/pydata/pydata-sphinx-theme
-
-.. code-block:: shell
-
-   git clone -b dev git@github.com:MegEngine/pydata-sphinx-theme.git
-
-接着安装修改过的主题包：
-
-.. code-block:: shell
-
-   python3 -m pip install --editable pydata-sphinx-theme
 
 安装相关软件包
 --------------
@@ -133,7 +135,6 @@ Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经�
 
 使用 Sphinx 进行文档构建
 ------------------------
-
 
 在文档目录下使用 ``make html`` 指令，会在 ``build`` 目录下生成 HTML 文件夹。
 

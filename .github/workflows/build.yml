@@ -17,6 +17,7 @@ jobs:
           persist-credentials: false
           fetch-depth: 1
           lfs: true
+          submodules: recursive
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -34,7 +35,7 @@ jobs:
         if: steps.cache-python.outputs.cache-hit != 'true'
         run: |
           python3 -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install -r requirements.txt
           pip install megengine -f https://megengine.org.cn/whl/mge.html
 
   Generate:
@@ -51,17 +52,10 @@ jobs:
           persist-credentials: false
           fetch-depth: 1
           lfs: true
+          submodules: recursive
 
       - name: Checkout LFS objects
         run: git lfs checkout
-
-      - name: Checkout theme repo
-        uses: actions/checkout@v2
-        with: 
-          repository: MegEngine/pydata-sphinx-theme
-          ref: dev
-          fetch-depth: 1
-          path: theme
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -74,9 +68,6 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}$-${{ hashFiles('requirements.txt') }}
-
-      - name: Install Pydata Sphinx theme
-        run: python3 -m pip install ./theme
 
       - name: Install pandoc and other dependencies
         run: sudo apt install -y pandoc graphviz
