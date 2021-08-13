@@ -11,6 +11,12 @@
 
    可以选择使用 :docs:`scripts/bootstrap.sh` 脚本自动完成初始化流程。
 
+.. warning::
+
+   为便于在任意环境下都能开发文档，默认会通过探测 megengine 包是否可用来决定是否构建 Reference 页面，详情请参见 ``设置 MegEngine 路径`` 章节。
+   
+   如果可以明确构建需求（例如编写脚本时），强烈建议显式声明构建模式，避免文档行为与预期不一致。
+
 克隆文档源码到本地
 ------------------
 
@@ -39,10 +45,13 @@
 设置 MegEngine 路径（可选）
 ---------------------------
 
-.. warning::
+.. note::
 
-   如果你的本地环境并没有 MegEngine 源码，并不会影响整个文档的构建流程。
-   但在这个时候会启动 Mini-doc 模式，所有 API Reference 页面将被排除（因为它们依赖源码进行内容生成）。
+   文档构建有 FULL 和 MINI 两种不同的形态，可以通过配置环境变量 ``MGE_DOC_MODE`` 来决定文档的行为，该环境变量有以下三种不同模式
+
+   * AUTO: 默认行为，文档会自动探测 MegEngine 包是否可用，如可用则进入 FULL 模式，否则进入 MINI 模式
+   * MINI: 构建除 MegEngine API Reference 外的文档，不依赖于 megengine 本身，无需进行本章节的配置工作
+   * FULL: 构建全部文档，包括 MegEngine API Reference，需要保证环境内已经安装好对应的 megengine
 
 根据不同的需求，有两种方式将用于构建文档的 MegEngine 导入当前 Python 环境（任选其一即可）：
 
