@@ -8,10 +8,12 @@ Tensor 所在设备
 
    * 通常用图形处理单元（GPU）代替中央处理单元（CPU）作为训练时的主要计算设备。
      （ :ref:`解释 <why-use-gpu>` ）
-   * 默认情况下，MegEngine 会自动使用当前可用的最快设备（xpux）作为计算节点，无需额外指定。
+   * 默认情况下，MegEngine 会自动使用当前可用的最快设备（xpux）， **无需额外进行人为的指定。** 
 
         >>> megengine.get_default_device()
         'xpux'
+
+     其中 ``xpu`` 表示 ``gpu`` 或者 ``cpu``, 后面的 ``x`` 表示编号（如果有多个设备），默认从 0 开始。
 
 在未检测到 GPU 设备的机器上，MegEngine 首次生成 Tensor 时，将进行一次提醒，如下所示：
 
@@ -20,6 +22,8 @@ Tensor 所在设备
 WRN cuda unavailable: no CUDA-capable device is detected(100) ndev=-1
 >>> a.device
 "cpu0:0" from "xpux:0"
+
+对于日常的 MegEngine 使用情景，我们不需要关注冒号 ``:`` 后面编号的含义。
 
 设备相关接口
 ------------
@@ -34,13 +38,13 @@ WRN cuda unavailable: no CUDA-capable device is detected(100) ndev=-1
 
 .. seealso::
 
-   * 可在 :ref:`device` 页面找到所有可调用的 API.
+   * 可在 :ref:`device` 页面找到所有可调用的 API;
    * 与设备相关的概念还有： :ref:`distributed-guide` 。
 
 支持 GPU 设备和软件平台
 -----------------------
 
-想要在 MegEngine 计算时利用 GPU 设备，无需进行额外的编码。框架将在底层替用户进行主流 GPU 软件平台接口的调用。
+想要在 MegEngine 计算时利用 GPU 设备，用户无需进行额外的编码。框架将在底层替用户进行主流 GPU 软件平台接口的调用。
 因此用户可以专注于神经网络结构的设计，选择相信由框架在背后完成的性能优化工作。
 但如果一名用户想要成为 MegEngine 核心开发者或拓展 MegEngine 功能，则需要了解相关背景知识。
 
@@ -50,6 +54,8 @@ WRN cuda unavailable: no CUDA-capable device is detected(100) ndev=-1
    （Compute Capability 5.2~8.0），如果你的 Nvidia GPU 设备不在支持的 Compute Capability 范围内，
    或需要使用支持 AMD GPU 的 MegEngine, 则需要 :ref:`build-from-source` ，否则会触发即时编译，或直接报错。
 
+感兴趣的用户可阅读下面的解释，略过这些部分的阅读不会影响 MegEngine 的日常使用。
+
 Nvidia GPU 和 CUDA
 ~~~~~~~~~~~~~~~~~~
 `Nvidia <https://en.wikipedia.org/wiki/Nvidia>`_
@@ -58,7 +64,12 @@ Nvidia GPU 和 CUDA
 即 Nvidia GPU 是支持并行计算的硬件，而 CUDA 是为开发人员提供 API 的软件层。
 开发人员通过下载 CUDA 工具包来使用它，该工具包附带了专门的库，如 cuDNN, 即 CUDA 深度神经网络库。
 
-MegEngine 内部的一些 DNN 算子的优化性能比 cuDNN 库中的实现还要好。
+.. seealso::
+
+   * 可以通过 `NVIDIA System Management Interface <https://developer.nvidia.com/nvidia-system-management-interface>`_
+     (nvidia-smi) 帮助管理和监控 NVIDIA GPU 设备；
+   * 可以使用环境变量 ``CUDA_VISIBLE_DEVICES`` 来限制 CUDA 应用程序看到的设备。
+     （ `官方博客 <https://developer.nvidia.com/zh-cn/blog/cuda-pro-tip-control-gpu-visibility-cuda_visible_devices/>`_ ）
 
 AMD GPU 和 ROCm
 ~~~~~~~~~~~~~~~
@@ -69,7 +80,7 @@ AMD GPU 和 ROCm
 .. _why-use-gpu:
 
 为何需要使用 GPU 训练？
-----------------------
+-----------------------
 在回答这个问题前，我们需要了解什么是 `并行计算 <https://en.wikipedia.org/wiki/Parallel_computing>`_ （Parallel computing）——
 并行计算是一种计算类型，可将其中的计算分解成能够同时进行的较小独立计算，然后将计算结果进行重新组合或同步，得到原始计算的结果。
 
@@ -91,7 +102,7 @@ AMD GPU 和 ROCm
 `图形计算单元 <https://en.wikipedia.org/wiki/Graphics_processing_unit>`_ （Graphics processing unit, GPU）
 是一种擅长处理特定（Specialized）类型计算的装置，而
 `中央处理单元 <https://en.wikipedia.org/wiki/Central_processing_unit>`_ （Central processing unit , CPU）
-被设计用来处理一般（General）的计算。虽然 CPU 能够胜任各种复杂但计算操作情景，
+被设计用来处理一般（General）的计算。虽然 CPU 能够胜任各种复杂的计算操作情景，
 但 GPU 高度并行的结构设计使它们在处理并行计算时比 CPU 更加高效。
 
 一个更大的任务可以分解成的任务数量也取决于特定硬件上包含的核心（Kernel）数量。
