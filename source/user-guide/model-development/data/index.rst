@@ -2,92 +2,156 @@
 .. currentmodule:: megengine
 
 ===========================
-使用 Data 处理 I/O 与数据集
+使用 Data 构建输入 Pipeline 
 ===========================
+MegEngine 中的 :py:mod:`data` 子包提供了用于处理数据（数据集）的原语，
+其中 :py:class:`megengine.data.DataLoader` 被用于加载批数据，本质上将用于生成一个可迭代的对象，
+负责从 :py:class:`~.Dataset` 描述的数据集中随机返回批量大小 ``batch_size`` 的数据。
+简而言之， ``Dataset`` 告诉 ``DataLoader`` 如何将单个训练或测试数据加载到内存中，
+而 ``DataLoader`` 负责按照给定的配置获取分批的数据，方便进行后续训练和测试。
+
+上面的介绍中隐藏了一些细节，如果你想要更加正确 & 高效地构建输入 Pipeline, 建议阅读完这一章节的内容。
+
+.. seealso::
+
+   该部分功能的主体设计与 PyTorch 提供的
+   `torch.utils.data <https://pytorch.org/docs/stable/data.html>`_ 类似。
+
+.. _dataloader-guide:
+
+使用 DataLoader 加载数据
+------------------------
+
+:py:class:`~.DataLoader` 类的签名如下：
+
+.. class:: DataLoader(dataset, sampler=None, transform=None, collator=None, 
+                      num_workers=0, timeout=0, timeout_event=raise_timeout_error, divide=False)
+   :noindex:
+
+以下选项可作为 :py:class:`~.DataLoader` 类的构造函数参数进行灵活配置：
+
+.. toctree::
+   :maxdepth: 1
+   
+   dataset
+   sampler
+   transform
+   collator
 
 .. note::
 
-   当前这个页面正在完全重构中。
+   以模型训练为例，在 MegEngine 中输入数据的 Pipeline 为：
 
-数据集是一组数据的集合，例如 MNIST、Cifar10 等图像数据集。 
-:py:class:`~.data.dataset.Dataset` 是 MegEngine 中表示数据集的抽象类。
-我们自定义的数据集类应该继承 :py:class:`~.data.dataset.Dataset` 并重写下列方法：
+   #. 创建一个 Dataset 对象；
+   #. 按需创建 Sampler, Transform 和 Collator 对象；
+   #. 创建一个 DataLoader 对象；
+   #. 迭代这个 DataLoader 对象，将数据分批加载到模型中进行训练；
+   
+   需要注意以下几点：
 
-* ``__init__``: 一般在其中实现读取数据源文件的功能。也可以添加任何其它的必要功能；
-* ``__getitem__``: 通过索引操作来获取数据集中某一个样本，使得可以通过 for 循环来遍历整个数据集；
-* ``__len__``: 返回数据集大小
+   * 如果不自定义配置，用户应当清楚在使用默认参数的情况下 DataLoader 的处理逻辑；
+   * 同理，模型的验证和测试也可以使用各自的 DataLoader 完成数据部分的加载；
 
-自定义数据集
-------------
+.. _load-image-data-example:
 
-下面是一个简单示例。我们根据下图所示的二分类数据，创建一个 :py:class:`~.data.dataset.Dataset` 。
-每个数据是一个二维平面上的点，横坐标和纵坐标在 [-1, 1] 之间。共有两个类别标签（图中的蓝色 * 和红色 +），
-标签为 0 的点处于一、三象限；标签为 1 的点处于二、四象限。
+举例：加载图像分类数据
+----------------------
 
-.. image:: ../../../_static/images/dataset.png
-   :align: center
+下面我们以加载图像分类数据的基本流程作为简单举例 ——
 
-该数据集的创建过程如下：
+#. 假设图像数据按照一定的规则放置于同一目录下（通常数据集主页会对目录组织和文件命名规则进行介绍）。
+   要创建对应的数据加载器，首先需要一个继承自 :py:class:`~.Dataset` 的类。
+   虽然对于 NumPy ndarray 数据，MegEngine 中提供了 :py:class:`~.ArrayDataset` 实现。
+   但更标准的做法应当是创建一个自定义的数据集：
 
-* 在 ``__init__`` 中利用 NumPy 随机生成 ndarray 作为数据；
-* 在 ``__getitem__`` 中返回 ndarray 中的一个样本；
-* 在 ``__len__`` 中返回整个数据集中样本的个数；
+   .. code-block:: python
 
-.. code-block:: python
+      import cv2
+      import numpy as np
+      import megengine
+      from megengine.data.dataset import Dataset
 
-   import numpy as np
-   from typing import Tuple
+      class CustomImageDataset(Dataset):
+          def __init__(self, image_folder):
+              # get all mapping indice
+              self.image_folder = image_folder
+              self.image_list = os.listdir(image_folder)
 
-   # 导入需要被继承的 Dataset 类
-   from megengine.data.dataset import Dataset
+          # get the sample
+          def __getitem__(self, idx):
+              # get the index
+              image_file = self.image_list[idx]
 
-   class XORDataset(Dataset):
-       def __init__(self, num_points):
-           """
-           生成如图1所示的二分类数据集，数据集长度为 num_points
-           """
-           super().__init__()
+              # get the data
+              # in this case we load image data and convert to ndarray
+              image = cv2.imread(self.image_folder + image_file, cv2.IMREAD_COLOR)
+              image = np.array(image)
 
-           # 初始化一个维度为 (50000, 2) 的 NumPy 数组。
-           # 数组的每一行是一个横坐标和纵坐标都落在 [-1, 1] 区间的一个数据点 (x, y)
-           self.data = np.random.rand(num_points, 2).astype(np.float32) * 2 - 1
-           # 为上述 NumPy 数组构建标签。每一行的 (x, y) 如果符合 x*y < 0，则对应标签为1，反之，标签为0
-           self.label = np.zeros(num_points, dtype=np.int32)
-           for i in range(num_points):
-               self.label[i] = 1 if np.prod(self.data[i]) < 0 else 0
+              # get the label
+              # in this case the label was noted in the name of the image file
+              # ie: 1_image_28457.png where 1 is the label 
+              # and the number at the end is just the id or something
+              target = int(image_file.split("_")[0])
 
-       # 定义获取数据集中每个样本的方法
-       def __getitem__(self, index: int) -> Tuple:
-           return self.data[index], self.label[index]
+              return image, target
 
-       # 定义返回数据集长度的方法
-       def __len__(self) -> int:
-           return len(self.data)
+          def __len__(self):
+              return len(self.images)
 
-   np.random.seed(2020)
-   # 构建一个包含 30000 个点的训练数据集
-   xor_train_dataset = XORDataset(30000)
-   print("The length of train dataset is: {}".format(len(xor_train_dataset)))
+   要获取示例图像，可以创建一个数据集对象，并将示例索引传递给 ``__getitem__`` 方法，
+   然后将返回图像数组和对应的标签，例如：
 
-   # 通过 for 遍历数据集中的每一个样本
-   for cor, tag in xor_train_dataset:
-       print("The first data point is: {}, {}".format(cor, tag))
-       break
+   .. code-block:: python
 
-   print("The second data point is: {}".format(xor_train_dataset[1]))
+      dataset = CustomImageDataset("/path/to/image/folder")
+      data, sample = dataset.__getitem__(0) # dataset[0]
 
-输出：
+#. 现在我们已经预先创建了能够返回一个样本及其标签的类 ``CustomImageDataset``, 
+   但仅依赖 ``Dataset`` 本身还无法实现自动分批、乱序、并行等功能；
+   我们必须接着创建 ``DataLoader``, 它通过其它的参数配置项围绕这个类“包装”，
+   可以按照我们的要求从数据集类中返回整批样本。
 
-.. code-block:: shell
+   .. code-block:: python
 
-   The length of train dataset is: 30000
-   The first data point is: [0.97255366 0.74678389], 0
-   The second data point is: (array([ 0.01949105, -0.45632857]), 1)
+      from megengine.data.transform import ToMode
+      from megengine.data import DataLoader, RandomSampler
 
-MegEngine 中也提供了一些已经继承自 :py:class:`~.data.dataset.Dataset` 的数据集类，方便我们使用，
-比如 :py:class:`~.data.dataset.ArrayDataset` ，允许通过传入单个或多个 NumPy 数组，对它进行初始化。
-其内部实现如下：
+      dataset = YourImageDataset("/path/to/image/folder")
 
-* ``_init__``: 检查传入的多个 NumPy 数组的长度是否一致；不一致则无法成功创建；
-* ``__getitem__``: 将多个 NumPy 数组相同索引位置的元素构成一个 tuple 并返回；
-* ``__len__``: 返回数据集的大小；
+      # you can implement the function to randomly split your dataset
+      train_set, val_set, test_set = random_split(dataset)
+
+      # B is your batch-size, ie. 128
+      train_dataloader = DataLoader(train_set,
+            sampler=RandomSampler(train_set, batch_size=B),
+            transform=ToMode('CHW'),
+      )
+
+   注意到在上面的代码中，我们还用到了 ``Sampler`` 来决定数据加载（抽样）顺序，
+   用到了 ``Transform`` 来对加载后的数据进行一些变换处理，这还不是全部可配置项，
+   在后续小节我们会进行更加详细的介绍。
+
+#. 现在我们已经创建了数据加载器并准备好训练！例如像这样：
+
+   .. code-block:: python
+
+      for epoch in range(epochs):
+
+          for images, targets in train_dataloder:
+              # now 'images' is a batch containing B samples
+              # and 'targets' is a batch containing B targets 
+              # (of the images in 'images' with the same index
+
+              # remember to convert data to tensor
+              images = megengine.Tensor(images)
+              targets = megengine.Tensor(targets)
+
+              # train function
+              # ...
+
+#. 成功地获取到批数据后，关于模型如何训练和测试的后续流程就不在这里介绍了。
+
+.. seealso::
+
+   * 在 MegEngine 新手入门板块中提供了完整的基于 MNIST 和 CIFAR10 数据集的模型训练与测试教程；
+   * 在 MegEngine 官方模型库 `Models <https://github.com/MegEngine/Models>`_ 中可以找到更多参考代码。

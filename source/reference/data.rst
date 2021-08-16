@@ -4,6 +4,14 @@
 ==============
 megengine.data
 ==============
+DataLoader
+----------
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
+   DataLoader
 
 .. py:module:: megengine.data.dataset
 .. currentmodule:: megengine.data.dataset
@@ -108,17 +116,4 @@ Collator
    :template: autosummary/api-class.rst
 
    Collator
-
-.. py:module:: megengine.data.dataloader
-.. currentmodule:: megengine.data
-
-DataLoader
-----------
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-   :template: autosummary/api-class.rst
-
-   DataLoader
-
 
