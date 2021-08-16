@@ -51,8 +51,9 @@
        return loss
 
    # with 写法
+   profiler = Profiler()
    def train_step(data, label, *, optimizer, gm, model)
-       with Profiler():
+       with profiler:
           with gm:
               logits = model(data)
               loss = F.loss.cross_entropy(logits, label)
@@ -62,7 +63,7 @@
 
 这样在每次进到对应代码块里时，MegEngine 会对区域里的代码单独做一次 Profiling.
 
-代码跑完后，将会在运行目录下生成 ``JSON`` 文件，用于接下来的性能分析。
+程序结束时（准确地说，是在Profiler析构时），将会在运行目录下生成 ``JSON`` 文件，用于接下来的性能分析。
 
 参数说明
 ^^^^^^^^
@@ -70,40 +71,32 @@
 :py:class:`~.utils.profiler.Profiler` 的构造函数支持如下参数：
 
 ``path``
-  数据的存储路径前缀，默认为 ``profile``, 后面将自动加上 ``.chrome_timeline.json`` 后缀。
+  profile数据的存储路径，默认为当前路径下的 ``profile``文件夹.
 
-``topic``
-  接受预设的主题组合，Profiler 将只记录对应的信息，默认为 ``OPERATOR|SCOPE`` . 可选配置如下：
+``format``
+  输出数据的格式，默认为 ``chrome_timeline.json`` ，是Chrome支持的一种标准格式，以时间线的形式展现profiling结果.
+  可选项还有 ``有memory_flow.svg`` ，以时间x地址空间的形式展示内存使用情况.
 
-  * ``ALL``: 包含下面所有主题
-  * ``OPERATOR``: 记录算子执行时间以及算子参数
-  * ``TENSOR_LIFETIME``: 记录 Tensor 的生命周期
-  * ``SYNC``: 记录内部线程之间的同步事件
-  * ``SCOPE``: 记录 module forward 前后的边界（类似调用栈形式）
-  * ``MEMORY``: 记录显存使用情况
-  * ``SHAPE_INFER``: 记录模型运行过程中 shape 推导的情况 
+``formats``
+  若需要的输出格式不止一种，可以在formats参数里列出.
 
-  .. warning::
+``sample_rate``
+  若该项不为零，则每隔n个op会统计一次显存信息，分析数据时可以绘制显存占用曲线，默认为0.
 
-     尽量避免使用 ``ALL``, 越多的配置将带来越大的 Profiling 开销。
-
-``align_time``
-  将输出时间从相对变成绝对，方便对比多个 ``JSON`` 文件，默认为 ``True``.
-
-``show_operator_name``
-  是否显示算子类型名称，默认为 ``True``. 设置为 ``False`` 则所有算子均显示为 ``Operator``.
+``profile_device``
+  是否记录gpu耗时，默认为True.
 
 分析性能数据
 ~~~~~~~~~~~~
-可以使用 `Chrome Performance <https://developer.chrome.com/docs/devtools/evaluate-performance/>`_
+可以使用 `Perfetto <https://ui.perfetto.dev/>`_
 工具加载上一步生成的 ``JSON`` 文件：
 
-#. 打开 `Chrome 浏览器 <https://www.google.com/intl/zh-CN/chrome/>`_ ；
-#. 按下 ``F12`` （更多工具->开发者工具）打开开发者工具页面；
-#. 切换到 Performance 标签，点击 ⬆️  （load profile） 按钮加载数据。
+#. 打开 `Perfetto 网页 <https://ui.perfetto.dev/>`_ ；
+#. 点击 ``Open trace file`` 按钮加载数据；
+#. 展开内容。
 
-此时可以在窗口里看到数个线程，每个线程中都有一群堆叠的色块（代表着事件）。
-横坐标是时间轴，色块的左右边缘即是事件的起始与终止时间。
+此时可以在窗口里看到数个线程，每个线程都按时间顺序显示历史调用栈。
+横坐标是时间轴，色块的左右边缘是事件的起始与终止时间。
 纵坐标代表事件所属的线程（其中 channel 为 python 主线程）。
 例如，当我们在模型源代码里的 ``self.conv1(x)`` 被执行时，
 channel 线程上会有一个对应的 ``conv1`` 块，而其他线程上同样的 ``conv1`` 块会滞后一些。
@@ -123,10 +116,8 @@ gpu 线程上的事件密度明显比 channel 和 worker 高。
 * :py:meth:`.Optimizer.clear_grad`
 * :py:meth:`.Module.forward`
 
-通过观察色块的长度，便可以得到对应操作的运行时间，从而评估模型的性能瓶颈。
-特别地，在 worker 与 gpu 线程上，还能看到 op 级别的（细粒度）事件。
-比如，诸如 ``z = x + y`` 的表达式，在 channel 上看不到信息，
-但是在 gpu 线程上一般会有一个对应的 op 被记录下来，名字一般是 ``Elemwise``.
+通过观察事件的持续时间，可以评估模型的性能瓶颈。
+在timeline的上方还会有一些曲线这些曲线与下方的事件共用同一条时间轴，展示了对应数据的变化过程。
 
 
 静态图下的性能分析
