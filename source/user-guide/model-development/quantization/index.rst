@@ -1,19 +1,23 @@
 .. _quantization-guide:
 
-====================
-量化（Quantization）
-====================
+==================
+量化(Quantization)
+==================
 
-量化指的是将浮点数模型（一般是 32 位浮点数）的权重或激活值用位数更少的数值类型
-（比如 8 位整数、16 位浮点数）来近似表示的过程。
-量化后的模型会占用更小的存储空间，还能够利用许多硬件平台上的专属算子进行提速。
-比如在 MegEngine 中使用 8 位整数来进行量化，相比默认的 32 位浮点数，
-模型大小可以减少为 1/4，而运行在特定的设备上其计算速度也能提升为 2-4 倍。
+常见的深度学习网络，其参数和运算的数据类型一般是浮点类型，而工业界出于对特定场景的速度和内存需求，需要把模型转换为基于定点运算和存储的形式。一般把这种形式称为量化。
+量化的原因有两点：
 
-量化的目的是为了追求极致的推理计算速度，为此舍弃了数值表示的精度，直觉上会带来较大的模型掉点，
-但是在使用一系列精细的量化处理之后，其掉点可以变得微乎其微，并能支持正常的部署使用。
-而且近年来随着专用神经网络加速芯片的兴起，低比特非浮点的运算方式越来越普及，
-因此如何把一个 GPU 上训练的浮点数模型转化为低比特的量化模型，就成为了工业界非常关心的话题。
+* 某些场景需要更小的内存和更快的推理速度，量化一般都是将32bit的浮点数转换成8bit,4bit等定点数，首先在内存占用上就有4x以上的缩减，同时具有更少的运行时内存和缓存要求，此外因为大部分的硬件对于定点运算都有特定的优化，所以在运行速度上也会有较大的提升
+* 某些计算设备只支持定点运算，这种情况下为了让网络可以在这些设备上正常运行，我们需要对其进行量化处理
+
+``当然，以上两点成立的前提模型经过量化处理之后，模型的正确率并没有下降或者下降后仍处于可用的状态。幸运的是，大部分情况下，量化都能得到相对不错的结果``
+
+MegEngine针对量化提供了一整套的解决方案，节省了大量我们需要手动处理的时间。不过为了理解它的工作，我们需要对量化的原理和实现有一个初步的了解。
+对量化原理不太了解的同学可以先阅读量化入门章节：
+ 
+.. toctree::
+
+   quantization_ABC
 
 一般来说，得到量化模型的转换过程按代价从低到高可以分为以下 4 种：
 
@@ -45,7 +49,26 @@
 .. image:: ../../../_static/images/float-qfloat-q.jpg
    :align: center
 
-对应到具体的 MegEngine 接口中，三阶段如下：
+
+
+Megengine的工程实现
+~~~~~~~~~~~~~~~~~~~
+
+对应到具体的 MegEngine 接口中，megengine 把module整理成了三类
+
+* 进行正常浮点运算的 默认 :class:`~.module.Module`
+* 带有伪量化算子和observe算子的 :class:`~.module.qat.QATModule`
+* 最终量化转化完毕的量化算子 :class:`~.module.quantized.QuantizedModule`
+  
+对于其中比较常见的可以被量化的算子(Conv等)，在这三种module中分别有同名的实现，megengine提供了 :func:`~.quantization.quantize_qat` 和 :func:`~.quantization.quantize` 两个来完成批量的op替换操作
+
+* quantize_qat 会把float module 转换成qat_module，通过 qat_module的源码 我们可以看出
+
+  * 在转换过程中qat_module本身根据qconfig相关配置设置对应module的weight (权重)和act (激活值)的 observe和fake_quant
+  * 在之后qat_module的forward过程中，qat_module会在调用 _apply_fakequant_with_observer 的时候对相应的tensor进行统计值域和进行伪量化的操作
+* quantize 主要是将一个qat_module转换成真正的quantized_module，在这一步会执行上面提到的浮点转定点操作，根据qat_module统计的观测值和设置的定点类型将qat_module里的weight转换成对应的定点类型
+
+所以在megengine上做一个常规的量化流程：
 
 1. 基于 :class:`~.module.Module` 搭建网络模型，并按照正常的浮点模型方式进行训练；
 2. 使用 :func:`~.quantization.quantize_qat` 将浮点模型转换为 QFloat 模型，
@@ -199,17 +222,17 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
 4. 调用 :func:`~.quantization.quantize` 转换为量化模型，并执行 dump 用于后续模型部署。
 
 网络结构见 ``resnet.py`` ，相比惯常写法，我们修改了其中一些子 Module，
-将原先单独的 ``conv``, ``bn``, ``relu`` 替换为 Fuse 过的 Quantable Module。
+将原先单独的 ``Conv``, ``BN``, ``relu`` 替换为 Fuse 过的 Quantable Module。
 
 .. code-block::
 
     class BasicBlock(Module):
         def __init__(self, in_planes, planes, stride=1):
             super(BasicBlock, self).__init__()
-            self.conv_bn_relu = ConvBnRelu2d(
+            self.Conv_BN_relu = ConvBnRelu2d(
                 in_planes, planes, kernel_size=3, stride=stride, padding=1, bias=False
             )
-            self.conv_bn = ConvBn2d(
+            self.Conv_BN = ConvBn2d(
                 planes, planes, kernel_size=3, stride=1, padding=1, bias=False
             )
             self.add_relu = Elemwise("FUSE_ADD_RELU")
@@ -220,8 +243,8 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
                 )
 
         def forward(self, x):
-            out = self.conv_bn_relu(x)
-            out = self.conv_bn(out)
+            out = self.Conv_BN_relu(x)
+            out = self.Conv_BN(out)
             cut = self.shortcut(x)
             out = self.add_relu(out, cut)
             return out
