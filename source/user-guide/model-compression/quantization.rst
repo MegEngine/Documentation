@@ -4,59 +4,121 @@
 量化
 ====
 
-量化指的是将浮点数模型（一般是 32 位浮点数）的权重或激活值用位数更少的数值类型
-（比如 8 位整数、16 位浮点数）来近似表示的过程。
-量化后的模型会占用更小的存储空间，还能够利用许多硬件平台上的专属算子进行提速。
-比如在 MegEngine 中使用 8 位整数来进行量化，相比默认的 32 位浮点数，
-模型大小可以减少为 1/4，而运行在特定的设备上其计算速度也能提升为 2-4 倍。
+一般对一个神经网络做量化主要是指将该模型的weights和activations进行浮点转定点的操作，这样做有几个好处：
 
-量化的目的是为了追求极致的推理计算速度，为此舍弃了数值表示的精度，直觉上会带来较大的模型掉点，
-但是在使用一系列精细的量化处理之后，其掉点可以变得微乎其微，并能支持正常的部署使用。
-而且近年来随着专用神经网络加速芯片的兴起，低比特非浮点的运算方式越来越普及，
-因此如何把一个 GPU 上训练的浮点数模型转化为低比特的量化模型，就成为了工业界非常关心的话题。
+* 流程简单，我们只需要将网络的参数进行替换而不需要替换整个网络结构，大部分情况下我们甚至不需要重新训练，就能得到一个点数ok，满足速度和内存要求的模型
+* 更小的内存和更快的推理速度，因为量化一般都是将32bit的浮点数转换成8bit,4bit等定点数，首先在内存占上就有4x以上的缩减，同时具有更少的运行时内存和缓存要求，此外因为大部分的硬件对于定点运算都有特定的优化，所以在运行速度上也会有较大的提升
+* 定点模型的功耗更低，在一些对功耗有极致需求的场景会更加友好
 
-一般来说，得到量化模型的转换过程按代价从低到高可以分为以下 4 种：
-
-.. image:: ../../_static/images/quant_cls.png
-   :align: center
-
-* Type1 和 Type2 由于是在模型浮点模型训练之后介入，无需大量训练数据，
-  故而转换代价更低，被称为后量化（Post Quantization）；
-* Type3 和 Type4 则需要在浮点模型训练时就插入一些假量化（FakeQuantize）算子，
-  模拟计算过程中数值截断后精度降低的情形，故而称为量化感知训练（Quantization Aware Training, QAT）。
-
-本文主要介绍 Type2 和 Type3 在 MegEngine 中的完整流程。
-事实上，除了 Type2 无需进行假量化，两者的整体流程完全一致。
-
-整体流程
+几种常见的浮点转定点方案
 --------
 
-以 Type3 为例，一般以一个训练完毕的浮点模型为起点，称为 Float 模型。
-包含假量化算子的用浮点操作来模拟量化过程的新模型，我们称之为 Quantized-Float 模型，或者 QFloat 模型。
-可以直接在终端设备上运行的模型，称之为 Quantized 模型，简称 Q 模型。
+目前主流的浮点转定点方案基本采用均匀量化，因为这种方案对推理更友好。将一个浮点数根据其值域范围，均匀的映射到一个定点数的表达范围上
 
-而三者的精度一般是 ``Float > QFloat > Q`` ，故而一般量化算法也就分为两步：
+非对称均匀量化
+~~~~~~~~
+一个浮点数x的值域范围为{x_min, x_max}，要转换到一个表达范围为(0,255)的8bit定点数的转换公式如下
 
-* 拉近 QFloat 和 Q，这样训练阶段的精度可以作为最终 Q 精度的代理指标，这一阶段偏工程；
-* 拔高 QFloat 逼近 Float，这样就可以将量化模型性能尽可能恢复到 Float 的精度，这一阶段偏算法。
+.. math::
+    :nowrap:
 
-典型的三种模型在三个阶段的精度变化如下：
+    \begin{gather*}
+    x_{int} = round(x/s) + z
+    x_{Q} = clamp(0,255,x_{int}) 
+    \end{gather*}
 
-.. image:: ../../_static/images/float-qfloat-q.jpg
-   :align: center
+其中s为scale，也叫步长，是个浮点数。
+.. math::
+    :nowrap:
 
-对应到具体的 MegEngine 接口中，三阶段如下：
+    \begin{gather*}
+    scale = (x_{max} - x_{min}) / 255
+    \end{gather*}
+z为零点，即浮点数中的0，是个定点数。 
+.. math::
+    :nowrap:
 
-1. 基于 :class:`~.module.Module` 搭建网络模型，并按照正常的浮点模型方式进行训练；
-2. 使用 :func:`~.quantization.quantize_qat` 将浮点模型转换为 QFloat 模型，
-   其中可被量化的关键 Module 会被转换为 :class:`~.module.qat.QATModule` ，
-   并基于量化配置 :class:`~.quantization.QConfig` 设置好假量化算子和数值统计方式；
-3. 使用 :func:`~.quantization.quantize` 将 QFloat 模型转换为 Q 模型，
-   对应的 QATModule 则会被转换为 :class:`~.module.quantized.QuantizedModule` ，
-   此时网络无法再进行训练，网络中的算子都会转换为低比特计算方式，即可用于部署了。
+    \begin{gather*}
+    z = round(0 - x_{min}) / 255
+    \end{gather*}
+零点很重要，因为我们的网络模型的padding，relu等运算对于0比较敏感，需要被正确量化才能保证转换后的定点运算的正确性。当浮点数的值域范围不包含零点的时候，为了保证正确量化，我们需要对其值域范围进行一定程度的缩放使其可以包含0点
 
-该流程是 Type3 对应 QAT 的步骤，Type2 对应的后量化则需使用不同 QConfig，
-且需使用 evaluation 模式运行 QFloat 模型，而非训练模式。更多细节可以继续阅读下一节详细的接口介绍。
+对应的反量化公式如下
+.. math::
+    :nowrap:
+
+    \begin{gather*}
+    x_{float} = (x_{Q} - z) * s
+    \end{gather*}
+
+需要注意，因为量化过程中存在round和clamp操作，所以经过量化和反量化之后的浮点数与原来的浮点数存在一定的误差，这个过程的差异可以查看下图。量化对我们网络模型的参数进行了离散化，这种操作对于模型最终点数的影响程度取决于我们模型本身的参数分布与均匀分布的差异
+此处需要插入图片
+
+接下来我们来看看如何用经过量化运算的定点卷积运算去表示一个原始的浮点卷积操作
+
+.. math::
+    :nowrap:
+
+    \begin{gather*}
+    conv(x, w)  = conv((x_{Q} - z_{x}) * s_{x}, (w_{Q} - z_{w}) * s_{w}) \\conv(x, w) = s_{x}s_{w} conv(x_{Q} - z_{x},w_{Q} - z_{w} ) \\conv(x, w) = s_{x}s_{w} (conv(x_{Q}, w_{Q}) - z_{x} \sum_{k,l,m}x_{Q} - z_{w}\sum_{k,l,m,n}w_{Q} + z_{x}z_{w})
+    \end{gather*}
+
+其中k,l,m,n分别是kernel size，output channel和input channel的遍历下标。可以看出，当卷积的输入和参数的zero_point都是0的时候，浮点卷积将简化成 ，即定点的卷积运算结果和实际输出只有一个scale上的偏差，大大的简化了定点的运算逻辑，
+所以我们接下来引出了对称量化
+    
+对称均匀量化
+~~~~~~~~
+
+如上所述，当我们把定点量化对应的zero point固定在整型的0处时，便是对称均匀量化。我们以int8的定点数为例 (选取int8只是为了看上去更对称一些，选取uint8也是可以的), 量化公式如下
+
+.. math::
+    :nowrap:
+
+    \begin{gather*}
+    scale = max(abs(x_{min}), abs(x_{max})) / 127
+    x_{int} = round(x/s)
+    x_{Q} = clamp(-128,127,x_{int})
+    \end{gather*}
+
+处于更快的SIMD实现的目的，有时候我们会把卷积的weight的定点范围表示成(-127,127)，对应的反量化操作为
+.. math::
+    :nowrap:
+
+    \begin{gather*}
+    x_{float} = x_{Q}*s
+    \end{gather*}
+
+由此可见，对称均匀量化的量化和反量化操作会更加的便捷一些
+除此之外还有随机均匀量化等别的量化手段，因为大部分情况下我们都采用对称均匀量化，这里不再展开描述
+
+参考文献：
+
+https://arxiv.org/pdf/1806.08342.pdf
+
+
+工程实现
+~~~~~~~~
+
+一般在浮点模型到定点模型这一步中间还有一步qat (Quantization-aware-training)训练步骤，但我们把这一步放到后面再讲。我们这一节主要讲一下megengine是如何完成量化转化的，以及在实际运行过程中是怎么一回事。
+为了方便批量操作，megengine 把module整理成了三类
+
+* 进行浮点运算的 默认 Module
+* 为qat使用的带有伪量化算子和observe算子的 QATModule
+* 最终量化转化完毕的量化算子 QuantizedModule
+
+对于其中比较常见的可以被量化的算子(conv等)，在这三种module中分别有同名的实现，megengine提供了quantize_qat 和 quantize 两个来完成批量的op替换操作
+
+* quantize_qat 会把float module 转换成qat_module，通过 qat_module的源码 我们可以看出
+  * 在转换过程中qat_module本身根据qconfig相关配置设置对应module的weight (权重)和act (激活值)的 observe和fake_quant
+  * 在之后qat_module的forward过程中，qat_module会在调用 _apply_fakequant_with_observer 的时候对相应的tensor进行统计值域和进行伪量化的操作
+* quantize 主要是将一个qat_module转换成真正的quantized_module，在这一步会执行上面提到的浮点转定点操作，根据qat_module统计的观测值和设置的定点类型将qat_module里的weight转换成对应的定点类型
+
+所以在megengine上做一个常规的量化流程：
+
+#. 首先将包含Module的常规模型转换成带qat_module的模型，这一步需要配置Qconfig，然后调用 quantize_qat 将module中可被量化的算子转换成同名的qat算子
+#. 如果需要进行qat训练，我们在第一步配置qconfig的时候需要指定伪量化算子，然后进行训练。同时每个对应qat算子的observe会统计需要量化的tensor的值域范围。
+   #. 如果只是进行calibration，只需要把伪量化算子置为None即可
+#. 调用quantize将qat_module转换成quantize_module，这一步将进行实际的浮点转量化操作
 
 接口介绍
 --------
