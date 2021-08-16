@@ -161,11 +161,12 @@ GitHub 协作流程
 
 #. 创建一个 Issue，讨论接下来你打算进行什么样的尝试，交流想法；
 #. 一旦确定了初步方案，Fork 并 Clone 存储库，创建一个新的本地分支；
-#. 修改代码或文本，:ref:`在本地构建与预览文档 <how-to-build-the-doc-locally>` ；
-#. 按照要求记录 :ref:`Commit <commit-message>` 信息（需要使用 GitHub 账号）；
-#. 确认无误后，Push 到你 Fork 的远端分支（Origin）；
-#. 在 GitHub 创建一个 Pull Request 并向上游（Upstream）发起合并申请；
-#. 根据 Review 意见进行交流，如有需要则修改你的代码；
+#. 参照 :ref:`风格指南 <megengine-document-style-guide>` 和 :ref:`语法规范 <restructuredtext>`
+   修改代码或文本，:ref:`在本地构建与预览文档 <how-to-build-the-doc-locally>` ；
+#. 按照 :ref:`格式要求 <commit-message>` 记录 Commit 信息（需要使用 GitHub 账号）；
+#. 确认所有改动符合预期后，Push 到你 Fork 的远端分支（Origin）；
+#. 在 GitHub 创建一个 Pull Request 并向上游（Upstream）发起合并请求；
+#. 根据 Review 意见进行交流，根据需求在 Pull Request 中提交后续修改；
 #. 当你的分支被合并了，便可以删除对应的本地和远程分支。
 
 我们还提供了更加详细的 :ref:`pull-request-guide` （里面的规则适用于 MegEngine ）。
