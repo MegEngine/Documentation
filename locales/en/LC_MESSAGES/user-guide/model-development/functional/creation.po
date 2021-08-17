@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-17 20:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/user-guide/model-development/functional/creation.rst:5
+msgid "创建 Tensor"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:7
+msgid "创建 Tensor 的方式有很多种，常见操作如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:9
+msgid ""
+"如果想要使用已经存在的数据创建 Tensor, 可以将其传入 :class:`~.Tensor` 的构造函数： "
+"支持传入标量（Scalar）、Python :class:`list` 以及 NumPy :class:`~numpy.ndarray` "
+"（当然也包括 Tensor 自己）；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:11
+msgid ""
+"对应地，Tensor 也支持通过 :meth:`~.Tensor.item` , :meth:`~.Tensor.tolist` 和 "
+":meth:`~.Tensor.numpy` 变成其它数据结构；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:12
+msgid "我们也可以使用 :ref:`creation` 和 :py:mod:`~.random` 中的 API 来无中生有想要的 Tensor 对象。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:15
+msgid "使用已经存在的数据"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:16
+msgid "一种常见的思路是，经过一系列流程，首先将输入的数据转化成 NumPy 支持的 ndarray 格式。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:18
+msgid "假设数据已被处理成 ndarray 类型的 ``data``, 我们则可以像下面的代码一样将其转换为 MegEngine Tensor:"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:28
+msgid "在这个过程中，MegEngine 会根据传入数据的类型自动进行推导，比如这里得到的是 ``int32`` 类型的数据。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:32
+msgid "MegEngine 基于已有数据生成的 Tensor 都是经过拷贝创建的，与原始数据的内存并不共享。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:33
+msgid "``tensor`` 只是 ``Tensor`` 的别名， **二者在使用上没有任何的区别。**"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:36
+msgid "使用相关算子创建"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:38
+msgid "使用一些 :py:mod:`~.functional` 模块中提供的接口，可以用来生成 Tensor. 比如："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:47
+msgid "更多接口比如 :py:func:`~.ones`, :py:func:`~.full`, ... 均可在 :ref:`creation` 中找到。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:49
+msgid "使用一些 :py:mod:`~.random` 模块中提供的接口，可以随机生成符合要求的 Tensor. 比如："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:58
+msgid ""
+"更多接口比如 :py:func:`~.uniform`, :py:func:`~.beta` ... 均可在 :py:mod:`~.random`"
+" 中找到。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:62
+msgid "使用 :py:func:`.random.seed` 可以设置随机数种子；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:63
+msgid "你也可以使用 NumPy 创建 ndarray 数据，然后转化成 MegEngine Tensor."
+msgstr ""
+
