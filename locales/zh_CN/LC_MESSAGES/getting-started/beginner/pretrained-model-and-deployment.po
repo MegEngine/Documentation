@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.5\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-08-17 16:29\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/pretrained-model-and-deployment.po\n"
+"X-Crowdin-File-ID: 7083\n"
+"Language: zh_CN\n"
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:9
 msgid "使用预训练模型与模型部署"
@@ -30,10 +31,7 @@ msgid "image0"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:12
-msgid ""
-"|image1| `查看源文件 "
-"<https://github.com/MegEngine/Documentation/blob/main/source/getting-"
-"started/beginner/pretrained-model-and-deployment>`__"
+msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/pretrained-model-and-deployment>`__"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:29
@@ -41,9 +39,7 @@ msgid "image1"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:16
-msgid ""
-"收集数据、使用深度学习框架训练模型并不是整个机器学习流程的全部，我们的最终目的是希望这些模型能够被部署到实际的生产情景中去，并且有效地发挥作用。 "
-"在某些时候，负责模型部署的开发者仅仅关注如何将这些现成的模型用于推理情景；亦或者希望借助一些已经训练好的模型在新的任务上进行微调，从而快速获得不错的预测性能。通过这个教程，你将接触到以下内容："
+msgid "收集数据、使用深度学习框架训练模型并不是整个机器学习流程的全部，我们的最终目的是希望这些模型能够被部署到实际的生产情景中去，并且有效地发挥作用。 在某些时候，负责模型部署的开发者仅仅关注如何将这些现成的模型用于推理情景；亦或者希望借助一些已经训练好的模型在新的任务上进行微调，从而快速获得不错的预测性能。通过这个教程，你将接触到以下内容："
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:18
@@ -67,9 +63,7 @@ msgid "我们还将为你提供后续学习方向的建议，希望你最终能�
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:26
-msgid ""
-"请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 "
-"<https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
+msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:83
@@ -77,10 +71,7 @@ msgid "残差网络（ResNet）"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:85
-msgid ""
-"我们通过一些实践验证了深层的网络确实比浅层的网络具有更好的效果，但为什么我们不设计出一个具深无比的网络，来达到更好的性能呢？ 这里引用了来自 "
-"`Tnil <https://www.zhihu.com/people/tylin98>`__ 的解释（ 完整内容建议 `阅读原文 "
-"<https://zhuanlan.zhihu.com/p/80226180>`__ ）："
+msgid "我们通过一些实践验证了深层的网络确实比浅层的网络具有更好的效果，但为什么我们不设计出一个具深无比的网络，来达到更好的性能呢？ 这里引用了来自 `Tnil <https://www.zhihu.com/people/tylin98>`__ 的解释（ 完整内容建议 `阅读原文 <https://zhuanlan.zhihu.com/p/80226180>`__ ）："
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:88
@@ -88,27 +79,18 @@ msgid "深度神经网络的“两朵乌云”"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:90
-msgid ""
-"一个前馈神经网络 :math:`f(\\mathbf{x} ; \\theta)` "
-"，由若干层神经元组成，为了方便讨论，我们以非线性单元（若干层神经元组成的函数单元）为单位讨论神经网络，即神经网络 "
-":math:`f(\\mathbf{x} ; \\theta)` 由 :math:`L` 个非线性单元堆叠而成（后面将每个单元称为一层），令 "
-":math:`\\mathbf{a}^{(0)}=\\mathbf{x}` , 则神经网络第 :math:`l` 层（ :math:`1 "
-"\\leq l \\leq L` ）的净输入 :math:`\\mathbf{z}^{(l)}` 与输出 "
-":math:`\\mathbf{a}^{(l)}` 的计算由下式给出："
+msgid "一个前馈神经网络 :math:`f(\\mathbf{x} ; \\theta)` ，由若干层神经元组成，为了方便讨论，我们以非线性单元（若干层神经元组成的函数单元）为单位讨论神经网络，即神经网络 :math:`f(\\mathbf{x} ; \\theta)` 由 :math:`L` 个非线性单元堆叠而成（后面将每个单元称为一层），令 :math:`\\mathbf{a}^{(0)}=\\mathbf{x}` , 则神经网络第 :math:`l` 层（ :math:`1 \\leq l \\leq L` ）的净输入 :math:`\\mathbf{z}^{(l)}` 与输出 :math:`\\mathbf{a}^{(l)}` 的计算由下式给出："
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:92
-msgid ""
-"\\begin{aligned}\n"
+msgid "\\begin{aligned}\n"
 "&\\mathbf{z}^{(l)}=\\mathcal{H}\\left(\\mathbf{a}^{(l-1)}\\right) \\\\\n"
 "&\\mathbf{a}^{(l)}=g\\left(\\mathbf{z}^{(l)}\\right)\n"
 "\\end{aligned}"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:100
-msgid ""
-"其中 :math:`\\mathcal{H}(\\cdot)` 是该层的内部运算，依照网络类型有所不同；\\ :math:`g(\\cdot)` "
-"是第 :math:`l` 层的输出激活函数。"
+msgid "其中 :math:`\\mathcal{H}(\\cdot)` 是该层的内部运算，依照网络类型有所不同；\\ :math:`g(\\cdot)` 是第 :math:`l` 层的输出激活函数。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:102
@@ -124,23 +106,15 @@ msgid "梯度弥散/爆炸"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:118
-msgid ""
-"现代神经网络一般是通过基于梯度的 BP 算法来优化，对前馈神经网络而言，一般需要前向传播输入信号，然后反向传播误差并使用梯度方法更新参数。第 "
-":math:`l` 层的某参数更新需要计算损失 :math:`\\epsilon` 对其的梯度，该梯度依赖于该层的误差项 "
-":math:`\\delta^{(l)}=\\frac{\\partial \\epsilon}{\\partial "
-"\\mathbf{z}^{(l)}}`, 根据链式法则，其依赖后一层的误差项 :math:`\\delta^{(l+1)}`:"
+msgid "现代神经网络一般是通过基于梯度的 BP 算法来优化，对前馈神经网络而言，一般需要前向传播输入信号，然后反向传播误差并使用梯度方法更新参数。第 :math:`l` 层的某参数更新需要计算损失 :math:`\\epsilon` 对其的梯度，该梯度依赖于该层的误差项 :math:`\\delta^{(l)}=\\frac{\\partial \\epsilon}{\\partial \\mathbf{z}^{(l)}}`, 根据链式法则，其依赖后一层的误差项 :math:`\\delta^{(l+1)}`:"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:120
-msgid ""
-"\\delta^{(l)}=\\frac{\\partial \\mathbf{z}^{(l+1)}}{\\partial "
-"\\mathbf{z}^{(l)}} \\cdot \\delta^{(l+1)}"
+msgid "\\delta^{(l)}=\\frac{\\partial \\mathbf{z}^{(l+1)}}{\\partial \\mathbf{z}^{(l)}} \\cdot \\delta^{(l+1)}"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:125
-msgid ""
-"假设网络单元输入输出维度一致，定义 :math:`\\gamma^{(l)} \\simeq\\left\\|\\frac{\\partial "
-"\\mathbf{z}^{(l+1)}}{\\partial \\mathbf{z}^{(l)}}\\right\\|`, 则有："
+msgid "假设网络单元输入输出维度一致，定义 :math:`\\gamma^{(l)} \\simeq\\left\\|\\frac{\\partial \\mathbf{z}^{(l+1)}}{\\partial \\mathbf{z}^{(l)}}\\right\\|`, 则有："
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:127
@@ -148,16 +122,11 @@ msgid "\\delta^{(l)} \\simeq \\gamma^{(l)} \\delta^{(l+1)}"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:132
-msgid ""
-"当 :math:`\\gamma^{(l)}<1` 时，第 :math:`l` "
-"层的误差项较后一层减小，如果很多层的情况都是如此，就会导致反向传播中，梯度逐渐消失，底层的参数不能有效更新，这也就是梯度弥散(或梯度消失)；当 "
-":math:`\\gamma^{(l)}>1` 时，则会使得梯度以指数级速度增大，造成系统不稳定，也就是梯度爆炸问题。"
+msgid "当 :math:`\\gamma^{(l)}<1` 时，第 :math:`l` 层的误差项较后一层减小，如果很多层的情况都是如此，就会导致反向传播中，梯度逐渐消失，底层的参数不能有效更新，这也就是梯度弥散(或梯度消失)；当 :math:`\\gamma^{(l)}>1` 时，则会使得梯度以指数级速度增大，造成系统不稳定，也就是梯度爆炸问题。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:134
-msgid ""
-"**在很深层的网络中，由于不能保证** :math:`\\gamma^{(l)}` **的大小，也很容易出现梯度弥散/爆炸。** "
-"这是两朵乌云中的第一朵。"
+msgid "**在很深层的网络中，由于不能保证** :math:`\\gamma^{(l)}` **的大小，也很容易出现梯度弥散/爆炸。** 这是两朵乌云中的第一朵。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:146
@@ -173,12 +142,7 @@ msgid "在神经网络可以收敛的前提下，随着网络深度增加，网�
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:152
-msgid ""
-"这一点并不符合常理：如果存在某个 :math:`K` 层的网络 :math:`f` "
-"是当前最优的网络，那么可以构造一个更深的网络，其最后几层仅是该网络 :math:`f` 第 :math:`K` 层输出的恒等映射（Identity"
-" Mapping）就可以取得与 :math:`f` 一致的结果；也许 :math:`K` "
-"还不是所谓“最佳层数”，那么更深的网络就可以取得更好的结果。总而言之，与浅层网络相比，更深的网络的表现不应该更差。因此，一个合理的猜测就是， "
-"**对神经网络来说，恒等映射并不容易拟合。**"
+msgid "这一点并不符合常理：如果存在某个 :math:`K` 层的网络 :math:`f` 是当前最优的网络，那么可以构造一个更深的网络，其最后几层仅是该网络 :math:`f` 第 :math:`K` 层输出的恒等映射（Identity Mapping）就可以取得与 :math:`f` 一致的结果；也许 :math:`K` 还不是所谓“最佳层数”，那么更深的网络就可以取得更好的结果。总而言之，与浅层网络相比，更深的网络的表现不应该更差。因此，一个合理的猜测就是， **对神经网络来说，恒等映射并不容易拟合。**"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:154
@@ -190,9 +154,7 @@ msgid "形式化定义与实现"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:168
-msgid ""
-"既然神经网络不容易拟合一个恒等映射，那么一种思路就是构造天然的恒等映射。假设神经网络非线性单元的输入和输出维度一致，可以将神经网络单元内要拟合的函数"
-" :math:`\\mathcal{H}(\\cdot)` 拆分成两个部分，即："
+msgid "既然神经网络不容易拟合一个恒等映射，那么一种思路就是构造天然的恒等映射。假设神经网络非线性单元的输入和输出维度一致，可以将神经网络单元内要拟合的函数 :math:`\\mathcal{H}(\\cdot)` 拆分成两个部分，即："
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:170
@@ -200,18 +162,11 @@ msgid "\\mathbf{z}^{(l)}=\\mathcal{H}\\left(\\mathbf{a}^{(l-1)}\\right)=\\mathbf
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:175
-msgid ""
-"其中 :math:`\\mathcal{F}(\\cdot)` 是残差函数。在网络高层，学习一个恒等映射 "
-":math:`\\mathcal{H}\\left(\\mathbf{a}^{(l-1)}\\right) \\rightarrow "
-"\\mathbf{a}^{(l-1)}` 即等价于令残差部分趋近于0，即 "
-":math:`\\mathcal{F}\\left(\\mathbf{a}^{(l-1)}\\right) \\rightarrow "
-"\\mathbf{0}`."
+msgid "其中 :math:`\\mathcal{F}(\\cdot)` 是残差函数。在网络高层，学习一个恒等映射 :math:`\\mathcal{H}\\left(\\mathbf{a}^{(l-1)}\\right) \\rightarrow \\mathbf{a}^{(l-1)}` 即等价于令残差部分趋近于0，即 :math:`\\mathcal{F}\\left(\\mathbf{a}^{(l-1)}\\right) \\rightarrow \\mathbf{0}`."
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:177
-msgid ""
-"残差单元可以以跳层连接的形式实现，即将单元的输入直接与单元输出加在一起，然后再激活。因此残差网络可以轻松地用主流的自动微分深度学习框架实现，直接使用"
-" BP 算法更新参数。"
+msgid "残差单元可以以跳层连接的形式实现，即将单元的输入直接与单元输出加在一起，然后再激活。因此残差网络可以轻松地用主流的自动微分深度学习框架实现，直接使用 BP 算法更新参数。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:179
@@ -223,9 +178,7 @@ msgid "residual"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:181
-msgid ""
-"实验表明，残差网络很好地解决了深度神经网络的退化问题，并在 ImageNet 和 CIFAR-10 "
-"等图像任务上取得了非常好的结果，同等层数的前提下残差网络也收敛得更快。这使得前馈神经网络可以采用更深的设计。除此之外，去除个别神经网络层，残差网络的表现不会受到显著影响，这与传统的前馈神经网络大相径庭。"
+msgid "实验表明，残差网络很好地解决了深度神经网络的退化问题，并在 ImageNet 和 CIFAR-10 等图像任务上取得了非常好的结果，同等层数的前提下残差网络也收敛得更快。这使得前馈神经网络可以采用更深的设计。除此之外，去除个别神经网络层，残差网络的表现不会受到显著影响，这与传统的前馈神经网络大相径庭。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:195
@@ -233,10 +186,7 @@ msgid "残差连接的代码实现"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:197
-msgid ""
-"下面是 `Model <https://github.com/MegEngine/Models>`__ 库中 `ResNet "
-"<https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`__"
-" 残差结构实现的 ``forward`` 部分："
+msgid "下面是 `Model <https://github.com/MegEngine/Models>`__ 库中 `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`__ 残差结构实现的 ``forward`` 部分："
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:213
@@ -244,9 +194,7 @@ msgid "思路很简单，实现也很简单，但经过后续无数的实验验�
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:215
-msgid ""
-"注：在 `文章原文 <https://zhuanlan.zhihu.com/p/80226180>`__ 中提供了更多角度的解释，你也可以选择阅读"
-" `论文原文 <https://arxiv.org/abs/1512.03385v1>`__ 。"
+msgid "注：在 `文章原文 <https://zhuanlan.zhihu.com/p/80226180>`__ 中提供了更多角度的解释，你也可以选择阅读 `论文原文 <https://arxiv.org/abs/1512.03385v1>`__ 。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:217
@@ -278,13 +226,7 @@ msgid "MegEngine Hub"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:241
-msgid ""
-"`MegEngine 模型中心 <https://megengine.org.cn/model-hub/>`__ "
-"提供了许多场景下的预训练模型，比如 `深度残差网络（ImageNet 预训练权重） <https://megengine.org.cn"
-"/model-hub/megengine_vision_resnet>`__ 。 该模型基于 2012 年的 ImageNet 数据集使用 "
-"ResNet 结构进行了训练， `ImageNet 项目 <https://image-net.org/>`__ "
-"是一个大型视觉数据库，用于视觉目标识别软件研究。 我们知道使用更大规模的数据能够获得更好的预测效果，而这也带来来训练时间和金钱成本的上升，因此提供"
-" ImageNet 上的预训练模型是十分有意义的。"
+msgid "`MegEngine 模型中心 <https://megengine.org.cn/model-hub/>`__ 提供了许多场景下的预训练模型，比如 `深度残差网络（ImageNet 预训练权重） <https://megengine.org.cn/model-hub/megengine_vision_resnet>`__ 。 该模型基于 2012 年的 ImageNet 数据集使用 ResNet 结构进行了训练， `ImageNet 项目 <https://image-net.org/>`__ 是一个大型视觉数据库，用于视觉目标识别软件研究。 我们知道使用更大规模的数据能够获得更好的预测效果，而这也带来来训练时间和金钱成本的上升，因此提供 ImageNet 上的预训练模型是十分有意义的。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:243
@@ -344,9 +286,7 @@ msgid "我们首先打印出该 ResNet 的结构："
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:644
-msgid ""
-"可以发现，模型最后的输出 ``out_features`` 为 1000 类，想要在 CIFAR10 "
-"图片分类任务上使用该模型，需要进行一定的微调（Finetune）。"
+msgid "可以发现，模型最后的输出 ``out_features`` 为 1000 类，想要在 CIFAR10 图片分类任务上使用该模型，需要进行一定的微调（Finetune）。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:646
@@ -386,9 +326,7 @@ msgid "为了节省时间，我们这里选择仅对最后一层 ``fc`` 层的�
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:855
-msgid ""
-"我们这里仅训练了 3 个周期，就达到了接近 80% 的精度，如果你更加精细地微调 ResNet 模型，最终在 CIFAR10 分类任务上取得超过 "
-"90% 的预测准确性。 达到满意的效果后，你也可以借助 MegEngine Hub, 将你训练好的模型作为预训练模型，供其他人在将来进行使用。"
+msgid "我们这里仅训练了 3 个周期，就达到了接近 80% 的精度，如果你更加精细地微调 ResNet 模型，最终在 CIFAR10 分类任务上取得超过 90% 的预测准确性。 达到满意的效果后，你也可以借助 MegEngine Hub, 将你训练好的模型作为预训练模型，供其他人在将来进行使用。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:857
@@ -476,10 +414,7 @@ msgid "动静结合"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:905
-msgid ""
-"在 MegEngine 中提供了 ``jit`` 子包，通过及时编译，利用 ``jit.trace`` 装饰器将计算图由 `动态转换成静态模式 "
-"<https://megengine-docs.iap.hh-b.brainpp.cn/user-guide/model-"
-"development/jit/trace.html>`__ ："
+msgid "在 MegEngine 中提供了 ``jit`` 子包，通过及时编译，利用 ``jit.trace`` 装饰器将计算图由 `动态转换成静态模式 <https://megengine-docs.iap.hh-b.brainpp.cn/user-guide/model-development/jit/trace.html>`__ ："
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:907
@@ -595,13 +530,7 @@ msgid "你需要学习 MegEngine 中的一些新功能，通常这需要你接�
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1042
-msgid ""
-"对于第一种情况，我们可以选择阅读 MegEngine 文档的用户指南板块，里面对各个子包的使用都有具体的讲解。 比如我们可以更加深入地了解 "
-"Tensor 这一数据结构，也可以学习 Optimizer 在参数优化时的一些进阶用法。 "
-"相较于教程，用户指南更倾向于帮助你理解如何解决特定的问题。 第二种情况也十分常见，比如当你存在分布式训练的需求时，你将会需要学习 "
-"Distributed 子包和对应接口的使用， 从最简单的单机单卡训练，到单机多卡、甚至是多机多卡的训练情景，也有可能要从最基本的概念开始学起； "
-"MegEngine 中还实现类似了 DTR/Sublinear 等显存优化，开启后通常能使用更大的 bathch size 进行训练； "
-"为了追求极致的速度，你还可以尝试使用量化和混合精度训练等功能... 这都需要一定的时间去接触和学习。"
+msgid "对于第一种情况，我们可以选择阅读 MegEngine 文档的用户指南板块，里面对各个子包的使用都有具体的讲解。 比如我们可以更加深入地了解 Tensor 这一数据结构，也可以学习 Optimizer 在参数优化时的一些进阶用法。 相较于教程，用户指南更倾向于帮助你理解如何解决特定的问题。 第二种情况也十分常见，比如当你存在分布式训练的需求时，你将会需要学习 Distributed 子包和对应接口的使用， 从最简单的单机单卡训练，到单机多卡、甚至是多机多卡的训练情景，也有可能要从最基本的概念开始学起； MegEngine 中还实现类似了 DTR/Sublinear 等显存优化，开启后通常能使用更大的 bathch size 进行训练； 为了追求极致的速度，你还可以尝试使用量化和混合精度训练等功能... 这都需要一定的时间去接触和学习。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1045
@@ -613,11 +542,6 @@ msgid "总而言之，我们会不断地在学习者和使用者的模式之间�
 msgstr ""
 
 #: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1049
-msgid ""
-"在学习时尝试寻找更多类似教程这样的材料，他们不一定来自于 MegEngine 官方文档，可能是一篇博客、一个问答、或一堂讲座； "
-"而在日常使用时，如果忘记了某些步骤和细节，通常可以借助查阅 MegEngine 官方的用户指南来解决。 "
-"如果遇到无法解决的问题，一种可行的途径是尝试在 `MegEngine 社区 "
-"<https://megengine.org.cn/community/>`__ 寻找帮助。 只有不断地使用 MegEngine, 遇到 Bug "
-"时学会主动地向开发人员反馈，我们的能力才能得到提升，同时MegEngine 也能走得更远。"
+msgid "在学习时尝试寻找更多类似教程这样的材料，他们不一定来自于 MegEngine 官方文档，可能是一篇博客、一个问答、或一堂讲座； 而在日常使用时，如果忘记了某些步骤和细节，通常可以借助查阅 MegEngine 官方的用户指南来解决。 如果遇到无法解决的问题，一种可行的途径是尝试在 `MegEngine 社区 <https://megengine.org.cn/community/>`__ 寻找帮助。 只有不断地使用 MegEngine, 遇到 Bug 时学会主动地向开发人员反馈，我们的能力才能得到提升，同时MegEngine 也能走得更远。"
 msgstr ""
 
