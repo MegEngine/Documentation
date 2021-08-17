@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-06-03 10:18+0000\n"
+"POT-Creation-Date: 2021-05-06 13:12+0800\n"
+"PO-Revision-Date: 2021-08-17 22:58\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.jit.trace.dump.po\n"
+"X-Crowdin-File-ID: 2352\n"
 
 #: ../../source/reference/api/megengine.jit.trace.dump.rst:2
 msgid "megengine.jit.trace.dump"
@@ -35,9 +39,7 @@ msgid "names of the input tensors in the traced function."
 msgstr "被追溯（traced）函数的输入张量的名字。"
 
 #: megengine.jit.tracing.trace.dump:5 of
-msgid ""
-"names of the output tensors in the traced function, use the default name "
-"if not specified."
+msgid "names of the output tensors in the traced function, use the default name if not specified."
 msgstr "被追溯（traced）函数的输出张量的名字，如果未指明则使用默认名字。"
 
 #: megengine.jit.tracing.trace.dump:7 of
@@ -45,17 +47,10 @@ msgid "whether output is appended to ``file``. Only works when ``file`` is str."
 msgstr "是否在 ``file`` 后追加输出。仅当 ``file`` 是文件名时可用。"
 
 #: megengine.jit.tracing.trace.dump:10 of
-msgid ""
-"level for keeping variable names:  * 0: none of the names are kept * 1: "
-"(default)keep names of output vars * 2: keep names of all (output and "
-"internal) vars"
-msgstr ""
-"保留变量名的级别: \n"
-"\n"
-"* 0: 不保留任何变量名\n"
-"\n"
-"* 1(默认): 保留输出变量的名字\n"
-"\n"
+msgid "level for keeping variable names:  * 0: none of the names are kept * 1: (default)keep names of output vars * 2: keep names of all (output and internal) vars"
+msgstr "保留变量名的级别: \n\n"
+"* 0: 不保留任何变量名\n\n"
+"* 1(默认): 保留输出变量的名字\n\n"
 "* 2: 保留所有变量 (包括输出和中间变量) 的名字"
 
 #: megengine.jit.tracing.trace.dump:16 of
@@ -63,9 +58,7 @@ msgid "whether to keep operator names."
 msgstr "是否要保留算子的名字"
 
 #: megengine.jit.tracing.trace.dump:18 of
-msgid ""
-"whether to keep param names, so param values can be easily manipulated "
-"after loading model"
+msgid "whether to keep param names, so param values can be easily manipulated after loading model"
 msgstr "是否要保留参数的名字，为了加载模型后可以简单地对参数做操作"
 
 #: megengine.jit.tracing.trace.dump:21 of
@@ -73,147 +66,107 @@ msgid "whether to keep priority setting for operators"
 msgstr "是否保留算子的优先级设置"
 
 #: megengine.jit.tracing.trace.dump:22 of
-msgid ""
-"a string for path or a file handler. if is not None, then the dump "
-"information for code strip would be written to ``strip_info_file``"
+msgid "a string for path or a file handler. if is not None, then the dump information for code strip would be written to ``strip_info_file``"
 msgstr "路径地址或文件句柄。如果不为空，则导出的代码条信息会被写入``strip_info_file``中。"
 
 #: megengine.jit.tracing.trace.dump:24 of
-msgid ""
-"will be check when `strip_info_file` is not None. if set true, the "
-"information for code strip will be append to strip_info_file. if set "
-"false, will rewrite strip_info_file"
-msgstr ""
-"当 `strip_info_file` 非空时会做检查。如果是真，代码条信息就会被添加到 `strip_info_file` "
-"的尾部；如果是假，就会覆盖掉 `strip_info_file`."
+msgid "will be check when `strip_info_file` is not None. if set true, the information for code strip will be append to strip_info_file. if set false, will rewrite strip_info_file"
+msgstr "当 `strip_info_file` 非空时会做检查。如果是真，代码条信息就会被添加到 `strip_info_file` 的尾部；如果是假，就会覆盖掉 `strip_info_file`."
 
 #: megengine.jit.tracing.trace.dump:27 of
-msgid ""
-"enbale optmizations, will skip all optimize options if this is False. "
-"Default: True"
+msgid "enbale optmizations, will skip all optimize options if this is False. Default: True"
 msgstr "打开推理优化，如果是False则关闭所有优化选项。默认：True"
-
-#: megengine.jit.tracing.trace.dump:30 of
-msgid "any type object, which will be pickled to bytes."
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:32 of
-msgid "whether to save metadata into output file."
-msgstr ""
 
 #: megengine.jit.tracing.trace.dump of
 msgid "Keyword Arguments"
 msgstr "关键字参数"
 
-#: megengine.jit.tracing.trace.dump:38 of
+#: megengine.jit.tracing.trace.dump:34 of
 msgid "enable_io16xc32 --"
 msgstr "enable_io16xc32 --"
 
-#: megengine.jit.tracing.trace.dump:37 of
-msgid ""
-"whether to use float16 for I/O between oprs and use float32 as internal "
-"computation precision. Note the output var would be changed to float16."
+#: megengine.jit.tracing.trace.dump:33 of
+msgid "whether to use float16 for I/O between oprs and use float32 as internal computation precision. Note the output var would be changed to float16."
 msgstr "是否使用float16作为算子间I/O的数据精度，同时float32作为内部计算的数据精度。注意输出变量的类型也随之更改为float16。"
 
-#: megengine.jit.tracing.trace.dump:42 of
+#: megengine.jit.tracing.trace.dump:38 of
 msgid "enable_ioc16 --"
 msgstr "enable_ioc16 --"
 
-#: megengine.jit.tracing.trace.dump:41 of
+#: megengine.jit.tracing.trace.dump:37 of
 msgid "whether to use float16 for both I/O and computation precision."
 msgstr "是否使用float16同时作为算子间I/O和内部计算的数据精度。"
 
-#: megengine.jit.tracing.trace.dump:45 of
+#: megengine.jit.tracing.trace.dump:41 of
 msgid "enable_hwcd4 --"
 msgstr "enable_hwcd4 --"
 
-#: megengine.jit.tracing.trace.dump:45 of
+#: megengine.jit.tracing.trace.dump:41 of
 msgid "whether to use NHWCD4 data layout. This is faster on some OpenCL backend."
 msgstr "是否使用NHWCD4数据格式。在某些OpenCL设备上，会提高计算速度。"
 
-#: megengine.jit.tracing.trace.dump:48 of
+#: megengine.jit.tracing.trace.dump:44 of
 msgid "enable_nchw88 --"
 msgstr "enable_nchw88 --"
 
-#: megengine.jit.tracing.trace.dump:48 of
+#: megengine.jit.tracing.trace.dump:44 of
 msgid "whether to use NCHW88 data layout, currently used in X86 AVX backend."
 msgstr "是否使用NCHW88数据格式。当前用于X86 AVX后端。"
 
-#: megengine.jit.tracing.trace.dump:51 of
+#: megengine.jit.tracing.trace.dump:47 of
 msgid "enable_nchw44 --"
 msgstr "enable_nchw44 --"
 
-#: megengine.jit.tracing.trace.dump:51 of
+#: megengine.jit.tracing.trace.dump:47 of
 msgid "whether to use NCHW44 data layout, currently used in arm backend."
 msgstr "是否使用NCHW44数据格式。当前用于arm后端。"
 
-#: megengine.jit.tracing.trace.dump:54 of
+#: megengine.jit.tracing.trace.dump:50 of
 msgid "enable_nchw44_dot --"
 msgstr "enable_nchw44_dot --"
 
-#: megengine.jit.tracing.trace.dump:54 of
-msgid ""
-"whether to use NCHW44_dot data layout, currently used in armv8.2+dotprod "
-"backend."
+#: megengine.jit.tracing.trace.dump:50 of
+msgid "whether to use NCHW44_dot data layout, currently used in armv8.2+dotprod backend."
 msgstr "是否使用NCHW4_dot数据格式。当前用于armv8.2+dotprod后端。"
 
-#: megengine.jit.tracing.trace.dump:57 of
+#: megengine.jit.tracing.trace.dump:53 of
 msgid "enable_nchw4 --"
 msgstr "enable_nchw4 --"
 
-#: megengine.jit.tracing.trace.dump:57 of
-msgid ""
-"whether to use NCHW4 data layout, currently used in nvidia backend(based "
-"on cudnn)."
+#: megengine.jit.tracing.trace.dump:53 of
+msgid "whether to use NCHW4 data layout, currently used in nvidia backend(based on cudnn)."
 msgstr "是否使用NCHW4数据格式。当前用于nvidia后端（基于cudnn）。"
 
-#: megengine.jit.tracing.trace.dump:60 of
+#: megengine.jit.tracing.trace.dump:56 of
 msgid "enable_nchw32 --"
 msgstr "enable_nchw32 --"
 
-#: megengine.jit.tracing.trace.dump:60 of
-msgid ""
-"whether to use NCHW32 data layout, currently used in nvidia backend with "
-"tensorcore(based on cudnn)."
+#: megengine.jit.tracing.trace.dump:56 of
+msgid "whether to use NCHW32 data layout, currently used in nvidia backend with tensorcore(based on cudnn)."
 msgstr "是否使用NCHW32数据格式。当前与tensorcore用于nvidia后端（基于cudnn）。"
 
-#: megengine.jit.tracing.trace.dump:63 of
+#: megengine.jit.tracing.trace.dump:60 of
 msgid "enable_chwn4 --"
 msgstr "enable_chwn4 --"
 
-#: megengine.jit.tracing.trace.dump:63 of
-msgid ""
-"whether to use CHWN4 data layout, currently used in nvidia backend with "
-"tensorcore."
+#: megengine.jit.tracing.trace.dump:59 of
+msgid "whether to use CHWN4 data layout, currently used in nvidia backend with tensorcore."
 msgstr "是否使用CHWN4数据格式。当前与tensorcore用于nvidia后端。"
 
-#: megengine.jit.tracing.trace.dump:67 of
-#, fuzzy
-msgid "enable_nchw64 --"
-msgstr "enable_nchw4 --"
-
-#: megengine.jit.tracing.trace.dump:66 of
-msgid ""
-"whether to use NCHW64 data layout, used for fast int4 support on Nvidia "
-"GPU."
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:69 of
+#: megengine.jit.tracing.trace.dump:62 of
 msgid "enable_fuse_conv_bias_nonlinearity: whether to fuse conv+bias+nonlinearty"
 msgstr "enable_fuse_conv_bias_nonlinearity：是否融合 conv bias nonlinearty 算子"
 
-#: megengine.jit.tracing.trace.dump:70 of
+#: megengine.jit.tracing.trace.dump:63 of
 msgid "into one opr."
 msgstr "成一个算子。"
 
-#: megengine.jit.tracing.trace.dump:73 of
+#: megengine.jit.tracing.trace.dump:66 of
 msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z"
 msgstr "enable_fuse_conv_bias_with_z："
 
-#: megengine.jit.tracing.trace.dump:72 of
-msgid ""
-"input for inference on nvidia backend(this optimization pass will result "
-"in mismatch of the precision of output of training and inference)"
+#: megengine.jit.tracing.trace.dump:65 of
+msgid "input for inference on nvidia backend(this optimization pass will result in mismatch of the precision of output of training and inference)"
 msgstr "推理阶段是否在nvidia后端对输入z融合 CONV + bias 成一个算子（这个优化会导致训练和推理的输出精度不一致）"
 
 #~ msgid "level for keeping variable names:"
