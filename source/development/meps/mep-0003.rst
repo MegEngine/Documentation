@@ -1,0 +1,33 @@
+.. _mep-0003:
+
+========================
+MEP 3 -- Tensor 类型提升
+========================
+:编号: 3
+:标题: Tensor 类型提升
+:作者: 邓哲也
+:状态: 草稿
+:类型: 信息
+:创建时间: 2020-09-28
+
+简介
+----
+
+此 MEP 将用于解释 MegEngine 中 Tensor 类型提升（Type Promotion）规则以及设计思路。
+
+背景与动机
+----------
+
+在计算机科学，特别是在程序设计语言中，类型转换（Type conversion）指将数据从一种类型转换到另一种类型的过程。一个简单的例子是将整数转换成浮点数。
+MegEngine 中的 Tensor 存在着多种 :ref:`数据类型（dtype） <tensor-dtype>` ，并提供了进行显式数据类型转换的接口。
+但当表达式中出现了不同的数据类型时，为了能够顺利解释执行，MegEngine 解释器需要有一套相应的规则隐式地对数据类型进行转换。
+
+NumPy 和 PyTorch 都设计了自己的类型提升规则：
+
+* NumPy 提供了 :py:func:`numpy.result_type` 函数来计算返回类型，并在对应的 API Note 中进行了解释；
+* PyTorch 也提供了 :py:func:`torch.result_type` 函数，并且在
+  `torch.dtype <https://pytorch.org/docs/stable/tensor_attributes.html#type-promotion-doc>`_ 中解释了提升规则。
+* PyTorch 社区相关的讨论：`#9515 <https://github.com/pytorch/pytorch/issues/9515>`_ 
+
+参考实现
+--------
