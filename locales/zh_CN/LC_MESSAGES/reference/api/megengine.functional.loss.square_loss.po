@@ -1,27 +1,29 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-06-03 10:18+0000\n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
+"PO-Revision-Date: 2021-08-17 22:53\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.loss.square_loss.po\n"
+"X-Crowdin-File-ID: 2200\n"
 
 #: ../../source/reference/api/megengine.functional.loss.square_loss.rst:2
 msgid "megengine.functional.loss.square\\_loss"
 msgstr "megengine.functional.loss.square\\_loss"
 
 #: megengine.functional.loss.square_loss:1 of
-msgid ""
-"Calculates the mean squared error (squared L2 norm) between each element "
-"in the pred :math:`x` and label :math:`y`."
+msgid "Calculates the mean squared error (squared L2 norm) between each element in the pred :math:`x` and label :math:`y`."
 msgstr "计算预测值 :math:`x` 和标签值 :math:`y` 之间的均方误差(平方L2范数)。"
 
 #: megengine.functional.loss.square_loss:4 of
@@ -29,9 +31,7 @@ msgid "The mean squared error can be described as:"
 msgstr "均方误差可以表示为："
 
 #: megengine.functional.loss.square_loss:6 of
-msgid ""
-"\\ell(x, y) = mean\\left( L \\right)\n"
-"\n"
+msgid "\\ell(x, y) = mean\\left( L \\right)\n\n"
 msgstr ""
 
 #: megengine.functional.loss.square_loss:8 of
@@ -39,72 +39,55 @@ msgid "where"
 msgstr "式中，"
 
 #: megengine.functional.loss.square_loss:10 of
-msgid ""
-"L = \\{l_1,\\dots,l_N\\}, \\quad\n"
+msgid "L = \\{l_1,\\dots,l_N\\}, \\quad\n"
 "l_n = \\left( x_n - y_n \\right)^2,"
 msgstr ""
 
 #: megengine.functional.loss.square_loss:15 of
-msgid ""
-":math:`x` and :math:`y` are tensors of arbitrary shapes with a total of "
-":math:`N` elements each. :math:`N` is the batch size."
-msgstr ""
-":math:`x` 和 :math:`y` 是任意形状的张量，各张量包含 :math:`N` 个元素。  :math:`N` "
-"是批(batch)大小。"
+msgid ":math:`x` and :math:`y` are tensors of arbitrary shapes with a total of :math:`N` elements each. :math:`N` is the batch size."
+msgstr ":math:`x` 和 :math:`y` 是任意形状的张量，各张量包含 :math:`N` 个元素。  :math:`N` 是批(batch)大小。"
 
 #: megengine.functional.loss.square_loss of
 msgid "参数"
 msgstr ""
 
-#: megengine.functional.loss.square_loss:19 of
+#: megengine.functional.loss.square_loss:18 of
 msgid "predicted result from model."
 msgstr "从模型中预测的结果。"
 
-#: megengine.functional.loss.square_loss:21 of
+#: megengine.functional.loss.square_loss:19 of
 msgid "ground truth to compare."
 msgstr "用于比较的真实值。"
 
-#: megengine.functional.loss.square_loss:23 of
-msgid ""
-"the reduction to apply to the output: 'none' | 'mean' | 'sum'. Default: "
-"'mean'"
-msgstr ""
-
-#: megengine.functional.loss.square_loss of
-msgid "返回类型"
-msgstr ""
-
-#: megengine.functional.loss.square_loss:24 of
-msgid ":py:class:`~megengine.tensor.Tensor`"
+#: megengine.functional.loss.square_loss:20 of
+msgid "the reduction to apply to the output: 'none' | 'mean' | 'sum'. Default: 'mean'"
 msgstr ""
 
 #: megengine.functional.loss.square_loss of
 msgid "返回"
 msgstr ""
 
-#: megengine.functional.loss.square_loss:25 of
+#: megengine.functional.loss.square_loss:21 of
 msgid "loss value."
 msgstr "损失值。"
 
-#: megengine.functional.loss.square_loss:30 of
+#: megengine.functional.loss.square_loss:26 of
 msgid "Shape:"
 msgstr "形状："
 
-#: megengine.functional.loss.square_loss:28 of
-msgid ""
-"pred: :math:`(N, *)` where :math:`*` means any number of additional "
-"dimensions."
+#: megengine.functional.loss.square_loss:24 of
+msgid "pred: :math:`(N, *)` where :math:`*` means any number of additional dimensions."
 msgstr "pred : :math:`(N, *)` ，这里的 :math:`*` 指任何附加的维度。"
 
-#: megengine.functional.loss.square_loss:30 of
+#: megengine.functional.loss.square_loss:26 of
 msgid "label: :math:`(N, *)`. Same shape as ``pred``."
 msgstr "label: :math:`(N, *)`. 与 ``pred`` 的形状相同"
 
-#: megengine.functional.loss.square_loss:32 of
+#: megengine.functional.loss.square_loss:28 of
 msgid "Examples:"
 msgstr "例如："
 
-#: megengine.functional.loss.square_loss:45 of
+#: megengine.functional.loss.square_loss:41 of
 msgid "Outputs:"
 msgstr "输出："
 
