@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-07-07 17:29+0000\n"
+"POT-Creation-Date: 2021-05-12 09:02+0800\n"
+"PO-Revision-Date: 2021-08-17 22:59\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.SyncBatchNorm.po\n"
+"X-Crowdin-File-ID: 2458\n"
 
 #: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:2
 msgid "megengine.module.SyncBatchNorm"
@@ -22,324 +26,159 @@ msgstr "megengine.module.SyncBatchNorm"
 msgid "Applies Synchronized Batch Normalization for distributed training."
 msgstr "对于分布式训练执行组同步Batch Normalization操作。"
 
-#: megengine.module.batchnorm.SyncBatchNorm of
-msgid "参数"
-msgstr ""
-
-#: megengine.module.batchnorm.SyncBatchNorm:4 of
-msgid ""
-"usually :math:`C` from an input of shape :math:`(N, C, H, W)` or the "
-"highest ranked dimension of an input less than 4D."
-msgstr ""
-
-#: megengine.module.batchnorm.SyncBatchNorm:8 of
-msgid "a value added to the denominator for numerical stability. Default: 1e-5"
-msgstr ""
-
-#: megengine.module.batchnorm.SyncBatchNorm:11 of
-msgid ""
-"the value used for the ``running_mean`` and ``running_var`` computation. "
-"Default: 0.9"
-msgstr ""
-
-#: megengine.module.batchnorm.SyncBatchNorm:14 of
-msgid ""
-"a boolean value that when set to True, this module has learnable affine "
-"parameters. Default: True"
-msgstr ""
-
-#: megengine.module.batchnorm.SyncBatchNorm:17 of
-msgid ""
-"when set to True, this module tracks the running mean and variance. When "
-"set to False, this module does not track such statistics and always uses "
-"batch statistics in both training and eval modes. Default: True"
-msgstr ""
-
-#: megengine.module.batchnorm.SyncBatchNorm:22 of
-msgid ""
-"when set to True, this module does not update the running mean and "
-"variance, and uses the running mean and variance instead of the batch "
-"mean and batch variance to normalize the input. The parameter takes "
-"effect only when the module is initilized with track_running_stats as "
-"True. Default: False"
-msgstr ""
-
-#: megengine.module.batchnorm.SyncBatchNorm:29 of
-msgid ""
-"communication group, caculate mean and variance between this group. "
-"Default: :obj:`~megengine.distributed.WORLD`"
-msgstr ""
-
-#: megengine.module.batchnorm.SyncBatchNorm of
-msgid "返回"
-msgstr ""
-
-#: megengine.module.batchnorm.SyncBatchNorm:31 of
-msgid "output tensor."
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:15
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:11
 msgid "Methods"
 msgstr "方法"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid ":obj:`apply <megengine.module.SyncBatchNorm.apply>`\\ \\(fn\\)"
 msgstr ":obj:`apply <megengine.module.SyncBatchNorm.apply>`\\ \\(fn\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-"Applies function ``fn`` to all the modules within this module, including "
-"itself."
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid "Applies function ``fn`` to all the modules within this module, including itself."
 msgstr "对当前模块中的所有模块应用函数 ``fn``，包括当前模块本身。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`buffers <megengine.module.SyncBatchNorm.buffers>`\\ "
-"\\(\\[recursive\\]\\)"
-msgstr ""
-":obj:`buffers <megengine.module.SyncBatchNorm.buffers>`\\ "
-"\\(\\[recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`buffers <megengine.module.SyncBatchNorm.buffers>`\\ \\(\\[recursive\\]\\)"
+msgstr ":obj:`buffers <megengine.module.SyncBatchNorm.buffers>`\\ \\(\\[recursive\\]\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid "Returns an iterable for the buffers of the module."
 msgstr "返回该模块中对于buffers的一个可迭代对象。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`children <megengine.module.SyncBatchNorm.children>`\\ "
-"\\(\\*\\*kwargs\\)"
-msgstr ""
-":obj:`children <megengine.module.SyncBatchNorm.children>`\\ "
-"\\(\\*\\*kwargs\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`children <megengine.module.SyncBatchNorm.children>`\\ \\(\\*\\*kwargs\\)"
+msgstr ":obj:`children <megengine.module.SyncBatchNorm.children>`\\ \\(\\*\\*kwargs\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable for all the submodules that are direct attributes of "
-"this module."
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid "Returns an iterable for all the submodules that are direct attributes of this module."
 msgstr "返回一个可迭代对象，可遍历所有属于当前模块的直接属性的子模块。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`disable_quantize "
-"<megengine.module.SyncBatchNorm.disable_quantize>`\\ \\(\\[value\\]\\)"
-msgstr ""
-":obj:`disable_quantize "
-"<megengine.module.SyncBatchNorm.disable_quantize>`\\ \\(\\[value\\]\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`disable_quantize <megengine.module.SyncBatchNorm.disable_quantize>`\\ \\(\\[value\\]\\)"
+msgstr ":obj:`disable_quantize <megengine.module.SyncBatchNorm.disable_quantize>`\\ \\(\\[value\\]\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
 msgstr "设置 ``module`` 的 ``quantize_diabled`` 属性，并返回 ``module`` 。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid ":obj:`eval <megengine.module.SyncBatchNorm.eval>`\\ \\(\\)"
 msgstr ":obj:`eval <megengine.module.SyncBatchNorm.eval>`\\ \\(\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-"Sets training mode of all the modules within this module (including "
-"itself) to ``False``."
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
 msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``False`` ，并将其切换为推理模式。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid ":obj:`forward <megengine.module.SyncBatchNorm.forward>`\\ \\(inp\\)"
 msgstr ":obj:`forward <megengine.module.SyncBatchNorm.forward>`\\ \\(inp\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`load_state_dict <megengine.module.SyncBatchNorm.load_state_dict>`\\"
-" \\(state\\_dict\\[\\, strict\\]\\)"
-msgstr ""
-":obj:`load_state_dict <megengine.module.SyncBatchNorm.load_state_dict>`\\"
-" \\(state\\_dict\\[\\, strict\\]\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`load_state_dict <megengine.module.SyncBatchNorm.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
+msgstr ":obj:`load_state_dict <megengine.module.SyncBatchNorm.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid "Loads a given dictionary created by :func:`state_dict` into this module."
 msgstr "加载一个参数字典，这个字典通常使用 :func:`state_dict` 得到。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`modules <megengine.module.SyncBatchNorm.modules>`\\ "
-"\\(\\*\\*kwargs\\)"
-msgstr ""
-":obj:`modules <megengine.module.SyncBatchNorm.modules>`\\ "
-"\\(\\*\\*kwargs\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`modules <megengine.module.SyncBatchNorm.modules>`\\ \\(\\*\\*kwargs\\)"
+msgstr ":obj:`modules <megengine.module.SyncBatchNorm.modules>`\\ \\(\\*\\*kwargs\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable for all the modules within this module, including "
-"itself."
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid "Returns an iterable for all the modules within this module, including itself."
 msgstr "返回一个可迭代对象，可以遍历当前模块中的所有模块，包括其本身。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`named_buffers <megengine.module.SyncBatchNorm.named_buffers>`\\ "
-"\\(\\[prefix\\, recursive\\]\\)"
-msgstr ""
-":obj:`named_buffers <megengine.module.SyncBatchNorm.named_buffers>`\\ "
-"\\(\\[prefix\\, recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`named_buffers <megengine.module.SyncBatchNorm.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
+msgstr ":obj:`named_buffers <megengine.module.SyncBatchNorm.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable for key buffer pairs of the module, where ``key`` is "
-"the dotted path from this module to the buffer."
-msgstr ""
-"返回可遍历模块中 key 与 buffer 的键值对的可迭代对象，其中 ``key`` 为从该模块至 buffer 的点路径（dotted "
-"path）。"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
+msgstr "返回可遍历模块中 key 与 buffer 的键值对的可迭代对象，其中 ``key`` 为从该模块至 buffer 的点路径（dotted path）。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`named_children <megengine.module.SyncBatchNorm.named_children>`\\ "
-"\\(\\*\\*kwargs\\)"
-msgstr ""
-":obj:`named_children <megengine.module.SyncBatchNorm.named_children>`\\ "
-"\\(\\*\\*kwargs\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`named_children <megengine.module.SyncBatchNorm.named_children>`\\ \\(\\*\\*kwargs\\)"
+msgstr ":obj:`named_children <megengine.module.SyncBatchNorm.named_children>`\\ \\(\\*\\*kwargs\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable of key-submodule pairs for all the submodules that "
-"are direct attributes of this module, where 'key' is the attribute name "
-"of submodules."
-msgstr ""
-"返回可迭代对象，可以遍历属于当前模块的直接属性的所有子模块（submodule）与键（key）组成的”key-"
-"submodule”对，其中'key'是子模块对应的属性名。"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
+msgstr "返回可迭代对象，可以遍历属于当前模块的直接属性的所有子模块（submodule）与键（key）组成的”key-submodule”对，其中'key'是子模块对应的属性名。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`named_modules <megengine.module.SyncBatchNorm.named_modules>`\\ "
-"\\(\\[prefix\\]\\)"
-msgstr ""
-":obj:`named_modules <megengine.module.SyncBatchNorm.named_modules>`\\ "
-"\\(\\[prefix\\]\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`named_modules <megengine.module.SyncBatchNorm.named_modules>`\\ \\(\\[prefix\\]\\)"
+msgstr ":obj:`named_modules <megengine.module.SyncBatchNorm.named_modules>`\\ \\(\\[prefix\\]\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable of key-module pairs for all the modules within this "
-"module, including itself, where 'key' is the dotted path from this module"
-" to the submodules."
-msgstr ""
-"返回可迭代对象，可以遍历当前模块包括自身在内的所有其内部模块所组成的key-"
-"module键-模块对，其中'key'是从当前模块到各子模块的点路径（dotted path）。"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
+msgstr "返回可迭代对象，可以遍历当前模块包括自身在内的所有其内部模块所组成的key-module键-模块对，其中'key'是从当前模块到各子模块的点路径（dotted path）。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`named_parameters "
-"<megengine.module.SyncBatchNorm.named_parameters>`\\ \\(\\[prefix\\, "
-"recursive\\]\\)"
-msgstr ""
-":obj:`named_parameters "
-"<megengine.module.SyncBatchNorm.named_parameters>`\\ \\(\\[prefix\\, "
-"recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`named_parameters <megengine.module.SyncBatchNorm.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
+msgstr ":obj:`named_parameters <megengine.module.SyncBatchNorm.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable for key :class:`~.Parameter` pairs of the module, "
-"where ``key`` is the dotted path from this module to the "
-":class:`~.Parameter`."
-msgstr ""
-"返回一个可迭代对象，可以遍历当前模块中key与 :class:`~.Parameter` 组成的键值对。其中  ``key`` 是从模块到 "
-":class:`~.Parameter` 的点路径（dotted path）。"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
+msgstr "返回一个可迭代对象，可以遍历当前模块中key与 :class:`~.Parameter` 组成的键值对。其中  ``key`` 是从模块到 :class:`~.Parameter` 的点路径（dotted path）。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`parameters <megengine.module.SyncBatchNorm.parameters>`\\ "
-"\\(\\[recursive\\]\\)"
-msgstr ""
-":obj:`parameters <megengine.module.SyncBatchNorm.parameters>`\\ "
-"\\(\\[recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`parameters <megengine.module.SyncBatchNorm.parameters>`\\ \\(\\[recursive\\]\\)"
+msgstr ":obj:`parameters <megengine.module.SyncBatchNorm.parameters>`\\ \\(\\[recursive\\]\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid "Returns an iterable for the :class:`~.Parameter` of the module."
 msgstr "返回一个可迭代对象，遍历当前模块中的所有 :class:`~.Parameter`"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`register_forward_hook "
-"<megengine.module.SyncBatchNorm.register_forward_hook>`\\ \\(hook\\)"
-msgstr ""
-":obj:`register_forward_hook "
-"<megengine.module.SyncBatchNorm.register_forward_hook>`\\ \\(hook\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`register_forward_hook <megengine.module.SyncBatchNorm.register_forward_hook>`\\ \\(hook\\)"
+msgstr ":obj:`register_forward_hook <megengine.module.SyncBatchNorm.register_forward_hook>`\\ \\(hook\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid "Registers a hook to handle forward results."
 msgstr "给模块输出注册一个回调函数。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`register_forward_pre_hook "
-"<megengine.module.SyncBatchNorm.register_forward_pre_hook>`\\ \\(hook\\)"
-msgstr ""
-":obj:`register_forward_pre_hook "
-"<megengine.module.SyncBatchNorm.register_forward_pre_hook>`\\ \\(hook\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`register_forward_pre_hook <megengine.module.SyncBatchNorm.register_forward_pre_hook>`\\ \\(hook\\)"
+msgstr ":obj:`register_forward_pre_hook <megengine.module.SyncBatchNorm.register_forward_pre_hook>`\\ \\(hook\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid "Registers a hook to handle forward inputs."
 msgstr "给模块输入注册一个回调函数。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`replace_param <megengine.module.SyncBatchNorm.replace_param>`\\ "
-"\\(params\\, start\\_pos\\[\\, seen\\]\\)"
-msgstr ""
-":obj:`replace_param <megengine.module.SyncBatchNorm.replace_param>`\\ "
-"\\(params\\, start\\_pos\\[\\, seen\\]\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`replace_param <megengine.module.SyncBatchNorm.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
+msgstr ":obj:`replace_param <megengine.module.SyncBatchNorm.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-"Replaces module's parameters with ``params``, used by "
-":class:`~.ParamPack` to speedup multimachine training."
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to speedup multimachine training."
 msgstr "用 `param` 替换模块的参数，被 :class:`~.ParamPack` 用来加速多机训练。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`reset_parameters "
-"<megengine.module.SyncBatchNorm.reset_parameters>`\\ \\(\\)"
-msgstr ""
-":obj:`reset_parameters "
-"<megengine.module.SyncBatchNorm.reset_parameters>`\\ \\(\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`reset_parameters <megengine.module.SyncBatchNorm.reset_parameters>`\\ \\(\\)"
+msgstr ":obj:`reset_parameters <megengine.module.SyncBatchNorm.reset_parameters>`\\ \\(\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>
-msgid "rtype"
-msgstr ""
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`reset_running_stats <megengine.module.SyncBatchNorm.reset_running_stats>`\\ \\(\\)"
+msgstr ":obj:`reset_running_stats <megengine.module.SyncBatchNorm.reset_running_stats>`\\ \\(\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ":py:obj:`None`"
-msgstr ""
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`state_dict <megengine.module.SyncBatchNorm.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+msgstr ":obj:`state_dict <megengine.module.SyncBatchNorm.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`reset_running_stats "
-"<megengine.module.SyncBatchNorm.reset_running_stats>`\\ \\(\\)"
-msgstr ""
-":obj:`reset_running_stats "
-"<megengine.module.SyncBatchNorm.reset_running_stats>`\\ \\(\\)"
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid ":obj:`train <megengine.module.SyncBatchNorm.train>`\\ \\(\\[mode\\, recursive\\]\\)"
+msgstr ":obj:`train <megengine.module.SyncBatchNorm.train>`\\ \\(\\[mode\\, recursive\\]\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`state_dict <megengine.module.SyncBatchNorm.state_dict>`\\ "
-"\\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
-msgstr ""
-":obj:`state_dict <megengine.module.SyncBatchNorm.state_dict>`\\ "
-"\\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
-
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-":obj:`train <megengine.module.SyncBatchNorm.train>`\\ \\(\\[mode\\, "
-"recursive\\]\\)"
-msgstr ""
-":obj:`train <megengine.module.SyncBatchNorm.train>`\\ \\(\\[mode\\, "
-"recursive\\]\\)"
-
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
-msgid ""
-"Sets training mode of all the modules within this module (including "
-"itself) to ``mode``."
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
+msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
 msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``mode``。"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid ":obj:`zero_grad <megengine.module.SyncBatchNorm.zero_grad>`\\ \\(\\)"
 msgstr ":obj:`zero_grad <megengine.module.SyncBatchNorm.zero_grad>`\\ \\(\\)"
 
-#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:77:<autosummary>:1
 msgid "Sets all parameters' grads to zero"
 msgstr "将所有参数的梯度置0。"
 
