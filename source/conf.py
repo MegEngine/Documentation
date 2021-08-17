@@ -40,6 +40,8 @@ import logging
 
 if mode == "FULL":
     import megengine
+elif mode == "MINI":
+    pass
 else:
     try:
         import megengine
