@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"POT-Creation-Date: 2021-08-17 20:15+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,87 +218,119 @@ msgstr ""
 msgid "亚线性内（显）存优化"
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:186
+#: ../../source/user-guide/model-development/jit/trace.rst:187
 msgid ""
 "亚线性内存优化技术的直观好处是能节省显存，换来更大的 Batch size, 但在编译计算图和训练模型时有少量的额外时间开销（以时间换空间）。 "
-"其基本原理是：基于 `Gradient Checkpointing <https://arxiv.org/abs/1604.06174>`_ "
-"算法， 通过事先搜索最优的计算图节点作为前向传播和反向传播检查点（checkpoints），省去其它中间结果存储。"
+"MegEngine 提供了两种具体的亚线性内存优化的算法，分别是 `Sublinear "
+"<https://arxiv.org/abs/1604.06174>`_ 和 `DTR "
+"<https://arxiv.org/abs/2006.09616>`_ "
+"算法。它们的基本原理都是通过事先搜索最优的计算图节点作为前向传播和反向传播检查点（checkpoints）， 省去其它中间结果存储。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:191
+#: ../../source/user-guide/model-development/jit/trace.rst:192
 msgid ""
 "用户在编译静态图时使用 :class:`~.jit.SublinearMemoryConfig` 设置 :class:`~.jit.trace` "
-"的参数 ``sublinear_memory_config`` ，就可以打开亚线性内存优化："
+"的参数 ``sublinear_memory_config`` ，就可以打开 Sublinear 优化："
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:204
+#: ../../source/user-guide/model-development/jit/trace.rst:205
+msgid ""
+"用户在编译静态图时使用 :class:`~.jit.DTRConfig` 设置 :class:`~.jit.trace` 的参数 "
+"``dtr_config`` ，就可以打开 DTR 优化："
+msgstr ""
+
+#: ../../source/user-guide/model-development/jit/trace.rst:220
+msgid "关于 ``eviction_threshold`` 的含义与设置，请参考 :ref:`动态图 Sublinear 显存优化 <dtr-guide>`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/jit/trace.rst:222
 msgid ""
 "经过测试，在 2080Ti GPU （显存容量为 11GB 左右）训练 ResNet50 模型， 不使用亚线性内存优化，可用的 "
-"``batch_size`` 最大为 100 左右； 使用亚线性内存优化，可用的 ``batch_size`` 最大为 200 "
-"左右，效果十分明显。"
+"``batch_size`` 最大为 100 左右； 使用 Sublinear 优化，可用的 ``batch_size`` 最大为 300 左右；"
+" 使用 DTR 优化，可用的 ``batch_size`` 最大为 450 左右，效果十分明显。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:211
+#: ../../source/user-guide/model-development/jit/trace.rst:230
 msgid "减少访存操作实现加速"
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:213
+#: ../../source/user-guide/model-development/jit/trace.rst:232
 msgid ""
 "通常，模型中不仅含有计算受限的操作，还含有一些访存受限操作（如 Elemwsie ）. MegEngine 内嵌了 Codegen "
 "优化机制，它可以在运行时将模型中多个操作融合起来， 并生成可以在目标机器上运行的代码，以此减少访存操作从而达到加速的目的。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:219
+#: ../../source/user-guide/model-development/jit/trace.rst:238
 msgid ""
 "我们在 :class:`~.trace` 接口中传入 ``symbolic=True, opt_level=3``, 即可打开 Codegen "
 "优化。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:221
+#: ../../source/user-guide/model-development/jit/trace.rst:240
 msgid "关于 ``symbolic`` 参数的说明，请参考 :ref:`symbolic` 。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:223
+#: ../../source/user-guide/model-development/jit/trace.rst:242
 msgid ""
 "MegEngine 的 Codegen 目前集成了三种后端，分别是 NVRTC, HALIDE 和 MLIR. 其中 NVRTC 和 HALIDE"
 " 仅支持在 GPU 上使用，MLIR 则同时支持 GPU 和 CPU, 不同的后端生成代码的策略有所不同，所以运行效率也各异。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:227
+#: ../../source/user-guide/model-development/jit/trace.rst:246
 msgid "我们可以通过设置 ``MGB_JIT_BACKEND`` 环境变量来改变 Codegen 的后端，例如："
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:233
+#: ../../source/user-guide/model-development/jit/trace.rst:252
 msgid "该环境变量在 NVIDIA GPU 环境下可取的值为 NVRTC, HALIDE 和 MLIR, 默认值为 HALIDE."
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:235
+#: ../../source/user-guide/model-development/jit/trace.rst:254
 msgid "对于 CPU, 目前暂时仅支持 MLIR 后端。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:239
+#: ../../source/user-guide/model-development/jit/trace.rst:258
 msgid "如果想要使用 MLIR 后端, 需要单独编译 MegEngine. 在使用 CMake 时换成如下命令："
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:245
+#: ../../source/user-guide/model-development/jit/trace.rst:264
 msgid "然后设置如下的环境变量："
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:254
+#: ../../source/user-guide/model-development/jit/trace.rst:273
 msgid "指定代码不被转换"
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:256
+#: ../../source/user-guide/model-development/jit/trace.rst:275
 msgid ""
 "使用 :py:func:`~.exclude_from_trace` ，其中的代码不会被 trace, 且允许访问静态区域的 "
 ":py:class:`~megengine.Tensor` ."
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:258
+#: ../../source/user-guide/model-development/jit/trace.rst:277
 msgid "示例代码如下："
 msgstr ""
 
-#: ../../source/user-guide/model-development/jit/trace.rst:276
+#: ../../source/user-guide/model-development/jit/trace.rst:295
 msgid "输出为："
 msgstr ""
+
+#~ msgid ""
+#~ "亚线性内存优化技术的直观好处是能节省显存，换来更大的 Batch size, "
+#~ "但在编译计算图和训练模型时有少量的额外时间开销（以时间换空间）。 其基本原理是：基于 `Gradient "
+#~ "Checkpointing <https://arxiv.org/abs/1604.06174>`_ 算法， "
+#~ "通过事先搜索最优的计算图节点作为前向传播和反向传播检查点（checkpoints），省去其它中间结果存储。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "用户在编译静态图时使用 :class:`~.jit.SublinearMemoryConfig` 设置 "
+#~ ":class:`~.jit.trace` 的参数 ``sublinear_memory_config`` "
+#~ "，就可以打开亚线性内存优化："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "经过测试，在 2080Ti GPU （显存容量为 11GB 左右）训练 "
+#~ "ResNet50 模型， 不使用亚线性内存优化，可用的 ``batch_size`` 最大为"
+#~ " 100 左右； 使用亚线性内存优化，可用的 ``batch_size`` 最大为"
+#~ " 200 左右，效果十分明显。"
+#~ msgstr ""
 

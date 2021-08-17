@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-07-21 03:30\n"
+"POT-Creation-Date: 2021-08-17 20:15+0800\n"
+"PO-Revision-Date: 2021-07-21 03:30+0000\n"
 "Last-Translator: \n"
-"Language: zh_CN\n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/from-linear-regression-to-linear-classification.po\n"
-"X-Crowdin-File-ID: 2840\n"
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:9
 msgid "从线性回归到线性分类"
@@ -31,7 +27,11 @@ msgid "image0"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:12
-msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb>`__"
+msgid ""
+"|image1| `查看源文件 "
+"<https://github.com/MegEngine/Documentation/blob/main/source/getting-"
+"started/beginner/from-linear-regression-to-linear-"
+"classification.ipynb>`__"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:17
@@ -55,11 +55,15 @@ msgid "结合之前的学习，\\ **实现一个最简单的线性分类器，�
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:34
-msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
+msgid ""
+"请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 "
+"<https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:76
-msgid "接下来，我们将先了解一下这次要使用到的分类问题经典数据集：\\ `MNIST 手写数字数据集 <http://yann.lecun.com/exdb/mnist/>`__\\ 。"
+msgid ""
+"接下来，我们将先了解一下这次要使用到的分类问题经典数据集：\\ `MNIST 手写数字数据集 "
+"<http://yann.lecun.com/exdb/mnist/>`__\\ 。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:79
@@ -87,7 +91,9 @@ msgid "经过上面的整理，我们得到了训练数据 ``train_data`` 和对
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:234
-msgid "可以发现此时的训练数据的形状是 :math:`(60000, 28, 28, 1)`, 分别对应数据量（Number）、高度（Height）、宽度（Width）和通道数（Channel），简记为 NHWC；"
+msgid ""
+"可以发现此时的训练数据的形状是 :math:`(60000, 28, 28, 1)`, "
+"分别对应数据量（Number）、高度（Height）、宽度（Width）和通道数（Channel），简记为 NHWC；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:235
@@ -119,11 +125,16 @@ msgid "图像数据的特征向量表示"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:353
-msgid "回想一下我们在使用波士顿房价数据集时，单个样本的特征通常以特征向量 :math:`\\mathbf {x} \\in \\mathbb R^D` 的形式进行表示，而图像的样本特征空间为 :math:`\\mathbf {x} \\in \\mathbb R ^{H \\times W \\times C}`\\ 。"
+msgid ""
+"回想一下我们在使用波士顿房价数据集时，单个样本的特征通常以特征向量 :math:`\\mathbf {x} \\in \\mathbb R^D` "
+"的形式进行表示，而图像的样本特征空间为 :math:`\\mathbf {x} \\in \\mathbb R ^{H \\times W "
+"\\times C}`\\ 。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:355
-msgid "对于图像类型的数据输入，在没有想到更好的特征抽取和表征形式时，不妨也粗线条一些，考虑直接将像素点“铺”成向量的形式，即 :math:`\\mathbb R ^{H \\times W \\times C} \\mapsto \\mathbb R^D`\\ ："
+msgid ""
+"对于图像类型的数据输入，在没有想到更好的特征抽取和表征形式时，不妨也粗线条一些，考虑直接将像素点“铺”成向量的形式，即 "
+":math:`\\mathbb R ^{H \\times W \\times C} \\mapsto \\mathbb R^D`\\ ："
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:396
@@ -135,7 +146,9 @@ msgid "在 MegEngine 的 ``functional`` 模块中，提供了 ``flatten()`` 方�
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:486
-msgid "这样的话，就可以把问题和我们所了解的线性回归模型 :math:`f(\\mathbf {x}) = \\mathbf {w} \\cdot \\mathbf {x} + b` 联系起来了，但情况有那么一些不同："
+msgid ""
+"这样的话，就可以把问题和我们所了解的线性回归模型 :math:`f(\\mathbf {x}) = \\mathbf {w} \\cdot "
+"\\mathbf {x} + b` 联系起来了，但情况有那么一些不同："
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:488
@@ -155,11 +168,16 @@ msgid "对于离散的标签，我们可以引入非线性的决策函数 :math:
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:497
-msgid "举个例子，可以将 :math:`f(\\mathbf {x}) = \\mathbf {x} \\cdot \\mathbf {w} + b` 的输出以 0 为阈值（threshold）做划分（即此时决策边界为 :math:`f(\\mathbf {x}) = 0`\\ ），决策函数为指示函数 :math:`\\mathbb{I}(\\cdot)`\\ ："
+msgid ""
+"举个例子，可以将 :math:`f(\\mathbf {x}) = \\mathbf {x} \\cdot \\mathbf {w} + b` "
+"的输出以 0 为阈值（threshold）做划分（即此时决策边界为 :math:`f(\\mathbf {x}) = 0`\\ "
+"），决策函数为指示函数 :math:`\\mathbb{I}(\\cdot)`\\ ："
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:499
-msgid "\\hat {y} = \\mathbb{I}(f(\\mathbf {x}) - \\text{threshold})=\\left\\{\\begin{array}{lll}\n"
+msgid ""
+"\\hat {y} = \\mathbb{I}(f(\\mathbf {x}) - "
+"\\text{threshold})=\\left\\{\\begin{array}{lll}\n"
 "1 & \\text {if} & f(\\mathbf {x})>\\text{threshold} \\\\\n"
 "0 & \\text {if} & f(\\mathbf {x})<\\text{threshold}\n"
 "\\end{array}\\right."
@@ -190,7 +208,9 @@ msgid "Logistic 回归"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:526
-msgid "Logistic 回归是一种常见的处理二分类问题的线性模型，使用 Sigmoid 函数 :math:`\\sigma (\\cdot)` 作为决策函数（其中 ``exp()`` 指以自然常数 :math:`e` 为底的指数函数）："
+msgid ""
+"Logistic 回归是一种常见的处理二分类问题的线性模型，使用 Sigmoid 函数 :math:`\\sigma (\\cdot)` "
+"作为决策函数（其中 ``exp()`` 指以自然常数 :math:`e` 为底的指数函数）："
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:528
@@ -202,7 +222,9 @@ msgid "Sigmoid 这样的 S 型函数最早被人们设计出来并使用，它�
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:535
-msgid "Sigmoid 函数的导数非常容易求出：\\ :math:`\\sigma '(x) = \\sigma (x)(1- \\sigma (x))`, 其处处可微的性质保证了在优化过程中梯度的可计算性；"
+msgid ""
+"Sigmoid 函数的导数非常容易求出：\\ :math:`\\sigma '(x) = \\sigma (x)(1- \\sigma "
+"(x))`, 其处处可微的性质保证了在优化过程中梯度的可计算性；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:536
@@ -210,11 +232,27 @@ msgid "Sigmoid 函数还可以将值压缩到 :math:`(0, 1)` 范围内，很适�
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:571
-msgid "历史小知识：Logistic 是比利时数学家 Pierre François Verhulst 在 1844 或 1845 年在研究人口增长的关系时命名的，和 Sigmoid 一样指代 S 形函数：起初阶段大致是指数增长；然后随着开始变得饱和，增加变慢最后，达到成熟时增加停止。以下是 Verhulst 对命名的解释："
+msgid ""
+"历史小知识：Logistic 是比利时数学家 Pierre François Verhulst 在 1844 或 1845 "
+"年在研究人口增长的关系时命名的，和 Sigmoid 一样指代 S "
+"形函数：起初阶段大致是指数增长；然后随着开始变得饱和，增加变慢最后，达到成熟时增加停止。以下是 Verhulst 对命名的解释："
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:573
-msgid "“We will give the name logistic [logistique] to the curve\" (1845 p.8). Though he does not explain this choice, there is a connection with the logarithmic basis of the function. Logarithm was coined by John Napier (1550-1617) from Greek logos (ratio, proportion, reckoning) and arithmos (number). Logistic comes from the Greek logistikos (computational). In the 1700's, logarithmic and logistic were synonymous. Since computation is needed to predict the supplies an army requires, logistics has come to be also used for the movement and supply of troops. So it appears the other meaning of \"logistics\" comes from the same logic as Verhulst terminology, but is independent (?). Verhulst paper is accessible; the definition is on page 8 (page 21 in the volume), and the picture is after the article (page 54 in the volume). ” —— `Why logistic (sigmoid) ogive and not autocatalytic curve? <https://rasch.org/rmt/rmt64k.htm>`__"
+msgid ""
+"“We will give the name logistic [logistique] to the curve\" (1845 p.8). "
+"Though he does not explain this choice, there is a connection with the "
+"logarithmic basis of the function. Logarithm was coined by John Napier "
+"(1550-1617) from Greek logos (ratio, proportion, reckoning) and arithmos "
+"(number). Logistic comes from the Greek logistikos (computational). In "
+"the 1700's, logarithmic and logistic were synonymous. Since computation "
+"is needed to predict the supplies an army requires, logistics has come to"
+" be also used for the movement and supply of troops. So it appears the "
+"other meaning of \"logistics\" comes from the same logic as Verhulst "
+"terminology, but is independent (?). Verhulst paper is accessible; the "
+"definition is on page 8 (page 21 in the volume), and the picture is after"
+" the article (page 54 in the volume). ” —— `Why logistic (sigmoid) ogive "
+"and not autocatalytic curve? <https://rasch.org/rmt/rmt64k.htm>`__"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:576
@@ -222,18 +260,24 @@ msgid "在 MegEngine 的 ``functional`` 模块中，提供了 ``sigmoid()`` 方�
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:622
-msgid "根据二分类问题 :math:`y \\in \\{0, 1\\}` 的特性，标签值不是 :math:`1` 即是 :math:`0`\\ ，可以使用如下形式表示预测分类为 :math:`1` 或 :math:`0` 的概率："
+msgid ""
+"根据二分类问题 :math:`y \\in \\{0, 1\\}` 的特性，标签值不是 :math:`1` 即是 :math:`0`\\ "
+"，可以使用如下形式表示预测分类为 :math:`1` 或 :math:`0` 的概率："
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:624
-msgid "\\begin{aligned}\n"
-"p(y=1 \\mid \\mathbf {x}) &= \\sigma (f(\\mathbf {x})) = \\frac{1}{1+\\exp \\left( -f(\\mathbf {x}) \\right)} \\\\\n"
+msgid ""
+"\\begin{aligned}\n"
+"p(y=1 \\mid \\mathbf {x}) &= \\sigma (f(\\mathbf {x})) = "
+"\\frac{1}{1+\\exp \\left( -f(\\mathbf {x}) \\right)} \\\\\n"
 "p(y=0 \\mid \\mathbf {x}) &= 1 - p(y=1 \\mid \\mathbf {x})\n"
 "\\end{aligned}"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:632
-msgid "在处理二分类问题时，我们进行优化的最终目的是，希望最终预测的概率值 :math:`\\hat{y}=\\sigma(f(\\mathbf x))` 尽可能地接近真实标签 :math:`y`;"
+msgid ""
+"在处理二分类问题时，我们进行优化的最终目的是，希望最终预测的概率值 :math:`\\hat{y}=\\sigma(f(\\mathbf x))`"
+" 尽可能地接近真实标签 :math:`y`;"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:634
@@ -241,17 +285,23 @@ msgid "为了能够正确地优化我们的任务目标，需要选用合适的�
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:636
-msgid "\\begin{aligned}\n"
-"\\ell_{\\operatorname{MSE}} &= \\frac {1}{2} \\sum_{n} \\left( \\hat{y} - y \\right )^2 \\\\\n"
+msgid ""
+"\\begin{aligned}\n"
+"\\ell_{\\operatorname{MSE}} &= \\frac {1}{2} \\sum_{n} \\left( \\hat{y} -"
+" y \\right )^2 \\\\\n"
 "\\frac {\\partial (\\hat{y} - y)^2}{\\partial \\mathbf {w}} &=\n"
-"2 (\\hat{y} - y) \\cdot \\frac {\\partial \\hat{y}}{\\partial f(\\mathbf {x})}\n"
+"2 (\\hat{y} - y) \\cdot \\frac {\\partial \\hat{y}}{\\partial f(\\mathbf "
+"{x})}\n"
 "\\cdot \\frac {\\partial f(\\mathbf {x})}{\\partial w} \\\\\n"
-"&= 2 (\\hat{y} - y) \\cdot \\color{blue} {\\hat{y} \\cdot (1 - \\hat{y})} \\cdot \\color{black} {\\mathbf {x}}\n"
+"&= 2 (\\hat{y} - y) \\cdot \\color{blue} {\\hat{y} \\cdot (1 - \\hat{y})}"
+" \\cdot \\color{black} {\\mathbf {x}}\n"
 "\\end{aligned}"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:647
-msgid "虽然可以求得相应的梯度，但随着参数的更新，单样本上求得的梯度越来越接近 :math:`0`, 即出现了梯度消失（Gradient Vanishing）的情况；"
+msgid ""
+"虽然可以求得相应的梯度，但随着参数的更新，单样本上求得的梯度越来越接近 :math:`0`, 即出现了梯度消失（Gradient "
+"Vanishing）的情况；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:648
@@ -267,15 +317,21 @@ msgid "Softmax 回归"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:664
-msgid "Softmax 回归可以看成是 Logistic 回归在多分类问题上的推广，也称为多项（Multinomial）Logistic 回归，或多类（Muti-Class）Logistic 回归。"
+msgid ""
+"Softmax 回归可以看成是 Logistic 回归在多分类问题上的推广，也称为多项（Multinomial）Logistic 回归，或多类"
+"（Muti-Class）Logistic 回归。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:666
-msgid "对于多分类问题，类别标签 :math:`y \\in \\{1, 2, \\ldots, C \\}` 可以有 :math:`C` 个取值 —— 前面提到，如何将我们的输出和这几个值较好地对应起来，是需要解决的难题之一。"
+msgid ""
+"对于多分类问题，类别标签 :math:`y \\in \\{1, 2, \\ldots, C \\}` 可以有 :math:`C` 个取值 —— "
+"前面提到，如何将我们的输出和这几个值较好地对应起来，是需要解决的难题之一。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:668
-msgid "在处理二分类问题时，我们使用 Sigmoid 函数将输出变成了 :math:`(0,1)` 范围内的值，将其视为概率。对于多分类问题的标签，我们也可以进行形式上的处理。"
+msgid ""
+"在处理二分类问题时，我们使用 Sigmoid 函数将输出变成了 :math:`(0,1)` "
+"范围内的值，将其视为概率。对于多分类问题的标签，我们也可以进行形式上的处理。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:670
@@ -291,325 +347,391 @@ msgid "不难发现，One-hot 编码以向量 :math:`\\mathbf y` 的形式给出
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:722
-msgid "自然地，我们希望线性分类器最终输出的预测值是一个形状为 :math:`(C,)` 的向量 :math:`\\hat {\\mathbf y}`\\ ，这样方便设计和计算损失函数。"
+msgid ""
+"自然地，我们希望线性分类器最终输出的预测值是一个形状为 :math:`(C,)` 的向量 :math:`\\hat {\\mathbf y}`\\"
+" ，这样方便设计和计算损失函数。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:724
-msgid "我们已经知道线性输出 :math:`\\hat y = f(\\mathbf x; \\mathbf w, b) = \\mathbf x \\cdot \\mathbf w + b \\in \\mathbb R` , 现在我们希望能够得到 :math:`\\hat {\\mathbf y} \\in \\mathbb R^C` 这样的输出;"
+msgid ""
+"我们已经知道线性输出 :math:`\\hat y = f(\\mathbf x; \\mathbf w, b) = \\mathbf x "
+"\\cdot \\mathbf w + b \\in \\mathbb R` , 现在我们希望能够得到 :math:`\\hat "
+"{\\mathbf y} \\in \\mathbb R^C` 这样的输出;"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:725
-msgid "可以设计 :math:`C` 个不同的 :math:`f(\\mathbf x; \\mathbf w, b`) 分别进行计算得到 :math:`C` 个输出，也可以直接利用矩阵 :math:`W` 和向量 :math:`b` 的形式直接计算："
-msgstr ""
-
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:785
-msgid "得到的输出虽然有 :math:`C` 个值了，但仍然不是概率的形式，这时我们希望设计这样一个决策函数："
+msgid ""
+"可以设计 :math:`C` 个不同的 :math:`f(\\mathbf x; \\mathbf w, b`) 分别进行计算得到 "
+":math:`C` 个输出，也可以直接利用矩阵 :math:`W` 和向量 :math:`b` 的形式直接计算："
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:787
-msgid "通过这个函数，可以将输出的 :math:`C` 个值转换为样本 :math:`\\mathbf{x}` 属于某一类别 :math:`c` 的概率 :math:`p(y=c | \\mathbf{x}) \\in (0,1)`\\ ；"
+msgid "得到的输出虽然有 :math:`C` 个值了，但仍然不是概率的形式，这时我们希望设计这样一个决策函数："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:788
-msgid "满足不同预测标签类别的概率和为 1."
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:789
+msgid ""
+"通过这个函数，可以将输出的 :math:`C` 个值转换为样本 :math:`\\mathbf{x}` 属于某一类别 :math:`c` 的概率 "
+":math:`p(y=c | \\mathbf{x}) \\in (0,1)`\\ ；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:790
-msgid "一个直接的想法是使用 :math:`\\operatorname{ArgMax}` 函数，将对应位置的概率设置为 1，其它位置为 0"
+msgid "满足不同预测标签类别的概率和为 1."
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:792
-msgid "这样也可以得到作为最终预测的 One-hot 编码形式的向量，但问题在于："
-msgstr ""
-
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:793
-msgid "和分段函数类似，此时的 :math:`\\operatorname{ArgMax}` 函数是不可导的，对梯度下降法不友好；"
+msgid "一个直接的想法是使用 :math:`\\operatorname{ArgMax}` 函数，将值最大位置的概率设置为 1，其它位置为 0"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:794
-msgid "这种处理方式过于简单粗暴，没有考虑到在其它类别上预测的概率值所带来的影响。"
+msgid "这样也可以得到作为最终预测的 One-hot 编码形式的向量，但问题在于："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:795
+msgid "和分段函数类似，此时的 :math:`\\operatorname{ArgMax}` 函数是不可导的，对梯度下降法不友好；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:796
+msgid "这种处理方式过于简单粗暴，没有考虑到在其它类别上预测的概率值所带来的影响。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:798
 msgid "在 MegEngine 的 ``functional`` 模块中，提供了 ``argmax()`` 方法："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:843
-msgid "为了解决上面的问题，人们设计出了 :math:`\\operatorname{Softmax}` 归一化指数函数（也叫 :math:`\\operatorname{SoftArgmax}`, 即柔和版 :math:`\\operatorname{Argmax}`\\ ）："
-msgstr ""
-
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:845
-msgid "p(y=c | \\mathbf {x}) = \\operatorname {Softmax}(y_c)=\\frac{\\exp y_c}{\\sum_{i} \\exp y_i}"
+msgid ""
+"为了解决上面的问题，人们设计出了 :math:`\\operatorname{Softmax}` 归一化指数函数（也叫 "
+":math:`\\operatorname{SoftArgmax}`, 即柔和版 :math:`\\operatorname{Argmax}`\\"
+" ）："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:850
-msgid "将线性输出 :math:`y_c = f(\\mathbf x)` 经过指数归一化计算后得到一个概率 :math:`p(y=c | \\mathbf{x})`, 我们通常经过类似处理后得到的分类概率值叫做 Logits."
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:847
+msgid ""
+"p(y=c | \\mathbf {x}) = \\operatorname {Softmax}(y_c)=\\frac{\\exp "
+"y_c}{\\sum_{i} \\exp y_i}"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:851
-msgid "由于指数 :math:`e^x` 容易随着输入值 :math:`x` 的变大发生指数爆炸，真正的 :math:`\\operatorname {Softmax}` 实现中还会有一些额外处理来增加数值稳定性，我们不在这里介绍。"
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:852
+msgid ""
+"将线性输出 :math:`y_c = f(\\mathbf x)` 经过指数归一化计算后得到一个概率 :math:`p(y=c | "
+"\\mathbf{x})`, 我们通常经过类似处理后得到的分类概率值叫做 Logits."
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:853
+msgid ""
+"由于指数 :math:`e^x` 容易随着输入值 :math:`x` 的变大发生指数爆炸，真正的 :math:`\\operatorname "
+"{Softmax}` 实现中还会有一些额外处理来增加数值稳定性，我们不在这里介绍。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:855
 msgid "在 MegEngine 的 ``functional`` 模块中，提供了 ``softmax()`` 方法："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:899
-msgid "我们为什么不采用均值归一化或其它的的方法，而要引入指数的形式呢？可以这样解释： - 指数函数具有“马太效应”：我们认为较大的原始值在归一化后得到的概率值也应该更大； - 与 :math:`\\operatorname{ArgMax}` 相比，使用 :math:`\\operatorname{SoftMax}` 还可以找到 Top-K 候选项，即前 :math:`k` 大概率的分类，有利于模型性能评估；"
-msgstr ""
-
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:901
-msgid "分类问题中 :math:`\\operatorname{SoftMax}` 函数的选用也和影响了所对应的损失函数的设计。"
+msgid ""
+"我们为什么不采用均值归一化或其它的的方法，而要引入指数的形式呢？可以这样解释： - "
+"指数函数具有“马太效应”：我们认为较大的原始值在归一化后得到的概率值也应该更大； - 与 "
+":math:`\\operatorname{ArgMax}` 相比，使用 :math:`\\operatorname{SoftMax}` "
+"还可以找到 Top-K 候选项，即前 :math:`k` 大概率的分类，有利于模型性能评估；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:913
-msgid "交叉熵（Cross Entropy）"
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:903
+msgid "分类问题中 :math:`\\operatorname{SoftMax}` 函数的选用也和影响了所对应的损失函数的设计，即下面即将介绍的交叉熵。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:915
-msgid "我们已经得到了预测的类别标签向量 :math:`\\mathbf {\\hat{y}}`, 也已经使用 One-hot 编码表示了真实的类别标签向量 :math:`\\mathbf{y}`. 二者各自代表一种概率分布。"
+msgid "交叉熵（Cross Entropy）"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:917
-msgid "在信息论中，如果对同一个随机变量 :math:`x` 有两个单独的概率分布 :math:`p(x)` 和 :math:`q(x)`\\ ，可以使用相对熵（KL 散度）来表示两个分布的差异："
+msgid ""
+"我们已经得到了预测的类别标签向量 :math:`\\mathbf {\\hat{y}}`, 也已经使用 One-hot "
+"编码表示了真实的类别标签向量 :math:`\\mathbf{y}`. 二者各自代表一种概率分布。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:919
-msgid "\\begin{aligned}\n"
-"\\mathrm{KL}(p \\| q) &=-\\int p(x) \\ln q(x) d x-\\left(-\\int p(x) \\ln p(x) d x\\right) \\\\\n"
+msgid ""
+"在信息论中，如果对同一个随机变量 :math:`x` 有两个单独的概率分布 :math:`p(x)` 和 :math:`q(x)`\\ "
+"，可以使用相对熵（KL 散度）来表示两个分布的差异："
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:921
+msgid ""
+"\\begin{aligned}\n"
+"\\mathrm{KL}(p \\| q) &=-\\int p(x) \\ln q(x) d x-\\left(-\\int p(x) \\ln"
+" p(x) d x\\right) \\\\\n"
 "&= H(p,q) - H(p)\n"
 "\\end{aligned}"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:927
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:929
 msgid "相对熵的特点是，两个概率分布完全相同时，其值为零。二者分布之间的差异越大，相对熵值越大。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:928
-msgid "由公式可知，\\ :math:`\\mathrm{KL}(p \\| q) \\neq \\mathrm{KL}(q \\| p)`. 不具对称性，所以其表示的不是严格意义上的“距离”，适合分类任务。"
-msgstr ""
-
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:929
-msgid "感兴趣的读者可以自行了解信息论中有关熵（Entropy）的概念，目前我们只要知道这些东西能做什么就行。"
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:930
+msgid ""
+"由公式可知，\\ :math:`\\mathrm{KL}(p \\| q) \\neq \\mathrm{KL}(q \\| p)`. "
+"不具对称性，所以其表示的不是严格意义上的“距离”，适合分类任务。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:931
-msgid "我们希望设计一个损失函数，可用来评估当前训练得到的概率分布 :math:`q(x)`\\ ，与真实分布 :math:`p(x)` 之间有多么大的差异，同时整体要是凸函数。"
+msgid "感兴趣的读者可以自行了解信息论中有关熵（Entropy）的概念，目前我们只要知道这些东西能做什么就行。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:933
-msgid "而在训练的过程中，代表 :math:`p(x)` 的 One-hot 编码是一个确定的常数，其 :math:`H(p)` 值不会随着训练而改变，也不会影响梯度计算，所以可省略。"
+msgid ""
+"我们希望设计一个损失函数，可用来评估当前训练得到的概率分布 :math:`q(x)`\\ ，与真实分布 :math:`p(x)` "
+"之间有多么大的差异，同时整体要是凸函数。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:935
-msgid "剩下的 :math:`H(p,q)` 部分则被定义为我们常用的交叉熵（Cross Entropy, CE），用我们现在的例子中的离散概率值来表示则为："
+msgid ""
+"而在训练的过程中，代表真实类别概率的 :math:`p(x)` 固定，是一个确定的常数，其 :math:`H(p)` "
+"值不会随着训练而改变，也不会影响梯度计算，所以可省略。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:937
-msgid "\\ell_{\\operatorname{CE}} = H(\\mathbf{y}, \\hat{\\mathbf{y}})=-\\sum_{i=1}^C y_i \\ln \\hat{y}_i"
+msgid ""
+"剩下的 :math:`H(p,q)` 部分则被定义为我们常用的交叉熵（Cross Entropy, "
+"CE），用我们现在的例子中的离散概率值来表示则为："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:942
-msgid "这即是 Softmax 分类器需要优化的损失函数，对应于 MegEngine 中的 ``cross_entropy()`` 损失函数："
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:939
+msgid ""
+"\\ell_{\\operatorname{CE}} = H(\\mathbf{y}, "
+"\\hat{\\mathbf{y}})=-\\sum_{i=1}^C y_i \\ln \\hat{y}_i"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:944
-msgid "在 MegEngine 的 ``cross_entropy()`` 函数中，会自动对原始标签 :math:`y` 进行 One-hot 编码得到 :math:`\\mathbf{y}`\\ ，所以 ``pred`` 应该比 ``label`` 多一个 :math:`\\mathbb R^C` 维度；"
-msgstr ""
-
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:945
-msgid "设置 ``with_logits=True`` 时，将使用 Softmax 函数把分类输出标准化成概率分布，下面的代码示例中 ``pred`` 已经为概率分布的形式；"
+msgid "这即是 Softmax 分类器需要优化的损失函数，对应于 MegEngine 中的 ``cross_entropy()`` 损失函数："
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:946
-msgid "二分类问题使用的 Sigmoid 函数其实是 Sotfmax 函数的一个特例（读者可尝试证明），对应 MegEngine 中的 ``binary_cross_entropy()`` 方法。"
+msgid ""
+"在 MegEngine 的 ``cross_entropy()`` 函数中，会自动对原始标签 :math:`y` 进行 One-hot 编码得到 "
+":math:`\\mathbf{y}`\\ ，所以 ``pred`` 应该比 ``label`` 多一个 :math:`\\mathbb R^C`"
+" 维度；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1009
-msgid "我们还可以发现，使用 Softmax + Cross Entropy 结合的形式，二者的 :math:`\\exp` 和 :math:`\\ln` 计算一定程度上可以相互抵消，简化计算流程。"
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:947
+msgid ""
+"设置 ``with_logits=True`` 时，将使用 Softmax 函数把分类输出标准化成概率分布，下面的代码示例中 ``pred`` "
+"已经为概率分布的形式；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:948
+msgid ""
+"二分类问题使用的 Sigmoid 函数其实是 Sotfmax 函数的一个特例（读者可尝试证明），对应 MegEngine 中的 "
+"``binary_cross_entropy()`` 方法。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1011
+msgid ""
+"我们还可以发现，使用 Softmax + Cross Entropy 结合的形式，二者的 :math:`\\exp` 和 :math:`\\ln`"
+" 计算一定程度上可以相互抵消，简化计算流程。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1013
 msgid "现在我们找到了 MNIST 手写图像分类任务的决策函数和损失函数，是时候尝试自己利用 MegEngine 构建一个线性分类器了。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1014
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1016
 msgid "练习：线性分类"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1016
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1018
 msgid "我们使用 MegEngine 对线性分类器进行实现："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1137
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1139
 msgid "接着我们要实现测试部分，分类问题可使用预测精度（Accuracy）来评估模型性能，即被正确预测的比例："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1213
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1215
 msgid "这意味着我们只训练了 5 个周期的线性分类器，在测试集的 10,000 张图片中，就有 9,170 张图片被正确地预测了分类。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1215
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1217
 msgid "你可以尝试增大上方的 ``epochs`` 超参数，最终结果不会提升很多，说明我们现在所实现的线性分类器存在一定的局限性，需要寻找更好的方法。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1227
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1229
 msgid "总结回顾"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1229
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1231
 msgid "我们依据对线性回归的认知发展衍生出了线性分类器，并完成了 MNIST 手写数字识别任务，请回忆一下整个探索的过程。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1231
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1233
 msgid "理解机器学习知识的角度有很多种，不同的角度之间存在着千丝万缕的联系："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1233
-msgid "预测（Predict）：线性回归输出的标量是 :math:`\\mathbb R` 连续值，使用 Sigmoid 将其映射到 :math:`(0, 1)`, 而 Softmax 可将 :math:`C` 个输出值变成对应分类上的概率；"
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1235
+msgid ""
+"预测（Predict）：线性回归输出的标量是 :math:`\\mathbb R` 连续值，使用 Sigmoid 将其映射到 :math:`(0,"
+" 1)`, 而 Softmax 可将 :math:`C` 个输出值变成对应分类上的概率；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1234
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1236
 msgid "优化（Optimize）：线性回归模型通常选择均方误差（MSE）作为损失（目标）函数，而线性分类模型通常使用交叉熵（CE）；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1235
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1237
 msgid "评估（Evaluate）：线性回归模型可以选者平均误差或总误差作为评估指标，而线性分类模型可以使用精度（Accuracy）；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1237
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1239
 msgid "对于特征的处理：我们接触了计算机领域的灰度栅格图，并尝试使用 ``flatten()`` 方法将每个样本的高维特征处理为特征向量。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1249
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1251
 msgid "问题思考"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1251
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1253
 msgid "旧问题的解决往往伴随着新问题的诞生，让我们一起来思考一下："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1253
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1255
 msgid "对于同样的任务（如 MNIST 手写数字识别），我们可以选用不同的模型和算法（比如 K 近邻算法）来解决，我们只接触了机器学习算法的冰山一角；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1254
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1256
 msgid "对于具有 HWC 属性的图像，教程中展平成特征向量的处理方式似乎有些直接（比如忽视掉了像素点在平面空间上的临接性），是否有更好的方法？"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1255
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1257
 msgid "我们在处理分类问题的输出时使用了 Softmax 达到了归一化的效果，那么对于输入数据的特征，是否也可以进行归一化呢？"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1256
-msgid "MegEngine 的自动求导机制帮助我们省掉了很多计算，可以尝试推导 Softmax + Cross Entropy 的反向传播过程，感受框架的便捷之处。"
-msgstr ""
-
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1258
-msgid "我们已经训练了一个识别手写数字的分类器，可以尝试用它在一些实际的数据上进行测试（而不仅仅是官方提供的测试集），可以尝试写代码测试一下："
+msgid ""
+"MegEngine 的自动求导机制帮助我们省掉了很多计算，可以尝试推导 Softmax + Cross Entropy "
+"的反向传播过程，感受框架的便捷之处。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1260
-msgid "如何将常见的 jpg, png, gif 等图像格式处理成 NumPy 的 ndarray 格式？（提示：可使用 OpenCV 或 Pillow 等库）"
-msgstr ""
-
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1261
-msgid "我想要测试的图像的长和宽和 MNIST 所使用的 :math:`28 \\times 28` 形状不一致，此时要如何处理？"
+msgid "我们已经训练了一个识别手写数字的分类器，可以尝试用它在一些实际的数据上进行测试（而不仅仅是官方提供的测试集），可以尝试写代码测试一下："
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1262
-msgid "我想要测试的图像是一张三通道的彩色图片，MNIST 数据集中是黑白图，此时又要如何处理？"
+msgid ""
+"如何将常见的 jpg, png, gif 等图像格式处理成 NumPy 的 ndarray 格式？（提示：可使用 OpenCV 或 Pillow "
+"等库）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1263
+msgid "我想要测试的图像的长和宽和 MNIST 所使用的 :math:`28 \\times 28` 形状不一致，此时要如何处理？"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1264
+msgid "我想要测试的图像是一张三通道的彩色图片，MNIST 数据集中是黑白图，此时又要如何处理？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1266
 msgid "你有思路了吗？我们在本次教程结尾的地方进行了一项有趣的测试。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1276
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1278
 msgid "机器学习背后的数学知识"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1278
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1280
 msgid "MegEngine 教程内容以相关代码实践为主，为了避免引入过多的理论导致“学究”，我们对一些数学细节的介绍比较笼统，感兴趣读者可进行拓展性的阅读："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1280
-msgid "斯坦福 `CS 229 <http://cs229.stanford.edu/>`__ 是非常好的机器学习课程，可以在课程主页找到有关广义线性模型、指数族分布和最大熵模型的讲义"
-msgstr ""
-
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1281
-msgid "对于线性回归问题的最小二乘估计，可以尝试推导正规方程得到其解析解（Analytical solution）或者说闭式解（Closed-form solution）"
-msgstr ""
-
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1282
-msgid "对于均方误差（MSE）和交叉熵（CE）的使用，可以用使用极大似然估计（Maximum likelihood estimation）进行推导和解释"
+msgid ""
+"斯坦福 `CS 229 <http://cs229.stanford.edu/>`__ "
+"是非常好的机器学习课程，可以在课程主页找到有关广义线性模型、指数族分布和最大熵模型的讲义"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1283
-msgid "对支持向量机（Support Vector Machine）和感知机模型（Perceptron）等经典二分类模型，属于机器学习领域，本教程中也没有进行介绍"
+msgid ""
+"对于线性回归问题的最小二乘估计，可以尝试推导正规方程得到其解析解（Analytical solution）或者说闭式解（Closed-form "
+"solution）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1284
+msgid "对于均方误差（MSE）和交叉熵（CE）的使用，可以用使用极大似然估计（Maximum likelihood estimation）进行推导和解释"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1285
-msgid "至于统计机器学习的理论解释，也分为频率派和贝叶斯派两大类，二者探讨「不确定性」这件事时的出发点与立足点不同，均作了解有助于拓宽视野。"
+msgid ""
+"对支持向量机（Support Vector "
+"Machine）和感知机模型（Perceptron）等经典二分类模型，属于机器学习领域，本教程中也没有进行介绍"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1287
-msgid "对于新知识，我们提倡先建立直觉性的解释，搞清楚它如何生效（How it works），优缺点在哪里（Why we use it），人们如何定义（What is it），从而建立共同的认知；"
-msgstr ""
-
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1288
-msgid "当你不断进步，达到当前阶段的认知边界后，自然会对更深层次的解释好奇，这个时候不妨利用数学的严谨性探索一番，最终恍然大悟：“原来如此。”；"
+msgid "至于统计机器学习的理论解释，也分为频率派和贝叶斯派两大类，二者探讨「不确定性」这件事时的出发点与立足点不同，均作了解有助于拓宽视野。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1289
-msgid "数学的严谨性让人赞叹，对于解释性不够强的理论，我们要勇于质疑，大胆探索，就像前人从地心说到日心说所付出的一样，不懈追求。"
+msgid ""
+"对于新知识，我们提倡先建立直觉性的解释，搞清楚它如何生效（How it works），优缺点在哪里（Why we use "
+"it），人们如何定义（What is it），从而建立共同的认知；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1290
+msgid "当你不断进步，达到当前阶段的认知边界后，自然会对更深层次的解释好奇，这个时候不妨利用数学的严谨性探索一番，最终恍然大悟：“原来如此。”；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1291
+msgid "数学的严谨性让人赞叹，对于解释性不够强的理论，我们要勇于质疑，大胆探索，就像前人从地心说到日心说所付出的一样，不懈追求。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1293
 msgid "在机器学习领域，线性模型比较适合初学者入门，过渡到神经网络模型也比较自然，接下来我们就要打开深度学习的大门。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1303
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1305
 msgid "线性模型就够了吗？"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1305
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1307
 msgid "既然线性模型在分类任务上可以取得如此好的准确率，是不是意味着线性模型就能够解决所有的问题呢？"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1307
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1309
 msgid "我们将前面使用的 MNIST 数据集换成 CIFAR10 数据集试一下（只改动了数据集处的代码），看看是否有一样的效果："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1443
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1445
 msgid "有没有感觉到一丝疑惑呢？之前大显神通的线性分类器，为何在换用了 CIFAR10 数据集后就判若两人了？随机猜测的正确率也会有 10% 的啊！"
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1445
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1447
 msgid "此时可以给你一些信息："
 msgstr ""
 
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1447
-msgid "在 CIFAR10 数据集中，一共有 10 类共 60000 张 32x32 **彩色** 图像，每类有 6000 张图片，其中 50000 个训练集，10000 张为测试集。"
-msgstr ""
-
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1449
-msgid "容易发现，将数据集换用后，图像的颜色由黑白变为了彩色，这意味着图像的通道数量由原本灰度图的 1 变成了由 RGB 表示的 3 通道图。"
-msgstr ""
-
-#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1450
-msgid "还记得我们对图像进行的 ``flatten`` 操作吗？这个特征处理操作对于简单的灰度图而言尚可接受，可用在 RGB 图像身上，似乎更加不合理了。"
+msgid ""
+"在 CIFAR10 数据集中，一共有 10 类共 60000 张 32x32 **彩色** 图像，每类有 6000 张图片，其中 50000 "
+"个训练集，10000 张为测试集。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1451
-msgid "另外，与 MNIST 数据集中全是黑底白字的手写数字不同，CIFAR10 数据集中有着包括 airplane(飞机)，automobile（汽车），bird（鸟），cat（猫），deer（鹿），dog（狗），frog（青蛙），horse（马），ship（船）和 truck（卡车）在内的 10 类物品，图像中蕴含的信息将更加复杂。"
+msgid "容易发现，将数据集换用后，图像的颜色由黑白变为了彩色，这意味着图像的通道数量由原本灰度图的 1 变成了由 RGB 表示的 3 通道图。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1452
+msgid "还记得我们对图像进行的 ``flatten`` 操作吗？这个特征处理操作对于简单的灰度图而言尚可接受，可用在 RGB 图像身上，似乎更加不合理了。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1453
-msgid "我想你现在应该发现了：想要用线性模型来处理稍微复杂一些的图片分类任务，就开始显得力不从心了。此时，你会尝试怎么做呢？"
+msgid ""
+"另外，与 MNIST 数据集中全是黑底白字的手写数字不同，CIFAR10 数据集中有着包括 "
+"airplane(飞机)，automobile（汽车），bird（鸟），cat（猫），deer（鹿），dog（狗），frog（青蛙），horse（马），ship（船）和"
+" truck（卡车）在内的 10 类物品，图像中蕴含的信息将更加复杂。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1455
+msgid "我想你现在应该发现了：想要用线性模型来处理稍微复杂一些的图片分类任务，就开始显得力不从心了。此时，你会尝试怎么做呢？"
+msgstr ""
+
+#: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1457
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
 msgstr ""
 
@@ -639,4 +761,15 @@ msgstr ""
 
 #~ msgid "以下是 Verhulst 对命名的解释："
 #~ msgstr "The following is an explanation of the naming Verhulst："
+
+#~ msgid "一个直接的想法是使用 :math:`\\operatorname{ArgMax}` 函数，将对应位置的概率设置为 1，其它位置为 0"
+#~ msgstr ""
+
+#~ msgid "分类问题中 :math:`\\operatorname{SoftMax}` 函数的选用也和影响了所对应的损失函数的设计。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "而在训练的过程中，代表 :math:`p(x)` 的 One-hot "
+#~ "编码是一个确定的常数，其 :math:`H(p)` 值不会随着训练而改变，也不会影响梯度计算，所以可省略。"
+#~ msgstr ""
 
