@@ -1,41 +1,37 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-06-03 10:18+0000\n"
+"POT-Creation-Date: 2021-05-12 09:02+0800\n"
+"PO-Revision-Date: 2021-08-17 22:58\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.quantization.QConfig.po\n"
+"X-Crowdin-File-ID: 2576\n"
 
 #: ../../source/reference/api/megengine.quantization.QConfig.rst:2
 msgid "megengine.quantization.QConfig"
 msgstr "megengine.quantization.QConfig"
 
 #: megengine.quantization.qconfig.QConfig:1 of
-#, fuzzy
-msgid ""
-"A config class indicating how to do quantize toward :class:`~.QATModule` "
-"'s ``activation`` and ``weight``. See :meth:`~.QATModule.set_qconfig` for"
-" detail usage."
-msgstr ""
-"一个配置类，用来指示如何对 :class:`~.QATModule` 的 ``activation`` 和 ``weight`` "
-"进行量化。详细用法参见 :meth:`~.QATModule.set_qconfig` 。"
+msgid "A config class indicating how to do quantize toward :class:`~.QATModule`'s ``activation`` and ``weight``. See :meth:`~.QATModule.set_qconfig` for detail usage."
+msgstr "一个配置类，用来指示如何对 :class:`~.QATModule` 的 ``activation`` 和 ``weight`` 进行量化。详细用法参见 :meth:`~.QATModule.set_qconfig` 。"
 
 #: megengine.quantization.qconfig.QConfig of
 msgid "参数"
 msgstr ""
 
 #: megengine.quantization.qconfig.QConfig:4 of
-msgid ""
-"interface to instantiate an :class:`~.Observer` indicating how to collect"
-" scales and zero_point of wegiht."
+msgid "interface to instantiate an :class:`~.Observer` indicating how to collect scales and zero_point of wegiht."
 msgstr "创建 :class:`~.Observer` 实例的接口，指定获得权重(weight)的scale和zero_point的方法。"
 
 #: megengine.quantization.qconfig.QConfig:6 of
@@ -43,9 +39,7 @@ msgid "similar to ``weight_observer`` but toward activation."
 msgstr "类似 ``weight_observer`` ，但该observer针对激活。"
 
 #: megengine.quantization.qconfig.QConfig:7 of
-msgid ""
-"interface to instantiate a :class:`~.FakeQuantize` indicating how to do "
-"fake_quant calculation."
+msgid "interface to instantiate a :class:`~.FakeQuantize` indicating how to do fake_quant calculation."
 msgstr "创建 :class:`~.FakeQuantize` 实例来指明如何做 ``fake_quant`` 计算的接口。"
 
 #: megengine.quantization.qconfig.QConfig:9 of
@@ -57,90 +51,67 @@ msgid "Examples:"
 msgstr "例如："
 
 #: megengine.quantization.qconfig.QConfig:23 of
-msgid ""
-"Each parameter is a ``class`` rather than an instance. And we recommand "
-"using ``functools.partial`` to add initialization parameters of the "
-"``class``, so that don't need to provide parameters in "
-":meth:`~.QATModule.set_qconfig`."
-msgstr ""
-"每个参数都是一个 ``class`` 而不是一个实例。 我们建议使用 ``functools.partial`` 来添加 ``class`` "
-"的初始化参数，这样就不需要在 :meth:`~.QATModule.set_qconfig` 中提供参数。"
+msgid "Each parameter is a ``class`` rather than an instance. And we recommand using ``functools.partial`` to add initialization parameters of the ``class``, so that don't need to provide parameters in :meth:`~.QATModule.set_qconfig`."
+msgstr "每个参数都是一个 ``class`` 而不是一个实例。 我们建议使用 ``functools.partial`` 来添加 ``class`` 的初始化参数，这样就不需要在 :meth:`~.QATModule.set_qconfig` 中提供参数。"
 
 #: megengine.quantization.qconfig.QConfig:27 of
-msgid ""
-"Usually we choose narrow version dtype (like ``qint8_narrow``) for weight"
-" related paramters and normal version for activation related ones. For "
-"the result of multiplication and addition as ``a * b + c * d``, if four "
-"variables are all -128 of dtype ``qint8``, then the result will be "
-"``2^15`` and cause overflow. Weights are commonly calculated in this way,"
-" so need to narrow qmin to -127."
-msgstr ""
-"通常我们给权重设置“窄”范围版本 (比如“qint8_narrow”) 的数值类型，给激活值设置普通版本的类型。比如对以下乘加操作的结果 ``a "
-"* b + c * d`` ，如果四个变量都是数值类型为 ``qint8`` 的 -128，那么乘加之后的结果是 ``2^15`` ，而这会超出 "
-"``qint32`` 的表示范围。而权重的计算方式一般都是这种形式，所以需要将最小值缩窄到 -127 以避免溢出。"
+msgid "Usually we choose narrow version dtype (like ``qint8_narrow``) for weight related paramters and normal version for activation related ones. For the result of multiplication and addition as ``a * b + c * d``, if four variables are all -128 of dtype ``qint8``, then the result will be ``2^15`` and cause overflow. Weights are commonly calculated in this way, so need to narrow qmin to -127."
+msgstr "通常我们给权重设置“窄”范围版本 (比如“qint8_narrow”) 的数值类型，给激活值设置普通版本的类型。比如对以下乘加操作的结果 ``a * b + c * d`` ，如果四个变量都是数值类型为 ``qint8`` 的 -128，那么乘加之后的结果是 ``2^15`` ，而这会超出 ``qint32`` 的表示范围。而权重的计算方式一般都是这种形式，所以需要将最小值缩窄到 -127 以避免溢出。"
 
 #: ../../source/reference/api/megengine.quantization.QConfig.rst:11
-msgid "Attributes"
-msgstr "属性。"
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid ":obj:`act_fake_quant <megengine.quantization.QConfig.act_fake_quant>`\\"
-msgstr ":obj:`act_fake_quant <megengine.quantization.QConfig.act_fake_quant>`\\"
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid "Alias for field number 3"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid ":obj:`act_observer <megengine.quantization.QConfig.act_observer>`\\"
-msgstr ":obj:`act_observer <megengine.quantization.QConfig.act_observer>`\\"
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid "Alias for field number 1"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid ""
-":obj:`weight_fake_quant "
-"<megengine.quantization.QConfig.weight_fake_quant>`\\"
-msgstr ""
-":obj:`weight_fake_quant "
-"<megengine.quantization.QConfig.weight_fake_quant>`\\"
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid "Alias for field number 2"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid ":obj:`weight_observer <megengine.quantization.QConfig.weight_observer>`\\"
-msgstr ":obj:`weight_observer <megengine.quantization.QConfig.weight_observer>`\\"
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid "Alias for field number 0"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:33
 msgid "Methods"
 msgstr "方法"
 
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:26:<autosummary>:1
 msgid ":obj:`count <megengine.quantization.QConfig.count>`\\ \\(value\\, \\/\\)"
 msgstr ":obj:`count <megengine.quantization.QConfig.count>`\\ \\(value\\, \\/\\)"
 
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:26:<autosummary>:1
 msgid "Return number of occurrences of value."
 msgstr ""
 
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
-msgid ""
-":obj:`index <megengine.quantization.QConfig.index>`\\ \\(value\\[\\, "
-"start\\, stop\\]\\)"
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:26:<autosummary>:1
+msgid ":obj:`index <megengine.quantization.QConfig.index>`\\ \\(value\\[\\, start\\, stop\\]\\)"
+msgstr ":obj:`index <megengine.quantization.QConfig.index>`\\ \\(value\\[\\, start\\, stop\\]\\)"
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:26:<autosummary>:1
+msgid "Return first index of value."
 msgstr ""
-":obj:`index <megengine.quantization.QConfig.index>`\\ \\(value\\[\\, "
-"start\\, stop\\]\\)"
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:28
+msgid "Attributes"
+msgstr "属性。"
 
 #: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
-msgid "Return first index of value."
+msgid ":obj:`act_fake_quant <megengine.quantization.QConfig.act_fake_quant>`\\"
+msgstr ":obj:`act_fake_quant <megengine.quantization.QConfig.act_fake_quant>`\\"
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid "Alias for field number 3"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid ":obj:`act_observer <megengine.quantization.QConfig.act_observer>`\\"
+msgstr ":obj:`act_observer <megengine.quantization.QConfig.act_observer>`\\"
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid "Alias for field number 1"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid ":obj:`weight_fake_quant <megengine.quantization.QConfig.weight_fake_quant>`\\"
+msgstr ":obj:`weight_fake_quant <megengine.quantization.QConfig.weight_fake_quant>`\\"
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid "Alias for field number 2"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid ":obj:`weight_observer <megengine.quantization.QConfig.weight_observer>`\\"
+msgstr ":obj:`weight_observer <megengine.quantization.QConfig.weight_observer>`\\"
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid "Alias for field number 0"
 msgstr ""
 
 #~ msgid "基类：:class:`megengine.quantization.qconfig.QConfig`"
