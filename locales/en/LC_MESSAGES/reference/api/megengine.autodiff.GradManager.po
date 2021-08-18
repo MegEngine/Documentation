@@ -1,45 +1,33 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-06-03 10:21+0000\n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
+"PO-Revision-Date: 2021-08-18 08:39\n"
 "Last-Translator: \n"
-"Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.autodiff.GradManager.po\n"
+"X-Crowdin-File-ID: 6588\n"
+"Language: en_US\n"
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:2
 msgid "megengine.autodiff.GradManager"
 msgstr ""
 
 #: megengine.autodiff.grad_manager.GradManager:1 of
-msgid ""
-"GradManager computes gradients or more generally, vector-Jacobian "
-"product, by reverse mode automatic differentiation (a.k.a. back "
-"propagation)."
-msgstr ""
-"GradManager computes gradients or more generally, vector-Jacobian "
-"product, by reverse mode automatic differentiation (aka back "
-"propagation)."
+msgid "GradManager computes gradients or more generally, vector-Jacobian product, by reverse mode automatic differentiation (a.k.a. back propagation)."
+msgstr "GradManager computes gradients or more generally, vector-Jacobian product, by reverse mode automatic differentiation (aka back propagation)."
 
 #: megengine.autodiff.grad_manager.GradManager:4 of
-msgid ""
-"Reverse mode autodiff normally reuses many intermediate tensors for best "
-"computation efficiency. In a read-eval-print-loop (REPL) environment "
-"however, it is impossible to known how the user would take gradients "
-"later thus which tensors to keep. To solve this problem, the user must "
-"somehow declare beforehand which gradient could possibly be taken. With "
-"GradManager, users are required to call the :meth:`attach` method on a "
-"tensor if they want to take gradients with respect to it later. "
-"Furthermore, any computation on a tensor before it is attached is "
-"completely ignored from the autodiff perspective, so :meth:`attach` must "
-"be called before any computation that needs differentiation."
+msgid "Reverse mode autodiff normally reuses many intermediate tensors for best computation efficiency. In a read-eval-print-loop (REPL) environment however, it is impossible to known how the user would take gradients later thus which tensors to keep. To solve this problem, the user must somehow declare beforehand which gradient could possibly be taken. With GradManager, users are required to call the :meth:`attach` method on a tensor if they want to take gradients with respect to it later. Furthermore, any computation on a tensor before it is attached is completely ignored from the autodiff perspective, so :meth:`attach` must be called before any computation that needs differentiation."
 msgstr ""
 
 #: megengine.autodiff.grad_manager.GradManager:13 of
@@ -55,95 +43,54 @@ msgid "A more realistic example of training a neural network would be like"
 msgstr ""
 
 #: megengine.autodiff.grad_manager.GradManager:47 of
-msgid ""
-"You can also use ``record()`` and ``release()`` method instead of "
-"``with`` context:"
+msgid "You can also use ``record()`` and ``release()`` method instead of ``with`` context:"
 msgstr ""
 
 #: megengine.autodiff.grad_manager.GradManager:62 of
-msgid ""
-"For your convenience, GradManager may (not must) be reused. As shown in "
-"the examples, you only need to attach a tensor once and GradManager will "
-"remember it afterwards. However, a single GradManager can record only one"
-" computation history at a time. To run multiple differentiations "
-"simultaneously or perform high order differentiation, create as many "
-"GradManager as you need."
+msgid "For your convenience, GradManager may (not must) be reused. As shown in the examples, you only need to attach a tensor once and GradManager will remember it afterwards. However, a single GradManager can record only one computation history at a time. To run multiple differentiations simultaneously or perform high order differentiation, create as many GradManager as you need."
 msgstr ""
 
 #: megengine.autodiff.grad_manager.GradManager:70 of
-msgid ""
-"Mutable tensors introduce ambiguities when doing symbolic "
-"differentiation: which version of the tensor are we referring to? For "
-"attached tensors, GradManager resolves this ambiguity by \"snapshoting\" "
-"them on first encounter, either on :meth:`record` (or entering with "
-"statement) if tensor is attached before :meth:`record`, or on "
-":meth:`attach` if GradManager is already recording. Attached tensors will"
-" then be interpreted as their snapshotted version for differentiation "
-"purpose. The same ambiguity on the first parameter of :meth:`backward` is"
-" simply resolved by using the latest version."
+msgid "Mutable tensors introduce ambiguities when doing symbolic differentiation: which version of the tensor are we referring to? For attached tensors, GradManager resolves this ambiguity by \"snapshoting\" them on first encounter, either on :meth:`record` (or entering with statement) if tensor is attached before :meth:`record`, or on :meth:`attach` if GradManager is already recording. Attached tensors will then be interpreted as their snapshotted version for differentiation purpose. The same ambiguity on the first parameter of :meth:`backward` is simply resolved by using the latest version."
 msgstr ""
 
 #: megengine.autodiff.grad_manager.GradManager:78 of
-msgid ""
-"Typically, in data parallel, we would like to average the gradients "
-"across processes. Users will finally get the averaged gradients if an "
-"\"AllReduce\" callback is registered as follows:"
+msgid "Typically, in data parallel, we would like to average the gradients across processes. Users will finally get the averaged gradients if an \"AllReduce\" callback is registered as follows:"
 msgstr ""
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:15
 msgid "Methods"
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-":obj:`attach <megengine.autodiff.GradManager.attach>`\\ \\(tensors\\[\\, "
-"callbacks\\]\\)"
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+msgid ":obj:`attach <megengine.autodiff.GradManager.attach>`\\ \\(tensors\\[\\, callbacks\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-"Instruct GradManager to track operations on tensors, so that gradients "
-"with respect to those tensors could be evaluated later."
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+msgid "Instruct GradManager to track operations on tensors, so that gradients with respect to those tensors could be evaluated later."
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-":obj:`attached_tensors "
-"<megengine.autodiff.GradManager.attached_tensors>`\\ \\(\\)"
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+msgid ":obj:`backward <megengine.autodiff.GradManager.backward>`\\ \\(\\[y\\, dy\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid "Return attached tensor list from :meth:`attach`."
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+msgid "Compute gradients (or vector-Jacobian product) for all attached tensors, accumulate to corresponding .grad attribute, and release resources along the way."
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-":obj:`backward <megengine.autodiff.GradManager.backward>`\\ \\(\\[y\\, "
-"dy\\]\\)"
-msgstr ""
-
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-"Compute gradients (or vector-Jacobian product) for all attached tensors, "
-"accumulate to corresponding .grad attribute, and release resources along "
-"the way."
-msgstr ""
-
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
 msgid ":obj:`record <megengine.autodiff.GradManager.record>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
 msgid "Start recording operations"
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
 msgid ":obj:`release <megengine.autodiff.GradManager.release>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-"Stop recording operations and release resources kept for gradient "
-"computation"
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+msgid "Stop recording operations and release resources kept for gradient computation"
 msgstr ""
 
