@@ -1,28 +1,29 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-06-03 10:20+0000\n"
+"POT-Creation-Date: 2021-05-12 09:02+0800\n"
+"PO-Revision-Date: 2021-08-17 23:19\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.quantization.QConfig.po\n"
+"X-Crowdin-File-ID: 2576\n"
 
 #: ../../source/reference/api/megengine.quantization.QConfig.rst:2
 msgid "megengine.quantization.QConfig"
 msgstr ""
 
 #: megengine.quantization.qconfig.QConfig:1 of
-msgid ""
-"A config class indicating how to do quantize toward :class:`~.QATModule` "
-"'s ``activation`` and ``weight``. See :meth:`~.QATModule.set_qconfig` for"
-" detail usage."
+msgid "A config class indicating how to do quantize toward :class:`~.QATModule`'s ``activation`` and ``weight``. See :meth:`~.QATModule.set_qconfig` for detail usage."
 msgstr ""
 
 #: megengine.quantization.qconfig.QConfig of
@@ -30,9 +31,7 @@ msgid "参数"
 msgstr ""
 
 #: megengine.quantization.qconfig.QConfig:4 of
-msgid ""
-"interface to instantiate an :class:`~.Observer` indicating how to collect"
-" scales and zero_point of wegiht."
+msgid "interface to instantiate an :class:`~.Observer` indicating how to collect scales and zero_point of wegiht."
 msgstr ""
 
 #: megengine.quantization.qconfig.QConfig:6 of
@@ -40,9 +39,7 @@ msgid "similar to ``weight_observer`` but toward activation."
 msgstr ""
 
 #: megengine.quantization.qconfig.QConfig:7 of
-msgid ""
-"interface to instantiate a :class:`~.FakeQuantize` indicating how to do "
-"fake_quant calculation."
+msgid "interface to instantiate a :class:`~.FakeQuantize` indicating how to do fake_quant calculation."
 msgstr ""
 
 #: megengine.quantization.qconfig.QConfig:9 of
@@ -54,81 +51,67 @@ msgid "Examples:"
 msgstr ""
 
 #: megengine.quantization.qconfig.QConfig:23 of
-msgid ""
-"Each parameter is a ``class`` rather than an instance. And we recommand "
-"using ``functools.partial`` to add initialization parameters of the "
-"``class``, so that don't need to provide parameters in "
-":meth:`~.QATModule.set_qconfig`."
+msgid "Each parameter is a ``class`` rather than an instance. And we recommand using ``functools.partial`` to add initialization parameters of the ``class``, so that don't need to provide parameters in :meth:`~.QATModule.set_qconfig`."
 msgstr ""
 
 #: megengine.quantization.qconfig.QConfig:27 of
-msgid ""
-"Usually we choose narrow version dtype (like ``qint8_narrow``) for weight"
-" related paramters and normal version for activation related ones. For "
-"the result of multiplication and addition as ``a * b + c * d``, if four "
-"variables are all -128 of dtype ``qint8``, then the result will be "
-"``2^15`` and cause overflow. Weights are commonly calculated in this way,"
-" so need to narrow qmin to -127."
+msgid "Usually we choose narrow version dtype (like ``qint8_narrow``) for weight related paramters and normal version for activation related ones. For the result of multiplication and addition as ``a * b + c * d``, if four variables are all -128 of dtype ``qint8``, then the result will be ``2^15`` and cause overflow. Weights are commonly calculated in this way, so need to narrow qmin to -127."
 msgstr ""
 
 #: ../../source/reference/api/megengine.quantization.QConfig.rst:11
-msgid "Attributes"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid ":obj:`act_fake_quant <megengine.quantization.QConfig.act_fake_quant>`\\"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid "Alias for field number 3"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid ":obj:`act_observer <megengine.quantization.QConfig.act_observer>`\\"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid "Alias for field number 1"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid ""
-":obj:`weight_fake_quant "
-"<megengine.quantization.QConfig.weight_fake_quant>`\\"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid "Alias for field number 2"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid ":obj:`weight_observer <megengine.quantization.QConfig.weight_observer>`\\"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:31:<autosummary>:1
-msgid "Alias for field number 0"
-msgstr ""
-
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:33
 msgid "Methods"
 msgstr ""
 
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:26:<autosummary>:1
 msgid ":obj:`count <megengine.quantization.QConfig.count>`\\ \\(value\\, \\/\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:26:<autosummary>:1
 msgid "Return number of occurrences of value."
 msgstr ""
 
-#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
-msgid ""
-":obj:`index <megengine.quantization.QConfig.index>`\\ \\(value\\[\\, "
-"start\\, stop\\]\\)"
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:26:<autosummary>:1
+msgid ":obj:`index <megengine.quantization.QConfig.index>`\\ \\(value\\[\\, start\\, stop\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:26:<autosummary>:1
+msgid "Return first index of value."
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:28
+msgid "Attributes"
 msgstr ""
 
 #: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
-msgid "Return first index of value."
+msgid ":obj:`act_fake_quant <megengine.quantization.QConfig.act_fake_quant>`\\"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid "Alias for field number 3"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid ":obj:`act_observer <megengine.quantization.QConfig.act_observer>`\\"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid "Alias for field number 1"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid ":obj:`weight_fake_quant <megengine.quantization.QConfig.weight_fake_quant>`\\"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid "Alias for field number 2"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid ":obj:`weight_observer <megengine.quantization.QConfig.weight_observer>`\\"
+msgstr ""
+
+#: ../../source/reference/api/megengine.quantization.QConfig.rst:42:<autosummary>:1
+msgid "Alias for field number 0"
 msgstr ""
 
 #~ msgid "基类：:class:`megengine.quantization.qconfig.QConfig`"
@@ -139,11 +122,4 @@ msgstr ""
 
 #~ msgid "Initialize self."
 #~ msgstr "初始化方法。"
-
-#~ msgid ""
-#~ "A config class indicating how to "
-#~ "do quantize toward :class:`~.QATModule`'s "
-#~ "``activation`` and ``weight``. See "
-#~ ":meth:`~.QATModule.set_qconfig` for detail usage."
-#~ msgstr ""
 

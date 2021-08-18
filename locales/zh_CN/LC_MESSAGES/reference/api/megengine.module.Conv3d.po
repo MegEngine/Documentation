@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-07-07 17:31+0000\n"
+"POT-Creation-Date: 2021-06-03 10:50+0800\n"
+"PO-Revision-Date: 2021-08-17 22:48\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.Conv3d.po\n"
+"X-Crowdin-File-ID: 2898\n"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:2
 msgid "megengine.module.Conv3d"
@@ -23,110 +27,83 @@ msgid "Applies a 3D convolution over an input tensor."
 msgstr "对输入 tensor 进行三维卷积"
 
 #: megengine.module.conv.Conv3d:3 of
-msgid ""
-"For instance, given an input of the size :math:`(N, C_{\\text{in}}, T, H,"
-" W)`, this layer generates an output of the size :math:`(N, "
-"C_{\\text{out}}, T_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` "
-"through the process described as below:"
+msgid "For instance, given an input of the size :math:`(N, C_{\\text{in}}, T, H, W)`, this layer generates an output of the size :math:`(N, C_{\\text{out}}, T_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` through the process described as below:"
 msgstr ""
 
 #: megengine.module.conv.Conv3d:8 of
-msgid ""
-"\\text{out}(N_i, C_{\\text{out}_j}) = \\text{bias}(C_{\\text{out}_j}) +\n"
-"\\sum_{k = 0}^{C_{\\text{in}} - 1} \\text{weight}(C_{\\text{out}_j}, k) "
-"\\star \\text{input}(N_i, k)\n"
-"\n"
+msgid "\\text{out}(N_i, C_{\\text{out}_j}) = \\text{bias}(C_{\\text{out}_j}) +\n"
+"\\sum_{k = 0}^{C_{\\text{in}} - 1} \\text{weight}(C_{\\text{out}_j}, k) \\star \\text{input}(N_i, k)\n\n"
 msgstr ""
 
 #: megengine.module.conv.Conv3d:12 of
-msgid ""
-"where :math:`\\star` is the valid 3D cross-correlation operator, "
-":math:`N` is batch size, :math:`C` denotes number of channels."
+msgid "where :math:`\\star` is the valid 3D cross-correlation operator, :math:`N` is batch size, :math:`C` denotes number of channels."
 msgstr ""
 
 #: megengine.module.conv.Conv3d:15 of
-msgid ""
-"When `groups == in_channels` and `out_channels == K * in_channels`, where"
-" K is a positive integer, this operation is also known as depthwise "
-"convolution."
-msgstr ""
-"当 `groups == in_channels` 且 `out_channels == K * in_channels` ，其中 K "
-"是正整数，该操作也被称为深度方向卷积（depthwise convolution）。"
+msgid "When `groups == in_channels` and `out_channels == K * in_channels`, where K is a positive integer, this operation is also known as depthwise convolution."
+msgstr "当 `groups == in_channels` 且 `out_channels == K * in_channels` ，其中 K 是正整数，该操作也被称为深度方向卷积（depthwise convolution）。"
 
 #: megengine.module.conv.Conv3d:19 of
-msgid ""
-"In other words, for an input of size :math:`(N, C_{in}, T_{int}, H_{in}, "
-"W_{in})`, a depthwise convolution with a depthwise multiplier `K`, can be"
-" constructed by arguments :math:`(in\\_channels=C_{in}, "
-"out\\_channels=C_{in} \\times K, ..., groups=C_{in})`."
+msgid "In other words, for an input of size :math:`(N, C_{in}, T_{int}, H_{in}, W_{in})`, a depthwise convolution with a depthwise multiplier `K`, can be constructed by arguments :math:`(in\\_channels=C_{in}, out\\_channels=C_{in} \\times K, ..., groups=C_{in})`."
 msgstr ""
 
 #: megengine.module.conv.Conv3d of
 msgid "参数"
 msgstr "参数"
 
-#: megengine.module.conv.Conv3d:24 of
+#: megengine.module.conv.Conv3d:23 of
 msgid "number of input channels."
 msgstr "输入数据中的通道数。"
 
-#: megengine.module.conv.Conv3d:26 of
+#: megengine.module.conv.Conv3d:24 of
 msgid "number of output channels."
 msgstr "输出数据中的通道数。"
 
-#: megengine.module.conv.Conv3d:28 of
-msgid ""
-"size of weight on spatial dimensions. If kernel_size is an :class:`int`, "
-"the actual kernel size would be `(kernel_size, kernel_size, "
-"kernel_size)`."
+#: megengine.module.conv.Conv3d:25 of
+msgid "size of weight on spatial dimensions. If kernel_size is an :class:`int`, the actual kernel size would be `(kernel_size, kernel_size, kernel_size)`."
 msgstr ""
 
-#: megengine.module.conv.Conv3d:32 of
+#: megengine.module.conv.Conv3d:28 of
 msgid "stride of the 3D convolution operation. Default: 1"
 msgstr "三维卷积运算中的步长。 默认： 1"
 
-#: megengine.module.conv.Conv3d:34 of
-msgid ""
-"size of the paddings added to the input on both sides of its spatial "
-"dimensions. Only zero-padding is supported. Default: 0"
+#: megengine.module.conv.Conv3d:29 of
+msgid "size of the paddings added to the input on both sides of its spatial dimensions. Only zero-padding is supported. Default: 0"
 msgstr "输入数据空域维度两侧的填充（padding）大小。仅支持填充0值。默认：0"
 
-#: megengine.module.conv.Conv3d:37 of
+#: megengine.module.conv.Conv3d:31 of
 msgid "dilation of the 3D convolution operation. Default: 1"
 msgstr "三维卷积运算的扩张值(dilation)。 默认： 1"
 
-#: megengine.module.conv.Conv3d:39 of
-msgid ""
-"number of groups into which the input and output channels are divided, so"
-" as to perform a \"grouped convolution\". When ``groups`` is not 1, "
-"``in_channels`` and ``out_channels`` must be divisible by ``groups``, and"
-" there would be an extra dimension at the beginning of the weight's "
-"shape. Default: 1"
+#: megengine.module.conv.Conv3d:32 of
+msgid "number of groups into which the input and output channels are divided, so as to perform a \"grouped convolution\". When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by ``groups``, and there would be an extra dimension at the beginning of the weight's shape. Default: 1"
 msgstr ""
 
-#: megengine.module.conv.Conv3d:45 of
+#: megengine.module.conv.Conv3d:37 of
 msgid "whether to add a bias onto the result of convolution. Default: True"
 msgstr "是否将偏置（bias）加入卷积的结果中。默认：True"
 
-#: megengine.module.conv.Conv3d:48 of
+#: megengine.module.conv.Conv3d:39 of
 msgid "Supports `cross_correlation`. Default: `cross_correlation`"
 msgstr ""
 
-#: megengine.module.conv.Conv3d:53 of
-msgid ""
-"``weight`` usually has shape ``(out_channels, in_channels, depth, height,"
-" width)`` , if groups is not 1, shape will be ``(groups, out_channels // "
-"groups, in_channels // groups, depth, height, width)``"
+#: megengine.module.conv.Conv3d:44 of
+msgid ":attr:`weight` usually has shape ``(out_channels, in_channels, depth, height, width)``,"
 msgstr ""
 
-#: megengine.module.conv.Conv3d:55 of
-msgid "``bias`` usually has shape ``(1, out_channels, *1)``"
+#: megengine.module.conv.Conv3d:45 of
+msgid "if groups is not 1, shape will be ``(groups, out_channels // groups, in_channels // groups, depth, height, width)``"
 msgstr ""
 
-#: megengine.module.conv.Conv3d:57 of
+#: megengine.module.conv.Conv3d:46 of
+msgid ":attr:`bias` usually has shape ``(1, out_channels, *1)``"
+msgstr ""
+
+#: megengine.module.conv.Conv3d:48 of
 msgid "Examples:"
 msgstr "例如："
 
-#: megengine.module.conv.Conv3d:70 of
+#: megengine.module.conv.Conv3d:61 of
 msgid "Outputs:"
 msgstr "输出："
 
@@ -139,9 +116,7 @@ msgid ":obj:`apply <megengine.module.Conv3d.apply>`\\ \\(fn\\)"
 msgstr ":obj:`apply <megengine.module.Conv3d.apply>`\\ \\(fn\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-"Applies function ``fn`` to all the modules within this module, including "
-"itself."
+msgid "Applies function ``fn`` to all the modules within this module, including itself."
 msgstr "对当前模块中的所有模块应用函数 ``fn``，包括当前模块本身。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
@@ -153,30 +128,20 @@ msgid "Returns an iterable for the buffers of the module."
 msgstr "返回该模块中对于buffers的一个可迭代对象。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`calc_conv <megengine.module.Conv3d.calc_conv>`\\ \\(inp\\, "
-"weight\\, bias\\)"
-msgstr ""
-":obj:`calc_conv <megengine.module.Conv3d.calc_conv>`\\ \\(inp\\, "
-"weight\\, bias\\)"
+msgid ":obj:`calc_conv <megengine.module.Conv3d.calc_conv>`\\ \\(inp\\, weight\\, bias\\)"
+msgstr ":obj:`calc_conv <megengine.module.Conv3d.calc_conv>`\\ \\(inp\\, weight\\, bias\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
 msgid ":obj:`children <megengine.module.Conv3d.children>`\\ \\(\\*\\*kwargs\\)"
 msgstr ":obj:`children <megengine.module.Conv3d.children>`\\ \\(\\*\\*kwargs\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable for all the submodules that are direct attributes of "
-"this module."
+msgid "Returns an iterable for all the submodules that are direct attributes of this module."
 msgstr "返回一个可迭代对象，可遍历所有属于当前模块的直接属性的子模块。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`disable_quantize <megengine.module.Conv3d.disable_quantize>`\\ "
-"\\(\\[value\\]\\)"
-msgstr ""
-":obj:`disable_quantize <megengine.module.Conv3d.disable_quantize>`\\ "
-"\\(\\[value\\]\\)"
+msgid ":obj:`disable_quantize <megengine.module.Conv3d.disable_quantize>`\\ \\(\\[value\\]\\)"
+msgstr ":obj:`disable_quantize <megengine.module.Conv3d.disable_quantize>`\\ \\(\\[value\\]\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
 msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
@@ -187,9 +152,7 @@ msgid ":obj:`eval <megengine.module.Conv3d.eval>`\\ \\(\\)"
 msgstr ":obj:`eval <megengine.module.Conv3d.eval>`\\ \\(\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-"Sets training mode of all the modules within this module (including "
-"itself) to ``False``."
+msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
 msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``False`` ，并将其切换为推理模式。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
@@ -197,12 +160,8 @@ msgid ":obj:`forward <megengine.module.Conv3d.forward>`\\ \\(inp\\)"
 msgstr ":obj:`forward <megengine.module.Conv3d.forward>`\\ \\(inp\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`load_state_dict <megengine.module.Conv3d.load_state_dict>`\\ "
-"\\(state\\_dict\\[\\, strict\\]\\)"
-msgstr ""
-":obj:`load_state_dict <megengine.module.Conv3d.load_state_dict>`\\ "
-"\\(state\\_dict\\[\\, strict\\]\\)"
+msgid ":obj:`load_state_dict <megengine.module.Conv3d.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
+msgstr ":obj:`load_state_dict <megengine.module.Conv3d.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
 msgid "Loads a given dictionary created by :func:`state_dict` into this module."
@@ -213,164 +172,87 @@ msgid ":obj:`modules <megengine.module.Conv3d.modules>`\\ \\(\\*\\*kwargs\\)"
 msgstr ":obj:`modules <megengine.module.Conv3d.modules>`\\ \\(\\*\\*kwargs\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable for all the modules within this module, including "
-"itself."
+msgid "Returns an iterable for all the modules within this module, including itself."
 msgstr "返回一个可迭代对象，可以遍历当前模块中的所有模块，包括其本身。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`named_buffers <megengine.module.Conv3d.named_buffers>`\\ "
-"\\(\\[prefix\\, recursive\\]\\)"
-msgstr ""
-":obj:`named_buffers <megengine.module.Conv3d.named_buffers>`\\ "
-"\\(\\[prefix\\, recursive\\]\\)"
+msgid ":obj:`named_buffers <megengine.module.Conv3d.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
+msgstr ":obj:`named_buffers <megengine.module.Conv3d.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable for key buffer pairs of the module, where ``key`` is "
-"the dotted path from this module to the buffer."
-msgstr ""
-"返回可遍历模块中 key 与 buffer 的键值对的可迭代对象，其中 ``key`` 为从该模块至 buffer 的点路径（dotted "
-"path）。"
+msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
+msgstr "返回可遍历模块中 key 与 buffer 的键值对的可迭代对象，其中 ``key`` 为从该模块至 buffer 的点路径（dotted path）。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`named_children <megengine.module.Conv3d.named_children>`\\ "
-"\\(\\*\\*kwargs\\)"
-msgstr ""
-":obj:`named_children <megengine.module.Conv3d.named_children>`\\ "
-"\\(\\*\\*kwargs\\)"
+msgid ":obj:`named_children <megengine.module.Conv3d.named_children>`\\ \\(\\*\\*kwargs\\)"
+msgstr ":obj:`named_children <megengine.module.Conv3d.named_children>`\\ \\(\\*\\*kwargs\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable of key-submodule pairs for all the submodules that "
-"are direct attributes of this module, where 'key' is the attribute name "
-"of submodules."
-msgstr ""
-"返回可迭代对象，可以遍历属于当前模块的直接属性的所有子模块（submodule）与键（key）组成的”key-"
-"submodule”对，其中'key'是子模块对应的属性名。"
+msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
+msgstr "返回可迭代对象，可以遍历属于当前模块的直接属性的所有子模块（submodule）与键（key）组成的”key-submodule”对，其中'key'是子模块对应的属性名。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`named_modules <megengine.module.Conv3d.named_modules>`\\ "
-"\\(\\[prefix\\]\\)"
-msgstr ""
-":obj:`named_modules <megengine.module.Conv3d.named_modules>`\\ "
-"\\(\\[prefix\\]\\)"
+msgid ":obj:`named_modules <megengine.module.Conv3d.named_modules>`\\ \\(\\[prefix\\]\\)"
+msgstr ":obj:`named_modules <megengine.module.Conv3d.named_modules>`\\ \\(\\[prefix\\]\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable of key-module pairs for all the modules within this "
-"module, including itself, where 'key' is the dotted path from this module"
-" to the submodules."
-msgstr ""
-"返回可迭代对象，可以遍历当前模块包括自身在内的所有其内部模块所组成的key-"
-"module键-模块对，其中'key'是从当前模块到各子模块的点路径（dotted path）。"
+msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
+msgstr "返回可迭代对象，可以遍历当前模块包括自身在内的所有其内部模块所组成的key-module键-模块对，其中'key'是从当前模块到各子模块的点路径（dotted path）。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`named_parameters <megengine.module.Conv3d.named_parameters>`\\ "
-"\\(\\[prefix\\, recursive\\]\\)"
-msgstr ""
-":obj:`named_parameters <megengine.module.Conv3d.named_parameters>`\\ "
-"\\(\\[prefix\\, recursive\\]\\)"
+msgid ":obj:`named_parameters <megengine.module.Conv3d.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
+msgstr ":obj:`named_parameters <megengine.module.Conv3d.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-"Returns an iterable for key :class:`~.Parameter` pairs of the module, "
-"where ``key`` is the dotted path from this module to the "
-":class:`~.Parameter`."
-msgstr ""
-"返回一个可迭代对象，可以遍历当前模块中key与 :class:`~.Parameter` 组成的键值对。其中  ``key`` 是从模块到 "
-":class:`~.Parameter` 的点路径（dotted path）。"
+msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
+msgstr "返回一个可迭代对象，可以遍历当前模块中key与 :class:`~.Parameter` 组成的键值对。其中  ``key`` 是从模块到 :class:`~.Parameter` 的点路径（dotted path）。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`parameters <megengine.module.Conv3d.parameters>`\\ "
-"\\(\\[recursive\\]\\)"
-msgstr ""
-":obj:`parameters <megengine.module.Conv3d.parameters>`\\ "
-"\\(\\[recursive\\]\\)"
+msgid ":obj:`parameters <megengine.module.Conv3d.parameters>`\\ \\(\\[recursive\\]\\)"
+msgstr ":obj:`parameters <megengine.module.Conv3d.parameters>`\\ \\(\\[recursive\\]\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
 msgid "Returns an iterable for the :class:`~.Parameter` of the module."
 msgstr "返回一个可迭代对象，遍历当前模块中的所有 :class:`~.Parameter`"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`register_forward_hook "
-"<megengine.module.Conv3d.register_forward_hook>`\\ \\(hook\\)"
-msgstr ""
-":obj:`register_forward_hook "
-"<megengine.module.Conv3d.register_forward_hook>`\\ \\(hook\\)"
+msgid ":obj:`register_forward_hook <megengine.module.Conv3d.register_forward_hook>`\\ \\(hook\\)"
+msgstr ":obj:`register_forward_hook <megengine.module.Conv3d.register_forward_hook>`\\ \\(hook\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
 msgid "Registers a hook to handle forward results."
 msgstr "给模块输出注册一个回调函数。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`register_forward_pre_hook "
-"<megengine.module.Conv3d.register_forward_pre_hook>`\\ \\(hook\\)"
-msgstr ""
-":obj:`register_forward_pre_hook "
-"<megengine.module.Conv3d.register_forward_pre_hook>`\\ \\(hook\\)"
+msgid ":obj:`register_forward_pre_hook <megengine.module.Conv3d.register_forward_pre_hook>`\\ \\(hook\\)"
+msgstr ":obj:`register_forward_pre_hook <megengine.module.Conv3d.register_forward_pre_hook>`\\ \\(hook\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
 msgid "Registers a hook to handle forward inputs."
 msgstr "给模块输入注册一个回调函数。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`replace_param <megengine.module.Conv3d.replace_param>`\\ "
-"\\(params\\, start\\_pos\\[\\, seen\\]\\)"
-msgstr ""
-":obj:`replace_param <megengine.module.Conv3d.replace_param>`\\ "
-"\\(params\\, start\\_pos\\[\\, seen\\]\\)"
+msgid ":obj:`replace_param <megengine.module.Conv3d.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
+msgstr ":obj:`replace_param <megengine.module.Conv3d.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-"Replaces module's parameters with ``params``, used by "
-":class:`~.ParamPack` to speedup multimachine training."
+msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to speedup multimachine training."
 msgstr "用 `param` 替换模块的参数，被 :class:`~.ParamPack` 用来加速多机训练。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`reset_parameters <megengine.module.Conv3d.reset_parameters>`\\ "
-"\\(\\)"
-msgstr ""
-":obj:`reset_parameters <megengine.module.Conv3d.reset_parameters>`\\ "
-"\\(\\)"
-
-#: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>
-msgid "rtype"
-msgstr ""
+msgid ":obj:`reset_parameters <megengine.module.Conv3d.reset_parameters>`\\ \\(\\)"
+msgstr ":obj:`reset_parameters <megengine.module.Conv3d.reset_parameters>`\\ \\(\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ":py:obj:`None`"
-msgstr ""
+msgid ":obj:`state_dict <megengine.module.Conv3d.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+msgstr ":obj:`state_dict <megengine.module.Conv3d.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`state_dict <megengine.module.Conv3d.state_dict>`\\ \\(\\[rst\\, "
-"prefix\\, keep\\_var\\]\\)"
-msgstr ""
-":obj:`state_dict <megengine.module.Conv3d.state_dict>`\\ \\(\\[rst\\, "
-"prefix\\, keep\\_var\\]\\)"
+msgid ":obj:`train <megengine.module.Conv3d.train>`\\ \\(\\[mode\\, recursive\\]\\)"
+msgstr ":obj:`train <megengine.module.Conv3d.train>`\\ \\(\\[mode\\, recursive\\]\\)"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-":obj:`train <megengine.module.Conv3d.train>`\\ \\(\\[mode\\, "
-"recursive\\]\\)"
-msgstr ""
-":obj:`train <megengine.module.Conv3d.train>`\\ \\(\\[mode\\, "
-"recursive\\]\\)"
-
-#: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
-msgid ""
-"Sets training mode of all the modules within this module (including "
-"itself) to ``mode``."
+msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
 msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``mode``。"
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:81:<autosummary>:1
@@ -450,21 +332,5 @@ msgstr "将所有参数的梯度置0。"
 #~ "constructed by arguments "
 #~ ":math:`(in\\_channels=C_{in}, out\\_channels=C_{in}      "
 #~ "imes K, ..., groups=C_{in})`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ ":attr:`weight` usually has shape "
-#~ "``(out_channels, in_channels, depth, height, "
-#~ "width)``,"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "if groups is not 1, shape will "
-#~ "be ``(groups, out_channels // groups, "
-#~ "in_channels // groups, depth, height, "
-#~ "width)``"
-#~ msgstr ""
-
-#~ msgid ":attr:`bias` usually has shape ``(1, out_channels, *1)``"
 #~ msgstr ""
 

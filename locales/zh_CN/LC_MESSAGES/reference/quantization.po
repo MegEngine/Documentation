@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-06-03 10:19+0000\n"
+"POT-Creation-Date: 2021-05-14 14:18+0800\n"
+"PO-Revision-Date: 2021-08-17 22:57\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/quantization.po\n"
+"X-Crowdin-File-ID: 2802\n"
 
 #: ../../source/reference/quantization.rst:6
 msgid "megengine.quantization"
@@ -27,10 +31,7 @@ msgid ":obj:`QConfig <megengine.quantization.QConfig>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:16:<autosummary>:1
-#, fuzzy
-msgid ""
-"A config class indicating how to do quantize toward :class:`~.QATModule` "
-"'s ``activation`` and ``weight``."
+msgid "A config class indicating how to do quantize toward :class:`~.QATModule`'s ``activation`` and ``weight``."
 msgstr "一个配置类指明如何对 :class:`~.QATModule` 的 ``activation`` 和 ``weight`` 进行量化。"
 
 #: ../../source/reference/quantization.rst:18
@@ -50,9 +51,7 @@ msgid "``ema_fakequant_qconfig``"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:24
-msgid ""
-"使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` "
-"预设。"
+msgid "使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 预设。"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:27
@@ -60,9 +59,7 @@ msgid "``sync_ema_fakequant_qconfig``"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:27
-msgid ""
-"使用 :class:`~.SyncExponentialMovingAverageObserver` 和 "
-":class:`~.FakeQuantize` 的预设。"
+msgid "使用 :class:`~.SyncExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 的预设。"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:30
@@ -70,9 +67,7 @@ msgid "``ema_lowbit_fakequant_qconfig``"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:30
-msgid ""
-"使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` "
-"且数值类型为 ``qint4`` 的预设。"
+msgid "使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 且数值类型为 ``qint4`` 的预设。"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:33
@@ -99,7 +94,7 @@ msgstr ""
 msgid "使用 :class:`~.PassiveObserver` 和 :class:`~.FakeQuantize` 的预设。"
 msgstr ""
 
-#: ../../source/reference/quantization.rst:42
+#: ../../source/reference/quantization.rst:43
 msgid "``easyquant_qconfig``"
 msgstr ""
 
@@ -107,75 +102,67 @@ msgstr ""
 msgid "用于 easyquant 算法的 QConfig，等价于 ``passive_qconfig``."
 msgstr ""
 
-#: ../../source/reference/quantization.rst:45
+#: ../../source/reference/quantization.rst:46
 msgid "观察"
 msgstr ""
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`Observer <megengine.quantization.Observer>`"
 msgstr ""
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "A base class for Observer Module."
 msgstr "所有 Observer 的基类"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`MinMaxObserver <megengine.quantization.MinMaxObserver>`"
 msgstr ""
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
-msgid ""
-"A Observer Module records input tensor's running min and max values to "
-"calc scale."
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
+msgid "A Observer Module records input tensor's running min and max values to calc scale."
 msgstr "一个通过记录输入 Tensor 的滑动最小值、最大值来计算 scale 的 Observer。"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`SyncMinMaxObserver <megengine.quantization.SyncMinMaxObserver>`"
 msgstr ""
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "A distributed version of :class:`~.MinMaxObserver`."
 msgstr "一个分布式版本的 :class:`~.MinMaxObserver` 。"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
-msgid ""
-":obj:`ExponentialMovingAverageObserver "
-"<megengine.quantization.ExponentialMovingAverageObserver>`"
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
+msgid ":obj:`ExponentialMovingAverageObserver <megengine.quantization.ExponentialMovingAverageObserver>`"
 msgstr ""
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "A :class:`~.MinMaxObserver` with momentum support for min/max updating."
 msgstr "一个支持动量更新最小、最大值的 :class:`~.MinMaxObserver` 。"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
-msgid ""
-":obj:`SyncExponentialMovingAverageObserver "
-"<megengine.quantization.SyncExponentialMovingAverageObserver>`"
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
+msgid ":obj:`SyncExponentialMovingAverageObserver <megengine.quantization.SyncExponentialMovingAverageObserver>`"
 msgstr ""
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "A distributed version of :class:`~.ExponentialMovingAverageObserver`."
 msgstr "一个分布式版本的 :class:`~.ExponentialMovingAverageObserver` 。"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`HistogramObserver <megengine.quantization.HistogramObserver>`"
 msgstr ""
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
-msgid ""
-"A :class:`~.MinMaxObserver` using running histogram of tensor values for "
-"min/max updating."
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
+msgid "A :class:`~.MinMaxObserver` using running histogram of tensor values for min/max updating."
 msgstr "一个使用滑动直方图统计算法更新最小、最大值的 :class:`~.MinMaxObserver` 。"
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid ":obj:`PassiveObserver <megengine.quantization.PassiveObserver>`"
 msgstr ""
 
-#: ../../source/reference/quantization.rst:58:<autosummary>:1
+#: ../../source/reference/quantization.rst:59:<autosummary>:1
 msgid "An Observer that supports setting :attr:`scale` directly."
 msgstr "一个支持直接设置 :attr:`scale` 而非通过统计得到的 Observer。"
 
-#: ../../source/reference/quantization.rst:60
+#: ../../source/reference/quantization.rst:61
 msgid "模拟"
 msgstr "假量化"
 
@@ -184,9 +171,7 @@ msgid ":obj:`FakeQuantize <megengine.quantization.FakeQuantize>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:71:<autosummary>:1
-msgid ""
-"A module to do quant and dequant according to observer's scale and "
-"zero_point."
+msgid "A module to do quant and dequant according to observer's scale and zero_point."
 msgstr "可根据observer的scale和zero_point参数来进行量化（Quantization）和反量化（Dequantization）的模块。"
 
 #: ../../source/reference/quantization.rst:71:<autosummary>:1
@@ -194,22 +179,8 @@ msgid ":obj:`TQT <megengine.quantization.TQT>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:71:<autosummary>:1
-msgid ""
-"TQT: https://arxiv.org/abs/1903.08066 Trained Quantization Thresholds for"
-" Accurate and Efficient Fixed-Point Inference of Deep Neural Networks."
-msgstr ""
-"TQT: https://arxiv.org/abs/1903.08066 Trained Quantization Thresholds for"
-" Accurate and Efficient Fixed-Point Inference of Deep Neural Networks"
-
-#: ../../source/reference/quantization.rst:71:<autosummary>:1
-msgid ":obj:`LSQ <megengine.quantization.LSQ>`"
-msgstr ""
-
-#: ../../source/reference/quantization.rst:71:<autosummary>:1
-msgid ""
-"LSQ: https://arxiv.org/pdf/1902.08153.pdf Estimating and scaling the task"
-" loss gradient at each weight and activation layer's quantizer step size"
-msgstr ""
+msgid "TQT: https://arxiv.org/abs/1903.08066 Trained Quantization Thresholds for Accurate and Efficient Fixed-Point Inference of Deep Neural Networks."
+msgstr "TQT: https://arxiv.org/abs/1903.08066 Trained Quantization Thresholds for Accurate and Efficient Fixed-Point Inference of Deep Neural Networks"
 
 #: ../../source/reference/quantization.rst:73
 msgid "量化操作"
@@ -220,24 +191,16 @@ msgid ":obj:`quantize_qat <megengine.quantization.quantize_qat>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
-msgid ""
-"Recursively convert float :class:`~.Module` to :class:`~.QATModule` "
-"through :meth:`~.Module.apply` and set qconfig relatively."
-msgstr ""
-"通过使用 :meth:`~.Module.apply` 并设置相应的qconfig，递归地将float  :class:`~.Module` "
-"转换为 :class:`~.QATModule` 。"
+msgid "Recursively convert float :class:`~.Module` to :class:`~.QATModule` through :meth:`~.Module.apply` and set qconfig relatively."
+msgstr "通过使用 :meth:`~.Module.apply` 并设置相应的qconfig，递归地将float  :class:`~.Module` 转换为 :class:`~.QATModule` 。"
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
 msgid ":obj:`quantize <megengine.quantization.quantize>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
-msgid ""
-"Recursively convert :class:`~.QATModule` to :class:`~.QuantizedModule` "
-"through :meth:`~.Module.apply`."
-msgstr ""
-"使用 :meth:`~.Module.apply` 将 :class:`~.QATModule` 递归地转换为 "
-":class:`~.QuantizedModule` 。"
+msgid "Recursively convert :class:`~.QATModule` to :class:`~.QuantizedModule` through :meth:`~.Module.apply`."
+msgstr "使用 :meth:`~.Module.apply` 将 :class:`~.QATModule` 递归地转换为 :class:`~.QuantizedModule` 。"
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
 msgid ":obj:`apply_easy_quant <megengine.quantization.apply_easy_quant>`"
@@ -252,9 +215,7 @@ msgid ":obj:`enable_fake_quant <megengine.quantization.enable_fake_quant>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
-msgid ""
-"Recursively enable ``module`` fake quantization in QATModule through "
-":meth:`~.Module.apply`"
+msgid "Recursively enable ``module`` fake quantization in QATModule through :meth:`~.Module.apply`"
 msgstr "使用 :meth:`~.Module.apply` 在QATModule中递归地启用 ``module``  fake quantization 。"
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
@@ -262,9 +223,7 @@ msgid ":obj:`disable_fake_quant <megengine.quantization.disable_fake_quant>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
-msgid ""
-"Recursively disable ``module`` fake quantization in QATModule through "
-":meth:`~.Module.apply`"
+msgid "Recursively disable ``module`` fake quantization in QATModule through :meth:`~.Module.apply`"
 msgstr "使用 :meth:`~.Module.apply` 在QATModule中递归地禁用 ``module`` fake quantization。"
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
@@ -272,9 +231,7 @@ msgid ":obj:`enable_observer <megengine.quantization.enable_observer>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
-msgid ""
-"Recursively enable ``module`` observer in QATModule through "
-":meth:`~.Module.apply`"
+msgid "Recursively enable ``module`` observer in QATModule through :meth:`~.Module.apply`"
 msgstr "使用 :meth:`~.Module.apply` 在QATModule中递归地启用 ``module``  observer 。"
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
@@ -282,9 +239,7 @@ msgid ":obj:`disable_observer <megengine.quantization.disable_observer>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
-msgid ""
-"Recursively disable ``module`` observer in QATModule through "
-":meth:`~.Module.apply`"
+msgid "Recursively disable ``module`` observer in QATModule through :meth:`~.Module.apply`"
 msgstr "使用 :meth:`~.Module.apply` 在QATModule中递归地禁用 ``module`` observer 。"
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
@@ -300,9 +255,7 @@ msgid ":obj:`reset_qconfig <megengine.quantization.reset_qconfig>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:87:<autosummary>:1
-msgid ""
-"Reset :class:`~._FakeQuantize` and :class:`~.Observer` according to "
-"``qconfig``"
+msgid "Reset :class:`~._FakeQuantize` and :class:`~.Observer` according to ``qconfig``"
 msgstr "根据 ``qconfig`` 来替换模块中所有的 :class:`~._FakeQuantize` 和 :class:`~.Observer` 。"
 
 #: ../../source/reference/quantization.rst:89
@@ -338,9 +291,7 @@ msgid ":obj:`fake_quant_bias <megengine.quantization.fake_quant_bias>`"
 msgstr ""
 
 #: ../../source/reference/quantization.rst:104:<autosummary>:1
-msgid ""
-"Apply fake quantization to bias, with the special scale from input tensor"
-" and weight tensor, the quantized type set to qint32 also."
+msgid "Apply fake quantization to bias, with the special scale from input tensor and weight tensor, the quantized type set to qint32 also."
 msgstr "根据给定输入和权重的 scale 属性，对给定的偏置进行假量化，目前仅支持输入类型为 qint8，偏置类型为 qint32。"
 
 #: ../../source/reference/quantization.rst:104:<autosummary>:1

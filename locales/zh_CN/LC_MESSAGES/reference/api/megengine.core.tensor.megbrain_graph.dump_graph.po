@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-06-21 14:21+0000\n"
+"POT-Creation-Date: 2021-06-21 15:57+0800\n"
+"PO-Revision-Date: 2021-08-17 23:17\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.core.tensor.megbrain_graph.dump_graph.po\n"
+"X-Crowdin-File-ID: 6892\n"
 
 #: ../../source/reference/api/megengine.core.tensor.megbrain_graph.dump_graph.rst:2
 msgid "megengine.core.tensor.megbrain\\_graph.dump\\_graph"
@@ -26,117 +30,78 @@ msgstr ""
 msgid "参数"
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:4 of
-msgid ""
-"output variables which are the graph's end point.  .. note::      The "
-"underlying C++ API only accepts a var list. If a dict is given,     the "
-"vars would be renamed to the given names."
+#: megengine.core.tensor.megbrain_graph.dump_graph:3 of
+msgid "output variables which are the graph's end point.  .. note::      The underlying C++ API only accepts a var list. If a dict is given,     the vars would be renamed to the given names."
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:4 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:3 of
 msgid "output variables which are the graph's end point."
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:8 of
-msgid ""
-"The underlying C++ API only accepts a var list. If a dict is given, the "
-"vars would be renamed to the given names."
+#: megengine.core.tensor.megbrain_graph.dump_graph:7 of
+msgid "The underlying C++ API only accepts a var list. If a dict is given, the vars would be renamed to the given names."
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:12 of
-msgid ""
-"level for keeping variable names:  * 0: none of the names are kept * 1: "
-"(default)keep names of output vars * 2: keep names of all (output and "
-"internal) vars"
-msgstr ""
-"保留变量名的级别: \n"
-"\n"
-"* 0: 不保留任何变量名\n"
-"\n"
-"* 1(默认): 保留输出变量的名字\n"
-"\n"
+#: megengine.core.tensor.megbrain_graph.dump_graph:10 of
+msgid "level for keeping variable names:  * 0: none of the names are kept * 1: (default)keep names of output vars * 2: keep names of all (output and internal) vars"
+msgstr "保留变量名的级别: \n\n"
+"* 0: 不保留任何变量名\n\n"
+"* 1(默认): 保留输出变量的名字\n\n"
 "* 2: 保留所有变量 (包括输出和中间变量) 的名字"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:18 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:15 of
 msgid "whether to keep operator names."
 msgstr "是否要保留算子的名字"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:20 of
-msgid ""
-"whether to keep param names, so param values can be easily manipulated "
-"after loading model"
+#: megengine.core.tensor.megbrain_graph.dump_graph:16 of
+msgid "whether to keep param names, so param values can be easily manipulated after loading model"
 msgstr "是否要保留参数的名字，为了加载模型后可以简单地对参数做操作"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:23 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:18 of
 msgid "whether to keep priority setting for operators"
 msgstr "是否保留算子的优先级设置"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:24 of
-msgid ""
-"a string for path or a file handler. if is not None, then the dump "
-"information for code strip would be written to ``strip_info_file``"
+#: megengine.core.tensor.megbrain_graph.dump_graph:19 of
+msgid "a string for path or a file handler. if is not None, then the dump information for code strip would be written to ``strip_info_file``"
 msgstr "路径地址或文件句柄。如果不为空，则导出的代码条信息会被写入``strip_info_file``中。"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:26 of
-msgid ""
-"will be check when `strip_info_file` is not None. if set true, the "
-"information for code strip will be append to strip_info_file. if set "
-"false, will rewrite strip_info_file"
-msgstr ""
-"当 `strip_info_file` 非空时会做检查。如果是真，代码条信息就会被添加到 `strip_info_file` "
-"的尾部；如果是假，就会覆盖掉 `strip_info_file`."
-
-#: megengine.core.tensor.megbrain_graph.dump_graph of
-msgid "返回类型"
-msgstr ""
-
-#: megengine.core.tensor.megbrain_graph.dump_graph:29 of
-msgid ""
-":py:data:`~typing.Tuple`\\[:py:class:`bytes`, "
-":py:class:`~megengine.core.tensor.megbrain_graph.CompGraphDumpResult`]"
-msgstr ""
+#: megengine.core.tensor.megbrain_graph.dump_graph:21 of
+msgid "will be check when `strip_info_file` is not None. if set true, the information for code strip will be append to strip_info_file. if set false, will rewrite strip_info_file"
+msgstr "当 `strip_info_file` 非空时会做检查。如果是真，代码条信息就会被添加到 `strip_info_file` 的尾部；如果是假，就会覆盖掉 `strip_info_file`."
 
 #: megengine.core.tensor.megbrain_graph.dump_graph of
 msgid "返回"
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:30 of
-msgid ""
-"dump result as byte string, and an instance of namedtuple "
-":class:`CompGraphDumpResult`, whose fields are:      * ``nr_opr`` number "
-"of operators dumped     * ``tot_bytes`` total bytes for the whole graph"
-"     * ``tensor_value_bytes`` bytes consumed for dumping tensor values"
-"     * ``inputs`` names of input tensors     * ``params`` list of names "
-"of dumped params     * ``outputs`` names of output vars"
+#: megengine.core.tensor.megbrain_graph.dump_graph:24 of
+msgid "dump result as byte string, and an instance of namedtuple :class:`CompGraphDumpResult`, whose fields are:      * ``nr_opr`` number of operators dumped     * ``tot_bytes`` total bytes for the whole graph     * ``tensor_value_bytes`` bytes consumed for dumping tensor values     * ``inputs`` names of input tensors     * ``params`` list of names of dumped params     * ``outputs`` names of output vars"
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:30 of
-msgid ""
-"dump result as byte string, and an instance of namedtuple "
-":class:`CompGraphDumpResult`, whose fields are:"
+#: megengine.core.tensor.megbrain_graph.dump_graph:24 of
+msgid "dump result as byte string, and an instance of namedtuple :class:`CompGraphDumpResult`, whose fields are:"
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:33 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:27 of
 msgid "``nr_opr`` number of operators dumped"
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:34 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:28 of
 msgid "``tot_bytes`` total bytes for the whole graph"
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:35 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:29 of
 msgid "``tensor_value_bytes`` bytes consumed for dumping tensor values"
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:36 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:30 of
 msgid "``inputs`` names of input tensors"
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:37 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:31 of
 msgid "``params`` list of names of dumped params"
 msgstr ""
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:38 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:32 of
 msgid "``outputs`` names of output vars"
 msgstr ""
 
