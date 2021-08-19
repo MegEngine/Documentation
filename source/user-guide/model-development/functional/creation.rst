@@ -237,8 +237,8 @@ Tensor([12.557  17.8996 10.0152 18.2324 11.2644], device=xpux:0)
 
 .. _create-tensor-from-ndarray:
 
-*将 NumPy ndarray 转化为 MegEngine Tensor
------------------------------------------
+将 NumPy ndarray 转化为 MegEngine Tensor
+----------------------------------------
 
 我们也能够通过 :py:class:`~.megengine.Tensor`, 将 ndarray 作为输入数据传入，得到对应的 Tensor.
 
@@ -250,7 +250,7 @@ dtype('int64')
 >>> Tensor([1 2 3], dtype=int32, device=xpux:0)
 Tensor([1 2 3], dtype=int32, device=xpux:0)
 
-通过 Tensor 的 :py:meth:`~.numpy` 方法，我们可以得到 Tensor 转为 ndarray 后的结果：
+通过 Tensor 的 :py:meth:`~.Tensor.numpy` 方法，我们可以得到 Tensor 转为 ndarray 后的结果：
 
 >>> b.numpy()
 array([1, 2, 3], dtype=int32)
