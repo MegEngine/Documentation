@@ -54,7 +54,9 @@ WRN cuda unavailable: no CUDA-capable device is detected(100) ndev=-1
    （Compute Capability 5.2~8.0），如果你的 Nvidia GPU 设备不在支持的 Compute Capability 范围内，
    或需要使用支持 AMD GPU 的 MegEngine, 则需要 :ref:`build-from-source` ，否则会触发即时编译，或直接报错。
 
-感兴趣的用户可阅读下面的解释，略过这些部分的阅读不会影响 MegEngine 的日常使用。
+.. seealso::
+
+   感兴趣的用户可阅读下面的解释，略过这些部分的阅读不会影响 MegEngine 的基础使用。
 
 Nvidia GPU 和 CUDA
 ~~~~~~~~~~~~~~~~~~
