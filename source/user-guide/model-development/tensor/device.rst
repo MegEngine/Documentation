@@ -8,7 +8,7 @@ Tensor 所在设备
 
    * 通常用图形处理单元（GPU）代替中央处理单元（CPU）作为训练时的主要计算设备。
      （ :ref:`解释 <why-use-gpu>` ）
-   * 默认情况下，MegEngine 会自动使用当前可用的最快设备（xpux）， **无需额外进行人为的指定。** 
+   * 默认情况下，MegEngine 会自动使用当前可用的最快设备（xpux）， **无需额外进行人为的指定。**
 
         >>> megengine.get_default_device()
         'xpux'
@@ -18,7 +18,7 @@ Tensor 所在设备
 在未检测到 GPU 设备的机器上，MegEngine 首次生成 Tensor 时，将进行一次提醒，如下所示：
 
 >>> import megengine
->>> a = megengine.tensor([1., 2., 3.])
+>>> a = megengine.Tensor([1., 2., 3.])
 WRN cuda unavailable: no CUDA-capable device is detected(100) ndev=-1
 >>> a.device
 "cpu0:0" from "xpux:0"
@@ -127,7 +127,7 @@ AMD GPU 和 ROCm
 ~~~~~~~~~~~~~~~~~~~~~~
 
 在神经网络中存在着大量的可并行计算任务，其中一些类型属于
-`Embarrassingly parallel <https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_ , 
+`Embarrassingly parallel <https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_ ,
 即各个独立的线程之间都表现得很难为情，不愿意和其它线程进行交流。
 实际上它描述的是各个线程在不进行交流的情况下，也能够独立地完成并行计算任务。
 从语义上看，这样的并行计算是容易的、完美的、甚至令人愉悦的。

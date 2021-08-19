@@ -6,11 +6,11 @@
 
 .. note::
 
-   * 在 MegEngine 中创建 Tensor 与 `NumPy 创建数组 
+   * 在 MegEngine 中创建 Tensor 与 `NumPy 创建数组
      <https://numpy.org/doc/stable/user/basics.creation.html>`_ 的途径类似；
    * 由于 ndarray 是 Python 数据科学社区中较为通用支持的格式
      （例如 SciPy、Pandas、OpenCV 等库都对 ndarray 提供了良好的支持），
-     如果存在着 NumPy 已经实现但 MegEngine 尚未支持的创建途径，可以先创建 NumPy ndarray, 
+     如果存在着 NumPy 已经实现但 MegEngine 尚未支持的创建途径，可以先创建 NumPy ndarray,
      再将其转换成 MegEngine Tensor. 也是下面提到的最后一种方法。
 
 创建 Tensor 的常见途径如下：
@@ -38,14 +38,14 @@
 * 由列表组成的列表将创建 2 维 Tensor;
 * 同理，更进一步的列表嵌套将创建更加高维的 Tensor.
 
->>> a1D = megengine.tensor([1, 2, 3, 4])
->>> a2D = megengine.tensor([[1, 2], [3, 4]])
->>> a3D = megengine.tensor([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+>>> a1D = megengine.Tensor([1, 2, 3, 4])
+>>> a2D = megengine.Tensor([[1, 2], [3, 4]])
+>>> a3D = megengine.Tensor([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
 
 .. warning::
 
    * 这种写法其实调用了 :py:class:`~.megengine.Tensor` 类的构造函数，传入了 ``data`` 参数；
-   * ``megengine.tensor`` 是 ``megengine.Tensor`` 的别名，**二者本质上没有任何区别。** 
+   * ``megengine.tensor`` 是 ``megengine.Tensor`` 的别名，**二者本质上没有任何区别。**
 
 .. seealso::
 
@@ -56,13 +56,13 @@
 .. seealso::
 
    当你使用 :py:class:`megengine.Tensor` 来定义新的 Tensor 时，需要考虑到其中每个元素的 :ref:`数据类型 <tensor-dtype>` 。
-   
+
 默认行为是以 32 位有符号整数 ``int32`` 或浮点数 ``float32`` 来创建 Tensor.
 
->>> megengine.tensor([1, 2, 3, 4]).dtype
+>>> megengine.Tensor([1, 2, 3, 4]).dtype
 numpy.int32
 
->>> megengine.tensor([1., 2., 3., 4.]).dtype
+>>> megengine.Tensor([1., 2., 3., 4.]).dtype
 numpy.float32
 
 如果你希望得到的 Tensor 是某种数据类型，则需要指定在创建 Tensor 时显式指定 dtype.
@@ -72,7 +72,7 @@ numpy.float32
 
 数据类型是可以被显式指定的，但显式指定 ``dtype`` 有可能产生非预期的溢出，例如：
 
->>> a = megengine.tensor([127, 128, 129], dtype="int8")
+>>> a = megengine.Tensor([127, 128, 129], dtype="int8")
 >>> a
 Tensor([ 127 -128 -127], dtype=int8, device=xpux:0)
 
@@ -80,8 +80,8 @@ Tensor([ 127 -128 -127], dtype=int8, device=xpux:0)
 
 如果使用不匹配的数据类型执行计算，可能会得到非预期的结果，例如：
 
->>> a = megengine.tensor([2, 3, 4], dtype="uint8")
->>> b = megengine.tensor([5, 6, 7], dtype="uint8")
+>>> a = megengine.Tensor([2, 3, 4], dtype="uint8")
+>>> b = megengine.Tensor([5, 6, 7], dtype="uint8")
 >>> a - b
 Tensor([253 253 253], dtype=uint8, device=xpux:0)
 
@@ -125,10 +125,10 @@ Tensor([-3 -3 -3], dtype=int16, device=xpux:0)
 
 :py:func:`~.arange` 将创建具有规律递增值的 Tensor, 下面显示了一些用法：
 
->>> megengine.functional.arange(10) 
+>>> megengine.functional.arange(10)
 Tensor([0. 1. 2. 3. 4. 5. 6. 7. 8. 9.], device=xpux:0)
 
->>> megengine.functional.arange(2, 10, dtype="float") 
+>>> megengine.functional.arange(2, 10, dtype="float")
 Tensor([2. 3. 4. 5. 6. 7. 8. 9.], device=xpux:0)
 
 >>> megengine.functional.arange(2, 3, 0.1)

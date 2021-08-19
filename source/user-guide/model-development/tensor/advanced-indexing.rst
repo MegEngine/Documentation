@@ -31,14 +31,14 @@ Tensor 高级索引
    :container: +full-width
    :card:
 
-   MegEngine 
+   MegEngine
    ^^^^^^^^^
-   >>> x = tensor([[1., 2.], [3., 4.]])
+   >>> x = Tensor([[1., 2.], [3., 4.]])
    >>> y = x[0]
    >>> y[1] = 6
    >>> x
    Tensor([[1. 2.]
-    [3. 4.]], device=xpux:0) 
+    [3. 4.]], device=xpux:0)
    ---
    NumPy
    ^^^^^
@@ -47,7 +47,7 @@ Tensor 高级索引
    >>> y[1] = 6
    >>> x
    array([[1., 6.],
-          [3., 4.]]) 
+          [3., 4.]])
 
 出现这种情况的原因是，在 NumPy 中使用索引时，得到的是原数组的 `视图（View）
 <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_ 。
@@ -64,10 +64,10 @@ Tensor 高级索引
 
 MegEngine 和 NumPy 在进行切片时，都不会改变对象 :ref:`tensor-ndim` ：
 
->>> M = tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+>>> M = Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 >>> M[1:2], M[1:2].ndim
 (Tensor([[4 5 6]], dtype=int32, device=xpux:0), 2)
->>> M[1:2][0:1], M[1:2][0:1].ndim 
+>>> M[1:2][0:1], M[1:2][0:1].ndim
 (Tensor([[4 5 6]], dtype=int32, device=xpux:0), 2)
 
 整个过程中，切片得到的都是一个 ``ndim=2`` 的 Tensor.
@@ -94,19 +94,19 @@ MegEngine 和 NumPy 在进行切片时，都不会改变对象 :ref:`tensor-ndim
    :container: +full-width
    :card:
 
-   MegEngine 
+   MegEngine
    ^^^^^^^^^
-   >>> x = tensor([1., 2., 3.])
+   >>> x = Tensor([1., 2., 3.])
    >>> y = x[[0, 2]]
    >>> y
-   Tensor([1. 3.], device=xpux:0) 
+   Tensor([1. 3.], device=xpux:0)
    ---
    NumPy
    ^^^^^
    >>> x = array([1., 2., 3.])
    >>> y = x[[0, 2]]
    >>> y
-   array([1., 3.]) 
+   array([1., 3.])
 
 此时列表的长度对应了被索引的元素的个数，在一些情况下这种机制十分有帮助。
 
@@ -114,7 +114,7 @@ MegEngine 和 NumPy 在进行切片时，都不会改变对象 :ref:`tensor-ndim
 
 注意语法细节，一些用户容易将列表索引写成如下形式：
 
->>> x = tensor([1., 2., 3.])
+>>> x = Tensor([1., 2., 3.])
 >>> y = x[0, 1, 2]
 IndexError: too many indices for tensor: tensor is 1-dimensional, but 3 were indexed
 
@@ -129,7 +129,7 @@ IndexError: too many indices for tensor: tensor is 1-dimensional, but 3 were ind
 
 .. math::
 
-   M = 
+   M =
    \begin{bmatrix}
 	1 & 2 & 3 \\
 	4 & 5 & \color{blue}{6} \\
@@ -145,7 +145,7 @@ IndexError: too many indices for tensor: tensor is 1-dimensional, but 3 were ind
    * 实际上 Tensor 支持在多个维度直接进行索引；
    * 语法使用 ``,`` 进行分隔，而没有必要使用多个方括号 ``[]`` .
 
->>> M = tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+>>> M = Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 >>> M[1,2]
 Tensor(6, dtype=int32, device=xpux:0)
 
@@ -168,10 +168,10 @@ Tensor(6, dtype=int32, device=xpux:0)
 
 对于有 n 个维度的 Tensor, 我们可以传入 n 个列表来进行索引：
 
->>> M = tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+>>> M = Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 >>> M[[0, 1], [1, 2]]
 Tensor([2 6], dtype=int32, device=xpux:0)
->>> M[[0, 1]] 
+>>> M[[0, 1]]
 Tensor([[1 2 3]
  [4 5 6]], dtype=int32, device=xpux:0)
 
@@ -182,7 +182,7 @@ Tensor([[1 2 3]
 .. seealso::
 
    * NumPy 官网文档中对 `整数列表索引（Integer array indexing）
-     <https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-array-indexing>`_ 
+     <https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-array-indexing>`_
      进行了更详细的说明；
    * 除了整数列表索引外，MegEngine 还支持和 NumPy 一致的 `布尔列表索引
      <https://numpy.org/doc/stable/reference/arrays.indexing.html#boolean-array-indexing>`_ 。
@@ -203,7 +203,7 @@ Tensor([[1 2 3]
 
 .. math::
 
-   M = 
+   M =
    \begin{bmatrix}
 	1 & 2 & 3 \\
 	\color{blue}{4} & \color{blue}{5} & 6 \\
@@ -280,7 +280,7 @@ Tensor([[4 5]
 	\color{green}{1} & \color{green}{2} & 3 \\
 	\color{green}{4} & \color{green}{5} & 6 \\
 	\color{green}{7} & \color{green}{8} & 9 \\
-   \end{bmatrix} 
+   \end{bmatrix}
    _{\xrightarrow{\text{0:2}}}
    =
    \begin{bmatrix}
