@@ -34,7 +34,11 @@ WRN cuda unavailable: no CUDA-capable device is detected(100) ndev=-1
 * 我们可以通过 :py:func:`~.set_default_device` 设置默认的计算节点；
 * 如果想要将 Tensor 拷贝到指定的计算设备，可以使用 :py:func:`~.copy` .
 
-借助这些接口，我们可以有选择地在 CPU 上或 GPU 上进行 Tensor 计算。
+借助这些接口，我们可以有选择地在 CPU 上或 GPU 上进行 Tensor 计算。比如指定为 CPU:
+
+>>> megengine.set_default_device("cpux")
+>>> megengine.get_default_device()
+'cpux'
 
 .. seealso::
 
