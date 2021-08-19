@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-08-17 16:29\n"
+"PO-Revision-Date: 2021-08-19 02:04\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -40,439 +40,439 @@ msgstr "image1"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:16
 msgid "通过引入（卷积）神经网络模型，我们在 CIFAR-10 图片分类任务上已经能够达到 60% 左右的分类准确率。但是，探索从未停止！"
-msgstr ""
+msgstr "By introducing the (convolutional) neural network model, we have been able to achieve a classification accuracy of about 60% on the CIFAR-10 image classification task. However, the exploration never stops!"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:18
 msgid "在本次的教程中，我们会接触到神经网络模型训练过程中的部分常见技巧，并尝试对其原理做出一定的解释。"
-msgstr ""
+msgstr "In this tutorial, we will come into contact with some common techniques in the training process of neural network models, and try to explain their principles."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:20
 msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
-msgstr ""
+msgstr "Please run the following code first to verify whether MegEngine has been installed in your environment (\\ `Installation Tutorial <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\)："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:76
 msgid "数据预处理"
-msgstr ""
+msgstr "Data preprocessing"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:78
 msgid "在机器学习领域，由于不同的机器学习算法和模型对于数据中的信息利用程度不同（回想一下线性分类器和 CNN 分类器），因此我们需要利用数据领域相关的知识使机器学习算法达到最佳性能，即进行特征工程（Feature Engineering），利用特征来对原始数据来进行更好的表达。机器学习坊间传闻着这一句话：“数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已”。（可以查看 Kaggle 提供的 `特征工程教程 <https://www.kaggle.com/learn/feature-engineering>`__ ）我们在之前教程的 AlexNet 模型代码中也存在着 ``feature`` 和 ``classifier`` 两部分，可以认为前半部分是在利用深度学习模型进行特征的提取和处理，而后半部分是传统的分类器。实际上，在将数据真正输入到深度学习模型之前，我们还可以提前进行一定程度的预处理。"
-msgstr ""
+msgstr "In the field of machine learning, because different machine learning algorithms and models use the information in the data to different degrees (recall the linear classifier and the CNN classifier), we need to use the knowledge related to the data field to achieve the best performance of the machine learning algorithm , That is, feature engineering (Feature Engineering), using features to better express the original data. There are rumors in the machine learning market that this sentence：\"data and features determine the upper limit of machine learning, and models and algorithms are only approaching this upper limit.\" (You can view 'feature provided engineering tutorial Kaggle <https://www.kaggle.com/learn/feature-engineering>`__) we AlexNet model code before the tutorial there are` `feature`` and` `classifier`` two parts, the first part can be considered a model in the use of deep learning Perform feature extraction and processing, and the latter part is a traditional classifier. In fact, before the data is actually input into the deep learning model, we can also perform a certain degree of preprocessing in advance."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:81
 msgid "我们在上一个教程中，利用 MegEngine 中的 ``data.transform.Resize`` 实现了对 CIFAR-10 输入数据形状的缩放，使之可以满足原本用于 ImageNet 的模型对输入形状的要求。图片形状的缩放属于数据预处理方式的一种，存在着包括双线性插值采样在内的不同算法实现。除了改变数据的形状，我们也可以直接对特征值进行一定的处理，比较常见的一种做法是特征缩放。"
-msgstr ""
+msgstr "In the previous tutorial, we used the ``data.transform.Resize'' in MegEngine to scale the shape of the CIFAR-10 input data, so that it can meet the input shape requirements of the model originally used for ImageNet. The image shape scaling is a kind of data preprocessing method, and there are different algorithm implementations including bilinear interpolation sampling. In addition to changing the shape of the data, we can also directly perform certain processing on the feature value. A common method is feature scaling."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:84
 msgid "特征缩放"
-msgstr ""
+msgstr "Feature scaling"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:86
 msgid "特征缩放通常指将给定数据集的不同特征转换为相似的尺度，一些机器学习算法对于这样的预处理方式有着较强的依赖。"
-msgstr ""
+msgstr "Feature scaling usually refers to converting different features of a given data set into similar scales. Some machine learning algorithms have a strong dependence on such preprocessing methods."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:88
 msgid "回忆一下我们的一元线性回归模型 :math:`y = w \\cdot x + b` 进行参数学习的过程，通常 :math:`w` 总是能更快地比 :math:`b` 先接近理想值，这是为什么呢？"
-msgstr ""
+msgstr "Recall the process of parameter learning in our univariate linear regression model :math:`y = w \\cdot x + b`. Usually :math:`w` can always :math:`b`. Why is this? ?"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:90
 msgid "在进行梯度下降时，我们对于不同的参数 :math:`w` 和 :math:`b`, 使用了相同的学习率 ``lr``\\ ；"
-msgstr ""
+msgstr "When performing gradient descent, we used the same learning rate ``lr``\\ :math:`w` and :math:"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:91
 msgid "但是由于输入特征在尺度上的差异（一个是 :math:`x`, 一个是常数 :math:`1` ），影响到了实际更新的步长。"
-msgstr ""
+msgstr "However, due to the difference in scale of the input features (one is :math:`x` and the other is constant :math:`1`), the actual update step size is affected."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:93
 msgid "再比如我们进行波士顿房价预测时，假设一个特征 :math:`x_1` 指代房屋面积，范围是 :math:`(500, 5000)`; 另一个特征 :math:`x_2` 是房间数量，范围是 :math:`(1, 10)`."
-msgstr ""
+msgstr "For another example, when we are predicting housing prices in Boston, suppose that a feature :math:`x_1` refers to the area of a house, and the range is :math:`(500, 5000)`; another feature :math:`x_2` is the number of rooms, and the range is :math:`(1, 10)`."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:95
 msgid "很显然，如果要进行房价预测，理想中最终得到的 :math:`w_1` 和 :math:`w_2` 可能会在不同的数量级；"
-msgstr ""
+msgstr "Obviously, if you want to predict housing prices, ideally :math:`w_1` and :math:`w_2` may be of different orders of magnitude;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:96
 msgid "在进行前向计算时，由于 :math:`x_1` 和 :math:`x_2` 的尺度差异，其对于最终线性输出的结果影响能力差异巨大；"
-msgstr ""
+msgstr "When performing forward calculations, due to :math:`x_1` and :math:`x_2`, their ability to influence the final linear output result has a huge difference;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:97
 msgid "不同特征 :math:`x_1` 和 :math:`x_2` 的量纲（或者说尺度范围）差异，也会直接地影响到对应参数的梯度更新幅度。"
-msgstr ""
+msgstr "The difference :math:`x_1` and :math:`x_2` will also directly affect the gradient update amplitude of the corresponding parameters."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:99
 msgid "如果我们能够按照一定的规则，将不同特征的值都缩放到相同的范围，比如 :math:`(0, 1)`, 就能够避免尺度不同带来的影响。"
-msgstr ""
+msgstr "If we can scale the values of different features to the same range according to certain rules, such as :math:`(0, 1)`, we can avoid the impact of different scales."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:111
 msgid "与梯度下降算法的关系"
-msgstr ""
+msgstr "Relationship with gradient descent algorithm"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:113
 msgid "借助下面这张图，我们能进行更加直观的理解。\\ **具有相似尺度的特征在进行梯度更新时步伐一致，可以帮助梯度下降更快地收敛到最小值** ："
-msgstr ""
+msgstr "With the help of the following picture, we can have a more intuitive understanding. \\ **Features with similar scales have the same pace when performing gradient updates, which can help gradient descent to converge to the minimum value faster** ："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:115
 msgid "|normalization|"
-msgstr ""
+msgstr "|normalization|"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:139
 msgid "normalization"
-msgstr ""
+msgstr "normalization"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:117
 msgid "上图来自《\\ `Gradient Descent Algorithm and Its Variants <https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3>`__\\ 》，我们可以看出："
-msgstr ""
+msgstr "The picture above is from \"\\ `Gradient Descent Algorithm and Its Variants <https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3>`__\\ \", we can see that："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:119
 msgid "这是一个等高线图，我们可以理解成横轴和纵轴是参数 :math:`w` 和 :math:`b` , 高度表示损失，理想情况下，我们需要往中间的最低点做梯度下降；"
-msgstr ""
+msgstr "This is a contour map. We can understand that the horizontal and vertical axes are the parameters :math:`w` and :math:`b`. The height represents the loss. Ideally, we need to do gradient descent to the lowest point in the middle;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:120
 msgid "如果特征的分布是不标准（不均匀）的，随着参数的更新，最优的梯度下降方向将变得越来越“窄”；"
-msgstr ""
+msgstr "If the distribution of features is non-standard (uneven), as the parameters are updated, the optimal gradient descent direction will become narrower and narrower;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:121
 msgid "假设每次都进行同等步长的梯度下降，左图容易导致走出一个 Z 字形状，相较于右图达到收敛需要更多的更新次数。"
-msgstr ""
+msgstr "Assuming that the gradient descent with the same step length is performed every time, the left image will easily lead to a zigzag shape, which requires more updates than the right image to achieve convergence."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:123
 msgid "特征缩放的具体处理方式有很多种，我们将着重关注其中一种情况（感兴趣的读者可自行进行这方面知识的拓展）。"
-msgstr ""
+msgstr "There are many specific ways to deal with feature scaling, and we will focus on one of them (interested readers can expand their knowledge in this area)."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:125
 msgid "比如，对于由图片组成的数据集（比如 CIFAR10），我们可以进行 z-score normalization 处理："
-msgstr ""
+msgstr "For example, for a data set consisting of pictures (for example CIFAR10), we can z-score normalization process："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:127
 msgid "将每个图像的像素点首先减去所有图像均值的像素点 ``mean``, 然后再除以标准差 ``std``;"
-msgstr ""
+msgstr "The pixel points of each image are first subtracted from the pixel point ``mean'' of the average of all images, and then divided by the standard deviation ``std``;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:128
 msgid "这样可以保证所有的图像分布都相似，也就是在训练的时候更容易收敛；"
-msgstr ""
+msgstr "This can ensure that all image distributions are similar, which is easier to converge during training;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:129
 msgid "但是需要注意，不同图像数据集的 ``mean`` 和 ``std`` 是不一样的，通常需要进行统计；"
-msgstr ""
+msgstr "However, it should be noted that the ``mean'' and ``std'' of different image data sets are different, and statistics are usually required;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:130
 msgid "对于具有多通道的图像，我们通常会针对每个通道去计算不同的 ``mean`` 和 ``std`` 值。"
-msgstr ""
+msgstr "For images with multiple channels, we usually calculate different ``mean`` and ``std`` values for each channel."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:132
 msgid "MegEngine 的 ``functional`` 模块中，提供 ``mean()``, ``std()`` 等常见的统计方法，有助于计算。"
-msgstr ""
+msgstr "In the ``functional`` module of MegEngine, common statistical methods such as ``mean()``, ``std()'' are provided, which are helpful for calculation."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:134
 msgid "MegEngine 的 ``data.transform`` 模块中，提供了 ``Normalize`` 方法，我们在下面就会看到如何使用。"
-msgstr ""
+msgstr "The ``data.transform`` module of MegEngine provides the ``Normalize`` method, we will see how to use it below."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:136
 msgid "在机器学习领域，还有着更多的对数据进行预处理的方法，比如 PCA 和白化等等；"
-msgstr ""
+msgstr "In the field of machine learning, there are more methods of preprocessing data, such as PCA and whitening, etc.;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:137
 msgid "有些时候一些复杂的处理需要借助其它的框架和脚本来完成，比如机器学习库 Scikit-Learn 提供了\\ `预处理教程 <https://scikit-learn.org/stable/modules/preprocessing.html>`__ 和对应实现 。"
-msgstr ""
+msgstr "Sometimes some complex processing needs to be done with the help of other frameworks and scripts. For example, the machine learning library Scikit-Learn provides \\ `preprocessing tutorial <https://scikit-learn.org/stable/modules/preprocessing.html>`__ and corresponding implementations."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:151
 msgid "数据增广"
-msgstr ""
+msgstr "Data augmentation"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:153
 msgid "在 MegEngine 的 ``data.transfrom`` 模块中，还提供了非常多的常见数据处理接口以供使用，一种有效的用途是用作数据增广（Data Augmentation）。"
-msgstr ""
+msgstr "In the ``data.transfrom'' module of MegEngine, a lot of common data processing interfaces are also provided for use. An effective use is for data augmentation."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:155
 msgid "深度学习之所以有效，除了 “模型” 和 “算法” 之外，离不开 “数据” 的帮助；"
-msgstr ""
+msgstr "In addition to \"models\" and \"algorithms\", deep learning is effective because of the help of \"data\";"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:156
 msgid "我们喂入神经网络数据的数量多少和质量好坏，将会对最终模型的预测效果产生影响。"
-msgstr ""
+msgstr "The amount and quality of the data we feed into the neural network will affect the prediction effect of the final model."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:158
 msgid "简单来说，如果可以对位置、视角、大小、照明等不同情况下的图片进行稳健的分类，则说明神经网络模型具备这些方面的不变性，前提是它需要 “见多识广”。 自然地，想要训练出足够好的模型，就需要喂入足够好的数据，这意味着我们需要对数据进行一定程度的增强，让模型能够得到更加充分的锻炼。 数据增广操作可以在机器学习 Pipeline 不同的位置执行，我们有两种思路："
-msgstr ""
+msgstr "To put it simply, if the images in different situations such as location, viewing angle, size, lighting, etc. can be robustly classified, it means that the neural network model has the invariance of these aspects, provided that it needs to be \"informed.\" Naturally, if we want to train a good enough model, we need to feed enough good data, which means that we need to enhance the data to a certain extent so that the model can be more fully exercised. Data augmentation operations can learn to perform in a different location Pipeline machines, we have two ideas："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:160
 msgid "线下增强（Offline augmentation）：即事先执行好所有转换，等同于对整个数据集提前处理。这种方法适用于规模比较小的数据集，因为它实质上会增大数据集的规模；"
-msgstr ""
+msgstr "Offline augmentation：means that all transformations are performed in advance, which is equivalent to processing the entire data set in advance. This method is suitable for a relatively small data set, because it will substantially increase the size of the data set;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:161
 msgid "线上增强（Online augmentation）：即在当前 Batch 的数据喂入模型之前进行转换，这种操作可以避免数据规模爆炸带来的负面影响。"
-msgstr ""
+msgstr "Online augmentation (Online augmentation)：means that the current batch data is converted before being fed into the model. This operation can avoid the negative impact of the explosion of data scale."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:163
 msgid "使用 MegEngine 的 ``data.transform`` 模块对数据进行增强，即采用了上述第二种策略。"
-msgstr ""
+msgstr "Use MegEngine's ``data.transform`` module to enhance the data, that is, the second strategy mentioned above is adopted."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:165
 msgid "下面我们将以图片数据为例，展示一下常见的增强操作："
-msgstr ""
+msgstr "Here we will be picture data, for example, show how common enhancement operations："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:214
 msgid "我们仅对图片数据的特征进行了一些处理，而对应的标签无需做出改变，如你所见，上面变换后的图片仍然能分辨出是柴犬图。"
-msgstr ""
+msgstr "We only performed some processing on the characteristics of the image data, and the corresponding label does not need to be changed. As you can see, the transformed image above can still be distinguished as a Shiba Inu image."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:216
 msgid "需要提醒的是，MegEngine 的图像处理接口底层调用了 OpenCV, 而不是 PIL 库。"
-msgstr ""
+msgstr "What needs to be reminded is that the bottom layer of MegEngine's image processing interface calls OpenCV, not the PIL library."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:228
 msgid "使用 Compose 组合处理"
-msgstr ""
+msgstr "Combine processing with Compose"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:230
 msgid "我们还可以使用 ``transform.Compose`` 来组合一些已有的变化，比如同时进行水平和垂直的翻转："
-msgstr ""
+msgstr "We can also use a combination of some `` transform.Compose`` to existing variations, such as simultaneous horizontal and vertical flipping："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:268
 msgid "与 Dataloader 结合使用"
-msgstr ""
+msgstr "Combine with Dataloader"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:270
 msgid "这些操作还可以结合在 ``Dataloader`` 中对成批的数据使用，调用起来非常方便："
-msgstr ""
+msgstr "These operations may also be incorporated in the use of `` Dataloader`` bulk data call is very convenient："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:291
 msgid "我们在之前的教程中已经见过了类似的用法，因此不再赘述。"
-msgstr ""
+msgstr "We have already seen similar usages in the previous tutorials, so I won’t repeat them here."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:293
 msgid "你也可以将更多常见的数据增强功能实现到 MegEngine 中（欢迎成为 ``data.transform`` 贡献者～）。"
-msgstr ""
+msgstr "You can also implement more common data enhancement functions into MegEngine (welcome to be a ``data.transform`` contributor~)."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:305
 msgid "正则化（Regularization）"
-msgstr ""
+msgstr "Regularization"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:307
 msgid "我们之前在设计深度学习优化的目标函数时，主要在意的是模型的预测输出和实际标签值之间的差异，这种差异通常叫做“经验损失”，即我们设计了一个损失函数，来计算当前模型在指定任务处理经验上的匮乏。但我们也慢慢地发现了，除了预测的精度以外，我们也需要关照模型训练过程中收敛的速度，以及计算量等等因素；与此同时，我们还需要避免产生过拟合的现象。"
-msgstr ""
+msgstr "When we designed the objective function of deep learning optimization, we were mainly concerned about the difference between the predicted output of the model and the actual label value. This difference is usually called \"empirical loss\", that is, we designed a loss function to calculate the current The model lacks experience in handling specified tasks. But we also slowly discovered that in addition to the accuracy of the prediction, we also need to take care of factors such as the speed of convergence during the model training process, as well as the amount of calculation; at the same time, we also need to avoid overfitting."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:309
 msgid "|over-fitting|"
-msgstr ""
+msgstr "|over-fitting|"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:326
 msgid "over-fitting"
-msgstr ""
+msgstr "over-fitting"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:311
 msgid "上图是一个多项式模型的拟合程度对比，分别对应欠拟合、拟合良好以及过拟合的情况；"
-msgstr ""
+msgstr "The figure above is a comparison of the fitting degree of a polynomial model, corresponding to underfitting, good fitting and overfitting respectively;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:312
 msgid "尽管我们可以通过各种技巧极限优化模型在训练集上的经验损失，但我们的目的之一是让模型具有较好的泛化能力；"
-msgstr ""
+msgstr "Although we can optimize the experience loss of the model on the training set through various techniques, one of our goals is to make the model have better generalization ability;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:313
 msgid "实际上，右边的过拟合模型的最终得到的权重分配差异可能会非常的夸张..."
-msgstr ""
+msgstr "In fact, the final weight distribution difference of the overfitting model on the right may be very exaggerated..."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:315
 msgid "越是复杂的模型，越是容易出现过拟合现象。我们可以通过正则化技术引入“结构损失”，通过加入惩罚项，对模型的参数大小进行限制，来达到避免过拟合的效果。"
-msgstr ""
+msgstr "The more complex the model, the more prone to overfitting. We can introduce \"structural loss\" through regularization technology, and limit the size of the model's parameters by adding penalty terms to achieve the effect of avoiding overfitting."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:317
 msgid "比如最常见的 L2 正则化，向目标函数中添加了 :math:`\\lambda \\|w\\|_{2}^{2}` 项，这鼓励网络中使用尽可能小的参数 :math:`w`, 其中 :math:`\\lambda` 是惩罚系数。"
-msgstr ""
+msgstr "For example, the most common L2 regularization adds :math:`\\lambda \\|w\\|_{2}^{2}`to the objective function, which encourages the use of the smallest possible parameter :math:`w` in the network, of which :math:`\\lambda `Is the penalty coefficient."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:319
 msgid "具体的原理和梯度求导到一些数学方面的细节，这不是我们当前关注的目标，我们需要留有这样一个概念："
-msgstr ""
+msgstr "Specific principles and gradient derivation to some details of the math, this is not our current target of concern, we need to leave such a concept："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:321
 msgid "L2 regularization 也被称作 weight decay(权重衰减），它能够有效约束参数的大小，避免过拟合；"
-msgstr ""
+msgstr "L2 regularization is also called weight decay (weight decay), which can effectively constrain the size of the parameters and avoid overfitting;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:322
 msgid "在常见的优化器比如 ``SGD`` 中提供了 ``weight_decay`` 参数，用来制定权重衰减因子（惩罚系数）的比例。"
-msgstr ""
+msgstr "The ``weight_decay`` parameter is provided in common optimizers such as ``SGD``, which is used to set the proportion of the weight decay factor (penalty coefficient)."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:324
 msgid "除了对模型的参数进行限制以外，使用 `Dropout <https://jmlr.org/papers/v15/srivastava14a.html>`__ 层也是一种不错的思路：通过按照设定的概率 :math:`p` 来随机地丢掉一些神经元，从而减少模型的复杂度。在进行模型评估时我们不需要进行 Dropout 操作，因此如果你的模型中使用到了 Dropout 层却没有设置 ``model.eval()``, 可能会得到和预期不一致的结果。"
-msgstr ""
+msgstr "In addition to restricting the parameters of the model, it is also a good idea to <https://jmlr.org/papers/v15/srivastava14a.html>：reduces the complexity of the model by randomly dropping some neurons according to the set probability of :math:We do not need to perform the Dropout operation during model evaluation, so if you use the Dropout layer in your model but do not set ``model.eval()'', you may get results that are inconsistent with expectations."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:338
 msgid "随机初始化"
-msgstr ""
+msgstr "Random initialization"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:340
 msgid "我们在学习 ``module`` 模块的时候接触过了许多不同的权重初始化策略，也了解了如何去自定义初始化策略。问题是：为什么要这样做？"
-msgstr ""
+msgstr "We have come into contact with many different weight initialization strategies when learning the ``module`` module, and also learned how to customize the initialization strategy. The question is：do this?"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:342
 msgid "现在一起来思考一下，全连接神经网络使用零初始化策略时，具体发生了什么："
-msgstr ""
+msgstr "Now think about together, fully connected neural network using zero-initialized strategy, specifically what happened："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:344
 msgid "在同一个线性层中，每个神经元都接受了前一层所有神经元的输出作为输入；"
-msgstr ""
+msgstr "In the same linear layer, each neuron receives the output of all neurons in the previous layer as input;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:345
 msgid "如果该层的每个神经元都采用了相同的初始化策略，这意味着当前层每个神经元进行的计算是完全一致的；"
-msgstr ""
+msgstr "If each neuron in this layer uses the same initialization strategy, it means that the calculations performed by each neuron in the current layer are completely consistent;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:346
 msgid "同样地，如果有多个线性层，下一层的每个神经元会将当前层这些完全一致的输出都作为自己的输入..."
-msgstr ""
+msgstr "Similarly, if there are multiple linear layers, each neuron in the next layer will use these completely consistent outputs of the current layer as its own input..."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:348
 msgid "通常模型的结构是固定的，采用梯度下降这种确定性优化算法时，意味着在前向传播和反向传播的过程中，每个隐含层内部的相邻神经元都在做完全相同的计算和更新，做了大量的重复劳动。 这与我们希望不同的神经元能学到不同的特征信息，或起到不同的表征作用的想法相违背， “世界上没有完全相同的两片树叶”，神经网络模型中也不应该有作用完全一样的神经元。 因此，我们必须采用随机初始化策略，来“打破”原有的对称性。"
-msgstr ""
+msgstr "Usually the structure of the model is fixed. When using a deterministic optimization algorithm such as gradient descent, it means that in the process of forward propagation and back propagation, adjacent neurons in each hidden layer are doing exactly the same Calculations and updates have done a lot of repetitive work. This is contrary to our hope that different neurons can learn different characteristic information, or play a different role in representation. \"There are no two identical leaves in the world\", and the neural network model should not have a full effect. The same neuron. Therefore, we must adopt a random initialization strategy to \"break\" the original symmetry."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:351
 msgid "什么是科学的初始化方式？"
-msgstr ""
+msgstr "What is the scientific way of initialization?"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:353
 msgid "**如何进行“随机”才是最有效的呢？** 通常我们会假设数据的分布具备一定的概率先验，从统计的视角设计出有意义的初始化策略，比如让初始化的参数满足均匀分布、或者是正态分布。"
-msgstr ""
+msgstr "**How to \"random\" is the most effective? ** Usually we assume that the distribution of the data has a certain probability prior, and design a meaningful initialization strategy from a statistical perspective, such as making the initialized parameters meet a uniform distribution or a normal distribution."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:354
 msgid "**随机初始化的值范围又该如何选定呢？** 如果设置得太大或太小，将会导致梯度出现爆炸或者消失的情况，在反向传播时无法很好地向后流动。为了确定合适的初始化方式，研究人员提出了 ``xavier`` 和 ``msra`` 等初始化策略，并被广泛实践（想要了解原理的话可以去阅读对应的论文）。"
-msgstr ""
+msgstr "**How to choose the randomly initialized value range? ** If it is set too large or too small, it will cause the gradient to explode or disappear, and it will not flow back well during backpropagation. In order to determine the appropriate initialization method, researchers have proposed initialization strategies such as ``xavier'' and ``msra'', which have been widely practiced (you can read the corresponding paper if you want to understand the principle)."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:356
 msgid "在 MegEngine 的 ``module.init`` 模块中，实现了这些常见的初始化策略："
-msgstr ""
+msgstr "In MegEngine of `` module.init`` module to achieve these common initialization strategy："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:358
 msgid "``megengine.module.init.xavier_uniform_``"
-msgstr ""
+msgstr "``megengine.module.init.xavier_uniform_''"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:359
 msgid "``megengine.module.init.xavier_normal_``"
-msgstr ""
+msgstr "``megengine.module.init.xavier_normal_''"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:360
 msgid "``megengine.module.init.msra_uniform_``"
-msgstr ""
+msgstr "``megengine.module.init.msra_uniform_''"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:361
 msgid "``megengine.module.init.msra_normal_``"
-msgstr ""
+msgstr "``megengine.module.init.msra_normal_''"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:363
 msgid "我们无法证明哪一种初始化策略一定是最优的，直到目前为止，提出更通用更好用的初始化策略依旧是一项艰巨的任务。"
-msgstr ""
+msgstr "We can't prove which kind of initialization strategy is necessarily optimal. So far, it is still a difficult task to propose a more general and more useful initialization strategy."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:365
 msgid "好消息是，接下来我们将介绍 Batch Normalization, 从某种意义上来说，它可以减少我们对参数初始化的依赖。"
-msgstr ""
+msgstr "The good news is that next we will introduce Batch Normalization, in a sense, it can reduce our dependence on parameter initialization."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:377
 msgid "Batch Normalization"
-msgstr ""
+msgstr "Batch Normalization"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:379
 msgid "在本次教程的一开始，提到了可以通过 ``data.transform.Normalize`` 对输入数据进行预处理，对加速模型收敛很有帮助。"
-msgstr ""
+msgstr "At the beginning of this tutorial, it was mentioned that the input data can be preprocessed through ``data.transform.Normalize``, which is very helpful for accelerating model convergence."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:381
 msgid "回忆一下在 MegEngine 中采取的 mini-batch 梯度下降策略："
-msgstr ""
+msgstr "Recall that in MegEngine take the mini-batch gradient descent strategy："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:383
 msgid "把数据分为若干个 mini-batch，每个 mini-batch 的数据共同决定了本次梯度的方向，在参数更新时减少了随机性；"
-msgstr ""
+msgstr "Divide the data into several mini-batch, and the data of each mini-batch jointly determines the direction of this gradient, which reduces the randomness when the parameters are updated;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:384
 msgid "另一方面因为 batch size 与整个数据集的规模相比小了很多，因此计算量也下降了很多，这样可以避免训练时爆掉内存。"
-msgstr ""
+msgstr "On the other hand, because the batch size is much smaller than the size of the entire data set, the amount of calculation is also reduced a lot, which can prevent memory from bursting during training."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:386
 msgid "这个思路也可以运用在神经网络的训练过程中，即我们在进行一层前向计算后，对 mini-batch 的数据进行一次 ``Normalization``, 用来重新调整数据分布。"
-msgstr ""
+msgstr "This idea can also be used in the training process of neural networks, that is, after we perform a layer of forward calculation, we perform a ``Normalization'' on the mini-batch data to readjust the data distribution."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:388
 msgid "回忆一下，在 VGG 系列模型中可根据 Conv2d(->BatchNorm2d)->ReLU->MaxPool2d 的区别将模型分为带 BN 的版本和不带 BN 的版本。"
-msgstr ""
+msgstr "Recall that in the VGG series models, the model can be divided into a version with BN and a version without BN according to the difference between Conv2d(->BatchNorm2d)->ReLU->MaxPool2d."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:390
 msgid "对于 CNN 模型，BN 的操作是分别在各个特征维度之间进行的，也就是说各个通道 :math:`C` 分别进行 Batch Normalization 操作。"
-msgstr ""
+msgstr "For the CNN model, the operation of BN is performed between each feature dimension, which means that each channel :math:`C` performs Batch Normalization operation separately."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:392
 msgid "在使用 BN 的情况下，即使一开始的权重初始化策略很糟糕，也能够通过各层之间的 BN 操作来重新调整，因此减少了对其的依赖；"
-msgstr ""
+msgstr "In the case of using BN, even if the initial weight initialization strategy is bad, it can be re-adjusted through the BN operation between the layers, thus reducing the dependence on it;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:393
 msgid "BN 还能够让损失更快地收敛，这意味着我们可以设置一个比较大的学习率，在较短的时间内取得不错的训练效果；"
-msgstr ""
+msgstr "BN can also make the loss converge faster, which means that we can set a relatively large learning rate and achieve good training results in a short time;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:394
 msgid "由于 BN 使用了 Batch 规模的数据进行统一的标准化，一定程度上加强了训练出的模型的泛化能力；"
-msgstr ""
+msgstr "Because BN uses batch-scale data for unified standardization, it strengthens the generalization ability of the trained model to a certain extent;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:395
 msgid "批数据和全量数据的均值和方差存在着差异，如果想要发挥出 Batch Normalization 的优势，Batch size 的值不能设置得过小。"
-msgstr ""
+msgstr "There is a difference between the mean and variance of batch data and full data. If you want to take advantage of Batch Normalization, the value of Batch size cannot be set too small."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:397
 msgid "实际上 BN 的工程化实现可能会复杂一些，对其原理的解释也存在着多种角度。"
-msgstr ""
+msgstr "In fact, the engineering realization of BN may be more complicated, and there are many angles in explaining its principle."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:399
 msgid "对比前面教程实现的 AlexNet 模型，我们尝试加上 BN 层看看效果："
-msgstr ""
+msgstr "Contrast AlexNet model to achieve the previous tutorial, we try to look at the effect of adding BN layer："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:461
 msgid "我们看看超参数一致的情况下，加入 BN 能够提升到什么样的效果："
-msgstr ""
+msgstr "We look at the case of ultra-consistent parameters, adding BN can upgrade to what kind of effect："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:492
 msgid "在预处理环节，我们使用从 CIFAR10 数据集统计得到的 ``mean`` 和 ``std`` 值："
-msgstr ""
+msgstr "In the preprocessing step, we use the ``mean'' and ``std'' values obtained from the CIFAR10 data set to be："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:597
 msgid "可以发现，BN 层的计算量还是比较大的，但在第一个 epoch, 得到的 loss 便降低到了 0.05 以下!"
-msgstr ""
+msgstr "It can be found that the calculation amount of the BN layer is still relatively large, but in the first epoch, the loss obtained is reduced to below 0.05!"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:599
 msgid "我们指 BN 层能够加速模型的收敛，并不意味着在训练的速度和计算量上进行了优化，而是从特征层面进行了更加科学的处理；"
-msgstr ""
+msgstr "We mean that the BN layer can accelerate the convergence of the model. It does not mean that the training speed and the amount of calculation are optimized, but more scientific processing is carried out from the feature level;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:600
 msgid "使用越复杂的模型时，随着单个 epoch 的基础训练用时增加，我们越能够意识到 BN 层带来的好处。"
-msgstr ""
+msgstr "When using a more complex model, as the basic training time of a single epoch increases, the more we can realize the benefits of the BN layer."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:602
 msgid "接下来我们再看看加入 BN 的 AlexNet 在测试数据上的表现："
-msgstr ""
+msgstr "Next we look at the AlexNet join BN performance on the test data："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:604
 msgid "需要注意的是，在使用训练好的模型进行测试时，Batch size 的设置不一定一致，使用 BN 层的机制需要有些变化；"
-msgstr ""
+msgstr "It should be noted that when using the trained model for testing, the Batch size settings are not necessarily consistent, and the mechanism of using the BN layer requires some changes;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:605
 msgid "这也是我们使用 ``model.eval()`` 进行设置的原因，可以防止训练时使用的 ``mean``, ``std`` 统计特性产生变化。"
-msgstr ""
+msgstr "This is also the reason why we use ``model.eval()`` for setting, which can prevent the statistical characteristics of ``mean`` and ``std`` used during training from changing."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:679
 msgid "可以发现，BN 对于原始模型效果的提升还是比较明显的。"
-msgstr ""
+msgstr "It can be found that the effect of BN on the original model is relatively obvious."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:681
 msgid "继 BN 后，发展出了一些适用于不同情况下的 Normalization 的变种，在 MegEngine 中对这些经典的 Normalization 都进行了实现："
-msgstr ""
+msgstr "Following the BN, developed a number of variants suitable for Normalization in different situations, in MegEngine in these classic Normalization have been achieved："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:683
 msgid "``megengine.module.GroupNorm``"
-msgstr ""
+msgstr "``megengine.module.GroupNorm``"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:684
 msgid "``megengine.module.InstanceNorm``"
-msgstr ""
+msgstr "``megengine.module.InstanceNorm``"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:685
 msgid "``megengine.module.LayerNorm``"
-msgstr ""
+msgstr "``megengine.module.LayerNorm``"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:687
 msgid "我们不会在这里介绍不同 Normalization 的区别和使用情景，读原始论文是一种更加推荐的了解方式。"
-msgstr ""
+msgstr "We will not introduce the differences and usage scenarios of different Normalizations here. Reading the original paper is a more recommended way to understand."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:699
 msgid "总结回顾"
@@ -480,27 +480,27 @@ msgstr "Summary review"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:701
 msgid "在本次教程中，我们提到了训练神经网络模型中常见的训练技巧（但这些绝不是全部！）。"
-msgstr ""
+msgstr "In this tutorial, we mentioned common training techniques in training neural network models (but these are by no means all!)."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:703
 msgid "相较于关注具体有哪些技巧，我更希望你能了解为什么需要使用它们，即在训练的时候需要关注哪些问题？"
-msgstr ""
+msgstr "Rather than focusing on specific skills, I hope you can understand why you need to use them, that is, what issues need to be paid attention to when training?"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:705
 msgid "核心指标是预测效果与泛化能力，首先你需要证明你设计的模型是有效的，这是一切的大前提；"
-msgstr ""
+msgstr "The core indicator is the prediction effect and generalization ability. First, you need to prove that the model you design is effective. This is the major premise of everything;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:706
 msgid "其次我们需要关注训练时的速度，我们希望模型能够快速有效地收敛。"
-msgstr ""
+msgstr "Secondly, we need to pay attention to the speed of training. We hope that the model can converge quickly and effectively."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:708
 msgid "在不断探索的过程中，我们不断发现问题，并尝试逐个击破。"
-msgstr ""
+msgstr "In the process of continuous exploration, we continue to find problems and try to solve them one by one."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:710
 msgid "相信总有一天，你也能够发现深度学习新的有效思路，成为整个领域的热门选择。"
-msgstr ""
+msgstr "I believe that one day, you will also be able to discover new and effective ideas for deep learning and become a popular choice in the entire field."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:722
 msgid "问题思考"
@@ -508,39 +508,39 @@ msgstr "Problem thinking"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:733
 msgid "到目前为止，我们一直在通过入门教程来培养自己对于深度学习常见概念和框架使用的基本直觉，一切 “似乎存在着捷径”。"
-msgstr ""
+msgstr "So far, we have been using introductory tutorials to develop our basic intuition for the use of common concepts and frameworks for deep learning. Everything \"seems to be a shortcut.\""
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:735
 msgid "仅仅停留在会用的层面就够了吗？在特定的情景下或许可以。慢慢地你会发现，这些直觉并不能给我们带来一种安全感。"
-msgstr ""
+msgstr "Is it enough to just stay at the level that can be used? It may be possible under certain circumstances. Slowly you will find that these intuitions do not bring us a sense of security."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:737
 msgid "许多概念和有效实践背后都有着科学研究和实验做理论支撑，为了搞清楚细节，阅读论文、问答、博客、论坛是有必要的；"
-msgstr ""
+msgstr "Many concepts and effective practices are supported by scientific research and experiments. In order to clarify the details, it is necessary to read papers, Q&A, blogs, and forums;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:738
 msgid "深度学习的可解释性仍然是一个正在被探索的领域，因此我们需要对一切现象背后的本质抱有好奇心；"
-msgstr ""
+msgstr "The interpretability of deep learning is still an area being explored, so we need to be curious about the essence behind all phenomena;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:739
 msgid "拥有扎实的理论基础和工程能力，是支持我们不断向前的主要动力。"
-msgstr ""
+msgstr "Having a solid theoretical foundation and engineering capabilities is the main driving force that supports us to move forward."
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:741
 msgid "另外，在深度学习模型越来越复杂的情况下，为了方便我们的开发，我们经常需要实现一些辅助功能，比如："
-msgstr ""
+msgstr "In addition, in the case of deep learning models becoming more and more complex, in order to facilitate our development, we often need to implement some auxiliary functions, such as："
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:743
 msgid "在模型训练的过程中进行交叉验证，使用一些策略来决定何时停止训练；"
-msgstr ""
+msgstr "Perform cross-validation during model training and use some strategies to decide when to stop training;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:744
 msgid "使用更高级的管理工具来让你的机器学习工作流程更有效率；"
-msgstr ""
+msgstr "Use more advanced management tools to make your machine learning workflow more efficient;"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:746
 msgid "这些功能可能已经超出了 MegEngine 的服务范畴，不过你完全可以基于 MegEngine 开发出属于你自己领域的深度学习库～"
-msgstr ""
+msgstr "These functions may be beyond the service scope of MegEngine, but you can develop a deep learning library in your own field based on MegEngine~"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:748
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"

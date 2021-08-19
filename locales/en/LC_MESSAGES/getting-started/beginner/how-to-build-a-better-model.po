@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-07-21 03:33\n"
+"PO-Revision-Date: 2021-08-19 02:04\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -64,7 +64,7 @@ msgstr "Idea 20：Change the method of feature extraction. At this time, we have
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:37
 msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
-msgstr ""
+msgstr "Please run the following code first to verify whether MegEngine has been installed in your environment (\\ `Installation Tutorial <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\)："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:79
 msgid "接下来，我们将先了解一下这次要使用到的经典数据集：\\ `CIFAR-10 数据集 <https://www.cs.toronto.edu/~kriz/cifar.html>`__\\ 。"
@@ -284,11 +284,11 @@ msgstr "When using a fully connected layer, the amount of parameters in each lay
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:785
 msgid "隐藏层神经元个数也是需要人为设计的超参数，并且直接影响到整个网络模型的参数总量；"
-msgstr ""
+msgstr "The number of hidden layer neurons is also a hyperparameter that needs to be designed artificially, and directly affects the total number of parameters of the entire network model;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:786
 msgid "**我们的参数初始化选择了随机初始化而不是零初始化策略，** 这是为什么呢？（你可以改回零初始化试试看）"
-msgstr ""
+msgstr "**Our parameter initialization chooses random initialization instead of zero initialization strategy.** Why is this? (You can change back to zero initialization to try)"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:787
 msgid "我们还对输入的数据进行了归一化处理，原始值位于 :math:`(0, 255)`, 归一化后统一到 :math:`(0,1)`;"
@@ -416,11 +416,11 @@ msgstr "I believe you have new doubts-because the pixels at the edge of the imag
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1047
 msgid "用到了卷积算子的神经网络又被人们称为 “卷积神经网络”（Convolutional Neural Network, CNN），从结构上看，它也是前馈神经网络的一种。卷积神经网络常用于计算机视觉领域，上面的 ``padding`` 操作也是计算机视觉中常见的图像处理手段，常见的一起搭配使用的算子还有 ``max_pooling``, 可以认为是一种降采样策略，从采样区域内选择最大值进行保留，从而改变了整个长宽比："
-msgstr ""
+msgstr "Neural networks that use convolution operators are also called \"convolutional neural networks\" (Convolutional Neural Network, CNN). From a structural point of view, it is also a kind of feedforward neural network. Convolutional neural networks are often used in the field of computer vision. The above ``padding'' operation is also a common image processing method in computer vision. The common operators used together are ``max_pooling'', which can be considered as a drop Sampling strategy, select the maximum value from the sampling area to keep, thus changing the entire aspect ratio to："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1101
 msgid "不过我们的教程目前还不打算涉及到太多关于计算机视觉相关的内容，因此不打算进行更多这方面的解释。我们需要关注的是："
-msgstr ""
+msgstr "However, our tutorial does not intend to cover too much computer vision-related content, so we do not intend to explain more in this regard. What we need to focus on is："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1103
 msgid "相较于简单粗暴的 ``flatten`` 操作， ``conv`` 操作更能够利用图像的空间局部信息；"
@@ -436,7 +436,7 @@ msgstr "But please note that：\\ ** operators related to convolution need to pa
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1108
 msgid "Functional 卷积神经网络"
-msgstr ""
+msgstr "Functional Convolutional Neural Network"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1110
 msgid "结合前面提到的知识，现在我们将构建一个多层的卷积神经网络模型！"
@@ -444,23 +444,23 @@ msgstr "Combining the previously mentioned knowledge, now we will build a multi-
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1112
 msgid "由于 MegEngine 默认 Tensor 的数据排布是 :math:`(N,C,H,W)` 格式，而我们的 CIFAR10 数据集图片是 :math:`(N,H,W,C)` 格式，所以我们在下面的代码中进行了对应的预处理："
-msgstr ""
+msgstr "Since MegEngine default Tensor data arrangement is :math:`(N,C,H,W)` format, and our CIFAR10 data set picture is :math:`(N,H,W,C)` format, so we are in the following Corresponding preprocessing in the code："
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1287
 msgid "可以看到，经过 100 个周期的训练，这个简陋的模型在 CIFAR10 图片分类上已经能够达到接近 60% 的预测准确率。"
-msgstr ""
+msgstr "It can be seen that after 100 cycles of training, this rudimentary model has been able to achieve a prediction accuracy of close to 60% in CIFAR10 image classification."
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1289
 msgid "实际上，我们这里定义的模型结构是非常经典的 `LeNet <http://yann.lecun.com/exdb/lenet/>`__\\ ，只是一些实现细节略有不同；"
-msgstr ""
+msgstr "In fact, the model structure we defined here is a very classic `LeNet <http://yann.lecun.com/exdb/lenet/>`__\\, but some implementation details are slightly different;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1290
 msgid "由于模型变复杂，我们开始计算训练用时，选择每 10 个 epoch 输出一次 Log 信息；"
-msgstr ""
+msgstr "Due to the complexity of the model, we started to calculate the training time and chose to output Log information every 10 epochs;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1291
 msgid "想象一下，如果没有使用 GPU 的话，那将花掉非常多的时间来进行模型训练；"
-msgstr ""
+msgstr "Imagine that if the GPU is not used, it will take a lot of time to train the model;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1292
 msgid "这只是我们对卷积神经网络模型的初体验，我们会慢慢地接触到更多的经典模型！"
@@ -512,7 +512,7 @@ msgstr "So far, we have been using operator MegEngine of `` functional`` module 
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1332
 msgid "当模型结构开始变得越来越复杂，计算图结构的代码组织工作会变得非常繁杂；"
-msgstr ""
+msgstr "When the model structure becomes more and more complex, the code organization of the computational graph structure will become very complicated;"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1333
 msgid "依赖 ``functional`` 的定义方式不够灵活，难以精细控制，更难以进行拓展，对业务不友好。"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-07-21 03:32\n"
+"PO-Revision-Date: 2021-08-19 02:04\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -44,7 +44,7 @@ msgstr "We have learned how to train a simple linear regression model :math:`y =
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:30
 msgid "我们对单个样本数据的表示形式将不再是简单的标量 :math:`x`, 而是升级为多维的向量 :math:`\\mathbf {x}` 表示；"
-msgstr ""
+msgstr "We form a single sample of data will no longer be a simple scalar :math:`x`, but multi-dimensional vector upgrade :math:` \\ mathbf {x}`representation;"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:31
 msgid "我们将接触到更多不同形式的梯度下降策略，从而接触一个新的超参数 ``batch_size``;"
@@ -56,7 +56,7 @@ msgstr "We will try to encapsulate the data set into the ``Dataset`` class suppo
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:33
 msgid "同时，我们的前向计算过程将变成矩阵运算形式，能够帮助你更好地理解向量化实现的优点；"
-msgstr ""
+msgstr "At the same time, our forward calculation process will become a matrix operation form, which can help you better understand the advantages of vectorization;"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:34
 msgid "在这个过程中，一些遗留问题会得到解答，同时我们将接触到一些新的机器学习概念。"
@@ -68,7 +68,7 @@ msgstr "The topic of this tutorial will revolve around \\ **\"Data\"**\\, I hope
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:38
 msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
-msgstr ""
+msgstr "Please run the following code first to verify whether MegEngine has been installed in your environment (\\ `Installation Tutorial <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\)："
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:80
 msgid "接下来，我们将对将要使用的数据集 `波士顿房价数据集 <https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html>`__ 进行一定的了解。"
@@ -76,7 +76,7 @@ msgstr "Next, we will have a certain understanding of the data set `Boston House
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:92
 msgid "波士顿房价数据集的获取和分析"
-msgstr ""
+msgstr "Acquisition and Analysis of Boston Housing Price Data Set"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:94
 msgid "获取到真实的数据集原始文件后，往往需要做大量的数据格式处理工作，变成易于计算机理解的形式，才能被各种框架和库使用。"
@@ -96,11 +96,11 @@ msgstr "When we describe a thing, we usually look for its attributes (Attribute)
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:155
 msgid "比如我们描述一只柴犬的长相，会说这只柴的鼻子如何、耳朵如何、毛发如何等等"
-msgstr ""
+msgstr "For example, when we describe the appearance of a Shiba Inu, we will say what the nose, ears, hair and so on of this Shiba are."
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:156
 msgid "又比如在游戏宠物的属性经常有生命值、魔法值、攻击力、防御力等属性"
-msgstr ""
+msgstr "For example, the attributes of game pets often have attributes such as health, magic, attack power, and defense power."
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:157
 msgid "类比到一些支持自定义角色的游戏，这些特征就变成许多可量化和调整的数据"
@@ -124,7 +124,7 @@ msgstr "A single sample can be represented by a vector :math:`\\mathbf {x}=(x_{1
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:165
 msgid "波士顿房价数据集的特征向量有 13 个维度，包括住宅平均房间数、城镇师生比例等等，记为 :math:`d`. （Dimensionality）"
-msgstr ""
+msgstr "The feature vector of the Boston housing price data set has 13 dimensions, including the average number of rooms in a house, the ratio of urban teachers and students, etc., which are recorded as :math:`d`. (Dimensionality)"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:166
 msgid "数据集 ``data`` 由 :math:`n` 行特征向量组成，每个特征向量有 :math:`d` 维度特征，因此整个数据集可以用一个形状为 :math:`(n, d)` 的数据矩阵 :math:`X` 来表示；"
@@ -182,7 +182,7 @@ msgstr "Several types of data sets"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:238
 msgid "在之前的线性回归模型教程中，我们在最后通过可视化效果对模型的拟合程度进行了判断，但这并不是评估模型性能通常的做法。"
-msgstr ""
+msgstr "In the previous linear regression model tutorial, we finally judged the fit of the model through the visualization effect, but this is not the usual way to evaluate the performance of the model."
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:240
 msgid "对于常见的机器学习任务，用作基准（Benchmark）的数据集通常会被分为训练集（Training dataset）和测试集（Test dataset）两部分；"
@@ -198,7 +198,7 @@ msgstr "The test set data cannot participate in model training, because we hope 
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:245
 msgid "训练模型时，通常还会在训练集的基础上划分出验证集（Validation dataset）或者说开发集（Develop dataset），方便进行控制和调试："
-msgstr ""
+msgstr "Training model, generally also divided on the basis of training set on a validation set (Validation dataset) or development set (Develop dataset), convenient control and debugging："
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:247
 msgid "在一些机器学习竞赛中，比赛方会将测试集中一部分拿出来做为 Public Leaderboard 评分和排名，剩下的部分作为 Private Leaderboard 的评分和排名。"
@@ -214,7 +214,7 @@ msgstr "Correspondingly, the data set used by Public Leaderboard can be understo
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:250
 msgid "为了避免在短时间内引入过多密集的新知识，我们目前将不会进行验证集（开发集）的代码实践和讨论"
-msgstr ""
+msgstr "In order to avoid introducing too much intensive new knowledge in a short time, we will not conduct code practice and discussion on the verification set (development set) at present"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:252
 msgid "数据集该如何划分是一个值得讨论与研究的话题，它是数据预处理的一个环节，目前我们只需要对它有一个基本概念，通过不断实践来加深理解。"
@@ -246,7 +246,7 @@ msgstr "\\begin{aligned}\n"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:318
 msgid "**注意在表示不同的乘积（Product）时，不仅使用的符号有所不同，数学概念和编程代码之间又有所区别** ，以 NumPy 为例："
-msgstr ""
+msgstr "** Note that represent different product (Product) in the symbol not only use different, there are differences ** between mathematical concepts and programming code, for example to NumPy："
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:320
 msgid "上个教程中用的星乘 :math:`*` 符号指的是元素间相乘（有时用 :math:`\\odot` 表示），也适用于标量乘法，编程对应于 ``np.multiply()`` 方法"
@@ -266,7 +266,7 @@ msgstr "Strictly speaking, dot product or quantitative product is just a special
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:325
 msgid "比如样本 :math:`\\mathbf {x}` 和参数 :math:`\\mathbf {w}` 都是 13 维的向量，二者的点积结果是一个标量（ ``shape`` 为空元组）："
-msgstr ""
+msgstr "Sample example :math:`\\ mathbf {x}` and Parameter :math:`\\ mathbf {w}` are 13-dimensional vector dot product of the two things is a scalar ( `` shape`` empty tuple)："
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:372
 msgid "我们之前已经实现过类似的训练过程，现在一起来看下面这份新实现的代码："
@@ -274,15 +274,15 @@ msgstr "We have implemented a similar training process before, now let’s take 
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:456
 msgid "模型评估（Model Metric）"
-msgstr ""
+msgstr "Model Metric"
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:458
 msgid "现在，我们可以使用训练得到的 ``w`` 和 ``b`` 在测试数据上进行评估，一些时候损失函数可以被直接用于评估，比如训练时使用的 MSE."
-msgstr ""
+msgstr "Now, we can use the ``w'' and ``b'' obtained from training to evaluate on the test data. Sometimes the loss function can be directly used for evaluation, such as the MSE used in training."
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:460
 msgid "但进行评估时，使用的评估指标可以不同，这里我们可以选择使用平均绝对误差（Mean Absolute Error, MAE）作为评估指标："
-msgstr ""
+msgstr "But are assessed for indicators used may be different, where we can choose to use the mean absolute error (Mean Absolute Error, MAE) as an evaluation index："
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:462
 msgid "\\ell(y_{pred}, y_{real})= \\frac{1}{n }\\sum_{i=1}^{n}\\left | \\hat{y}_{i}-{y}_{i}\\right |"
@@ -298,7 +298,7 @@ msgstr "We can find that：, every time we train a complete epoch, we will updat
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:535
 msgid "这种通过对所有的样本的计算来求解梯度的方法叫做 **批梯度下降法(Batch Gradient Descent)**."
-msgstr ""
+msgstr "This method of solving the gradient by calculating all samples is called Batch Gradient Descent."
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:536
 msgid "当碰到样本容量特别大的情况时，可能会导致无法一次性将所有数据给读入内存，遇到内存用尽（Out of memory，OOM）的情况。"
@@ -310,7 +310,7 @@ msgstr "At this time, you may think：\"In fact, we can update the parameters im
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:540
 msgid "Bingo~ 这种思路叫做 **随机梯度下降（Stochastic Gradient Descent，常缩写成 SGD)** ，动手改写后，整体代码实现如下："
-msgstr ""
+msgstr "Bingo~ This idea is called Stochastic Gradient Descent (Stochastic Gradient Descent, often abbreviated as SGD)**, after the hands-on rewriting, the overall code implementation is as follows："
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:615
 msgid "可以看到，在同样的训练周期内，使用随机梯度下降得到的训练损失更低，即损失收敛得更快。这是因为参数的实际更新次数要多得多。"
@@ -551,7 +551,7 @@ msgstr "**The idea of matrix/tensor operation is very common in deep learning an
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1061
 msgid "NumPy 的\\ `官方文档 <https://numpy.org/doc/stable/reference/generated/numpy.dot.html>`__\\ 中写着此时 ``np.dot()`` 的真实逻辑："
-msgstr ""
+msgstr "NumPy's \\ `Official document <https://numpy.org/doc/stable/reference/generated/numpy.dot.html>`__\\ writes the true logic of ``np.dot()'' at this time："
 
 #: ../../source/getting-started/beginner/learning-from-linear-regression.ipynb:1063
 msgid "If a is an N-D array and b is a 1-D array, it is a sum product over the last axis of a and b."

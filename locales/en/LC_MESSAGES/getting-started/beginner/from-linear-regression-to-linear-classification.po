@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: 2021-08-17 16:29\n"
+"PO-Revision-Date: 2021-08-19 02:04\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -57,7 +57,7 @@ msgstr "**Implement a simple linear classifier to recognize handwritten digits**
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:34
 msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
-msgstr ""
+msgstr "Please run the following code first to verify whether MegEngine has been installed in your environment (\\ `Installation Tutorial <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\)："
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:76
 msgid "接下来，我们将先了解一下这次要使用到的分类问题经典数据集：\\ `MNIST 手写数字数据集 <http://yann.lecun.com/exdb/mnist/>`__\\ 。"
@@ -329,7 +329,7 @@ msgstr "The sum of the probabilities of meeting different predicted label catego
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:792
 msgid "一个直接的想法是使用 :math:`\\operatorname{ArgMax}` 函数，将值最大位置的概率设置为 1，其它位置为 0"
-msgstr ""
+msgstr "The idea is to use a direct :math:`\\ operatorname{ArgMax}` function, the position of maximum probability value is set to 1, 0 elsewhere"
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:794
 msgid "这样也可以得到作为最终预测的 One-hot 编码形式的向量，但问题在于："
@@ -373,7 +373,7 @@ msgstr "Why don't we use mean normalization or other methods, but introduce an e
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:903
 msgid "分类问题中 :math:`\\operatorname{SoftMax}` 函数的选用也和影响了所对应的损失函数的设计，即下面即将介绍的交叉熵。"
-msgstr ""
+msgstr "Classification problems :math:`\\ operatorname{SoftMax}choice of` function and also influenced the design of the corresponding loss function, that is to be introduced under cross entropy."
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:915
 msgid "交叉熵（Cross Entropy）"
@@ -415,7 +415,7 @@ msgstr "We hope to design a loss function that can be used to evaluate :math:`q(
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:935
 msgid "而在训练的过程中，代表真实类别概率的 :math:`p(x)` 固定，是一个确定的常数，其 :math:`H(p)` 值不会随着训练而改变，也不会影响梯度计算，所以可省略。"
-msgstr ""
+msgstr ":math:`p(x)` representing the true category probability is fixed, which is a definite constant, and its :math:`H(p)` value will not change with training, nor will it affect the gradient calculation , So it can be omitted."
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:937
 msgid "剩下的 :math:`H(p,q)` 部分则被定义为我们常用的交叉熵（Cross Entropy, CE），用我们现在的例子中的离散概率值来表示则为："
@@ -599,7 +599,7 @@ msgstr "MNIST data set we used earlier data set into CIFAR10 try (just change th
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1445
 msgid "有没有感觉到一丝疑惑呢？之前大显神通的线性分类器，为何在换用了 CIFAR10 数据集后就判若两人了？随机猜测的正确率也会有 10% 的啊！"
-msgstr ""
+msgstr "Do you feel a trace of doubt? Why did the linear classifier that showed great power in the past become so different after switching to the CIFAR10 data set? The correct rate of random guessing will also be 10%!"
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1447
 msgid "此时可以给你一些信息："
@@ -607,7 +607,7 @@ msgstr "I can give you some information at this："
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1449
 msgid "在 CIFAR10 数据集中，一共有 10 类共 60000 张 32x32 **彩色** 图像，每类有 6000 张图片，其中 50000 个训练集，10000 张为测试集。"
-msgstr ""
+msgstr "In the CIFAR10 data set, there are a total of 60,000 32x32 **color** images in 10 categories. Each category has 6,000 images, of which 50,000 are training sets and 10,000 are test sets."
 
 #: ../../source/getting-started/beginner/from-linear-regression-to-linear-classification.ipynb:1451
 msgid "容易发现，将数据集换用后，图像的颜色由黑白变为了彩色，这意味着图像的通道数量由原本灰度图的 1 变成了由 RGB 表示的 3 通道图。"
