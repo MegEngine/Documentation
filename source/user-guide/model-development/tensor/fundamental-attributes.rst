@@ -72,6 +72,7 @@ Tensor 的轴
 
 Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）。
 
+* 一维 Tensor 只有一个轴，索引其中的元素就好像在刻度为单位 Tensor 长度的尺子上找到特定的位置；
 * 在笛卡尔平面坐标系中，存在着 :math:`X, Y` 轴，想要知道平面中某个点的位置，就需要知道坐标 :math:`(x, y)`.
 * 同样地，想要知道三维空间中的一个点，就需要知道坐标 :math:`(x, y, z)`, 推广到更高维也是如此。
 
@@ -325,6 +326,34 @@ Tensor 还具备名为 :py:attr:`~.Tensor.size` 的属性，用来表示 Tensor 
 
 .. image:: ../../../_static/images/ndim-axis-shape.png
    :align: center
+
+.. warning::
+
+   0 维 Tensor 的形状为 ``()``, 需要区分它和只有一个元素的 1 维 Tensor 的区别：
+
+   >>> a = megengine.tensor(1)
+   >>> a.shape
+   ()
+
+   >>> b = megengine.tensor([1])
+   >>> b.shape
+   (1,)
+
+   注意 “向量”、“行向量”、“列向量” 的区别：
+
+   * 1 维 Tensor 是一个向量，没有二维空间中行与列的区别；
+   * 行向量或列向量通常指形状为 :math:`(n,1)` 或 :math:`(1,n)` 的 2 维 Tensor（矩阵）
+
+   >>> a = megengine.tensor([2, 5, 6, 9])
+   >>> a.shape
+   (4,)
+
+   >>> a.reshape(1,-1).shape
+   (1, 4)
+
+   >>> a.reshape(-1,1).shape
+   (4, 1)
+
 
 .. note::
 
