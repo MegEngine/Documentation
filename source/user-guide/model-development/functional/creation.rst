@@ -1,8 +1,8 @@
 .. _tensor-creation:
 
-===========
-创建 Tensor
-===========
+===================
+如何创建一个 Tensor
+===================
 
 .. note::
 
@@ -16,9 +16,9 @@
 创建 Tensor 的常见途径如下：
 
 * :ref:`create-tensor-from-python-structure` （例如 :py:class:`list`, :py:class:`tuple` ）；
-* :ref:`create-tensor-with-intrinsic-functions` （例如 ``arange``, ``ones``, ``zeros`` 等）；
-* :ref:`create-tensor-from-random-package` （可从 ``normal``, ``uniform`` 等分布中采样）；
-* :ref:`create-tensor-through-manipulation` （例如 ``split``, ``stack`` 等）；
+* :ref:`create-tensor-with-intrinsic-functions` （例如 :py:func:`~.arange`, :py:func:`ones`, :py:func:`zeros` 等）；
+* :ref:`create-tensor-from-random-package` （可从 :py:func:`~.random.normal`, :py:func:`~.random.uniform` 等分布中采样）；
+* :ref:`create-tensor-through-manipulation` （例如 :py:func:`~.split`, :py:func:`stack` 等）；
 * :ref:`create-tensor-from-ndarray`.
 
 .. warning::
