@@ -10,14 +10,16 @@
    :maxdepth: 1
 
    fundamental-attributes
-   advanced-indexing
+   indexing
    dtype
    device
    examples
+   layout
 
 MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数据结构，
 区别于数学中的定义，其概念与 NumPy_ 中的 :py:class:`~numpy.ndarray` 更加相似，
-即张量是一类多维数组，其中每个元素的数据类型和所需空间一致，而数据值可以不同。
+即张量是一类同构多维数组，其中每个元素占用相同大小的内存块，并且所有块都以完全相同的方式解释。
+如何解释 Tensor 中的元素由其 :ref:`数据类型 <tensor-dtype>` 决定，而每种数据类型都代表一类 Tensor.
 
 * 我们可以基于 Tensor 数据结构，进行各式各样的科学计算；
 * Tensor 也是神经网络编程时所用的主要数据结构，网络的输入、输出和转换都使用 Tensor 表示。
@@ -32,6 +34,10 @@ MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数�
    * 如果有查看/改变默认计算设备的需求，请参考 :ref:`tensor-device` 中的说明。
    * 通过 :meth:`.Tensor.to` 和 :func:`.functional.copy` 可将 Tensor 拷贝到指定设备。
 
+.. seealso::
+
+   如果你还不清楚如何获得一个 Tensor, 请参考 :ref:`tensor-creation` 。
+
 .. _specific-concepts:
 
 概念（术语）使用上的区分
@@ -43,7 +49,7 @@ MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数�
 数学                  计算机科学            抽象概念 具象化例子
 ===================== ===================== ======== ===========
 标量（scalar）        数字（number）        点       得分、概率
-向量（vector）        数组（array）         线       英文字母表
+向量（vector）        数组（array）         线       列表 
 矩阵（matrix）        2 维数组（2d-array）  面       Excel 表格
 ===================== ===================== ======== ===========
 
@@ -57,7 +63,7 @@ MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数�
 
 .. _access-tensor-element:
 
-访问 Tensor 中特定元素
+访问 Tensor 中某个元素
 ----------------------
 对于数字（或者说标量） Tensor, 显然我们可以直接进行使用。
 
@@ -131,8 +137,8 @@ n 维张量（nd-tensor） n 维数组（nd-array）  n
 
 .. _tensor-slice:
 
-理解切片（Slice）
------------------
+使用切片获取部分元素
+--------------------
 
 前面我们展示了如何访问单个的元素，另一种比较常见的情况是需要对部分元素进行访问。
 
@@ -178,7 +184,7 @@ n 维张量（nd-tensor） n 维数组（nd-array）  n
 
 此时可以将其当作是一个一维数组去理解，里面的每个元素又是一维数组。
 
-我们这里仅仅对最外面这一层进行了索引，在 :ref:`tensor-advanced-indexing` 中会讲解更复杂的情况。
+我们这里仅仅对最外面这一层进行了索引，在 :ref:`tensor-indexing` 中会讲解更复杂的情况。
 
 .. note::
 
@@ -237,19 +243,19 @@ Python 嵌套列表并不支持这种语法，你能猜测出在 ``[]`` 运算�
 
 想要解答这些问题，你必须先理解 Tensor 的 :ref:`tensor-fundamental-attributes` 等有关概念，
 更好地理解 Tensor 所具备的一些特点，
-接着从 :ref:`tensor-advanced-indexing` 的内容中找到答案。
+接着从 :ref:`tensor-indexing` 的内容中找到答案。
 
 .. seealso::
 
-   数据类型
+   Tensor 数据类型
      我们提到了 Tensor 中的每个元素的数据类型一致，如果你想要知道具体有哪些数据类型的 Tensor,
      请参考 :ref:`tensor-dtype` 。
 
-   所在设备
+   Tensor 所在设备
      能够利用 GPU 设备进行高效运算是 MegEngine 相较于 NumPy 的优势，想要了解不同设备之间的区别，
      请参考 :ref:`tensor-device` 。
 
-   具象化举例
+   Tensor 具象化举例
      如果你目前对于 Tensor 的概念不够直观，可以参考 :ref:`tensor-examples` 。
 
 
