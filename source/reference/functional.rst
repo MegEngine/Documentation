@@ -17,9 +17,13 @@ megengine.functional
    * 分布式算子统一封装在 :mod:`megengine.functional.distributed` 中，方便调用；
    * 其它的常见算子均可在 :mod:`megengine.functional` 中直接调用；
 
-.. _standard-tensor-operations:
+.. seealso::
 
-Standard tensor operations
+   用户指南中对于 :ref:`functional-guide` 有另外一套分类逻辑，可作为参考。
+
+.. _general-tensor-operations:
+
+General tensor operations
 --------------------------
 
 .. note::
@@ -31,6 +35,10 @@ Standard tensor operations
 
 Creation Functions
 ~~~~~~~~~~~~~~~~~~
+.. seealso::
+
+   :ref:`tensor-creation`
+
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -49,6 +57,10 @@ Creation Functions
 
 Manipulation Functions
 ~~~~~~~~~~~~~~~~~~~~~~
+.. seealso::
+
+   :ref:`tensor-manipulation`
+
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -56,6 +68,7 @@ Manipulation Functions
    copy
    reshape
    flatten
+   transpose
    broadcast_to
    expand_dims
    squeeze
@@ -65,9 +78,6 @@ Manipulation Functions
    tile
    repeat
    roll
-   gather
-   scatter
-   cond_take
 
 .. _arithmetic-operations:
 
@@ -150,27 +160,18 @@ Logic functions
    :toctree: api
    :nosignatures:
 
+   isnan
+   isinf
    logical_and
    logical_not
    logical_or
    logical_xor
-
-.. _comparison-functions:
-
-Comparison functions
-~~~~~~~~~~~~~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   isnan
-   isinf
-   equal
-   not_equal
-   less
-   less_equal
    greater
    greater_equal
+   less
+   less_equal
+   equal
+   not_equal
 
 .. _statistical-functions:
 
@@ -188,6 +189,10 @@ Statistical Functions
    var
    std
 
+.. seealso::
+
+   想要返回 ``min``, ``max`` 的索引而不是元素值，请参考 :ref:`searching-functions` 
+
 .. _linear-algebra-functions:
 
 Linear Algebra Functions
@@ -196,7 +201,6 @@ Linear Algebra Functions
    :toctree: api
    :nosignatures:
 
-   transpose
    dot
    matinv
    matmul
@@ -204,19 +208,40 @@ Linear Algebra Functions
    norm
    normalize
 
-.. _searching-and-sorting-functions:
+.. _indexing-functions:
 
-Searching and Sorting Functions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Indexing Functions
+~~~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   gather
+   scatter
+   cond_take
+   where
+
+.. _searching-functions:
+
+Searching Functions
+~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
 
    argmin
    argmax
-   argsort
-   where
+
+.. _sorting-functions:
+
+Sorting Functions
+~~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
    sort
+   argsort
    topk
 
 .. py:module:: megengine.functional.nn

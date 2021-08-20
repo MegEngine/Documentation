@@ -24,17 +24,17 @@ Data Structure
      - Pytorch
      - MegEngine
      - Comment
+
    * - :py:class:`~numpy.ndarray`
      - :py:class:`~torch.Tensor`
      - :py:class:`~megengine.Tensor`
      - :ref:`tensor-guide`
 
-Standard tensor operations
---------------------------
+General tensor operations
+-------------------------
 
 Creation Functions
 ~~~~~~~~~~~~~~~~~~
-
 .. list-table::
    :header-rows: 1
 
@@ -42,6 +42,7 @@ Creation Functions
      - Pytorch
      - MegEngine
      - Comment
+
    * - :py:func:`~numpy.arange`                   
      - :py:func:`~torch.arange`
      - :py:func:`~megengine.functional.arange`
@@ -81,7 +82,6 @@ Creation Functions
 
 Manipulation Functions
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. list-table::
    :header-rows: 1
 
@@ -89,6 +89,7 @@ Manipulation Functions
      - Pytorch
      - MegEngine
      - Comment
+
    * - :py:func:`~numpy.reshape`                  
      - :py:func:`~torch.reshape`
      - :py:func:`~megengine.functional.reshape`
@@ -133,22 +134,9 @@ Manipulation Functions
      - :py:func:`~torch.roll`
      - :py:func:`~megengine.functional.roll`
      - 
-   * - :py:func:`~numpy.take_along_axis`
-     - :py:func:`~torch.gather`
-     - :py:func:`~megengine.functional.gather`
-     - 
-   * - :py:func:`~numpy.put_along_axis`
-     - :py:func:`~torch.scatter`
-     - :py:func:`~megengine.functional.scatter`
-     - 
-   * - :py:func:`~numpy.compress`
-     - :py:func:`~torch.take`
-     - :py:func:`~megengine.functional.cond_take`
-     -
 
 Arithmetic operations
 ~~~~~~~~~~~~~~~~~~~~~
-
 .. list-table::
    :header-rows: 1
 
@@ -156,6 +144,7 @@ Arithmetic operations
      - Pytorch
      - MegEngine
      - Comment
+
    * - :py:data:`~numpy.add`
      - :py:func:`~torch.add`
      - :py:func:`~megengine.functional.add`
@@ -344,6 +333,14 @@ Logic functions
      - MegEngine
      - Comment
 
+   * - :py:data:`~numpy.isnan`
+     - :py:func:`~torch.isnan`
+     - :py:func:`~megengine.functional.isnan`
+     - 
+   * - :py:data:`~numpy.isinf`
+     - :py:func:`~torch.isinf`
+     - :py:func:`~megengine.functional.isinf`
+     - 
    * - :py:data:`~numpy.logical_and`
      - Not Found
      - :py:func:`~megengine.functional.logical_and`
@@ -360,25 +357,6 @@ Logic functions
      - Not Found
      - :py:func:`~megengine.functional.logical_xor`
      - ``^`` operator
-
-Comparison functions
-~~~~~~~~~~~~~~~~~~~~
-.. list-table::
-   :header-rows: 1
-
-   * - NumPy
-     - Pytorch
-     - MegEngine
-     - Comment
-
-   * - :py:data:`~numpy.isnan`
-     - :py:func:`~torch.isnan`
-     - :py:func:`~megengine.functional.isnan`
-     - 
-   * - :py:data:`~numpy.isinf`
-     - :py:func:`~torch.isinf`
-     - :py:func:`~megengine.functional.isinf`
-     - 
    * - :py:data:`~numpy.equal`
      - :py:func:`~torch.equal`
      - :py:func:`~megengine.functional.equal`
@@ -478,8 +456,35 @@ Linear Algebra Functions
      - :py:func:`~megengine.functional.norm`
      - 
 
-Searching and Sorting Functions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Indexing Functions
+~~~~~~~~~~~~~~~~~~
+.. list-table::
+   :header-rows: 1
+
+   * - NumPy
+     - Pytorch
+     - MegEngine
+     - Comment
+
+   * - :py:func:`~numpy.take_along_axis`
+     - :py:func:`~torch.gather`
+     - :py:func:`~megengine.functional.gather`
+     - 
+   * - :py:func:`~numpy.put_along_axis`
+     - :py:func:`~torch.scatter`
+     - :py:func:`~megengine.functional.scatter`
+     - 
+   * - :py:func:`~numpy.compress`
+     - :py:func:`~torch.take`
+     - :py:func:`~megengine.functional.cond_take`
+     -
+   * - :py:func:`~numpy.where`
+     - :py:func:`~torch.where`
+     - :py:func:`~megengine.functional.where`
+     - 
+
+Searching Functions
+~~~~~~~~~~~~~~~~~~~
 .. list-table::
    :header-rows: 1
 
@@ -496,17 +501,25 @@ Searching and Sorting Functions
      - :py:func:`~torch.argmax`
      - :py:func:`~megengine.functional.argmax`
      - 
+
+
+Sorting Functions
+~~~~~~~~~~~~~~~~~
+.. list-table::
+   :header-rows: 1
+
+   * - NumPy
+     - Pytorch
+     - MegEngine
+     - Comment
+
    * - :py:func:`~numpy.argsort`
-     - :py:func:`~torch.topk`
-     - :py:func:`~megengine.functional.topk`
+     - :py:func:`~torch.argsort`
+     - :py:func:`~megengine.functional.argsort`
      - 
    * - :py:func:`~numpy.sort`
      - :py:func:`~torch.sort`
      - :py:func:`~megengine.functional.sort`
-     - 
-   * - :py:func:`~numpy.where`
-     - :py:func:`~torch.where`
-     - :py:func:`~megengine.functional.where`
      - 
 
 NN Funtional Operations

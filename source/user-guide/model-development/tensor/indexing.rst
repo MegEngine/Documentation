@@ -1,20 +1,19 @@
-.. _tensor-advanced-indexing:
+.. _tensor-indexing:
 
 ===============
-Tensor 高级索引
+Tensor 元素索引
 ===============
 
 .. seealso::
 
-   在阅读这部分的内容前，你需要 :ref:`tensor-slice` 。
+   阅读这部分内容前，你需要知道如何 :ref:`access-tensor-element` 以及 :ref:`tensor-slice` 。
 
+和 NumPy 索引对比
+-----------------
 .. admonition:: NumPy 用户请注意！
    :class: warning
 
    不能将 NumPy 中存在的一些概念和设计直接应用于 MegEngine.
-
-和 NumPy 索引对比
------------------
 
 .. seealso::
 
@@ -65,10 +64,10 @@ Tensor 高级索引
 MegEngine 和 NumPy 在进行切片时，都不会改变对象 :ref:`tensor-ndim` ：
 
 >>> M = Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
->>> M[1:2], M[1:2].ndim
-(Tensor([[4 5 6]], dtype=int32, device=xpux:0), 2)
->>> M[1:2][0:1], M[1:2][0:1].ndim
-(Tensor([[4 5 6]], dtype=int32, device=xpux:0), 2)
+>>> print(M[1:2], M[1:2].ndim)
+>>> print(M[1:2][0:1], M[1:2][0:1].ndim)
+Tensor([[4 5 6]], dtype=int32, device=cpux:0) 2
+Tensor([[4 5 6]], dtype=int32, device=cpux:0) 2
 
 整个过程中，切片得到的都是一个 ``ndim=2`` 的 Tensor.
 
