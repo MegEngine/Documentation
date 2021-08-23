@@ -20,7 +20,7 @@ MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数�
 即张量是一类多维数组，其中每个元素的数据类型和所需空间一致，而数据值可以不同。
 
 * 我们可以基于 Tensor 数据结构，进行各式各样的科学计算；
-* Tensor 也是神经网络编程时所用的主要数据结构，网络的输入、输出和转换都使用 Tensor 表示。 
+* Tensor 也是神经网络编程时所用的主要数据结构，网络的输入、输出和转换都使用 Tensor 表示。
 
 .. _Numpy: https://numpy.org
 
@@ -28,7 +28,7 @@ MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数�
 
    与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效的计算。
    当 GPU 和 CPU 设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。
-   
+
    * 如果有查看/改变默认计算设备的需求，请参考 :ref:`tensor-device` 中的说明。
    * 通过 :meth:`.Tensor.to` 和 :func:`.functional.copy` 可将 Tensor 拷贝到指定设备。
 
@@ -79,7 +79,7 @@ MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数�
 
 .. math::
 
-   M = 
+   M =
    \begin{bmatrix}
 	1 & 2 & 3 \\
 	4 & 5 & \color{blue}{6} \\
@@ -207,15 +207,15 @@ n 维张量（nd-tensor） n 维数组（nd-array）  n
 
    Python nested list
    ^^^^^^^^^^^^^^^^^^
-   >>> c = [[1, 2, 3], 
-   >>>      [4, 5, 6], 
+   >>> c = [[1, 2, 3],
+   >>>      [4, 5, 6],
    >>>      [7, 8, 9]]
    >>> c[1, 1]
    ---
    MegEngine 2-d Tensor
    ^^^^^^^^^^^^^^^^^^^^
-   >>> c = tensor([[1, 2, 3],
-   >>>             [4, 5, 6], 
+   >>> c = Tensor([[1, 2, 3],
+   >>>             [4, 5, 6],
    >>>             [7, 8, 9]])
    >>> c[1, 1]
 
@@ -226,7 +226,7 @@ Python 嵌套列表并不支持这种语法，你能猜测出在 ``[]`` 运算�
 
 .. math::
 
-   M = 
+   M =
    \begin{bmatrix}
 	1 & 2 & 3 \\
 	\color{blue}{4} & \color{blue}{5} & 6 \\
@@ -254,9 +254,9 @@ Python 嵌套列表并不支持这种语法，你能猜测出在 ``[]`` 运算�
 
 
 .. admonition:: Python 数据 API 标准联盟协会
-   :class: note 
+   :class: note
 
    MegEngine 中的许多 Tensor 标准 API 设计遵循了 Python 数据 API 标准联盟协会的倡导，
-   一些常见的实现尽可能地向 NumPy 靠近，更多细节可以参考 `Consortium for Python Data API Standards 
+   一些常见的实现尽可能地向 NumPy 靠近，更多细节可以参考 `Consortium for Python Data API Standards
    <https://data-apis.org/>`_ .
 

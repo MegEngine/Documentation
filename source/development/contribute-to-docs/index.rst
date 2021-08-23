@@ -72,6 +72,7 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
      有的时候，为了在本地预览自己的改动效果，我们需要学会 :ref:`how-to-build-the-doc-locally` 。
    * 你也可以根据自身情况，选择使用 `Gitpod <https://gitpod.io/#prebuild/https://github.com/MegEngine/Documentation>`_ 
      等类型的云 IDE 来创建一个临时的文档开发环境，但这需要连接到 GitHub 帐户，且会对你的网络环境有一定的要求。
+     另外由于空间限制，将不会安装 MegEngine 包，因此仅支持使用 MINI 模式来生成除 API Reference 外的文档。
 
 源码组织逻辑
 ~~~~~~~~~~~~
@@ -160,9 +161,12 @@ GitHub 协作流程
 
 #. 创建一个 Issue，讨论接下来你打算进行什么样的尝试，交流想法；
 #. 一旦确定了初步方案，Fork 并 Clone 存储库，创建一个新的本地分支；
-#. 修改代码，记录 :ref:`Commit <commit-message>` 并 Push 到你 Fork 的远端分支（Origin）；
-#. 在 GitHub 创建一个 Pull Request 并向上游（Upstream）发起合并申请；
-#. 根据 Review 意见进行交流，如有需要则修改你的代码；
+#. 参照 :ref:`风格指南 <megengine-document-style-guide>` 和 :ref:`语法规范 <restructuredtext>`
+   修改代码或文本，:ref:`在本地构建与预览文档 <how-to-build-the-doc-locally>` ；
+#. 按照 :ref:`格式要求 <commit-message>` 记录 Commit 信息（需要使用 GitHub 账号）；
+#. 确认所有改动符合预期后，Push 到你 Fork 的远端分支（Origin）；
+#. 在 GitHub 创建一个 Pull Request 并向上游（Upstream）发起合并请求；
+#. 根据 Review 意见进行交流，根据需求在 Pull Request 中提交后续修改；
 #. 当你的分支被合并了，便可以删除对应的本地和远程分支。
 
 我们还提供了更加详细的 :ref:`pull-request-guide` （里面的规则适用于 MegEngine ）。
@@ -202,6 +206,11 @@ Pull Request 如何被合并
 * 必须通过 Actions 中触发的状态检查（Status check），如 
   `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ .
 * 必须将你的 Commits 历史记录整理为线性，消息内容符合 :ref:`commit-message` 。
+
+.. warning::
+
+   签署 CLA 协议要求 commit 中所记录的 Author 账户都是 GitHub 上的账户。
+   如果你默认使用了非 GitHub 账户，需要使用 ``git config`` 命令单独配置。
 
 官网文档页面的更新将会有一定的处理流程延迟，请耐心等待官网服务器更新文档内容。
 

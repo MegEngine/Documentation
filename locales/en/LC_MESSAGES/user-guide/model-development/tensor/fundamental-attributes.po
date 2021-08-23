@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"POT-Creation-Date: 2021-08-17 20:15+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,98 +68,155 @@ msgstr ""
 msgid "我们有一个 2 维张量（2d-tensor）"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:34
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:37
+msgid "维度的个数"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:39
 msgid ""
 "但在 MegEngine 中并没有为 Tensor 设计 ``rank`` 这个属性，而是使用了字面上更容易理解的 "
 ":py:attr:`~.Tensor.ndim`, 即 `the number of dimensions` 的缩写。这也是 NumPy "
 "中用来表示多维数组 :py:class:`~numpy.ndarray` 维度的数量所设计的属性。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:47
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:52
 msgid ""
 "当你听到别人提到某个 Tensor 的秩时，在深度学习的语义下，你应该意识到他/她此时指代的是维数。 一种可能性是，这是一名使用过 "
 "TensorFlow 框架的用户，已经习惯了用秩来描述维度的数量。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:50
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:55
 msgid "好了，接下来我们能够忘记 ``rank`` 这种说法，用 ``ndim`` 进行交流了。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:54
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:59
 msgid "在 MegEngine 中为 Tensor 提供了 :py:attr:`~.Tensor.ndim` 属性，用来表示维度的数量。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:55
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:60
 msgid ""
 "Tensor 的 ``ndim`` 属性的值对应我们常说的 “一个 n 维张量” 时中的 ``n``. 它告诉我们想要从当前这个 Tensor "
 "中访问特定元素时所需索引（Indices）的个数。 （参考 :ref:`access-tensor-element`）"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:61
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:66
 msgid "NumPy 中对于维数的定义请参考 :py:attr:`numpy.ndarray.ndim`."
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:66
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:71
 msgid "Tensor 的轴"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:68
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:73
+msgid "Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:75
 msgid "在笛卡尔平面坐标系中，存在着 :math:`X, Y` 轴，想要知道平面中某个点的位置，就需要知道坐标 :math:`(x, y)`."
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:70
-msgid "同样地，对于一个高维 Tensor, 我们可以借助轴（Axes）的概念，用来表明 Tensor 某个维度可操作的方向。"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:72
-msgid "对初学者来说，Tensor 的轴是最难理解的概念之一，你需要明白："
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:74
-msgid "轴的方向（Direction）"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:77
-msgid "一个轴的方向代表对应维度的索引进行变化的方向。"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:79
-msgid "轴的长度（Length）"
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:76
+msgid "同样地，想要知道三维空间中的一个点，就需要知道坐标 :math:`(x, y, z)`, 推广到更高维也是如此。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:82
-msgid "一个轴的长度决定对应维度能够进行索引的范围。"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:84
-msgid "轴的命名与索引顺序的关系"
+msgid "二维平面坐标系"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:87
+msgid ""
+"via `Cartesian coordinate system "
+"<https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`_"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:90
+msgid "三维空间坐标系"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:95
+msgid ""
+"via `Three-dimensional_space <https://en.wikipedia.org/wiki/Three-"
+"dimensional_space>`_"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:99
+msgid "借助坐标系，高维空间中的任何一点 :math:`P` 都可以用向量来表示（其起点在原点，终点在点 :math:`P` ）。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:101
+msgid ""
+"以 3 维空间为例，如果点 :math:`P` 的向量是 :math:`\\mathbf{r}`, 直角坐标是 :math:`(x, y, "
+"z)`, 那么："
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:103
+msgid ""
+"\\mathbf{r}=\n"
+"x {\\color{red}\\hat{\\mathbf{i}}} +\n"
+"y {\\color{green}\\hat{\\mathbf{j}}} +\n"
+"z {\\color{blue}\\hat{\\mathbf{k}}}"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:110
+msgid ""
+"其中单位向量 :math:`\\hat{\\mathbf{i}}, \\hat{\\mathbf{j}}, \\hat{\\mathbf{k}}`"
+" 分别指向 :math:`X, Y, Z` 轴的正无穷方向。 与 Tensor "
+"索引特定元素类似，整个过程就像是沿着轴从原点位置出发开始寻找该维度的坐标，接着前往下一个轴..."
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:113
+msgid "同样地，对于一个高维 Tensor, 我们可以借助轴的概念，用来表明 Tensor 某个维度可操作的方向。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:115
+msgid "对初学者来说，Tensor 的轴是最难理解的概念之一，你需要明白："
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:117
+msgid "轴的方向（Direction）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:120
+msgid "一个轴的方向代表对应维度的索引进行变化的方向。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:122
+msgid "轴的长度（Length）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:125
+msgid "一个轴的长度决定对应维度能够进行索引的范围。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:127
+msgid "轴的命名与索引顺序的关系"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:130
 msgid ""
 "在访问 n 维 Tensor 的特定某个元素时，需要进行 n 次索引，每次索引其实就是在一个轴上找坐标。 "
 "轴的命名与索引的顺序有关，首先被索引的维度是第 0 轴 ``axis=0``, 往内一层是第 1 轴 ``axis=1``, 依此类推..."
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:90
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:133
 msgid "沿着轴（Along the axis）"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:93
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:136
 msgid ""
 "在一些 Tensor 计算中，我们经常会看到需要指定 ``axis`` 参数，表明沿着指定轴计算。 "
 "这意味着在对应轴的方向上所能取得的所有元素都需要参与计算。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:98
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:141
 msgid "Axes 是 Axis 的复数形式，前者通常指代多个轴，后者通常指代单条轴。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:100
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:143
 msgid "让我们从最简单的情况开始，观察下面这个由矩阵（2 维数组） :math:`M` 表示的 Tensor:"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:102
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:145
 msgid ""
 "M =\n"
 "\\begin{bmatrix}\n"
@@ -169,55 +226,55 @@ msgid ""
 "\\end{bmatrix}"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:111
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:154
 msgid "当我们说这个 Tensor 有 2 个维度时，等价于在说这个 Tensor 有两个轴（Axes）："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:113
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:156
 msgid "第 0 轴 ``axis=0`` 的方向即矩阵的行（Row）索引变化的方向；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:114
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:157
 msgid "第 1 轴 ``axis=1`` 的方向即矩阵的列（Column）索引变化的方向；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:119
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:162
 msgid ""
 "上图来自于一篇解释 `NumPy Axes <https://www.sharpsightlabs.com/blog/numpy-axes-"
 "explained/>`_ 的文章（NumPy 多维数组的 Axes 概念与 MegEngine Tensor 一致）。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:122
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:165
 msgid "实际编程时，上面这个 Tensor 通常是这样构造的："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:135
-msgid "Tensor 的轴是一个抽象的概念，它不是一个单独的属性，而被用作 Tensor 计算的参数。"
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:178
+msgid "Tensor 的轴是一个抽象的概念，它不是一个单独的属性，通常是操作某些 Tensor 时的参数。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:140
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:183
 msgid "使用 axis 作为参数"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:142
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:185
 msgid "有了轴的概念，我们便可以定义一些沿着轴的操作，比如求和 :py:func:`~.functional.sum` :"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:148
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:164
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:191
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:207
 msgid "沿着 ``axis=0`` 方向"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:153
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:179
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:196
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:222
 msgid "沿着 ``axis=1`` 方向"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:158
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:201
 msgid "我们看看这个过程中究竟发生了什么："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:166
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:209
 msgid ""
 "M =\n"
 "\\begin{bmatrix}\n"
@@ -231,7 +288,7 @@ msgid ""
 "\\end{bmatrix}"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:181
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:224
 msgid ""
 "M =\n"
 "\\begin{bmatrix}\n"
@@ -248,55 +305,54 @@ msgid ""
 "\\end{bmatrix}"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:194
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:237
 msgid ""
 "我们将位于同一个 ``axis`` 方向上的元素用颜色进行了区分，来更好地理解沿着轴计算的本质。 在进行类似 ``sum()`` "
 "这样的统计性质的计算（多个数据统计得到单个统计值）时， ``axis`` "
-"参数将控制对哪个轴上的元素进行聚合（Aggregat）或折叠（Collapse）。"
+"参数将控制对哪个轴上的元素进行聚合（Aggregat），或者说折叠（Collapse）。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:198
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:241
 msgid "实际上，计算后的返回的 Tensor 的 ``ndim`` 已经由 2 变成了 1."
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:210
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:253
 msgid ""
 "更多统计性质的计算请参考 :py:func:`~.functional.prod`, :py:func:`~.functional.mean`, "
 ":py:func:`~.functional.min`, :py:func:`~.functional.max`, "
-":py:func:`~.functional.var`, :py:func:`~.functional.std`"
+":py:func:`~.functional.var`, :py:func:`~.functional.std` ..."
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:216
-msgid "这种统计某条轴上的元素使得 Tensor 维数减 1 的操作也叫做归约计算（Reduction）。"
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:259
+msgid "这种对某个轴上的元素进行统计，使得 Tensor 维数减 1 的操作也叫做归约计算（Reduction）。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:217
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:260
 msgid "除了归约计算，Tensor 的拼接、拓展等操作也可以指定在特定的轴上进行，参考 :ref:`tensor-manipulation` 。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:221
-msgid "``ndim`` 为 3 的 Tensor 进行沿轴操作时，可以想象成空间坐标系中的 :math:`X, Y, Z` 坐标轴；"
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:264
+msgid "``ndim`` 为 3 的 Tensor 进行沿轴操作时，可以借助空间坐标系中存在的 :math:`X, Y, Z` 坐标轴理解；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:222
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:265
 msgid ""
 "更高维 Tensor 的沿轴操作不好借助视觉想象，我们可以通过元素索引的角度来理解， :math:`T_{[a_0][a_1]\\ldots "
-"[a_{n-1}]}` 中的 :math:`i` 轴方向即对应下标运算符中 :math:`a_i \\quad i \\in [0, n)` "
-"变化的方向。"
+"[a_{n-1}]}` 中的 :math:`i \\in [0, n)` 轴方向即对应索引 :math:`a_i` 变化的方向。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:228
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:271
 msgid "Tensor 的形状"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:230
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:273
 msgid ""
 "Tensor 的轴具有长度，我们可以通过 Python 内置的 :py:func:`len` 来获取一个 Tensor 在第 0 轴的长度， "
 "如果取出第 0 轴的某个子 Tensor, 对它使用 ``len()`` 则可以获得子 Tensor 在第 0 轴的长度， 对应于原 Tensor"
 " 在第 1 轴的长度。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:234
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:277
 msgid ""
 "M_{3 \\times 4} =\n"
 "\\begin{bmatrix}\n"
@@ -311,77 +367,132 @@ msgid ""
 "\\end{bmatrix}"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:247
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:290
 msgid "以 :math:`M` 为例，它在第 0 轴的长度为 3, 在第 1 轴的长度为 4."
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:256
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:299
 msgid "通过 ``len()`` 和索引，我们总是能获得想要知道的特定轴的长度，但这样不够直观。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:258
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:301
 msgid "Tensor 的秩告诉我们它具有多少个轴，而每个轴的长度引出了一个非常重要的概念——形状（Shape）。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:260
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:303
 msgid ""
 "Tensor 具有形状 :py:attr:`~.Tensor.shape` 属性，它是一个元组 :py:class:`tuple`, "
 "元组中的每个元素描述了对应维度的轴的长度。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:268
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:311
 msgid ":math:`M` 的形状 :math:`(3, 4)` 告诉我们非常多的信息："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:270
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:313
 msgid ":math:`M` 是一个秩为 2 的 Tensor, 也即 2 维 Tensor, 对应有两个轴；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:271
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:314
 msgid "第 0 轴有 3 个索引值可用，第 1 轴有 4 个索引值可用。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:275
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:316
+msgid "Tensor 还具备名为 :py:attr:`~.Tensor.size` 的属性，用来表示 Tensor 中元素的个数："
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:324
+msgid "我们借助下面这张图，将这几个 Tensor 基础属性的关系直观地展示出来："
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:331
+msgid "知道了形状信息，我们就可以推导出其它基础的属性值；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:332
 msgid "我们在进行 Tensor 有关的计算时，尤其需要关注形状的变化。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:280
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:337
 msgid "接下来：更多的 Tensor 属性"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:282
-msgid "Tensor 还具备名为 :py:attr:`~.Tensor.size` 的属性，表示 Tensor 中元素的个数："
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:338
+msgid ""
+"掌握 Tensor 的基本属性后，我们便可以进行一些 :ref:`tensor-manipulation` ，或者了解 :ref:`tensor-"
+"advanced-indexing` 。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:289
-msgid "上面这些概念在使用 NumPy, Pandas 等基于多维数组的科学计算库时也会被用到。"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:291
-msgid "掌握 Tensor 的基本属性后，我们便可以进行一些 :ref:`tensor-manipulation`."
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:293
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:340
 msgid "另外一个 NumPy 多维数组也具备的属性是数据类型，请参考 :ref:`tensor-dtype` 了解细节。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:295
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:342
 msgid "MegEngine 中实现的 Tensor 还具备有更多的属性，它们与 MegEngine 所支持的功能有关。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:300
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:347
 msgid ":py:attr:`.Tensor.device`"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:300
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:347
 msgid "Tensor 可以在不同的设备上进行计算，比如 GPU/CPU 等，请参考 :ref:`tensor-device` 。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:302
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:350
 msgid ":py:attr:`.Tensor.grad`"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:303
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:350
 msgid "Tensor 的梯度是神经网络编程中很重要的一个属性，在反向传播的过程中被频繁使用。"
 msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:352
+msgid "The N-dimensional array ( :class:`~numpy.ndarray` )"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:353
+msgid "通过 NumPy 官方文档了解与多维数组有关的知识，与 MegEngine 的 Tensor 联想对比。"
+msgstr ""
+
+#~ msgid "同样地，对于一个高维 Tensor, 我们可以借助轴（Axes）的概念，用来表明 Tensor 某个维度可操作的方向。"
+#~ msgstr ""
+
+#~ msgid "Tensor 的轴是一个抽象的概念，它不是一个单独的属性，而被用作 Tensor 计算的参数。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "我们将位于同一个 ``axis`` 方向上的元素用颜色进行了区分，来更好地理解沿着轴计算的本质。 "
+#~ "在进行类似 ``sum()`` 这样的统计性质的计算（多个数据统计得到单个统计值）时， ``axis``"
+#~ " 参数将控制对哪个轴上的元素进行聚合（Aggregat）或折叠（Collapse）。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "更多统计性质的计算请参考 :py:func:`~.functional.prod`, "
+#~ ":py:func:`~.functional.mean`, :py:func:`~.functional.min`, "
+#~ ":py:func:`~.functional.max`, :py:func:`~.functional.var`, "
+#~ ":py:func:`~.functional.std`"
+#~ msgstr ""
+
+#~ msgid "这种统计某条轴上的元素使得 Tensor 维数减 1 的操作也叫做归约计算（Reduction）。"
+#~ msgstr ""
+
+#~ msgid "``ndim`` 为 3 的 Tensor 进行沿轴操作时，可以想象成空间坐标系中的 :math:`X, Y, Z` 坐标轴；"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "更高维 Tensor 的沿轴操作不好借助视觉想象，我们可以通过元素索引的角度来理解， "
+#~ ":math:`T_{[a_0][a_1]\\ldots [a_{n-1}]}` 中的 :math:`i`"
+#~ " 轴方向即对应下标运算符中 :math:`a_i \\quad i \\in "
+#~ "[0, n)` 变化的方向。"
+#~ msgstr ""
+
+#~ msgid "Tensor 还具备名为 :py:attr:`~.Tensor.size` 的属性，表示 Tensor 中元素的个数："
+#~ msgstr ""
+
+#~ msgid "上面这些概念在使用 NumPy, Pandas 等基于多维数组的科学计算库时也会被用到。"
+#~ msgstr ""
+
+#~ msgid "掌握 Tensor 的基本属性后，我们便可以进行一些 :ref:`tensor-manipulation`."
+#~ msgstr ""
 

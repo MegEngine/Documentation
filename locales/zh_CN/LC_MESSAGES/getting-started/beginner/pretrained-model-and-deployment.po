@@ -1,0 +1,547 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: megengine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-17 20:15+0800\n"
+"PO-Revision-Date: 2021-08-17 16:29\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/pretrained-model-and-deployment.po\n"
+"X-Crowdin-File-ID: 7083\n"
+"Language: zh_CN\n"
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:9
+msgid "使用预训练模型与模型部署"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:12
+msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/#>`__"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:28
+msgid "image0"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:12
+msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/pretrained-model-and-deployment>`__"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:29
+msgid "image1"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:16
+msgid "收集数据、使用深度学习框架训练模型并不是整个机器学习流程的全部，我们的最终目的是希望这些模型能够被部署到实际的生产情景中去，并且有效地发挥作用。 在某些时候，负责模型部署的开发者仅仅关注如何将这些现成的模型用于推理情景；亦或者希望借助一些已经训练好的模型在新的任务上进行微调，从而快速获得不错的预测性能。通过这个教程，你将接触到以下内容："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:18
+msgid "了解 ResNet 模型结构的核心思想，看它解决了哪些 VGG 等模型结构没有解决的问题；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:19
+msgid "了解预训练模型的用途，借助在 ImageNet 数据集上预训练好的 ResNet 模型，完成 CIFAR10 图像分类；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:20
+msgid "了解模型部署的有关概念，理解工业界在做业务落地时的关注点，体会 MegEngine 如何发挥作用。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:22
+msgid "除了强大的工程实现能力外，核心思路的突破很重要，我们在前面的教程中接触了很多代码，在作为系列结尾的这篇教程中，将提供更多概念上的解释。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:24
+msgid "我们还将为你提供后续学习方向的建议，希望你最终能够成为一个高效率的 MegEngine 使用者。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:26
+msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:83
+msgid "残差网络（ResNet）"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:85
+msgid "我们通过一些实践验证了深层的网络确实比浅层的网络具有更好的效果，但为什么我们不设计出一个具深无比的网络，来达到更好的性能呢？ 这里引用了来自 `Tnil <https://www.zhihu.com/people/tylin98>`__ 的解释（ 完整内容建议 `阅读原文 <https://zhuanlan.zhihu.com/p/80226180>`__ ）："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:88
+msgid "深度神经网络的“两朵乌云”"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:90
+msgid "一个前馈神经网络 :math:`f(\\mathbf{x} ; \\theta)` ，由若干层神经元组成，为了方便讨论，我们以非线性单元（若干层神经元组成的函数单元）为单位讨论神经网络，即神经网络 :math:`f(\\mathbf{x} ; \\theta)` 由 :math:`L` 个非线性单元堆叠而成（后面将每个单元称为一层），令 :math:`\\mathbf{a}^{(0)}=\\mathbf{x}` , 则神经网络第 :math:`l` 层（ :math:`1 \\leq l \\leq L` ）的净输入 :math:`\\mathbf{z}^{(l)}` 与输出 :math:`\\mathbf{a}^{(l)}` 的计算由下式给出："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:92
+msgid "\\begin{aligned}\n"
+"&\\mathbf{z}^{(l)}=\\mathcal{H}\\left(\\mathbf{a}^{(l-1)}\\right) \\\\\n"
+"&\\mathbf{a}^{(l)}=g\\left(\\mathbf{z}^{(l)}\\right)\n"
+"\\end{aligned}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:100
+msgid "其中 :math:`\\mathcal{H}(\\cdot)` 是该层的内部运算，依照网络类型有所不同；\\ :math:`g(\\cdot)` 是第 :math:`l` 层的输出激活函数。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:102
+msgid "一般认为，经过训练的深度神经网络能够将数据特征逐层抽象，最终提取出完成任务所需要的特征/表示，最终使用一个简单的分类器（或其他学习器），就可以完成最终任务——因此深度学习也被叫做表示/特征学习。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:104
+msgid "在“层层抽象”的直觉下，很自然的想法就是，训练一个很深的前馈神经网路，来完成任务。直观上看，更深的神经网络，在非线性激活函数的加持下，拥有更大的假设空间，因此当然“更有可能”包含了一个最优解。但是在实际使用时，训练又成了一个难题。除了过拟合问题以外，更深的神经网络会遇到如下两个难题，我姑且按照物理史的比喻将其称为深度神经网络的“两朵乌云”："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:116
+msgid "梯度弥散/爆炸"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:118
+msgid "现代神经网络一般是通过基于梯度的 BP 算法来优化，对前馈神经网络而言，一般需要前向传播输入信号，然后反向传播误差并使用梯度方法更新参数。第 :math:`l` 层的某参数更新需要计算损失 :math:`\\epsilon` 对其的梯度，该梯度依赖于该层的误差项 :math:`\\delta^{(l)}=\\frac{\\partial \\epsilon}{\\partial \\mathbf{z}^{(l)}}`, 根据链式法则，其依赖后一层的误差项 :math:`\\delta^{(l+1)}`:"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:120
+msgid "\\delta^{(l)}=\\frac{\\partial \\mathbf{z}^{(l+1)}}{\\partial \\mathbf{z}^{(l)}} \\cdot \\delta^{(l+1)}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:125
+msgid "假设网络单元输入输出维度一致，定义 :math:`\\gamma^{(l)} \\simeq\\left\\|\\frac{\\partial \\mathbf{z}^{(l+1)}}{\\partial \\mathbf{z}^{(l)}}\\right\\|`, 则有："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:127
+msgid "\\delta^{(l)} \\simeq \\gamma^{(l)} \\delta^{(l+1)}"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:132
+msgid "当 :math:`\\gamma^{(l)}<1` 时，第 :math:`l` 层的误差项较后一层减小，如果很多层的情况都是如此，就会导致反向传播中，梯度逐渐消失，底层的参数不能有效更新，这也就是梯度弥散(或梯度消失)；当 :math:`\\gamma^{(l)}>1` 时，则会使得梯度以指数级速度增大，造成系统不稳定，也就是梯度爆炸问题。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:134
+msgid "**在很深层的网络中，由于不能保证** :math:`\\gamma^{(l)}` **的大小，也很容易出现梯度弥散/爆炸。** 这是两朵乌云中的第一朵。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:146
+msgid "网络退化问题"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:148
+msgid "在前面的讨论中，梯度弥散/爆炸问题导致模型训练难以收敛，但是这个问题很大程度上已经被标准初始化和中间层正规化方法有效控制了（参考上一篇教程中提到的神经网络训练技巧），这些方法使得深度神经网络可以收敛。深度神经网络面临的另一朵乌云是网络退化问题："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:150
+msgid "在神经网络可以收敛的前提下，随着网络深度增加，网络的表现先是逐渐增加至饱和，然后迅速下降。需要注意，网络退化问题不是过拟合导致的，即便在模型训练过程中，同样的训练轮次下，退化的网络也比稍浅层的网络的训练错误更高。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:152
+msgid "这一点并不符合常理：如果存在某个 :math:`K` 层的网络 :math:`f` 是当前最优的网络，那么可以构造一个更深的网络，其最后几层仅是该网络 :math:`f` 第 :math:`K` 层输出的恒等映射（Identity Mapping）就可以取得与 :math:`f` 一致的结果；也许 :math:`K` 还不是所谓“最佳层数”，那么更深的网络就可以取得更好的结果。总而言之，与浅层网络相比，更深的网络的表现不应该更差。因此，一个合理的猜测就是， **对神经网络来说，恒等映射并不容易拟合。**"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:154
+msgid "也许我们可以对网络单元进行一定的改造，来改善退化问题？这也就引出了残差网络的基本思路..."
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:166
+msgid "形式化定义与实现"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:168
+msgid "既然神经网络不容易拟合一个恒等映射，那么一种思路就是构造天然的恒等映射。假设神经网络非线性单元的输入和输出维度一致，可以将神经网络单元内要拟合的函数 :math:`\\mathcal{H}(\\cdot)` 拆分成两个部分，即："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:170
+msgid "\\mathbf{z}^{(l)}=\\mathcal{H}\\left(\\mathbf{a}^{(l-1)}\\right)=\\mathbf{a}^{(l-1)}+\\mathcal{F}\\left(\\mathbf{a}^{(l-1)}\\right)"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:175
+msgid "其中 :math:`\\mathcal{F}(\\cdot)` 是残差函数。在网络高层，学习一个恒等映射 :math:`\\mathcal{H}\\left(\\mathbf{a}^{(l-1)}\\right) \\rightarrow \\mathbf{a}^{(l-1)}` 即等价于令残差部分趋近于0，即 :math:`\\mathcal{F}\\left(\\mathbf{a}^{(l-1)}\\right) \\rightarrow \\mathbf{0}`."
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:177
+msgid "残差单元可以以跳层连接的形式实现，即将单元的输入直接与单元输出加在一起，然后再激活。因此残差网络可以轻松地用主流的自动微分深度学习框架实现，直接使用 BP 算法更新参数。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:179
+msgid "|residual|"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:183
+msgid "residual"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:181
+msgid "实验表明，残差网络很好地解决了深度神经网络的退化问题，并在 ImageNet 和 CIFAR-10 等图像任务上取得了非常好的结果，同等层数的前提下残差网络也收敛得更快。这使得前馈神经网络可以采用更深的设计。除此之外，去除个别神经网络层，残差网络的表现不会受到显著影响，这与传统的前馈神经网络大相径庭。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:195
+msgid "残差连接的代码实现"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:197
+msgid "下面是 `Model <https://github.com/MegEngine/Models>`__ 库中 `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`__ 残差结构实现的 ``forward`` 部分："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:213
+msgid "思路很简单，实现也很简单，但经过后续无数的实验验证，发现其思想如此有效。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:215
+msgid "注：在 `文章原文 <https://zhuanlan.zhihu.com/p/80226180>`__ 中提供了更多角度的解释，你也可以选择阅读 `论文原文 <https://arxiv.org/abs/1512.03385v1>`__ 。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:217
+msgid "接下来我们将通过预训练好的 ResNet 模型来进行微调，使它能够按照 CIFAR10 的分类标签进行预测。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:229
+msgid "迁移学习思想"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:231
+msgid "在面临新的任务时，我们首先会联想到已经完成过的类似任务，看是否能从已经习得的一些经验中进行迁移。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:233
+msgid "例如在学习新的汉字时，我们会尝试从偏旁部首猜其含义，学习成语时则会根据已有的汉字来理解；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:234
+msgid "这些经验在神经网络模型中则是已经学习好的参数，我们希望这些参数在类似任务上也能够发挥作用。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:236
+msgid "之前我们已经了解过如何在本地保存和加载模型，实际上我们还可以通过 Hub 的形式，对模型进行共享。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:239
+msgid "MegEngine Hub"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:241
+msgid "`MegEngine 模型中心 <https://megengine.org.cn/model-hub/>`__ 提供了许多场景下的预训练模型，比如 `深度残差网络（ImageNet 预训练权重） <https://megengine.org.cn/model-hub/megengine_vision_resnet>`__ 。 该模型基于 2012 年的 ImageNet 数据集使用 ResNet 结构进行了训练， `ImageNet 项目 <https://image-net.org/>`__ 是一个大型视觉数据库，用于视觉目标识别软件研究。 我们知道使用更大规模的数据能够获得更好的预测效果，而这也带来来训练时间和金钱成本的上升，因此提供 ImageNet 上的预训练模型是十分有意义的。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:243
+msgid "MegEngine 的 Hub 子包中提供了获取和加载预训练模型的接口："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:245
+msgid "调用 ``megengine.hub.load`` 可以从指定路径按照给定入口点获取预训练模型；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:246
+msgid "如何上传预训练模型，请参考 https://github.com/MegEngine/Hub 中的说明；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:247
+msgid "注意在加载模型后，如果想进行测试，一定需要调整为 ``eval`` 模式。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:250
+msgid "加载预训练模型"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:252
+msgid "按照 ResNet 预训练模型页面对应的说明，我们能够将其直接用来推理测试。首先我们获取训练好的模型："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:254
+msgid "默认从 GitHub 存储库入口获取模型，因此对网络环境有一定的要求；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:255
+msgid "你也可以选择从本地文件加载模型，具体细节请查询 ``load`` API 说明。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:298
+msgid "接着我们获取一张分类测试用的图片，并进行一定的预处理，使之满足模型输入的要求："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:358
+msgid "接下来我们直接测试这张图片经过预训练模型模型会得到什么样的预测结果："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:403
+msgid "查询 ImageNet 相关的标签信息后发现，250 代表该图片被预测为 “Siberian husky” 即哈士奇。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:405
+msgid "ImageNet 中并没有 “Shiba Inu” 这一分类，因此无法直接预测正确，当它确实被预测在狗的分类范围内，说明预训练模型是有效的。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:417
+msgid "模型微调"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:419
+msgid "我们首先打印出该 ResNet 的结构："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:644
+msgid "可以发现，模型最后的输出 ``out_features`` 为 1000 类，想要在 CIFAR10 图片分类任务上使用该模型，需要进行一定的微调（Finetune）。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:646
+msgid "我们需要将最后的线性层输出由 1000 类修改为 10 类，这样在预测时标签才能对上；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:647
+msgid "在最后一层的线性层替换后，我们需要进行一定的再训练，达到模型微调的目的。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:649
+msgid "我们先完成第一步，即修改模型的部分结构。实现起来十分简单："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:690
+msgid "接下来要考虑微调的具体方式："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:692
+msgid "最后的 ``fc`` 层是一定需要进行参数训练的，因为我们刚对其完成了替换，里面的参数处于刚初始化的状态；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:693
+msgid "我们也可以选择微调部分已有结构的卷积、池化参数来节省计算量，调整后的 Module 同样需要被训练；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:694
+msgid "除此以外，我们也可以选择对整个模型进行几轮完整的训练，以达到更好的效果，这取决于希望投入多少训练用时。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:697
+msgid "参数再训练"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:699
+msgid "为了节省时间，我们这里选择仅对最后一层 ``fc`` 层的参数进行训练，这样可以减少大量的梯度计算："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:855
+msgid "我们这里仅训练了 3 个周期，就达到了接近 80% 的精度，如果你更加精细地微调 ResNet 模型，最终在 CIFAR10 分类任务上取得超过 90% 的预测准确性。 达到满意的效果后，你也可以借助 MegEngine Hub, 将你训练好的模型作为预训练模型，供其他人在将来进行使用。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:857
+msgid "不过此时你或许发现了，在使用大模型时，哪怕仅仅进行前向计算（推理），也会用掉非常多的时间。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:869
+msgid "模型部署应用"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:871
+msgid "从整个机器学习流程来看，我们已经经过了数据采集和算法模型设计的步骤，能够产出所需要的算法模型了。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:873
+msgid "但我们的最终目的是用模型进行推理，即能够对新的数据进行预测，就好像我们上面使用柴犬图片对 ResNet 预训练模型进行验证时所做的操作一样。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:875
+msgid "这与评估测试集时的方式一致，将需要用于推理的数据经过模型的前向过程，得到预测的输出结果；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:876
+msgid "借助这种思路，我们可以写个验证脚本，或使用类似于 Flask 这样的 Python Web 服务来进行简单的部署应用。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:878
+msgid "但是在实际的生产环境中，我们除了考虑推理的效果，还需要考虑到不同的平台和设备之间的差异，以及推理的速度。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:880
+msgid "高性能：例如在一些对实时性有要求的场景中，比如人脸检测和识别，我们除了希望保证精度，也希望推理速度越快越好；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:881
+msgid "拓展性：我们还会希望模型能够在端侧进行推理（网页、手机等设备），而不是集中在一个设备上，因此要对各种平台设备都有兼容；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:882
+msgid "轻量级：在测试情景下一般无法提供高性能计算设备，在一些嵌入式设备中，尤其是需要考虑硬件性能和功耗的限制。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:884
+msgid "从学术界的 SOTA 模型到真正的部署应用落地，这中间其实还有很长的一段路要走。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:887
+msgid "训推一体"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:889
+msgid "MegEngine 的特点是训练推理的一体化，这意味着框架本身提供了强大的推理需求支持，追求极致的性能："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:891
+msgid "通常使用其他框架训练得到的模型，需要经过转换为类似 ONNX 标准格式的步骤，才能够在其它的推理平台上进行使用；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:892
+msgid "如果训练侧、中间格式、推理侧的一些算子没有完整支持，就意味着很难走通从训练到推理的流程；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:893
+msgid "而使用 MegEngine 训练得到的模型，可以直接利用 MegEngine 提供的推理接口，在不同的平台和设备上部署。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:895
+msgid "不过为了实现这一目标，我们需要导出一个经过优化的模型文件，描述了我们的计算图结构和参数信息。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:897
+msgid "而此前我们一致没有提到的是，在 MegEngine 中，计算图存在着动态和静态两种模式："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:899
+msgid "默认使用动态图模式进行训练，动态即计算图的构建和计算同时发生，这种模式有利于在开发模型时进行调试；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:900
+msgid "我们也可以切换到静态图模式获取更多的全局信息，这给各种优化都提供了可能性。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:903
+msgid "动静结合"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:905
+msgid "在 MegEngine 中提供了 ``jit`` 子包，通过及时编译，利用 ``jit.trace`` 装饰器将计算图由 `动态转换成静态模式 <https://megengine-docs.iap.hh-b.brainpp.cn/user-guide/model-development/jit/trace.html>`__ ："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:907
+msgid "将循环内的网络计算函数，如下面例子中的 ``inference_func()`` ；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:908
+msgid "将网络所需输入作为训练函数的参数，并返回任意你需要的结果（如计算图的结果和损失函数值）；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:909
+msgid "用 ``jit`` 模块中的 ``trace`` 装饰器来装饰这个函数，将其中的代码变为静态图代码。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:911
+msgid "在将模型导出之前，我们需要至少调用一次被 ``trace`` 的函数，可以生成随机数据（符合输入形状要求）来完成："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:963
+msgid "接着我们可以通过 ``dump`` 接口将模型导出，满足我们进行推理部署的需求："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:965
+msgid "这个过程中会出现一些 Warning 信息，目前我们不需要了解背后的细节；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:966
+msgid "取消掉下面的注释后运行，我们的模型文件将会导出到当前目录所在路径；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:988
+msgid "MegEngine Lite"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:990
+msgid "想要使用该模型文件，我们可以使用由 MegEngine Lite 封装好的接口，但这不是我们现在关注的重点。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:992
+msgid "我们需要明白的是，MegEngine 底层为不同平台不同设备的推理情景做了许多的优化，实现了训推一体；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:993
+msgid "在训练模型时，我们通常会使用动态图模式，因为其方便调试；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:994
+msgid "而当存在推理部署的需求时，我们会使用静态图模式，追求极致的优化；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:996
+msgid "我们会在后续系列的教程中进一步地探索这些功能，它们已经超出了当前零基础教程的范围。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:998
+msgid "时刻回顾很重要，接下来我们需要花一些时间消化在整个系列教程中接触到的东西。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1010
+msgid "零基础教程系列回顾"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1012
+msgid "在整个 MegEngine 零基础教程中，我们循序渐进地讲述了如何从零到一地去开发一个神经网络模型："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1014
+msgid "首先我们接触了 Tensor 和 Functional 两个子包，前者定义数据结构，后者实现基本计算；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1015
+msgid "在处理输入数据时，我们会用到 Data 子包，尤其是会用到里面的 Dataloader;"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1016
+msgid "借助于 Autodiff 和 Optimizer 子包，我们能很方便地做到自动微分和梯度更新；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1017
+msgid "为了灵活设计更加复杂的网络结构，我们用到了 Module 子包，里面有各种经典层的实现；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1018
+msgid "我们可以使用 Hub 子包来获取预训练模型文件，也可以发布自己的预训练模型；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1019
+msgid "想要将模型部署到实际的生产环境中，我们还需要利用 Jit 子包将计算图转化为静态模式。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1021
+msgid "通过计算机视觉中最基本的分类任务，我们实现了完整的 AlexNet 模型，也了解了一些经典的模型结构。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1033
+msgid "问题思考：接下来做什么"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1035
+msgid "本系列 MegEngine 零基础教程的目的在于提供一个稳定可复现的简单情景，以帮助读者了解最简单的概念。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1037
+msgid "经过最基本的练习后，接下来我们将进入日常使用阶段，逐渐地会碰到许多不同的情况，大致分为两类："
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1039
+msgid "你需要更加了解一些已经学习过的子包的使用细节，来解决那些没有在教程中提到的问题；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1040
+msgid "你需要学习 MegEngine 中的一些新功能，通常这需要你接触之前从未接触过的新功能或概念。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1042
+msgid "对于第一种情况，我们可以选择阅读 MegEngine 文档的用户指南板块，里面对各个子包的使用都有具体的讲解。 比如我们可以更加深入地了解 Tensor 这一数据结构，也可以学习 Optimizer 在参数优化时的一些进阶用法。 相较于教程，用户指南更倾向于帮助你理解如何解决特定的问题。 第二种情况也十分常见，比如当你存在分布式训练的需求时，你将会需要学习 Distributed 子包和对应接口的使用， 从最简单的单机单卡训练，到单机多卡、甚至是多机多卡的训练情景，也有可能要从最基本的概念开始学起； MegEngine 中还实现类似了 DTR/Sublinear 等显存优化，开启后通常能使用更大的 bathch size 进行训练； 为了追求极致的速度，你还可以尝试使用量化和混合精度训练等功能... 这都需要一定的时间去接触和学习。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1045
+msgid "上面这些情景都属于模型开发阶段，当你想要进行模型的推理部署时，基本上也会碰到类似的情景。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1047
+msgid "总而言之，我们会不断地在学习者和使用者的模式之间不断切换。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/pretrained-model-and-deployment.ipynb:1049
+msgid "在学习时尝试寻找更多类似教程这样的材料，他们不一定来自于 MegEngine 官方文档，可能是一篇博客、一个问答、或一堂讲座； 而在日常使用时，如果忘记了某些步骤和细节，通常可以借助查阅 MegEngine 官方的用户指南来解决。 如果遇到无法解决的问题，一种可行的途径是尝试在 `MegEngine 社区 <https://megengine.org.cn/community/>`__ 寻找帮助。 只有不断地使用 MegEngine, 遇到 Bug 时学会主动地向开发人员反馈，我们的能力才能得到提升，同时MegEngine 也能走得更远。"
+msgstr ""
+

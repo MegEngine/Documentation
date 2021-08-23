@@ -5,7 +5,25 @@
 
 除了 :ref:`doc-ci-preview` 外，在某些时候，我们需要在本地构建与预览文档。
 
-我们以 Ubuntu 18.04 + Python 3.8 环境为例，向你展示从无到有构建 MegEngine 文档的过程。
+.. warning::
+
+   文档构建有 FULL 和 MINI 两种不同的模式，可以通过配置环境变量 ``MGE_DOC_MODE`` 来决定具体的行为，
+   该环境变量提供以下三种选项：
+
+   ``AUTO`` （默认）
+     自动探测 MegEngine 包是否可用，如可用则进入 FULL 模式，否则进入 MINI 模式；
+   
+   ``MINI``
+     构建除 MegEngine API Reference 外的文档，不依赖于 MegEngine 本身，能节约大量构建时间；
+
+   ``FULL``
+     构建全部文档，包括 MegEngine API Reference, 需要设置好 MegEngine 路径。
+
+.. note::
+
+   可以使用 :docs:`scripts/bootstrap.sh` 脚本自动完成初始化流程，但该脚本不会自动安装 MegEngine 包。
+
+下面我们以 Ubuntu 18.04 + Python 3.8 环境为例，向你展示从无到有构建 MegEngine 文档的过程。
 
 克隆文档源码到本地
 ------------------
@@ -16,6 +34,7 @@
 
    git lfs install
    git clone https://github.com/MegEngine/Documentation
+   cd Documentation
 
 .. note::
 
@@ -23,13 +42,20 @@
 
 .. _LFS: https://git-lfs.github.com/
 
+初始化第三方依赖
+----------------
+.. code-block:: shell
+
+  git submodule update --init --progress --depth=1 --recursive
+
+这一步将会拉取文档所依赖的第三方子模块，比如主题（在后面的步骤中会进行安装）。
+
+.. _megengine-path:
+
 设置 MegEngine 路径（可选）
 ---------------------------
 
-.. warning::
-
-   如果你的本地环境并没有 MegEngine 源码，并不会影响整个文档的构建流程。
-   但在这个时候会启动 Mini-doc 模式，所有 API Reference 页面将被排除（因为它们依赖源码进行内容生成）。
+使用 FULL 模式构建文档，环境内必须要安装有 MegEngine. 
 
 根据不同的需求，有两种方式将用于构建文档的 MegEngine 导入当前 Python 环境（任选其一即可）：
 
@@ -41,9 +67,6 @@
   通过 ``export PYTHONPATH`` 的形式来临时指定特定的 MegEngine 源代码路径，
   这种方式适合开发者需要同时对源码和文档进行维护的情况。:ref:`了解如何进行从源码构建。<install>`
 
-如果你正在维护 MegEngine 的特性分支，需要添加新的 API 到文档中进行预览验证，此时一定需要使用人为编译版本。
-并且在文档的 ``source/reference/*.rst`` 将新增 API 添加到合适的位置。 
-
 安装 Sphinx 与 Pydata 主题
 --------------------------
 
@@ -54,6 +77,12 @@ MegEngine 文档使用 Sphinx_ 进行整个网站的构建，请运行下面的�
 .. code-block:: shell
 
    python3 -m pip install -r requirements.txt
+
+.. warning::
+
+   MegEgnine 文档使用了 Fork 后修改过的 
+   `pydata-sphinx-theme <https://github.com/MegEngine/pydata-sphinx-theme/tree/dev>`_ 主题，
+   如果你的本地环境已经存在该主题，可能需要提前删除该主题或使用额外的 Python 虚拟环境。
 
 .. dropdown:: :fa:`eye,mr-1` 编辑 Sphinx 文档的配置文件
 
@@ -75,23 +104,6 @@ MegEngine 文档使用 Sphinx_ 进行整个网站的构建，请运行下面的�
 
       如果你未经过编译，想要直接使用 MegEngine 源码进行文档的构建，
       则将因会缺少编译构建出的动态链接库而无法正常执行 ``import``.
-
-安装文档所用主题
-~~~~~~~~~~~~~~~~
-
-接下来我们需要从 MegEngine/pydata-sphinx-theme 克隆 Fork 版 PyData_ 主题：
-
-.. _Pydata: https://github.com/pydata/pydata-sphinx-theme
-
-.. code-block:: shell
-
-   git clone -b dev git@github.com:MegEngine/pydata-sphinx-theme.git
-
-接着安装修改过的主题包：
-
-.. code-block:: shell
-
-   python3 -m pip install --editable pydata-sphinx-theme
 
 安装相关软件包
 --------------
@@ -133,7 +145,6 @@ Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经�
 
 使用 Sphinx 进行文档构建
 ------------------------
-
 
 在文档目录下使用 ``make html`` 指令，会在 ``build`` 目录下生成 HTML 文件夹。
 

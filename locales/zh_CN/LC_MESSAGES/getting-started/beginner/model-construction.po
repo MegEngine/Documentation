@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-07-21 03:56\n"
+"POT-Creation-Date: 2021-08-17 20:15+0800\n"
+"PO-Revision-Date: 2021-08-17 16:29\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -183,11 +183,11 @@ msgid "在 MegEngine 中也提供了 ``Module`` 的有序容器 ``Sequential``, 
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:316
-msgid "你应该发现了，我们可以直接使用 ``Sequential`` 定义的模型处理数据，而无需在内部指定 ``forward()`` 流程（默认顺序完成）。"
+msgid "你应该发现了，我们可以直接使用 ``Sequential`` 定义的模型处理数据，而无需在内部指定 ``forward()`` 流程，因为在序列定义时即决定了前向传播的顺序。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:318
-msgid "接下来我们用 ``Sequential`` 来实现 LeNet 模型："
+msgid "接下来我们用 ``Sequential`` 组合来实现 LeNet 模型："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:320
@@ -271,7 +271,7 @@ msgid "这意味着，我们既可以借助 ``parameters()`` 完成整体性的�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:678
-msgid "比如，我们可以通过添加一些 ``if`` 逻辑来对满足规则的参数进行操作："
+msgid "比如，我们可以通过添加一些 ``if`` 逻辑来对满足规则的参数进行操作（作为演示，下面的代码中仅做了 ``print`` 操作）："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:726
@@ -363,23 +363,19 @@ msgid "默认初始化策略"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1113
-msgid "常见 ``Module`` 的基类实现中会有一个默认的参数初始化策略："
+msgid "我们曾经提到，神经网络模型的参数使用全零初始化不是一个好策略，只是目前我们还没有解释原因。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1115
-msgid "比如 ``Conv1d`` 和 ``Conv2d`` 其实都继承自 ``_ConvNd``, 而在 ``_ConvNd`` 的 ``__init__()`` 方法中进行了参数初始化；"
-msgstr ""
-
-#: ../../source/getting-started/beginner/model-construction.ipynb:1116
-msgid "阅读下面的部分源代码，你会发现 ``Linear`` 也采用了与 ``_ConvNd`` 类似的默认初始化策略；"
+msgid "常见 ``Module`` 的基类实现中会有一个默认的参数初始化策略："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1117
-msgid "我们曾经提到，神经网络模型的参数使用全零初始化不是一个好策略，只是目前我们还没有解释原因；"
+msgid "比如 ``Conv1d`` 和 ``Conv2d`` 其实都继承自 ``_ConvNd``, 而在 ``_ConvNd`` 的 ``__init__()`` 方法中进行了参数初始化；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1118
-msgid "目前需要明白的是，MegEngine 中实现的神经网络模块中的默认初始化方式通常能够满足基本需求。"
+msgid "阅读下面的部分源代码，你会发现 ``Linear`` 也采用了与 ``_ConvNd`` 类似的默认初始化策略；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1172
@@ -443,7 +439,7 @@ msgid "由于不同数据集输入的数据形状不一致，我们如果想要�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1275
-msgid "一种思路是在 ``Dataloader`` 中对输入图片进行 ``Resize`` 预处理，比如将原本 :math:`32 \\times 32` 的图片缩放成 :math:`224 \\times 224` 的图片；"
+msgid "一种思路是我们即将采用的：在 ``Dataloader`` 中对输入图片进行 ``Resize`` 预处理，比如将原本 :math:`32 \\times 32` 的图片缩放成 :math:`224 \\times 224` 的图片；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1276
@@ -695,254 +691,258 @@ msgid "实际上细心的话你会发现，我们这里使用了 Adam 优化器�
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1843
-msgid "我们在这个教程中留下了诸多疑点，这些都是关于模型训练方面的经验和技巧，我们会在下一个教程中统一进行解释。现在我们来测试下模型预测的效果："
+msgid "我们在这个教程中留下了诸多疑点，这些都是关于模型训练方面的经验和技巧，我们会在下一个教程中统一进行解释。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1898
-msgid "我们在这里仅对不同模型的效果进行了简单的对比，实际上这样的对照不够严谨（没有严格地控制变量），仅仅是为了让你感受复杂模型的有效性。"
+#: ../../source/getting-started/beginner/model-construction.ipynb:1845
+msgid "现在我们来测试下模型预测的效果："
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1900
-msgid "你可以再多多调教我们的 AlexNet 模型，看能否达到更高的精度。"
+msgid "我们在这里仅对不同模型的效果进行了简单的对比，实际上这样的对照不够严谨（没有严格地控制变量），仅仅是为了让你感受复杂模型的有效性。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1902
-msgid "我们经常会在科研文献中看到一个模型在某个 Benchmark 上所取得的最优效果，前沿论文的实验结果通常能达到当前最优（State-of-the-art, SOTA），也容易被后来居上；"
-msgstr ""
-
-#: ../../source/getting-started/beginner/model-construction.ipynb:1903
-msgid "这通常研究人员需要花费很多的时间和精力去选取合适的超参数，或者对模型结构进行精细的设计和调整，找到最好效果的模型作为实验结果，“刷点”行为在深度学习领域十分常见；"
+msgid "你可以再多多调教我们的 AlexNet 模型，看能否达到更高的精度。"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1904
-msgid "但我们在分享自己实验结果的同时，也需要讲究实验的可复现性（Reproducibility），如果一篇深度学习领域论文的实验结果无法被他人复现，则其真实性容易受到质疑。"
+msgid "我们经常会在科研文献中看到一个模型在某个 Benchmark 上所取得的最优效果，前沿论文的实验结果通常能达到当前最优（State-of-the-art, SOTA），也容易被后来居上；"
+msgstr ""
+
+#: ../../source/getting-started/beginner/model-construction.ipynb:1905
+msgid "这通常研究人员需要花费很多的时间和精力去选取合适的超参数，或者对模型结构进行精细的设计和调整，找到最好效果的模型作为实验结果，“刷点”行为在深度学习领域十分常见；"
 msgstr ""
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1906
+msgid "但我们在分享自己实验结果的同时，也需要讲究实验的可复现性（Reproducibility），如果一篇深度学习领域论文的实验结果无法被他人复现，则其真实性容易受到质疑。"
+msgstr ""
+
+#: ../../source/getting-started/beginner/model-construction.ipynb:1908
 msgid "有了不错的模型，是不是已经开始有分享给别人使用的冲动了呢？接下来我们就将学习如何保存和加载模型。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1918
+#: ../../source/getting-started/beginner/model-construction.ipynb:1920
 msgid "模型保存与加载"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1920
+#: ../../source/getting-started/beginner/model-construction.ipynb:1922
 msgid "到目前为止，我们一直在关注如何实现并且训练好一个模型。但我们有时需要把训练好的（模型）参数以文件的形式存储在硬盘上，以供后续使用，比如："
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1922
+#: ../../source/getting-started/beginner/model-construction.ipynb:1924
 msgid "你预计需要训练超过 1000 个 epoch 的模型，但时间不足，你希望能够将途中模型参数临时保存起来，下次有时间再继续基于保存的参数进行训练；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1923
+#: ../../source/getting-started/beginner/model-construction.ipynb:1925
 msgid "你有充足的时间，但是训练太久容易导致过拟合，因此需要每训练一段时间就保存好当前的模型，根据最终的测试效果选出最优的模型；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1924
+#: ../../source/getting-started/beginner/model-construction.ipynb:1926
 msgid "你需要将训练的模型部署到其它的设备上进行使用（这是另外的使用情景，我们在当前系列的教程中不会接触到）..."
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1926
+#: ../../source/getting-started/beginner/model-construction.ipynb:1928
 msgid "最简单的办法是，使用 MegEngine 中提供的 ``save`` 和 ``load`` 接口，我们以最简单的 ``Tensor`` 进行举例："
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1971
+#: ../../source/getting-started/beginner/model-construction.ipynb:1973
 msgid "在上面的代码执行过程中 ``megengine.save()`` 负责把对象保存成磁盘文件，而 ``megengine.load()`` 负责从文件中加载用 ``save()`` 所保存的对象。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1973
+#: ../../source/getting-started/beginner/model-construction.ipynb:1975
 msgid "文件的后缀名其实可以随意选取，比如 ``.mge``, ``.megengine``, ``.pkl``... 等，关键是要让使用的人从后缀名中能判断出加载方式。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1975
+#: ../../source/getting-started/beginner/model-construction.ipynb:1977
 msgid "我们回顾一下教程开始提到的一个知识点，在每个 ``Module``/``Optimizer`` 对象中，都提供了 ``state_dict()`` 方法来获取内部的状态信息："
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1977
+#: ../../source/getting-started/beginner/model-construction.ipynb:1979
 msgid "``Module`` 的 ``state_dict()`` 获取到的是一个有序字典，其键值对是每个网络层和其对应的参数；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:1978
+#: ../../source/getting-started/beginner/model-construction.ipynb:1980
 msgid "``Optimizer`` 的 ``state_dict()`` 获取到的是无序字典，内部有包含优化器参数的 ``param_groups`` 和 ``state`` 信息。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2021
+#: ../../source/getting-started/beginner/model-construction.ipynb:2023
 msgid "根据我们 ``save()`` 和 ``load()`` 思路的不同，也导致有好几种不同的处理方式。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2024
+#: ../../source/getting-started/beginner/model-construction.ipynb:2026
 msgid "保存和加载状态字典"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2026
+#: ../../source/getting-started/beginner/model-construction.ipynb:2028
 msgid "即保存模型的 ``state_dict()``. 这是比较推荐的做法。但是注意："
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2028
+#: ../../source/getting-started/beginner/model-construction.ipynb:2030
 msgid "**在进行预测之前，必须调用 ``.eval()`` 将一些算子设置成验证状态，** 否则会生成前后不一致的预测结果（经常有人忘记这一点）；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2029
+#: ../../source/getting-started/beginner/model-construction.ipynb:2031
 msgid "由于我们保存的是 ``state_dict()``, 在加载时也需要调用模型对应的 ``load_state_dict()`` 方法；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2030
+#: ../../source/getting-started/beginner/model-construction.ipynb:2032
 msgid "``load_state_dict()`` 方法必须传入一个状态字典，而不是对象的保存路径，也就是说必须先调用 ``load()``, 然后再调用该方法。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2058
+#: ../../source/getting-started/beginner/model-construction.ipynb:2060
 msgid "加载后的模型可以继续用于训练或者直接用于预测，这里我们测试一下这个刚加载进来的模型，结果应该与之前保存的模型精度完全一致。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2099
+#: ../../source/getting-started/beginner/model-construction.ipynb:2101
 msgid "保存和加载整个模型"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2101
+#: ../../source/getting-started/beginner/model-construction.ipynb:2103
 msgid "你也可以选择将整个模型进行保存："
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2143
+#: ../../source/getting-started/beginner/model-construction.ipynb:2145
 msgid "这种做法简单粗暴，缺点在于序列化后的数据只适用于特定模型结构，无法做进一步的处理；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2146
+#: ../../source/getting-started/beginner/model-construction.ipynb:2148
 msgid "使用检查点（Checkpoint）"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2148
+#: ../../source/getting-started/beginner/model-construction.ipynb:2150
 msgid "我们知道了 ``model`` 和 ``optimizer`` 都能够提供 ``state_dict`` 信息，因此一种更加精细的做法是将它们和更多的信息组合起来存储："
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2160
+#: ../../source/getting-started/beginner/model-construction.ipynb:2162
 msgid "这样在加载使用的时候，我们就能够利用更多已经保存下来的信息："
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2173
+#: ../../source/getting-started/beginner/model-construction.ipynb:2175
 msgid "将来你会在一些工程化的代码中看到这样的用法，状态信息非常重要，请及时保存，以免丢失。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2185
+#: ../../source/getting-started/beginner/model-construction.ipynb:2187
 msgid "总结回顾"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2187
+#: ../../source/getting-started/beginner/model-construction.ipynb:2189
 msgid "MegEngine 中的 ``Module`` 类为开发者提供了足够程度的抽象，使得我们能够灵活高效地实现各种神经网络的模型结构："
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2189
+#: ../../source/getting-started/beginner/model-construction.ipynb:2191
 msgid "我们能够借助 ``Module.parameters()`` 方法，快速地获取所有参数的迭代，并且作为 Optimizer 和 GradManager 的输入参数统一管理；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2190
+#: ../../source/getting-started/beginner/model-construction.ipynb:2192
 msgid "通过 ``Module.init`` 子模块，模型参数的初始化变得十分简单，我们也能够用自己的逻辑对各层的参数、权重进行更加精细的初始化策略控制；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2191
+#: ../../source/getting-started/beginner/model-construction.ipynb:2193
 msgid "通过 ``megengine.save()`` 和 ``megengine.load()`` 可以方便地完成状态信息的保存和加载，\\ ``state_dict`` 信息可以灵活组合使用。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2193
+#: ../../source/getting-started/beginner/model-construction.ipynb:2195
 msgid "与此同时，我们也接触到了一些超出深度学习框架服务范围的编程知识，见识到了更多的经典 CNN 结构设计："
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2195
+#: ../../source/getting-started/beginner/model-construction.ipynb:2197
 msgid "AlexNet: 将卷积神经网络的层数加深，在 CIFAR10 分类任务上取得了更好的效果；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2196
+#: ../../source/getting-started/beginner/model-construction.ipynb:2198
 msgid "VGGNet: 利用循环和子程序，可以高效地“配置”出不同类型的 VGG11, VGG13, VGG16, VGG19 模型结构；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2197
+#: ../../source/getting-started/beginner/model-construction.ipynb:2199
 msgid "GoogLeNet: 除了不断地加深神经网络的深度，我们也可以像搭积木一样将整个模型看作是由不同的 “块” 组成的大网络。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2199
+#: ../../source/getting-started/beginner/model-construction.ipynb:2201
 msgid "尽管这些模型主要被用在计算机视觉分类相关的应用上，但其中发展出的设计思想，希望能够给你带来一些启发。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2201
+#: ../../source/getting-started/beginner/model-construction.ipynb:2203
 msgid "在工程化方面，我们见识到了标准的深度学习工程模型代码长什么样子，这有利于我们将来去阅读其他人复现好的模型代码，或者是将自己的代码组织得更加优雅。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2203
+#: ../../source/getting-started/beginner/model-construction.ipynb:2205
 msgid "另外我们在举例的过程中提到了 ResNet, 这是再经典不过的 CNN 模型了！当你能够自己实现完整的 ResNet 中 ``model.py`` 内部的各种结构时，即意味着你可以从初学者教程“毕业”，以后遇到奇怪的模型结构也能游刃有余。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2205
+#: ../../source/getting-started/beginner/model-construction.ipynb:2207
 msgid "不过心急吃不了热豆腐，在抵达这个小目标之前，我们还有一段路要走。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2217
+#: ../../source/getting-started/beginner/model-construction.ipynb:2219
 msgid "问题思考"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2219
+#: ../../source/getting-started/beginner/model-construction.ipynb:2221
 msgid "我们在这个教程中引入了许多新的概念没有解释，比如什么是 ``Dropout`` 算子，什么又是 ``BatchNorm2d`` 算子？"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2221
+#: ../../source/getting-started/beginner/model-construction.ipynb:2223
 msgid "以及我们一直都没有解释为什么神经网络模型不应该使用零值初始化策略。如果你始终留有疑惑，这是件好事，耐心完成后面的教程，终究会守得云开见月明。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2224
+#: ../../source/getting-started/beginner/model-construction.ipynb:2226
 msgid "大模型即是正义？"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2226
+#: ../../source/getting-started/beginner/model-construction.ipynb:2228
 msgid "CIFAR10 图片预测的准确率还有很大的提升空间，是不是意味着只要不断加大模型的深度/宽度，让它变得更复杂，加上精细的超参数调整，就总是能够取得更好的效果呢？"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2228
+#: ../../source/getting-started/beginner/model-construction.ipynb:2230
 msgid "你是否思考过这样一个明显的问题：VGG 论文中设计出了 VGG11, VGG13, VGG16, VGG19... 为什么不搞出一个 VGG100 模型呢？直接 VGG6666 岂不是无敌？"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2230
+#: ../../source/getting-started/beginner/model-construction.ipynb:2232
 msgid "一个比较直接的原因是，大模型的计算量更大，训练起来的时间成本和经济成本也更高，耗电也多（我们需要有环保意识）；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2231
+#: ../../source/getting-started/beginner/model-construction.ipynb:2233
 msgid "我们在处理机器学习任务时，不但要考虑精度，还要考虑速度——比如与目标检测/追踪有关的应用就很在意推理时的速度；"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2232
+#: ../../source/getting-started/beginner/model-construction.ipynb:2234
 msgid "实际上，不使用 VGG6666 模型的背后还有着其他的原因，我们在下个教程中将进行解释。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2234
+#: ../../source/getting-started/beginner/model-construction.ipynb:2236
 msgid "这个教程中也给你留下了一个挑战，我们没有完整地写出 GoogLeNet 模型，请你试试能否独立地实现出 GoogLeNet, 甚至是整个 Inception Net 系列的网络结构。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2237
+#: ../../source/getting-started/beginner/model-construction.ipynb:2239
 msgid "知其然，知其所以然"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2239
+#: ../../source/getting-started/beginner/model-construction.ipynb:2241
 msgid "如果你尝试自己训练过上面的几个模型，修改过不同的超参数方案组合，还可能会遇到如下一些情况："
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2241
+#: ../../source/getting-started/beginner/model-construction.ipynb:2243
 msgid "我的 Loss 在训练几个 epoch 之后就不下降了，有时甚至从来没有下降过！"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2242
+#: ../../source/getting-started/beginner/model-construction.ipynb:2244
 msgid "我的 Loss 从第一个 epoch 开始就显示为 NaN, 发生什么事了？"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2243
+#: ../../source/getting-started/beginner/model-construction.ipynb:2245
 msgid "训练一个 epoch 的成本比之前高了很多，寻找合适的超参数会花掉很多时间..."
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2245
+#: ../../source/getting-started/beginner/model-construction.ipynb:2247
 msgid "除此以外，在不改变模型结构的情况下，我们还在代码中进行了一些修改，比如我们改变了超参数，对输入数据进行了预处理，模型参数使用了除零值之外其它的初始化策略。这些修改背后的直觉是什么，当我们需要用神经网络解决不同的任务时，有没有什么经验可循？对于这些深度学习炼丹老师傅们再熟悉不过的一些 “玄学” 现象，如果能分析出问题背后可能的原因，一定会很有成就感。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2247
+#: ../../source/getting-started/beginner/model-construction.ipynb:2249
 msgid "对于深度学习初学者来说，经典论文的复现是一个比较有趣的练习方式，我们在介绍 AlexNet 和 VGGNet 时给出了 `Paper with Code <https://paperswithcode.com/>`__ 的网站链接，里面是一个巨大的宝库。你可以尝试参照着一些其他人复现过的模型代码，实现自己的 MegEngine 版本，看看是否能达到一样的效果，我们鼓励你以开源的方式将它们分享出来。最有效的实践方式就是：多看，多写，多想。我们在接下来的教程中，将会一起探索一些炼丹玄学现象背后的原因，总结出一些神经网络模型训练中的常见技巧。"
 msgstr ""
 
-#: ../../source/getting-started/beginner/model-construction.ipynb:2249
+#: ../../source/getting-started/beginner/model-construction.ipynb:2251
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
 msgstr ""
 
@@ -1225,4 +1225,29 @@ msgstr ""
 #~ " behind the problem, we will "
 #~ "definitely feel a sense of "
 #~ "accomplishment."
+
+#~ msgid ""
+#~ "你应该发现了，我们可以直接使用 ``Sequential`` 定义的模型处理数据，而无需在内部指定 "
+#~ "``forward()`` 流程（默认顺序完成）。"
+#~ msgstr ""
+
+#~ msgid "接下来我们用 ``Sequential`` 来实现 LeNet 模型："
+#~ msgstr ""
+
+#~ msgid "目前需要明白的是，MegEngine 中实现的神经网络模块中的默认初始化方式通常能够满足基本需求。"
+#~ msgstr ""
+#~ "What needs to be understood at "
+#~ "present is that the default "
+#~ "initialization method in the neural "
+#~ "network module implemented in MegEngine "
+#~ "can usually meet the basic needs."
+
+#~ msgid ""
+#~ "一种思路是在 ``Dataloader`` 中对输入图片进行 ``Resize`` "
+#~ "预处理，比如将原本 :math:`32 \\times 32` 的图片缩放成 "
+#~ ":math:`224 \\times 224` 的图片；"
+#~ msgstr ""
+
+#~ msgid "我们在这个教程中留下了诸多疑点，这些都是关于模型训练方面的经验和技巧，我们会在下一个教程中统一进行解释。现在我们来测试下模型预测的效果："
+#~ msgstr ""
 

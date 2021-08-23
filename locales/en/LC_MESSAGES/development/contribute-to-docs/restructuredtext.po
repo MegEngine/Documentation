@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"POT-Creation-Date: 2021-08-17 20:15+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:16
-msgid "如果你有 MarkDown 语法经验，学习 RST 语法会更加简单。"
+msgid "如果你有 MarkDown 语法经验，学习 reST 语法会更加简单。"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:17
@@ -44,327 +44,426 @@ msgstr ""
 msgid "即使是在 Python 文档字符串中也可以使用 :ref:`sphinx-directives` 和 :ref:`sphinx-ext`."
 msgstr ""
 
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:22
+msgid "对于简单的文本编辑，可以先在 MarkDown 编辑器中撰写，再通过 Pandoc 转换成 reST 格式；"
+msgstr ""
+
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:23
-msgid "章节（Sections）"
+msgid ""
+"如果你习惯使用 Visual Studio Code, 可以考虑安装 `reStructuredText Language Support for"
+" Visual Studio Code "
+"<https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_"
+" 拓展，所见即所得。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:25
-msgid "通过使用标点符号对节标题加下划线（并可选地对它们进行加上划线）来创建节标题（:duref:`参考 <sections>` ），"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:28
+msgid "这些指令和自己的可选参数之间不能存在空行，但和被渲染的内容之间必须有空行。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:27
-msgid "MegEngine 采用如下的章节结构语法规范："
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:33
+msgid "缩进（Indentation）"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:43
-msgid "**标记符必须与文本长度一致。**"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:37
+msgid "reST 语法要求使用 3 格缩进（有的是 2 格），错误的缩进将导致无法正确渲染样式。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:44
-msgid "你可以采用更深的嵌套级别，但在文档中应当避免出现四级甚至更深的标题。"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:38
+msgid "如果在 Sphinx reST 内使用代码块，其缩进要求不受影响（如 Python）。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:40
+msgid "对于不同的编辑器，都有着对应的调整缩进宽度的办法（以 Vim 为例子）："
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:49
+msgid "上面的命令可以快速对 20 至 37 行的内容进行向右缩进。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:55
+msgid "章节（Sections）"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:57
+msgid "通过使用标点符号对节标题加下划线（并可选地对它们进行加上划线）来创建节标题（:duref:`参考 <sections>` ），"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:59
+msgid "MegEngine 采用如下的章节结构语法规范："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:75
+msgid "**标记符必须与文本长度一致，否则会导致 Warning （无法通过 CI）。**"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:76
+msgid "你可以采用更深的嵌套级别，但在文档中应当避免出现四级甚至更深的标题。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:80
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:185
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:298
+msgid "正确示范"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:89
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:193
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:316
+msgid "错误示范"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:100
 msgid "段落（Paragraphs）"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:51
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:102
 msgid ""
 "段落（:duref:`参考 <paragraphs>` ）即一个或多个空白行分隔的文本块，是 reST 文档中最基本的部分。 缩进在 reST "
 "语法中很重要（与 Python 一样），因此同一段落的所有行都必须左对齐到相同的缩进级别。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:61
-msgid "第一段内容的第一部分， 第一段内容的第二部分，将与前一句话连续（即不会换行）。"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:64
-msgid "第二段内容。"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:67
-msgid "保留换行特性"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:69
-msgid "行块（:duref:`参考 <line-blocks>` ）是保留换行符的一种方法："
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:76
-msgid "第一段内容的第一部分，"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:77
-msgid "第一段内容的第二部分，将会进行换行。"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:82
-msgid "内联标记（Inline markup）"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:84
-msgid "标准的 reST 内联标记用法十分简单："
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:94
-msgid "*使用单个星号表示标记重点。（粗体）*"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:96
-msgid "**使用两个星号表示强调重点。（斜体）**"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:98
-msgid "``使用两个反引号表示代码示例。``"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:102
-msgid "内联标记不支持嵌套语法"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:103
-msgid "内容不能以空格开头或结尾，如 ``* 文本*`` 这样的用法是错误的"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:104
-msgid "必须用非单词字符将其和周围的文本分开"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:109
-msgid "列表（List）"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:112
-msgid "无序列表"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:107
+msgid "没有空行的情况"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:114
-msgid "无序列表（:duref:`参考 <bullet-lists>` ）的用法很自然。 只需要在段落开头放置星号，然后正确地缩进："
+msgid "第一部分，第二部分。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:123
-msgid "这是一个无序列表。"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:116
+msgid "存在空行的情况"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:124
-msgid "它有两个元素， 第二个元素占据两行源码，实际上视作同一个段落。"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:128
-msgid "有序列表"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:130
-msgid "对于有序列表，可以自己编号，也可以使用 # 来自动编号："
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:137
-msgid "这是一个有序列表。"
-msgstr ""
-
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:138
-msgid "它也有两个元素。"
+msgid "第一部分，"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:145
-msgid "这又是一个有序列表。"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:126
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:139
+msgid "第二部分。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:129
+msgid "保留换行特性"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:131
+msgid "行块（:duref:`参考 <line-blocks>` ）是保留换行符的一种方法："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:144
+msgid "内联标记（Inline markup）"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:146
-msgid "但是它能够自动编号～"
+msgid "包裹使用，标准的 reST 内联标记用法十分简单："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:148
-msgid "考虑到内容修改的方便，推荐使用自动编号的有序列表。"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:154
+msgid "单个星号表示 ``<em>``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:151
-msgid "嵌套列表"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:154
+msgid "*HTML 着重元素 (<em>) 标记出需要用户着重阅读的内容*"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:153
-msgid "嵌套列表必须使用空白行和父列表项目隔开："
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:161
+msgid "两个星号表示 ``<strong>``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:164
-msgid "这是一个列表。"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:161
+msgid "**Strong 元素 (<strong>)表示文本十分重要，一般用粗体显示。**"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:166
-msgid "它嵌套了一个子列表，"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:168
+msgid "单个反引号表示 ``<cite>``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:167
-msgid "并且有自己的子元素。"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:168
+msgid "`HTML引用（ Citation）标签 (<cite>) 表示一个作品的引用，且必须包含作品的标题。`"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:169
-msgid "这里是父列表的后续元素。"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:175
+msgid "两个反引号表示 ``<pre>``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:172
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:175
+msgid "``HTML <pre> 元素表示预定义格式文本``"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:181
+msgid "标记符号与被包裹的文本内容之间不能存在空格，与外部文本之间必须存在空格。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:191
+msgid "这些文本 **表示强调** 作用"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:201
+msgid "这些文本 ** 表示强调** 作用 这些文本 **表示强调 ** 作用 这些文本**表示强调** 作用"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:208
+msgid "列表（List）"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:212
+msgid "列表语法是最容易被用错的地方，在文档中也极为常见。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:215
 msgid "定义列表"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:174
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:217
 msgid "定义列表（:duref:`参考 <definition-lists>` ）在 API 文档很常见，使用方法如下："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:189
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:232
 msgid "术语 （限定在一行文本）"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:187
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:230
 msgid "术语的定义，必须使用缩进。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:189
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:232
 msgid "支持使用多个段落。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:192
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:235
 msgid "下一个术语"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:192
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:235
 msgid "下一个术语对应的定义。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:197
-msgid "表格（Tables）"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:238
+msgid "无序列表"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:200
-msgid "网格表"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:202
-msgid "对于网格表（:duref:`参考 <grid-tables>` ），必须手动“画”出单元格："
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:216
-msgid "Header row, column 1 (header rows optional)"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:216
-msgid "Header 2"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:216
-msgid "Header 3"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:216
-msgid "Header 4"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:219
-msgid "body row 1, column 1"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:219
-msgid "column 2"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:219
-msgid "column 3"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:219
-msgid "column 4"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:221
-msgid "body row 2"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:221
-msgid "..."
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:225
-msgid "简单表"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:227
-msgid "简单表（:duref:`参考 <simple-tables>` ）写起来很简单，但有局限性： 它们必须包含多个行，并且第一列单元格不能包含多行。"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:242
-msgid "A"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:242
-msgid "B"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:242
-msgid "A and B"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:244
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:245
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:246
-msgid "False"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:240
+msgid "无序列表（:duref:`参考 <bullet-lists>` ）的用法很自然。 只需要在段落开头放置星号，然后正确地缩进："
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:245
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:246
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:247
-msgid "True"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:251
-msgid "CSV 表"
+msgid "正确的示范（2 格缩进）"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:253
-msgid "CSV 表格可以根据 CSV（逗号分隔值）数据创建表。"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:265
+msgid "这是一个无序列表。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:254
+msgid "它有两个元素， 第二个元素占据两行源码，视作同一个段落。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:257
+msgid "错误的示范（4 格缩进）"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:266
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:300
+msgid "它有两个元素，"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:267
+msgid "第二个元素被解析成定义列表。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:270
+msgid "有序列表"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:272
+msgid "对于有序列表，可以自己编号，也可以使用 # 来自动编号："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:279
+msgid "这是一个有序列表。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:280
+msgid "它也有两个元素。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:287
+msgid "这又是一个有序列表。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:288
+msgid "但是它能够自动编号～"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:292
+msgid "嵌套列表"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:294
+msgid "嵌套列表必须使用空白行和父列表项目隔开："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:309
+msgid "这是一个列表。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:311
+msgid "它嵌套了一个子列表，"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:312
+msgid "并且有自己的子元素。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:314
+msgid "这里是父列表的后续元素。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:325
+msgid "这并不是嵌套列表， * 前面三行被看作是同一个元素， * 其中星号被解析成普通的文本。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:328
+msgid "这是列表的第二个元素。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:333
+msgid "表格（Tables）"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:336
+msgid "网格表"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:338
+msgid "对于网格表（:duref:`参考 <grid-tables>` ），必须手动“画”出单元格："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:352
+msgid "Header row, column 1 (header rows optional)"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:352
+msgid "Header 2"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:352
+msgid "Header 3"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:352
+msgid "Header 4"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:355
+msgid "body row 1, column 1"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:355
+msgid "column 2"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:355
+msgid "column 3"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:355
+msgid "column 4"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:357
+msgid "body row 2"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:357
+msgid "..."
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:361
+msgid "简单表"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:363
+msgid "简单表（:duref:`参考 <simple-tables>` ）写起来很简单，但有局限性： 它们必须包含多个行，并且第一列单元格不能包含多行。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:378
+msgid "A"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:378
+msgid "B"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:378
+msgid "A and B"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:380
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:381
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:382
+msgid "False"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:381
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:382
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:383
+msgid "True"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:387
+msgid "CSV 表"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:389
+msgid "CSV 表格可以根据 CSV（逗号分隔值）数据创建表。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:402
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:436
 msgid "Frozen Delights!"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:1
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:304
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:440
 msgid "Treat"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:1
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:305
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:441
 msgid "Quantity"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:1
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:306
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:442
 msgid "Description"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:1
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:307
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:443
 msgid "Albatross"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:1
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:308
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:444
 msgid "2.99"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:1
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:309
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:316
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:445
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:452
 msgid "On a stick!"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:1
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:310
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:446
 msgid "Crunchy Frog"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:1
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:311
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:447
 msgid "1.49"
 msgstr ""
 
@@ -373,127 +472,132 @@ msgid "If we took the bones out, it wouldn't becrunchy, now would it?"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:1
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:314
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:450
 msgid "Gannet Ripple"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/restructuredtext.rst:1
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:315
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:451
 msgid "1.99"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:276
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:412
 msgid "List 表"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:278
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:414
 msgid "List 表可以根据两级无序列表来生成表格："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:312
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:448
 msgid "If we took the bones out, it wouldn't be crunchy, now would it?"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:321
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:457
 msgid "超链接（Hyperlinks）"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:323
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:459
 msgid "使用 ```链接文本 <https://domain.invalid>`_`` 来插入内联网页链接。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:327
-msgid "在链接文本和 ``<`` 符号之间必须有一个空格。"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:329
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:461
 msgid "你也可以使用目标定义（:duref:`参考 <hyperlink-targets>` ）的形式分离文本和链接："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:337
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:469
 msgid "这个段落包含一个 `超链接`_."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:344
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:475
+msgid "在链接文本和 ``<`` 符号之间必须至少有一个空格。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:476
+msgid "同 :ref:`inlnie-markup-rst` ， 标记符和被包裹的文本之间不能有空格， 而标记符和外部文本之间至少需要有一个空格。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:484
 msgid "图片（Images）"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:346
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:486
 msgid "reST 支持图像指令，用法如下："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:362
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:502
 msgid ""
 "MegEngine 文档中所使用的图片请统一放置在 ``source/_static/images`` 目录内。 **绝对不允许** "
 "直接将图片放在和文本文件相同的文件夹内，这样虽然方便了写作时进行引用， 但却给整个文档的维护引入了技术债务，将形成潜在的风险。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:365
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:505
 msgid "一般情况下请优先使用 SVG 格式的矢量图，使用位图请权衡好图片体积和清晰度。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:366
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:506
 msgid ""
 "尽可能使用 :ref:`Graphviz <graphviz-ext>` 或 :ref:`Mermaid <mermaid-ext>` "
 "语法绘制示意图。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:367
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:507
 msgid "图片文件名需要有相应的语义信息，不可使用完全随机生成的字符。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:372
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:511
+msgid ""
+"如果你想要给图片添加描述性文字，请使用 ``figure`` 代替 ``image``, 接着使用 ``:caption: text`` "
+"作为传入的参数，其它参数用法一致。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:517
 msgid "交叉引用（Cross-reference）"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:374
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:519
 msgid "使用 ``:role:`target``` 语法，就会创造一个 ``role`` 类型的指向 ``target`` 的链接。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:376
-msgid "显示的链接文本会和 ``target`` 一致"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:521
+msgid "最常见的使用情景是文档内部页面的相互引用（尤其是引用 API 参考内容时）。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:377
-msgid "你也可以使用 ``:role:`title <target>``` 来将链接文本指定为 ``title``"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:378
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:522
 msgid ""
-"如果使用前缀 ``~`` , 链接文本将会只显示 ``target`` 的最后一部分。 例如 "
-"``:py:func:`~megengine.functional.add``` 将会指向 "
-"``megengine.functional.add`` 但显示为 :py:func:`~megengine.functional.add` ."
+"显示的链接文本会和 ``target`` 一致， 你也可以使用 ``:role:`title <target>``` 来将链接文本指定为 "
+"``title``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:383
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:526
 msgid "通过 ref 进行引用"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:385
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:528
 msgid "为了支持对任意位置的交叉引用，使用了标准的 reST 标签（标签名称在整个文档中必须唯一）。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:387
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:530
 msgid "可以通过两种方式引用标签："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:389
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:532
 msgid "在章节标题之前放置一个标签，引用时则可以使用 ``:ref:`label-name``` , 比如："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:402
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:545
 msgid "这种方法将自动获取章节标题作为链接文本，且对图片和表格也一样有效。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:404
-msgid "如果标签没有放在标题之前，则需要使用 ``:ref:`Link title <label-name>``` 在其它地方引用。"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:547
+msgid "如果标签没有放在标题之前，则需要使用 ``:ref:`Link title <label-name>``` 来指定名称。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:407
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:550
 msgid "交叉引用 Python 对象"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:409
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:552
 msgid ""
 "MegEngine 文档按照 Sphinx `Python Domain <https://www.sphinx-"
 "doc.org/en/master/usage/restructuredtext/domains.html#the-python-"
@@ -502,422 +606,422 @@ msgid ""
 "之间可以交叉引用，其它类型的文档也可以借此快速跳转到 API 页面。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:413
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:556
 msgid "你可以在 MegEngine 的用户指南文档源码中找到非常多的使用参考。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:415
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:558
 msgid "如果找到匹配的标识符，则会自动生成对应的超链接："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:417
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:560
 msgid "``:py:mod:`` 引用一个模块（Module）；可以使用点名。也适用于包（Package）。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:418
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:561
 msgid "``:py:func:`` 引用一个 Python 函数；可以使用点名。可不添加括号以增强可读性。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:419
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:562
 msgid "``:py:data:`` 引用模块级变量。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:420
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:563
 msgid "``:py:const:`` 引用一个 “已定义的” 常量。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:421
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:564
 msgid "``:py:class:`` 引用一个类（Class）；可以使用点名。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:422
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:565
 msgid "``:py:meth:`` 引用一个对象的方法（Method）；可以使用点名。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:423
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:566
 msgid "``:py:attr:`` 引用一个对象的特性（Attribute），也适用于属性（Property）。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:424
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:567
 msgid "``:py:exc:`` 引用一个异常（Exception）；可以使用点名。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:425
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:568
 msgid "``:py:obj:`` 引用未指定类型的对象。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:427
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:570
 msgid ""
 "默认情况下，将在 `当前的模块 <https://www.sphinx-"
 "doc.org/en/master/usage/restructuredtext/domains.html#directive-py-"
-"currentmodule>`_ 中进行搜索。 比如 ``:py:func:`add``` 可以指向当前模块名为 ``add`` 的一个函数或者 "
-"built-in 的函数。 如果使用 ``:py:func:`functional.add``` 则可以明确指向到 ``functional`` "
+"currentmodule>`_ 中进行搜索。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:577
+msgid ""
+"比如 ``:py:func:`add``` 可以指向当前 ``funtional`` 模块内名为 ``add`` 的一个函数或者 Python "
+"Built-in 的函数。 如果使用 ``:py:func:`functional.add``` 则可以明确指向到 ``functional`` "
 "模块中的 ``add`` 函数。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:431
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:580
 msgid ""
-"如果使用点名，在没有找到完全匹配的内容时，会将点名作为后缀， 并开始搜索和匹配带有该后缀的所有对象的名称（即使匹配到的结果不在当前模块）。 "
-"例如在已知当前模块为 ``data`` 时，使用 ``:py:func:`.functional.add``` 会找到 "
-":py:func:`.functional.add` . 我们也可以结合使用 ``~`` 和 ``.`` ， 如 "
-"``:py:func:`~.functional.add``` 将只显示 :py:func:`~.functional.add` ."
+"如果使用前缀 ``~`` , 链接文本将会只显示 ``target`` 的最后一部分。 例如 "
+"``:py:func:`~megengine.functional.add``` 将会指向 "
+"``megengine.functional.add`` 但显示为 :py:func:`~megengine.functional.add` ."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:439
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:584
+msgid ""
+"如果使用 ``.`` 点名，在没有找到完全匹配的内容时，会将点名作为后缀， "
+"并开始搜索和匹配带有该后缀的所有对象的名称（即使匹配到的结果不在当前模块）。 例如在已知当前模块为 ``data`` 时，使用 "
+"``:py:func:`.functional.add``` 会找到 :py:func:`.functional.add` . 我们也可以结合使用"
+" ``~`` 和 ``.`` ， 如 ``:py:func:`~.functional.add``` 将只显示 "
+":py:func:`~.functional.add` ."
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:592
 msgid ""
 "MegEngine 文档列举出的 Python API 通常是最短调用路径。 比如 ``add`` 的实际路径是 "
 "``megengine.functional.elemwise.add`` ， 但在文档中能够搜索到的路径只有 "
 "``megengine.functional.add`` . 因此在引用时应当使用 ``:py:func:`~.functional.add```"
-" 而不是 ``:py:func:`~.functional.elemwise.add``` （后者会因为匹配失败而无法生成超链接），前者是我们推荐"
-" MegEngine 用户的 API 调用方式。"
+" 而不是 ``:py:func:`~.functional.elemwise.add``` （后者会因为匹配失败而无法生成超链接）。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:447
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:600
 msgid ""
 "对于 ``Conv2d`` 这种存在多个前缀的 API, 请补全部分前缀以防止冲突，比如 "
 "``:py:class:`.module.Conv2d```."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:452
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:605
 msgid "脚注（Footnotes）"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:454
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:607
 msgid ""
 "脚注（:duref:`参考 <footnotes>` ）使用 ``[#name]_`` 来标记脚注的位置，并在 ``Footnotes`` "
 "专栏（rubic）后显示，例如："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:465
-msgid "Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:618
+msgid "Lorem ipsum [1]_ dolor sit amet ... [2]_"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:468
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:621
 msgid "Footnotes"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:469
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:622
 msgid "Text of the first footnote."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:470
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:623
 msgid "Text of the second footnote."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:472
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:625
 msgid "你可以显式使用 ``[1]_`` 来编号，否则使用 ``[#]_`` 进行自动编号。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:477
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:630
 msgid "引用（Citation）"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:479
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:632
 msgid "引用和脚注类似，但不需要进行编号，且全局可用："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:487
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:640
 msgid "Lorem ipsum [Ref]_ dolor sit amet."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:489
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:642
 msgid "Book or article reference, URL or whatever."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:494
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:647
 msgid "数学公式（Math）"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:496
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:649
 msgid "只需要使用类似的语法："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:502
-msgid "就会得到由 `MathJax <https://www.mathjax.org/>`_ 渲染得到的数学公式："
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:504
-msgid "Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`."
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:508
-msgid "这个用法适合显示行内公式，如果想要使用行间公式，请参考下面的拓展指令。"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:513
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:658
 msgid "Sphinx 拓展指令"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:517
-msgid "以下语法非原生 ReStructuredText 语法，需要使用 Sphinx 进行支持。"
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:662
+msgid "以下语法非原生 ReStructuredText 语法，需要通过 Sphinx 进行支持。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:520
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:665
 msgid "``.. toctree::``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:520
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:665
 msgid "Table of contents tree. 用于组织文档结构。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:523
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:668
 msgid "``.. note::``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:523
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:668
 msgid "用于添加提示性信息，用户忽视这些信息可能出错。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:526
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:671
 msgid "``.. warning::``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:526
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:671
 msgid "用于添加警告性信息，用户忽视这些信息一定出错。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:529
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:674
 msgid "``.. versionadded:: version``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:529
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:674
 msgid "描述 API 添加版本，如果用于单个模块, 则必须放在显式文本内容顶部。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:532
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:677
 msgid "``.. versionchanged:: version``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:532
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:677
 msgid "描述 API 变更版本，指出以何种方式（新参数）进行了更改以及可能的副作用。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:535
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:680
 msgid "``.. deprecated:: version``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:535
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:680
 msgid "描述 API 弃用版本，简要地告知替代使用方式。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:554
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:699
 msgid "``.. seealso::``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:538
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:683
 msgid "包括对模块文档或外部文档的引用列表，内容应该是一个 reST 定义列表，比如："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:550
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:695
 msgid "也可以使用简略写法，如下所示："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:557
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:702
 msgid "``.. rubric:: title``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:557
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:702
 msgid "用于创建一个不会产生导航锚点的标题。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:560
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:705
 msgid "``.. centered::``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:560
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:705
 msgid "创建居中文本"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:581
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:726
 msgid "``.. math::``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:563
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:708
 msgid "LaTeX 标记的数学公式，相较于 ``:math:`` 语法提供了更干净的阅读空间。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:573
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:718
 msgid ""
 "(a + b)^2 = a^2 + 2ab + b^2\n"
 "\n"
 "(a - b)^2 = a^2 - 2ab + b^2"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:581
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:726
 msgid "用于 Python 文档字符串中时，必须将所有反斜杠加倍，或者使用 Python 原始字符串 ``r\"raw\"``."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:584
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:729
 msgid "``.. highlight:: language``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:584
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:729
 msgid "使用指定语言（Pygments 支持）的语法高亮，直到再次被定义。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:587
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:732
 msgid "``.. code-block:: [language]``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:587
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:732
 msgid "展示代码块，如果未设置 ``language``, highlight_language 将被使用。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:589
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:736
 msgid ""
 "想要了解完整的指令和配置项，请访问 `Directives <https://www.sphinx-"
 "doc.org/en/master/usage/restructuredtext/directives.html>`_ 页面。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:595
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:742
 msgid "Sphinx 插件语法"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:599
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:746
 msgid "下面的语法通过 Sphinx Extensions 支持，同样可以用于 Python 文档字符串。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:604
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:751
 msgid "Graphviz 语法支持"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:606
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:753
 msgid ""
 "文档已经通过 `sphinx.ext.graphviz <https://www.sphinx-"
 "doc.org/en/master/usage/extensions/graphviz.html>`_ 插件支持 `Graphviz "
 "<https://graphviz.org/>`_ 语法，样例如下："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:628
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:775
 msgid "Mermaid 语法支持"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:630
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:777
 msgid ""
 "文档已经通过 `sphinxcontrib-mermaid <https://sphinxcontrib-mermaid-"
 "demo.readthedocs.io/en/latest/>`_ 插件支持 `Mermaid <https://mermaid-"
 "js.github.io/mermaid/>`_ 语法，样例如下："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:667
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:814
 msgid "Toggle 语法支持"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:669
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:816
 msgid ""
 "文档已经通过 `sphinx-togglebutton <https://sphinx-"
 "togglebutton.readthedocs.io/en/latest/>`_ 插件支持常见 Toggle 功能，样例如下："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:679
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:826
 msgid "Here's my title"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:682
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:829
 msgid "My note"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:684
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:831
 msgid "以上展示的为基础用法，更多用法请参考文档。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:689
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:836
 msgid "Pannels 语法支持"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:691
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:838
 msgid ""
 "文档已经通过 `sphinx-panels <https://sphinx-panels.readthedocs.io/en/latest/>`_"
 " 插件支持常见 Pannels 功能，样例如下："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:713
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:860
 msgid "panel1"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:715
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:862
 msgid "panel2"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:717
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:864
 msgid "panel3"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:720
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:867
 msgid "panel4"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:722
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:869
 msgid "以上展示的为 Grid Layout 用法，Card Layout, Image Caps 等用法请参考文档。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:726
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:873
 msgid "该插件也实现了 Toggle, Tabs 语法功能。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:731
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:878
 msgid "Tabs 语法支持"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:733
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:880
 msgid ""
 "文档已经通过 `sphinx-tabs <https://sphinx-tabs.readthedocs.io/en/latest/>`_ "
 "插件支持常见 Tabs 功能，样例如下："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:754
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:901
 msgid "Apples"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:756
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:903
 msgid "Apples are green, or sometimes red."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:758
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:905
 msgid "Pears"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:760
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:907
 msgid "Pears are green."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:762
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:909
 msgid "Oranges"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:764
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:911
 msgid "Oranges are orange."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:766
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:913
 msgid "以上展示的为 Basic 用法，Nested / Group / Code Tabs 用法请参考文档。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:769
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:916
 msgid "GitHub URL 缩写"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:771
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:918
 msgid "为了方面写文档时引用 GitHub 上的源代码，支持如下语法："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:780
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:927
 msgid ":src:`imperative/python/megengine/`"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:781
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:928
 msgid ":docs:`source/conf.py`"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:782
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:929
 msgid ":issue:`142`"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:783
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:930
 msgid ":pull:`148`"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/restructuredtext.rst:785
+#: ../../source/development/contribute-to-docs/restructuredtext.rst:932
 msgid ""
 "该功能通过 `sphinx.ext.extlinks <https://www.sphinx-"
 "doc.org/en/master/usage/extensions/extlinks.html>`_ 插件支持。"
@@ -950,5 +1054,106 @@ msgstr ""
 #~ "``:py:func:`~.functional.elemwise.add``` "
 #~ "（后者会因为匹配失败而无法生成超链接），前者是我们推荐 MegEngine 用户的 API "
 #~ "调用方式。"
+#~ msgstr ""
+
+#~ msgid "如果你有 MarkDown 语法经验，学习 RST 语法会更加简单。"
+#~ msgstr ""
+
+#~ msgid "**标记符必须与文本长度一致。**"
+#~ msgstr ""
+
+#~ msgid "第一段内容的第一部分， 第一段内容的第二部分，将与前一句话连续（即不会换行）。"
+#~ msgstr ""
+
+#~ msgid "第二段内容。"
+#~ msgstr ""
+
+#~ msgid "第一段内容的第一部分，"
+#~ msgstr ""
+
+#~ msgid "第一段内容的第二部分，将会进行换行。"
+#~ msgstr ""
+
+#~ msgid "标准的 reST 内联标记用法十分简单："
+#~ msgstr ""
+
+#~ msgid "*使用单个星号表示标记重点。（粗体）*"
+#~ msgstr ""
+
+#~ msgid "**使用两个星号表示强调重点。（斜体）**"
+#~ msgstr ""
+
+#~ msgid "``使用两个反引号表示代码示例。``"
+#~ msgstr ""
+
+#~ msgid "内联标记不支持嵌套语法"
+#~ msgstr ""
+
+#~ msgid "内容不能以空格开头或结尾，如 ``* 文本*`` 这样的用法是错误的"
+#~ msgstr ""
+
+#~ msgid "必须用非单词字符将其和周围的文本分开"
+#~ msgstr ""
+
+#~ msgid "它有两个元素， 第二个元素占据两行源码，实际上视作同一个段落。"
+#~ msgstr ""
+
+#~ msgid "考虑到内容修改的方便，推荐使用自动编号的有序列表。"
+#~ msgstr ""
+
+#~ msgid "在链接文本和 ``<`` 符号之间必须有一个空格。"
+#~ msgstr ""
+
+#~ msgid "显示的链接文本会和 ``target`` 一致"
+#~ msgstr ""
+
+#~ msgid "你也可以使用 ``:role:`title <target>``` 来将链接文本指定为 ``title``"
+#~ msgstr ""
+
+#~ msgid "如果标签没有放在标题之前，则需要使用 ``:ref:`Link title <label-name>``` 在其它地方引用。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "默认情况下，将在 `当前的模块 <https://www.sphinx-"
+#~ "doc.org/en/master/usage/restructuredtext/domains.html#directive-"
+#~ "py-currentmodule>`_ 中进行搜索。 比如 ``:py:func:`add```"
+#~ " 可以指向当前模块名为 ``add`` 的一个函数或者 built-in "
+#~ "的函数。 如果使用 ``:py:func:`functional.add``` 则可以明确指向到 "
+#~ "``functional`` 模块中的 ``add`` 函数。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "如果使用点名，在没有找到完全匹配的内容时，会将点名作为后缀， "
+#~ "并开始搜索和匹配带有该后缀的所有对象的名称（即使匹配到的结果不在当前模块）。 例如在已知当前模块为 ``data``"
+#~ " 时，使用 ``:py:func:`.functional.add``` 会找到 "
+#~ ":py:func:`.functional.add` . 我们也可以结合使用 ``~`` 和"
+#~ " ``.`` ， 如 ``:py:func:`~.functional.add``` "
+#~ "将只显示 :py:func:`~.functional.add` ."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "MegEngine 文档列举出的 Python API 通常是最短调用路径。 "
+#~ "比如 ``add`` 的实际路径是 "
+#~ "``megengine.functional.elemwise.add`` ， 但在文档中能够搜索到的路径只有"
+#~ " ``megengine.functional.add`` . 因此在引用时应当使用 "
+#~ "``:py:func:`~.functional.add``` 而不是 "
+#~ "``:py:func:`~.functional.elemwise.add``` "
+#~ "（后者会因为匹配失败而无法生成超链接），前者是我们推荐 MegEngine 用户的 API "
+#~ "调用方式。"
+#~ msgstr ""
+
+#~ msgid "Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_"
+#~ msgstr ""
+
+#~ msgid "就会得到由 `MathJax <https://www.mathjax.org/>`_ 渲染得到的数学公式："
+#~ msgstr ""
+
+#~ msgid "Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`."
+#~ msgstr ""
+
+#~ msgid "这个用法适合显示行内公式，如果想要使用行间公式，请参考下面的拓展指令。"
+#~ msgstr ""
+
+#~ msgid "以下语法非原生 ReStructuredText 语法，需要使用 Sphinx 进行支持。"
 #~ msgstr ""
 

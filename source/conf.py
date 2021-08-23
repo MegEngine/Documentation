@@ -5,9 +5,10 @@ list see the documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
 
-# Setting for documentation editors who do not want to install megengine.
-# This will remove some pages and configurations to keep the doc slim.
-mini_doc = False
+import os
+
+mode = os.getenv("MGE_DOC_MODE", "AUTO")
+assert mode in ("AUTO", "FULL", "MINI"), 'MGE_DOC_MODE only support "AUTO" / "FULL" / "MINI"'
 
 # -- Monkey patch for `mprop` package ----------------------------------------
 # It will make some module to be a instance for getting or setting property
@@ -37,13 +38,21 @@ import logging
 # But MegEngine source code and documentation are stored in two different 
 #   repository and it's recommended to import megengine package to match.
 
-try:
+if mode == "FULL":
     import megengine
-except ImportError:
-    print("MegEngine not found. Using mini-doc mode.")
-    mini_doc = True
+elif mode == "MINI":
+    pass
 else:
-    print("MegEngine found. Using standard mode.")
+    try:
+        import megengine
+    except ImportError:
+        print("MegEngine not found. Use mini mode.")
+        mode = "MINI"
+    else:
+        print("MegEngine found. Use full mode.")
+        print("MegEngine path:", os.path.dirname(megengine.__file__))
+        mode = "FULL"
+assert mode in ("MINI", "FULL")
 
 # -- Project information -----------------------------------------------------
 
@@ -95,10 +104,8 @@ exclude_patterns = [
     "**.ipynb_checkpoints",
 ]
 
-# If users do not install MegEngine in system, exclude APIs from the document.
-if mini_doc:
+if mode == "MINI":
     exclude_patterns.append("reference")
-    exclude_patterns.append("reference/api")
 
 # -- Options for internationalization ----------------------------------------
 language = "zh_CN"

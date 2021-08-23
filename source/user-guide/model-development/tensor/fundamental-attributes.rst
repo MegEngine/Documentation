@@ -41,11 +41,11 @@ Tensor 的秩（Rank）指 Tensor 的维数（维度的数量，the number of di
 
 .. code-block:: python
 
-   >>> x = megengine.tensor([1, 2, 3])
+   >>> x = megengine.Tensor([1, 2, 3])
    >>> x.ndim
    1
 
-   >>> x = megengine.tensor([[1, 2], [3, 4]])
+   >>> x = megengine.Tensor([[1, 2], [3, 4]])
    >>> x.ndim
    2
 
@@ -72,6 +72,7 @@ Tensor 的轴
 
 Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）。
 
+* 一维 Tensor 只有一个轴，索引其中的元素就好像在刻度为单位 Tensor 长度的尺子上找到特定的位置；
 * 在笛卡尔平面坐标系中，存在着 :math:`X, Y` 轴，想要知道平面中某个点的位置，就需要知道坐标 :math:`(x, y)`.
 * 同样地，想要知道三维空间中的一个点，就需要知道坐标 :math:`(x, y, z)`, 推广到更高维也是如此。
 
@@ -91,7 +92,7 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
    ^^^^^^^^^^^^^^
    .. figure:: ../../../_static/images/coord_planes_color.svg
       :align: center
-      
+
       via `Three-dimensional_space <https://en.wikipedia.org/wiki/Three-dimensional_space>`_
 
 .. dropdown:: :fa:`eye,mr-1` Tensor 元素索引方向 vs 空间坐标的单位向量方向
@@ -144,7 +145,7 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
 
 .. math::
 
-   M = 
+   M =
    \begin{bmatrix}
 	1 & 2  & 3  & 4\\
 	5 & 6  & 7  & 8\\
@@ -159,7 +160,7 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
 .. image:: ../../../_static/images/numpy-arrays-have-axes.png
    :align: center
 
-上图来自于一篇解释 `NumPy Axes <https://www.sharpsightlabs.com/blog/numpy-axes-explained/>`_ 
+上图来自于一篇解释 `NumPy Axes <https://www.sharpsightlabs.com/blog/numpy-axes-explained/>`_
 的文章（NumPy 多维数组的 Axes 概念与 MegEngine Tensor 一致）。
 
 实际编程时，上面这个 Tensor 通常是这样构造的：
@@ -167,11 +168,11 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
 .. code-block:: python
 
    >>> from megengine import tensor
-   >>> M = tensor([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+   >>> M = Tensor([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
    >>> M.numpy()
    array([[ 1,  2,  3,  4],
           [ 5,  6,  7,  8],
-          [ 9, 10, 11, 12]], dtype=int32) 
+          [ 9, 10, 11, 12]], dtype=int32)
 
 .. note::
 
@@ -191,12 +192,12 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
    沿着 ``axis=0`` 方向
    ^^^^^^^^^^^^^^^^^^^^
    >>> F.sum(M, axis=0).numpy()
-   array([15, 18, 21, 24], dtype=int32) 
+   array([15, 18, 21, 24], dtype=int32)
    ---
    沿着 ``axis=1`` 方向
    ^^^^^^^^^^^^^^^^^^^^
    >>> F.sum(M, axis=1).numpy()
-   array([10, 26, 42], dtype=int32) 
+   array([10, 26, 42], dtype=int32)
 
 我们看看这个过程中究竟发生了什么：
 
@@ -208,13 +209,13 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
    ^^^^^^^^^^^^^^^^^^^^
    .. math::
 
-      M = 
+      M =
       \begin{bmatrix}
 	  1 & \color{red}{2}  & \color{green}{3}  & \color{blue}{4}  \\
 	  5 & \color{red}{6}  & \color{green}{7}  & \color{blue}{8}  \\
 	  9 & \color{red}{10} & \color{green}{11} & \color{blue}{12} \\
       \end{bmatrix} \\
-      \downarrow{\text{sum()}} \\ 
+      \downarrow{\text{sum()}} \\
       \begin{bmatrix}
 	  15 & \color{red}{18}  & \color{green}{21}  & \color{blue}{24}
       \end{bmatrix}
@@ -223,7 +224,7 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
    ^^^^^^^^^^^^^^^^^^^^
    .. math::
 
-      M = 
+      M =
       \begin{bmatrix}
 	  \color{red}1   & \color{red}2    & \color{red}3    & \color{red}4   \\
 	  \color{green}5 & \color{green}6  & \color{green}7  & \color{green}8 \\
@@ -262,7 +263,7 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
 .. note::
 
    * ``ndim`` 为 3 的 Tensor 进行沿轴操作时，可以借助空间坐标系中存在的 :math:`X, Y, Z` 坐标轴理解；
-   * 更高维 Tensor 的沿轴操作不好借助视觉想象，我们可以通过元素索引的角度来理解， 
+   * 更高维 Tensor 的沿轴操作不好借助视觉想象，我们可以通过元素索引的角度来理解，
      :math:`T_{[a_0][a_1]\ldots [a_{n-1}]}` 中的 :math:`i \in [0, n)` 轴方向即对应索引 :math:`a_i` 变化的方向。
 
 .. _tensor-shape:
@@ -276,13 +277,13 @@ Tensor 的轴具有长度，我们可以通过 Python 内置的 :py:func:`len` �
 
 .. math::
 
-   M_{3 \times 4} = 
+   M_{3 \times 4} =
    \begin{bmatrix}
 	\color{blue}1 & \color{blue}2  & \color{blue}3  & \color{blue}4 \\
 	5 & 6  & 7  & 8 \\
 	9 & 10 & 11 & 12 \\
    \end{bmatrix} \quad
-   M[0] = 
+   M[0] =
    \begin{bmatrix}
 	1 & 2  & 3  & 4
    \end{bmatrix}
@@ -326,6 +327,34 @@ Tensor 还具备名为 :py:attr:`~.Tensor.size` 的属性，用来表示 Tensor 
 .. image:: ../../../_static/images/ndim-axis-shape.png
    :align: center
 
+.. warning::
+
+   0 维 Tensor 的形状为 ``()``, 需要区分它和只有一个元素的 1 维 Tensor 的区别：
+
+   >>> a = megengine.Tensor(1)
+   >>> a.shape
+   ()
+
+   >>> b = megengine.Tensor([1])
+   >>> b.shape
+   (1,)
+
+   注意 “向量”、“行向量”、“列向量” 的区别：
+
+   * 1 维 Tensor 是一个向量，没有二维空间中行与列的区别；
+   * 行向量或列向量通常指形状为 :math:`(n,1)` 或 :math:`(1,n)` 的 2 维 Tensor（矩阵）
+
+   >>> a = megengine.Tensor([2, 5, 6, 9])
+   >>> a.shape
+   (4,)
+
+   >>> a.reshape(1,-1).shape
+   (1, 4)
+
+   >>> a.reshape(-1,1).shape
+   (4, 1)
+
+
 .. note::
 
    * 知道了形状信息，我们就可以推导出其它基础的属性值；
@@ -349,6 +378,6 @@ MegEngine 中实现的 Tensor 还具备有更多的属性，它们与 MegEngine 
    :py:attr:`.Tensor.grad`
       Tensor 的梯度是神经网络编程中很重要的一个属性，在反向传播的过程中被频繁使用。
 
-   The N-dimensional array ( :class:`~numpy.ndarray` ) 
+   The N-dimensional array ( :class:`~numpy.ndarray` )
      通过 NumPy 官方文档了解与多维数组有关的知识，与 MegEngine 的 Tensor 联想对比。
 

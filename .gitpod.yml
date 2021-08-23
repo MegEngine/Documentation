@@ -9,16 +9,7 @@ github:
     addBadge: false
 
 tasks:
-  - name: Dependencies
-  - init: |
-        pip install -r requirements.txt
-        pushd ..
-        git clone -b dev --depth=1 https://github.com/MegEngine/pydata-sphinx-theme.git
-        pip install --editable pydata-sphinx-theme
-        popd
-        sudo apt install -y pandoc
-        sudo apt install -y graphviz
-  - name: Autobuild Sever
+  - init: ./scripts/bootstrap.sh
     command: make livehtml
         
 ports:
