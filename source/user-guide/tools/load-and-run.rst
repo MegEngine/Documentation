@@ -162,10 +162,10 @@ dump 输出结果
 
 .. code-block:: python
 
-   import megengine as mge
+   from megengine.tools.compare_binary_iodump import load_tensor_binary
 
-   v0 = mge.utils.load_tensor_binary('out/run0-var1602')
-   v1 = mge.utils.load_tensor_binary('out/run1-var1602')
+   v0 = load_tensor_binary('out/run0-var1602')
+   v1 = load_tensor_binary('out/run1-var1602')
 
 dump 每层结果
 ~~~~~~~~~~~~~
