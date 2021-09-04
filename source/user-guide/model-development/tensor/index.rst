@@ -152,10 +152,11 @@ n 维张量（nd-tensor） n 维数组（nd-array）  n
 [2, 4, 6]
 
 观察上面的例子，我们通过 ``:`` 符号进行了切片操作，语法为 ``start:stop:step``, 对应起始索引、终止索引和步长。
-它其实是 Python 内置的 :py:class:`slice` 类生成的 ``Slice`` 对象的别名，通过传入 ``(start, stop[, step])`` 实现一样的效果：
+这种用法可以作为索引或下标用在 ``[]`` 中来返回一个切片对象 ``slice(start:stop:step)``, 用起来十分方便。
+对 ``a[start:stop:step]`` 求值时，Python 实际上会调用 ``a.__getitem__(slice(start:stop:step))`` 这一特殊方法：
 
 >>> myslice = slice(2, 8, 2)
->>> a[myslice]
+>>> a[myslice] # a.__getitem__(myslice)
 [2, 4, 6]
 
 .. warning::
@@ -204,16 +205,18 @@ n 维张量（nd-tensor） n 维数组（nd-array）  n
 接下来：Tensor 基础属性
 -----------------------
 
-一些用户会认为，多维切片的写法可能是这样的：
+通过本小节的内容，用户能够掌握最基本的 Tensor 概念，并且了解如何对 1 维 Tensor 中的元素进行索引，后面的几个小节将进一步介绍有关内容。
+
+我们建议循序渐进地阅读后面的内容，避免由于误用产生非预期的效果。比如新手阶段的用户经常会将多个 ``[][]...[]`` 看作是对多维 Tensor 的切片：
 
 >>> b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 >>> b[1:2]
 >>> b[1:2][0:1]
 
-输出结果是否和你的想法一致呢？是不是有些人认为输出应该是 4 呢？
+是不是有些人认为 ``b[1:2][0:1]`` 的输出结果应该是 4 呢？熟悉 Python 切片的用户应该不会犯这样的错误。
 （ :ref:`解释 <slice-will-not-reduce-dim>` ）
 
-在上面的代码示例中，我们一直在使用 Python 的 ``list`` 来举例，
+另外，为了方便初学者学习和过度，在上面的代码示例中，我们一直在使用 Python 的 ``list`` 来举例，
 以表明 MegEngine Tensor 数据结构与 Python 嵌套列表设计的一致性，但实际上二者还是存在着一定的区别。
 
 我们再举一些例子，请你尝试猜测一下输出：
@@ -253,8 +256,7 @@ Python 嵌套列表并不支持这种语法，你能猜测出在 ``[]`` 运算�
    M_{(?, ?)} = (4 \ 5)
 
 想要解答这些问题，你必须先理解 Tensor 的 :ref:`tensor-fundamental-attributes` 等有关概念，
-更好地理解 Tensor 所具备的一些特点，
-接着从 :ref:`tensor-indexing` 的内容中找到答案。
+更好地理解 Tensor 所具备的一些特点，接着从 :ref:`tensor-indexing` 的内容中找到答案。
 
 .. seealso::
 
@@ -268,7 +270,6 @@ Python 嵌套列表并不支持这种语法，你能猜测出在 ``[]`` 运算�
 
    Tensor 具象化举例
      如果你目前对于 Tensor 的概念不够直观，可以参考 :ref:`tensor-examples` 。
-
 
 .. admonition:: Python 数据 API 标准联盟协会
    :class: note
