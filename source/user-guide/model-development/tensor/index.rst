@@ -55,7 +55,10 @@ MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数�
 
 不同的研究领域对同一个概念使用不同的术语进行描述，这很常见，对这些概念不清晰的话很容易产生疑惑。
 
-而在 Python 中没有直接的数组类型，我们可以用（嵌套）列表 :py:class:`list` 来类比举例。
+Python 中提供了 `array <https://docs.python.org/3/library/array.html>` 的官方实现，
+但其使用方法和我们提到的 NumPy 数组有所不同，因此我们可以用 Python （嵌套）列表 :py:class:`list` 来类比举例。
+
+注意：为了方便理解，我们这里假设此处 Python 列表中的数据类型是一致的，比如都是 Number 类型。
 
 .. note::
 
@@ -148,9 +151,8 @@ n 维张量（nd-tensor） n 维数组（nd-array）  n
 >>> a[2:8:2]
 [2, 4, 6]
 
-我们通过 ``:`` 运算符进行了切片操作，语法为 ``start:stop:step``, 对应起始索引、终止索引和步长。
-
-我们也可以调用 Python 内置的 :py:class:`slice` 类，通过传入 ``(start, stop[, step])`` 实现一样的效果：
+观察上面的例子，我们通过 ``:`` 符号进行了切片操作，语法为 ``start:stop:step``, 对应起始索引、终止索引和步长。
+它其实是 Python 内置的 :py:class:`slice` 类生成的 ``Slice`` 对象的别名，通过传入 ``(start, stop[, step])`` 实现一样的效果：
 
 >>> myslice = slice(2, 8, 2)
 >>> a[myslice]
@@ -159,7 +161,16 @@ n 维张量（nd-tensor） n 维数组（nd-array）  n
 .. warning::
 
    * ``start`` 和 ``stop`` 索引区间是左闭右开的 ``[start, stop)`` 形式，即 ``a[stop]`` 本身不在切片范围之内。
-   * 这个设计其实与基于零的索引方式对应，使得我们可以直观地用 ``a[0:10]`` 来取得所有元素。
+   * 这个设计其实与基于零的索引方式对应，该设计的好处有很多：
+     比如当只有最后一个位置信息时，我们也可以快速计算出切片和区间内有几个元素，比如 ``a[:5]``;
+     同理使用 ``stop`` 减去 ``start`` 可以快速计算出切片和区间的长度，不容易混淆；
+     与此同时，我们可以用 ``a[:i]`` 和 ``a[i:]`` 获得原始数据分割后不重叠的两部分。
+
+.. seealso::
+
+   计算机科学家，Edsger W. Dijkstra 教授在《`Why numbering should start at zero 
+   <https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html>`_ 》
+   中的内容为基于 0 的下标以及左闭右开的区间习惯进行了很好的解释。
 
 另外，切片语法中的部分元素可以被省略：
 
