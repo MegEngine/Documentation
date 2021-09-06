@@ -59,6 +59,14 @@
   如果需要编译支持 TensorRT 的版本。
 * LLVM/Clang(>=6.0) ，如果需要编译支持 Halide JIT 的版本（默认开启）。
 * Python(>=3.5), Numpy, SWIG(>=3.0), 如果需要编译生成 Python 模块。
+ 
+其中 CUDA 三件套的环境变量设置如下：
+
+.. code-block:: shell
+
+   export CUDA_ROOT_DIR=/path/to/cuda/lib
+   export CUDNN_ROOT_DIR=/path/to/cudnn/lib
+   export TRT_ROOT_DIR=/path/to/tensorrt/lib
 
 开始编译
 ~~~~~~~~
