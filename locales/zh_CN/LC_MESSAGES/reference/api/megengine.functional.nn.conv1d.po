@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-08-17 22:46\n"
+"PO-Revision-Date: 2021-09-07 11:27\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -40,7 +40,7 @@ msgstr "卷积运算的特征图。"
 
 #: megengine.functional.nn.conv1d:6 of
 msgid "The convolution kernel."
-msgstr ""
+msgstr "卷积核。"
 
 #: megengine.functional.nn.conv1d:7 of
 msgid "The bias added to the result of convolution (if given)"
@@ -60,11 +60,11 @@ msgstr "一维卷积运算的扩张值(dilation)。 默认： 1"
 
 #: megengine.functional.nn.conv1d:12 of
 msgid "number of groups to divide input and output channels into, so as to perform a \"grouped convolution\". When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by ``groups``, and the shape of weight should be ``(groups, out_channel // groups, in_channels // groups, kernel_size)``. Default: 1"
-msgstr ""
+msgstr "在进行“分组卷积”时，对输入输出通道的分组数量。当 ``groups`` 不是 1 时，``in_channels`` 和 ``out_channels`` 必须可被 ``groups`` 整除，卷积核权重的形状将会是 ``(groups, out_channel // groups, in_channels // groups, kernel_size)``。默认值：1"
 
 #: megengine.functional.nn.conv1d:18 of
 msgid "Supports 'cross_correlation'. Default: 'cross_correlation'."
-msgstr ""
+msgstr "仅支持 'cross_correlation'。默认值：'cross_correlation'"
 
 #: megengine.functional.nn.conv1d:22 of
 msgid "When set to 'default', no special requirements will be placed on the precision of intermediate results. When set to 'float32', float32 would be used for accumulator and intermediate result, but only effective when input and output are of float16 dtype."
