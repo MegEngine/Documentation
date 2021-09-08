@@ -185,9 +185,6 @@ else:
         exclude_patterns.append("**/*.ipynb")
 
 # -- Options for HTML output -------------------------------------------------
-
-panels_add_bootstrap_css = False  # pydata-sphinx-theme already loads this
-
 html_logo = "logo.png"
 html_favicon = "favicon.ico"
 html_theme = "pydata_sphinx_theme"
@@ -196,7 +193,8 @@ html_static_path = ["_static"]
 html_extra_path = ["google940c72af103ac75f.html"]
 html_css_files = ["css/custom.css"]
 html_additional_pages = {
-    'index': 'indexcontent.html'
+    'index': 'indexcontent.html',
+    '404': '404.html',
 }
 
 html_search_language = "zh"
