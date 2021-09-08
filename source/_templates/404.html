@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{%- block htmltitle -%}
+<title>{% trans %}页面没找到{% endtrans %} - {{ shorttitle }}</title>
+{%- endblock -%}
+
+{% block docs_toc %}{% endblock %}
+
+{% block docs_body %}
+<img src="{{ pathto("./_static/images/404.png", 1) }}"class="img-fluid align-center" alt="404 Note Found">
+<div class="warning admonition">
+    <p class="admonition-title">{% trans %}404... 没找到对应页面...{% endtrans %}</p>
+    <ul class="simple">
+        <li><p>{% trans %}MegEngine 文档在更新过程中会更改部分网页地址，但你可以在历史归档版本中找到页面；{% endtrans %}</p></li>
+        <li><p>{% trans %}你也可以尝试利用站内提供的搜索功能，搜索感兴趣的内容；{% endtrans %}</p></li>
+        <li><p>{% trans %}如果依旧发现页面缺失，可以通过 <a href="https://github.com/MegEngine/Documentation"><span class="std std-ref">Issue</span></a> 联系官方人员，感谢你的反馈。{% endtrans %}</p></li>
+    </ul>
+</div>
+{% endblock %}
+
