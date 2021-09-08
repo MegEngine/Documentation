@@ -80,7 +80,6 @@ Others
    NodeFilterHasInput
    NodeFilterName
 
-.. py:module:: megengine.utils.network_node
 .. currentmodule:: megengine.utils
 
 Network Node

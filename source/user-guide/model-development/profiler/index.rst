@@ -71,7 +71,7 @@
 :py:class:`~.utils.profiler.Profiler` 的构造函数支持如下参数：
 
 ``path``
-  profile数据的存储路径，默认为当前路径下的 ``profile``文件夹.
+  profile数据的存储路径，默认为当前路径下的 ``profile`` 文件夹.
 
 ``format``
   输出数据的格式，默认为 ``chrome_timeline.json`` ，是Chrome支持的一种标准格式，以时间线的形式展现profiling结果.

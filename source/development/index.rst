@@ -10,7 +10,7 @@
    architecture-design/index
    behind/index
    roadmap/index
-   meps/index
+   meps
    environment/index
    workflow
    how-to/index
