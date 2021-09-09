@@ -14,7 +14,8 @@
      自动探测 MegEngine 包是否可用，如可用则进入 FULL 模式，否则进入 MINI 模式；
    
    ``MINI``
-     构建除 MegEngine API Reference 外的文档，不依赖于 MegEngine 本身，能节约大量构建时间；
+     构建除 MegEngine API Reference 外的文档， **不依赖于 MegEngine 本身** ，
+     能节约大量构建时间，但由于删去了部分板块，在构建文档时会产生大量 Warnings；
 
    ``FULL``
      构建全部文档，包括 MegEngine API Reference, 需要设置好 MegEngine 路径。
@@ -120,7 +121,7 @@ nbsphinx_ 是 Sphinx 的一个插件，可以帮助我们对 ``.ipynb`` 格式�
 
 .. _Pandoc: https://pandoc.org/
 
-如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Pandoc：
+如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Pandoc:
 
 .. code-block:: shell
 
@@ -133,7 +134,7 @@ Graphviz 绘图工具
 
 Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经常会用他制作一些可视化图片。
 
-如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Pandoc：
+如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Graphviz:
 
 .. code-block:: shell
 
