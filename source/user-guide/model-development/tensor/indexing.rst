@@ -12,9 +12,9 @@ Tensor 元素索引
 
    以下是本小节提到的相关内容速记：
 
-   * MegEngine 中切片将返回新的对象（而不是共用同一片内存），切片操作不会降低数组维度；
-   * 多维数组的索引语法形如 ``a[i, j]``, 也支持切片语法形如 ``a[i:j, p:q]``;
-   * 可以使用省略符 ``...``` 来自动填充完整切片到剩余维度，比如 ``a[i, ...]`` 等同于 ``a[i, :, :]``.
+   * MegEngine 中切片将返回新的对象（而不是共用同一片内存），切片操作不会降低 Tensor 维度；
+   * 多维 Tensor 的索引语法形如 ``a[i, j]``, 也支持切片语法形如 ``a[i:j, p:q]``;
+   * 可以使用省略符 ``...`` 来自动填充完整切片到剩余维度，比如 ``a[i, ...]`` 等同于 ``a[i, :, :]``.
 
 和 NumPy 索引对比
 -----------------
@@ -71,7 +71,9 @@ Tensor 元素索引
 
 MegEngine 和 NumPy 在进行切片时，都不会改变对象 :ref:`tensor-ndim` ：
 
->>> M = Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+>>> M = Tensor([[1, 2, 3],
+...             [4, 5, 6], 
+...             [7, 8, 9]])
 >>> print(M[1:2], M[1:2].ndim)
 >>> print(M[1:2][0:1], M[1:2][0:1].ndim)
 Tensor([[4 5 6]], dtype=int32, device=cpux:0) 2
@@ -90,12 +92,14 @@ Tensor([[4 5 6]], dtype=int32, device=cpux:0) 2
 .. note::
 
    * 切片的作用是从整体中取出一部分，因此不会产生降低维度的行为。
-   * 如果你希望切片操作后能去掉冗余的维度，可以使用 :func:`~.squeeze` .
+   * 如果你希望切片操作后能去冗余的维度，可以使用 :func:`~.squeeze` .
+
+.. _array-indexing:
 
 都可以使用数组索引
 ~~~~~~~~~~~~~~~~~~
 
-实际上除了切片索引，我们还可以使用数组（列表）进行索引：
+实际上除了切片索引，我们还可以使用整数数组进行索引得到特定位置的元素，以一维情况为例：
 
 .. panels::
    :container: +full-width
@@ -115,17 +119,19 @@ Tensor([[4 5 6]], dtype=int32, device=cpux:0) 2
    >>> y
    array([1., 3.])
 
-此时列表的长度对应了被索引的元素的个数，在一些情况下这种机制十分有帮助。
+索引数组的长度对应了被索引的元素的个数，在一些情况下这种机制十分有帮助。
 
 此时 NumPy 将不会生成原始数组的视图，与 MegEngine 的逻辑一致。
 
-注意语法细节，一些用户容易将列表索引写成如下形式：
+.. warning::
 
->>> x = Tensor([1., 2., 3.])
->>> y = x[0, 1, 2]
-IndexError: too many indices for tensor: tensor is 1-dimensional, but 3 were indexed
+   注意语法细节，一些用户容易将整数数组索引写成如下形式：
 
-实际上这是对 Tensor 的 n 个维度分别进行索引的语法。引出了下一小节的解释 ——
+   >>> x = Tensor([1., 2., 3.])
+   >>> y = x[0, 1, 2]
+   IndexError: too many indices for tensor: tensor is 1-dimensional, but 3 were indexed
+
+   实际上这是对 Tensor 的 n 个维度分别进行索引的语法。引出了下一小节的解释 ——
 
 .. _multi-dim-indexing:
 
@@ -149,10 +155,12 @@ IndexError: too many indices for tensor: tensor is 1-dimensional, but 3 were ind
 
 .. note::
 
-   * Python 的内置序列类型都是一维的，因此只支持单一索引，但对于具备多维属性的 Tensor, 可以使用成对索引，
-     在多个维度直接进行索引（或者是 :ref:`切片 <multi-dim-slicing>` ），语法使用 ``,`` 进行分隔，而没有必要使用多个方括号 ``[]`` .
-   * 背后的细节是：在 Python 中要正确处理这种形式的 ``[]`` 运算符，对象的特殊方法 ``__getitem__`` 和 ``__setitem__`` 需要以元组的形式来接受索引。
-     也即是说如果要得到 ``M[i, j]`` 的值，Python 会调用 ``M.__getitem__((i, j))`` .
+   * Python 的内置序列类型都是一维的，因此只支持单向索引，但对于具备多维属性的 Tensor, 可以在多个维度直接进行索引
+     （或者是 :ref:`在多个维度进行切片 <multi-dim-slicing>` ，后面会进行举例），
+     使用 ``,`` 作为维度之间的分隔，上面的例子则可用 ``M[1, 2]`` 访问元素，而没有必要使用多个方括号 ``M[1][2]`` .
+   * 感兴趣的用户可以了解试着背后的细节：在 Python 中要正确处理这种形式的 ``[]`` 运算符，
+     对象的特殊方法 ``__getitem__`` 和 ``__setitem__`` 需要以元组的形式来接受传入的索引。
+     也即是说如果要得到 ``M[i, j]`` 的值，Python 实际上会调用 ``M.__getitem__((i, j))`` .
 
 >>> M = Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 >>> M[1,2]
@@ -169,33 +177,6 @@ Tensor(6, dtype=int32, device=xpux:0)
 即我们要提供 :math:`i_1, i_2, \ldots ,i_n` 共 n 个索引值，此时不需要层层降维索引，而是直接得到对应元素。
 
 如果提供的索引数组个数不足 n, 则需要了解 :ref:`default-indexing` 。
-
-.. _multi-dim-array-indexing:
-
-结合数组索引使用
-~~~~~~~~~~~~~~~~
-
-对于有 n 个维度的 Tensor, 我们可以传入 n 个列表来进行索引：
-
->>> M = Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
->>> M[[0, 1], [1, 2]]
-Tensor([2 6], dtype=int32, device=xpux:0)
->>> M[[0, 1]]
-Tensor([[1 2 3]
- [4 5 6]], dtype=int32, device=xpux:0)
-
-需要注意的是，数组的长度需要一致，数组长度表示需要被索引的元素个数；
-
-如果提供的索引个数不足 n, 则需要了解 :ref:`default-indexing` 。
-
-.. seealso::
-
-   * NumPy 官网文档中对 `整数列表索引（Integer array indexing）
-     <https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-array-indexing>`_
-     进行了更详细的说明；
-   * 除了整数列表索引外，MegEngine 还支持和 NumPy 一致的 `布尔列表索引
-     <https://numpy.org/doc/stable/reference/arrays.indexing.html#boolean-array-indexing>`_ 。
-
 
 .. _multi-dim-slicing:
 
@@ -320,8 +301,8 @@ Tensor([[4 5]
 
 .. _use-ellipsis:
 
-多维切片时使用省略
-------------------
+多维切片时使用省略符号
+----------------------
 
 在对 Tensor 进行多维切片时，允许对部分不做切片的维度进行省略（Ellipsis）表示。
 它的正确写法是三个英语句号 ``...`` 而不是 Unicode 码位 U+2026 表示的半个省略号 ``…`` .
@@ -352,4 +333,12 @@ Tensor([3 6 9], dtype=int32, device=xpux:0)
 * 此时其它维度的元素将被完整地保留，等同于使用 ``:`` 作为缺省维度的默认索引；
 * 根据给定的明确索引数，得到的子 Tensor 维度个数将对应地减少。
 
+.. _advanced-indexing:
 
+高级索引方式
+------------
+
+.. seealso::
+
+参考 `NumPy Advanced Indexing
+<https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-array-indexing>`_ .
