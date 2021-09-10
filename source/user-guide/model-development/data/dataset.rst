@@ -3,17 +3,22 @@
 =======================
 使用 Dataset 定义数据集
 =======================
-这个世界上的数据集五花八门，并且总是以各种格式分布在不同地方，
+这个世界上的数据集五花八门，并且总是以不同的格式（比如 png, HDF5, npy 等）分布在不同地方，
 或许一些数据集的存储和组织形式已经成为了参考标准，但并不是所有数据一开始都用 MegEngine 所支持格式的进行存储，
 很多时候需要我们写脚本借助一些库或框架对原始数据进行处理，并且转换成 MegEngine 中可用的数据集对象。
 
 在 :ref:`tensor-creation` 小节中，我们提到了 ndarray 是 Python 数据科学社区中较为通用支持的格式，
-因此 MegEngine 中的数据集相关操作均以 NumPy 的 :py:class:`~.numpy.ndarray` 作为处理对象，
-同时不会产生 Tensor 类型的输出结果，因此在后续如果进行 Tensor 计算时，则需要 :ref:`create-tensor-from-ndarray` 。
+因此 MegEngine 中的数据集相关操作均以 NumPy 的 :py:class:`~.numpy.ndarray` 作为处理对象
+（此时假设用户已经通过一些途径将原始数据转换成了 ndarray 格式，能够用作后续数据集封装），
+整个过程中数据格式不会自动转换，因此需要注意：后续如果要进行 Tensor 计算时，则需要 :ref:`create-tensor-from-ndarray` 。
+
+.. seealso::
+
+   通过搜索引擎搜索类似 “如何用 NumPy 加载 xxx 类型数据？” 等问题会很有帮助。
 
 .. note::
 
-   * :py:class:`~.DataLoader` 初始化时必须提供 ``dataset`` 参数，通过传入一个数据集对象，表明将要加载的数据；
+   * :py:class:`~.DataLoader` 初始化时必须提供 ``dataset`` 参数，通过传入一个数据集对象，告知如何加载每个数据；
    * MegEngine 中可以 :ref:`megengine-dataset` （如 :py:class:`~.PascalVOC`,  :py:class:`~.ImageNet` 等）
      替用户完成一些主流数据集的获取、切分等工作。但一些时候这些实现不能满足需求，或者我们需要使用自己采集和标注好的的数据集，
      因此在使用 ``DataLoader`` 之前，通常需要将要用到的数据集人为地封装。
@@ -34,8 +39,8 @@
      - :py:class:`~.dataset.Dataset` / :py:class:`~.dataset.ArrayDataset`
      - :py:class:`~.dataset.StreamDataset`
    * - 访问方式
-     - 支持随机
-     - 顺序迭代
+     - 支持随机访问
+     - 仅能顺序迭代
    * - 适用情景
      - Numpy 数组、字典、磁盘文件 [2]_
      - 生成器、来自网络的流数据
@@ -45,7 +50,7 @@
        但 ``MapDataset`` 不太适合输入数据作为流的一部分到达的情况，例如音频或视频源；
        或者每个数据点可能是文件的一个子集，该文件太大而无法保存在内存中，因此需要在训练期间进行增量加载。
        虽然这些情况可以通过往 Map-style 数据集中加入更复杂的逻辑或在输入时进行额外的预处理来解决，
-       但现在有一个更自然的解决方案，即使用 Iterable-style 的 ``StreamDataset`` 作为输入。
+       但也会花掉更多的准备时间，现在有一个更自然的解决方案，即使用 Iterable-style 的 ``StreamDataset`` 作为输入。
 
 .. _map-style-dataset:
 
@@ -87,6 +92,7 @@ Map-style
        我们建议将实际的数据读取操作实现在 ``__getitem__`` 方法中，而不是 ``__init__`` 方法中，
        后者仅记录映射关系中的索引/键内容（可能是文件名或路径组成的列表），这可以极大程度地减少内存占用。
        具体的例子可参考 :ref:`load-image-data-example` ；
+     * 如果数据规模已经大到了无法将索引等 meta 信息加载进内存，则需要考虑流式获取方式；
      * 但情况并不总是唯一的。如果我们的数据集规模比较小，可以常驻在内存中，
        那么就可以考虑在初始化对象时就加载好整个数据集，减少反复从硬盘或其它位置读取数据到内存的次数。
        例如在不同的 Epoch 中，同一个样本会被用来训练多次，此时从内存中直接读取会更加高效。
@@ -121,12 +127,12 @@ Iterable-style
 :py:class:`~.dataset.StreamDataset` （也可被称为 ``IterableDataset`` ）
   Iterable-style 数据集，适用于流式数据，即迭代式地访问数据，
   例如使用 ``iter(dataset)`` 可以返回从数据库、远程服务器甚至实时生成的日志中读取的数据流，
-  ``DataLoader`` 将使用 ``next`` 对数据进行迭代。
+  ``DataLoader`` 将使用 ``next`` 来不断获取数据。
 
   这种类型的数据集特别适用于：
 
-  * 随机读取成本过高，或者不提供随机访问途径的情况；
-  * 批量大小实际取决于获取的数据的情况。
+  * 随机读取成本过高，或者数据规模太大，无法支持随机访问的情况；
+  * 批量大小情况实际取决于获取数据的情况，即必须根据流数据才能判断当前批是否已经完整。
 
   使用时需要实现 ``__iter__()`` 协议。
 
@@ -161,8 +167,10 @@ Iterable-style
   >>> len(iterable_dataset)
   AssertionError: StreamDataset does not have length
 
-在 DataLoader 中的区别
-~~~~~~~~~~~~~~~~~~~~~~
+  这个例子无法体现 ``StreamDataset`` 加载的真实需求情景，但方便和 ``MapDataset`` 进行对比。
+
+为何设计流式数据集
+~~~~~~~~~~~~~~~~~~
 .. panels::
    :container: +full-width
    :card:
