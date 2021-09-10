@@ -137,4 +137,80 @@ Tensor 的步幅
 
    对于一些改变形状的 Tensor 操作，我们可以通过修改步幅来避免实际进行内存的拷贝。
 
+.. _format-introduction:
+
+format介绍
+-------------
+
+​在深度学习框架中，如下图所示，通用的神经网络特征图用4维数组组成，然而对于计算机而言，数据的存储只能是线性的，因此不同的数据排布（format）方式，会显著影响计算性能，其中针对GPU的特点，Megengine采用的数据排布方式有：NCHW、NHWC、NCHW4、NCHW32、NCHW64和CHWN4等等。
+
+为更好的说明不同format的具体含义，下图列举了128个tensor的逻辑结构。其中N、H、W和C分别为：
+
+      * N：Batch。表示图片的批次，此处为2；
+      * H：Height。表示图片的高，此处为3；
+      * W：Weight。表示图片的宽，此处为3；
+      * C：Channel。表示图片的通道数，此处为64。
+
+.. figure:: ../../../_static/images/format_logical_construction.svg
+
+NCHW 和 NHWC
+~~~~~~~~~~~~~~
+
+(1) **排布方式**
+
+对于计算机而言，数据的存储只能是线性的，其中 NCHW 和 NHWC 最为常用，下图列举了 NCHW 和 NHWC 的物理存储结构：
+
+.. figure:: ../../../_static/images/format_NCHW_NHWC.svg
+
+对于 NCHW 而言，优先存储W维度，之后按照H、C和N分别存储，因此按照顺序从0000一直存储到1151；
+
+对于 NHWC 而言，优先存储C维度，因此优先存储0000、0009一直到1143，之后继续按照W、H和N分别存储，存储0001、0010等；
+
+(2) **特性**
+
+
+   * 对于"NCHW" 而言，其同一个通道的像素值连续排布，更适合那些需要对 **每个通道单独做运算** 的操作，比如"MaxPooling"。
+   * 对于"NHWC"而言，其不同通道中的同一位置元素顺序存储，因此更适合那些需要对 **不同通道的同一像素做某种运算** 的操作，比如“Conv”。
+
+NCHWX
+~~~~~~~~~~~~~~
+[Batch, Channels/X, Height, Width, X=4，32或64]
+
+(1) **排布方式**
+
+由于典型的卷积神经网络随着层数的增加，其特征图在下采样后的长和宽逐渐减小，
+但是channel数随着卷积的filter的个数不断增大是越来越大的，经常会出现channel数为128，256等很深的特征图。
+这些很深的特征图与filter数很多的卷积层进行运算的运算量很大。
+为了充分利用有限的矩阵计算单元，进行了Channel维度的拆分是很有必要的。Megengine根据不同数据结构特点，分别对Channel维进行了Channel/4，Channel/32和Channel/64的拆分，
+下图为NCHWX的物理存储结构。
+
+.. figure:: ../../../_static/images/format_NCHWX.svg
+
+NCHWX最先存储的都是Channel维，不同点在于因为X的不同，优先存储的Channel个数不同，NCHW4 优先存储4个channel维，此处为0000、0009、0018和0027，之后继续按照W、H、C和N进行存，此处继续存0001、0010等；
+NCHW32和NCHW64类似，不过优先存储的分别为32个channel和64个channel，之后继续按照W、H、C和N进行存。
+
+(2) **特性**
+
+
+   * ​更好的适配SIMT，其中NCHW4可以针对int8数据类型，利用CUDA的dp4a模块进行计算，而NCHW32和NCHW64分别针对int8和int4数据类型，更好的利用CUDA的tensorcore计算单元进行计算；
+   * 对cache更友好，减少cache miss；
+   * 易进行padding，减少边界分支判断，代码逻辑简单。
+
+CHWN4
+~~~~~~~~~~~~~~
+为了更好的适配cuda的dp4a和tensorcore处理单元，引入了CHWN4。
+
+(1) **排布方式**
+
+
+.. figure:: ../../../_static/images/format_CHWN4.svg
+
+CHWN4优先存储Channel维，存储4个数，0000、0009、0018和0027之后，沿着N维，直接存0576到0603，之后在沿W维和H维，存0001和0010等。
+
+(2) **特性**
+
+
+   * 相较于NCHWX，可以更好的利用dp4a和tensorcore处理单元，不需要layout转换；
+   * 此外依然具有对cache友好，及易进行padding的优点。
+
 
