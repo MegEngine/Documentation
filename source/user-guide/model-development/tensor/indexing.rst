@@ -340,5 +340,5 @@ Tensor([3 6 9], dtype=int32, device=xpux:0)
 
 .. seealso::
 
-参考 `NumPy Advanced Indexing
-<https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-array-indexing>`_ .
+   参考 `NumPy Advanced Indexing
+   <https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-array-indexing>`_ .
