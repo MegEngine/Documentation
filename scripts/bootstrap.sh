@@ -1,5 +1,7 @@
 #! /bin/bash
+set -e
 
+sudo apt install git-lfs
 git lfs install
 git submodule update --init --progress --depth=1 --recursive
 python3 -m pip install --user -r requirements.txt
