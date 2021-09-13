@@ -2,12 +2,13 @@
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 LANGUAGE      ?= zh_CN
-SPHINXOPTS    ?= -j auto -D language='$(LANGUAGE)' $(AUTOBUILDOPTS)
+AUTOBUILDOPTS ?= 
+
+SPHINXOPTS    ?= -j auto -W --keep-going -D language='$(LANGUAGE)' $(AUTOBUILDOPTS)
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 HTMLAPI       ?= reference/api
-AUTOBUILDOPTS ?= 
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -20,7 +21,6 @@ help:
 	@echo "  BUILDDIR:      ${BUILDDIR}"
 	@echo "  HTMLAPI:       ${HTMLAPI}"
 	@echo "  SPHINXOPTS:    ${SPHINXOPTS}"
-	@echo "  AUTOBUILDOPTS: ${AUTOBUILDOPTS}"
 	@echo "=============================================== Notes ======================================================"
 	@echo "1. You can use\033[36m export PYTHONPATH=\"/path/to/megengine\"\033[0m to specify megengine python package path."
 	@echo "2. You can use\033[36m export MGE_DOC_MODE=\"MINI\"\033[0m to skip generating API Pages, which speeds up a lot."

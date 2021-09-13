@@ -74,7 +74,7 @@ jobs:
 
       - name: Generate HTML files
         run: |
-          make LANGUAGE=${{ matrix.language }} html --keep-going
+          make LANGUAGE=${{ matrix.language }} html
           mv build/html ${{ matrix.language }}
           tar czf ${{ matrix.language }}.tgz ${{ matrix.language }}
 
