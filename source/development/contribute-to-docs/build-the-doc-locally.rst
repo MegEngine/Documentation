@@ -33,6 +33,7 @@
 
 .. code-block:: shell
 
+   sudo apt install git-lfs
    git lfs install
    git clone https://github.com/MegEngine/Documentation
    cd Documentation
