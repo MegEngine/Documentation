@@ -350,8 +350,6 @@ Sparse functions
    indexing_one_hot
    embedding
 
-.. currentmodule:: megengine.functional.metric
-
 .. _metric-functions:
 
 Metric functions
@@ -361,8 +359,6 @@ Metric functions
    :nosignatures:
 
    topk_accuracy
-
-.. currentmodule:: megengine.functional.loss
 
 .. _loss-functions:
 
@@ -377,8 +373,6 @@ Loss functions
    hinge_loss
    binary_cross_entropy
    cross_entropy
-
-.. currentmodule:: megengine.functional.vision
 
 .. _vision-functions:
 
