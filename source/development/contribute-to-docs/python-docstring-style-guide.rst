@@ -13,7 +13,7 @@ Python 文档字符串风格指南
 
 .. note::
 
-   在 MegEngine 源码中鼓励使用 Google Style 风格的 Docstring. (必须带上 Type Hints)
+   在 MegEngine 源码中鼓励使用 Google 风格的 Docstring. (必须带上 Type Hints)
 
 .. warning::
 
@@ -32,7 +32,7 @@ Docstring Google Style 模版
 
    .. code-block:: python
 
-      """Example Google style docstrings.
+      r"""Example Google style docstrings.
 
       This module demonstrates documentation as specified by the `Google Python
       Style Guide`_. Docstrings may extend over multiple lines. Sections are created
@@ -69,7 +69,7 @@ Docstring Google Style 模版
       module_level_variable1 = 12345
 
       module_level_variable2 = 98765
-      """int: Module level variable documented inline.
+      r"""int: Module level variable documented inline.
 
       The docstring may span multiple lines. The type may optionally be specified
       on the first line, separated by a colon.
@@ -77,7 +77,7 @@ Docstring Google Style 模版
 
 
       def function_with_types_in_docstring(param1, param2):
-          """Example function with types documented in the docstring.
+          r"""Example function with types documented in the docstring.
 
           `PEP 484`_ type annotations are supported. If attribute, parameter, and
           return types are annotated according to `PEP 484`_, they do not need to be
@@ -97,7 +97,7 @@ Docstring Google Style 模版
 
 
       def function_with_pep484_type_annotations(param1: int, param2: str) -> bool:
-          """Example function with PEP 484 type annotations.
+          r"""Example function with PEP 484 type annotations.
 
           Args:
               param1: The first parameter.
@@ -110,7 +110,7 @@ Docstring Google Style 模版
 
 
       def module_level_function(param1, param2=None, *args, **kwargs):
-          """This is an example of a module level function.
+          r"""This is an example of a module level function.
 
           Function parameters should be documented in the ``Args`` section. The name
           of each parameter is required. The type and description of each parameter
@@ -164,7 +164,7 @@ Docstring Google Style 模版
 
 
       def example_generator(n):
-          """Generators have a ``Yields`` section instead of a ``Returns`` section.
+          r"""Generators have a ``Yields`` section instead of a ``Returns`` section.
 
           Args:
               n (int): The upper limit of the range to generate, from 0 to `n` - 1.
@@ -185,7 +185,7 @@ Docstring Google Style 模版
 
 
       class ExampleError(Exception):
-          """Exceptions are documented in the same way as classes.
+          r"""Exceptions are documented in the same way as classes.
 
           The __init__ method may be documented in either the class level
           docstring, or as a docstring on the __init__ method itself.
@@ -212,7 +212,7 @@ Docstring Google Style 模版
 
 
       class ExampleClass(object):
-          """The summary line for a class docstring should fit on one line.
+          r"""The summary line for a class docstring should fit on one line.
 
           If the class has public attributes, they may be documented here
           in an ``Attributes`` section and follow the same formatting as a
@@ -229,7 +229,7 @@ Docstring Google Style 模版
           """
 
           def __init__(self, param1, param2, param3):
-              """Example of docstring on the __init__ method.
+              r"""Example of docstring on the __init__ method.
 
               The __init__ method may be documented in either the class level
               docstring, or as a docstring on the __init__ method itself.
@@ -255,16 +255,16 @@ Docstring Google Style 模版
               self.attr4 = ['attr4']
 
               self.attr5 = None
-              """str: Docstring *after* attribute, with type specified."""
+              r"""str: Docstring *after* attribute, with type specified."""
 
           @property
           def readonly_property(self):
-              """str: Properties should be documented in their getter method."""
+              r"""str: Properties should be documented in their getter method."""
               return 'readonly_property'
 
           @property
           def readwrite_property(self):
-              """:obj:`list` of :obj:`str`: Properties with both a getter and setter
+              r""":obj:`list` of :obj:`str`: Properties with both a getter and setter
               should only be documented in their getter method.
 
               If the setter method contains notable behavior, it should be
@@ -277,7 +277,7 @@ Docstring Google Style 模版
               value
 
           def example_method(self, param1, param2):
-              """Class methods are similar to regular functions.
+              r"""Class methods are similar to regular functions.
 
               Note:
                   Do not include the `self` parameter in the ``Args`` section.
@@ -293,7 +293,7 @@ Docstring Google Style 模版
               return True
 
           def __special__(self):
-              """By default special members with docstrings are not included.
+              r"""By default special members with docstrings are not included.
 
               Special members are any methods or attributes that start with and
               end with a double underscore. Any special member with a docstring
@@ -312,7 +312,7 @@ Docstring Google Style 模版
               pass
 
           def _private(self):
-              """By default private members are not included.
+              r"""By default private members are not included.
 
               Private members are any methods or attributes that start with an
               underscore and are *not* special. By default they are not included
@@ -333,6 +333,106 @@ Docstring Google Style 模版
 
    * 阅读 :ref:`document-reference` 会对了解如何组织内容有所帮助。
    * 上面给出的样例模版更多地是作为形式上的参考，适合作为比对。
+
+Docstring Sections
+~~~~~~~~~~~~~~~~~~
+
+* Args (alias of Parameters)
+* Arguments (alias of Parameters)
+* Attention
+* Attributes
+* Caution
+* Danger 
+* Error
+* Example
+* Examples
+* Hint
+* Important
+* Keyword Args (alias of Keyword Arguments)
+* Keyword Arguments
+* Methods
+* Note
+* Notes
+* Other Parameters
+* Parameters
+* Return (alias of Returns)
+* Returns
+* Raise (alias of Raises)
+* Raises
+* References
+* See Also
+* Tip
+* Todo
+* Warning
+* Warnings (alias of Warning)
+* Warn (alias of Warns)
+* Warns
+* Yield (alias of Yields)
+* Yields
+
+.. seealso::
+
+   这些指令所示的内容域都需要使用风格一致的缩进，
+   了解 `napoleon <https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html>`_ 插件。
+
+Docstring 编辑自查清单
+----------------------
+
+* 对于具有返回值的 APIs, 请统一按照 PEP484 添加类型提示 Type Hints;
+  除非需要用更加具体的文本描述对返回类型进行说明，
+  则可以使用类似 ``param(Number)`` 的写法对 PEP484 的类型提示进行覆盖。
+
+* Google Style 语法请统一使用与 Python 一致的 4 格缩进（而非 2 格），
+  另一种常见的错误写法如下：
+
+  .. code-block::
+
+     Example:
+     .. code-block::
+
+        example_func()
+
+  对于一些指令，我们必须将其内容域向右缩进 4 格以便识别：
+
+  .. code-block::
+
+     Example:
+         .. code-block::
+
+            example_func()
+
+* 通常而言，我们应该在 API Examples 中向用户展示如何正确地使用 APIs,
+  而不是用一些单元测试用例作为使用示范，因为一些时候这只能验证接口的有效性，
+  无法帮助查阅 API 文档的用户理解如何去使用它们；因此请勿使用 ``testcode``.
+  如果你必须在解释清楚一些相关概念或实现常见任务后才能向用户说明 API 用法，
+  通常表明你需要提供一份教程或者是用户指南来进行额外的说明，并在 API 参考中引用。
+
+  
+  
+* 请花时间琢磨一下：文档字符串中的首行是否起到了 **清晰、准确、概括** 的效果，错误例子如下：
+
+  .. code-block::
+
+     def all_reduce_max(...):
+         r"""Create all_reduce_max operator for collective communication."""
+
+  整个注释内容只有上述这句话，对于一个不了解分布式概念的用户来说，
+  仅提供这些信息的注释是毫无作用的，甚至让人感到更加的迷惑。
+  用户完全不知道这样的 API 能够用在什么地方，也不知道什么是 collective communication.
+  我们应当认为该 API 文档字符串并没有起到应该有的作用，形同虚设。
+
+  参考解决办法如下：
+
+  * 如果有且仅有一处相关的 API 实现（常见于某个算法实现调用接口），
+    比如则在文档字符串中对相关的概念和算法进行解释，
+    如果有必要的话，需要给出相关参考材料的原始出处的引用；
+  * 如果存在着一类属于相同概念但细节不同的 APIs, 则需要提供用户指南集中介绍背景，
+    可以参考 NumPy 中对概念
+    `Discrete Fourier Transform <https://numpy.org/doc/stable/reference/routines.fft.html>`_ 
+    的解释，以及参考 API 文档如 :py:func:`numpy.fft.fft`. 
+
+  对于上面这个例子，我们应该有一个页面对分布式通信和计算的概念进行介绍，并提供相关例程。
+
 
 Docstring 对文档的意义
 ----------------------
