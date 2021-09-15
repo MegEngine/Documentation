@@ -334,53 +334,13 @@ Docstring Google Style 模版
    * 阅读 :ref:`document-reference` 会对了解如何组织内容有所帮助。
    * 上面给出的样例模版更多地是作为形式上的参考，适合作为比对。
 
-Docstring Sections
-~~~~~~~~~~~~~~~~~~
-
-* Args (alias of Parameters)
-* Arguments (alias of Parameters)
-* Attention
-* Attributes
-* Caution
-* Danger 
-* Error
-* Example
-* Examples
-* Hint
-* Important
-* Keyword Args (alias of Keyword Arguments)
-* Keyword Arguments
-* Methods
-* Note
-* Notes
-* Other Parameters
-* Parameters
-* Return (alias of Returns)
-* Returns
-* Raise (alias of Raises)
-* Raises
-* References
-* See Also
-* Tip
-* Todo
-* Warning
-* Warnings (alias of Warning)
-* Warn (alias of Warns)
-* Warns
-* Yield (alias of Yields)
-* Yields
-
-.. seealso::
-
-   这些指令所示的内容域都需要使用风格一致的缩进，
-   了解 `napoleon <https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html>`_ 插件。
-
 Docstring 编辑自查清单
 ----------------------
 
-* 对于具有返回值的 APIs, 请统一按照 PEP484 添加类型提示 Type Hints;
-  除非需要用更加具体的文本描述对返回类型进行说明，
-  则可以使用类似 ``param(Number)`` 的写法对 PEP484 的类型提示进行覆盖。
+* 一份好的 Docstring 应当具有 Args, Returns, Examples 等章节；
+
+* 对于具有返回值的 APIs, 请统一按照 
+  `PEP 484 <https://www.python.org/dev/peps/pep-0484>`_ 添加类型提示 Type Hints;
 
 * Google Style 语法请统一使用与 Python 一致的 4 格缩进（而非 2 格），
   另一种常见的错误写法如下：
@@ -406,12 +366,10 @@ Docstring 编辑自查清单
   无法帮助查阅 API 文档的用户理解如何去使用它们；因此请勿使用 ``testcode``.
   如果你必须在解释清楚一些相关概念或实现常见任务后才能向用户说明 API 用法，
   通常表明你需要提供一份教程或者是用户指南来进行额外的说明，并在 API 参考中引用。
-
-  
   
 * 请花时间琢磨一下：文档字符串中的首行是否起到了 **清晰、准确、概括** 的效果，错误例子如下：
 
-  .. code-block::
+  .. code-block:: python
 
      def all_reduce_max(...):
          r"""Create all_reduce_max operator for collective communication."""
@@ -424,7 +382,7 @@ Docstring 编辑自查清单
   参考解决办法如下：
 
   * 如果有且仅有一处相关的 API 实现（常见于某个算法实现调用接口），
-    比如则在文档字符串中对相关的概念和算法进行解释，
+    则需要在文档字符串中对相关的概念和算法进行简单解释，
     如果有必要的话，需要给出相关参考材料的原始出处的引用；
   * 如果存在着一类属于相同概念但细节不同的 APIs, 则需要提供用户指南集中介绍背景，
     可以参考 NumPy 中对概念
