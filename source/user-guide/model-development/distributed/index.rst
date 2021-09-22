@@ -39,6 +39,7 @@
     from megengine.data.dataloader import DataLoader
     from megengine.data.sampler import SequentialSampler
     from megengine import functional as F
+    from megengine import module as M
 
     # pre download MNIST data
     MNIST()
@@ -55,22 +56,26 @@
         num_features = 784   # (28, 28, 1) Flatten -> 784
         num_classes = 10
 
-        # 初始化参数
-        W = mge.Parameter(np.zeros((num_features, num_classes)))
-        b = mge.Parameter(np.zeros((num_classes,)))
-        params=[W, b]
-
         # 定义单层线性分类网络
-        def linear_cls(data):
-            data = F.flatten(data, 1)
-            return F.matmul(data, W) + b
+        class Linear(M.Module):
+            def __init__(self):
+                # 初始化参数
+                self.w = mge.Parameter(np.zeros((num_features, num_classes)))
+                self.b = mge.Parameter(np.zeros((num_classes,)))
+
+            def forward(self, data):
+                data = f.flatten(data, 1)
+                return F.matmul(data, self.w) + self.b
+
+        # 初始化模型
+        linear_cls = Linear()
 
         # 同步模型参数，默认全局同步，可以给bcast_list_加上group参数在指定group之间同步
-        dist.bcast_list_(params)
+        dist.bcast_list_(linear_cls.tensors())
 
         gm = ad.GradManager()
-        gm.attach(params, callbacks=[dist.make_allreduce_cb("sum")])
-        opt = optim.SGD(params, lr=lr)
+        gm.attach(linear_cls.parameters(), callbacks=[dist.make_allreduce_cb("sum")])
+        opt = optim.SGD(linear_cls.parameters(), lr=lr)
 
         data = MNIST()
         sampler = SequentialSampler(data, batch_size=bs)
@@ -87,7 +92,7 @@
                     gm.backward(loss)
                 opt.step().clear_grad()
                 loss = dist.functional.all_reduce_sum(loss) / dist.get_world_size()
-                total_loss +=  loss.item()
+                total_loss += loss.item()
             if rank == 0:
                 print("epoch = {}, loss = {:.3f}".format(epoch, total_loss / len(data_loader)))
 
@@ -104,8 +109,8 @@
 和单卡训练相比，单机多卡的训练代码只有几行代码的不同
 
 * @dist.launcher
-* dist.bcast_list_(params)
-* gm.attach(params, callbacks=[dist.make_allreduce_cb("sum")])
+* dist.bcast_list_(linear_cls.tensors())
+* gm.attach(linear_cls.parameters(), callbacks=[dist.make_allreduce_cb("sum")])
 
 下面我会逐一解释这几句话分别有什么含义
 
@@ -118,17 +123,18 @@
 
 .. code-block::
 
-    dist.bcast_list_(params)
+    dist.bcast_list_(linear_cls.tensors())
 
 :func:`~.distributed.bcast_list_` 用于同步各个进程之间的参数，默认在全局范围（所有计算设备）同步，可以设置group参数在特定的group之间同步
 
 .. warning::
 
-    注意，有些情况下不仅要同步参数，还需要同步统计量，比如 :class:`~module.BatchNorm2d` 的均值和方差统计量
+    注意，这里使用的API是 :func:`module.Module.tensors`而不是 :func:`module.Module.parameters`，这是因为不仅参数需要同步，
+    有些时候模型里还会存在一些统计量，比如 :class:`~module.BatchNorm2d` 里的均值和方差
 
 .. code-block::
 
-    gm.attach(params, callbacks=[dist.make_allreduce_cb("sum")])
+    gm.attach(linear_cls.parameters(), callbacks=[dist.make_allreduce_cb("sum")])
 
 在数据并行的情况下，由于每张卡只负责一部分数据，所以求导之后只会有部分导数，
 在GradManager中注册对于梯度的回调函数，在对应参数的导数求完之后，
@@ -169,9 +175,9 @@
     # 加载模型参数
     if rank == 0:
         net.load_state_dict(checkpoint['net'])
-    dist.bcast_list_(net.parameters())
+    dist.bcast_list_(net.tensors())
     opt = SGD(net.parameters(), lr=0.01, momentum=0.9, weight_decay=5e-4)
-    gm = GradManager().attach(net.parameters, callbacks=[dist.make_allreduce_cb("sum")])
+    gm = GradManager().attach(net.parameters(), callbacks=[dist.make_allreduce_cb("sum")])
 
     # 训练
     for epoch in range(epochs):
