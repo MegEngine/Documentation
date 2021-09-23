@@ -12,7 +12,7 @@
 
 .. warning::
 
-   大部分时候时候，我们会将对 Tensor 的操作和运算区分为两个概念：
+   大部分时候，我们会将对 Tensor 的操作和运算区分为两个概念：
 
    * 对单个 Tensor 进行操作（Manipulation），通常其属性（如形状、设备、类型等）发生了变化；
    * Tensor 之间可以进行运算（Operation），通常基于 Tensor 内元素的数值进行了计算。
