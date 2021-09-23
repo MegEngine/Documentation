@@ -4,13 +4,16 @@
 使用 Sampler 定义抽样规则
 =========================
 
-经过 :ref:`dataset-guide` 这一步骤后，``DataLoader`` 便可以知道需要从什么数据集中得到数据。
-但除了要能够获取数据集中的样本数据外，批数据的生成也有着一定的要求，比如每批数据的规模大小、以及对抽样的要求等，
-都需要有对应的规则，使用 ``Sampler`` 可以对抽样得到批数据的规则进行自定义。
+经过 :ref:`dataset-guide` 这一步骤后，``DataLoader`` 便可以知道如何从数据集中加载数据到内存。
+但除了要能够获取数据集中的单个样本数据外，每批数据的生成也有着一定的要求，比如每批数据的规模大小、以及对抽样规则的要求等，
+都需要有对应的配置，使用 ``Sampler`` 可以对每批数据的抽样规则进行自定义。
+在其它小节我们还会介绍如何 :ref:`data-collator-guide` ，但本小节我们主要介绍 ``Sampler`` 的概念和使用。
 
-准确来说，抽样器的职责是决定数据的获取顺序，为 ``DataLoader`` 提供一个可供迭代的数据集索引。
+准确来说，抽样器的职责是决定数据的获取顺序，方便为 ``DataLoader`` 提供一个可供迭代的多批数据的索引。
 
-:py:class:`Sampler` 是所有抽样器的抽象基类，好消息是在大部分情况下用户无需对抽样器进行自定义实现，
+>>> dataloader = DataLoader(dataset, sampler=...)
+
+在 MegEngine 中，:py:class:`Sampler` 是所有抽样器的抽象基类，在大部分情况下用户无需对抽样器进行自定义实现，
 因为在 MegEngine 中已经实现了常见的各种抽样器，比如常见的顺序抽样和随机抽样。
 
 .. note::
@@ -20,10 +23,10 @@
    * :ref:`MapSampler <map-sampler-guide>` : 适用于 Map-style 数据集的抽样器：
 
      * 根据抽样方式划分： :ref:`sequential-sampler-guide` （默认方式） / :ref:`random-sampler-guide` / :ref:`replacement-sampler-guide`
-     * 我们还可以使用 :ref:`Infinite <infinite-sampler-guide>` 封装类来实现无限抽样。
+     * 我们还可以使用 :ref:`Infinite <infinite-sampler-guide>` 封装上述类来实现 :ref:`infinite-sampler-guide` ；
+     * 如果你想实现自己的 ``MapSampler``, 则需要自行继承该类，并实现 ``sample`` 方法。
 
    * :ref:`StreamSampler <stream-sampler-guide>` : 适用于 Iterable-style 数据集的抽样器。
-
 
 .. _map-sampler-guide:
 
@@ -35,7 +38,8 @@
            num_samples=None, world_size=None, rank=None, seed=None) 
    :noindex:
 
-其中 ``batch_size`` 参数用于指定批数据的规模， ``drop_last`` 参数用于设置是否丢掉最后一批不完整的数据，
+其中 ``dataset`` 用来获取数据集信息， ``batch_size`` 参数用于指定批数据的规模，
+``drop_last`` 参数用于设置是否丢掉最后一批不完整的数据，
 而 ``num_samples``, ``world_size``, ``rank`` 和 ``seed`` 这些参数用于分布式训练情景。
 
 .. warning::
@@ -43,11 +47,11 @@
    ``MapSampler`` 不会真正地将数据读入内存且最终返回经过抽样后的数据，因为会带来比较大的内存开销。
 
    * 实际上它根据 ``Dataset`` 中实现的 ``__len__`` 协议来获取样本容量，
-     形成 ``[0, 1, ...]`` 整数索引列表，并按照实现的 ``sample`` 方法进行抽样，得到的也是索引；
+     形成 ``[0, 1, ...]`` 整数索引列表，并按照子类实现的 ``sample`` 方法对整数索引列表进行抽样；
    * 生成的 ``Sampler`` 对象的本质是一个可供迭代的列表，里面存放的是多批抽样数据所对应的索引；
    * 这些索引值 ``indices`` 在 ``DataLoader`` 加载数据时通过 ``Dataset.__getitem__(indices)`` 的形式调用。
 
-``sample`` 方法需要在 ``MapSampler`` 的子类中实现，下面我们通过最常见的几类抽样器，来展示相关概念。
+下面我们通过 MegEngine 中提供的最常见的几类抽样器，来展示相关概念。
 
 首先随机生成一个形状为 ``(N, C, H, W)`` 的图片数据集，分别对应样本容量、通道数、高度和宽度。
 
@@ -139,11 +143,16 @@
 8 [80, 59, 53, 19, 46, 43, 24, 61, 16, 5]
 9 [86, 82, 31, 76, 28, 91, 27, 21, 69, 41]
 
+.. seealso::
+
+   无放回随机抽样也叫简单随机抽样，参考 
+   `Simple random sample <https://en.wikipedia.org/wiki/Simple_random_sample>`_
+
 .. _replacement-sampler-guide:
 
 有放回随机抽样
 ~~~~~~~~~~~~~~
-使用 :py:class:`~.ReplacementSampler` 可对数据集进行无放回随机抽样：
+使用 :py:class:`~.ReplacementSampler` 可对数据集进行有放回随机抽样：
 
 >>> from megengine.data import ReplacementSampler 
 >>> sampler = ReplacementSampler(image_dataset, batch_size=10)
@@ -166,8 +175,16 @@
 ~~~~~~~~
 
 通常数据集在给定 ``batch_size`` 的情况下，只能划分为有限个 ``batch``.
+这意味着抽样所能得到的数据批数是有限的，想要重复利用数据，
+最常见的做法是循环多个周期 ``epochs`` 来反复遍历数据集：
 
-但在一些情况下，我们希望能够从数据集中无限进行抽样，因此 MegEngine 提供了 :py:class:`~.Infinite` 包装类：
+>>> for epoch in epochs:
+>>>     for batch_data in dataloader:
+
+这里的 ``epochs`` 是机器学习算法中一个比较常见的超参数。
+
+但在一些情况下，我们希望能够直接从数据集中无限进行抽样，
+因此 MegEngine 提供了 :py:class:`~.Infinite` 包装类：
 
 >>> from megengine.data import Infinite
 >>> sampler = Infinite(SequentialSampler(image_dataset, batch_size=10))
@@ -212,3 +229,4 @@
 如何使用 StreamSampler
 ----------------------
 
+这一部分的内容等待添加中...
