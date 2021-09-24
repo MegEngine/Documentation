@@ -146,6 +146,7 @@ intersphinx_mapping = {
 extlinks = {
     "src": ("https://github.com/MegEngine/MegEngine/blob/master/%s", ""),
     "docs": ("https://github.com/MegEngine/Documentation/blob/main/%s", ""),
+    "models": ("https://github.com/MegEngine/Models/blob/master/%s", ""),
     "issue": ("https://github.com/MegEngine/MegEngine/issues/%s", "Issue #"),
     "pull": ("https://github.com/MegEngine/MegEngine/pull/%s", "Pull Requset #"),
     "duref": (
