@@ -6,12 +6,19 @@
 ===========================
 MegEngine 中的 :py:mod:`data` 子包提供了用于处理数据（数据集）的原语，
 其中 :py:class:`megengine.data.DataLoader` 被用于加载批数据，本质上将用于生成一个可迭代的对象，
-负责从 :py:class:`~.Dataset` 描述的数据集中随机返回批量大小 ``batch_size`` 的数据。
-简而言之， ``Dataset`` 告诉 ``DataLoader`` 如何将单个训练或测试数据加载到内存中，
+负责从 :py:class:`~.Dataset` 描述的数据集中返回批量大小（即 ``batch_size`` ）的数据。
+简而言之， ``Dataset`` 告诉 ``DataLoader`` 如何将单个样本加载到内存中，
 而 ``DataLoader`` 负责按照给定的配置获取分批的数据，方便进行后续训练和测试。
 
-上面的介绍中隐藏了一些细节， 实际上 ``DataLoader`` 负责集中处理所有与数据加载相关的逻辑，
-包括但不限于加载数据到内存、决定不同批数据的获取顺序、批数据格式的整理以及多线程数据加载等等...
+>>> from megengine.data import DataLoader
+>>> dataset = CustomDataset() 
+>>> dataloader = DataLoader(dataset)
+>>> for batch_data in DataLoader:
+...     pass
+
+上面的介绍中隐藏了一些细节， 实际上 ``DataLoader`` 负责调用所有与数据加载相关的逻辑，
+包括但不限于：获取下一批数据索引、将数据加载到内存、收集批数据以及多线程数据加载等等...
+这些步骤对应的功能由 ``data`` 模块内其它不同的组件（如 ``Sampler``, ``Transform`` 等）进行实现。
 
 如果你想要更加正确 & 高效地构建输入 Pipeline, 建议阅读完当前章节的所有内容。
 
@@ -51,14 +58,15 @@ MegEngine 中的 :py:mod:`data` 子包提供了用于处理数据（数据集）
    #. 迭代这个 DataLoader 对象，将数据分批加载到模型中进行训练；
 
    每当我们向 DataLoader 索要一批数据时，DataLoader 将从 Sampler 获得下一批数据的索引，
-   要求 Dataset 根据索引将对应的数据逐个加载到内存，再通过 Collator 将单独的样本组织成批数据，
-   加载进来的批数据可以通过指定的 Transform 做一些处理。
+   根据 Dataset 提供的 ``__getitem__`` 方法将对应的数据逐个加载到内存，
+   加载进来的数据可以通过指定的 Transform 做一些处理，再通过 Collator 将单独的数据组织成批数据。
    以上为单进程的情况，DataLoader 也支持多进程加载，支持多个 Worker 同时加载数据。
    
-   需要注意以下几点：
+   同理，模型的验证和测试也可以使用各自的 DataLoader 完成数据部分的加载。
 
-   * 如果不自定义以上配置，用户应当清楚在使用默认参数的情况下 DataLoader 的处理逻辑；
-   * 同理，模型的验证和测试也可以使用各自的 DataLoader 完成数据部分的加载；
+.. warning::
+
+   如果不自定义以上配置，用户应当清楚在默认情况下 DataLoader 的处理逻辑。
 
 .. _load-image-data-example:
 
