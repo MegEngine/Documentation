@@ -43,7 +43,7 @@
 举例：伪变换和自定义变换
 ------------------------
 
-:class:`~.PseudoTransform` 的实现非常简单，它没有对输入进行任何处理，而是直接返回：
+MegEngine 中提供了 :class:`~.PseudoTransform` 作为默认实现，它没有对输入进行任何处理，而是直接返回：
 
 .. code-block:: python
 
@@ -87,9 +87,13 @@ array([[ 2,  3,  4],
        [ 5,  6,  7],
        [ 8,  9, 10]])
 
+最终，我们的各种 ``Transform`` 实现应当被应用于 ``DataLoader``:
+
+>>> dataloader = DataLoader(dataset, transform=composed_transform)
+       
 .. warning::
 
-   我们这里给出的例子比较简单，实际上 ``apply`` 方法支持 Tuple 类型的输入，
+   我们这里给出的例子比较简单，假设样本都是单个元素，实际上 ``apply`` 方法支持 Tuple 类型的输入，
    代码逻辑中完全可以处理更加一些复杂的样本结构，可以参考 :py:class:`VisionTransform` 的实现。
 
 .. seealso::
@@ -100,8 +104,8 @@ array([[ 2,  3,  4],
 
 .. _transform-vs-functional:
 
-与 Functional 的区别
---------------------
+注意与 Functional 的区别
+------------------------
 
 用户不应当将 ``megengine.data.transform`` 与 ``megengine.functional`` 中的接口搞混淆：
 
@@ -117,6 +121,7 @@ array([[ 2,  3,  4],
 ------------------------
 
 当我们从 ``DataLoader`` 中获取批数据时，如果定义了 ``Transform``, 则会在每次加载完样本后立即对其进行变换。
+
 数据变换操作也是有计算开销的，且该流程通常在 CPU 设备上进行，以及有些操作会调用类似 ``OpenCV`` 的库。
 如果我们对每个样本进行多次加载（比如训练多个周期），那么变换操作也会被执行多次，这可能会带来额外的开销。
 因此在有些时候，我们会选择将预处理操作在更早的流程中进行，即直接对原始数据先进行一次预处理操作，

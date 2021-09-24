@@ -11,10 +11,10 @@
 
 准确来说，抽样器的职责是决定数据的获取顺序，方便为 ``DataLoader`` 提供一个可供迭代的多批数据的索引。
 
->>> dataloader = DataLoader(dataset, sampler=...)
+>>> dataloader = DataLoader(dataset, sampler=RandomSampler)
 
 在 MegEngine 中，:py:class:`Sampler` 是所有抽样器的抽象基类，在大部分情况下用户无需对抽样器进行自定义实现，
-因为在 MegEngine 中已经实现了常见的各种抽样器，比如常见的顺序抽样和随机抽样。
+因为在 MegEngine 中已经实现了常见的各种抽样器，比如上面示例代码中的 ``RandomSampler`` 抽样器。
 
 .. note::
 
@@ -45,11 +45,10 @@
 .. warning::
 
    ``MapSampler`` 不会真正地将数据读入内存且最终返回经过抽样后的数据，因为会带来比较大的内存开销。
-
-   * 实际上它根据 ``Dataset`` 中实现的 ``__len__`` 协议来获取样本容量，
-     形成 ``[0, 1, ...]`` 整数索引列表，并按照子类实现的 ``sample`` 方法对整数索引列表进行抽样；
-   * 生成的 ``Sampler`` 对象的本质是一个可供迭代的列表，里面存放的是多批抽样数据所对应的索引；
-   * 这些索引值 ``indices`` 在 ``DataLoader`` 加载数据时通过 ``Dataset.__getitem__(indices)`` 的形式调用。
+   实际上它根据 ``Dataset`` 中实现的 ``__len__`` 协议来获取样本容量，形成 ``[0, 1, ...]`` 整数索引列表，
+   并按照子类实现的 ``sample`` 方法对该整数索引列表进行抽样，
+   返回一个可供迭代的列表，里面存放的是抽样得到的各批数据所对应的索引。
+   只有在迭代 ``DataLoader`` 时才会根据这些索引加载数据。
 
 下面我们通过 MegEngine 中提供的最常见的几类抽样器，来展示相关概念。
 
@@ -224,6 +223,14 @@
    <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>`_
    训练代码中找到 ``DataLoader`` 通过无限采样器加载 ImageNet 数据的示例。
 
+自定义 MapSampler 示例
+----------------------
+
+.. seealso::
+
+   * :models:`official/vision/detection/tools/utils.py#L67` - ``GroupedRandomSampler``
+   * :models:`official/vision/detection/tools/utils.py#L106` - ``InferenceSampler``
+   
 .. _stream-sampler-guide:
 
 如何使用 StreamSampler
