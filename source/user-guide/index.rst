@@ -44,6 +44,7 @@
    :maxdepth: 1
 
    deployment/index
+   deployment/traced_module/index
    deployment/lite/index
    deployment/midout
 
