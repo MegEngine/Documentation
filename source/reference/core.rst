@@ -25,9 +25,6 @@ tesnor
    :nosignatures:
    :template: autosummary/api-class.rst
 
-   core.OpBase
-   core.TensorBase
-   core.TensorWrapperBase
    array_method.ArrayMethodMixin
 
 dtype
