@@ -42,6 +42,7 @@ Python API
    distributed
    quantization
    random
+   traced_module
    hub
    utils
 
