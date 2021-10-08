@@ -74,10 +74,10 @@ MegEngine 和 NumPy 在进行切片时，都不会改变对象 :ref:`tensor-ndim
 >>> M = Tensor([[1, 2, 3],
 ...             [4, 5, 6], 
 ...             [7, 8, 9]])
->>> print(M[1:2], M[1:2].ndim)
->>> print(M[1:2][0:1], M[1:2][0:1].ndim)
-Tensor([[4 5 6]], dtype=int32, device=cpux:0) 2
-Tensor([[4 5 6]], dtype=int32, device=cpux:0) 2
+>>> M[1:2][0:1] 
+Tensor([[4 5 6]], dtype=int32, device=cpux:0)
+>>> M[1:2][0:1].ndim
+2
 
 整个过程中，切片得到的都是一个 ``ndim=2`` 的 Tensor.
 

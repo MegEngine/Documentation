@@ -9,21 +9,23 @@ Tensor 数据类型
    在计算机科学中，数据类型负责告诉编译器或解释器程序员打算如何使用数据。
    参考 `Data type <https://en.wikipedia.org/wiki/Data_type>`_ WIKI.
 
+   MegEngine 中借助 :class:`numpy.dtype` 来表示基础数据类型，参考如下：
+
    * NumPy 中有着专门实现的 :class:`numpy.dtype`, 参考其对
      `Data type objects <https://numpy.org/doc/stable/reference/arrays.dtypes.html#arrays-dtypes>`_ 
      的解释；
    * NumPy 官方 `Data types <https://numpy.org/doc/stable/user/basics.types.html>`_ 
      文档中对数组类型和转换规则进行了解释。
 
-数据类型（Data type, :attr:`~.Tensor.dtype` ）是 Tensor 的一种基础属性，
-单个 Tensor 内的元素数据类型完全一致，每个元素占据的内存空间也完全相同。
+上面提到的数据类型（Data type, :attr:`~.Tensor.dtype` ）是 Tensor 的一种基础属性，
+单个 Tensor 内的元素的数据类型完全一致，每个元素占据的内存空间也完全相同。
 Tensor 数据类型可以在创建时指定，也可以从已经存在的 Tensor 中指定进行转化。
-参考本页面 :ref:`dtype-argument` 中给出的例子。
+（参考本页面 :ref:`dtype-argument` 中给出的例子。）
 
 已经支持的类型
 --------------
 
-MegEngine 中借助 :class:`numpy.dtype` 来表示数据类型，目前支持的数据类型如下：
+目前支持的数据类型如下：
 
 .. list-table::
    :header-rows: 1
