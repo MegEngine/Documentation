@@ -116,7 +116,7 @@ dump 模型获得 opr 类型名称
 
    .. code-block:: bash
 
-      python3 ./tools/gen_header_for_bin_reduce.py resnet50.mge.json midout_trace.20717
+      python3 ./tools/gen_header_for_bin_reduce.py resnet50.mge.json midout_trace.20717 -o src/bin_reduce_cmake.h
 
       EXTRA_CMAKE_ARGS="-DMGE_WITH_MINIMUM_SIZE=ON -DBUILD_SHARED_LIBS=OFF" ./scripts/cmake-build/cross_build_android_arm_inference.sh -r
 
@@ -228,7 +228,7 @@ dump 模型获得 opr 类型名称
 
 .. code-block:: bash
 
-   python3 ./tools/gen_header_for_bin_reduce.py A.mge.json A.trace B.mge.json B.trace
+   python3 ./tools/gen_header_for_bin_reduce.py A.mge.json A.trace B.mge.json B.trace -o src/bin_reduce_cmake.h
 
 裁剪基于 MegEngine 的应用
 -------------------------
