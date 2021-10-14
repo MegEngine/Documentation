@@ -3,35 +3,47 @@
 ====================
 量化（Quantization）
 ====================
+.. toctree::
+   :hidden:
 
-量化指的是将浮点数模型（一般是 32 位浮点数）的权重或激活值用位数更少的数值类型
-（比如 8 位整数、16 位浮点数）来近似表示的过程。
-量化后的模型会占用更小的存储空间，还能够利用许多硬件平台上的专属算子进行提速。
-比如在 MegEngine 中使用 8 位整数来进行量化，相比默认的 32 位浮点数，
-模型大小可以减少为 1/4，而运行在特定的设备上其计算速度也能提升为 2-4 倍。
+   basic-concept
 
-量化的目的是为了追求极致的推理计算速度，为此舍弃了数值表示的精度，直觉上会带来较大的模型掉点，
-但是在使用一系列精细的量化处理之后，其掉点可以变得微乎其微，并能支持正常的部署使用。
-而且近年来随着专用神经网络加速芯片的兴起，低比特非浮点的运算方式越来越普及，
-因此如何把一个 GPU 上训练的浮点数模型转化为低比特的量化模型，就成为了工业界非常关心的话题。
+.. note::
 
-一般来说，得到量化模型的转换过程按代价从低到高可以分为以下 4 种：
+   常见神经网络模型所用的 :ref:`tensor-dtype` 一般是 ``float32`` 类型，
+   而工业界出于对特定场景的需求，需要把模型转换为像 ``int8`` 这样的低精度类型
+   —— 该过程被称为量化（Quantization）。
 
-.. image:: ../../../_static/images/quant_cls.png
-   :align: center
+   * 量化能将 32 位的浮点数转换成 8 位甚至是 4 位定点数，具有更少的运行时内存和缓存要求；
+     另外由于大部分的硬件对于定点运算都有特定的优化，所以在运行速度上也会有较大的提升。
+     相较于普通模型， **量化模型有着更小的内存容量与带宽占用、更低的功耗和更快的推理速度等优点。**
+   * 某些计算设备只支持做定点运算。为了让模型可以在这些设备上正常运行，我们需要进行量化处理。
 
-* Type1 和 Type2 由于是在模型浮点模型训练之后介入，无需大量训练数据，
-  故而转换代价更低，被称为后量化（Post Quantization）；
-* Type3 和 Type4 则需要在浮点模型训练时就插入一些假量化（FakeQuantize）算子，
-  模拟计算过程中数值截断后精度降低的情形，故而称为量化感知训练（Quantization Aware Training, QAT）。
+   “为了追求极致的推理计算速度，从而舍弃了数值表示的精度”，直觉上会带来较大的模型掉点，
+   但是在使用一系列精妙的量化处理之后，其掉点可以变得微乎其微，并能支持正常的部署使用。
 
-本文主要介绍 Type2 和 Type3 在 MegEngine 中的完整流程。
-事实上，除了 Type2 无需进行假量化，两者的整体流程完全一致。
+   MegEngine 中提供的量化方案可分为两类，二者在使用流程并上没有太大的区别：
+
+   * 训练后量化（Post-Training Quantization, PTQ），指将训练好的模型转换成低精度类型；
+   * 量化感知训练（Quantization-Aware Training, QAT），则需要在浮点模型训练中就进行一定的处理。
+
+   实际上用户无需关注背后的实现原理和细节，MegEngine 已经提供好了一整套的解决方案。
+
+.. seealso::
+
+   我们为感兴趣的用户提供了更多量化基本概念的介绍，可参考 :ref:`quantization-basic-concept` 。
+
+.. warning::
+
+   请不要将 “量化” 与 “混合精度（Mixed precision）” 混淆，可参考 :ref:`amp-guide` 文档。
+   
 
 整体流程
 --------
 
-以 Type3 为例，一般以一个训练完毕的浮点模型为起点，称为 Float 模型。
+以量化感知训练为例，需要在浮点模型训练时就插入一些假量化（FakeQuantize）算子， 模拟计算过程中数值截断后精度降低的情形，
+
+一般以一个训练完毕的浮点模型为起点，称为 Float 模型。
 包含假量化算子的用浮点操作来模拟量化过程的新模型，我们称之为 Quantized-Float 模型，或者 QFloat 模型。
 可以直接在终端设备上运行的模型，称之为 Quantized 模型，简称 Q 模型。
 
@@ -45,7 +57,26 @@
 .. image:: ../../../_static/images/float-qfloat-q.jpg
    :align: center
 
-对应到具体的 MegEngine 接口中，三阶段如下：
+
+
+Megengine的工程实现
+~~~~~~~~~~~~~~~~~~~
+
+对应到具体的 MegEngine 接口中，megengine 把module整理成了三类
+
+* 进行正常浮点运算的 默认 :class:`~.module.Module`
+* 带有伪量化算子和observe算子的 :class:`~.module.qat.QATModule`
+* 最终量化转化完毕的量化算子 :class:`~.module.quantized.QuantizedModule`
+  
+对于其中比较常见的可以被量化的算子(Conv等)，在这三种module中分别有同名的实现，megengine提供了 :func:`~.quantization.quantize_qat` 和 :func:`~.quantization.quantize` 两个来完成批量的op替换操作
+
+* quantize_qat 会把float module 转换成qat_module，通过 qat_module的源码 我们可以看出
+
+  * 在转换过程中qat_module本身根据qconfig相关配置设置对应module的weight (权重)和act (激活值)的 observe和fake_quant
+  * 在之后qat_module的forward过程中，qat_module会在调用 _apply_fakequant_with_observer 的时候对相应的tensor进行统计值域和进行伪量化的操作
+* quantize 主要是将一个qat_module转换成真正的quantized_module，在这一步会执行上面提到的浮点转定点操作，根据qat_module统计的观测值和设置的定点类型将qat_module里的weight转换成对应的定点类型
+
+所以在megengine上做一个常规的量化流程：
 
 1. 基于 :class:`~.module.Module` 搭建网络模型，并按照正常的浮点模型方式进行训练；
 2. 使用 :func:`~.quantization.quantize_qat` 将浮点模型转换为 QFloat 模型，
@@ -199,17 +230,17 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
 4. 调用 :func:`~.quantization.quantize` 转换为量化模型，并执行 dump 用于后续模型部署。
 
 网络结构见 ``resnet.py`` ，相比惯常写法，我们修改了其中一些子 Module，
-将原先单独的 ``conv``, ``bn``, ``relu`` 替换为 Fuse 过的 Quantable Module。
+将原先单独的 ``Conv``, ``BN``, ``relu`` 替换为 Fuse 过的 Quantable Module。
 
 .. code-block::
 
     class BasicBlock(Module):
         def __init__(self, in_planes, planes, stride=1):
             super(BasicBlock, self).__init__()
-            self.conv_bn_relu = ConvBnRelu2d(
+            self.Conv_BN_relu = ConvBnRelu2d(
                 in_planes, planes, kernel_size=3, stride=stride, padding=1, bias=False
             )
-            self.conv_bn = ConvBn2d(
+            self.Conv_BN = ConvBn2d(
                 planes, planes, kernel_size=3, stride=1, padding=1, bias=False
             )
             self.add_relu = Elemwise("FUSE_ADD_RELU")
@@ -220,8 +251,8 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
                 )
 
         def forward(self, x):
-            out = self.conv_bn_relu(x)
-            out = self.conv_bn(out)
+            out = self.Conv_BN_relu(x)
+            out = self.Conv_BN(out)
             cut = self.shortcut(x)
             out = self.add_relu(out, cut)
             return out
