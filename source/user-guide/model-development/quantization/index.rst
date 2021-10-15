@@ -11,8 +11,15 @@
 .. note::
 
    常见神经网络模型所用的 :ref:`tensor-dtype` 一般是 ``float32`` 类型，
-   而工业界出于对特定场景的需求，需要把模型转换为像 ``int8`` 这样的低精度类型
-   —— 该过程被称为量化（Quantization）。
+   而工业界出于对特定场景的需求，需要把模型转换为像 ``int8`` 这样的低精度/比特类型
+   —— 整个过程被称为量化（Quantization）。
+
+   .. mermaid::
+      :align: center
+      :caption: 通常以浮点模型为起点，经过中间的量化处理后最终变成量化模型
+
+      flowchart LR
+          FM[Float Model] -- processing --> QM[Quantized Model]
 
    * 量化能将 32 位的浮点数转换成 8 位甚至是 4 位定点数，具有更少的运行时内存和缓存要求；
      另外由于大部分的硬件对于定点运算都有特定的优化，所以在运行速度上也会有较大的提升。
@@ -20,127 +27,175 @@
    * 某些计算设备只支持做定点运算。为了让模型可以在这些设备上正常运行，我们需要进行量化处理。
 
    “为了追求极致的推理计算速度，从而舍弃了数值表示的精度”，直觉上会带来较大的模型掉点，
-   但是在使用一系列精妙的量化处理之后，其掉点可以变得微乎其微，并能支持正常的部署使用。
+   但是在通过一系列精妙的量化处理之后，其掉点可以变得微乎其微，并能支持正常的部署使用。
 
-   MegEngine 中提供的量化方案可分为两类，二者在使用流程并上没有太大的区别：
+   用户无需了解背后的实现细节，使用 MegEngine 的 :mod:`~.quantization` 所提供的解决方案，就能满足基本量化需求。
+   我们为感兴趣的用户提供了更多有关量化基本原理的介绍，可参考 :ref:`quantization-basic-concept` 。
 
-   * 训练后量化（Post-Training Quantization, PTQ），指将训练好的模型转换成低精度类型；
-   * 量化感知训练（Quantization-Aware Training, QAT），则需要在浮点模型训练中就进行一定的处理。
-
-   实际上用户无需关注背后的实现原理和细节，MegEngine 已经提供好了一整套的解决方案。
-
-.. seealso::
-
-   我们为感兴趣的用户提供了更多量化基本概念的介绍，可参考 :ref:`quantization-basic-concept` 。
+   熟悉基本原理的用户可直接跳转到 :ref:`megengine-quantization` ↩ 查看基本用法。
 
 .. warning::
 
    请不要将 “量化” 与 “混合精度（Mixed precision）” 混淆，可参考 :ref:`amp-guide` 文档。
    
+.. _quantization-intro:
 
-整体流程
---------
+量化基本流程介绍
+----------------
 
-以量化感知训练为例，需要在浮点模型训练时就插入一些假量化（FakeQuantize）算子， 模拟计算过程中数值截断后精度降低的情形，
+目前工业界主要应用有两类量化技术，在 MegEngine 中都进行了支持：
 
-一般以一个训练完毕的浮点模型为起点，称为 Float 模型。
-包含假量化算子的用浮点操作来模拟量化过程的新模型，我们称之为 Quantized-Float 模型，或者 QFloat 模型。
-可以直接在终端设备上运行的模型，称之为 Quantized 模型，简称 Q 模型。
+* 训练后量化（Post-Training Quantization, PTQ）；
+* 量化感知训练（Quantization-Aware Training, QAT）。
 
-而三者的精度一般是 ``Float > QFloat > Q`` ，故而一般量化算法也就分为两步：
+训练后量化是将已经训练好的浮点模型转换成低精度/比特模型所使用的通用技术，常见的做法是对模型的权重（weight）和激活值（activation）进行处理，
+将它们转换成精度更低的类型。在转换过程中，需要用到待量化模型中权重和激活的一些统计信息，如缩放因子（scale）和零点（zero_point）。
+尽管精度转换发生在训练后，但为了获取这些统计信息，我们仍需要在模型训练时 —— 即前向计算的过程中，插入一名观察者（Observer）。
 
-* 拉近 QFloat 和 Q，这样训练阶段的精度可以作为最终 Q 精度的代理指标，这一阶段偏工程；
-* 拔高 QFloat 逼近 Float，这样就可以将量化模型性能尽可能恢复到 Float 的精度，这一阶段偏算法。
+使用训练后量化技术，会导致量化后的模型掉点（即预测正确率下降）。严重情况下会导致量化模型不可用。
 
-典型的三种模型在三个阶段的精度变化如下：
+一种可行的改善方案是使用量化感知训练技术，向浮点模型中插入一些伪量化（FakeQuantize）算子作为改造，
+在训练时伪量化算子会根据 Observer 观察到的信息进行量化模拟，
+即模拟计算过程中数值截断后精度降低的情形，先做一遍数值转换，再将转换后的值还原成原类型。
+这样可以让被量化对象在训练时 “提前适应” 量化操作，缓解在训练后量化时带来的掉点影响。
 
-.. image:: ../../../_static/images/float-qfloat-q.jpg
+新增的 FakeQuantize 算子会引入大量的训练开销，为了节省总用时，模型量化更通常的思路是：
+
+#. 按照平时训练模型的流程，设计好 Float 模型并进行训练（等同于得到一个预训练模型）；
+#. 插入 Observer 和 FakeQuantize 算子，得到 Quantized-Float 模型（简称 QFloat 模型），量化感知训练；
+#. 进行训练后量化，得到真正的 Quantized 模型（简称 Q 模型），即最终被用作推理的低比特模型。
+
+.. mermaid::
    :align: center
+   :caption: 此时的量化感知训练 QAT 可被看作是在预训练好的 QFloat 模型上微调（Fine-tune）
 
+   flowchart LR
+       FM[Float Model] --> |train| PFM[Pre-trained Float Model]
+       PFM --> |Observer| PQFM[Pre-trained QFloat Model]
+       PFM --> |FakeQuantize| PQFM
+       PQFM --> |QAT| FQFM[Fine-tuned QFloat Model]
+       FQFM --> |PTQ| QM[Q Model]
 
+.. note::
 
-Megengine的工程实现
-~~~~~~~~~~~~~~~~~~~
+   根据实际情景的一些差异，量化流程可以有灵活的变化，例如：
 
-对应到具体的 MegEngine 接口中，megengine 把module整理成了三类
+   * 在不考虑训练开销的情况下，为了简化整体流程，可以直接构造 QFloat 模型，并进行训练与后量化：
 
-* 进行正常浮点运算的 默认 :class:`~.module.Module`
-* 带有伪量化算子和observe算子的 :class:`~.module.qat.QATModule`
-* 最终量化转化完毕的量化算子 :class:`~.module.quantized.QuantizedModule`
-  
-对于其中比较常见的可以被量化的算子(Conv等)，在这三种module中分别有同名的实现，megengine提供了 :func:`~.quantization.quantize_qat` 和 :func:`~.quantization.quantize` 两个来完成批量的op替换操作
+      .. mermaid::
+         :align: center
 
-* quantize_qat 会把float module 转换成qat_module，通过 qat_module的源码 我们可以看出
+         flowchart LR
+            FM[Float Model] --> |Observer| QFM[QFloat Model]
+            FM[Float Model] --> |FakeQuantize| QFM[QFloat Model]
+            QFM --> |QAT| TQFM[trained QFloat Model]
+            TQFM --> |PTQ| QM[Q Model]
 
-  * 在转换过程中qat_module本身根据qconfig相关配置设置对应module的weight (权重)和act (激活值)的 observe和fake_quant
-  * 在之后qat_module的forward过程中，qat_module会在调用 _apply_fakequant_with_observer 的时候对相应的tensor进行统计值域和进行伪量化的操作
-* quantize 主要是将一个qat_module转换成真正的quantized_module，在这一步会执行上面提到的浮点转定点操作，根据qat_module统计的观测值和设置的定点类型将qat_module里的weight转换成对应的定点类型
+   * 在构造 QFloat 模型时，如果不插入 FakeQuantize 算子，也可以相应地减少训练开销，提升速度。
 
-所以在megengine上做一个常规的量化流程：
+     但是这时等同于未进行量化感知，只进行了普通的训练后量化 PTQ, 模型可能会掉点严重：
 
-1. 基于 :class:`~.module.Module` 搭建网络模型，并按照正常的浮点模型方式进行训练；
-2. 使用 :func:`~.quantization.quantize_qat` 将浮点模型转换为 QFloat 模型，
-   其中可被量化的关键 Module 会被转换为 :class:`~.module.qat.QATModule` ，
-   并基于量化配置 :class:`~.quantization.QConfig` 设置好假量化算子和数值统计方式；
-3. 使用 :func:`~.quantization.quantize` 将 QFloat 模型转换为 Q 模型，
-   对应的 QATModule 则会被转换为 :class:`~.module.quantized.QuantizedModule` ，
+      .. mermaid::
+         :align: center
+
+         flowchart LR
+            FM[Float Model] --> |Observer| QFM[QFloat Model]
+            FM[Float Model] -.- |FakeQuantize| QFM[QFloat Model]
+            QFM --> |train| TQFM[trained QFloat Model]
+            TQFM --> |PTQ| QM[Q Model]
+
+   对于上述不同情景，在 MegEngine 中可以使用一套统一的接口来对不同的情况进行灵活配置。
+
+.. _megengine-quantization:
+
+Megengine 量化步骤
+------------------
+
+在 MegEngine 中，最上层的量化接口是配置如何量化的 :class:`~.quantization.QConfig` 
+和模型转换模块里的 :func:`~.quantization.quantize_qat` 与 :func:`~.quantization.quantize` .
+通过配置 :class:`~.quantization.QConfig` 中所使用的 Observer 和 FakeQuantize 算子，我们可以对量化方案进行自定义。
+进一步的说明请参考 :ref:`qconfig-guide` 小节，下面将展示推荐量化流程所需的步骤:
+
+.. code-block:: python
+
+   import megengine.quantization as Q
+
+   model = ... # The pre-trained float model that needs to be quantified
+
+   Q.quantize_qat(model, qconfig=Q.ema_fakequant_qconfig) # EMA is a built-in QConfig for QAT
+   
+   for _ in range(...):
+       train(model)
+
+   Q.quantize(model)
+
+#. :ref:`module-guide` ，并按照正常的浮点模型方式进行训练，得到预训练模型；
+#. 使用 :func:`~.quantization.quantize_qat` 将 Float 模型转换为 QFloat 模型，
+   这一步会基于量化配置 :class:`~.quantization.QConfig` 设置好 Observer 和 FakeQuantize 算子
+   （在 MegEngine 中提供了常见的 QConfig :ref:`预设 <qconfig-list>`, 这里使用了 EMA 算法）；
+#. 使用 QFloat 模型继续训练（微调），此时 Obersever 统计信息, FakeQuantize 进行伪量化；
+#. 使用 :func:`~.quantization.quantize` 将 QFloat 模型转换为Q 模型，这一步也叫 “真量化”（相较于伪量化）。
    此时网络无法再进行训练，网络中的算子都会转换为低比特计算方式，即可用于部署了。
 
-该流程是 Type3 对应 QAT 的步骤，Type2 对应的后量化则需使用不同 QConfig，
-且需使用 evaluation 模式运行 QFloat 模型，而非训练模式。更多细节可以继续阅读下一节详细的接口介绍。
+.. mermaid::
+   :align: center
+   :caption: 此处为标准量化流程，实际使用时也可有灵活的变化
 
-接口介绍
---------
+   flowchart LR
+      PFM[Pre-trained Float Model] --> |quantize_qat| QFM[Pre-trained QFloat Model]
+      QFM --> |train| FQFM[Fine-tuned QFloat Model]
+      FQFM --> |quantize| QM[Q Model]
 
-在 MegEngine 中，最上层的接口是配置如何量化的 :class:`~.quantization.QConfig` 
-和模型转换模块里的 :func:`~.quantization.quantize_qat` 与 :func:`~.quantization.quantize` 。
+.. seealso::
 
-QConfig
-~~~~~~~
+   * 经过量化的模型通常还需要经过数据校准（Calibration），需准备校准数据集；
+   * 通过校准和测试的量化模型可被导出用于推理部署，参考 :ref:`dump` 。
 
-QConfig 包括了 :class:`~.quantization.Observer` 和 :class:`~.quantization.FakeQuantize` 两部分。
-我们知道，对模型转换为低比特量化模型一般分为两步：
-一是统计待量化模型中参数和 activation 的数值范围（scale）和零点（zero_point），
-二是根据 scale 和 zero_point 将模型转换成指定的数值类型。而为了统计这两个值，我们需要使用 Observer.
+   完整的 MegEngine 模型量化代码示范可在 :models:`official/quantization` 找到。
 
-Observer 继承自 :class:`~.module.Module` ，也会参与网络的前向传播，
-但是其 forward 的返回值就是输入，所以不会影响网络的反向梯度传播。
-其作用就是在前向时拿到输入的值，并统计其数值范围，并通过 :meth:`~.quantization.Observer.get_qparams` 来获取。
-所以在搭建网络时把需要统计数值范围的的 Tensor 作为 Observer 的输入即可。
+.. note::
 
-.. code-block::
+   从宏观上看，量化是在 Model 级别之间的转换操作，但掰开细节，则都是对 Module 的处理。
 
-    # forward of MinMaxObserver
-    def forward(self, x_orig):
-        if self.enabled:
-            # stop gradient
-            x = x_orig.detach()
-            # find max and min
-            self.min_val._reset(F.minimum(self.min_val, x.min()))
-            self.max_val._reset(F.maximum(self.max_val, x.max()))
-        return x_orig
+   对应 Float, QFloat 和 Q Model, MegEngine 中的 Module 可被整理成以下三种：
 
-另外如果只观察而不模拟量化会导致模型掉点，于是我们需要有 FakeQuantize 
-来根据 Observer 观察到的数值范围模拟量化时的截断，使得参数在训练时就能提前“适应“这种操作。
-FakeQuantize 在前向时会根据传入的 scale 和 zero_point 对输入 Tensor 做模拟量化的操作，
-即先做一遍数值转换再转换后的值还原成原类型，如下所示：
+   #. 进行正常浮点运算的默认 :class:`~.module.Module` （也即 Float Module ）
+   #. 带有 Observer 和 FakeQuantize 算子的 :class:`.qat.QATModule`
+   #. 无法训练、专门用于部署的 :class:`.quantized.QuantizedModule`
 
-.. code-block::
+   对于其中比较常见的可以被量化的算子，分别有同名的实现如 ——
 
-    def fake_quant_tensor(inp: Tensor, qmin: int, qmax: int, q_dict: Dict) -> Tensor:
-        scale = q_dict["scale"]
-        zero_point = 0
-        if q_dict["mode"] == QuantMode.ASYMMERTIC:
-            zero_point = q_dict["zero_point"]
-        # Quant
-        oup = Round()(inp / scale) + zero_point
-        # Clip
-        oup = F.minimum(F.maximum(oup, qmin), qmax)
-        # Dequant
-        oup = (oup - zero_point) * scale
-        return oup
+   * :class:`.module.Linear`, :class:`.module.qat.Linear` 和 :class:`.module.quantized.Linear`
+   * :class:`.module.Conv2d`, :class:`.module.qat.Conv2d` 和 :class:`.module.quantized.Conv2d`
 
-目前 MegEngine 支持对 weight/activation 两部分的量化，如下所示：
+   调用模型转换接口 :func:`~.quantization.quantize_qat` 和 :func:`~.quantization.quantize` 时，
+   会完成相应算子的批量替换操作，感兴趣的用户可以阅读源码逻辑，
+   在 :ref:`module-convert` 小节中也会进行更具体的介绍。
+  
+.. _qconfig-guide:
+
+量化配置 QConfig 说明
+---------------------
+
+:class:`~.quantization.QConfig` 包括 :class:`~.quantization.Observer` 和 :class:`~.quantization.FakeQuantize` 两部分，用户可 1.使用预设 2.自定义配置。
+
+.. mermaid::
+   :align: center
+
+   flowchart LR
+      FM[Float Model] --> QC{QConfig}
+      QC -.- |Observer| QFM[QFloat Model]
+      QC -.- |FakeQuantize| QFM[QFloat Model]
+
+使用预设配置
+~~~~~~~~~~~~
+
+MegEngine 中提供了类似 ``ema_fakequant_qconfig`` 这样的预设，可用作 :func:`~.quantization.quantize_qat` 的 ``qconfig``:
+
+>>> import megengine.quantization as Q
+>>> Q.quantize_qat(model, qconfig=Q.ema_fakequant_qconfig)
+
+实际上它等同于使用以下 :class:`~.quantization.Qconfig` （以下即源码写法）：
 
 .. code-block::
 
@@ -153,7 +208,7 @@ FakeQuantize 在前向时会根据传入的 scale 和 zero_point 对输入 Tenso
 
 这里使用了两种 Observer 来统计信息，而 FakeQuantize 使用了默认的算子。
 
-如果是后量化，或者说 Calibration，由于无需进行 FakeQuantize，故而其 fake_quant 属性为 None 即可：
+如果是后量化，或者说 Calibration, 由于无需进行 FakeQuantize, 故而其 ``fake_quant`` 属性为 None 即可：
 
 .. code-block::
 
@@ -164,102 +219,176 @@ FakeQuantize 在前向时会根据传入的 scale 和 zero_point 对输入 Tenso
         act_fake_quant=None,
     )
 
-除了使用在 :class:`~.quantization.Qconfig` 里提供的预设 QConfig，
-也可以根据需要灵活选择 Observer 和 FakeQuantize  实现自己的 QConfig。目前提供的 Observer 包括：
+.. seealso::
 
-* :class:`~.quantization.MinMaxObserver` ，
-  使用最简单的算法统计 min/max，对见到的每批数据取 min/max 跟当前存的值比较并替换，
-  基于 min/max 得到 scale 和 zero_point；
-* :class:`~.quantization.ExponentialMovingAverageObserver` ，
-  引入动量的概念，对每批数据的 min/max 与现有 min/max 的加权和跟现有值比较；
-* :class:`~.quantization.HistogramObserver` ，
-  更加复杂的基于直方图分布的 min/max 统计算法，且在 forward 时持续更新该分布，
-  并根据该分布计算得到 scale 和 zero_point。
+   * 这里的 ``calibration_qconfig`` 也是可以直接使用的 Qconfig 预设配置；
+   * 所有可用的 Qconfig 预设可以在 :ref:`量化 API 参考 <qconfig-list>` 中找到。
 
-对于 FakeQuantize，目前还提供了 :class:`~.quantization.TQT` 算子，
-另外还可以继承 ``_FakeQuant`` 基类实现自定义的假量化算子。
+自定义 Observer 和 FakeQuantize
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-在实际使用过程中，可能需要在训练时让 Observer 统计并更新参数，但是在推理时则停止更新。
-Observer 和 FakeQuantize 都支持 :meth:`~.quantization.Observer.enable` 
-和 :meth:`~.quantization.Observer.disable` 功能，
-且 Observer 会在 :meth:`~module.Module.train` 
-和 :meth:`~module.Module.eval` 时自动分别调用 enable/disable。
+除了使用预设配置，用户也可以根据需要灵活选择 Observer 和 FakeQuantize, 实现自己的 QConfig.
 
-所以一般在 Calibration 时，会先执行 ``net.eval()`` 保证网络的参数不被更新，
-然后再执行 :``enable_observer(net)`` 来手动开启 Observer 的统计修改功能。
+.. seealso::
+
+   * Observer 举例：:class:`~.quantization.MinMaxObserver` / :class:`~.HistogramObserver` / :class:`~.ExponentialMovingAverageObserver` ...
+   * FakeQuantize 举例：:class:`FakeQuantize` / :class:`~.TQT` / :class:`~.LSQ` ...
+   * 所有可选的 Observer 和 FakeQuantize 已经列举在 :ref:`量化 API 参考 <calculate_scale>` 页面。
+
+.. note::
+
+   在实际使用过程中，可能需要在训练时让 Observer 统计并更新参数，但是在推理时则停止更新。
+   Observer 和 FakeQuantize 都支持 :meth:`~.quantization.Observer.enable` 
+   和 :meth:`~.quantization.Observer.disable` 方法，且 Observer 会在模型调用 :meth:`~.module.Module.train` 
+   和 :meth:`~.module.Module.eval` 方法时自动分别调用自己的 enable/disable 方法。可以按需求情景灵活使用：
+
+   比如一般在进行数据校准时，会先执行 ``net.eval()`` 保证网络的参数不被更新，
+   然后再执行 :meth:`~.quantization.enable_observer` 来手动开启 Observer 的统计修改功能
+   （即先全局关闭，再开启特定的部分）：
+
+   .. code-block:: python
+
+      def calculate_scale(data, target):
+          model.eval()
+          enable_observer(model)
+          ...
+
+   注意这些开关处理都是递归进行的。类似接口还有 :meth:`~.quantization.disable_observer`, :meth:`~.quantization.enable_fake_quant`,
+   :meth:`~.quantization.disable_fake_quant` 等，可在 :ref:`quantize-operation` 中找到。
+
+.. _module-convert:
 
 模型转换模块与相关基类
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 QConfig 提供了一系列如何对模型做量化的接口，而要使用这些接口，
-需要网络的 Module 能够在 forward 时给参数、activation 加上 Observer 和进行 FakeQuantize.
-转换模块的作用就是将模型中的普通 Module 替换为支持这一系列操作的 :class:`~.module.qat.QATModule` ，
-并能支持进一步替换成无法训练、专用于部署的 :class:`~.module.quantized.QuantizedModule` 。
+需要网络的 Module 能够在 forward 时给权重、激活值加上 Observer 和进行 FakeQuantize.
+转换模块的作用就是将模型中的普通 :class:`~.module.Module` 替换为支持这一系列操作的 :class:`~.module.qat.QATModule` ，
+并能支持进一步替换成无法训练、专用于部署的 :class:`~.module.quantized.QuantizedModule` .
 
-基于三种基类实现的 Module 是一一对应的关系，通过转换接口可以依次替换为不同实现的同名 Module。
+这三种 Module 与 Model 对应，通过转换接口可以依次替换为不同实现的同名 Module.
+
+.. mermaid::
+   :align: center
+   :caption: 以 Conv2d 为例，从 Moudle 到 QATModule 再到 QuantizedModule.
+
+   flowchart LR
+       M[module.Conv2d] -- quantize_qat --> QATM[module.qat.Conv2d] -- quantize --> QM[module.quantized.Conv2d]
+
+
 同时考虑到量化与算子融合（Fuse）的高度关联，我们提供了一系列预先融合好的 Module，
 比如 :class:`~.module.ConvRelu2d` 、 :class:`~.module.ConvBn2d` 和 :class:`~.module.ConvBnRelu2d` 等。
+显式地使用融合算子可以保证过程更加可控，是推荐做法；否则框架需要自己根据网络结构进行自动匹配和融合优化。
 除此之外还提供专用于量化的 :class:`~.module.QuantStub` 、 :class:`~.module.DequantStub` 等辅助模块。
 
 转换的原理很简单，就是将父 Module 中可被量化（Quantable）的子 Module 替换为对应的新 Module. 
 但是有一些 Quantable Module 还包含 Quantable 子 Module，比如 ConvBn 就包含一个 Conv2d 和一个 BatchNorm2d，
 转换过程并不会对这些子 Module 进一步转换，原因是父 Module 被替换之后，
-其 forward 计算过程已经完全不同了，不会再依赖于这些子 Module。
+其 forward 计算过程已经完全不同了，不会再依赖于这些子 Module.
 
 .. note::
 
     如果需要使一部分 Module 及其子 Module 保留 Float 状态，不进行转换，
     可以使用 :meth:`~.module.Module.disable_quantize` 来处理。
+    比如当你发现对 fc 层进行量化后，模型会掉点，则可以关闭该层的量化处理：
+
+    >>> model.fc.disable_quantize()
+
+    该接口也可以被当作装饰器进行使用，方便对多个 Module 进行处理。
+
+..  warning::
 
     如果网络结构中涉及一些二元及以上的 ElementWise 操作符，比如加法乘法等，
     由于多个输入各自的 scale 并不一致，必须使用量化专用的算子，并指定好输出的 scale. 
     实际使用中只需要把这些操作替换为 :class:`~.module.Elemwise` 即可，
     比如 ``self.add_relu = Elemwise("FUSE_ADD_RELU")``
 
+    目前支持的量化 Elemwise 算子可在 :src:`dnn/scripts/opr_param_defs.py` 中找到：
+
+    .. code-block:: python
+
+       pdef('ElemwiseMultiType').add_enum(
+           'Mode',
+           # ...
+           Doc('QFUSE_ADD_RELU = 7', 'Fused elemwise add two quantized int8 followed'
+               ' by ReLU and typecvt to specified dtype'),
+           # ...
+       )
+
+    注意：在量化模型过程中，使用 Elemwise 算子不用加上前置 Q.
+
     另外由于转换过程修改了原网络结构，模型保存与加载无法直接适用于转换后的网络，
-    读取新网络保存的参数时，需要先调用转换接口得到转换后的网络，才能用 load_state_dict 将参数进行加载。
+    读取新网络保存的参数时，需要先调用转换接口得到转换后的网络，
+    才能用 :meth:`~.module.Module.load_state_dict` 将参数进行加载。
 
 实例讲解
 --------
 
 下面我们以 ResNet18 为例来讲解量化的完整流程，完整代码见 `MegEngine/Models <https://github.com/MegEngine/Models/tree/master/official/quantization>`_ . 主要分为以下几步：
 
-1. 修改网络结构，使用已经 Fuse 好的 ConvBn2d、ConvBnRelu2d、ElementWise 代替原先的 Module；
-2. 在正常模式下预训练模型，并在每轮迭代保存网络检查点；
-3. 调用 :func:`~.quantization.quantize_qat` 转换模型，并进行 finetune；
-4. 调用 :func:`~.quantization.quantize` 转换为量化模型，并执行 dump 用于后续模型部署。
+#. 修改网络结构，使用已经融合好的 ConvBn2d、ConvBnRelu2d、ElementWise 代替原先的 Module；
+#. 在正常模式下预训练模型，并在每轮迭代保存网络检查点；
+#. 调用 :func:`~.quantization.quantize_qat` 转换模型，并进行微调；
+#. 调用 :func:`~.quantization.quantize` 转换为量化模型，导出模型用于后续模型部署。
 
-网络结构见 ``resnet.py`` ，相比惯常写法，我们修改了其中一些子 Module，
-将原先单独的 ``Conv``, ``BN``, ``relu`` 替换为 Fuse 过的 Quantable Module。
+我们修改了模型结构中的一些子 Module, 将原先单独的 ``Conv``, ``BN``, ``ReLU`` 替换为融合后的可被量化的 Module.
 
-.. code-block::
+* 修改前的模型结构： :models:`official/vision/classification/resnet/model.py`
+* 修改后的模型结构： :models:`official/quantization/models/resnet.py`
 
-    class BasicBlock(Module):
-        def __init__(self, in_planes, planes, stride=1):
-            super(BasicBlock, self).__init__()
-            self.Conv_BN_relu = ConvBnRelu2d(
-                in_planes, planes, kernel_size=3, stride=stride, padding=1, bias=False
+以 ``BasicBlock`` 模块的修改前后作为例子对比：
+
+.. code-block:: python
+
+   class BasicBlock(M.Module):
+         def __init__(self, in_channels, channels):
+            super().__init__()
+            self.conv1 = M.Conv2d(in_channels, channels, 3, 1, padding=dilation, bias=False)
+            self.bn1 = M.BatchNorm2d
+            self.conv2 = M.Conv2d(channels, channels, 3, 1, padding=1, bias=False)
+            self.bn2 = M.BatchNorm2d
+            self.downsample = (
+               M.Identity()
+               if in_channels == channels and stride == 1
+               else M.Sequential(
+               M.Conv2d(in_channels, channels, 1, stride, bias=False)
+               M.BatchNorm2d
             )
-            self.Conv_BN = ConvBn2d(
-                planes, planes, kernel_size=3, stride=1, padding=1, bias=False
-            )
-            self.add_relu = Elemwise("FUSE_ADD_RELU")
-            self.shortcut = Sequential()
-            if stride != 1 or in_planes != planes:
-                self.shortcut = Sequential(
-                    ConvBn2d(in_planes, planes, kernel_size=1, stride=stride, bias=False)
-                )
 
-        def forward(self, x):
-            out = self.Conv_BN_relu(x)
-            out = self.Conv_BN(out)
-            cut = self.shortcut(x)
-            out = self.add_relu(out, cut)
-            return out
+         def forward(self, x):
+            identity = x
+            x = F.relu(self.bn1(self.conv1(x)))
+            x = self.bn2(self.conv2(x))
+            identity = self.downsample(identity)
+            x = F.relu(x + identity)
+            return x
+
+.. code-block:: python
+   :emphasize-lines: 4,5,9,11
+
+   class BasicBlock(M.Module):
+         def __init__(self, in_channels, channels):
+            super().__init__()
+            self.conv_bn_relu1 = M.ConvBnRelu2d(in_channels, channels, 3, 1, padding=dilation, bias=False)
+            self.conv_bn2 = M.ConvBn2d(channels, channels, 3, 1, padding=1, bias=False)
+            self.downsample = (
+               M.Identity()
+               if in_channels == channels and stride == 1
+               else M.ConvBn2d(in_channels, channels, 1, 1, bias=False)
+            )
+            self.add_relu = M.Elemwise("FUSE_ADD_RELU")
+
+         def forward(self, x):
+            identity = x
+            x = self.conv_bn_relu1(x)
+            x = self.conv_bn2(x)
+            identity = self.downsample(identity)
+            x = self.add_relu(x, identity)
+            return x
 
 然后对该模型进行若干轮迭代训练，并保存检查点，这里省略细节：
 
-.. code-block::
+.. code-block:: python
 
     for step in range(0, total_steps):
         # Linear learning rate decay
@@ -273,15 +402,13 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
         n = image.shape[0]
 
         loss, acc1, acc5 = train_func(image, label, net, gm)
-        optimizer.step()
-        optimizer.clear_grad()
+        optimizer.step().clear_grad()
 
-再调用 :func:`~.quantization.quantize_qat` 来将网络转换为 QATModule：
+再调用 :func:`~.quantization.quantize_qat` 来将网络转换为 QATModule:
 
-.. code-block::
+.. code-block:: python
 
-    from ~.quantization import ema_fakequant_qconfig
-    from ~.quantization.quantize import quantize_qat
+    from megengine.quantization import ema_fakequant_qconfig, quantize_qat
 
     model = ResNet18()
     if args.mode != "normal":
@@ -297,9 +424,11 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
 在 QAT 模式训练完成后，我们继续保存检查点，执行 ``inference.py`` 并设置 ``mode`` 为 ``quantized`` ，
 这里需要将原始 Float 模型转换为 QAT 模型之后再加载检查点。
 
-.. code-block::
+.. code-block:: python
+   :emphasize-lines: 5
 
-    from ~.quantization.quantize import quantize_qat
+    from mmegengine.quantization import quantize_qat
+
     model = ResNet18()
     if args.mode != "normal":
         quantize_qat(model, ema_fakequant_qconfig)
@@ -309,13 +438,14 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
         ckpt = ckpt["state_dict"] if "state_dict" in ckpt else ckpt
         model.load_state_dict(ckpt, strict=False)
 
-模型转换为量化模型包括以下几步：
+最终真正地将模型转换为量化模型，包括以下几步：
 
-.. code-block::
+.. code-block:: python
+   :emphasize-lines: 13
 
-    from ~.quantization.quantize import quantize
+    from mmegengine.quantization import quantize
 
-    # 定义trace函数，打开capture_as_const以进行dump
+    # 定义 trace 函数，打开 capture_as_const 以进行 dump
     @jit.trace(capture_as_const=True)
     def infer_func(processed_img):
         model.eval()
@@ -334,7 +464,7 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
     elif args.mode == "quantized":
         processed_img = processed_img.astype("int8")
 
-    # 执行一遍evaluation
+    # 执行一遍 evaluation
     probs = infer_func(processed_img)
 
     # 将模型 dump 导出
