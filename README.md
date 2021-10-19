@@ -1,7 +1,7 @@
 # MegEngine 官方文档
 
 <p align="center">
-  <img height="128" src="./source/_static/logo/megengine.jpg">
+  <img height="128" src="./source/_static/logo/megengine.png">
 </p>
 
 [![language-zh](https://img.shields.io/badge/language-zh-brightgreen)](https://megengine.org.cn/doc/stable/zh/) [![language-en](https://img.shields.io/badge/language-en-brightgreen)](https://megengine.org.cn/doc/stable/en/) [![Crowdin](https://badges.crowdin.net/megengine/localized.svg)](https://crowdin.com/project/megengine) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
