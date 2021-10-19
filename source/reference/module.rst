@@ -67,6 +67,8 @@ Convolution Layers
    LocalConv2d
    DeformableConv2d
    SlidingWindow
+   SlidingWindowTranspose
+
 
 Pooling layers
 ~~~~~~~~~~~~~~
@@ -149,8 +151,6 @@ Fused operations
    ConvBn2d
    ConvBnRelu2d
    BatchMatMulActivation
-   SlidingWindow
-   SlidingWindowTranspose
 
 Quantization
 ~~~~~~~~~~~~
