@@ -1389,6 +1389,11 @@ Distance Functions
 
 Loss Functions
 ~~~~~~~~~~~~~~
+
+.. seealso::
+
+   请参考 loss function 的 functional 实现。
+
 .. list-table::
    :header-rows: 1
 
