@@ -104,6 +104,7 @@ MegEngine 用户在日常使用中无需直接调用它，因为里面的功能�
    get_mem_status_bytes
    get_cuda_compute_capability
    set_prealloc_config
+   coalesce_free_memory
 
 .. _logger:
 

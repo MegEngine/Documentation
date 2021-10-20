@@ -109,6 +109,7 @@ Arithmetic operations
    expm1
    log
    log1p
+   logaddexp
 
 .. _trigonometric-functions:
 
@@ -318,6 +319,8 @@ Normalization functions
 
    batch_norm
    sync_batch_norm
+   layer_norm
+   local_response_norm
 
 .. _linear-functions:
 
@@ -374,6 +377,7 @@ Loss functions
    hinge_loss
    binary_cross_entropy
    cross_entropy
+   ctc_loss
 
 .. _vision-functions:
 
@@ -385,6 +389,7 @@ Vision functions
 
    cvt_color
    pad
+   pixel_shuffle
    interpolate
    remap
    warp_affine
