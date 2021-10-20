@@ -111,6 +111,7 @@ Normalization Layers
    GroupNorm
    InstanceNorm
    LayerNorm
+   LocalResponseNorm
 
 Linear Layers
 ~~~~~~~~~~~~~
