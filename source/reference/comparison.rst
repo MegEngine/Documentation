@@ -240,6 +240,10 @@ Arithmetic operations
      - :py:func:`~torch.log1p`
      - :py:func:`~megengine.functional.log1p`
      -
+   * - :py:data:`~numpy.logaddexp`
+     - :py:func:`~torch.logaddexp`
+     - :py:func:`~megengine.functional.logaddexp`
+     -
 
 Trigonometric functions
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -847,7 +851,7 @@ Loss functions
      - :py:func:`~megengine.functional.nn.cross_entropy`
      -
    * - :py:func:`~torch.nn.functional.ctc_loss`
-     - :ref:`not-implemented`
+     - :py:func:`~megengine.functional.nn.ctc_loss`
      -
    * - :py:func:`~torch.nn.functional.hinge_embedding_loss`
      - :ref:`not-implemented`
@@ -1480,7 +1484,7 @@ Vision functions
      - Comment
 
    * - :py:func:`~torch.nn.functional.pixel_shuffle`
-     - :ref:`not-implemented`
+     - :py:func:`~megengine.functional.nn.pixel_shuffle`
      -
    * - :py:func:`~torch.nn.functional.pad`
      - :ref:`not-implemented`
