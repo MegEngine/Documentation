@@ -53,7 +53,7 @@
 尽管精度转换发生在训练后，但为了获取这些统计信息，我们仍需要在模型训练时 —— 即前向计算的过程中，插入一名观察者（Observer）。
 
 使用训练后量化技术，会导致量化后的模型掉点（即预测正确率下降）。严重情况下会导致量化模型不可用。
-一种可行的做法是使用小批量数据来进行校准（Calibration），也叫 Calibration 后量化。
+一种可行的做法是使用小批量数据来在量化前对 Observer 进行校准（Calibration），也叫 Calibration 后量化。
 
 另一种可行的改善方案是使用量化感知训练技术，向浮点模型中插入一些伪量化（FakeQuantize）算子作为改造，
 在训练时伪量化算子会根据 Observer 观察到的信息进行量化模拟，
@@ -68,7 +68,7 @@
 
 .. mermaid::
    :align: center
-   :caption: 此时的量化感知训练 QAT 可被看作是在预训练好的 QFloat 模型上微调（Fine-tune）
+   :caption: 此时的量化感知训练 QAT 可被看作是在预训练好的 QFloat 模型上微调（Fine-tune），同时做了校准
 
    flowchart LR
        FM[Float Model] --> |train| PFM[Pre-trained Float Model]
@@ -94,16 +94,16 @@
 
    * 在构造 QFloat 模型时，如果不插入 FakeQuantize 算子，也可以相应地减少训练开销，提升速度。
 
-     但是这时等同于未进行量化感知，只进行了普通的训练后量化 PTQ, 模型可能会掉点严重：
+     但是这时等同于未进行量化感知，只进行了数据校准 Calibration, 模型可能会掉点严重：
 
       .. mermaid::
          :align: center
 
          flowchart LR
-            FM[Float Model] --> |Observer| QFM[QFloat Model]
-            FM[Float Model] -.- |FakeQuantize| QFM[QFloat Model]
-            QFM --> |train| TQFM[trained QFloat Model]
-            TQFM --> |PTQ| QM[Q Model]
+            PFM[Pre-trained Float Model] --> |Observer| PQFM[Pre-trained QFloat Model]
+            PFM[Pre-trained Float Model] -.- |FakeQuantize| PQFM[Pre-trained QFloat Model]
+            PQFM --> |Calibration| CQFM[Calibrated QFloat Model]
+            CQFM --> |PTQ| QM[Q Model]
 
    对于上述不同情景，在 MegEngine 中可以使用一套统一的接口来对不同的情况进行灵活配置。
 
@@ -115,7 +115,7 @@ Megengine 量化步骤
 在 MegEngine 中，最上层的量化接口是配置如何量化的 :class:`~.quantization.QConfig` 
 和模型转换模块里的 :func:`~.quantization.quantize_qat` 与 :func:`~.quantization.quantize` .
 通过配置 :class:`~.quantization.QConfig` 中所使用的 Observer 和 FakeQuantize 算子，我们可以对量化方案进行自定义。
-进一步的说明请参考 :ref:`qconfig-guide` 小节，下面将展示推荐量化流程所需的步骤:
+进一步的说明请参考 :ref:`qconfig-guide` 小节，下面将展示 QAT 量化流程所需的步骤:
 
 .. code-block:: python
 
@@ -135,7 +135,7 @@ Megengine 量化步骤
    这一步会基于量化配置 :class:`~.quantization.QConfig` 设置好 Observer 和 FakeQuantize 算子
    （在 MegEngine 中提供了常见的 QConfig :ref:`预设 <qconfig-list>`, 这里使用了 EMA 算法）；
 #. 使用 QFloat 模型继续训练（微调），此时 Obersever 统计信息, FakeQuantize 进行伪量化；
-#. 使用 :func:`~.quantization.quantize` 将 QFloat 模型转换为Q 模型，这一步也叫 “真量化”（相较于伪量化）。
+#. 使用 :func:`~.quantization.quantize` 将 QFloat 模型转换为 Q 模型，这一步也叫 “真量化”（相较于伪量化）。
    此时网络无法再进行训练，网络中的算子都会转换为低比特计算方式，即可用于部署了。
 
 .. mermaid::
@@ -149,8 +149,8 @@ Megengine 量化步骤
 
 .. seealso::
 
-   * 经过量化的模型通常还需要经过数据校准（Calibration），需准备校准数据集（参考代码示范）；
-   * 通过校准和测试的量化模型可被导出用于推理部署，参考 :ref:`dump` 。
+   * 我们也可以使用 Calibration 后量化方案，需准备校准数据集（参考代码示范）；
+   * MegEngine 的量化模型可被直接导出用于推理部署，参考 :ref:`dump` 。
 
    完整的 MegEngine 模型量化代码示范可在 :models:`official/quantization` 找到。
 
@@ -169,8 +169,8 @@ Megengine 量化步骤
    * :class:`.module.Linear`, :class:`.module.qat.Linear` 和 :class:`.module.quantized.Linear`
    * :class:`.module.Conv2d`, :class:`.module.qat.Conv2d` 和 :class:`.module.quantized.Conv2d`
 
-   调用模型转换接口 :func:`~.quantization.quantize_qat` 和 :func:`~.quantization.quantize` 时，
-   会完成相应算子的批量替换操作，感兴趣的用户可以阅读源码逻辑，
+   对 Module 的处理用户无需感知，通过调用模型转换接口 :func:`~.quantization.quantize_qat` 和 :func:`~.quantization.quantize`,
+   框架会完成相应算子的批量替换操作，感兴趣的用户可以阅读相应的源码逻辑，
    在 :ref:`module-convert` 小节中也会进行更具体的介绍。
   
 .. _qconfig-guide:
@@ -196,7 +196,7 @@ MegEngine 中提供了类似 ``ema_fakequant_qconfig`` 这样的预设，可用�
 >>> import megengine.quantization as Q
 >>> Q.quantize_qat(model, qconfig=Q.ema_fakequant_qconfig)
 
-实际上它等同于使用以下 :class:`~.quantization.Qconfig` （以下即源码写法）：
+实际上它等同于使用以下 :class:`~.quantization.Qconfig` （以下即源码写法），以进行量化感知训练：
 
 .. code-block::
 
@@ -209,7 +209,7 @@ MegEngine 中提供了类似 ``ema_fakequant_qconfig`` 这样的预设，可用�
 
 这里使用了两种 Observer 来统计信息，而 FakeQuantize 使用了默认的算子。
 
-如果是后量化，或者说 Calibration, 由于无需进行 FakeQuantize, 故而其 ``fake_quant`` 属性为 None 即可：
+如果仅做后量化，或者说 Calibration, 由于无需进行 FakeQuantize, 故而其 ``fake_quant`` 属性为 None 即可：
 
 .. code-block::
 
@@ -280,7 +280,6 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
 比如 :class:`~.module.ConvRelu2d` 、 :class:`~.module.ConvBn2d` 和 :class:`~.module.ConvBnRelu2d` 等。
 显式地使用融合算子可以保证过程更加可控，其对应的 QuantizedModule 版本都会直接调用底层实现好的融合算子；
 否则框架需要自己根据网络结构进行自动匹配和融合优化。
-
 这样实现的缺点在于用户在使用时需要修改原先的网络结构，使用融合好的 Module 搭建网络。
 而好处则是用户能更直接地控制网络如何转换，比如同时存在需要融合和不需要融合的 Conv 算子，
 相比提供一个冗长的白名单，我们更倾向于在网络结构中显式地控制；而一些默认会进行转换的算子，
@@ -328,14 +327,14 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
     读取新网络保存的参数时，需要先调用转换接口得到转换后的网络，
     才能用 :meth:`~.module.Module.load_state_dict` 将参数进行加载。
 
-实例讲解
---------
+ResNet 实例讲解
+---------------
 
 下面我们以 ResNet18 为例来讲解量化的完整流程。主要分为以下几步：
 
-#. 修改网络结构，使用已经融合好的 ConvBn2d、ConvBnRelu2d、ElementWise 代替原先的 Module；
-#. 在正常模式下预训练模型，并在每轮迭代保存网络检查点；
-#. 调用 :func:`~.quantization.quantize_qat` 转换模型，并进行微调；
+#. 修改网络结构，使用已经融合好的 ConvBn2d、ConvBnRelu2d、ElementWise 代替原先的 Module.
+   在正常模式下预训练模型，并在每轮迭代保存网络检查点；
+#. 调用 :func:`~.quantization.quantize_qat` 转换模型，并进行量化感知训练微调（或校准，取决于 QConfig）；
 #. 调用 :func:`~.quantization.quantize` 转换为量化模型，导出模型用于后续模型部署。
 
 .. seealso::
@@ -418,21 +417,30 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
         loss, acc1, acc5 = train_func(image, label, net, gm)  # traced
         optimizer.step().clear_grad()
 
-    # Save checkpoints
+        # Save checkpoints
 
-通过 QAT 进行微调
-~~~~~~~~~~~~~~~~~
+.. seealso::
 
-调用 :func:`~.quantization.quantize_qat` 来将网络转换为 QATModule:
+   * Train - :models:`official/quantization/train.py`
+
+转换成 QFloat 模型
+~~~~~~~~~~~~~~~~~~
+
+调用 :func:`~.quantization.quantize_qat` 来将网络转换为 QFloat 模型:
 
 .. code-block:: python
 
    from megengine.quantization import ema_fakequant_qconfig, quantize_qat
 
    model = ResNet18()
+
+   # QAT
    quantize_qat(model, ema_fakequant_qconfig)
 
-读取预训练 Float 模型保存的检查点，继续使用上面相同的代码进行量化感知训练。
+   # Or Calibration:
+   # quantize_qat(model, calibration_qconfig)
+
+读取预训练 Float 模型保存的检查点，继续使用上面相同的代码进行微调 / 校准。
 
 .. code-block:: python
 
@@ -442,9 +450,10 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
        ckpt = ckpt["state_dict"] if "state_dict" in ckpt else ckpt
        model.load_state_dict(ckpt, strict=False)
 
-   # Traced QAT and save checkpoints
+   # Fine-tune / Calibrate with new traced train_func
+   # Save checkpoints
 
-在 QAT 模式训练完成后，继续保存检查点，以便在测试和推理进行 QFloat 模型的加载和转换。
+最后也需要保存此时 QFloat 模型的检查点，以便在测试和推理进行 QFloat 模型的加载和转换。
 
 .. warning::
 
@@ -452,9 +461,13 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
    * 如果这两次训练全在同一个脚本中执行，那么训练的 traced 函数需要用不一样的，
      因为此时模型的参数变化了，需要重新进行编译。
 
+.. seealso::
 
-推理以及导出 Q 模型
-~~~~~~~~~~~~~~~~~~~
+   * Finetune - :models:`official/quantization/finetune.py`
+   * Calibration - :models:`official/quantization/calibration.py`
+
+转换成 Q 模型
+~~~~~~~~~~~~~
 
 将 QFloat 模型转换为 Q 模型并导出，共包括以下几步：
 
@@ -483,3 +496,8 @@ QConfig 提供了一系列如何对模型做量化的接口，而要使用这些
 #. 准备数据并执行一次推理，调用 :meth:`~.trace.dump` 将模型导出。
 
 至此便得到了一个可用于部署的量化模型。
+
+.. seealso::
+
+   * Inference and dump - :models:`official/quantization/inference.py`
+
