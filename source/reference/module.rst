@@ -104,6 +104,7 @@ Normalization Layers
    GroupNorm
    InstanceNorm
    LayerNorm
+   LocalResponseNorm
 
 Linear Layers
 ~~~~~~~~~~~~~
@@ -132,6 +133,15 @@ Sparse Layers
    :template: autosummary/api-class.rst
 
    Embedding
+
+Vision Layers
+~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
+   PixelShuffle
 
 Fused operations
 ~~~~~~~~~~~~~~~~
