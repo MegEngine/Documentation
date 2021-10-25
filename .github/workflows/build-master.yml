@@ -1,0 +1,101 @@
+name: Build Master
+
+on:
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  Prepare:
+    name: Setup environment
+    if: ${{ github.event.label.name != 'no-build' }}
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout doc repsitory
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          lfs: true
+          submodules: recursive
+
+      - name: Checkout MegEngine repository
+        uses: actions/checkout@v2
+        with: 
+          repository: MegEngine/MegEngine
+          ref: master
+          fetch-depth: 1
+          path: MegEngine
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Cache Python packages
+        id: cache-python
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}$-${{ hashFiles('requirements.txt') }}
+
+      - name: Install Python dependencies
+        if: steps.cache-python.outputs.cache-hit != 'true'
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+
+      - name: Build MegEngine from source
+        run: |
+          ./MegEngine/third_party/prepare.sh
+          ./MegEngine/third_party/install-mkl.sh
+          ./MegEngine/ci/cmake.sh cpu
+          python3 -m pip install -r ./MegEngine/imperative/python/requires.txt
+          export PYTHONPATH=./MegEngine/imperative/python
+
+  Generate:
+    name: Build HTML files
+    needs: Prepare
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        language: ["zh_CN", "en"]
+    steps:
+      - name: Checkout repsitory
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          lfs: true
+          submodules: recursive
+
+      - name: Checkout LFS objects
+        run: git lfs checkout
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Get cached Python packages
+        id: cache-python
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}$-${{ hashFiles('requirements.txt') }}
+
+      - name: Install pandoc and other dependencies
+        run: sudo apt install -y pandoc graphviz
+
+      - name: Generate HTML files
+        run: |
+          make LANGUAGE=${{ matrix.language }} html --keep-going
+          mv build/html ${{ matrix.language }}
+          tar czf ${{ matrix.language }}.tgz ${{ matrix.language }}
+
+      - name: Upload aritifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: HTML
+          path: ${{ matrix.language }}.tgz
+
