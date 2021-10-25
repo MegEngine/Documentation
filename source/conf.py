@@ -84,6 +84,7 @@ extensions = [
     "sphinx_togglebutton",
     "sphinx_panels",
     "sphinx_tabs.tabs",
+    "sphinx_remove_toctrees",
 ]
 
 source_suffix = {
@@ -95,7 +96,9 @@ source_suffix = {
 source_encoding = "utf-8"
 
 master_doc = "index"
+
 templates_path = ["_templates"]
+
 exclude_patterns = [
     "_build",
     "build",
@@ -171,19 +174,9 @@ panels_add_bootstrap_css = False
 # Setting for sphinx.ext.nbsphinx
 # nbsphinx do not use requirejs (breaks bootstrap)
 nbsphinx_requirejs_path = ""
-logger = logging.getLogger(__name__)
 
-try:
-    import nbconvert
-except ImportError:
-    logger.warning("nbconvert not installed. Skipping notebooks.")
-    exclude_patterns.append("**/*.ipynb")
-else:
-    try:
-        nbconvert.utils.pandoc.get_pandoc_version()
-    except nbconvert.utils.pandoc.PandocMissing:
-        logger.warning("Pandoc not installed. Skipping notebooks.")
-        exclude_patterns.append("**/*.ipynb")
+# Settign for sphinx_remove_toctrees
+remove_toctrees_from = ["reference/api/*", "development/meps/*"]
 
 # -- Options for HTML output -------------------------------------------------
 html_logo = "logo.png"
