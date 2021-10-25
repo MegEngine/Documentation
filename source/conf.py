@@ -30,7 +30,6 @@ else:
 # -- Package setup -----------------------------------------------------------
 
 from datetime import datetime
-import logging
 
 # -- Path setup --------------------------------------------------------------
 # Generally we use `os.path` and `sys.path` to tell Sphinx where to find code
@@ -176,7 +175,11 @@ panels_add_bootstrap_css = False
 nbsphinx_requirejs_path = ""
 
 # Settign for sphinx_remove_toctrees
-remove_toctrees_from = ["reference/api/*", "development/meps/*"]
+remove_toctrees_from = [
+    "reference/core.rst",
+    "reference/api/*", 
+    "development/meps/*",
+]
 
 # -- Options for HTML output -------------------------------------------------
 html_logo = "logo.png"
