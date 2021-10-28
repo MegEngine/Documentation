@@ -6,19 +6,20 @@ Python 文档字符串风格指南
 
 如果你对 Python 文档字符串（Docstring）的概念不是很清楚，可以参考以下材料：
 
-* `PEP 257 <https://www.python.org/dev/peps/pep-0257>`_ - Docstring Conventions
-* `PEP 287 <https://www.python.org/dev/peps/pep-0287>`_ - reStructuredText Docstring Format
-* `PEP 484 <https://www.python.org/dev/peps/pep-0484>`_ - Type Hints
-* `Google Python Style guides <https://google.github.io/styleguide/pyguide.html#381-docstrings>`_ - Docstrings
+* `PEP 257 <https://www.python.org/dev/peps/pep-0257>`_ - 文档字符串约定（Docstring Conventions）
+* `PEP 287 <https://www.python.org/dev/peps/pep-0287>`_ - reStructuredText 风格文档字符串格式
+* `PEP 484 <https://www.python.org/dev/peps/pep-0484>`_ - 类型提示（Type Hints）
+* `Google Python Style guides <https://google.github.io/styleguide/pyguide.html#381-docstrings>`_ - Google 风格文档字符串格式
 
 .. note::
 
-   在 MegEngine 源码中鼓励使用 Google 风格的 Docstring. (必须带上 Type Hints)
+   在 MegEngine 源码中鼓励使用 Google 风格的文档字符串。 (必须带上类型提示)
 
 .. warning::
 
-   * 由于历史原因，MegEngine 曾选择了使用 reStructuredText Docstring 代码风格。 
-   * 在 >=1.6 版本的 MegEngine, 所有 Docstring 将统一迁移成 Google Style.
+   * 由于历史原因，MegEngine 曾选择了使用 reStructuredText 文档字符串风格； 
+   * 在 >=1.6 版本的 MegEngine, 所有文档字符串将统一迁移成 Google 风格；
+   * 如果你发现了 MegEngine 仍然存在 ReST 风格的参数/返回值写法，欢迎帮我们改正过来。
 
 .. _docstring-template:
 
@@ -26,7 +27,7 @@ Docstring Google Style 模版
 ---------------------------
 
 我们建议所有刚开始尝试 Docstring 编写的开发者看一看下面这个模版文件
-（ `源文件地址 <https://github.com/sphinx-contrib/napoleon/blob/master/docs/source/example_google.rst>`_ ）：
+（ `源文件地址 <https://github.com/sphinx-contrib/napoleon/blob/master/docs/source/example_google.py>`_ ）：
 
 .. dropdown:: Example Google style docstrings
 
@@ -334,91 +335,131 @@ Docstring Google Style 模版
    * 阅读 :ref:`document-reference` 会对了解如何组织内容有所帮助。
    * 上面给出的样例模版更多地是作为形式上的参考，适合作为比对。
 
-Docstring 编辑自查清单
-----------------------
+Docstring 撰写指南
+------------------
 
-* 一份好的 Docstring 应当具有 Args, Returns, Examples 等章节；
+在 《Google Python Style Guide》的第 `3.8 <https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings>`_ 小节，
+已经提供了相当丰富的建议，如：
 
-* 对于具有返回值的 APIs, 请统一按照 
-  `PEP 484 <https://www.python.org/dev/peps/pep-0484>`_ 添加类型提示 Type Hints;
+* 函数（方法、或生成器）必须提供文档字符串，除非它：对外不可见、很短、用途明显；
+* 文档字符串应该提供足够的信息来体现函数的调用方式，使用户无需阅读其源码即可使用；
+* 文档字符串应描述函数的调用语法及其语义，但通常不描述其实现细节；
+* 文档字符串应该是描述性风格而不是命令式风格... 等等。
 
-* Google Style 语法请统一使用与 Python 一致的 4 格缩进（而非 2 格），
-  另一种常见的错误写法如下：
+除此以外，开发者在为 MegEngine 的 Python API 编写 Docstring 时，还需注意以下情况：
 
-  .. code-block::
+#. **Tensor API 文档字符串优先参考《数组 API 标准》。** 在《 :ref:`mep-0003` 》中，明确了 MegEngine Tensor API 在设计时将尽量参考
+   《 `数组 API 标准 <https://data-apis.org/array-api/latest/>`_ 》中所定义的规格和约定，文档字符串也应当遵循这一原则。
+   当某个 Tensor API 已经存在于《标准》之中时，文档字符串编辑人员应当仔细确认《标准》中所陈述的行为在 MegEngine 中表现是否一致。
+   对于完全一致的行为，应当使用一致的、《标准》中已经提供的文档字符串进行描述；对于不一致的行为，应当以提示或警告的形式进行说明。
 
-     Example:
-     .. code-block::
+#. **可适当重写以覆盖 API 源码中提供的类型提示。** 默认情况下，API 文档中的类型提示将根据源码 TypeHint 内容生成。
+   一些仅内部使用的类型如 ``SymbolVar``, ``CompNote``... 所涉及的概念会让用户感到迷惑，此时应当在文档字符串中适当重写。
+   做法是在参数后面空一格，然后用半角圆括号括起重写后的类型提示内容：
 
-        example_func()
+   .. code-block:: python
+      :emphasize-lines: 5
 
-  对于一些指令，我们必须将其内容域向右缩进 4 格以便识别：
+      def func(inp: Union[Tensor, SymbolVar]) -> Union[Tensor, SymbolVar]:  # <- TypeHint
+          r""""Example function with PEP 484 type annotations.
 
-  .. code-block::
+          Args:
+              inp (Tensor): The input tensor.
 
-     Example:
-         .. code-block::
+          Returns:
+              The return tensor.
+          """
+          pass
 
-            example_func()
+   理想状态下，源码中的每个 API 的参数都应该带上类型提示，这样做对编辑器、集成开发环境更为友好。
+   覆写 TypeHint 内容会引入额外的维护成本，因此不建议所有的 TypeHint 都进行人为覆写。
 
-* 通常而言，我们应该在 API Examples 中向用户展示如何正确地使用 APIs,
-  而不是用一些单元测试用例作为使用示范，因为一些时候这只能验证接口的有效性，
-  无法帮助查阅 API 文档的用户理解如何去使用它们；因此请勿使用 ``testcode``.
-  如果你必须在解释清楚一些相关概念或实现常见任务后才能向用户说明 API 用法，
-  通常表明你需要提供一份教程或者是用户指南来进行额外的说明，并在 API 参考中引用。
-  
-* 请花时间琢磨一下：文档字符串中的首行是否起到了 **清晰、准确、概括** 的效果，错误例子如下：
+#. **示范代码必须使用标准 doctest 风格而非 code-output 风格。** 对比如下：
 
-  .. code-block:: python
+   .. panels::
+      :container: +full-width
+      :card:
 
-     def all_reduce_max(...):
-         r"""Create all_reduce_max operator for collective communication."""
+      错误写法
+      ^^^^^^^^
+      .. code-block::
 
-  整个注释内容只有上述这句话，对于一个不了解分布式概念的用户来说，
-  仅提供这些信息的注释是毫无作用的，甚至让人感到更加的迷惑。
-  用户完全不知道这样的 API 能够用在什么地方，也不知道什么是 collective communication.
-  我们应当认为该 API 文档字符串并没有起到应该有的作用，形同虚设。
+         .. testcode::
 
-  参考解决办法如下：
+            import megengine.functions as F
 
-  * 如果有且仅有一处相关的 API 实现（常见于某个算法实现调用接口），
-    则需要在文档字符串中对相关的概念和算法进行简单解释，
-    如果有必要的话，需要给出相关参考材料的原始出处的引用；
-  * 如果存在着一类属于相同概念但细节不同的 APIs, 则需要提供用户指南集中介绍背景，
-    可以参考 NumPy 中对概念
-    `Discrete Fourier Transform <https://numpy.org/doc/stable/reference/routines.fft.html>`_ 
-    的解释，以及参考 API 文档如 :py:func:`numpy.fft.fft`. 
+            a = F.arange(5)
+            print(a.numpy)
 
-  对于上面这个例子，我们应该有一个页面对分布式通信和计算的概念进行介绍，并提供相关例程。
+         .. testoutput::
+
+            [0. 1. 2. 3. 4.]
+   
+      ---
+      正确写法
+      ^^^^^^^^
+      .. code-block::
+
+         >>> megengine.functional.arange(5)
+         Tensor([0. 1. 2. 3. 4.], device=xpux:0)
+
+         >>> megengine.functional.arange(1, 4)
+         Tensor([1. 2. 3.], device=xpux:0)
+
+      * 一些时候可用注释代替上下文；
+      * 可以有多例，以展示不同的用法。
+
+
+#. **API 文档首行简述应确保做到 “清晰、准确、概括” 这三点要求。** 错误例子如下：
+
+   .. code-block:: python
+
+      def all_reduce_max(...):
+          r"""Create all_reduce_max operator for collective communication."""
+
+   整个文档字符串的内容只有上述这句话，对于一个不了解分布式概念的用户来说， 仅提供这些信息的帮助极其有限。
+   用户完全不知道这样的 API 能够用在什么地方，也有可能对 “聚合式通信（collective communication）” 的概念一无所知。
+   我们希望文档中所提供的概念应该是自包含的（Self-contained），解释性的文本（或对应的链接）是不可或缺的，尽可能避免让用户去搜索其它材料。
+
+   对于一些比较复杂的、或需要结合情景使用的 API, 仅靠示范代码不足以帮助用户理解使用情景，
+   此时可以提供到专门介绍用法的文档页面的链接。常见的做法是使用 ``seealso`` 进行拓展：
+
+   .. code-block:: restructuredtext
+
+      .. seealso::
+
+         See :ref:`collective-communication-intro` for more details.
+
+
+#. **合理补充提示（Note）和警告（Warning）信息，善用页面交叉引用，根据用户反馈不断迭代。** 
 
 
 Docstring 对文档的意义
 ----------------------
 
-一些开发者的 Python 开发环境中，可以根据 Docstring 进行更加智能的内容提示。但这还不是全部，
+.. admonition:: API 参考页面自动生成
+   :class: note
 
-在 MegEngine 文档中，Docstring 肩负着重要的使命——
+   我们借助 Sphinx 来构建整个 MegEngine 文档（参考 :ref:`how-to-build-the-doc-locally` ），
+   其中每个 Python API 的单个文档页面（如 :func:`~.functional.add` ）都是提取相应的文档字符串内容自动生成的。
 
-API 参考页面自动生成
-~~~~~~~~~~~~~~~~~~~~
+   前面提到了，在 MegEngine 源码中鼓励使用 Google 风格的文档字符串。
+   由于 Sphinx 在根据文档字符串生成 API 页面时，默认只支持 reStructuredText 语法。
+   因此我们用到了 `sphinx.ext.napoleon 
+   <https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html>`_ 插件，
+   它能够在生成文档前临时将所有的 Google Style 语法解析成 reStructureText 语法。
+   这也意味着我们依旧可以使用 :ref:`restructuredtext` 中提到的各种语法来编辑文档字符串内容，
+   包括 API 之间的交叉引用、超链接、插入图片，甚至加入一些高级的 HTML 视觉样式。
 
-我们借助 Sphinx 来构建整个 MegEngine 文档（参考 :ref:`how-to-build-the-doc-locally` ），
-而 Sphinx 在根据 Docstring 生成 API 页面时，默认只支持 reStructuredText 语法。
-因此我们用到了 `sphinx.ext.napoleon 
-<https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html>`_ 插件，
-它能够在生成文档前临时将所有的 Google Style 语法解析成 reStructureText 语法。
+   但是，我们也要考虑到习惯直接阅读源码（以及使用 ``help()`` / ``print(*.__doc__)`` 语法）的用户，
+   使用过多的衍生语法和交叉引用将打破纯文本样式的约定，降低 Python 源码的阅读体验，需克制使用。
 
-* 这也意味着我们依旧可以使用 :ref:`restructuredtext` 中提到的各种语法来编辑 Docstring 内容，
-  包括 API 之间的交叉引用、超链接、插入图片，甚至加入一些高级的 HTML 视觉样式。
-* 但我们也要考虑到习惯直接阅读源码（以及使用 ``help()`` / ``print(*.__doc__)`` 语法）的用户，
-  使用过多的衍生语法将打破纯文本样式的约定，降低 Python 源码的阅读体验。
+.. admonition:: 别忘记提供对应的翻译文本
+   :class: warning
 
-We need Chinese!
-~~~~~~~~~~~~~~~~
-
-MegEngine 文档的特点之一是提供了中文 API 翻译，而 Docstring 作为源代码的一部分，当然是用英文撰写的。
-因此在 MegEngine 源代码中修改 Docstring 后我们还需要在 Documentation 文档中更新对应 ``.po`` 文件，
-Sphinx 在生成文档时会先检索匹配到的文本，接着自动地将原文替换成对应的英文，这和 WordPress 国际化原理类似，
-相关细节和翻译流程请参考 :ref:`translation` 。
+   MegEngine 文档的特点之一是提供了中文 API 翻译，而 Docstring 作为源代码的一部分，当然是用英文撰写的。
+   因此在 MegEngine 源代码中修改 Docstring 后我们还需要在 Documentation 文档中更新对应 ``.po`` 文件，
+   Sphinx 在生成文档时会先检索匹配到的文本，接着自动地将原文替换成对应的译文，这和 WordPress 国际化原理类似，
+   相关细节和翻译流程请参考 :ref:`translation` 。
 
 
