@@ -83,6 +83,16 @@ Pooling layers
    AdaptiveMaxPool2d
    DeformablePSROIPooling
 
+
+Vision layers
+~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
+   PixelShuffle
+
 Non-linear Activations
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
