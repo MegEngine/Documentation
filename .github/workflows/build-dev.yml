@@ -1,0 +1,63 @@
+name: Build (master)
+
+on:
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  Flow:
+    name: Build master branches MegEngine and dev docs
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout documentation repsitory
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          lfs: true
+          submodules: recursive
+
+      - name: Checkout MegEngine repsitory
+        uses: actions/checkout@v2
+        with:
+          repository: MegEngine/MegEngine
+          path: megengine
+          ref: master
+          fetch-depth: 1
+          lfs: true
+          submodules: recursive
+
+      - name: Checkout LFS objects
+        run: git lfs checkout
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+          python3 -m pip install -r megengine/imperative/python/requires.txt
+
+      - name: Install pandoc and other dependencies
+        run: sudo apt install -y pandoc graphviz
+
+      - name: Build MegEngine
+        run: |
+          cd megengine
+          ./third_party/prepare.sh
+          ./third_party/install-mkl.sh
+          cmake -S . -B build -DMGE_WITH_DISTRIBUTED=OFF -DMGE_WITH_CUDA=OFF -DMGE_WITH_LITE=OFF
+          cd build && make -j$(($(nproc) * 2))
+          make develop
+          cd ..
+
+      - name: Generate HTML files
+        run: |
+          export PYTHONPATH=./megengine/imperative/python
+          export MGE_DOC_MODE="FULL"
+          make html
+
