@@ -132,23 +132,6 @@ autodoc_docstring_signature = True
 autodoc_preserve_defaults = True
 autodoc_mock_imports = ["mprop"]
 
-# Setting for sphinx.ext.doctest
-import sphinx.ext.doctest
-
-doctest_test_doctest_blocks = ''
-doctest_default_flags = sphinx.ext.doctest.doctest.ELLIPSIS
-doctest_global_setup = '''
-import megengine
-import megengine.functional as F
-import megengine.module as M
-import megengine.optimizer as optim
-import megengine.hub as hub
-import megengine.autodiff as autodiff
-import megengine.data as data
-import megengine.data.transform as T
-import megengine.distributed as dist
-'''
-
 # Setting for sphinx.ext.mathjax
 # The path to the JavaScript file to include in the HTML files in order to load MathJax.
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
