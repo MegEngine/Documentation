@@ -1,6 +1,5 @@
 import argparse
 import json
-import os
 
 def main():
     parser = argparse.ArgumentParser(description="MegEngine Documentation Version Mapping Informaion Updating")
