@@ -52,11 +52,11 @@ dump 模型获得 opr 类型名称
 
 一个模型通常不会用到所有的opr，根据模型使用的opr，可以裁掉那些模型没有使用的 opr. 
 在转换模型时，我们可以通过如下方式获得模型的 opr 信息。
-使用 ``load_and_run/dump_with_testcase_mge.py`` 准备模型时，加上 ``--output-strip-info`` 参数。
+使用 ``megengine.jit.trace.dump`` 准备模型时，设置 ``strip_info_file`` 参数。
 
-.. code-block:: bash
+.. code-block:: python
 
-    python3 sdk/load-and-run/dump_with_testcase_mge.py --optimize-for-inference resnet50.pkl -o resnet50.mge --enable-fuse-conv-bias-nonlinearity --data "#rand(0,1)" --no-assert --output-strip-info
+   train_func.dump("resnet50.mge", enable_fuse_conv_bias_nonlinearity=True, input_data=["#rand(0,1)"], no_assert=True, strip_info_file="resnet50.mge.json")
 
 执行完毕后，会生成 ``resnet50.mge`` 和 ``resnet50.mge.json`` . 查看这个 JSON 文件，它记录了模型用到的 opr 名称。
 
