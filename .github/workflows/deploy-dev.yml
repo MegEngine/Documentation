@@ -1,7 +1,7 @@
-name: Build (master)
+name: Deploy (master)
 
 on:
-  pull_request:
+  push:
     branches:
       - dev
 
@@ -55,8 +55,24 @@ jobs:
           make develop
           cd ..
 
-      - name: Generate HTML files
+      - name: Generate static.tgz 
         run: |
           export PYTHONPATH=./megengine/imperative/python
           export MGE_DOC_MODE="FULL"
-          make html
+          ./scripts/oss/build_for_oss.sh
+
+      - name: Deploy on OSS
+        run: |
+          export GIT_HASH=$(git rev-parse --short HEAD) && echo $GIT_HASH
+          wget http://gosspublic.alicdn.com/ossutil/1.7.7/ossutil64
+          chmod 755 ossutil64
+          ./ossutil64 config -e ${{ secrets.OSS_PROD_ENDPOINT }} -i ${{ secrets.OSS_PROD_ACCESS_KEY_ID }} -k ${{ secrets.OSS_PROD_ACCESS_KEY_SECRET }}
+          ./ossutil64 mkdir oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/commit-$GIT_HASH
+          ./ossutil64 cp static.tgz oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/commit-$GIT_HASH/static.tgz
+          ./ossutil64 cp -f oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/mapping.json .
+          export MGE_DOC_MODE="MINI"
+          version=`python3 -c "from source.conf import version; print(version)"`
+          python3 scripts/oss/update.py -v "master" -c ${GIT_HASH}
+          ./ossutil64 cp -f mapping.json oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/mapping.json
+
+
