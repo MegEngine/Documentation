@@ -58,7 +58,7 @@ assert mode in ("MINI", "FULL")
 project = "MegEngine"
 copyright = f"2020-{datetime.now().year}, The MegEngine Open Source Team"
 author = "The MegEngine Open Source Team"
-version = "1.6"
+version = "1.7"
 release = version
 
 # -- General configuration ---------------------------------------------------
