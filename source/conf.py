@@ -196,7 +196,7 @@ panels_add_bootstrap_css = False
 nbsphinx_requirejs_path = ""
 
 # Settign for sphinx_remove_toctrees
-remove_toctrees_from = [
+remove_from_toctrees = [
     "reference/core.rst",
     "reference/api/*", 
     "development/meps/*",
