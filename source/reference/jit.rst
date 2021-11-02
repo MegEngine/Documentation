@@ -20,6 +20,7 @@ megengine.jit
    trace
    exclude_from_trace
    SublinearMemoryConfig
+   DTRConfig
 
 
 
