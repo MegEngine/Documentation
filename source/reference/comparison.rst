@@ -4,6 +4,13 @@
 与其它框架 API 进行对比
 =======================
 
+.. warning::
+
+   MegEngine 的 API 设计遵循 :ref:`mep-0003` , 向《数组 API 标准》靠齐。
+
+   * 在同其它框架进行对比时，同样的命名不意味着用法也完全一致；
+   * 如果有新的 API 支持需求，可在 GitHub 创建相应的 Issue 或 Pull Request.
+
 .. note::
 
    * 你可以利用浏览器的查找功能在当前页面查询对应的 API.
@@ -474,14 +481,10 @@ Indexing Functions
      - :py:func:`~torch.scatter`
      - :py:func:`~megengine.functional.scatter`
      -
-   * - :py:func:`~numpy.compress`
-     - :py:func:`~torch.take`
-     - :py:func:`~megengine.functional.cond_take`
-     -
    * - :py:func:`~numpy.where`
      - :py:func:`~torch.where`
-     - :py:func:`~megengine.functional.where`
-     -
+     - :py:func:`~megengine.functional.where` / :py:func:`~megengine.functional.cond_take`
+     - 取决于传参情况
 
 Searching Functions
 ~~~~~~~~~~~~~~~~~~~
