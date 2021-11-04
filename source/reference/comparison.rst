@@ -561,10 +561,10 @@ Convolution functions
      - :py:func:`~megengine.functional.nn.deformable_conv2d`
      -
    * - :py:func:`~torch.nn.functional.unfold`
-     - :py:func:`~megengine.functional.nn.sliding_window_transpose`
+     - :py:func:`~megengine.functional.nn.sliding_window`
      -
    * - :py:func:`~torch.nn.functional.fold`
-     - :py:func:`~megengine.functional.nn.sliding_window`
+     - :py:func:`~megengine.functional.nn.sliding_window_transpose`
      -
 
 Pooling functions
