@@ -50,10 +50,8 @@ jobs:
           cd megengine
           ./third_party/prepare.sh
           ./third_party/install-mkl.sh
-          cmake -S . -B build -DMGE_WITH_DISTRIBUTED=OFF -DMGE_WITH_CUDA=OFF -DMGE_WITH_LITE=OFF
-          cd build && make -j$(($(nproc) * 2))
-          make develop
-          cd ..
+          cmake -S . -B build -DMGE_WITH_CUDA=OFF -DMGE_WITH_MKLDNN=OFF
+          make -C build -j$(($(nproc) * 2)) develop
 
       - name: Generate static.tgz 
         run: |
