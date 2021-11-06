@@ -230,8 +230,8 @@ html_theme_options = {
     "navbar_end": ["navbar-icon-links.html", "version-switcher.html"],
     "collapse_navigation": True,
     "use_edit_page_button": True,
-    "navigation_with_keys": False,
-    "show_prev_next": False,
+    "navigation_with_keys": True,
+    "show_prev_next": True,
     # The following settings just work in MegEngine forked dev branch
     "use_version_switch": True,
     "version_switch_json_url": "/doc/version.json",
