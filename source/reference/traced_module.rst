@@ -5,6 +5,8 @@
 megengine.traced_module
 =======================
 
+>>> import megengine.traced_module as tm
+
 .. autosummary::
    :toctree: api
    :nosignatures:
