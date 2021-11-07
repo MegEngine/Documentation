@@ -5,6 +5,8 @@
 megengine.jit
 =============
 
+>>> from megengine.jit import trace
+
 .. autosummary::
    :toctree: api
    :nosignatures:

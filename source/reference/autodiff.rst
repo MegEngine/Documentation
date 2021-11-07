@@ -5,6 +5,8 @@
 megengine.autodiff
 ==================
 
+>>> from megengine.autodiff import GradManager 
+
 .. autosummary::
    :toctree: api
    :nosignatures:

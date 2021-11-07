@@ -4,6 +4,10 @@
 ==============
 megengine.data
 ==============
+
+>>> import megengine.data as data
+>>> import megengine.data.transform as T
+
 DataLoader
 ----------
 .. autosummary::
