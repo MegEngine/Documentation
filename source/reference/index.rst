@@ -34,6 +34,7 @@ Python API
    data
    functional
    module
+   module.init
    autodiff
    optimizer
    jit
