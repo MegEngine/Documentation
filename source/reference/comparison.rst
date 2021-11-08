@@ -427,6 +427,11 @@ Statistical Functions
      - :py:func:`~torch.std`
      - :py:func:`~megengine.functional.std`
      -
+   * - :py:func:`~numpy.cumsum`
+     - :py:func:`~torch.cumsum`
+     - :py:func:`~megengine.functional.cumsum`
+     -
+
 
 Linear Algebra Functions
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1100,32 +1105,35 @@ Padding Layers
      - Comment
 
    * - :py:class:`~torch.nn.ReflectionPad1d`
-     - :ref:`not-implemented`
-     -
-   * - :py:class:`~torch.nn.ReflectionPad1d`
-     - :ref:`not-implemented`
-     -
+     - :py:class:`~megengine.module.Pad`
+     - mode = REFLECT
+   * - :py:class:`~torch.nn.ReflectionPad2d`
+     - :py:class:`~megengine.module.Pad`
+     - mode = REFLECT
+   * - :py:class:`~torch.nn.ReflectionPad3d`
+     - :py:class:`~megengine.module.Pad`
+     - mode = REFLECT
    * - :py:class:`~torch.nn.ReplicationPad1d`
-     - :ref:`not-implemented`
-     -
-   * - :py:class:`~torch.nn.ReplicationPad1d`
-     - :ref:`not-implemented`
-     -
+     - :py:class:`~megengine.module.Pad`
+     - mode = EDGE
+   * - :py:class:`~torch.nn.ReplicationPad2d`
+     - :py:class:`~megengine.module.Pad`
+     - mode = EDGE
    * - :py:class:`~torch.nn.ReplicationPad3d`
-     - :ref:`not-implemented`
-     -
+     - :py:class:`~megengine.module.Pad`
+     - mode = EDGE
    * - :py:class:`~torch.nn.ZeroPad2d`
-     - :ref:`not-implemented`
-     -
+     - :py:class:`~megengine.module.Pad`
+     - mode = CONSTANT
    * - :py:class:`~torch.nn.ConstantPad1d`
-     - :ref:`not-implemented`
-     -
+     - :py:class:`~megengine.module.Pad`
+     - mode = CONSTANT
    * - :py:class:`~torch.nn.ConstantPad2d`
-     - :ref:`not-implemented`
-     -
+     - :py:class:`~megengine.module.Pad`
+     - mode = CONSTANT
    * - :py:class:`~torch.nn.ConstantPad3d`
-     - :ref:`not-implemented`
-     -
+     - :py:class:`~megengine.module.Pad`
+     - mode = CONSTANT
 
 Non-linear Activations
 ~~~~~~~~~~~~~~~~~~~~~~

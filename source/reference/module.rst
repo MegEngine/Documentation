@@ -67,6 +67,15 @@ Pooling layers
    AdaptiveMaxPool2d
    DeformablePSROIPooling
 
+Padding layers
+~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
+   Pad
+
 Non-linear Activations
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::

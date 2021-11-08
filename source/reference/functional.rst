@@ -188,6 +188,7 @@ Statistical Functions
    max
    var
    std
+   cumsum
 
 .. seealso::
 
@@ -383,6 +384,7 @@ Vision functions
    :nosignatures:
 
    cvt_color
+   pad
    interpolate
    remap
    warp_affine
