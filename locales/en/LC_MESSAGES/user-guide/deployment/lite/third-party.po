@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:5
+msgid "MegEngine Lite 第三方硬件支持"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:7
+msgid "MdegEngine Lite 的设计为方便地支持第三方硬件做了考量。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:9
+msgid "目前，我们以 rknn 设备（rk3568）为范例做了支持。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:12
+msgid "编译"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:14
+msgid "目前 Lite 有两个后端：``mge`` 和 ``rknn`` 。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:16
+msgid "可以同时编译两个后端，也可以只编译一个后端；"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:17
+msgid "因为需要依赖 rknn 的第三方动态库，所以目前编译出来的都是动态库;"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:18
+msgid "目前只支持编译 android 版本，包括 android arm64 和 android armv7."
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:21
+msgid "使用"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:23
+msgid "下面主要介绍工程集成 rknn 时候使用 lite 的接口，基本推理调用流程为："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:25
+msgid "构造 network 并 load 数据"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:26
+msgid "获取模型的 input tensor"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:27
+msgid "copy 数据到输入 tensor 中"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:28
+msgid "Inference"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:29
+msgid "读取输出数据"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:65
+msgid ""
+"rknn 中如果输入 tensor 的 format 和 data type 和模型 input 的数据不一样的时候， "
+"可以对输入数据进行配置，rknn 内部自己转换为需要的数据格式。 主要在第 4 步 (forward) 之前，将目前输入数据的 format 和 "
+"data type 设置 tensor 中， 通过接口是 ``TensorUtils::set_tensor_information``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:85
+msgid "其中 ``input info`` 中可以设置："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:87
+msgid "``key:\"pass_through\"`` ,  类型: uint8_t,  输入数据是透传到 network 中"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:88
+msgid ""
+"``key:\"fmt\"`` ,  类型 (rknn_tensor_format)int,  非透传模式中，指明输入 tensor 的 "
+"format"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:89
+msgid "``key:\"type\"`` ,  类型 (rknn_tensor_type)int,  非透传模式下，指明输出 tensor 的 format"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:91
+msgid ""
+"输出内存预先申请主要是将输出内存提前申请，可以为用户外部申请的内存， 这样可以避免输出数据的copy，lite 中使用，依然是在第 4 "
+"步之前进行配置。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:111
+msgid "设置内存预先申请有两途径："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:113
+msgid "通过对 output tensor 执行 reset 操作，调用 output tensor 的 reset 接口"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:114
+msgid "通过设置 output 的 information, \"is_prealloc\" 设置为 true"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:116
+msgid ""
+"rknn 模型默认是量化的模型，正常情况下输出是int8，如果用户需要最终数据是 float， 可以通过在第 4 步 (forward) "
+"之前，设置 output tensor 的数据类型为 float, 方法如下："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:137
+msgid "设置输出为 float 有两途径："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:139
+msgid ""
+"通过对 output tensor 执行 set_layout 接口，不改变 shape 的情况下，将 data type 设置为 "
+"LiteDataType::LITE_FLOAT"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:140
+msgid "通过设置 output 的 information，\"want_float\" 这只为 true"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:142
+msgid "output tensor 可以设置的 info 有："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:144
+msgid "``key:\"want_float\"`` , 类型：uint8_t, 是否输出 tensor 转换为 float"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/third-party.rst:145
+msgid "``key:\"is_prealloc\"`` , 类型：uint8_t, 输出是否提前申请好"
+msgstr ""
+

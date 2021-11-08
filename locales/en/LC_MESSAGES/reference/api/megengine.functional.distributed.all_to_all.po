@@ -1,45 +1,74 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 09:02+0800\n"
-"PO-Revision-Date: 2021-08-17 23:16\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-08-17 23:16+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.distributed.all_to_all.po\n"
-"X-Crowdin-File-ID: 2100\n"
 
 #: ../../source/reference/api/megengine.functional.distributed.all_to_all.rst:2
 msgid "megengine.functional.distributed.all\\_to\\_all"
 msgstr ""
 
 #: megengine.distributed.functional.all_to_all:1 of
-msgid "Create all_to_all operator for collective communication."
+msgid ""
+"Each process scatter input tensor to all processes and return gathered "
+"tensor."
 msgstr ""
 
 #: megengine.distributed.functional.all_to_all of
 msgid "参数"
 msgstr ""
 
-#: megengine.distributed.functional.all_to_all:3 of
-msgid "input tensor."
-msgstr ""
-
 #: megengine.distributed.functional.all_to_all:4 of
-msgid "communication group."
+msgid "Input tensor."
 msgstr ""
 
-#: megengine.distributed.functional.all_to_all:5 of
-msgid "execution device."
+#: megengine.distributed.functional.all_to_all:6 of
+msgid ""
+"The process group to work on. The default group is WORLD which means all "
+"processes available. You can use a list of process ranks to create new "
+"group to work on it, e.g. [1, 3, 5]."
+msgstr ""
+
+#: megengine.distributed.functional.all_to_all:10 of
+msgid ""
+"The specific device to execute this operator. None default device means "
+"the device of inp will be used. Specify \"gpu0:1\" to execute this "
+"operator on diffrent cuda stream, 1 is stream id, and default stream id "
+"is 0."
+msgstr ""
+
+#: megengine.distributed.functional.all_to_all:15 of
+msgid "The axis that collectivecomm will split data the default axis is 0"
+msgstr ""
+
+#: megengine.distributed.functional.all_to_all of
+msgid "返回类型"
+msgstr ""
+
+#: megengine.distributed.functional.all_to_all:18 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr ""
+
+#: megengine.distributed.functional.all_to_all of
+msgid "返回"
+msgstr ""
+
+#: megengine.distributed.functional.all_to_all:19 of
+msgid "Result tensor."
+msgstr ""
+
+#: megengine.distributed.functional.all_to_all:22 of
+msgid "实际案例"
 msgstr ""
 
 #~ msgid "返回类型"
@@ -47,4 +76,16 @@ msgstr ""
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
+
+#~ msgid "Create all_to_all operator for collective communication."
+#~ msgstr ""
+
+#~ msgid "input tensor."
+#~ msgstr ""
+
+#~ msgid "communication group."
+#~ msgstr ""
+
+#~ msgid "execution device."
+#~ msgstr ""
 

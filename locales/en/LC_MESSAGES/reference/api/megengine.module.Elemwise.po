@@ -1,29 +1,28 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 09:02+0800\n"
-"PO-Revision-Date: 2021-08-17 23:18\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-08-17 23:18+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.Elemwise.po\n"
-"X-Crowdin-File-ID: 2394\n"
 
 #: ../../source/reference/api/megengine.module.Elemwise.rst:2
 msgid "megengine.module.Elemwise"
 msgstr ""
 
 #: megengine.module.elemwise.Elemwise:1 of
-msgid "A :class:`~.Module` to do :mod:`~.functional.elemwise` operator. Could be replaced with :class:`~.QATModule` version :class:`~.qat.Elemwise` using :func:`~.quantize.quantize_qat`."
+msgid ""
+"A :class:`~.Module` to do :mod:`~.functional.elemwise` operator. Could be"
+" replaced with :class:`~.QATModule` version :class:`~.qat.Elemwise` using"
+" :func:`~.quantize.quantize_qat`."
 msgstr ""
 
 #: megengine.module.elemwise.Elemwise of
@@ -31,366 +30,223 @@ msgid "参数"
 msgstr ""
 
 #: megengine.module.elemwise.Elemwise:4 of
-msgid "the elemwise method, support the following string. It will do the normal elemwise operator for float.  * \"add\": a + b * \"fuse_add_relu\": max(x+y, 0) * \"mul\": x * y * \"min\": min(x, y) * \"max\": max(x, y) * \"sub\": x - y * \"true_div\": x / y * \"fuse_add_sigmoid\": sigmoid(x + y) * \"fuse_add_tanh\": tanh(x + y) * \"relu\": x > 0 ? x : 0 * \"abs\": x > 0 ? x : -x * \"sigmoid\": sigmoid(x) * \"exp\": exp(x) * \"tanh\": tanh(x) * \"fuse_mul_add3\": x * y + z * \"fast_tanh\": x * (27. + x * x) / (27. + 9. * x * x) * \"negate\": -x * \"acos\": acos(x) * \"asin\": asin(x) * \"ceil\": ceil(x) * \"cos\": cos(x) * \"expm1\": expm1(x) * \"floor\": floor(x) * \"log\": log(x) * \"log1p\": log1p(x) * \"sin\": sin(x) * \"round\": round(x) * \"erf\": erf(x) * \"erfinv\": erfinv(x) * \"erfc\": erfc(x) * \"erfcinv\": erfcinv(x) * \"abs_grad\": abs_grad * \"floor_div\": floor_div * \"mod\": mod * \"sigmoid_grad\": sigmoid_grad * \"switch_gt0\": switch_gt0 * \"tanh_grad\": tanh_grad * \"lt\": less * \"leq\": leq * \"eq\": equal * \"pow\": pow * \"log_sum_exp\": log_sum_exp * \"fast_tanh_grad\": fast_tanh_grad * \"atan2\": atan2 * \"cond_leq_mov\": cond_leq_mov * \"h_swish\": h_swish * \"fuse_add_h_swish\": h_swish(x+y) * \"h_swish_grad\": h_swish_grad * \"and\": bool binary: x && y * \"or\": bool binary: x || y * \"xor\": bool binary: x ^ y * \"not\": bool unary: ~x"
+msgid ""
+"the elemwise method, support the following string. It will do the normal "
+"elemwise operator for float."
 msgstr ""
 
-#: megengine.module.elemwise.Elemwise:4 of
-msgid "the elemwise method, support the following string. It will do the normal elemwise operator for float."
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:7 of
-msgid "\"add\": a + b"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:8 of
-msgid "\"fuse_add_relu\": max(x+y, 0)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:9 of
-msgid "\"mul\": x * y"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:10 of
-msgid "\"min\": min(x, y)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:11 of
-msgid "\"max\": max(x, y)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:12 of
-msgid "\"sub\": x - y"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:13 of
-msgid "\"true_div\": x / y"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:14 of
-msgid "\"fuse_add_sigmoid\": sigmoid(x + y)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:15 of
-msgid "\"fuse_add_tanh\": tanh(x + y)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:16 of
-msgid "\"relu\": x > 0 ? x : 0"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:17 of
-msgid "\"abs\": x > 0 ? x : -x"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:18 of
-msgid "\"sigmoid\": sigmoid(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:19 of
-msgid "\"exp\": exp(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:20 of
-msgid "\"tanh\": tanh(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:21 of
-msgid "\"fuse_mul_add3\": x * y + z"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:22 of
-msgid "\"fast_tanh\": x * (27. + x * x) / (27. + 9. * x * x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:23 of
-msgid "\"negate\": -x"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:24 of
-msgid "\"acos\": acos(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:25 of
-msgid "\"asin\": asin(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:26 of
-msgid "\"ceil\": ceil(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:27 of
-msgid "\"cos\": cos(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:28 of
-msgid "\"expm1\": expm1(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:29 of
-msgid "\"floor\": floor(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:30 of
-msgid "\"log\": log(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:31 of
-msgid "\"log1p\": log1p(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:32 of
-msgid "\"sin\": sin(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:33 of
-msgid "\"round\": round(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:34 of
-msgid "\"erf\": erf(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:35 of
-msgid "\"erfinv\": erfinv(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:36 of
-msgid "\"erfc\": erfc(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:37 of
-msgid "\"erfcinv\": erfcinv(x)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:38 of
-msgid "\"abs_grad\": abs_grad"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:39 of
-msgid "\"floor_div\": floor_div"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:40 of
-msgid "\"mod\": mod"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:41 of
-msgid "\"sigmoid_grad\": sigmoid_grad"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:42 of
-msgid "\"switch_gt0\": switch_gt0"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:43 of
-msgid "\"tanh_grad\": tanh_grad"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:44 of
-msgid "\"lt\": less"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:45 of
-msgid "\"leq\": leq"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:46 of
-msgid "\"eq\": equal"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:47 of
-msgid "\"pow\": pow"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:48 of
-msgid "\"log_sum_exp\": log_sum_exp"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:49 of
-msgid "\"fast_tanh_grad\": fast_tanh_grad"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:50 of
-msgid "\"atan2\": atan2"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:51 of
-msgid "\"cond_leq_mov\": cond_leq_mov"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:52 of
-msgid "\"h_swish\": h_swish"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:53 of
-msgid "\"fuse_add_h_swish\": h_swish(x+y)"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:54 of
-msgid "\"h_swish_grad\": h_swish_grad"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:55 of
-msgid "\"and\": bool binary: x && y"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:56 of
-msgid "\"or\": bool binary: x || y"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:57 of
-msgid "\"xor\": bool binary: x ^ y"
-msgstr ""
-
-#: megengine.module.elemwise.Elemwise:58 of
-msgid "\"not\": bool unary: ~x"
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.Elemwise.rst:11
+#: ../../source/reference/api/megengine.module.Elemwise.rst:15
 msgid "Methods"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid ":obj:`apply <megengine.module.Elemwise.apply>`\\ \\(fn\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid "Applies function ``fn`` to all the modules within this module, including itself."
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Applies function ``fn`` to all the modules within this module, including "
+"itself."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid ":obj:`buffers <megengine.module.Elemwise.buffers>`\\ \\(\\[recursive\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid "Returns an iterable for the buffers of the module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid ":obj:`children <megengine.module.Elemwise.children>`\\ \\(\\*\\*kwargs\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid "Returns an iterable for all the submodules that are direct attributes of this module."
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable for all the submodules that are direct attributes of "
+"this module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`disable_quantize <megengine.module.Elemwise.disable_quantize>`\\ \\(\\[value\\]\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`disable_quantize <megengine.module.Elemwise.disable_quantize>`\\ "
+"\\(\\[value\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid ":obj:`eval <megengine.module.Elemwise.eval>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Sets training mode of all the modules within this module (including "
+"itself) to ``False``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid ":obj:`forward <megengine.module.Elemwise.forward>`\\ \\(\\*inps\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`load_state_dict <megengine.module.Elemwise.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`load_state_dict <megengine.module.Elemwise.load_state_dict>`\\ "
+"\\(state\\_dict\\[\\, strict\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid "Loads a given dictionary created by :func:`state_dict` into this module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid ":obj:`modules <megengine.module.Elemwise.modules>`\\ \\(\\*\\*kwargs\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid "Returns an iterable for all the modules within this module, including itself."
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable for all the modules within this module, including "
+"itself."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`named_buffers <megengine.module.Elemwise.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`named_buffers <megengine.module.Elemwise.named_buffers>`\\ "
+"\\(\\[prefix\\, recursive\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable for key buffer pairs of the module, where ``key`` is "
+"the dotted path from this module to the buffer."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`named_children <megengine.module.Elemwise.named_children>`\\ \\(\\*\\*kwargs\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`named_children <megengine.module.Elemwise.named_children>`\\ "
+"\\(\\*\\*kwargs\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable of key-submodule pairs for all the submodules that "
+"are direct attributes of this module, where 'key' is the attribute name "
+"of submodules."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`named_modules <megengine.module.Elemwise.named_modules>`\\ \\(\\[prefix\\]\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`named_modules <megengine.module.Elemwise.named_modules>`\\ "
+"\\(\\[prefix\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable of key-module pairs for all the modules within this "
+"module, including itself, where 'key' is the dotted path from this module"
+" to the submodules."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`named_parameters <megengine.module.Elemwise.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`named_parameters <megengine.module.Elemwise.named_parameters>`\\ "
+"\\(\\[prefix\\, recursive\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable for key :class:`~.Parameter` pairs of the module, "
+"where ``key`` is the dotted path from this module to the "
+":class:`~.Parameter`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`parameters <megengine.module.Elemwise.parameters>`\\ \\(\\[recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`named_tensors <megengine.module.Elemwise.named_tensors>`\\ "
+"\\(\\[prefix\\, recursive\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable for key tensor pairs of the module, where ``key`` is "
+"the dotted path from this module to the tensor."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`parameters <megengine.module.Elemwise.parameters>`\\ "
+"\\(\\[recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid "Returns an iterable for the :class:`~.Parameter` of the module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`register_forward_hook <megengine.module.Elemwise.register_forward_hook>`\\ \\(hook\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`register_forward_hook "
+"<megengine.module.Elemwise.register_forward_hook>`\\ \\(hook\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid "Registers a hook to handle forward results."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`register_forward_pre_hook <megengine.module.Elemwise.register_forward_pre_hook>`\\ \\(hook\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`register_forward_pre_hook "
+"<megengine.module.Elemwise.register_forward_pre_hook>`\\ \\(hook\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid "Registers a hook to handle forward inputs."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`replace_param <megengine.module.Elemwise.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`replace_param <megengine.module.Elemwise.replace_param>`\\ "
+"\\(params\\, start\\_pos\\[\\, seen\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to speedup multimachine training."
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Replaces module's parameters with ``params``, used by "
+":class:`~.ParamPack` to"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`state_dict <megengine.module.Elemwise.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`state_dict <megengine.module.Elemwise.state_dict>`\\ \\(\\[rst\\, "
+"prefix\\, keep\\_var\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid ":obj:`train <megengine.module.Elemwise.train>`\\ \\(\\[mode\\, recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ":obj:`tensors <megengine.module.Elemwise.tensors>`\\ \\(\\[recursive\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
-msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid "Returns an iterable for the :class:`~.Tensor` of the module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+":obj:`train <megengine.module.Elemwise.train>`\\ \\(\\[mode\\, "
+"recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
+msgid ""
+"Sets training mode of all the modules within this module (including "
+"itself) to ``mode``."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid ":obj:`zero_grad <megengine.module.Elemwise.zero_grad>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Elemwise.rst:71:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Elemwise.rst:81:<autosummary>:1
 msgid "Sets all parameters' grads to zero"
 msgstr ""
 
@@ -615,4 +471,210 @@ msgstr ""
 
 #~ msgid "module's name, can be initialized by the ``kwargs`` parameter"
 #~ msgstr "模块名称，子类的 ``kwargs`` 将会保存和传递此关键字参数。"
+
+#~ msgid ""
+#~ "the elemwise method, support the "
+#~ "following string. It will do the "
+#~ "normal elemwise operator for float.  *"
+#~ " \"add\": a + b * \"fuse_add_relu\":"
+#~ " max(x+y, 0) * \"mul\": x * y"
+#~ " * \"min\": min(x, y) * \"max\": "
+#~ "max(x, y) * \"sub\": x - y *"
+#~ " \"true_div\": x / y * "
+#~ "\"fuse_add_sigmoid\": sigmoid(x + y) * "
+#~ "\"fuse_add_tanh\": tanh(x + y) * "
+#~ "\"relu\": x > 0 ? x : 0 "
+#~ "* \"abs\": x > 0 ? x : "
+#~ "-x * \"sigmoid\": sigmoid(x) * \"exp\":"
+#~ " exp(x) * \"tanh\": tanh(x) * "
+#~ "\"fuse_mul_add3\": x * y + z * "
+#~ "\"fast_tanh\": x * (27. + x * "
+#~ "x) / (27. + 9. * x * "
+#~ "x) * \"negate\": -x * \"acos\": "
+#~ "acos(x) * \"asin\": asin(x) * \"ceil\":"
+#~ " ceil(x) * \"cos\": cos(x) * "
+#~ "\"expm1\": expm1(x) * \"floor\": floor(x) "
+#~ "* \"log\": log(x) * \"log1p\": log1p(x)"
+#~ " * \"sin\": sin(x) * \"round\": "
+#~ "round(x) * \"erf\": erf(x) * \"erfinv\":"
+#~ " erfinv(x) * \"erfc\": erfc(x) * "
+#~ "\"erfcinv\": erfcinv(x) * \"abs_grad\": "
+#~ "abs_grad * \"floor_div\": floor_div * "
+#~ "\"mod\": mod * \"sigmoid_grad\": sigmoid_grad"
+#~ " * \"switch_gt0\": switch_gt0 * "
+#~ "\"tanh_grad\": tanh_grad * \"lt\": less "
+#~ "* \"leq\": leq * \"eq\": equal *"
+#~ " \"pow\": pow * \"log_sum_exp\": "
+#~ "log_sum_exp * \"fast_tanh_grad\": fast_tanh_grad "
+#~ "* \"atan2\": atan2 * \"cond_leq_mov\": "
+#~ "cond_leq_mov * \"h_swish\": h_swish * "
+#~ "\"fuse_add_h_swish\": h_swish(x+y) * "
+#~ "\"h_swish_grad\": h_swish_grad * \"and\": bool"
+#~ " binary: x && y * \"or\": bool"
+#~ " binary: x || y * \"xor\": bool"
+#~ " binary: x ^ y * \"not\": bool"
+#~ " unary: ~x"
+#~ msgstr ""
+
+#~ msgid "\"add\": a + b"
+#~ msgstr ""
+
+#~ msgid "\"fuse_add_relu\": max(x+y, 0)"
+#~ msgstr ""
+
+#~ msgid "\"mul\": x * y"
+#~ msgstr ""
+
+#~ msgid "\"min\": min(x, y)"
+#~ msgstr ""
+
+#~ msgid "\"max\": max(x, y)"
+#~ msgstr ""
+
+#~ msgid "\"sub\": x - y"
+#~ msgstr ""
+
+#~ msgid "\"true_div\": x / y"
+#~ msgstr ""
+
+#~ msgid "\"fuse_add_sigmoid\": sigmoid(x + y)"
+#~ msgstr ""
+
+#~ msgid "\"fuse_add_tanh\": tanh(x + y)"
+#~ msgstr ""
+
+#~ msgid "\"relu\": x > 0 ? x : 0"
+#~ msgstr ""
+
+#~ msgid "\"abs\": x > 0 ? x : -x"
+#~ msgstr ""
+
+#~ msgid "\"sigmoid\": sigmoid(x)"
+#~ msgstr ""
+
+#~ msgid "\"exp\": exp(x)"
+#~ msgstr ""
+
+#~ msgid "\"tanh\": tanh(x)"
+#~ msgstr ""
+
+#~ msgid "\"fuse_mul_add3\": x * y + z"
+#~ msgstr ""
+
+#~ msgid "\"fast_tanh\": x * (27. + x * x) / (27. + 9. * x * x)"
+#~ msgstr ""
+
+#~ msgid "\"negate\": -x"
+#~ msgstr ""
+
+#~ msgid "\"acos\": acos(x)"
+#~ msgstr ""
+
+#~ msgid "\"asin\": asin(x)"
+#~ msgstr ""
+
+#~ msgid "\"ceil\": ceil(x)"
+#~ msgstr ""
+
+#~ msgid "\"cos\": cos(x)"
+#~ msgstr ""
+
+#~ msgid "\"expm1\": expm1(x)"
+#~ msgstr ""
+
+#~ msgid "\"floor\": floor(x)"
+#~ msgstr ""
+
+#~ msgid "\"log\": log(x)"
+#~ msgstr ""
+
+#~ msgid "\"log1p\": log1p(x)"
+#~ msgstr ""
+
+#~ msgid "\"sin\": sin(x)"
+#~ msgstr ""
+
+#~ msgid "\"round\": round(x)"
+#~ msgstr ""
+
+#~ msgid "\"erf\": erf(x)"
+#~ msgstr ""
+
+#~ msgid "\"erfinv\": erfinv(x)"
+#~ msgstr ""
+
+#~ msgid "\"erfc\": erfc(x)"
+#~ msgstr ""
+
+#~ msgid "\"erfcinv\": erfcinv(x)"
+#~ msgstr ""
+
+#~ msgid "\"abs_grad\": abs_grad"
+#~ msgstr ""
+
+#~ msgid "\"floor_div\": floor_div"
+#~ msgstr ""
+
+#~ msgid "\"mod\": mod"
+#~ msgstr ""
+
+#~ msgid "\"sigmoid_grad\": sigmoid_grad"
+#~ msgstr ""
+
+#~ msgid "\"switch_gt0\": switch_gt0"
+#~ msgstr ""
+
+#~ msgid "\"tanh_grad\": tanh_grad"
+#~ msgstr ""
+
+#~ msgid "\"lt\": less"
+#~ msgstr ""
+
+#~ msgid "\"leq\": leq"
+#~ msgstr ""
+
+#~ msgid "\"eq\": equal"
+#~ msgstr ""
+
+#~ msgid "\"pow\": pow"
+#~ msgstr ""
+
+#~ msgid "\"log_sum_exp\": log_sum_exp"
+#~ msgstr ""
+
+#~ msgid "\"fast_tanh_grad\": fast_tanh_grad"
+#~ msgstr ""
+
+#~ msgid "\"atan2\": atan2"
+#~ msgstr ""
+
+#~ msgid "\"cond_leq_mov\": cond_leq_mov"
+#~ msgstr ""
+
+#~ msgid "\"h_swish\": h_swish"
+#~ msgstr ""
+
+#~ msgid "\"fuse_add_h_swish\": h_swish(x+y)"
+#~ msgstr ""
+
+#~ msgid "\"h_swish_grad\": h_swish_grad"
+#~ msgstr ""
+
+#~ msgid "\"and\": bool binary: x && y"
+#~ msgstr ""
+
+#~ msgid "\"or\": bool binary: x || y"
+#~ msgstr ""
+
+#~ msgid "\"xor\": bool binary: x ^ y"
+#~ msgstr ""
+
+#~ msgid "\"not\": bool unary: ~x"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Replaces module's parameters with ``params``,"
+#~ " used by :class:`~.ParamPack` to speedup"
+#~ " multimachine training."
+#~ msgstr ""
 

@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-07-21 04:20\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-07-21 04:20+0000\n"
 "Last-Translator: \n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/environment-variables.po\n"
-"X-Crowdin-File-ID: 7081\n"
-"Language: zh_CN\n"
 
 #: ../../source/reference/environment-variables.rst:7
 msgid "环境变量（Env）设置"
@@ -112,9 +108,9 @@ msgstr ""
 #: ../../source/reference/environment-variables.rst:144
 #: ../../source/reference/environment-variables.rst:149
 #: ../../source/reference/environment-variables.rst:154
-#: ../../source/reference/environment-variables.rst:173
-#: ../../source/reference/environment-variables.rst:181
-#: ../../source/reference/environment-variables.rst:227
+#: ../../source/reference/environment-variables.rst:175
+#: ../../source/reference/environment-variables.rst:183
+#: ../../source/reference/environment-variables.rst:229
 msgid "设置为 ``0`` 表示关闭，为 ``1`` 表示开启。"
 msgstr ""
 
@@ -135,7 +131,9 @@ msgid "``RUNTIME_OVERRIDE_LOG_LEVEL`` （ :ref:`nd-environ` ）"
 msgstr ""
 
 #: ../../source/reference/environment-variables.rst:69
-msgid "设置 Runtime Log 等级，默认为 ``ERROR`` 级别，需通过数字进行设置： DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3, NO_LOG = 4."
+msgid ""
+"设置 Runtime Log 等级，默认为 ``ERROR`` 级别，需通过数字进行设置： DEBUG = 0, INFO = 1, WARN ="
+" 2, ERROR = 3, NO_LOG = 4."
 msgstr ""
 
 #: ../../source/reference/environment-variables.rst:73
@@ -267,7 +265,9 @@ msgid "``MEGENGINE_INPUT_NODE_USE_STATIC_SHAPE``"
 msgstr ""
 
 #: ../../source/reference/environment-variables.rst:134
-msgid "给 InputNode 加一个 static shape 的模式，可以使更多的 var_node 是static_shape 并使用static storage， batch_size 可以开的更大，默认关闭。"
+msgid ""
+"给 InputNode 加一个 static shape 的模式，可以使更多的 var_node 是static_shape 并使用static "
+"storage， batch_size 可以开的更大，默认关闭。"
 msgstr ""
 
 #: ../../source/reference/environment-variables.rst:140
@@ -315,158 +315,168 @@ msgid "``MEGENGINE_DTR_EVICTEE_MINIMUM_SIZE``"
 msgstr ""
 
 #: ../../source/reference/environment-variables.rst:163
-msgid "应用 DTR 策略的 tensor 需要达到的大小，默认为 1048576B （1MB），参考 :py:func:`~.evictee_minimum_size`."
+msgid ""
+"应用 DTR 策略的 tensor 需要达到的大小，默认为 1048576B （1MB），参考 "
+":py:func:`~.evictee_minimum_size`."
 msgstr ""
 
 #: ../../source/reference/environment-variables.rst:166
 msgid "图机制相关"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:168
+#: ../../source/reference/environment-variables.rst:170
 msgid "``MEGENGINE_INTERP_ASYNC_LEVEL`` （ :ref:`nd-environ` ）"
 msgstr ""
 
 #: ../../source/reference/environment-variables.rst:168
-msgid "动态图的执行并行度，``0`` 是完全串行，``1`` 是计算异步，``2`` 是用户代码和计算都异步（默认）。"
+msgid ""
+"动态图的执行并行度，``0`` 是完全串行，``1`` 是计算异步，``2`` 是用户代码和计算都异步（默认）。 设置为 0 将使 "
+"MegEngine 上层的任务队列变成同步执行，即 Python 调用一个 Op, C++ 层执行一个 Op, 没执行完前 Python "
+"层不会走到下一句，便于定位 Python 层报错的位置，但会影响速度。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:173
+#: ../../source/reference/environment-variables.rst:175
 msgid "``MEGENGINE_CATCH_WORKER_EXEC`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:171
+#: ../../source/reference/environment-variables.rst:173
 msgid "是否捕获动态图 worker 的异常，默认开启，Debug 时可将其关闭。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:176
+#: ../../source/reference/environment-variables.rst:178
 msgid "``MEGENGINE_COMMAND_BUFFER_LENGTH`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:176
+#: ../../source/reference/environment-variables.rst:178
 msgid "延迟执行最后面计算算子的个数（默认为 ``3`` ），用于做局部优化。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:181
+#: ../../source/reference/environment-variables.rst:183
 msgid "``MEGENGINE_RECORD_COMPUTING_PATH`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:179
+#: ../../source/reference/environment-variables.rst:181
 msgid "是否记录 tensor 的历史计算路径，默认关闭。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:191
+#: ../../source/reference/environment-variables.rst:193
 msgid "``MEGENGINE_EXECUTION_STRATEGY`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:184
+#: ../../source/reference/environment-variables.rst:186
 msgid "设置 kernel 选择策略（fast-run），影响运行速度、是否可复现以及编译时间："
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:186
+#: ../../source/reference/environment-variables.rst:188
 msgid "``HEURISTIC`` - 表示启发式选择 kernel"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:187
+#: ../../source/reference/environment-variables.rst:189
 msgid "``PROFILE`` -  表示根据 profile 时间选择 kernel"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:188
+#: ../../source/reference/environment-variables.rst:190
 msgid "``REPRODUCEABLE`` - 表示使用可复现的算法"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:189
+#: ../../source/reference/environment-variables.rst:191
 msgid "``OPTIMIZED`` - 表示使用经过优化的算法"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:191
+#: ../../source/reference/environment-variables.rst:193
 msgid "默认为 ``HEURISTIC``, 参考 :py:func:`~.set_execution_strategy` 了解更多。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:194
+#: ../../source/reference/environment-variables.rst:196
 msgid "``MGB_CONV_PROFILING_TIMEOUT`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:194
+#: ../../source/reference/environment-variables.rst:196
 msgid "Profile 超时阈值，超时则直接杀掉 Kernel 运行，默认为 0 表示不做限制。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:197
+#: ../../source/reference/environment-variables.rst:199
 msgid "``MGB_PROFILE_ONLY_WAIT`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:197
+#: ../../source/reference/environment-variables.rst:199
 msgid "Prifile 时只选择有 wait 行为的算子，默认为空，不开启。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:202
+#: ../../source/reference/environment-variables.rst:204
 msgid "``CUDA_BIN_PATH`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:200
+#: ../../source/reference/environment-variables.rst:202
 msgid "设置 CUDA 编译器 nvcc 的路径，用于编译 fuse kernel."
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:202
-msgid "默认从 ``PATH``, ``LIBRARY_PATH`` 环境变量中寻找，也可人为指定路径如 ``\"/data/opt/cuda/bin/\"``."
+#: ../../source/reference/environment-variables.rst:204
+msgid ""
+"默认从 ``PATH``, ``LIBRARY_PATH`` 环境变量中寻找，也可人为指定路径如 "
+"``\"/data/opt/cuda/bin/\"``."
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:205
+#: ../../source/reference/environment-variables.rst:207
 msgid "``MGB_JIT_BACKEND``"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:205
+#: ../../source/reference/environment-variables.rst:207
 msgid "jit fuse kernel 的编译后端选项，可设置为 ``HALIDE``, ``NVRTC``, ``MLIR``."
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:208
+#: ../../source/reference/environment-variables.rst:210
 msgid "``MGB_JIT_KEEP_INTERM`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:208
+#: ../../source/reference/environment-variables.rst:210
 msgid "是否保存 jit 产生的临时文件，默认为空，不保存。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:211
+#: ../../source/reference/environment-variables.rst:213
 msgid "``MGB_JIT_WORKDIR`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:211
+#: ../../source/reference/environment-variables.rst:213
 msgid "jit 产生的临时文件目录路径，默认为 ``/tmp/mgbjit-XXXXXX``."
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:214
+#: ../../source/reference/environment-variables.rst:216
 msgid "``MGB_DUMP_INPUT`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:214
+#: ../../source/reference/environment-variables.rst:216
 msgid "是否在 Dump 的同时导出每个算子时输入值，默认为空，不开启。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:217
+#: ../../source/reference/environment-variables.rst:219
 msgid "调试相关"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:219
+#: ../../source/reference/environment-variables.rst:221
 msgid "``MGB_WAIT_TERMINATE`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:219
+#: ../../source/reference/environment-variables.rst:221
 msgid "在 MegEngine 崩溃的时候进入等待，此时可以用 gdb attch 进行 debug, 默认为空，不开启。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:222
+#: ../../source/reference/environment-variables.rst:224
 msgid "``MGB_THROW_ON_FORK`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:222
+#: ../../source/reference/environment-variables.rst:224
 msgid "是否在 Fork 进程中抛出异常，默认为空，不开启。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:229
+#: ../../source/reference/environment-variables.rst:231
 msgid "``MGB_THROW_ON_SCALAR_IDX`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:225
+#: ../../source/reference/environment-variables.rst:227
 msgid "Tensor index 的下标如 果是scalar, 则可以使用 subtensor, 选择是否抛出异常，默认关闭。"
 msgstr ""
+
+#~ msgid "动态图的执行并行度，``0`` 是完全串行，``1`` 是计算异步，``2`` 是用户代码和计算都异步（默认）。"
+#~ msgstr ""
 

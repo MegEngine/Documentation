@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,81 +18,370 @@ msgstr ""
 "Generated-By: Babel 2.4.0\n"
 
 #: ../../source/user-guide/model-development/functional/creation.rst:5
-msgid "创建 Tensor"
-msgstr ""
-
-#: ../../source/user-guide/model-development/functional/creation.rst:7
-msgid "创建 Tensor 的方式有很多种，常见操作如下："
+msgid "如何创建一个 Tensor"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:9
 msgid ""
-"如果想要使用已经存在的数据创建 Tensor, 可以将其传入 :class:`~.Tensor` 的构造函数： "
-"支持传入标量（Scalar）、Python :class:`list` 以及 NumPy :class:`~numpy.ndarray` "
-"（当然也包括 Tensor 自己）；"
+"在 MegEngine 中创建 Tensor 与 `NumPy 创建数组 "
+"<https://numpy.org/doc/stable/user/basics.creation.html>`_ 的途径类似；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:11
 msgid ""
-"对应地，Tensor 也支持通过 :meth:`~.Tensor.item` , :meth:`~.Tensor.tolist` 和 "
-":meth:`~.Tensor.numpy` 变成其它数据结构；"
-msgstr ""
-
-#: ../../source/user-guide/model-development/functional/creation.rst:12
-msgid "我们也可以使用 :ref:`creation` 和 :py:mod:`~.random` 中的 API 来无中生有想要的 Tensor 对象。"
-msgstr ""
-
-#: ../../source/user-guide/model-development/functional/creation.rst:15
-msgid "使用已经存在的数据"
+"由于 ndarray 是 Python 数据科学社区中较为通用支持的格式 （例如 SciPy、Pandas、OpenCV 等库都对 ndarray"
+" 提供了良好的支持）， 如果存在着 NumPy 已经实现但 MegEngine 尚未支持的创建途径，可以先创建 NumPy ndarray, "
+"再将其转换成 MegEngine Tensor. 也是下面提到的最后一种方法。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:16
-msgid "一种常见的思路是，经过一系列流程，首先将输入的数据转化成 NumPy 支持的 ndarray 格式。"
+msgid "创建 Tensor 的常见途径如下："
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:18
-msgid "假设数据已被处理成 ndarray 类型的 ``data``, 我们则可以像下面的代码一样将其转换为 MegEngine Tensor:"
+msgid ""
+":ref:`create-tensor-from-python-structure` （例如 :py:class:`list`, "
+":py:class:`tuple` ）；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/functional/creation.rst:28
-msgid "在这个过程中，MegEngine 会根据传入数据的类型自动进行推导，比如这里得到的是 ``int32`` 类型的数据。"
+#: ../../source/user-guide/model-development/functional/creation.rst:19
+msgid ""
+":ref:`create-tensor-with-intrinsic-functions` （例如 :py:func:`~.arange`, "
+":py:func:`ones`, :py:func:`zeros` 等）；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/functional/creation.rst:32
-msgid "MegEngine 基于已有数据生成的 Tensor 都是经过拷贝创建的，与原始数据的内存并不共享。"
+#: ../../source/user-guide/model-development/functional/creation.rst:20
+msgid ""
+":ref:`create-tensor-from-random-package` （可从 :py:func:`~.random.normal`, "
+":py:func:`~.random.uniform` 等分布中采样）；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:21
+msgid ""
+":ref:`create-tensor-through-manipulation` （例如 :py:func:`~.split`, "
+":py:func:`stack` 等）；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:22
+msgid ":ref:`create-tensor-from-ndarray`."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:26
+msgid "任何通过已有数据创建 Tensor 的方式都是通过拷贝创建的，和原始数据不会共享内存。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:31
+msgid "将 Python 序列转换为 Tensor"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:33
-msgid "``tensor`` 只是 ``Tensor`` 的别名， **二者在使用上没有任何的区别。**"
+msgid "可以使用 Python 序列（例如列表和元组）定义 MegEngine Tensor."
 msgstr ""
 
-#: ../../source/user-guide/model-development/functional/creation.rst:36
-msgid "使用相关算子创建"
+#: ../../source/user-guide/model-development/functional/creation.rst:35
+msgid ""
+"列表 :py:class:`list` 和元组 :py:class:`tuple` 分别使用 ``[...]`` 和 ``(...)`` "
+"定义，可以用来定义 Tensor 如何创建："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:37
+msgid "由数字组成的列表将创建 1 维 Tensor;"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:38
-msgid "使用一些 :py:mod:`~.functional` 模块中提供的接口，可以用来生成 Tensor. 比如："
+msgid "由列表组成的列表将创建 2 维 Tensor;"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:39
+msgid "同理，更进一步的列表嵌套将创建更加高维的 Tensor."
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:47
-msgid "更多接口比如 :py:func:`~.ones`, :py:func:`~.full`, ... 均可在 :ref:`creation` 中找到。"
+msgid "这种写法其实调用了 :py:class:`~.megengine.Tensor` 类的构造函数，传入了 ``data`` 参数；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/functional/creation.rst:49
-msgid "使用一些 :py:mod:`~.random` 模块中提供的接口，可以随机生成符合要求的 Tensor. 比如："
+#: ../../source/user-guide/model-development/functional/creation.rst:48
+msgid "``megengine.tensor`` 是 ``megengine.Tensor`` 的别名，**二者本质上没有任何区别。**"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:52
+msgid ""
+"将 Tensor 转化为 Python 内置数据类型可以使用 :py:meth:`~.Tensor.item` 或 "
+":py:meth:`~.Tensor.tolist` ."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:55
+msgid "默认的数据类型"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:58
 msgid ""
-"更多接口比如 :py:func:`~.uniform`, :py:func:`~.beta` ... 均可在 :py:mod:`~.random`"
-" 中找到。"
+"当你使用 :py:class:`megengine.Tensor` 来定义新的 Tensor 时，需要考虑到其中每个元素的 :ref:`数据类型 "
+"<tensor-dtype>` 。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/functional/creation.rst:62
-msgid "使用 :py:func:`.random.seed` 可以设置随机数种子；"
+#: ../../source/user-guide/model-development/functional/creation.rst:60
+msgid "默认行为是以 32 位有符号整数 ``int32`` 或浮点数 ``float32`` 来创建 Tensor."
 msgstr ""
 
-#: ../../source/user-guide/model-development/functional/creation.rst:63
-msgid "你也可以使用 NumPy 创建 ndarray 数据，然后转化成 MegEngine Tensor."
+#: ../../source/user-guide/model-development/functional/creation.rst:68
+msgid "如果你希望得到的 Tensor 是某种数据类型，则需要指定在创建 Tensor 时显式指定 dtype."
 msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:71
+msgid "创建时指定数据类型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:73
+msgid "数据类型是可以被显式指定的，但显式指定 ``dtype`` 有可能产生非预期的溢出，例如："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:79
+msgid "一个 8 位有符号整数表示从 -128 到 127 的整数。将 int8 Tensor 赋值给此范围之外的整数会导致溢出。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:81
+msgid "如果使用不匹配的数据类型执行计算，可能会得到非预期的结果，例如："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:88
+msgid "你可能希望得到的结果是 ``[-3, -3, -3]``, 但在 ``uint8`` 数据类型下，这些值将表示为 ``253``."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:91
+msgid "不同数据类型之间的计算"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:93
+msgid ""
+"注意上面两个 Tensor 即 ``a`` 和 ``b`` 有着相同的 ``dtype: uint8``, 因此得到的 Tensor "
+"的数据类型也会相同。 如果你在两个不同 ``dtype`` 的 Tensor 之间进行计算，MegEngine 将进行类型提升来满足计算要求："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:99
+msgid ""
+"注意到数据类型为 ``uint8`` 的 ``a`` 与数据类型为 ``int8`` 的 ``b`` 进行计算， 最终得到了一个数据类型为 "
+"``int16`` 的 Tensor."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:105
+msgid "使用内置函数创建 Tensor"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:109
+msgid ""
+"MegEngine 的 :py:mod:`functional` 子包内置了多个创建 Tensor 的函数（位于 :ref:`creation` "
+"）；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:110
+msgid "使用这些函数创建的 Tensor 默认数据类型为 ``float32``."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:112
+msgid "根据它们所创建的 Tensor 的维数，这些函数大致上可以分为三类："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:114
+msgid ":ref:`create-1d-tensor`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:115
+msgid ":ref:`create-2d-tensor`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:116
+msgid ":ref:`create-nd-tensor`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:121
+msgid "创建 1 维 Tensor"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:123
+msgid ""
+"创建 1 维 Tensor 的函数如 :py:func:`~.arange` 和 :py:func:`~.linspace` "
+"通常需要至少两个输入，即 ``start`` 和 ``stop``."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:126
+msgid ":py:func:`~.arange` 将创建具有规律递增值的 Tensor, 下面显示了一些用法："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:137
+msgid "使用该函数得到的 Tensor 中的值不包括终点 ``stop``, 即范围为 ``[start, stop)``."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:139
+msgid ":py:func:`~.linspace` 将创建具有指定数量元素的 Tensor, 并在指定的开始值和结束值之间等距间隔。例如："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:144
+msgid "使用这个函数的好处是可以保证 Tensor 中元素的数量、值的起点和终点。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:148
+msgid ""
+"在 NumPy 中使用 :py:func:`~.arange` 的最佳实践是使用整型的 ``start``, ``stop`` 和 "
+"``step`` 值。 这是由于机器表示浮点数时存在着舍入误差，向 ``arange`` 传入非整数值时有可能得到非预期结果："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:155
+msgid "在 NumPy 中由于浮点误差的累积，最终的结果中将会看到 ``8.4`` 这个值。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:157
+msgid "而在 MegEngine 中，``arange`` 内部调用了 ``linspace`` 进行实现，此时得到的结果与 NumPy 不同："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:165
+msgid "创建 2 维 Tensor"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:167
+msgid "创建 2 维 Tensor 的函数通常以表示为二维数组的特殊矩阵的属性来定义。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:169
+msgid "例如 :py:func:`~.eye` 定义了一个 2 维单位矩阵，行索引和列索引相等的元素为 1, 其余为 0, 如下所示："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:184
+msgid "创建 n 维 Tensor"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:186
+msgid "此类函数如 :py:func:`~.ones`, :py:func:`~.zeros` 通常可以根据给定的形状创建 Tensor."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:202
+msgid "本质上它们都是通过调用 :py:func:`~.full` 来实现创建满足给定形状和值的 Tensor;"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:203
+msgid ""
+"使用 :py:func:`~.zeros_like`, :py:func:`~.ones_like`, "
+":py:func:`~.full_like` 根据输入 Tensor 形状进行创建。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:208
+msgid "使用 random 子包随机生成"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:209
+msgid "例如使用 :py:func:`~.random.normal` 可以从服从正态分布的随机变量中采样："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:214
+msgid "使用 :py:func:`~.random.uniform` 可以从服从均匀分布的随机变量中采样："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:221
+msgid ""
+"Python 的 ``random`` 标准库文档 -- `Generate pseudo-random numbers "
+"<https://docs.python.org/3/library/random.html>`_"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:222
+msgid ""
+"NumPy 的随机采样官方文档 ——  `Random sampling "
+"<https://numpy.org/doc/stable/reference/random/index.html>`_"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:223
+msgid "MegEngine 所有随机数生成相关 API 都列举在 :py:mod:`~.random` 页面。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:228
+msgid "基于现有的 Tensor 进行操作"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:232
+msgid "使用 :py:func:`~.functional.copy` 函数可以拷贝一个 Tensor."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:236
+msgid "更多具体内容请参考 :ref:`tensor-manipulation` 页面。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:241
+msgid "将 NumPy ndarray 转化为 MegEngine Tensor"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:243
+msgid "我们也能够通过 :py:class:`~.megengine.Tensor`, 将 ndarray 作为输入数据传入，得到对应的 Tensor."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:253
+msgid "通过 Tensor 的 :py:meth:`~.Tensor.numpy` 方法，我们可以得到 Tensor 转为 ndarray 后的结果："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/creation.rst:260
+msgid "相关注意事项如数据类型等，与 :ref:`create-tensor-from-python-structure` 一致。"
+msgstr ""
+
+#~ msgid "创建 Tensor"
+#~ msgstr ""
+
+#~ msgid "创建 Tensor 的方式有很多种，常见操作如下："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "如果想要使用已经存在的数据创建 Tensor, 可以将其传入 :class:`~.Tensor` "
+#~ "的构造函数： 支持传入标量（Scalar）、Python :class:`list` 以及 "
+#~ "NumPy :class:`~numpy.ndarray` （当然也包括 Tensor "
+#~ "自己）；"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "对应地，Tensor 也支持通过 :meth:`~.Tensor.item` , "
+#~ ":meth:`~.Tensor.tolist` 和 :meth:`~.Tensor.numpy` "
+#~ "变成其它数据结构；"
+#~ msgstr ""
+
+#~ msgid "我们也可以使用 :ref:`creation` 和 :py:mod:`~.random` 中的 API 来无中生有想要的 Tensor 对象。"
+#~ msgstr ""
+
+#~ msgid "使用已经存在的数据"
+#~ msgstr ""
+
+#~ msgid "一种常见的思路是，经过一系列流程，首先将输入的数据转化成 NumPy 支持的 ndarray 格式。"
+#~ msgstr ""
+
+#~ msgid "假设数据已被处理成 ndarray 类型的 ``data``, 我们则可以像下面的代码一样将其转换为 MegEngine Tensor:"
+#~ msgstr ""
+
+#~ msgid "在这个过程中，MegEngine 会根据传入数据的类型自动进行推导，比如这里得到的是 ``int32`` 类型的数据。"
+#~ msgstr ""
+
+#~ msgid "MegEngine 基于已有数据生成的 Tensor 都是经过拷贝创建的，与原始数据的内存并不共享。"
+#~ msgstr ""
+
+#~ msgid "``tensor`` 只是 ``Tensor`` 的别名， **二者在使用上没有任何的区别。**"
+#~ msgstr ""
+
+#~ msgid "使用相关算子创建"
+#~ msgstr ""
+
+#~ msgid "使用一些 :py:mod:`~.functional` 模块中提供的接口，可以用来生成 Tensor. 比如："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "更多接口比如 :py:func:`~.ones`, :py:func:`~.full`, ... "
+#~ "均可在 :ref:`creation` 中找到。"
+#~ msgstr ""
+
+#~ msgid "使用一些 :py:mod:`~.random` 模块中提供的接口，可以随机生成符合要求的 Tensor. 比如："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "更多接口比如 :py:func:`~.uniform`, :py:func:`~.beta` ..."
+#~ " 均可在 :py:mod:`~.random` 中找到。"
+#~ msgstr ""
+
+#~ msgid "使用 :py:func:`.random.seed` 可以设置随机数种子；"
+#~ msgstr ""
+
+#~ msgid "你也可以使用 NumPy 创建 ndarray 数据，然后转化成 MegEngine Tensor."
+#~ msgstr ""
 

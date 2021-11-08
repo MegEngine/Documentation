@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,76 @@ msgid "Autodiff 基本原理与使用"
 msgstr ""
 
 #: ../../source/user-guide/model-development/autodiff/index.rst:7
-msgid "内容正在建设中..."
+msgid "在深度学习领域，任何复杂的深度神经网络模型本质上都可以用一个计算图表示出来。"
 msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:9
+msgid ""
+"计算图中存在前向计算和反向计算的过程。在训练模型参数的过程中，需要根据 `反向传播 "
+"<https://en.wikipedia.org/wiki/Backpropagation>`_ "
+"（Backpropagation）算法，使用链式法则逐层计算参数关于损失函数的梯度。 作为一类深度学习框架，MegEngine "
+"实现了自动微分机制，能够在反向传播的过程中自动地计算、维护 Tensor 的梯度信息。 这一机制也可以被用于其它科学计算情景。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:13
+msgid "在这一小节，我们将介绍 Tensor 的梯度（Gradient）属性，以及如何借助 :py:mod:`autodiff` 模块来完成相应工作。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:16
+msgid "梯度与梯度管理器"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:18
+msgid "我们以下面这个最简单的一次运算 :math:`y=w*x+b` 作为举例："
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:26
+msgid "Tensor 具有 :attr:`~.Tensor.grad` （即梯度）属性，用来记录梯度信息，可在需要用到梯度参与计算的情景下使用。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:28
+msgid "在默认情况下，MegEngine 中的 Tensor 计算是不记录梯度信息的："
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:33
+msgid "如果希望对 Tensor 的梯度进行管理，需要用到 :py:class:`~.GradManager`, 其通过反向模式进行自动微分："
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:43
+msgid ""
+"在上面的代码中， ``with`` 语句中的操作历史都会被梯度管理器记录下来。 我们使用 "
+":py:meth:`~.GradManager.attach` 方法来绑定需要被跟踪的 Tensor（例子中为 ``x`` ），然后执行计算； "
+"使用 :py:meth:`~.GradManager.backward` 方法来计算所有已绑定的 Tensor 对于给定的 ``y`` 的梯度， "
+"并将其累加到对应 Tensor 的 ``grad`` 属性，并在这个过程中释放资源。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:50
+msgid "可以通过 :py:meth:`.Tensor.detach` 方法来返回一个解绑后的 Tensor."
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:51
+msgid "可以通过 :py:meth:`~.GradManager.attached_tensors` 接口来查询当前梯度管理器中绑定的 Tensor."
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:53
+msgid ""
+"我们还可以使用 :py:meth:`~.GradManager.record` 和 "
+":py:meth:`~.GradManager.release` 来代替 ``with`` 语义， 更多用法说明可参考 "
+":py:class:`~.GradManager` API 文档。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:57
+msgid "神经网络编程示例"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:59
+msgid "在训练神经网络时，我们可以借助梯度管理器来进行反向传播计算，得到参数的梯度信息："
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/index.rst:71
+msgid "更完整的使用示例可以在 MegEngine 文档的新手入门教程中找到。"
+msgstr ""
+
+#~ msgid "内容正在建设中..."
+#~ msgstr ""
 

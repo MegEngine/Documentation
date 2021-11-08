@@ -1,35 +1,40 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-06-03 10:21\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-06-03 10:21+0000\n"
 "Last-Translator: \n"
+"Language: en_US\n"
 "Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.SlidingWindow.po\n"
-"X-Crowdin-File-ID: 7028\n"
-"Language: en_US\n"
 
 #: ../../source/reference/api/megengine.module.SlidingWindow.rst:2
 msgid "megengine.module.SlidingWindow"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindow:1 of
-msgid "Apply a sliding window to input tensor and copy content in the window to corresponding output location. Assume input shape is :math:`(N, C, IH, IW)`, then output shape would be :math:`(N, C, OH, OW, window_h, window_w)` where :math:`(OH, OW)` would be computed from padding, stride, window and :math:`(IH, IW)`, as in convolution. For each output location, we have;"
+msgid ""
+"Apply a sliding window to input tensor and copy content in the window to "
+"corresponding output location. Assume input shape is :math:`(N, C, IH, "
+"IW)`, then output shape would be :math:`(N, C, OH, OW, window_h, "
+"window_w)` where :math:`(OH, OW)` would be computed from padding, stride,"
+" window and :math:`(IH, IW)`, as in convolution. For each output "
+"location, we have;"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindow:7 of
-msgid "out_{n, c, oh, ow, wh, ww} &= src_{n, c, ih+wh, iw+ww} \\\\\n"
-"\\text{where } & ih=-pad_h+oh \\times stride_h + (wh-1) \\times (dilation_h-1) \\\\\n"
-"               & iw=-pad_w+ow \\times stride_w + (ww-1) \\times (dilation_w-1)"
+msgid ""
+"out_{n, c, oh, ow, wh, ww} &= src_{n, c, ih+wh, iw+ww} \\\\\n"
+"\\text{where } & ih=-pad_h+oh \\times stride_h + (wh-1) \\times "
+"(dilation_h-1) \\\\\n"
+"               & iw=-pad_w+ow \\times stride_w + (ww-1) \\times "
+"(dilation_w-1)"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindow of
@@ -40,23 +45,23 @@ msgstr ""
 msgid "the size of the window to take a max over."
 msgstr ""
 
-#: megengine.module.sliding_window.SlidingWindow:15 of
+#: megengine.module.sliding_window.SlidingWindow:16 of
 msgid "implicit zero padding to be added on both sides. Default: 0"
 msgstr ""
 
-#: megengine.module.sliding_window.SlidingWindow:16 of
+#: megengine.module.sliding_window.SlidingWindow:18 of
 msgid "the stride of the window. Default: 1"
 msgstr ""
 
-#: megengine.module.sliding_window.SlidingWindow:17 of
+#: megengine.module.sliding_window.SlidingWindow:20 of
 msgid "the dilation of the window. Default: 1"
 msgstr ""
 
-#: megengine.module.sliding_window.SlidingWindow:19 of
-msgid "Example:"
+#: megengine.module.sliding_window.SlidingWindow:23 of
+msgid "示例"
 msgstr ""
 
-#: megengine.module.sliding_window.SlidingWindow:32 of
+#: megengine.module.sliding_window.SlidingWindow:35 of
 msgid "Outputs:"
 msgstr ""
 
@@ -64,147 +69,232 @@ msgstr ""
 msgid "Methods"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid ":obj:`apply <megengine.module.SlidingWindow.apply>`\\ \\(fn\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid "Applies function ``fn`` to all the modules within this module, including itself."
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Applies function ``fn`` to all the modules within this module, including "
+"itself."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`buffers <megengine.module.SlidingWindow.buffers>`\\ \\(\\[recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`buffers <megengine.module.SlidingWindow.buffers>`\\ "
+"\\(\\[recursive\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid "Returns an iterable for the buffers of the module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`children <megengine.module.SlidingWindow.children>`\\ \\(\\*\\*kwargs\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`children <megengine.module.SlidingWindow.children>`\\ "
+"\\(\\*\\*kwargs\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid "Returns an iterable for all the submodules that are direct attributes of this module."
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable for all the submodules that are direct attributes of "
+"this module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`disable_quantize <megengine.module.SlidingWindow.disable_quantize>`\\ \\(\\[value\\]\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`disable_quantize "
+"<megengine.module.SlidingWindow.disable_quantize>`\\ \\(\\[value\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid ":obj:`eval <megengine.module.SlidingWindow.eval>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Sets training mode of all the modules within this module (including "
+"itself) to ``False``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid ":obj:`forward <megengine.module.SlidingWindow.forward>`\\ \\(inp\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`load_state_dict <megengine.module.SlidingWindow.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`load_state_dict <megengine.module.SlidingWindow.load_state_dict>`\\"
+" \\(state\\_dict\\[\\, strict\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid "Loads a given dictionary created by :func:`state_dict` into this module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`modules <megengine.module.SlidingWindow.modules>`\\ \\(\\*\\*kwargs\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`modules <megengine.module.SlidingWindow.modules>`\\ "
+"\\(\\*\\*kwargs\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid "Returns an iterable for all the modules within this module, including itself."
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable for all the modules within this module, including "
+"itself."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`named_buffers <megengine.module.SlidingWindow.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`named_buffers <megengine.module.SlidingWindow.named_buffers>`\\ "
+"\\(\\[prefix\\, recursive\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable for key buffer pairs of the module, where ``key`` is "
+"the dotted path from this module to the buffer."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`named_children <megengine.module.SlidingWindow.named_children>`\\ \\(\\*\\*kwargs\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`named_children <megengine.module.SlidingWindow.named_children>`\\ "
+"\\(\\*\\*kwargs\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable of key-submodule pairs for all the submodules that "
+"are direct attributes of this module, where 'key' is the attribute name "
+"of submodules."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`named_modules <megengine.module.SlidingWindow.named_modules>`\\ \\(\\[prefix\\]\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`named_modules <megengine.module.SlidingWindow.named_modules>`\\ "
+"\\(\\[prefix\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable of key-module pairs for all the modules within this "
+"module, including itself, where 'key' is the dotted path from this module"
+" to the submodules."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`named_parameters <megengine.module.SlidingWindow.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`named_parameters "
+"<megengine.module.SlidingWindow.named_parameters>`\\ \\(\\[prefix\\, "
+"recursive\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable for key :class:`~.Parameter` pairs of the module, "
+"where ``key`` is the dotted path from this module to the "
+":class:`~.Parameter`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`parameters <megengine.module.SlidingWindow.parameters>`\\ \\(\\[recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`named_tensors <megengine.module.SlidingWindow.named_tensors>`\\ "
+"\\(\\[prefix\\, recursive\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Returns an iterable for key tensor pairs of the module, where ``key`` is "
+"the dotted path from this module to the tensor."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`parameters <megengine.module.SlidingWindow.parameters>`\\ "
+"\\(\\[recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid "Returns an iterable for the :class:`~.Parameter` of the module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`register_forward_hook <megengine.module.SlidingWindow.register_forward_hook>`\\ \\(hook\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`register_forward_hook "
+"<megengine.module.SlidingWindow.register_forward_hook>`\\ \\(hook\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid "Registers a hook to handle forward results."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`register_forward_pre_hook <megengine.module.SlidingWindow.register_forward_pre_hook>`\\ \\(hook\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`register_forward_pre_hook "
+"<megengine.module.SlidingWindow.register_forward_pre_hook>`\\ \\(hook\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid "Registers a hook to handle forward inputs."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`replace_param <megengine.module.SlidingWindow.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`replace_param <megengine.module.SlidingWindow.replace_param>`\\ "
+"\\(params\\, start\\_pos\\[\\, seen\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to speedup multimachine training."
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Replaces module's parameters with ``params``, used by "
+":class:`~.ParamPack` to"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`state_dict <megengine.module.SlidingWindow.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`state_dict <megengine.module.SlidingWindow.state_dict>`\\ "
+"\\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid ":obj:`train <megengine.module.SlidingWindow.train>`\\ \\(\\[mode\\, recursive\\]\\)"
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`tensors <megengine.module.SlidingWindow.tensors>`\\ "
+"\\(\\[recursive\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
-msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid "Returns an iterable for the :class:`~.Tensor` of the module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+":obj:`train <megengine.module.SlidingWindow.train>`\\ \\(\\[mode\\, "
+"recursive\\]\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
+msgid ""
+"Sets training mode of all the modules within this module (including "
+"itself) to ``mode``."
+msgstr ""
+
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid ":obj:`zero_grad <megengine.module.SlidingWindow.zero_grad>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.SlidingWindow.rst:75:<autosummary>:1
+#: ../../source/reference/api/megengine.module.SlidingWindow.rst:81:<autosummary>:1
 msgid "Sets all parameters' grads to zero"
 msgstr ""
+
+#~ msgid "Example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Replaces module's parameters with ``params``,"
+#~ " used by :class:`~.ParamPack` to speedup"
+#~ " multimachine training."
+#~ msgstr ""
 

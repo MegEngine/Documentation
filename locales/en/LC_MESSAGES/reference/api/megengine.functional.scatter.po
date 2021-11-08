@@ -1,92 +1,111 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-08-17 23:21\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-08-17 23:21+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.scatter.po\n"
-"X-Crowdin-File-ID: 2258\n"
 
 #: ../../source/reference/api/megengine.functional.scatter.rst:2
 msgid "megengine.functional.scatter"
 msgstr ""
 
 #: megengine.functional.tensor.scatter:1 of
-msgid "Writes all values from the tensor source into input tensor at the indices specified in the index tensor."
+msgid ""
+"Writes all values from the tensor source into input tensor at the indices"
+" specified in the index tensor."
 msgstr ""
 
 #: megengine.functional.tensor.scatter:4 of
-msgid "For each value in source, its output index is specified by its index in source for ``axis != dimension`` and by the corresponding value in index for ``axis = dimension``."
+msgid ""
+"For each value in source, its output index is specified by its index in "
+"source for ``axis != dimension`` and by the corresponding value in index "
+"for ``axis = dimension``."
 msgstr ""
 
 #: megengine.functional.tensor.scatter:8 of
-msgid "For a 3-D tensor, input tensor is updated as::"
-msgstr ""
-
-#: megengine.functional.tensor.scatter:14 of
-msgid "``inp``, ``index`` and ``source`` should have same number of dimensions."
+msgid "For a 3-D tensor, input tensor is updated as:"
 msgstr ""
 
 #: megengine.functional.tensor.scatter:16 of
-msgid "It is also required that ``source.shape(d) <= inp.shape(d)`` and ``index.shape(d) == source.shape(d)`` for all dimensions ``d``."
+msgid "``inp``, ``index`` and ``source`` should have same number of dimensions."
 msgstr ""
 
-#: megengine.functional.tensor.scatter:19 of
-msgid "Moreover, the values of index must be between ``0`` and ``inp.shape(axis) - 1`` inclusive."
+#: megengine.functional.tensor.scatter:18 of
+msgid ""
+"It is also required that ``source.shape(d) <= inp.shape(d)`` and "
+"``index.shape(d) == source.shape(d)`` for all dimensions ``d``."
 msgstr ""
 
-#: megengine.functional.tensor.scatter:22 of
-msgid "Please notice that, due to performance issues, the result is uncertain on the GPU device if scattering different positions from source to the same destination position regard to index tensor."
+#: megengine.functional.tensor.scatter:21 of
+msgid ""
+"Moreover, the values of index must be between ``0`` and ``inp.shape(axis)"
+" - 1`` inclusive."
 msgstr ""
 
-#: megengine.functional.tensor.scatter:26 of
-msgid "Check the following examples, the oup[0][2] is maybe from source[0][2] which value is 0.2256 or source[1][2] which value is 0.5339 if set the index[1][2] from 1 to 0."
+#: megengine.functional.tensor.scatter:25 of
+msgid ""
+"Please notice that, due to performance issues, the result is uncertain on"
+" the GPU device if scattering different positions from source to the same"
+" destination position regard to index tensor."
+msgstr ""
+
+#: megengine.functional.tensor.scatter:29 of
+msgid ""
+"Check the following examples, the oup[0][2] is maybe from source[0][2] "
+"which value is 0.2256 or source[1][2] which value is 0.5339 if set the "
+"index[1][2] from 1 to 0."
 msgstr ""
 
 #: megengine.functional.tensor.scatter of
 msgid "参数"
 msgstr ""
 
-#: megengine.functional.tensor.scatter:30 of
+#: megengine.functional.tensor.scatter:34 of
 msgid "inp tensor which to be scattered."
 msgstr ""
 
-#: megengine.functional.tensor.scatter:31 of
+#: megengine.functional.tensor.scatter:36 of
 msgid "axis along which to index."
 msgstr ""
 
-#: megengine.functional.tensor.scatter:32 of
+#: megengine.functional.tensor.scatter:38 of
 msgid "indices of elements to scatter."
 msgstr ""
 
-#: megengine.functional.tensor.scatter:33 of
+#: megengine.functional.tensor.scatter:40 of
 msgid "source element(s) to scatter."
+msgstr ""
+
+#: megengine.functional.tensor.scatter of
+msgid "返回类型"
+msgstr ""
+
+#: megengine.functional.tensor.scatter:42 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ""
 
 #: megengine.functional.tensor.scatter of
 msgid "返回"
 msgstr ""
 
-#: megengine.functional.tensor.scatter:34 of
+#: megengine.functional.tensor.scatter:43 of
 msgid "output tensor."
 msgstr ""
 
-#: megengine.functional.tensor.scatter:36 of
-msgid "Examples:"
+#: megengine.functional.tensor.scatter:46 of
+msgid "实际案例"
 msgstr ""
 
-#: megengine.functional.tensor.scatter:50 of
+#: megengine.functional.tensor.scatter:59 of
 msgid "Outputs:"
 msgstr ""
 
@@ -95,4 +114,10 @@ msgstr ""
 
 #~ msgid "返回类型"
 #~ msgstr "返回类型"
+
+#~ msgid "For a 3-D tensor, input tensor is updated as::"
+#~ msgstr ""
+
+#~ msgid "Examples:"
+#~ msgstr ""
 

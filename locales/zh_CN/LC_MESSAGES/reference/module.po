@@ -1,641 +1,635 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-08-17 22:57\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-08-17 22:57+0000\n"
 "Last-Translator: \n"
-"Language: zh_CN\n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/module.po\n"
-"X-Crowdin-File-ID: 2798\n"
 
 #: ../../source/reference/module.rst:6
 msgid "megengine.module"
 msgstr ""
 
-#: ../../source/reference/module.rst:9
+#: ../../source/reference/module.rst:12
+msgid "关于 Module 的使用案例，请参考 :ref:`module-guide` ；"
+msgstr ""
+
+#: ../../source/reference/module.rst:13
+msgid "关于如何进行模型量化以及几类 Module 的转换原理，请参考 :ref:`quantization-guide` 。"
+msgstr ""
+
+#: ../../source/reference/module.rst:18
 msgid "Float Module"
 msgstr ""
 
-#: ../../source/reference/module.rst:12 ../../source/reference/module.rst:168
+#: ../../source/reference/module.rst:21 ../../source/reference/module.rst:167
 msgid "Containers"
 msgstr ""
 
-#: ../../source/reference/module.rst:20:<autosummary>:1
+#: ../../source/reference/module.rst:29:<autosummary>:1
 msgid ":obj:`Module <megengine.module.Module>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:20:<autosummary>:1
+#: ../../source/reference/module.rst:29:<autosummary>:1
 msgid "Base Module class."
 msgstr "Module 基类。"
 
-#: ../../source/reference/module.rst:20:<autosummary>:1
+#: ../../source/reference/module.rst:29:<autosummary>:1
 msgid ":obj:`Sequential <megengine.module.Sequential>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:20:<autosummary>:1
+#: ../../source/reference/module.rst:29:<autosummary>:1
 msgid "A sequential container."
 msgstr ""
 
-#: ../../source/reference/module.rst:25
-msgid "Initialization"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`fill_ <megengine.module.init.fill_>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Fills the given ``tensor`` with value ``val``."
-msgstr "将 ``val`` 填入到给定的 ``tensor``。"
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`zeros_ <megengine.module.init.zeros_>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Fills the given ``tensor`` with scalar value `0`."
-msgstr "使用标量值 `0` 填入给定 ``tensor``。"
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`ones_ <megengine.module.init.ones_>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Fills the given ``tensor`` with the scalar value `1`."
-msgstr "使用标量值 `1` 填入给定的 ``tensor``。"
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`uniform_ <megengine.module.init.uniform_>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Fills the given ``tensor`` with random value sampled from uniform distribution :math:`\\mathcal{U}(\\text{a}, \\text{b})`."
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`normal_ <megengine.module.init.normal_>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Fills the given ``tensor`` with random value sampled from normal distribution :math:`\\mathcal{N}(\\text{mean}, \\text{std}^2)`."
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`calculate_gain <megengine.module.init.calculate_gain>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Returns a recommended gain value (see the table below) for the given nonlinearity function."
-msgstr "对于给定的非线性函数返回一个推荐的增益值（见下表）。"
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`calculate_fan_in_and_fan_out <megengine.module.init.calculate_fan_in_and_fan_out>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Calculates fan_in / fan_out value for given weight tensor."
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`calculate_correct_fan <megengine.module.init.calculate_correct_fan>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Calculates fan_in / fan_out value for given weight tensor, depending on given ``mode``."
-msgstr "计算对于给定的权重张量fan_in或fan_out值，这取决于给定的 ``mode``。"
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`xavier_uniform_ <megengine.module.init.xavier_uniform_>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Fills tensor with random values sampled from :math:`\\mathcal{U}(-a, a)` where"
-msgstr "使用从 :math:`\\mathcal{U}(-a, a)` 中随机采样值填入 ``tensor`` 。其中，"
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`xavier_normal_ <megengine.module.init.xavier_normal_>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Fills tensor with random values sampled from :math:`\\mathcal{N}(0, \\text{std}^2)` where"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`msra_uniform_ <megengine.module.init.msra_uniform_>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Fills tensor wilth random values sampled from :math:`\\mathcal{U}(-\\text{bound}, \\text{bound})` where"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid ":obj:`msra_normal_ <megengine.module.init.msra_normal_>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:42:<autosummary>:1
-msgid "Fills tensor wilth random values sampled from :math:`\\mathcal{N}(0, \\text{std}^2)` where"
-msgstr ""
-
-#: ../../source/reference/module.rst:46
+#: ../../source/reference/module.rst:31
 msgid "General operations"
 msgstr ""
 
-#: ../../source/reference/module.rst:54:<autosummary>:1
+#: ../../source/reference/module.rst:39:<autosummary>:1
 msgid ":obj:`Elemwise <megengine.module.Elemwise>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:54:<autosummary>:1
+#: ../../source/reference/module.rst:39:<autosummary>:1
 msgid "A :class:`~.Module` to do :mod:`~.functional.elemwise` operator."
 msgstr "进行 :mod:`~.functional.elemwise` 运算的 :class:`~.Module`."
 
-#: ../../source/reference/module.rst:54:<autosummary>:1
+#: ../../source/reference/module.rst:39:<autosummary>:1
 msgid ":obj:`Concat <megengine.module.Concat>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:54:<autosummary>:1
+#: ../../source/reference/module.rst:39:<autosummary>:1
 msgid "A :class:`~.Module` to do functional :func:`~.concat`."
 msgstr "进行 :func:`~.concat` 运算的 :class:`~.Module`."
 
-#: ../../source/reference/module.rst:56
+#: ../../source/reference/module.rst:41
 msgid "Convolution Layers"
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`Conv1d <megengine.module.Conv1d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Applies a 1D convolution over an input tensor."
 msgstr "对输入张量进行一维卷积"
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`Conv2d <megengine.module.Conv2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Applies a 2D convolution over an input tensor."
 msgstr "对输入张量进行二维卷积"
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`Conv3d <megengine.module.Conv3d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Applies a 3D convolution over an input tensor."
 msgstr "对输入 tensor 进行三维卷积"
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
-msgid ":obj:`ConvRelu2d <megengine.module.ConvRelu2d>`"
-msgstr ""
-
-#: ../../source/reference/module.rst:71:<autosummary>:1
-msgid "A fused :class:`~.Module` including :class:`~.module.Conv2d` and :func:`~.relu`."
-msgstr "融合 :class:`~.module.Conv2d` 和 :func:`~.relu` 运算的 :class:`~.Module`."
-
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`ConvTranspose2d <megengine.module.ConvTranspose2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Applies a 2D transposed convolution over an input tensor."
 msgstr "对输入张量进行二维转置卷积。"
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`ConvTranspose3d <megengine.module.ConvTranspose3d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Applies a 3D transposed convolution over an input tensor."
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`LocalConv2d <megengine.module.LocalConv2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
-msgid "Applies a spatial convolution with untied kernels over an groupped channeled input 4D tensor."
+#: ../../source/reference/module.rst:56:<autosummary>:1
+msgid ""
+"Applies a spatial convolution with untied kernels over an groupped "
+"channeled input 4D tensor."
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`DeformableConv2d <megengine.module.DeformableConv2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid "Deformable Convolution."
 msgstr "可变形卷积"
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
+#: ../../source/reference/module.rst:56:<autosummary>:1
 msgid ":obj:`SlidingWindow <megengine.module.SlidingWindow>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:71:<autosummary>:1
-msgid "Apply a sliding window to input tensor and copy content in the window to corresponding output location."
+#: ../../source/reference/module.rst:56:<autosummary>:1
+msgid ""
+"Apply a sliding window to input tensor and copy content in the window to "
+"corresponding output location."
 msgstr ""
 
-#: ../../source/reference/module.rst:73
+#: ../../source/reference/module.rst:56:<autosummary>:1
+msgid ":obj:`SlidingWindowTranspose <megengine.module.SlidingWindowTranspose>`"
+msgstr ""
+
+#: ../../source/reference/module.rst:56:<autosummary>:1
+msgid ""
+"Opposite opration of SlidingWindow, sum over the sliding windows on the "
+"corresponding input location."
+msgstr ""
+
+#: ../../source/reference/module.rst:58
 msgid "Pooling layers"
 msgstr ""
 
-#: ../../source/reference/module.rst:84:<autosummary>:1
+#: ../../source/reference/module.rst:69:<autosummary>:1
 msgid ":obj:`AvgPool2d <megengine.module.AvgPool2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:84:<autosummary>:1
+#: ../../source/reference/module.rst:69:<autosummary>:1
 msgid "Applies a 2D average pooling over an input."
 msgstr "对输入数据进行2D平均池化。"
 
-#: ../../source/reference/module.rst:84:<autosummary>:1
+#: ../../source/reference/module.rst:69:<autosummary>:1
 msgid ":obj:`MaxPool2d <megengine.module.MaxPool2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:84:<autosummary>:1
+#: ../../source/reference/module.rst:69:<autosummary>:1
 msgid "Applies a 2D max pooling over an input."
 msgstr "对输入数据进行2D最大值池化（max pooling）。"
 
-#: ../../source/reference/module.rst:84:<autosummary>:1
+#: ../../source/reference/module.rst:69:<autosummary>:1
 msgid ":obj:`AdaptiveAvgPool2d <megengine.module.AdaptiveAvgPool2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:84:<autosummary>:1
+#: ../../source/reference/module.rst:69:<autosummary>:1
 msgid ":obj:`AdaptiveMaxPool2d <megengine.module.AdaptiveMaxPool2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:84:<autosummary>:1
+#: ../../source/reference/module.rst:69:<autosummary>:1
 msgid "Applies a 2D max adaptive pooling over an input."
 msgstr "对输入数据进行2D最大池化。"
 
-#: ../../source/reference/module.rst:84:<autosummary>:1
+#: ../../source/reference/module.rst:69:<autosummary>:1
 msgid ":obj:`DeformablePSROIPooling <megengine.module.DeformablePSROIPooling>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:86
+#: ../../source/reference/module.rst:71
+msgid "Padding layers"
+msgstr ""
+
+#: ../../source/reference/module.rst:78:<autosummary>:1
+msgid ":obj:`Pad <megengine.module.Pad>`"
+msgstr ""
+
+#: ../../source/reference/module.rst:78:<autosummary>:1
+msgid ""
+"Pad is python warpper for padding opr in megbrain, can padding in random "
+"one of the max 7 dimensions."
+msgstr ""
+
+#: ../../source/reference/module.rst:80
 msgid "Non-linear Activations"
 msgstr ""
 
-#: ../../source/reference/module.rst:97:<autosummary>:1
+#: ../../source/reference/module.rst:93:<autosummary>:1
 msgid ":obj:`Sigmoid <megengine.module.Sigmoid>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:97:<autosummary>:1
+#: ../../source/reference/module.rst:93:<autosummary>:1
 msgid "Applies the element-wise function:"
 msgstr "对每个元素应用函数："
 
-#: ../../source/reference/module.rst:97:<autosummary>:1
+#: ../../source/reference/module.rst:93:<autosummary>:1
 msgid ":obj:`Softmax <megengine.module.Softmax>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:97:<autosummary>:1
+#: ../../source/reference/module.rst:93:<autosummary>:1
 msgid "Applies a softmax function."
 msgstr ""
 
-#: ../../source/reference/module.rst:97:<autosummary>:1
+#: ../../source/reference/module.rst:93:<autosummary>:1
 msgid ":obj:`ReLU <megengine.module.ReLU>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:97:<autosummary>:1
+#: ../../source/reference/module.rst:93:<autosummary>:1
 msgid ":obj:`LeakyReLU <megengine.module.LeakyReLU>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:97:<autosummary>:1
+#: ../../source/reference/module.rst:93:<autosummary>:1
 msgid ":obj:`PReLU <megengine.module.PReLU>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:99
+#: ../../source/reference/module.rst:93:<autosummary>:1
+msgid ":obj:`SiLU <megengine.module.SiLU>`"
+msgstr ""
+
+#: ../../source/reference/module.rst:93:<autosummary>:1
+msgid ":obj:`GELU <megengine.module.GELU>`"
+msgstr ""
+
+#: ../../source/reference/module.rst:95
 msgid "Normalization Layers"
 msgstr ""
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid ":obj:`BatchNorm1d <megengine.module.BatchNorm1d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid "Applies Batch Normalization over a 2D/3D tensor."
 msgstr "在2D/3D张量上进行批标准化（batch normalization）。"
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid ":obj:`BatchNorm2d <megengine.module.BatchNorm2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid "Applies Batch Normalization over a 4D tensor."
 msgstr "在四维张量上进行批标准化（Batch Normalization）。"
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid ":obj:`SyncBatchNorm <megengine.module.SyncBatchNorm>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid "Applies Synchronized Batch Normalization for distributed training."
 msgstr "对于分布式训练执行组同步Batch Normalization操作。"
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid ":obj:`GroupNorm <megengine.module.GroupNorm>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid "Simple implementation of GroupNorm."
-msgstr "对于GroupNorm的简单实现。将Channel方向分Group，然后每个Group内做归一化，算(C//G) Hw的均值；这样与Batchsize无关，不受其约束"
+msgstr ""
+"对于GroupNorm的简单实现。将Channel方向分Group，然后每个Group内做归一化，算(C//G) "
+"Hw的均值；这样与Batchsize无关，不受其约束"
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid ":obj:`InstanceNorm <megengine.module.InstanceNorm>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid "Simple implementation of InstanceNorm."
 msgstr "InstanceNorm的简单实现。对Channel内做归一化，算H*W的均值，用在风格化迁移；因为在图像风格化中，生成结果主要依赖于某个图像实例，所以对整个Batch归一化不适合图像风格化中，因而对HW做归一化。可以加速模型收敛，并且保持每个图像实例之间的独立。"
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid ":obj:`LayerNorm <megengine.module.LayerNorm>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:111:<autosummary>:1
+#: ../../source/reference/module.rst:107:<autosummary>:1
 msgid "Simple implementation of LayerNorm."
 msgstr "层归一化的简单实现，对于Channel方向做归一化，算CHW的均值，主要对RNN作用明显。"
 
-#: ../../source/reference/module.rst:113
+#: ../../source/reference/module.rst:109
 msgid "Linear Layers"
 msgstr ""
 
-#: ../../source/reference/module.rst:121:<autosummary>:1
+#: ../../source/reference/module.rst:117:<autosummary>:1
 msgid ":obj:`Identity <megengine.module.Identity>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:121:<autosummary>:1
+#: ../../source/reference/module.rst:117:<autosummary>:1
 msgid "A placeholder identity operator that will ignore any argument."
 msgstr "恒等占位符，输出和输入相等"
 
-#: ../../source/reference/module.rst:121:<autosummary>:1
+#: ../../source/reference/module.rst:117:<autosummary>:1
 msgid ":obj:`Linear <megengine.module.Linear>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:121:<autosummary>:1
+#: ../../source/reference/module.rst:117:<autosummary>:1
 msgid "Applies a linear transformation to the input."
 msgstr ""
 
-#: ../../source/reference/module.rst:123
+#: ../../source/reference/module.rst:119
 msgid "Dropout Layers"
 msgstr ""
 
-#: ../../source/reference/module.rst:130:<autosummary>:1
+#: ../../source/reference/module.rst:126:<autosummary>:1
 msgid ":obj:`Dropout <megengine.module.Dropout>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:130:<autosummary>:1
-msgid "Randomly sets input elements to zeros with the probability :math:`drop\\_prob` during training."
+#: ../../source/reference/module.rst:126:<autosummary>:1
+msgid ""
+"Randomly sets input elements to zeros with the probability "
+":math:`drop\\_prob` during training."
 msgstr ""
 
-#: ../../source/reference/module.rst:132
+#: ../../source/reference/module.rst:128
 msgid "Sparse Layers"
 msgstr ""
 
-#: ../../source/reference/module.rst:139:<autosummary>:1
+#: ../../source/reference/module.rst:135:<autosummary>:1
 msgid ":obj:`Embedding <megengine.module.Embedding>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:139:<autosummary>:1
-msgid "A simple lookup table that stores embeddings of a fixed dictionary and size."
+#: ../../source/reference/module.rst:135:<autosummary>:1
+msgid ""
+"A simple lookup table that stores embeddings of a fixed dictionary and "
+"size."
 msgstr "一个简单的查询表，存储具有固定大小的词向量（embedding）于固定的词典中。"
 
-#: ../../source/reference/module.rst:141
+#: ../../source/reference/module.rst:137
 msgid "Fused operations"
 msgstr ""
 
-#: ../../source/reference/module.rst:150:<autosummary>:1
+#: ../../source/reference/module.rst:147:<autosummary>:1
+msgid ":obj:`ConvRelu2d <megengine.module.ConvRelu2d>`"
+msgstr ""
+
+#: ../../source/reference/module.rst:147:<autosummary>:1
+msgid ""
+"A fused :class:`~.Module` including :class:`~.module.Conv2d` and "
+":func:`~.relu`."
+msgstr "融合 :class:`~.module.Conv2d` 和 :func:`~.relu` 运算的 :class:`~.Module`."
+
+#: ../../source/reference/module.rst:147:<autosummary>:1
 msgid ":obj:`ConvBn2d <megengine.module.ConvBn2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:150:<autosummary>:1
-msgid "A fused :class:`~.Module` including :class:`~.module.Conv2d` and :class:`~.module.BatchNorm2d`."
-msgstr "融合 :class:`~.module.Conv2d` 和 :class:`~.module.BatchNorm2d` 运算的 :class:`~.Module`."
+#: ../../source/reference/module.rst:147:<autosummary>:1
+msgid ""
+"A fused :class:`~.Module` including :class:`~.module.Conv2d` and "
+":class:`~.module.BatchNorm2d`."
+msgstr ""
+"融合 :class:`~.module.Conv2d` 和 :class:`~.module.BatchNorm2d` 运算的 "
+":class:`~.Module`."
 
-#: ../../source/reference/module.rst:150:<autosummary>:1
+#: ../../source/reference/module.rst:147:<autosummary>:1
 msgid ":obj:`ConvBnRelu2d <megengine.module.ConvBnRelu2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:150:<autosummary>:1
-msgid "A fused :class:`~.Module` including :class:`~.module.Conv2d`, :class:`~.module.BatchNorm2d` and :func:`~.relu`."
-msgstr "融合 :class:`~.module.Conv2d`, :class:`~.module.BatchNorm2d` 和 :func:`~.relu` 运算的 :class:`~.Module`."
+#: ../../source/reference/module.rst:147:<autosummary>:1
+msgid ""
+"A fused :class:`~.Module` including :class:`~.module.Conv2d`, "
+":class:`~.module.BatchNorm2d` and :func:`~.relu`."
+msgstr ""
+"融合 :class:`~.module.Conv2d`, :class:`~.module.BatchNorm2d` 和 "
+":func:`~.relu` 运算的 :class:`~.Module`."
 
-#: ../../source/reference/module.rst:150:<autosummary>:1
+#: ../../source/reference/module.rst:147:<autosummary>:1
 msgid ":obj:`BatchMatMulActivation <megengine.module.BatchMatMulActivation>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:150:<autosummary>:1
-msgid "Batched :func:`~.matmul` with activation(only :func:`~.relu` supported), no transpose anywhere."
+#: ../../source/reference/module.rst:147:<autosummary>:1
+msgid ""
+"Batched :func:`~.matmul` with activation(only :func:`~.relu` supported), "
+"no transpose anywhere."
 msgstr "带激活的批矩阵乘 :func:`~.matmul` （当前仅支持 :func:`~.relu` 激活），输入均不支持转置。"
 
-#: ../../source/reference/module.rst:152
+#: ../../source/reference/module.rst:149
 msgid "Quantization"
 msgstr ""
 
-#: ../../source/reference/module.rst:160:<autosummary>:1
+#: ../../source/reference/module.rst:157:<autosummary>:1
 msgid ":obj:`QuantStub <megengine.module.QuantStub>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:160:<autosummary>:1
+#: ../../source/reference/module.rst:157:<autosummary>:1
 msgid "A helper :class:`~.Module` simply returning input."
 msgstr "仅负责返回输入的辅助 :class:`~.Module`."
 
-#: ../../source/reference/module.rst:160:<autosummary>:1
+#: ../../source/reference/module.rst:157:<autosummary>:1
 msgid ":obj:`DequantStub <megengine.module.DequantStub>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:165
+#: ../../source/reference/module.rst:164
 msgid "QAT Module"
 msgstr ""
 
-#: ../../source/reference/module.rst:175:<autosummary>:1
+#: ../../source/reference/module.rst:174:<autosummary>:1
 msgid ":obj:`QATModule <megengine.module.qat.QATModule>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:175:<autosummary>:1
-msgid "Base class of quantized-float related :class:`~.Module`, basically for QAT and Calibration."
+#: ../../source/reference/module.rst:174:<autosummary>:1
+msgid ""
+"Base class of quantized-float related :class:`~.Module`, basically for "
+"QAT and Calibration."
 msgstr "浮点数量化相关 :class:`~.Module` 的基类。主要用于 QAT 和 Calibration."
 
-#: ../../source/reference/module.rst:177 ../../source/reference/module.rst:207
+#: ../../source/reference/module.rst:176 ../../source/reference/module.rst:208
 msgid "Operations"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid ":obj:`Linear <megengine.module.qat.Linear>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid "A :class:`~.QATModule` version of :class:`~.module.Linear`."
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid ":obj:`Elemwise <megengine.module.qat.Elemwise>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
-msgid "A :class:`~.QATModule` to do :mod:`~.functional.elemwise` operator with QAT support."
+#: ../../source/reference/module.rst:192:<autosummary>:1
+msgid ""
+"A :class:`~.QATModule` to do :mod:`~.functional.elemwise` operator with "
+"QAT support."
 msgstr "支持 QAT 的 :class:`~.QATModule` 用来执行 :mod:`~.functional.elemwise` 计算."
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid ":obj:`Concat <megengine.module.qat.Concat>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid "A :class:`~.QATModule` to do functional :func:`~.concat` with QAT support."
 msgstr "支持 QAT 的 :class:`~.QATModule` 用来执行 :func:`~.concat` 计算."
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid ":obj:`Conv2d <megengine.module.qat.Conv2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid "A :class:`~.QATModule` :class:`~.module.Conv2d` with QAT support."
 msgstr "支持 QAT 的 :class:`~.QATModule` :class:`~.module.Conv2d`."
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid ":obj:`ConvRelu2d <megengine.module.qat.ConvRelu2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
-msgid "A :class:`~.QATModule` include :class:`~.module.Conv2d` and :func:`~.relu` with QAT support."
-msgstr "支持 QAT 的 :class:`~.QATModule` 包括 :class:`~.module.Conv2d` 和 :func:`~.relu`."
+#: ../../source/reference/module.rst:192:<autosummary>:1
+msgid ""
+"A :class:`~.QATModule` include :class:`~.module.Conv2d` and "
+":func:`~.relu` with QAT support."
+msgstr ""
+"支持 QAT 的 :class:`~.QATModule` 包括 :class:`~.module.Conv2d` 和 "
+":func:`~.relu`."
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid ":obj:`ConvBn2d <megengine.module.qat.ConvBn2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
-msgid "A fused :class:`~.QATModule` including :class:`~.module.Conv2d` and :class:`~.module.BatchNorm2d` with QAT support."
-msgstr "支持 QAT 的 :class:`~.QATModule` 融合了 :class:`~.module.Conv2d` 和 :class:`~.module.BatchNorm2d`."
+#: ../../source/reference/module.rst:192:<autosummary>:1
+msgid ""
+"A fused :class:`~.QATModule` including :class:`~.module.Conv2d` and "
+":class:`~.module.BatchNorm2d` with QAT support."
+msgstr ""
+"支持 QAT 的 :class:`~.QATModule` 融合了 :class:`~.module.Conv2d` 和 "
+":class:`~.module.BatchNorm2d`."
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid ":obj:`ConvBnRelu2d <megengine.module.qat.ConvBnRelu2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
-msgid "A fused :class:`~.QATModule` including :class:`~.module.Conv2d`, :class:`~.module.BatchNorm2d` and :func:`~.relu` with QAT support."
-msgstr "支持 QAT 的 :class:`~.QATModule` 融合了 :class:`~.module.Conv2d`, :class:`~.module.BatchNorm2d` 和 :func:`~.relu`."
+#: ../../source/reference/module.rst:192:<autosummary>:1
+msgid ""
+"A fused :class:`~.QATModule` including :class:`~.module.Conv2d`, "
+":class:`~.module.BatchNorm2d` and :func:`~.relu` with QAT support."
+msgstr ""
+"支持 QAT 的 :class:`~.QATModule` 融合了 :class:`~.module.Conv2d`, "
+":class:`~.module.BatchNorm2d` 和 :func:`~.relu`."
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid ":obj:`BatchMatMulActivation <megengine.module.qat.BatchMatMulActivation>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
-msgid "A :class:`~.QATModule` :class:`~.module.BatchMatMulActivation` with QAT support."
+#: ../../source/reference/module.rst:192:<autosummary>:1
+msgid ""
+"A :class:`~.QATModule` :class:`~.module.BatchMatMulActivation` with QAT "
+"support."
 msgstr "支持 QAT 的 :class:`~.QATModule` :class:`~.module.BatchMatMulActivation`."
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid ":obj:`QuantStub <megengine.module.qat.QuantStub>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
-msgid "A helper :class:`~.QATModule` simply return input, but will quantize input after converted to :class:`~.QuantizedModule`."
-msgstr "仅返回输入的辅助 :class:`~.QATModule`, 但在转换为 :class:`~.QuantizedModule` 之后，会对输入进行量化。"
+#: ../../source/reference/module.rst:192:<autosummary>:1
+msgid ""
+"A helper :class:`~.QATModule` simply return input, but will quantize "
+"input after converted to :class:`~.QuantizedModule`."
+msgstr ""
+"仅返回输入的辅助 :class:`~.QATModule`, 但在转换为 :class:`~.QuantizedModule` "
+"之后，会对输入进行量化。"
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
+#: ../../source/reference/module.rst:192:<autosummary>:1
 msgid ":obj:`DequantStub <megengine.module.qat.DequantStub>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:193:<autosummary>:1
-msgid "A helper :class:`~.QATModule` simply return input, but will de-quantize input after converted to :class:`~.QuantizedModule`."
-msgstr "仅返回输入的辅助 :class:`~.QATModule`, 但在转换为 :class:`~.QuantizedModule` 之后，会对输入进行反量化。"
+#: ../../source/reference/module.rst:192:<autosummary>:1
+msgid ""
+"A helper :class:`~.QATModule` simply return input, but will de-quantize "
+"input after converted to :class:`~.QuantizedModule`."
+msgstr ""
+"仅返回输入的辅助 :class:`~.QATModule`, 但在转换为 :class:`~.QuantizedModule` "
+"之后，会对输入进行反量化。"
 
-#: ../../source/reference/module.rst:198
+#: ../../source/reference/module.rst:199
 msgid "Quantized Module"
 msgstr ""
 
-#: ../../source/reference/module.rst:205:<autosummary>:1
+#: ../../source/reference/module.rst:206:<autosummary>:1
 msgid ":obj:`QuantizedModule <megengine.module.quantized.QuantizedModule>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:205:<autosummary>:1
-msgid "Base class of quantized :class:`~.Module`, which should be converted from :class:`~.QATModule` and not support traning."
+#: ../../source/reference/module.rst:206:<autosummary>:1
+msgid ""
+"Base class of quantized :class:`~.Module`, which should be converted from"
+" :class:`~.QATModule` and not support traning."
 msgstr "量化版本 :class:`~.Module` 的基类。应从 :class:`~.QATModule` 转换而来，不支持训练。"
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid ":obj:`Linear <megengine.module.quantized.Linear>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid "Quantized version of :class:`~.qat.Linear`."
 msgstr "量化（quantized）版本 :class:`~.qat.Linear`。"
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid ":obj:`Elemwise <megengine.module.quantized.Elemwise>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid "Quantized version of :class:`~.qat.Elemwise`."
 msgstr "量化（quantized）版本 :class:`~.qat.Elemwise`。"
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid ":obj:`Concat <megengine.module.quantized.Concat>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
-msgid "A :class:`~.QuantizedModule` to do quantized :func:`~.concat`, used for inference only."
+#: ../../source/reference/module.rst:224:<autosummary>:1
+msgid ""
+"A :class:`~.QuantizedModule` to do quantized :func:`~.concat`, used for "
+"inference only."
 msgstr "量化版本 :func:`~.concat` 的 :class:`~.QuantizedModule`, 仅用于推理阶段。"
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid ":obj:`Conv2d <megengine.module.quantized.Conv2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid "Quantized version of :class:`~.qat.Conv2d`."
 msgstr "量化（quantized）版本 :class:`~.qat.Conv2d`。"
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid ":obj:`ConvRelu2d <megengine.module.quantized.ConvRelu2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid "Quantized version of :class:`~.qat.ConvRelu2d`."
 msgstr "量化（quantized）版本 :class:`~.qat.ConvRelu2d`."
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid ":obj:`ConvBn2d <megengine.module.quantized.ConvBn2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid "Quantized version of :class:`~.qat.ConvBn2d`."
 msgstr "量化（quantized）版本 :class:`~.qat.ConvBn2d`。"
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid ":obj:`ConvBnRelu2d <megengine.module.quantized.ConvBnRelu2d>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid "Quantized version of :class:`~.qat.ConvBnRelu2d`."
 msgstr "量化（quantized）版本 :class:`~.qat.ConvBnRelu2d`."
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
-msgid ":obj:`BatchMatMulActivation <megengine.module.quantized.BatchMatMulActivation>`"
+#: ../../source/reference/module.rst:224:<autosummary>:1
+msgid ""
+":obj:`BatchMatMulActivation "
+"<megengine.module.quantized.BatchMatMulActivation>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid "Quantized version of :class:`~.qat.BatchMatMulActivation`."
 msgstr ":class:`~.qat.BatchMatMulActivation` 的量化版本。"
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid ":obj:`QuantStub <megengine.module.quantized.QuantStub>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
-msgid "Quantized version of :class:`~.qat.QuantStub`, will convert input to quantized dtype."
+#: ../../source/reference/module.rst:224:<autosummary>:1
+msgid ""
+"Quantized version of :class:`~.qat.QuantStub`, will convert input to "
+"quantized dtype."
 msgstr "量化（quantized）版本 :class:`~.qat.QuantStub`，可将输入转化为量化数据类型。"
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
+#: ../../source/reference/module.rst:224:<autosummary>:1
 msgid ":obj:`DequantStub <megengine.module.quantized.DequantStub>`"
 msgstr ""
 
-#: ../../source/reference/module.rst:223:<autosummary>:1
-msgid "Quantized version of :class:`~.qat.DequantStub`, will restore quantized input to float32 dtype."
+#: ../../source/reference/module.rst:224:<autosummary>:1
+msgid ""
+"Quantized version of :class:`~.qat.DequantStub`, will restore quantized "
+"input to float32 dtype."
 msgstr "量化（quantized）版本 :class:`~.qat.DequantStub`，可将量化后的输入重置为float32类型。"
 
 #~ msgid ":obj:`Module.forward <megengine.module.Module.forward>`"
@@ -882,21 +876,19 @@ msgstr "量化（quantized）版本 :class:`~.qat.DequantStub`，可将量化后
 #~ "Fills tensor with random values sampled"
 #~ " from :math:`\\mathcal{N}(0, \\text{std}^2)` "
 #~ "where"
-#~ msgstr "使用从 :math:`\\mathcal{N}(0, \\text{std}^2)` 中随机采样值填入  ``tensor`` 。其中，"
+#~ msgstr ""
 
 #~ msgid ""
 #~ "Fills tensor wilth random values sampled"
 #~ " from :math:`\\mathcal{U}(-\\text{bound}, "
 #~ "\\text{bound})` where"
 #~ msgstr ""
-#~ "使用 :math:`\\mathcal{U}(-\\text{bound}, \\text{bound})` "
-#~ "的随机采样值填入 ``tensor``"
 
 #~ msgid ""
 #~ "Fills tensor wilth random values sampled"
 #~ " from :math:`\\mathcal{N}(0, \\text{std}^2)` "
 #~ "where"
-#~ msgstr "从 :math:`\\mathcal{N}(0, \\text{std}^2)` 中随机采样得到值，填入 ``tensor`` ，式中，"
+#~ msgstr ""
 
 #~ msgid "算子支持"
 #~ msgstr ""
@@ -955,5 +947,89 @@ msgstr "量化（quantized）版本 :class:`~.qat.DequantStub`，可将量化后
 #~ msgstr ""
 
 #~ msgid "Fills tensor wilth random values sampled from"
+#~ msgstr ""
+
+#~ msgid "Initialization"
+#~ msgstr ""
+
+#~ msgid ":obj:`fill_ <megengine.module.init.fill_>`"
+#~ msgstr ""
+
+#~ msgid "Fills the given ``tensor`` with value ``val``."
+#~ msgstr "将 ``val`` 填入到给定的 ``tensor``。"
+
+#~ msgid ":obj:`zeros_ <megengine.module.init.zeros_>`"
+#~ msgstr ""
+
+#~ msgid "Fills the given ``tensor`` with scalar value `0`."
+#~ msgstr "使用标量值 `0` 填入给定 ``tensor``。"
+
+#~ msgid ":obj:`ones_ <megengine.module.init.ones_>`"
+#~ msgstr ""
+
+#~ msgid "Fills the given ``tensor`` with the scalar value `1`."
+#~ msgstr "使用标量值 `1` 填入给定的 ``tensor``。"
+
+#~ msgid ":obj:`uniform_ <megengine.module.init.uniform_>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fills the given ``tensor`` with random"
+#~ " value sampled from uniform distribution"
+#~ " :math:`\\mathcal{U}(\\text{a}, \\text{b})`."
+#~ msgstr ""
+
+#~ msgid ":obj:`normal_ <megengine.module.init.normal_>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fills the given ``tensor`` with random"
+#~ " value sampled from normal distribution "
+#~ ":math:`\\mathcal{N}(\\text{mean}, \\text{std}^2)`."
+#~ msgstr ""
+
+#~ msgid ":obj:`calculate_gain <megengine.module.init.calculate_gain>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns a recommended gain value (see"
+#~ " the table below) for the given "
+#~ "nonlinearity function."
+#~ msgstr "对于给定的非线性函数返回一个推荐的增益值（见下表）。"
+
+#~ msgid ""
+#~ ":obj:`calculate_fan_in_and_fan_out "
+#~ "<megengine.module.init.calculate_fan_in_and_fan_out>`"
+#~ msgstr ""
+
+#~ msgid "Calculates fan_in / fan_out value for given weight tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`calculate_correct_fan "
+#~ "<megengine.module.init.calculate_correct_fan>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Calculates fan_in / fan_out value for"
+#~ " given weight tensor, depending on "
+#~ "given ``mode``."
+#~ msgstr "计算对于给定的权重张量fan_in或fan_out值，这取决于给定的 ``mode``。"
+
+#~ msgid ":obj:`xavier_uniform_ <megengine.module.init.xavier_uniform_>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fills tensor with random values sampled"
+#~ " from :math:`\\mathcal{U}(-a, a)` where"
+#~ msgstr "使用从 :math:`\\mathcal{U}(-a, a)` 中随机采样值填入 ``tensor`` 。其中，"
+
+#~ msgid ":obj:`xavier_normal_ <megengine.module.init.xavier_normal_>`"
+#~ msgstr ""
+
+#~ msgid ":obj:`msra_uniform_ <megengine.module.init.msra_uniform_>`"
+#~ msgstr ""
+
+#~ msgid ":obj:`msra_normal_ <megengine.module.init.msra_normal_>`"
 #~ msgstr ""
 

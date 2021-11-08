@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-06 13:12+0800\n"
-"PO-Revision-Date: 2021-08-17 23:18\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-08-17 23:18+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.jit.trace.dump.po\n"
-"X-Crowdin-File-ID: 2352\n"
 
 #: ../../source/reference/api/megengine.jit.trace.dump.rst:2
 msgid "megengine.jit.trace.dump"
@@ -39,7 +35,9 @@ msgid "names of the input tensors in the traced function."
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:5 of
-msgid "names of the output tensors in the traced function, use the default name if not specified."
+msgid ""
+"names of the output tensors in the traced function, use the default name "
+"if not specified."
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:7 of
@@ -47,7 +45,10 @@ msgid "whether output is appended to ``file``. Only works when ``file`` is str."
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:10 of
-msgid "level for keeping variable names:  * 0: none of the names are kept * 1: (default)keep names of output vars * 2: keep names of all (output and internal) vars"
+msgid ""
+"level for keeping variable names:  * 0: none of the names are kept * 1: "
+"(default)keep names of output vars * 2: keep names of all (output and "
+"internal) vars"
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:16 of
@@ -55,7 +56,9 @@ msgid "whether to keep operator names."
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:18 of
-msgid "whether to keep param names, so param values can be easily manipulated after loading model"
+msgid ""
+"whether to keep param names, so param values can be easily manipulated "
+"after loading model"
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:21 of
@@ -63,107 +66,108 @@ msgid "whether to keep priority setting for operators"
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:22 of
-msgid "a string for path or a file handler. if is not None, then the dump information for code strip would be written to ``strip_info_file``"
+msgid ""
+"a string for path or a file handler. if is not None, then the dump "
+"information for code strip would be written to ``strip_info_file``"
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:24 of
-msgid "will be check when `strip_info_file` is not None. if set true, the information for code strip will be append to strip_info_file. if set false, will rewrite strip_info_file"
+msgid ""
+"will be check when `strip_info_file` is not None. if set true, the "
+"information for code strip will be append to strip_info_file. if set "
+"false, will rewrite strip_info_file"
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:27 of
-msgid "enbale optmizations, will skip all optimize options if this is False. Default: True"
+msgid ""
+"enbale optmizations, will skip all optimize options if this is False. "
+"Default: True"
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump of
-msgid "Keyword Arguments"
+#: megengine.jit.tracing.trace.dump:30 of
+msgid "any type object, which will be pickled to bytes."
+msgstr ""
+
+#: megengine.jit.tracing.trace.dump:32 of
+msgid "whether to save metadata into output file."
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:34 of
-msgid "enable_io16xc32 --"
+msgid "Keyword Arguments:"
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:33 of
-msgid "whether to use float16 for I/O between oprs and use float32 as internal computation precision. Note the output var would be changed to float16."
+#: megengine.jit.tracing.trace.dump:36 of
+msgid ""
+"enable_io16xc32 -- whether to use float16 for I/O between oprs and use "
+"float32 as internal computation precision. Note the output var would be "
+"changed to float16."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:38 of
-msgid "enable_ioc16 --"
+#: megengine.jit.tracing.trace.dump:40 of
+msgid ""
+"enable_ioc16 -- whether to use float16 for both I/O and computation "
+"precision."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:37 of
-msgid "whether to use float16 for both I/O and computation precision."
+#: megengine.jit.tracing.trace.dump:43 of
+msgid ""
+"enable_hwcd4 -- whether to use NHWCD4 data layout. This is faster on some"
+" OpenCL backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:41 of
-msgid "enable_hwcd4 --"
+#: megengine.jit.tracing.trace.dump:46 of
+msgid ""
+"enable_nchw88 -- whether to use NCHW88 data layout, currently used in X86"
+" AVX backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:41 of
-msgid "whether to use NHWCD4 data layout. This is faster on some OpenCL backend."
+#: megengine.jit.tracing.trace.dump:49 of
+msgid ""
+"enable_nchw44 -- whether to use NCHW44 data layout, currently used in arm"
+" backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:44 of
-msgid "enable_nchw88 --"
+#: megengine.jit.tracing.trace.dump:52 of
+msgid ""
+"enable_nchw44_dot -- whether to use NCHW44_dot data layout, currently "
+"used in armv8.2+dotprod backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:44 of
-msgid "whether to use NCHW88 data layout, currently used in X86 AVX backend."
+#: megengine.jit.tracing.trace.dump:55 of
+msgid ""
+"enable_nchw4 -- whether to use NCHW4 data layout, currently used in "
+"nvidia backend(based on cudnn)."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:47 of
-msgid "enable_nchw44 --"
+#: megengine.jit.tracing.trace.dump:58 of
+msgid ""
+"enable_nchw32 -- whether to use NCHW32 data layout, currently used in "
+"nvidia backend with tensorcore(based on cudnn)."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:47 of
-msgid "whether to use NCHW44 data layout, currently used in arm backend."
+#: megengine.jit.tracing.trace.dump:61 of
+msgid ""
+"enable_chwn4 -- whether to use CHWN4 data layout, currently used in "
+"nvidia backend with tensorcore."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:50 of
-msgid "enable_nchw44_dot --"
+#: megengine.jit.tracing.trace.dump:64 of
+msgid ""
+"enable_nchw64 -- whether to use NCHW64 data layout, used for fast int4 "
+"support on Nvidia GPU."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:50 of
-msgid "whether to use NCHW44_dot data layout, currently used in armv8.2+dotprod backend."
+#: megengine.jit.tracing.trace.dump:67 of
+msgid ""
+"enable_fuse_conv_bias_nonlinearity: whether to fuse conv+bias+nonlinearty"
+" into one opr."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:53 of
-msgid "enable_nchw4 --"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:53 of
-msgid "whether to use NCHW4 data layout, currently used in nvidia backend(based on cudnn)."
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:56 of
-msgid "enable_nchw32 --"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:56 of
-msgid "whether to use NCHW32 data layout, currently used in nvidia backend with tensorcore(based on cudnn)."
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:60 of
-msgid "enable_chwn4 --"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:59 of
-msgid "whether to use CHWN4 data layout, currently used in nvidia backend with tensorcore."
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:62 of
-msgid "enable_fuse_conv_bias_nonlinearity: whether to fuse conv+bias+nonlinearty"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:63 of
-msgid "into one opr."
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:66 of
-msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:65 of
-msgid "input for inference on nvidia backend(this optimization pass will result in mismatch of the precision of output of training and inference)"
+#: megengine.jit.tracing.trace.dump:69 of
+msgid ""
+"enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z input for "
+"inference on nvidia backend(this optimization pass will result in "
+"mismatch of the precision of output of training and inference)"
 msgstr ""
 
 #~ msgid "level for keeping variable names:"
@@ -177,4 +181,98 @@ msgstr ""
 
 #~ msgid "2: keep names of all (output and internal) vars"
 #~ msgstr "2: 保留所有变量 (包括输出和中间变量) 的名字"
+
+#~ msgid "Keyword Arguments"
+#~ msgstr ""
+
+#~ msgid "enable_io16xc32 --"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "whether to use float16 for I/O "
+#~ "between oprs and use float32 as "
+#~ "internal computation precision. Note the "
+#~ "output var would be changed to "
+#~ "float16."
+#~ msgstr ""
+
+#~ msgid "enable_ioc16 --"
+#~ msgstr ""
+
+#~ msgid "whether to use float16 for both I/O and computation precision."
+#~ msgstr ""
+
+#~ msgid "enable_hwcd4 --"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "whether to use NHWCD4 data layout. "
+#~ "This is faster on some OpenCL "
+#~ "backend."
+#~ msgstr ""
+
+#~ msgid "enable_nchw88 --"
+#~ msgstr ""
+
+#~ msgid "whether to use NCHW88 data layout, currently used in X86 AVX backend."
+#~ msgstr ""
+
+#~ msgid "enable_nchw44 --"
+#~ msgstr ""
+
+#~ msgid "whether to use NCHW44 data layout, currently used in arm backend."
+#~ msgstr ""
+
+#~ msgid "enable_nchw44_dot --"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "whether to use NCHW44_dot data layout,"
+#~ " currently used in armv8.2+dotprod backend."
+#~ msgstr ""
+
+#~ msgid "enable_nchw4 --"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "whether to use NCHW4 data layout, "
+#~ "currently used in nvidia backend(based "
+#~ "on cudnn)."
+#~ msgstr ""
+
+#~ msgid "enable_nchw32 --"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "whether to use NCHW32 data layout, "
+#~ "currently used in nvidia backend with"
+#~ " tensorcore(based on cudnn)."
+#~ msgstr ""
+
+#~ msgid "enable_chwn4 --"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "whether to use CHWN4 data layout, "
+#~ "currently used in nvidia backend with"
+#~ " tensorcore."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "enable_fuse_conv_bias_nonlinearity: whether to fuse"
+#~ " conv+bias+nonlinearty"
+#~ msgstr ""
+
+#~ msgid "into one opr."
+#~ msgstr ""
+
+#~ msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "input for inference on nvidia "
+#~ "backend(this optimization pass will result "
+#~ "in mismatch of the precision of "
+#~ "output of training and inference)"
+#~ msgstr ""
 

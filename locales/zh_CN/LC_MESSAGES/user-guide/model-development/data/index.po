@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/user-guide/model-development/data/index.rst:6
+msgid "使用 Data 构建输入 Pipeline"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:7
+msgid ""
+"MegEngine 中的 :py:mod:`data` 子包提供了用于处理数据（数据集）的原语， 其中 "
+":py:class:`megengine.data.DataLoader` 被用于加载批数据，本质上将用于生成一个可迭代的对象， 负责从 "
+":py:class:`~.Dataset` 描述的数据集中返回批量大小（即 ``batch_size`` ）的数据。 简而言之， "
+"``Dataset`` 告诉 ``DataLoader`` 如何将单个样本加载到内存中， 而 ``DataLoader`` "
+"负责按照给定的配置获取分批的数据，方便进行后续训练和测试。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:19
+msgid ""
+"上面的介绍中隐藏了一些细节， 实际上 ``DataLoader`` 负责调用所有与数据加载相关的逻辑， "
+"包括但不限于：获取下一批数据索引、将数据加载到内存、收集批数据以及多线程数据加载等等... 这些步骤对应的功能由 ``data`` "
+"模块内其它不同的组件（如 ``Sampler``, ``Transform`` 等）进行实现。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:23
+msgid "如果你想要更加正确 & 高效地构建输入 Pipeline, 建议阅读完当前章节的所有内容。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:27
+msgid ""
+"该部分功能的主体设计与 PyTorch 提供的 `torch.utils.data "
+"<https://pytorch.org/docs/stable/data.html>`_ 类似。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:33
+msgid "使用 DataLoader 加载数据"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:35
+msgid ":py:class:`~.DataLoader` 类的签名如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:41
+msgid "一些选项可在 :py:class:`~.DataLoader` 初始化时进行灵活配置，我们将着重介绍："
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:53
+msgid "以模型训练为例，在 MegEngine 中输入数据的 Pipeline 为："
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:55
+msgid "创建一个 Dataset 对象；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:56
+msgid "按需创建 Sampler, Transform 和 Collator 对象；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:57
+msgid "创建一个 DataLoader 对象；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:58
+msgid "迭代这个 DataLoader 对象，将数据分批加载到模型中进行训练；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:60
+msgid ""
+"每当我们向 DataLoader 索要一批数据时，DataLoader 将从 Sampler 获得下一批数据的索引， 根据 Dataset 提供的"
+" ``__getitem__`` 方法将对应的数据逐个加载到内存， 加载进来的数据可以通过指定的 Transform 做一些处理，再通过 "
+"Collator 将单独的数据组织成批数据。 以上为单进程的情况，DataLoader 也支持多进程加载，支持多个 Worker 同时加载数据。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:65
+msgid "同理，模型的验证和测试也可以使用各自的 DataLoader 完成数据部分的加载。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:69
+msgid "如果不自定义以上配置，用户应当清楚在默认情况下 DataLoader 的处理逻辑。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:74
+msgid "举例：加载图像分类数据"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:76
+msgid "下面我们以加载图像分类数据的基本流程作为简单举例 ——"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:78
+msgid ""
+"假设图像数据按照一定的规则放置于同一目录下（通常数据集主页会对目录组织和文件命名规则进行介绍）。 要创建对应的数据加载器，首先需要一个继承自 "
+":py:class:`~.Dataset` 的类。 虽然对于 NumPy ndarray 数据，MegEngine 中提供了 "
+":py:class:`~.ArrayDataset` 实现。 但更标准的做法应当是创建一个自定义的数据集："
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:117
+msgid "要获取示例图像，可以创建一个数据集对象，并将示例索引传递给 ``__getitem__`` 方法， 然后将返回图像数组和对应的标签，例如："
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:125
+msgid ""
+"现在我们已经预先创建了能够返回一个样本及其标签的类 ``CustomImageDataset``, 但仅依赖 ``Dataset`` "
+"本身还无法实现自动分批、乱序、并行等功能； 我们必须接着创建 ``DataLoader``, 它通过其它的参数配置项围绕这个类“包装”， "
+"可以按照我们的要求从数据集类中返回整批样本。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:146
+msgid ""
+"注意到在上面的代码中，我们还用到了 ``Sampler`` 来决定数据加载（抽样）顺序， 用到了 ``Transform`` "
+"来对加载后的数据进行一些变换处理，这还不是全部可配置项， 在后续小节我们会进行更加详细的介绍。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:150
+msgid "现在我们已经创建了数据加载器并准备好训练！例如像这样："
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:168
+msgid "成功地获取到批数据后，关于模型如何训练和测试的后续流程就不在这里介绍了。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:172
+msgid "在 MegEngine 新手入门板块中提供了完整的基于 MNIST 和 CIFAR10 数据集的模型训练与测试教程；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/index.rst:173
+msgid ""
+"在 MegEngine 官方模型库 `Models <https://github.com/MegEngine/Models>`_ "
+"中可以找到更多参考代码。"
+msgstr ""
+
