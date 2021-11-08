@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgid "如何在本地构建与预览文档"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:6
-msgid "除了 :ref:`doc-ci-preview` 外，在某些时候，我们需要在本地构建与预览文档。"
+msgid "除了通过 :ref:`doc-ci-preview` 生成文档外，在某些时候，我们需要在本地构建与预览文档。"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:10
@@ -39,202 +39,203 @@ msgstr ""
 msgid "自动探测 MegEngine 包是否可用，如可用则进入 FULL 模式，否则进入 MINI 模式；"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:17
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:18
 msgid "``MINI``"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:17
-msgid "构建除 MegEngine API Reference 外的文档，不依赖于 MegEngine 本身，能节约大量构建时间；"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:19
-msgid "``FULL``"
+msgid ""
+"构建除 MegEngine API Reference 外的文档， **不依赖于 MegEngine 本身** ， "
+"能节约大量构建时间，但由于删去了部分板块，在构建文档时会产生大量 Warnings；"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:20
+msgid "``FULL``"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:21
 msgid "构建全部文档，包括 MegEngine API Reference, 需要设置好 MegEngine 路径。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:24
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:25
 msgid "可以使用 :docs:`scripts/bootstrap.sh` 脚本自动完成初始化流程，但该脚本不会自动安装 MegEngine 包。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:26
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:27
 msgid "下面我们以 Ubuntu 18.04 + Python 3.8 环境为例，向你展示从无到有构建 MegEngine 文档的过程。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:29
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:30
 msgid "克隆文档源码到本地"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:31
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:32
 msgid "将存储库克隆到本地（默认为 ``main`` 分支），确保目录下有 ``Makefile`` 文件。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:41
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:43
 msgid "为确保正常克隆，上面的命令将安装 LFS_ (Large File Storage) 插件。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:46
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:48
 msgid "初始化第三方依赖"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:51
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:53
 msgid "这一步将会拉取文档所依赖的第三方子模块，比如主题（在后面的步骤中会进行安装）。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:56
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:58
 msgid "设置 MegEngine 路径（可选）"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:58
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:60
 msgid "使用 FULL 模式构建文档，环境内必须要安装有 MegEngine."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:60
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:62
 msgid "根据不同的需求，有两种方式将用于构建文档的 MegEngine 导入当前 Python 环境（任选其一即可）："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:62
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:64
 msgid ""
 "如果你是框架用户，不需要改动 MegEngine 源码，只想在本地完整地构建和预览所有文档的内容， 或进行简单的增删查改，建议安装最新发布的 "
 "MegEngine 稳定版 Wheel 包。 可以直接使用对应的 ``pip intall`` 命令将已经打包好的 MegEngine "
 "安装到当前的 Python 环境中。 :ref:`了解如何进行使用 pip 安装。<install>`"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:66
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:68
 msgid ""
 "如果你是研发人员，需要在指定的 MegEngine 分支源代码上生成对应文档，则需要克隆对应分支进行编译构建。 通过 ``export "
 "PYTHONPATH`` 的形式来临时指定特定的 MegEngine 源代码路径， "
 "这种方式适合开发者需要同时对源码和文档进行维护的情况。:ref:`了解如何进行从源码构建。<install>`"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:71
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:73
 msgid "安装 Sphinx 与 Pydata 主题"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:73
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:75
 msgid "MegEngine 文档使用 Sphinx_ 进行整个网站的构建，请运行下面的指令，安装 Sphinx 和相关依赖："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:83
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:85
 msgid ""
 "MegEgnine 文档使用了 Fork 后修改过的 `pydata-sphinx-theme "
 "<https://github.com/MegEngine/pydata-sphinx-theme/tree/dev>`_ 主题， "
 "如果你的本地环境已经存在该主题，可能需要提前删除该主题或使用额外的 Python 虚拟环境。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:89
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:91
 msgid ""
 "通常情况下，你无需对已有配置文件进行任何改动，即可继续进行后面的流程。 MegEngine 文档对应的 Sphinx 配置文件位于 "
 ":docs:`source/conf.py`, 如需修改请参考官方的 Configuration_ 页面。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:97
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:99
 msgid ""
 "Sphinx 通过 ``conf.py`` 中的 ``import megengine`` 来尝试寻找 MegEngine 包路径， "
 "你也可以通过其它方式比如人为将 MegEngine 路径添加到 ``sys.path`` 来达到同样的效果。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:100
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:102
 msgid "使用 ``pip`` 安装的路径应该类似于：``/.../lib/.../site-packages/megengine``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:101
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:103
 msgid "从源码编译构建的路径应该类似于： ``/.../MegEngine/imperative/python/megengine``"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:105
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:107
 msgid "如果你未经过编译，想要直接使用 MegEngine 源码进行文档的构建， 则将因会缺少编译构建出的动态链接库而无法正常执行 ``import``."
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:109
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:111
 msgid "安装相关软件包"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:112
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:114
 msgid "Pandoc 转换工具"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:114
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:116
 msgid "nbsphinx_ 是 Sphinx 的一个插件，可以帮助我们对 ``.ipynb`` 格式的 Jupyter Notebook_ 文件进行解析。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:119
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:121
 msgid "我们在安装依赖环境时已经安装好了 nbsphinx, 但还需要通过依赖项目 Pandoc_ 来支持转换 Markdown 格式。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:123
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:136
-msgid "如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Pandoc："
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:125
+msgid "如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Pandoc:"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:129
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:131
 msgid ""
 "如果你使用的是其它操作系统，想要安装 Pandoc，请参考 Pandoc 官方的 `Installing "
 "<https://pandoc.org/installing.html>`_ 页面。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:132
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:134
 msgid "Graphviz 绘图工具"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:134
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:136
 msgid "Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经常会用他制作一些可视化图片。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:142
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:138
+msgid "如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Graphviz:"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:144
 msgid ""
 "如果你使用的是其它操作系统，想要安装 Graphviz，请参考 Graphviz 官方的 `Download "
 "<https://graphviz.org/download/>`_ 页面。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:147
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:149
 msgid "使用 Sphinx 进行文档构建"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:149
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:151
+msgid "运行 ``make help`` 指令，可看到相应的帮助和参数信息；"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:152
 msgid "在文档目录下使用 ``make html`` 指令，会在 ``build`` 目录下生成 HTML 文件夹。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:151
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:153
 msgid "文档生成成功后，打开 ``build/html/index.html`` 文件便可访问主页。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:155
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:157
 msgid "Sphinx 默认支持增量构建，当你再次执行 ``make html`` 时将仅对变化的文件进行更新；"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:159
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:161
 msgid ""
 "Sphinx 不会检测增量模式下非文档文件的更改，例如主题文件、静态文件和与 autodoc 一起使用的源代码； "
 "如果发现一些页面的元素仍被缓存而没有被更新，请尝试通过传入 ``-a`` 参数禁用增量模式（但构建速度会相应地变慢）， 或者通过 ``make "
 "clean`` 指令清除掉已经构建出的内容。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:165
-msgid "运行 ``make help`` 指令，可看到相应的帮助和参数信息，比如显示当前 MegEngine 路径等；"
-msgstr ""
-
 #: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:166
-msgid "``make html`` 本质上调用了 sphinx-build_ 工具（参考 :docs:`Makefile` 了解更多细节）。"
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:169
 msgid "自动构建和实时预览页面"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:171
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:168
 msgid ""
-"你也可以使用 ``make livehtml`` 指令，在监测到文件变化时自动重新构建， 而且可以通过浏览器进行实时的预览。 ``HOST`` "
-"默认为 ``127.0.0.1`` 和 ``PORT`` 默认为 ``8000``, 可人为指定："
+"你也可以使用 ``make livehtml`` 指令，在监测到文件变化时自动重新构建，而且可以通过浏览器进行实时的预览。 其中 ``HOST``"
+" 参数默认为 ``127.0.0.1``, ``PORT`` 参数默认为 ``8000``, 可人为指定："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:179
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:175
 msgid "运行上面这个代码将得到类似的实时监控输出："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:189
+#: ../../source/development/contribute-to-docs/build-the-doc-locally.rst:185
 msgid "背后的原理是：我们使用了 sphinx-autobuild_ 对原有 sphinx-build_ 进行了增强。"
 msgstr ""
 
@@ -341,5 +342,26 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "通常你可以选择将 Web 服务挂在后台，这样在重新 build HTML 文件后只需要刷新页面即可。"
+#~ msgstr ""
+
+#~ msgid "除了 :ref:`doc-ci-preview` 外，在某些时候，我们需要在本地构建与预览文档。"
+#~ msgstr ""
+
+#~ msgid "构建除 MegEngine API Reference 外的文档，不依赖于 MegEngine 本身，能节约大量构建时间；"
+#~ msgstr ""
+
+#~ msgid "如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Pandoc："
+#~ msgstr ""
+
+#~ msgid "运行 ``make help`` 指令，可看到相应的帮助和参数信息，比如显示当前 MegEngine 路径等；"
+#~ msgstr ""
+
+#~ msgid "``make html`` 本质上调用了 sphinx-build_ 工具（参考 :docs:`Makefile` 了解更多细节）。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "你也可以使用 ``make livehtml`` 指令，在监测到文件变化时自动重新构建， "
+#~ "而且可以通过浏览器进行实时的预览。 ``HOST`` 默认为 ``127.0.0.1`` 和"
+#~ " ``PORT`` 默认为 ``8000``, 可人为指定："
 #~ msgstr ""
 

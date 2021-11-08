@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-08-17 22:54\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-08-17 22:54+0000\n"
 "Last-Translator: \n"
-"Language: zh_CN\n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.transpose.po\n"
-"X-Crowdin-File-ID: 2302\n"
 
 #: ../../source/reference/api/megengine.functional.transpose.rst:2
 msgid "megengine.functional.transpose"
@@ -30,67 +26,90 @@ msgstr "根据给定模板交换形状和步长（stride）。"
 msgid "参数"
 msgstr "参数"
 
-#: megengine.functional.tensor.transpose:3 of
+#: megengine.functional.tensor.transpose:4 of
 msgid "input tensor."
 msgstr "输入张量。"
 
-#: megengine.functional.tensor.transpose:4 of
-msgid "a list of integers including 0, 1, ... , ``ndim``-1, and any number of ``'x'`` char in dimensions where this tensor should be broadcasted. For examples:  * (``'x'``) -> make a 0d (scalar) into a 1d vector * (0, 1) -> identity for 2d vectors * (1, 0) -> inverts the first and second dimensions * (``'x'``, 0) -> make a row out of a 1d vector (N to 1xN) * (0, ``'x'``) -> make a column out of a 1d vector (N to Nx1) * (2, 0, 1) -> AxBxC to CxAxB * (0, ``'x'``, 1) -> AxB to Ax1xB * (1, ``'x'``, 0) -> AxB to Bx1xA * (1,) -> this removes dimensions 0. It must be a broadcastable dimension (1xA to A)"
+#: megengine.functional.tensor.transpose:6 of
+msgid ""
+"a list of integers including 0, 1, ... , ``ndim``-1, and any number of "
+"``'x'`` char in dimensions where this tensor should be broadcasted. For "
+"examples:  * (``'x'``) -> make a 0d (scalar) into a 1d vector * (0, 1) ->"
+" identity for 2d vectors * (1, 0) -> inverts the first and second "
+"dimensions * (``'x'``, 0) -> make a row out of a 1d vector (N to 1xN) * "
+"(0, ``'x'``) -> make a column out of a 1d vector (N to Nx1) * (2, 0, 1) "
+"-> AxBxC to CxAxB * (0, ``'x'``, 1) -> AxB to Ax1xB * (1, ``'x'``, 0) -> "
+"AxB to Bx1xA * (1,) -> this removes dimensions 0. It must be a "
+"broadcastable dimension (1xA to A)"
 msgstr ""
 
-#: megengine.functional.tensor.transpose:4 of
-msgid "a list of integers including 0, 1, ... , ``ndim``-1, and any number of ``'x'`` char in dimensions where this tensor should be broadcasted. For examples:"
+#: megengine.functional.tensor.transpose:6 of
+msgid ""
+"a list of integers including 0, 1, ... , ``ndim``-1, and any number of "
+"``'x'`` char in dimensions where this tensor should be broadcasted. For "
+"examples:"
 msgstr ""
 
-#: megengine.functional.tensor.transpose:7 of
+#: megengine.functional.tensor.transpose:10 of
 msgid "(``'x'``) -> make a 0d (scalar) into a 1d vector"
 msgstr "(``'x'``) -> 将一个0维向量(标量)放入一个1维向量中"
 
-#: megengine.functional.tensor.transpose:8 of
+#: megengine.functional.tensor.transpose:11 of
 msgid "(0, 1) -> identity for 2d vectors"
 msgstr "(0, 1) -> 等价的2维向量"
 
-#: megengine.functional.tensor.transpose:9 of
+#: megengine.functional.tensor.transpose:12 of
 msgid "(1, 0) -> inverts the first and second dimensions"
 msgstr "(1, 0) -> 将第一维和第二维互换"
 
-#: megengine.functional.tensor.transpose:10 of
+#: megengine.functional.tensor.transpose:13 of
 msgid "(``'x'``, 0) -> make a row out of a 1d vector (N to 1xN)"
 msgstr "(``'x'``, 0) -> 将1维向量 (N to 1xN) 中的数排成一行"
 
-#: megengine.functional.tensor.transpose:11 of
+#: megengine.functional.tensor.transpose:14 of
 msgid "(0, ``'x'``) -> make a column out of a 1d vector (N to Nx1)"
 msgstr "(0, ``'x'``) -> 将一维向量 (N to Nx1)中的数排成一列"
 
-#: megengine.functional.tensor.transpose:12 of
+#: megengine.functional.tensor.transpose:15 of
 msgid "(2, 0, 1) -> AxBxC to CxAxB"
 msgstr "(2, 0, 1) -> AxBxC 变为 CxAxB"
 
-#: megengine.functional.tensor.transpose:13 of
+#: megengine.functional.tensor.transpose:16 of
 msgid "(0, ``'x'``, 1) -> AxB to Ax1xB"
 msgstr "(0, ``'x'``, 1) -> AxB 变为 Ax1xB"
 
-#: megengine.functional.tensor.transpose:14 of
+#: megengine.functional.tensor.transpose:17 of
 msgid "(1, ``'x'``, 0) -> AxB to Bx1xA"
 msgstr "(1, ``'x'``, 0) -> AxB 变为 Bx1xA"
 
-#: megengine.functional.tensor.transpose:15 of
-msgid "(1,) -> this removes dimensions 0. It must be a broadcastable dimension (1xA to A)"
+#: megengine.functional.tensor.transpose:18 of
+msgid ""
+"(1,) -> this removes dimensions 0. It must be a broadcastable dimension "
+"(1xA to A)"
 msgstr "(1,) -> 这样就删除了第0维。最终一定变为可以广播的维度 (1xA to A)"
+
+#: megengine.functional.tensor.transpose of
+#, fuzzy
+msgid "返回类型"
+msgstr "返回"
+
+#: megengine.functional.tensor.transpose:20 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr ""
 
 #: megengine.functional.tensor.transpose of
 msgid "返回"
 msgstr "返回"
 
-#: megengine.functional.tensor.transpose:17 of
+#: megengine.functional.tensor.transpose:21 of
 msgid "output tensor."
 msgstr "输出张量。"
 
-#: megengine.functional.tensor.transpose:19 of
-msgid "Examples:"
-msgstr "例如："
+#: megengine.functional.tensor.transpose:24 of
+msgid "实际案例"
+msgstr ""
 
-#: megengine.functional.tensor.transpose:30 of
+#: megengine.functional.tensor.transpose:34 of
 msgid "Outputs:"
 msgstr "输出："
 
@@ -99,4 +118,7 @@ msgstr "输出："
 
 #~ msgid "返回类型"
 #~ msgstr "返回类型"
+
+#~ msgid "Examples:"
+#~ msgstr "例如："
 

@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:5
+msgid "MegEngine Lite Python 进阶实例"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:7
+msgid "Lite 的 Python 封装将随着 Lite 一起开源。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:10
+msgid "Python 推理接口"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:12
+msgid "Lite 的 python 封装里主要有两个类：**LiteTensor** 和 **LiteNetwork** 。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:15
+msgid "LiteTensor"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:17
+msgid "**LiteTensor** 提供了用户对数据的操作接口，提供了接口包括:"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:19
+msgid "``fill_zero()``: 将tensor的内存设置为全0"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:20
+msgid "``share_memory_with()``: 可以和其他 **LiteTensor** 的共享内存"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:21
+msgid "``copy_from()``: 从其他 **LiteTensor** 中copy数据到自身内存中"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:22
+msgid "``reshape()``: 改变该 **LiteTensor** 的shape，内存数据保持不变"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:23
+msgid "``slice()``: 对该 **LiteTensor** 中的数据进行切片，需要分别指定每一维切片的start，end，和step。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:24
+msgid ""
+"``set_data_by_share()``: 调用之后使得该 **LiteTensor** "
+"中的内存共享自输入的array的内存，输入的array必须是numpy的ndarray，并且tensor在CPU上"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:25
+msgid ""
+"``set_data_by_copy()``: 该 **LiteTensor** "
+"将会从输入的data中copy数据，data可以是list和numpy的ndarray，需要保证data的数据量不超过tensor的容量，tensor在CPU上"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:26
+msgid ""
+"``to_numpy()``: 将该 **LiteTensor** 中数据copy到numpy的array中，返回给用户，如果是非连续的 "
+"**LiteTensor** ，如slice出来的，将copy到连续的numpy array中，该接口主要数为了debug，有性能问题。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:28
+msgid "对 **LiteTensor** 赋值，请参考："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:68
+msgid "让多个 **LiteTensor** 共享同一块内存数据，请参考："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:106
+msgid "LiteNetwork"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:108
+msgid "**LiteNetwork** 主要为用户提供模型载入，运行等功能。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:110
+msgid "以CPU为后端的模型载入、运行，请参考："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-advanced.rst:187
+msgid "以CUDA为后端，使用device内存作为模型输入，需要在构造network候配置config和IO信息。请参考："
+msgstr ""
+

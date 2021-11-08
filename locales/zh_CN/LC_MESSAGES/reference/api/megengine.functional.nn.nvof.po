@@ -1,76 +1,77 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-06-03 10:18\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-06-03 10:18+0000\n"
 "Last-Translator: \n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.nn.nvof.po\n"
-"X-Crowdin-File-ID: 2226\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
 
 #: ../../source/reference/api/megengine.functional.nn.nvof.rst:2
 msgid "megengine.functional.nn.nvof"
 msgstr "megengine.functional.nn.nvof"
 
-#: megengine.functional.nn.nvof:1 of
+#: megengine.functional.vision.nvof:1 of
 msgid "Implements NVIDIA Optical Flow SDK."
 msgstr "NVIDIA光流SDK的实现"
 
-#: megengine.functional.nn.nvof of
-msgid "src shape"
-msgstr "输入的形状"
-
-#: megengine.functional.nn.nvof:3 of
-msgid "input tensor with shape (n, t, h, w, c4)."
-msgstr "输入张量，其形状为 (n, t, h, w, c4)."
-
-#: megengine.functional.nn.nvof of
-msgid "src dtype"
-msgstr "输入的数据类型"
-
-#: megengine.functional.nn.nvof:4 of
-msgid "uint8."
-msgstr "uint8."
-
-#: megengine.functional.nn.nvof of
+#: megengine.functional.vision.nvof of
 msgid "参数"
 msgstr "参数"
 
-#: megengine.functional.nn.nvof:6 of
+#: megengine.functional.vision.nvof:4 of
+#, fuzzy
+msgid "input tensor with shape (n, t, h, w, c4) and unit8 dtype."
+msgstr "输入张量，其形状为 (n, t, h, w, c4)."
+
+#: megengine.functional.vision.nvof:6 of
 msgid "0:NV_OF_PERF_LEVEL_SLOW 1:NV_OF_PERF_LEVEL_MEDIUM 2:NV_OF_PERF_LEVEL_FAST."
 msgstr "0:NV_OF_PERF_LEVEL_SLOW 1:NV_OF_PERF_LEVEL_MEDIUM 2:NV_OF_PERF_LEVEL_FAST."
 
-#: megengine.functional.nn.nvof of
-msgid "output shape"
-msgstr "输出形状"
+#: megengine.functional.vision.nvof of
+#, fuzzy
+msgid "返回"
+msgstr "返回类型"
 
-#: megengine.functional.nn.nvof:7 of
-msgid "(n, t-1, h//4, w//4, c2)."
-msgstr "(n, t-1, h//4, w//4, c2)."
+#: megengine.functional.vision.nvof:8 of
+msgid ""
+"``(n, t-1, (h+out_grid_size-1)//out_grid_size, "
+"(w+out_grid_size-1)//out_grid_size, c2)``. By default, out_grid_size = 4."
+" dtype: int16."
+msgstr ""
 
-#: megengine.functional.nn.nvof of
-msgid "output dtype"
-msgstr "输出的数据类型"
-
-#: megengine.functional.nn.nvof:8 of
-msgid "int16."
-msgstr "int16."
-
-#: megengine.functional.nn.nvof of
+#: megengine.functional.vision.nvof of
 msgid "返回类型"
 msgstr "返回类型"
 
-#: megengine.functional.nn.nvof:23 of
-msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr ":py:class:`~megengine.tensor.Tensor`"
+#~ msgid "src shape"
+#~ msgstr "输入的形状"
+
+#~ msgid "src dtype"
+#~ msgstr "输入的数据类型"
+
+#~ msgid "uint8."
+#~ msgstr "uint8."
+
+#~ msgid "output shape"
+#~ msgstr "输出形状"
+
+#~ msgid "(n, t-1, h//4, w//4, c2)."
+#~ msgstr "(n, t-1, h//4, w//4, c2)."
+
+#~ msgid "output dtype"
+#~ msgstr "输出的数据类型"
+
+#~ msgid "int16."
+#~ msgstr "int16."
+
+#~ msgid ":py:class:`~megengine.tensor.Tensor`"
+#~ msgstr ":py:class:`~megengine.tensor.Tensor`"
 

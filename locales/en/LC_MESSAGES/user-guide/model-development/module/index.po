@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 10:52+0800\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,138 @@ msgstr ""
 msgid "使用 Module 定义模型结构"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/index.rst:7
-msgid "内容正在建设中..."
+#: ../../source/user-guide/model-development/module/index.rst:13
+msgid "神经网络模型由对输入数据执行操作的各种层（Layer），或者说模块（Module）组成。"
 msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:18
+msgid ""
+"上图为经典的 AlexNet 模型结构 （ `图片来源 <https://www.researchgate.net/figure"
+"/Simplified-illustration-of-the-AlexNet-architecture_fig2_329790469>`_ ），"
+" 其中有经典的卷积层 ``conv`` 以及全连接层 ``fc`` 模块..."
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:22
+msgid "在 MegEngine 的 :mod:`megengine.module` 命名空间中提供了对这种结构的抽象 ——"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:24
+msgid "该命名空间中实现了常见的神经网络模块接口如 :py:class:`~.module.Conv2d` ，方便用户快速搭建模型结构；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:25
+msgid "其中所有的模块都是 :class:`~.module.Module` 的子类， 可参考 :ref:`module-design` ；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:26
+msgid "另外还提供了 :class:`~.module.Sequential` 顺序容器，在定义复杂结构时会很有帮助。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:30
+msgid ""
+"MegEngine 中首字母大写形式的 ``Module`` 指的是在设计模型结构时频繁被我们使用的基类， 需要把它和 Python 中小写 "
+"``module`` 的概念进行区分，后者指的是可被导入的文件。 而语句 ``import megengine.module as M`` "
+"实际上是导入名为 ``module.py`` 这个文件模块（通常缩写为 ``M`` ）。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:36
+msgid ""
+"这一章节主要介绍默认使用的 Float32 类型的 ``Module`` 以及参数初始化 ``init`` 模块。 关于量化模型中所用到的 "
+"``QAT Module`` 和 ``Quantized Module``, 将在 :ref:`quantization-guide` "
+"章节中介绍。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:40
+msgid "基本用法示例"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:42
+msgid "下面这段代码展现了如何借助 ``Module`` 中的基本组件快速地设计一个卷积神经网络结构："
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:44
+msgid "所有网络结构都源自基类 ``M.Module``. 在构造函数中，一定要先调用 ``super().__init__()``."
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:46
+msgid "在构造函数中，声明要使用的所有层/模块；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:47
+msgid "在 ``forward`` 函数中，定义模型将如何运行，从输入到输出。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:79
+msgid "注意以下几点："
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:81
+msgid ""
+"``ConvNet`` 本身也是一个模块 ``Module``, 与 ``Conv2d``, ``Linear`` "
+"一样，这意味着它可以作为其它模块的子结构。 ``Module`` 之间这种灵活的嵌套机制允许用户使用比较简单的方式设计出非常复杂的模型结构。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:83
+msgid ""
+"在定义模型的过程中，可以使用任意的 Python 代码来组织模型结构， 条件和循环控制流语句是完全合法的，能够被自动微分机制很好地处理。 "
+"你甚至可以在前传过程中造一个循环，里面重复使用相同的模块。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:87
+msgid "让我们创建一个实例试试看："
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:102
+msgid "所有的 ``Module`` 只支持小批量样本作为输入，而不是单个样本。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:104
+msgid ""
+"例如，:py:class:`~.module.Conv2d` 输入为 ``nSamples x nChannels x Height x "
+"Width`` 的 4 维 Tensor."
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:106
+msgid "如果你有单个的样本，则需要使用 :py:func:`~.expand_dims` 来增加一个纬度。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:108
+msgid "我们创建一个包含单个样本的小批量数据（即 ``batch_size=1`` ），并发送给 ``ConvNet``:"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:115
+msgid ""
+"``ConvNet`` 的输出是一个 Tensor, 我们可以用它和目标标签来计算损失，再利用自动求导来完成反向传播过程。 不过默认情况下所有的 "
+"Tensor 是不需要被求导的，因此在此之前我们需要有一个梯度管理器来绑定 ``Module`` 参数， "
+"并在前向计算的过程中记录梯度信息，想要了解这个流程，请参考 :ref:`autodiff-guide` 。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:120
+msgid "更多使用情景"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:124
+msgid ":py:class:`~.module.Module` 接口中提供了许多有用的属性和方法，可以方便在不同的情景下使用，比如："
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:126
+msgid "使用 ``.parameters()`` 可以方便地获取参数的迭代器，可被用来追踪梯度，方便进行自动求导；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:127
+msgid ""
+"每个 ``Module`` 有自己的名字 ``name``, 通过 ``.named_module()`` 可以获取到名字和对应的 "
+"``Module``;"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:128
+msgid "使用 ``.state_dict()`` 和 ``.load_state_dict()`` 获取和加载状态信息..."
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/index.rst:130
+msgid "有关于更多内容的介绍，请参考 :ref:`module-design` 等页面。"
+msgstr ""
+
+#~ msgid "内容正在建设中..."
+#~ msgstr ""
 

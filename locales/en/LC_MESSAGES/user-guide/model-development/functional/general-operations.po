@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:5
+msgid "如何用 Tenosr 进行科学运算"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:7
+msgid ""
+"可以通过 ``megengine.functional.xxx`` 形式调用的 API 被认为是通用 Tensor 运算， "
+"负责提供常见的科学运算接口，该部分的 API 设计尽可能地向 NumPy API 靠拢。 所有的 API 都可以在 :ref:`general-"
+"tensor-operations` 中找到。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:11
+msgid "根据对 Tensor 形状的要求和影响，我们又可以把这些运算分为以下几大类："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:13
+msgid ":ref:`element-wise-operations`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:14
+msgid ":ref:`reduction-operations`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:18
+msgid ""
+"并不是所有的 NumPy 中的计算接口都有提供对应的 MegEngine 实现，但在处理数据时， 你可以选择先调用 NumPy 实现获得 "
+"ndarray, 然后 :ref:`create-tensor-from-ndarray` ；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:20
+msgid "如果你不理解一些 API 的使用方法，可以查询 NumPy 中关于对应 API 用法的介绍。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:25
+msgid "元素级别运算（Element-wise）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:27
+msgid ""
+"元素级别运算是 Tensor 运算中最常见的一大类，根据操作数的区别， 它既可以指对 Tensor 中每个位置的元素进行相同的运算（即一元运算），"
+" 也可以指在不同的 Tensor 之间的对应元素逐个进行相互运算（即二元或更多元运算）， 这些运算自身又可以根据运算性质简略地区分为："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:32
+msgid "算术运算 （加减乘除等，参考 :ref:`arithmetic-operations` ）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:33
+msgid ""
+"三角函数与反三角函数（参考 :ref:`trigonometric-functions` 与 :ref:`hyperbolic-"
+"functions` ）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:34
+msgid "位运算（参考 :ref:`bit-operations` ）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:35
+msgid "逻辑运算（参考 :ref:`logic-functions` ）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:37
+msgid "在神经网络运算中，也有许多运算是元素级别的，比如激活函数 :py:func:`~.relu` 等。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:40
+msgid "元素级别的含义"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:42
+msgid ""
+"如果两个元素在各自的 Tensor 内占据着相同的位置，那么我们可以称这两个元素是对应的， 其中元素的位置由用于定位每个元素的 :ref:`索引 "
+"<access-tensor-element>` 确定。 我们用下面两个 Tensor ``a`` 和 ``b`` 作为例子："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:49
+msgid "我们使用相同的索引 ``[0][0]`` 去获取分别获取两个 Tensor 中的元素："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:57
+msgid "可以发现，``a`` 中值为 1 的元素对应着 ``b`` 中值为 9 的元素。其它 3 个位置的元素也分别对应。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:61
+msgid "对应关系由相同的索引定义，它表明了 Tensor 之间必须具有相同的形状才能进行元素间操作。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:63
+msgid "以加法为例子，我们可以当作是两个矩阵之间进行了矩阵加法："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:65
+msgid ""
+"\\begin{bmatrix}\n"
+"     1 & 2 \\\\\n"
+" 3 & 4\n"
+"\\end{bmatrix} +\n"
+"\\begin{bmatrix}\n"
+"     9 & 8 \\\\\n"
+" 7 & 6\n"
+"\\end{bmatrix} =\n"
+"\\begin{bmatrix}\n"
+"     10 & 10 \\\\\n"
+" 10 & 10\n"
+"\\end{bmatrix}"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:86
+msgid ""
+"并不是形状完全相同的两个 Tensor 之间才能够进行元素级别的运算， 如果两个 Tensor 的形状相互 “兼容”，则可以 "
+":ref:`广播（Broadcast） <tensor-broadcasting>` 至相同的形状进行运算。 这个机制让 Tensor "
+"计算变得非常灵活。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:92
+msgid "人们也用 Component-wise / Point-wise 等术语来指代元素级别的运算。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:95
+msgid "与矩阵运算的对比"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:97
+msgid "与 ``+`` 类似，使用 ``*`` 可以用来计算矩阵的对应元素相乘，也叫哈达玛积（Hadamard product）："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:99
+msgid ""
+"\\begin{bmatrix}\n"
+"     1 & 2 \\\\\n"
+" 3 & 4\n"
+"\\end{bmatrix} \\odot\n"
+"\\begin{bmatrix}\n"
+"     9 & 8 \\\\\n"
+" 7 & 6\n"
+"\\end{bmatrix} =\n"
+"\\begin{bmatrix}\n"
+"     9 & 16 \\\\\n"
+" 21 & 24\n"
+"\\end{bmatrix}"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:123
+msgid ""
+"**不同的框架和库对于一些运算符的定义不同。** 在 Matlab 中使用 ``.*`` 和 ``.^`` 表示元素级别的乘法和乘方， 使用 "
+"``*`` 和 ``^`` 表示矩阵乘法和乘方，参考官网解释： `Array vs. Matrix Operations "
+"<https://www.mathworks.com/help/matlab/matlab_prog/array-vs-matrix-"
+"operations.html>`_"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:127
+msgid ""
+"一些人会将 ``*`` 误认为是矩阵乘法 :py:func:`~.matmul` , 实际上在 MegEngine 中矩阵乘法对应的运算符是 "
+"``@`` ."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:133
+msgid "它对应于 :py:mod:`functional` 模块中提供的 :py:func:`~.matmul` 接口："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:141
+msgid "更多与线性代数有关的运算，请参考 :ref:`linear-algebra-functions` ."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:146
+msgid "归约运算（Reductioin）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:150
+msgid "归约运算能够减少一个 Tensor 中元素的数量。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:152
+msgid "我们可以理解成统计意义上的降维（Dimensionality reduction）。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:154
+msgid "一个最简单的例子是对 Tensor 中的元素求和，使用 :py:func:`~.sum` 接口："
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:163
+msgid "可以看到，我们对一个形状为 ``(2, 3)`` 的 Tensor 求和后得到了一个 0 维 Tensor."
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:167
+msgid ""
+"归约运算并不总是将输入 Tensor 归约为具有单个元素的 0 维 Tensor. 在传入 ``axis`` 参数且不为 `None` "
+"时，则可以要求沿着轴进行规约，参考 :ref:`axis-argument` ；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:169
+msgid "我们也可以通过设置参数 ``keepdims=True`` 来保持归约运算前后的维度不变。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:173
+msgid ""
+"常见的 Tensor 归约运算还有：:py:func:`~.prod` / :py:func:`~.mean` 等， 可在 :ref"
+":`statistical-functions` 中找到相关 API 和例程。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/general-operations.rst:175
+msgid ""
+"想要了解更多关于规约的知识，可以参考维基百科中对 `Reduction operator "
+"<https://en.wikipedia.org/wiki/Reduction_operator>`_ 的解释。"
+msgstr ""
+

@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:5
+msgid "MegEngine Lite Python 基础实例"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:9
+msgid "在CPU上做推理的一个例子"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:11
+msgid "接下来，我们将逐步讲解一个使用MegEngine Lite Python在CPU上做推理的简单例子。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:15
+msgid "0. 准备输入数据和模型文件"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:17
+msgid "示例代码如下："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:37
+msgid ""
+"在本例中，输入数据为 *input_data.npy* ，模型文件为 *shufflenet.mge* ，这两个文件存放在 "
+":src:`/lite/test/resource/lite` 目录下，但需要通过通过 *git lfs pull* 来获得。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:40
+msgid "1. 加载模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:42
+msgid ""
+"模型文件将被作为参数，传给 **LiteNetwork** 的 ``load`` 函数，以构建一个 **LiteNetwork** "
+"实体。模型加载后，即可拿到模型所有输入、输出的名字，以及输入Tensor的一些信息。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:46
+msgid "输出Tensor的对应信息需要在模型执行过推理之后才能拿到。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:69
+msgid "2. 加载输入数据"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:71
+msgid ""
+"通过 ``get_io_tensor()`` 接口，获取指定的 **LiteTensor** 实体，然后用 "
+"``set_data_by_copy()`` 把numpy数据拷贝给该 **LiteTensor**："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:85
+msgid ""
+"**LiteTensor** 获取数据的方式除了 ``set_data_by_copy()`` 之外，还有 "
+"``share_memory_with()``,  ``copy_from()`` 等。详情请参考 :ref:`pylite-advanced`"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:89
+msgid "3. 推理"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:91
+msgid "利用 **LiteNetwork** 的 ``forward()`` 和 ``wait()`` 接口完成网络的推理，相关代码如下："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:104
+msgid "4. 获取输出数据"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/pylite-basic.rst:106
+msgid ""
+"推理完成后，网络的输出Tensor便可以通过 **LiteNetwork** 的 ``get_io_tensor()`` "
+"函数获取。**LiteTensor** 的 ``to_numpy()`` 接口可以把 **LiteTensor** "
+"的数据转存为numpy数据的形式，具体代码演示如下："
+msgstr ""
+

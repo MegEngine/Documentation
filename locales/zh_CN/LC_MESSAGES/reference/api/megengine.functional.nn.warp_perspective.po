@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/reference/api/megengine.functional.nn.warp_perspective.rst:2
+msgid "megengine.functional.nn.warp\\_perspective"
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:1 of
+msgid "Applies perspective transformation to batched 2D images."
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:3 of
+msgid ""
+"The input images are transformed to the output images by the "
+"transformation matrix:"
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:5 of
+msgid ""
+"\\text{output}(n, c, h, w) = \\text{input} \\left( n, c,\n"
+"    \\frac{M_{00}w + M_{01}h + M_{02}}{M_{20}w + M_{21}h + M_{22}},\n"
+"    \\frac{M_{10}w + M_{11}h + M_{12}}{M_{20}w + M_{21}h + M_{22}}\n"
+"    \\right)\n"
+"\n"
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:11 of
+msgid ""
+"Optionally, we can set `mat_idx` to assign different transformations to "
+"the same image, otherwise the input images and transformations should be "
+"one-to-one correnspondence."
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective of
+msgid "参数"
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:15 of
+msgid "input image."
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:17 of
+msgid "batch, 3, 3)` transformation matrix."
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:19 of
+msgid "h, w)` size of the output image."
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:21 of
+msgid "batch, )` image batch idx assigned to each matrix. Default: None"
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:23 of
+msgid ""
+"pixel extrapolation method. Default: \"replicate\". Currently also "
+"support \"constant\", \"reflect\", \"reflect_101\", \"wrap\"."
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:27 of
+msgid "value used in case of a constant border. Default: 0"
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:29 of
+msgid "NHWC\" is also supported. Default: \"NCHW\"."
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:31 of
+msgid ""
+"interpolation methods. Default: \"linear\". Currently only support "
+"\"linear\" mode."
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective of
+msgid "返回类型"
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:34 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective of
+msgid "返回"
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:35 of
+msgid "output tensor."
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:37 of
+msgid ""
+"The transformation matrix is the inverse of that used by "
+"`cv2.warpPerspective`."
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:40 of
+msgid "实际案例"
+msgstr ""
+
+#: megengine.functional.vision.warp_perspective:57 of
+msgid "Outputs:"
+msgstr ""
+

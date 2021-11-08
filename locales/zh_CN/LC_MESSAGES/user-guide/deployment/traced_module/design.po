@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:5
+msgid "TracedModule 基本概念"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:7
+msgid ""
+"TracedModule 来源于普通的 Module，但它与普通 Module 不同的是其 "
+":py:meth:`.TracedModule.forward` 方法的执行逻辑通过 :py:class:`~.InternalGraph` "
+"来描述。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:9
+msgid "下面的例子展示了 Module、TracedModule 以及 InternalGraph 之间的关系。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:64
+msgid ""
+"一个普通的 Module 可通过 :py:func:`~.trace_module` 方法将其转换为 TracedModule。 "
+"在转换过程中，用户自定义的 Module 将被转换为 TracedModule，内置 Module（如 "
+":py:class:`~.module.Linear`, :py:class:`~.module.Conv2d` 等）不作转换。 转换后的模型仅由"
+" MegEngine 的数据结构构成，可脱离源代码被序列化以及反序列化。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:68
+msgid ""
+"构成 InternalGraph 的基本单元为 :py:class:`~.traced_module.node.Node` 和 "
+":py:class:`~.traced_module.expr.Expr`。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:71
+msgid "Node"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:72
+msgid "通过 Node 描述 一个 :py:class:`~.Tensor` 或 :py:class:`~.Module`。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:84
+msgid "Node 的 expr 属性记录了生成该 Node 的 Expr，users 属性记录了将该 Node 作为输入的 Expr。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:117
+msgid "InternalGraph 中的 Node 有两种："
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:119
+msgid ""
+":py:class:`~.TensorNode`：描述一个 Tensor，记录了该 Tensor 的 dtype 、shape 和 qparams"
+" 等信息；"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:120
+msgid ":py:class:`~.ModuleNode`：描述一个 Module，记录了该 Module 的类型，以及对应的 Module。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:143
+msgid "Expr"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:144
+msgid ""
+"通过 Expr 来描述一个 Module.forward 中的某个表达式。 一个 Expr 由表达式的输入 ( "
+":py:attr:`~.Expr.inputs` )、输出 ( :py:attr:`~.Expr.outputs` )、以及由输入到输出的执行逻辑"
+" ( :py:meth:`~.Expr.interpret` ) 构成。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:161
+msgid "Expr 的子类分别有："
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:163
+msgid ""
+":py:class:`~.Expr.GetAttr`: 获取 TracedModule 的中的某个属性，该 Expr 保存一个 name "
+"字符串（用来描述要获取的属性），接受一个输入（一般为一个 ModuleNode），它的执行逻辑为 outputs = "
+"getattr(inputs[0], self.name)。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:165
+msgid ""
+"例如：SimpleModule.forward 中的 self.param 将会被解释为 \"%7: param= getattr(self, "
+"\"param\") -> (Tensor)\"，self.linear 将会被解释为 ”%7: linear = getattr(self, "
+"\"linear\") -> (Linear)“，这两个 GetAttr 的输入均为 self 这个 ModuleNode。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:177
+msgid ""
+":py:class:`~.Expr.CallMethod`: 调用变量（Module，Tensor 等）的一个方法，该 Expr 保存一个 "
+"method 字符串（用来描述调用变量的哪个方法），接受多个输入（第一个输入为变量本身，即 self）。 它的执行逻辑为 otuputs = "
+"getattr(inputs[0], selfmethod)(\\*inputs[1:]) 。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:180
+msgid ""
+"例如：SimpleModule.forward 中的 x = x + self.param  将会被解释为 \"%9: add_out_1 = "
+"relu_out.__add__(param, )\"，这个 expr 是指调用了 x 的 \"__add__\" 方法，输入为 x 和 "
+"self.param。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:192
+msgid ""
+":py:class:`~.Expr.CallFunction`: 调用 megengine 内置的某个函数，该 Expr 保存一个 func "
+"(可调用的函数)，接受多个输入。它的执行逻辑为 outputs = self.func(\\*inputs) 。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:194
+msgid ""
+"例如：SimpleModule.forward 中的 x = F.relu(x) ，将会被解释为 relu_out = "
+"nn.relu(add_out, ), 代表调用了 nn.relu 这个 function，其输入为 add_out。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:206
+msgid ""
+":py:class:`~.Expr.Constant`: 产生一个常量，该 Expr 会记录一个不会改变的参数（int, float, "
+"Module, Tensor 等），不接受输入，它的执行逻辑为 outputs = self.value。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:208
+msgid ""
+"例如：SimpleModule.forward 中的 mge.Tensor([1]) 将会被解释为 ”%5: const_tensor = "
+"Constant(<class 'megengine.tensor.Tensor'>) -> (Tensor)“，表示一个生成固定 Tensor "
+"的 Expr。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:220
+msgid ""
+":py:class:`~.Expr.Input`: 表示 Module.forward "
+"的输入，仅仅是一个占位符的作用。真正推理的时候会将其替换为真正的 Tensor。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:222
+msgid "**所有的 Node 在实际执行推理的时候（interpret）都会被替换为实际的 Tensor 或者 Module。**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:225
+msgid "InternalGraph"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:226
+msgid "将 Module.foward 中的每一条语句都解释为由 Node 和 Expr 组成的执行序列就构成了最终的 InternalGraph。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:238
+msgid "InternalGraph 包含以下三个属性："
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:240
+msgid ":py:attr:`~.InternalGraph._exprs`: 按执行顺序排列的 Expr 列表"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:241
+msgid ":py:attr:`~.InternalGraph._inputs`: 该 graph 的输入 Node"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:242
+msgid ":py:attr:`~.InternalGraph._outputs`: 该 graph 的输出 Node"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:244
+msgid ""
+"在解析 Module.forward 的过程中，会将 forward 里的每一个执行语句描述为 Expr，并按执行次序依次添加到 _exprs "
+"属性里。在真正推理时，只需要遍历 _exprs 并依次 interpret 即可得到与执行原 Module 的 foward 一样的结果。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/traced_module/design.rst:246
+msgid ""
+"执行方式如下：保存一个 {Node: Tensor/Module} 的字典，这样每个 Expr 都可以通过自己的 inputs 记录的 Node "
+"找到推理时真正想要的 Tensor/Module。"
+msgstr ""
+

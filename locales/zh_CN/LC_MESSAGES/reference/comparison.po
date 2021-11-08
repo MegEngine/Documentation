@@ -1,2915 +1,4854 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-08-17 23:17\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-08-17 23:17+0000\n"
 "Last-Translator: \n"
-"Language: zh_CN\n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/comparison.po\n"
-"X-Crowdin-File-ID: 7066\n"
 
 #: ../../source/reference/comparison.rst:5
 msgid "与其它框架 API 进行对比"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:9
+msgid "MegEngine 的 API 设计遵循 :ref:`mep-0003` , 向《数组 API 标准》靠齐。"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:11
+msgid "在同其它框架进行对比时，同样的命名不意味着用法也完全一致；"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:12
+msgid "如果有新的 API 支持需求，可在 GitHub 创建相应的 Issue 或 Pull Request."
+msgstr ""
+
+#: ../../source/reference/comparison.rst:16
 msgid "你可以利用浏览器的查找功能在当前页面查询对应的 API."
 msgstr ""
 
-#: ../../source/reference/comparison.rst:10
+#: ../../source/reference/comparison.rst:17
 msgid "当前页面并非自动生成，如发现有缺失/过时内容，欢迎编辑当前页面。"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:13
-msgid "Standard tensor operations"
+#: ../../source/reference/comparison.rst:21
+msgid "当前页面更多用于检索，具有其它框架使用经验的用户还可以参考 :ref:`transfer-to-megengine` 。"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:15
-#: ../../source/reference/comparison.rst:34
-#: ../../source/reference/comparison.rst:50
-#: ../../source/reference/comparison.rst:70
-#: ../../source/reference/comparison.rst:99
-#: ../../source/reference/comparison.rst:112
-#: ../../source/reference/comparison.rst:125
-#: ../../source/reference/comparison.rst:134
-#: ../../source/reference/comparison.rst:145
-#: ../../source/reference/comparison.rst:160
-#: ../../source/reference/comparison.rst:174
-#: ../../source/reference/comparison.rst:187
+#: ../../source/reference/comparison.rst:24
+msgid "Data Structure"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:30
+#: ../../source/reference/comparison.rst:48
+#: ../../source/reference/comparison.rst:95
+#: ../../source/reference/comparison.rst:150
+#: ../../source/reference/comparison.rst:249
+#: ../../source/reference/comparison.rst:284
+#: ../../source/reference/comparison.rst:319
+#: ../../source/reference/comparison.rst:338
+#: ../../source/reference/comparison.rst:397
+#: ../../source/reference/comparison.rst:441
+#: ../../source/reference/comparison.rst:476
+#: ../../source/reference/comparison.rst:499
+#: ../../source/reference/comparison.rst:519
 msgid "NumPy"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:15
-#: ../../source/reference/comparison.rst:34
-#: ../../source/reference/comparison.rst:50
-#: ../../source/reference/comparison.rst:70
-#: ../../source/reference/comparison.rst:99
-#: ../../source/reference/comparison.rst:112
-#: ../../source/reference/comparison.rst:125
-#: ../../source/reference/comparison.rst:134
-#: ../../source/reference/comparison.rst:145
-#: ../../source/reference/comparison.rst:160
-#: ../../source/reference/comparison.rst:174
-#: ../../source/reference/comparison.rst:187
-#: ../../source/reference/comparison.rst:201
-#: ../../source/reference/comparison.rst:218
-#: ../../source/reference/comparison.rst:242
-#: ../../source/reference/comparison.rst:275
-#: ../../source/reference/comparison.rst:287
-#: ../../source/reference/comparison.rst:296
-#: ../../source/reference/comparison.rst:308
-#: ../../source/reference/comparison.rst:318
-#: ../../source/reference/comparison.rst:328
-#: ../../source/reference/comparison.rst:354
-#: ../../source/reference/comparison.rst:362
-#: ../../source/reference/comparison.rst:375
+#: ../../source/reference/comparison.rst:31
+#: ../../source/reference/comparison.rst:49
+#: ../../source/reference/comparison.rst:96
+#: ../../source/reference/comparison.rst:151
+#: ../../source/reference/comparison.rst:250
+#: ../../source/reference/comparison.rst:285
+#: ../../source/reference/comparison.rst:320
+#: ../../source/reference/comparison.rst:339
 #: ../../source/reference/comparison.rst:398
-#: ../../source/reference/comparison.rst:416
-#: ../../source/reference/comparison.rst:441
-#: ../../source/reference/comparison.rst:457
-#: ../../source/reference/comparison.rst:492
-#: ../../source/reference/comparison.rst:509
-#: ../../source/reference/comparison.rst:523
-#: ../../source/reference/comparison.rst:535
-#: ../../source/reference/comparison.rst:545
-#: ../../source/reference/comparison.rst:556
-#: ../../source/reference/comparison.rst:565
-#: ../../source/reference/comparison.rst:574
-#: ../../source/reference/comparison.rst:600
+#: ../../source/reference/comparison.rst:442
+#: ../../source/reference/comparison.rst:477
+#: ../../source/reference/comparison.rst:500
+#: ../../source/reference/comparison.rst:520
+#: ../../source/reference/comparison.rst:540
+#: ../../source/reference/comparison.rst:580
+#: ../../source/reference/comparison.rst:641
+#: ../../source/reference/comparison.rst:729
+#: ../../source/reference/comparison.rst:754
+#: ../../source/reference/comparison.rst:770
+#: ../../source/reference/comparison.rst:795
+#: ../../source/reference/comparison.rst:814
+#: ../../source/reference/comparison.rst:833
+#: ../../source/reference/comparison.rst:897
+#: ../../source/reference/comparison.rst:910
+#: ../../source/reference/comparison.rst:938
+#: ../../source/reference/comparison.rst:996
+#: ../../source/reference/comparison.rst:1039
+#: ../../source/reference/comparison.rst:1103
+#: ../../source/reference/comparison.rst:1143
+#: ../../source/reference/comparison.rst:1237
+#: ../../source/reference/comparison.rst:1277
+#: ../../source/reference/comparison.rst:1308
+#: ../../source/reference/comparison.rst:1333
+#: ../../source/reference/comparison.rst:1352
+#: ../../source/reference/comparison.rst:1374
+#: ../../source/reference/comparison.rst:1390
+#: ../../source/reference/comparison.rst:1411
+#: ../../source/reference/comparison.rst:1478
+#: ../../source/reference/comparison.rst:1521
+#: ../../source/reference/comparison.rst:1546
 msgid "Pytorch"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:15
-#: ../../source/reference/comparison.rst:34
+#: ../../source/reference/comparison.rst:32
 #: ../../source/reference/comparison.rst:50
-#: ../../source/reference/comparison.rst:70
-#: ../../source/reference/comparison.rst:99
-#: ../../source/reference/comparison.rst:112
-#: ../../source/reference/comparison.rst:125
-#: ../../source/reference/comparison.rst:134
-#: ../../source/reference/comparison.rst:145
-#: ../../source/reference/comparison.rst:160
-#: ../../source/reference/comparison.rst:174
-#: ../../source/reference/comparison.rst:187
-#: ../../source/reference/comparison.rst:201
-#: ../../source/reference/comparison.rst:218
-#: ../../source/reference/comparison.rst:242
-#: ../../source/reference/comparison.rst:275
-#: ../../source/reference/comparison.rst:287
-#: ../../source/reference/comparison.rst:296
-#: ../../source/reference/comparison.rst:308
-#: ../../source/reference/comparison.rst:318
-#: ../../source/reference/comparison.rst:328
-#: ../../source/reference/comparison.rst:354
-#: ../../source/reference/comparison.rst:362
-#: ../../source/reference/comparison.rst:375
-#: ../../source/reference/comparison.rst:398
-#: ../../source/reference/comparison.rst:416
-#: ../../source/reference/comparison.rst:441
-#: ../../source/reference/comparison.rst:457
-#: ../../source/reference/comparison.rst:492
-#: ../../source/reference/comparison.rst:509
-#: ../../source/reference/comparison.rst:523
-#: ../../source/reference/comparison.rst:535
-#: ../../source/reference/comparison.rst:545
-#: ../../source/reference/comparison.rst:556
-#: ../../source/reference/comparison.rst:565
-#: ../../source/reference/comparison.rst:574
-#: ../../source/reference/comparison.rst:600
-#: ../../source/reference/comparison.rst:618
-#: ../../source/reference/comparison.rst:630
+#: ../../source/reference/comparison.rst:97
+#: ../../source/reference/comparison.rst:152
+#: ../../source/reference/comparison.rst:251
+#: ../../source/reference/comparison.rst:286
+#: ../../source/reference/comparison.rst:321
+#: ../../source/reference/comparison.rst:340
+#: ../../source/reference/comparison.rst:399
+#: ../../source/reference/comparison.rst:443
+#: ../../source/reference/comparison.rst:478
+#: ../../source/reference/comparison.rst:501
+#: ../../source/reference/comparison.rst:521
+#: ../../source/reference/comparison.rst:541
+#: ../../source/reference/comparison.rst:581
+#: ../../source/reference/comparison.rst:642
+#: ../../source/reference/comparison.rst:730
+#: ../../source/reference/comparison.rst:755
+#: ../../source/reference/comparison.rst:771
+#: ../../source/reference/comparison.rst:796
+#: ../../source/reference/comparison.rst:815
+#: ../../source/reference/comparison.rst:834
+#: ../../source/reference/comparison.rst:898
+#: ../../source/reference/comparison.rst:911
+#: ../../source/reference/comparison.rst:939
+#: ../../source/reference/comparison.rst:997
+#: ../../source/reference/comparison.rst:1040
+#: ../../source/reference/comparison.rst:1104
+#: ../../source/reference/comparison.rst:1144
+#: ../../source/reference/comparison.rst:1238
+#: ../../source/reference/comparison.rst:1278
+#: ../../source/reference/comparison.rst:1309
+#: ../../source/reference/comparison.rst:1334
+#: ../../source/reference/comparison.rst:1353
+#: ../../source/reference/comparison.rst:1375
+#: ../../source/reference/comparison.rst:1391
+#: ../../source/reference/comparison.rst:1412
+#: ../../source/reference/comparison.rst:1479
+#: ../../source/reference/comparison.rst:1522
+#: ../../source/reference/comparison.rst:1547
 msgid "MegEngine"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:15
-#: ../../source/reference/comparison.rst:34
-#: ../../source/reference/comparison.rst:50
-#: ../../source/reference/comparison.rst:70
-#: ../../source/reference/comparison.rst:99
-#: ../../source/reference/comparison.rst:112
-#: ../../source/reference/comparison.rst:125
-#: ../../source/reference/comparison.rst:134
-#: ../../source/reference/comparison.rst:145
-#: ../../source/reference/comparison.rst:160
-#: ../../source/reference/comparison.rst:174
-#: ../../source/reference/comparison.rst:187
+#: ../../source/reference/comparison.rst:33
+#: ../../source/reference/comparison.rst:51
+#: ../../source/reference/comparison.rst:98
+#: ../../source/reference/comparison.rst:153
+#: ../../source/reference/comparison.rst:252
+#: ../../source/reference/comparison.rst:287
+#: ../../source/reference/comparison.rst:322
+#: ../../source/reference/comparison.rst:341
+#: ../../source/reference/comparison.rst:400
+#: ../../source/reference/comparison.rst:444
+#: ../../source/reference/comparison.rst:479
+#: ../../source/reference/comparison.rst:502
+#: ../../source/reference/comparison.rst:522
+#: ../../source/reference/comparison.rst:542
+#: ../../source/reference/comparison.rst:582
+#: ../../source/reference/comparison.rst:643
+#: ../../source/reference/comparison.rst:731
+#: ../../source/reference/comparison.rst:756
+#: ../../source/reference/comparison.rst:772
+#: ../../source/reference/comparison.rst:797
+#: ../../source/reference/comparison.rst:816
+#: ../../source/reference/comparison.rst:835
+#: ../../source/reference/comparison.rst:899
+#: ../../source/reference/comparison.rst:912
+#: ../../source/reference/comparison.rst:940
+#: ../../source/reference/comparison.rst:998
+#: ../../source/reference/comparison.rst:1041
+#: ../../source/reference/comparison.rst:1105
+#: ../../source/reference/comparison.rst:1145
+#: ../../source/reference/comparison.rst:1239
+#: ../../source/reference/comparison.rst:1279
+#: ../../source/reference/comparison.rst:1310
+#: ../../source/reference/comparison.rst:1335
+#: ../../source/reference/comparison.rst:1354
+#: ../../source/reference/comparison.rst:1376
+#: ../../source/reference/comparison.rst:1392
+#: ../../source/reference/comparison.rst:1413
+#: ../../source/reference/comparison.rst:1480
+#: ../../source/reference/comparison.rst:1523
+#: ../../source/reference/comparison.rst:1548
 msgid "Comment"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:17
-msgid ":py:class:`numpy.ndarray`"
+#: ../../source/reference/comparison.rst:35
+msgid ":py:class:`~numpy.ndarray`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:17
-msgid ":py:class:`torch.Tensor`"
+#: ../../source/reference/comparison.rst:36
+msgid ":py:class:`~torch.Tensor`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:17
-msgid ":py:class:`megengine.Tensor`"
+#: ../../source/reference/comparison.rst:37
+msgid ":py:class:`~megengine.Tensor`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:17
-msgid "Basic N-dimensional array type"
+#: ../../source/reference/comparison.rst:38
+msgid ":ref:`tensor-guide`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:22
-msgid "Pytorch 的 Tensor 类中提供了许多操作/计算方法，而在 MegEngine 中这些方法被统一实现在 functional 模块中， 意味着类似 ``functional.add()`` 等操作并不一定存在着对应的 ``Tensor.add()`` 实现，这是设计上的历史决定。"
+#: ../../source/reference/comparison.rst:41
+msgid "General tensor operations"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:27
-msgid "Pytorch 中默认所有 Tensor 都需要被求导，因此提供了 :py:class:`torch.no_grad` 来禁用梯度计算。 而在 MegEngine 中 Tensor 默认不需要被求导，需要通过 :py:meth:`megengine.autodiff.GradManager.attach` 来进行绑定， 被绑定后的 Tensor 可以通过 :py:meth:`megengine.Tensor.detach` 来解除绑定。"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:32
+#: ../../source/reference/comparison.rst:44
 msgid "Creation Functions"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:36
-msgid ":py:func:`numpy.arange`"
+#: ../../source/reference/comparison.rst:53
+msgid ":py:func:`~numpy.arange`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:36
-msgid ":py:func:`torch.arange`"
+#: ../../source/reference/comparison.rst:54
+msgid ":py:func:`~torch.arange`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:36
-msgid ":py:func:`megengine.functional.arange`"
+#: ../../source/reference/comparison.rst:55
+msgid ":py:func:`~megengine.functional.arange`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:37
-msgid ":py:func:`numpy.linspace`"
+#: ../../source/reference/comparison.rst:57
+msgid ":py:func:`~numpy.linspace`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:37
-msgid ":py:func:`torch.linspace`"
+#: ../../source/reference/comparison.rst:58
+msgid ":py:func:`~torch.linspace`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:37
-msgid ":py:func:`megengine.functional.linspace`"
+#: ../../source/reference/comparison.rst:59
+msgid ":py:func:`~megengine.functional.linspace`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:38
-msgid ":py:func:`numpy.eye`"
+#: ../../source/reference/comparison.rst:61
+msgid ":py:func:`~numpy.eye`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:38
-msgid ":py:func:`torch.eye`"
+#: ../../source/reference/comparison.rst:62
+msgid ":py:func:`~torch.eye`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:38
-msgid ":py:func:`megengine.functional.eye`"
+#: ../../source/reference/comparison.rst:63
+msgid ":py:func:`~megengine.functional.eye`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:39
-msgid ":py:func:`numpy.zeros`"
+#: ../../source/reference/comparison.rst:65
+msgid ":py:func:`~numpy.zeros`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:39
-msgid ":py:func:`torch.zeros`"
+#: ../../source/reference/comparison.rst:66
+msgid ":py:func:`~torch.zeros`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:39
-msgid ":py:func:`megengine.functional.zeros`"
+#: ../../source/reference/comparison.rst:67
+msgid ":py:func:`~megengine.functional.zeros`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:40
-msgid ":py:func:`numpy.zeros_like`"
+#: ../../source/reference/comparison.rst:69
+msgid ":py:func:`~numpy.zeros_like`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:40
-msgid ":py:func:`torch.zeros_like`"
+#: ../../source/reference/comparison.rst:70
+msgid ":py:func:`~torch.zeros_like`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:40
-msgid ":py:func:`megengine.functional.zeros_like`"
+#: ../../source/reference/comparison.rst:71
+msgid ":py:func:`~megengine.functional.zeros_like`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:41
-msgid ":py:func:`numpy.ones`"
+#: ../../source/reference/comparison.rst:73
+msgid ":py:func:`~numpy.ones`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:41
-msgid ":py:func:`torch.ones`"
+#: ../../source/reference/comparison.rst:74
+msgid ":py:func:`~torch.ones`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:41
-msgid ":py:func:`megengine.functional.ones`"
+#: ../../source/reference/comparison.rst:75
+msgid ":py:func:`~megengine.functional.ones`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:42
-msgid ":py:func:`numpy.ones_like`"
+#: ../../source/reference/comparison.rst:77
+msgid ":py:func:`~numpy.ones_like`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:42
-msgid ":py:func:`torch.ones_like`"
+#: ../../source/reference/comparison.rst:78
+msgid ":py:func:`~torch.ones_like`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:42
-msgid ":py:func:`megengine.functional.ones_like`"
+#: ../../source/reference/comparison.rst:79
+msgid ":py:func:`~megengine.functional.ones_like`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:43
-msgid ":py:func:`numpy.full`"
+#: ../../source/reference/comparison.rst:81
+msgid ":py:func:`~numpy.full`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:43
-msgid ":py:func:`torch.full`"
+#: ../../source/reference/comparison.rst:82
+msgid ":py:func:`~torch.full`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:43
-msgid ":py:func:`megengine.functional.full`"
+#: ../../source/reference/comparison.rst:83
+msgid ":py:func:`~megengine.functional.full`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:44
-msgid ":py:func:`numpy.full_like`"
+#: ../../source/reference/comparison.rst:85
+msgid ":py:func:`~numpy.full_like`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:44
-msgid ":py:func:`torch.full_like`"
+#: ../../source/reference/comparison.rst:86
+msgid ":py:func:`~torch.full_like`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:44
-msgid ":py:func:`megengine.functional.full_like`"
+#: ../../source/reference/comparison.rst:87
+msgid ":py:func:`~megengine.functional.full_like`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:48
+#: ../../source/reference/comparison.rst:91
 msgid "Manipulation Functions"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:52
-msgid ":py:func:`numpy.reshape`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:52
-msgid ":py:func:`torch.reshape`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:52
-msgid ":py:func:`megengine.functional.reshape`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:53
-msgid ":py:meth:`numpy.ndarray.flatten`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:53
-msgid ":py:func:`torch.flatten`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:53
-msgid ":py:func:`megengine.functional.flatten`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:54
-msgid ":py:func:`numpy.broadcast_to`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:54
-msgid ":py:func:`torch.broadcast_to`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:54
-msgid ":py:func:`megengine.functional.broadcast_to`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:54
-msgid "aka. ``expand()``"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:55
-msgid ":py:func:`numpy.expand_dims`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:55
-msgid ":py:func:`torch.unsqueeze`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:55
-msgid ":py:func:`megengine.functional.expand_dims`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:55
-#: ../../source/reference/comparison.rst:57
-msgid "NumPy Style"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:56
-msgid ":py:func:`numpy.squeeze`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:56
-msgid ":py:func:`torch.squeeze`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:56
-msgid ":py:func:`megengine.functional.squeeze`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:57
-msgid ":py:func:`numpy.concatenate`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:57
-msgid ":py:func:`torch.cat`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:57
-msgid ":py:func:`megengine.functional.concat`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:58
-msgid ":py:func:`numpy.stack`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:58
-msgid ":py:func:`torch.stack`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:58
-msgid ":py:func:`megengine.functional.stack`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:59
-msgid ":py:func:`numpy.split`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:59
-msgid ":py:func:`torch.split`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:59
-msgid ":py:func:`megengine.functional.split`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:60
-msgid ":py:func:`numpy.tile`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:60
-msgid ":py:func:`torch.tile`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:60
-msgid ":py:func:`megengine.functional.tile`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:61
-msgid ":py:func:`numpy.repeat`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:61
-msgid ":py:func:`torch.repeat_interleave`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:61
-msgid ":py:func:`megengine.functional.repeat`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:62
-msgid ":py:func:`numpy.take_along_axis`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:62
-msgid ":py:func:`torch.gather`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:62
-msgid ":py:func:`megengine.functional.gather`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:62
-#: ../../source/reference/comparison.rst:63
-#: ../../source/reference/comparison.rst:104
-#: ../../source/reference/comparison.rst:105
-#: ../../source/reference/comparison.rst:106
-#: ../../source/reference/comparison.rst:117
-#: ../../source/reference/comparison.rst:118
-#: ../../source/reference/comparison.rst:119
-msgid "Pytorch Style"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:63
-msgid ":py:func:`numpy.put_along_axis`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:63
-msgid ":py:func:`torch.scatter`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:63
-msgid ":py:func:`megengine.functional.scatter`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:64
-msgid ":py:func:`numpy.compress`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:64
-msgid ":py:func:`torch.take`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:64
-msgid ":py:func:`megengine.functional.cond_take`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:68
-msgid "Arithmetic operations"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:72
-msgid ":py:data:`numpy.add`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:72
-msgid ":py:func:`torch.add`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:72
-msgid ":py:func:`megengine.functional.add`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:73
-msgid ":py:data:`numpy.subtract`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:73
-msgid ":py:func:`torch.sub`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:73
-msgid ":py:func:`megengine.functional.sub`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:74
-msgid ":py:data:`numpy.multiply`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:74
-msgid ":py:func:`torch.mul`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:74
-msgid ":py:func:`megengine.functional.mul`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:75
-msgid ":py:data:`numpy.divide`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:75
-msgid ":py:func:`torch.div`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:75
-msgid ":py:func:`megengine.functional.div`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:76
-msgid ":py:data:`numpy.floor_divide`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:76
-msgid ":py:func:`torch.floor_divide`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:76
-msgid ":py:func:`megengine.functional.floor_div`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:77
-msgid ":py:data:`numpy.negative`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:77
-msgid ":py:func:`torch.neg`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:77
-msgid ":py:func:`megengine.functional.neg`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:78
-msgid ":py:data:`numpy.absolute`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:78
-msgid ":py:func:`torch.abs`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:78
-msgid ":py:func:`megengine.functional.abs`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:79
-msgid ":py:data:`numpy.power`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:79
-msgid ":py:func:`torch.pow`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:79
-msgid ":py:func:`megengine.functional.pow`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:80
-msgid ":py:data:`numpy.mod`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:80
-msgid ":py:func:`torch.remainder`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:80
-msgid ":py:func:`megengine.functional.mod`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:81
-msgid ":py:data:`numpy.sqrt`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:81
-msgid ":py:func:`torch.sqrt`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:81
-msgid ":py:func:`megengine.functional.sqrt`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:82
-msgid ":py:data:`numpy.square`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:82
-msgid ":py:func:`torch.square`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:82
-msgid ":py:func:`megengine.functional.square`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:83
-msgid ":py:data:`numpy.sign`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:83
-msgid ":py:func:`torch.sign`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:83
-msgid ":py:func:`megengine.functional.sign`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:84
-msgid ":py:data:`numpy.maximum`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:84
-msgid ":py:func:`torch.maximum`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:84
-msgid ":py:func:`megengine.functional.maximum`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:85
-msgid ":py:data:`numpy.minimum`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:85
-msgid ":py:func:`torch.minimum`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:85
-msgid ":py:func:`megengine.functional.minimum`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:86
-msgid ":py:meth:`numpy.ndarray.round`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:86
-msgid ":py:func:`torch.round`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:86
-msgid ":py:func:`megengine.functional.round`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:87
-msgid ":py:data:`numpy.ceil`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:87
-msgid ":py:func:`torch.ceil`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:87
-msgid ":py:func:`megengine.functional.ceil`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:88
-msgid ":py:data:`numpy.floor`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:88
-msgid ":py:func:`torch.floor`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:88
-msgid ":py:func:`megengine.functional.floor`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:89
-msgid ":py:func:`numpy.clip`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:89
-msgid ":py:func:`torch.clamp`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:89
-msgid ":py:func:`megengine.functional.clip`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:90
-msgid ":py:data:`numpy.exp`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:90
-msgid ":py:func:`torch.exp`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:90
-msgid ":py:func:`megengine.functional.exp`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:91
-msgid ":py:data:`numpy.expm1`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:91
-msgid ":py:func:`torch.expm1`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:91
-msgid ":py:func:`megengine.functional.expm1`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:92
-msgid ":py:data:`numpy.log`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:92
-msgid ":py:func:`torch.log`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:92
-msgid ":py:func:`megengine.functional.log`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:93
-msgid ":py:data:`numpy.log1p`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:93
-msgid ":py:func:`torch.log1p`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:93
-msgid ":py:func:`megengine.functional.log1p`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:97
-msgid "Trigonometric functions"
+#: ../../source/reference/comparison.rst:100
+msgid ":py:func:`~numpy.reshape`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:101
-msgid ":py:data:`numpy.sin`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:101
-msgid ":py:func:`torch.sin`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:101
-msgid ":py:func:`megengine.functional.sin`"
+msgid ":py:func:`~torch.reshape`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:102
-msgid ":py:data:`numpy.cos`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:102
-msgid ":py:func:`torch.cos`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:102
-msgid ":py:func:`megengine.functional.cos`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:103
-msgid ":py:data:`numpy.tan`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:103
-msgid ":py:func:`torch.tan`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:103
-msgid ":py:func:`megengine.functional.tan`"
+msgid ":py:func:`~megengine.functional.reshape`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:104
-msgid ":py:data:`numpy.arcsin`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:104
-msgid ":py:func:`torch.asin`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:104
-msgid ":py:func:`megengine.functional.asin`"
+msgid ":py:meth:`~numpy.ndarray.flatten`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:105
-msgid ":py:data:`numpy.arccos`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:105
-msgid ":py:func:`torch.acos`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:105
-msgid ":py:func:`megengine.functional.acos`"
+msgid ":py:func:`~torch.flatten`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:106
-msgid ":py:data:`numpy.arctan`"
+msgid ":py:func:`~megengine.functional.flatten`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:106
-msgid ":py:func:`torch.atan`"
+#: ../../source/reference/comparison.rst:108
+msgid ":py:func:`~numpy.broadcast_to`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:106
-msgid ":py:func:`megengine.functional.atan`"
+#: ../../source/reference/comparison.rst:109
+msgid ":py:func:`~torch.broadcast_to` / :py:meth:`~torch.Tensor.expand`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:110
-msgid "Hyperbolic functions"
+msgid ":py:func:`~megengine.functional.broadcast_to`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:112
+msgid ":py:func:`~numpy.expand_dims`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:113
+msgid ":py:func:`~torch.unsqueeze`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:114
-msgid ":py:data:`numpy.sinh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:114
-msgid ":py:func:`torch.sinh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:114
-msgid ":py:func:`megengine.functional.sinh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:115
-msgid ":py:data:`numpy.cosh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:115
-msgid ":py:func:`torch.cosh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:115
-msgid ":py:func:`megengine.functional.cosh`"
+msgid ":py:func:`~megengine.functional.expand_dims`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:116
-msgid ":py:data:`numpy.tanh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:116
-msgid ":py:func:`torch.tanh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:116
-msgid ":py:func:`megengine.functional.tanh`"
+msgid ":py:func:`~numpy.squeeze`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:117
-msgid ":py:data:`numpy.arcsinh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:117
-msgid ":py:func:`torch.asinh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:117
-msgid ":py:func:`megengine.functional.asinh`"
+msgid ":py:func:`~torch.squeeze`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:118
-msgid ":py:data:`numpy.arccosh`"
+msgid ":py:func:`~megengine.functional.squeeze`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:118
-msgid ":py:func:`torch.acosh`"
+#: ../../source/reference/comparison.rst:120
+msgid ":py:func:`~numpy.concatenate`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:118
-msgid ":py:func:`megengine.functional.acosh`"
+#: ../../source/reference/comparison.rst:121
+msgid ":py:func:`~torch.cat`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:119
-msgid ":py:data:`numpy.arctanh`"
+#: ../../source/reference/comparison.rst:122
+msgid ":py:func:`~megengine.functional.concat`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:119
-msgid ":py:func:`torch.atanh`"
+#: ../../source/reference/comparison.rst:124
+msgid ":py:func:`~numpy.stack`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:119
-msgid ":py:func:`megengine.functional.atanh`"
+#: ../../source/reference/comparison.rst:125
+msgid ":py:func:`~torch.stack`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:123
-msgid "Bit operations"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:127
-msgid ":py:data:`numpy.left_shift`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:127
-#: ../../source/reference/comparison.rst:128
-#: ../../source/reference/comparison.rst:136
-#: ../../source/reference/comparison.rst:137
-#: ../../source/reference/comparison.rst:138
-#: ../../source/reference/comparison.rst:139
-msgid "Not Found"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:127
-msgid ":py:func:`megengine.functional.left_shift`"
+#: ../../source/reference/comparison.rst:126
+msgid ":py:func:`~megengine.functional.stack`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:128
-msgid ":py:data:`numpy.right_shift`"
+msgid ":py:func:`~numpy.split`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:128
-msgid ":py:func:`megengine.functional.right_shift`"
+#: ../../source/reference/comparison.rst:129
+msgid ":py:func:`~torch.split`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:130
+msgid ":py:func:`~megengine.functional.split`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:132
-msgid "Logic functions"
+msgid ":py:func:`~numpy.tile`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:133
+msgid ":py:func:`~torch.tile`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:134
+msgid ":py:func:`~megengine.functional.tile`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:136
-msgid ":py:data:`numpy.logical_and`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:136
-msgid ":py:func:`megengine.functional.logical_and`"
+msgid ":py:func:`~numpy.repeat`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:137
-msgid ":py:data:`numpy.logical_not`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:137
-msgid ":py:func:`megengine.functional.logical_not`"
+msgid ":py:func:`~torch.repeat_interleave`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:138
-msgid ":py:data:`numpy.logical_or`"
+msgid ":py:func:`~megengine.functional.repeat`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:138
-msgid ":py:func:`megengine.functional.logical_or`"
+#: ../../source/reference/comparison.rst:140
+msgid ":py:func:`~numpy.roll`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:139
-msgid ":py:data:`numpy.logical_xor`"
+#: ../../source/reference/comparison.rst:141
+msgid ":py:func:`~torch.roll`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:139
-msgid ":py:func:`megengine.functional.logical_xor`"
+#: ../../source/reference/comparison.rst:142
+msgid ":py:func:`~megengine.functional.roll`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:143
-msgid "Comparison functions"
+#: ../../source/reference/comparison.rst:146
+msgid "Arithmetic operations"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:147
-msgid ":py:data:`numpy.isnan`"
+#: ../../source/reference/comparison.rst:155
+msgid ":py:data:`~numpy.add`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:147
-msgid ":py:func:`torch.isnan`"
+#: ../../source/reference/comparison.rst:156
+msgid ":py:func:`~torch.add`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:147
-msgid ":py:func:`megengine.functional.isnan`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:148
-msgid ":py:data:`numpy.isinf`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:148
-msgid ":py:func:`torch.isinf`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:148
-msgid ":py:func:`megengine.functional.isinf`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:149
-msgid ":py:data:`numpy.equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:149
-msgid ":py:func:`torch.equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:149
-msgid ":py:func:`megengine.functional.equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:150
-msgid ":py:data:`numpy.not_equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:150
-msgid ":py:func:`torch.not_equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:150
-msgid ":py:func:`megengine.functional.not_equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:151
-msgid ":py:data:`numpy.less`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:151
-msgid ":py:func:`torch.less`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:151
-msgid ":py:func:`megengine.functional.less`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:152
-msgid ":py:data:`numpy.less_equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:152
-msgid ":py:func:`torch.less_equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:152
-msgid ":py:func:`megengine.functional.less_equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:153
-msgid ":py:data:`numpy.greater`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:153
-msgid ":py:func:`torch.greater`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:153
-msgid ":py:func:`megengine.functional.greater`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:154
-msgid ":py:data:`numpy.greater_equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:154
-msgid ":py:func:`torch.greater_equal`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:154
-msgid ":py:func:`megengine.functional.greater_equal`"
+#: ../../source/reference/comparison.rst:157
+msgid ":py:func:`~megengine.functional.add`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:158
-msgid "Statistical Functions"
+msgid "``+`` operator"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:159
+msgid ":py:data:`~numpy.subtract`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:160
+msgid ":py:func:`~torch.sub`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:161
+msgid ":py:func:`~megengine.functional.sub`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:162
-msgid ":py:func:`numpy.sum`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:162
-msgid ":py:func:`torch.sum`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:162
-msgid ":py:func:`megengine.functional.sum`"
+msgid "``-`` operator"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:163
-msgid ":py:func:`numpy.prod`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:163
-msgid ":py:func:`torch.prod`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:163
-msgid ":py:func:`megengine.functional.prod`"
+msgid ":py:data:`numpy.multiply`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:164
-msgid ":py:func:`numpy.mean`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:164
-msgid ":py:func:`torch.mean`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:164
-msgid ":py:func:`megengine.functional.mean`"
+msgid ":py:func:`~torch.mul`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:165
-msgid ":py:meth:`numpy.ndarray.min`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:165
-msgid ":py:func:`torch.min`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:165
-msgid ":py:func:`megengine.functional.min`"
+msgid ":py:func:`~megengine.functional.mul`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:166
-msgid ":py:meth:`numpy.ndarray.max`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:166
-msgid ":py:func:`torch.max`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:166
-msgid ":py:func:`megengine.functional.max`"
+msgid "``*`` operator"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:167
-msgid ":py:func:`numpy.var`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:167
-msgid ":py:func:`torch.var`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:167
-msgid ":py:func:`megengine.functional.var`"
+msgid ":py:data:`~numpy.divide`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:168
-msgid ":py:func:`numpy.std`"
+msgid ":py:func:`~torch.div`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:168
-msgid ":py:func:`torch.std`"
+#: ../../source/reference/comparison.rst:169
+msgid ":py:func:`~megengine.functional.div`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:168
-msgid ":py:func:`megengine.functional.std`"
+#: ../../source/reference/comparison.rst:170
+msgid "``/`` operator"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:171
+msgid ":py:data:`~numpy.floor_divide`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:172
-msgid "Linear Algebra Functions"
+msgid ":py:func:`~torch.floor_divide`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:173
+msgid ":py:func:`~megengine.functional.floor_div`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:174
+msgid "``//`` operator"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:175
+msgid ":py:data:`~numpy.negative`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:176
-msgid ":py:func:`numpy.transpose`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:176
-msgid ":py:func:`torch.transpose`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:176
-msgid ":py:func:`megengine.functional.transpose`"
+msgid ":py:func:`~torch.neg`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:177
-msgid ":py:func:`numpy.dot`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:177
-msgid ":py:func:`torch.dot`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:177
-msgid ":py:func:`megengine.functional.dot`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:178
-msgid ":py:func:`numpy.linalg.inv`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:178
-msgid ":py:func:`torch.linalg.inv`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:178
-msgid ":py:func:`megengine.functional.matinv`"
+msgid ":py:func:`~megengine.functional.neg`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:179
-msgid ":py:data:`numpy.matmul`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:179
-msgid ":py:func:`torch.matmul`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:179
-msgid ":py:func:`megengine.functional.matmul`"
+msgid ":py:data:`~numpy.absolute`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:180
-msgid ":py:func:`numpy.linalg.svd`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:180
-msgid ":py:func:`torch.linalg.svd`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:180
-msgid ":py:func:`megengine.functional.svd`"
+msgid ":py:func:`~torch.abs`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:181
-msgid ":py:func:`numpy.linalg.norm`"
+msgid ":py:func:`~megengine.functional.abs`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:181
-msgid ":py:func:`torch.norm`"
+#: ../../source/reference/comparison.rst:183
+msgid ":py:data:`~numpy.power`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:181
-msgid ":py:func:`megengine.functional.norm`"
+#: ../../source/reference/comparison.rst:184
+msgid ":py:func:`~torch.pow`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:185
-msgid "Searching and Sorting Functions"
+msgid ":py:func:`~megengine.functional.pow`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:186
+msgid "``**`` operator"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:187
+msgid ":py:data:`~numpy.mod`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:188
+msgid ":py:func:`~torch.remainder`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:189
-msgid ":py:func:`numpy.argmin`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:189
-msgid ":py:func:`torch.argmin`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:189
-msgid ":py:func:`megengine.functional.argmin`"
+msgid ":py:func:`~megengine.functional.mod`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:190
-msgid ":py:func:`numpy.argmax`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:190
-msgid ":py:func:`torch.argmax`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:190
-msgid ":py:func:`megengine.functional.argmax`"
+msgid "``%`` operator"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:191
-msgid ":py:func:`numpy.argsort`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:191
-msgid ":py:func:`torch.topk`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:191
-msgid ":py:func:`megengine.functional.topk`"
+msgid ":py:data:`~numpy.sqrt`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:192
-msgid ":py:func:`numpy.sort`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:192
-msgid ":py:func:`torch.sort`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:192
-msgid ":py:func:`megengine.functional.sort`"
+msgid ":py:func:`~torch.sqrt`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:193
-msgid ":py:func:`numpy.where`"
+msgid ":py:func:`~megengine.functional.sqrt`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:193
-msgid ":py:func:`torch.where`"
+#: ../../source/reference/comparison.rst:195
+msgid ":py:data:`~numpy.square`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:193
-msgid ":py:func:`megengine.functional.where`"
+#: ../../source/reference/comparison.rst:196
+msgid ":py:func:`~torch.square`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:197
-msgid "NN Funtional Operations"
+msgid ":py:func:`~megengine.functional.square`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:199
-msgid "Convolution functions"
+msgid ":py:data:`~numpy.sign`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:200
+msgid ":py:func:`~torch.sign`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:201
+msgid ":py:func:`~megengine.functional.sign`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:203
-msgid ":py:func:`torch.nn.functional.conv1d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:203
-msgid ":py:func:`megengine.functional.nn.conv1d`"
+msgid ":py:data:`~numpy.maximum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:204
-msgid ":py:func:`torch.nn.functional.conv2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:204
-msgid ":py:func:`megengine.functional.nn.conv2d`"
+msgid ":py:func:`~torch.maximum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:205
-msgid ":py:func:`torch.nn.functional.conv3d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:205
-msgid ":py:func:`megengine.functional.nn.conv3d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:206
-msgid ":py:func:`torch.nn.functional.conv_transpose1d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:206
-#: ../../source/reference/comparison.rst:211
-#: ../../source/reference/comparison.rst:220
-#: ../../source/reference/comparison.rst:222
-#: ../../source/reference/comparison.rst:223
-#: ../../source/reference/comparison.rst:225
-#: ../../source/reference/comparison.rst:226
-#: ../../source/reference/comparison.rst:227
-#: ../../source/reference/comparison.rst:228
-#: ../../source/reference/comparison.rst:229
-#: ../../source/reference/comparison.rst:230
-#: ../../source/reference/comparison.rst:231
-#: ../../source/reference/comparison.rst:233
-#: ../../source/reference/comparison.rst:234
-#: ../../source/reference/comparison.rst:236
-#: ../../source/reference/comparison.rst:244
-#: ../../source/reference/comparison.rst:246
-#: ../../source/reference/comparison.rst:249
-#: ../../source/reference/comparison.rst:250
-#: ../../source/reference/comparison.rst:251
-#: ../../source/reference/comparison.rst:254
-#: ../../source/reference/comparison.rst:255
-#: ../../source/reference/comparison.rst:256
-#: ../../source/reference/comparison.rst:258
-#: ../../source/reference/comparison.rst:259
-#: ../../source/reference/comparison.rst:260
-#: ../../source/reference/comparison.rst:261
-#: ../../source/reference/comparison.rst:262
-#: ../../source/reference/comparison.rst:264
-#: ../../source/reference/comparison.rst:265
-#: ../../source/reference/comparison.rst:269
-#: ../../source/reference/comparison.rst:278
-#: ../../source/reference/comparison.rst:279
-#: ../../source/reference/comparison.rst:280
-#: ../../source/reference/comparison.rst:290
-#: ../../source/reference/comparison.rst:299
-#: ../../source/reference/comparison.rst:300
-#: ../../source/reference/comparison.rst:301
-#: ../../source/reference/comparison.rst:302
-#: ../../source/reference/comparison.rst:311
-#: ../../source/reference/comparison.rst:320
-#: ../../source/reference/comparison.rst:321
-#: ../../source/reference/comparison.rst:322
-#: ../../source/reference/comparison.rst:332
-#: ../../source/reference/comparison.rst:333
-#: ../../source/reference/comparison.rst:335
-#: ../../source/reference/comparison.rst:336
-#: ../../source/reference/comparison.rst:337
-#: ../../source/reference/comparison.rst:340
-#: ../../source/reference/comparison.rst:341
-#: ../../source/reference/comparison.rst:342
-#: ../../source/reference/comparison.rst:344
-#: ../../source/reference/comparison.rst:345
-#: ../../source/reference/comparison.rst:346
-#: ../../source/reference/comparison.rst:347
-#: ../../source/reference/comparison.rst:348
-#: ../../source/reference/comparison.rst:385
-#: ../../source/reference/comparison.rst:386
-#: ../../source/reference/comparison.rst:391
-#: ../../source/reference/comparison.rst:392
-#: ../../source/reference/comparison.rst:403
-#: ../../source/reference/comparison.rst:409
-#: ../../source/reference/comparison.rst:418
-#: ../../source/reference/comparison.rst:420
-#: ../../source/reference/comparison.rst:421
-#: ../../source/reference/comparison.rst:422
-#: ../../source/reference/comparison.rst:423
-#: ../../source/reference/comparison.rst:424
-#: ../../source/reference/comparison.rst:426
-#: ../../source/reference/comparison.rst:427
-#: ../../source/reference/comparison.rst:428
-#: ../../source/reference/comparison.rst:429
-#: ../../source/reference/comparison.rst:430
-#: ../../source/reference/comparison.rst:432
-#: ../../source/reference/comparison.rst:433
-#: ../../source/reference/comparison.rst:435
-#: ../../source/reference/comparison.rst:443
-#: ../../source/reference/comparison.rst:444
-#: ../../source/reference/comparison.rst:445
-#: ../../source/reference/comparison.rst:446
-#: ../../source/reference/comparison.rst:447
-#: ../../source/reference/comparison.rst:448
-#: ../../source/reference/comparison.rst:449
-#: ../../source/reference/comparison.rst:450
-#: ../../source/reference/comparison.rst:451
-#: ../../source/reference/comparison.rst:459
-#: ../../source/reference/comparison.rst:460
-#: ../../source/reference/comparison.rst:461
-#: ../../source/reference/comparison.rst:462
-#: ../../source/reference/comparison.rst:463
-#: ../../source/reference/comparison.rst:465
-#: ../../source/reference/comparison.rst:466
-#: ../../source/reference/comparison.rst:469
-#: ../../source/reference/comparison.rst:470
-#: ../../source/reference/comparison.rst:471
-#: ../../source/reference/comparison.rst:472
-#: ../../source/reference/comparison.rst:473
-#: ../../source/reference/comparison.rst:475
-#: ../../source/reference/comparison.rst:476
-#: ../../source/reference/comparison.rst:477
-#: ../../source/reference/comparison.rst:478
-#: ../../source/reference/comparison.rst:479
-#: ../../source/reference/comparison.rst:480
-#: ../../source/reference/comparison.rst:481
-#: ../../source/reference/comparison.rst:482
-#: ../../source/reference/comparison.rst:484
-#: ../../source/reference/comparison.rst:485
-#: ../../source/reference/comparison.rst:486
-#: ../../source/reference/comparison.rst:496
-#: ../../source/reference/comparison.rst:499
-#: ../../source/reference/comparison.rst:501
-#: ../../source/reference/comparison.rst:503
-#: ../../source/reference/comparison.rst:511
-#: ../../source/reference/comparison.rst:512
-#: ../../source/reference/comparison.rst:513
-#: ../../source/reference/comparison.rst:514
-#: ../../source/reference/comparison.rst:515
-#: ../../source/reference/comparison.rst:516
-#: ../../source/reference/comparison.rst:517
-#: ../../source/reference/comparison.rst:525
-#: ../../source/reference/comparison.rst:526
-#: ../../source/reference/comparison.rst:527
-#: ../../source/reference/comparison.rst:528
-#: ../../source/reference/comparison.rst:529
-#: ../../source/reference/comparison.rst:539
-#: ../../source/reference/comparison.rst:548
-#: ../../source/reference/comparison.rst:549
-#: ../../source/reference/comparison.rst:550
-#: ../../source/reference/comparison.rst:559
-#: ../../source/reference/comparison.rst:567
-#: ../../source/reference/comparison.rst:568
-#: ../../source/reference/comparison.rst:576
-#: ../../source/reference/comparison.rst:577
-#: ../../source/reference/comparison.rst:578
-#: ../../source/reference/comparison.rst:579
-#: ../../source/reference/comparison.rst:580
-#: ../../source/reference/comparison.rst:581
-#: ../../source/reference/comparison.rst:582
-#: ../../source/reference/comparison.rst:583
-#: ../../source/reference/comparison.rst:584
-#: ../../source/reference/comparison.rst:585
-#: ../../source/reference/comparison.rst:586
-#: ../../source/reference/comparison.rst:587
-#: ../../source/reference/comparison.rst:588
-#: ../../source/reference/comparison.rst:589
-#: ../../source/reference/comparison.rst:590
-#: ../../source/reference/comparison.rst:591
-#: ../../source/reference/comparison.rst:592
-#: ../../source/reference/comparison.rst:593
-#: ../../source/reference/comparison.rst:594
-#: ../../source/reference/comparison.rst:602
-#: ../../source/reference/comparison.rst:603
-msgid ":ref:`not-implemented`"
+msgid ":py:func:`~megengine.functional.maximum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:207
-msgid ":py:func:`torch.nn.functional.conv_transpose2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:207
-msgid ":py:func:`megengine.functional.nn.conv_transpose2d`"
+msgid ":py:data:`~numpy.minimum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:208
-msgid ":py:func:`torch.nn.functional.conv_transpose3d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:208
-msgid ":py:func:`megengine.functional.nn.conv_transpose3d`"
+msgid ":py:func:`~torch.minimum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:209
-msgid "local_conv2d"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:209
-msgid ":py:func:`megengine.functional.nn.local_conv2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:210
-msgid "deformable_conv2d"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:210
-msgid ":py:func:`megengine.functional.nn.deformable_conv2d`"
+msgid ":py:func:`~megengine.functional.minimum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:211
-msgid ":py:func:`torch.nn.functional.unfold`"
+msgid ":py:meth:`~numpy.ndarray.round`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:212
-msgid ":py:func:`torch.nn.functional.fold`"
+msgid ":py:func:`~torch.round`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:212
-msgid ":py:func:`megengine.functional.nn.sliding_window`"
+#: ../../source/reference/comparison.rst:213
+msgid ":py:func:`~megengine.functional.round`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:215
+msgid ":py:data:`~numpy.ceil`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:216
-msgid "Pooling functions"
+msgid ":py:func:`~torch.ceil`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:217
+msgid ":py:func:`~megengine.functional.ceil`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:219
+msgid ":py:data:`~numpy.floor`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:220
-msgid ":py:func:`torch.nn.functional.avg_pool1d`"
+msgid ":py:func:`~torch.floor`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:221
-msgid ":py:func:`torch.nn.functional.avg_pool2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:221
-msgid ":py:func:`megengine.functional.nn.avg_pool2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:222
-msgid ":py:func:`torch.nn.functional.avg_pool3d`"
+msgid ":py:func:`~megengine.functional.floor`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:223
-msgid ":py:func:`torch.nn.functional.max_pool1d`"
+msgid ":py:func:`~numpy.clip`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:224
-msgid ":py:func:`torch.nn.functional.max_pool2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:224
-msgid ":py:func:`megengine.functional.nn.max_pool2d`"
+msgid ":py:func:`~torch.clamp`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:225
-msgid ":py:func:`torch.nn.functional.max_pool3d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:226
-msgid ":py:func:`torch.nn.functional.max_unpool1d`"
+msgid ":py:func:`~megengine.functional.clip`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:227
-msgid ":py:func:`torch.nn.functional.max_unpool2d`"
+msgid ":py:data:`~numpy.exp`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:228
-msgid ":py:func:`torch.nn.functional.max_unpool3d`"
+msgid ":py:func:`~torch.exp`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:229
-msgid ":py:func:`torch.nn.functional.lp_pool1d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:230
-msgid ":py:func:`torch.nn.functional.lp_pool2d`"
+msgid ":py:func:`~megengine.functional.exp`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:231
-msgid ":py:func:`torch.nn.functional.adaptive_max_pool1d`"
+msgid ":py:data:`~numpy.expm1`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:232
-msgid ":py:func:`torch.nn.functional.adaptive_max_pool2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:232
-msgid ":py:func:`megengine.functional.nn.adaptive_max_pool2d`"
+msgid ":py:func:`~torch.expm1`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:233
-msgid ":py:func:`torch.nn.functional.adaptive_max_pool3d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:234
-msgid ":py:func:`torch.nn.functional.adaptive_avg_pool1d`"
+msgid ":py:func:`~megengine.functional.expm1`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:235
-msgid ":py:func:`torch.nn.functional.adaptive_avg_pool2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:235
-msgid ":py:func:`megengine.functional.nn.adaptive_avg_pool2d`"
+msgid ":py:data:`~numpy.log`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:236
-msgid ":py:func:`torch.nn.functional.adaptive_avg_pool3d`"
+msgid ":py:func:`~torch.log`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:237
+msgid ":py:func:`~megengine.functional.log`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:239
+msgid ":py:data:`~numpy.log1p`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:240
-msgid "Non-linear activation functions"
+msgid ":py:func:`~torch.log1p`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:244
-msgid ":py:func:`torch.nn.functional.threshold`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:245
-msgid ":py:func:`torch.nn.functional.relu`"
+#: ../../source/reference/comparison.rst:241
+msgid ":py:func:`~megengine.functional.log1p`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:245
-msgid ":py:func:`megengine.functional.nn.relu`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:246
-msgid ":py:func:`torch.nn.functional.hardtanh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:247
-msgid ":py:func:`torch.nn.functional.hardswish`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:247
-msgid ":py:func:`megengine.functional.nn.hswish`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:248
-msgid ":py:func:`torch.nn.functional.relu6`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:248
-msgid ":py:func:`megengine.functional.nn.relu6`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:249
-msgid ":py:func:`torch.nn.functional.elu`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:250
-msgid ":py:func:`torch.nn.functional.selu`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:251
-msgid ":py:func:`torch.nn.functional.celu`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:252
-msgid ":py:func:`torch.nn.functional.leaky_relu`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:252
-msgid ":py:func:`megengine.functional.nn.leaky_relu`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:253
-msgid ":py:func:`torch.nn.functional.prelu`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:253
-msgid ":py:func:`megengine.functional.nn.prelu`"
+msgid "Trigonometric functions"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:254
-msgid ":py:func:`torch.nn.functional.rrelu`"
+msgid ":py:data:`~numpy.sin`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:255
-msgid ":py:func:`torch.nn.functional.glu`"
+msgid ":py:func:`~torch.sin`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:256
-msgid ":py:func:`torch.nn.functional.gelu`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:257
-msgid ":py:func:`torch.nn.functional.logsigmoid`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:257
-msgid ":py:func:`megengine.functional.nn.logsigmoid`"
+msgid ":py:func:`~megengine.functional.sin`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:258
-msgid ":py:func:`torch.nn.functional.hardshrink`"
+msgid ":py:data:`~numpy.cos`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:259
-msgid ":py:func:`torch.nn.functional.tanhshrink`"
+msgid ":py:func:`~torch.cos`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:260
-msgid ":py:func:`torch.nn.functional.softsign`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:261
-msgid ":py:func:`torch.nn.functional.softplus`"
+msgid ":py:func:`~megengine.functional.cos`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:262
-msgid ":py:func:`torch.nn.functional.softmin`"
+msgid ":py:data:`~numpy.tan`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:263
-msgid ":py:func:`torch.nn.functional.softmax`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:263
-msgid ":py:func:`megengine.functional.nn.softmax`"
+msgid ":py:func:`~torch.tan`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:264
-msgid ":py:func:`torch.nn.functional.softshrink`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:265
-msgid ":py:func:`torch.nn.functional.gumbel_softmax`"
+msgid ":py:func:`~megengine.functional.tan`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:266
-msgid ":py:func:`torch.nn.functional.log_softmax`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:266
-msgid ":py:func:`megengine.functional.nn.logsoftmax`"
+msgid ":py:data:`~numpy.arcsin`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:267
-msgid ":py:func:`torch.nn.functional.sigmoid`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:267
-msgid ":py:func:`megengine.functional.nn.sigmoid`"
+msgid ":py:func:`~torch.asin`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:268
-msgid ":py:func:`torch.nn.functional.hardsigmoid`"
+msgid ":py:func:`~megengine.functional.asin`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:268
-msgid ":py:func:`megengine.functional.nn.hsigmoid`"
+#: ../../source/reference/comparison.rst:270
+msgid ":py:data:`~numpy.arccos`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:269
-msgid ":py:func:`torch.nn.functional.silu`"
+#: ../../source/reference/comparison.rst:271
+msgid ":py:func:`~torch.acos`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:273
-msgid "Normalization functions"
+#: ../../source/reference/comparison.rst:272
+msgid ":py:func:`~megengine.functional.acos`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:277
-msgid ":py:func:`torch.nn.functional.batch_norm`"
+#: ../../source/reference/comparison.rst:274
+msgid ":py:data:`~numpy.arctan`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:277
-msgid ":py:func:`megengine.functional.nn.batch_norm`"
+#: ../../source/reference/comparison.rst:275
+msgid ":py:func:`~torch.atan`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:278
-msgid ":py:func:`torch.nn.functional.instance_norm`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:279
-msgid ":py:func:`torch.nn.functional.layer_norm`"
+#: ../../source/reference/comparison.rst:276
+msgid ":py:func:`~megengine.functional.atan`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:280
-msgid ":py:func:`torch.nn.functional.local_response_norm`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:281
-msgid ":py:func:`torch.nn.functional.normalize`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:281
-msgid ":py:func:`megengine.functional.normalize`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:285
-msgid "Linear functions"
+msgid "Hyperbolic functions"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:289
-msgid ":py:func:`torch.nn.functional.linear`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:289
-msgid ":py:func:`megengine.functional.nn.linear`"
+msgid ":py:data:`~numpy.sinh`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:290
-msgid ":py:func:`torch.nn.functional.bilinear`"
+msgid ":py:func:`~torch.sinh`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:291
+msgid ":py:func:`~megengine.functional.sinh`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:293
+msgid ":py:data:`~numpy.cosh`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:294
-msgid "Dropout functions"
+msgid ":py:func:`~torch.cosh`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:295
+msgid ":py:func:`~megengine.functional.cosh`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:297
+msgid ":py:data:`~numpy.tanh`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:298
-msgid ":py:func:`torch.nn.functional.dropout`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:298
-msgid ":py:func:`megengine.functional.nn.dropout`"
+msgid ":py:func:`~torch.tanh`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:299
-msgid ":py:func:`torch.nn.functional.alpha_dropout`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:300
-msgid ":py:func:`torch.nn.functional.feature_alpha_dropout`"
+msgid ":py:func:`~megengine.functional.tanh`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:301
-msgid ":py:func:`torch.nn.functional.dropout2d`"
+msgid ":py:data:`~numpy.arcsinh`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:302
-msgid ":py:func:`torch.nn.functional.dropout3d`"
+msgid ":py:func:`~torch.asinh`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:303
+msgid ":py:func:`~megengine.functional.asinh`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:305
+msgid ":py:data:`~numpy.arccosh`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:306
-msgid "Sparse functions"
+msgid ":py:func:`~torch.acosh`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:307
+msgid ":py:func:`~megengine.functional.acosh`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:309
+msgid ":py:data:`~numpy.arctanh`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:310
-msgid ":py:func:`torch.nn.functional.embedding`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:310
-msgid ":py:func:`megengine.functional.nn.embedding`"
+msgid ":py:func:`~torch.atanh`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:311
-msgid ":py:func:`torch.nn.functional.embedding_bag`"
+msgid ":py:func:`~megengine.functional.atanh`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:312
-msgid ":py:func:`torch.nn.functional.one_hot`"
+#: ../../source/reference/comparison.rst:315
+msgid "Bit operations"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:312
-msgid ":py:func:`megengine.functional.nn.one_hot`"
+#: ../../source/reference/comparison.rst:324
+msgid ":py:data:`~numpy.left_shift`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:316
-msgid "Metric functions"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:320
-msgid ":py:func:`torch.nn.functional.pairwise_distance`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:321
-msgid ":py:func:`torch.nn.functional.cosine_similarity`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:322
-msgid ":py:func:`torch.nn.functional.pdist`"
+#: ../../source/reference/comparison.rst:325
+#: ../../source/reference/comparison.rst:329
+#: ../../source/reference/comparison.rst:352
+#: ../../source/reference/comparison.rst:356
+#: ../../source/reference/comparison.rst:360
+#: ../../source/reference/comparison.rst:364
+msgid "Not Found"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:326
-msgid "Loss functions"
+msgid ":py:func:`~megengine.functional.left_shift`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:327
+msgid "``<<`` operator"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:328
+msgid ":py:data:`~numpy.right_shift`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:330
-msgid ":py:func:`torch.nn.functional.binary_cross_entropy`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:330
-#: ../../source/reference/comparison.rst:331
-msgid ":py:func:`megengine.functional.loss.binary_cross_entropy`"
+msgid ":py:func:`~megengine.functional.right_shift`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:331
-msgid ":py:func:`torch.nn.functional.binary_cross_entropy_with_logits`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:332
-msgid ":py:func:`torch.nn.functional.poisson_nll_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:333
-msgid ":py:func:`torch.nn.functional.cosine_embedding_loss`"
+msgid "``>>`` operator"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:334
-msgid ":py:func:`torch.nn.functional.cross_entropy`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:334
-msgid ":py:func:`megengine.functional.loss.cross_entropy`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:335
-msgid ":py:func:`torch.nn.functional.ctc_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:336
-msgid ":py:func:`torch.nn.functional.hinge_embedding_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:337
-msgid ":py:func:`torch.nn.functional.kl_div`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:338
-msgid ":py:func:`torch.nn.functional.l1_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:338
-msgid ":py:func:`megengine.functional.loss.l1_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:339
-msgid ":py:func:`torch.nn.functional.mse_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:339
-msgid ":py:func:`megengine.functional.loss.square_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:340
-msgid ":py:func:`torch.nn.functional.margin_ranking_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:341
-msgid ":py:func:`torch.nn.functional.multilabel_margin_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:342
-msgid ":py:func:`torch.nn.functional.multilabel_soft_margin_loss`"
+msgid "Logic functions"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:343
-msgid ":py:func:`torch.nn.functional.multi_margin_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:343
-msgid ":py:func:`megengine.functional.loss.hinge_loss`"
+msgid ":py:data:`~numpy.isnan`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:344
-msgid ":py:func:`torch.nn.functional.nll_loss`"
+msgid ":py:func:`~torch.isnan`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:345
-msgid ":py:func:`torch.nn.functional.smooth_l1_loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:346
-msgid ":py:func:`torch.nn.functional.soft_margin_loss`"
+msgid ":py:func:`~megengine.functional.isnan`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:347
-msgid ":py:func:`torch.nn.functional.triplet_margin_loss`"
+msgid ":py:data:`~numpy.isinf`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:348
-msgid ":py:func:`torch.nn.functional.triplet_margin_with_distance_loss`"
+msgid ":py:func:`~torch.isinf`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:352
-msgid "NN Module"
+#: ../../source/reference/comparison.rst:349
+msgid ":py:func:`~megengine.functional.isinf`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:356
-msgid ":py:class:`torch.nn.parameter.Parameter`"
+#: ../../source/reference/comparison.rst:351
+msgid ":py:data:`~numpy.logical_and`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:356
-msgid ":py:class:`megengine.Parameter`"
+#: ../../source/reference/comparison.rst:353
+msgid ":py:func:`~megengine.functional.logical_and`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:360
-msgid "Containers"
+#: ../../source/reference/comparison.rst:354
+msgid "``&`` operator"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:364
-msgid ":py:class:`torch.nn.Module`"
+#: ../../source/reference/comparison.rst:355
+msgid ":py:data:`~numpy.logical_not`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:364
-msgid ":py:class:`megengine.module.Module`"
+#: ../../source/reference/comparison.rst:357
+msgid ":py:func:`~megengine.functional.logical_not`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:358
+msgid "``~`` operator"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:359
+msgid ":py:data:`~numpy.logical_or`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:361
+msgid ":py:func:`~megengine.functional.logical_or`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:362
+msgid "``|`` operator"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:363
+msgid ":py:data:`~numpy.logical_xor`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:365
-msgid ":py:class:`torch.nn.Sequential`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:365
-msgid ":py:class:`megengine.module.Sequential`"
+msgid ":py:func:`~megengine.functional.logical_xor`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:366
-msgid ":py:class:`torch.nn.ModuleList`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:366
-#: ../../source/reference/comparison.rst:367
-#: ../../source/reference/comparison.rst:368
-#: ../../source/reference/comparison.rst:369
-msgid "MegEngine 原生支持"
+msgid "``^`` operator"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:367
-msgid ":py:class:`torch.nn.ModuleDict`"
+msgid ":py:data:`~numpy.equal`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:368
-msgid ":py:class:`torch.nn.ParameterList`"
+msgid ":py:func:`~torch.equal`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:369
-msgid ":py:class:`torch.nn.ParameterDict`"
+msgid ":py:func:`~megengine.functional.equal`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:371
+msgid ":py:data:`~numpy.not_equal`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:372
+msgid ":py:func:`~torch.not_equal`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:373
-msgid "Initialization"
+msgid ":py:func:`~megengine.functional.not_equal`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:375
+msgid ":py:data:`~numpy.less`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:376
+msgid ":py:func:`~torch.less`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:377
-msgid ":py:func:`torch.nn.init.calculate_gain`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:377
-msgid ":py:class:`megengine.module.init.calculate_gain`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:378
-msgid "_calculate_fan_in_and_fan_out"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:378
-msgid ":py:class:`megengine.module.init.calculate_fan_in_and_fan_out`"
+msgid ":py:func:`~megengine.functional.less`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:379
-msgid "_calculate_correct_fan"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:379
-msgid ":py:class:`megengine.module.init.calculate_correct_fan`"
+msgid ":py:data:`~numpy.less_equal`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:380
-msgid ":py:func:`torch.nn.init.uniform_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:380
-msgid ":py:class:`megengine.module.init.uniform_`"
+msgid ":py:func:`~torch.less_equal`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:381
-msgid ":py:func:`torch.nn.init.normal_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:381
-msgid ":py:class:`megengine.module.init.normal_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:382
-msgid ":py:func:`torch.nn.init.constant_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:382
-msgid ":py:class:`megengine.module.init.fill_`"
+msgid ":py:func:`~megengine.functional.less_equal`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:383
-msgid ":py:func:`torch.nn.init.ones_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:383
-msgid ":py:class:`megengine.module.init.ones_`"
+msgid ":py:data:`~numpy.greater`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:384
-msgid ":py:func:`torch.nn.init.zeros_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:384
-msgid ":py:class:`megengine.module.init.zeros_`"
+msgid ":py:func:`~torch.greater`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:385
-msgid ":py:func:`torch.nn.init.eye_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:386
-msgid ":py:func:`torch.nn.init.dirac_`"
+msgid ":py:func:`~megengine.functional.greater`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:387
-msgid ":py:func:`torch.nn.init.xavier_uniform_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:387
-msgid ":py:class:`megengine.module.init.xavier_uniform_`"
+msgid ":py:data:`~numpy.greater_equal`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:388
-msgid ":py:func:`torch.nn.init.xavier_normal_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:388
-msgid ":py:class:`megengine.module.init.xavier_normal_`"
+msgid ":py:func:`~torch.greater_equal`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:389
-msgid ":py:func:`torch.nn.init.kaiming_uniform_`"
+msgid ":py:func:`~megengine.functional.greater_equal`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:389
-msgid ":py:class:`megengine.module.init.msra_uniform_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:390
-msgid ":py:func:`torch.nn.init.kaiming_normal_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:390
-msgid ":py:class:`megengine.module.init.msra_normal_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:391
-msgid ":py:func:`torch.nn.init.orthogonal_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:392
-msgid ":py:func:`torch.nn.init.sparse_`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:396
-msgid "Convolution Layers"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:400
-#: ../../source/reference/comparison.rst:408
-msgid ":py:class:`torch.nn.Conv1d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:400
-#: ../../source/reference/comparison.rst:408
-msgid ":py:class:`megengine.module.Conv1d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:401
-msgid ":py:class:`torch.nn.Conv2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:401
-msgid ":py:class:`megengine.module.Conv2d`"
+#: ../../source/reference/comparison.rst:393
+msgid "Statistical Functions"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:402
-msgid ":py:class:`torch.nn.Conv3d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:402
-msgid ":py:class:`megengine.module.Conv3d`"
+msgid ":py:func:`~numpy.sum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:403
-msgid ":py:class:`torch.nn.ConvTranspose1d`"
+msgid ":py:func:`~torch.sum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:404
-msgid ":py:class:`torch.nn.ConvTranspose2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:404
-msgid ":py:class:`megengine.module.ConvTranspose2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:405
-msgid ":py:class:`torch.nn.ConvTranspose3d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:405
-msgid ":py:class:`megengine.module.ConvTranspose3d`"
+msgid ":py:func:`~megengine.functional.sum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:406
-msgid "LocalConv2d"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:406
-msgid ":py:class:`megengine.module.LocalConv2d`"
+msgid ":py:func:`~numpy.prod`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:407
-msgid "DeformableConv2d"
+msgid ":py:func:`~torch.prod`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:407
-msgid ":py:class:`megengine.module.DeformableConv2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:409
-msgid ":py:class:`torch.nn.Unfold`"
+#: ../../source/reference/comparison.rst:408
+msgid ":py:func:`~megengine.functional.prod`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:410
-msgid ":py:class:`torch.nn.Fold`"
+msgid ":py:func:`~numpy.mean`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:410
-msgid ":py:class:`megengine.module.SlidingWindow`"
+#: ../../source/reference/comparison.rst:411
+msgid ":py:func:`~torch.mean`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:412
+msgid ":py:func:`~megengine.functional.mean`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:414
-msgid "Pooling layers"
+msgid ":py:meth:`~numpy.ndarray.min`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:415
+msgid ":py:func:`~torch.min`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:416
+msgid ":py:func:`~megengine.functional.min`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:418
-msgid ":py:class:`torch.nn.MaxPool1d`"
+msgid ":py:meth:`~numpy.ndarray.max`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:419
-msgid ":py:class:`torch.nn.MaxPool2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:419
-msgid ":py:class:`megengine.module.MaxPool2d`"
+msgid ":py:func:`~torch.max`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:420
-msgid ":py:class:`torch.nn.MaxPool3d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:421
-msgid ":py:class:`torch.nn.MaxUnpool1d`"
+msgid ":py:func:`~megengine.functional.max`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:422
-msgid ":py:class:`torch.nn.MaxUnpool2d`"
+msgid ":py:func:`~numpy.var`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:423
-msgid ":py:class:`torch.nn.MaxUnpool3d`"
+msgid ":py:func:`~torch.var`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:424
-msgid ":py:class:`torch.nn.AvgPool1d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:425
-msgid ":py:class:`torch.nn.AvgPool2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:425
-msgid ":py:class:`megengine.module.AvgPool2d`"
+msgid ":py:func:`~megengine.functional.var`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:426
-msgid ":py:class:`torch.nn.AvgPool3d`"
+msgid ":py:func:`~numpy.std`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:427
-msgid ":py:class:`torch.nn.FractionalMaxPool2d`"
+msgid ":py:func:`~torch.std`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:428
-msgid ":py:class:`torch.nn.LPPool1d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:429
-msgid ":py:class:`torch.nn.LPPool2d`"
+msgid ":py:func:`~megengine.functional.std`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:430
-msgid ":py:class:`torch.nn.AdaptiveMaxPool1d`"
+msgid ":py:func:`~numpy.cumsum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:431
-msgid ":py:class:`torch.nn.AdaptiveMaxPool2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:431
-msgid ":py:class:`megengine.module.AdaptiveMaxPool2d`"
+msgid ":py:func:`~torch.cumsum`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:432
-msgid ":py:class:`torch.nn.AdaptiveMaxPool3d`"
+msgid ":py:func:`~megengine.functional.cumsum`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:433
-msgid ":py:class:`torch.nn.AdaptiveAvgPool1d`"
+#: ../../source/reference/comparison.rst:437
+msgid "Linear Algebra Functions"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:434
-msgid ":py:class:`torch.nn.AdaptiveAvgPool2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:434
-msgid ":py:class:`megengine.module.AdaptiveAvgPool2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:435
-msgid ":py:class:`torch.nn.AdaptiveAvgPool3d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:439
-msgid "Padding Layers"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:443
-#: ../../source/reference/comparison.rst:444
-msgid ":py:class:`torch.nn.ReflectionPad1d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:445
 #: ../../source/reference/comparison.rst:446
-msgid ":py:class:`torch.nn.ReplicationPad1d`"
+msgid ":py:func:`~numpy.transpose`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:447
-msgid ":py:class:`torch.nn.ReplicationPad3d`"
+msgid ":py:func:`~torch.transpose`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:448
-msgid ":py:class:`torch.nn.ZeroPad2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:449
-msgid ":py:class:`torch.nn.ConstantPad1d`"
+msgid ":py:func:`~megengine.functional.transpose`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:450
-msgid ":py:class:`torch.nn.ConstantPad2d`"
+msgid ":py:func:`~numpy.dot`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:451
-msgid ":py:class:`torch.nn.ConstantPad3d`"
+msgid ":py:func:`~torch.dot`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:452
+msgid ":py:func:`~megengine.functional.dot`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:454
+msgid ":py:func:`~numpy.linalg.inv`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:455
-msgid "Non-linear Activations"
+msgid ":py:func:`~torch.linalg.inv`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:456
+msgid ":py:func:`~megengine.functional.matinv`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:458
+msgid ":py:data:`~numpy.matmul`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:459
-msgid ":py:class:`torch.nn.ELU`"
+msgid ":py:func:`~torch.matmul`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:460
-msgid ":py:class:`torch.nn.Hardshrink`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:461
-msgid ":py:class:`torch.nn.Hardsigmoid`"
+msgid ":py:func:`~megengine.functional.matmul`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:462
-msgid ":py:class:`torch.nn.Hardtanh`"
+msgid ":py:func:`~numpy.linalg.svd`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:463
-msgid ":py:class:`torch.nn.Hardswish`"
+msgid ":py:func:`~torch.linalg.svd`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:464
-msgid ":py:class:`torch.nn.LeakyReLU`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:464
-msgid ":py:class:`megengine.module.LeakyReLU`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:465
-msgid ":py:class:`torch.nn.LogSigmoid`"
+msgid ":py:func:`~megengine.functional.svd`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:466
-msgid ":py:class:`torch.nn.MultiheadAttention`"
+msgid ":py:func:`~numpy.linalg.norm`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:467
-msgid ":py:class:`torch.nn.PReLU`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:467
-msgid ":py:class:`megengine.module.PReLU`"
+msgid ":py:func:`~torch.norm`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:468
-msgid ":py:class:`torch.nn.ReLU`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:468
-msgid ":py:class:`megengine.module.ReLU`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:469
-msgid ":py:class:`torch.nn.ReLU6`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:470
-msgid ":py:class:`torch.nn.RReLU`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:471
-msgid ":py:class:`torch.nn.SELU`"
+msgid ":py:func:`~megengine.functional.norm`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:472
-msgid ":py:class:`torch.nn.CELU`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:473
-msgid ":py:class:`torch.nn.GELU`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:474
-msgid ":py:class:`torch.nn.Sigmoid`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:474
-msgid ":py:class:`megengine.module.Sigmoid`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:475
-msgid ":py:class:`torch.nn.SiLU`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:476
-msgid ":py:class:`torch.nn.Softplus`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:477
-msgid ":py:class:`torch.nn.Softshrink`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:478
-msgid ":py:class:`torch.nn.Softsign`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:479
-msgid ":py:class:`torch.nn.Tanh`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:480
-msgid ":py:class:`torch.nn.Tanhshrink`"
+msgid "Indexing Functions"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:481
-msgid ":py:class:`torch.nn.Threshold`"
+msgid ":py:func:`~numpy.take_along_axis`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:482
-msgid ":py:class:`torch.nn.Softmin`"
+msgid ":py:func:`~torch.gather`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:483
-msgid ":py:class:`torch.nn.Softmax`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:483
-msgid ":py:class:`megengine.module.Softmax`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:484
-msgid ":py:class:`torch.nn.Softmax2d`"
+msgid ":py:func:`~megengine.functional.gather`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:485
-msgid ":py:class:`torch.nn.LogSoftmax`"
+msgid ":py:func:`~numpy.put_along_axis`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:486
-msgid ":py:class:`torch.nn.AdaptiveLogSoftmaxWithLoss`"
+msgid ":py:func:`~torch.scatter`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:487
+msgid ":py:func:`~megengine.functional.scatter`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:489
+msgid ":py:func:`~numpy.where`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:490
-msgid "Normalization Layers"
+msgid ":py:func:`~torch.where`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:494
-msgid ":py:class:`torch.nn.BatchNorm1d`"
+#: ../../source/reference/comparison.rst:491
+msgid ""
+":py:func:`~megengine.functional.where` / "
+":py:func:`~megengine.functional.cond_take`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:494
-msgid ":py:class:`megengine.module.BatchNorm1d`"
+#: ../../source/reference/comparison.rst:492
+msgid "取决于传参情况"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:495
-msgid ":py:class:`torch.nn.BatchNorm2d`"
+msgid "Searching Functions"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:495
-msgid ":py:class:`megengine.module.BatchNorm2d`"
+#: ../../source/reference/comparison.rst:504
+msgid ":py:func:`~numpy.argmin`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:496
-msgid ":py:class:`torch.nn.BatchNorm3d`"
+#: ../../source/reference/comparison.rst:505
+msgid ":py:func:`~torch.argmin`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:497
-msgid ":py:class:`torch.nn.GroupNorm`"
+#: ../../source/reference/comparison.rst:506
+msgid ":py:func:`~megengine.functional.argmin`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:497
-msgid ":py:class:`megengine.module.GroupNorm`"
+#: ../../source/reference/comparison.rst:508
+msgid ":py:func:`~numpy.argmax`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:498
-msgid ":py:class:`torch.nn.SyncBatchNorm`"
+#: ../../source/reference/comparison.rst:509
+msgid ":py:func:`~torch.argmax`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:498
-msgid ":py:class:`megengine.module.SyncBatchNorm`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:499
-msgid ":py:class:`torch.nn.InstanceNorm1d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:500
-msgid ":py:class:`torch.nn.InstanceNorm2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:500
-msgid ":py:class:`megengine.module.InstanceNorm`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:501
-msgid ":py:class:`torch.nn.InstanceNorm3d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:502
-msgid ":py:class:`torch.nn.LayerNorm`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:502
-msgid ":py:class:`megengine.module.LayerNorm`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:503
-msgid ":py:class:`torch.nn.LocalResponseNorm`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:507
-msgid "Recurrent Layers"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:511
-msgid ":py:class:`torch.nn.RNNBase`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:512
-msgid ":py:class:`torch.nn.RNN`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:513
-msgid ":py:class:`torch.nn.LSTM`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:514
-msgid ":py:class:`torch.nn.GRU`"
+#: ../../source/reference/comparison.rst:510
+msgid ":py:func:`~megengine.functional.argmax`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:515
-msgid ":py:class:`torch.nn.RNNCell`"
+msgid "Sorting Functions"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:516
-msgid ":py:class:`torch.nn.LSTMCell`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:517
-msgid ":py:class:`torch.nn.GRUCell`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:521
-msgid "Transformer Layers"
+#: ../../source/reference/comparison.rst:524
+msgid ":py:func:`~numpy.argsort`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:525
-msgid ":py:class:`torch.nn.Transformer`"
+msgid ":py:func:`~torch.argsort`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:526
-msgid ":py:class:`torch.nn.TransformerEncoder`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:527
-msgid ":py:class:`torch.nn.TransformerDecoder`"
+msgid ":py:func:`~megengine.functional.argsort`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:528
-msgid ":py:class:`torch.nn.TransformerEncoderLayer`"
+msgid ":py:func:`~numpy.sort`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:529
-msgid ":py:class:`torch.nn.TransformerDecoderLayer`"
+msgid ":py:func:`~torch.sort`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:533
-msgid "Linear Layers"
+#: ../../source/reference/comparison.rst:530
+msgid ":py:func:`~megengine.functional.sort`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:537
-msgid ":py:class:`torch.nn.Identity`"
+#: ../../source/reference/comparison.rst:534
+msgid "NN Funtional Operations"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:537
-msgid ":py:class:`megengine.module.Identity`"
+#: ../../source/reference/comparison.rst:536
+msgid "Convolution functions"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:538
-msgid ":py:class:`torch.nn.Linear`"
+#: ../../source/reference/comparison.rst:544
+msgid ":py:func:`~torch.nn.functional.conv1d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:538
-msgid ":py:class:`megengine.module.Linear`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:539
-msgid ":py:class:`torch.nn.Bilinear`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:543
-msgid "Dropout Layers"
+#: ../../source/reference/comparison.rst:545
+msgid ":py:func:`~megengine.functional.nn.conv1d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:547
-msgid ":py:class:`torch.nn.Dropout`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:547
-msgid ":py:class:`megengine.module.Dropout`"
+msgid ":py:func:`~torch.nn.functional.conv2d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:548
-msgid ":py:class:`torch.nn.Dropout2d`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:549
-msgid ":py:class:`torch.nn.Dropout3d`"
+msgid ":py:func:`~megengine.functional.nn.conv2d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:550
-msgid ":py:class:`torch.nn.AlphaDropout`"
+msgid ":py:func:`~torch.nn.functional.conv3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:551
+msgid ":py:func:`~megengine.functional.nn.conv3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:553
+msgid ":py:func:`~torch.nn.functional.conv_transpose1d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:554
-msgid "Sparse Layers"
+#: ../../source/reference/comparison.rst:585
+#: ../../source/reference/comparison.rst:591
+#: ../../source/reference/comparison.rst:594
+#: ../../source/reference/comparison.rst:600
+#: ../../source/reference/comparison.rst:603
+#: ../../source/reference/comparison.rst:606
+#: ../../source/reference/comparison.rst:609
+#: ../../source/reference/comparison.rst:612
+#: ../../source/reference/comparison.rst:615
+#: ../../source/reference/comparison.rst:618
+#: ../../source/reference/comparison.rst:624
+#: ../../source/reference/comparison.rst:627
+#: ../../source/reference/comparison.rst:633
+#: ../../source/reference/comparison.rst:646
+#: ../../source/reference/comparison.rst:652
+#: ../../source/reference/comparison.rst:661
+#: ../../source/reference/comparison.rst:664
+#: ../../source/reference/comparison.rst:667
+#: ../../source/reference/comparison.rst:676
+#: ../../source/reference/comparison.rst:679
+#: ../../source/reference/comparison.rst:688
+#: ../../source/reference/comparison.rst:691
+#: ../../source/reference/comparison.rst:694
+#: ../../source/reference/comparison.rst:697
+#: ../../source/reference/comparison.rst:700
+#: ../../source/reference/comparison.rst:706
+#: ../../source/reference/comparison.rst:709
+#: ../../source/reference/comparison.rst:737
+#: ../../source/reference/comparison.rst:740
+#: ../../source/reference/comparison.rst:743
+#: ../../source/reference/comparison.rst:762
+#: ../../source/reference/comparison.rst:778
+#: ../../source/reference/comparison.rst:781
+#: ../../source/reference/comparison.rst:784
+#: ../../source/reference/comparison.rst:787
+#: ../../source/reference/comparison.rst:803
+#: ../../source/reference/comparison.rst:819
+#: ../../source/reference/comparison.rst:822
+#: ../../source/reference/comparison.rst:825
+#: ../../source/reference/comparison.rst:841
+#: ../../source/reference/comparison.rst:844
+#: ../../source/reference/comparison.rst:850
+#: ../../source/reference/comparison.rst:853
+#: ../../source/reference/comparison.rst:856
+#: ../../source/reference/comparison.rst:865
+#: ../../source/reference/comparison.rst:868
+#: ../../source/reference/comparison.rst:871
+#: ../../source/reference/comparison.rst:877
+#: ../../source/reference/comparison.rst:880
+#: ../../source/reference/comparison.rst:883
+#: ../../source/reference/comparison.rst:886
+#: ../../source/reference/comparison.rst:889
+#: ../../source/reference/comparison.rst:967
+#: ../../source/reference/comparison.rst:970
+#: ../../source/reference/comparison.rst:985
+#: ../../source/reference/comparison.rst:988
+#: ../../source/reference/comparison.rst:1010
+#: ../../source/reference/comparison.rst:1044
+#: ../../source/reference/comparison.rst:1050
+#: ../../source/reference/comparison.rst:1053
+#: ../../source/reference/comparison.rst:1056
+#: ../../source/reference/comparison.rst:1059
+#: ../../source/reference/comparison.rst:1062
+#: ../../source/reference/comparison.rst:1068
+#: ../../source/reference/comparison.rst:1071
+#: ../../source/reference/comparison.rst:1074
+#: ../../source/reference/comparison.rst:1077
+#: ../../source/reference/comparison.rst:1080
+#: ../../source/reference/comparison.rst:1086
+#: ../../source/reference/comparison.rst:1089
+#: ../../source/reference/comparison.rst:1095
+#: ../../source/reference/comparison.rst:1148
+#: ../../source/reference/comparison.rst:1151
+#: ../../source/reference/comparison.rst:1154
+#: ../../source/reference/comparison.rst:1157
+#: ../../source/reference/comparison.rst:1160
+#: ../../source/reference/comparison.rst:1166
+#: ../../source/reference/comparison.rst:1169
+#: ../../source/reference/comparison.rst:1178
+#: ../../source/reference/comparison.rst:1181
+#: ../../source/reference/comparison.rst:1184
+#: ../../source/reference/comparison.rst:1187
+#: ../../source/reference/comparison.rst:1199
+#: ../../source/reference/comparison.rst:1202
+#: ../../source/reference/comparison.rst:1205
+#: ../../source/reference/comparison.rst:1208
+#: ../../source/reference/comparison.rst:1211
+#: ../../source/reference/comparison.rst:1214
+#: ../../source/reference/comparison.rst:1217
+#: ../../source/reference/comparison.rst:1223
+#: ../../source/reference/comparison.rst:1226
+#: ../../source/reference/comparison.rst:1229
+#: ../../source/reference/comparison.rst:1248
+#: ../../source/reference/comparison.rst:1257
+#: ../../source/reference/comparison.rst:1263
+#: ../../source/reference/comparison.rst:1269
+#: ../../source/reference/comparison.rst:1282
+#: ../../source/reference/comparison.rst:1285
+#: ../../source/reference/comparison.rst:1288
+#: ../../source/reference/comparison.rst:1291
+#: ../../source/reference/comparison.rst:1294
+#: ../../source/reference/comparison.rst:1297
+#: ../../source/reference/comparison.rst:1300
+#: ../../source/reference/comparison.rst:1313
+#: ../../source/reference/comparison.rst:1316
+#: ../../source/reference/comparison.rst:1319
+#: ../../source/reference/comparison.rst:1322
+#: ../../source/reference/comparison.rst:1325
+#: ../../source/reference/comparison.rst:1344
+#: ../../source/reference/comparison.rst:1360
+#: ../../source/reference/comparison.rst:1363
+#: ../../source/reference/comparison.rst:1366
+#: ../../source/reference/comparison.rst:1382
+#: ../../source/reference/comparison.rst:1395
+#: ../../source/reference/comparison.rst:1398
+#: ../../source/reference/comparison.rst:1416
+#: ../../source/reference/comparison.rst:1419
+#: ../../source/reference/comparison.rst:1422
+#: ../../source/reference/comparison.rst:1425
+#: ../../source/reference/comparison.rst:1428
+#: ../../source/reference/comparison.rst:1431
+#: ../../source/reference/comparison.rst:1434
+#: ../../source/reference/comparison.rst:1437
+#: ../../source/reference/comparison.rst:1440
+#: ../../source/reference/comparison.rst:1443
+#: ../../source/reference/comparison.rst:1446
+#: ../../source/reference/comparison.rst:1449
+#: ../../source/reference/comparison.rst:1452
+#: ../../source/reference/comparison.rst:1455
+#: ../../source/reference/comparison.rst:1458
+#: ../../source/reference/comparison.rst:1461
+#: ../../source/reference/comparison.rst:1464
+#: ../../source/reference/comparison.rst:1467
+#: ../../source/reference/comparison.rst:1470
+#: ../../source/reference/comparison.rst:1483
+#: ../../source/reference/comparison.rst:1486
+msgid ":ref:`not-implemented`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:558
-msgid ":py:class:`torch.nn.Embedding`"
+#: ../../source/reference/comparison.rst:556
+msgid ":py:func:`~torch.nn.functional.conv_transpose2d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:558
-msgid ":py:class:`megengine.module.Embedding`"
+#: ../../source/reference/comparison.rst:557
+msgid ":py:func:`~megengine.functional.nn.conv_transpose2d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:559
-msgid ":py:class:`torch.nn.EmbeddingBag`"
+msgid ":py:func:`~torch.nn.functional.conv_transpose3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:560
+msgid ":py:func:`~megengine.functional.nn.conv_transpose3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:562
+msgid "local_conv2d"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:563
-msgid "Distance Functions"
+msgid ":py:func:`~megengine.functional.nn.local_conv2d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:567
-msgid ":py:class:`torch.nn.CosineSimilarity`"
+#: ../../source/reference/comparison.rst:565
+msgid "deformable_conv2d"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:566
+msgid ":py:func:`~megengine.functional.nn.deformable_conv2d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:568
-msgid ":py:class:`torch.nn.PairwiseDistance`"
+msgid ":py:func:`~torch.nn.functional.unfold`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:569
+msgid ":py:func:`~megengine.functional.nn.sliding_window`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:571
+msgid ":py:func:`~torch.nn.functional.fold`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:572
-msgid "Loss Functions"
+msgid ":py:func:`~megengine.functional.nn.sliding_window_transpose`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:576
-msgid ":py:class:`torch.nn.L1Loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:577
-msgid ":py:class:`torch.nn.MSELoss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:578
-msgid ":py:class:`torch.nn.CrossEntropyLoss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:579
-msgid ":py:class:`torch.nn.CTCLoss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:580
-msgid ":py:class:`torch.nn.NLLLoss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:581
-msgid ":py:class:`torch.nn.PoissonNLLLoss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:582
-msgid ":py:class:`torch.nn.KLDivLoss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:583
-msgid ":py:class:`torch.nn.BCELoss`"
+msgid "Pooling functions"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:584
-msgid ":py:class:`torch.nn.BCEWithLogitsLoss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:585
-msgid ":py:class:`torch.nn.MarginRankingLoss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:586
-msgid ":py:class:`torch.nn.HingeEmbeddingLoss`"
+msgid ":py:func:`~torch.nn.functional.avg_pool1d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:587
-msgid ":py:class:`torch.nn.MultiLabelMarginLoss`"
+msgid ":py:func:`~torch.nn.functional.avg_pool2d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:588
-msgid ":py:class:`torch.nn.SmoothL1Loss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:589
-msgid ":py:class:`torch.nn.SoftMarginLoss`"
+msgid ":py:func:`~megengine.functional.nn.avg_pool2d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:590
-msgid ":py:class:`torch.nn.MultiLabelSoftMarginLoss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:591
-msgid ":py:class:`torch.nn.CosineEmbeddingLoss`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:592
-msgid ":py:class:`torch.nn.MultiMarginLoss`"
+msgid ":py:func:`~torch.nn.functional.avg_pool3d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:593
-msgid ":py:class:`torch.nn.TripletMarginLoss`"
+msgid ":py:func:`~torch.nn.functional.max_pool1d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:594
-msgid ":py:class:`torch.nn.TripletMarginWithDistanceLoss`"
+#: ../../source/reference/comparison.rst:596
+msgid ":py:func:`~torch.nn.functional.max_pool2d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:598
-msgid "Vision functions"
+#: ../../source/reference/comparison.rst:597
+msgid ":py:func:`~megengine.functional.nn.max_pool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:599
+msgid ":py:func:`~torch.nn.functional.max_pool3d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:602
-msgid ":py:func:`torch.nn.functional.pixel_shuffle`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:603
-msgid ":py:func:`torch.nn.functional.pad`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:604
-msgid ":py:func:`torch.nn.functional.interpolate`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:604
-#: ../../source/reference/comparison.rst:605
-#: ../../source/reference/comparison.rst:606
-#: ../../source/reference/comparison.rst:607
-#: ../../source/reference/comparison.rst:621
-msgid ":py:func:`megengine.functional.vision.interpolate`"
+msgid ":py:func:`~torch.nn.functional.max_unpool1d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:605
-msgid ":py:func:`torch.nn.functional.upsample`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:606
-msgid ":py:func:`torch.nn.functional.upsample_nearest`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:607
-msgid ":py:func:`torch.nn.functional.upsample_bilinear`"
+msgid ":py:func:`~torch.nn.functional.max_unpool2d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:608
-msgid ":py:func:`torch.nn.functional.grid_sample`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:608
-#: ../../source/reference/comparison.rst:622
-msgid ":py:func:`megengine.functional.vision.remap`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:609
-msgid ":py:func:`torch.nn.functional.affine_grid`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:609
-#: ../../source/reference/comparison.rst:623
-msgid ":py:func:`megengine.functional.vision.warp_affine`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:610
-msgid ":py:func:`torchvision.ops.nms`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:610
-msgid ":py:func:`megengine.functional.vision.nms`"
+msgid ":py:func:`~torch.nn.functional.max_unpool3d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:611
-msgid ":py:func:`torchvision.ops.roi_align`"
+msgid ":py:func:`~torch.nn.functional.lp_pool1d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:611
-msgid ":py:func:`megengine.functional.vision.roi_align`"
+#: ../../source/reference/comparison.rst:614
+msgid ":py:func:`~torch.nn.functional.lp_pool2d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:612
-msgid ":py:func:`torchvision.ops.roi_pool`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:612
-msgid ":py:func:`megengine.functional.vision.roi_pooling`"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:616
-msgid "OpenCV Python Package"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:618
-msgid "OpenCV"
+#: ../../source/reference/comparison.rst:617
+msgid ":py:func:`~torch.nn.functional.adaptive_max_pool1d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:620
-msgid "cv2.cvtColor()"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:620
-msgid ":py:func:`megengine.functional.vision.cvt_color`"
+msgid ":py:func:`~torch.nn.functional.adaptive_max_pool2d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:621
-msgid "cv2.resize()"
-msgstr ""
-
-#: ../../source/reference/comparison.rst:622
-msgid "cv2.remap()"
+msgid ":py:func:`~megengine.functional.nn.adaptive_max_pool2d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:623
-msgid "cv2.warpAffine()"
+msgid ":py:func:`~torch.nn.functional.adaptive_max_pool3d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:624
-msgid "cv2.warpPerspective()"
+#: ../../source/reference/comparison.rst:626
+msgid ":py:func:`~torch.nn.functional.adaptive_avg_pool1d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:624
-msgid ":py:func:`megengine.functional.vision.warp_perspective`"
+#: ../../source/reference/comparison.rst:629
+msgid ":py:func:`~torch.nn.functional.adaptive_avg_pool2d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:628
 #: ../../source/reference/comparison.rst:630
-msgid "NVIDIA"
+msgid ":py:func:`~megengine.functional.nn.adaptive_avg_pool2d`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:632
-msgid "correlation"
+msgid ":py:func:`~torch.nn.functional.adaptive_avg_pool3d`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:632
-msgid ":py:func:`megengine.functional.vision.correlation`"
+#: ../../source/reference/comparison.rst:637
+msgid "Non-linear activation functions"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:633
-msgid "nvof"
+#: ../../source/reference/comparison.rst:645
+msgid ":py:func:`~torch.nn.functional.threshold`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:633
-msgid ":py:func:`megengine.functional.vision.nvof`"
+#: ../../source/reference/comparison.rst:648
+msgid ":py:func:`~torch.nn.functional.relu`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:639
-msgid "Not Implemeted"
+#: ../../source/reference/comparison.rst:649
+msgid ":py:func:`~megengine.functional.nn.relu`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:643
-msgid "一些 API 在 MegEngine 中可能还没有实现，但所有的 API 并不是一开始就被设计出来的。 我们可以像搭积木一样，利用已经存在的基础 API 来组合出 MegEngine 中尚未提供的接口。"
+#: ../../source/reference/comparison.rst:651
+msgid ":py:func:`~torch.nn.functional.hardtanh`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:646
-msgid "比如 “如何实现 :py:func:`torch.roll` ” 这个问题，可以使用 :py:func:`~.functional.split` 和 :py:func:`~.functional.concat` 拼接出来："
+#: ../../source/reference/comparison.rst:654
+msgid ":py:func:`~torch.nn.functional.hardswish`"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:680
-msgid "除此之外，你可以尝试在 GitHub Issues 或论坛中针对 API 问题发起求助。"
+#: ../../source/reference/comparison.rst:655
+msgid ":py:func:`~megengine.functional.nn.hswish`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:657
+msgid ":py:func:`~torch.nn.functional.relu6`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:658
+msgid ":py:func:`~megengine.functional.nn.relu6`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:660
+msgid ":py:func:`~torch.nn.functional.elu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:663
+msgid ":py:func:`~torch.nn.functional.selu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:666
+msgid ":py:func:`~torch.nn.functional.celu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:669
+msgid ":py:func:`~torch.nn.functional.leaky_relu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:670
+msgid ":py:func:`~megengine.functional.nn.leaky_relu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:672
+msgid ":py:func:`~torch.nn.functional.prelu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:673
+msgid ":py:func:`~megengine.functional.nn.prelu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:675
+msgid ":py:func:`~torch.nn.functional.rrelu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:678
+msgid ":py:func:`~torch.nn.functional.glu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:681
+msgid ":py:func:`~torch.nn.functional.gelu`"
 msgstr ""
 
 #: ../../source/reference/comparison.rst:682
+msgid ":py:func:`~megengine.functional.nn.gelu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:684
+msgid ":py:func:`~torch.nn.functional.logsigmoid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:685
+msgid ":py:func:`~megengine.functional.nn.logsigmoid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:687
+msgid ":py:func:`~torch.nn.functional.hardshrink`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:690
+msgid ":py:func:`~torch.nn.functional.tanhshrink`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:693
+msgid ":py:func:`~torch.nn.functional.softsign`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:696
+msgid ":py:func:`~torch.nn.functional.softplus`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:699
+msgid ":py:func:`~torch.nn.functional.softmin`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:702
+msgid ":py:func:`~torch.nn.functional.softmax`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:703
+msgid ":py:func:`~megengine.functional.nn.softmax`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:705
+msgid ":py:func:`~torch.nn.functional.softshrink`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:708
+msgid ":py:func:`~torch.nn.functional.gumbel_softmax`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:711
+msgid ":py:func:`~torch.nn.functional.log_softmax`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:712
+msgid ":py:func:`~megengine.functional.nn.logsoftmax`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:714
+msgid ":py:func:`~torch.nn.functional.sigmoid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:715
+msgid ":py:func:`~megengine.functional.nn.sigmoid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:717
+msgid ":py:func:`~torch.nn.functional.hardsigmoid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:718
+msgid ":py:func:`~megengine.functional.nn.hsigmoid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:720
+msgid ":py:func:`~torch.nn.functional.silu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:721
+msgid ":py:func:`~megengine.functional.nn.silu`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:725
+msgid "Normalization functions"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:733
+msgid ":py:func:`~torch.nn.functional.batch_norm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:734
+msgid ":py:func:`~megengine.functional.nn.batch_norm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:736
+msgid ":py:func:`~torch.nn.functional.instance_norm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:739
+msgid ":py:func:`~torch.nn.functional.layer_norm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:742
+msgid ":py:func:`~torch.nn.functional.local_response_norm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:745
+msgid ":py:func:`~torch.nn.functional.normalize`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:746
+msgid ":py:func:`~megengine.functional.normalize`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:750
+msgid "Linear functions"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:758
+msgid ":py:func:`~torch.nn.functional.linear`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:759
+msgid ":py:func:`~megengine.functional.nn.linear`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:761
+msgid ":py:func:`~torch.nn.functional.bilinear`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:766
+msgid "Dropout functions"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:774
+msgid ":py:func:`~torch.nn.functional.dropout`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:775
+msgid ":py:func:`~megengine.functional.nn.dropout`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:777
+msgid ":py:func:`~torch.nn.functional.alpha_dropout`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:780
+msgid ":py:func:`~torch.nn.functional.feature_alpha_dropout`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:783
+msgid ":py:func:`~torch.nn.functional.dropout2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:786
+msgid ":py:func:`~torch.nn.functional.dropout3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:791
+msgid "Sparse functions"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:799
+msgid ":py:func:`~torch.nn.functional.embedding`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:800
+msgid ":py:func:`~megengine.functional.nn.embedding`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:802
+msgid ":py:func:`~torch.nn.functional.embedding_bag`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:805
+msgid ":py:func:`~torch.nn.functional.one_hot`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:806
+msgid ":py:func:`~megengine.functional.nn.one_hot`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:810
+msgid "Metric functions"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:818
+msgid ":py:func:`~torch.nn.functional.pairwise_distance`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:821
+msgid ":py:func:`~torch.nn.functional.cosine_similarity`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:824
+msgid ":py:func:`~torch.nn.functional.pdist`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:829
+msgid "Loss functions"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:837
+msgid ":py:func:`~torch.nn.functional.binary_cross_entropy_with_logits`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:838
+msgid ":py:func:`~megengine.functional.nn.binary_cross_entropy`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:840
+msgid ":py:func:`~torch.nn.functional.poisson_nll_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:843
+msgid ":py:func:`~torch.nn.functional.cosine_embedding_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:846
+msgid ":py:func:`~torch.nn.functional.cross_entropy`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:847
+msgid ":py:func:`~megengine.functional.nn.cross_entropy`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:849
+msgid ":py:func:`~torch.nn.functional.ctc_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:852
+msgid ":py:func:`~torch.nn.functional.hinge_embedding_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:855
+msgid ":py:func:`~torch.nn.functional.kl_div`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:858
+msgid ":py:func:`~torch.nn.functional.l1_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:859
+msgid ":py:func:`~megengine.functional.nn.l1_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:861
+msgid ":py:func:`~torch.nn.functional.mse_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:862
+msgid ":py:func:`~megengine.functional.nn.square_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:864
+msgid ":py:func:`~torch.nn.functional.margin_ranking_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:867
+msgid ":py:func:`~torch.nn.functional.multilabel_margin_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:870
+msgid ":py:func:`~torch.nn.functional.multilabel_soft_margin_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:873
+msgid ":py:func:`~torch.nn.functional.multi_margin_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:874
+msgid ":py:func:`~megengine.functional.nn.hinge_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:876
+msgid ":py:func:`~torch.nn.functional.nll_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:879
+msgid ":py:func:`~torch.nn.functional.smooth_l1_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:882
+msgid ":py:func:`~torch.nn.functional.soft_margin_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:885
+msgid ":py:func:`~torch.nn.functional.triplet_margin_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:888
+msgid ":py:func:`~torch.nn.functional.triplet_margin_with_distance_loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:893
+msgid "NN Module"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:901
+msgid ":py:class:`~torch.nn.parameter.Parameter`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:902
+msgid ":py:class:`~megengine.Parameter`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:906
+msgid "Containers"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:914
+msgid ":py:class:`~torch.nn.Module`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:915
+msgid ":py:class:`~megengine.module.Module`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:917
+msgid ":py:class:`~torch.nn.Sequential`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:918
+msgid ":py:class:`~megengine.module.Sequential`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:920
+msgid ":py:class:`~torch.nn.ModuleList`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:921
+#: ../../source/reference/comparison.rst:924
+#: ../../source/reference/comparison.rst:927
+#: ../../source/reference/comparison.rst:930
+msgid "MegEngine 原生支持"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:923
+msgid ":py:class:`~torch.nn.ModuleDict`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:926
+msgid ":py:class:`~torch.nn.ParameterList`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:929
+msgid ":py:class:`~torch.nn.ParameterDict`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:934
+msgid "Initialization"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:942
+msgid ":py:func:`~torch.nn.init.calculate_gain`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:943
+msgid ":py:class:`~megengine.module.init.calculate_gain`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:945
+msgid "_calculate_fan_in_and_fan_out"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:946
+msgid ":py:class:`~megengine.module.init.calculate_fan_in_and_fan_out`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:948
+msgid "_calculate_correct_fan"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:949
+msgid ":py:class:`~megengine.module.init.calculate_correct_fan`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:951
+msgid ":py:func:`~torch.nn.init.uniform_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:952
+msgid ":py:class:`~megengine.module.init.uniform_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:954
+msgid ":py:func:`~torch.nn.init.normal_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:955
+msgid ":py:class:`~megengine.module.init.normal_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:957
+msgid ":py:func:`~torch.nn.init.constant_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:958
+msgid ":py:class:`~megengine.module.init.fill_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:960
+msgid ":py:func:`~torch.nn.init.ones_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:961
+msgid ":py:class:`~megengine.module.init.ones_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:963
+msgid ":py:func:`~torch.nn.init.zeros_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:964
+msgid ":py:class:`~megengine.module.init.zeros_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:966
+msgid ":py:func:`~torch.nn.init.eye_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:969
+msgid ":py:func:`~torch.nn.init.dirac_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:972
+msgid ":py:func:`~torch.nn.init.xavier_uniform_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:973
+msgid ":py:class:`~megengine.module.init.xavier_uniform_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:975
+msgid ":py:func:`~torch.nn.init.xavier_normal_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:976
+msgid ":py:class:`~megengine.module.init.xavier_normal_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:978
+msgid ":py:func:`~torch.nn.init.kaiming_uniform_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:979
+msgid ":py:class:`~megengine.module.init.msra_uniform_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:981
+msgid ":py:func:`~torch.nn.init.kaiming_normal_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:982
+msgid ":py:class:`~megengine.module.init.msra_normal_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:984
+msgid ":py:func:`~torch.nn.init.orthogonal_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:987
+msgid ":py:func:`~torch.nn.init.sparse_`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:992
+msgid "Convolution Layers"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1000
+#: ../../source/reference/comparison.rst:1024
+msgid ":py:class:`~torch.nn.Conv1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1001
+#: ../../source/reference/comparison.rst:1025
+msgid ":py:class:`~megengine.module.Conv1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1003
+msgid ":py:class:`~torch.nn.Conv2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1004
+msgid ":py:class:`~megengine.module.Conv2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1006
+msgid ":py:class:`~torch.nn.Conv3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1007
+msgid ":py:class:`~megengine.module.Conv3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1009
+msgid ":py:class:`~torch.nn.ConvTranspose1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1012
+msgid ":py:class:`~torch.nn.ConvTranspose2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1013
+msgid ":py:class:`~megengine.module.ConvTranspose2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1015
+msgid ":py:class:`~torch.nn.ConvTranspose3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1016
+msgid ":py:class:`~megengine.module.ConvTranspose3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1018
+msgid "LocalConv2d"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1019
+msgid ":py:class:`~megengine.module.LocalConv2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1021
+msgid "DeformableConv2d"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1022
+msgid ":py:class:`~megengine.module.DeformableConv2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1027
+msgid ":py:class:`~torch.nn.Unfold`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1028
+msgid ":py:class:`~megengine.module.SlidingWindowTranspose`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1030
+msgid ":py:class:`~torch.nn.Fold`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1031
+msgid ":py:class:`~megengine.module.SlidingWindow`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1035
+msgid "Pooling layers"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1043
+msgid ":py:class:`~torch.nn.MaxPool1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1046
+msgid ":py:class:`~torch.nn.MaxPool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1047
+msgid ":py:class:`~megengine.module.MaxPool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1049
+msgid ":py:class:`~torch.nn.MaxPool3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1052
+msgid ":py:class:`~torch.nn.MaxUnpool1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1055
+msgid ":py:class:`~torch.nn.MaxUnpool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1058
+msgid ":py:class:`~torch.nn.MaxUnpool3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1061
+msgid ":py:class:`~torch.nn.AvgPool1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1064
+msgid ":py:class:`~torch.nn.AvgPool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1065
+msgid ":py:class:`~megengine.module.AvgPool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1067
+msgid ":py:class:`~torch.nn.AvgPool3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1070
+msgid ":py:class:`~torch.nn.FractionalMaxPool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1073
+msgid ":py:class:`~torch.nn.LPPool1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1076
+msgid ":py:class:`~torch.nn.LPPool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1079
+msgid ":py:class:`~torch.nn.AdaptiveMaxPool1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1082
+msgid ":py:class:`~torch.nn.AdaptiveMaxPool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1083
+msgid ":py:class:`~megengine.module.AdaptiveMaxPool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1085
+msgid ":py:class:`~torch.nn.AdaptiveMaxPool3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1088
+msgid ":py:class:`~torch.nn.AdaptiveAvgPool1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1091
+msgid ":py:class:`~torch.nn.AdaptiveAvgPool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1092
+msgid ":py:class:`~megengine.module.AdaptiveAvgPool2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1094
+msgid ":py:class:`~torch.nn.AdaptiveAvgPool3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1099
+msgid "Padding Layers"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1107
+msgid ":py:class:`~torch.nn.ReflectionPad1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1108
+#: ../../source/reference/comparison.rst:1111
+#: ../../source/reference/comparison.rst:1114
+#: ../../source/reference/comparison.rst:1117
+#: ../../source/reference/comparison.rst:1120
+#: ../../source/reference/comparison.rst:1123
+#: ../../source/reference/comparison.rst:1126
+#: ../../source/reference/comparison.rst:1129
+#: ../../source/reference/comparison.rst:1132
+#: ../../source/reference/comparison.rst:1135
+msgid ":py:class:`~megengine.module.Pad`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1109
+#: ../../source/reference/comparison.rst:1112
+#: ../../source/reference/comparison.rst:1115
+msgid "mode = REFLECT"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1110
+msgid ":py:class:`~torch.nn.ReflectionPad2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1113
+msgid ":py:class:`~torch.nn.ReflectionPad3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1116
+msgid ":py:class:`~torch.nn.ReplicationPad1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1118
+#: ../../source/reference/comparison.rst:1121
+#: ../../source/reference/comparison.rst:1124
+msgid "mode = EDGE"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1119
+msgid ":py:class:`~torch.nn.ReplicationPad2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1122
+msgid ":py:class:`~torch.nn.ReplicationPad3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1125
+msgid ":py:class:`~torch.nn.ZeroPad2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1127
+#: ../../source/reference/comparison.rst:1130
+#: ../../source/reference/comparison.rst:1133
+#: ../../source/reference/comparison.rst:1136
+msgid "mode = CONSTANT"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1128
+msgid ":py:class:`~torch.nn.ConstantPad1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1131
+msgid ":py:class:`~torch.nn.ConstantPad2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1134
+msgid ":py:class:`~torch.nn.ConstantPad3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1139
+msgid "Non-linear Activations"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1147
+msgid ":py:class:`~torch.nn.ELU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1150
+msgid ":py:class:`~torch.nn.Hardshrink`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1153
+msgid ":py:class:`~torch.nn.Hardsigmoid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1156
+msgid ":py:class:`~torch.nn.Hardtanh`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1159
+msgid ":py:class:`~torch.nn.Hardswish`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1162
+msgid ":py:class:`~torch.nn.LeakyReLU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1163
+msgid ":py:class:`~megengine.module.LeakyReLU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1165
+msgid ":py:class:`~torch.nn.LogSigmoid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1168
+msgid ":py:class:`~torch.nn.MultiheadAttention`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1171
+msgid ":py:class:`~torch.nn.PReLU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1172
+msgid ":py:class:`~megengine.module.PReLU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1174
+msgid ":py:class:`~torch.nn.ReLU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1175
+msgid ":py:class:`~megengine.module.ReLU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1177
+msgid ":py:class:`~torch.nn.ReLU6`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1180
+msgid ":py:class:`~torch.nn.RReLU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1183
+msgid ":py:class:`~torch.nn.SELU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1186
+msgid ":py:class:`~torch.nn.CELU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1189
+msgid ":py:class:`~torch.nn.GELU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1190
+msgid ":py:class:`~megengine.module.GELU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1192
+msgid ":py:class:`~torch.nn.Sigmoid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1193
+msgid ":py:class:`~megengine.module.Sigmoid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1195
+msgid ":py:class:`~torch.nn.SiLU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1196
+msgid ":py:class:`~megengine.module.SiLU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1198
+msgid ":py:class:`~torch.nn.Softplus`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1201
+msgid ":py:class:`~torch.nn.Softshrink`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1204
+msgid ":py:class:`~torch.nn.Softsign`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1207
+msgid ":py:class:`~torch.nn.Tanh`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1210
+msgid ":py:class:`~torch.nn.Tanhshrink`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1213
+msgid ":py:class:`~torch.nn.Threshold`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1216
+msgid ":py:class:`~torch.nn.Softmin`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1219
+msgid ":py:class:`~torch.nn.Softmax`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1220
+msgid ":py:class:`~megengine.module.Softmax`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1222
+msgid ":py:class:`~torch.nn.Softmax2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1225
+msgid ":py:class:`~torch.nn.LogSoftmax`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1228
+msgid ":py:class:`~torch.nn.AdaptiveLogSoftmaxWithLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1233
+msgid "Normalization Layers"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1241
+msgid ":py:class:`~torch.nn.BatchNorm1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1242
+msgid ":py:class:`~megengine.module.BatchNorm1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1244
+msgid ":py:class:`~torch.nn.BatchNorm2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1245
+msgid ":py:class:`~megengine.module.BatchNorm2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1247
+msgid ":py:class:`~torch.nn.BatchNorm3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1250
+msgid ":py:class:`~torch.nn.GroupNorm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1251
+msgid ":py:class:`~megengine.module.GroupNorm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1253
+msgid ":py:class:`~torch.nn.SyncBatchNorm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1254
+msgid ":py:class:`~megengine.module.SyncBatchNorm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1256
+msgid ":py:class:`~torch.nn.InstanceNorm1d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1259
+msgid ":py:class:`~torch.nn.InstanceNorm2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1260
+msgid ":py:class:`~megengine.module.InstanceNorm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1262
+msgid ":py:class:`~torch.nn.InstanceNorm3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1265
+msgid ":py:class:`~torch.nn.LayerNorm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1266
+msgid ":py:class:`~megengine.module.LayerNorm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1268
+msgid ":py:class:`~torch.nn.LocalResponseNorm`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1273
+msgid "Recurrent Layers"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1281
+msgid ":py:class:`~torch.nn.RNNBase`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1284
+msgid ":py:class:`~torch.nn.RNN`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1287
+msgid ":py:class:`~torch.nn.LSTM`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1290
+msgid ":py:class:`~torch.nn.GRU`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1293
+msgid ":py:class:`~torch.nn.RNNCell`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1296
+msgid ":py:class:`~torch.nn.LSTMCell`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1299
+msgid ":py:class:`~torch.nn.GRUCell`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1304
+msgid "Transformer Layers"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1312
+msgid ":py:class:`~torch.nn.Transformer`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1315
+msgid ":py:class:`~torch.nn.TransformerEncoder`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1318
+msgid ":py:class:`~torch.nn.TransformerDecoder`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1321
+msgid ":py:class:`~torch.nn.TransformerEncoderLayer`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1324
+msgid ":py:class:`~torch.nn.TransformerDecoderLayer`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1329
+msgid "Linear Layers"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1337
+msgid ":py:class:`~torch.nn.Identity`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1338
+msgid ":py:class:`~megengine.module.Identity`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1340
+msgid ":py:class:`~torch.nn.Linear`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1341
+msgid ":py:class:`~megengine.module.Linear`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1343
+msgid ":py:class:`~torch.nn.Bilinear`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1348
+msgid "Dropout Layers"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1356
+msgid ":py:class:`~torch.nn.Dropout`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1357
+msgid ":py:class:`~megengine.module.Dropout`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1359
+msgid ":py:class:`~torch.nn.Dropout2d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1362
+msgid ":py:class:`~torch.nn.Dropout3d`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1365
+msgid ":py:class:`~torch.nn.AlphaDropout`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1370
+msgid "Sparse Layers"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1378
+msgid ":py:class:`~torch.nn.Embedding`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1379
+msgid ":py:class:`~megengine.module.Embedding`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1381
+msgid ":py:class:`~torch.nn.EmbeddingBag`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1386
+msgid "Distance Functions"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1394
+msgid ":py:class:`~torch.nn.CosineSimilarity`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1397
+msgid ":py:class:`~torch.nn.PairwiseDistance`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1402
+msgid "Loss Functions"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1406
+msgid "请参考 loss function 的 functional 实现。"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1415
+msgid ":py:class:`~torch.nn.L1Loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1418
+msgid ":py:class:`~torch.nn.MSELoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1421
+msgid ":py:class:`~torch.nn.CrossEntropyLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1424
+msgid ":py:class:`~torch.nn.CTCLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1427
+msgid ":py:class:`~torch.nn.NLLLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1430
+msgid ":py:class:`~torch.nn.PoissonNLLLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1433
+msgid ":py:class:`~torch.nn.KLDivLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1436
+msgid ":py:class:`~torch.nn.BCELoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1439
+msgid ":py:class:`~torch.nn.BCEWithLogitsLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1442
+msgid ":py:class:`~torch.nn.MarginRankingLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1445
+msgid ":py:class:`~torch.nn.HingeEmbeddingLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1448
+msgid ":py:class:`~torch.nn.MultiLabelMarginLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1451
+msgid ":py:class:`~torch.nn.SmoothL1Loss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1454
+msgid ":py:class:`~torch.nn.SoftMarginLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1457
+msgid ":py:class:`~torch.nn.MultiLabelSoftMarginLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1460
+msgid ":py:class:`~torch.nn.CosineEmbeddingLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1463
+msgid ":py:class:`~torch.nn.MultiMarginLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1466
+msgid ":py:class:`~torch.nn.TripletMarginLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1469
+msgid ":py:class:`~torch.nn.TripletMarginWithDistanceLoss`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1474
+msgid "Vision functions"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1482
+msgid ":py:func:`~torch.nn.functional.pixel_shuffle`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1485
+msgid ":py:func:`~torch.nn.functional.pad`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1488
+msgid ":py:func:`~torch.nn.functional.interpolate`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1489
+#: ../../source/reference/comparison.rst:1492
+#: ../../source/reference/comparison.rst:1495
+#: ../../source/reference/comparison.rst:1498
+#: ../../source/reference/comparison.rst:1529
+msgid ":py:func:`~megengine.functional.nn.interpolate`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1491
+msgid ":py:func:`~torch.nn.functional.upsample`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1494
+msgid ":py:func:`~torch.nn.functional.upsample_nearest`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1497
+msgid ":py:func:`~torch.nn.functional.upsample_bilinear`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1500
+msgid ":py:func:`~torch.nn.functional.grid_sample`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1501
+#: ../../source/reference/comparison.rst:1532
+msgid ":py:func:`~megengine.functional.nn.remap`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1503
+msgid ":py:func:`~torch.nn.functional.affine_grid`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1504
+#: ../../source/reference/comparison.rst:1535
+msgid ":py:func:`~megengine.functional.nn.warp_affine`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1506
+msgid ":py:func:`~torchnn.ops.nms`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1507
+msgid ":py:func:`~megengine.functional.nn.nms`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1509
+msgid ":py:func:`~torchnn.ops.roi_align`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1510
+msgid ":py:func:`~megengine.functional.nn.roi_align`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1512
+msgid ":py:func:`~torchnn.ops.roi_pool`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1513
+msgid ":py:func:`~megengine.functional.nn.roi_pooling`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1517
+msgid "OpenCV Python Package"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1525
+msgid "cvtColor"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1526
+msgid ":py:func:`~megengine.functional.nn.cvt_color`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1528
+msgid "resize"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1531
+msgid "remap"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1534
+msgid "warpAffine"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1537
+msgid "warpPerspective"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1538
+msgid ":py:func:`~megengine.functional.nn.warp_perspective`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1542
+msgid "NVIDIA"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1551
+msgid "correlation"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1552
+msgid ":py:func:`~megengine.functional.nn.correlation`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1554
+msgid "nvof"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1555
+msgid ":py:func:`~megengine.functional.nn.nvof`"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1561
+msgid "Not Implemeted"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1565
+msgid ""
+"一些 API 在 MegEngine 中可能还没有实现，但所有的 API 并不是一开始就被设计出来的。 我们可以像搭积木一样，利用已经存在的基础 "
+"API 来组合出 MegEngine 中尚未提供的接口。"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1568
+msgid ""
+"比如 “如何实现 :py:func:`~torch.roll` ” 这个问题，可以使用 :py:func:`~.functional.split`"
+" 和 :py:func:`~.functional.concat` 拼接出来："
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1602
+msgid "除此之外，你可以尝试在 GitHub Issues 或论坛中针对 API 问题发起求助。"
+msgstr ""
+
+#: ../../source/reference/comparison.rst:1604
 msgid "我们也欢迎你将自己实现的 API 以 Pull Request 的形式提交到 MegEngine 代码库中来～"
 msgstr ""
 
-#: ../../source/reference/comparison.rst:686
+#: ../../source/reference/comparison.rst:1608
 msgid "对于缺失的 Loss Funtions 算子，大都可自行设计实现。"
 msgstr ""
+
+#~ msgid "Standard tensor operations"
+#~ msgstr ""
+
+#~ msgid ":py:class:`numpy.ndarray`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.Tensor`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.Tensor`"
+#~ msgstr ""
+
+#~ msgid "Basic N-dimensional array type"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Pytorch 的 Tensor 类中提供了许多操作/计算方法，而在 MegEngine"
+#~ " 中这些方法被统一实现在 functional 模块中， 意味着类似 "
+#~ "``functional.add()`` 等操作并不一定存在着对应的 ``Tensor.add()`` "
+#~ "实现，这是设计上的历史决定。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Pytorch 中默认所有 Tensor 都需要被求导，因此提供了 "
+#~ ":py:class:`torch.no_grad` 来禁用梯度计算。 而在 MegEngine "
+#~ "中 Tensor 默认不需要被求导，需要通过 "
+#~ ":py:meth:`megengine.autodiff.GradManager.attach` 来进行绑定， "
+#~ "被绑定后的 Tensor 可以通过 :py:meth:`megengine.Tensor.detach`"
+#~ " 来解除绑定。"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.arange`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.arange`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.arange`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.linspace`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.linspace`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.linspace`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.eye`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.eye`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.eye`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.zeros`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.zeros`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.zeros`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.zeros_like`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.zeros_like`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.zeros_like`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.ones`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.ones`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.ones`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.ones_like`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.ones_like`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.ones_like`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.full`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.full`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.full`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.full_like`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.full_like`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.full_like`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.reshape`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.reshape`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.reshape`"
+#~ msgstr ""
+
+#~ msgid ":py:meth:`numpy.ndarray.flatten`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.flatten`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.flatten`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.broadcast_to`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.broadcast_to`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.broadcast_to`"
+#~ msgstr ""
+
+#~ msgid "aka. ``expand()``"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.expand_dims`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.unsqueeze`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.expand_dims`"
+#~ msgstr ""
+
+#~ msgid "NumPy Style"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.squeeze`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.squeeze`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.squeeze`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.concatenate`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.cat`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.concat`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.stack`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.stack`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.stack`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.split`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.split`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.split`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.tile`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.tile`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.tile`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.repeat`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.repeat_interleave`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.repeat`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.take_along_axis`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.gather`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.gather`"
+#~ msgstr ""
+
+#~ msgid "Pytorch Style"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.put_along_axis`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.scatter`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.scatter`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.compress`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.take`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.cond_take`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.add`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.add`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.add`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.subtract`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.sub`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.sub`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.mul`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.mul`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.divide`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.div`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.div`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.floor_divide`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.floor_divide`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.floor_div`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.negative`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.neg`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.neg`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.absolute`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.abs`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.abs`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.power`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.pow`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.pow`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.mod`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.remainder`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.mod`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.sqrt`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.sqrt`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.sqrt`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.square`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.square`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.square`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.sign`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.sign`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.sign`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.maximum`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.maximum`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.maximum`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.minimum`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.minimum`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.minimum`"
+#~ msgstr ""
+
+#~ msgid ":py:meth:`numpy.ndarray.round`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.round`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.round`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.ceil`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.ceil`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.ceil`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.floor`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.floor`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.floor`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.clip`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.clamp`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.clip`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.exp`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.exp`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.exp`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.expm1`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.expm1`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.expm1`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.log`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.log`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.log`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.log1p`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.log1p`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.log1p`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.sin`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.sin`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.sin`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.cos`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.cos`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.cos`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.tan`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.tan`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.tan`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.arcsin`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.asin`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.asin`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.arccos`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.acos`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.acos`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.arctan`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.atan`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.atan`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.sinh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.sinh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.sinh`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.cosh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.cosh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.cosh`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.tanh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.tanh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.tanh`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.arcsinh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.asinh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.asinh`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.arccosh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.acosh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.acosh`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.arctanh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.atanh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.atanh`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.left_shift`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.left_shift`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.right_shift`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.right_shift`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.logical_and`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.logical_and`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.logical_not`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.logical_not`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.logical_or`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.logical_or`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.logical_xor`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.logical_xor`"
+#~ msgstr ""
+
+#~ msgid "Comparison functions"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.isnan`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.isnan`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.isnan`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.isinf`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.isinf`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.isinf`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.equal`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.equal`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.equal`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.not_equal`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.not_equal`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.not_equal`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.less`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.less`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.less`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.less_equal`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.less_equal`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.less_equal`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.greater`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.greater`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.greater`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.greater_equal`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.greater_equal`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.greater_equal`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.sum`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.sum`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.sum`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.prod`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.prod`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.prod`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.mean`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.mean`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.mean`"
+#~ msgstr ""
+
+#~ msgid ":py:meth:`numpy.ndarray.min`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.min`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.min`"
+#~ msgstr ""
+
+#~ msgid ":py:meth:`numpy.ndarray.max`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.max`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.max`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.var`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.var`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.var`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.std`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.std`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.std`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.transpose`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.transpose`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.transpose`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.dot`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.dot`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.dot`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.linalg.inv`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.linalg.inv`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.matinv`"
+#~ msgstr ""
+
+#~ msgid ":py:data:`numpy.matmul`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.matmul`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.matmul`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.linalg.svd`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.linalg.svd`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.svd`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.linalg.norm`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.norm`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.norm`"
+#~ msgstr ""
+
+#~ msgid "Searching and Sorting Functions"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.argmin`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.argmin`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.argmin`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.argmax`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.argmax`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.argmax`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.argsort`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.topk`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.topk`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.sort`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.sort`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.sort`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`numpy.where`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.where`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.where`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.conv1d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.conv1d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.conv2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.conv2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.conv3d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.conv3d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.conv_transpose1d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.conv_transpose2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.conv_transpose2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.conv_transpose3d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.conv_transpose3d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.local_conv2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.deformable_conv2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.unfold`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.fold`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.sliding_window`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.avg_pool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.avg_pool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.avg_pool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.avg_pool3d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.max_pool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.max_pool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.max_pool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.max_pool3d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.max_unpool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.max_unpool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.max_unpool3d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.lp_pool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.lp_pool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.adaptive_max_pool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.adaptive_max_pool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.adaptive_max_pool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.adaptive_max_pool3d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.adaptive_avg_pool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.adaptive_avg_pool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.adaptive_avg_pool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.adaptive_avg_pool3d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.threshold`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.relu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.relu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.hardtanh`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.hardswish`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.hswish`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.relu6`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.relu6`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.elu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.selu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.celu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.leaky_relu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.leaky_relu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.prelu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.prelu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.rrelu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.glu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.gelu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.logsigmoid`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.logsigmoid`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.hardshrink`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.tanhshrink`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.softsign`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.softplus`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.softmin`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.softmax`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.softmax`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.softshrink`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.gumbel_softmax`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.log_softmax`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.logsoftmax`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.sigmoid`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.sigmoid`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.hardsigmoid`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.hsigmoid`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.silu`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.batch_norm`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.batch_norm`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.instance_norm`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.layer_norm`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.local_response_norm`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.normalize`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.normalize`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.linear`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.linear`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.bilinear`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.dropout`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.dropout`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.alpha_dropout`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.feature_alpha_dropout`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.dropout2d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.dropout3d`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.embedding`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.embedding`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.embedding_bag`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.one_hot`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.nn.one_hot`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.pairwise_distance`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.cosine_similarity`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.pdist`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.binary_cross_entropy`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.loss.binary_cross_entropy`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.binary_cross_entropy_with_logits`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.poisson_nll_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.cosine_embedding_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.cross_entropy`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.loss.cross_entropy`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.ctc_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.hinge_embedding_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.kl_div`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.l1_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.loss.l1_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.mse_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.loss.square_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.margin_ranking_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.multilabel_margin_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.multilabel_soft_margin_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.multi_margin_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.loss.hinge_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.nll_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.smooth_l1_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.soft_margin_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.triplet_margin_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.triplet_margin_with_distance_loss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.parameter.Parameter`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.Parameter`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Module`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Module`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Sequential`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Sequential`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ModuleList`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ModuleDict`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ParameterList`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ParameterDict`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.calculate_gain`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.calculate_gain`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.calculate_fan_in_and_fan_out`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.calculate_correct_fan`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.uniform_`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.uniform_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.normal_`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.normal_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.constant_`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.fill_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.ones_`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.ones_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.zeros_`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.zeros_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.eye_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.dirac_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.xavier_uniform_`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.xavier_uniform_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.xavier_normal_`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.xavier_normal_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.kaiming_uniform_`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.msra_uniform_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.kaiming_normal_`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.init.msra_normal_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.orthogonal_`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.init.sparse_`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Conv1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Conv1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Conv2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Conv2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Conv3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Conv3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ConvTranspose1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ConvTranspose2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.ConvTranspose2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ConvTranspose3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.ConvTranspose3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.LocalConv2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.DeformableConv2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Unfold`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Fold`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.SlidingWindow`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MaxPool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MaxPool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.MaxPool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MaxPool3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MaxUnpool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MaxUnpool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MaxUnpool3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AvgPool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AvgPool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.AvgPool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AvgPool3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.FractionalMaxPool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.LPPool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.LPPool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AdaptiveMaxPool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AdaptiveMaxPool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.AdaptiveMaxPool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AdaptiveMaxPool3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AdaptiveAvgPool1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AdaptiveAvgPool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.AdaptiveAvgPool2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AdaptiveAvgPool3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ReflectionPad1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ReplicationPad1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ReplicationPad3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ZeroPad2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ConstantPad1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ConstantPad2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ConstantPad3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ELU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Hardshrink`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Hardsigmoid`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Hardtanh`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Hardswish`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.LeakyReLU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.LeakyReLU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.LogSigmoid`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MultiheadAttention`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.PReLU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.PReLU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ReLU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.ReLU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.ReLU6`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.RReLU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.SELU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.CELU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.GELU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Sigmoid`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Sigmoid`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.SiLU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Softplus`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Softshrink`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Softsign`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Tanh`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Tanhshrink`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Threshold`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Softmin`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Softmax`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Softmax`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Softmax2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.LogSoftmax`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AdaptiveLogSoftmaxWithLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.BatchNorm1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.BatchNorm1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.BatchNorm2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.BatchNorm2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.BatchNorm3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.GroupNorm`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.GroupNorm`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.SyncBatchNorm`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.SyncBatchNorm`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.InstanceNorm1d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.InstanceNorm2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.InstanceNorm`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.InstanceNorm3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.LayerNorm`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.LayerNorm`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.LocalResponseNorm`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.RNNBase`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.RNN`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.LSTM`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.GRU`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.RNNCell`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.LSTMCell`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.GRUCell`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Transformer`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.TransformerEncoder`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.TransformerDecoder`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.TransformerEncoderLayer`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.TransformerDecoderLayer`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Identity`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Identity`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Linear`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Linear`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Bilinear`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Dropout`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Dropout`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Dropout2d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Dropout3d`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.AlphaDropout`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.Embedding`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`megengine.module.Embedding`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.EmbeddingBag`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.CosineSimilarity`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.PairwiseDistance`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.L1Loss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MSELoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.CrossEntropyLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.CTCLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.NLLLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.PoissonNLLLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.KLDivLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.BCELoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.BCEWithLogitsLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MarginRankingLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.HingeEmbeddingLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MultiLabelMarginLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.SmoothL1Loss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.SoftMarginLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MultiLabelSoftMarginLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.CosineEmbeddingLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.MultiMarginLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.TripletMarginLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:class:`torch.nn.TripletMarginWithDistanceLoss`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.pixel_shuffle`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.pad`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.interpolate`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.vision.interpolate`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.upsample`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.upsample_nearest`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.upsample_bilinear`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.grid_sample`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.vision.remap`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torch.nn.functional.affine_grid`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.vision.warp_affine`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torchvision.ops.nms`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.vision.nms`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torchvision.ops.roi_align`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.vision.roi_align`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`torchvision.ops.roi_pool`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.vision.roi_pooling`"
+#~ msgstr ""
+
+#~ msgid "OpenCV"
+#~ msgstr ""
+
+#~ msgid "cv2.cvtColor()"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.vision.cvt_color`"
+#~ msgstr ""
+
+#~ msgid "cv2.resize()"
+#~ msgstr ""
+
+#~ msgid "cv2.remap()"
+#~ msgstr ""
+
+#~ msgid "cv2.warpAffine()"
+#~ msgstr ""
+
+#~ msgid "cv2.warpPerspective()"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.vision.warp_perspective`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.vision.correlation`"
+#~ msgstr ""
+
+#~ msgid ":py:func:`megengine.functional.vision.nvof`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "比如 “如何实现 :py:func:`torch.roll` ” 这个问题，可以使用 "
+#~ ":py:func:`~.functional.split` 和 "
+#~ ":py:func:`~.functional.concat` 拼接出来："
+#~ msgstr ""
 
