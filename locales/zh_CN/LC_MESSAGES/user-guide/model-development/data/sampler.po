@@ -1,32 +1,29 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-09 20:54\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/data/sampler.po\n"
+"X-Crowdin-File-ID: 8161\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/model-development/data/sampler.rst:5
 msgid "使用 Sampler 定义抽样规则"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:7
-msgid ""
-"经过 :ref:`dataset-guide` 这一步骤后，``DataLoader`` 便可以知道如何从数据集中加载数据到内存。 "
-"但除了要能够获取数据集中的单个样本数据外，每批数据的生成也有着一定的要求，比如每批数据的规模大小、以及对抽样规则的要求等， "
-"都需要有对应的配置，使用 ``Sampler`` 可以对每批数据的抽样规则进行自定义。 在其它小节我们还会介绍如何 :ref:`data-"
-"collator-guide` ，但本小节我们主要介绍 ``Sampler`` 的概念和使用。"
+msgid "经过 :ref:`dataset-guide` 这一步骤后，``DataLoader`` 便可以知道如何从数据集中加载数据到内存。 但除了要能够获取数据集中的单个样本数据外，每批数据的生成也有着一定的要求，比如每批数据的规模大小、以及对抽样规则的要求等， 都需要有对应的配置，使用 ``Sampler`` 可以对每批数据的抽样规则进行自定义。 在其它小节我们还会介绍如何 :ref:`data-collator-guide` ，但本小节我们主要介绍 ``Sampler`` 的概念和使用。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:12
@@ -34,9 +31,7 @@ msgid "准确来说，抽样器的职责是决定数据的获取顺序，方便�
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:16
-msgid ""
-"在 MegEngine 中，:py:class:`Sampler` 是所有抽样器的抽象基类，在大部分情况下用户无需对抽样器进行自定义实现， 因为在"
-" MegEngine 中已经实现了常见的各种抽样器，比如上面示例代码中的 ``RandomSampler`` 抽样器。"
+msgid "在 MegEngine 中，:py:class:`Sampler` 是所有抽样器的抽象基类，在大部分情况下用户无需对抽样器进行自定义实现， 因为在 MegEngine 中已经实现了常见的各种抽样器，比如上面示例代码中的 ``RandomSampler`` 抽样器。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:21
@@ -48,15 +43,11 @@ msgid ":ref:`MapSampler <map-sampler-guide>` : 适用于 Map-style 数据集的�
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:25
-msgid ""
-"根据抽样方式划分： :ref:`sequential-sampler-guide` （默认方式） / :ref:`random-sampler-"
-"guide` / :ref:`replacement-sampler-guide`"
+msgid "根据抽样方式划分： :ref:`sequential-sampler-guide` （默认方式） / :ref:`random-sampler-guide` / :ref:`replacement-sampler-guide`"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:26
-msgid ""
-"我们还可以使用 :ref:`Infinite <infinite-sampler-guide>` 封装上述类来实现 :ref:`infinite-"
-"sampler-guide` ；"
+msgid "我们还可以使用 :ref:`Infinite <infinite-sampler-guide>` 封装上述类来实现 :ref:`infinite-sampler-guide` ；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:27
@@ -76,18 +67,11 @@ msgid ":py:class:`MapSampler` 类签名如下："
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:41
-msgid ""
-"其中 ``dataset`` 用来获取数据集信息， ``batch_size`` 参数用于指定批数据的规模， ``drop_last`` "
-"参数用于设置是否丢掉最后一批不完整的数据， 而 ``num_samples``, ``world_size``, ``rank`` 和 "
-"``seed`` 这些参数用于分布式训练情景。"
+msgid "其中 ``dataset`` 用来获取数据集信息， ``batch_size`` 参数用于指定批数据的规模， ``drop_last`` 参数用于设置是否丢掉最后一批不完整的数据， 而 ``num_samples``, ``world_size``, ``rank`` 和 ``seed`` 这些参数用于分布式训练情景。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:47
-msgid ""
-"``MapSampler`` 不会真正地将数据读入内存且最终返回经过抽样后的数据，因为会带来比较大的内存开销。 实际上它根据 "
-"``Dataset`` 中实现的 ``__len__`` 协议来获取样本容量，形成 ``[0, 1, ...]`` 整数索引列表， "
-"并按照子类实现的 ``sample`` 方法对该整数索引列表进行抽样， 返回一个可供迭代的列表，里面存放的是抽样得到的各批数据所对应的索引。 "
-"只有在迭代 ``DataLoader`` 时才会根据这些索引加载数据。"
+msgid "``MapSampler`` 不会真正地将数据读入内存且最终返回经过抽样后的数据，因为会带来比较大的内存开销。 实际上它根据 ``Dataset`` 中实现的 ``__len__`` 协议来获取样本容量，形成 ``[0, 1, ...]`` 整数索引列表， 并按照子类实现的 ``sample`` 方法对该整数索引列表进行抽样， 返回一个可供迭代的列表，里面存放的是抽样得到的各批数据所对应的索引。 只有在迭代 ``DataLoader`` 时才会根据这些索引加载数据。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:53
@@ -143,9 +127,7 @@ msgid "使用 :py:class:`~.RandomSampler` 可对数据集进行无放回随机�
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:147
-msgid ""
-"无放回随机抽样也叫简单随机抽样，参考 `Simple random sample "
-"<https://en.wikipedia.org/wiki/Simple_random_sample>`_"
+msgid "无放回随机抽样也叫简单随机抽样，参考 `Simple random sample <https://en.wikipedia.org/wiki/Simple_random_sample>`_"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:153
@@ -161,9 +143,7 @@ msgid "无限抽样"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:176
-msgid ""
-"通常数据集在给定 ``batch_size`` 的情况下，只能划分为有限个 ``batch``. "
-"这意味着抽样所能得到的数据批数是有限的，想要重复利用数据， 最常见的做法是循环多个周期 ``epochs`` 来反复遍历数据集："
+msgid "通常数据集在给定 ``batch_size`` 的情况下，只能划分为有限个 ``batch``. 这意味着抽样所能得到的数据批数是有限的，想要重复利用数据， 最常见的做法是循环多个周期 ``epochs`` 来反复遍历数据集："
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:183
@@ -179,16 +159,11 @@ msgid "``Infinite`` 可以对已有的各类 ``MapSampler`` 进行包装，进�
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:217
-msgid ""
-"它的实现原理是：当发现当前的批索引列表无法再进行迭代时，表明已经完成一次数据遍历， "
-"此时它会立刻再次调用原来的抽样器形成一个新的批索引列表，以供下一次 ``next`` 调用。"
+msgid "它的实现原理是：当发现当前的批索引列表无法再进行迭代时，表明已经完成一次数据遍历， 此时它会立刻再次调用原来的抽样器形成一个新的批索引列表，以供下一次 ``next`` 调用。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:222
-msgid ""
-"可以在官方 `ResNet "
-"<https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>`_"
-" 训练代码中找到 ``DataLoader`` 通过无限采样器加载 ImageNet 数据的示例。"
+msgid "可以在官方 `ResNet <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>`_ 训练代码中找到 ``DataLoader`` 通过无限采样器加载 ImageNet 数据的示例。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:227
@@ -196,15 +171,11 @@ msgid "自定义 MapSampler 示例"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:231
-msgid ""
-":models:`official/vision/detection/tools/utils.py#L67` - "
-"``GroupedRandomSampler``"
+msgid ":models:`official/vision/detection/tools/utils.py#L67` - ``GroupedRandomSampler``"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:232
-msgid ""
-":models:`official/vision/detection/tools/utils.py#L106` - "
-"``InferenceSampler``"
+msgid ":models:`official/vision/detection/tools/utils.py#L106` - ``InferenceSampler``"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/sampler.rst:237
