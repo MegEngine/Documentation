@@ -1,76 +1,58 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-08-17 22:55+0000\n"
+"PO-Revision-Date: 2021-11-09 06:44\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.scatter.po\n"
+"X-Crowdin-File-ID: 2258\n"
 
 #: ../../source/reference/api/megengine.functional.scatter.rst:2
 msgid "megengine.functional.scatter"
 msgstr "megengine.functional.scatter"
 
 #: megengine.functional.tensor.scatter:1 of
-msgid ""
-"Writes all values from the tensor source into input tensor at the indices"
-" specified in the index tensor."
+msgid "Writes all values from the tensor source into input tensor at the indices specified in the index tensor."
 msgstr "把 ``source`` 张量中所有的值通过 ``index`` 张量指定的索引位置上写入到输入张量中。"
 
 #: megengine.functional.tensor.scatter:4 of
-msgid ""
-"For each value in source, its output index is specified by its index in "
-"source for ``axis != dimension`` and by the corresponding value in index "
-"for ``axis = dimension``."
-msgstr ""
-"对于 ``source`` 中的每个值，它的输出索引在 ``axis != dimension`` 时，为 ``source`` 的索引或在 "
-"``axis = dimension`` 时，为 ``index`` 中相对应的值。"
+msgid "For each value in source, its output index is specified by its index in source for ``axis != dimension`` and by the corresponding value in index for ``axis = dimension``."
+msgstr "对于 ``source`` 中的每个值，它的输出索引在 ``axis != dimension`` 时，为 ``source`` 的索引或在 ``axis = dimension`` 时，为 ``index`` 中相对应的值。"
 
 #: megengine.functional.tensor.scatter:8 of
-#, fuzzy
 msgid "For a 3-D tensor, input tensor is updated as:"
-msgstr "对于三维张量， ``inp`` 张量将更新为："
+msgstr ""
 
 #: megengine.functional.tensor.scatter:16 of
 msgid "``inp``, ``index`` and ``source`` should have same number of dimensions."
 msgstr "``inp``, ``index`` 和 ``source`` 应当具有相同的维数。"
 
 #: megengine.functional.tensor.scatter:18 of
-msgid ""
-"It is also required that ``source.shape(d) <= inp.shape(d)`` and "
-"``index.shape(d) == source.shape(d)`` for all dimensions ``d``."
-msgstr ""
-"在所有维度上需要满足 ``source.shape(d) <= inp.shape(d)`` 以及 ``index.shape(d) == "
-"source.shape(d)`` 。"
+msgid "It is also required that ``source.shape(d) <= inp.shape(d)`` and ``index.shape(d) == source.shape(d)`` for all dimensions ``d``."
+msgstr "在所有维度上需要满足 ``source.shape(d) <= inp.shape(d)`` 以及 ``index.shape(d) == source.shape(d)`` 。"
 
 #: megengine.functional.tensor.scatter:21 of
-msgid ""
-"Moreover, the values of index must be between ``0`` and ``inp.shape(axis)"
-" - 1`` inclusive."
+msgid "Moreover, the values of index must be between ``0`` and ``inp.shape(axis) - 1`` inclusive."
 msgstr "此外， ``index`` 的值必须介于 ``0`` 和 ``inp.shape(axis) - 1`` 之间（包含边界）。"
 
 #: megengine.functional.tensor.scatter:25 of
-msgid ""
-"Please notice that, due to performance issues, the result is uncertain on"
-" the GPU device if scattering different positions from source to the same"
-" destination position regard to index tensor."
+msgid "Please notice that, due to performance issues, the result is uncertain on the GPU device if scattering different positions from source to the same destination position regard to index tensor."
 msgstr "请注意，在GPU设备上，由于性能原因，若多个源数据被 index 指定同一个目标位置时，结果会不确定。"
 
 #: megengine.functional.tensor.scatter:29 of
-msgid ""
-"Check the following examples, the oup[0][2] is maybe from source[0][2] "
-"which value is 0.2256 or source[1][2] which value is 0.5339 if set the "
-"index[1][2] from 1 to 0."
-msgstr ""
-"使用以下例子展示案例，如果将 index[1][2] 设置为 1 到 0, 则 oup[0][2] 可能来自值为 0.2256 的 "
-"source[0][2], 或值为 0.5339 的source[1][2]."
+msgid "Check the following examples, the oup[0][2] is maybe from source[0][2] which value is 0.2256 or source[1][2] which value is 0.5339 if set the index[1][2] from 1 to 0."
+msgstr "使用以下例子展示案例，如果将 index[1][2] 设置为 1 到 0, 则 oup[0][2] 可能来自值为 0.2256 的 source[0][2], 或值为 0.5339 的source[1][2]."
 
 #: megengine.functional.tensor.scatter of
 msgid "参数"
@@ -93,9 +75,8 @@ msgid "source element(s) to scatter."
 msgstr "将要进行 scatter 操作的一个或多个元素。"
 
 #: megengine.functional.tensor.scatter of
-#, fuzzy
 msgid "返回类型"
-msgstr "返回"
+msgstr ""
 
 #: megengine.functional.tensor.scatter:42 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
