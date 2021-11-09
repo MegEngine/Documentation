@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-09 20:54\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/lite/cpp-basic.po\n"
+"X-Crowdin-File-ID: 8207\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:5
 msgid "MegEngine Lite C++ 基础功能介绍"
@@ -26,9 +27,7 @@ msgid "在CPU上做推理的一个例子"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:10
-msgid ""
-"接下来，我们将逐步讲解一个使用MegEngine Lite在CPU上做推理的简单例子，即：:src:`basic.cpp "
-"<lite/example/mge/basic.cpp>` 中的 ``basic_load_from_path()`` 函数。"
+msgid "接下来，我们将逐步讲解一个使用MegEngine Lite在CPU上做推理的简单例子，即：:src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``basic_load_from_path()`` 函数。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:14
@@ -36,9 +35,7 @@ msgid "1. 一些配置"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:16
-msgid ""
-"首先需要配置Log的级别，**LiteLogLevel** 一共有 **DEBUG**、**INFO**、**WARN** 和 **ERROR**"
-" 四个级别，其中 **DEBUG** 级别会把最细致的信息作为log显示在屏幕。此外，模型文件和输入数据的路径也要设定。对应代码如下："
+msgid "首先需要配置Log的级别，**LiteLogLevel** 一共有 **DEBUG**、**INFO**、**WARN** 和 **ERROR** 四个级别，其中 **DEBUG** 级别会把最细致的信息作为log显示在屏幕。此外，模型文件和输入数据的路径也要设定。对应代码如下："
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:26
@@ -46,10 +43,7 @@ msgid "2. 加载模型"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:28
-msgid ""
-"模型文件将被作为参数，传给 **Network** 类的 ``load_model`` 方法。**Network** "
-"类包含了加载、初始化、推理模型和显示模型信息的功能。详情请参考 :src:`network.h "
-"<lite/include/lite/network.h>`"
+msgid "模型文件将被作为参数，传给 **Network** 类的 ``load_model`` 方法。**Network** 类包含了加载、初始化、推理模型和显示模型信息的功能。详情请参考 :src:`network.h <lite/include/lite/network.h>`"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:37
@@ -57,17 +51,11 @@ msgid "3. 加载输入数据"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:39
-msgid ""
-"加载前，先要构建 **Tensor** 实体，需要注意与之相关的 **LiteBackend** 、 **LiteDeviceType** "
-"Enum和 **Layout** 类。 **Layout** 类的实体是 **Tensor** 类的成员之一，用于描述 **Tensor** "
-"的维度和数据类型，而 **LiteBackend** 、 **LiteDeviceType** 的实现如下："
+msgid "加载前，先要构建 **Tensor** 实体，需要注意与之相关的 **LiteBackend** 、 **LiteDeviceType** Enum和 **Layout** 类。 **Layout** 类的实体是 **Tensor** 类的成员之一，用于描述 **Tensor** 的维度和数据类型，而 **LiteBackend** 、 **LiteDeviceType** 的实现如下："
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:61
-msgid ""
-"本例中，输入数据是从某npy文件加载进来的，具体的加载方式详见 :src:`main.cpp <lite/example/main.cpp>` "
-"中关于 ``parse_npy()`` 函数的实现。本例通过 ``parse_npy()`` "
-"加载数据并构建src_tensor。然后把src_tensor的数据拷贝到network的输入tensor中。"
+msgid "本例中，输入数据是从某npy文件加载进来的，具体的加载方式详见 :src:`main.cpp <lite/example/main.cpp>` 中关于 ``parse_npy()`` 函数的实现。本例通过 ``parse_npy()`` 加载数据并构建src_tensor。然后把src_tensor的数据拷贝到network的输入tensor中。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:86
@@ -75,9 +63,7 @@ msgid "4. 推理"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:88
-msgid ""
-"网络的推理是通过调用 **Network** 的 ``forward()`` 方法和 ``wait()`` "
-"方法完成的。如果想记录运行时间，可以使用 **lite\\:\\:Timer** 。本例中相关代码如下："
+msgid "网络的推理是通过调用 **Network** 的 ``forward()`` 方法和 ``wait()`` 方法完成的。如果想记录运行时间，可以使用 **lite\\:\\:Timer** 。本例中相关代码如下："
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:108
@@ -85,9 +71,7 @@ msgid "5. 获取输出数据"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:110
-msgid ""
-"推理完成后，网络的输出数据可通过 **Network** 的 ``get_output_tensor()`` 函数获取。具体用法可参看 "
-":src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``output_info()`` 函数代码。"
+msgid "推理完成后，网络的输出数据可通过 **Network** 的 ``get_output_tensor()`` 函数获取。具体用法可参看 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``output_info()`` 函数代码。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:115
@@ -95,10 +79,7 @@ msgid "对于在N卡设备上的推理"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:117
-msgid ""
-"如果用N卡设备做推理，需要在上面例子的基础上稍作修改：把输入Tensor需要构造为 "
-"**LiteDeviceType\\:\\:LITE_CUDA** 类型。即 ``load_from_path_run_cuda()`` "
-"函数中的如下部分（完整代码在 :src:`basic.cpp <lite/example/mge/basic.cpp>` 里）："
+msgid "如果用N卡设备做推理，需要在上面例子的基础上稍作修改：把输入Tensor需要构造为 **LiteDeviceType\\:\\:LITE_CUDA** 类型。即 ``load_from_path_run_cuda()`` 函数中的如下部分（完整代码在 :src:`basic.cpp <lite/example/mge/basic.cpp>` 里）："
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:130
@@ -118,9 +99,7 @@ msgid "以算法搜索结果文件中的算法推理模型（ ``load_from_path_r
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:138
-msgid ""
-"前者首次推理的速度较慢，可以看做是为后者做的准备。后者的运行效率才是更贴近工程应用水平的。两者的详细实现都在文件 :src:`basic.cpp "
-"<lite/example/mge/basic.cpp>` 中。"
+msgid "前者首次推理的速度较慢，可以看做是为后者做的准备。后者的运行效率才是更贴近工程应用水平的。两者的详细实现都在文件 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:143
@@ -128,10 +107,6 @@ msgid "用异步执行模式进行推理"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:145
-msgid ""
-"实现在 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``async_forward()`` "
-"函数 。用户通过接口注册异步回调函数将设置 Network 的 Forward 模式为异步执行模式，目前异步执行模式只有在 CPU 和 CUDA "
-"10.0 "
-"以上才支持，在inference时异步模式，主线程可以在工作线程正在执行计算的同时做一些其他的运算，避免长时间等待，但是在一些单核处理器上没有收益。"
+msgid "实现在 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``async_forward()`` 函数 。用户通过接口注册异步回调函数将设置 Network 的 Forward 模式为异步执行模式，目前异步执行模式只有在 CPU 和 CUDA 10.0 以上才支持，在inference时异步模式，主线程可以在工作线程正在执行计算的同时做一些其他的运算，避免长时间等待，但是在一些单核处理器上没有收益。"
 msgstr ""
 
