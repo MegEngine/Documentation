@@ -1,47 +1,34 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-08-17 23:28+0000\n"
+"PO-Revision-Date: 2021-11-09 08:03\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.autodiff.GradManager.po\n"
+"X-Crowdin-File-ID: 6588\n"
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:2
 msgid "megengine.autodiff.GradManager"
 msgstr ""
 
 #: megengine.autodiff.grad_manager.GradManager:1 of
-msgid ""
-"GradManager computes gradients or more generally, vector-Jacobian "
-"product, by reverse mode automatic differentiation (a.k.a. back "
-"propagation)."
+msgid "GradManager computes gradients or more generally, vector-Jacobian product, by reverse mode automatic differentiation (a.k.a. back propagation)."
 msgstr "GradManager 负责计算梯度，或更一般地，矢量-雅可比积，通过反向模式做自动微分（又称为反向传播）。"
 
 #: megengine.autodiff.grad_manager.GradManager:4 of
-msgid ""
-"Reverse mode autodiff normally reuses many intermediate tensors for best "
-"computation efficiency. In a read-eval-print-loop (REPL) environment "
-"however, it is impossible to known how the user would take gradients "
-"later thus which tensors to keep. To solve this problem, the user must "
-"somehow declare beforehand which gradient could possibly be taken. With "
-"GradManager, users are required to call the :meth:`attach` method on a "
-"tensor if they want to take gradients with respect to it later. "
-"Furthermore, any computation on a tensor before it is attached is "
-"completely ignored from the autodiff perspective, so :meth:`attach` must "
-"be called before any computation that needs differentiation."
-msgstr ""
-"反向模式自动微分为了最佳计算效率通常会重用许多中间张量。然而在交互式（REPL）环境中，很难知道用户之后将如何使用梯度从而预先保存某些张量。要解决此问题，用户必须以某种方式事先声明什么梯度需要被保留。在"
-" GradManager 中，用户如果希望后续计算张量的梯度，则需要在该张量上调用 :meth:`~.attach` 方法。此外，在张量被 "
-"``attach`` 之前对张量的任何计算都会从 ``autodiff`` 的角度完全被忽略，所以 :meth:`~.attach` "
-"必须在需要微分的任何计算之前被调用。"
+msgid "Reverse mode autodiff normally reuses many intermediate tensors for best computation efficiency. In a read-eval-print-loop (REPL) environment however, it is impossible to known how the user would take gradients later thus which tensors to keep. To solve this problem, the user must somehow declare beforehand which gradient could possibly be taken. With GradManager, users are required to call the :meth:`attach` method on a tensor if they want to take gradients with respect to it later. Furthermore, any computation on a tensor before it is attached is completely ignored from the autodiff perspective, so :meth:`attach` must be called before any computation that needs differentiation."
+msgstr "反向模式自动微分为了最佳计算效率通常会重用许多中间张量。然而在交互式（REPL）环境中，很难知道用户之后将如何使用梯度从而预先保存某些张量。要解决此问题，用户必须以某种方式事先声明什么梯度需要被保留。在 GradManager 中，用户如果希望后续计算张量的梯度，则需要在该张量上调用 :meth:`~.attach` 方法。此外，在张量被 ``attach`` 之前对张量的任何计算都会从 ``autodiff`` 的角度完全被忽略，所以 :meth:`~.attach` 必须在需要微分的任何计算之前被调用。"
 
 #: megengine.autodiff.grad_manager.GradManager:13 of
 msgid "For example, the following symbolic differentiation code"
@@ -56,47 +43,19 @@ msgid "A more realistic example of training a neural network would be like"
 msgstr "训练神经网络的一个更现实的例子是"
 
 #: megengine.autodiff.grad_manager.GradManager:47 of
-msgid ""
-"You can also use ``record()`` and ``release()`` method instead of "
-"``with`` context:"
+msgid "You can also use ``record()`` and ``release()`` method instead of ``with`` context:"
 msgstr "你也可以使用 ``record()`` 和 ``release()`` 而不使用 ``with`` 语义："
 
 #: megengine.autodiff.grad_manager.GradManager:62 of
-msgid ""
-"For your convenience, GradManager may (not must) be reused. As shown in "
-"the examples, you only need to attach a tensor once and GradManager will "
-"remember it afterwards. However, a single GradManager can record only one"
-" computation history at a time. To run multiple differentiations "
-"simultaneously or perform high order differentiation, create as many "
-"GradManager as you need."
-msgstr ""
-"为方便起见，可以（并非必须）重用 GradManager 。如在这些示例中，您只需要 attach 一个张量一次，而 GradManager "
-"将永远记住它。但是，一个 GradManager 只能记录一次计算历史。要同时进行多种微分或进行高阶微分，可根据需要创建尽可能多的 "
-"GradManager。"
+msgid "For your convenience, GradManager may (not must) be reused. As shown in the examples, you only need to attach a tensor once and GradManager will remember it afterwards. However, a single GradManager can record only one computation history at a time. To run multiple differentiations simultaneously or perform high order differentiation, create as many GradManager as you need."
+msgstr "为方便起见，可以（并非必须）重用 GradManager 。如在这些示例中，您只需要 attach 一个张量一次，而 GradManager 将永远记住它。但是，一个 GradManager 只能记录一次计算历史。要同时进行多种微分或进行高阶微分，可根据需要创建尽可能多的 GradManager。"
 
 #: megengine.autodiff.grad_manager.GradManager:70 of
-msgid ""
-"Mutable tensors introduce ambiguities when doing symbolic "
-"differentiation: which version of the tensor are we referring to? For "
-"attached tensors, GradManager resolves this ambiguity by \"snapshoting\" "
-"them on first encounter, either on :meth:`record` (or entering with "
-"statement) if tensor is attached before :meth:`record`, or on "
-":meth:`attach` if GradManager is already recording. Attached tensors will"
-" then be interpreted as their snapshotted version for differentiation "
-"purpose. The same ambiguity on the first parameter of :meth:`backward` is"
-" simply resolved by using the latest version."
-msgstr ""
-"可变张量在执行符号微分时引入歧义：我们指的是 Tensor 的哪个版本？对于 attched 的张量，GradManager "
-"通过在第一次遇见张量时 ‘snapshoting’ 它们来解决这种歧义，要么通过 :meth:`~.record`（或者输入 "
-"‘statement’），若张量是在 :meth:`~.record` 之前就被 :meth:`~.attach`，要么通过 "
-":meth:`~.attach` 如果 GradManager 已经在记录。attched 的张量将会被解释为它们的快照版本以进行区分。对 "
-":meth:`~.backward` 的第一个参数的相同歧义是只需使用最新版本即可解决。"
+msgid "Mutable tensors introduce ambiguities when doing symbolic differentiation: which version of the tensor are we referring to? For attached tensors, GradManager resolves this ambiguity by \"snapshoting\" them on first encounter, either on :meth:`record` (or entering with statement) if tensor is attached before :meth:`record`, or on :meth:`attach` if GradManager is already recording. Attached tensors will then be interpreted as their snapshotted version for differentiation purpose. The same ambiguity on the first parameter of :meth:`backward` is simply resolved by using the latest version."
+msgstr "可变张量在执行符号微分时引入歧义：我们指的是 Tensor 的哪个版本？对于 attched 的张量，GradManager 通过在第一次遇见张量时 ‘snapshoting’ 它们来解决这种歧义，要么通过 :meth:`~.record`（或者输入 ‘statement’），若张量是在 :meth:`~.record` 之前就被 :meth:`~.attach`，要么通过 :meth:`~.attach` 如果 GradManager 已经在记录。attched 的张量将会被解释为它们的快照版本以进行区分。对 :meth:`~.backward` 的第一个参数的相同歧义是只需使用最新版本即可解决。"
 
 #: megengine.autodiff.grad_manager.GradManager:78 of
-msgid ""
-"Typically, in data parallel, we would like to average the gradients "
-"across processes. Users will finally get the averaged gradients if an "
-"\"AllReduce\" callback is registered as follows:"
+msgid "Typically, in data parallel, we would like to average the gradients across processes. Users will finally get the averaged gradients if an \"AllReduce\" callback is registered as follows:"
 msgstr "通常，在数据并行的时候，我们需要跨进程计算梯度的均值。使用者最终可获得平均的梯度若一个 “AllReduce” 回调函数像下面一样被注册的话："
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:15
@@ -104,21 +63,15 @@ msgid "Methods"
 msgstr "方法"
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-":obj:`attach <megengine.autodiff.GradManager.attach>`\\ \\(tensors\\[\\, "
-"callbacks\\]\\)"
+msgid ":obj:`attach <megengine.autodiff.GradManager.attach>`\\ \\(tensors\\[\\, callbacks\\]\\)"
 msgstr ""
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-"Instruct GradManager to track operations on tensors, so that gradients "
-"with respect to those tensors could be evaluated later."
+msgid "Instruct GradManager to track operations on tensors, so that gradients with respect to those tensors could be evaluated later."
 msgstr "指示 GradManager 跟踪张量上的操作，以便那些张量上的梯度，可以在之后进行计算。"
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-":obj:`attached_tensors "
-"<megengine.autodiff.GradManager.attached_tensors>`\\ \\(\\)"
+msgid ":obj:`attached_tensors <megengine.autodiff.GradManager.attached_tensors>`\\ \\(\\)"
 msgstr ""
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
@@ -126,16 +79,11 @@ msgid "Return attached tensor list from :meth:`attach`."
 msgstr ""
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-":obj:`backward <megengine.autodiff.GradManager.backward>`\\ \\(\\[y\\, "
-"dy\\]\\)"
+msgid ":obj:`backward <megengine.autodiff.GradManager.backward>`\\ \\(\\[y\\, dy\\]\\)"
 msgstr ""
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-"Compute gradients (or vector-Jacobian product) for all attached tensors, "
-"accumulate to corresponding .grad attribute, and release resources along "
-"the way."
+msgid "Compute gradients (or vector-Jacobian product) for all attached tensors, accumulate to corresponding .grad attribute, and release resources along the way."
 msgstr "对所有 attached Tensor 计算梯度 (或向量-雅可比积)，并将其积累到对应 Tensor 的 .grad 属性中，在过程中释放资源。"
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
@@ -151,8 +99,6 @@ msgid ":obj:`release <megengine.autodiff.GradManager.release>`\\ \\(\\)"
 msgstr ""
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
-msgid ""
-"Stop recording operations and release resources kept for gradient "
-"computation"
+msgid "Stop recording operations and release resources kept for gradient computation"
 msgstr "停止记录操作并释放为计算梯度而保留的资源"
 

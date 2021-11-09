@@ -1,31 +1,30 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-06-03 10:18+0000\n"
+"PO-Revision-Date: 2021-11-09 06:43\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.data.transform.VisionTransform.po\n"
+"X-Crowdin-File-ID: 1992\n"
 
 #: ../../source/reference/api/megengine.data.transform.VisionTransform.rst:2
 msgid "megengine.data.transform.VisionTransform"
 msgstr "megengine.data.transform.VisionTransform"
 
 #: megengine.data.transform.vision.transform.VisionTransform:1 of
-msgid ""
-"Base class of all transforms used in computer vision. Calling logic: "
-"apply_batch() -> apply() -> _apply_image() and other _apply_*() method. "
-"If you want to implement a self-defined transform method for image, "
-"rewrite _apply_image method in subclass."
-msgstr ""
-"计算机视觉（vision）中所有transform(数据增广)类函数的基类。\n"
+msgid "Base class of all transforms used in computer vision. Calling logic: apply_batch() -> apply() -> _apply_image() and other _apply_*() method. If you want to implement a self-defined transform method for image, rewrite _apply_image method in subclass."
+msgstr "计算机视觉（vision）中所有transform(数据增广)类函数的基类。\n"
 "调用逻辑：apply_batch() -> apply() -> _apply_image() 以及其他类似 _apply_*() 的类方法。\n"
 "如果需要自定义处理图像的transform函数的实现，在子类中重写 _apply_image 方法。"
 
@@ -34,38 +33,13 @@ msgid "参数"
 msgstr "参数"
 
 #: megengine.data.transform.vision.transform.VisionTransform:6 of
-msgid ""
-"input type order. Input is a tuple containing different structures, order"
-" is used to specify the order of structures. For example, if your input "
-"is (image, boxes) type, then the ``order`` should be (\"image\", "
-"\"boxes\"). Current available strings and data type are describe below:  "
-"* \"image\": input image, with shape of `(H, W, C)`. * \"coords\": "
-"coordinates, with shape of `(N, 2)`. * \"boxes\": bounding boxes, with "
-"shape of `(N, 4)`, \"xyxy\" format,   the 1st \"xy\" represents top left "
-"point of a box,   the 2nd \"xy\" represents right bottom point. * "
-"\"mask\": map used for segmentation, with shape of `(H, W, 1)`. * "
-"\"keypoints\": keypoints with shape of `(N, K, 3)`, N for number of "
-"instances,   and K for number of keypoints in one instance. The first two"
-" dimensions   of last axis is coordinate of keypoints and the the 3rd "
-"dimension is   the label of keypoints. * \"polygons\": a sequence "
-"containing numpy arrays, its length is the number of instances.   Each "
-"numpy array represents polygon coordinate of one instance. * "
-"\"category\": categories for some data type. For example, "
-"\"image_category\"   means category of the input image and "
-"\"boxes_category\" means categories of   bounding boxes. * \"info\": "
-"information for images such as image shapes and image path."
+msgid "input type order. Input is a tuple containing different structures, order is used to specify the order of structures. For example, if your input is (image, boxes) type, then the ``order`` should be (\"image\", \"boxes\"). Current available strings and data type are describe below:  * \"image\": input image, with shape of `(H, W, C)`. * \"coords\": coordinates, with shape of `(N, 2)`. * \"boxes\": bounding boxes, with shape of `(N, 4)`, \"xyxy\" format,   the 1st \"xy\" represents top left point of a box,   the 2nd \"xy\" represents right bottom point. * \"mask\": map used for segmentation, with shape of `(H, W, 1)`. * \"keypoints\": keypoints with shape of `(N, K, 3)`, N for number of instances,   and K for number of keypoints in one instance. The first two dimensions   of last axis is coordinate of keypoints and the the 3rd dimension is   the label of keypoints. * \"polygons\": a sequence containing numpy arrays, its length is the number of instances.   Each numpy array represents polygon coordinate of one instance. * \"category\": categories for some data type. For example, \"image_category\"   means category of the input image and \"boxes_category\" means categories of   bounding boxes. * \"info\": information for images such as image shapes and image path."
 msgstr ""
 
 #: megengine.data.transform.vision.transform.VisionTransform:6 of
-msgid ""
-"input type order. Input is a tuple containing different structures, order"
-" is used to specify the order of structures. For example, if your input "
-"is (image, boxes) type, then the ``order`` should be (\"image\", "
-"\"boxes\"). Current available strings and data type are describe below:"
-msgstr ""
-"输入数据中各类型的顺序。输入数据是由不同类型数据组成元组，order则可以用来指明其中\n"
-"各类数据类型出现的顺序。比如，如果输入为(image, boxes)类型，那么order应该相应地设为(\"image\", "
-"\"boxes\")。目前支持的字符串类型与数据类型有："
+msgid "input type order. Input is a tuple containing different structures, order is used to specify the order of structures. For example, if your input is (image, boxes) type, then the ``order`` should be (\"image\", \"boxes\"). Current available strings and data type are describe below:"
+msgstr "输入数据中各类型的顺序。输入数据是由不同类型数据组成元组，order则可以用来指明其中\n"
+"各类数据类型出现的顺序。比如，如果输入为(image, boxes)类型，那么order应该相应地设为(\"image\", \"boxes\")。目前支持的字符串类型与数据类型有："
 
 #: megengine.data.transform.vision.transform.VisionTransform:11 of
 msgid "\"image\": input image, with shape of `(H, W, C)`."
@@ -76,54 +50,31 @@ msgid "\"coords\": coordinates, with shape of `(N, 2)`."
 msgstr "\"coords\": 坐标，形为 `(N, 2)`。"
 
 #: megengine.data.transform.vision.transform.VisionTransform:13 of
-msgid ""
-"\"boxes\": bounding boxes, with shape of `(N, 4)`, \"xyxy\" format, the "
-"1st \"xy\" represents top left point of a box, the 2nd \"xy\" represents "
-"right bottom point."
-msgstr ""
-"\"boxes\": bounding boxes，形为 `(N, 4)`，采用 \"xyxy\" "
-"格式，第一个\"xy\"代表box的左上角，第二个\"xy\"代表右下角。"
+msgid "\"boxes\": bounding boxes, with shape of `(N, 4)`, \"xyxy\" format, the 1st \"xy\" represents top left point of a box, the 2nd \"xy\" represents right bottom point."
+msgstr "\"boxes\": bounding boxes，形为 `(N, 4)`，采用 \"xyxy\" 格式，第一个\"xy\"代表box的左上角，第二个\"xy\"代表右下角。"
 
 #: megengine.data.transform.vision.transform.VisionTransform:16 of
 msgid "\"mask\": map used for segmentation, with shape of `(H, W, 1)`."
 msgstr "\"mask\": 用于图像分割的 mask map，形为 `(H, W, 1)`。"
 
 #: megengine.data.transform.vision.transform.VisionTransform:17 of
-msgid ""
-"\"keypoints\": keypoints with shape of `(N, K, 3)`, N for number of "
-"instances, and K for number of keypoints in one instance. The first two "
-"dimensions of last axis is coordinate of keypoints and the the 3rd "
-"dimension is the label of keypoints."
-msgstr ""
-"\"keypoints\": 特征点，形为 `(N, K, 3)`，其中 N 为实例数量, K "
-"为一个实例中的特征点数量。最后一轴对应的数据前两维是特征点的坐标，第三维则是特征点的标签。"
+msgid "\"keypoints\": keypoints with shape of `(N, K, 3)`, N for number of instances, and K for number of keypoints in one instance. The first two dimensions of last axis is coordinate of keypoints and the the 3rd dimension is the label of keypoints."
+msgstr "\"keypoints\": 特征点，形为 `(N, K, 3)`，其中 N 为实例数量, K 为一个实例中的特征点数量。最后一轴对应的数据前两维是特征点的坐标，第三维则是特征点的标签。"
 
 #: megengine.data.transform.vision.transform.VisionTransform:21 of
-msgid ""
-"\"polygons\": a sequence containing numpy arrays, its length is the "
-"number of instances. Each numpy array represents polygon coordinate of "
-"one instance."
+msgid "\"polygons\": a sequence containing numpy arrays, its length is the number of instances. Each numpy array represents polygon coordinate of one instance."
 msgstr "\"polygons\": 包含numpy数组的序列。其长为实例的数目，每个numpy数组代表一个实例的多边形坐标。"
 
 #: megengine.data.transform.vision.transform.VisionTransform:23 of
-msgid ""
-"\"category\": categories for some data type. For example, "
-"\"image_category\" means category of the input image and "
-"\"boxes_category\" means categories of bounding boxes."
-msgstr ""
-"\"category\": "
-"某些数据类型的标签。比如，\"image_category\"表示输入图像的类别，\"boxes_category\"表示bounding "
-"box的类别。"
+msgid "\"category\": categories for some data type. For example, \"image_category\" means category of the input image and \"boxes_category\" means categories of bounding boxes."
+msgstr "\"category\": 某些数据类型的标签。比如，\"image_category\"表示输入图像的类别，\"boxes_category\"表示bounding box的类别。"
 
 #: megengine.data.transform.vision.transform.VisionTransform:26 of
 msgid "\"info\": information for images such as image shapes and image path."
 msgstr "\"info\": 关于图像的信息，比如图像形状与图像路径。"
 
 #: megengine.data.transform.vision.transform.VisionTransform:28 of
-msgid ""
-"You can also customize your data types only if you implement the "
-"corresponding _apply_*() methods, otherwise ``NotImplementedError`` will "
-"be raised."
+msgid "You can also customize your data types only if you implement the corresponding _apply_*() methods, otherwise ``NotImplementedError`` will be raised."
 msgstr "只有自定义实现了对应的_apply_*()，才支持自定义数据类型，否则抛出 ``NotImplementedError`` 错误。"
 
 #: ../../source/reference/api/megengine.data.transform.VisionTransform.rst:15
@@ -131,24 +82,16 @@ msgid "Methods"
 msgstr "方法"
 
 #: ../../source/reference/api/megengine.data.transform.VisionTransform.rst:24:<autosummary>:1
-msgid ""
-":obj:`apply <megengine.data.transform.VisionTransform.apply>`\\ "
-"\\(input\\)"
-msgstr ""
-":obj:`apply <megengine.data.transform.VisionTransform.apply>`\\ "
-"\\(input\\)"
+msgid ":obj:`apply <megengine.data.transform.VisionTransform.apply>`\\ \\(input\\)"
+msgstr ":obj:`apply <megengine.data.transform.VisionTransform.apply>`\\ \\(input\\)"
 
 #: ../../source/reference/api/megengine.data.transform.VisionTransform.rst:24:<autosummary>:1
 msgid "Apply transform on single input data."
 msgstr "对单个输入数据实施数据增强。"
 
 #: ../../source/reference/api/megengine.data.transform.VisionTransform.rst:24:<autosummary>:1
-msgid ""
-":obj:`apply_batch "
-"<megengine.data.transform.VisionTransform.apply_batch>`\\ \\(inputs\\)"
-msgstr ""
-":obj:`apply_batch "
-"<megengine.data.transform.VisionTransform.apply_batch>`\\ \\(inputs\\)"
+msgid ":obj:`apply_batch <megengine.data.transform.VisionTransform.apply_batch>`\\ \\(inputs\\)"
+msgstr ":obj:`apply_batch <megengine.data.transform.VisionTransform.apply_batch>`\\ \\(inputs\\)"
 
 #: ../../source/reference/api/megengine.data.transform.VisionTransform.rst:24:<autosummary>:1
 msgid "Apply transform on batch input data."
