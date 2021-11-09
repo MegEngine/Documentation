@@ -22,17 +22,17 @@ Tensor 数据类型
 
 上面提到的数据类型（Data type, :attr:`~.Tensor.dtype` ）是 Tensor 的一种基础属性，
 单个 Tensor 内的元素的数据类型完全一致，每个元素占据的内存空间也完全相同。
-Tensor 数据类型可以在创建时指定，也可以从已经存在的 Tensor 中指定进行转化，此时 :ref:`dtype-argument` 。
+Tensor 数据类型可以在创建时指定，也可以从已经存在的 Tensor 中指定进行转化，此时 :ref:`dtype-as-argument` 。
 ``float32`` 是 MegEngine 中最经常用到的 Tensor 数据类型。
 
->>> a = megengine.functional.arange(5)
+>>> a = megengine.functional.ones(5)
 >>> a.dtype
 numpy.float32
 
-已经支持的类型
---------------
+数据类型支持情况
+----------------
 
-目前支持的数据类型如下：
+在 MegEngine 中尚未支持《数组 API 标准》中需求的所有数据类型，目前状态如下：
 
 .. list-table::
    :header-rows: 1
@@ -41,44 +41,91 @@ numpy.float32
      - numpy.dtype
      - 等效字符串
      - 数值区间
-   * - 单精度浮点
-     - :any:`numpy.float32` / :class:`numpy.single`  
-     - ``float32``
-     - 参考 IEEE 754-2019
-   * - 半精度浮点
-     - :any:`numpy.float16` / :class:`numpy.half`
-     - ``float16``
-     - 参考 IEEE 754-2019
-   * - 无符号 8 位整型
-     - :any:`numpy.uint8`
-     - ``uint8``
-     - :math:`[0, 2^{8}-1]`
-   * - 有符号 8 位整型  
-     - :any:`numpy.int8`
-     - ``int8``
-     - :math:`[-2^{7}, 2^{7}-1]`
-   * - 有符号 16 位整型
-     - :any:`numpy.int16`
-     - ``int16``
-     - :math:`[−2^{15}, 2^{15}-1]`
-   * - 有符号 32 位整型
-     - :any:`numpy.int32`
-     - ``int32``
-     - :math:`[−2^{31}, 2^{31}-1]`
+     - 支持情况
+
    * - 布尔型
      - :any:`numpy.bool8` / :class:`numpy.bool_`
      - ``bool``
      - ``True`` 或者 ``False``
+     - ✔
+   * - 有符号 8 位整型  
+     - :any:`numpy.int8`
+     - ``int8``
+     - :math:`[-2^{7}, 2^{7}-1]`
+     - ✔
+   * - 有符号 16 位整型
+     - :any:`numpy.int16`
+     - ``int16``
+     - :math:`[−2^{15}, 2^{15}-1]`
+     - ✔
+   * - 有符号 32 位整型
+     - :any:`numpy.int32`
+     - ``int32``
+     - :math:`[−2^{31}, 2^{31}-1]`
+     - ✔
+   * - 有符号 64 位整型
+     - :any:`numpy.int64`
+     - ``int64``
+     - :math:`[−2^{64}, 2^{64}-1]`
+     - ✖
+   * - 无符号 8 位整型
+     - :any:`numpy.uint8`
+     - ``uint8``
+     - :math:`[0, 2^{8}-1]`
+     - ✔
+   * - 无符号 16 位整型
+     - :any:`numpy.uint16`
+     - ``uint16``
+     - :math:`[0, 2^{16}-1]`
+     - ✖
+   * - 无符号 32 位整型
+     - :any:`numpy.uint32`
+     - ``uint32``
+     - :math:`[0, 2^{32}-1]`
+     - ✖
+   * - 无符号 64 位整型
+     - :any:`numpy.uint64`
+     - ``uint64``
+     - :math:`[0, 2^{64}-1]`
+     - ✖
+   * - 半精度浮点
+     - :any:`numpy.float16` / :class:`numpy.half`
+     - ``float16``
+     - IEEE 754 :footcite:p:`IEEE754-2019`
+     - ✔
+   * - 单精度浮点
+     - :any:`numpy.float32` / :class:`numpy.single`
+     - ``float32``
+     - IEEE 754 :footcite:p:`IEEE754-2019`
+     - ✔
+   * - 双精度浮点
+     - :any:`numpy.float64` / :class:`numpy.double`  
+     - ``float64``
+     - IEEE 754 :footcite:p:`IEEE754-2019`
+     - ✖
+
+.. footbibliography::
 
 .. warning::
 
-   并不是所有的已有算子都支持上述任意数据类型之间的计算（仅保证 ``float32`` 类型全部可用）。
+   并不是所有的已有算子都支持 MegEngine 数据类型之间的计算（仅保证 ``float32`` 类型全部可用）。
 
 .. note::
 
    我们会在 :mod:`megengine.quantization` 模块中提到对量化数据类型的支持。
 
-.. _dtype-argument:
+.. _default-data-types:
+
+默认数据类型
+------------
+
+MegEngine 中对 Tensor 默认数据类型对定义如下：
+
+* 默认浮点数据类型为 ``float32``;
+* 默认整型数据类型为 ``int32``;
+* 默认索引数据类型为 ``int32``.
+
+.. _dtype-as-argument:
 
 dtype 作为参数使用
 ------------------
@@ -91,20 +138,10 @@ Tensor([1. 2. 3.], device=xpux:0)
 >>> megengine.functional.arange(5, dtype="float32")
 Tensor([0. 1. 2. 3. 4.], device=xpux:0)
 
-如果使用已经存在的数据来创建 Tensor 而不指定 ``dtype``, 则 Tensor 的数据类型将根据输入的类型推导：
-
->>> megengine.Tensor([1, 2, 3])
-Tensor([1 2 3], device=xpux:0)
+如果使用已经存在的数据来创建 Tensor 而不指定 ``dtype``, 则 Tensor 的数据类型将根据 :ref:`default-data-types` 推导：
 
 >>> megengine.Tensor([1, 2, 3]).dtype
 int32
-
-基本的推导规则为：
-
-* Python scalar bool -> MegEngine Tensor bool
-* Python scalar int -> MegEngine Tensor int32
-* Python scalar float -> MegEngine Tensor float32
-* Numpy array dtype -> MegEngine Tensor dtype （保持一致，前提是类型支持）
 
 .. warning::
 
@@ -178,4 +215,4 @@ numpy.int16
 >>> (a + b).dtype
 numpy.float32
 
-此时 Python 标量按照 :ref:`上一小节 <dtype-argument>` 的推导规则转为了 ``float32`` Tensor.
+此时 Python 标量通过使用 :ref:`default-data-types` 转为了 ``float32`` Tensor.
