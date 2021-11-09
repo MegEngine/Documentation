@@ -37,11 +37,7 @@ from datetime import datetime
 # But MegEngine source code and documentation are stored in two different 
 #   repository and it's recommended to import megengine package to match.
 
-if mode == "FULL":
-    import megengine
-elif mode == "MINI":
-    pass
-else:
+if mode == "AUTO":
     try:
         import megengine
     except ImportError:
@@ -51,7 +47,9 @@ else:
         print("MegEngine found. Use full mode.")
         print("MegEngine path:", os.path.dirname(megengine.__file__))
         mode = "FULL"
-assert mode in ("MINI", "FULL")
+
+if mode == "MINI":
+    suppress_warnings = ['ref.ref']
 
 # -- Project information -----------------------------------------------------
 
