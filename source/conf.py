@@ -77,6 +77,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
     "sphinx.ext.graphviz",
+    "sphinxcontrib.bibtex",
     "sphinxcontrib.mermaid",
     "sphinx_autodoc_typehints",
     "sphinx_copybutton",
@@ -135,6 +136,9 @@ autodoc_mock_imports = ["mprop"]
 # Setting for sphinx.ext.mathjax
 # The path to the JavaScript file to include in the HTML files in order to load MathJax.
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+# Setting for sphinxcontrib-bibtex
+bibtex_bibfiles = ['refs.bib']
 
 # Setting for sphinxcontrib-mermaid
 mermaid_version = "latest"  # from CDN unpkg.com
