@@ -1,37 +1,33 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.5\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-09 20:54\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/functional/creation.po\n"
+"X-Crowdin-File-ID: 8147\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/model-development/functional/creation.rst:5
 msgid "如何创建一个 Tensor"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:9
-msgid ""
-"在 MegEngine 中创建 Tensor 与 `NumPy 创建数组 "
-"<https://numpy.org/doc/stable/user/basics.creation.html>`_ 的途径类似；"
+msgid "在 MegEngine 中创建 Tensor 与 `NumPy 创建数组 <https://numpy.org/doc/stable/user/basics.creation.html>`_ 的途径类似；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:11
-msgid ""
-"由于 ndarray 是 Python 数据科学社区中较为通用支持的格式 （例如 SciPy、Pandas、OpenCV 等库都对 ndarray"
-" 提供了良好的支持）， 如果存在着 NumPy 已经实现但 MegEngine 尚未支持的创建途径，可以先创建 NumPy ndarray, "
-"再将其转换成 MegEngine Tensor. 也是下面提到的最后一种方法。"
+msgid "由于 ndarray 是 Python 数据科学社区中较为通用支持的格式 （例如 SciPy、Pandas、OpenCV 等库都对 ndarray 提供了良好的支持）， 如果存在着 NumPy 已经实现但 MegEngine 尚未支持的创建途径，可以先创建 NumPy ndarray, 再将其转换成 MegEngine Tensor. 也是下面提到的最后一种方法。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:16
@@ -39,27 +35,19 @@ msgid "创建 Tensor 的常见途径如下："
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:18
-msgid ""
-":ref:`create-tensor-from-python-structure` （例如 :py:class:`list`, "
-":py:class:`tuple` ）；"
+msgid ":ref:`create-tensor-from-python-structure` （例如 :py:class:`list`, :py:class:`tuple` ）；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:19
-msgid ""
-":ref:`create-tensor-with-intrinsic-functions` （例如 :py:func:`~.arange`, "
-":py:func:`ones`, :py:func:`zeros` 等）；"
+msgid ":ref:`create-tensor-with-intrinsic-functions` （例如 :py:func:`~.arange`, :py:func:`ones`, :py:func:`zeros` 等）；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:20
-msgid ""
-":ref:`create-tensor-from-random-package` （可从 :py:func:`~.random.normal`, "
-":py:func:`~.random.uniform` 等分布中采样）；"
+msgid ":ref:`create-tensor-from-random-package` （可从 :py:func:`~.random.normal`, :py:func:`~.random.uniform` 等分布中采样）；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:21
-msgid ""
-":ref:`create-tensor-through-manipulation` （例如 :py:func:`~.split`, "
-":py:func:`stack` 等）；"
+msgid ":ref:`create-tensor-through-manipulation` （例如 :py:func:`~.split`, :py:func:`stack` 等）；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:22
@@ -79,9 +67,7 @@ msgid "可以使用 Python 序列（例如列表和元组）定义 MegEngine Ten
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:35
-msgid ""
-"列表 :py:class:`list` 和元组 :py:class:`tuple` 分别使用 ``[...]`` 和 ``(...)`` "
-"定义，可以用来定义 Tensor 如何创建："
+msgid "列表 :py:class:`list` 和元组 :py:class:`tuple` 分别使用 ``[...]`` 和 ``(...)`` 定义，可以用来定义 Tensor 如何创建："
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:37
@@ -105,9 +91,7 @@ msgid "``megengine.tensor`` 是 ``megengine.Tensor`` 的别名，**二者本质�
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:52
-msgid ""
-"将 Tensor 转化为 Python 内置数据类型可以使用 :py:meth:`~.Tensor.item` 或 "
-":py:meth:`~.Tensor.tolist` ."
+msgid "将 Tensor 转化为 Python 内置数据类型可以使用 :py:meth:`~.Tensor.item` 或 :py:meth:`~.Tensor.tolist` ."
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:55
@@ -115,9 +99,7 @@ msgid "默认的数据类型"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:58
-msgid ""
-"当你使用 :py:class:`megengine.Tensor` 来定义新的 Tensor 时，需要考虑到其中每个元素的 :ref:`数据类型 "
-"<tensor-dtype>` 。"
+msgid "当你使用 :py:class:`megengine.Tensor` 来定义新的 Tensor 时，需要考虑到其中每个元素的 :ref:`数据类型 <tensor-dtype>` 。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:60
@@ -153,15 +135,11 @@ msgid "不同数据类型之间的计算"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:93
-msgid ""
-"注意上面两个 Tensor 即 ``a`` 和 ``b`` 有着相同的 ``dtype: uint8``, 因此得到的 Tensor "
-"的数据类型也会相同。 如果你在两个不同 ``dtype`` 的 Tensor 之间进行计算，MegEngine 将进行类型提升来满足计算要求："
+msgid "注意上面两个 Tensor 即 ``a`` 和 ``b`` 有着相同的 ``dtype: uint8``, 因此得到的 Tensor 的数据类型也会相同。 如果你在两个不同 ``dtype`` 的 Tensor 之间进行计算，MegEngine 将进行类型提升来满足计算要求："
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:99
-msgid ""
-"注意到数据类型为 ``uint8`` 的 ``a`` 与数据类型为 ``int8`` 的 ``b`` 进行计算， 最终得到了一个数据类型为 "
-"``int16`` 的 Tensor."
+msgid "注意到数据类型为 ``uint8`` 的 ``a`` 与数据类型为 ``int8`` 的 ``b`` 进行计算， 最终得到了一个数据类型为 ``int16`` 的 Tensor."
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:105
@@ -169,9 +147,7 @@ msgid "使用内置函数创建 Tensor"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:109
-msgid ""
-"MegEngine 的 :py:mod:`functional` 子包内置了多个创建 Tensor 的函数（位于 :ref:`creation` "
-"）；"
+msgid "MegEngine 的 :py:mod:`functional` 子包内置了多个创建 Tensor 的函数（位于 :ref:`creation` ）；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:110
@@ -199,9 +175,7 @@ msgid "创建 1 维 Tensor"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:123
-msgid ""
-"创建 1 维 Tensor 的函数如 :py:func:`~.arange` 和 :py:func:`~.linspace` "
-"通常需要至少两个输入，即 ``start`` 和 ``stop``."
+msgid "创建 1 维 Tensor 的函数如 :py:func:`~.arange` 和 :py:func:`~.linspace` 通常需要至少两个输入，即 ``start`` 和 ``stop``."
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:126
@@ -221,9 +195,7 @@ msgid "使用这个函数的好处是可以保证 Tensor 中元素的数量、�
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:148
-msgid ""
-"在 NumPy 中使用 :py:func:`~.arange` 的最佳实践是使用整型的 ``start``, ``stop`` 和 "
-"``step`` 值。 这是由于机器表示浮点数时存在着舍入误差，向 ``arange`` 传入非整数值时有可能得到非预期结果："
+msgid "在 NumPy 中使用 :py:func:`~.arange` 的最佳实践是使用整型的 ``start``, ``stop`` 和 ``step`` 值。 这是由于机器表示浮点数时存在着舍入误差，向 ``arange`` 传入非整数值时有可能得到非预期结果："
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:155
@@ -259,9 +231,7 @@ msgid "本质上它们都是通过调用 :py:func:`~.full` 来实现创建满足
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:203
-msgid ""
-"使用 :py:func:`~.zeros_like`, :py:func:`~.ones_like`, "
-":py:func:`~.full_like` 根据输入 Tensor 形状进行创建。"
+msgid "使用 :py:func:`~.zeros_like`, :py:func:`~.ones_like`, :py:func:`~.full_like` 根据输入 Tensor 形状进行创建。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:208
@@ -277,15 +247,11 @@ msgid "使用 :py:func:`~.random.uniform` 可以从服从均匀分布的随机�
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:221
-msgid ""
-"Python 的 ``random`` 标准库文档 -- `Generate pseudo-random numbers "
-"<https://docs.python.org/3/library/random.html>`_"
+msgid "Python 的 ``random`` 标准库文档 -- `Generate pseudo-random numbers <https://docs.python.org/3/library/random.html>`_"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:222
-msgid ""
-"NumPy 的随机采样官方文档 ——  `Random sampling "
-"<https://numpy.org/doc/stable/reference/random/index.html>`_"
+msgid "NumPy 的随机采样官方文档 ——  `Random sampling <https://numpy.org/doc/stable/reference/random/index.html>`_"
 msgstr ""
 
 #: ../../source/user-guide/model-development/functional/creation.rst:223
