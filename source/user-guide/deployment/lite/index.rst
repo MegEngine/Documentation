@@ -1,34 +1,37 @@
 .. _megengine-lite:
 
 ==============================
-使用 MegEngine Lite 做模型部署
+快速使用 MegEngine Lite 部署模型
 ==============================
 
 简介
 ------------
 
-MegEngine Lite 是对 MegEngine 的推理功能的封装，具有配置统一、接口完备、化繁为简、支持第三方硬件等优点。
+MegEngine Lite 是 MegEngine 的一层接口封装，主要目的是为用户提供更加简洁，易用，高效的推理接口，充分发挥MegEngine的高效，多平台的推理能力，其结构如下:
 
-.. figure:: ../../../_static/images/lite-structure.png
+.. figure:: ../../../_static/images/lite.png
    :align: center
 
-* **配置统一** ：配置选项可以存为json文件，在模型制作阶段和模型调用阶段均可加载，获得同一份配置选项。
-* **接口完备** ：从业务需要出发，涵盖了推理和部署所涉及的网络和张量的接口。
-* **化繁为简** ：lite所封装的接口，是MegEngine接口中只和推理部署相关的部分。对于只对推理部署、而非训练测试感兴趣的开发者，学习和上手的成本降到最低。
-* **支持第三方硬件** ：lite里提供了新硬件接入的方案：新硬件接口被封装后，以“插件”的方式注册在lite上，而弱化对lite或MegEngine版本号的依赖。
+MegEngine Lite 主要是对训推一体的 MegEngine 框架进行一层很薄的封装，并对用户提供多种模型推理接口，包括：C++，C，python接口，同时 MegEngine Lite 底层也可以接入其他的推理框架，以及其他的NPU支持。
+相比较直接调用 MegEngine 的接口进行推理，使用 MegEngine Lite 的接口有使用方便，接口简单，功能齐全等优点，其底层实现依然是 MegEngine，因此继承了 MegEngine 的所有优点，MegEngine
+在推理层面具有以下特点：
 
+高性能
+^^^^^^
 
-编译
-------------
+MegEngine 首先在计算图中对 Inference 做了很多高效的优化，如：将 BN 融合到 Convolution 中，将 Activation 融合到 Convolution 中等，这些优化有效的减少访存，提高计算访存比。另外
+MegEngine 还对底层的 Kernel 做了细粒度的优化，从算法到指令都进行深入优化，卷积算法层面 Convolution 就有直接卷积，Im2col，Winograd 等优化，在 Kernel 层面有粗粒度的 Intrinsic
+级别的优化，在一些关键的算子会进行汇编，深入指令集优化。
 
-将 Lite 结合到整个生产流程，步骤如下：
+多平台支持
+^^^^^^^^^^
 
-#. 模型准备：模型开发完成后，你需要通过 :ref:`dump <dump>` 得到 Lite 支持的模型格式；
-#. 环境准备：按照使用环境，:ref:`从源码编译 MegEngine <build-from-source>` .
-   （ ``MGE_WITH_LITE`` 变量默认为 ``ON`` ）；
-#. 工程接入：调用 MegEngine Lite 提供的接口，实现接入；
-#. 集成编译：将之前编译得到的 Lite 库文件和对应调用代码一同编译成 SDK.
+MegEngine 支持多种主流深度学习推理平台，包括 Arm，X86，Cuda，Rocm，Atlas，Cambricom 等平台，另外 MegEngine Lite 还支持以 RuntimeOpr/Loader 的形式接入第三方推理框架以及NPU。
 
+高精度
+^^^^^^
+
+使用 MegEngine 训练的模型可以不需要进行任何模型转换，就可以直接进行推理，这样有效的避免由于模型转换以及量化等带来的模型精度的损失，有效降低了模型部署的难度。
 
 文档目录
 -----------
@@ -36,10 +39,5 @@ MegEngine Lite 是对 MegEngine 的推理功能的封装，具有配置统一、
 .. toctree::
    :maxdepth: 1
 
-   cpp-basic
-   cpp-advanced
-   pylite-basic
-   pylite-advanced
-   third-party
-
-
+   fast-develope-cpp
+   fast-develope-python
