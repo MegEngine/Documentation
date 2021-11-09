@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-09 20:54\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/autodiff/index.po\n"
+"X-Crowdin-File-ID: 8169\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/model-development/autodiff/index.rst:5
 msgid "Autodiff 基本原理与使用"
@@ -26,11 +27,7 @@ msgid "在深度学习领域，任何复杂的深度神经网络模型本质上�
 msgstr ""
 
 #: ../../source/user-guide/model-development/autodiff/index.rst:9
-msgid ""
-"计算图中存在前向计算和反向计算的过程。在训练模型参数的过程中，需要根据 `反向传播 "
-"<https://en.wikipedia.org/wiki/Backpropagation>`_ "
-"（Backpropagation）算法，使用链式法则逐层计算参数关于损失函数的梯度。 作为一类深度学习框架，MegEngine "
-"实现了自动微分机制，能够在反向传播的过程中自动地计算、维护 Tensor 的梯度信息。 这一机制也可以被用于其它科学计算情景。"
+msgid "计算图中存在前向计算和反向计算的过程。在训练模型参数的过程中，需要根据 `反向传播 <https://en.wikipedia.org/wiki/Backpropagation>`_ （Backpropagation）算法，使用链式法则逐层计算参数关于损失函数的梯度。 作为一类深度学习框架，MegEngine 实现了自动微分机制，能够在反向传播的过程中自动地计算、维护 Tensor 的梯度信息。 这一机制也可以被用于其它科学计算情景。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/autodiff/index.rst:13
@@ -58,11 +55,7 @@ msgid "如果希望对 Tensor 的梯度进行管理，需要用到 :py:class:`~.
 msgstr ""
 
 #: ../../source/user-guide/model-development/autodiff/index.rst:43
-msgid ""
-"在上面的代码中， ``with`` 语句中的操作历史都会被梯度管理器记录下来。 我们使用 "
-":py:meth:`~.GradManager.attach` 方法来绑定需要被跟踪的 Tensor（例子中为 ``x`` ），然后执行计算； "
-"使用 :py:meth:`~.GradManager.backward` 方法来计算所有已绑定的 Tensor 对于给定的 ``y`` 的梯度， "
-"并将其累加到对应 Tensor 的 ``grad`` 属性，并在这个过程中释放资源。"
+msgid "在上面的代码中， ``with`` 语句中的操作历史都会被梯度管理器记录下来。 我们使用 :py:meth:`~.GradManager.attach` 方法来绑定需要被跟踪的 Tensor（例子中为 ``x`` ），然后执行计算； 使用 :py:meth:`~.GradManager.backward` 方法来计算所有已绑定的 Tensor 对于给定的 ``y`` 的梯度， 并将其累加到对应 Tensor 的 ``grad`` 属性，并在这个过程中释放资源。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/autodiff/index.rst:50
@@ -74,10 +67,7 @@ msgid "可以通过 :py:meth:`~.GradManager.attached_tensors` 接口来查询当
 msgstr ""
 
 #: ../../source/user-guide/model-development/autodiff/index.rst:53
-msgid ""
-"我们还可以使用 :py:meth:`~.GradManager.record` 和 "
-":py:meth:`~.GradManager.release` 来代替 ``with`` 语义， 更多用法说明可参考 "
-":py:class:`~.GradManager` API 文档。"
+msgid "我们还可以使用 :py:meth:`~.GradManager.record` 和 :py:meth:`~.GradManager.release` 来代替 ``with`` 语义， 更多用法说明可参考 :py:class:`~.GradManager` API 文档。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/autodiff/index.rst:57
