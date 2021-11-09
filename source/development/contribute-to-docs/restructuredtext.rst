@@ -745,7 +745,16 @@ Sphinx 插件语法
 
    下面的语法通过 Sphinx Extensions 支持，同样可以用于 Python 文档字符串。
 
+.. _bibtex-ext:
+
+Bibtex 语法支持
+~~~~~~~~~~~~~~~
+
 .. _graphviz-ext:
+
+文档已经通过 `sphinxcontrib-bibtex 
+<https://sphinxcontrib-bibtex.readthedocs.io/en/latest/index.html>`_ 插件支持
+`Bibtex <http://www.bibtex.org/>`_ 语法。
 
 Graphviz 语法支持
 ~~~~~~~~~~~~~~~~~
