@@ -1,30 +1,29 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-09 20:54\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/lite/cpp-advanced.po\n"
+"X-Crowdin-File-ID: 8205\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:5
 msgid "MegEngine Lite C++ 进阶功能介绍"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:7
-msgid ""
-"在 example 目录中，除了 :src:`basic.cpp <lite/example/mge/basic.cpp>` "
-"介绍了一些基本用法之外，还有其他一些例子演示了用 lite 的接口做推理相关更进阶的功能。比如："
+msgid "在 example 目录中，除了 :src:`basic.cpp <lite/example/mge/basic.cpp>` 介绍了一些基本用法之外，还有其他一些例子演示了用 lite 的接口做推理相关更进阶的功能。比如："
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:11
@@ -32,11 +31,7 @@ msgid "CPU上的模型加载和推理"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:13
-msgid ""
-"主要介绍了用 lite 来完成基本的 inference 功能，load 模型使用默认的配置，进行 forward 之前将输入数据 copy "
-"到输入 tensor 中，完成 forward 之后，再将数据从输出 tensor 中 copy 到用户的内存中，输入 tensor 和输出 "
-"tensor 都是从Network 中通过 name 来获取的，输入输出 tensor 的 layout 也可以从对应的 "
-"tensor中直接获取获取，"
+msgid "主要介绍了用 lite 来完成基本的 inference 功能，load 模型使用默认的配置，进行 forward 之前将输入数据 copy 到输入 tensor 中，完成 forward 之后，再将数据从输出 tensor 中 copy 到用户的内存中，输入 tensor 和输出 tensor 都是从Network 中通过 name 来获取的，输入输出 tensor 的 layout 也可以从对应的 tensor中直接获取获取，"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:17
@@ -44,10 +39,7 @@ msgid "输出 tensor 的 layout 必须在 forward 完成之后获取才是正确
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:19
-msgid ""
-"着重强调两种加载模型的方式： *通过模型文件加载模型* （ ``basic_load_from_path()`` ）和 *通过内存加载模型* （ "
-"``basic_load_from_memory()`` ），请着重对比两个函数调用 ``network->load_model()`` "
-"时参数的不同。详细实现在文件 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中。"
+msgid "着重强调两种加载模型的方式： *通过模型文件加载模型* （ ``basic_load_from_path()`` ）和 *通过内存加载模型* （ ``basic_load_from_memory()`` ），请着重对比两个函数调用 ``network->load_model()`` 时参数的不同。详细实现在文件 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:23
@@ -55,12 +47,7 @@ msgid "OpenCL后端设备上的模型加载和推理"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:25
-msgid ""
-"在以OpenCL为后端的设备上，有两种加载并推理模型的方式： *首次推理的同时搜索最优算法并将搜索结果存为文件* （ "
-"``load_from_path_use_opencl_tuning()`` ）和 *以算法搜索结果文件中的算法推理模型* （ "
-"``load_from_path_run_opencl_cache_and_policy()`` "
-"）。前者首次推理的速度较慢，可以看做是为后者做的准备。后者的运行效率才是更贴近工程应用水平的。详细实现在文件 :src:`basic.cpp "
-"<lite/example/mge/basic.cpp>` 中。"
+msgid "在以OpenCL为后端的设备上，有两种加载并推理模型的方式： *首次推理的同时搜索最优算法并将搜索结果存为文件* （ ``load_from_path_use_opencl_tuning()`` ）和 *以算法搜索结果文件中的算法推理模型* （ ``load_from_path_run_opencl_cache_and_policy()`` ）。前者首次推理的速度较慢，可以看做是为后者做的准备。后者的运行效率才是更贴近工程应用水平的。详细实现在文件 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:29
@@ -72,27 +59,19 @@ msgid "在以CPU为后端的设备上"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:34
-msgid ""
-"实现在 :src:`reset_io.cpp <lite/example/mge/reset_io.cpp>` 中，包括 "
-"``reset_input()`` 和 ``reset_input_output()`` 两个函数。"
+msgid "实现在 :src:`reset_io.cpp <lite/example/mge/reset_io.cpp>` 中，包括 ``reset_input()`` 和 ``reset_input_output()`` 两个函数。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:36
-msgid ""
-"两个函数演示了输入 tensor 的内存为用户指定的内存（该内存中已经保存好输入数据），输出 tensor 也可以是用户指定的内存，这样 "
-"Network 完成 Forward 之后就会将数据保存在指定的输出内存中。如此减少不必要的 memory copy 的操作。"
+msgid "两个函数演示了输入 tensor 的内存为用户指定的内存（该内存中已经保存好输入数据），输出 tensor 也可以是用户指定的内存，这样 Network 完成 Forward 之后就会将数据保存在指定的输出内存中。如此减少不必要的 memory copy 的操作。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:38
-msgid ""
-"tensor 中的 reset 接口可以重新指定 tensor 的内存和对应的layout，如果 layout 没有指定，默认为 tensor "
-"中原来的 layout。"
+msgid "tensor 中的 reset 接口可以重新指定 tensor 的内存和对应的layout，如果 layout 没有指定，默认为 tensor 中原来的 layout。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:42
-msgid ""
-"该方法中由于内存是用户申请，需要用户提前知道输入，输出 tensor 对应的 layout，然后根据 layout 来申请内存。另外，通过 "
-"reset 设置到 tensor 中的内存的生命周期不由 tensor管理，而是由外部用户来管理。"
+msgid "该方法中由于内存是用户申请，需要用户提前知道输入，输出 tensor 对应的 layout，然后根据 layout 来申请内存。另外，通过 reset 设置到 tensor 中的内存的生命周期不由 tensor管理，而是由外部用户来管理。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:46
@@ -104,12 +83,7 @@ msgid "**指定输入输出的显存**"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:50
-msgid ""
-"实现在 :src:`device_io.cpp <lite/example/mge/device_io.cpp>` 中的 "
-"``device_input()`` 和 ``device_input_output()`` 两个函数。示例中，模型运行在 "
-"device(CUDA) 上，并且使用用户提前申请的 device 上的内存作为模型运行的输入和输出。这需要在 Network "
-"构建的时候指定输入输出的在 device 上（如不设置，则默认在 CPU 上），其他地方和**输入输出为用户指定的内存**的使用相同。可以通过 "
-"tensor 的 ``is_host()`` 接口来判断该 tensor 在 device 端还是 host 端。"
+msgid "实现在 :src:`device_io.cpp <lite/example/mge/device_io.cpp>` 中的 ``device_input()`` 和 ``device_input_output()`` 两个函数。示例中，模型运行在 device(CUDA) 上，并且使用用户提前申请的 device 上的内存作为模型运行的输入和输出。这需要在 Network 构建的时候指定输入输出的在 device 上（如不设置，则默认在 CPU 上），其他地方和**输入输出为用户指定的内存**的使用相同。可以通过 tensor 的 ``is_host()`` 接口来判断该 tensor 在 device 端还是 host 端。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:53
@@ -117,13 +91,7 @@ msgid "**申请 pinned host 内存作为输入**"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:55
-msgid ""
-"实现在 :src:`device_io.cpp <lite/example/mge/device_io.cpp>` 中的 "
-"``pinned_host_input()`` 。示例中的模型运行在 device(CUDA) 上，但是输入输出在 CPU 上，为了加速 "
-"host2device 的copy，将 CPU 上的 input tensor 的内存指定提前申请为 cuda pinned "
-"内存。目前如果输出output tensor 不是 device 上的时候，默认就是 pinned host 的。申请 pinned host "
-"内存的方法是：构建 tensor 的时候指定 device，layout，以及 is_host_pinned参数，这样申请的内存就是 pinned"
-" host 的内存。"
+msgid "实现在 :src:`device_io.cpp <lite/example/mge/device_io.cpp>` 中的 ``pinned_host_input()`` 。示例中的模型运行在 device(CUDA) 上，但是输入输出在 CPU 上，为了加速 host2device 的copy，将 CPU 上的 input tensor 的内存指定提前申请为 cuda pinned 内存。目前如果输出output tensor 不是 device 上的时候，默认就是 pinned host 的。申请 pinned host 内存的方法是：构建 tensor 的时候指定 device，layout，以及 is_host_pinned参数，这样申请的内存就是 pinned host 的内存。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:65
@@ -131,15 +99,11 @@ msgid "用户指定内存分配器"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:67
-msgid ""
-"实现在 :src:`user_allocator.cpp <lite/example/mge/user_allocator.cpp>` 中的 "
-"``config_user_allocator()`` 。"
+msgid "实现在 :src:`user_allocator.cpp <lite/example/mge/user_allocator.cpp>` 中的 ``config_user_allocator()`` 。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:69
-msgid ""
-"这个例子中使用用户自定义的 CPU 内存分配器演示了用户设置自定义的 Allocator 的方法，用户自定义内存分配器需要继承自 lite 中的 "
-"Allocator 基类，并实现 allocate 和 free 两个接口。目前在 CPU上验证是正确的，其他设备上有待测试。"
+msgid "这个例子中使用用户自定义的 CPU 内存分配器演示了用户设置自定义的 Allocator 的方法，用户自定义内存分配器需要继承自 lite 中的 Allocator 基类，并实现 allocate 和 free 两个接口。目前在 CPU上验证是正确的，其他设备上有待测试。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:71
@@ -151,17 +115,11 @@ msgid "多个 Network 共享同一份模型 weights"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:81
-msgid ""
-"实现在 :src:`network_share_weights.cpp "
-"<lite/example/mge/network_share_weights.cpp>` 中的 "
-"``network_share_same_weights()`` 。"
+msgid "实现在 :src:`network_share_weights.cpp <lite/example/mge/network_share_weights.cpp>` 中的 ``network_share_same_weights()`` 。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:83
-msgid ""
-"很多情况用户希望多个 Network 共享同一份 weights，因为模型中 weights "
-"是只读的，这样可以节省模型的运行时内存使用量。这个例子主要演示了 lite 中如何实现这个功能，首先创建一个新的 Network，用户可以指定新的"
-" Config 和 NetworkIO 以及其他一些配置，使得新创建出来的 Network 完成不同的功能。"
+msgid "很多情况用户希望多个 Network 共享同一份 weights，因为模型中 weights 是只读的，这样可以节省模型的运行时内存使用量。这个例子主要演示了 lite 中如何实现这个功能，首先创建一个新的 Network，用户可以指定新的 Config 和 NetworkIO 以及其他一些配置，使得新创建出来的 Network 完成不同的功能。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:85
@@ -177,16 +135,11 @@ msgid "CPU 绑核"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:100
-msgid ""
-"实现在 :src:`cpu_affinity.cpp <lite/example/mge/cpu_affinity.cpp>` 中的 "
-"``cpu_affinity()`` 。"
+msgid "实现在 :src:`cpu_affinity.cpp <lite/example/mge/cpu_affinity.cpp>` 中的 ``cpu_affinity()`` 。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:102
-msgid ""
-"该 example 之中指定模型运行在 CPU 多线程上，然后使用 Network 中的 "
-"``set_runtime_thread_affinity()`` 来设置绑核回调函数。该回调函数中会传递当前线程的 id 进来，用户可以根据该 "
-"id 决定具体绑核行为，在多线程中，如果线程总数为 n，则 id 为 n-1 的线程为主线程。"
+msgid "该 example 之中指定模型运行在 CPU 多线程上，然后使用 Network 中的 ``set_runtime_thread_affinity()`` 来设置绑核回调函数。该回调函数中会传递当前线程的 id 进来，用户可以根据该 id 决定具体绑核行为，在多线程中，如果线程总数为 n，则 id 为 n-1 的线程为主线程。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:106
@@ -194,17 +147,11 @@ msgid "用户注册自定义解密算法和 key"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:108
-msgid ""
-"实现在 :src:`user_cryption.cpp <lite/example/mge/user_cryption.cpp>` 中的 "
-"``register_cryption_method()`` 和 ``update_aes_key()`` 。"
+msgid "实现在 :src:`user_cryption.cpp <lite/example/mge/user_cryption.cpp>` 中的 ``register_cryption_method()`` 和 ``update_aes_key()`` 。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:110
-msgid ""
-"这两个示例主要使用 lite 自定义解密算法和更新解密算法的接口，实现了使用用户自定的解密算法实现模型的 load 操作。在这个 example "
-"中，自定义了一个解密方法，(其实没有做任何事情，将模型两次异或上 key 之后返回，等于将原始模型直接返回)，然后将其注册到 lite "
-"中，后面创建 Network 时候在其config中的bare_model_cryption_name指定具体的解密算法名字。在第二个 "
-"example 展示了对其key 的更新操作。目前 lite 里面定义好了几种解密算法："
+msgid "这两个示例主要使用 lite 自定义解密算法和更新解密算法的接口，实现了使用用户自定的解密算法实现模型的 load 操作。在这个 example 中，自定义了一个解密方法，(其实没有做任何事情，将模型两次异或上 key 之后返回，等于将原始模型直接返回)，然后将其注册到 lite 中，后面创建 Network 时候在其config中的bare_model_cryption_name指定具体的解密算法名字。在第二个 example 展示了对其key 的更新操作。目前 lite 里面定义好了几种解密算法："
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:112
@@ -212,21 +159,15 @@ msgid "**AES_default** : 其 key 是由 32 个 unsighed char 组成，默认为0
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:113
-msgid ""
-"**RC4_default** : 其 key 由 hash key 和 enc_key 组成的8个 unsigned char，hash key"
-" 在前，enc_key 在后。"
+msgid "**RC4_default** : 其 key 由 hash key 和 enc_key 组成的8个 unsigned char，hash key 在前，enc_key 在后。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:115
-msgid ""
-"**SIMPLE_FAST_RC4_default**: "
-"其key组成同RC4_default。大概命名规则为：前面大写是具体算法的名字，'_'后面的小写，代表解密 key。具体的接口为："
+msgid "**SIMPLE_FAST_RC4_default**: 其key组成同RC4_default。大概命名规则为：前面大写是具体算法的名字，'_'后面的小写，代表解密 key。具体的接口为："
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:126
-msgid ""
-"register 接口中必须要求三个参数都是正确的值，update中 decrypt_nam 必须为已有的解密算法， 将使用 func 和 key"
-" 中不为空的部分对 decrypt_nam 解密算法进行更新"
+msgid "register 接口中必须要求三个参数都是正确的值，update中 decrypt_nam 必须为已有的解密算法， 将使用 func 和 key 中不为空的部分对 decrypt_nam 解密算法进行更新"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:131
@@ -238,10 +179,7 @@ msgid "实现在 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``async_fo
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:135
-msgid ""
-"用户通过接口注册异步回调函数将设置 Network 的 Forward 模式为异步执行模式，目前异步执行模式只有在 CPU 和 CUDA 10.0"
-" "
-"以上才支持，在inference时异步模式，主线程可以在工作线程正在执行计算的同时做一些其他的运算，避免长时间等待，但是在一些单核处理器上没有收益。"
+msgid "用户通过接口注册异步回调函数将设置 Network 的 Forward 模式为异步执行模式，目前异步执行模式只有在 CPU 和 CUDA 10.0 以上才支持，在inference时异步模式，主线程可以在工作线程正在执行计算的同时做一些其他的运算，避免长时间等待，但是在一些单核处理器上没有收益。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:139
@@ -249,10 +187,7 @@ msgid "纯 C example"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:141
-msgid ""
-"实现在 :src:`lite_c_interface.cpp <lite/example/mge/lite_c_interface.cpp>` "
-"中的 ``basic_c_interface()``， ``device_io_c_interface()`` 和 "
-"``async_c_interface()`` 。"
+msgid "实现在 :src:`lite_c_interface.cpp <lite/example/mge/lite_c_interface.cpp>` 中的 ``basic_c_interface()``， ``device_io_c_interface()`` 和 ``async_c_interface()`` 。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:143
@@ -260,9 +195,7 @@ msgid "Lite 完成对 C++ 接口的封装，对外暴露了纯 C 的接口，用
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:144
-msgid ""
-"纯 C 的所有接口都是返回一个 int，如果这个 int 的数值不为 0，则又错误产生，需要调用 ``LITE_get_last_error`` "
-"来获取错误信息。"
+msgid "纯 C 的所有接口都是返回一个 int，如果这个 int 的数值不为 0，则又错误产生，需要调用 ``LITE_get_last_error`` 来获取错误信息。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/cpp-advanced.rst:145

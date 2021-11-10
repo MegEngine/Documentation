@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-09 20:53\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/traced_module/index.po\n"
+"X-Crowdin-File-ID: 8203\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:6
 msgid "TracedModule 发版方案"
@@ -30,9 +31,7 @@ msgid "TracedModule 是基于 MegEngine 的发版方案。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:21
-msgid ""
-"TracedModule 由一个普通的 Module 通过 :py:func:`~.trace_module` 方法转换得到，仅由 "
-"MegEngine 的数据结构而构成，可脱离用户源代码被训练、序列化以及反序列化、以及图手术。"
+msgid "TracedModule 由一个普通的 Module 通过 :py:func:`~.trace_module` 方法转换得到，仅由 MegEngine 的数据结构而构成，可脱离用户源代码被训练、序列化以及反序列化、以及图手术。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:23
@@ -40,15 +39,11 @@ msgid "相比于普通的 Module, 它有如下特性:"
 msgstr ""
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:25
-msgid ""
-"拥有 graph 属性，graph 描述了 TracedModule 计算过程，可通过修改 graph 来改变计算过程（即 "
-":py:meth:`.TracedModule.forward` 通过解析 :py:attr:`.TracedMoudle.graph` 执行）；"
+msgid "拥有 graph 属性，graph 描述了 TracedModule 计算过程，可通过修改 graph 来改变计算过程（即 :py:meth:`.TracedModule.forward` 通过解析 :py:attr:`.TracedMoudle.graph` 执行）；"
 msgstr ""
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:26
-msgid ""
-"可序列化（pickle）到文件中，即使在没有模型源码的环境中也可被正确 load（普通 Module 的序列化文件脱离模型源码后无法 load "
-"回来）。"
+msgid "可序列化（pickle）到文件中，即使在没有模型源码的环境中也可被正确 load（普通 Module 的序列化文件脱离模型源码后无法 load 回来）。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:28
@@ -96,8 +91,6 @@ msgid "如果需要对模型进行图手术、后量化等操作，可直接对�
 msgstr ""
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:49
-msgid ""
-"当真正确定最终要发版的模型后，可直接通过 :ref:`trace <trace>` & :ref:`dump <dump>` 转为 c++ "
-"模型进行部署。转换为其他框架模型的转换工具正在开发中，敬请期待。"
+msgid "当真正确定最终要发版的模型后，可直接通过 :ref:`trace <trace>` & :ref:`dump <dump>` 转为 c++ 模型进行部署。转换为其他框架模型的转换工具正在开发中，敬请期待。"
 msgstr ""
 

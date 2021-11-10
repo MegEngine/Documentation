@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-09 20:54\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/data/collator.po\n"
+"X-Crowdin-File-ID: 8155\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/model-development/data/collator.rst:5
 msgid "使用 Collator 定义合并策略"
@@ -26,9 +27,7 @@ msgid "在使用 ``DataLoader`` 获取批数据的整个流程中， ``Collator`
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/collator.rst:13
-msgid ""
-"通常用户不用实现自己的 ``Collator``, 使用默认合并策略就可以处理大部分批数据合并的情况。 "
-"但遇到一些默认合并策略难以处理的情景时，用户可以使用自己实现的 ``Collator``. 参考 :ref:`custom-collator`."
+msgid "通常用户不用实现自己的 ``Collator``, 使用默认合并策略就可以处理大部分批数据合并的情况。 但遇到一些默认合并策略难以处理的情景时，用户可以使用自己实现的 ``Collator``. 参考 :ref:`custom-collator`."
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/collator.rst:19
@@ -64,9 +63,7 @@ msgid "MegEngine 中也提供了类似的 :py:func:`~.functional.stack` 函数�
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/collator.rst:42
-msgid ""
-"默认的 ``Collator`` 支持 NumPy ndarrays, Numbers, Unicode strings, bytes, "
-"dicts 或 lists 数据类型。 要求输入必须包含至少一种上述数据类型，否则用户需要使用自己定义的 ``Collator``."
+msgid "默认的 ``Collator`` 支持 NumPy ndarrays, Numbers, Unicode strings, bytes, dicts 或 lists 数据类型。 要求输入必须包含至少一种上述数据类型，否则用户需要使用自己定义的 ``Collator``."
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/collator.rst:46
@@ -74,10 +71,7 @@ msgid "Collator 效果示范"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/collator.rst:47
-msgid ""
-"如果此时每个样本是形状为 :math:`(C, H, W)` 的图片 ``image``, 且在 ``Sampler`` 中指定了 "
-"``batch_size`` 为 :math:`N`. 那么 ``Collator`` 的主要目的就是将获得的该样本列表合并成一个形状为 "
-":math:`(N, C, H, W)` 的批样本结构。"
+msgid "如果此时每个样本是形状为 :math:`(C, H, W)` 的图片 ``image``, 且在 ``Sampler`` 中指定了 ``batch_size`` 为 :math:`N`. 那么 ``Collator`` 的主要目的就是将获得的该样本列表合并成一个形状为 :math:`(N, C, H, W)` 的批样本结构。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/collator.rst:50
@@ -85,9 +79,7 @@ msgid "我们可以模拟得到这样一个 ``image_list`` 数据，并借助 ``
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/collator.rst:63
-msgid ""
-"如果样本带有标签，则 ``Collator`` 就需要将由 ``(image, label)`` 元组构成的列表合并， 形成一个大的 "
-"``(batch_image, bacth_label)`` 元组。这也是我们对 ``DataLoader`` 进行迭代时通常会获得的东西。"
+msgid "如果样本带有标签，则 ``Collator`` 就需要将由 ``(image, label)`` 元组构成的列表合并， 形成一个大的 ``(batch_image, bacth_label)`` 元组。这也是我们对 ``DataLoader`` 进行迭代时通常会获得的东西。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/collator.rst:66
@@ -123,8 +115,6 @@ msgid ":models:`official/vision/keypoints/dataset.py#L167` - ``HeatmapCollator``
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/collator.rst:99
-msgid ""
-":models:`official/vision/detection/tools/utils.py#L125` - "
-"``DetectionPadCollator``"
+msgid ":models:`official/vision/detection/tools/utils.py#L125` - ``DetectionPadCollator``"
 msgstr ""
 
