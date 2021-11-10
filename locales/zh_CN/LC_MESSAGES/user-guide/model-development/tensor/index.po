@@ -1,32 +1,29 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-09 20:54\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/tensor/index.po\n"
+"X-Crowdin-File-ID: 8139\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:6
 msgid "深入理解 Tensor 数据结构"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:19
-msgid ""
-"MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数据结构， 区别于数学中的定义，其概念与 NumPy_"
-" 中的 :py:class:`~numpy.ndarray` 更加相似， "
-"即张量是一类同构多维数组，其中每个元素占用相同大小的内存块，并且所有块都以完全相同的方式解释。 如何解释 Tensor 中的元素由其 "
-":ref:`数据类型 <tensor-dtype>` 决定，而每种数据类型都代表一类 Tensor."
+msgid "MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数据结构， 区别于数学中的定义，其概念与 NumPy_ 中的 :py:class:`~numpy.ndarray` 更加相似， 即张量是一类同构多维数组，其中每个元素占用相同大小的内存块，并且所有块都以完全相同的方式解释。 如何解释 Tensor 中的元素由其 :ref:`数据类型 <tensor-dtype>` 决定，而每种数据类型都代表一类 Tensor."
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:24
@@ -38,9 +35,7 @@ msgid "Tensor 也是神经网络编程时所用的主要数据结构，网络的
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:31
-msgid ""
-"与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效的计算。 当 GPU 和 CPU "
-"设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。"
+msgid "与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效的计算。 当 GPU 和 CPU 设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:34
@@ -140,10 +135,7 @@ msgid "不同的研究领域对同一个概念使用不同的术语进行描述�
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:58
-msgid ""
-"Python 中提供了 `array <https://docs.python.org/3/library/array.html>`_ "
-"的官方实现， 但其使用方法和我们提到的 NumPy 数组有所不同，因此我们可以用 Python （嵌套）列表 :py:class:`list` "
-"来类比举例。 在后续的页面，我们会慢慢地过渡到 Tensor 的实际使用和操作中。"
+msgid "Python 中提供了 `array <https://docs.python.org/3/library/array.html>`_ 的官方实现， 但其使用方法和我们提到的 NumPy 数组有所不同，因此我们可以用 Python （嵌套）列表 :py:class:`list` 来类比举例。 在后续的页面，我们会慢慢地过渡到 Tensor 的实际使用和操作中。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:62
@@ -187,8 +179,7 @@ msgid "二维情况可以类比成我们在矩阵 :math:`M` 中按照先行后�
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:94
-msgid ""
-"M =\n"
+msgid "M =\n"
 "\\begin{bmatrix}\n"
 "     1 & 2 & 3 \\\\\n"
 "     4 & 5 & \\color{blue}{6} \\\\\n"
@@ -299,9 +290,7 @@ msgid "与 Python 一致，我们可以使用切片（Slicing）操作符来访�
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:159
-msgid ""
-"观察上面的例子，我们通过 ``:`` 符号进行了切片操作，语法为 ``start:stop:step``, 对应起始索引、终止索引和步长。 "
-"这种写法实际上在背后为我们生成了一个切片对象 ``slice(start:stop:step)``, 二者是等价的："
+msgid "观察上面的例子，我们通过 ``:`` 符号进行了切片操作，语法为 ``start:stop:step``, 对应起始索引、终止索引和步长。 这种写法实际上在背后为我们生成了一个切片对象 ``slice(start:stop:step)``, 二者是等价的："
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:168
@@ -309,23 +298,15 @@ msgid "``start``, ``stop``, ``step`` 也可以是负数，意味着索引变化�
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:169
-msgid ""
-"``start`` 和 ``stop`` 索引区间是左闭右开的 ``[start, stop)`` 形式，即 ``a[stop]`` "
-"本身不在切片范围之内。"
+msgid "``start`` 和 ``stop`` 索引区间是左闭右开的 ``[start, stop)`` 形式，即 ``a[stop]`` 本身不在切片范围之内。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:170
-msgid ""
-"这个设计其实与基于零的索引方式对应，该设计的好处有很多： 当只有最后一个位置信息时，我们也可以快速计算出切片和区间内有几个元素; 同理使用 "
-"``stop`` 减去 ``start`` 可以快速计算出切片和区间的长度，不容易混淆； 与此同时，我们可以用 ``a[:i]`` 和 "
-"``a[i:]`` 获得原始数据分割后不重叠的两部分。"
+msgid "这个设计其实与基于零的索引方式对应，该设计的好处有很多： 当只有最后一个位置信息时，我们也可以快速计算出切片和区间内有几个元素; 同理使用 ``stop`` 减去 ``start`` 可以快速计算出切片和区间的长度，不容易混淆； 与此同时，我们可以用 ``a[:i]`` 和 ``a[i:]`` 获得原始数据分割后不重叠的两部分。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:177
-msgid ""
-"计算机科学家，Edsger W. Dijkstra 教授在《`Why numbering should start at zero "
-"<https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html>`_"
-" 》 中的内容为基于 0 的下标以及左闭右开的区间习惯进行了很好的解释。"
+msgid "计算机科学家，Edsger W. Dijkstra 教授在《`Why numbering should start at zero <https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html>`_ 》 中的内容为基于 0 的下标以及左闭右开的区间习惯进行了很好的解释。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:181
@@ -369,9 +350,7 @@ msgid "我们这里仅仅对最外面这一层进行了索引，在 :ref:`tensor
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:213
-msgid ""
-"使用切片索引可以从 Tensor 中访问部分元素，但有些时候我们希望获得的部分元素是不连续的， 而是几个特定位置元素的组合，此时可以使用 "
-":ref:`数组索引 <array-indexing>` 。"
+msgid "使用切片索引可以从 Tensor 中访问部分元素，但有些时候我们希望获得的部分元素是不连续的， 而是几个特定位置元素的组合，此时可以使用 :ref:`数组索引 <array-indexing>` 。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:217
@@ -383,9 +362,7 @@ msgid "通过本小节的内容，用户能够掌握最基本的 Tensor 概念�
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:221
-msgid ""
-"为了方便初学者学习和过渡，在上面的代码示例中，我们一直在使用 Python 的 ``list`` 来举例， 以表明 MegEngine "
-"Tensor 数据结构与 Python 嵌套列表设计的一致性，但实际上二者还是存在着一定的区别。"
+msgid "为了方便初学者学习和过渡，在上面的代码示例中，我们一直在使用 Python 的 ``list`` 来举例， 以表明 MegEngine Tensor 数据结构与 Python 嵌套列表设计的一致性，但实际上二者还是存在着一定的区别。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:224
@@ -405,14 +382,11 @@ msgid "Python 嵌套列表并不支持这种语法，你能猜测出在 ``[]`` �
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:246
-msgid ""
-"假设我们现在需要从下面这个 2 维 Tensor 中取出蓝色部分的元素，又需要如何做呢？ （ :ref:`解释 <multi-dim-"
-"slicing>` ）"
+msgid "假设我们现在需要从下面这个 2 维 Tensor 中取出蓝色部分的元素，又需要如何做呢？ （ :ref:`解释 <multi-dim-slicing>` ）"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:249
-msgid ""
-"M =\n"
+msgid "M =\n"
 "\\begin{bmatrix}\n"
 "     1 & 2 & 3 \\\\\n"
 "     \\color{blue}{4} & \\color{blue}{5} & 6 \\\\\n"
@@ -423,9 +397,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:260
-msgid ""
-"想要解答这些问题，你必须先理解 Tensor 的 :ref:`tensor-fundamental-attributes` 等有关概念， "
-"更好地理解 Tensor 所具备的一些特点，接着从 :ref:`tensor-indexing` 的内容中找到答案。"
+msgid "想要解答这些问题，你必须先理解 Tensor 的 :ref:`tensor-fundamental-attributes` 等有关概念， 更好地理解 Tensor 所具备的一些特点，接着从 :ref:`tensor-indexing` 的内容中找到答案。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:267
@@ -433,9 +405,7 @@ msgid "Tensor 数据类型"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:266
-msgid ""
-"我们提到了 Tensor 中的每个元素的数据类型一致，如果你想要知道具体有哪些数据类型的 Tensor, 请参考 :ref:`tensor-"
-"dtype` 。"
+msgid "我们提到了 Tensor 中的每个元素的数据类型一致，如果你想要知道具体有哪些数据类型的 Tensor, 请参考 :ref:`tensor-dtype` 。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:271
@@ -443,9 +413,7 @@ msgid "Tensor 所在设备"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:270
-msgid ""
-"能够利用 GPU 设备进行高效运算是 MegEngine 相较于 NumPy 的优势，想要了解不同设备之间的区别， 请参考 :ref"
-":`tensor-device` 。"
+msgid "能够利用 GPU 设备进行高效运算是 MegEngine 相较于 NumPy 的优势，想要了解不同设备之间的区别， 请参考 :ref:`tensor-device` 。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:274
@@ -469,10 +437,7 @@ msgid "Python 数据 API 标准联盟协会"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/index.rst:282
-msgid ""
-"MegEngine 中的许多 Tensor 标准 API 设计遵循了 Python 数据 API 标准联盟协会的倡导， 一些常见的实现尽可能地向 "
-"NumPy 靠近，更多细节可以参考 `Consortium for Python Data API Standards <https"
-"://data-apis.org/>`_ ."
+msgid "MegEngine 中的许多 Tensor 标准 API 设计遵循了 Python 数据 API 标准联盟协会的倡导， 一些常见的实现尽可能地向 NumPy 靠近，更多细节可以参考 `Consortium for Python Data API Standards <https://data-apis.org/>`_ ."
 msgstr ""
 
 #~ msgid "如果有查看/改变默认计算设备的需求，请参考 :ref:`device` 中提供的接口。"

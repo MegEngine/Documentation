@@ -1,37 +1,33 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-09 20:54\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/quantization/index.po\n"
+"X-Crowdin-File-ID: 8185\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/model-development/quantization/index.rst:5
 msgid "量化（Quantization）"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:13
-msgid ""
-"常见神经网络模型所用的 :ref:`tensor-dtype` 一般是 ``float32`` 类型， "
-"而工业界出于对特定场景的需求，需要把模型转换为像 ``int8`` 这样的低精度/比特类型 —— 整个过程被称为量化（Quantization）。"
+msgid "常见神经网络模型所用的 :ref:`tensor-dtype` 一般是 ``float32`` 类型， 而工业界出于对特定场景的需求，需要把模型转换为像 ``int8`` 这样的低精度/比特类型 —— 整个过程被称为量化（Quantization）。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:24
-msgid ""
-"量化能将 32 位的浮点数转换成 8 位甚至是 4 位定点数，具有更少的运行时内存和缓存要求； "
-"另外由于大部分的硬件对于定点运算都有特定的优化，所以在运行速度上也会有较大的提升。 相较于普通模型， "
-"**量化模型有着更小的内存容量与带宽占用、更低的功耗和更快的推理速度等优点。**"
+msgid "量化能将 32 位的浮点数转换成 8 位甚至是 4 位定点数，具有更少的运行时内存和缓存要求； 另外由于大部分的硬件对于定点运算都有特定的优化，所以在运行速度上也会有较大的提升。 相较于普通模型， **量化模型有着更小的内存容量与带宽占用、更低的功耗和更快的推理速度等优点。**"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:27
@@ -39,15 +35,11 @@ msgid "某些计算设备只支持做定点运算。为了让模型可以在这�
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:29
-msgid ""
-"“为了追求极致的推理计算速度，从而舍弃了数值表示的精度”，直觉上会带来较大的模型掉点， "
-"但是在通过一系列精妙的量化处理之后，其掉点可以变得微乎其微，并能支持正常的部署使用。"
+msgid "“为了追求极致的推理计算速度，从而舍弃了数值表示的精度”，直觉上会带来较大的模型掉点， 但是在通过一系列精妙的量化处理之后，其掉点可以变得微乎其微，并能支持正常的部署使用。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:32
-msgid ""
-"用户无需了解背后的实现细节，使用 MegEngine 的 :mod:`~.quantization` 所提供的解决方案，就能满足基本量化需求。 "
-"我们为感兴趣的用户提供了更多有关量化基本原理的介绍，可参考 :ref:`quantization-basic-concept` 。"
+msgid "用户无需了解背后的实现细节，使用 MegEngine 的 :mod:`~.quantization` 所提供的解决方案，就能满足基本量化需求。 我们为感兴趣的用户提供了更多有关量化基本原理的介绍，可参考 :ref:`quantization-basic-concept` 。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:35
@@ -75,23 +67,15 @@ msgid "量化感知训练（Quantization-Aware Training, QAT）。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:51
-msgid ""
-"训练后量化是将已经训练好的浮点模型转换成低精度/比特模型所使用的通用技术，常见的做法是对模型的权重（weight）和激活值（activation）进行处理，"
-" 将它们转换成精度更低的类型。在转换过程中，需要用到待量化模型中权重和激活的一些统计信息，如缩放因子（scale）和零点（zero_point）。"
-" 尽管精度转换发生在训练后，但为了获取这些统计信息，我们仍需要在模型训练时 —— 即前向计算的过程中，插入一名观察者（Observer）。"
+msgid "训练后量化是将已经训练好的浮点模型转换成低精度/比特模型所使用的通用技术，常见的做法是对模型的权重（weight）和激活值（activation）进行处理， 将它们转换成精度更低的类型。在转换过程中，需要用到待量化模型中权重和激活的一些统计信息，如缩放因子（scale）和零点（zero_point）。 尽管精度转换发生在训练后，但为了获取这些统计信息，我们仍需要在模型训练时 —— 即前向计算的过程中，插入一名观察者（Observer）。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:55
-msgid ""
-"使用训练后量化技术，会导致量化后的模型掉点（即预测正确率下降）。严重情况下会导致量化模型不可用。 一种可行的做法是使用小批量数据来在量化前对 "
-"Observer 进行校准（Calibration），也叫 Calibration 后量化。"
+msgid "使用训练后量化技术，会导致量化后的模型掉点（即预测正确率下降）。严重情况下会导致量化模型不可用。 一种可行的做法是使用小批量数据来在量化前对 Observer 进行校准（Calibration），也叫 Calibration 后量化。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:58
-msgid ""
-"另一种可行的改善方案是使用量化感知训练技术，向浮点模型中插入一些伪量化（FakeQuantize）算子作为改造， 在训练时伪量化算子会根据 "
-"Observer 观察到的信息进行量化模拟， 即模拟计算过程中数值截断后精度降低的情形，先做一遍数值转换，再将转换后的值还原成原类型。 "
-"这样可以让被量化对象在训练时 “提前适应” 量化操作，缓解在训练后量化时带来的掉点影响。"
+msgid "另一种可行的改善方案是使用量化感知训练技术，向浮点模型中插入一些伪量化（FakeQuantize）算子作为改造， 在训练时伪量化算子会根据 Observer 观察到的信息进行量化模拟， 即模拟计算过程中数值截断后精度降低的情形，先做一遍数值转换，再将转换后的值还原成原类型。 这样可以让被量化对象在训练时 “提前适应” 量化操作，缓解在训练后量化时带来的掉点影响。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:63
@@ -135,11 +119,7 @@ msgid "Megengine 量化步骤"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:115
-msgid ""
-"在 MegEngine 中，最上层的量化接口是配置如何量化的 :class:`~.quantization.QConfig` 和模型转换模块里的 "
-":func:`~.quantization.quantize_qat` 与 :func:`~.quantization.quantize` . "
-"通过配置 :class:`~.quantization.QConfig` 中所使用的 Observer 和 FakeQuantize "
-"算子，我们可以对量化方案进行自定义。 进一步的说明请参考 :ref:`qconfig-guide` 小节，下面将展示 QAT 量化流程所需的步骤:"
+msgid "在 MegEngine 中，最上层的量化接口是配置如何量化的 :class:`~.quantization.QConfig` 和模型转换模块里的 :func:`~.quantization.quantize_qat` 与 :func:`~.quantization.quantize` . 通过配置 :class:`~.quantization.QConfig` 中所使用的 Observer 和 FakeQuantize 算子，我们可以对量化方案进行自定义。 进一步的说明请参考 :ref:`qconfig-guide` 小节，下面将展示 QAT 量化流程所需的步骤:"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:133
@@ -147,10 +127,7 @@ msgid ":ref:`module-guide` ，并按照正常的浮点模型方式进行训练�
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:134
-msgid ""
-"使用 :func:`~.quantization.quantize_qat` 将 Float 模型转换为 QFloat 模型， "
-"这一步会基于量化配置 :class:`~.quantization.QConfig` 设置好 Observer 和 FakeQuantize 算子"
-" （在 MegEngine 中提供了常见的 QConfig :ref:`预设 <qconfig-list>`, 这里使用了 EMA 算法）；"
+msgid "使用 :func:`~.quantization.quantize_qat` 将 Float 模型转换为 QFloat 模型， 这一步会基于量化配置 :class:`~.quantization.QConfig` 设置好 Observer 和 FakeQuantize 算子 （在 MegEngine 中提供了常见的 QConfig :ref:`预设 <qconfig-list>`, 这里使用了 EMA 算法）；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:137
@@ -158,9 +135,7 @@ msgid "使用 QFloat 模型继续训练（微调），此时 Obersever 统计信
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:138
-msgid ""
-"使用 :func:`~.quantization.quantize` 将 QFloat 模型转换为 Q 模型，这一步也叫 "
-"“真量化”（相较于伪量化）。 此时网络无法再进行训练，网络中的算子都会转换为低比特计算方式，即可用于部署了。"
+msgid "使用 :func:`~.quantization.quantize` 将 QFloat 模型转换为 Q 模型，这一步也叫 “真量化”（相较于伪量化）。 此时网络无法再进行训练，网络中的算子都会转换为低比特计算方式，即可用于部署了。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:152
@@ -200,22 +175,15 @@ msgid "对于其中比较常见的可以被量化的算子，分别有同名的�
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:169
-msgid ""
-":class:`.module.Linear`, :class:`.module.qat.Linear` 和 "
-":class:`.module.quantized.Linear`"
+msgid ":class:`.module.Linear`, :class:`.module.qat.Linear` 和 :class:`.module.quantized.Linear`"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:170
-msgid ""
-":class:`.module.Conv2d`, :class:`.module.qat.Conv2d` 和 "
-":class:`.module.quantized.Conv2d`"
+msgid ":class:`.module.Conv2d`, :class:`.module.qat.Conv2d` 和 :class:`.module.quantized.Conv2d`"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:172
-msgid ""
-"对 Module 的处理用户无需感知，通过调用模型转换接口 :func:`~.quantization.quantize_qat` 和 "
-":func:`~.quantization.quantize`, 框架会完成相应算子的批量替换操作，感兴趣的用户可以阅读相应的源码逻辑， 在 "
-":ref:`module-convert` 小节中也会进行更具体的介绍。"
+msgid "对 Module 的处理用户无需感知，通过调用模型转换接口 :func:`~.quantization.quantize_qat` 和 :func:`~.quantization.quantize`, 框架会完成相应算子的批量替换操作，感兴趣的用户可以阅读相应的源码逻辑， 在 :ref:`module-convert` 小节中也会进行更具体的介绍。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:179
@@ -223,9 +191,7 @@ msgid "量化配置 QConfig 说明"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:181
-msgid ""
-":class:`~.quantization.QConfig` 包括 :class:`~.quantization.Observer` 和 "
-":class:`~.quantization.FakeQuantize` 两部分，用户可 1.使用预设 2.自定义配置。"
+msgid ":class:`~.quantization.QConfig` 包括 :class:`~.quantization.Observer` 和 :class:`~.quantization.FakeQuantize` 两部分，用户可 1.使用预设 2.自定义配置。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:192
@@ -233,9 +199,7 @@ msgid "使用预设配置"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:194
-msgid ""
-"MegEngine 中提供了类似 ``ema_fakequant_qconfig`` 这样的预设，可用作 "
-":func:`~.quantization.quantize_qat` 的 ``qconfig``:"
+msgid "MegEngine 中提供了类似 ``ema_fakequant_qconfig`` 这样的预设，可用作 :func:`~.quantization.quantize_qat` 的 ``qconfig``:"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:199
@@ -247,9 +211,7 @@ msgid "这里使用了两种 Observer 来统计信息，而 FakeQuantize 使用�
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:212
-msgid ""
-"如果仅做后量化，或者说 Calibration, 由于无需进行 FakeQuantize, 故而其 ``fake_quant`` 属性为 None"
-" 即可："
+msgid "如果仅做后量化，或者说 Calibration, 由于无需进行 FakeQuantize, 故而其 ``fake_quant`` 属性为 None 即可："
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:225
@@ -269,16 +231,11 @@ msgid "除了使用预设配置，用户也可以根据需要灵活选择 Observ
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:235
-msgid ""
-"Observer 举例：:class:`~.quantization.MinMaxObserver` / "
-":class:`~.HistogramObserver` / "
-":class:`~.ExponentialMovingAverageObserver` ..."
+msgid "Observer 举例：:class:`~.quantization.MinMaxObserver` / :class:`~.HistogramObserver` / :class:`~.ExponentialMovingAverageObserver` ..."
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:236
-msgid ""
-"FakeQuantize 举例：:class:`~.FakeQuantize` / :class:`~.TQT` / :class:`~.LSQ`"
-" ..."
+msgid "FakeQuantize 举例：:class:`~.FakeQuantize` / :class:`~.TQT` / :class:`~.LSQ` ..."
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:237
@@ -286,27 +243,15 @@ msgid "所有可选的 Observer 和 FakeQuantize 已经列举在 :ref:`量化 AP
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:241
-msgid ""
-"在实际使用过程中，可能需要在训练时让 Observer 统计并更新参数，但是在推理时则停止更新。 Observer 和 FakeQuantize "
-"自身都支持 :meth:`~.quantization.Observer.enable` 和 "
-":meth:`~.quantization.Observer.disable` 方法，且 Observer 会在模型调用 "
-":meth:`~.module.Module.train` 和 :meth:`~.module.Module.eval` 方法时自动分别调用对应的"
-" ``Observer.enable/disable`` 方法。"
+msgid "在实际使用过程中，可能需要在训练时让 Observer 统计并更新参数，但是在推理时则停止更新。 Observer 和 FakeQuantize 自身都支持 :meth:`~.quantization.Observer.enable` 和 :meth:`~.quantization.Observer.disable` 方法，且 Observer 会在模型调用 :meth:`~.module.Module.train` 和 :meth:`~.module.Module.eval` 方法时自动分别调用对应的 ``Observer.enable/disable`` 方法。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:246
-msgid ""
-"一般在进行数据校准时，会先执行 ``net.eval()`` 保证网络的参数不被更新， 然后再调用 "
-":func:`~.quantization.enable_observer` 函数来手动开启 Module 中 Observer 的统计修改功能 "
-"（即先全局关闭，再开启特定的部分）："
+msgid "一般在进行数据校准时，会先执行 ``net.eval()`` 保证网络的参数不被更新， 然后再调用 :func:`~.quantization.enable_observer` 函数来手动开启 Module 中 Observer 的统计修改功能 （即先全局关闭，再开启特定的部分）："
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:257
-msgid ""
-"注意这些开关处理都是递归进行的。类似接口还有 :func:`~.quantization.disable_observer`, "
-":func:`~.quantization.enable_fake_quant`, "
-":func:`~.quantization.disable_fake_quant` 等，可在 :ref:`quantize-operation` "
-"中找到。"
+msgid "注意这些开关处理都是递归进行的。类似接口还有 :func:`~.quantization.disable_observer`, :func:`~.quantization.enable_fake_quant`, :func:`~.quantization.disable_fake_quant` 等，可在 :ref:`quantize-operation` 中找到。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:263
@@ -314,11 +259,7 @@ msgid "模型转换模块与相关基类"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:265
-msgid ""
-"QConfig 提供了一系列如何对模型做量化的接口，而要使用这些接口， 需要网络的 Module 能够在 forward 时给权重、激活值加上 "
-"Observer 和进行 FakeQuantize. 转换模块的作用就是将模型中的普通 :class:`~.module.Module` "
-"替换为支持这一系列操作的 :class:`~.module.qat.QATModule` ， 并能支持进一步替换成无法训练、专用于部署的 "
-":class:`~.module.quantized.QuantizedModule` ."
+msgid "QConfig 提供了一系列如何对模型做量化的接口，而要使用这些接口， 需要网络的 Module 能够在 forward 时给权重、激活值加上 Observer 和进行 FakeQuantize. 转换模块的作用就是将模型中的普通 :class:`~.module.Module` 替换为支持这一系列操作的 :class:`~.module.qat.QATModule` ， 并能支持进一步替换成无法训练、专用于部署的 :class:`~.module.quantized.QuantizedModule` ."
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:270
@@ -326,36 +267,19 @@ msgid "这三种 Module 与 Model 对应，通过转换接口可以依次替换�
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:279
-msgid ""
-"同时考虑到量化与推理优化时常用的算子融合（Fuse）技术高度关联，MegEngine 中提供了一系列预先融合好的 Module， 比如 "
-":class:`~.module.ConvRelu2d` 、 :class:`~.module.ConvBn2d` 和 "
-":class:`~.module.ConvBnRelu2d` 等。 显式地使用融合算子可以保证过程更加可控，其对应的 "
-"QuantizedModule 版本都会直接调用底层实现好的融合算子； 否则框架需要自己根据网络结构进行自动匹配和融合优化。 "
-"这样实现的缺点在于用户在使用时需要修改原先的网络结构，使用融合好的 Module 搭建网络。 "
-"而好处则是用户能更直接地控制网络如何转换，比如同时存在需要融合和不需要融合的 Conv 算子， "
-"相比提供一个冗长的白名单，我们更倾向于在网络结构中显式地控制；而一些默认会进行转换的算子， 也可以通过 "
-":meth:`~.module.Module.disable_quantize` 方法来控制其不进行转换（下面有举例）。"
+msgid "同时考虑到量化与推理优化时常用的算子融合（Fuse）技术高度关联，MegEngine 中提供了一系列预先融合好的 Module， 比如 :class:`~.module.ConvRelu2d` 、 :class:`~.module.ConvBn2d` 和 :class:`~.module.ConvBnRelu2d` 等。 显式地使用融合算子可以保证过程更加可控，其对应的 QuantizedModule 版本都会直接调用底层实现好的融合算子； 否则框架需要自己根据网络结构进行自动匹配和融合优化。 这样实现的缺点在于用户在使用时需要修改原先的网络结构，使用融合好的 Module 搭建网络。 而好处则是用户能更直接地控制网络如何转换，比如同时存在需要融合和不需要融合的 Conv 算子， 相比提供一个冗长的白名单，我们更倾向于在网络结构中显式地控制；而一些默认会进行转换的算子， 也可以通过 :meth:`~.module.Module.disable_quantize` 方法来控制其不进行转换（下面有举例）。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:288
-msgid ""
-"除此之外还提供专用于量化的 :class:`~.module.QuantStub` 、 :class:`~.module.DequantStub`"
-" 等辅助模块。"
+msgid "除此之外还提供专用于量化的 :class:`~.module.QuantStub` 、 :class:`~.module.DequantStub` 等辅助模块。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:290
-msgid ""
-"转换的原理很简单，就是将父 Module 中可被量化（Quantable）的子 Module 替换为对应的新 Module. 但是有一些 "
-"Quantable Module 还包含 Quantable 子 Module，比如 ConvBn 就包含一个 Conv2d 和一个 "
-"BatchNorm2d， 转换过程并不会对这些子 Module 进一步转换，原因是父 Module 被替换之后， 其 forward "
-"计算过程已经完全不同了，不会再依赖于这些子 Module."
+msgid "转换的原理很简单，就是将父 Module 中可被量化（Quantable）的子 Module 替换为对应的新 Module. 但是有一些 Quantable Module 还包含 Quantable 子 Module，比如 ConvBn 就包含一个 Conv2d 和一个 BatchNorm2d， 转换过程并不会对这些子 Module 进一步转换，原因是父 Module 被替换之后， 其 forward 计算过程已经完全不同了，不会再依赖于这些子 Module."
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:297
-msgid ""
-"如果需要使一部分 Module 及其子 Module 保留 Float 状态，不进行转换， 可以使用 "
-":meth:`~.module.Module.disable_quantize` 来处理。 比如当你发现对 fc "
-"层进行量化后，模型会掉点，则可以关闭该层的量化处理："
+msgid "如果需要使一部分 Module 及其子 Module 保留 Float 状态，不进行转换， 可以使用 :meth:`~.module.Module.disable_quantize` 来处理。 比如当你发现对 fc 层进行量化后，模型会掉点，则可以关闭该层的量化处理："
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:303
@@ -363,11 +287,7 @@ msgid "该接口也可以被当作装饰器进行使用，方便对多个 Module
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:307
-msgid ""
-"如果网络结构中涉及一些二元及以上的 ElementWise 操作符，比如加法乘法等， 由于多个输入各自的 scale "
-"并不一致，必须使用量化专用的算子，并指定好输出的 scale. 实际使用中只需要把这些操作替换为 "
-":class:`~.module.Elemwise` 即可， 比如 ``self.add_relu = "
-"Elemwise(\"FUSE_ADD_RELU\")``"
+msgid "如果网络结构中涉及一些二元及以上的 ElementWise 操作符，比如加法乘法等， 由于多个输入各自的 scale 并不一致，必须使用量化专用的算子，并指定好输出的 scale. 实际使用中只需要把这些操作替换为 :class:`~.module.Elemwise` 即可， 比如 ``self.add_relu = Elemwise(\"FUSE_ADD_RELU\")``"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:312
@@ -379,9 +299,7 @@ msgid "注意：在量化模型过程中，使用 Elemwise 算子不用加上前
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:326
-msgid ""
-"另外由于转换过程修改了原网络结构，模型保存与加载无法直接适用于转换后的网络， 读取新网络保存的参数时，需要先调用转换接口得到转换后的网络， 才能用"
-" :meth:`~.module.Module.load_state_dict` 将参数进行加载。"
+msgid "另外由于转换过程修改了原网络结构，模型保存与加载无法直接适用于转换后的网络， 读取新网络保存的参数时，需要先调用转换接口得到转换后的网络， 才能用 :meth:`~.module.Module.load_state_dict` 将参数进行加载。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:331
@@ -393,9 +311,7 @@ msgid "下面我们以 ResNet18 为例来讲解量化的完整流程。主要分
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:335
-msgid ""
-"修改网络结构，使用已经融合好的 ConvBn2d、ConvBnRelu2d、ElementWise 代替原先的 Module. "
-"在正常模式下预训练模型，并在每轮迭代保存网络检查点；"
+msgid "修改网络结构，使用已经融合好的 ConvBn2d、ConvBnRelu2d、ElementWise 代替原先的 Module. 在正常模式下预训练模型，并在每轮迭代保存网络检查点；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:337
@@ -415,9 +331,7 @@ msgid "训练 Float 模型"
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:347
-msgid ""
-"我们修改了模型结构中的一些子 Module, 将原先单独的 ``Conv``, ``BN``, ``ReLU`` 替换为融合后的可被量化的 "
-"Module."
+msgid "我们修改了模型结构中的一些子 Module, 将原先单独的 ``Conv``, ``BN``, ``ReLU`` 替换为融合后的可被量化的 Module."
 msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/index.rst:349

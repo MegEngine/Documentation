@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-09 20:54\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/optimizer/advanced-parameter-optimization.po\n"
+"X-Crowdin-File-ID: 8171\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:5
 msgid "参数优化进阶配置"
@@ -34,9 +35,7 @@ msgid "不同参数使用不同的学习速率"
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:23
-msgid ""
-":class:`~.megengine.optimizer.Optimizer` 支持将网络的参数进行分组， "
-"不同的参数组可以采用不同的学习速率进行训练。 一个参数组由一个字典表示，这个字典中有"
+msgid ":class:`~.megengine.optimizer.Optimizer` 支持将网络的参数进行分组， 不同的参数组可以采用不同的学习速率进行训练。 一个参数组由一个字典表示，这个字典中有"
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:26
@@ -48,16 +47,11 @@ msgid "``'lr': learning_rate`` ，用来指定此参数组的学习速率。此�
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:30
-msgid ""
-"所有待优化参数组的字典会组成一个列表作为 :class:`~.megengine.optimizer.Optimizer` "
-"实例化时的第一个参数传入。"
+msgid "所有待优化参数组的字典会组成一个列表作为 :class:`~.megengine.optimizer.Optimizer` 实例化时的第一个参数传入。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:32
-msgid ""
-"为了更好的说明参数组，我们首先使用 :class:`~.megengine.module.Module` 提供的 "
-":meth:`~.megengine.module.Module.named_parameters` 函数来对网络参数进行分组。 "
-"这个函数返回一个包含网络所有参数并且以参数名字为键、参数变量为值的字典："
+msgid "为了更好的说明参数组，我们首先使用 :class:`~.megengine.module.Module` 提供的 :meth:`~.megengine.module.Module.named_parameters` 函数来对网络参数进行分组。 这个函数返回一个包含网络所有参数并且以参数名字为键、参数变量为值的字典："
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:54
@@ -69,9 +63,7 @@ msgid "分组后即可根据下述代码对不同参数组设置不同的学习�
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:82
-msgid ""
-"优化器中设置的参数组列表对应于 :attr:`~.megengine.Optimizer.param_groups` 属性。 "
-"我们可以通过其获取不同参数组的学习速率。"
+msgid "优化器中设置的参数组列表对应于 :attr:`~.megengine.Optimizer.param_groups` 属性。 我们可以通过其获取不同参数组的学习速率。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:97
@@ -79,11 +71,7 @@ msgid "训练中对学习速率的更改"
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:99
-msgid ""
-"MegEngine 也支持在训练过程中对学习速率进行修改，比如部分参数训练到一定程度后就不再需要优化， "
-"此时将对应参数组的学习速率设为零即可。我们修改训练代码进行示例说明。 "
-"修改后的训练代码总共训练四个epoch，我们会在第二个epoch结束时将所有全连接层参数的学习速率置零， 并在每个epoch当中输出 "
-"``LeNet`` 中全连接层的部分参数值以显示是否被更新。"
+msgid "MegEngine 也支持在训练过程中对学习速率进行修改，比如部分参数训练到一定程度后就不再需要优化， 此时将对应参数组的学习速率设为零即可。我们修改训练代码进行示例说明。 修改后的训练代码总共训练四个epoch，我们会在第二个epoch结束时将所有全连接层参数的学习速率置零， 并在每个epoch当中输出 ``LeNet`` 中全连接层的部分参数值以显示是否被更新。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:132
@@ -99,18 +87,11 @@ msgid "不同参数使用不同的优化器"
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:149
-msgid ""
-"对于不同的参数，也可以使用不同的优化器对它们分别优化。 对参数的梯度置零（ "
-":meth:`~.megengine.optimizer.Optimizer.clear_grad` ） 和更新（ "
-":meth:`~.megengine.optimizer.Optimizer.step` ）操作， 如果所有优化器都是同时进行的，可以定义一个 "
-"``MultipleOptimizer`` 类。 在初始化时声明多个不同的优化器，在调用置零函数和更新函数时对所有优化器执行对应操作。"
+msgid "对于不同的参数，也可以使用不同的优化器对它们分别优化。 对参数的梯度置零（ :meth:`~.megengine.optimizer.Optimizer.clear_grad` ） 和更新（ :meth:`~.megengine.optimizer.Optimizer.step` ）操作， 如果所有优化器都是同时进行的，可以定义一个 ``MultipleOptimizer`` 类。 在初始化时声明多个不同的优化器，在调用置零函数和更新函数时对所有优化器执行对应操作。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:169
-msgid ""
-"假设想用 :class:`~.megengine.optimizer.SGD` 优化所有卷积参数， 用 "
-":class:`~.megengine.optimizer.adam.Adam` 优化所有全连接层参数。 "
-"可以按照如下方式定义优化器，不需要改变训练代码就可以达到不同的参数使用不同的优化器优化的效果。"
+msgid "假设想用 :class:`~.megengine.optimizer.SGD` 优化所有卷积参数， 用 :class:`~.megengine.optimizer.adam.Adam` 优化所有全连接层参数。 可以按照如下方式定义优化器，不需要改变训练代码就可以达到不同的参数使用不同的优化器优化的效果。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:179
@@ -122,9 +103,7 @@ msgid "固定部分参数不优化"
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:184
-msgid ""
-"除了将不训练的参数分为一组并将学习速率设为零外， MegEngine 还提供了其他途径来固定参数不进行优化： "
-"仅将需要优化的参数与求导器和优化器绑定即可。 如下代码所示，仅对 ``LeNet`` 中的卷积参数进行优化："
+msgid "除了将不训练的参数分为一组并将学习速率设为零外， MegEngine 还提供了其他途径来固定参数不进行优化： 仅将需要优化的参数与求导器和优化器绑定即可。 如下代码所示，仅对 ``LeNet`` 中的卷积参数进行优化："
 msgstr ""
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:207
