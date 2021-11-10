@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-07-21 04:21+0000\n"
+"PO-Revision-Date: 2021-11-10 11:06\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/environment-variables.po\n"
+"X-Crowdin-File-ID: 7081\n"
 
 #: ../../source/reference/environment-variables.rst:7
 msgid "环境变量（Env）设置"
@@ -32,27 +36,19 @@ msgstr "Precautions"
 
 #: ../../source/reference/environment-variables.rst:17
 msgid "MegEngine 中使用的环境变量可分为 “动态” 与 “非动态” 两类："
-msgstr ""
-"MegEngine environment variable used can be divided into \"active\" and "
-"\"non-dynamic\" categories："
+msgstr "MegEngine environment variable used can be divided into \"active\" and \"non-dynamic\" categories："
 
 #: ../../source/reference/environment-variables.rst:19
 msgid "动态环境变量可以动态地进行读取，即在代码运行过程中修改可即时生效。"
-msgstr ""
-"Dynamic environment variables can be dynamically read, that is, "
-"modifications can take effect immediately during code execution."
+msgstr "Dynamic environment variables can be dynamically read, that is, modifications can take effect immediately during code execution."
 
 #: ../../source/reference/environment-variables.rst:20
 msgid "非动态环境变量在整个过程中只读取一次，后续对其进行修改将无法生效。"
-msgstr ""
-"Non-dynamic environment variables are only read once in the entire "
-"process, and subsequent modifications to them will not take effect."
+msgstr "Non-dynamic environment variables are only read once in the entire process, and subsequent modifications to them will not take effect."
 
 #: ../../source/reference/environment-variables.rst:22
 msgid "对于非动态环境变量，我们会标注为 :ref:`nd-environ` 。"
-msgstr ""
-"For non-dynamic environment variables, we will mark them as :ref:`nd-"
-"environ`."
+msgstr "For non-dynamic environment variables, we will mark them as :ref:`nd-environ`."
 
 #: ../../source/reference/environment-variables.rst:27
 msgid "仅首次设置生效"
@@ -60,27 +56,19 @@ msgstr "Only the first time setting takes effect"
 
 #: ../../source/reference/environment-variables.rst:31
 msgid "需要注意，运行 ``import megengine`` 的过程中会读取部分环境变量。"
-msgstr ""
-"It should be noted that some environment variables will be read during "
-"the process of running ``import megengine``."
+msgstr "It should be noted that some environment variables will be read during the process of running ``import megengine``."
 
 #: ../../source/reference/environment-variables.rst:33
 msgid "因此对于那些只读取一次的环境变量，推荐采用以下两种方法之一进行设置："
-msgstr ""
-"Therefore, for those environment variables that are only read once, it is"
-" recommended to use one of the following two methods to set："
+msgstr "Therefore, for those environment variables that are only read once, it is recommended to use one of the following two methods to set："
 
 #: ../../source/reference/environment-variables.rst:35
 msgid "在 Shell 中通过 ``export`` 进行临时设置，然后再运行代码；"
-msgstr ""
-"Make temporary settings through ``export'' in the Shell, and then run the"
-" code;"
+msgstr "Make temporary settings through ``export'' in the Shell, and then run the code;"
 
 #: ../../source/reference/environment-variables.rst:37
 msgid "在需要运行的代码中进行设置，相关代码放在最开头处："
-msgstr ""
-"Set in the code that needs to be run, and place the relevant code at the "
-"very beginning："
+msgstr "Set in the code that needs to be run, and place the relevant code at the very beginning："
 
 #: ../../source/reference/environment-variables.rst:47
 msgid "编译相关"
@@ -104,9 +92,7 @@ msgstr "``MGE_DEFAULT_DEVICE`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:56
 msgid "设定默认使用计算设备，参考 :py:func:`~.set_default_device`."
-msgstr ""
-"Set the default computing device to use, refer to: "
-"py:func:`~.set_default_device`."
+msgstr "Set the default computing device to use, refer to: py:func:`~.set_default_device`."
 
 #: ../../source/reference/environment-variables.rst:61
 msgid "``MEGENGINE_HOST_COMPUTE`` （ :ref:`nd-environ` ）"
@@ -114,9 +100,7 @@ msgstr "``MEGENGINE_HOST_COMPUTE`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:59
 msgid "是否允许在 Host 上进行简单的计算（即使已有 GPU 设备），默认开启。"
-msgstr ""
-"Whether to allow simple calculations on the Host (even if there is a GPU "
-"device), it is enabled by default."
+msgstr "Whether to allow simple calculations on the Host (even if there is a GPU device), it is enabled by default."
 
 #: ../../source/reference/environment-variables.rst:61
 #: ../../source/reference/environment-variables.rst:88
@@ -151,12 +135,8 @@ msgid "``RUNTIME_OVERRIDE_LOG_LEVEL`` （ :ref:`nd-environ` ）"
 msgstr "``RUNTIME_OVERRIDE_LOG_LEVEL`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:69
-msgid ""
-"设置 Runtime Log 等级，默认为 ``ERROR`` 级别，需通过数字进行设置： DEBUG = 0, INFO = 1, WARN ="
-" 2, ERROR = 3, NO_LOG = 4."
-msgstr ""
-"Set the Runtime Log level, the default is ``ERROR'' level, need to be set"
-" by numbers： DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3, NO_LOG = 4."
+msgid "设置 Runtime Log 等级，默认为 ``ERROR`` 级别，需通过数字进行设置： DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3, NO_LOG = 4."
+msgstr "Set the Runtime Log level, the default is ``ERROR'' level, need to be set by numbers： DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3, NO_LOG = 4."
 
 #: ../../source/reference/environment-variables.rst:73
 msgid "``MGB_DEBUG_VAR_SANITY_CHECK_LOG``"
@@ -164,19 +144,15 @@ msgstr "``MGB_DEBUG_VAR_SANITY_CHECK_LOG''"
 
 #: ../../source/reference/environment-variables.rst:73
 msgid "对指定 ID 的 varnode 打印显存越界检查的 log, 默认为空，不开启。"
-msgstr ""
-"Print the log of the out-of-bounds check of the video memory for the "
-"varnode with the specified ID. The default is empty and not enabled."
+msgstr "Print the log of the out-of-bounds check of the video memory for the varnode with the specified ID. The default is empty and not enabled."
 
 #: ../../source/reference/environment-variables.rst:76
 msgid "``MGB_LOG_TRT_MEM_ALLOC``"
-msgstr "``MGB_LOG_TRT_MEM_ALLOC``"
+msgstr ""
 
 #: ../../source/reference/environment-variables.rst:76
 msgid "打印 tensorrt 申请的显存情况，默认为空，不开启。"
-msgstr ""
-"Print the video memory requested by tensorrt. The default is empty and "
-"not enabled."
+msgstr "Print the video memory requested by tensorrt. The default is empty and not enabled."
 
 #: ../../source/reference/environment-variables.rst:79
 msgid "分布式相关"
@@ -184,7 +160,7 @@ msgstr "Distributed correlation"
 
 #: ../../source/reference/environment-variables.rst:83
 msgid "``MGE_PLASMA_MEMORY``"
-msgstr "``MGE_PLASMA_MEMORY``"
+msgstr ""
 
 #: ../../source/reference/environment-variables.rst:81
 msgid ":class:`~.DataLoader` 共享内存大小，默认单位为 B."
@@ -192,9 +168,7 @@ msgstr ":class:`~.DataLoader` shared memory size, the default unit is B."
 
 #: ../../source/reference/environment-variables.rst:83
 msgid "设置为 ``0`` 表示不使用，为 ``100000000`` 表示 100MB, 为 ``4000000000`` 表示 4GB, 以此类推。"
-msgstr ""
-"Set to ``0'' means not to use, ``100000000'' means 100MB, ``4000000000`` "
-"means 4GB, and so on."
+msgstr "Set to ``0'' means not to use, ``100000000'' means 100MB, ``4000000000`` means 4GB, and so on."
 
 #: ../../source/reference/environment-variables.rst:88
 msgid "``MGE_DATALOADER_PLASMA_DEBUG``"
@@ -202,9 +176,7 @@ msgstr "``MGE_DATALOADER_PLASMA_DEBUG''"
 
 #: ../../source/reference/environment-variables.rst:86
 msgid "是否显示 :class:`~.DataLoader` 共享内存的输出和报错信息。"
-msgstr ""
-"Whether to display :class:`~.DataLoader` shared memory output and error "
-"messages."
+msgstr "Whether to display :class:`~.DataLoader` shared memory output and error messages."
 
 #: ../../source/reference/environment-variables.rst:93
 msgid "``MGE_MM_OPR_DEBUG`` （ :ref:`nd-environ` ）"
@@ -212,9 +184,7 @@ msgstr "``MGE_MM_OPR_DEBUG`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:91
 msgid "是否输出多机算子的 Debug 信息，默认关闭。"
-msgstr ""
-"Whether to output the debug information of the multi-computer operator, "
-"it is disabled by default."
+msgstr "Whether to output the debug information of the multi-computer operator, it is disabled by default."
 
 #: ../../source/reference/environment-variables.rst:96
 msgid "显存相关"
@@ -226,10 +196,7 @@ msgstr "``MEGENGINE_INPLACE_UPDATE''"
 
 #: ../../source/reference/environment-variables.rst:98
 msgid "是否原地修改模型参数，避免动态显存碎片，通常可以省一倍参数量的显存。"
-msgstr ""
-"Whether to modify the model parameters in situ to avoid dynamic video "
-"memory fragmentation, you can usually save twice the amount of video "
-"memory."
+msgstr "Whether to modify the model parameters in situ to avoid dynamic video memory fragmentation, you can usually save twice the amount of video memory."
 
 #: ../../source/reference/environment-variables.rst:105
 msgid "``MGB_CUDA_RESERVE_MEMORY`` （ :ref:`nd-environ` ）"
@@ -237,9 +204,7 @@ msgstr "``MGB_CUDA_RESERVE_MEMORY`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:103
 msgid "是否占满所有 CUDA 显存，可能会对显存分配有一定优化。"
-msgstr ""
-"Whether to occupy all the CUDA video memory, the video memory allocation "
-"may be optimized."
+msgstr "Whether to occupy all the CUDA video memory, the video memory allocation may be optimized."
 
 #: ../../source/reference/environment-variables.rst:110
 msgid "``MGB_ROCM_RESERVE_MEMORY`` （ :ref:`nd-environ` ）"
@@ -247,9 +212,7 @@ msgstr "``MGB_ROCM_RESERVE_MEMORY`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:108
 msgid "是否占满所有 ROCm 显存，可能会对显存分配有一定优化。"
-msgstr ""
-"Whether to occupy all the ROCm video memory, the video memory allocation "
-"may be optimized to a certain extent."
+msgstr "Whether to occupy all the ROCm video memory, the video memory allocation may be optimized to a certain extent."
 
 #: ../../source/reference/environment-variables.rst:113
 msgid "Sublinear 相关"
@@ -265,9 +228,7 @@ msgstr "``MGB_SUBLINEAR_MEMORY_THRESH_NR_TRY''"
 
 #: ../../source/reference/environment-variables.rst:119
 msgid "线性空间以及亚线性内存优化的当前范围搜索的样本数目，默认为 ``10``."
-msgstr ""
-"The number of samples searched in the current range of linear space and "
-"sub-linear memory optimization, the default is ``10''."
+msgstr "The number of samples searched in the current range of linear space and sub-linear memory optimization, the default is ``10''."
 
 #: ../../source/reference/environment-variables.rst:122
 msgid "``MGB_SUBLINEAR_MEMORY_GENETIC_NR_ITER``"
@@ -275,9 +236,7 @@ msgstr "``MGB_SUBLINEAR_MEMORY_GENETIC_NR_ITER''"
 
 #: ../../source/reference/environment-variables.rst:122
 msgid "使用遗传算法寻找最优切分策略时的迭代轮数，默认为 ``0``."
-msgstr ""
-"The number of iterations when the genetic algorithm is used to find the "
-"optimal segmentation strategy. The default is ``0''."
+msgstr "The number of iterations when the genetic algorithm is used to find the optimal segmentation strategy. The default is ``0''."
 
 #: ../../source/reference/environment-variables.rst:125
 msgid "``MGB_SUBLINEAR_MEMORY_GENETIC_POOL_SIZE``"
@@ -285,9 +244,7 @@ msgstr "``MGB_SUBLINEAR_MEMORY_GENETIC_POOL_SIZE''"
 
 #: ../../source/reference/environment-variables.rst:125
 msgid "遗传优化算法进行交叉随机选择（crossover）时所使用的样本数，默认为 ``20``."
-msgstr ""
-"The number of samples used by the genetic optimization algorithm for "
-"crossover selection. The default is ``20''."
+msgstr "The number of samples used by the genetic optimization algorithm for crossover selection. The default is ``20''."
 
 #: ../../source/reference/environment-variables.rst:128
 msgid "``MGB_SUBLINEAR_MEMORY_LOWER_BOUND_MB``"
@@ -295,10 +252,7 @@ msgstr "``MGB_SUBLINEAR_MEMORY_LOWER_BOUND_MB''"
 
 #: ../../source/reference/environment-variables.rst:128
 msgid "亚线性内存优化瓶颈大小的下界（以 MB 为单位），可用于在内存和速度之间进行手动权衡，默认为 ``0``."
-msgstr ""
-"The lower bound (in MB) of the bottleneck size for sub-linear memory "
-"optimization, which can be used to manually trade-off between memory and "
-"speed. The default is ``0''."
+msgstr "The lower bound (in MB) of the bottleneck size for sub-linear memory optimization, which can be used to manually trade-off between memory and speed. The default is ``0''."
 
 #: ../../source/reference/environment-variables.rst:131
 msgid "``MGB_SUBLINEAR_MEMORY_WORKERS``"
@@ -306,23 +260,15 @@ msgstr "``MGB_SUBLINEAR_MEMORY_WORKERS''"
 
 #: ../../source/reference/environment-variables.rst:131
 msgid "搜索次线性内存优化最优切分策略时使用的线程数，默认为当前系统中CPU数目的一半。"
-msgstr ""
-"The number of threads used when searching for the optimal segmentation "
-"strategy for sub-linear memory optimization. The default is half of the "
-"number of CPUs in the current system."
+msgstr "The number of threads used when searching for the optimal segmentation strategy for sub-linear memory optimization. The default is half of the number of CPUs in the current system."
 
 #: ../../source/reference/environment-variables.rst:137
 msgid "``MEGENGINE_INPUT_NODE_USE_STATIC_SHAPE``"
 msgstr "``MEGENGINE_INPUT_NODE_USE_STATIC_SHAPE''"
 
 #: ../../source/reference/environment-variables.rst:134
-msgid ""
-"给 InputNode 加一个 static shape 的模式，可以使更多的 var_node 是static_shape 并使用static "
-"storage， batch_size 可以开的更大，默认关闭。"
-msgstr ""
-"Adding a static shape mode to InputNode can make more var_nodes "
-"static_shape and use static storage, batch_size can be opened larger, and"
-" it is closed by default."
+msgid "给 InputNode 加一个 static shape 的模式，可以使更多的 var_node 是static_shape 并使用static storage， batch_size 可以开的更大，默认关闭。"
+msgstr "Adding a static shape mode to InputNode can make more var_nodes static_shape and use static storage, batch_size can be opened larger, and it is closed by default."
 
 #: ../../source/reference/environment-variables.rst:140
 msgid "DTR 相关"
@@ -354,9 +300,7 @@ msgstr "Whether to enable the automatic drop policy, it is not enabled by defaul
 
 #: ../../source/reference/environment-variables.rst:157
 msgid "以上环境变量应当通过 :py:func:`~dtr.enable` 和 :py:func:`~dtr.disable` 进行控制。"
-msgstr ""
-"The above environment variables should be controlled by "
-":py:func:`~dtr.enable` and :py:func:`~dtr.disable`."
+msgstr "The above environment variables should be controlled by :py:func:`~dtr.enable` and :py:func:`~dtr.disable`."
 
 #: ../../source/reference/environment-variables.rst:160
 msgid "``MEGENGINE_DTR_EVICTION_THRESHOLD``"
@@ -364,22 +308,15 @@ msgstr "``MEGENGINE_DTR_EVICTION_THRESHOLD''"
 
 #: ../../source/reference/environment-variables.rst:160
 msgid "DTR 显存上限，超过后将采用自动 drop 策略，参考 :py:func:`~.eviction_threshold`."
-msgstr ""
-"The upper limit of DTR video memory, after exceeding the automatic drop "
-"strategy, refer to: py:func:`~.eviction_threshold`."
+msgstr "The upper limit of DTR video memory, after exceeding the automatic drop strategy, refer to: py:func:`~.eviction_threshold`."
 
 #: ../../source/reference/environment-variables.rst:163
 msgid "``MEGENGINE_DTR_EVICTEE_MINIMUM_SIZE``"
 msgstr "``MEGENGINE_DTR_EVICTEE_MINIMUM_SIZE''"
 
 #: ../../source/reference/environment-variables.rst:163
-msgid ""
-"应用 DTR 策略的 tensor 需要达到的大小，默认为 1048576B （1MB），参考 "
-":py:func:`~.evictee_minimum_size`."
-msgstr ""
-"The size that the tensor that applies the DTR strategy needs to reach, "
-"the default is 1048576B (1MB), refer to: "
-"py:func:`~.evictee_minimum_size`."
+msgid "应用 DTR 策略的 tensor 需要达到的大小，默认为 1048576B （1MB），参考 :py:func:`~.evictee_minimum_size`."
+msgstr "The size that the tensor that applies the DTR strategy needs to reach, the default is 1048576B (1MB), refer to: py:func:`~.evictee_minimum_size`."
 
 #: ../../source/reference/environment-variables.rst:166
 msgid "图机制相关"
@@ -390,10 +327,7 @@ msgid "``MEGENGINE_INTERP_ASYNC_LEVEL`` （ :ref:`nd-environ` ）"
 msgstr "``MEGENGINE_INTERP_ASYNC_LEVEL`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:168
-msgid ""
-"动态图的执行并行度，``0`` 是完全串行，``1`` 是计算异步，``2`` 是用户代码和计算都异步（默认）。 设置为 0 将使 "
-"MegEngine 上层的任务队列变成同步执行，即 Python 调用一个 Op, C++ 层执行一个 Op, 没执行完前 Python "
-"层不会走到下一句，便于定位 Python 层报错的位置，但会影响速度。"
+msgid "动态图的执行并行度，``0`` 是完全串行，``1`` 是计算异步，``2`` 是用户代码和计算都异步（默认）。 设置为 0 将使 MegEngine 上层的任务队列变成同步执行，即 Python 调用一个 Op, C++ 层执行一个 Op, 没执行完前 Python 层不会走到下一句，便于定位 Python 层报错的位置，但会影响速度。"
 msgstr ""
 
 #: ../../source/reference/environment-variables.rst:175
@@ -402,9 +336,7 @@ msgstr "``MEGENGINE_CATCH_WORKER_EXEC`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:173
 msgid "是否捕获动态图 worker 的异常，默认开启，Debug 时可将其关闭。"
-msgstr ""
-"Whether to capture the exception of the dynamic graph worker, it is "
-"enabled by default, and it can be disabled during Debugging."
+msgstr "Whether to capture the exception of the dynamic graph worker, it is enabled by default, and it can be disabled during Debugging."
 
 #: ../../source/reference/environment-variables.rst:178
 msgid "``MEGENGINE_COMMAND_BUFFER_LENGTH`` （ :ref:`nd-environ` ）"
@@ -412,9 +344,7 @@ msgstr "``MEGENGINE_COMMAND_BUFFER_LENGTH`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:178
 msgid "延迟执行最后面计算算子的个数（默认为 ``3`` ），用于做局部优化。"
-msgstr ""
-"Delay execution of the number of last calculation operators (default is "
-"``3''), used for local optimization."
+msgstr "Delay execution of the number of last calculation operators (default is ``3''), used for local optimization."
 
 #: ../../source/reference/environment-variables.rst:183
 msgid "``MEGENGINE_RECORD_COMPUTING_PATH`` （ :ref:`nd-environ` ）"
@@ -422,9 +352,7 @@ msgstr "``MEGENGINE_RECORD_COMPUTING_PATH`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:181
 msgid "是否记录 tensor 的历史计算路径，默认关闭。"
-msgstr ""
-"Whether to record the historical calculation path of tensor, it is closed"
-" by default."
+msgstr "Whether to record the historical calculation path of tensor, it is closed by default."
 
 #: ../../source/reference/environment-variables.rst:193
 msgid "``MEGENGINE_EXECUTION_STRATEGY`` （ :ref:`nd-environ` ）"
@@ -432,9 +360,7 @@ msgstr "``MEGENGINE_EXECUTION_STRATEGY`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:186
 msgid "设置 kernel 选择策略（fast-run），影响运行速度、是否可复现以及编译时间："
-msgstr ""
-"Set the kernel selection strategy (fast-run), which affects the running "
-"speed, reproducibility and compilation："
+msgstr "Set the kernel selection strategy (fast-run), which affects the running speed, reproducibility and compilation："
 
 #: ../../source/reference/environment-variables.rst:188
 msgid "``HEURISTIC`` - 表示启发式选择 kernel"
@@ -442,9 +368,7 @@ msgstr "``HEURISTIC``-means heuristic selection kernel"
 
 #: ../../source/reference/environment-variables.rst:189
 msgid "``PROFILE`` -  表示根据 profile 时间选择 kernel"
-msgstr ""
-"``PROFILE''-indicates that the kernel is selected according to the "
-"profile time"
+msgstr "``PROFILE''-indicates that the kernel is selected according to the profile time"
 
 #: ../../source/reference/environment-variables.rst:190
 msgid "``REPRODUCEABLE`` - 表示使用可复现的算法"
@@ -456,9 +380,7 @@ msgstr "``OPTIMIZED``-means to use an optimized algorithm"
 
 #: ../../source/reference/environment-variables.rst:193
 msgid "默认为 ``HEURISTIC``, 参考 :py:func:`~.set_execution_strategy` 了解更多。"
-msgstr ""
-"The default is ``HEURISTIC``, refer to: "
-"py:func:`~.set_execution_strategy` for more information."
+msgstr "The default is ``HEURISTIC``, refer to: py:func:`~.set_execution_strategy` for more information."
 
 #: ../../source/reference/environment-variables.rst:196
 msgid "``MGB_CONV_PROFILING_TIMEOUT`` （ :ref:`nd-environ` ）"
@@ -466,10 +388,7 @@ msgstr "``MGB_CONV_PROFILING_TIMEOUT`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:196
 msgid "Profile 超时阈值，超时则直接杀掉 Kernel 运行，默认为 0 表示不做限制。"
-msgstr ""
-"Profile timeout threshold. When the timeout expires, the Kernel operation"
-" will be killed directly. The default value is 0, which means no "
-"restriction."
+msgstr "Profile timeout threshold. When the timeout expires, the Kernel operation will be killed directly. The default value is 0, which means no restriction."
 
 #: ../../source/reference/environment-variables.rst:199
 msgid "``MGB_PROFILE_ONLY_WAIT`` （ :ref:`nd-environ` ）"
@@ -477,9 +396,7 @@ msgstr "``MGB_PROFILE_ONLY_WAIT`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:199
 msgid "Prifile 时只选择有 wait 行为的算子，默认为空，不开启。"
-msgstr ""
-"In Prifile, only operators with wait behavior are selected, which is "
-"empty by default and is not enabled."
+msgstr "In Prifile, only operators with wait behavior are selected, which is empty by default and is not enabled."
 
 #: ../../source/reference/environment-variables.rst:204
 msgid "``CUDA_BIN_PATH`` （ :ref:`nd-environ` ）"
@@ -490,13 +407,8 @@ msgid "设置 CUDA 编译器 nvcc 的路径，用于编译 fuse kernel."
 msgstr "Set the path of CUDA compiler nvcc for compiling fuse kernel."
 
 #: ../../source/reference/environment-variables.rst:204
-msgid ""
-"默认从 ``PATH``, ``LIBRARY_PATH`` 环境变量中寻找，也可人为指定路径如 "
-"``\"/data/opt/cuda/bin/\"``."
-msgstr ""
-"The default is to search from the ``PATH``, ``LIBRARY_PATH`` environment "
-"variables, or you can manually specify the path such as "
-"``\"/data/opt/cuda/bin/\"``."
+msgid "默认从 ``PATH``, ``LIBRARY_PATH`` 环境变量中寻找，也可人为指定路径如 ``\"/data/opt/cuda/bin/\"``."
+msgstr "The default is to search from the ``PATH``, ``LIBRARY_PATH`` environment variables, or you can manually specify the path such as ``\"/data/opt/cuda/bin/\"``."
 
 #: ../../source/reference/environment-variables.rst:207
 msgid "``MGB_JIT_BACKEND``"
@@ -504,9 +416,7 @@ msgstr "``MGB_JIT_BACKEND''"
 
 #: ../../source/reference/environment-variables.rst:207
 msgid "jit fuse kernel 的编译后端选项，可设置为 ``HALIDE``, ``NVRTC``, ``MLIR``."
-msgstr ""
-"The compilation backend options of jit fuse kernel can be set to "
-"``HALIDE``, ``NVRTC``, ``MLIR``."
+msgstr "The compilation backend options of jit fuse kernel can be set to ``HALIDE``, ``NVRTC``, ``MLIR``."
 
 #: ../../source/reference/environment-variables.rst:210
 msgid "``MGB_JIT_KEEP_INTERM`` （ :ref:`nd-environ` ）"
@@ -514,9 +424,7 @@ msgstr "``MGB_JIT_KEEP_INTERM`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:210
 msgid "是否保存 jit 产生的临时文件，默认为空，不保存。"
-msgstr ""
-"Whether to save the temporary file generated by jit, the default is "
-"empty, do not save."
+msgstr "Whether to save the temporary file generated by jit, the default is empty, do not save."
 
 #: ../../source/reference/environment-variables.rst:213
 msgid "``MGB_JIT_WORKDIR`` （ :ref:`nd-environ` ）"
@@ -524,9 +432,7 @@ msgstr "``MGB_JIT_WORKDIR`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:213
 msgid "jit 产生的临时文件目录路径，默认为 ``/tmp/mgbjit-XXXXXX``."
-msgstr ""
-"The directory path of temporary files generated by jit, the default is "
-"``/tmp/mgbjit-XXXXXX''."
+msgstr "The directory path of temporary files generated by jit, the default is ``/tmp/mgbjit-XXXXXX''."
 
 #: ../../source/reference/environment-variables.rst:216
 msgid "``MGB_DUMP_INPUT`` （ :ref:`nd-environ` ）"
@@ -534,9 +440,7 @@ msgstr "``MGB_DUMP_INPUT`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:216
 msgid "是否在 Dump 的同时导出每个算子时输入值，默认为空，不开启。"
-msgstr ""
-"Whether to input the value when exporting each operator while dumping, "
-"the default is empty and not enabled."
+msgstr "Whether to input the value when exporting each operator while dumping, the default is empty and not enabled."
 
 #: ../../source/reference/environment-variables.rst:219
 msgid "调试相关"
@@ -548,9 +452,7 @@ msgstr "``MGB_WAIT_TERMINATE`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:221
 msgid "在 MegEngine 崩溃的时候进入等待，此时可以用 gdb attch 进行 debug, 默认为空，不开启。"
-msgstr ""
-"When MegEngine crashes, it enters waiting. At this time, you can use gdb "
-"attch to debug, which is empty by default and is not enabled."
+msgstr "When MegEngine crashes, it enters waiting. At this time, you can use gdb attch to debug, which is empty by default and is not enabled."
 
 #: ../../source/reference/environment-variables.rst:224
 msgid "``MGB_THROW_ON_FORK`` （ :ref:`nd-environ` ）"
@@ -558,9 +460,7 @@ msgstr "``MGB_THROW_ON_FORK`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:224
 msgid "是否在 Fork 进程中抛出异常，默认为空，不开启。"
-msgstr ""
-"Whether to throw an exception in the Fork process, the default is empty "
-"and not enabled."
+msgstr "Whether to throw an exception in the Fork process, the default is empty and not enabled."
 
 #: ../../source/reference/environment-variables.rst:231
 msgid "``MGB_THROW_ON_SCALAR_IDX`` （ :ref:`nd-environ` ）"
@@ -568,15 +468,8 @@ msgstr "``MGB_THROW_ON_SCALAR_IDX`` ( :ref:`nd-environ`)"
 
 #: ../../source/reference/environment-variables.rst:227
 msgid "Tensor index 的下标如 果是scalar, 则可以使用 subtensor, 选择是否抛出异常，默认关闭。"
-msgstr ""
-"If the subscript of Tensor index is scalar, you can use subtensor to "
-"choose whether to throw an exception, and it is closed by default."
+msgstr "If the subscript of Tensor index is scalar, you can use subtensor to choose whether to throw an exception, and it is closed by default."
 
 #~ msgid "动态图的执行并行度，``0`` 是完全串行，``1`` 是计算异步，``2`` 是用户代码和计算都异步（默认）。"
 #~ msgstr ""
-#~ "The execution parallelism of dynamic "
-#~ "graphs, ``0'' is completely serial, "
-#~ "``1'' is calculation asynchronous, and "
-#~ "``2'' is user code and calculation "
-#~ "are both asynchronous (default)."
 
