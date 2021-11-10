@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-10 02:20\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/faq/gpu-memory.po\n"
+"X-Crowdin-File-ID: 8121\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/faq/gpu-memory.rst:5
 msgid "显存使用常见问题"
@@ -30,15 +31,11 @@ msgid "如何正确的观察显存使用情况"
 msgstr ""
 
 #: ../../source/user-guide/faq/gpu-memory.rst:14
-msgid ""
-"MegEngine 使用了显存池机制来加速显存的申请和释放，程序中释放掉的显存将会存储在显存池中，不会被主动的释放给 CUDA driver. "
-"因此使用 ``nvidia-smi`` 命令观察到的显存占用可能大于实际的使用值。"
+msgid "MegEngine 使用了显存池机制来加速显存的申请和释放，程序中释放掉的显存将会存储在显存池中，不会被主动的释放给 CUDA driver. 因此使用 ``nvidia-smi`` 命令观察到的显存占用可能大于实际的使用值。"
 msgstr ""
 
 #: ../../source/user-guide/faq/gpu-memory.rst:16
-msgid ""
-"可以使用 :meth:`~megengine.get_mem_status_bytes` "
-"来获取某个计算设备的总显存和空闲显存（此时的空闲显存包含了显存池中未分配的显存），根据两者的差值即可获知当前准确的显存占用量。"
+msgid "可以使用 :meth:`~megengine.get_mem_status_bytes` 来获取某个计算设备的总显存和空闲显存（此时的空闲显存包含了显存池中未分配的显存），根据两者的差值即可获知当前准确的显存占用量。"
 msgstr ""
 
 #: ../../source/user-guide/faq/gpu-memory.rst:20
@@ -50,9 +47,7 @@ msgid "当一个 Python 对象的生命周期结束时，显存就会被释放�
 msgstr ""
 
 #: ../../source/user-guide/faq/gpu-memory.rst:24
-msgid ""
-"对于 :class:`~.Tensor` 对象，当没有被任何变量、:class:`~.Module` 和 "
-":class:`~.GradManager` 引用时，将会被析构并释放显存"
+msgid "对于 :class:`~.Tensor` 对象，当没有被任何变量、:class:`~.Module` 和 :class:`~.GradManager` 引用时，将会被析构并释放显存"
 msgstr ""
 
 #: ../../source/user-guide/faq/gpu-memory.rst:25
@@ -60,15 +55,10 @@ msgid "可以通过 :code:`del` 对应的 Tensor 或 Module 对象来手动释�
 msgstr ""
 
 #: ../../source/user-guide/faq/gpu-memory.rst:29
-msgid ""
-"由于 Python GC 并不保证所有对象在引用计数为 0 "
-"时会被立刻释放，因此可能会出现对象在删除后显存却没有立刻释放的情况（尤其是在多个对象循环引用时）， 此时可以通过 "
-":py:func:`gc.collect` 来尝试强制立刻回收。"
+msgid "由于 Python GC 并不保证所有对象在引用计数为 0 时会被立刻释放，因此可能会出现对象在删除后显存却没有立刻释放的情况（尤其是在多个对象循环引用时）， 此时可以通过 :py:func:`gc.collect` 来尝试强制立刻回收。"
 msgstr ""
 
 #: ../../source/user-guide/faq/gpu-memory.rst:34
-msgid ""
-"Python 的变量生存周期与 C++ 不一样，在 for 循环结束时，有可能会遇到 Tensor 对象未释放导致的额外显存占用。 "
-"我们可以通过显式删除变量，来立刻释放掉这部分显存，示例如下："
+msgid "Python 的变量生存周期与 C++ 不一样，在 for 循环结束时，有可能会遇到 Tensor 对象未释放导致的额外显存占用。 我们可以通过显式删除变量，来立刻释放掉这部分显存，示例如下："
 msgstr ""
 
