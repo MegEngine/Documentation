@@ -1,164 +1,156 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/jit/dump.po\n"
+"X-Crowdin-File-ID: 8191\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:5
 msgid "导出序列化模型文件（Dump）"
-msgstr ""
+msgstr "Export serialized model file (Dump)"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:9
 msgid "序列化操作依赖于 :py:class:`~.jit.trace` 进行的 :ref:`将动态图转为静态图 <trace>` 操作；"
-msgstr ""
+msgstr "Sequence of operation is dependent on: py: class: `~ .jit.trace` performed :ref:'into static dynamic FIG FIG <trace>` operation;"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:10
 msgid "与此同时，需要在 :py:class:`~.jit.trace` 中指定 ``capture_as_const = True`` 以将参数固化下来。"
-msgstr ""
+msgstr "At the same time, you need to specify ``capture_as_const = True'' in :py:class:`~.jit.trace` to solidify the parameters."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:12
 msgid "考虑到推理部署需求，使用 :py:meth:`~.jit.trace.dump`, 即可将训练好的模型序列化到一个文件或文件对象中："
-msgstr ""
+msgstr "Considering the reasoning deployment requirements, use: py: meth: `~ .jit.trace.dump` , to the trained model serialization to a file or object："
 
 #: ../../source/user-guide/model-development/jit/dump.rst:14
-msgid ""
-"我们以 `ResNet50 "
-"<https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_"
-" 为例子，参考代码片段如下："
-msgstr ""
+msgid "我们以 `ResNet50 <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ 为例子，参考代码片段如下："
+msgstr "We take `ResNet50 <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ as an example, the reference code snippet is as follows："
 
 #: ../../source/user-guide/model-development/jit/dump.rst:39
 msgid "执行脚本，并完成模型转换后，我们就获得了 MegEngine C++ API 可识别的预训练模型文件 ``resnet50.mge`` ."
-msgstr ""
+msgstr "After executing the script and completing the model conversion, we have obtained the pre-trained model file ``resnet50.mge`` which can be recognized by the MegEngine C++ API."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:42
 msgid "Dump 常用参数说明"
-msgstr ""
+msgstr "Dump common parameter description"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:44
 msgid "使用 :meth:`~.jit.trace.dump` 时，可传入多个参数，其中最常用的有如下两个："
-msgstr ""
+msgstr "When using :meth:`~.jit.trace.dump`, multiple parameters can be passed in, among which the most commonly used are the following two："
 
 #: ../../source/user-guide/model-development/jit/dump.rst:48
 msgid "``arg_names``"
-msgstr ""
+msgstr "``arg_names``"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:47
-msgid ""
-"在序列化的时候统一设置模型输入 Tensor 的名字。由于不同的模型的差异，会导致输入 Tensor 的名字千差万别。 "
-"为了减少理解和使用难度，可使用此参数统一设置模型输入为诸如 ``arg_0``, ``arg_1``, ..."
-msgstr ""
+msgid "在序列化的时候统一设置模型输入 Tensor 的名字。由于不同的模型的差异，会导致输入 Tensor 的名字千差万别。 为了减少理解和使用难度，可使用此参数统一设置模型输入为诸如 ``arg_0``, ``arg_1``, ..."
+msgstr "Set the name of the model input Tensor uniformly during serialization. Due to the differences of different models, the names of the input Tensor will be very different. In order to reduce the difficulty of understanding and use, this parameter can be used to uniformly set the model input to such as ``arg_0``, ``arg_1``, ..."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:53
 msgid "``optimize_for_inference``"
-msgstr ""
+msgstr "``optimize_for_inference''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:51
-msgid ""
-"训练出的模型往往在部署时不能发挥最优的性能， 而我们提供 ``optimize_for_inference`` "
-"来保证序列化出的模型是经特定优化的。 详细的键值参数可见下方的 :ref:`optimieze-for-inference-options` ."
-msgstr ""
+msgid "训练出的模型往往在部署时不能发挥最优的性能， 而我们提供 ``optimize_for_inference`` 来保证序列化出的模型是经特定优化的。 详细的键值参数可见下方的 :ref:`optimieze-for-inference-options` ."
+msgstr "The trained model often cannot play the best performance during deployment, and we provide ``optimize_for_inference'' to ensure that the serialized model is specifically optimized. For detailed key-value parameters, see :ref:`optimieze-for-inference-options` below."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:57
-msgid ""
-"``optimize_for_inference`` 参数默认是 ``True`` ， 所以即使不给任何键值优化参数，仍然会做一些基础的优化操作，"
-" 这会导致序列化出来的模型相较之前的定义有细微的差别。"
-msgstr ""
+msgid "``optimize_for_inference`` 参数默认是 ``True`` ， 所以即使不给任何键值优化参数，仍然会做一些基础的优化操作， 这会导致序列化出来的模型相较之前的定义有细微的差别。"
+msgstr "The ``optimize_for_inference`` parameter defaults to ``True``, so even if you don't optimize the parameters for any key value, you will still do some basic optimization operations, which will cause the serialized model to be slightly different from the previous definition ."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:64
 msgid "推理优化选项表"
-msgstr ""
+msgstr "Inference optimization options table"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:67
 msgid "``--enable-io16xc32``"
-msgstr ""
+msgstr "``--enable-io16xc32''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:67
 msgid "采用 float16 作为算子之间的数据传输类型，使用 float32 作为计算类型。"
-msgstr ""
+msgstr "Use float16 as the data transfer type between operators and float32 as the calculation type."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:70
 msgid "``--enable-ioc16``"
-msgstr ""
+msgstr "``--enable-ioc16''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:70
 msgid "采用 float16 作为算子之间的数据传输类型以及计算类型。"
-msgstr ""
+msgstr "Use float16 as the data transmission type and calculation type between operators."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:73
 msgid "``--enable-fuse-conv-bias-nonlinearity``"
-msgstr ""
+msgstr "``--enable-fuse-conv-bias-nonlinearity``"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:73
 msgid "是否融合 conv+bias+nonlinearity。"
-msgstr ""
+msgstr "Whether to integrate conv+bias+nonlinearity."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:76
 msgid "``--enalbe-hwcd4``"
-msgstr ""
+msgstr "``--enalbe-hwcd4''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:76
 msgid "采用 hwcd4 数据布局。"
-msgstr ""
+msgstr "Use hwcd4 data layout."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:79
 msgid "``--enable-nchw88``"
-msgstr ""
+msgstr "``--enable-nchw88''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:79
 msgid "采用 nchw88 数据布局。"
-msgstr ""
+msgstr "Use nchw88 data layout."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:82
 msgid "``--enable-nchw44``"
-msgstr ""
+msgstr "``--enable-nchw44''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:82
 msgid "采用 nchw44 数据布局。"
-msgstr ""
+msgstr "Use nchw44 data layout."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:85
 msgid "``--enable-nchw44-dot``"
-msgstr ""
+msgstr "``--enable-nchw44-dot''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:85
 msgid "采用 nchw44_dot 数据布局。"
-msgstr ""
+msgstr "Use nchw44_dot data layout."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:88
 msgid "``--enable-nchw32``"
-msgstr ""
+msgstr "``--enable-nchw32''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:88
 msgid "采用 nchw32 数据布局。"
-msgstr ""
+msgstr "Use nchw32 data layout."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:91
 msgid "``--enable-chwn4``"
-msgstr ""
+msgstr "``--enable-chwn4''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:91
 msgid "采用 chwn4 数据布局。"
-msgstr ""
+msgstr "Use chwn4 data layout."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:94
 msgid "``--enable-fuse-conv-bias-with-z``"
-msgstr ""
+msgstr "``--enable-fuse-conv-bias-with-z``"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:94
 msgid "仅在使用 GPU 平台下可用，把 conv，bias (elemwise add)，z(elemwise add) 融合成一个算子。"
-msgstr ""
+msgstr "Only available under the GPU platform, conv, bias (elemwise add), z (elemwise add) are merged into one operator."
 
