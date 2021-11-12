@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 09:02+0800\n"
-"PO-Revision-Date: 2021-06-03 04:03\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-11-12 00:52\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -23,28 +23,53 @@ msgid "megengine.functional.distributed.gather"
 msgstr "crwdns30582:0crwdne30582:0"
 
 #: megengine.distributed.functional.gather:1 of
-msgid "Create gather operator for collective communication."
-msgstr "crwdns30584:0crwdne30584:0"
+msgid "Gather tensors across the specified group. Only root process will receive the final result."
+msgstr "crwdns68959:0crwdne68959:0"
 
 #: megengine.distributed.functional.gather of
 msgid "参数"
 msgstr "crwdns30586:0crwdne30586:0"
 
-#: megengine.distributed.functional.gather:3 of
-msgid "input tensor."
-msgstr "crwdns30588:0crwdne30588:0"
-
-#: megengine.distributed.functional.gather:4 of
-msgid "communication group."
-msgstr "crwdns30590:0crwdne30590:0"
-
 #: megengine.distributed.functional.gather:5 of
-msgid "execution device."
-msgstr "crwdns30592:0crwdne30592:0"
+msgid "Input tensor."
+msgstr "crwdns68961:0crwdne68961:0"
+
+#: megengine.distributed.functional.gather:7 of
+msgid "The process group to work on. The default group is WORLD which means all processes available. You can use a list of process ranks to create new group to work on it, e.g. [1, 3, 5]."
+msgstr "crwdns68963:0crwdne68963:0"
+
+#: megengine.distributed.functional.gather:11 of
+msgid "The specific device to execute this operator. None default device means the device of inp will be used. Specify \"gpu0:1\" to execute this operator on diffrent cuda stream, 1 is stream id, and default stream id is 0."
+msgstr "crwdns68965:0crwdne68965:0"
+
+#: megengine.distributed.functional.gather:15 of
+msgid "The concat axis for collective_comm result"
+msgstr "crwdns68967:0crwdne68967:0"
+
+#: megengine.distributed.functional.gather:18 of
+msgid "实际案例"
+msgstr "crwdns68969:0crwdne68969:0"
+
+#: megengine.distributed.functional.gather of
+msgid "返回类型"
+msgstr "crwdns68971:0crwdne68971:0"
+
+#: megengine.distributed.functional.gather:35 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr "crwdns68973:0crwdne68973:0"
 
 #~ msgid "返回类型"
 #~ msgstr "返回类型"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
+
+#~ msgid "Create gather operator for collective communication."
+#~ msgstr "创建用于聚合通信的 gather 算子。"
+
+#~ msgid "communication group."
+#~ msgstr "通信组。"
+
+#~ msgid "execution device."
+#~ msgstr "执行设备。"
 
