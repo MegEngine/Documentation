@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-06-03 04:00\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-11-12 00:52\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -34,37 +34,41 @@ msgstr "crwdns62582:0:class:crwdnd62582:0:class:crwdnd62582:0:class:crwdne62582:
 msgid "参数"
 msgstr "crwdns62584:0crwdne62584:0"
 
-#: megengine.data.dataloader.DataLoader:7 of
+#: megengine.data.dataloader.DataLoader:8 of
 msgid "dataset from which to load the minibatch."
 msgstr "crwdns62586:0crwdne62586:0"
 
-#: megengine.data.dataloader.DataLoader:8 of
+#: megengine.data.dataloader.DataLoader:10 of
 msgid "defines the strategy to sample data from the dataset."
 msgstr "crwdns62588:0crwdne62588:0"
 
-#: megengine.data.dataloader.DataLoader:9 of
+#: megengine.data.dataloader.DataLoader:12 of
 msgid "defined the transforming strategy for a sampled batch. Default: None"
 msgstr "crwdns62590:0crwdne62590:0"
 
-#: megengine.data.dataloader.DataLoader:11 of
+#: megengine.data.dataloader.DataLoader:15 of
 msgid "defined the merging strategy for a transformed batch. Default: None"
 msgstr "crwdns62592:0crwdne62592:0"
 
-#: megengine.data.dataloader.DataLoader:13 of
+#: megengine.data.dataloader.DataLoader:18 of
 msgid "the number of sub-process to load, transform and collate the batch. ``0`` means using single-process. Default: 0"
 msgstr "crwdns62594:0crwdne62594:0"
 
-#: megengine.data.dataloader.DataLoader:15 of
+#: megengine.data.dataloader.DataLoader:21 of
 msgid "if positive, means the timeout value(second) for collecting a batch from workers. Default: 0"
 msgstr "crwdns62596:0crwdne62596:0"
 
-#: megengine.data.dataloader.DataLoader:17 of
+#: megengine.data.dataloader.DataLoader:24 of
 msgid "callback function triggered by timeout, default to raise runtime error."
 msgstr "crwdns62598:0crwdne62598:0"
 
-#: megengine.data.dataloader.DataLoader:19 of
+#: megengine.data.dataloader.DataLoader:27 of
 msgid "define the paralleling strategy in multi-processing mode. ``True`` means one batch is divided into :attr:`num_workers` pieces, and the workers will process these pieces parallelly. ``False`` means different sub-process will process different batch. Default: False"
 msgstr "crwdns62600:0:attr:crwdne62600:0"
+
+#: megengine.data.dataloader.DataLoader:32 of
+msgid "Defines whether to apply the preloading strategy of dataloader, and parallelize the copy of host2device while kernal is executed to improve the loading speed. default is seted False the output will change from np.ndarry to dtype tensor. the support dtypes for preload are int,float,list[int,float],tuple[int,float],and another type is not supported."
+msgstr "crwdns68545:0crwdne68545:0"
 
 #: ../../source/reference/api/megengine.data.DataLoader.rst:15
 msgid "Methods"
