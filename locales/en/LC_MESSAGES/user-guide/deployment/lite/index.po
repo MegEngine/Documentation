@@ -1,81 +1,76 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/lite/index.po\n"
+"X-Crowdin-File-ID: 8209\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/deployment/lite/index.rst:5
 msgid "使用 MegEngine Lite 做模型部署"
-msgstr ""
+msgstr "Use MegEngine Lite for model deployment"
 
 #: ../../source/user-guide/deployment/lite/index.rst:8
 msgid "简介"
-msgstr ""
+msgstr "Introduction"
 
 #: ../../source/user-guide/deployment/lite/index.rst:10
 msgid "MegEngine Lite 是对 MegEngine 的推理功能的封装，具有配置统一、接口完备、化繁为简、支持第三方硬件等优点。"
-msgstr ""
+msgstr "MegEngine Lite is an encapsulation of the reasoning function of MegEngine. It has the advantages of unified configuration, complete interface, simplified complexity, and third-party hardware support."
 
 #: ../../source/user-guide/deployment/lite/index.rst:15
 msgid "**配置统一** ：配置选项可以存为json文件，在模型制作阶段和模型调用阶段均可加载，获得同一份配置选项。"
-msgstr ""
+msgstr "**Configuration unified** ：configuration options can be saved as a json file, which can be loaded during the model making stage and the model calling stage, and the same configuration options can be obtained."
 
 #: ../../source/user-guide/deployment/lite/index.rst:16
 msgid "**接口完备** ：从业务需要出发，涵盖了推理和部署所涉及的网络和张量的接口。"
-msgstr ""
+msgstr "**Complete interface** ：Starting from business needs, it covers the network and tensor interfaces involved in reasoning and deployment."
 
 #: ../../source/user-guide/deployment/lite/index.rst:17
-msgid ""
-"**化繁为简** "
-"：lite所封装的接口，是MegEngine接口中只和推理部署相关的部分。对于只对推理部署、而非训练测试感兴趣的开发者，学习和上手的成本降到最低。"
-msgstr ""
+msgid "**化繁为简** ：lite所封装的接口，是MegEngine接口中只和推理部署相关的部分。对于只对推理部署、而非训练测试感兴趣的开发者，学习和上手的成本降到最低。"
+msgstr "** ：The interface encapsulated by lite is the part of the MegEngine interface that is only related to inference deployment. For developers who are only interested in inference deployment, not training and testing, the cost of learning and getting started is minimized."
 
 #: ../../source/user-guide/deployment/lite/index.rst:18
-msgid ""
-"**支持第三方硬件** "
-"：lite里提供了新硬件接入的方案：新硬件接口被封装后，以“插件”的方式注册在lite上，而弱化对lite或MegEngine版本号的依赖。"
-msgstr ""
+msgid "**支持第三方硬件** ：lite里提供了新硬件接入的方案：新硬件接口被封装后，以“插件”的方式注册在lite上，而弱化对lite或MegEngine版本号的依赖。"
+msgstr "**Support third-party hardware** ：A new hardware access solution is provided in lite.：new hardware interface is encapsulated, it is registered on the lite as a \"plug-in\", and the dependence on the version number of lite or MegEngine is weakened."
 
 #: ../../source/user-guide/deployment/lite/index.rst:22
 msgid "编译"
-msgstr ""
+msgstr "Compile"
 
 #: ../../source/user-guide/deployment/lite/index.rst:24
 msgid "将 Lite 结合到整个生产流程，步骤如下："
-msgstr ""
+msgstr "Integrate Lite into the entire production process, the steps are as："
 
 #: ../../source/user-guide/deployment/lite/index.rst:26
 msgid "模型准备：模型开发完成后，你需要通过 :ref:`dump <dump>` 得到 Lite 支持的模型格式；"
-msgstr ""
+msgstr "Model preparation：after model development is complete, you need to pass :ref:`dump <dump>model format` get Lite support;"
 
 #: ../../source/user-guide/deployment/lite/index.rst:27
-msgid ""
-"环境准备：按照使用环境，:ref:`从源码编译 MegEngine <build-from-source>` . （ "
-"``MGE_WITH_LITE`` 变量默认为 ``ON`` ）；"
-msgstr ""
+msgid "环境准备：按照使用环境，:ref:`从源码编译 MegEngine <build-from-source>` . （ ``MGE_WITH_LITE`` 变量默认为 ``ON`` ）；"
+msgstr "Environment preparation：According to the use environment,:ref: <build-from-source>`from source code. (``MGE_WITH_LITE`` variable defaults to ``ON``);"
 
 #: ../../source/user-guide/deployment/lite/index.rst:29
 msgid "工程接入：调用 MegEngine Lite 提供的接口，实现接入；"
-msgstr ""
+msgstr "Engineering access：calls the interface provided by MegEngine Lite to achieve access;"
 
 #: ../../source/user-guide/deployment/lite/index.rst:30
 msgid "集成编译：将之前编译得到的 Lite 库文件和对应调用代码一同编译成 SDK."
-msgstr ""
+msgstr "Integrated compilation：compiles the previously compiled Lite library files and corresponding calling codes into SDK."
 
 #: ../../source/user-guide/deployment/lite/index.rst:34
 msgid "文档目录"
-msgstr ""
+msgstr "Document directory"
 
