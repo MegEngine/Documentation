@@ -1,353 +1,248 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:50\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/customop.po\n"
+"X-Crowdin-File-ID: 8079\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/tools/customop.rst:5
 msgid "自定义算子（Custom Op）"
-msgstr ""
+msgstr "Custom Op"
 
 #: ../../source/user-guide/tools/customop.rst:7
-msgid ""
-"MegEngine 中提供了非常丰富的与机器学习、神经网络、张量计算等相关的函数与模块。 "
-"不过研究人员在开发模型的过程中，经常会去设计一些新的操作比如定义新的神经网络层（Neural Network Layer）等，MegEngine "
-"需要提供给用户自定义这些操作的能力。"
-msgstr ""
+msgid "MegEngine 中提供了非常丰富的与机器学习、神经网络、张量计算等相关的函数与模块。 不过研究人员在开发模型的过程中，经常会去设计一些新的操作比如定义新的神经网络层（Neural Network Layer）等，MegEngine 需要提供给用户自定义这些操作的能力。"
+msgstr "MegEngine provides a wealth of functions and modules related to machine learning, neural networks, and tensor calculations. However, in the process of developing models, researchers often design new operations such as defining new Neural Network Layers, etc. MegEngine needs to provide users with the ability to customize these operations."
 
 #: ../../source/user-guide/tools/customop.rst:10
-msgid ""
-"一般而言，研究人员可以使用 MegEngine 提供的 python 接口通过拓展 Function 和 Module 去实现其所需的功能。 "
-"同时，面向对性能要求比较高的用户，MegEngine 还另外提供给用户一套工具，可以将其自定义的 C++/CUDA 算子快速集成入 "
-"MegEngine，即 Custom Op."
-msgstr ""
+msgid "一般而言，研究人员可以使用 MegEngine 提供的 python 接口通过拓展 Function 和 Module 去实现其所需的功能。 同时，面向对性能要求比较高的用户，MegEngine 还另外提供给用户一套工具，可以将其自定义的 C++/CUDA 算子快速集成入 MegEngine，即 Custom Op."
+msgstr "Generally speaking, researchers can use the python interface provided by MegEngine to implement their required functions by extending Function and Module. At the same time, for users with high performance requirements, MegEngine also provides users with a set of tools that can quickly integrate their custom C++/CUDA operators into MegEngine, that is, Custom Op."
 
 #: ../../source/user-guide/tools/customop.rst:13
 msgid "下面将通过一个简单示例去展示编写 Custom Op 并将之集成入 MegEngine 的流程，之后将展示更具体的接口介绍。"
-msgstr ""
+msgstr "A simple example will be used to show the process of writing Custom Op and integrating it into MegEngine, and then a more specific interface introduction will be shown."
 
 #: ../../source/user-guide/tools/customop.rst:16
 msgid "整体流程"
-msgstr ""
+msgstr "Overall process"
 
 #: ../../source/user-guide/tools/customop.rst:18
-msgid ""
-"现在我们需要为 MegEngine 添加一个名为 :class:`MatMulScale` 的算子，这个算子在计算时首先会对两个输入 "
-"Tensor，lhs 和 rhs 执行矩阵乘，然后再将这个矩阵乘的结果再乘以标量 Scale."
-msgstr ""
+msgid "现在我们需要为 MegEngine 添加一个名为 :class:`MatMulScale` 的算子，这个算子在计算时首先会对两个输入 Tensor，lhs 和 rhs 执行矩阵乘，然后再将这个矩阵乘的结果再乘以标量 Scale."
+msgstr "Now we need to add an :class:`MatMulScale` to MegEngine. This operator first performs a matrix multiplication on the two input Tensors, lhs and rhs, and then multiplies the result of this matrix multiplication by a scalar. Scale."
 
 #: ../../source/user-guide/tools/customop.rst:20
 msgid "该算子数学上的执行过程的伪代码如下："
-msgstr ""
+msgstr "The pseudo code of the mathematical execution process of the operator is as follows："
 
 #: ../../source/user-guide/tools/customop.rst:29
 msgid "对于这样的一个操作，假设我们已经为之写好了一份 CUDA kernel 代码，并提供如下的接口函数用于调用："
-msgstr ""
+msgstr "For such an operation, suppose we have already written a CUDA kernel code for it, and provide the following interface functions for calling："
 
 #: ../../source/user-guide/tools/customop.rst:35
-msgid ""
-"这些的参数中，``lhs``，``rhs``，以及 ``result`` 是三个 float 类型的指针， 分别代表这个 Op 的两个输入 "
-"``Tensor`` 和一个输出 ``Tensor``，其均需要指向一片已经分配好的 cuda memory. 而 "
-"``M``，``K``，``N`` 是矩阵的维度信息，表示一个 ``M*K`` 的矩阵乘以一个 ``K*N`` 的矩阵。 而 ``scale`` "
-"则代表着矩阵乘的结果需要乘以的那个系数。"
-msgstr ""
+msgid "这些的参数中，``lhs``，``rhs``，以及 ``result`` 是三个 float 类型的指针， 分别代表这个 Op 的两个输入 ``Tensor`` 和一个输出 ``Tensor``，其均需要指向一片已经分配好的 cuda memory. 而 ``M``，``K``，``N`` 是矩阵的维度信息，表示一个 ``M*K`` 的矩阵乘以一个 ``K*N`` 的矩阵。 而 ``scale`` 则代表着矩阵乘的结果需要乘以的那个系数。"
+msgstr "Among these parameters, ``lhs``, ``rhs``, and ``result`` are three pointers of float type, which represent the two input ``Tensor`` and one output ``Tensor'' of this Op. ``, they all need to point to a piece of cuda memory that has been allocated. And ``M``, ``K``, ``N`` are the dimension information of the matrix, which means a matrix of ``M*K`` Multiply by a matrix of ``K*N``. And ``scale'' represents the coefficient that the result of matrix multiplication needs to be multiplied by."
 
 #: ../../source/user-guide/tools/customop.rst:40
 msgid "对于这种情况我们可以编写如下的 C++ 代码，就可以将之封装成 MegEngine 的 Op。"
-msgstr ""
+msgstr "In this case, we can write the following C++ code, which can be encapsulated into the Op of MegEngine."
 
 #: ../../source/user-guide/tools/customop.rst:73
-msgid ""
-"这段代码中，其首先 include Custom Op 头文件，然后使用两个宏 ``CUSTOM_OP_REG_BEGIN()`` 和 "
-"``CUSTOM_OP_REG_END()`` 构建了一段 scope. 在这个 scope 中，我们可以编写 Custom Op "
-"的主体代码，而这个主体代码分为两个部分。 第一个部分是一些函数的定义，包括输出 ``Tensor`` 属性推断函数和计算函数。 其中前者会根据输入"
-" ``Tensor`` 的属性（比如 ``shape``）去推导输出 ``Tensor`` 的对应属性，而后者则是在其中调用 CUDA "
-"kernel，完成计算。 第二部分是 Op 的注册，主要用于定义 Op 有几个输入输出 ``Tensor``，有几个 "
-"``Param``，并将上面定义的属性推断函数和计算函数的指针也注册给 Op."
-msgstr ""
+msgid "这段代码中，其首先 include Custom Op 头文件，然后使用两个宏 ``CUSTOM_OP_REG_BEGIN()`` 和 ``CUSTOM_OP_REG_END()`` 构建了一段 scope. 在这个 scope 中，我们可以编写 Custom Op 的主体代码，而这个主体代码分为两个部分。 第一个部分是一些函数的定义，包括输出 ``Tensor`` 属性推断函数和计算函数。 其中前者会根据输入 ``Tensor`` 的属性（比如 ``shape``）去推导输出 ``Tensor`` 的对应属性，而后者则是在其中调用 CUDA kernel，完成计算。 第二部分是 Op 的注册，主要用于定义 Op 有几个输入输出 ``Tensor``，有几个 ``Param``，并将上面定义的属性推断函数和计算函数的指针也注册给 Op."
+msgstr "In this code, it first includes the Custom Op header file, and then uses two macros ``CUSTOM_OP_REG_BEGIN()`` and ``CUSTOM_OP_REG_END()'' to construct a scope. In this scope, we can write the body of Custom Op Code, and this main code is divided into two parts. The first part is the definition of some functions, including the output ``Tensor'' attribute inference function and calculation function. The former will derive the corresponding attributes of the output ``Tensor'' according to the attributes of the input ``Tensor`` (such as ``shape''), while the latter will call the CUDA kernel in it to complete the calculation. The second part is the registration of Op, which is mainly used to define Op has several input and output ``Tensor``, several ``Params'', and also register the pointers of the attribute inference function and calculation function defined above to Op ."
 
 #: ../../source/user-guide/tools/customop.rst:79
-msgid ""
-"之后可以使用 Custom Op 所提供的 makefile 模板将 CUDA kernel 以及上面的 C++ "
-"文件一起编译成一个库文件，我们将之命名为 matmul_scale.so. 然后在 python 中，我们可以编写如下的代码去使用它："
-msgstr ""
+msgid "之后可以使用 Custom Op 所提供的 makefile 模板将 CUDA kernel 以及上面的 C++ 文件一起编译成一个库文件，我们将之命名为 matmul_scale.so. 然后在 python 中，我们可以编写如下的代码去使用它："
+msgstr "Then you can use the template Custom Op makefile provided will be compiled into a library file with CUDA kernel and above C ++ files, we named this matmul_scale.so. Then in python, we can write the following code to use it："
 
 #: ../../source/user-guide/tools/customop.rst:95
-msgid ""
-"当然，我们也可以将 Custom Op 与 MegEngine 已有的 Python 组件如 ``autodiff.Function`` 以及 "
-"``module.Module`` 结合起来，以支持训练和构建更大规模的模型："
-msgstr ""
+msgid "当然，我们也可以将 Custom Op 与 MegEngine 已有的 Python 组件如 ``autodiff.Function`` 以及 ``module.Module`` 结合起来，以支持训练和构建更大规模的模型："
+msgstr "Of course, we can also Custom Op and MegEngine existing Python components such as `` autodiff.Function`` and `` module.Module`` combine to support training and build a larger model："
 
 #: ../../source/user-guide/tools/customop.rst:129
 msgid "接口介绍"
-msgstr ""
+msgstr "Interface introduction"
 
 #: ../../source/user-guide/tools/customop.rst:132
 msgid "属性推断函数"
-msgstr ""
+msgstr "Attribute inference function"
 
 #: ../../source/user-guide/tools/customop.rst:134
-msgid ""
-"Custom Op 的输出 ``Tensor`` 属性推导主要是根据输入 ``Tensor`` "
-"的一些属性（``Shape``，``DType``，``Device``）以及 Op 的参数来计算输出 ``Tensor`` 的对应相关属性。 "
-"其中 ``Shape`` 代表的是 ``Tensor`` 维度信息，``DType`` 对应 Tensor 的数据类型，``Device`` "
-"表示这个 ``Tensor`` 在什么设备（cpu/gpu）上。 比如卷积中我们可以根据输入 ``Tensor`` 的 ``Shape`` 以及 "
-"``stride``，``padding`` 等参数计算出输出 ``Tensor`` 的 ``Shape`` 信息。"
-msgstr ""
+msgid "Custom Op 的输出 ``Tensor`` 属性推导主要是根据输入 ``Tensor`` 的一些属性（``Shape``，``DType``，``Device``）以及 Op 的参数来计算输出 ``Tensor`` 的对应相关属性。 其中 ``Shape`` 代表的是 ``Tensor`` 维度信息，``DType`` 对应 Tensor 的数据类型，``Device`` 表示这个 ``Tensor`` 在什么设备（cpu/gpu）上。 比如卷积中我们可以根据输入 ``Tensor`` 的 ``Shape`` 以及 ``stride``，``padding`` 等参数计算出输出 ``Tensor`` 的 ``Shape`` 信息。"
+msgstr "Custom Op's output ``Tensor`` attribute derivation is mainly based on some attributes of the input ``Tensor`` (``Shape``, ``DType``, ``Device``) and the parameters of Op to calculate the output` Corresponding related attributes of `Tensor``. Among them, ``Shape'' represents the dimensional information of ``Tensor``, ``DType'' corresponds to the data type of Tensor, and ``Device'' indicates which device (cpu/gpu) the ``Tensor'' is on. For example, in convolution, we can calculate the ``Shape`` information of the output ``Tensor`` according to the input ``Tensor`` ``Shape``, ``stride'', ``padding'' and other parameters."
 
 #: ../../source/user-guide/tools/customop.rst:138
 msgid "这些输出属性推导的过程目前需要使用者以 C++ 函数的形式给出，而这些函数的函数签名（即函数的输入参数与返回值的类型）是固定的，其分别如下："
-msgstr ""
+msgstr "The process of deriving these output attributes currently requires users to give them in the form of C++ functions, and the function signatures of these functions (that is, the types of input parameters and return values of the function) are fixed, which are as follows："
 
 #: ../../source/user-guide/tools/customop.rst:146
-msgid ""
-"我们编写自己 Custom Op 的相关属性推导函数时需要确保自己的相关函数的函数签名应该与上述例子中对应函数的函数签名保持一致。 "
-"这几个函数的函数签名基本是类似的，以 ``Shape`` 推导来说，其参数传入了输入的 ``Tensor`` 的 ``Shape`` 信息和其 "
-"``param``，以及输出 ``Shape`` 的引用。 其中这两个 ``vector`` 的长度即分别为输入 ``Tensor`` "
-"的数量和输出 ``Tensor`` 的数量。 我们在这个函数中可以计算出输出 ``Tensor`` ``Shape``，并将之赋值给对应引用。"
-msgstr ""
+msgid "我们编写自己 Custom Op 的相关属性推导函数时需要确保自己的相关函数的函数签名应该与上述例子中对应函数的函数签名保持一致。 这几个函数的函数签名基本是类似的，以 ``Shape`` 推导来说，其参数传入了输入的 ``Tensor`` 的 ``Shape`` 信息和其 ``param``，以及输出 ``Shape`` 的引用。 其中这两个 ``vector`` 的长度即分别为输入 ``Tensor`` 的数量和输出 ``Tensor`` 的数量。 我们在这个函数中可以计算出输出 ``Tensor`` ``Shape``，并将之赋值给对应引用。"
+msgstr "When we write our own Custom Op's related attribute derivation function, we need to ensure that the function signature of our related function should be consistent with the function signature of the corresponding function in the above example. The function signatures of these functions are basically similar. Taking the derivation of ``Shape``, the parameters are passed in the ``Shape`` information of the input ``Tensor`` and its ``param``, and Output a reference to ``Shape``. The lengths of these two ``vectors'' are the number of input ``Tensor`` and the number of output ``Tensor``, respectively. In this function, we can calculate the output ``Tensor`` ``Shape``, and assign it to the corresponding reference."
 
 #: ../../source/user-guide/tools/customop.rst:151
 msgid "**Device**"
-msgstr ""
+msgstr "**Device**"
 
 #: ../../source/user-guide/tools/customop.rst:153
-msgid ""
-"目前 Custom Op 支持的 ``Device`` 支持的设备类型包括 ``x86`` 和 ``cuda``. "
-"我们可以像使用字符串的方式去使用它，下面是几个 ``Device`` 的使用案例。"
-msgstr ""
+msgid "目前 Custom Op 支持的 ``Device`` 支持的设备类型包括 ``x86`` 和 ``cuda``. 我们可以像使用字符串的方式去使用它，下面是几个 ``Device`` 的使用案例。"
+msgstr "Currently Custom Op supports the ``Device`` supported device types including ``x86`` and ``cuda``. We can use it like a string, the following are the use of several ``Device`` Case."
 
 #: ../../source/user-guide/tools/customop.rst:163
-msgid ""
-"而 Custom Op 还为输出 ``Tensor`` 的 ``Device`` 类型推导提供了一种默认的行为，即所有输出 ``Tensor`` "
-"的 ``Device`` 都与第 0 个输入 ``Tensor`` 的 ``Device`` 类型相等。 如果没有输入 "
-"``Tensor``，则所有输出 ``Tensor`` 的 ``Device`` 都为 ``x86``. 而在上面的 "
-"``MatMulScale`` 的例子中，我们并没有为之定义 ``Device`` 推导函数，故而其就使用了这种默认的 ``Device`` "
-"推导行为。"
-msgstr ""
+msgid "而 Custom Op 还为输出 ``Tensor`` 的 ``Device`` 类型推导提供了一种默认的行为，即所有输出 ``Tensor`` 的 ``Device`` 都与第 0 个输入 ``Tensor`` 的 ``Device`` 类型相等。 如果没有输入 ``Tensor``，则所有输出 ``Tensor`` 的 ``Device`` 都为 ``x86``. 而在上面的 ``MatMulScale`` 的例子中，我们并没有为之定义 ``Device`` 推导函数，故而其就使用了这种默认的 ``Device`` 推导行为。"
+msgstr "And Custom Op also provides a default behavior for the derivation of the ``Device`` type of the output ``Tensor``, that is, all the ``Device`` of the output ``Tensor`` are the same as the 0th input ``Tensor''. The ``Device`` types of `` are equal. If there is no input ``Tensor``, the ``Device'' of all output ``Tensor`` is ``x86``. And in the above example of ``MatMulScale``, we did not define it ``Device`` derivation function, so it uses this default ``Device`` derivation behavior."
 
 #: ../../source/user-guide/tools/customop.rst:167
 msgid "**DType**"
-msgstr ""
+msgstr "**DType**"
 
 #: ../../source/user-guide/tools/customop.rst:169
-msgid ""
-"目前 Custom Op 支持的 ``DType`` 支持的设备类型包括 "
-"``float16``，``bfloat16``，``float32``，``uint8``，``int8``，``int16``，``uint16``，``int32``，"
-" 以及四种量化类型``qint8``，``quint8``，``qint16``，``qint32``.其中 ``quint8`` "
-"是非对称量化数据类型，而其他三者是对称量化数据类型。 我们也可以像使用字符串的方式去使用它，下面是几个 ``DType`` 的使用案例。"
-msgstr ""
+msgid "目前 Custom Op 支持的 ``DType`` 支持的设备类型包括 ``float16``，``bfloat16``，``float32``，``uint8``，``int8``，``int16``，``uint16``，``int32``， 以及四种量化类型``qint8``，``quint8``，``qint16``，``qint32``.其中 ``quint8`` 是非对称量化数据类型，而其他三者是对称量化数据类型。 我们也可以像使用字符串的方式去使用它，下面是几个 ``DType`` 的使用案例。"
+msgstr "Currently, the ``DType`` supported by Custom Op supports device types including ``float16``, ``bfloat16``, ``float32``, ``uint8``, ``int8``, ``int16`` , ``uint16``, ``int32``, and the four quantization types ``qint8``, ``quint8``, ``qint16``, ``qint32``. Among them, ``quint8`` is asymmetric The quantized data type, while the other three are symmetrically quantized data types. We can also use it like a string. Here are a few use cases of ``DType``."
 
 #: ../../source/user-guide/tools/customop.rst:186
-msgid ""
-"与 ``Device`` 类似，而 Custom Op 也为输出 ``Tensor`` 的 ``DType`` "
-"类型推导提供了一种默认的行为，即所有输出 ``Tensor`` 的 ``DType`` 都与第 0 个输入 ``Tensor`` 的 "
-"``DType`` 类型相等。 如果没有输入 ``Tensor``，则所有输出 ``Tensor`` 的 ``DType`` 都为 "
-"``float32``. 而在上面的 ``MatMulScale`` 的例子中，我们同样并没有为之定义 ``DType`` "
-"推导函数，故而其也使用了这种默认的 ``DType`` 推导行为。"
-msgstr ""
+msgid "与 ``Device`` 类似，而 Custom Op 也为输出 ``Tensor`` 的 ``DType`` 类型推导提供了一种默认的行为，即所有输出 ``Tensor`` 的 ``DType`` 都与第 0 个输入 ``Tensor`` 的 ``DType`` 类型相等。 如果没有输入 ``Tensor``，则所有输出 ``Tensor`` 的 ``DType`` 都为 ``float32``. 而在上面的 ``MatMulScale`` 的例子中，我们同样并没有为之定义 ``DType`` 推导函数，故而其也使用了这种默认的 ``DType`` 推导行为。"
+msgstr "Similar to ``Device``, Custom Op also provides a default behavior for the ``DType`` type derivation of the output ``Tensor``, that is, all the ``DType`` of the output ``Tensor`` are It is equal to the ``DType`` type of the 0th input ``Tensor``. If there is no input ``Tensor``, the ``DType'' of all output ``Tensor`` is ``float32``. And in the above ``MatMulScale`` example, we also did not do it Define the ``DType`` derivation function, so it also uses this default ``DType`` derivation behavior."
 
 #: ../../source/user-guide/tools/customop.rst:190
 msgid "**Shape**"
-msgstr ""
+msgstr "**Shape**"
 
 #: ../../source/user-guide/tools/customop.rst:192
-msgid ""
-"在 Custom Op 中我们可以以类似于 vector 或 C++ 原生数组的方式去构建和使用 ``Shape``，下面是几个 "
-"``Shape`` 的使用案例。"
-msgstr ""
+msgid "在 Custom Op 中我们可以以类似于 vector 或 C++ 原生数组的方式去构建和使用 ``Shape``，下面是几个 ``Shape`` 的使用案例。"
+msgstr "In Custom Op, we can construct and use ``Shape`` in a way similar to vector or C++ native arrays. Here are several use cases of ``Shape``."
 
 #: ../../source/user-guide/tools/customop.rst:203
-msgid ""
-"Custom Op 也为 ``Shape`` 推导提供的默认的行为是，让所有输出 ``Tensor`` 的 ``Shape`` 都与第 0 个输入"
-" ``Tensor`` 的 ``Shape`` 类型相等。 如果没有输入 ``Tensor``，则所有输出 ``Tensor`` 的 "
-"``Shape`` 都为 ``[1]``. 而在上面的 ``MatMulScale`` 的例子中，显然默认的 ``Shape`` "
-"推导函数不符合我们的需求，所以我们自行定义了我们同样并没有为之定义 ``DType`` 推导函数，故而其也使用了这种默认的 ``DType`` "
-"推导行为。"
-msgstr ""
+msgid "Custom Op 也为 ``Shape`` 推导提供的默认的行为是，让所有输出 ``Tensor`` 的 ``Shape`` 都与第 0 个输入 ``Tensor`` 的 ``Shape`` 类型相等。 如果没有输入 ``Tensor``，则所有输出 ``Tensor`` 的 ``Shape`` 都为 ``[1]``. 而在上面的 ``MatMulScale`` 的例子中，显然默认的 ``Shape`` 推导函数不符合我们的需求，所以我们自行定义了我们同样并没有为之定义 ``DType`` 推导函数，故而其也使用了这种默认的 ``DType`` 推导行为。"
+msgstr "The default behavior provided by Custom Op for ``Shape`` derivation is to make all the ``Shape'' of the output ``Tensor`` equal to the ``Shape'' type of the 0th input ``Tensor`` . If there is no input ``Tensor``, the ``Shape'' of all output ``Tensor`` will be ``[1]``. And in the above ``MatMulScale`` example, obviously the default ``Shape'' ``The derivation function does not meet our needs, so we defined it ourselves. We also did not define the ``DType`` derivation function for it, so it also uses this default ``DType`` derivation behavior."
 
 #: ../../source/user-guide/tools/customop.rst:208
 msgid "计算函数"
-msgstr ""
+msgstr "Calculation function"
 
 #: ../../source/user-guide/tools/customop.rst:210
-msgid ""
-"Custom Op 的计算函数的主要功能其实就是如何调用我们已经编写好的 Kernel 的接口函数。 这些过程也是需要使用者以 C++ "
-"函数的形式给出，而这个函数的函数签名也是固定的："
-msgstr ""
+msgid "Custom Op 的计算函数的主要功能其实就是如何调用我们已经编写好的 Kernel 的接口函数。 这些过程也是需要使用者以 C++ 函数的形式给出，而这个函数的函数签名也是固定的："
+msgstr "The main function of the calculation function of Custom Op is actually how to call the interface function of the Kernel that we have written. These procedures also need to be given by the user in the form of a C++ function, and the function signature of this function is also fixed："
 
 #: ../../source/user-guide/tools/customop.rst:217
-msgid ""
-"同样的 Custom Op 的计算函数并无返回值，该函数传入输入 ``Tensor`` 以及 ``Param``，然后计算出输出 "
-"``Tensor`` 的值并将之作为引用返回。 这里主要涉及到两个概念，分别是 ``Tensor`` 和 "
-"``Param``，下面将分别对其进行介绍。"
-msgstr ""
+msgid "同样的 Custom Op 的计算函数并无返回值，该函数传入输入 ``Tensor`` 以及 ``Param``，然后计算出输出 ``Tensor`` 的值并将之作为引用返回。 这里主要涉及到两个概念，分别是 ``Tensor`` 和 ``Param``，下面将分别对其进行介绍。"
+msgstr "The same Custom Op calculation function has no return value. The function passes in the input ``Tensor`` and ``Param'', then calculates the value of the output ``Tensor'' and returns it as a reference. There are mainly two concepts involved here, namely ``Tensor`` and ``Param``, which will be introduced separately below."
 
 #: ../../source/user-guide/tools/customop.rst:220
 msgid "**Tensor**"
-msgstr ""
+msgstr "**Tensor**"
 
 #: ../../source/user-guide/tools/customop.rst:222
-msgid ""
-"Custom Op中的 ``Tensor`` 可以视为数据（``data``）以及数据的属性（即上面 "
-"``Device``，``DType``，``Shape``）的集合。 我们可以用下面的代码去获取 ``Tensor`` 的相关信息："
-msgstr ""
+msgid "Custom Op中的 ``Tensor`` 可以视为数据（``data``）以及数据的属性（即上面 ``Device``，``DType``，``Shape``）的集合。 我们可以用下面的代码去获取 ``Tensor`` 的相关信息："
+msgstr "The ``Tensor`` in Custom Op can be regarded as a collection of data (``data``) and the attributes of the data (ie the above ``Device``, ``DType``, ``Shape``). We can use the following code to `` get the relevant information Tensor``："
 
 #: ../../source/user-guide/tools/customop.rst:236
-msgid ""
-"我们使用上述函数获取 ``Tensor`` 的相关属性如 ``Device``，``DType``，``Shape``，或者是一些更细节的信息如 "
-"``Tensor`` 中元素的数量，``Tensor`` 中各个维度的 ``stride`` 等。 然后我们可以利用这些信息来帮助我们进行 "
-"kernel 的编写。"
-msgstr ""
+msgid "我们使用上述函数获取 ``Tensor`` 的相关属性如 ``Device``，``DType``，``Shape``，或者是一些更细节的信息如 ``Tensor`` 中元素的数量，``Tensor`` 中各个维度的 ``stride`` 等。 然后我们可以利用这些信息来帮助我们进行 kernel 的编写。"
+msgstr "We use the above function to get the relevant attributes of ``Tensor`` such as ``Device``, ``DType``, ``Shape``, or some more detailed information such as the number of elements in ``Tensor``, The ``stride`` etc. of each dimension in ``Tensor``. Then we can use this information to help us write the kernel."
 
 #: ../../source/user-guide/tools/customop.rst:239
 msgid "另外我们可以使用下面的代码去获取 ``Tensor`` 中所存储的数据："
-msgstr ""
+msgstr "In addition, we can use the following code to get the data stored in ``Tensor``："
 
 #: ../../source/user-guide/tools/customop.rst:246
 msgid "这里提供了两个 ``data()`` 函数，分别是不支持模板参数的和支持模板参数的，这两者均会返回实际数据的指针。"
-msgstr ""
+msgstr "Two ``data()'' functions are provided here, one that does not support template parameters and the one that supports template parameters, both of which return pointers to actual data."
 
 #: ../../source/user-guide/tools/customop.rst:248
 msgid "其中前者返回的是 ``void*`` 类型，我们使用时可以将之强制成转换成自己所需的实际类型，这提供给我们自行定义自己数据类型的能力。"
-msgstr ""
+msgstr "The former returns the ``void*'' type, we can force it into the actual type we need when we use it, which provides us with the ability to define our own data types."
 
 #: ../../source/user-guide/tools/customop.rst:250
-msgid ""
-"而后者返回的是模板参数所指定的类型的指针，比如在此例中模板参数是 ``float``，所以其返回 ``float*`` 类型的指针。 "
-"在这种情况下，Custom Op 会检测模板参数类型的正确性，即此时 ``Tensor`` 中实际存储的数据类型也必须是 ``float`` "
-"类型，否则就会出错。 而获取到的指针则指向一片这个 ``Tensor`` 的 ``Device`` 属性所对应的设备上的内存。"
-msgstr ""
+msgid "而后者返回的是模板参数所指定的类型的指针，比如在此例中模板参数是 ``float``，所以其返回 ``float*`` 类型的指针。 在这种情况下，Custom Op 会检测模板参数类型的正确性，即此时 ``Tensor`` 中实际存储的数据类型也必须是 ``float`` 类型，否则就会出错。 而获取到的指针则指向一片这个 ``Tensor`` 的 ``Device`` 属性所对应的设备上的内存。"
+msgstr "The latter returns a pointer of the type specified by the template parameter. For example, in this example, the template parameter is “float”, so it returns a pointer of type “float*”. In this case, Custom Op will check the correctness of the template parameter type, that is, the data type actually stored in the ``Tensor`` at this time must also be of the ``float'' type, otherwise an error will occur. The obtained pointer points to a piece of memory on the device corresponding to the ``Device`` attribute of this ``Tensor``."
 
 #: ../../source/user-guide/tools/customop.rst:254
-msgid ""
-"在获取到这个原始指针之后，结合上面可以获取的诸如 ``Shape``，``stride`` "
-"之类的信息，我们就可以去正常的去计算各个元素的下标，读取/存储数据，编写 kernel，完成计算。 不过下标计算总是繁琐而容易出错的，故而 "
-"Custom Op 中还提供了一个叫 ``TensorAccessor`` 的工具，允许我们可以以类似于 C++ 数组的方式访问 "
-"``Tensor`` 中的对应元素。 下面这段代码展示了如何使用 ``TensorAccessor`` 去访问一个 4 维 ``Tensor`` "
-"中第 ``(n, c, h, w)`` 个元素"
-msgstr ""
+msgid "在获取到这个原始指针之后，结合上面可以获取的诸如 ``Shape``，``stride`` 之类的信息，我们就可以去正常的去计算各个元素的下标，读取/存储数据，编写 kernel，完成计算。 不过下标计算总是繁琐而容易出错的，故而 Custom Op 中还提供了一个叫 ``TensorAccessor`` 的工具，允许我们可以以类似于 C++ 数组的方式访问 ``Tensor`` 中的对应元素。 下面这段代码展示了如何使用 ``TensorAccessor`` 去访问一个 4 维 ``Tensor`` 中第 ``(n, c, h, w)`` 个元素"
+msgstr "After obtaining this original pointer, combined with the information that can be obtained above such as ``Shape``, ``stride``, we can go to calculate the subscript of each element normally, read/store the data, Write the kernel and complete the calculation. However, subscript calculation is always cumbersome and error-prone, so Custom Op also provides a tool called ``TensorAccessor``, which allows us to access the corresponding elements in ``Tensor`` in a way similar to C++ arrays. The following code shows how to use ``TensorAccessor`` to access the ``(n, c, h, w)'' element in a 4-dimensional ``Tensor``"
 
 #: ../../source/user-guide/tools/customop.rst:264
-msgid ""
-"这里的 ``accessor()`` 函数一般需要提供两个模板参数，其中第一个参数表示 ``Tensor`` 的数据类型，第二个参数表示 "
-"``Tensor`` 的维度。 在此例中，因为 ``tensor`` 是一个 ``float`` 类型的 4 维 "
-"``Tensor``，故而此处这两个模板参数分别为 ``float`` 和 ``4``."
-msgstr ""
+msgid "这里的 ``accessor()`` 函数一般需要提供两个模板参数，其中第一个参数表示 ``Tensor`` 的数据类型，第二个参数表示 ``Tensor`` 的维度。 在此例中，因为 ``tensor`` 是一个 ``float`` 类型的 4 维 ``Tensor``，故而此处这两个模板参数分别为 ``float`` 和 ``4``."
+msgstr "The ``accessor()'' function here generally needs to provide two template parameters. The first parameter represents the data type of ``Tensor``, and the second parameter represents the dimension of ``Tensor``. In this example, because ``tensor`` is a 4-dimensional ``Tensor`` of type ``float``, the two template parameters here are ``float`` and ``4`` respectively."
 
 #: ../../source/user-guide/tools/customop.rst:267
-msgid ""
-"如果想要使用 ``TensorAccessor`` 的话，我们可以将之作为 kernel 的参数传递给 kernel，然后在 kernel "
-"内部去使用 accessor 去访问数据。 当然，使用 ``TensorAccessor`` 相对于自行计算元素下标会引入一点额外的 "
-"overhead，大家可以根据自己的需要选择是否使用 ``TensorAccessor``."
-msgstr ""
+msgid "如果想要使用 ``TensorAccessor`` 的话，我们可以将之作为 kernel 的参数传递给 kernel，然后在 kernel 内部去使用 accessor 去访问数据。 当然，使用 ``TensorAccessor`` 相对于自行计算元素下标会引入一点额外的 overhead，大家可以根据自己的需要选择是否使用 ``TensorAccessor``."
+msgstr "If we want to use ``TensorAccessor``, we can pass it as a parameter of the kernel to the kernel, and then use the accessor inside the kernel to access the data. Of course, using ``TensorAccessor`` will introduce a little extra overhead compared to calculating the element index by yourself. You can choose whether to use ``TensorAccessor`` according to your needs."
 
 #: ../../source/user-guide/tools/customop.rst:270
-msgid ""
-"最后需要强调的一件事情是，为了方便进行内存管理，目前在 Custom Op 的代码中是不允许自己构造 ``Tensor`` 的。 "
-"MegEngine 中会自动的为 Custom Op 构造 ``Tensor``，分配内存，然后将构造好的 ``Tensor`` "
-"传递给我们，我们再调用上述接口对 ``Tensor`` 进行操作。"
-msgstr ""
+msgid "最后需要强调的一件事情是，为了方便进行内存管理，目前在 Custom Op 的代码中是不允许自己构造 ``Tensor`` 的。 MegEngine 中会自动的为 Custom Op 构造 ``Tensor``，分配内存，然后将构造好的 ``Tensor`` 传递给我们，我们再调用上述接口对 ``Tensor`` 进行操作。"
+msgstr "The last thing that needs to be emphasized is that, in order to facilitate memory management, it is currently not allowed to construct a ``Tensor'' in the code of Custom Op. MegEngine will automatically construct a ``Tensor'' for Custom Op, allocate memory, and then pass the constructed ``Tensor'' to us, and then we will call the above interface to operate on the ``Tensor``."
 
 #: ../../source/user-guide/tools/customop.rst:273
 msgid "**Param**"
-msgstr ""
+msgstr "**Param**"
 
 #: ../../source/user-guide/tools/customop.rst:275
-msgid ""
-"``Param`` 用于记录 Custom Op 的一些非 ``Tensor`` 的输入，比如卷积中的 padding，stride 等等。 "
-"其实际上是一个 ``map``，其 ``key`` 为 ``std::string`` 类型，表示某个 ``param`` 元素的名字, 而 "
-"``value`` 为 ``ParamVal`` 类型，这个类可视为一个支持有限类型的 Any. 通过下面的代码可以简单的展示 "
-"``ParamVal`` 的一些特性："
-msgstr ""
+msgid "``Param`` 用于记录 Custom Op 的一些非 ``Tensor`` 的输入，比如卷积中的 padding，stride 等等。 其实际上是一个 ``map``，其 ``key`` 为 ``std::string`` 类型，表示某个 ``param`` 元素的名字, 而 ``value`` 为 ``ParamVal`` 类型，这个类可视为一个支持有限类型的 Any. 通过下面的代码可以简单的展示 ``ParamVal`` 的一些特性："
+msgstr "``Param`` is used to record some non-``Tensor`` input of Custom Op, such as padding, stride, etc. in convolution. It is actually a ``map``, whose ``key'' is of ``std::string'' type, which represents the name of a certain ``param`` element, and ``value'' is ``ParamVal'' `` type, this class can be seen as a support Any type of limited by the following code can simply show `` some of the features of ParamVal``："
 
 #: ../../source/user-guide/tools/customop.rst:292
-msgid ""
-"目前 ``ParamVal`` 支持的类型包括 "
-"``int32_t``，``uint32_t``，``int64_t``，``uint64_t``，``float``，``double``，``bool``，``std::string``，以及这些类型对应的"
-" ``std::vector`` 类型（比如 ``std::vector<int32_t>``）。"
-msgstr ""
+msgid "目前 ``ParamVal`` 支持的类型包括 ``int32_t``，``uint32_t``，``int64_t``，``uint64_t``，``float``，``double``，``bool``，``std::string``，以及这些类型对应的 ``std::vector`` 类型（比如 ``std::vector<int32_t>``）。"
+msgstr "Currently ``ParamVal`` supports types including ``int32_t``, ``uint32_t``, ``int64_t``, ``uint64_t``, ``float``, ``double``, ``bool` `, ``std::string``, and the corresponding ``std::vector<int32_t>``)."
 
 #: ../../source/user-guide/tools/customop.rst:294
-msgid ""
-"``Param`` 可以使用 ``[]`` 运算符去根据名字获取 ``Param`` 中对应元素（``ParamVal`` "
-"类型），我们可以以如下的方式去读写其中的数据："
-msgstr ""
+msgid "``Param`` 可以使用 ``[]`` 运算符去根据名字获取 ``Param`` 中对应元素（``ParamVal`` 类型），我们可以以如下的方式去读写其中的数据："
+msgstr "``Param`` can use the ``[]`` operator to get the corresponding element in ``Param`` (``ParamVal`` type) according to the name, we can read and write the data in the following way："
 
 #: ../../source/user-guide/tools/customop.rst:302
 msgid "Custom Op 的注册"
-msgstr ""
+msgstr "Registration of Custom Op"
 
 #: ../../source/user-guide/tools/customop.rst:304
-msgid ""
-"上面我们为 Custom Op 定义了诸如属性推导函数，计算函数等信息，然而这些信息是彼此孤立的，Custom Op "
-"的注册会将这些信息组合成一个整体。"
-msgstr ""
+msgid "上面我们为 Custom Op 定义了诸如属性推导函数，计算函数等信息，然而这些信息是彼此孤立的，Custom Op 的注册会将这些信息组合成一个整体。"
+msgstr "Above we have defined information such as attribute derivation functions and calculation functions for Custom Op. However, these information are isolated from each other. The registration of Custom Op will combine this information into a whole."
 
 #: ../../source/user-guide/tools/customop.rst:306
 msgid "**Op 的注册**"
-msgstr ""
+msgstr "**Op registration**"
 
 #: ../../source/user-guide/tools/customop.rst:308
-msgid ""
-"我们为 Custom Op 提供了一个宏，``CUSTOM_OP_REG(your_op_name)``，使用这个宏我们可以定义一个指定名字的 "
-"Custom Op."
-msgstr ""
+msgid "我们为 Custom Op 提供了一个宏，``CUSTOM_OP_REG(your_op_name)``，使用这个宏我们可以定义一个指定名字的 Custom Op."
+msgstr "We provide a macro for Custom Op, ``CUSTOM_OP_REG(your_op_name)'', using this macro we can define a Custom Op with a specified name."
 
 #: ../../source/user-guide/tools/customop.rst:314
 msgid "**为 Op 添加输入输出**"
-msgstr ""
+msgstr "**Add input and output for Op**"
 
 #: ../../source/user-guide/tools/customop.rst:316
-msgid ""
-"我们可以使用 ``add_input()`` 函数为 Op 添加一个输入 ``Tensor``，使用 ``add_output()`` 函数为 "
-"Op 添加输出 ``Tensor`` 的信息。 也可以使用 ``add_inputs()`` 和 ``add_outputs()`` "
-"去批量添加输入输出。"
-msgstr ""
+msgid "我们可以使用 ``add_input()`` 函数为 Op 添加一个输入 ``Tensor``，使用 ``add_output()`` 函数为 Op 添加输出 ``Tensor`` 的信息。 也可以使用 ``add_inputs()`` 和 ``add_outputs()`` 去批量添加输入输出。"
+msgstr "We can use the ``add_input()`` function to add an input ``Tensor`` to Op, and use the ``add_output()'' function to add output ``Tensor`` information to Op. You can also use ``add_inputs()`` and ``add_outputs()`` to add inputs and outputs in batches."
 
 #: ../../source/user-guide/tools/customop.rst:331
 msgid "**为 Op 添加 Param**"
-msgstr ""
+msgstr "**Add Param to Op**"
 
 #: ../../source/user-guide/tools/customop.rst:333
 msgid "我们可以使用 ``add_param()`` 函数为 Op 添加一个 ``Param`` 元素，其示例代码如下："
-msgstr ""
+msgstr "We can use the ``add_param()'' function to add a ``Param`` element to Op, the sample code is as follows："
 
 #: ../../source/user-guide/tools/customop.rst:340
-msgid ""
-"在这里我们为 ``MatMulScale`` Op 添加了一个名为 \"scale\" 的参数，其默认值为 1.0f， "
-"之后我们就可以在我们的相关属性推导函数和计算函数中使用 param[\"scale\"] 去访问这个参数。"
-msgstr ""
+msgid "在这里我们为 ``MatMulScale`` Op 添加了一个名为 \"scale\" 的参数，其默认值为 1.0f， 之后我们就可以在我们的相关属性推导函数和计算函数中使用 param[\"scale\"] 去访问这个参数。"
+msgstr "Here we add a parameter named \"scale\" for ``MatMulScale`` Op, its default value is 1.0f, and then we can use param[\"scale\"] in our related attribute derivation functions and calculation functions Go to access this parameter."
 
 #: ../../source/user-guide/tools/customop.rst:343
 msgid "**为 Op 添加属性推导与计算函数**"
-msgstr ""
+msgstr "**Add attribute derivation and calculation functions to Op**"
 
 #: ../../source/user-guide/tools/customop.rst:345
-msgid ""
-"对于属性推导函数的添加，Custom Op 提供了 ``set_shape_infer()``，``set_device_infer()``， "
-"``set_dtype_infer()`` 三个函数分别用于设置 ``Shape``，``Device``，``DType`` 的属性推导函数。 "
-"而对于计算函数，Custom Op 提供了 ``set_compute()`` 函数用于设置进行设置。 "
-"其中属性推导函数只可以调用相关接口添加一次，而 ``set_compute()`` 函数则可以多次调用以添加不同平台上的计算函数。 相关示例代码如"
-msgstr ""
+msgid "对于属性推导函数的添加，Custom Op 提供了 ``set_shape_infer()``，``set_device_infer()``， ``set_dtype_infer()`` 三个函数分别用于设置 ``Shape``，``Device``，``DType`` 的属性推导函数。 而对于计算函数，Custom Op 提供了 ``set_compute()`` 函数用于设置进行设置。 其中属性推导函数只可以调用相关接口添加一次，而 ``set_compute()`` 函数则可以多次调用以添加不同平台上的计算函数。 相关示例代码如"
+msgstr "For the addition of attribute derivation functions, Custom Op provides ``set_shape_infer()``, ``set_device_infer()``, ``set_dtype_infer()`` three functions for setting ``Shape``, ``Device ``, ``DType`` attribute derivation function. For the calculation function, Custom Op provides the ``set_compute()'' function for setting. The attribute derivation function can only be added once by calling the relevant interface, while the ``set_compute()'' function can be called multiple times to add calculation functions on different platforms. The relevant sample code is as"
 
 #: ../../source/user-guide/tools/customop.rst:360
-msgid ""
-"在这里 ``MatMulScale`` 算子并未使用默认的属性推导函数，而是分别调用相关接口为 "
-"``Shape``，``Device``，``DType`` 的属性推导函数另行做了设置。 同时，这里还分别设置了 ``MatMulScale``"
-" 在 ``x86`` 和 ``cuda`` 上的计算函数。"
-msgstr ""
+msgid "在这里 ``MatMulScale`` 算子并未使用默认的属性推导函数，而是分别调用相关接口为 ``Shape``，``Device``，``DType`` 的属性推导函数另行做了设置。 同时，这里还分别设置了 ``MatMulScale`` 在 ``x86`` 和 ``cuda`` 上的计算函数。"
+msgstr "Here, the ``MatMulScale`` operator does not use the default attribute derivation function, but calls the relevant interfaces as ``Shape``, ``Device``, ``DType`` and the attribute derivation functions are separately set . At the same time, the calculation functions of ``MatMulScale`` on ``x86`` and ``cuda`` are also set up here."
 
