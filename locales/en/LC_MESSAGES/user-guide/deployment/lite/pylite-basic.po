@@ -1,94 +1,84 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/lite/pylite-basic.po\n"
+"X-Crowdin-File-ID: 8213\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:5
 msgid "MegEngine Lite Python 基础实例"
-msgstr ""
+msgstr "MegEngine Lite Python basic example"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:9
 msgid "在CPU上做推理的一个例子"
-msgstr ""
+msgstr "An example of inference on the CPU"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:11
 msgid "接下来，我们将逐步讲解一个使用MegEngine Lite Python在CPU上做推理的简单例子。"
-msgstr ""
+msgstr "Next, we will explain step by step a simple example of using MegEngine Lite Python to do inference on the CPU."
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:15
 msgid "0. 准备输入数据和模型文件"
-msgstr ""
+msgstr "0. Prepare input data and model files"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:17
 msgid "示例代码如下："
-msgstr ""
+msgstr "The sample code is as："
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:37
-msgid ""
-"在本例中，输入数据为 *input_data.npy* ，模型文件为 *shufflenet.mge* ，这两个文件存放在 "
-":src:`/lite/test/resource/lite` 目录下，但需要通过通过 *git lfs pull* 来获得。"
-msgstr ""
+msgid "在本例中，输入数据为 *input_data.npy* ，模型文件为 *shufflenet.mge* ，这两个文件存放在 :src:`/lite/test/resource/lite` 目录下，但需要通过通过 *git lfs pull* 来获得。"
+msgstr "In this example, the input data is *input_data.npy* and the model file is *shufflenet.mge*. These two files are stored in the :src:`/lite/test/resource/lite` directory, but need to pass *git lfs pull* to get it."
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:40
 msgid "1. 加载模型"
-msgstr ""
+msgstr "1. Load the model"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:42
-msgid ""
-"模型文件将被作为参数，传给 **LiteNetwork** 的 ``load`` 函数，以构建一个 **LiteNetwork** "
-"实体。模型加载后，即可拿到模型所有输入、输出的名字，以及输入Tensor的一些信息。"
-msgstr ""
+msgid "模型文件将被作为参数，传给 **LiteNetwork** 的 ``load`` 函数，以构建一个 **LiteNetwork** 实体。模型加载后，即可拿到模型所有输入、输出的名字，以及输入Tensor的一些信息。"
+msgstr "The model file will be passed as a parameter to the ``load'' function of **LiteNetwork** to build a **LiteNetwork** entity. After the model is loaded, you can get the names of all inputs and outputs of the model, as well as some information about the input Tensor."
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:46
 msgid "输出Tensor的对应信息需要在模型执行过推理之后才能拿到。"
-msgstr ""
+msgstr "The corresponding information of the output Tensor can only be obtained after the model has performed inference."
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:69
 msgid "2. 加载输入数据"
-msgstr ""
+msgstr "2. Load input data"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:71
-msgid ""
-"通过 ``get_io_tensor()`` 接口，获取指定的 **LiteTensor** 实体，然后用 "
-"``set_data_by_copy()`` 把numpy数据拷贝给该 **LiteTensor**："
-msgstr ""
+msgid "通过 ``get_io_tensor()`` 接口，获取指定的 **LiteTensor** 实体，然后用 ``set_data_by_copy()`` 把numpy数据拷贝给该 **LiteTensor**："
+msgstr "Get the specified **LiteTensor** entity through the ``get_io_tensor()'' interface, and then use ``set_data_by_copy()'' to copy the numpy data to the **LiteTensor**："
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:85
-msgid ""
-"**LiteTensor** 获取数据的方式除了 ``set_data_by_copy()`` 之外，还有 "
-"``share_memory_with()``,  ``copy_from()`` 等。详情请参考 :ref:`pylite-advanced`"
-msgstr ""
+msgid "**LiteTensor** 获取数据的方式除了 ``set_data_by_copy()`` 之外，还有 ``share_memory_with()``,  ``copy_from()`` 等。详情请参考 :ref:`pylite-advanced`"
+msgstr "**LiteTensor** obtain data in addition to ``set_data_by_copy()``, there are also ``share_memory_with()``, ``copy_from()'' and so on. For details, please refer to :ref:`pylite-advanced`"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:89
 msgid "3. 推理"
-msgstr ""
+msgstr "3. Reasoning"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:91
 msgid "利用 **LiteNetwork** 的 ``forward()`` 和 ``wait()`` 接口完成网络的推理，相关代码如下："
-msgstr ""
+msgstr "Use **LiteNetwork**'s ``forward()'' and ``wait()'' interfaces to complete network inference, the relevant code is as follows："
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:104
 msgid "4. 获取输出数据"
-msgstr ""
+msgstr "4. Get output data"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:106
-msgid ""
-"推理完成后，网络的输出Tensor便可以通过 **LiteNetwork** 的 ``get_io_tensor()`` "
-"函数获取。**LiteTensor** 的 ``to_numpy()`` 接口可以把 **LiteTensor** "
-"的数据转存为numpy数据的形式，具体代码演示如下："
-msgstr ""
+msgid "推理完成后，网络的输出Tensor便可以通过 **LiteNetwork** 的 ``get_io_tensor()`` 函数获取。**LiteTensor** 的 ``to_numpy()`` 接口可以把 **LiteTensor** 的数据转存为numpy数据的形式，具体代码演示如下："
+msgstr "After the inference is completed, the output Tensor of the network can be obtained through the ``get_io_tensor()'' function of **LiteNetwork**. ** LiteTensor ** of `` to_numpy () `` ** LiteTensor ** interface to dump the data in the form of data numpy, particularly following code shows："
 
