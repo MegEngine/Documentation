@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 09:02+0800\n"
-"PO-Revision-Date: 2021-06-03 04:03\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-11-12 00:52\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -23,28 +23,57 @@ msgid "megengine.functional.distributed.broadcast"
 msgstr "crwdns30566:0crwdne30566:0"
 
 #: megengine.distributed.functional.broadcast:1 of
-msgid "Create broadcast operator for collective communication."
-msgstr "crwdns30568:0crwdne30568:0"
+msgid "Broadcast tensor data from root process to others."
+msgstr "crwdns68941:0crwdne68941:0"
 
 #: megengine.distributed.functional.broadcast of
 msgid "参数"
 msgstr "crwdns30570:0crwdne30570:0"
 
-#: megengine.distributed.functional.broadcast:3 of
-msgid "input tensor."
-msgstr "crwdns30572:0crwdne30572:0"
-
 #: megengine.distributed.functional.broadcast:4 of
-msgid "communication group."
-msgstr "crwdns30574:0crwdne30574:0"
+msgid "Input tensor."
+msgstr "crwdns68943:0crwdne68943:0"
 
-#: megengine.distributed.functional.broadcast:5 of
-msgid "execution device."
-msgstr "crwdns30576:0crwdne30576:0"
+#: megengine.distributed.functional.broadcast:6 of
+msgid "The process group to work on. The default group is WORLD which means all processes available. You can use a list of process ranks to create new group to work on it, e.g. [1, 3, 5]."
+msgstr "crwdns68945:0crwdne68945:0"
+
+#: megengine.distributed.functional.broadcast:10 of
+msgid "The specific device to execute this operator. None default device means the device of inp will be used. Specify \"gpu0:1\" to execute this operator on diffrent cuda stream, 1 is stream id, and default stream id is 0."
+msgstr "crwdns68947:0crwdne68947:0"
+
+#: megengine.distributed.functional.broadcast of
+msgid "返回类型"
+msgstr "crwdns68949:0crwdne68949:0"
+
+#: megengine.distributed.functional.broadcast:15 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr "crwdns68951:0crwdne68951:0"
+
+#: megengine.distributed.functional.broadcast of
+msgid "返回"
+msgstr "crwdns68953:0crwdne68953:0"
+
+#: megengine.distributed.functional.broadcast:16 of
+msgid "Result tensor."
+msgstr "crwdns68955:0crwdne68955:0"
+
+#: megengine.distributed.functional.broadcast:19 of
+msgid "实际案例"
+msgstr "crwdns68957:0crwdne68957:0"
 
 #~ msgid "返回类型"
 #~ msgstr "返回类型"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
+
+#~ msgid "Create broadcast operator for collective communication."
+#~ msgstr "创建用于聚合通信的广播算子。"
+
+#~ msgid "communication group."
+#~ msgstr "通信组。"
+
+#~ msgid "execution device."
+#~ msgstr "执行设备。"
 
