@@ -1,412 +1,376 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/tensor/layout.po\n"
+"X-Crowdin-File-ID: 8143\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:5
 msgid "Tensor 内存布局"
-msgstr ""
+msgstr "Tensor memory layout"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:8
-msgid ""
-"这一部分内容属于底层细节，在绝大多数情景下用户不需要了解这些背后的设计。 如果你希望成为 MegEngine "
-"的核心开发者，了解底层细节将很有帮助，更多内容请参考开发者指南；"
-msgstr ""
+msgid "这一部分内容属于底层细节，在绝大多数情景下用户不需要了解这些背后的设计。 如果你希望成为 MegEngine 的核心开发者，了解底层细节将很有帮助，更多内容请参考开发者指南；"
+msgstr "This part of the content belongs to the low-level details, and users do not need to understand the design behind these in most scenarios. If you want to become a core developer of MegEngine, it will be helpful to understand the underlying details. For more information, please refer to the developer guide;"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:10
-msgid ""
-"相关的代码实现在： :src:`dnn/include/megdnn/basic_types.h` - "
-"``megdnn::TensorLayout``."
-msgstr ""
+msgid "相关的代码实现在： :src:`dnn/include/megdnn/basic_types.h` - ``megdnn::TensorLayout``."
+msgstr "The relevant code is implemented in： :src:`dnn/include/megdnn/basic_types.h`-``megdnn::TensorLayout``."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:14
-msgid ""
-"NumPy 对 ndarray 内存布局的解释： `Internal memory layout of an ndarray "
-"<https://numpy.org/doc/stable/reference/arrays.ndarray.html#internal-"
-"memory-layout-of-an-ndarray>`_"
-msgstr ""
+msgid "NumPy 对 ndarray 内存布局的解释： `Internal memory layout of an ndarray <https://numpy.org/doc/stable/reference/arrays.ndarray.html#internal-memory-layout-of-an-ndarray>`_"
+msgstr "NumPy's explanation of ndarray memory layout： `Internal memory layout of an ndarray <https://numpy.org/doc/stable/reference/arrays.ndarray.html#internal-memory-layout-of-an-ndarray>`_"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:19
 msgid "Tensor 值如何存储在内存中"
-msgstr ""
+msgstr "How Tensor values are stored in memory"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:21
 msgid "一个 :py:class:`~.Tensor` 类的实例由一维连续的计算机内存段组成。"
-msgstr ""
+msgstr "An instance of the :py:class:`~.Tensor` class is composed of one-dimensional continuous computer memory segments."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:23
-msgid ""
-"结合 :ref:`tensor-indexing` 机制，可以将值映射到内存块中对应元素的位置， 而索引可以变化的范围由 Tensor 的 "
-":ref:`形状 <tensor-shape>` 属性指定。 每个元素占用多少个字节以及如何解释这些字节由 Tensor 的 :ref:`数据类型"
-" <tensor-dtype>` 属性指定。"
-msgstr ""
+msgid "结合 :ref:`tensor-indexing` 机制，可以将值映射到内存块中对应元素的位置， 而索引可以变化的范围由 Tensor 的 :ref:`形状 <tensor-shape>` 属性指定。 每个元素占用多少个字节以及如何解释这些字节由 Tensor 的 :ref:`数据类型 <tensor-dtype>` 属性指定。"
+msgstr "Binding :ref:`Tensor-indexing` mechanism, it may be mapped to a value in the corresponding element position in the memory block, and the index may be varied by a range of Tensor :ref:'shape <tensor-shape>designated` attribute. The number of bytes occupied by each element and how to interpret the byte Tensor the :ref:'data type <tensor-dtype>designated `attribute."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:27
-msgid ""
-"一段内存本质上是连续的，有许多不同的方案可以将 N 维 Tensor 数组的项排列在一维块中。 "
-"根据排列顺序的区别，又可以分为行主序和列主序两种风格，下面我们以最简单的 2 维情况进行举例："
-msgstr ""
+msgid "一段内存本质上是连续的，有许多不同的方案可以将 N 维 Tensor 数组的项排列在一维块中。 根据排列顺序的区别，又可以分为行主序和列主序两种风格，下面我们以最简单的 2 维情况进行举例："
+msgstr "A segment of memory is essentially continuous, and there are many different schemes to arrange the items of the N-dimensional Tensor array in a one-dimensional block. The difference of the order, can be divided into a main column and row major order two styles, for example to let the simplest two-dimensional case："
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:36
 msgid "上图分别使用行主序和列主序进行索引："
-msgstr ""
+msgstr "The above figure uses row-major order and column-major order respectively for indexing："
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:38
 msgid "其中 :math:`a_{11} \\ldots a_{33}` 代表九个元素各自的值；"
-msgstr ""
+msgstr "Among them, :math:`a_{11} \\ldots a_{33}`represents the value of each of the nine elements;"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:39
 msgid "偏移量和索引之间有着明显的关系。"
-msgstr ""
+msgstr "There is an obvious relationship between offset and index."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:41
-msgid ""
-"图片来自 `Row- and column-major order <https://en.wikipedia.org/wiki/Row-"
-"_and_column-major_order>`_"
-msgstr ""
+msgid "图片来自 `Row- and column-major order <https://en.wikipedia.org/wiki/Row-_and_column-major_order>`_"
+msgstr "Picture from `Row- and column-major order <https://en.wikipedia.org/wiki/Row-_and_column-major_order>`_"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:43
 msgid "这个 2 维 Tensor 中的元素实际上可以由一维连续的内存块分别进行映射："
-msgstr ""
+msgstr "The elements in the two-dimensional Tensor can actually mapped by the memory blocks, respectively, one-dimensionally continuous："
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:48
 msgid "Offset"
-msgstr ""
+msgstr "Offset"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:49
 msgid "Access"
-msgstr ""
+msgstr "Access"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:50
 msgid "Value"
-msgstr ""
+msgstr "Value"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:51
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:52
 msgid "a[0][0]"
-msgstr ""
+msgstr "a[0][0]"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:53
 msgid "a11"
-msgstr ""
+msgstr "a11"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:54
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:55
 msgid "a[0][1]"
-msgstr ""
+msgstr "a[0][1]"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:56
 msgid "a12"
-msgstr ""
+msgstr "a12"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:57
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:58
 msgid "a[0][2]"
-msgstr ""
+msgstr "a[0][2]"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:59
 msgid "a13"
-msgstr ""
+msgstr "a13"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:60
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:61
 msgid "a[1][0]"
-msgstr ""
+msgstr "a[1][0]"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:62
 msgid "a21"
-msgstr ""
+msgstr "a21"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:63
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:64
 msgid "a[1][1]"
-msgstr ""
+msgstr "a[1][1]"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:65
 msgid "a22"
-msgstr ""
+msgstr "a22"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:66
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:67
 msgid "a[1][2]"
-msgstr ""
+msgstr "a[1][2]"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:68
 msgid "a23"
-msgstr ""
+msgstr "a23"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:69
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:70
 msgid "a[2][0]"
-msgstr ""
+msgstr "a[2][0]"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:71
 msgid "a31"
-msgstr ""
+msgstr "a31"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:72
 msgid "7"
-msgstr ""
+msgstr "7"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:73
 msgid "a[2][1]"
-msgstr ""
+msgstr "a[2][1]"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:74
 msgid "a32"
-msgstr ""
+msgstr "a32"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:75
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:76
 msgid "a[2][2]"
-msgstr ""
+msgstr "a[2][2]"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:77
 msgid "a33"
-msgstr ""
+msgstr "a33"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:80
 msgid "这里以 C 风格所用的行主序进行举例。"
-msgstr ""
+msgstr "Here is an example of the line main sequence used in C style."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:82
 msgid "MegEngine 和 NumPy 一样灵活，支持任何跨步索引方案，这里需要提到一个概念：步幅（Strides）。"
-msgstr ""
+msgstr "MegEngine is as flexible as NumPy and supports any stride indexing scheme. Here we need to mention a concept of：strides (Strides)."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:87
 msgid "Tensor 的步幅"
-msgstr ""
+msgstr "Tensor stride"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:91
-msgid ""
-"NumPy 的 ndarray 具有 :py:attr:`~numpy.ndarray.strides` 属性（MegEngine "
-"中也存在着这一概念，但没有提供接口）。"
-msgstr ""
+msgid "NumPy 的 ndarray 具有 :py:attr:`~numpy.ndarray.strides` 属性（MegEngine 中也存在着这一概念，但没有提供接口）。"
+msgstr "NumPy's ndarray has: py:attr:`~numpy.ndarray.strides` property (this concept also exists in MegEngine, but no interface is provided)."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:95
-msgid ""
-"Tensor 的步幅 ``strides`` 是一个元组，告诉我们遍历 Tensor 元素时要在每个维度中步进（step）的字节数； "
-"或者可以理解成在某个轴上索引元素时，单位刻度代表的内存范围， 即必须在内存中跳过多少字节才能沿某个轴移动到下一个位置。 "
-"这个属性通常不需要由用户进行修改。"
-msgstr ""
+msgid "Tensor 的步幅 ``strides`` 是一个元组，告诉我们遍历 Tensor 元素时要在每个维度中步进（step）的字节数； 或者可以理解成在某个轴上索引元素时，单位刻度代表的内存范围， 即必须在内存中跳过多少字节才能沿某个轴移动到下一个位置。 这个属性通常不需要由用户进行修改。"
+msgstr "The stride of Tensor ``strides'' is a tuple that tells us the number of bytes to step in each dimension when traversing Tensor elements; or it can be understood as the unit when indexing elements on a certain axis The memory range represented by the scale, that is, how many bytes must be skipped in the memory to move to the next position along a certain axis. This attribute usually does not need to be modified by the user."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:101
 msgid "以 2 维情况为例"
-msgstr ""
+msgstr "Take the 2-dimensional case as an example"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:103
 msgid "想象有这样一个由 32 位（4 字节）整型元素组成的 Tensor:"
-msgstr ""
+msgstr "Imagine such a Tensor composed of 32-bit (4-byte) integer elements:"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:108
-msgid ""
-"该 Tensor 中的元素一个接一个地存储在内存中（称为连续内存块），占据 40 个字节。 我们必须跳过 4 个字节才能移动到下一列，但必须跳过 "
-"20 个字节才能到达下一行的相同位置。 因此，``x`` 的步幅为 ``(20, 4)``."
-msgstr ""
+msgid "该 Tensor 中的元素一个接一个地存储在内存中（称为连续内存块），占据 40 个字节。 我们必须跳过 4 个字节才能移动到下一列，但必须跳过 20 个字节才能到达下一行的相同位置。 因此，``x`` 的步幅为 ``(20, 4)``."
+msgstr "The elements in the Tensor are stored in memory one by one (called a contiguous memory block), occupying 40 bytes. We must skip 4 bytes to move to the next column, but we must skip 20 bytes to reach the same position in the next row. Therefore, the stride of ``x`` is ``(20, 4)``."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:112
-msgid ""
-"我们用 :math:`s^{\\text {row }}` 表示行主序得到的步幅，则有 :math:`s_0^{\\text {row }} = "
-"4 \\times 5 = 20`, :math:`s_1^{\\text {row }} = 4`."
-msgstr ""
+msgid "我们用 :math:`s^{\\text {row }}` 表示行主序得到的步幅，则有 :math:`s_0^{\\text {row }} = 4 \\times 5 = 20`, :math:`s_1^{\\text {row }} = 4`."
+msgstr "We use :math:`s^{\\text {row }}` to represent the stride obtained in the main sequence of the row, then there are :math:`s_0^{\\text {row }} = 4 \\times 5 = 20`, :math:`s_1^{\\text {row }} = 4`."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:114
-msgid ""
-"借助 :math:`s^{\\text {row }}` 来计算，对应地 ``x[1][2]`` （对应值为 :math:`7` "
-"）位置元素的字节偏移量为 :math:`1 \\times 20 + 2 \\times 4 = 28` ."
-msgstr ""
+msgid "借助 :math:`s^{\\text {row }}` 来计算，对应地 ``x[1][2]`` （对应值为 :math:`7` ）位置元素的字节偏移量为 :math:`1 \\times 20 + 2 \\times 4 = 28` ."
+msgstr "Calculated with the help of :math:`s^{\\text {row }}`, correspondingly, the byte offset of the position element of[1][2]`` (corresponding value is :math: :math:`1 \\times 20 + 2 \\times 4 = 28`."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:117
 msgid "推广到一般情况"
-msgstr ""
+msgstr "Generalize"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:119
-msgid ""
-"更一般的情况，对于形状为 ``shape`` 的一个 N 维 Tensor, 其步幅 :math:`s^{\\text {row }}` "
-"计算公式如下："
-msgstr ""
+msgid "更一般的情况，对于形状为 ``shape`` 的一个 N 维 Tensor, 其步幅 :math:`s^{\\text {row }}` 计算公式如下："
+msgstr "In a more general case, for an N-dimensional Tensor of shape ``shape``, its stride is :math:`s^{\\text {row }}` The calculation formula is as follows："
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:121
 msgid "s_{k}^{\\text {row }}=\\text { itemsize } \\prod_{j=k+1}^{N-1} d_{j}"
-msgstr ""
+msgstr "s_{k}^{\\text {row }}=\\text { itemsize } \\prod_{j=k+1}^{N-1} d_{j}"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:125
-msgid ""
-"其中 :math:`\\text {itemsize}` 取决于 ``dtype``, 而 :math:`d_{j}=\\text { "
-"self.shape }[j]` ."
-msgstr ""
+msgid "其中 :math:`\\text {itemsize}` 取决于 ``dtype``, 而 :math:`d_{j}=\\text { self.shape }[j]` ."
+msgstr "Wherein :math:`\\tEXT {itemsize}` depending `` dtype``, and :math:`D_{j}=\\tEXT { self.shape }[j]`."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:127
 msgid "索引为 :math:`T[n_0, n_1, \\ldots , n_{N-1}]` 元素的字节偏移量为："
-msgstr ""
+msgstr "The index is :math:`T[n_0, n_1, \\ldots, n_{N-1}]` The byte offset of the element is："
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:129
 msgid "n_{\\text {offset }}=\\sum_{k=0}^{N-1} s_{k} n_{k}"
-msgstr ""
+msgstr "n_{\\text {offset }}=\\sum_{k=0}^{N-1} s_{k} n_{k}"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:134
 msgid "步幅概念的用途"
-msgstr ""
+msgstr "Use of stride concept"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:138
 msgid "对于一些改变形状的 Tensor 操作，我们可以通过修改步幅来避免实际进行内存的拷贝。"
-msgstr ""
+msgstr "For some Tensor operations that change the shape, we can modify the stride to avoid the actual memory copy."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:143
 msgid "format介绍"
-msgstr ""
+msgstr "format introduction"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:145
 msgid "​在深度学习框架中，如下图所示，通用的神经网络特征图用4维数组组成，然而对于计算机而言，数据的存储只能是线性的，因此不同的数据排布（format）方式，会显著影响计算性能，其中针对GPU的特点，Megengine采用的数据排布方式有：NCHW、NHWC、NCHW4、NCHW32、NCHW64和CHWN4等等。"
-msgstr ""
+msgstr "​In the deep learning framework, as shown in the figure below, the general neural network feature map is composed of 4-dimensional arrays. However, for computers, the storage of data can only be linear, so different data formatting methods, It will significantly affect computing performance. For the characteristics of GPU, Megengine uses：NCHW, NHWC, NCHW4, NCHW32, NCHW64, CHWN4 and so on."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:147
 msgid "为更好的说明不同format的具体含义，下图列举了128个tensor的逻辑结构。其中N、H、W和C分别为："
-msgstr ""
+msgstr "In order to better explain the specific meaning of different formats, the following figure lists the logical structure of 128 tensors. Where N, H, W and C are："
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:149
 msgid "N：Batch。表示图片的批次，此处为2；"
-msgstr ""
+msgstr "N：Batch. Indicates the batch of pictures, here is 2;"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:150
 msgid "H：Height。表示图片的高，此处为3；"
-msgstr ""
+msgstr "H：Height. Indicates the height of the picture, here is 3;"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:151
 msgid "W：Weight。表示图片的宽，此处为3；"
-msgstr ""
+msgstr "W：Weight. Indicates the width of the picture, here is 3;"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:152
 msgid "C：Channel。表示图片的通道数，此处为64。"
-msgstr ""
+msgstr "C：Channel. Indicates the number of channels of the picture, here is 64."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:157
 msgid "NCHW 和 NHWC"
-msgstr ""
+msgstr "NCHW and NHWC"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:159
 #: ../../source/user-guide/model-development/tensor/layout.rst:179
 #: ../../source/user-guide/model-development/tensor/layout.rst:203
 msgid "**排布方式**"
-msgstr ""
+msgstr "**Arrangement method**"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:161
 msgid "对于计算机而言，数据的存储只能是线性的，其中 NCHW 和 NHWC 最为常用，下图列举了 NCHW 和 NHWC 的物理存储结构："
-msgstr ""
+msgstr "For a computer, for storing data can be linear, and wherein NCHW NHWC most commonly used, the FIG lists NCHW physical storage structure and NHWC："
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:165
 msgid "对于 NCHW 而言，优先存储W维度，之后按照H、C和N分别存储，因此按照顺序从0000一直存储到1151；"
-msgstr ""
+msgstr "For NCHW, the W dimension is stored first, and then stored separately according to H, C and N, so it is stored in order from 0000 to 1151;"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:167
 msgid "对于 NHWC 而言，优先存储C维度，因此优先存储0000、0009一直到1143，之后继续按照W、H和N分别存储，存储0001、0010等；"
-msgstr ""
+msgstr "For NHWC, the C dimension is stored first, so the priority is to store 0000, 0009 until 1143, and then continue to be stored according to W, H, and N respectively, and store 0001, 0010, etc.;"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:169
 #: ../../source/user-guide/model-development/tensor/layout.rst:192
 #: ../../source/user-guide/model-development/tensor/layout.rst:210
 msgid "**特性**"
-msgstr ""
+msgstr "**characteristic**"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:172
 msgid "对于\"NCHW\" 而言，其同一个通道的像素值连续排布，更适合那些需要对 **每个通道单独做运算** 的操作，比如\"MaxPooling\"。"
-msgstr ""
+msgstr "For \"NCHW\", the pixel values of the same channel are arranged continuously, which is more suitable for operations that require **each channel to be calculated separately**, such as \"MaxPooling\"."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:173
 msgid "对于\"NHWC\"而言，其不同通道中的同一位置元素顺序存储，因此更适合那些需要对 **不同通道的同一像素做某种运算** 的操作，比如“Conv”。"
-msgstr ""
+msgstr "For \"NHWC\", the elements in the same position in different channels are stored sequentially, so it is more suitable for operations that require a certain operation on the same pixel in different channels, such as \"Conv\"."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:176
 msgid "NCHWX"
-msgstr ""
+msgstr "NCHWX"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:177
 msgid "[Batch, Channels/X, Height, Width, X=4，32或64]"
-msgstr ""
+msgstr "[Batch, Channels/X, Height, Width, X=4, 32 or 64]"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:181
-msgid ""
-"由于典型的卷积神经网络随着层数的增加，其特征图在下采样后的长和宽逐渐减小， "
-"但是channel数随着卷积的filter的个数不断增大是越来越大的，经常会出现channel数为128，256等很深的特征图。 "
-"这些很深的特征图与filter数很多的卷积层进行运算的运算量很大。 "
-"为了充分利用有限的矩阵计算单元，进行了Channel维度的拆分是很有必要的。Megengine根据不同数据结构特点，分别对Channel维进行了Channel/4，Channel/32和Channel/64的拆分，"
-" 下图为NCHWX的物理存储结构。"
-msgstr ""
+msgid "由于典型的卷积神经网络随着层数的增加，其特征图在下采样后的长和宽逐渐减小， 但是channel数随着卷积的filter的个数不断增大是越来越大的，经常会出现channel数为128，256等很深的特征图。 这些很深的特征图与filter数很多的卷积层进行运算的运算量很大。 为了充分利用有限的矩阵计算单元，进行了Channel维度的拆分是很有必要的。Megengine根据不同数据结构特点，分别对Channel维进行了Channel/4，Channel/32和Channel/64的拆分， 下图为NCHWX的物理存储结构。"
+msgstr "As a typical convolutional neural network increases in the number of layers, the length and width of its feature map gradually decrease after downsampling, but the number of channels increases as the number of convolutional filters increases. Very deep feature maps such as 128 and 256 channels often appear. These deep feature maps and convolutional layers with a large number of filters require a lot of calculations. In order to make full use of the limited matrix calculation unit, it is necessary to split the channel dimension. Megengine splits the Channel dimension into Channel/4, Channel/32 and Channel/64 according to the characteristics of different data structures. The following figure shows the physical storage structure of NCHWX."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:189
-msgid ""
-"NCHWX最先存储的都是Channel维，不同点在于因为X的不同，优先存储的Channel个数不同，NCHW4 "
-"优先存储4个channel维，此处为0000、0009、0018和0027，之后继续按照W、H、C和N进行存，此处继续存0001、0010等； "
-"NCHW32和NCHW64类似，不过优先存储的分别为32个channel和64个channel，之后继续按照W、H、C和N进行存。"
-msgstr ""
+msgid "NCHWX最先存储的都是Channel维，不同点在于因为X的不同，优先存储的Channel个数不同，NCHW4 优先存储4个channel维，此处为0000、0009、0018和0027，之后继续按照W、H、C和N进行存，此处继续存0001、0010等； NCHW32和NCHW64类似，不过优先存储的分别为32个channel和64个channel，之后继续按照W、H、C和N进行存。"
+msgstr "NCHWX first stores Channel dimensions. The difference is that because of the difference in X, the number of channels that are stored first is different. NCHW4 first stores 4 channel dimensions, here are 0000, 0009, 0018 and 0027, and then continue to follow W, H, C, and N are stored, and continue to store 0001, 0010, etc.; NCHW32 and NCHW64 are similar, but the priority storage is 32 channels and 64 channels, respectively, and then continue to store according to W, H, C, and N."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:195
 msgid "​更好的适配SIMT，其中NCHW4可以针对int8数据类型，利用CUDA的dp4a模块进行计算，而NCHW32和NCHW64分别针对int8和int4数据类型，更好的利用CUDA的tensorcore计算单元进行计算；"
-msgstr ""
+msgstr "​Better adaptation to SIMT, where NCHW4 can use CUDA's dp4a module for calculations for int8 data types, while NCHW32 and NCHW64 are for int8 and int4 data types, respectively, and better use CUDA's tensorcore calculation unit for calculations;"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:196
 msgid "对cache更友好，减少cache miss；"
-msgstr ""
+msgstr "It is more friendly to cache and reduces cache miss;"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:197
 msgid "易进行padding，减少边界分支判断，代码逻辑简单。"
-msgstr ""
+msgstr "Easy padding, reduce boundary branch judgment, simple code logic."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:200
 msgid "CHWN4"
-msgstr ""
+msgstr "CHWN4"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:201
 msgid "为了更好的适配cuda的dp4a和tensorcore处理单元，引入了CHWN4。"
-msgstr ""
+msgstr "In order to better adapt to cuda's dp4a and tensorcore processing units, CHWN4 is introduced."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:208
 msgid "CHWN4优先存储Channel维，存储4个数，0000、0009、0018和0027之后，沿着N维，直接存0576到0603，之后在沿W维和H维，存0001和0010等。"
-msgstr ""
+msgstr "CHWN4 stores the Channel dimension first, and stores 4 numbers. After 0000, 0009, 0018 and 0027, store 0576 to 0603 directly along the N dimension, and then store 0001 and 0010 along the W dimension and H dimension."
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:213
 msgid "相较于NCHWX，可以更好的利用dp4a和tensorcore处理单元，不需要layout转换；"
-msgstr ""
+msgstr "Compared with NCHWX, it can make better use of dp4a and tensorcore processing units, without layout conversion;"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:214
 msgid "此外依然具有对cache友好，及易进行padding的优点。"
-msgstr ""
+msgstr "In addition, it still has the advantages of being cache-friendly and easy to padding."
 
