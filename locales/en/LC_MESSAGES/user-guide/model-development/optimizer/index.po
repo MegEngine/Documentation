@@ -1,98 +1,86 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/optimizer/index.po\n"
+"X-Crowdin-File-ID: 8173\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:5
 msgid "使用 Optimizer 优化参数"
-msgstr ""
+msgstr "Use Optimizer to optimize parameters"
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:6
-msgid ""
-"MegEngine 的 :py:mod:`optimizer` 模块中实现了大量的优化算法， 其中 :py:class:`~.Optimizer`"
-" 是所有优化器的抽象基类，规定了必须提供的接口。 同时为用户提供了包括 :py:class:`~.SGD`, :py:class:`~.Adam`"
-" 在内的常见优化器实现。 这些优化器能够基于参数的梯度信息，按照算法所定义的策略对参数执行更新。"
-msgstr ""
+msgid "MegEngine 的 :py:mod:`optimizer` 模块中实现了大量的优化算法， 其中 :py:class:`~.Optimizer` 是所有优化器的抽象基类，规定了必须提供的接口。 同时为用户提供了包括 :py:class:`~.SGD`, :py:class:`~.Adam` 在内的常见优化器实现。 这些优化器能够基于参数的梯度信息，按照算法所定义的策略对参数执行更新。"
+msgstr "MegEngine's :py:mod:`optimizer` module implements a large number of optimization algorithms, among which :py:class:`~.Optimizer` is the abstract base class of all optimizers and specifies the interfaces that must be provided. At the same time, users are provided with common optimizer implementations including: py:class:`~.SGD`, :py:class:`~.Adam`. These optimizers can update the parameters according to the strategy defined by the algorithm based on the gradient information of the parameters."
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:11
 msgid "以 ``SGD`` 优化器为例，优化神经网络模型参数的基本流程如下："
-msgstr ""
+msgstr "Taking the ``SGD'' optimizer as an example, the basic process of optimizing the parameters of the neural network model is as follows："
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:29
 msgid "我们需要构造一个优化器，并且传入需要被优化的参数 ``Parameter`` 或其迭代；"
-msgstr ""
+msgstr "We need to construct an optimizer and pass in the parameter ``Parameter'' or its iteration that needs to be optimized;"
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:30
 msgid "通过执行 :py:meth:`~.Optimizer.step` 方法，参数将基于梯度信息被进行一次优化；"
-msgstr ""
+msgstr "By executing the :py:meth:`~.Optimizer.step` method, the parameters will be optimized once based on the gradient information;"
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:31
 msgid "通过执行 :py:meth:`~.Optimizer.clear_grad` 方法，将清空参数的梯度。"
-msgstr ""
+msgstr "By executing the :py:meth:`~.Optimizer.clear_grad` method, the gradient of the parameter will be cleared."
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:33
 msgid "为何需要手动清空梯度？"
-msgstr ""
+msgstr "Why do I need to clear the gradient manually?"
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:36
-msgid ""
-"梯度管理器执行 :py:meth:`~.GradManager.backward` 方法时， "
-"会将当前计算所得到的梯度以累加的形式积累到原有梯度上，而不是直接做替换。 因此对于新一轮的梯度计算，通常需要将上一轮计算得到的梯度信息清空。 "
-"何时进行梯度清空是由人为控制的，这样可允许灵活进行梯度的累积。"
-msgstr ""
+msgid "梯度管理器执行 :py:meth:`~.GradManager.backward` 方法时， 会将当前计算所得到的梯度以累加的形式积累到原有梯度上，而不是直接做替换。 因此对于新一轮的梯度计算，通常需要将上一轮计算得到的梯度信息清空。 何时进行梯度清空是由人为控制的，这样可允许灵活进行梯度的累积。"
+msgstr "When the gradient manager executes the :py:meth:`~.GradManager.backward` method, it will accumulate the current calculated gradient to the original gradient instead of directly replacing it. Therefore, for a new round of gradient calculation, it is usually necessary to clear the gradient information obtained in the previous round. When to clear the gradient is manually controlled, which allows flexible accumulation of gradients."
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:42
 msgid "Optimizer 状态字典"
-msgstr ""
+msgstr "Optimizer state dictionary"
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:44
-msgid ""
-"``Optimizer`` 构造函数中还可接受一个含有优化器默认参数的字典（如含有学习率、动量、权重衰减系数等等）， 这些信息可以通过 "
-":py:meth:`~.Optimizer.state_dict` 和 "
-":py:meth:`~.Optimizer.load_state_dict` 获取和加载。"
-msgstr ""
+msgid "``Optimizer`` 构造函数中还可接受一个含有优化器默认参数的字典（如含有学习率、动量、权重衰减系数等等）， 这些信息可以通过 :py:meth:`~.Optimizer.state_dict` 和 :py:meth:`~.Optimizer.load_state_dict` 获取和加载。"
+msgstr "The ``Optimizer`` constructor can also accept a dictionary containing the default parameters of the optimizer (such as learning rate, momentum, weight decay coefficient, etc.). This information can be passed: py:meth:`~.Optimizer.state_dict` And :py:meth:`~.Optimizer.load_state_dict` to get and load."
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:47
 msgid "子类在实现时可自定义这些参数，同样以 ``SGD`` 为例："
-msgstr ""
+msgstr "The subclass can customize these parameters when implemented, likewise `` SGD`` Example："
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:60
-msgid ""
-"大多数的 Optimizer 状态字典中会存储参数梯度的统计信息（例如运行时均值、反差等）， "
-"在暂停/恢复模型训练时，这些信息需要被保存/加载，以保证前后状态的一致性。"
-msgstr ""
+msgid "大多数的 Optimizer 状态字典中会存储参数梯度的统计信息（例如运行时均值、反差等）， 在暂停/恢复模型训练时，这些信息需要被保存/加载，以保证前后状态的一致性。"
+msgstr "Most Optimizer state dictionaries store statistical information about parameter gradients (such as runtime mean, contrast, etc.). This information needs to be saved/loaded when the model training is paused/resumed to ensure the consistency of the state before and after."
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:65
-msgid ""
-"通过 :py:meth:`~.Optimizer.load_state_dict` 我们可以加载 ``Optimizer`` "
-"状态字典，常用于模型训练过程的保存与加载。"
-msgstr ""
+msgid "通过 :py:meth:`~.Optimizer.load_state_dict` 我们可以加载 ``Optimizer`` 状态字典，常用于模型训练过程的保存与加载。"
+msgstr "Through: py:meth:`~.Optimizer.load_state_dict` we can load the ``Optimizer'' state dictionary, which is often used to save and load the model training process."
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:67
 msgid "``Module`` 中也有用于保存和加载的状态字典，参考 :ref:`module-guide` 。"
-msgstr ""
+msgstr "There is also a state dictionary for saving and loading in ``Module``, refer to :ref:`module-guide`."
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:68
 msgid "关于模型训练过程中保存与加载的最佳实践，请参考 :ref:`serialization-guide` 。"
-msgstr ""
+msgstr "For the best practice of saving and loading during model training, please refer to :ref:`serialization-guide`."
 
 #: ../../source/user-guide/model-development/optimizer/index.rst:71
 msgid "了解更多"
-msgstr ""
+msgstr "learn more"
 
 #~ msgid "Optimizer 进阶使用情景"
 #~ msgstr ""
