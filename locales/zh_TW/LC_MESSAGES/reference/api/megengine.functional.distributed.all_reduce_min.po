@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 09:02+0800\n"
-"PO-Revision-Date: 2021-06-03 04:03\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-11-12 00:52\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -23,28 +23,57 @@ msgid "megengine.functional.distributed.all\\_reduce\\_min"
 msgstr "crwdns30518:0crwdne30518:0"
 
 #: megengine.distributed.functional.all_reduce_min:1 of
-msgid "Create all_reduce_min operator for collective communication."
-msgstr "crwdns30520:0crwdne30520:0"
+msgid "Reduce tensors across the specified group by min."
+msgstr "crwdns68885:0crwdne68885:0"
 
 #: megengine.distributed.functional.all_reduce_min of
 msgid "参数"
 msgstr "crwdns30522:0crwdne30522:0"
 
-#: megengine.distributed.functional.all_reduce_min:3 of
-msgid "input tensor."
-msgstr "crwdns30524:0crwdne30524:0"
-
 #: megengine.distributed.functional.all_reduce_min:4 of
-msgid "communication group."
-msgstr "crwdns30526:0crwdne30526:0"
+msgid "Input tensor."
+msgstr "crwdns68887:0crwdne68887:0"
 
-#: megengine.distributed.functional.all_reduce_min:5 of
-msgid "execution device."
-msgstr "crwdns30528:0crwdne30528:0"
+#: megengine.distributed.functional.all_reduce_min:6 of
+msgid "The process group to work on. The default group is WORLD which means all processes available. You can use a list of process ranks to create new group to work on it, e.g. [1, 3, 5]."
+msgstr "crwdns68889:0crwdne68889:0"
+
+#: megengine.distributed.functional.all_reduce_min:10 of
+msgid "The specific device to execute this operator. None default device means the device of inp will be used. Specify \"gpu0:1\" to execute this operator on diffrent cuda stream, 1 is stream id, and default stream id is 0."
+msgstr "crwdns68891:0crwdne68891:0"
+
+#: megengine.distributed.functional.all_reduce_min of
+msgid "返回类型"
+msgstr "crwdns68893:0crwdne68893:0"
+
+#: megengine.distributed.functional.all_reduce_min:15 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr "crwdns68895:0crwdne68895:0"
+
+#: megengine.distributed.functional.all_reduce_min of
+msgid "返回"
+msgstr "crwdns68897:0crwdne68897:0"
+
+#: megengine.distributed.functional.all_reduce_min:16 of
+msgid "Result tensor."
+msgstr "crwdns68899:0crwdne68899:0"
+
+#: megengine.distributed.functional.all_reduce_min:19 of
+msgid "实际案例"
+msgstr "crwdns68901:0crwdne68901:0"
 
 #~ msgid "返回类型"
 #~ msgstr "返回类型"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
+
+#~ msgid "Create all_reduce_min operator for collective communication."
+#~ msgstr "创建用于聚合通信的 all_reduce_min 算子。"
+
+#~ msgid "communication group."
+#~ msgstr "通信组。"
+
+#~ msgid "execution device."
+#~ msgstr "执行设备。"
 
