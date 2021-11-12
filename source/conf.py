@@ -34,7 +34,7 @@ from datetime import datetime
 # -- Path setup --------------------------------------------------------------
 # Generally we use `os.path` and `sys.path` to tell Sphinx where to find code
 #   of our project, which can be used in the sphinx.autodoc extension.
-# But MegEngine source code and documentation are stored in two different 
+# But MegEngine source code and documentation are stored in two different
 #   repository and it's recommended to import megengine package to match.
 
 if mode == "AUTO":
@@ -45,11 +45,13 @@ if mode == "AUTO":
         mode = "MINI"
     else:
         print("MegEngine found. Use full mode.")
-        print("MegEngine path:", os.path.dirname(megengine.__file__))
         mode = "FULL"
 
 if mode == "MINI":
     suppress_warnings = ['ref.ref']
+else:
+    import megengine
+    print("MegEngine path:", os.path.dirname(megengine.__file__))
 
 # -- Project information -----------------------------------------------------
 
@@ -183,7 +185,7 @@ nbsphinx_requirejs_path = ""
 # Settign for sphinx_remove_toctrees
 remove_from_toctrees = [
     "reference/core.rst",
-    "reference/api/*", 
+    "reference/api/*",
     "development/meps/*",
 ]
 
