@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-06-03 03:56\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-11-12 00:54\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -51,63 +51,59 @@ msgstr "crwdns62982:0:math:crwdnd62982:0{in}crwdnd62982:0{in}crwdnd62982:0:math:
 msgid "参数"
 msgstr "crwdns33538:0crwdne33538:0"
 
-#: megengine.module.conv.Conv1d:24 of
+#: megengine.module.conv.Conv1d:25 of
 msgid "number of input channels."
 msgstr "crwdns33540:0crwdne33540:0"
 
-#: megengine.module.conv.Conv1d:25 of
+#: megengine.module.conv.Conv1d:27 of
 msgid "number of output channels."
 msgstr "crwdns33542:0crwdne33542:0"
 
-#: megengine.module.conv.Conv1d:26 of
+#: megengine.module.conv.Conv1d:29 of
 msgid "size of weight on spatial dimensions."
 msgstr "crwdns62984:0crwdne62984:0"
 
-#: megengine.module.conv.Conv1d:27 of
+#: megengine.module.conv.Conv1d:31 of
 msgid "stride of the 1D convolution operation."
 msgstr "crwdns62986:0crwdne62986:0"
 
-#: megengine.module.conv.Conv1d:28 of
+#: megengine.module.conv.Conv1d:33 of
 msgid "size of the paddings added to the input on both sides of its spatial dimensions. Only zero-padding is supported. Default: 0"
 msgstr "crwdns33548:0crwdne33548:0"
 
-#: megengine.module.conv.Conv1d:30 of
+#: megengine.module.conv.Conv1d:36 of
 msgid "dilation of the 1D convolution operation. Default: 1"
 msgstr "crwdns33550:0crwdne33550:0"
 
-#: megengine.module.conv.Conv1d:31 of
+#: megengine.module.conv.Conv1d:38 of
 msgid "number of groups into which the input and output channels are divided, so as to perform a \"grouped convolution\". When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by ``groups``, and there would be an extra dimension at the beginning of the weight's shape. Default: 1"
 msgstr "crwdns62988:0crwdne62988:0"
 
-#: megengine.module.conv.Conv1d:36 of
+#: megengine.module.conv.Conv1d:44 of
 msgid "whether to add a bias onto the result of convolution. Default: True"
 msgstr "crwdns33554:0crwdne33554:0"
 
-#: megengine.module.conv.Conv1d:38 of
+#: megengine.module.conv.Conv1d:46 of
 msgid "Supports `cross_correlation`. Default: `cross_correlation`"
 msgstr "crwdns50380:0crwdne50380:0"
 
-#: megengine.module.conv.Conv1d:40 of
+#: megengine.module.conv.Conv1d:48 of
 msgid "When set to \"default\", no special requirements will be placed on the precision of intermediate results. When set to \"float32\", \"float32\" would be used for accumulator and intermediate result, but only effective when input and output are of float16 dtype."
 msgstr "crwdns50382:0crwdne50382:0"
 
-#: megengine.module.conv.Conv1d:47 of
-msgid ":attr:`weight` usually has shape ``(out_channels, in_channels, kernel_size)``,"
-msgstr "crwdns62990:0:attr:crwdne62990:0"
+#: megengine.module.conv.Conv1d:55 of
+msgid "``weight`` usually has shape ``(out_channels, in_channels, kernel_size)`` , if groups is not 1, shape will be ``(groups, out_channels // groups, in_channels // groups, kernel_size)``"
+msgstr "crwdns70933:0crwdne70933:0"
 
-#: megengine.module.conv.Conv1d:48 of
-msgid "if groups is not 1, shape will be ``(groups, out_channels // groups, in_channels // groups, kernel_size)``"
-msgstr "crwdns62992:0crwdne62992:0"
+#: megengine.module.conv.Conv1d:57 of
+msgid "``bias`` usually has shape ``(1, out_channels, 1)``"
+msgstr "crwdns70935:0crwdne70935:0"
 
-#: megengine.module.conv.Conv1d:49 of
-msgid ":attr:`bias` usually has shape ``(1, out_channels, 1)``"
-msgstr "crwdns62994:0:attr:crwdne62994:0"
+#: megengine.module.conv.Conv1d:60 of
+msgid "实际案例"
+msgstr "crwdns70937:0crwdne70937:0"
 
-#: megengine.module.conv.Conv1d:51 of
-msgid "Examples:"
-msgstr "crwdns33560:0crwdne33560:0"
-
-#: megengine.module.conv.Conv1d:64 of
+#: megengine.module.conv.Conv1d:72 of
 msgid "Outputs:"
 msgstr "crwdns33562:0crwdne33562:0"
 
@@ -115,155 +111,179 @@ msgstr "crwdns33562:0crwdne33562:0"
 msgid "Methods"
 msgstr "crwdns33564:0crwdne33564:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`apply <megengine.module.Conv1d.apply>`\\ \\(fn\\)"
 msgstr "crwdns33572:0:obj:crwdne33572:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Applies function ``fn`` to all the modules within this module, including itself."
 msgstr "crwdns33574:0crwdne33574:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`buffers <megengine.module.Conv1d.buffers>`\\ \\(\\[recursive\\]\\)"
 msgstr "crwdns33576:0:obj:crwdne33576:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Returns an iterable for the buffers of the module."
 msgstr "crwdns33578:0crwdne33578:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`calc_conv <megengine.module.Conv1d.calc_conv>`\\ \\(inp\\, weight\\, bias\\)"
 msgstr "crwdns33580:0:obj:crwdne33580:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`children <megengine.module.Conv1d.children>`\\ \\(\\*\\*kwargs\\)"
 msgstr "crwdns33582:0:obj:crwdne33582:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Returns an iterable for all the submodules that are direct attributes of this module."
 msgstr "crwdns33584:0crwdne33584:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`disable_quantize <megengine.module.Conv1d.disable_quantize>`\\ \\(\\[value\\]\\)"
 msgstr "crwdns33586:0:obj:crwdne33586:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
 msgstr "crwdns33588:0crwdne33588:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`eval <megengine.module.Conv1d.eval>`\\ \\(\\)"
 msgstr "crwdns33590:0:obj:crwdne33590:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
 msgstr "crwdns33592:0crwdne33592:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`forward <megengine.module.Conv1d.forward>`\\ \\(inp\\)"
 msgstr "crwdns33594:0:obj:crwdne33594:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`load_state_dict <megengine.module.Conv1d.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
 msgstr "crwdns33596:0:obj:crwdne33596:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Loads a given dictionary created by :func:`state_dict` into this module."
 msgstr "crwdns33598:0:func:crwdne33598:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`modules <megengine.module.Conv1d.modules>`\\ \\(\\*\\*kwargs\\)"
 msgstr "crwdns33600:0:obj:crwdne33600:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Returns an iterable for all the modules within this module, including itself."
 msgstr "crwdns33602:0crwdne33602:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`named_buffers <megengine.module.Conv1d.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
 msgstr "crwdns33604:0:obj:crwdne33604:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
 msgstr "crwdns33606:0crwdne33606:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`named_children <megengine.module.Conv1d.named_children>`\\ \\(\\*\\*kwargs\\)"
 msgstr "crwdns33608:0:obj:crwdne33608:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
 msgstr "crwdns33610:0crwdne33610:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`named_modules <megengine.module.Conv1d.named_modules>`\\ \\(\\[prefix\\]\\)"
 msgstr "crwdns33612:0:obj:crwdne33612:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
 msgstr "crwdns33614:0crwdne33614:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`named_parameters <megengine.module.Conv1d.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
 msgstr "crwdns33616:0:obj:crwdne33616:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
 msgstr "crwdns33618:0:class:crwdnd33618:0:class:crwdne33618:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
+msgid ":obj:`named_tensors <megengine.module.Conv1d.named_tensors>`\\ \\(\\[prefix\\, recursive\\]\\)"
+msgstr "crwdns70939:0:obj:crwdne70939:0"
+
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
+msgid "Returns an iterable for key tensor pairs of the module, where ``key`` is the dotted path from this module to the tensor."
+msgstr "crwdns70941:0crwdne70941:0"
+
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`parameters <megengine.module.Conv1d.parameters>`\\ \\(\\[recursive\\]\\)"
 msgstr "crwdns33620:0:obj:crwdne33620:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Returns an iterable for the :class:`~.Parameter` of the module."
 msgstr "crwdns33622:0:class:crwdne33622:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`register_forward_hook <megengine.module.Conv1d.register_forward_hook>`\\ \\(hook\\)"
 msgstr "crwdns33624:0:obj:crwdne33624:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Registers a hook to handle forward results."
 msgstr "crwdns33626:0crwdne33626:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`register_forward_pre_hook <megengine.module.Conv1d.register_forward_pre_hook>`\\ \\(hook\\)"
 msgstr "crwdns33628:0:obj:crwdne33628:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Registers a hook to handle forward inputs."
 msgstr "crwdns33630:0crwdne33630:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`replace_param <megengine.module.Conv1d.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
 msgstr "crwdns33632:0:obj:crwdne33632:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
-msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to speedup multimachine training."
-msgstr "crwdns33634:0:class:crwdne33634:0"
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
+msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to"
+msgstr "crwdns70943:0:class:crwdne70943:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`reset_parameters <megengine.module.Conv1d.reset_parameters>`\\ \\(\\)"
 msgstr "crwdns33636:0:obj:crwdne33636:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>
+msgid "rtype"
+msgstr "crwdns70945:0crwdne70945:0"
+
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
+msgid ":py:obj:`None`"
+msgstr "crwdns70947:0crwdne70947:0"
+
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`state_dict <megengine.module.Conv1d.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
 msgstr "crwdns33642:0:obj:crwdne33642:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
+msgid ":obj:`tensors <megengine.module.Conv1d.tensors>`\\ \\(\\[recursive\\]\\)"
+msgstr "crwdns70949:0:obj:crwdne70949:0"
+
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
+msgid "Returns an iterable for the :class:`~.Tensor` of the module."
+msgstr "crwdns70951:0:class:crwdne70951:0"
+
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`train <megengine.module.Conv1d.train>`\\ \\(\\[mode\\, recursive\\]\\)"
 msgstr "crwdns33644:0:obj:crwdne33644:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
 msgstr "crwdns33646:0crwdne33646:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid ":obj:`zero_grad <megengine.module.Conv1d.zero_grad>`\\ \\(\\)"
 msgstr "crwdns33648:0:obj:crwdne33648:0"
 
-#: ../../source/reference/api/megengine.module.Conv1d.rst:81:<autosummary>:1
+#: ../../source/reference/api/megengine.module.Conv1d.rst:87:<autosummary>:1
 msgid "Sets all parameters' grads to zero"
 msgstr "crwdns33650:0crwdne33650:0"
 
@@ -345,4 +365,21 @@ msgstr "crwdns33650:0crwdne33650:0"
 #~ msgstr ""
 #~ "在空域维度权重的尺寸。如果 kernel_size 是一个 :class:`int` "
 #~ "，则实际的卷积核尺寸是 `(kernel_size, kernel_size)` 。默认：1"
+
+#~ msgid ""
+#~ ":attr:`weight` usually has shape "
+#~ "``(out_channels, in_channels, kernel_size)``,"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "if groups is not 1, shape will "
+#~ "be ``(groups, out_channels // groups, "
+#~ "in_channels // groups, kernel_size)``"
+#~ msgstr ""
+
+#~ msgid ":attr:`bias` usually has shape ``(1, out_channels, 1)``"
+#~ msgstr ""
+
+#~ msgid "Examples:"
+#~ msgstr "例如："
 
