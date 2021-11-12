@@ -41,10 +41,12 @@
 .. toctree::
    :caption: 推理部署篇
    :hidden:
-   :maxdepth: 1
+   :maxdepth: 2
 
    deployment/traced_module/index
    deployment/lite/index
+   deployment/lite_interface/index
+   deployment/lite_advance/index
    deployment/midout
 
 .. toctree::
