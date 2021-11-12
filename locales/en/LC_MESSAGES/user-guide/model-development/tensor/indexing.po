@@ -1,167 +1,159 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/tensor/indexing.po\n"
+"X-Crowdin-File-ID: 8141\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:5
 msgid "Tensor 元素索引"
-msgstr ""
+msgstr "Tensor element index"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:9
 msgid "阅读这部分内容前，你需要知道如何 :ref:`access-tensor-element` 以及 :ref:`tensor-slice` 。"
-msgstr ""
+msgstr "Before reading this part, you need to know how to :ref:`access-tensor-element` and :ref:`tensor-slice`."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:13
 msgid "以下是本小节提到的相关内容速记："
-msgstr ""
+msgstr "The following is noted in this section referred to in shorthand："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:15
 msgid "MegEngine 中切片将返回新的对象（而不是共用同一片内存），切片操作不会降低 Tensor 维度；"
-msgstr ""
+msgstr "Slicing in MegEngine will return new objects (rather than sharing the same piece of memory), and the slicing operation will not reduce the Tensor dimension;"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:16
 msgid "多维 Tensor 的索引语法形如 ``a[i, j]``, 也支持切片语法形如 ``a[i:j, p:q]``;"
-msgstr ""
+msgstr "The index syntax of multi-dimensional Tensor is like ``a(i, j)'', and slice syntax like ``a(i:j, p:q]'' is also supported;"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:17
 msgid "可以使用省略符 ``...`` 来自动填充完整切片到剩余维度，比如 ``a[i, ...]`` 等同于 ``a[i, :, :]``."
-msgstr ""
+msgstr "You can use the ellipsis ``...'' to automatically fill in the complete slice to the remaining dimensions, for example, ``a[i, ...]'' is equivalent to ``a[i, :, :]``."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:20
 msgid "和 NumPy 索引对比"
-msgstr ""
+msgstr "Compared with NumPy index"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:21
 msgid "NumPy 用户请注意！"
-msgstr ""
+msgstr "Attention NumPy users!"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:24
 msgid "不能将 NumPy 中存在的一些概念和设计直接应用于 MegEngine."
-msgstr ""
+msgstr "Some concepts and designs existing in NumPy cannot be directly applied to MegEngine."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:28
-msgid ""
-"在 MegEngine 中，想要 :ref:`access-tensor-element` ，可以使用标准的 ``x[obj]`` 语法。 "
-"看上去一切都和 NumPy 很相似，后者的官方文档中也对 :class:`~.numpy.ndarray` 的各种索引方式都 `进行了解释 "
-"<https://numpy.org/doc/stable/reference/arrays.indexing.html>`_ 。 但 "
-"MegEngine 的 Tensor 实现和 NumPy 还是略有不同，如果不清楚某些细节，可能无法对一些现象做出解释。"
-msgstr ""
+msgid "在 MegEngine 中，想要 :ref:`access-tensor-element` ，可以使用标准的 ``x[obj]`` 语法。 看上去一切都和 NumPy 很相似，后者的官方文档中也对 :class:`~.numpy.ndarray` 的各种索引方式都 `进行了解释 <https://numpy.org/doc/stable/reference/arrays.indexing.html>`_ 。 但 MegEngine 的 Tensor 实现和 NumPy 还是略有不同，如果不清楚某些细节，可能无法对一些现象做出解释。"
+msgstr "In MegEngine, if you want :ref:`access-tensor-element`, you can use the standard ``x[obj]`` syntax. It seems that everything is very similar to NumPy. The official documentation of the latter also explains the various indexing methods :class: <https://numpy.org/doc/stable/reference/arrays.indexing.html>`_. However, MegEngine's Tensor implementation is still slightly different from NumPy. If you don't know some details, you may not be able to explain some phenomena."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:35
 msgid "索引得到的对象不同"
-msgstr ""
+msgstr "Indexed objects are different"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:41
 #: ../../source/user-guide/model-development/tensor/indexing.rst:108
 msgid "MegEngine"
-msgstr ""
+msgstr "MegEngine"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:50
 #: ../../source/user-guide/model-development/tensor/indexing.rst:115
 msgid "NumPy"
-msgstr ""
+msgstr "NumPy"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:59
-msgid ""
-"出现这种情况的原因是，在 NumPy 中使用索引时，得到的是原数组的 `视图（View） "
-"<https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_"
-" 。 改变视图中的元素，原始数组中的元素也会发生变化 —— 这是很多 NumPy 用户初学时容易困扰的地方。 而在 MegEngine 中没有视图"
-" ``view`` 这一属性， 通过索引或切片得到的元素或子 Tensor 和原 Tensor 占用的是不同的内存区域。"
-msgstr ""
+msgid "出现这种情况的原因是，在 NumPy 中使用索引时，得到的是原数组的 `视图（View） <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_ 。 改变视图中的元素，原始数组中的元素也会发生变化 —— 这是很多 NumPy 用户初学时容易困扰的地方。 而在 MegEngine 中没有视图 ``view`` 这一属性， 通过索引或切片得到的元素或子 Tensor 和原 Tensor 占用的是不同的内存区域。"
+msgstr "The reason for this is that when using indexing in NumPy, you get the `View (View) <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_ of the original array. Changing the elements in the view, the elements in the original array will also change-this is a place where many NumPy users are prone to confusion when they learn. In MegEngine, there is no view ``view`` attribute. The element or sub-Tensor obtained by indexing or slicing and the original Tensor occupy a different memory area."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:65
 msgid "在其它地方的一些设计，二者还是一致的，接下来我们将进行介绍。"
-msgstr ""
+msgstr "In some designs in other places, the two are still the same, and we will introduce them next."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:70
 msgid "切片索引不会降低维度"
-msgstr ""
+msgstr "Slice index does not reduce dimensionality"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:72
 msgid "MegEngine 和 NumPy 在进行切片时，都不会改变对象 :ref:`tensor-ndim` ："
-msgstr ""
+msgstr "Both MegEngine and NumPy will not change the object when slicing :ref:`tensor-ndim` ："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:82
 msgid "整个过程中，切片得到的都是一个 ``ndim=2`` 的 Tensor."
-msgstr ""
+msgstr "In the whole process, the slice obtained is a Tensor with ``ndim=2''."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:84
 msgid "执行 ``M[1:2]`` 得到的结果是 ``[[4, 5, 6]]`` 而不是 ``[4, 5, 6]``."
-msgstr ""
+msgstr "The result of executing ``M[1:2]`` is ``[[4, 5, 6])'' instead of ``[4, 5, 6]``."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:85
 msgid "对 ``[[4, 5, 6]]`` 进行 ``[0:1]`` 切片，得到的还是 ``[[4, 5, 6]]``."
-msgstr ""
+msgstr "To slice ``[[4, 5, 6]]`` with ``[0:1]``, the result is still ``[[4, 5, 6]]``."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:87
 msgid "错误的理解思路可能是这样的："
-msgstr ""
+msgstr "The wrong understanding may be like this："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:89
 msgid "执行 ``M[1:2]`` 得到的结果是 ``[4, 5, 6]``. —— 错！切片不会降维！"
-msgstr ""
+msgstr "The result of executing ``M[1:2]`` is ``[4, 5, 6]``. —— Wrong! Slicing will not reduce dimensionality!"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:90
 msgid "对 ``[4, 5, 6]`` 进行 ``[0:1]`` 切片，得到的是 ``4``. —— 降维了，因此也不对！"
-msgstr ""
+msgstr "Slice ``[0:1]`` on ``[4, 5, 6]``, and get ``4``. —— Dimensionality reduction, so it's not right!"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:94
 msgid "切片的作用是从整体中取出一部分，因此不会产生降低维度的行为。"
-msgstr ""
+msgstr "The function of the slice is to take a part from the whole, so it will not produce the behavior of reducing the dimensionality."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:95
 msgid "如果你希望切片操作后能去冗余的维度，可以使用 :func:`~.squeeze` ."
-msgstr ""
+msgstr "If you want to remove redundant dimensions after slicing, you can use :func:`~.squeeze`."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:100
 msgid "都可以使用数组索引"
-msgstr ""
+msgstr "Can use array index"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:102
 msgid "实际上除了切片索引，我们还可以使用整数数组进行索引得到特定位置的元素，以一维情况为例："
-msgstr ""
+msgstr "In addition to actually slice index, we can also use an integer array element index to get a particular position, in one dimension, for example："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:122
 msgid "索引数组的长度对应了被索引的元素的个数，在一些情况下这种机制十分有帮助。"
-msgstr ""
+msgstr "The length of the index array corresponds to the number of elements to be indexed, in some cases this mechanism is very helpful."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:124
 msgid "此时 NumPy 将不会生成原始数组的视图，与 MegEngine 的逻辑一致。"
-msgstr ""
+msgstr "At this time, NumPy will not generate a view of the original array, which is consistent with the logic of MegEngine."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:128
 msgid "注意语法细节，一些用户容易将整数数组索引写成如下形式："
-msgstr ""
+msgstr "Pay attention to the grammatical details, some users are easy to write integer array index as the following form："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:134
 msgid "实际上这是对 Tensor 的 n 个维度分别进行索引的语法。引出了下一小节的解释 ——"
-msgstr ""
+msgstr "In fact, this is the syntax for indexing the n dimensions of Tensor separately. Leads to the explanation of the next section-"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:139
 msgid "在多个维度进行索引"
-msgstr ""
+msgstr "Index in multiple dimensions"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:141
 msgid "以下面这个由矩阵（2 维数组） :math:`M` 表示的 Tensor 为例："
-msgstr ""
+msgstr "Take the following Tensor represented by the matrix (2-dimensional array) :math:`M` as an example："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:143
-msgid ""
-"M =\n"
+msgid "M =\n"
 "\\begin{bmatrix}\n"
 "     1 & 2 & 3 \\\\\n"
 "     4 & 5 & \\color{blue}{6} \\\\\n"
@@ -169,89 +161,91 @@ msgid ""
 "\\end{bmatrix}\n"
 "\\quad\n"
 "M_{(1,2)} = 6"
-msgstr ""
+msgstr "M =\n"
+"\\begin{bmatrix}\n"
+"     1 & 2 & 3 \\\\\n"
+"     4 & 5 & \\color{blue}{6} \\\\\n"
+"     7 & 8 & 9 \\\\\n"
+"\\end{bmatrix}\n"
+"\\quad\n"
+"M_{(1,2)} = 6"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:154
-msgid ""
-"虽然我们可以使用 ``M[1][2]`` 这样的语法得到 6 这个值，但效率并不高（参考 :ref:`access-tensor-element`"
-" 的解释）。"
-msgstr ""
+msgid "虽然我们可以使用 ``M[1][2]`` 这样的语法得到 6 这个值，但效率并不高（参考 :ref:`access-tensor-element` 的解释）。"
+msgstr "Although we can use[1][2]`` to get the value of 6, but the efficiency is not high (refer to :ref:`access-tensor-element`)."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:158
-msgid ""
-"Python 的内置序列类型都是一维的，因此只支持单向索引，但对于具备多维属性的 Tensor, 可以在多个维度直接进行索引 （或者是 "
-":ref:`在多个维度进行切片 <multi-dim-slicing>` ，后面会进行举例）， 使用 ``,`` "
-"作为维度之间的分隔，上面的例子则可用 ``M[1, 2]`` 访问元素，而没有必要使用多个方括号 ``M[1][2]`` ."
-msgstr ""
+msgid "Python 的内置序列类型都是一维的，因此只支持单向索引，但对于具备多维属性的 Tensor, 可以在多个维度直接进行索引 （或者是 :ref:`在多个维度进行切片 <multi-dim-slicing>` ，后面会进行举例）， 使用 ``,`` 作为维度之间的分隔，上面的例子则可用 ``M[1, 2]`` 访问元素，而没有必要使用多个方括号 ``M[1][2]`` ."
+msgstr "Python sequence types are built one-dimensional, and therefore support only the index, but have a multidimensional Tensor properties, it may be indexed directly in a plurality of dimensions (or :ref:'slicing in a plurality of dimensions <multi-dim-slicing>', the latter will For example), use ``,'' as the separation between dimensions. In the above example, you can use ``M[1, 2]`` to access elements, instead of using multiple square brackets ``M[1][2]`` ."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:161
-msgid ""
-"感兴趣的用户可以了解试着背后的细节：在 Python 中要正确处理这种形式的 ``[]`` 运算符， 对象的特殊方法 "
-"``__getitem__`` 和 ``__setitem__`` 需要以元组的形式来接受传入的索引。 也即是说如果要得到 ``M[i, j]``"
-" 的值，Python 实际上会调用 ``M.__getitem__((i, j))`` ."
-msgstr ""
+msgid "感兴趣的用户可以了解试着背后的细节：在 Python 中要正确处理这种形式的 ``[]`` 运算符， 对象的特殊方法 ``__getitem__`` 和 ``__setitem__`` 需要以元组的形式来接受传入的索引。 也即是说如果要得到 ``M[i, j]`` 的值，Python 实际上会调用 ``M.__getitem__((i, j))`` ."
+msgstr "Interested users can understand the details behind the try.：To correctly handle this form of ``[]`` operator in Python, the special methods of objects ``__getitem__`` and ``__setitem__`` need to be tuples To accept the incoming index. In other words, if you want to get the value of ``M[i, j]``, Python will actually call ``M.__getitem__((i, j))``."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:169
 msgid "可以理解成，在第 0 轴索引值为 1，第 1 轴索引值为 2 的位置去直接访问元素。"
-msgstr ""
+msgstr "It can be understood that the element is directly accessed at the position where the index value of the 0th axis is 1, and the index value of the 1st axis is 2."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:171
 msgid "推广到一般情况，在访问 n 维 Tensor （假定为 :math:`T` ）的特定某个元素时，可以使用如下语法："
-msgstr ""
+msgstr "To generalize to the general case, when accessing :math:`T`), the following syntax can be used:："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:173
 msgid "T_{[i_1, i_2, \\ldots i_n]}"
-msgstr ""
+msgstr "T_{[i_1, i_2, \\ldots i_n]}"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:177
 msgid "即我们要提供 :math:`i_1, i_2, \\ldots ,i_n` 共 n 个索引值，此时不需要层层降维索引，而是直接得到对应元素。"
-msgstr ""
+msgstr "That is, we need to provide :math:`i_1, i_2, \\ldots, i_n`. At this time, there is no need to reduce the dimensionality index, but to get the corresponding element directly."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:179
 msgid "如果提供的索引数组个数不足 n, 则需要了解 :ref:`default-indexing` 。"
-msgstr ""
+msgstr "If the number of index arrays provided is less than n, you need to know :ref:`default-indexing`."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:184
 msgid "在多个维度进行切片"
-msgstr ""
+msgstr "Slice in multiple dimensions"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:187
 msgid "在某个维度上进行索引，除了索引特定元素以外，还可以进行切片操作，来获取特定部分元素。"
-msgstr ""
+msgstr "Indexing on a certain dimension, in addition to indexing specific elements, you can also perform slicing operations to obtain specific parts of the elements."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:189
 msgid "既然我们可以在多个维度进行索引，自然地，我们可以从多个维度进行切片；"
-msgstr ""
+msgstr "Since we can index in multiple dimensions, naturally, we can slice from multiple dimensions;"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:190
 msgid "问题在于，用户容易忽视 :ref:`slice-will-not-reduce-dim` 这一特点，尤其是和多个 ``[]`` 使用时。"
-msgstr ""
+msgstr "The problem is that users tend to ignore :ref:`slice-will-not-reduce-dim`, especially when used with multiple ``[]``."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:192
 msgid "现在需要从下面这个 2 维 Tensor 中切出蓝色部分的元素："
-msgstr ""
+msgstr "Now we need to cut out the blue part of the element："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:194
-msgid ""
-"M =\n"
+msgid "M =\n"
 "\\begin{bmatrix}\n"
 "     1 & 2 & 3 \\\\\n"
 "     \\color{blue}{4} & \\color{blue}{5} & 6 \\\\\n"
 "     \\color{blue}{7} & \\color{blue}{8} & 9 \\\\\n"
 "\\end{bmatrix}"
-msgstr ""
+msgstr "M =\n"
+"\\begin{bmatrix}\n"
+"     1 & 2 & 3 \\\\\n"
+"     \\color{blue}{4} & \\color{blue}{5} & 6 \\\\\n"
+"     \\color{blue}{7} & \\color{blue}{8} & 9 \\\\\n"
+"\\end{bmatrix}"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:203
 msgid "一些人会写成 ``M[1:3][0:2]`` , 此时将得到非预期结果："
-msgstr ""
+msgstr "Some people will write it as ``M[1:3][0:2]'', and you will get unexpected results at this time："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:209
 msgid "这是因为 ``[]`` 操作是顺序进行解释的，它背后的逻辑顺序是："
-msgstr ""
+msgstr "This is because the ``[]'' operation is explained in order, and the logical order behind it is："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:211
-msgid ""
-"\\begin{bmatrix}\n"
+msgid "\\begin{bmatrix}\n"
 "     1 & 2 & 3 \\\\\n"
 "     4 & 5 & 6 \\\\\n"
 "     7 & 8 & 9 \\\\\n"
@@ -273,27 +267,47 @@ msgid ""
 "     4 & 5 & 6 \\\\\n"
 "     7 & 8 & 9 \\\\\n"
 "\\end{bmatrix}"
-msgstr ""
+msgstr "\\begin{bmatrix}\n"
+"     1 & 2 & 3 \\\\\n"
+"     4 & 5 & 6 \\\\\n"
+"     7 & 8 & 9 \\\\\n"
+"\\end{bmatrix}\n"
+"_{\\downarrow{\\text{1:3}}}\n"
+"=\n"
+"\\begin{bmatrix}\n"
+"     4 & 5 & 6 \\\\\n"
+"     7 & 8 & 9 \\\\\n"
+"\\end{bmatrix}\n"
+"\\quad\n"
+"\\begin{bmatrix}\n"
+"     4 & 5 & 6 \\\\\n"
+"     7 & 8 & 9 \\\\\n"
+"\\end{bmatrix}\n"
+"_{\\downarrow {\\text{0:2}}}\n"
+"=\n"
+"\\begin{bmatrix}\n"
+"     4 & 5 & 6 \\\\\n"
+"     7 & 8 & 9 \\\\\n"
+"\\end{bmatrix}"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:246
 msgid "由于切片操作并不会降低维度，所以上面的写法等于每次都在 axis=0 进行切片。"
-msgstr ""
+msgstr "Since the slicing operation does not reduce the dimensionality, the above writing is equivalent to slicing at axis=0 every time."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:250
 msgid "如果你不清楚 axis 的概念，可以参考 :ref:`tensor-axes` 。"
-msgstr ""
+msgstr "If you are not clear about the concept of axis, you can refer to :ref:`tensor-axes`."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:252
 msgid "正确的做法是像 :ref:`multi-dim-indexing` 一样，使用 ``,`` 对维度进行区分："
-msgstr ""
+msgstr "The correct approach is like :ref:`Multi-Dim-indexing`, the use of` `,` `to distinguish dimensions："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:258
 msgid "可以理解成在第 0 轴使用 ``1:3`` 切片，在第 1 轴使用 ``0:2`` 切片，求它们的交集："
-msgstr ""
+msgstr "It can be understood as using the ``1:3'' slice on the 0th axis and the ``0:2'' slice on the 1st axis, and find their intersection："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:260
-msgid ""
-"\\begin{bmatrix}\n"
+msgid "\\begin{bmatrix}\n"
 "     1 & 2 & 3 \\\\\n"
 "     \\color{red}{4} & \\color{red}{5} & \\color{red}{6}\\\\\n"
 "     \\color{red}{7} & \\color{red}{8} & \\color{red}{9}\\\\\n"
@@ -312,94 +326,99 @@ msgid ""
 "     \\color{blue}{4} & \\color{blue}{5} & 6 \\\\\n"
 "     \\color{blue}{7} & \\color{blue}{8} & 9 \\\\\n"
 "\\end{bmatrix}"
-msgstr ""
+msgstr "\\begin{bmatrix}\n"
+"     1 & 2 & 3 \\\\\n"
+"     \\color{red}{4} & \\color{red}{5} & \\color{red}{6}\\\\\n"
+"     \\color{red}{7} & \\color{red}{8} & \\color{red}{9}\\\\\n"
+"\\end{bmatrix}\n"
+"_{\\downarrow{\\text{1:3}}}\n"
+"\\cap\n"
+"\\begin{bmatrix}\n"
+"     \\color{green}{1} & \\color{green}{2} & 3 \\\\\n"
+"     \\color{green}{4} & \\color{green}{5} & 6 \\\\\n"
+"     \\color{green}{7} & \\color{green}{8} & 9 \\\\\n"
+"\\end{bmatrix}\n"
+"_{\\xrightarrow{\\text{0:2}}}\n"
+"=\n"
+"\\begin{bmatrix}\n"
+"     1 & 2 & 3 \\\\\n"
+"     \\color{blue}{4} & \\color{blue}{5} & 6 \\\\\n"
+"     \\color{blue}{7} & \\color{blue}{8} & 9 \\\\\n"
+"\\end{bmatrix}"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:282
 msgid "推广到一般情况，在访问 n 维 Tensor （假定为 :math:`T` ）的特定部分的元素时，要求使用如下语法："
-msgstr ""
+msgstr "Generalizing to the general case, when accessing :math:`T`), the following syntax is required:："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:284
 msgid "T_{[s_1, s_2, \\ldots s_n]}"
-msgstr ""
+msgstr "T_{[s_1, s_2, \\ldots s_n]}"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:288
 msgid "即我们要提供 :math:`s_1, s_2, \\ldots ,s_n` 共 n 个切片，每个切片针对特定第维度。"
-msgstr ""
+msgstr "That is, we have to provide :math:`s_1, s_2, \\ldots ,s_n` a total of n slices, and each slice is for a specific dimension."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:290
 msgid "如果提供的切片个数不足 n, 则需要了解 :ref:`default-indexing` 。"
-msgstr ""
+msgstr "If the number of slices provided is less than n, you need to know :ref:`default-indexing`."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:294
 msgid "多维切片时， ``x[obj]`` 内部的 ``obj`` 由给定的不同维度的切片组成。"
-msgstr ""
+msgstr "In multi-[obj]'' is composed of slices of different dimensions."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:298
-msgid ""
-"对于 ``ndim`` 特别大的 Tensor （假设超过 1000 维）， 有些时候我们只想对某一个轴进行索引， "
-"或进行特定操作，此时我们可以使用 :py:func:`~.functional.gather` 或 "
-":py:func:`~.functional.scatter`"
-msgstr ""
+msgid "对于 ``ndim`` 特别大的 Tensor （假设超过 1000 维）， 有些时候我们只想对某一个轴进行索引， 或进行特定操作，此时我们可以使用 :py:func:`~.functional.gather` 或 :py:func:`~.functional.scatter`"
+msgstr "For ``ndim'' especially large Tensor (assuming more than 1000 dimensions), sometimes we only want to index a certain axis, or perform specific operations, at this time we can use: py:func:`~.functional.gather `or:py:func:`~.functional.scatter`"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:300
-msgid ""
-"这两个方法分别对应于 :py:func:`numpy.take_along_axis` 和 "
-":py:func:`numpy.put_along_axis`"
-msgstr ""
+msgid "这两个方法分别对应于 :py:func:`numpy.take_along_axis` 和 :py:func:`numpy.put_along_axis`"
+msgstr "These two methods correspond to: py:func:`numpy.take_along_axis` and: py:func:`numpy.put_along_axis`"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:305
 msgid "多维切片时使用省略符号"
-msgstr ""
+msgstr "Use ellipsis when multidimensional slicing"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:307
-msgid ""
-"在对 Tensor 进行多维切片时，允许对部分不做切片的维度进行省略（Ellipsis）表示。 它的正确写法是三个英语句号 ``...`` 而不是"
-" Unicode 码位 U+2026 表示的半个省略号 ``…`` . Python 解析器会将 ``...`` 看作是一个符号，就像 "
-"``start:end:step`` 符号可以表示切片对象一样， 省略符号其实是 `Ellipsis "
-"<https://docs.python.org/dev/library/constants.html#Ellipsis>`_ "
-"对象的别名，用于尽可能地在该位置插入尽可能多的完整切片 ``:`` 以将切片语法拓展到所有维度。"
-msgstr ""
+msgid "在对 Tensor 进行多维切片时，允许对部分不做切片的维度进行省略（Ellipsis）表示。 它的正确写法是三个英语句号 ``...`` 而不是 Unicode 码位 U+2026 表示的半个省略号 ``…`` . Python 解析器会将 ``...`` 看作是一个符号，就像 ``start:end:step`` 符号可以表示切片对象一样， 省略符号其实是 `Ellipsis <https://docs.python.org/dev/library/constants.html#Ellipsis>`_ 对象的别名，用于尽可能地在该位置插入尽可能多的完整切片 ``:`` 以将切片语法拓展到所有维度。"
+msgstr "When multi-dimensional slicing of Tensor, it is allowed to omit (Ellipsis) representation for some dimensions that are not sliced. It is correctly written as three English periods ``...'' instead of the half ellipsis ``…U+2026 Python parser treats ``...'' as a symbol Just like the ``start:end:step`` symbol can represent a slice object, the ellipsis is actually <https://docs.python.org/dev/library/constants.html#Ellipsis>`_ object, which is used to insert as many complete slices as possible at this position``: `` to extend the slicing syntax to all dimensions."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:313
 msgid "举个例子，如果 ``T`` 是一个 4 维 Tensor, 那么则有："
-msgstr ""
+msgstr "For example, if ``T`` is a 4-dimensional Tensor, then there is："
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:315
 msgid "``T[i, ...]`` 是 ``T[i, :, :, :]`` 的缩写；"
-msgstr ""
+msgstr "``T[i, ...]'' is an abbreviation of ``T[i, :, :, :]``;"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:316
 msgid "``T[..., i]`` 是 ``T[:, :, :, i]`` 的缩写；"
-msgstr ""
+msgstr "``T[..., i]`` is an abbreviation of ``T[:, :, :, i]``;"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:317
 msgid "``T[i, ..., j]`` 是 ``T[i, :, :, j]`` 的缩写。"
-msgstr ""
+msgstr "``T[i, ..., j]'' is an abbreviation of ``T[i, :, :, j]``."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:322
 msgid "多维索引的缺省情况"
-msgstr ""
+msgstr "Default condition of multidimensional index"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:324
 msgid "如果索引一个多维 Tensor 时给定的索引数少于实际的维数 ``ndim``, 将得到一个子 Tensor:"
-msgstr ""
+msgstr "If the index number given when indexing a multi-dimensional Tensor is less than the actual dimension ``ndim'', you will get a sub-Tensor:"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:333
 msgid "此时其它维度的元素将被完整地保留，等同于使用 ``:`` 作为缺省维度的默认索引；"
-msgstr ""
+msgstr "At this time, the elements of other dimensions will be completely retained, which is equivalent to using ``:'' as the default index of the default dimension;"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:334
 msgid "根据给定的明确索引数，得到的子 Tensor 维度个数将对应地减少。"
-msgstr ""
+msgstr "According to the given number of explicit indexes, the number of subTensor dimensions obtained will be correspondingly reduced."
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:339
 msgid "高级索引方式"
-msgstr ""
+msgstr "Advanced indexing method"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:343
-msgid ""
-"参考 `NumPy Advanced Indexing "
-"<https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-"
-"array-indexing>`_ ."
-msgstr ""
+msgid "参考 `NumPy Advanced Indexing <https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-array-indexing>`_ ."
+msgstr "Refer to `NumPy Advanced Indexing <https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-array-indexing>`_."
 
