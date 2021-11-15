@@ -1,4 +1,4 @@
-.. _contribute-to-docs:
+.. _docs:
 
 ================
 如何为文档做贡献
@@ -7,7 +7,7 @@
 .. toctree::
    :hidden:
    :maxdepth: 1
- 
+
    document-style-guide/index
    python-docstring-style-guide
    restructuredtext
@@ -30,7 +30,7 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 * 帮助我们将中文文档内容翻译成对应的英文版本，参考 :ref:`translation` ；
 * 帮助我们补充完善 :ref:`文档内容 <doc-content>` ，比如教程和指南，不断追求更高的质量。
 
-你也可以浏览处于 Open 状态的 `Issues <https://github.com/MegEngine/Documentation/issues>`_ 
+你也可以浏览处于 Open 状态的 `Issues <https://github.com/MegEngine/Documentation/issues>`_
 列表，从里面接下任务或找到一些灵感。
 
 .. _doc-co-author:
@@ -66,11 +66,11 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 开发环境设置
 ~~~~~~~~~~~~
 
-.. note:: 
+.. note::
 
    * 如果你曾经使用 Sphinx 构建过 Python 项目的文档，想必会对下面展示的源码结构非常熟悉。
      有的时候，为了在本地预览自己的改动效果，我们需要学会 :ref:`how-to-build-the-doc-locally` 。
-   * 你也可以根据自身情况，选择使用 `Gitpod <https://gitpod.io/#prebuild/https://github.com/MegEngine/Documentation>`_ 
+   * 你也可以根据自身情况，选择使用 `Gitpod <https://gitpod.io/#prebuild/https://github.com/MegEngine/Documentation>`_
      等类型的云 IDE 来创建一个临时的文档开发环境，但这需要连接到 GitHub 帐户，且会对你的网络环境有一定的要求。
      另外由于空间限制，将不会安装 MegEngine 包，因此仅支持使用 MINI 模式来生成除 API Reference 外的文档。
 
@@ -80,7 +80,7 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 MegEngine 文档的源码结构如下：
 
 .. code-block:: shell
-   
+
    Documentation
    ├── source
    │   ├── _static           # 静态资源文件统一放在这里
@@ -92,7 +92,7 @@ MegEngine 文档的源码结构如下：
    │   ├── conf.py
    │   ├── favicon.ico
    │   ├── logo.png
-   │   └── index.rst         
+   │   └── index.rst
    ├── build                 # 生成的文档一般在 build 目录
    │   ├── doctrees
    │   └── html
@@ -118,7 +118,7 @@ MegEngine 文档的源码结构如下：
       （参考 :ref:`translation` ）
 
    .. warning::
-      
+
       为了支持内容的自定义排序，MegEngine 的 :ref:`megengine-reference` 是通过列举而非自动生成的形式添加到文档中的，
       如果你需要在文档中预览 API, 则需要参考已有 API 的分类组织方式，编辑对应的 ``source/reference/*.rst`` 文件。
 
@@ -146,7 +146,7 @@ MegEngine 的文档主要包括以下方面的内容：
 +========================+============+==========+
 | 实践步骤               |  教程 🤔   |  指南 📖 |
 +------------------------+------------+----------+
-| 理论知识               |  解释 📝   |  参考 📚 | 
+| 理论知识               |  解释 📝   |  参考 📚 |
 +------------------------+------------+----------+
 
 
@@ -203,7 +203,7 @@ Pull Request 如何被合并
 
 * 必须签署贡献者协议（Contributor License Agreement，简称 CLA）；
 * 必须至少有一位官方维护人员审核（Review）完成并批准（Approve）了你的所有代码
-* 必须通过 Actions 中触发的状态检查（Status check），如 
+* 必须通过 Actions 中触发的状态检查（Status check），如
   `Build <https://github.com/MegEngine/Documentation/actions/workflows/build.yml>`_ .
 * 必须将你的 Commits 历史记录整理为线性，消息内容符合 :ref:`commit-message` 。
 

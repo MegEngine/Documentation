@@ -8,13 +8,13 @@
 
 根据官方文档学习旷视天元「[MegEngine](https://github.com/MegEngine/MegEngine) 」深度学习框架的使用和开发。
 
-欢迎在 [MegEngine 论坛](https://discuss.megengine.org.cn/)（我们的中文社区）进行交流反馈～ 
+欢迎在 [MegEngine 论坛](https://discuss.megengine.org.cn/)（我们的中文社区）进行交流反馈～
 
 :point_right: 你也可以选择 [成为文档贡献者](./CONTRIBUTING.md) 或者 [帮助我们进行翻译](https://crowdin.com/project/megengine) 。
 
 ## 如何在本地构建与预览文档
 
-参考 [这个文件](./source/development/contribute-to-docs/build-the-doc-locally.rst) 。
+参考 [这个文件](./source/development/docs/build-the-doc-locally.rst) 。
 
 ## 分支名解释
 
