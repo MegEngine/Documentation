@@ -1,53 +1,44 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/tensor/manipulation.po\n"
+"X-Crowdin-File-ID: 8145\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/model-development/tensor/manipulation.rst:5
 msgid "Tensor 操作"
-msgstr ""
+msgstr "Tensor operation"
 
 #: ../../source/user-guide/model-development/tensor/manipulation.rst:7
 msgid "创建 Tensor 的方式有很多种，常见操作如下："
-msgstr ""
+msgstr "There are many ways to create Tensor, the common operations are as："
 
 #: ../../source/user-guide/model-development/tensor/manipulation.rst:9
-msgid ""
-"如果想要使用已经存在的数据创建 Tensor, 可以将其传入 :class:`~.Tensor` 的构造函数： "
-"支持传入标量（Scalar）、Python :class:`list` 以及 NumPy :class:`~numpy.ndarray` "
-"（当然也包括 Tensor 自己）；"
-msgstr ""
+msgid "如果想要使用已经存在的数据创建 Tensor, 可以将其传入 :class:`~.Tensor` 的构造函数： 支持传入标量（Scalar）、Python :class:`list` 以及 NumPy :class:`~numpy.ndarray` （当然也包括 Tensor 自己）；"
+msgstr "If you want to use the existing data to create a Tensor, you can pass it into the constructor of :class:： supports passing in scalar (Scalar), Python :class:`list` and NumPy :class:`~numpy.ndarray` (of course Including Tensor itself);"
 
 #: ../../source/user-guide/model-development/tensor/manipulation.rst:11
-msgid ""
-"对应地，Tensor 也支持通过 :meth:`~.Tensor.item` , :meth:`~.Tensor.tolist` 和 "
-":meth:`~.Tensor.numpy` 变成其它类型。"
-msgstr ""
+msgid "对应地，Tensor 也支持通过 :meth:`~.Tensor.item` , :meth:`~.Tensor.tolist` 和 :meth:`~.Tensor.numpy` 变成其它类型。"
+msgstr "Correspondingly, Tensor also supports :meth:`~.Tensor.item`, :meth:`~.Tensor.tolist` and :meth:`~.Tensor.numpy` to become other types."
 
 #: ../../source/user-guide/model-development/tensor/manipulation.rst:15
-msgid ""
-"Tensor 中重载了 Python 中常见的运算符，支持直接进行 ``+`` ``-`` ``*`` ``/`` 等操作。 但请注意，与 "
-"Tensor 相关的绝大多数计算接口，都封装在 :mod:`megengine.functional` 模块中。"
-msgstr ""
+msgid "Tensor 中重载了 Python 中常见的运算符，支持直接进行 ``+`` ``-`` ``*`` ``/`` 等操作。 但请注意，与 Tensor 相关的绝大多数计算接口，都封装在 :mod:`megengine.functional` 模块中。"
+msgstr "Tensor overloads the common operators in Python, and supports direct operations such as ``+`` ``-`` ``*`` ``/``. But please note that most of the calculation interfaces related to Tensor are encapsulated in the :mod:`megengine.functional` module."
 
 #: ../../source/user-guide/model-development/tensor/manipulation.rst:20
-msgid ""
-"更多时候，我们希望能够将现实中的数据（或数据集）在 MegEngine 中进行处理。 一种普遍的方法是将其转化为 "
-":class:`~.numpy.ndarray` 后传入 :class:`~.Tensor` 来创建实例； 还可以利用 MegEngine "
-"中封装好的接口，方便进行一些预处理操作，参考 :mod:`megengine.data` 子包。"
-msgstr ""
+msgid "更多时候，我们希望能够将现实中的数据（或数据集）在 MegEngine 中进行处理。 一种普遍的方法是将其转化为 :class:`~.numpy.ndarray` 后传入 :class:`~.Tensor` 来创建实例； 还可以利用 MegEngine 中封装好的接口，方便进行一些预处理操作，参考 :mod:`megengine.data` 子包。"
+msgstr "More often, we hope to be able to process actual data (or data sets) in MegEngine. A common method is to convert it to :class:`~.numpy.ndarray` and then pass in :class:`~.Tensor` to create an instance; you can also use the interface encapsulated in MegEngine to facilitate some preprocessing operations, refer to :mod:`megengine.data` sub-package."
 

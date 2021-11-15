@@ -1,194 +1,185 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.4.0\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/tensor/index.po\n"
+"X-Crowdin-File-ID: 8139\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:6
 msgid "深入理解 Tensor 数据结构"
-msgstr ""
+msgstr "Deep understanding of Tensor data structure"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:19
-msgid ""
-"MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数据结构， 区别于数学中的定义，其概念与 NumPy_"
-" 中的 :py:class:`~numpy.ndarray` 更加相似， "
-"即张量是一类同构多维数组，其中每个元素占用相同大小的内存块，并且所有块都以完全相同的方式解释。 如何解释 Tensor 中的元素由其 "
-":ref:`数据类型 <tensor-dtype>` 决定，而每种数据类型都代表一类 Tensor."
-msgstr ""
+msgid "MegEngine 中提供了一种名为 “张量” （:py:class:`Tensor` ）的数据结构， 区别于数学中的定义，其概念与 NumPy_ 中的 :py:class:`~numpy.ndarray` 更加相似， 即张量是一类同构多维数组，其中每个元素占用相同大小的内存块，并且所有块都以完全相同的方式解释。 如何解释 Tensor 中的元素由其 :ref:`数据类型 <tensor-dtype>` 决定，而每种数据类型都代表一类 Tensor."
+msgstr "MegEngine provides a data structure called \"Tensor\" (:py:class:`Tensor`), which is different from the definition in mathematics, and its concept is the same as that in NumPy_: py:class:`~numpy.ndarray` It is more similar, that is, a tensor is a kind of homogeneous multidimensional array, where each element occupies the same size memory block, and all blocks are interpreted in exactly the same way. How to interpret the element by Tensor :ref:'data type <tensor-dtype>`decisions, each data type represents a type Tensor."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:24
 msgid "我们可以基于 Tensor 数据结构，进行各式各样的科学计算；"
-msgstr ""
+msgstr "We can perform various scientific calculations based on the Tensor data structure;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:25
 msgid "Tensor 也是神经网络编程时所用的主要数据结构，网络的输入、输出和转换都使用 Tensor 表示。"
-msgstr ""
+msgstr "Tensor is also the main data structure used in neural network programming. The input, output and conversion of the network are all represented by Tensor."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:31
-msgid ""
-"与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效的计算。 当 GPU 和 CPU "
-"设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。"
-msgstr ""
+msgid "与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效的计算。 当 GPU 和 CPU 设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。"
+msgstr "The difference with NumPy is that MegEngine also supports the use of GPU devices for more efficient calculations. When both GPU and CPU devices are available, MegEngine will give priority to using GPU as the default computing device, without the user's manual setting."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:34
 msgid "如果有查看/改变默认计算设备的需求，请参考 :ref:`tensor-device` 中的说明。"
-msgstr ""
+msgstr "If you need to view/change the default computing device, please refer :ref:`tensor-device`."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:35
 msgid "通过 :meth:`.Tensor.to` 和 :func:`.functional.copy` 可将 Tensor 拷贝到指定设备。"
-msgstr ""
+msgstr "Tensor can be copied to the specified device through :meth:`.Tensor.to` and :func:"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:39
 msgid "如果你还不清楚如何获得一个 Tensor, 请参考 :ref:`tensor-creation` 。"
-msgstr ""
+msgstr "If you are not sure how to obtain a Tensor, please refer to :ref:`tensor-creation`."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:44
 msgid "概念（术语）使用上的区分"
-msgstr ""
+msgstr "Distinction in the use of concepts (terms)"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:46
 msgid "我们所提到的 Tensor 的概念往往是其它更具体概念的概括（或者说推广），下面有一些例子："
-msgstr ""
+msgstr "Tensor concept that we often mentioned is a summary of other more specific concepts (or promotion), here are some examples："
 
 #: ../../source/user-guide/model-development/tensor/index.rst:49
 #: ../../source/user-guide/model-development/tensor/index.rst:111
 msgid "数学"
-msgstr ""
+msgstr "math"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:49
 #: ../../source/user-guide/model-development/tensor/index.rst:111
 msgid "计算机科学"
-msgstr ""
+msgstr "computer science"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:49
 msgid "抽象概念"
-msgstr ""
+msgstr "abstraction"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:49
 msgid "具象化例子"
-msgstr ""
+msgstr "Concrete example"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:51
 #: ../../source/user-guide/model-development/tensor/index.rst:113
 msgid "标量（scalar）"
-msgstr ""
+msgstr "Scalar"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:51
 #: ../../source/user-guide/model-development/tensor/index.rst:113
 msgid "数字（number）"
-msgstr ""
+msgstr "Number"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:51
 msgid "点"
-msgstr ""
+msgstr "point"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:51
 msgid "得分、概率"
-msgstr ""
+msgstr "Score, probability"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:52
 #: ../../source/user-guide/model-development/tensor/index.rst:114
 msgid "向量（vector）"
-msgstr ""
+msgstr "Vector"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:52
 #: ../../source/user-guide/model-development/tensor/index.rst:114
 msgid "数组（array）"
-msgstr ""
+msgstr "Array"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:52
 msgid "线"
-msgstr ""
+msgstr "String"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:52
 msgid "列表"
-msgstr ""
+msgstr "List"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:53
 #: ../../source/user-guide/model-development/tensor/index.rst:115
 msgid "矩阵（matrix）"
-msgstr ""
+msgstr "Matrix"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:53
 #: ../../source/user-guide/model-development/tensor/index.rst:115
 msgid "2 维数组（2d-array）"
-msgstr ""
+msgstr "2 dimensional array (2d-array)"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:53
 msgid "面"
-msgstr ""
+msgstr "noodle"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:53
 msgid "Excel 表格"
-msgstr ""
+msgstr "Excel spreadsheet"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:56
 msgid "不同的研究领域对同一个概念使用不同的术语进行描述，这很常见，对这些概念不清晰的话很容易产生疑惑。"
-msgstr ""
+msgstr "It is common for different research fields to use different terms to describe the same concept. It is easy to be confused if these concepts are not clear."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:58
-msgid ""
-"Python 中提供了 `array <https://docs.python.org/3/library/array.html>`_ "
-"的官方实现， 但其使用方法和我们提到的 NumPy 数组有所不同，因此我们可以用 Python （嵌套）列表 :py:class:`list` "
-"来类比举例。 在后续的页面，我们会慢慢地过渡到 Tensor 的实际使用和操作中。"
-msgstr ""
+msgid "Python 中提供了 `array <https://docs.python.org/3/library/array.html>`_ 的官方实现， 但其使用方法和我们提到的 NumPy 数组有所不同，因此我们可以用 Python （嵌套）列表 :py:class:`list` 来类比举例。 在后续的页面，我们会慢慢地过渡到 Tensor 的实际使用和操作中。"
+msgstr "Python provides the <https://docs.python.org/3/library/array.html>`_, but its usage is different from the NumPy array we mentioned, so we can use Python (nested) list: py:class:`list` as an analogy. On subsequent pages, we will slowly transition to the actual use and operation of Tensor."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:62
 msgid "注意：为了方便理解，我们这里假设此处 Python 列表中的数据类型是一致的，比如都是 Number 类型。"
-msgstr ""
+msgstr "Note：In order to facilitate understanding, we assume here that the data types in the Python list are the same, such as the Number type."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:66
 msgid "在深度学习领域，我们通常将上述这些概念统称为张量（Tensor）。"
-msgstr ""
+msgstr "In the field of deep learning, we usually refer to the above concepts collectively as tensors."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:71
 msgid "访问 Tensor 中某个元素"
-msgstr ""
+msgstr "Access an element in Tensor"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:72
 msgid "对于数字（或者说标量） Tensor, 显然我们可以直接得到其值，因为它只有一个元素。"
-msgstr ""
+msgstr "For a number (or scalar) Tensor, obviously we can get its value directly because it has only one element."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:78
 msgid "其它情况下，想要在 Tensor 中获得某个元素，需要提供对应位置的整数索引（Index），并使用下标运算符 ``[]``:"
-msgstr ""
+msgstr "In other cases, if you want to get an element in the Tensor, you need to provide the integer index (Index) of the corresponding position and use the subscript operator ``[]``:"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:80
 msgid "注意：Tensor 的索引是基于零（Zero-based）开始计数的，和 Python 列表 / NumPy 多维数组一致；"
-msgstr ""
+msgstr "Note that：Tensor starts counting based on zero (Zero-based), which is consistent with Python lists/NumPy multidimensional arrays;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:81
 msgid "比如我们想要获取向量/数组 ``a = [0, 1, 2, 3, 4]`` 中的第 3 个元素，我们需要使用 ``a[2]``;"
-msgstr ""
+msgstr "For example, if we want to get the 3rd element in the vector/array ``a = [0, 1, 2, 3, 4]'', we need to use ``a[2]``;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:82
 msgid "又比如我们想要获取下面这个 2d-数组 ``b`` 中值为 6 的元素，则需要使用 ``b[1][2]``;"
-msgstr ""
+msgstr "For another example, if we want to get the element with the value of 6 in the following 2d-array ``b``, we need to use ``b[1][2]``;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:90
 msgid "我们可以理解成先访问 ``b[1]``, 再将 ``b[1]`` 看成单独的一部分，去访问 ``b[1]`` 中索引为 2 的元素。"
-msgstr ""
+msgstr "We can understand it as visiting ``b[1]`` first, and then treating ``b[1]`` as a separate part to access the element with index 2 in[1]"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:92
 msgid "二维情况可以类比成我们在矩阵 :math:`M` 中按照先行后列的顺序去获取元素——"
-msgstr ""
+msgstr "The two-dimensional situation can be analogized to that we :math:`M` in the order of the first row and then the column-"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:94
-msgid ""
-"M =\n"
+msgid "M =\n"
 "\\begin{bmatrix}\n"
 "     1 & 2 & 3 \\\\\n"
 "     4 & 5 & \\color{blue}{6} \\\\\n"
@@ -196,223 +187,213 @@ msgid ""
 "\\end{bmatrix}\n"
 "\\quad\n"
 "M_{(1,2)} = 6"
-msgstr ""
+msgstr "M =\n"
+"\\begin{bmatrix}\n"
+"     1 & 2 & 3 \\\\\n"
+"     4 & 5 & \\color{blue}{6} \\\\\n"
+"     7 & 8 & 9 \\\\\n"
+"\\end{bmatrix}\n"
+"\\quad\n"
+"M_{(1,2)} = 6"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:105
 msgid "在更高维度的情况下，再用专门的 “标量”，“向量”，“矩阵”... 术语去定义结构是很不现实的。"
-msgstr ""
+msgstr "In the case of higher dimensions, it is very unrealistic to use special \"scalar\", \"vector\", \"matrix\"... terms to define the structure."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:107
 msgid "因此在数学中提供了 n 维张量的概念，对应地，NumPy 中提供了 n 维数组；"
-msgstr ""
+msgstr "Therefore, the concept of n-dimensional tensor is provided in mathematics. Correspondingly, n-dimensional array is provided in NumPy;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:108
 msgid "n 维张量和 n 维数组中的 n 则表明从中获取元素需要提供 n 个索引值。"
-msgstr ""
+msgstr "The n in n-dimensional tensor and n-dimensional array indicates that n index values need to be provided to obtain elements from it."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:111
 msgid "获取值所需标量索引数量"
-msgstr ""
+msgstr "The number of scalar indexes needed to get the value"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:113
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:114
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:115
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:116
 msgid "n 维张量（nd-tensor）"
-msgstr ""
+msgstr "n-dimensional tensor (nd-tensor)"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:116
 msgid "n 维数组（nd-array）"
-msgstr ""
+msgstr "n-dimensional array (nd-array)"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:116
 msgid "n"
-msgstr ""
+msgstr "n"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:119
 msgid "现在我们已经可以忘掉上面这些术语，统一用 n 来确定 Tensor 维度的数量。"
-msgstr ""
+msgstr "Now we can forget the above terms and use n to determine the number of Tensor dimensions."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:121
 msgid "因此我们可以这样理解："
-msgstr ""
+msgstr "So we can understand："
 
 #: ../../source/user-guide/model-development/tensor/index.rst:123
 msgid "一个标量是一个 0 维 Tensor;"
-msgstr ""
+msgstr "A scalar is a 0-dimensional Tensor;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:124
 msgid "一个向量是一个 1 维 Tensor;"
-msgstr ""
+msgstr "A vector is a 1-dimensional Tensor;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:125
 msgid "一个矩阵是一个 2 维 Tensor;"
-msgstr ""
+msgstr "A matrix is a 2-dimensional Tensor;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:126
 msgid "一个 n 维数组是一个 n 维 Tensor."
-msgstr ""
+msgstr "An n-dimensional array is an n-dimensional Tensor."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:128
 msgid "而在访问 n 维 Tensor （假定为 :math:`T` ）的特定某个元素时，可以使用如下语法："
-msgstr ""
+msgstr "When accessing a specific element of n-dimensional Tensor (assumed to be :math:`T`), the following syntax can be used:："
 
 #: ../../source/user-guide/model-development/tensor/index.rst:130
 msgid "T_{[i_1][i_2]\\ldots [i_n]}"
-msgstr ""
+msgstr "T_{[i_1][i_2]\\ldots [i_n]}"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:134
 msgid "即我们要提供 :math:`i_1, i_2, \\ldots ,i_n` 共 n 个索引值，每次索引降低一个维度，最终得到 0 维数字（标量）。"
-msgstr ""
+msgstr "That is, we have to provide :math:`i_1, i_2, \\ldots ,i_n`, and each index is reduced by one dimension, and finally a 0-dimensional number (scalar) is obtained."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:136
 msgid "比如我们得知要找的某个人住在某小区的 23 号楼 3 单元 902 室，因此我们需要访问 ``court[23][3][9][2]``;"
-msgstr ""
+msgstr "For example, we learn that the person we are looking for lives in Room 902, Unit 3, Building 23, in a community, so we need to visit ``court[23][3][9][2]``;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:140
 msgid "实际上，对于 Tensor 和多维数组，有着更加高效的索引方法，可参考 :ref:`multi-dim-indexing` 的用法。"
-msgstr ""
+msgstr "In fact, there are more efficient indexing methods for Tensor and multi-dimensional arrays, please refer to :ref:`multi-dim-indexing`."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:144
 msgid "深度学习领域的 Tensor 其实就是一个多维数组（N 维数组）。"
-msgstr ""
+msgstr "Tensor in the field of deep learning is actually a multi-dimensional array (N-dimensional array)."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:149
 msgid "使用切片获取部分元素"
-msgstr ""
+msgstr "Use slices to get some elements"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:151
 msgid "前面我们展示了如何访问单个的元素，另一种比较常见的情况是需要对部分元素进行访问。"
-msgstr ""
+msgstr "Earlier we showed how to access a single element. Another common situation is the need to access some elements."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:153
 msgid "与 Python 一致，我们可以使用切片（Slicing）操作符来访问和修改 Tensor 对象中的部分元素："
-msgstr ""
+msgstr "Consistent with Python, we can use the slice (Slicing) operator to access and modify the part of the element object Tensor："
 
 #: ../../source/user-guide/model-development/tensor/index.rst:159
-msgid ""
-"观察上面的例子，我们通过 ``:`` 符号进行了切片操作，语法为 ``start:stop:step``, 对应起始索引、终止索引和步长。 "
-"这种写法实际上在背后为我们生成了一个切片对象 ``slice(start:stop:step)``, 二者是等价的："
-msgstr ""
+msgid "观察上面的例子，我们通过 ``:`` 符号进行了切片操作，语法为 ``start:stop:step``, 对应起始索引、终止索引和步长。 这种写法实际上在背后为我们生成了一个切片对象 ``slice(start:stop:step)``, 二者是等价的："
+msgstr "Observing the above example, we have performed a slicing operation through the ``:`` symbol, the syntax is ``start:stop:step``, which corresponds to the start index, end index and step length. This way of writing actually generates a slice object ``slice(start:stop:step)'' for us behind the scenes, the two are equivalent to："
 
 #: ../../source/user-guide/model-development/tensor/index.rst:168
 msgid "``start``, ``stop``, ``step`` 也可以是负数，意味着索引变化顺序与默认情况相反。"
-msgstr ""
+msgstr "``start``, ``stop``, ``step`` can also be negative numbers, which means that the index change order is opposite to the default."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:169
-msgid ""
-"``start`` 和 ``stop`` 索引区间是左闭右开的 ``[start, stop)`` 形式，即 ``a[stop]`` "
-"本身不在切片范围之内。"
-msgstr ""
+msgid "``start`` 和 ``stop`` 索引区间是左闭右开的 ``[start, stop)`` 形式，即 ``a[stop]`` 本身不在切片范围之内。"
+msgstr "The index range of ``start`` and ``stop`` is in the form of ``[start, stop)'' with left closed and right open, that is, ``a[stop]`` itself is not within the slice range."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:170
-msgid ""
-"这个设计其实与基于零的索引方式对应，该设计的好处有很多： 当只有最后一个位置信息时，我们也可以快速计算出切片和区间内有几个元素; 同理使用 "
-"``stop`` 减去 ``start`` 可以快速计算出切片和区间的长度，不容易混淆； 与此同时，我们可以用 ``a[:i]`` 和 "
-"``a[i:]`` 获得原始数据分割后不重叠的两部分。"
-msgstr ""
+msgid "这个设计其实与基于零的索引方式对应，该设计的好处有很多： 当只有最后一个位置信息时，我们也可以快速计算出切片和区间内有几个元素; 同理使用 ``stop`` 减去 ``start`` 可以快速计算出切片和区间的长度，不容易混淆； 与此同时，我们可以用 ``a[:i]`` 和 ``a[i:]`` 获得原始数据分割后不重叠的两部分。"
+msgstr "In fact, this design corresponds to the zero-based index of the way, there are many benefits of this design is： when only the last location information, we can quickly calculate a few slices and elements within range; the same token use `` stop`` Less Go to ``start`` to quickly calculate the length of the slice and interval, which is not easy to confuse; at the same time, we can use ``a[:i]`` and ``a[i:]`` to obtain the original data segmentation After the two parts do not overlap."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:177
-msgid ""
-"计算机科学家，Edsger W. Dijkstra 教授在《`Why numbering should start at zero "
-"<https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html>`_"
-" 》 中的内容为基于 0 的下标以及左闭右开的区间习惯进行了很好的解释。"
-msgstr ""
+msgid "计算机科学家，Edsger W. Dijkstra 教授在《`Why numbering should start at zero <https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html>`_ 》 中的内容为基于 0 的下标以及左闭右开的区间习惯进行了很好的解释。"
+msgstr "Computer scientist, Professor Edsger W. Dijkstra’s content in \"Why numbering should start at zero <https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html>`_ \"provides a good explanation for the 0-based subscript and the interval habit of left-closed and right-opened."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:181
 msgid "另外，切片语法中的部分元素可以被省略："
-msgstr ""
+msgstr "Further, part of the slice syntax elements may be omitted："
 
 #: ../../source/user-guide/model-development/tensor/index.rst:183
 msgid "如果下标运算符中没有任何冒号运算符如 ``a[i]``, 则返回与该索引位置对应的单个元素；"
-msgstr ""
+msgstr "If there is no colon operator in the subscript operator such as ``a[i]``, then the single element corresponding to the index position is returned;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:184
 msgid "如果下标运算符中只有一个冒号运算符，则需要根据不同的写法进行判断："
-msgstr ""
+msgstr "If there is only one colon operator in the subscript operator, it needs to be judged according to different writing methods.："
 
 #: ../../source/user-guide/model-development/tensor/index.rst:186
 msgid "如果为 ``a[start:]``, 则表明从 ``start`` 位置往后的所有项都被提取；"
-msgstr ""
+msgstr "If it is ``a[start:]``, it means that all items from the position of ``start`` have been extracted;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:187
 msgid "如果为 ``a[:stop]``, 则表明从 ``stop`` 位置往前的所有项都被提取；"
-msgstr ""
+msgstr "If it is ``a[:stop]``, it means that all items from the ``stop`` position forward are extracted;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:188
 msgid "如果为 ``a[start:stop]``, 则表明从 ``start`` 到 ``stop`` 的所有项将被提取；"
-msgstr ""
+msgstr "If it is ``a[start:stop]``, it means that all items from ``start`` to ``stop`` will be extracted;"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:190
 msgid "如果没有指定 ``step``, 则默认提取切片范围内的所有项目。"
-msgstr ""
+msgstr "If ``step'' is not specified, all items in the slice range will be extracted by default."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:192
 msgid "多维数组也支持使用切片语法："
-msgstr ""
+msgstr "Also supports the use of multidimensional array slice syntax："
 
 #: ../../source/user-guide/model-development/tensor/index.rst:198
 msgid "此时可以将其当作是一个一维数组去理解，里面的每个元素又是一维数组："
-msgstr ""
+msgstr "At this point, it can be understood as a one-dimensional array, and each element in it is a one-dimensional array.："
 
 #: ../../source/user-guide/model-development/tensor/index.rst:209
 msgid "我们这里仅仅对最外面这一层进行了索引，在 :ref:`tensor-indexing` 中会讲解更复杂的情况。"
-msgstr ""
+msgstr "We only indexed the outermost layer here, and more complicated situations will be explained :ref:"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:213
-msgid ""
-"使用切片索引可以从 Tensor 中访问部分元素，但有些时候我们希望获得的部分元素是不连续的， 而是几个特定位置元素的组合，此时可以使用 "
-":ref:`数组索引 <array-indexing>` 。"
-msgstr ""
+msgid "使用切片索引可以从 Tensor 中访问部分元素，但有些时候我们希望获得的部分元素是不连续的， 而是几个特定位置元素的组合，此时可以使用 :ref:`数组索引 <array-indexing>` 。"
+msgstr "Use the index can be accessed from Tensor slice of some elements, but there are times when we want to get some elements are not continuous but a combination of several elements in a specific location, then you can use :ref:`array index <array-indexing>'."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:217
 msgid "接下来：Tensor 基础属性"
-msgstr ""
+msgstr "Next：Tensor basic attributes"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:219
 msgid "通过本小节的内容，用户能够掌握最基本的 Tensor 概念。"
-msgstr ""
+msgstr "Through the content of this section, users can grasp the most basic Tensor concepts."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:221
-msgid ""
-"为了方便初学者学习和过渡，在上面的代码示例中，我们一直在使用 Python 的 ``list`` 来举例， 以表明 MegEngine "
-"Tensor 数据结构与 Python 嵌套列表设计的一致性，但实际上二者还是存在着一定的区别。"
-msgstr ""
+msgid "为了方便初学者学习和过渡，在上面的代码示例中，我们一直在使用 Python 的 ``list`` 来举例， 以表明 MegEngine Tensor 数据结构与 Python 嵌套列表设计的一致性，但实际上二者还是存在着一定的区别。"
+msgstr "In order to facilitate learning and transition for beginners, in the above code examples, we have been using Python's ``list`` as an example to show the consistency between the MegEngine Tensor data structure and the Python nested list design, but in fact the two There are still some differences."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:224
 msgid "我们再举一些例子，请你尝试猜测一下输出："
-msgstr ""
+msgstr "Let's give some more examples, please try to guess the output："
 
 #: ../../source/user-guide/model-development/tensor/index.rst:230
 msgid "Python nested list"
-msgstr ""
+msgstr "Python nested list"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:237
 msgid "MegEngine 2-d Tensor"
-msgstr ""
+msgstr "MegEngine 2-d Tensor"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:244
 msgid "Python 嵌套列表并不支持这种语法，你能猜测出在 ``[]`` 运算符中使用 ``,`` 的作用吗？"
-msgstr ""
+msgstr "Python nested lists do not support this syntax. Can you guess the effect of using ``,`` in the ``[]`` operator?"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:246
-msgid ""
-"假设我们现在需要从下面这个 2 维 Tensor 中取出蓝色部分的元素，又需要如何做呢？ （ :ref:`解释 <multi-dim-"
-"slicing>` ）"
-msgstr ""
+msgid "假设我们现在需要从下面这个 2 维 Tensor 中取出蓝色部分的元素，又需要如何做呢？ （ :ref:`解释 <multi-dim-slicing>` ）"
+msgstr "Suppose we now need to extract the elements in the blue part from the following 2-dimensional Tensor, what do we need to do? ( :ref:`construed <multi-dim-slicing>')"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:249
-msgid ""
-"M =\n"
+msgid "M =\n"
 "\\begin{bmatrix}\n"
 "     1 & 2 & 3 \\\\\n"
 "     \\color{blue}{4} & \\color{blue}{5} & 6 \\\\\n"
@@ -420,60 +401,58 @@ msgid ""
 "\\end{bmatrix}\n"
 "\\quad\n"
 "M_{(?, ?)} = (4 \\ 5)"
-msgstr ""
+msgstr "M =\n"
+"\\begin{bmatrix}\n"
+"     1 & 2 & 3 \\\\\n"
+"     \\color{blue}{4} & \\color{blue}{5} & 6 \\\\\n"
+"     7 & 8 & 9 \\\\\n"
+"\\end{bmatrix}\n"
+"\\quad\n"
+"M_{(?,? )) = (4 \\ 5)"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:260
-msgid ""
-"想要解答这些问题，你必须先理解 Tensor 的 :ref:`tensor-fundamental-attributes` 等有关概念， "
-"更好地理解 Tensor 所具备的一些特点，接着从 :ref:`tensor-indexing` 的内容中找到答案。"
-msgstr ""
+msgid "想要解答这些问题，你必须先理解 Tensor 的 :ref:`tensor-fundamental-attributes` 等有关概念， 更好地理解 Tensor 所具备的一些特点，接着从 :ref:`tensor-indexing` 的内容中找到答案。"
+msgstr "To answer these questions, you must first understand Tensor's :ref:`tensor-fundamental-attributes` and other related concepts, better understand some of the characteristics of Tensor, and then find the answer from the content of :ref:"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:267
 msgid "Tensor 数据类型"
-msgstr ""
+msgstr "Tensor data type"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:266
-msgid ""
-"我们提到了 Tensor 中的每个元素的数据类型一致，如果你想要知道具体有哪些数据类型的 Tensor, 请参考 :ref:`tensor-"
-"dtype` 。"
-msgstr ""
+msgid "我们提到了 Tensor 中的每个元素的数据类型一致，如果你想要知道具体有哪些数据类型的 Tensor, 请参考 :ref:`tensor-dtype` 。"
+msgstr "We mentioned that the data type of each element in the Tensor is the same. If you want to know which data types are Tensor, please refer to :ref:`tensor-dtype`."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:271
 msgid "Tensor 所在设备"
-msgstr ""
+msgstr "The device where the Tensor is located"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:270
-msgid ""
-"能够利用 GPU 设备进行高效运算是 MegEngine 相较于 NumPy 的优势，想要了解不同设备之间的区别， 请参考 :ref"
-":`tensor-device` 。"
-msgstr ""
+msgid "能够利用 GPU 设备进行高效运算是 MegEngine 相较于 NumPy 的优势，想要了解不同设备之间的区别， 请参考 :ref:`tensor-device` 。"
+msgstr "The ability to use GPU devices for efficient operations is the advantage of MegEngine over NumPy. To understand the differences between different devices, please refer to :ref:`tensor-device`."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:274
 msgid "Tensor 具象化举例"
-msgstr ""
+msgstr "Examples of Tensor visualization"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:274
 msgid "如果你目前对于 Tensor 的概念不够直观，可以参考 :ref:`tensor-examples` 。"
-msgstr ""
+msgstr "If your current concept of Tensor is not intuitive enough, you can refer to :ref:`tensor-examples`."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:276
 msgid "Tensor 内存布局"
-msgstr ""
+msgstr "Tensor memory layout"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:277
 msgid "一些有经验的开发者喜欢研究底层的细节，可以参考 :ref:`tensor-layout` 。"
-msgstr ""
+msgstr "Some experienced developers like to study the underlying details, you can refer to :ref:`tensor-layout`."
 
 #: ../../source/user-guide/model-development/tensor/index.rst:279
 msgid "Python 数据 API 标准联盟协会"
-msgstr ""
+msgstr "Python Data API Standard Alliance Association"
 
 #: ../../source/user-guide/model-development/tensor/index.rst:282
-msgid ""
-"MegEngine 中的许多 Tensor 标准 API 设计遵循了 Python 数据 API 标准联盟协会的倡导， 一些常见的实现尽可能地向 "
-"NumPy 靠近，更多细节可以参考 `Consortium for Python Data API Standards <https"
-"://data-apis.org/>`_ ."
-msgstr ""
+msgid "MegEngine 中的许多 Tensor 标准 API 设计遵循了 Python 数据 API 标准联盟协会的倡导， 一些常见的实现尽可能地向 NumPy 靠近，更多细节可以参考 `Consortium for Python Data API Standards <https://data-apis.org/>`_ ."
+msgstr "Many Tensor standard API designs in MegEngine follow the advocacy of the Python Data API Standards Association. Some common implementations are as close to NumPy as possible. For more details, please refer to `Consortium for Python Data API Standards <https://data-apis.org/>`_."
 
 #~ msgid "如果有查看/改变默认计算设备的需求，请参考 :ref:`device` 中提供的接口。"
 #~ msgstr ""

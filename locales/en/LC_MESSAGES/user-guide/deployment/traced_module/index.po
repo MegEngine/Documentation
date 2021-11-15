@@ -1,103 +1,96 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/traced_module/index.po\n"
+"X-Crowdin-File-ID: 8203\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:6
 msgid "TracedModule 发版方案"
-msgstr ""
+msgstr "TracedModule release plan"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:17
 msgid "TracedModule 是什么"
-msgstr ""
+msgstr "What is TracedModule"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:19
 msgid "TracedModule 是基于 MegEngine 的发版方案。"
-msgstr ""
+msgstr "TracedModule is a release solution based on MegEngine."
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:21
-msgid ""
-"TracedModule 由一个普通的 Module 通过 :py:func:`~.trace_module` 方法转换得到，仅由 "
-"MegEngine 的数据结构而构成，可脱离用户源代码被训练、序列化以及反序列化、以及图手术。"
-msgstr ""
+msgid "TracedModule 由一个普通的 Module 通过 :py:func:`~.trace_module` 方法转换得到，仅由 MegEngine 的数据结构而构成，可脱离用户源代码被训练、序列化以及反序列化、以及图手术。"
+msgstr "TracedModule is converted from an ordinary Module through the :py:func:`~.trace_module` method. It is only composed of the data structure of MegEngine, and can be trained, serialized and deserialized, and graph operations separated from the user source code."
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:23
 msgid "相比于普通的 Module, 它有如下特性:"
-msgstr ""
+msgstr "Compared with ordinary Module, it has the following characteristics:"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:25
-msgid ""
-"拥有 graph 属性，graph 描述了 TracedModule 计算过程，可通过修改 graph 来改变计算过程（即 "
-":py:meth:`.TracedModule.forward` 通过解析 :py:attr:`.TracedMoudle.graph` 执行）；"
-msgstr ""
+msgid "拥有 graph 属性，graph 描述了 TracedModule 计算过程，可通过修改 graph 来改变计算过程（即 :py:meth:`.TracedModule.forward` 通过解析 :py:attr:`.TracedMoudle.graph` 执行）；"
+msgstr "With the graph attribute, graph describes the calculation process of TracedModule, which can be changed by modifying the graph (ie: py:meth:`.TracedModule.forward` is executed by parsing: py:attr:`.TracedMoudle.graph`);"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:26
-msgid ""
-"可序列化（pickle）到文件中，即使在没有模型源码的环境中也可被正确 load（普通 Module 的序列化文件脱离模型源码后无法 load "
-"回来）。"
-msgstr ""
+msgid "可序列化（pickle）到文件中，即使在没有模型源码的环境中也可被正确 load（普通 Module 的序列化文件脱离模型源码后无法 load 回来）。"
+msgstr "It can be serialized (pickle) to a file, and it can be loaded correctly even in an environment where there is no model source code (the serialized file of a normal Module cannot be loaded back after being separated from the model source code)."
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:28
 msgid "TracedModule 发版方案的优点:"
-msgstr ""
+msgstr "Advantages of the TracedModule release solution:"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:30
 msgid "graph 基于 MegEngine 内置的 Module 和 function 构建，OP 粒度粗；"
-msgstr ""
+msgstr "Graph is constructed based on the built-in Module and function of MegEngine, with coarse OP granularity;"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:31
 msgid "图手术直观，可直接查看 graph ，了解修改后的 graph 是否与预期一致；"
-msgstr ""
+msgstr "The graph operation is intuitive, you can directly view the graph to understand whether the revised graph is consistent with expectations;"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:32
 msgid "基于动态图，调试方便，所见即所得。"
-msgstr ""
+msgstr "Based on the dynamic graph, debugging is convenient, what you see is what you get."
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:35
 msgid "TracedModule 发版流程"
-msgstr ""
+msgstr "TracedModule release process"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:40
 msgid "step1: 模型训练阶段"
-msgstr ""
+msgstr "step1: Model training stage"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:42
 msgid "使用 MegEngine 来训练模型，模型基于 Module 构建。此时可直接将模型（Module） 转为 TracedModule 训练。"
-msgstr ""
+msgstr "Use MegEngine to train the model, which is based on Module. At this time, the model (Module) can be directly converted to TracedModule training."
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:43
 msgid "将模型（Module 或 TracedModule）转为 TracedModule，并通过 pickle 将模型序列化到文件中。"
-msgstr ""
+msgstr "Convert the model (Module or TracedModule) to TracedModule, and pickle to serialize the model to a file."
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:45
 msgid "step2: 模型发版阶段"
-msgstr ""
+msgstr "step2: model release stage"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:47
 msgid "在无模型源码的环境中 pickle.load 第一步中序列化的 TracedModule 模型。"
-msgstr ""
+msgstr "Pickle.load the TracedModule model serialized in the first step in an environment without model source code."
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:48
 msgid "如果需要对模型进行图手术、后量化等操作，可直接对模型进行修改，此时模型依然在动态图模式下运行，所见即所得。"
-msgstr ""
+msgstr "If you need to perform operations such as graph surgery and post-quantification on the model, you can directly modify the model. At this time, the model is still running in the dynamic graph mode, and what you see is what you get."
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:49
-msgid ""
-"当真正确定最终要发版的模型后，可直接通过 :ref:`trace <trace>` & :ref:`dump <dump>` 转为 c++ "
-"模型进行部署。转换为其他框架模型的转换工具正在开发中，敬请期待。"
-msgstr ""
+msgid "当真正确定最终要发版的模型后，可直接通过 :ref:`trace <trace>` & :ref:`dump <dump>` 转为 c++ 模型进行部署。转换为其他框架模型的转换工具正在开发中，敬请期待。"
+msgstr "When really determine the final version of the model to be made, directly through :ref:`the trace <trace>` & :ref:`dump <dump>` c ++ into the model deployed. A conversion tool to convert to other framework models is under development, so stay tuned."
 

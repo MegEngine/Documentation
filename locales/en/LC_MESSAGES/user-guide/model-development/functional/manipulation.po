@@ -1,467 +1,419 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.5\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/functional/manipulation.po\n"
+"X-Crowdin-File-ID: 8153\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:5
 msgid "如何对 Tensor 进行操作"
-msgstr ""
+msgstr "How to operate Tensor"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:7
 msgid "这个文档将展示如何使用 :py:mod:`functional` 中的接口对已经存在的 Tensor 进行操作。"
-msgstr ""
+msgstr "This document will show how to use the interface in :py:mod:`functional` to operate on an existing Tensor."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:9
-msgid ""
-":ref:`reshaping-tensor` （例如 :py:func:`~.reshape`, :py:func:`~.flatten` 和 "
-":py:func:`~.transpose` ）"
-msgstr ""
+msgid ":ref:`reshaping-tensor` （例如 :py:func:`~.reshape`, :py:func:`~.flatten` 和 :py:func:`~.transpose` ）"
+msgstr ":ref:`reshaping-tensor` (for example: py:func:`~.reshape`, :py:func:`~.flatten` and :py:func:`~.transpose`)"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:10
-msgid ""
-":ref:`squeeze-and-unsqueeze` （使用 :py:func:`~.expand_dims` 增加维度，使用 "
-":py:func:`~.squeeze` 降低维度）"
-msgstr ""
+msgid ":ref:`squeeze-and-unsqueeze` （使用 :py:func:`~.expand_dims` 增加维度，使用 :py:func:`~.squeeze` 降低维度）"
+msgstr ":ref:`squeeze-and-unsqueeze` (use :py:func:`~.expand_dims` to increase the dimension, use :py:func:`~.squeeze` to decrease the dimension)"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:11
-msgid ""
-":ref:`tensor-broadcasting` （使用 :py:func:`~.broadcast_to` 按照规则对 Tensor "
-"进行扩充 ）"
-msgstr ""
+msgid ":ref:`tensor-broadcasting` （使用 :py:func:`~.broadcast_to` 按照规则对 Tensor 进行扩充 ）"
+msgstr ":ref:`tensor-broadcasting` (use :py:func:`~.broadcast_to` to expand Tensor according to the rules)"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:12
 msgid ":ref:`tensor-manipulation-miscs` （Tensor 的多变一与一变多等操作）"
-msgstr ""
+msgstr ":ref:`tensor-manipulation-miscs` (multiple-to-one and one-to-many operations of Tensor)"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:13
 msgid "更多 API 请直接参考 :ref:`manipulation` ."
-msgstr ""
+msgstr "For more APIs, please refer to :ref:`manipulation` directly."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:15
 msgid "这些操作的相同点是：没有基于 Tensor 的数值进行计算，往往改变的是 Tensor 的形状。"
-msgstr ""
+msgstr "The similarity of these operations is that：not calculated based on the value of Tensor, and what often changes is the shape of Tensor."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:19
 msgid "由于 :ref:`tensor-shape` 蕴含着太多核心的信息，因此我们操作 Tensor 时需要额外关注形状的变化；"
-msgstr ""
+msgstr "Since :ref:`tensor-shape` contains too much core information, we need to pay extra attention to shape changes when operating Tensor;"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:20
 msgid "一些对 Tensor 的操作需要指定沿着轴进行，如果不清楚轴的概念，请参考 :ref:`tensor-axes` 。"
-msgstr ""
+msgstr "Some operations on Tensor need to be specified along the axis. If you don’t know the concept of axis, please refer to :ref:`tensor-axes`."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:24
-msgid ""
-"使用 :py:func:`~.functional.copy` 或 :py:meth:`.Tensor.to` 可以得到位于指定 "
-":ref:`所在设备 <tensor-device>` 的 Tensor;"
-msgstr ""
+msgid "使用 :py:func:`~.functional.copy` 或 :py:meth:`.Tensor.to` 可以得到位于指定 :ref:`所在设备 <tensor-device>` 的 Tensor;"
+msgstr "Use: py: func: `~ .functional.copy` or: py: meth:` .Tensor.to` can be obtained at the specified :ref:`resides apparatus <tensor-device>'of the Tensor;"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:25
 msgid "使用 :py:meth:`.Tensor.astype` 可以改变 Tensor 的 :ref:`数据类型 <tensor-dtype>` ；"
-msgstr ""
+msgstr "Use: py: meth: `.Tensor.astype` Tensor can be changed to :ref:'data type <tensor-dtype>`;"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:26
-msgid ""
-"使用 :py:meth:`.Tensor.item`, :py:meth:`.Tensor.tolist`, "
-":py:meth:`.Tensor.numpy` 可以将 Tensor 转化成其它数据结构。"
-msgstr ""
+msgid "使用 :py:meth:`.Tensor.item`, :py:meth:`.Tensor.tolist`, :py:meth:`.Tensor.numpy` 可以将 Tensor 转化成其它数据结构。"
+msgstr "Use: py:meth:`.Tensor.item`, :py:meth:`.Tensor.tolist`, :py:meth:`.Tensor.numpy` to convert Tensor into other data structures."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:28
 msgid "更多内置方法请参考 :py:class:`Tensor` API 文档。"
-msgstr ""
+msgstr "For more built-in methods, please refer to the :py:class:`Tensor` API documentation."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:32
 msgid "MegEngine 中的计算都是非原地（inplace）进行的，返回新 Tensor, 但原始的 Tensor 并没有改变。"
-msgstr ""
+msgstr "The calculations in MegEngine are all performed inplace, returning a new Tensor, but the original Tensor has not changed."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:39
 msgid "可以发现调用 :py:meth:`.Tensor.reshape` 将得到 ``a`` 改变形状后的 Tensor, 但 ``a`` 自身没有变化："
-msgstr ""
+msgstr "It can be found that calling: py:meth:`.Tensor.reshape` will get the Tensor after ``a'' changed shape, but ``a'' itself has not changed："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:46
 msgid "一些操作的背后并没有实际产生数据拷贝，想要了解底层逻辑，可以参考 :ref:`tensor-layout` 。"
-msgstr ""
+msgstr "There is no actual data copy behind some operations. If you want to understand the underlying logic, you can refer to :ref:`tensor-layout`."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:51
 msgid "通过重塑来改变形状"
-msgstr ""
+msgstr "Change shape by reshaping"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:53
 msgid "重塑的特点是不会改变原 Tensor 中的数据，但会得到一个给定新形状的 Tensor."
-msgstr ""
+msgstr "The feature of reshaping is that it will not change the data in the original Tensor, but will get a Tensor of a given new shape."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:55
 msgid ":py:func:`~.reshape` 可能是最重要的对 Tensor 的操作，设我们现在有这样一个 Tensor:"
-msgstr ""
+msgstr ":py:func:`~.reshape` is probably the most important operation on Tensor, suppose we now have such a Tensor:"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:65
 msgid "通过 :py:func:`~.reshape` 我们可以在不改变 ``size`` 属性的情况下改变 ``shape``:"
-msgstr ""
+msgstr "By: py:func:`~.reshape` we can change the ``shape`` without changing the ``size`` attribute:"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:72
 msgid "``reshape`` 的目标形状中支持存在一个值为 ``-1`` 的轴，其真实值将根据 ``size`` 自动地推导出来："
-msgstr ""
+msgstr "The target shape of ``reshape`` supports the existence of an axis with a value of ``-1``, and its true value will be automatically derived from ``size`` to："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:87
-msgid ""
-":py:func:`~.flatten` 操作将对起点轴 ``start_axis`` 到终点轴 ``end_axis`` "
-"的子张量进行展平，等同于特定形式的 ``reshape``:"
-msgstr ""
+msgid ":py:func:`~.flatten` 操作将对起点轴 ``start_axis`` 到终点轴 ``end_axis`` 的子张量进行展平，等同于特定形式的 ``reshape``:"
+msgstr "The :py:func:`~.flatten` operation will flatten the sub-tensors from the start axis ``start_axis`` to the end axis ``end_axis``, which is equivalent to a specific form of ``reshape``:"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:96
 msgid "而 :py:func:`~.transpose` 将根据给定的模版 ``pattern`` 来改变形状："
-msgstr ""
+msgstr "And: py:func:`~.transpose` will change the shape according to the given template ``pattern``："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:105
 msgid "上面的例程中将原本排序为 ``(0, 1, 2)`` 的轴变为了 ``(1, 2, 0)`` 顺序。"
-msgstr ""
+msgstr "In the above example, the axes originally sorted as ``(0, 1, 2)'' are changed to ``(1, 2, 0)'' order."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:109
 msgid "更多使用细节说明请参考对应的 API 文档；"
-msgstr ""
+msgstr "For more detailed instructions, please refer to the corresponding API documentation;"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:110
 msgid "这类 API 在 :py:class:`Tensor` 中都提供了对应的内置方法实现 ——"
-msgstr ""
+msgstr "This type of API provides corresponding built-in method implementations in: py:class:`Tensor`-"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:111
-msgid ""
-":py:meth:`.Tensor.reshape` / :py:meth:`.Tensor.flatten` / "
-":py:meth:`.Tensor.transpose`"
-msgstr ""
+msgid ":py:meth:`.Tensor.reshape` / :py:meth:`.Tensor.flatten` / :py:meth:`.Tensor.transpose`"
+msgstr ":py:meth:`.Tensor.reshape` / :py:meth:`.Tensor.flatten` / :py:meth:`.Tensor.transpose`"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:116
 msgid "对 Tensor 进行升维和降维"
-msgstr ""
+msgstr "Upgrading and reducing Tensor dimensionality"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:118
-msgid ""
-"改变 Tensor 形状的另一个方法是增加它的维度，或者删除冗余的维度。 "
-"一些时候，我们用挤压（Squeeze）来称呼删除维度的操作，用解压（Unsqueeze）来称呼添加维度的操作。 显然，升维或者降维都不会改变一个 "
-"Tensor 中元素的个数，这与重塑 Tensor 的特点比较相似。"
-msgstr ""
+msgid "改变 Tensor 形状的另一个方法是增加它的维度，或者删除冗余的维度。 一些时候，我们用挤压（Squeeze）来称呼删除维度的操作，用解压（Unsqueeze）来称呼添加维度的操作。 显然，升维或者降维都不会改变一个 Tensor 中元素的个数，这与重塑 Tensor 的特点比较相似。"
+msgstr "Another way to change the shape of a Tensor is to increase its dimensions or remove redundant dimensions. Sometimes, we use Squeeze to refer to the operation of deleting a dimension, and Unsqueeze to refer to the operation of adding a dimension. Obviously, dimensionality increase or dimensionality reduction will not change the number of elements in a Tensor, which is similar to the characteristics of reshaping Tensor."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:122
 msgid "使用 :py:func:`~.expand_dims` 增加维度时，需要指定所在轴的位置："
-msgstr ""
+msgstr "Use: py:func:`~.expand_dims` to increase the dimension, you need to specify the position of the axis："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:134
-msgid ""
-"如上所示，对于一个 1 维 Tensor, 在 ``axis=0`` 的位置增加维度，则原 Tensor 中的元素将位于 ``axis=1`` "
-"维度； 在 ``axis=1`` 的位置增加维度，则原 Tensor 中的元素将位于 ``axis=0`` 维度。"
-msgstr ""
+msgid "如上所示，对于一个 1 维 Tensor, 在 ``axis=0`` 的位置增加维度，则原 Tensor 中的元素将位于 ``axis=1`` 维度； 在 ``axis=1`` 的位置增加维度，则原 Tensor 中的元素将位于 ``axis=0`` 维度。"
+msgstr "As shown above, for a 1-dimensional Tensor, increase the dimension at the position of ``axis=0``, then the elements in the original Tensor will be located at the dimension of ``axis=1``; at the position of ``axis=1`` Increase the dimension, and the elements in the original Tensor will be in the ``axis=0'' dimension."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:139
 msgid "虽然使用 :py:func:`~.reshape` 可以达到一样的效果："
-msgstr ""
+msgstr "Although the use of: py: func: `~ .reshape` can achieve the same effect："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:146
 msgid "但我们应当尽可能使用语义明确的接口。"
-msgstr ""
+msgstr "But we should use clear semantic interfaces as much as possible."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:149
 msgid "增加新的维度"
-msgstr ""
+msgstr "Add a new dimension"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:151
-msgid ""
-"增加维度的逻辑很简单，新 Tensor 从 ``axis=0`` 开始判断，如果该维度是 :py:func:`~.expand_dims` "
-"得到的，则该新增维度的轴长度为 1. 如果该维度并不在需要新增维度的位置上，则按照原 Tensor 的形状逐个维度进行填充。举例如下："
-msgstr ""
+msgid "增加维度的逻辑很简单，新 Tensor 从 ``axis=0`` 开始判断，如果该维度是 :py:func:`~.expand_dims` 得到的，则该新增维度的轴长度为 1. 如果该维度并不在需要新增维度的位置上，则按照原 Tensor 的形状逐个维度进行填充。举例如下："
+msgstr "The logic of adding dimension is very simple. The new Tensor starts from ``axis=0''. If the dimension is obtained by: py:func:`~.expand_dims`, the axis length of the added dimension is 1. If this The dimension is not in the position where the new dimension needs to be added, and it is filled dimension by dimension according to the shape of the original Tensor. Examples are as follows："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:159
-msgid ""
-"对于 2 维 Tensor ``a``, 我们想要在 ``axis=1`` 的位置添加一个维度。从 ``axis=0`` 开始排列新 "
-"Tensor, 由于 ``0`` 并不在增加维度的范围内， 因此新 Tensor 的 ``axis=0`` 维度将由 ``a`` 的第 0 "
-"维进行填充（即例子中长度为 2 的维度）； 接下来排列新 Tensor 中 ``axis=1`` 的位置，该位置是新增的维度，因此对应位置轴长度为"
-" 1. 新增维度后，原 Tensor 中后续的维度（这里是长度为 2 的维度）将直接接在当前新 Tensor 维度后面，最终得到形状 ``(2, "
-"1, 3)`` 的 Tensor."
-msgstr ""
+msgid "对于 2 维 Tensor ``a``, 我们想要在 ``axis=1`` 的位置添加一个维度。从 ``axis=0`` 开始排列新 Tensor, 由于 ``0`` 并不在增加维度的范围内， 因此新 Tensor 的 ``axis=0`` 维度将由 ``a`` 的第 0 维进行填充（即例子中长度为 2 的维度）； 接下来排列新 Tensor 中 ``axis=1`` 的位置，该位置是新增的维度，因此对应位置轴长度为 1. 新增维度后，原 Tensor 中后续的维度（这里是长度为 2 的维度）将直接接在当前新 Tensor 维度后面，最终得到形状 ``(2, 1, 3)`` 的 Tensor."
+msgstr "For the 2-dimensional Tensor ``a``, we want to add a dimension at the position of ``axis=1``. Arrange the new Tensor from ``axis=0''. Since ``0'' is not in the range of increasing dimensions, the ``axis=0'' dimension of the new Tensor will be performed by the 0th dimension of ``a`` Filling (that is, the dimension of length 2 in the example); Next, arrange the position of ``axis=1'' in the new Tensor. This position is a new dimension, so the corresponding position axis length is 1. After adding a dimension, the original The subsequent dimensions in the Tensor (here, the dimension of length 2) will be directly connected to the current new Tensor dimension, and finally a Tensor of shape ``(2, 1, 3)'' will be obtained."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:164
 msgid ":py:func:`~.expand_dims` 还支持一次性新增多个维度，规则与上面描述的一致："
-msgstr ""
+msgstr ":py:func:`~.expand_dims` also supports adding multiple dimensions at once, and the rules are the same as those described above.："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:178
 msgid "使用 :py:func:`~.expand_dims` 新增维度时要注意范围，不能超出原 Tensor 的维数 ``ndim`` 与新增维数之和："
-msgstr ""
+msgstr "Use: py:func:`~.expand_dims` to pay attention to the range when adding dimensions, and it should not exceed the sum of the original Tensor's dimension ``ndim'' and the newly added dimension："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:185
-msgid ""
-"在上面的例子中，原 Tensor 维数 ``ndim`` 为 2, 如果新增一个维度，最终新 Tensor 的维数应该是 3. 新增的轴应该满足 "
-"``0 <= axis <= 2``, 上面给出的 3 已经超出了所能表达的维度范围。"
-msgstr ""
+msgid "在上面的例子中，原 Tensor 维数 ``ndim`` 为 2, 如果新增一个维度，最终新 Tensor 的维数应该是 3. 新增的轴应该满足 ``0 <= axis <= 2``, 上面给出的 3 已经超出了所能表达的维度范围。"
+msgstr "In the above example, the original Tensor dimension ``ndim'' is 2, if a new dimension is added, the final dimension of the new Tensor should be 3. The newly added axis should satisfy ``0 <= axis <= 2` `, The 3 given above has exceeded the range of dimensions that can be expressed."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:189
 msgid "去除冗余的维度"
-msgstr ""
+msgstr "Remove redundant dimensions"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:191
-msgid ""
-"与 :py:func:`~.expand_dims` 相反的操作是 :py:func:`~.squeeze`, 能够去掉 Tensor 中轴长度为"
-" 1 的维度："
-msgstr ""
+msgid "与 :py:func:`~.expand_dims` 相反的操作是 :py:func:`~.squeeze`, 能够去掉 Tensor 中轴长度为 1 的维度："
+msgstr "The opposite operation to: py:func:`~.expand_dims` is: py:func:`~.squeeze`, which can remove the dimension："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:198
 msgid "默认 :py:func:`~.squeeze` 将移除掉所有轴长度为 1 的维度，也可以通过 ``axis`` 指定性移除："
-msgstr ""
+msgstr "Default: py: func: `~ .squeeze` remove off axis length of all of the dimension 1 may be designated by` `axis`` of removing："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:207
 msgid "同样地，:py:func:`~.squeeze` 支持一次性去除多个指定的维度："
-msgstr ""
+msgstr "Similarly, :py:func:`~.squeeze` supports removing multiple specified dimensions at once："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:214
 msgid "使用 :py:func:`~.squeeze` 新增维度时要注意轴长度，只能去掉轴长度为 1 的冗余维度。"
-msgstr ""
+msgstr "Use: py:func:`~.squeeze` to pay attention to the axis length when adding dimensions. Only the redundant dimension with the axis length of 1 can be removed."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:219
 msgid "对 Tensor 进行广播"
-msgstr ""
+msgstr "Broadcast to Tensor"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:223
-msgid ""
-"MegEngine 的广播机制与 NumPy `Broadcasting "
-"<https://numpy.org/doc/stable/user/basics.broadcasting.html>`_ "
-"一致，这里使用一样的代码与配图；"
-msgstr ""
+msgid "MegEngine 的广播机制与 NumPy `Broadcasting <https://numpy.org/doc/stable/user/basics.broadcasting.html>`_ 一致，这里使用一样的代码与配图；"
+msgstr "The broadcasting mechanism of MegEngine is <https://numpy.org/doc/stable/user/basics.broadcasting.html>`_, and the same code and pictures are used here;"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:224
 msgid "在进行 :ref:`element-wise-operations` 时，会尝试进行广播使得输入 Tensor 的形状一致；"
-msgstr ""
+msgstr "When doing :ref:`element-wise-operations`, it will try to broadcast so that the shape of the input Tensor is consistent;"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:225
 msgid "我们可以使用 :py:func:`~.broadcast_to` 将 Tensor 广播至指定的形状。"
-msgstr ""
+msgstr "We can use :py:func:`~.broadcast_to` to broadcast the Tensor to the specified shape."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:229
-msgid ""
-"本小节示例图形来自 NumPy 文档，生成它们的源代码参考自： `astroML "
-"<http://www.astroml.org/book_figures/appendix/fig_broadcast_visual.html>`_"
-msgstr ""
+msgid "本小节示例图形来自 NumPy 文档，生成它们的源代码参考自： `astroML <http://www.astroml.org/book_figures/appendix/fig_broadcast_visual.html>`_"
+msgstr "The sample graphics in this section are from the NumPy documentation, and the source code to generate them is referenced from： `astroML <http://www.astroml.org/book_figures/appendix/fig_broadcast_visual.html>`_"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:231
 msgid "类似的扩充 Tensor 形状的 API 有：:py:func:`~.repeat` / :py:func:`~.tile`"
-msgstr ""
+msgstr "Similar APIs for expanding the shape of Tensor are：:py:func:`~.repeat` / :py:func:`~.tile`"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:233
-msgid ""
-"术语 “广播” 描述了 MegEngine 在算术运算期间如何处理具有不同形状的 Tensor 对象。 出于某些原因，在运算时需要让较小的 "
-"Tensor 基于较大的 Tensor 进行广播，使得它们具有兼容的形状。 "
-"广播机制可以避免制作不必要的数据拷贝，使得一些算法的实现变得更加高效（参考 :ref:`tensor-layout` ）。"
-msgstr ""
+msgid "术语 “广播” 描述了 MegEngine 在算术运算期间如何处理具有不同形状的 Tensor 对象。 出于某些原因，在运算时需要让较小的 Tensor 基于较大的 Tensor 进行广播，使得它们具有兼容的形状。 广播机制可以避免制作不必要的数据拷贝，使得一些算法的实现变得更加高效（参考 :ref:`tensor-layout` ）。"
+msgstr "The term \"broadcast\" describes how MegEngine handles Tensor objects with different shapes during arithmetic operations. For some reasons, the smaller Tensor needs to be broadcast based on the larger Tensor during operation, so that they have compatible shapes. The broadcast mechanism can avoid making unnecessary data copies, making the implementation of some algorithms more efficient (refer to :ref:`tensor-layout`)."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:237
 msgid "Tensor 之间经常进行逐个元素的运算，在最简单的情况下，两个 Tensor 具有完全相同的形状："
-msgstr ""
+msgstr "Often between Tensor element-wise operation, in the simplest case, two exactly the same shape Tensor："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:244
 msgid "当两个 Tensor 的形状不一致，但满足广播的条件时，则会先广播至一样的形状，再进行运算。"
-msgstr ""
+msgstr "When the shapes of two Tensors are inconsistent, but meet the broadcast conditions, they will be broadcast to the same shape first, and then the operation will be performed."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:246
 msgid "最简单的广播示例发生在将 Tensor 和标量的元素级别运算中："
-msgstr ""
+msgstr "The simplest example of a broadcast occurs in a Tensor and scalar calculation element level："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:253
-msgid ""
-"结果等同于前面的例子，其中 ``b`` 是一个标量。我们可以想象成，在算术运算期间， 标量 ``b`` 被 *拉伸（Stretch）*  "
-"成一个形状与 ``a`` 相同的 Tensor, 此时 ``b`` 中的新元素只是原始标量元素的副本。 "
-"但这里的拉伸只是概念上的类比，MegEngine 的 Tensor 内部存在着一些机制， 可以统一使用原始的标量值，而无需发生实际的数据拷贝； "
-"这些机制也使得广播行为更具有内存和计算效率。"
-msgstr ""
+msgid "结果等同于前面的例子，其中 ``b`` 是一个标量。我们可以想象成，在算术运算期间， 标量 ``b`` 被 *拉伸（Stretch）*  成一个形状与 ``a`` 相同的 Tensor, 此时 ``b`` 中的新元素只是原始标量元素的副本。 但这里的拉伸只是概念上的类比，MegEngine 的 Tensor 内部存在着一些机制， 可以统一使用原始的标量值，而无需发生实际的数据拷贝； 这些机制也使得广播行为更具有内存和计算效率。"
+msgstr "The result is equivalent to the previous example, where ``b`` is a scalar. We can imagine that during arithmetic operations, the scalar ``b`` is *stretched (Stretch)* into a Tensor with the same shape as ``a``, at this time the new element in ``b`` is just the original A copy of the scalar element. But the stretching here is just a conceptual analogy. There are some mechanisms inside MegEngine's Tensor that can use the original scalar value uniformly without actual data copying; these mechanisms also make the broadcast behavior more memory and computational efficiency."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:263
 msgid "在最简单的广播示例中，标量 ``b`` 被拉伸为与 ``a`` 形状相同的数组，因此这些形状兼容逐个元素的乘法。"
-msgstr ""
+msgstr "In the simplest broadcast example, the scalar ``b`` is stretched into an array with the same shape as ``a``, so these shapes are compatible with element-by-element multiplication."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:265
 msgid "我们可以通过使用 :py:func:`~.broadcast_to` 来人为地对 Tensor 进行广播，同样以 ``b`` 为例："
-msgstr ""
+msgstr "We can broadcast Tensor artificially by using: py:func:`~.broadcast_to`, and also take ``b`` as an example："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:274
-msgid ""
-"MegEngine 中要求 :py:mod:`functional` API 输入数据为 Tensor, 因此这里的传给 "
-"``broadcast_to`` 的标量实际上是一个 0 维 Tensor. 在使用 ``*`` "
-"等算术运算时没有这样的限制，因此无需将输入提前转化为 Tensor."
-msgstr ""
+msgid "MegEngine 中要求 :py:mod:`functional` API 输入数据为 Tensor, 因此这里的传给 ``broadcast_to`` 的标量实际上是一个 0 维 Tensor. 在使用 ``*`` 等算术运算时没有这样的限制，因此无需将输入提前转化为 Tensor."
+msgstr "MegEngine requires: py:mod:`functional` API input data is Tensor, so the scalar passed to ``broadcast_to'' here is actually a 0-dimensional Tensor. This is not the case when using ``*'' and other arithmetic operations Therefore, there is no need to convert the input to Tensor in advance."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:281
 msgid "广播机制与规则"
-msgstr ""
+msgstr "Broadcasting mechanism and rules"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:285
-msgid ""
-"在对两个 Tensor 进行运算时，MegEngine 从它们的形状最右边的元素开始逐个向左比较。 "
-"当两个维度兼容时（指对应轴长度相等，或者其中一个值为 1），则能够进行相应的运算。"
-msgstr ""
+msgid "在对两个 Tensor 进行运算时，MegEngine 从它们的形状最右边的元素开始逐个向左比较。 当两个维度兼容时（指对应轴长度相等，或者其中一个值为 1），则能够进行相应的运算。"
+msgstr "When performing operations on two Tensors, MegEngine starts from the rightmost elements of their shapes and compares them to the left one by one. When the two dimensions are compatible (meaning that the length of the corresponding axis is equal, or one of the values is 1), the corresponding operation can be performed."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:288
 msgid "如果无法满足这些条件，则会抛出异常，表明 Tensor 之间的形状不兼容："
-msgstr ""
+msgstr "If you can not meet these conditions, it will throw an exception, show shapes between the Tensor not compatible："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:296
 msgid "广播规则并没有要求进行运算的 Tensor 具有相同的维数 ``ndim``."
-msgstr ""
+msgstr "The broadcasting rules do not require that the tensors that are operated on have the same dimension ``ndim''."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:298
-msgid ""
-"例如，如果你有一个 256 x 256 x 3 的 RGB 值 Tensor, 并且想用不同的值缩放图像中的每种颜色，则可以将图像乘以具有 3 "
-"个值的一维 Tensor."
-msgstr ""
+msgid "例如，如果你有一个 256 x 256 x 3 的 RGB 值 Tensor, 并且想用不同的值缩放图像中的每种颜色，则可以将图像乘以具有 3 个值的一维 Tensor."
+msgstr "For example, if you have a 256 x 256 x 3 RGB value Tensor, and you want to scale each color in the image with a different value, you can multiply the image by a one-dimensional Tensor with 3 values."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:303
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:304
 #: ../../source/user-guide/model-development/functional/manipulation.rst:314
 #: ../../source/user-guide/model-development/functional/manipulation.rst:336
 msgid "(3d array)"
-msgstr ""
+msgstr "(3d array)"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:305
 #: ../../source/user-guide/model-development/functional/manipulation.rst:306
 #: ../../source/user-guide/model-development/functional/manipulation.rst:315
 #: ../../source/user-guide/model-development/functional/manipulation.rst:316
 msgid "256 x"
-msgstr ""
+msgstr "256 x"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:307
 #: ../../source/user-guide/model-development/functional/manipulation.rst:312
 #: ../../source/user-guide/model-development/functional/manipulation.rst:317
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:308
 msgid "Scale"
-msgstr ""
+msgstr "Scale"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:309
 msgid "(1d array)"
-msgstr ""
+msgstr "(1d array)"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:313
 #: ../../source/user-guide/model-development/functional/manipulation.rst:341
 msgid "Result"
-msgstr ""
+msgstr "Result"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:325
 msgid "在下面这个例子中，Tensor ``a`` 和 ``b`` 都具有长度为 1 的轴，这些轴在广播操作中扩展为更大的尺寸。"
-msgstr ""
+msgstr "In the following example, Tensor ``a`` and ``b`` both have axes of length 1, and these axes are expanded to a larger size in the broadcast operation."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:329
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:330
 #: ../../source/user-guide/model-development/functional/manipulation.rst:342
 msgid "(4d array)"
-msgstr ""
+msgstr "(4d array)"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:331
 #: ../../source/user-guide/model-development/functional/manipulation.rst:343
 msgid "8 x"
-msgstr ""
+msgstr "8 x"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:332
 #: ../../source/user-guide/model-development/functional/manipulation.rst:339
 msgid "1 x"
-msgstr ""
+msgstr "1 x"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:333
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:334
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:335
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:338
 #: ../../source/user-guide/model-development/functional/manipulation.rst:344
 msgid "7 x"
-msgstr ""
+msgstr "7 x"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:340
 #: ../../source/user-guide/model-development/functional/manipulation.rst:346
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:345
 msgid "6 x"
-msgstr ""
+msgstr "6 x"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:355
 msgid "更多广播可视化例子"
-msgstr ""
+msgstr "More broadcast visualization examples"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:357
 msgid "下面这个例子展示了 2 维 Tensor 和 1 维 Tensor 之间的加法运算："
-msgstr ""
+msgstr "The following example shows the addition operation between two-dimensional and one-dimensional Tensor Tensor："
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:370
 msgid "如下图所示，``b`` 经过广播后将添加到 ``a`` 的每一行。"
-msgstr ""
+msgstr "As shown in the figure below, ``b`` will be added to each line of ``a`` after broadcasting."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:375
 msgid "如果 1 维 Tensor 元素的数量与 2 维 Tensor 的列数相匹配，则它们相加会导致广播。"
-msgstr ""
+msgstr "If the number of elements of the 1-dimensional Tensor matches the number of columns of the 2-dimensional Tensor, their addition will result in broadcasting."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:380
 msgid "如果两个 Tensor 的尾部维度不兼容时，广播失败，无法进行元素级别的运算。"
-msgstr ""
+msgstr "If the tail dimensions of the two Tensors are not compatible, the broadcast fails and element-level operations cannot be performed."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:385
 msgid "对 Tensor 进行拼接、切分"
-msgstr ""
+msgstr "Splicing and segmenting Tensor"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:387
 msgid "另一类常见的 Tensor 操作是将多个 Tensor 拼成一个 Tensor, 或者是将一个 Tensor 拆成多个 Tensor."
-msgstr ""
+msgstr "Another common type of Tensor operation is to combine multiple Tensors into one Tensor, or to split one Tensor into multiple Tensors."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:390
 msgid ":py:func:`~.concat`"
-msgstr ""
+msgstr ":py:func:`~.concat`"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:390
 msgid "沿着已经存在的轴连接 Tensor 序列。"
-msgstr ""
+msgstr "Connect the Tensor sequence along the existing axis."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:393
 msgid ":py:func:`~.stack`"
-msgstr ""
+msgstr ":py:func:`~.stack`"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:393
 msgid "沿着新的轴连接 Tensor 序列。"
-msgstr ""
+msgstr "Connect the Tensor sequence along the new axis."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:396
 msgid ":py:func:`~.split`"
-msgstr ""
+msgstr ":py:func:`~.split`"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:396
 msgid "将 Tensor 切分成多个相同大小的子 Tensor."
-msgstr ""
+msgstr "Divide the Tensor into multiple sub-Tensors of the same size."
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:398
 msgid "更多的接口和详细使用说明请参考 :ref:`manipulation` API 文档。"
-msgstr ""
+msgstr "For more interfaces and detailed instructions, please refer to :ref:`manipulation` API documentation."
 
 #~ msgid "Tensor 操作"
 #~ msgstr ""
