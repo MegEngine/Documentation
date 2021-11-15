@@ -13,7 +13,7 @@
 .. code-block:: shell
 
    Documentation
-   ├── source                
+   ├── source
    ├── locales               # Sphinx 多语言支持，内部结构和 source 高度对齐
    │   ├── zh-CN             # 中文：主要需要翻译 API 的 Docstring 部分
    │   └── en                # 英文：需要翻译除 API Docstring 外的全部内容
@@ -22,7 +22,7 @@
 基本原理
 --------
 
-MegEngine 文档使用 Sphinx 官方推荐的 
+MegEngine 文档使用 Sphinx 官方推荐的
 `国际化 <https://www.sphinx-doc.org/en/master/usage/advanced/intl.html>`_ 方式实现多语言支持。
 
 整个翻译内容的生成流程如下（ **翻译人员通常只需要关注第 4 步** ）：
@@ -106,18 +106,18 @@ Crowdin 不可用时的做法
 
 当遇到 Crowdin 平台不可用时，我们可以使用最原始的方式来直接维护 ``.po`` 文件。
 
-假设你发现 `reference/api/megengine.functional.add.html 
+假设你发现 `reference/api/megengine.functional.add.html
 <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.functional.add.html>`_
-对应的 API Docstring 部分内容翻译有误/没有翻译，标准的处理流程应该如下： 
+对应的 API Docstring 部分内容翻译有误/没有翻译，标准的处理流程应该如下：
 
 1. 判断 ``.po`` 文件位置（在这个例子中，属于 API Docstring 英文翻译中文的情况）：
-   `locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.add.po 
+   `locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.add.po
    <https://github.com/MegEngine/Documentation/blob/main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.add.po>`_
 
 2. 根据 ``msgstr`` 找到对应位置，根据 ``msgid`` 原文修改 ``msgstr`` 为正确内容；
 3. 按照 Git 工作流向 Documentation 库发起 Pull Request.
 
-更多细节请参考 :ref:`contribute-to-docs` 和 :ref:`commit-message` 。
+更多细节请参考 :ref:`docs` 和 :ref:`commit-message` 。
 
 .. note::
 
@@ -166,7 +166,7 @@ Crowdin 不可用时的做法
 
 * 中英文之间有且只能有一个空格作为分隔；
 * 优先使用全角标点符号（包括逗号、句号、冒号、分号和问号）；
-* 遇到特定英文（要求不译）结束，则后跟使用英文标点符号 —— 
+* 遇到特定英文（要求不译）结束，则后跟使用英文标点符号 ——
 
   * 绝大部分软件名字都是不翻译的，直接使用英文即可；
   * 项目或组织名称，一般也不进行翻译；

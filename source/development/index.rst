@@ -18,7 +18,7 @@
    debugging-tools
    benchmark
    governance
-   contribute-to-docs/index
+   docs/index
 
 .. admonition:: 开发者指南的定位
    :class: note
@@ -60,7 +60,7 @@
 .. note::
 
    * 不同的材料中通常会进行相互引用，以满足人们对不同类型材料的阅读需求，也方便跳转；
-   * 如果说用户指南能帮助一个人成为 Effective MegEnginer, 
+   * 如果说用户指南能帮助一个人成为 Effective MegEnginer,
      那么开发者指南的目的在于帮助整个社区了解 MegEngine Internals, 锻炼内功，拓展视野。
 
 For developers
@@ -87,4 +87,4 @@ For developers
 ----------------
 *“滴水穿石非一日之功，冰冻三尺非一日之寒。”*
 
-文档需要投入许多时间和精力维护，欢迎你加入文档建设，参考 :ref:`contribute-to-docs` 。
+文档需要投入许多时间和精力维护，欢迎你加入文档建设，参考 :ref:`docs` 。
