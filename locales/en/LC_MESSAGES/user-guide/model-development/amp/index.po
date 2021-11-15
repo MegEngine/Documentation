@@ -1,99 +1,84 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.5\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-17 20:15+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/amp/index.po\n"
+"X-Crowdin-File-ID: 8187\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/model-development/amp/index.rst:5
 msgid "自动混合精度（AMP）"
-msgstr ""
+msgstr "Automatic mixing accuracy (AMP)"
 
 #: ../../source/user-guide/model-development/amp/index.rst:7
-msgid ""
-"混合精度（Mix Precision）训练是指在训练时，对网络不同的部分采用不同的数值精度，对追求速度的算子（比如 "
-"conv、matmul）可以用较低精度（比如 float16）从而获得明显的性能提升，而对其它更看重精度的算子（比如 "
-"log、softmax）则保留较高的精度（比如 float32）。"
-msgstr ""
+msgid "混合精度（Mix Precision）训练是指在训练时，对网络不同的部分采用不同的数值精度，对追求速度的算子（比如 conv、matmul）可以用较低精度（比如 float16）从而获得明显的性能提升，而对其它更看重精度的算子（比如 log、softmax）则保留较高的精度（比如 float32）。"
+msgstr "Mixed precision (Mix Precision) training refers to the use of different numerical precisions for different parts of the network during training. For operators that pursue speed (such as conv, matmul), lower precision (such as float16) can be used to obtain obvious performance. Improve, and retain higher precision for other operators that value more precision (such as log, softmax) (such as float32)."
 
 #: ../../source/user-guide/model-development/amp/index.rst:9
-msgid ""
-"得益于 NVIDIA TensorCore 的存在（需要 Volta, Turing, Ampere 架构 GPU），对于 conv、matmul"
-" 占比较多的网络，混合精度训练一般能使网络整体的训练速度有较大的提升（2-3X)。"
-msgstr ""
+msgid "得益于 NVIDIA TensorCore 的存在（需要 Volta, Turing, Ampere 架构 GPU），对于 conv、matmul 占比较多的网络，混合精度训练一般能使网络整体的训练速度有较大的提升（2-3X)。"
+msgstr "Thanks to the existence of NVIDIA TensorCore (requires Volta, Turing, Ampere architecture GPU), for networks where conv and matmul account for more, mixed-precision training generally can greatly improve the overall training speed of the network (2-3X)."
 
 #: ../../source/user-guide/model-development/amp/index.rst:12
 msgid "接口介绍"
-msgstr ""
+msgstr "Interface introduction"
 
 #: ../../source/user-guide/model-development/amp/index.rst:14
 msgid "在 MegEngine 中，使用 :class:`~.amp.autocast` 接口可以实现对网络中相关 op 数据类型的自动转换："
-msgstr ""
+msgstr "In MegEngine using :class:`~ .amp.autocast` interface may be automatically converted to network-related data types op："
 
 #: ../../source/user-guide/model-development/amp/index.rst:29
 msgid "上面样例中是把 :class:`~.amp.autocast` 作为 context manager 使用，也可以使用装饰器的写法："
-msgstr ""
+msgstr "In the above example, :class:`~.amp.autocast` is used as the context manager. You can also use the decorator："
 
 #: ../../source/user-guide/model-development/amp/index.rst:41
 msgid "或者使用单独的开关："
-msgstr ""
+msgstr "Or use a separate switch："
 
 #: ../../source/user-guide/model-development/amp/index.rst:51
-msgid ""
-"在开启 autocast 后，网络中间结果的数值类型会变成 float16，其对应的梯度自然也是 float16。而由于 float16 "
-"的数值范围比 float32 要小，所以如果遇到特别小的数（比如 loss、gradient），float16 "
-"就难以精确表达，这时候一般需要进行梯度放缩（Gradient Scaling）。做法是对网络的 loss "
-"进行放大，从而使反向传播时网络中间结果对应的梯度也得到相同的放大，减少精度的损失，而梯度反传到参数时，仍会是 float32 "
-"的类型，在等比缩小之后，并不会影响参数的更新。"
-msgstr ""
+msgid "在开启 autocast 后，网络中间结果的数值类型会变成 float16，其对应的梯度自然也是 float16。而由于 float16 的数值范围比 float32 要小，所以如果遇到特别小的数（比如 loss、gradient），float16 就难以精确表达，这时候一般需要进行梯度放缩（Gradient Scaling）。做法是对网络的 loss 进行放大，从而使反向传播时网络中间结果对应的梯度也得到相同的放大，减少精度的损失，而梯度反传到参数时，仍会是 float32 的类型，在等比缩小之后，并不会影响参数的更新。"
+msgstr "After autocast is turned on, the numerical type of the intermediate result of the network will become float16, and the corresponding gradient will naturally also be float16. Since the value range of float16 is smaller than that of float32, it is difficult to accurately express float16 if it encounters particularly small numbers (such as loss, gradient). At this time, gradient scaling (Gradient Scaling) is generally required. The method is to amplify the loss of the network, so that the gradient corresponding to the intermediate result of the network during backpropagation is also amplified in the same way, reducing the loss of accuracy, and when the gradient is transmitted back to the parameter, it will still be of the type of float32. After shrinking, it will not affect the update of the parameters."
 
 #: ../../source/user-guide/model-development/amp/index.rst:53
 msgid "在 MegEngine 中使用梯度放缩，可以通过 :class:`~.amp.GradScaler` 接口进行。"
-msgstr ""
+msgstr "Using gradient scaling in MegEngine can be done through the :class:`~.amp.GradScaler` interface."
 
 #: ../../source/user-guide/model-development/amp/index.rst:79
-msgid ""
-"上面的样例中，通过替换 ``gm.backward(loss)`` 为 ``scaler.backward(gm, loss)``，可以实现对 "
-"loss、gradient 的自动放缩，实际上包含三个步骤："
-msgstr ""
+msgid "上面的样例中，通过替换 ``gm.backward(loss)`` 为 ``scaler.backward(gm, loss)``，可以实现对 loss、gradient 的自动放缩，实际上包含三个步骤："
+msgstr "In the above example, by replacing ``gm.backward(loss)'' with ``scaler.backward(gm, loss)'', automatic scaling of loss and gradient can be realized, which actually involves three steps:："
 
 #: ../../source/user-guide/model-development/amp/index.rst:81
-msgid ""
-"修改 :meth:`.GradManager.backward` 的 ``dy`` 参数，使从 loss 反传的梯度都乘以一个常数 "
-"``scale_factor``；"
-msgstr ""
+msgid "修改 :meth:`.GradManager.backward` 的 ``dy`` 参数，使从 loss 反传的梯度都乘以一个常数 ``scale_factor``；"
+msgstr "Modify :meth:`.GradManager.backward`, so that the gradient returned from loss is multiplied by a constant ``scale_factor``;"
 
 #: ../../source/user-guide/model-development/amp/index.rst:82
-msgid ""
-"调用 :meth:`.GradScaler.unscale` 对 :meth:`.GradManager.attached_tensors` "
-"的梯度进行修改，乘以 ``scale_factor`` 的倒数；"
-msgstr ""
+msgid "调用 :meth:`.GradScaler.unscale` 对 :meth:`.GradManager.attached_tensors` 的梯度进行修改，乘以 ``scale_factor`` 的倒数；"
+msgstr "Call :meth:`.GradScaler.unscale` to :meth:`.GradManager.attached_tensors` and multiply it by the reciprocal of ``scale_factor``;"
 
 #: ../../source/user-guide/model-development/amp/index.rst:83
 msgid "调用 :meth:`.GradScaler.update` ，更新内部统计量，以及视情况更新 ``scale_factor`` 。"
-msgstr ""
+msgstr "Call :meth:`.GradScaler.update` to update internal statistics and update ``scale_factor`` as appropriate."
 
 #: ../../source/user-guide/model-development/amp/index.rst:85
 msgid "所以如果需要更加精细的操作，比如累积多个 iter 的梯度，那么可以使用以下等价形式："
-msgstr ""
+msgstr "So if you need more refined operations, such as accumulating multiple iter gradients, you can use the following equivalent form："
 
 #: ../../source/user-guide/model-development/amp/index.rst:103
 msgid "我们可以形象地把上面两种方式分别称为自动挡和手动挡。"
-msgstr ""
+msgstr "We can vividly refer to the above two methods as automatic transmission and manual transmission respectively."
 
 #: ../../source/user-guide/model-development/amp/index.rst:105
 msgid "通过以上接口，就可以在无需修改模型代码的条件下，只修改训练代码实现混合精度训练，大幅提升网络的训练速度了。"
-msgstr ""
+msgstr "Through the above interface, it is possible to modify only the training code to achieve mixed-precision training without modifying the model code, which greatly improves the training speed of the network."
 

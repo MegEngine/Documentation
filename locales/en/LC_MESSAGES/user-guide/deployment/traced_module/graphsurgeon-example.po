@@ -1,98 +1,92 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:50\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/traced_module/graphsurgeon-example.po\n"
+"X-Crowdin-File-ID: 8201\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:5
 msgid "图手术 Example"
-msgstr ""
+msgstr "Figure Surgery Example"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:8
 msgid "为模型添加前后处理"
-msgstr ""
+msgstr "Add pre- and post-processing to the model"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:10
 msgid "TracedModule 可以被反复的 trace，因此在加前后处理时，推荐以新写一个 Module 的形式给模型加前后处理。"
-msgstr ""
+msgstr "TracedModule can be traced repeatedly, so when adding pre- and post-processing, it is recommended to add pre- and post-processing to the model in the form of a new module."
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:12
 msgid "在 Module 里加前后处理"
-msgstr ""
+msgstr "Pre- and post-processing in Module Riga"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:73
 msgid "当然也可以用图手术的方式添加前后处理，最终效果是一样的。"
-msgstr ""
+msgstr "Of course, it is also possible to add pre- and post-processing by means of graphic surgery, and the final effect is the same."
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:75
 msgid "图手术加前后处理"
-msgstr ""
+msgstr "Figure surgery plus pre- and post-treatment"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:137
 msgid "把一些常量吸收到卷积里"
-msgstr ""
+msgstr "Absorb some constants into the convolution"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:139
-msgid ""
-"对于一些基于 anchor 的检测算法，经常会在卷积的输出后，对卷积结果乘 ``stride`` 或除 "
-"``anchor_size``，在推理部署时，可以将这些常量吸收到卷积里，基于 TracedModule 可以较容易的实现这些转换, "
-"如下面的例子。"
-msgstr ""
+msgid "对于一些基于 anchor 的检测算法，经常会在卷积的输出后，对卷积结果乘 ``stride`` 或除 ``anchor_size``，在推理部署时，可以将这些常量吸收到卷积里，基于 TracedModule 可以较容易的实现这些转换, 如下面的例子。"
+msgstr "For some anchor-based detection algorithms, after the output of the convolution, the convolution result is often multiplied by ``stride'' or divided by ``anchor_size''. These constants can be absorbed into the convolution during inference deployment. These conversions can be easily implemented based on TracedModule, as shown in the following example."
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:141
 msgid "吸常量"
-msgstr ""
+msgstr "Suction constant"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:207
 msgid "将一些 OP 转换为 fp16"
-msgstr ""
+msgstr "Convert some OP to fp16"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:209
 msgid "对于一些计算量特别大的全连接层，会占用较多的存储资源，可以通过将其转换为 fp16 计算减少其占用的资源, 如下面的例子。"
-msgstr ""
+msgstr "For some fully connected layers with a particularly large amount of calculation, they will take up more storage resources. You can reduce the resources occupied by converting them to fp16 calculations, as shown in the following example."
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:211
 msgid "转 fp16"
-msgstr ""
+msgstr "To fp16"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:281
 msgid "通过 InternalGraph  确定数据流向"
-msgstr ""
+msgstr "Determine data flow through InternalGraph"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:283
-msgid ""
-"在量化训练时，常常会对 concat 的输入做某些约束，通过 TracedModule 可以轻易的找到这些 concat 的输入是来自于哪个内置的"
-" function 或 Module 的输出，如下面的例子。"
-msgstr ""
+msgid "在量化训练时，常常会对 concat 的输入做某些约束，通过 TracedModule 可以轻易的找到这些 concat 的输入是来自于哪个内置的 function 或 Module 的输出，如下面的例子。"
+msgstr "In quantitative training, certain constraints are often imposed on the input of concat. You can easily find out which built-in function or module output the input of concat comes from through TracedModule, as shown in the following example."
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:285
 msgid "find inputs"
-msgstr ""
+msgstr "find inputs"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:334
 msgid "Conv 和 BN 融合"
-msgstr ""
+msgstr "Conv and BN fusion"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:336
-msgid ""
-"在 推理 或 量化训练 时，常常需要将 Conv 和 Bn 融合到一起，基于 TracedModule 的 Graph 可以找到满足融合条件的 "
-"Conv 和 Bn，并以图手术的方式将其融合，如下面的例子。"
-msgstr ""
+msgid "在 推理 或 量化训练 时，常常需要将 Conv 和 Bn 融合到一起，基于 TracedModule 的 Graph 可以找到满足融合条件的 Conv 和 Bn，并以图手术的方式将其融合，如下面的例子。"
+msgstr "In reasoning or quantitative training, it is often necessary to fuse Conv and Bn together. Graph based on TracedModule can find Conv and Bn that meet the fusion conditions, and fuse them in a graph operation, as shown in the following example."
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:338
 msgid "fuse bn"
-msgstr ""
+msgstr "fuse bn"
 

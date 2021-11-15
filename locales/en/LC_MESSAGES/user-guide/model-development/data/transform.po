@@ -1,176 +1,153 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/data/transform.po\n"
+"X-Crowdin-File-ID: 8163\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/model-development/data/transform.rst:5
 msgid "使用 Transform 定义数据变换"
-msgstr ""
+msgstr "Use Transform to define data transformation"
 
 #: ../../source/user-guide/model-development/data/transform.rst:8
 msgid "对输入数据进行变换（Transformation）是十分常见的操作，尤其是在计算机视觉领域。"
-msgstr ""
+msgstr "Transformation of input data is a very common operation, especially in the field of computer vision."
 
 #: ../../source/user-guide/model-development/data/transform.rst:10
-msgid ""
-"在 :py:mod:`megengine.data.transform` 中提供的各种数据变换都是基于 "
-":py:class:`~.Transform` 抽象类实现的，其中："
-msgstr ""
+msgid "在 :py:mod:`megengine.data.transform` 中提供的各种数据变换都是基于 :py:class:`~.Transform` 抽象类实现的，其中："
+msgstr "The various data transformations provided in: py:mod:`megengine.data.transform` are implemented based on the abstract class: py:class:`~.Transform`, of which："
 
 #: ../../source/user-guide/model-development/data/transform.rst:12
-msgid ""
-"``apply`` 抽象方法可用于单个的数据样本， **需要在子类中实现** （ :ref:`下面有举例 <custom-transform-"
-"guide>` ）；"
-msgstr ""
+msgid "``apply`` 抽象方法可用于单个的数据样本， **需要在子类中实现** （ :ref:`下面有举例 <custom-transform-guide>` ）；"
+msgstr "`` apply`` method for a single abstract data samples, the need to achieve ** ** subclasses ( :ref:`Examples below <custom-transform-guide>');"
 
 #: ../../source/user-guide/model-development/data/transform.rst:13
 msgid "各种变换操作可以通过 :py:class:`~.Compose` 进行组合，这样使用起来更加方便。"
-msgstr ""
+msgstr "Various transformation operations can be combined by :py:class:`~.Compose`, which is more convenient to use."
 
 #: ../../source/user-guide/model-development/data/transform.rst:15
 msgid "我们能够很方便地在 ``DataLoader`` 加载数据时进行相应地变换操作。例如："
-msgstr ""
+msgstr "We can easily perform corresponding transformation operations when loading data in ``DataLoader``. For example："
 
 #: ../../source/user-guide/model-development/data/transform.rst:19
 msgid "更多 API 请参考 :py:mod:`megengine.data.transform` 模块。"
-msgstr ""
+msgstr "For more API, please refer to: py:mod:`megengine.data.transform` module."
 
 #: ../../source/user-guide/model-development/data/transform.rst:23
 msgid "借助数据变换，我们可以达成各种目标，包括但不限于："
-msgstr ""
+msgstr "With the help of data transformation, we can achieve various goals, including but not limited to："
 
 #: ../../source/user-guide/model-development/data/transform.rst:25
 msgid "通过 ``Resize`` 操作，使得输入数据的形状满足模型对形状的要求；"
-msgstr ""
+msgstr "Through the ``Resize'' operation, the shape of the input data meets the requirements of the model;"
 
 #: ../../source/user-guide/model-development/data/transform.rst:26
 #, python-format
-msgid ""
-"实现 `数据增广 <https://megengine.org.cn/doc/stable/zh/getting-started/beginner"
-"/neural-network-traning-"
-"tricks.html#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%B9%BF>`_ （Data "
-"augmentation），更多的数据往往能提升模型的性能..."
-msgstr ""
+msgid "实现 `数据增广 <https://megengine.org.cn/doc/stable/zh/getting-started/beginner/neural-network-traning-tricks.html#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%B9%BF>`_ （Data augmentation），更多的数据往往能提升模型的性能..."
+msgstr "`Achieve data augmented <https://megengine.org.cn/doc/stable/zh/getting-started/beginner/neural-network-traning-tricks.html#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%B9%BF>` _ (the Data Augmentation), more data can often improve the performance of the model ..."
 
 #: ../../source/user-guide/model-development/data/transform.rst:31
 msgid "MegEngine 中提供了大量的 :py:class:`VisionTransform` 实现，用户也可参考 API 文档进行拓展；"
-msgstr ""
+msgstr "A large number of :py:class:`VisionTransform` implementations are provided in MegEngine, and users can also refer to the API documentation for expansion;"
 
 #: ../../source/user-guide/model-development/data/transform.rst:32
-msgid ""
-"一些数据变换的实现参考自 `torchvision "
-"<https://pytorch.org/vision/stable/index.html>`_ 以及 `OpenMMLab "
-"<https://github.com/open-mmlab>`_ ."
-msgstr ""
+msgid "一些数据变换的实现参考自 `torchvision <https://pytorch.org/vision/stable/index.html>`_ 以及 `OpenMMLab <https://github.com/open-mmlab>`_ ."
+msgstr "Some data transformation implementations are referenced from `torchvision <https://pytorch.org/vision/stable/index.html>`_ and `OpenMMLab <https://github.com/open-mmlab>`_."
 
 #: ../../source/user-guide/model-development/data/transform.rst:34
-msgid ""
-"MegEngine 中也提供了 :py:class:`TorchTransformCompose` 实现，方便使用 ``torchvision``"
-" 中的实现。"
-msgstr ""
+msgid "MegEngine 中也提供了 :py:class:`TorchTransformCompose` 实现，方便使用 ``torchvision`` 中的实现。"
+msgstr "MegEngine also provides: py:class:`TorchTransformCompose` implementation, which is convenient to use the implementation in ``torchvision``."
 
 #: ../../source/user-guide/model-development/data/transform.rst:38
 msgid ":ref:`transform-vs-functional`"
-msgstr ""
+msgstr ":ref:`transform-vs-functional`"
 
 #: ../../source/user-guide/model-development/data/transform.rst:39
 msgid ":ref:`when-preprocess-data`"
-msgstr ""
+msgstr ":ref:`when-preprocess-data`"
 
 #: ../../source/user-guide/model-development/data/transform.rst:44
 msgid "举例：伪变换和自定义变换"
-msgstr ""
+msgstr "Example：pseudo transformation and custom transformation"
 
 #: ../../source/user-guide/model-development/data/transform.rst:46
 msgid "MegEngine 中提供了 :class:`~.PseudoTransform` 作为默认实现，它没有对输入进行任何处理，而是直接返回："
-msgstr ""
+msgstr "MegEngine provides :class:`~.PseudoTransform` as the default implementation, it does not perform any processing on the input, but directly returns："
 
 #: ../../source/user-guide/model-development/data/transform.rst:54
 msgid "我们构造一个数据 ``data`` 进行测试："
-msgstr ""
+msgstr "We construct a data ``data'' for testing："
 
 #: ../../source/user-guide/model-development/data/transform.rst:68
 msgid "如果我们要实现自定义的变换操作，只需要自己实现相应的 ``apply`` 逻辑。"
-msgstr ""
+msgstr "If we want to implement a custom transformation operation, we only need to implement the corresponding ``apply'' logic by ourselves."
 
 #: ../../source/user-guide/model-development/data/transform.rst:70
 msgid "比如我们实现一个 ``AddOneTransform``:"
-msgstr ""
+msgstr "For example, we implement an ``AddOneTransform'':"
 
 #: ../../source/user-guide/model-development/data/transform.rst:81
 msgid "可以使用 ``Compose`` 对数据变换进行组合："
-msgstr ""
+msgstr "`` Compose`` may be used to combine data into："
 
 #: ../../source/user-guide/model-development/data/transform.rst:90
 msgid "最终，我们的各种 ``Transform`` 实现应当被应用于 ``DataLoader``:"
-msgstr ""
+msgstr "Finally, our various ``Transform`` implementations should be applied to ``DataLoader``:"
 
 #: ../../source/user-guide/model-development/data/transform.rst:96
-msgid ""
-"我们这里给出的例子比较简单，假设样本都是单个元素，实际上 ``apply`` 方法支持 Tuple 类型的输入， "
-"代码逻辑中完全可以处理更加一些复杂的样本结构，可以参考 :py:class:`VisionTransform` 的实现。"
-msgstr ""
+msgid "我们这里给出的例子比较简单，假设样本都是单个元素，实际上 ``apply`` 方法支持 Tuple 类型的输入， 代码逻辑中完全可以处理更加一些复杂的样本结构，可以参考 :py:class:`VisionTransform` 的实现。"
+msgstr "The example we give here is relatively simple, assuming that the samples are all single elements, in fact the ``apply`` method supports Tuple type input, and the code logic can handle more complex sample structures. You can refer to:py:class: Implementation of `VisionTransform`."
 
 #: ../../source/user-guide/model-development/data/transform.rst:101
-msgid ""
-"可以在官方 `ResNet "
-"<https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>`_"
-" 训练代码中找到 ``DataLoader`` 通过组合数据变换对数据进行预处理的例子。"
-msgstr ""
+msgid "可以在官方 `ResNet <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>`_ 训练代码中找到 ``DataLoader`` 通过组合数据变换对数据进行预处理的例子。"
+msgstr "You can find an example of ``DataLoader'' preprocessing data through combined data transformation in the official `ResNet <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>"
 
 #: ../../source/user-guide/model-development/data/transform.rst:108
 msgid "注意与 Functional 的区别"
-msgstr ""
+msgstr "Note the difference with Functional"
 
 #: ../../source/user-guide/model-development/data/transform.rst:110
 msgid "用户不应当将 ``megengine.data.transform`` 与 ``megengine.functional`` 中的接口搞混淆："
-msgstr ""
+msgstr "Users should not be `` megengine.data.transform`` and `` megengine.functional`` Interface confused："
 
 #: ../../source/user-guide/model-development/data/transform.rst:112
 msgid "``megengine.data.transform`` 可以看作是一个独立的子库，可以对 NumPy 的 ndarray 数据进行各种处理；"
-msgstr ""
+msgstr "``megengine.data.transform`` can be regarded as an independent sub-library, which can perform various processing on NumPy's ndarray data;"
 
 #: ../../source/user-guide/model-development/data/transform.rst:113
 msgid "``megengine.functional`` 中的实现都是围绕着 MegEngine 的 Tensor 数据结构进行的。"
-msgstr ""
+msgstr "The implementation in ``megengine.functional'' is all around the Tensor data structure of MegEngine."
 
 #: ../../source/user-guide/model-development/data/transform.rst:115
-msgid ""
-"从流程上看，用户可以将原始数据转换成 ndarray 作为输入，经过 ``megengine.data.transform`` 做一些处理。 "
-"如果需要参与模型训练，得到的结果需要人为地转换成 Tensor 才能够被用于 ``megengine.functional`` 中的接口。"
-msgstr ""
+msgid "从流程上看，用户可以将原始数据转换成 ndarray 作为输入，经过 ``megengine.data.transform`` 做一些处理。 如果需要参与模型训练，得到的结果需要人为地转换成 Tensor 才能够被用于 ``megengine.functional`` 中的接口。"
+msgstr "From the process point of view, the user can convert the original data into an ndarray as input, and do some processing through ``megengine.data.transform``. If you need to participate in model training, the results obtained need to be artificially converted into Tensor before they can be used in the interface in ``megengine.functional``."
 
 #: ../../source/user-guide/model-development/data/transform.rst:121
 msgid "数据预处理应该在何时发生"
-msgstr ""
+msgstr "When should data preprocessing happen"
 
 #: ../../source/user-guide/model-development/data/transform.rst:123
 msgid "当我们从 ``DataLoader`` 中获取批数据时，如果定义了 ``Transform``, 则会在每次加载完样本后立即对其进行变换。"
-msgstr ""
+msgstr "When we get batch data from ``DataLoader``, if ``Transform'' is defined, it will be transformed immediately after each sample is loaded."
 
 #: ../../source/user-guide/model-development/data/transform.rst:125
-msgid ""
-"数据变换操作也是有计算开销的，且该流程通常在 CPU 设备上进行，以及有些操作会调用类似 ``OpenCV`` 的库。 "
-"如果我们对每个样本进行多次加载（比如训练多个周期），那么变换操作也会被执行多次，这可能会带来额外的开销。 "
-"因此在有些时候，我们会选择将预处理操作在更早的流程中进行，即直接对原始数据先进行一次预处理操作， 这样在 ``DataLoader`` "
-"中获取的输入便已经是经过预处理的数据了，这样可以尽可能地减少 ``Transform`` 操作。"
-msgstr ""
+msgid "数据变换操作也是有计算开销的，且该流程通常在 CPU 设备上进行，以及有些操作会调用类似 ``OpenCV`` 的库。 如果我们对每个样本进行多次加载（比如训练多个周期），那么变换操作也会被执行多次，这可能会带来额外的开销。 因此在有些时候，我们会选择将预处理操作在更早的流程中进行，即直接对原始数据先进行一次预处理操作， 这样在 ``DataLoader`` 中获取的输入便已经是经过预处理的数据了，这样可以尽可能地减少 ``Transform`` 操作。"
+msgstr "The data transformation operation also has computational overhead, and the process is usually performed on the CPU device, and some operations will call a library similar to ``OpenCV``. If we load each sample multiple times (such as training multiple cycles), the transformation operation will also be performed multiple times, which may bring additional overhead. Therefore, in some cases, we will choose to perform the preprocessing operation in an earlier process, that is, directly perform a preprocessing operation on the original data first, so that the input obtained in the ``DataLoader`` is already preprocessed Data, so that you can reduce the ``Transform`` operation as much as possible."
 
 #: ../../source/user-guide/model-development/data/transform.rst:130
 msgid "用户应当考虑到，原始数据相关的 I/O 和处理也有可能成为模型训练整体流程中的瓶颈。"
-msgstr ""
+msgstr "Users should consider that I/O and processing related to raw data may also become a bottleneck in the overall process of model training."
 

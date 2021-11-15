@@ -1,677 +1,613 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.6\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-12 00:51\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/traced_module/api-example.po\n"
+"X-Crowdin-File-ID: 8197\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:5
 msgid "API 与 使用方式"
-msgstr ""
+msgstr "API and usage"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:8
-msgid ""
-"注意：TracedModule API 在未来一段时间会根据使用反馈进行调整，请关注 github release note "
-"获取变更。欢迎在文档或 Github 提交使用反馈，一起让模型到应用更快更便捷！"
-msgstr ""
+msgid "注意：TracedModule API 在未来一段时间会根据使用反馈进行调整，请关注 github release note 获取变更。欢迎在文档或 Github 提交使用反馈，一起让模型到应用更快更便捷！"
+msgstr "Note：TracedModule API will be adjusted based on usage feedback in the future. Please follow the github release note for changes. Welcome to submit usage feedback in the documentation or Github, together to make the model to the application faster and more convenient!"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:10
-msgid ""
-"以 resnet18 为例介绍 TracedModule 的使用方式，model.py 可从 `这里 "
-"<https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/model.py>`__"
-" 下载。 通过 :py:func:`~.trace_module` 方法将一个普通的 Module 转变成 "
-"TracedModule。接口形式如下："
-msgstr ""
+msgid "以 resnet18 为例介绍 TracedModule 的使用方式，model.py 可从 `这里 <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/model.py>`__ 下载。 通过 :py:func:`~.trace_module` 方法将一个普通的 Module 转变成 TracedModule。接口形式如下："
+msgstr "Take resnet18 as an example to introduce the use of TracedModule, model.py can be <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/model.py>`__. Use the :py:func:`~.trace_module` method to convert an ordinary Module into a TracedModule. The interface form is as follows："
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:23
 msgid "将自定义的 resnet18（Module）转换为 TracedModule："
-msgstr ""
+msgstr "Convert custom resnet18 (Module) to TracedModule："
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:42
 msgid "Node 、Expr 、InternalGraph 的常用属性和方法"
-msgstr ""
+msgstr "Common attributes and methods of Node, Expr, and InternalGraph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:45
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:48
 msgid "TracedModule.graph"
-msgstr ""
+msgstr "TracedModule.graph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:46
-msgid ""
-"查看 TracedModule 对应的 InternalGraph，以及子 TracedModule 对应的 InternalGraph。通过 "
-"``\"{:ip}\".format(InternalGraph)`` 查看 Expr 的 id，Node 的 id 和 name。在一个 "
-"InternalGraph 中每个 Expr 和 Node 都有一个唯一的 id 与其对应。通过这个 id 可以区分和定位不同的 Expr 与 "
-"Node。"
-msgstr ""
+msgid "查看 TracedModule 对应的 InternalGraph，以及子 TracedModule 对应的 InternalGraph。通过 ``\"{:ip}\".format(InternalGraph)`` 查看 Expr 的 id，Node 的 id 和 name。在一个 InternalGraph 中每个 Expr 和 Node 都有一个唯一的 id 与其对应。通过这个 id 可以区分和定位不同的 Expr 与 Node。"
+msgstr "Check the InternalGraph corresponding to TracedModule and the InternalGraph corresponding to sub-TracedModule. Check the id of Expr, id and name of Node through ``\"{:ip}In an InternalGraph, each Expr and Node has a unique id corresponding to it. Through this id, different Expr and Node can be distinguished and located."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:160
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:168
 msgid "InternalGraph.exprs"
-msgstr ""
+msgstr "InternalGraph.exprs"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:161
-msgid ""
-"遍历 Graph 中的 Expr。通过访问 :py:meth:`.InternalGraph.exprs` 可得到该 graph 按执行顺序的 "
-"Expr 序列。"
-msgstr ""
+msgid "遍历 Graph 中的 Expr。通过访问 :py:meth:`.InternalGraph.exprs` 可得到该 graph 按执行顺序的 Expr 序列。"
+msgstr "Traverse the Expr in Graph. By visiting:py:meth:`.InternalGraph.exprs`, the Expr sequence of the graph in the order of execution can be obtained."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:166
 msgid ":py:meth:`.InternalGraph.exprs` ``(recursive : bool = True)``"
-msgstr ""
+msgstr ":py:meth:`.InternalGraph.exprs` ``(recursive: bool = True)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:164
 msgid "按 Expr 执行顺序获取 Expr 执行序列"
-msgstr ""
+msgstr "Get Expr execution sequence according to Expr execution order"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:166
 msgid "``recursive``:  是否获取子 Graph 中的 Expr，默认为 True"
-msgstr ""
+msgstr "``recursive'': Whether to get the Expr in the child Graph, the default is True"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:201
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:209
 msgid "InternalGraph.nodes"
-msgstr ""
+msgstr "InternalGraph.nodes"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:202
-msgid ""
-"遍历 Graph 中的 Node。通过访问 :py:meth:`.InternalGraph.nodes` 可得到该 graph 中的 Node "
-"序列。"
-msgstr ""
+msgid "遍历 Graph 中的 Node。通过访问 :py:meth:`.InternalGraph.nodes` 可得到该 graph 中的 Node 序列。"
+msgstr "Traverse the Node in the Graph. The Node sequence in the graph can be obtained by visiting:py:meth:`.InternalGraph.nodes`."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:207
 msgid ":py:meth:`.InternalGraph.nodes` ``(recursive : bool = True)``"
-msgstr ""
+msgstr ":py:meth:`.InternalGraph.nodes` ``(recursive: bool = True)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:205
 msgid "按 id 从小到大返回 Graph 中的 Node"
-msgstr ""
+msgstr "Return to the Node in the Graph by id from small to large"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:207
 msgid "``recursive``:  是否获取子 Graph 中的 Node，默认为 True"
-msgstr ""
+msgstr "``recursive'': Whether to get the Node in the child Graph, the default is True"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:244
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:250
 msgid "Expr.inputs & Expr.outputs"
-msgstr ""
+msgstr "Expr.inputs & Expr.outputs"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:245
 msgid "通过访问 Expr 的 inputs 和 outputs 属性，可获得该 Expr 的输入和输出 Node。"
-msgstr ""
+msgstr "By accessing Expr's inputs and outputs properties, the Expr's input and output Node can be obtained."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:247
-msgid ""
-":py:attr:`.Expr.inputs` ``: List[Node]`` :py:attr:`.Expr.outputs` ``: "
-"List[Node]``"
-msgstr ""
+msgid ":py:attr:`.Expr.inputs` ``: List[Node]`` :py:attr:`.Expr.outputs` ``: List[Node]``"
+msgstr ":py:attr:`.Expr.inputs` ``: List[Node]`` :py:attr:`.Expr.outputs` ``: List[Node]``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:268
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:273
 msgid "Node.expr"
-msgstr ""
+msgstr "Node.expr"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:269
 msgid "通过访问 Node 的 expr 属性，可获得该 Node 是由哪个 Expr 生成的。"
-msgstr ""
+msgstr "By accessing the expr attribute of Node, you can get which Expr generated the Node."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:271
 msgid ":py:attr:`.Node.expr` ``: Expr``"
-msgstr ""
+msgstr ":py:attr:`.Node.expr` ``: Expr``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:287
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:292
 msgid "Node.users"
-msgstr ""
+msgstr "Node.users"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:288
 msgid "通过访问 Node 的 users 属性，可获得该 Node 是将会被哪些 Expr 作为输入。"
-msgstr ""
+msgstr "By accessing the users property of Node, you can get which Expr the Node will be used as input."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:290
 msgid ":py:attr:`.Node.users` ``: Lsit[Expr]``"
-msgstr ""
+msgstr ":py:attr:`.Node.users` ``: Lsit[Expr]``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:306
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:311
 msgid "ModuleNode.owner"
-msgstr ""
+msgstr "ModuleNode.owner"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:307
 msgid "通过访问 ModuleNode 的 owner 属性，可直接访问该 ModuleNode 所对应的 Module。"
-msgstr ""
+msgstr "By accessing the owner attribute of ModuleNode, you can directly access the Module corresponding to the ModuleNode."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:309
 msgid ":py:attr:`.ModuleNode.owner` ``: Module``"
-msgstr ""
+msgstr ":py:attr:`.ModuleNode.owner` ``: Module``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:333
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:340
 msgid "Node.top_graph & Expr.top_graph"
-msgstr ""
+msgstr "Node.top_graph & Expr.top_graph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:334
 msgid "通过访问 Node 或 Expr 的 top_graph 属性，可直获得该 Node 或 Expr 所属的 InternalGraph。"
-msgstr ""
+msgstr "By accessing the top_graph property of a Node or Expr, you can directly obtain the InternalGraph to which the Node or Expr belongs."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:336
 msgid ":py:attr:`.Node.top_graph` ``: InternalGraph``"
-msgstr ""
+msgstr ":py:attr:`.Node.top_graph` ``: InternalGraph``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:338
 msgid ":py:attr:`.Expr.top_graph` ``: InternalGraph``"
-msgstr ""
+msgstr ":py:attr:`.Expr.top_graph` ``: InternalGraph``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:372
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:380
 msgid "InternalGraph.eval"
-msgstr ""
+msgstr "InternalGraph.eval"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:373
 msgid "通过访问 InternalGraph 的 eval 方法，可以直接运行该 Graph。"
-msgstr ""
+msgstr "You can run the Graph directly by accessing the eval method of InternalGraph."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:378
 msgid ":py:meth:`.InternalGraph.eval` ``(*inputs)``"
-msgstr ""
+msgstr ":py:meth:`.InternalGraph.eval` ``(*inputs)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:376
 msgid "将 Tensor 直接输入 Graph 并返回按 Expr 执行序列执行后的结果"
-msgstr ""
+msgstr "Input Tensor directly into Graph and return the result after executing the sequence according to Expr"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:378
 msgid "``inputs`` 模型的输入"
-msgstr ""
+msgstr "``inputs`` model inputs"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:404
 msgid "Node 和 Expr 的查找方法"
-msgstr ""
+msgstr "Finding methods for Node and Expr"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:407
 msgid "BaseFilter"
-msgstr ""
+msgstr "BaseFilter"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:408
 msgid ":py:class:`~.BaseFilter` 是一个可迭代的类，其提供了一些方法将迭代器转换为 ``list``, ``dict`` 等。"
-msgstr ""
+msgstr ":py:class:`~.BaseFilter` is an iterable class, which provides some methods to convert iterators into ``list``, ``dict``, etc."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:410
-msgid ""
-":py:class:`~.NodeFilter` 和 :py:class:`~.ExprFilter` 继承于 "
-":py:class:`~.BaseFilter`，NodeFilter 负责处理 Node，ExprFilter 负责处理 Expr。"
-msgstr ""
+msgid ":py:class:`~.NodeFilter` 和 :py:class:`~.ExprFilter` 继承于 :py:class:`~.BaseFilter`，NodeFilter 负责处理 Node，ExprFilter 负责处理 Expr。"
+msgstr ":py:class:`~.NodeFilter` and :py:class:`~.ExprFilter` inherit from :py:class:`~.BaseFilter`, NodeFilter is responsible for processing Node, ExprFilter is responsible for processing Expr."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:412
 msgid ":py:meth:`.BaseFilter.as_list` : 返回 Node 或 Expr 列表"
-msgstr ""
+msgstr ":py:meth:`.BaseFilter.as_list`: return Node or Expr list"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:413
 msgid ":py:meth:`.BaseFilter.as_dict` : 返回 Node 或 Expr 的 id 和 Node 或 Expr 组成的字典"
-msgstr ""
+msgstr ":py:meth:`.BaseFilter.as_dict`: Return a dictionary composed of Node or Expr id and Node or Expr"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:414
-msgid ""
-":py:meth:`.BaseFilter.as_unique` : 如果查找到的 Node 或 Expr 只有一个，直接返回该 Node 或 "
-"Expr, 否则报错"
-msgstr ""
+msgid ":py:meth:`.BaseFilter.as_unique` : 如果查找到的 Node 或 Expr 只有一个，直接返回该 Node 或 Expr, 否则报错"
+msgstr ":py:meth:`.BaseFilter.as_unique`: If there is only one Node or Expr found, return the Node or Expr directly, otherwise an error will be reported"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:415
 msgid ":py:meth:`.BaseFilter.as_count` : 返回查找到 Node 或 Expr 的数量"
-msgstr ""
+msgstr ":py:meth:`.BaseFilter.as_count`: return the number of Node or Expr found"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:418
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:427
 msgid "get_node_by_id"
-msgstr ""
+msgstr "get_node_by_id"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:419
 msgid "通过 Node 的 id 从 Graph 中获取对应 id 的 Node。"
-msgstr ""
+msgstr "Obtain the Node corresponding to the id from the Graph through the id of the Node."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:425
-msgid ""
-":py:meth:`.InternalGraph.get_node_by_id` ``(node_id: List[int] = None, "
-"recursive=True)``"
-msgstr ""
+msgid ":py:meth:`.InternalGraph.get_node_by_id` ``(node_id: List[int] = None, recursive=True)``"
+msgstr ":py:meth:`.InternalGraph.get_node_by_id` ``(node_id: List[int] = None, recursive=True)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:422
 msgid "获取 InternalGraph 中 id 在 node_id 里的 Node，支持一次查找多个 Node"
-msgstr ""
+msgstr "Get the Node with id in node_id in InternalGraph, support to find multiple Nodes at once"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:424
 msgid "``node_id`` 待查找 Node 的 id 列表"
-msgstr ""
+msgstr "``node_id`` The id list of the Node to be found"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:425
 msgid "``recursive`` 是否查找子 Graph 中的 Node，默认为 True"
-msgstr ""
+msgstr "``recursive`` Whether to find the Node in the child Graph, the default is True"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:450
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:459
 msgid "get_expr_by_id"
-msgstr ""
+msgstr "get_expr_by_id"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:451
 msgid "与 get_node_by_id 类似，该方法通过 Expr 的 id 从 Graph 中获取对应 id 的 Expr"
-msgstr ""
+msgstr "Similar to get_node_by_id, this method obtains the Expr of the corresponding id from the Graph through the id of Expr"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:457
-msgid ""
-":py:meth:`.InternalGraph.get_expr_by_id` ``(expr_id: List[int] = None, "
-"recursive=True)``"
-msgstr ""
+msgid ":py:meth:`.InternalGraph.get_expr_by_id` ``(expr_id: List[int] = None, recursive=True)``"
+msgstr ":py:meth:`.InternalGraph.get_expr_by_id` ``(expr_id: List[int] = None, recursive=True)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:454
 msgid "获取 InternalGraph 中 id 在 expr_id 里的 Expr，支持一次查找多个 Expr"
-msgstr ""
+msgstr "Get the Expr with id in expr_id in InternalGraph, support searching multiple Expr at once"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:456
 msgid "``expr_id`` 待查找 Expr 的 id 列表"
-msgstr ""
+msgstr "``expr_id`` The id list of Expr to be found"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:457
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:490
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:519
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:550
 msgid "``recursive`` 是否查找子 Graph 中的 Expr，默认为 True"
-msgstr ""
+msgstr "``recursive`` Whether to find the Expr in the child Graph, the default is True"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:483
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:492
 msgid "get_function_by_type"
-msgstr ""
+msgstr "get_function_by_type"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:484
 msgid "通过该方法查找 Graph 中调用了某个 function 的 CallFunction Expr"
-msgstr ""
+msgstr "Use this method to find the CallFunction Expr that called a function in Graph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:490
-msgid ""
-":py:meth:`.InternalGraph.get_function_by_type` ``(func: Callable = None, "
-"recursive=True)``"
-msgstr ""
+msgid ":py:meth:`.InternalGraph.get_function_by_type` ``(func: Callable = None, recursive=True)``"
+msgstr ":py:meth:`.InternalGraph.get_function_by_type` ``(func: Callable = None, recursive=True)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:487
 msgid "获取 InternalGraph 中 ``self.func == func`` 的 CallFunction"
-msgstr ""
+msgstr "Get the CallFunction of ``self.func == func'' in InternalGraph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:489
 msgid "``func`` 可调用的函数"
-msgstr ""
+msgstr "``func`` callable function"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:512
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:521
 msgid "get_method_by_type"
-msgstr ""
+msgstr "get_method_by_type"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:513
 msgid "通过该方法查找 Graph 中调用了某个 method 的 CallMethod Expr"
-msgstr ""
+msgstr "Use this method to find the CallMethod Expr that called a method in Graph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:519
-msgid ""
-":py:meth:`.InternalGraph.get_method_by_type` ``(method: str = None, "
-"recursive=True)``"
-msgstr ""
+msgid ":py:meth:`.InternalGraph.get_method_by_type` ``(method: str = None, recursive=True)``"
+msgstr ":py:meth:`.InternalGraph.get_method_by_type` ``(method: str = None, recursive=True)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:516
 msgid "获取 InternalGraph 中 ``self.method == method`` 的 CallMethod"
-msgstr ""
+msgstr "Get the CallMethod of ``self.method == method'' in InternalGraph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:518
 msgid "``method`` 待查找某对象的方法的名字（该方法是一个可调用的函数）"
-msgstr ""
+msgstr "``method`` The name of the method to find an object (the method is a callable function)"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:543
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:552
 msgid "get_module_by_type"
-msgstr ""
+msgstr "get_module_by_type"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:544
 msgid "通过该方法查找 Graph 中对应某种 Module 的 ModuleNode"
-msgstr ""
+msgstr "Use this method to find the ModuleNode corresponding to a certain Module in Graph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:550
-msgid ""
-":py:meth:`.InternalGraph.get_module_by_type` ``(module_cls: Module, "
-"recursive=True)``"
-msgstr ""
+msgid ":py:meth:`.InternalGraph.get_module_by_type` ``(module_cls: Module, recursive=True)``"
+msgstr ":py:meth:`.InternalGraph.get_module_by_type` ``(module_cls: Module, recursive=True)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:547
 msgid "获取 InternalGraph 中对应于 ``module_cls`` 的 ModuleNode"
-msgstr ""
+msgstr "Get the ModuleNode corresponding to ``module_cls`` in InternalGraph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:549
 msgid "``module_cls`` Module 某个子类"
-msgstr ""
+msgstr "``module_cls`` Module a certain subclass"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:574
 msgid "图手术常用方法"
-msgstr ""
+msgstr "Figure Surgery Common Methods"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:577
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:587
 msgid "add_input_node"
-msgstr ""
+msgstr "add_input_node"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:578
-msgid ""
-"为最顶层的 InternalGraph 增加一个输入，此输入会作为一个 free_varargs 参数（即无形参名称）。当调用该方法的 Graph"
-" 是一个子 Graph 时，将会报错。"
-msgstr ""
+msgid "为最顶层的 InternalGraph 增加一个输入，此输入会作为一个 free_varargs 参数（即无形参名称）。当调用该方法的 Graph 是一个子 Graph 时，将会报错。"
+msgstr "Add an input to the topmost InternalGraph, which will be used as a free_varargs parameter (ie, no formal parameter name). When the Graph calling this method is a child Graph, an error will be reported."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:585
-msgid ""
-":py:meth:`.InternalGraph.add_input_node` ``(shape, dtype=\"float32\", "
-"name=\"args\")``"
-msgstr ""
+msgid ":py:meth:`.InternalGraph.add_input_node` ``(shape, dtype=\"float32\", name=\"args\")``"
+msgstr ":py:meth:`.InternalGraph.add_input_node` ``(shape, dtype=\"float32\", name=\"args\")''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:581
 msgid "为顶层 Graph 新增一个输入"
-msgstr ""
+msgstr "Add an input for the top-level Graph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:583
 msgid "``shape`` 新增输入的 shape"
-msgstr ""
+msgstr "``shape`` new input shape"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:584
 msgid "``dtype`` 新增输入的 dtype，默认为 \"float32\""
-msgstr ""
+msgstr "``dtype`` newly added input dtype, default is \"float32\""
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:585
-msgid ""
-"``name``  新增输入的名字，默认为 \"args\"，若该名字在 Graph 种已存在，则会在 name 后添加后缀，以保证 name 在"
-" Graph 在的唯一性。"
-msgstr ""
+msgid "``name``  新增输入的名字，默认为 \"args\"，若该名字在 Graph 种已存在，则会在 name 后添加后缀，以保证 name 在 Graph 在的唯一性。"
+msgstr "``name`` Add a new input name. The default is \"args\". If the name already exists in the Graph, a suffix will be added to the name to ensure the uniqueness of the name in the Graph."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:610
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:618
 msgid "add_output_node"
-msgstr ""
+msgstr "add_output_node"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:611
-msgid ""
-"为最顶层的 InternalGraph 增加一个输出，此输入会作为输出元组种的最后一个元素。当调用该方法的 Graph 是一个子 Graph "
-"时，将会报错。"
-msgstr ""
+msgid "为最顶层的 InternalGraph 增加一个输出，此输入会作为输出元组种的最后一个元素。当调用该方法的 Graph 是一个子 Graph 时，将会报错。"
+msgstr "Add an output to the topmost InternalGraph, and this input will be the last element of the output tuple. When the Graph calling this method is a child Graph, an error will be reported."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:616
 msgid ":py:meth:`.InternalGraph.add_output_node` ``(node: TensorNode)``"
-msgstr ""
+msgstr ":py:meth:`.InternalGraph.add_output_node` ``(node: TensorNode)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:614
 msgid "将 Graph 种的某个 Node 作为 Graph 的一个输出"
-msgstr ""
+msgstr "Use a Node of the Graph species as an output of Graph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:616
 msgid "``node`` Graph 中的某 Node"
-msgstr ""
+msgstr "A Node in the ``node`` Graph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:650
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:660
 msgid "reset_outputs"
-msgstr ""
+msgstr "reset_outputs"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:651
 msgid "重新设置最顶层 InternalGraph 的输出。当调用该方法的 Graph 是一个子 Graph 时，将会报错。"
-msgstr ""
+msgstr "Reset the output of the topmost InternalGraph. When the Graph calling this method is a child Graph, an error will be reported."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:653
-msgid ""
-"当要改变的输出较多时，一个一个调用 ``add_output_node`` 较为麻烦，通过 ``reset_outputs`` "
-"方法一次性重置输出内容于结构。"
-msgstr ""
+msgid "当要改变的输出较多时，一个一个调用 ``add_output_node`` 较为麻烦，通过 ``reset_outputs`` 方法一次性重置输出内容于结构。"
+msgstr "When there are many outputs to be changed, it is more troublesome to call ``add_output_node`` one by one, and the output content and structure are reset at one time through the ``reset_outputs`` method."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:658
 msgid ":py:meth:`.InternalGraph.reset_outputs` ``(node: outputs)``"
-msgstr ""
+msgstr ":py:meth:`.InternalGraph.reset_outputs` ``(node: outputs)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:656
 msgid "重置 Graph 的输出"
-msgstr ""
+msgstr "Reset Graph output"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:658
-msgid ""
-"``node`` 由 Graph 中的 TensorNode 构成的某种结构，支持 ``list``, ``dict``, ``tuple`` "
-"等（最底层的元素必须是 TensorNode）。"
-msgstr ""
+msgid "``node`` 由 Graph 中的 TensorNode 构成的某种结构，支持 ``list``, ``dict``, ``tuple`` 等（最底层的元素必须是 TensorNode）。"
+msgstr "``node`` is a structure formed by TensorNode in Graph, supporting ``list``, ``dict``, ``tuple``, etc. (the lowest element must be TensorNode)."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:700
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:708
 msgid "replace_node"
-msgstr ""
+msgstr "replace_node"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:701
-msgid ""
-"替换 InternalGraph 中的指定 Node。可用于新增 Expr 后替换一些 Node，或结合 "
-":py:meth:`.InternalGraph.compile` 删某些 Expr。"
-msgstr ""
+msgid "替换 InternalGraph 中的指定 Node。可用于新增 Expr 后替换一些 Node，或结合 :py:meth:`.InternalGraph.compile` 删某些 Expr。"
+msgstr "Replace the specified Node in InternalGraph. It can be used to replace some Nodes after adding Expr, or combine with :py:meth:`.InternalGraph.compile` to delete some Expr."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:706
 msgid ":py:meth:`.InternalGraph.replace_node` ``(repl_dict : Dict[Node, Node])``"
-msgstr ""
+msgstr ":py:meth:`.InternalGraph.replace_node` ``(repl_dict: Dict[Node, Node])''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:704
 msgid "替换 Graph 中的 ``key`` 替换为 ``value``"
-msgstr ""
+msgstr "Replace ``key`` in Graph with ``value``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:706
-msgid ""
-"``repl_dict`` 为一个 ``key`` 和 ``value`` 都为 Node 的字典，且 ``key`` 和 ``value`` "
-"必须在同一个 Graph 中。生成 ``value`` 的 Expr 之后的所有将 ``key`` 作为输入的 Expr 的输入将被替换为 "
-"``value``。"
-msgstr ""
+msgid "``repl_dict`` 为一个 ``key`` 和 ``value`` 都为 Node 的字典，且 ``key`` 和 ``value`` 必须在同一个 Graph 中。生成 ``value`` 的 Expr 之后的所有将 ``key`` 作为输入的 Expr 的输入将被替换为 ``value``。"
+msgstr "``repl_dict`` is a dictionary where both ``key`` and ``value`` are Node, and ``key`` and ``value`` must be in the same Graph. After the Expr that generates ``value``, all the inputs of Expr that use ``key`` as input will be replaced with ``value``."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:780
 msgid "insert_exprs"
-msgstr ""
+msgstr "insert_exprs"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:781
-msgid ""
-"向 InternalGraph 中插入 Expr。可用于插入 ``function`` 或 ``Module`` ，并在插入的过程中将这些 "
-"``function`` 或 ``Module`` 解析为 Expr 或 TracedModule。"
-msgstr ""
+msgid "向 InternalGraph 中插入 Expr。可用于插入 ``function`` 或 ``Module`` ，并在插入的过程中将这些 ``function`` 或 ``Module`` 解析为 Expr 或 TracedModule。"
+msgstr "Insert Expr into InternalGraph. It can be used to insert ``function`` or ``Module``, and parse these ``function`` or ``Module`` into Expr or TracedModule during the insertion process."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:783
 msgid "一般与 ``replace_node`` 和 ``compile`` 一起使用完成图手术。"
-msgstr ""
+msgstr "Generally used together with ``replace_node`` and ``compile`` to complete graph operation."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:788
 msgid ":py:meth:`.InternalGraph.insert_exprs` ``(expr: Optional[Expr] = None)``"
-msgstr ""
+msgstr ":py:meth:`.InternalGraph.insert_exprs` ``(expr: Optional[Expr] = None)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:786
 msgid "向 Graph 中插入 Expr"
-msgstr ""
+msgstr "Insert Expr into Graph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:788
-msgid ""
-"``expr`` 在 :py:attr:`.InternalGraph._exprs` 中 ``expr`` 之后插入新的 "
-"``function`` 或 ``Module``。"
-msgstr ""
+msgid "``expr`` 在 :py:attr:`.InternalGraph._exprs` 中 ``expr`` 之后插入新的 ``function`` 或 ``Module``。"
+msgstr "``expr`` Insert new ``function`` or ``Module`` after ``expr`` in :py:attr:`.InternalGraph._exprs`."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:790
-msgid ""
-"在 ``insert_exprs`` 的作用域里，``TensorNode`` 可以当作 ``Tensor`` 使用， "
-"``ModuleNode`` 可以当作 ``Module``。"
-msgstr ""
+msgid "在 ``insert_exprs`` 的作用域里，``TensorNode`` 可以当作 ``Tensor`` 使用， ``ModuleNode`` 可以当作 ``Module``。"
+msgstr "In the scope of ``insert_exprs``, ``TensorNode`` can be used as ``Tensor``, and ``ModuleNode`` can be used as ``Module``."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:792
 msgid "insert_exprs 插入 function"
-msgstr ""
+msgstr "insert_exprs insert function"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:850
 msgid "insert_exprs 替换 function"
-msgstr ""
+msgstr "insert_exprs replace function"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:910
 msgid "insert_exprs 插入 Module"
-msgstr ""
+msgstr "insert_exprs insert Module"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:948
 msgid "由于 ``__setitem__`` 比较特殊，因此在图手术模式下 TensorNode 的赋值结果作为输出时需要特别注意要图手术结果是否符合预期。"
-msgstr ""
+msgstr "Since ``__setitem__'' is special, when the assignment result of TensorNode in the graph operation mode is used as the output, it is necessary to pay special attention to whether the graph operation result meets expectations."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:965
 msgid "compile"
-msgstr ""
+msgstr "compile"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:966
 msgid "该方法会将 InternalGraph 与输出无关的 Expr 删除。"
-msgstr ""
+msgstr "This method will delete the Expr that is not related to the output of InternalGraph."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:968
 msgid ":py:meth:`.InternalGraph.compile` ``()``"
-msgstr ""
+msgstr ":py:meth:`.InternalGraph.compile` ``()''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:970
 msgid "常与 ``insert_exprs`` 和 ``replace_node`` 一起使用。"
-msgstr ""
+msgstr "Often used with ``insert_exprs`` and ``replace_node``."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:973
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:982
 msgid "wrap"
-msgstr ""
+msgstr "wrap"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:974
-msgid ""
-"有时不希望插入的函数被解析为 megengine 内置的 function, 此时可以选择用 "
-":py:meth:`~.traced_module.wrap` 函数将自定义的函数当作 megengine 内置函数处理， 即不再 "
-"``trace`` 到函数内部。"
-msgstr ""
+msgid "有时不希望插入的函数被解析为 megengine 内置的 function, 此时可以选择用 :py:meth:`~.traced_module.wrap` 函数将自定义的函数当作 megengine 内置函数处理， 即不再 ``trace`` 到函数内部。"
+msgstr "Sometimes you don’t want the inserted function to be parsed as a megengine built-in function. At this time, you can choose to use: py:meth:`~.traced_module.wrap` function to treat the custom function as a megengine built-in function, that is, no longer ``trace” `` to the inside of the function."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:980
 msgid ":py:meth:`~.traced_module.wrap` ``(func: Callable)``"
-msgstr ""
+msgstr ":py:meth:`~.traced_module.wrap` ``(func: Callable)''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:978
 msgid "将自定义函数注册为内置函数"
-msgstr ""
+msgstr "Register a custom function as a built-in function"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:980
 msgid "``func`` 为一个可调用的对象。"
-msgstr ""
+msgstr "``func`` is a callable object."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1032
 msgid "TracedModule 常用方法"
-msgstr ""
+msgstr "TracedModule common methods"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1035
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1043
 msgid "flatten"
-msgstr ""
+msgstr "flatten"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1036
-msgid ""
-"该方法可去除 InternalGraph 的层次结构，即将子 graph 展开, 并返回一个新的 TracedModule。在新的 "
-"TracedModule 中，所有的 ``Getattr`` Expr 将被转换为 ``Constant`` Expr。"
-msgstr ""
+msgid "该方法可去除 InternalGraph 的层次结构，即将子 graph 展开, 并返回一个新的 TracedModule。在新的 TracedModule 中，所有的 ``Getattr`` Expr 将被转换为 ``Constant`` Expr。"
+msgstr "This method can remove the hierarchy of InternalGraph, that is, expand the subgraph, and return a new TracedModule. In the new TracedModule, all ``Getattr`` Expr will be converted to ``Constant`` Expr."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1039
 msgid ":py:meth:`.TracedModule.flatten` ``()``"
-msgstr ""
+msgstr ":py:meth:`.TracedModule.flatten` ``()``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1039
 msgid "返回一个新的 TracedModule，其 Graph 无层次结构"
-msgstr ""
+msgstr "Return a new TracedModule with no hierarchical structure of Graph"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1041
 msgid "拍平后的 InternalGraph 仅包含内置 Module 的 Expr，此时可以直观的得到数据之间的连接关系。"
-msgstr ""
+msgstr "The flattened InternalGraph only contains the Expr of the built-in Module. At this time, the connection relationship between the data can be obtained intuitively."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1180
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1191
 msgid "set_watch_points & clear_watch_points"
-msgstr ""
+msgstr "set_watch_points & clear_watch_points"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1181
 msgid "查看 TracedModule 执行时 graph 中某个 Node 对应的真正的 Tensor/Module。"
-msgstr ""
+msgstr "View the real Tensor/Module corresponding to a Node in the graph when TracingModule is executed."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1186
 msgid ":py:meth:`.TracedModule.set_watch_points` ``(nodes : Sequence[Node])``"
-msgstr ""
+msgstr ":py:meth:`.TracedModule.set_watch_points` ``(nodes: Sequence[Node])''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1184
 msgid "设置观察点"
-msgstr ""
+msgstr "Set watchpoint"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1186
 msgid "``nodes`` 待观察的 Node"
-msgstr ""
+msgstr "``nodes`` Node to be seen"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1189
 msgid ":py:meth:`.TracedModule.clear_watch_points` ``()``"
-msgstr ""
+msgstr ":py:meth:`.TracedModule.clear_watch_points` ``()``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1189
 msgid "清除观察点"
-msgstr ""
+msgstr "Clear observation point"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1218
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1229
 msgid "set_end_points & clear_end_points"
-msgstr ""
+msgstr "set_end_points & clear_end_points"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1219
 msgid "设置模型停止运行的位置，接受一个 ``List[Node]`` 作为输入，当网络生成所有设置的 ``Node`` 后会立即返回，不再继续往下执行。"
-msgstr ""
+msgstr "Set the position where the model stops running and accept a ``List[Node]`` as input. When the network generates all the set ``Nodes'', it will return immediately, and will not continue to execute."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1224
 msgid ":py:meth:`.TracedModule.set_end_points` ``(nodes : Sequence[Node])``"
-msgstr ""
+msgstr ":py:meth:`.TracedModule.set_end_points` ``(nodes: Sequence[Node])''"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1222
 msgid "设置结束运行点"
-msgstr ""
+msgstr "Set the end point of operation"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1224
 msgid "``nodes`` 停止运行处的的 ``Node``"
-msgstr ""
+msgstr "``nodes`` Stop the ``Node``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1227
 msgid ":py:meth:`.TracedModule.clear_end_points` ``()``"
-msgstr ""
+msgstr ":py:meth:`.TracedModule.clear_end_points` ``()``"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1227
 msgid "清除结束运行点"
-msgstr ""
+msgstr "Clear the end of the run point"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1253
 msgid "TracedModule 的局限"
-msgstr ""
+msgstr "Limitations of TracedModule"
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1255
-msgid ""
-"不支持动态控制流，动态控制流是指 ``if`` 语句中的 ``condition`` 随输入的变化而变化，或者是 ``for``, "
-"``while`` 每次运行的语句不一样。当 ``trace`` 到控制流时，仅会记录并解释满足条件的那个分支。"
-msgstr ""
+msgid "不支持动态控制流，动态控制流是指 ``if`` 语句中的 ``condition`` 随输入的变化而变化，或者是 ``for``, ``while`` 每次运行的语句不一样。当 ``trace`` 到控制流时，仅会记录并解释满足条件的那个分支。"
+msgstr "Dynamic control flow is not supported. Dynamic control flow means that the ``condition'' in the ``if'' statement changes with the input changes, or the ``for``, ``while`` statement does not change each time it runs. Same. When ``trace'' to the control flow, only the branch that meets the condition will be recorded and explained."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1257
 msgid "不支持全局变量（Tensor），即跨 Module 使用 ``Tensor`` 将会得到不可预知的结果，如下面的例子。"
-msgstr ""
+msgstr "Global variables (Tensor) are not supported, that is, using ``Tensor`` across Modules will result in unpredictable results, as shown in the following example."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1271
-msgid ""
-"被 ``trace`` 的 Module 或 function 参数中的非 ``Tensor`` 类型，将会被看作是常量存储在 Expr 的 "
-":py:attr:`~.Expr.const_val` 属性中，并且该值将不会再变化。"
-msgstr ""
+msgid "被 ``trace`` 的 Module 或 function 参数中的非 ``Tensor`` 类型，将会被看作是常量存储在 Expr 的 :py:attr:`~.Expr.const_val` 属性中，并且该值将不会再变化。"
+msgstr "The module or function parameter that is ``trace'' of non-``Tensor`` type will be regarded as a constant stored in Expr's :py:attr:`~.Expr.const_val` attribute, and this value Will not change again."
 
 #: ../../source/user-guide/deployment/traced_module/api-example.rst:1273
-msgid ""
-"当被 ``trace`` 的自定义 Module 被调用了多次，并且每次传入参数中的非 ``Tensor`` 数据不一致时，将会被 "
-"``trace`` 出多个 Graph。此时将无法通过 :py:attr:`.TracedModule.graph` 属性访问 "
-"Graph，只能通过对应 Moldule 的 ``CallMethod`` Expr 访问，如下面的例子。"
-msgstr ""
+msgid "当被 ``trace`` 的自定义 Module 被调用了多次，并且每次传入参数中的非 ``Tensor`` 数据不一致时，将会被 ``trace`` 出多个 Graph。此时将无法通过 :py:attr:`.TracedModule.graph` 属性访问 Graph，只能通过对应 Moldule 的 ``CallMethod`` Expr 访问，如下面的例子。"
+msgstr "When the ``trace'' custom module is called multiple times, and each time the non-``Tensor'' data in the passed parameters is inconsistent, multiple graphs will be ``trace'' out. At this time, Graph cannot be accessed through the :py:attr:`.TracedModule.graph` attribute, but only through the ``CallMethod`` Expr corresponding to Moldule, as shown in the following example."
 
