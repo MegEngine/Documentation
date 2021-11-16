@@ -29,13 +29,19 @@
 克隆文档源码到本地
 ------------------
 
-将存储库克隆到本地（默认为 ``main`` 分支），确保目录下有 ``Makefile`` 文件。
+将存储库克隆到本地（默认为 ``main`` 分支），确保目录下有 ``Makefile`` 文件：
 
 .. code-block:: shell
 
    git clone https://github.com/MegEngine/Documentation
    cd Documentation
+
+对于一些旧版本的 Git, 还需要用下面的命令从 GitHub LFS 服务器拉取对应文件：
+
+.. code-block:: shell
+
    git lfs install
+   git lfs pull
 
 .. note::
 

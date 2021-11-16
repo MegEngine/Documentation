@@ -26,7 +26,7 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
   `论坛 <https://discuss.megengine.org.cn/c/33-category/33>`_ 中提供各种各样建设性的意见；
 * 更正文档中的拼写错误（Typographical error，简称 Typo）或格式错误（Format error）；
 * 更正文档中的其它类型错误，需要详细说明理由，方便进行讨论和采纳；
-* 帮助我们进行对 Python API 源码中 Docstring 的翻译，参考 :ref:`translation` ；
+* 帮助我们进行对 Python API 源码中文档字符串的翻译，参考 :ref:`translation` ；
 * 帮助我们将中文文档内容翻译成对应的英文版本，参考 :ref:`translation` ；
 * 帮助我们补充完善 :ref:`文档内容 <doc-content>` ，比如教程和指南，不断追求更高的质量。
 
@@ -52,13 +52,12 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
    Co-authored-by: name <name@example.com>
    Co-authored-by: another-name <another-name@example.com>"
 
-这样的方法虽然简单直接，但 MegEngine 团队不能保证处理此类 Issues 的优先级。
-
-俗话说得好：“众人拾柴火焰高”，快来尝试一下吧～ n(\*≧▽≦\*)n
+俗话说得好：“众人拾柴火焰高”，有时候发现问题比解决问题还重要，快来尝试一下吧～ 
 
 .. warning::
 
-   请勿将对文档（Documentation）的 Issues 提交到 MegEngine/MegEngine 存储库。
+   * 这样的方法虽然简单直接，但 MegEngine 团队不能保证处理此类 Issues 的优先级；
+   * 请勿将对文档（Documentation）的 Issues 提交到 MegEngine/MegEngine 存储库。
 
 开发者的贡献方式
 ----------------
@@ -68,11 +67,22 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 
 .. note::
 
-   * 如果你曾经使用 Sphinx 构建过 Python 项目的文档，想必会对下面展示的源码结构非常熟悉。
-     有的时候，为了在本地预览自己的改动效果，我们需要学会 :ref:`how-to-build-the-doc-locally` 。
-   * 你也可以根据自身情况，选择使用 `Gitpod <https://gitpod.io/#prebuild/https://github.com/MegEngine/Documentation>`_
-     等类型的云 IDE 来创建一个临时的文档开发环境，但这需要连接到 GitHub 帐户，且会对你的网络环境有一定的要求。
-     另外由于空间限制，将不会安装 MegEngine 包，因此仅支持使用 MINI 模式来生成除 API Reference 外的文档。
+   目前提供基于 `GitHub Codespaces`_ 云端开发（推荐）和 :ref:`本地开发 <how-to-build-the-doc-locally>` 两种模式。
+
+   如果你的网络环境能够流畅地访问 GitHub 服务，建议在云端进行开发。
+   打开 `Documentation <https://github.com/MegEngine/Documentation>`_ 存储库，
+   点击 Code -> New codespaces 自动启动实例，完成环境初始化，
+   在云端的 Visual Studio Code 中进行相关操作；执行下面的命令构建文档，启动 WEB 服务进行验证：
+
+   >>> make html
+   >>> python3 -m http.server 1124 --directory build/html
+
+   将自动转发的端口可见性设置为公开（Public），可以方便他人在其它机器上进行审核；
+
+   Codespaces 实例可长期持有，支持同步 Visual Studio Code 设置或基于 ``dotfiles`` 的 `个性化设置 
+   <https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account>`_ 。
+
+.. _GitHub Codespaces: https://github.com/features/codespaces 
 
 源码组织逻辑
 ~~~~~~~~~~~~
@@ -106,26 +116,25 @@ MegEngine 文档的源码结构如下：
    ├── CONTRIBUTING.md
    └── README.md
 
-.. dropdown:: :fa:`eye, mr-1` 翻译逻辑和新增 API 注意事项
+.. note::
 
-   .. note::
+    与常见的软件文档 “以英文撰写原文，后续提供多语言翻译” 的逻辑不同，
+    MegEngine 文档默认以中文作为原稿，后续提供其它语言的翻译版本。
+    但由于 :ref:`Python 文档字符串 <python-docstring-style-guide>` 属于源代码注释的一部分，而代码注释提倡用英文撰写，
+    因此 MegEngine 中文文档中的 API 页面在自动生成时，将先从源代码提取出英文文档字符串，
+    再通根据对应的 ``locales/zh-CN/LC_MESSAGES/reference/api/*.po`` 文件中的翻译替换中文。
+    想要了解有关细节，可以参考 :ref:`translation` 页面。
 
-      与常见的软件文档 “以英文撰写原文，后续提供多语言翻译” 的逻辑不同，
-      MegEngine 文档默认以中文作为原稿，后续提供其它语言的翻译版本。
-      但由于 Python Docstring 属于源代码注释的一部分，而代码注释提倡用英文撰写，
-      因此 MegEngine 的 Python API 文档将先从源代码提取出英文 Docstring，
-      再通过翻译对应的 ``locales/zh-CN/LC_MESSAGES/reference/api/*.po`` 文件变为中文。
-      （参考 :ref:`translation` ）
+.. warning::
 
-   .. warning::
+    尽管单个的 API 页面是依据文档字符串的内容自动进行生成的，
+    但为了支持 APIs 的自定义排序，MegEngine 的 :ref:`megengine-reference` 
+    中的各个列表是在 ``source/reference/*.rst`` 文件中人工进行维护的。
 
-      为了支持内容的自定义排序，MegEngine 的 :ref:`megengine-reference` 是通过列举而非自动生成的形式添加到文档中的，
-      如果你需要在文档中预览 API, 则需要参考已有 API 的分类组织方式，编辑对应的 ``source/reference/*.rst`` 文件。
+    比如 :func:`.functional.add` 位于 :docs:`source/reference/functional.rst` 的 Arithmetic operations 分类。
 
-      比如 ``funtional.add`` 位于 ``source/reference/functional.rst`` 的 Arithmetic operations 分类。
-
-      新增 API 不应该出现在当前版本的文档中，所以在验证无误后，请提交到文档的 dev 分支，
-      与 MegEngine 的 master 分支对应。（如果更新了适用于新版本的教程或用户指南，方法同理。）
+    新增 API 不应该出现在当前版本的文档中，所以在验证无误后，请提交到文档的 dev 分支，
+    与 MegEngine 的 master 分支对应。（如果更新了适用于新版本的教程或用户指南，方法同理。）
 
 .. _doc-content:
 
@@ -210,18 +219,10 @@ Pull Request 如何被合并
 .. warning::
 
    签署 CLA 协议要求 commit 中所记录的 Author 账户都是 GitHub 上的账户。
-   如果你默认使用了非 GitHub 账户，需要使用 ``git config`` 命令单独配置。
+   如果你默认使用了非 GitHub 账户，建议使用 ``git config --local`` 命令配置。
 
-官网文档页面的更新将会有一定的处理流程延迟，请耐心等待官网服务器更新文档内容。
+.. note::
 
-官方文档维护人员
-----------------
+   官网文档页面的更新将会有一定的处理流程延迟，请耐心等待官网服务器更新文档内容。
 
-当代码需要找人审核时，可以从下面的人员名单中进行选择：
 
-* 整体内容：Chai_ , xxr_ , `Dash Chen`_
-* 文档架构：Chai_
-
-.. _Chai: https://github.com/MegChai
-.. _xxr: https://github.com/xxr3376
-.. _Dash chen: https://github.com/dc3671
