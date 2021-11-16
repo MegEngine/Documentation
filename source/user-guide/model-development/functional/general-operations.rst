@@ -142,7 +142,7 @@ Tensor([[ 9. 16.]
 
 .. _reduction-operations:
 
-归约运算（Reductioin）
+归约运算（Reduction）
 ----------------------
 
 .. note::
