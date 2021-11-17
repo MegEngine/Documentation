@@ -37,6 +37,21 @@
 
    使用 ``pickle`` 模块时，相应术语也叫做封存（pickling）和解封（unpickling）。
 
+.. admonition:: pickle 模块与协议的兼容
+   :class: note
+
+   由于不同版本的 Python 之间 ``pickle`` 模块使用的 
+   `数据流格式 <https://docs.python.org/3/library/pickle.html#data-stream-format>`_ 协议可能不同，
+   因此可能会出现高版本 Python 保存的 MegEngine 模型在低版本 Python
+   无法加载的情况。这里提供两种解决思路：
+
+   * 在调用 :func:`megengine.save` 时，通过参数 ``pickle_protocol`` 指定兼容性较强的版本（比如第 4 版）;
+   * 接口 :func:`megengine.save` 和 :func:`megengine.load` 都支持传入 ``pickle_module`` 参数，
+     从而使用指定的 ``pickle`` 模块，比如安装并使用 `pickle5 <https://pypi.org/project/pickle5/>`_ 
+     来代替 Python 内置的 ``pickle`` 模块：
+
+     >>> import pickle5 as pickle
+
 .. admonition:: pickle 模块并不安全！
    :class: warning
 
