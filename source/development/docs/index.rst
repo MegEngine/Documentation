@@ -33,7 +33,7 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 你也可以浏览处于 Open 状态的 `Issues <https://github.com/MegEngine/Documentation/issues>`_
 列表，从里面接下任务或找到一些灵感。
 
-.. _doc-co-author:
+.. _doc-contribution-quick-start:
 
 非开发人员的贡献方式
 --------------------
@@ -42,7 +42,7 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 但没有 GitHub 账号，或者不熟悉 MegEngine 文档的 :ref:`github-collaborate` ，
 觉得 Fork & Pull Request 等流程过于麻烦，
 则可以通过 Issues、交流群和论坛等官方渠道友好地提出来，由我们负责进行后续处理。
-我们会在对应的 Commit 中将你以共同作者（Co-author）的形式加入历史记录：
+我们会在对应的 Commit 中将你以共同作者（Co-author）的形式加入历史记录（需要提供 GitHub 用户名和邮箱）：
 
 .. code-block:: shell
 
@@ -52,12 +52,14 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
    Co-authored-by: name <name@example.com>
    Co-authored-by: another-name <another-name@example.com>"
 
-俗话说得好：“众人拾柴火焰高”，有时候发现问题比解决问题还重要，快来尝试一下吧～ 
+俗话说得好：“众人拾柴火焰高”，有时候发现问题比解决问题还重要，快来尝试一下吧～
 
 .. warning::
 
    * 这样的方法虽然简单直接，但 MegEngine 团队不能保证处理此类 Issues 的优先级；
    * 请勿将对文档（Documentation）的 Issues 提交到 MegEngine/MegEngine 存储库。
+
+.. _doc-contribution-standard-way:
 
 开发者的贡献方式
 ----------------
@@ -71,18 +73,19 @@ MegEngine 文档的贡献者大致可参考以下几个方向（由易到难）�
 
    如果你的网络环境能够流畅地访问 GitHub 服务，建议在云端进行开发。
    打开 `Documentation <https://github.com/MegEngine/Documentation>`_ 存储库，
-   点击 Code -> New codespaces 自动启动实例，完成环境初始化，
-   在云端的 Visual Studio Code 中进行相关操作；执行下面的命令构建文档，启动 WEB 服务进行验证：
+   点击 Code -> Codespaces -> New codespace 自动启动实例，完成环境初始化。
+   在云端的 Visual Studio Code 中进行相关操作后，执行下面的命令构建文档，启动 WEB 服务进行验证：
 
    >>> make html
    >>> python3 -m http.server 1124 --directory build/html
 
    将自动转发的端口可见性设置为公开（Public），可以方便他人在其它机器上进行审核；
 
-   Codespaces 实例可长期持有，支持同步 Visual Studio Code 设置或基于 ``dotfiles`` 的 `个性化设置 
-   <https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account>`_ 。
+   * Codespaces 支持同步 Visual Studio Code 设置或基于 ``dotfiles`` 的 `个性化设置
+     <https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account>`_ ；
+   * Codespaces 支持通过 Visual Studio Code Desktop 打开，开发者可按需选择使用方式。
 
-.. _GitHub Codespaces: https://github.com/features/codespaces 
+.. _GitHub Codespaces: https://github.com/features/codespaces
 
 源码组织逻辑
 ~~~~~~~~~~~~
@@ -128,7 +131,7 @@ MegEngine 文档的源码结构如下：
 .. warning::
 
     尽管单个的 API 页面是依据文档字符串的内容自动进行生成的，
-    但为了支持 APIs 的自定义排序，MegEngine 的 :ref:`megengine-reference` 
+    但为了支持 APIs 的自定义排序，MegEngine 的 :ref:`megengine-reference`
     中的各个列表是在 ``source/reference/*.rst`` 文件中人工进行维护的。
 
     比如 :func:`.functional.add` 位于 :docs:`source/reference/functional.rst` 的 Arithmetic operations 分类。
@@ -190,7 +193,7 @@ GitHub 协作流程
 持续集成 & 部署逻辑
 ~~~~~~~~~~~~~~~~~~~
 
-当你在本地的修改已经完成后，可以通过发起 Pull Request 来触发持续集成。
+已经推送分支后，可以通过向 Documentation 的特定分支发起 Pull Request 来触发持续集成。
 
 .. image:: ../../_static/images/megengine-ci.png
    :align: center

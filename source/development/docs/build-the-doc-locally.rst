@@ -3,10 +3,6 @@
 如何在本地构建与预览文档
 ========================
 
-.. note::
-
-   我们建议开发者在发起 MegEngine 文档相关的 Pull Requset 前，在本地构建并预览好文档内容。
-
 .. warning::
 
    文档构建有 FULL 和 MINI 两种不同的模式，可以通过配置环境变量 ``MGE_DOC_MODE`` 来决定具体的行为，
@@ -14,7 +10,7 @@
 
    ``AUTO`` （默认）
      自动探测 MegEngine 包是否可用，如可用则进入 FULL 模式，否则进入 MINI 模式；
-   
+
    ``MINI``
      构建除 MegEngine API Reference 外的文档，**不依赖于 MegEngine 源代码** 。
 
@@ -91,7 +87,7 @@ MegEngine 文档使用 Sphinx_ 进行整个网站的构建，请运行下面的�
 
 .. warning::
 
-   MegEgnine 文档使用了 Fork 后修改过的 
+   MegEgnine 文档使用了 Fork 后修改过的
    `pydata-sphinx-theme <https://github.com/MegEngine/pydata-sphinx-theme/tree/dev>`_ 主题，
    如果你的本地环境已经存在该主题，可能需要提前删除该主题或使用额外的 Python 虚拟环境。
 
@@ -127,7 +123,7 @@ Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经�
 
 .. code-block:: shell
 
-   sudo apt install -y graphviz 
+   sudo apt install -y graphviz
 
 如果你使用的是其它操作系统，想要安装 Graphviz，请参考 Graphviz 官方的 `Download <https://graphviz.org/download/>`_ 页面。
 
