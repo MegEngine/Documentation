@@ -117,11 +117,7 @@ Crowdin 不可用时的做法
 2. 根据 ``msgstr`` 找到对应位置，根据 ``msgid`` 原文修改 ``msgstr`` 为正确内容；
 3. 按照 Git 工作流向 Documentation 库发起 Pull Request.
 
-更多细节请参考 :ref:`docs` 和 :ref:`commit-message` 。
-
-.. note::
-
-   如果不熟悉 Git 操作，你可以通过任何官方渠道与文档维护人员联系并进行反馈，亦可作为 :ref:`共同作者 <doc-co-author>` 。
+更多细节请参考 :ref:`docs` 和 :ref:`commit-message` 。s
 
 翻译注意事项
 ------------
