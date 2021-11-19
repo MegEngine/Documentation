@@ -79,28 +79,28 @@ Tensor API 设计规范
 
 .. note::
 
-  #. 默认情况下，采用《 `数组 API 标准`_ 》以及 :ref:`array-api-addon` 作为基本规范；
+   #. 默认情况下，采用《 `数组 API 标准`_ 》以及 :ref:`array-api-addon` 作为基本规范；
 
-     * `Purpose and scope <https://data-apis.org/array-api/latest/purpose_and_scope.html>`_
-     * `Design topics & constraints <https://data-apis.org/array-api/latest/design_topics/index.html>`_
-     * `API specification <https://data-apis.org/array-api/latest/API_specification/index.html#api-specification-index--page-root>`_
+      * `Purpose and scope <https://data-apis.org/array-api/latest/purpose_and_scope.html>`_
+      * `Design topics & constraints <https://data-apis.org/array-api/latest/design_topics/index.html>`_
+      * `API specification <https://data-apis.org/array-api/latest/API_specification/index.html#api-specification-index--page-root>`_
 
-  #. 对于《数组 API 标准》中尚待形成标准的主题内容（TODO），采取如下原则：
+   #. 对于《数组 API 标准》中尚待形成标准的主题内容（TODO），采取如下原则：
 
-     #. API 科学合理是首要追求，只有在几种参考选择仅仅是习惯上的区别时，优先级为 NumPy > PyTorch > 其它；
-     #. 除 NumPy 和 PyTorch 外，应该总是全面地比较各框架/库的 API, 包括但不限于 TensorFlow, OpenCV 等...
+      #. API 科学合理是首要追求，只有在几种参考选择仅仅是习惯上的区别时，优先级为 NumPy > PyTorch > 其它；
+      #. 除 NumPy 和 PyTorch 外，应该总是全面地比较各框架/库的 API, 包括但不限于 TensorFlow, OpenCV 等...
 
-  一些还未被讨论的主题或许会在将来被纳入《数组 API 标准》，届时 MegEngine 中应当向标准靠拢，并保留该旧接口以免造成兼容性破坏。
-  例如由于目前尚未形成 ``random`` 的《标准》参考实现，而按照 Tensor API 设计规范的基本原则，目前应当参考 NumPy 中的 ``random`` 进行实现，
-  其中有： 
+   一些还未被讨论的主题或许会在将来被纳入《数组 API 标准》，届时 MegEngine 中应当向标准靠拢，并保留该旧接口以免造成兼容性破坏。
+   例如由于目前尚未形成 ``random`` 的《标准》参考实现，而按照 Tensor API 设计规范的基本原则，目前应当参考 NumPy 中的 ``random`` 进行实现，
+   其中有： 
 
-  * ``numpy.random.permutation``
-  * ``numpy.random.shuffle``
-  * ``numpy.random.Generator.permuted``
+   * ``numpy.random.permutation``
+   * ``numpy.random.shuffle``
+   * ``numpy.random.Generator.permuted``
 
-  几个语义极为接近的 API. 如果将来的《标准》中提出了更加规范的定义，MegEngine 将实现新的接口，并保留旧接口调用。
-  另一种情况是，如果《标准》中对 NumPy 中的 API 进行了重命名，比如使用 ``concat`` 代替 ``concatenate``,
-  那么 MegEngine 中将实现 ``concat``, 并且在文档中仅向用户展示这种用法，旧的用法将不被推荐（但保证兼容历史用法）。
+   几个语义极为接近的 API. 如果将来的《标准》中提出了更加规范的定义，MegEngine 将实现新的接口，并保留旧接口调用。
+   另一种情况是，如果《标准》中对 NumPy 中的 API 进行了重命名，比如使用 ``concat`` 代替 ``concatenate``,
+   那么 MegEngine 中将实现 ``concat``, 并且在文档中仅向用户展示这种用法，旧的用法将不被推荐（但保证兼容历史用法）。
 
 .. warning::
 
@@ -137,16 +137,19 @@ Tensor API 设计规范
   * 目前 MegEngine 中支持的数据类型可在 :ref:`tensor-dtype` 中找到，并未完全实现《标准》中要求的数据类型，例如 64 位数据类型和复数数据类型；
   * 混合类型提升在《标准》中是未定义行为，而在 MegEngine 用户指南中明确了相关行为。
 
-函数签名与参数（ `Function and method signatures`_ ）
+函数与方法签名（ `Function and method signatures`_ ）
   * 位置参数必须使用 `PEP 570`_ 中规定的仅位置（Positional-Only）参数，语法为 ``/`` 符。
     由于该特性仅在 Python >= 3.8 版本可用，而 MegEngine 目前仍需要支持一些低于 3.8 的 Python 版本。
-    因此现在的做法是在文档中为用户添加指导，让用户以仅位置参数的方式去使用它们。
+    因此现在的做法是在文档中以示例代码的形式为用户添加指导，要求用户以仅位置参数的方式去使用它们。
     另一种方式是在文档字符串的第一行重载签名内容，参考 `autodoc_docstring_signature`_ .
-  * 对于只有单个 Tensor 输入作为位置参数的函数，参数应该被命名为 ``inp``,
-    对于有多个输入参数的情况，参数应该被命名为 ``inp1, inp2 ...``, 以此类推。
-    在标准中要求使用 ``x`` 作为输入位置参数的名字，如果遵循标准，会引入兼容性破坏，因此保留现在的参数名。
-    我们认为，由于将来会采取仅位置参数约定，因此位置参数的名称并不关键，这里只是为了历史写法兼容。
-  * 参考示例中使用了 NumPy 风格的文档字符串，MegEngine 中要求使用 Google 风格。
+  * 关键字参数必须使用仅关键字（Keyword-Only）参数，且保证向后兼容性。
+  * 对于只有单个 Tensor 输入作为位置参数的函数，在标准中要求使用 ``x`` 作为输入位置参数的名字。
+    而在 MegEngine 中，部分函数签名中的输入已经被命名为 ``inp``, 当前此类参数命名并不统一。
+    由于位置参数要求以仅位置参数的形式使用，因此位置参数的名称改动将不被看作是兼容性破坏，
+    后续会有相应的命名变更，使之符合《标准》的要求。
+  * 为了可读性，《标准》要求类型注释被排除在签名本身之外，但是需要被添加到单独的参数描述中。
+    目前 MegEngine 中 API 的做法是签名中的参数都需要添加类型注释，而不要求写在参数描述中。
+  * 《标准》参考示例中使用了 NumPy 风格的文档字符串，而在 MegEngine 中要求使用 Google 风格。
 
 向后兼容性处理
 ~~~~~~~~~~~~~~
