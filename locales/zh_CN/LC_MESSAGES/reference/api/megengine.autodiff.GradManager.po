@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-08-17 23:28\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-11-09 08:03\n"
 "Last-Translator: \n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.autodiff.GradManager.po\n"
 "X-Crowdin-File-ID: 6588\n"
-"Language: zh_CN\n"
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:2
 msgid "megengine.autodiff.GradManager"
@@ -62,35 +62,43 @@ msgstr "通常，在数据并行的时候，我们需要跨进程计算梯度的
 msgid "Methods"
 msgstr "方法"
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
 msgid ":obj:`attach <megengine.autodiff.GradManager.attach>`\\ \\(tensors\\[\\, callbacks\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
 msgid "Instruct GradManager to track operations on tensors, so that gradients with respect to those tensors could be evaluated later."
 msgstr "指示 GradManager 跟踪张量上的操作，以便那些张量上的梯度，可以在之后进行计算。"
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
+msgid ":obj:`attached_tensors <megengine.autodiff.GradManager.attached_tensors>`\\ \\(\\)"
+msgstr ""
+
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
+msgid "Return attached tensor list from :meth:`attach`."
+msgstr ""
+
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
 msgid ":obj:`backward <megengine.autodiff.GradManager.backward>`\\ \\(\\[y\\, dy\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
 msgid "Compute gradients (or vector-Jacobian product) for all attached tensors, accumulate to corresponding .grad attribute, and release resources along the way."
 msgstr "对所有 attached Tensor 计算梯度 (或向量-雅可比积)，并将其积累到对应 Tensor 的 .grad 属性中，在过程中释放资源。"
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
 msgid ":obj:`record <megengine.autodiff.GradManager.record>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
 msgid "Start recording operations"
 msgstr "开始记录操作"
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
 msgid ":obj:`release <megengine.autodiff.GradManager.release>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.autodiff.GradManager.rst:30:<autosummary>:1
+#: ../../source/reference/api/megengine.autodiff.GradManager.rst:33:<autosummary>:1
 msgid "Stop recording operations and release resources kept for gradient computation"
 msgstr "停止记录操作并释放为计算梯度而保留的资源"
 

@@ -49,6 +49,12 @@ Meta 与流程类 MEPs
    * - P
      - :ref:`mep-0001`
      - The MegEngine Open Source Team
+   * - P
+     - :ref:`mep-0002`
+     - 许欣然
+   * - I
+     - :ref:`mep-0003`
+     - 高华佐，曹骁威
 
 临时状态 MEPs
 ~~~~~~~~~~~~~

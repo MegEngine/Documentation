@@ -30,50 +30,14 @@ Deprecated APIs
      - 将被删除
      - 备选方案
 
-   * - megengine.funtional.nn.interpolate
-     - 1.3
+   * - megengine.Tensor.reset_zero
+     - 1.0
      - 待定
-     - megengine.functional.vision.interpolate
-
-   * - megengine.funtional.nn.roi_pooling
-     - 1.3
+     - 
+   * - megengine.Tensor.set_value
+     - 1.0
      - 待定
-     - megengine.functional.vision.roi_pooling
-
-   * - megengine.funtional.nn.roi_align
-     - 1.3
-     - 待定
-     - megengine.functional.vision.roi_align
-
-   * - megengine.funtional.nn.nms
-     - 1.3
-     - 待定
-     - megengine.functional.vision.nms
-
-   * - megengine.funtional.nn.resize
-     - 1.3
-     - 待定
-     - megengine.functional.vision.resize
-
-   * - megengine.funtional.nn.remap
-     - 1.3
-     - 待定
-     - megengine.functional.vision.remap
-
-   * - megengine.funtional.nn.nvof
-     - 1.3
-     - 待定
-     - megengine.functional.vision.nvof
-
-   * - megengine.funtional.nn.warp_affine
-     - 1.3
-     - 待定
-     - megengine.functional.vision.warp_affine
-
-   * - megengine.funtional.nn.warp_perspective
-     - 1.3
-     - 待定
-     - megengine.functional.vision.warp_perspective
+     - 
 
 .. _deprecation-policy:
 

@@ -1,0 +1,76 @@
+name: Deploy (master)
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  Flow:
+    name: Build master branches MegEngine and dev docs
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout documentation repsitory
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          lfs: true
+          submodules: recursive
+
+      - name: Checkout MegEngine repsitory
+        uses: actions/checkout@v2
+        with:
+          repository: MegEngine/MegEngine
+          path: megengine
+          ref: master
+          fetch-depth: 1
+          lfs: true
+          submodules: recursive
+
+      - name: Checkout LFS objects
+        run: git lfs checkout
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+          python3 -m pip install -r megengine/imperative/python/requires.txt
+
+      - name: Install pandoc and other dependencies
+        run: sudo apt install -y pandoc graphviz
+
+      - name: Build MegEngine
+        run: |
+          cd megengine
+          ./third_party/prepare.sh
+          ./third_party/install-mkl.sh
+          cmake -S . -B build -DMGE_WITH_CUDA=OFF -DMGE_WITH_MKLDNN=OFF
+          make -C build -j$(($(nproc) * 2)) develop
+
+      - name: Generate static.tgz 
+        run: |
+          export PYTHONPATH=./megengine/imperative/python
+          export MGE_DOC_MODE="FULL"
+          ./scripts/oss/build_for_oss.sh
+
+      - name: Deploy on OSS
+        run: |
+          export GIT_HASH=$(git rev-parse --short HEAD) && echo $GIT_HASH
+          wget http://gosspublic.alicdn.com/ossutil/1.7.7/ossutil64
+          chmod 755 ossutil64
+          ./ossutil64 config -e ${{ secrets.OSS_PROD_ENDPOINT }} -i ${{ secrets.OSS_PROD_ACCESS_KEY_ID }} -k ${{ secrets.OSS_PROD_ACCESS_KEY_SECRET }}
+          ./ossutil64 mkdir oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/commit-$GIT_HASH
+          ./ossutil64 cp static.tgz oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/commit-$GIT_HASH/static.tgz
+          ./ossutil64 cp -f oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/mapping.json .
+          export MGE_DOC_MODE="MINI"
+          version=`python3 -c "from source.conf import version; print(version)"`
+          python3 scripts/oss/update.py -v "master" -c ${GIT_HASH}
+          ./ossutil64 cp -f mapping.json oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/mapping.json
+
+

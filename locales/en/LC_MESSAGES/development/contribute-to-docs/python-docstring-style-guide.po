@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 20:15+0800\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,103 +27,195 @@ msgstr ""
 
 #: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:9
 msgid ""
-"`PEP 257 <https://www.python.org/dev/peps/pep-0257>`_ - Docstring "
-"Conventions"
+"`PEP 257 <https://www.python.org/dev/peps/pep-0257>`_ - 文档字符串约定（Docstring"
+" Conventions）"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:10
 msgid ""
 "`PEP 287 <https://www.python.org/dev/peps/pep-0287>`_ - reStructuredText "
-"Docstring Format"
+"风格文档字符串格式"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:11
-msgid "`PEP 484 <https://www.python.org/dev/peps/pep-0484>`_ - Type Hints"
+msgid "`PEP 484 <https://www.python.org/dev/peps/pep-0484>`_ - 类型提示（Type Hints）"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:12
 msgid ""
 "`Google Python Style guides "
 "<https://google.github.io/styleguide/pyguide.html#381-docstrings>`_ - "
-"Docstrings"
+"Google 风格文档字符串格式"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:16
-msgid "在 MegEngine 源码中鼓励使用 Google Style 风格的 Docstring. (必须带上 Type Hints)"
+msgid "在 MegEngine 源码中鼓励使用 Google 风格的文档字符串。 (必须带上类型提示)"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:20
-msgid "由于历史原因，MegEngine 曾选择了使用 reStructuredText Docstring 代码风格。"
+msgid "由于历史原因，MegEngine 曾选择了使用 reStructuredText 文档字符串风格；"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:21
-msgid "在 >=1.6 版本的 MegEngine, 所有 Docstring 将统一迁移成 Google Style."
+msgid "在 >=1.6 版本的 MegEngine, 所有文档字符串将统一迁移成 Google 风格；"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:26
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:22
+msgid "如果你发现了 MegEngine 仍然存在 ReST 风格的参数/返回值写法，欢迎帮我们改正过来。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:27
 msgid "Docstring Google Style 模版"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:28
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:29
 msgid ""
 "我们建议所有刚开始尝试 Docstring 编写的开发者看一看下面这个模版文件 （ `源文件地址 <https://github.com"
-"/sphinx-contrib/napoleon/blob/master/docs/source/example_google.rst>`_ ）："
-msgstr ""
-
-#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:334
-msgid "阅读 :ref:`document-reference` 会对了解如何组织内容有所帮助。"
+"/sphinx-contrib/napoleon/blob/master/docs/source/example_google.py>`_ ）："
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:335
+msgid "阅读 :ref:`document-reference` 会对了解如何组织内容有所帮助。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:336
 msgid "上面给出的样例模版更多地是作为形式上的参考，适合作为比对。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:338
-msgid "Docstring 对文档的意义"
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:339
+msgid "Docstring 撰写指南"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:340
-msgid "一些开发者的 Python 开发环境中，可以根据 Docstring 进行更加智能的内容提示。但这还不是全部，"
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:341
+msgid ""
+"在 《Google Python Style Guide》的第 `3.8 "
+"<https://google.github.io/styleguide/pyguide.html#38-comments-and-"
+"docstrings>`_ 小节， 已经提供了相当丰富的建议，如："
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:342
-msgid "在 MegEngine 文档中，Docstring 肩负着重要的使命——"
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:344
+msgid "函数（方法、或生成器）必须提供文档字符串，除非它：对外不可见、很短、用途明显；"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:345
-msgid "API 参考页面自动生成"
+msgid "文档字符串应该提供足够的信息来体现函数的调用方式，使用户无需阅读其源码即可使用；"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:346
+msgid "文档字符串应描述函数的调用语法及其语义，但通常不描述其实现细节；"
 msgstr ""
 
 #: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:347
-msgid ""
-"我们借助 Sphinx 来构建整个 MegEngine 文档（参考 :ref:`how-to-build-the-doc-locally` ）， "
-"而 Sphinx 在根据 Docstring 生成 API 页面时，默认只支持 reStructuredText 语法。 因此我们用到了 "
-"`sphinx.ext.napoleon <https://www.sphinx-"
-"doc.org/en/master/usage/extensions/napoleon.html>`_ 插件， 它能够在生成文档前临时将所有的 "
-"Google Style 语法解析成 reStructureText 语法。"
+msgid "文档字符串应该是描述性风格而不是命令式风格... 等等。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:353
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:349
+msgid "除此以外，开发者在为 MegEngine 的 Python API 编写 Docstring 时，还需注意以下情况："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:351
 msgid ""
-"这也意味着我们依旧可以使用 :ref:`restructuredtext` 中提到的各种语法来编辑 Docstring 内容， 包括 API "
+"**Tensor API 文档字符串优先参考《数组 API 标准》。** 在《 :ref:`mep-0003` 》中，明确了 MegEngine "
+"Tensor API 在设计时将尽量参考 《 `数组 API 标准 <https://data-apis.org/array-"
+"api/latest/>`_ 》中所定义的规格和约定，文档字符串也应当遵循这一原则。 当某个 Tensor API "
+"已经存在于《标准》之中时，文档字符串编辑人员应当仔细确认《标准》中所陈述的行为在 MegEngine 中表现是否一致。 "
+"对于完全一致的行为，应当使用一致的、《标准》中已经提供的文档字符串进行描述；对于不一致的行为，应当以提示或警告的形式进行说明。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:356
+msgid ""
+"**可适当重写以覆盖 API 源码中提供的类型提示。** 默认情况下，API 文档中的类型提示将根据源码 TypeHint 内容生成。 "
+"一些仅内部使用的类型如 ``SymbolVar``, ``CompNote``... "
+"所涉及的概念会让用户感到迷惑，此时应当在文档字符串中适当重写。 做法是在参数后面空一格，然后用半角圆括号括起重写后的类型提示内容："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:374
+msgid ""
+"理想状态下，源码中的每个 API 的参数都应该带上类型提示，这样做对编辑器、集成开发环境更为友好。 覆写 TypeHint "
+"内容会引入额外的维护成本，因此不建议所有的 TypeHint 都进行人为覆写。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:377
+msgid "**示范代码必须使用标准 doctest 风格而非 code-output 风格。** 对比如下："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:383
+msgid "错误写法"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:399
+msgid "正确写法"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:409
+msgid "一些时候可用注释代替上下文；"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:410
+msgid "可以有多例，以展示不同的用法。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:413
+msgid "**API 文档首行简述应确保做到 “清晰、准确、概括” 这三点要求。** 错误例子如下："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:420
+msgid ""
+"整个文档字符串的内容只有上述这句话，对于一个不了解分布式概念的用户来说， 仅提供这些信息的帮助极其有限。 用户完全不知道这样的 API "
+"能够用在什么地方，也有可能对 “聚合式通信（collective communication）” 的概念一无所知。 "
+"我们希望文档中所提供的概念应该是自包含的（Self-"
+"contained），解释性的文本（或对应的链接）是不可或缺的，尽可能避免让用户去搜索其它材料。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:424
+msgid ""
+"对于一些比较复杂的、或需要结合情景使用的 API, 仅靠示范代码不足以帮助用户理解使用情景， "
+"此时可以提供到专门介绍用法的文档页面的链接。常见的做法是使用 ``seealso`` 进行拓展："
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:434
+msgid "**合理补充提示（Note）和警告（Warning）信息，善用页面交叉引用，根据用户反馈不断迭代。**"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:438
+msgid "Docstring 对文档的意义"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:440
+msgid "API 参考页面自动生成"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:443
+msgid ""
+"我们借助 Sphinx 来构建整个 MegEngine 文档（参考 :ref:`how-to-build-the-doc-locally` ）， "
+"其中每个 Python API 的单个文档页面（如 :func:`~.functional.add` ）都是提取相应的文档字符串内容自动生成的。"
+msgstr ""
+
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:446
+msgid ""
+"前面提到了，在 MegEngine 源码中鼓励使用 Google 风格的文档字符串。 由于 Sphinx 在根据文档字符串生成 API "
+"页面时，默认只支持 reStructuredText 语法。 因此我们用到了 `sphinx.ext.napoleon <https://www"
+".sphinx-doc.org/en/master/usage/extensions/napoleon.html>`_ 插件， "
+"它能够在生成文档前临时将所有的 Google Style 语法解析成 reStructureText 语法。 这也意味着我们依旧可以使用 "
+":ref:`restructuredtext` 中提到的各种语法来编辑文档字符串内容， 包括 API "
 "之间的交叉引用、超链接、插入图片，甚至加入一些高级的 HTML 视觉样式。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:355
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:454
 msgid ""
-"但我们也要考虑到习惯直接阅读源码（以及使用 ``help()`` / ``print(*.__doc__)`` 语法）的用户， "
-"使用过多的衍生语法将打破纯文本样式的约定，降低 Python 源码的阅读体验。"
+"但是，我们也要考虑到习惯直接阅读源码（以及使用 ``help()`` / ``print(*.__doc__)`` 语法）的用户， "
+"使用过多的衍生语法和交叉引用将打破纯文本样式的约定，降低 Python 源码的阅读体验，需克制使用。"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:359
-msgid "We need Chinese!"
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:457
+msgid "别忘记提供对应的翻译文本"
 msgstr ""
 
-#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:361
+#: ../../source/development/contribute-to-docs/python-docstring-style-guide.rst:460
 msgid ""
 "MegEngine 文档的特点之一是提供了中文 API 翻译，而 Docstring 作为源代码的一部分，当然是用英文撰写的。 因此在 "
 "MegEngine 源代码中修改 Docstring 后我们还需要在 Documentation 文档中更新对应 ``.po`` 文件， "
-"Sphinx 在生成文档时会先检索匹配到的文本，接着自动地将原文替换成对应的英文，这和 WordPress 国际化原理类似， "
+"Sphinx 在生成文档时会先检索匹配到的文本，接着自动地将原文替换成对应的译文，这和 WordPress 国际化原理类似， "
 "相关细节和翻译流程请参考 :ref:`translation` 。"
 msgstr ""
 
@@ -137,5 +229,81 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "内容正在建设中......"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`PEP 257 <https://www.python.org/dev/peps/pep-0257>`_ "
+#~ "- Docstring Conventions"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`PEP 287 <https://www.python.org/dev/peps/pep-0287>`_ "
+#~ "- reStructuredText Docstring Format"
+#~ msgstr ""
+
+#~ msgid "`PEP 484 <https://www.python.org/dev/peps/pep-0484>`_ - Type Hints"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Google Python Style guides "
+#~ "<https://google.github.io/styleguide/pyguide.html#381-docstrings>`_"
+#~ " - Docstrings"
+#~ msgstr ""
+
+#~ msgid "在 MegEngine 源码中鼓励使用 Google Style 风格的 Docstring. (必须带上 Type Hints)"
+#~ msgstr ""
+
+#~ msgid "由于历史原因，MegEngine 曾选择了使用 reStructuredText Docstring 代码风格。"
+#~ msgstr ""
+
+#~ msgid "在 >=1.6 版本的 MegEngine, 所有 Docstring 将统一迁移成 Google Style."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "我们建议所有刚开始尝试 Docstring 编写的开发者看一看下面这个模版文件 （ "
+#~ "`源文件地址 <https://github.com/sphinx-"
+#~ "contrib/napoleon/blob/master/docs/source/example_google.rst>`_ "
+#~ "）："
+#~ msgstr ""
+
+#~ msgid "一些开发者的 Python 开发环境中，可以根据 Docstring 进行更加智能的内容提示。但这还不是全部，"
+#~ msgstr ""
+
+#~ msgid "在 MegEngine 文档中，Docstring 肩负着重要的使命——"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "我们借助 Sphinx 来构建整个 MegEngine 文档（参考 :ref"
+#~ ":`how-to-build-the-doc-locally` ），"
+#~ " 而 Sphinx 在根据 Docstring 生成 API "
+#~ "页面时，默认只支持 reStructuredText 语法。 因此我们用到了 "
+#~ "`sphinx.ext.napoleon <https://www.sphinx-"
+#~ "doc.org/en/master/usage/extensions/napoleon.html>`_ 插件， "
+#~ "它能够在生成文档前临时将所有的 Google Style 语法解析成 "
+#~ "reStructureText 语法。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "这也意味着我们依旧可以使用 :ref:`restructuredtext` 中提到的各种语法来编辑 "
+#~ "Docstring 内容， 包括 API "
+#~ "之间的交叉引用、超链接、插入图片，甚至加入一些高级的 HTML 视觉样式。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "但我们也要考虑到习惯直接阅读源码（以及使用 ``help()`` / "
+#~ "``print(*.__doc__)`` 语法）的用户， 使用过多的衍生语法将打破纯文本样式的约定，降低 "
+#~ "Python 源码的阅读体验。"
+#~ msgstr ""
+
+#~ msgid "We need Chinese!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "MegEngine 文档的特点之一是提供了中文 API 翻译，而 Docstring "
+#~ "作为源代码的一部分，当然是用英文撰写的。 因此在 MegEngine 源代码中修改 "
+#~ "Docstring 后我们还需要在 Documentation 文档中更新对应 "
+#~ "``.po`` 文件， Sphinx "
+#~ "在生成文档时会先检索匹配到的文本，接着自动地将原文替换成对应的英文，这和 WordPress 国际化原理类似，"
+#~ " 相关细节和翻译流程请参考 :ref:`translation` 。"
 #~ msgstr ""
 

@@ -166,6 +166,8 @@ DTR 相关
 ----------
 ``MEGENGINE_INTERP_ASYNC_LEVEL`` （ :ref:`nd-environ` ）
   动态图的执行并行度，``0`` 是完全串行，``1`` 是计算异步，``2`` 是用户代码和计算都异步（默认）。
+  设置为 0 将使 MegEngine 上层的任务队列变成同步执行，即 Python 调用一个 Op, C++ 层执行一个 Op,
+  没执行完前 Python 层不会走到下一句，便于定位 Python 层报错的位置，但会影响速度。
 
 ``MEGENGINE_CATCH_WORKER_EXEC`` （ :ref:`nd-environ` ）
   是否捕获动态图 worker 的异常，默认开启，Debug 时可将其关闭。

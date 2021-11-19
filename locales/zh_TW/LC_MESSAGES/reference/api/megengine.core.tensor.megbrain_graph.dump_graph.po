@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-21 15:57+0800\n"
-"PO-Revision-Date: 2021-06-21 14:59\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-11-12 01:17\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -30,75 +30,79 @@ msgstr "crwdns62434:0crwdne62434:0"
 msgid "参数"
 msgstr "crwdns62436:0crwdne62436:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:3 of
-msgid "output variables which are the graph's end point.  .. note::      The underlying C++ API only accepts a var list. If a dict is given,     the vars would be renamed to the given names."
-msgstr "crwdns62438:0crwdne62438:0"
-
-#: megengine.core.tensor.megbrain_graph.dump_graph:3 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:4 of
 msgid "output variables which are the graph's end point."
 msgstr "crwdns62440:0crwdne62440:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:7 of
-msgid "The underlying C++ API only accepts a var list. If a dict is given, the vars would be renamed to the given names."
-msgstr "crwdns62442:0crwdne62442:0"
-
-#: megengine.core.tensor.megbrain_graph.dump_graph:10 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:6 of
 msgid "level for keeping variable names:  * 0: none of the names are kept * 1: (default)keep names of output vars * 2: keep names of all (output and internal) vars"
 msgstr "crwdns62444:0crwdne62444:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:15 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:12 of
 msgid "whether to keep operator names."
 msgstr "crwdns62454:0crwdne62454:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:16 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:14 of
 msgid "whether to keep param names, so param values can be easily manipulated after loading model"
 msgstr "crwdns62456:0crwdne62456:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:18 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:17 of
 msgid "whether to keep priority setting for operators"
 msgstr "crwdns62458:0crwdne62458:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:19 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:18 of
 msgid "a string for path or a file handler. if is not None, then the dump information for code strip would be written to ``strip_info_file``"
 msgstr "crwdns62460:0crwdne62460:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:21 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:20 of
 msgid "will be check when `strip_info_file` is not None. if set true, the information for code strip will be append to strip_info_file. if set false, will rewrite strip_info_file"
 msgstr "crwdns62462:0crwdne62462:0"
+
+#: megengine.core.tensor.megbrain_graph.dump_graph:26 of
+msgid "The underlying C++ API only accepts a var list. If a dict is given, the vars would be renamed to the given names."
+msgstr "crwdns62442:0crwdne62442:0"
+
+#: megengine.core.tensor.megbrain_graph.dump_graph of
+msgid "返回类型"
+msgstr "crwdns68523:0crwdne68523:0"
+
+#: megengine.core.tensor.megbrain_graph.dump_graph:29 of
+msgid ":py:data:`~typing.Tuple`\\[:py:class:`bytes`, :py:class:`~megengine.core.tensor.megbrain_graph.CompGraphDumpResult`]"
+msgstr "crwdns68525:0crwdne68525:0"
 
 #: megengine.core.tensor.megbrain_graph.dump_graph of
 msgid "返回"
 msgstr "crwdns62464:0crwdne62464:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:24 of
-msgid "dump result as byte string, and an instance of namedtuple :class:`CompGraphDumpResult`, whose fields are:      * ``nr_opr`` number of operators dumped     * ``tot_bytes`` total bytes for the whole graph     * ``tensor_value_bytes`` bytes consumed for dumping tensor values     * ``inputs`` names of input tensors     * ``params`` list of names of dumped params     * ``outputs`` names of output vars"
-msgstr "crwdns62466:0:class:crwdne62466:0"
+#: megengine.core.tensor.megbrain_graph.dump_graph:30 of
+msgid "dump result as byte string, and an instance of namedtuple :class:`CompGraphDumpResult`, whose fields are:  * ``nr_opr`` number of operators dumped * ``tot_bytes`` total bytes for the whole graph * ``tensor_value_bytes`` bytes consumed for dumping tensor values * ``inputs`` names of input tensors * ``params`` list of names of dumped params * ``outputs`` names of output vars"
+msgstr "crwdns68527:0:class:crwdne68527:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:24 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:30 of
 msgid "dump result as byte string, and an instance of namedtuple :class:`CompGraphDumpResult`, whose fields are:"
 msgstr "crwdns62468:0:class:crwdne62468:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:27 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:33 of
 msgid "``nr_opr`` number of operators dumped"
 msgstr "crwdns62470:0crwdne62470:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:28 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:34 of
 msgid "``tot_bytes`` total bytes for the whole graph"
 msgstr "crwdns62472:0crwdne62472:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:29 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:35 of
 msgid "``tensor_value_bytes`` bytes consumed for dumping tensor values"
 msgstr "crwdns62474:0crwdne62474:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:30 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:36 of
 msgid "``inputs`` names of input tensors"
 msgstr "crwdns62476:0crwdne62476:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:31 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:37 of
 msgid "``params`` list of names of dumped params"
 msgstr "crwdns62478:0crwdne62478:0"
 
-#: megengine.core.tensor.megbrain_graph.dump_graph:32 of
+#: megengine.core.tensor.megbrain_graph.dump_graph:38 of
 msgid "``outputs`` names of output vars"
 msgstr "crwdns62480:0crwdne62480:0"
 
@@ -112,5 +116,29 @@ msgstr "crwdns62480:0crwdne62480:0"
 #~ msgstr ""
 
 #~ msgid "2: keep names of all (output and internal) vars"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "output variables which are the graph's"
+#~ " end point.  .. note::      The "
+#~ "underlying C++ API only accepts a "
+#~ "var list. If a dict is given,"
+#~ "     the vars would be renamed to "
+#~ "the given names."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "dump result as byte string, and an"
+#~ " instance of namedtuple "
+#~ ":class:`CompGraphDumpResult`, whose fields are:"
+#~ "      * ``nr_opr`` number of operators "
+#~ "dumped     * ``tot_bytes`` total bytes "
+#~ "for the whole graph     * "
+#~ "``tensor_value_bytes`` bytes consumed for "
+#~ "dumping tensor values     * ``inputs`` "
+#~ "names of input tensors     * ``params``"
+#~ " list of names of dumped params"
+#~ "     * ``outputs`` names of output "
+#~ "vars"
 #~ msgstr ""
 

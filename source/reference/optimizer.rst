@@ -4,6 +4,9 @@
 ===================
 megengine.optimizer
 ===================
+
+>>> import megengine.optimizer as optim
+
 .. autosummary::
    :toctree: api
    :nosignatures:

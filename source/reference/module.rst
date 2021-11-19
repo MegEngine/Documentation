@@ -5,6 +5,15 @@
 megengine.module
 ================
 
+>>> import megengine.module as M
+
+.. seealso::
+
+   * 关于 Module 的使用案例，请参考 :ref:`module-guide` ；
+   * 关于如何进行模型量化以及几类 Module 的转换原理，请参考 :ref:`quantization-guide` 。
+
+.. _float-module:
+
 Float Module
 ------------
 
@@ -17,30 +26,6 @@ Containers
 
    Module
    Sequential
-
-.. py:module:: megengine.module.init
-.. currentmodule:: megengine.module.init
-
-Initialization
-~~~~~~~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   fill_
-   zeros_
-   ones_
-   uniform_
-   normal_
-   calculate_gain
-   calculate_fan_in_and_fan_out
-   calculate_correct_fan
-   xavier_uniform_
-   xavier_normal_
-   msra_uniform_
-   msra_normal_
-
-.. currentmodule:: megengine.module
 
 General operations
 ~~~~~~~~~~~~~~~~~~
@@ -67,6 +52,7 @@ Convolution Layers
    LocalConv2d
    DeformableConv2d
    SlidingWindow
+   SlidingWindowTranspose
 
 Pooling layers
 ~~~~~~~~~~~~~~
@@ -80,6 +66,15 @@ Pooling layers
    AdaptiveAvgPool2d
    AdaptiveMaxPool2d
    DeformablePSROIPooling
+
+Padding layers
+~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+   :template: autosummary/api-class.rst
+
+   Pad
 
 Non-linear Activations
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -149,8 +144,6 @@ Fused operations
    ConvBn2d
    ConvBnRelu2d
    BatchMatMulActivation
-   SlidingWindow
-   SlidingWindowTranspose
 
 Quantization
 ~~~~~~~~~~~~
@@ -164,6 +157,8 @@ Quantization
 
 .. py:module:: megengine.module.qat
 .. currentmodule:: megengine.module.qat
+
+.. _qat-module:
 
 QAT Module
 ----------
@@ -197,6 +192,8 @@ Operations
 
 .. py:module:: megengine.module.quantized
 .. currentmodule:: megengine.module.quantized
+
+.. _quantized-module:
 
 Quantized Module
 ----------------

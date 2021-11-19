@@ -34,6 +34,7 @@ Python API
    data
    functional
    module
+   module.init
    autodiff
    optimizer
    jit
@@ -42,6 +43,7 @@ Python API
    distributed
    quantization
    random
+   traced_module
    hub
    utils
 

@@ -30,19 +30,14 @@ else:
 # -- Package setup -----------------------------------------------------------
 
 from datetime import datetime
-import logging
 
 # -- Path setup --------------------------------------------------------------
 # Generally we use `os.path` and `sys.path` to tell Sphinx where to find code
 #   of our project, which can be used in the sphinx.autodoc extension.
-# But MegEngine source code and documentation are stored in two different 
+# But MegEngine source code and documentation are stored in two different
 #   repository and it's recommended to import megengine package to match.
 
-if mode == "FULL":
-    import megengine
-elif mode == "MINI":
-    pass
-else:
+if mode == "AUTO":
     try:
         import megengine
     except ImportError:
@@ -50,16 +45,20 @@ else:
         mode = "MINI"
     else:
         print("MegEngine found. Use full mode.")
-        print("MegEngine path:", os.path.dirname(megengine.__file__))
         mode = "FULL"
-assert mode in ("MINI", "FULL")
+
+if mode == "MINI":
+    suppress_warnings = ['ref.ref']
+else:
+    import megengine
+    print("MegEngine path:", os.path.dirname(megengine.__file__))
 
 # -- Project information -----------------------------------------------------
 
 project = "MegEngine"
 copyright = f"2020-{datetime.now().year}, The MegEngine Open Source Team"
 author = "The MegEngine Open Source Team"
-version = "1.5"
+version = "1.6"
 release = version
 
 # -- General configuration ---------------------------------------------------
@@ -78,12 +77,14 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
     "sphinx.ext.graphviz",
+    "sphinxcontrib.bibtex",
     "sphinxcontrib.mermaid",
     "sphinx_autodoc_typehints",
     "sphinx_copybutton",
     "sphinx_togglebutton",
     "sphinx_panels",
     "sphinx_tabs.tabs",
+    "sphinx_remove_toctrees",
 ]
 
 source_suffix = {
@@ -95,7 +96,9 @@ source_suffix = {
 source_encoding = "utf-8"
 
 master_doc = "index"
+
 templates_path = ["_templates"]
+
 exclude_patterns = [
     "_build",
     "build",
@@ -119,9 +122,13 @@ gettext_compact = False
 # See `Makefile` for more detail.
 autosummary_generate = True
 
+# Setting for sphinx.ext.napoleon
+napoleon_use_ivar = True
+
 # Setting for sphinx.ext.auotdoc
 autodoc_default_options = {"member-order": "bysource"}
 autoclass_content = "class"
+autodoc_typehints = 'none'
 autodoc_docstring_signature = True
 autodoc_preserve_defaults = True
 autodoc_mock_imports = ["mprop"]
@@ -129,6 +136,9 @@ autodoc_mock_imports = ["mprop"]
 # Setting for sphinx.ext.mathjax
 # The path to the JavaScript file to include in the HTML files in order to load MathJax.
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+# Setting for sphinxcontrib-bibtex
+bibtex_bibfiles = ['refs.bib']
 
 # Setting for sphinxcontrib-mermaid
 mermaid_version = "latest"  # from CDN unpkg.com
@@ -146,6 +156,7 @@ intersphinx_mapping = {
 extlinks = {
     "src": ("https://github.com/MegEngine/MegEngine/blob/master/%s", ""),
     "docs": ("https://github.com/MegEngine/Documentation/blob/main/%s", ""),
+    "models": ("https://github.com/MegEngine/Models/blob/master/%s", ""),
     "issue": ("https://github.com/MegEngine/MegEngine/issues/%s", "Issue #"),
     "pull": ("https://github.com/MegEngine/MegEngine/pull/%s", "Pull Requset #"),
     "duref": (
@@ -170,24 +181,15 @@ panels_add_bootstrap_css = False
 # Setting for sphinx.ext.nbsphinx
 # nbsphinx do not use requirejs (breaks bootstrap)
 nbsphinx_requirejs_path = ""
-logger = logging.getLogger(__name__)
 
-try:
-    import nbconvert
-except ImportError:
-    logger.warning("nbconvert not installed. Skipping notebooks.")
-    exclude_patterns.append("**/*.ipynb")
-else:
-    try:
-        nbconvert.utils.pandoc.get_pandoc_version()
-    except nbconvert.utils.pandoc.PandocMissing:
-        logger.warning("Pandoc not installed. Skipping notebooks.")
-        exclude_patterns.append("**/*.ipynb")
+# Settign for sphinx_remove_toctrees
+remove_from_toctrees = [
+    "reference/core.rst",
+    "reference/api/*",
+    "development/meps/*",
+]
 
 # -- Options for HTML output -------------------------------------------------
-
-panels_add_bootstrap_css = False  # pydata-sphinx-theme already loads this
-
 html_logo = "logo.png"
 html_favicon = "favicon.ico"
 html_theme = "pydata_sphinx_theme"
@@ -196,7 +198,8 @@ html_static_path = ["_static"]
 html_extra_path = ["google940c72af103ac75f.html"]
 html_css_files = ["css/custom.css"]
 html_additional_pages = {
-    'index': 'indexcontent.html'
+    'index': 'indexcontent.html',
+    '404': '404.html',
 }
 
 html_search_language = "zh"
@@ -231,8 +234,8 @@ html_theme_options = {
     "navbar_end": ["navbar-icon-links.html", "version-switcher.html"],
     "collapse_navigation": True,
     "use_edit_page_button": True,
-    "navigation_with_keys": False,
-    "show_prev_next": False,
+    "navigation_with_keys": True,
+    "show_prev_next": True,
     # The following settings just work in MegEngine forked dev branch
     "use_version_switch": True,
     "version_switch_json_url": "/doc/version.json",

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-06 13:12+0800\n"
-"PO-Revision-Date: 2021-08-17 23:18\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-11-09 13:27\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -74,96 +74,64 @@ msgstr ""
 msgid "enbale optmizations, will skip all optimize options if this is False. Default: True"
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump of
-msgid "Keyword Arguments"
+#: megengine.jit.tracing.trace.dump:30 of
+msgid "any type object, which will be pickled to bytes."
+msgstr ""
+
+#: megengine.jit.tracing.trace.dump:32 of
+msgid "whether to save metadata into output file."
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:34 of
-msgid "enable_io16xc32 --"
+msgid "Keyword Arguments:"
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:33 of
-msgid "whether to use float16 for I/O between oprs and use float32 as internal computation precision. Note the output var would be changed to float16."
+#: megengine.jit.tracing.trace.dump:36 of
+msgid "enable_io16xc32 -- whether to use float16 for I/O between oprs and use float32 as internal computation precision. Note the output var would be changed to float16."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:38 of
-msgid "enable_ioc16 --"
+#: megengine.jit.tracing.trace.dump:40 of
+msgid "enable_ioc16 -- whether to use float16 for both I/O and computation precision."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:37 of
-msgid "whether to use float16 for both I/O and computation precision."
+#: megengine.jit.tracing.trace.dump:43 of
+msgid "enable_hwcd4 -- whether to use NHWCD4 data layout. This is faster on some OpenCL backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:41 of
-msgid "enable_hwcd4 --"
+#: megengine.jit.tracing.trace.dump:46 of
+msgid "enable_nchw88 -- whether to use NCHW88 data layout, currently used in X86 AVX backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:41 of
-msgid "whether to use NHWCD4 data layout. This is faster on some OpenCL backend."
+#: megengine.jit.tracing.trace.dump:49 of
+msgid "enable_nchw44 -- whether to use NCHW44 data layout, currently used in arm backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:44 of
-msgid "enable_nchw88 --"
+#: megengine.jit.tracing.trace.dump:52 of
+msgid "enable_nchw44_dot -- whether to use NCHW44_dot data layout, currently used in armv8.2+dotprod backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:44 of
-msgid "whether to use NCHW88 data layout, currently used in X86 AVX backend."
+#: megengine.jit.tracing.trace.dump:55 of
+msgid "enable_nchw4 -- whether to use NCHW4 data layout, currently used in nvidia backend(based on cudnn)."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:47 of
-msgid "enable_nchw44 --"
+#: megengine.jit.tracing.trace.dump:58 of
+msgid "enable_nchw32 -- whether to use NCHW32 data layout, currently used in nvidia backend with tensorcore(based on cudnn)."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:47 of
-msgid "whether to use NCHW44 data layout, currently used in arm backend."
+#: megengine.jit.tracing.trace.dump:61 of
+msgid "enable_chwn4 -- whether to use CHWN4 data layout, currently used in nvidia backend with tensorcore."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:50 of
-msgid "enable_nchw44_dot --"
+#: megengine.jit.tracing.trace.dump:64 of
+msgid "enable_nchw64 -- whether to use NCHW64 data layout, used for fast int4 support on Nvidia GPU."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:50 of
-msgid "whether to use NCHW44_dot data layout, currently used in armv8.2+dotprod backend."
+#: megengine.jit.tracing.trace.dump:67 of
+msgid "enable_fuse_conv_bias_nonlinearity: whether to fuse conv+bias+nonlinearty into one opr."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:53 of
-msgid "enable_nchw4 --"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:53 of
-msgid "whether to use NCHW4 data layout, currently used in nvidia backend(based on cudnn)."
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:56 of
-msgid "enable_nchw32 --"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:56 of
-msgid "whether to use NCHW32 data layout, currently used in nvidia backend with tensorcore(based on cudnn)."
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:60 of
-msgid "enable_chwn4 --"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:59 of
-msgid "whether to use CHWN4 data layout, currently used in nvidia backend with tensorcore."
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:62 of
-msgid "enable_fuse_conv_bias_nonlinearity: whether to fuse conv+bias+nonlinearty"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:63 of
-msgid "into one opr."
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:66 of
-msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:65 of
-msgid "input for inference on nvidia backend(this optimization pass will result in mismatch of the precision of output of training and inference)"
+#: megengine.jit.tracing.trace.dump:69 of
+msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z input for inference on nvidia backend(this optimization pass will result in mismatch of the precision of output of training and inference)"
 msgstr ""
 
 #~ msgid "level for keeping variable names:"
@@ -177,4 +145,37 @@ msgstr ""
 
 #~ msgid "2: keep names of all (output and internal) vars"
 #~ msgstr "2: 保留所有变量 (包括输出和中间变量) 的名字"
+
+#~ msgid "enable_io16xc32 --"
+#~ msgstr "enable_io16xc32 --"
+
+#~ msgid "enable_ioc16 --"
+#~ msgstr "enable_ioc16 --"
+
+#~ msgid "enable_hwcd4 --"
+#~ msgstr "enable_hwcd4 --"
+
+#~ msgid "enable_nchw88 --"
+#~ msgstr "enable_nchw88 --"
+
+#~ msgid "enable_nchw44 --"
+#~ msgstr "enable_nchw44 --"
+
+#~ msgid "enable_nchw44_dot --"
+#~ msgstr "enable_nchw44_dot --"
+
+#~ msgid "enable_nchw4 --"
+#~ msgstr "enable_nchw4 --"
+
+#~ msgid "enable_nchw32 --"
+#~ msgstr "enable_nchw32 --"
+
+#~ msgid "enable_chwn4 --"
+#~ msgstr "enable_chwn4 --"
+
+#~ msgid "into one opr."
+#~ msgstr "成一个算子。"
+
+#~ msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z"
+#~ msgstr "enable_fuse_conv_bias_with_z："
 

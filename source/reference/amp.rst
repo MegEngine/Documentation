@@ -5,6 +5,8 @@
 megengine.amp
 =============
 
+>>> from megengine import amp
+
 .. autosummary::
    :toctree: api
    :template: autosummary/api-class.rst

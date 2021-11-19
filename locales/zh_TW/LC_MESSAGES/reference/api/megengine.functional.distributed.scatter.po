@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 09:02+0800\n"
-"PO-Revision-Date: 2021-06-03 04:02\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-11-12 00:53\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -23,28 +23,61 @@ msgid "megengine.functional.distributed.scatter"
 msgstr "crwdns30664:0crwdne30664:0"
 
 #: megengine.distributed.functional.scatter:1 of
-msgid "Create scatter operator for collective communication."
-msgstr "crwdns30666:0crwdne30666:0"
+msgid "Split tensor in root process at first dimension."
+msgstr "crwdns69043:0crwdne69043:0"
 
 #: megengine.distributed.functional.scatter of
 msgid "参数"
 msgstr "crwdns30668:0crwdne30668:0"
 
-#: megengine.distributed.functional.scatter:3 of
-msgid "input tensor."
-msgstr "crwdns30670:0crwdne30670:0"
-
 #: megengine.distributed.functional.scatter:4 of
-msgid "communication group."
-msgstr "crwdns30672:0crwdne30672:0"
+msgid "Input tensor."
+msgstr "crwdns69045:0crwdne69045:0"
 
-#: megengine.distributed.functional.scatter:5 of
-msgid "execution device."
-msgstr "crwdns30674:0crwdne30674:0"
+#: megengine.distributed.functional.scatter:6 of
+msgid "The process group to work on. The default group is WORLD which means all processes available. You can use a list of process ranks to create new group to work on it, e.g. [1, 3, 5]."
+msgstr "crwdns69047:0crwdne69047:0"
+
+#: megengine.distributed.functional.scatter:10 of
+msgid "The specific device to execute this operator. None default device means the device of inp will be used. Specify \"gpu0:1\" to execute this operator on diffrent cuda stream, 1 is stream id, and default stream id is 0."
+msgstr "crwdns69049:0crwdne69049:0"
+
+#: megengine.distributed.functional.scatter:14 of
+msgid "The concat axis for collective_comm result The default axis is 0"
+msgstr "crwdns69051:0crwdne69051:0"
+
+#: megengine.distributed.functional.scatter of
+msgid "返回类型"
+msgstr "crwdns69053:0crwdne69053:0"
+
+#: megengine.distributed.functional.scatter:17 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr "crwdns69055:0crwdne69055:0"
+
+#: megengine.distributed.functional.scatter of
+msgid "返回"
+msgstr "crwdns69057:0crwdne69057:0"
+
+#: megengine.distributed.functional.scatter:18 of
+msgid "Split tensor."
+msgstr "crwdns69059:0crwdne69059:0"
+
+#: megengine.distributed.functional.scatter:21 of
+msgid "实际案例"
+msgstr "crwdns69061:0crwdne69061:0"
 
 #~ msgid "返回类型"
 #~ msgstr "返回类型"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
+
+#~ msgid "Create scatter operator for collective communication."
+#~ msgstr "创建用于聚合通信的 scatter 算子。"
+
+#~ msgid "communication group."
+#~ msgstr "通信组。"
+
+#~ msgid "execution device."
+#~ msgstr "执行设备。"
 

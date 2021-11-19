@@ -1,0 +1,416 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/development/meps/mep-0003.rst:5
+msgid "MEP 3 -- Tensor API 设计规范"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst
+msgid "编号"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:6
+msgid "3"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst
+msgid "标题"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:7
+#: ../../source/development/meps/mep-0003.rst:76
+msgid "Tensor API 设计规范"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst
+msgid "作者"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:8
+msgid "高华佐，曹骁威"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst
+msgid "状态"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:9
+msgid "草稿"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst
+msgid "类型"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:10
+msgid "信息"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst
+msgid "创建时间"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:11
+msgid "2021-09-16"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:14
+msgid "摘要"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:16
+msgid ""
+"我们预计通过该提案确定在 MegEngine 中所使用的 Tensor API 规范，以便符合一致的开发和使用理念； 并提倡现在开始为采纳《 "
+"`数组 API 标准`_ 》做好相应的准备，后者将允许用户写出更具移植性的代码。 在该提案中将阐明 Tensor API "
+"和社区标准之间的差异点，以及补充说明社区标准中未明确的部分。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:21
+msgid "背景与动机"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:23
+msgid ""
+"Python 用户可以选择各种不同的用于数值计算、数据科学、机器学习和深度学习的库和框架。 "
+"新框架几乎每年都在出现，百家争鸣所导致的一个后果便是基本数据结构 —— 多维数组（又名张量）的碎片化， 几乎每一个 API "
+"都非常相似，但是它们之间又存在着足够的差异，导致用户很难编写适用于多个库的代码。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:27
+msgid ""
+"考虑到 NumPy 中所使用的设计和约束未必是最理想的，比如没有考虑到非 CPU 设备、基于图形的库或 JIT 编译器， "
+"以及一些已有设计存在着副作用（比如基于值的类型提升规则），在一些情况下反而对库本身的开发形成了限制， 因此一些库在必要情况下选择了不遵循 "
+"NumPy 的部分设计，包括 MegEngine 也是如此。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:31
+msgid ""
+"`Python 数据 API 标准联盟`_ 在 2020 年发布了《 `数组 API 标准`_ 》，目前正接受社区审查。 "
+"它不规定任何有关如何实现功能的内容——只关心语法（如函数签名）和语义（预期输出是什么——形状、数据类型、数值结果） ， "
+"而不是性能、算法选择或获得数值结果的精度。NumPy 在自己的 `NEP 47`_ 提案中表明了积极适配的倾向， "
+"并提出了一些参考实现，但该提案在相当长的一段时间内仍将处于草案状态。 MegEngine 的 Tensor API "
+"设计也应当考虑尽可能地与社区其它成员相互兼容，但也有额外需要关注的地方："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:37
+msgid "上述标准并不能覆盖到 MegEngine Tensor API 的全部使用情景，如一些神经网络编程情景；"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:38
+msgid "必须尽力保障不向现有的 Tensor API 设计引入兼容性破坏（Breaking Change），这将被主要讨论。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:40
+msgid ""
+"基于以上背景，我们需要一份提案（或许在很长一段时间内也将以草案的形式存在），来确定当前的 Tensor API 规范。 而术语《数组 API "
+"标准》更多用于指代目前正在处于发展阶段的社区标准，只是它当前还不够完整，无法被直接使用。 《数组 API 标准》某种意义上可以看作是 Tensor"
+" API 设计规范的子集， 我们将在本提案中讨论 MegEngine "
+"将要如何支持社区标准，不遵循社区标准的部分，以及为了避免兼容性破坏可能采取的措施。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:47
+msgid "由于《数组 API 标准》本身仍处于发展变化状态中，因此本 MEP 也有随时进行更新的可能性。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:50
+msgid "旧版 API 设计原则"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:52
+msgid "以下为 MegEngine Tensor API 在设计之初所采取的基本原则："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:54
+msgid "与数组科学计算相关的 API 设计，如果在 NumPy 中存在相应实现，优先以 NumPy 作为参考标准；"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:55
+msgid "与神经网络编程相关的 API 设计，如果在 PyTorch 中存在相应实现，优先以 PyTorch 作为参考标准；"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:56
+msgid "如果一些 API 在 NumPy 和 PyTorch 中都有实现，默认优先以 NumPy 作为参考标准；"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:57
+msgid "所有的 API 变更操作（包括新增），最终都需要经过 MegEngine API 委员会的审核。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:59
+msgid ""
+"另外，在 NumPy 中被认为不科学的 API 命名没有被 MegEngine 采纳，如 ``concatenate`` 被改为 "
+"``concat``. 上述原则已被模糊地实施了几个版本，但未形成详细的参考规范，因此在实施新的规范时，需要保证向后兼容。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:62
+msgid "另外，由于一些历史原因，Tensor API 的设计与 NumPy 之间也存在着不一致的地方："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:64
+msgid "比如 NumPy 习惯将函数接受的输入位置参数命名为 ``x``, 而在 MegEngine 中通常为 ``inp``;"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:65
+msgid "MegEngine 中提供的接口并不保证与 NumPy 完全对应，比如 ``dot`` 的实现；"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:67
+msgid "这让我们的 API 设计无法脱离开 API 委员会的审核，由于缺少一份参考规范，给后续的维护引入了昂贵的成本。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:70
+msgid "采纳数组 API 标准"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:72
+msgid ""
+"我们惊喜地发现，Python 数据 API 标准联盟发布的《数组 API 标准》与 MegEngine Tensor API 的设计哲学高度一致，"
+" 因此我们接下来将选择用其代替 NumPy 实现作为首要参考标准，并尽量避免引入兼容性破坏。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:78
+msgid "以下是 Tensor API 设计时采取的基本原则："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:82
+msgid "默认情况下，采用《 `数组 API 标准`_ 》以及 :ref:`array-api-addon` 作为基本规范；"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:84
+msgid ""
+"`Purpose and scope <https://data-apis.org/array-"
+"api/latest/purpose_and_scope.html>`_"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:85
+msgid ""
+"`Design topics & constraints <https://data-apis.org/array-"
+"api/latest/design_topics/index.html>`_"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:86
+msgid ""
+"`API specification <https://data-apis.org/array-"
+"api/latest/API_specification/index.html#api-specification-index--page-"
+"root>`_"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:88
+msgid "对于《数组 API 标准》中尚待形成标准的主题内容（TODO），采取如下原则："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:90
+msgid "API 科学合理是首要追求，只有在几种参考选择仅仅是习惯上的区别时，优先级为 NumPy > PyTorch > 其它；"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:91
+msgid "除 NumPy 和 PyTorch 外，应该总是全面地比较各框架/库的 API, 包括但不限于 TensorFlow, OpenCV 等..."
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:93
+msgid ""
+"一些还未被讨论的主题或许会在将来被纳入《数组 API 标准》，届时 MegEngine 中应当向标准靠拢，并保留该旧接口以免造成兼容性破坏。 "
+"例如由于目前尚未形成 ``random`` 的《标准》参考实现，而按照 Tensor API 设计规范的基本原则，目前应当参考 NumPy 中的 "
+"``random`` 进行实现， 其中有："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:97
+msgid "``numpy.random.permutation``"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:98
+msgid "``numpy.random.shuffle``"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:99
+msgid "``numpy.random.Generator.permuted``"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:101
+msgid ""
+"几个语义极为接近的 API. 如果将来的《标准》中提出了更加规范的定义，MegEngine 将实现新的接口，并保留旧接口调用。 "
+"另一种情况是，如果《标准》中对 NumPy 中的 API 进行了重命名，比如使用 ``concat`` 代替 ``concatenate``, "
+"那么 MegEngine 中将实现 ``concat``, 并且在文档中仅向用户展示这种用法，旧的用法将不被推荐（但保证兼容历史用法）。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:107
+msgid "任何 API Change 行为都需要在相关实现中给出参考标准，以便 API 委员会进行代码审核。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:112
+msgid "数组 API 标准补充说明"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:114
+msgid "本小节主要用于讨论："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:116
+msgid "一些《数组 API 标准》中尚未明确的主题，以及 MegEngine 目前打算如何做；"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:117
+msgid "由于向后兼容等历史性问题，MegEngine 的 Tensor 实现与《标准》不一致的地方;"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:118
+msgid "将来打算如何提供与《标准》中完全一致的实现。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:121
+msgid "现有 Tensor 实现的差异性说明"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:134
+msgid "副本和视图，以及可变性（ `Copy-view behaviour and mutability`_ ）"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:124
+msgid ""
+"对于该情况《标准》中没有做硬性要求，MegEngine 中的 Tensor 没有视图（View）这样的概念。 与 ``view`` "
+"有关的操作虽然能提升效率，但在语义上加大了用户的心智负担。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:129
+msgid "这不代表 MegEngine 中并不存在原地（Inplace）操作，以下行为依然是原地进行的："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:131
+msgid "原地运算符（例如 ``*=`` ）"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:132
+msgid "元素赋值（例如 ``x[0] = 1`` ）"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:134
+msgid "但由于 MegEngine 没有视图的概念，一个 Tensor 上的原地操作一定不会影响另一个 Tensor."
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:138
+msgid "数据类型与类型提升（ `Data Types`_ / `Type Promotion Rules`_ ）"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:137
+msgid ""
+"目前 MegEngine 中支持的数据类型可在 :ref:`tensor-dtype` 中找到，并未完全实现《标准》中要求的数据类型，例如 64 "
+"位数据类型和复数数据类型；"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:138
+msgid "混合类型提升在《标准》中是未定义行为，而在 MegEngine 用户指南中明确了相关行为。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:149
+msgid "函数签名与参数（ `Function and method signatures`_ ）"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:141
+msgid ""
+"位置参数必须使用 `PEP 570`_ 中规定的仅位置（Positional-Only）参数，语法为 ``/`` 符。 由于该特性仅在 "
+"Python >= 3.8 版本可用，而 MegEngine 目前仍需要支持一些低于 3.8 的 Python 版本。 "
+"因此现在的做法是在文档中为用户添加指导，让用户以仅位置参数的方式去使用它们。 另一种方式是在文档字符串的第一行重载签名内容，参考 "
+"`autodoc_docstring_signature`_ ."
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:145
+msgid ""
+"对于只有单个 Tensor 输入作为位置参数的函数，参数应该被命名为 ``inp``, 对于有多个输入参数的情况，参数应该被命名为 ``inp1,"
+" inp2 ...``, 以此类推。 在标准中要求使用 ``x`` 作为输入位置参数的名字，如果遵循标准，会引入兼容性破坏，因此保留现在的参数名。"
+" 我们认为，由于将来会采取仅位置参数约定，因此位置参数的名称并不关键，这里只是为了历史写法兼容。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:149
+msgid "参考示例中使用了 NumPy 风格的文档字符串，MegEngine 中要求使用 Google 风格。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:152
+msgid "向后兼容性处理"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:154
+msgid ""
+"NumPy 的主命名空间下已经实现了非常多的 API, 为了在采用《数组 API 标准》的同时不破坏兼容性， NumPy 在 `NEP 47`_ "
+"中提出了添加一个单独的命名空间 ``numpy.array_api`` 的做法， 类似的做法也出现在一些其它想要采用现有 NumPy "
+"标准的库或框架中（比如 ``jax.numpy`` ）。 而 MegEngine 在接口设计之初，并没有要求主命名空间与 NumPy API "
+"完全对应，因此不存在这样的历史负担。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:159
+msgid ""
+"我们可以继续保留现有设计， ``megengine.functional`` 中将负责提供所有与 Tensor 相关的原子操作。 "
+"如果将来用户想要找到 ``numpy.array_api`` 中的对应接口，应当确保能够在 ``megengine.functional`` "
+"中找到。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:162
+msgid "可能导致的问题是："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:164
+msgid ""
+"MegEngine 现有的一些接口和设计（未在当前《标准》提及）可能会和后续版本《标准》中的要求起冲突， 比如同一个 API "
+"实现功能不同，或者在后续标准中要求统一支持视图操作，届时无法保证用法完全兼容。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:167
+msgid "可能的解决方案："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:169
+msgid ""
+"如果将来《标准》中对于一些概念有了更加具体的规定，或存在着相应的需求，导致无法处理向后兼容问题， MegEngine 中或许会提供 "
+"``megengine.functional.numpy`` 与 ``megengine.functional.array`` 命名空间， "
+"以寻求和 NumPy 以及 Array API 标准的高度统一。也有可能不采用新的《数组 API 标准》，锁定某一个版本。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:174
+msgid "关于 NN API 的讨论"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:176
+msgid ""
+"目前 MegEngine 有关于神经网络编程的接口实现都存放在 ``megengine.functional.nn`` 命名空间中， 大都以 "
+"``torch.nn.functional`` 作为参考标准（包括命名/分类规则）。 相关 API 在《数组 API 标准》中被划分为 misc "
+"functions 一类，尚未进行具体讨论。 以下是 MegEngine 在处理此类 API 时的基本思路："
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:181
+msgid "PyTorch 中的一些 API 命名规则是不合理的，因此最终命名需要经过 API 委员会的审核。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:183
+msgid ""
+"例如 Pytorch 中的 ``fold`` 和 ``unfold`` 两个接口， 在 MegEngine 中对应为 "
+"``sliding_window`` 和 ``sliding_window_transpose``. "
+"这样的命名是经过研发人员和用户经过讨论后确定的，相关讨论应该被记录。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:187
+msgid ""
+"由于 MegEngine 不存在类似 ``torchvision``, ``torchtext`` 这样的领域细分库， "
+"因此规定所有的神经网络领域概念相关接口均统一放在 ``functional.nn`` 命名空间 "
+"（具体实现的源代码文件如何组织不做要求，但提供给用户的 API 入口需要统一） 包括像 ``l1_loss`` 这样的接口，也统一使用 "
+"``functional.nn`` 调用；"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:192
+msgid "相关 API 对比信息应当提供在 :ref:`comparison` 页面，方便用户查询。"
+msgstr ""
+

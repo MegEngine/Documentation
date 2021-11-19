@@ -4,6 +4,9 @@
 =====================
 megengine.distributed
 =====================
+
+>>> import megengine.distributed as dist
+
 .. autosummary::
    :toctree: api
    :nosignatures:

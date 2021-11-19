@@ -5,8 +5,25 @@
 megengine.quantization
 ======================
 
-量化配置
---------
+.. note::
+
+   .. code-block:: python
+
+      import megengine.quantization as Q
+
+      model = ... # The pre-trained float model that needs to be quantified
+
+      Q.quantize_qat(model, qconfig=...) # 
+
+      for _ in range(...):
+          train(model)
+
+      Q.quantize(model)
+
+   具体用法说明请参考用户指南页面 —— :ref:`quantization-guide` 。
+
+量化配置 QConfig
+----------------
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -14,6 +31,8 @@ megengine.quantization
 
    QConfig
    
+.. _qconfig-list:
+
 可用预设配置
 ~~~~~~~~~~~~
 
@@ -41,8 +60,10 @@ megengine.quantization
 ``easyquant_qconfig``
   用于 easyquant 算法的 QConfig，等价于 ``passive_qconfig``.
 
-观察
-~~~~
+.. _qconfig-obsever:
+
+Observer
+~~~~~~~~
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -56,8 +77,8 @@ megengine.quantization
    HistogramObserver
    PassiveObserver
 
-模拟
-~~~~
+FakeQuantize
+~~~~~~~~~~~~
 .. currentmodule:: megengine.quantization
 .. autosummary::
    :toctree: api
@@ -68,6 +89,8 @@ megengine.quantization
    TQT
    LSQ
 
+
+.. _quantize-operation:
 
 量化操作
 --------

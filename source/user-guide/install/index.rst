@@ -14,6 +14,8 @@
    其中 MacOS 只支持 Intel x86 CPU；
    此外，MegEngine 也支持在很多其它平台上进行推理运算。
 
+.. _install-with-pip:
+
 通过包管理器安装
 ----------------
 
@@ -26,71 +28,46 @@
 
 .. note::
 
-   * 对于 ``conda`` 用户, 可以选择通过在环境中先安装 ``pip``,
-     再按照上述方式进行 MegEngine 的安装。
+   对于 ``conda`` 用户, 可以选择通过在环境中先安装 ``pip``, 再按照上述方式进行 MegEngine 的安装；
+
+.. warning::
+ 
+   * MegEngine 包中集成了 CUDA 环境，但用户需确保环境中已经正确地安装好 GPU 设备相关驱动；
+   * 由于 EAR 限制，目前官方发布的预编译包是基于 CUDA 10.1 的，参考 :ref:`cuda-compiling` 。
 
 .. _build-from-source:
 
 通过源码编译安装
 ----------------
 
-如果包管理器安装的方式无法满足你的需求，则可以尝试自行通过源码编译安装。
+如果包管理器安装的方式无法满足你的需求，例如：
 
-环境依赖
-~~~~~~~~
+* 我使用的 GPU 设备非 Nvidia 厂商的，比如用的是 AMD 等厂商的 GPU;
+* 我使用的 Nvidia GPU 设备比较新或者比较旧，不在当前的设备支持列表中；
+* 我希望更改一些其它的编译配置选项，启用一些默认关闭的特性。
 
-大多数编译 MegEngine 的依赖位于 :src:`third_party` 目录，可以通过以下命令自动安装：
+则可以尝试自行通过源码编译安装。相关细节请参考 :src:`scripts/cmake-build/BUILD_README.md` . 
 
-.. code-block:: shell
+.. _cuda-compiling:
 
-   ./third_party/prepare.sh
-   ./third_party/install-mkl.sh
+CUDA 编译支持现状
+~~~~~~~~~~~~~~~~~
 
-上述过程中需要从国外获取软件源，建议使用比较通畅的网络环境。
+MegEngine CMake CUDA 编译的现状如下：
 
-一些依赖需要手动安装：
+* CUDA 11.1 及以上编译能适配市面上所有的 Ampere 卡，适配 sm80+sm86
+* CUDA 11.0 编译能适配 A100, 但不能适配 30 系卡，仅适配 sm80
+* CUDA 10 不适配 Ampere 架构（官方发布的预编译包是基于 CUDA 10.1 的）
 
-* `CUDA <https://developer.nvidia.com/cuda-toolkit-archive>`_ (>=10.1), 
-  `cuDNN <https://developer.nvidia.com/cudnn>`_ (>=7.6), 
-  如果需要编译支持 CUDA 的版本。
-* `TensorRT <https://docs.nvidia.com/deeplearning/tensorrt/archives/index.html>`_ (>=5.1.5) ，
-  如果需要编译支持 TensorRT 的版本。
-* LLVM/Clang(>=6.0) ，如果需要编译支持 Halide JIT 的版本（默认开启）。
-* Python(>=3.5), Numpy, SWIG(>=3.0), 如果需要编译生成 Python 模块。
+.. note::
 
-开始编译
-~~~~~~~~
+   用户可以使用 ``cmake -DMGE_CUDA_GENCODE="-gencode arch=compute80, code=sm80"`` 自由指定。
 
-* :src:`scripts/cmake-build/host_build.sh` 用于本地编译。
+.. warning::
 
-  参数 ``-h`` 可用于查询脚本支持的参数:
+   用户在编译前需要确定有 GPU 设备，以及确定环境中所使用的 CUDA 版本。
 
-  .. code-block:: shell
+.. seealso::
 
-     scripts/cmake-build/host_build.sh -h
-
-* :src:`scripts/cmake-build/cross_build_android_arm_inference.sh` 用于 ARM-安卓 交叉编译。
-
-  参数 ``-h`` 可用于查询脚本支持的参数:
-
-  .. code-block:: shell
-
-     scripts/cmake-build/cross_build_android_arm_inference.sh -h
-
-* :src:`scripts/cmake-build/cross_build_linux_arm_inference.sh` 用于 ARM-Linux 交叉编译。
-
-  参数 ``-h`` 可用于查询脚本支持的参数:
-
-  .. code-block:: shell
-
-     scripts/cmake-build/cross_build_linux_arm_inference.sh -h
-
-* :src:`scripts/cmake-build/cross_build_ios_arm_inference.sh` 用于 iOS 交叉编译。
-
-  参数 ``-h`` 可用于查询脚本支持的参数:
-
-  .. code-block:: shell
-
-     scripts/cmake-build/cross_build_ios_arm_inference.sh -h
-
-更多细节请参考 :src:`scripts/cmake-build/BUILD_README.md` . 
+   用户可在 `Compute Capability <https://developer.nvidia.com/cuda-gpus#compute>`_
+   页面找到自己的 GPU 设备对应的计算兼容性版本。

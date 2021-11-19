@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 09:02+0800\n"
-"PO-Revision-Date: 2021-06-03 04:03\n"
+"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"PO-Revision-Date: 2021-11-12 00:52\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -23,28 +23,57 @@ msgid "megengine.functional.distributed.all\\_reduce\\_sum"
 msgstr "crwdns30534:0crwdne30534:0"
 
 #: megengine.distributed.functional.all_reduce_sum:1 of
-msgid "Create all_reduce_sum operator for collective communication."
-msgstr "crwdns30536:0crwdne30536:0"
+msgid "Reduce tensors across the specified group by sum."
+msgstr "crwdns68903:0crwdne68903:0"
 
 #: megengine.distributed.functional.all_reduce_sum of
 msgid "参数"
 msgstr "crwdns30538:0crwdne30538:0"
 
-#: megengine.distributed.functional.all_reduce_sum:3 of
-msgid "input tensor."
-msgstr "crwdns30540:0crwdne30540:0"
-
 #: megengine.distributed.functional.all_reduce_sum:4 of
-msgid "communication group."
-msgstr "crwdns30542:0crwdne30542:0"
+msgid "Input tensor."
+msgstr "crwdns68905:0crwdne68905:0"
 
-#: megengine.distributed.functional.all_reduce_sum:5 of
-msgid "execution device."
-msgstr "crwdns30544:0crwdne30544:0"
+#: megengine.distributed.functional.all_reduce_sum:6 of
+msgid "The process group to work on. The default group is WORLD which means all processes available. You can use a list of process ranks to create new group to work on it, e.g. [1, 3, 5]."
+msgstr "crwdns68907:0crwdne68907:0"
+
+#: megengine.distributed.functional.all_reduce_sum:10 of
+msgid "The specific device to execute this operator. None default device means the device of inp will be used. Specify \"gpu0:1\" to execute this operator on diffrent cuda stream, 1 is stream id, and default stream id is 0."
+msgstr "crwdns68909:0crwdne68909:0"
+
+#: megengine.distributed.functional.all_reduce_sum of
+msgid "返回类型"
+msgstr "crwdns68911:0crwdne68911:0"
+
+#: megengine.distributed.functional.all_reduce_sum:15 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr "crwdns68913:0crwdne68913:0"
+
+#: megengine.distributed.functional.all_reduce_sum of
+msgid "返回"
+msgstr "crwdns68915:0crwdne68915:0"
+
+#: megengine.distributed.functional.all_reduce_sum:16 of
+msgid "Result tensor."
+msgstr "crwdns68917:0crwdne68917:0"
+
+#: megengine.distributed.functional.all_reduce_sum:19 of
+msgid "实际案例"
+msgstr "crwdns68919:0crwdne68919:0"
 
 #~ msgid "返回类型"
 #~ msgstr "返回类型"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
+
+#~ msgid "Create all_reduce_sum operator for collective communication."
+#~ msgstr "创建用于聚合通信的 all_reduce_sum 算子。"
+
+#~ msgid "communication group."
+#~ msgstr "通信组。"
+
+#~ msgid "execution device."
+#~ msgstr "执行设备。"
 

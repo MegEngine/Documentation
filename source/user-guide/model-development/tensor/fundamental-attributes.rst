@@ -9,7 +9,7 @@ Rank, Axes 与 Shape 属性
    秩（Rank），轴（Axes）和形状（Shape）是 Tensor 数据结构最基本的属性。
 
    * 我们需要密切关注这三个属性之间的关系，它们也会影响到我们 :ref:`索引元素 <access-tensor-element>` 的具体方式。
-   * 如果你对于这些基本属性的概念不是很清楚，将影响你对于 :ref:`tensor-manipulation` 背后行为逻辑的理解。
+   * 如果你对于这些基本属性的概念不是很清楚，将影响你对于 :ref:`tensor-manipulation` 的理解。
 
 .. _tensor-rank:
 
@@ -237,7 +237,7 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
 
 我们将位于同一个 ``axis`` 方向上的元素用颜色进行了区分，来更好地理解沿着轴计算的本质。
 在进行类似 ``sum()`` 这样的统计性质的计算（多个数据统计得到单个统计值）时，
-``axis`` 参数将控制对哪个轴上的元素进行聚合（Aggregat），或者说折叠（Collapse）。
+``axis`` 参数将控制对哪个/哪些轴上的元素进行聚合（Aggregat），或者说折叠（Collapse）。
 
 实际上，计算后的返回的 Tensor 的 ``ndim`` 已经由 2 变成了 1.
 
@@ -257,8 +257,8 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
 
 .. note::
 
-   * 这种对某个轴上的元素进行统计，使得 Tensor 维数减 1 的操作也叫做归约计算（Reduction）。
-   * 除了归约计算，Tensor 的拼接、拓展等操作也可以指定在特定的轴上进行，参考 :ref:`tensor-manipulation` 。
+   * 这种对某个轴上的元素进行统计，使得 Tensor 维数减少的操作也叫做 :ref:`reduction-operations` 。
+   * Tensor 的拼接、拓展等操作也可以指定在特定的轴上进行，参考 :ref:`tensor-manipulation` 。
 
 .. note::
 
@@ -266,12 +266,14 @@ Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）�
    * 更高维 Tensor 的沿轴操作不好借助视觉想象，我们可以通过元素索引的角度来理解，
      :math:`T_{[a_0][a_1]\ldots [a_{n-1}]}` 中的 :math:`i \in [0, n)` 轴方向即对应索引 :math:`a_i` 变化的方向。
 
-.. _tensor-shape:
+.. _axis-length:
 
-Tensor 的形状
--------------
+理解轴的长度
+~~~~~~~~~~~~
 
-Tensor 的轴具有长度，我们可以通过 Python 内置的 :py:func:`len` 来获取一个 Tensor 在第 0 轴的长度，
+Tensor 的轴具有长度，可以理解成当前维度的索引个数。
+
+我们可以通过 Python 内置的 :py:func:`len` 来获取一个 Tensor 在第 0 轴的长度，
 如果取出第 0 轴的某个子 Tensor, 对它使用 ``len()`` 则可以获得子 Tensor 在第 0 轴的长度，
 对应于原 Tensor 在第 1 轴的长度。
 
@@ -300,6 +302,11 @@ Tensor 的轴具有长度，我们可以通过 Python 内置的 :py:func:`len` �
 通过 ``len()`` 和索引，我们总是能获得想要知道的特定轴的长度，但这样不够直观。
 
 Tensor 的秩告诉我们它具有多少个轴，而每个轴的长度引出了一个非常重要的概念——形状（Shape）。
+
+.. _tensor-shape:
+
+Tensor 的形状
+-------------
 
 Tensor 具有形状 :py:attr:`~.Tensor.shape` 属性，它是一个元组 :py:class:`tuple`,
 元组中的每个元素描述了对应维度的轴的长度。
@@ -364,13 +371,14 @@ Tensor 还具备名为 :py:attr:`~.Tensor.size` 的属性，用来表示 Tensor 
 
 接下来：更多的 Tensor 属性
 --------------------------
-掌握 Tensor 的基本属性后，我们便可以进行一些 :ref:`tensor-manipulation` ，或者了解 :ref:`tensor-advanced-indexing` 。
+掌握 Tensor 的基本属性后，我们便可以了解 :ref:`tensor-manipulation` ，或者了解 :ref:`tensor-indexing` 。
 
-另外一个 NumPy 多维数组也具备的属性是数据类型，请参考 :ref:`tensor-dtype` 了解细节。
-
-MegEngine 中实现的 Tensor 还具备有更多的属性，它们与 MegEngine 所支持的功能有关。
+MegEngine 中实现的 Tensor 还具备有更多的属性，它们与 MegEngine 所支持的功能有关 ——
 
 .. seealso::
+
+   :py:attr:`.Tensor.dtype`
+     另外一个 NumPy 多维数组也具备的属性是数据类型，请参考 :ref:`tensor-dtype` 了解细节。
 
    :py:attr:`.Tensor.device`
       Tensor 可以在不同的设备上进行计算，比如 GPU/CPU 等，请参考 :ref:`tensor-device` 。

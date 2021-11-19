@@ -44,6 +44,8 @@
    :maxdepth: 1
 
    deployment/index
+   deployment/traced_module/index
+   deployment/lite/index
    deployment/midout
 
 .. toctree::
@@ -55,6 +57,7 @@
    tools/runtimeopr
    tools/load-and-run
    tools/load-and-run-py
+   tools/customop
 
 用户指南是一份较为通用的 MegEngine 操作手册，
 其中的内容按照机器学习基础流程，结合用户的实际使用情景组织而成。
