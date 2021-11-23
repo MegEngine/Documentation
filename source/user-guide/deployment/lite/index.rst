@@ -1,8 +1,8 @@
 .. _megengine-lite:
 
-==============================
+=================================
 快速使用 MegEngine Lite 部署模型
-==============================
+=================================
 
 简介
 ------------
@@ -39,5 +39,5 @@ MegEngine 支持多种主流深度学习推理平台，包括 Arm，X86，Cuda�
 .. toctree::
    :maxdepth: 1
 
-   fast-develope-cpp
-   fast-develope-python
+   fast-develop-cpp
+   fast-develop-python
