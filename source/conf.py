@@ -40,6 +40,7 @@ from datetime import datetime
 if mode == "AUTO":
     try:
         import megengine
+        import megenginelite
     except ImportError:
         print("MegEngine not found. Use mini mode.")
         mode = "MINI"
@@ -51,6 +52,7 @@ if mode == "MINI":
     suppress_warnings = ['ref.ref']
 else:
     import megengine
+    import megenginelite
     print("MegEngine path:", os.path.dirname(megengine.__file__))
 
 # -- Project information -----------------------------------------------------
@@ -67,6 +69,7 @@ add_module_names = False
 
 # WARNING: Do not modify the order unless you know what will happen
 extensions = [
+    "breathe",
     "nbsphinx",
     "sphinx.ext.napoleon",
     "sphinx.ext.autodoc",
@@ -116,6 +119,10 @@ locale_dirs = ["../locales/"]
 gettext_compact = False
 
 # -- Options for Extensions -------------------------------------------------
+
+# Setting for breathe
+breathe_projects = { "MegEngine": "../xml" }
+breathe_default_project = "MegEngine"
 
 # Setting for sphinx.ext.autosummary to auto-generate single html pages
 # Please makesure all api pages are stored in `/reference/api/` directory

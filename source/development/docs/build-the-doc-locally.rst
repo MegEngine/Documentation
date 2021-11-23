@@ -112,8 +112,6 @@ nbsphinx_ 是 Sphinx 的一个插件，可以帮助我们对 ``.ipynb`` 格式�
 
    sudo apt install -y pandoc
 
-如果你使用的是其它操作系统，想要安装 Pandoc，请参考 Pandoc 官方的 `Installing <https://pandoc.org/installing.html>`_ 页面。
-
 Graphviz 绘图工具
 ~~~~~~~~~~~~~~~~~
 
@@ -125,9 +123,20 @@ Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经�
 
    sudo apt install -y graphviz
 
-如果你使用的是其它操作系统，想要安装 Graphviz，请参考 Graphviz 官方的 `Download <https://graphviz.org/download/>`_ 页面。
-
 .. _Graphviz: https://graphviz.org/
+
+Doxygen 文档生成工具
+~~~~~~~~~~~~~~~~~~~~
+
+Doxygen_ 是是从带注释的 C++ 源代码生成文档的的标准工具，可结合 Breathe 包用于 Sphinx 文档。
+
+如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Doxygen:
+
+.. code-block:: shell
+
+   sudo apt install -y doxygen
+
+.. _Doxygen: https://www.doxygen.nl/index.html
 
 使用 Sphinx 进行文档构建
 ------------------------

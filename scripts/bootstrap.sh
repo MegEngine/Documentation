@@ -4,9 +4,9 @@ set -e
 # TODO: Support for more systems and linux distributions
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt update
-    sudo apt install -y git-lfs pandoc graphviz libgl1-mesa-glx
+    sudo apt install -y git-lfs pandoc graphviz doxygen libgl1-mesa-glx
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install git-lfs pandoc graphviz
+    brew install git-lfs pandoc graphviz doxygen
 else
     echo "Not support now."
 fi
@@ -14,6 +14,7 @@ fi
 git lfs install
 git lfs pull
 git submodule update --init --progress --depth=1 --recursive
+doxygen Doxyfile
 python3 -m pip install --user -r requirements.txt
 
 if [[ "$1" == megengine ]]; then
