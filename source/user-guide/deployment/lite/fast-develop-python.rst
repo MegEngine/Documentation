@@ -1,8 +1,8 @@
-.. _fast-develope-python:
+.. _fast-develop-python:
 
-================================
+=========================================
 快速上手MegEngine Lite Python 部署模型
-================================
+=========================================
 
 MegEngine Lite 提供 Python 接口，用户可以直接安装预编译的 python whl 包，然后使用 python 接口进行 inference，该方法可以直接加载 trace 之后的模型并执行推理，
 减少使用 C++ 进行推理时候复杂的编译环节，MegEngine Lite 的 whl 包是和 MegEngine 的 whl 包绑定在一起的，所以只需要安装 MegEngine python whl 包即可。
