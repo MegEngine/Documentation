@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-07-21 03:30\n"
+"POT-Creation-Date: 2021-11-26 12:37+0800\n"
+"PO-Revision-Date: 2021-11-26 15:45\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-CN\n"
@@ -55,7 +55,7 @@ msgid "Linux x86 平台编译"
 msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run.rst:31
-msgid "编译完成后，我们可以在 ``build/sdk/load_and_run`` 目录找到 ``load_and_run`` ."
+msgid "编译完成后，我们可以在 ``build/lite/load_and_run`` 目录找到 ``load_and_run`` ."
 msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run.rst:34
@@ -174,8 +174,8 @@ msgstr ""
 msgid "搜参阶段："
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:136
-msgid "``--fast-run [--winograd-transform] --fast-run-algo-policy CACHE_FILE``"
+#: ../../source/user-guide/tools/load-and-run.rst:132
+msgid "``--fast-run --fast-run-algo-policy CACHE_FILE``"
 msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run.rst:132
@@ -183,90 +183,90 @@ msgid "开启 fastrun 模式，同时将输出的结果存储到一个 cache 文
 msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run.rst:134
-msgid "其中 ``--winograd-transform`` 为可选项目， 由于对于相同的卷积，多种 winograd 算法的理论加速比和实际性能表现有时会不一致， 开启该选项可使其基于 fastrun 模式搜索的结果来决定做哪种 winograd 变换。"
-msgstr ""
-
-#: ../../source/user-guide/tools/load-and-run.rst:138
 msgid "运行阶段："
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:142
+#: ../../source/user-guide/tools/load-and-run.rst:138
 msgid "``--fast-run-algo-policy CACHE_FILE``"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:141
+#: ../../source/user-guide/tools/load-and-run.rst:137
 msgid "执行阶段: 带上之前的 cache 文件再次执行"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:145
+#: ../../source/user-guide/tools/load-and-run.rst:141
 msgid "正确性验证"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:147
+#: ../../source/user-guide/tools/load-and-run.rst:143
 msgid "MegEngine 内置了多种正确性验证的方法，方便检查网络计算正确性。"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:150
+#: ../../source/user-guide/tools/load-and-run.rst:146
 msgid "dump 输出结果"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:152
+#: ../../source/user-guide/tools/load-and-run.rst:148
 msgid "``--bin-out-dump``"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:152
+#: ../../source/user-guide/tools/load-and-run.rst:148
 msgid "在指定的文件夹内保存输出结果，可以用 load-and-run 在目标设备上跑数据集"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:154
+#: ../../source/user-guide/tools/load-and-run.rst:150
 msgid "使用方式如下："
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:161
+#: ../../source/user-guide/tools/load-and-run.rst:157
 msgid "然后可以在 python 里打开输出文件："
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:171
+#: ../../source/user-guide/tools/load-and-run.rst:167
 msgid "dump 每层结果"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:172
+#: ../../source/user-guide/tools/load-and-run.rst:168
 msgid "我们很多时候会遇到这种情况，就是模型输出结果不对， 这个时候就需要打出网络每一层的结果作比对，看看是哪一层导致。 目前有两种展现方式，一个是 ``io-dump``, 另一个是 ``bin-io-dump``."
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:176
+#: ../../source/user-guide/tools/load-and-run.rst:172
 msgid "为了对比结果，需要假定一个平台结果为 ``ground-truth`` ， 下面假定以 x86 的结果为 ``ground-truth`` ，验证 x86 和 CUDA 上的误差产生的原因 （下面会使用 ``host_build.sh`` 编译出来的 ``load_and_run`` 来演示）。"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:180
+#: ../../source/user-guide/tools/load-and-run.rst:176
 msgid "文本形式对比结果："
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:188
+#: ../../source/user-guide/tools/load-and-run.rst:184
 msgid "文档形式只是显示了部分信息，比如 Tensor 的前几个输出结果，整个 Tensor 的平均值、标准差之类， 如果需要具体到哪个值错误，需要用 ``bin-io-dump`` 会将每一层的结果都输出到一个文件。"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:191
+#: ../../source/user-guide/tools/load-and-run.rst:187
 msgid "raw 形式对比结果："
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:201
+#: ../../source/user-guide/tools/load-and-run.rst:197
 msgid "如何进行性能调优"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:203
+#: ../../source/user-guide/tools/load-and-run.rst:199
 msgid "Load and Run 支持传入 ``--profile`` 参数："
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:206
+#: ../../source/user-guide/tools/load-and-run.rst:202
 msgid "``--profile PROFILE``"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:206
+#: ../../source/user-guide/tools/load-and-run.rst:202
 msgid "记录信息并将结果的 ``JSON`` 内容写到 ``PROFILE`` 文件路径中"
 msgstr ""
 
-#: ../../source/user-guide/tools/load-and-run.rst:208
+#: ../../source/user-guide/tools/load-and-run.rst:204
 msgid "该 ``PROFILE`` 文件可后续用于 :ref:`profile-analyze` 。"
+msgstr ""
+
+#: ../../source/user-guide/tools/load-and-run.rst:206
+msgid "load and run 还有很多丰富的配置选项，可以通过 ``--help`` 查看更多功能"
 msgstr ""
 
