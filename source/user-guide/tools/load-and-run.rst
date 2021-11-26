@@ -28,7 +28,7 @@ Linux x86 平台编译
    cmake .. -DMGE_WITH_CUDA=OFF -DMGE_WITH_TEST=OFF
    make -j$(nproc)
 
-编译完成后，我们可以在 ``build/sdk/load_and_run`` 目录找到 ``load_and_run`` .
+编译完成后，我们可以在 ``build/lite/load_and_run`` 目录找到 ``load_and_run`` .
 
 Linux 交叉编译 ARM 版本
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,12 +128,8 @@ Linux 交叉编译 ARM 版本
 
 搜参阶段：
 
-``--fast-run [--winograd-transform] --fast-run-algo-policy CACHE_FILE``
+``--fast-run --fast-run-algo-policy CACHE_FILE``
   开启 fastrun 模式，同时将输出的结果存储到一个 cache 文件中
-
-  其中 ``--winograd-transform`` 为可选项目，
-  由于对于相同的卷积，多种 winograd 算法的理论加速比和实际性能表现有时会不一致，
-  开启该选项可使其基于 fastrun 模式搜索的结果来决定做哪种 winograd 变换。
 
 运行阶段：
 
@@ -207,3 +203,4 @@ Load and Run 支持传入 ``--profile`` 参数：
 
 该 ``PROFILE`` 文件可后续用于 :ref:`profile-analyze` 。
 
+load and run 还有很多丰富的配置选项，可以通过 ``--help`` 查看更多功能
