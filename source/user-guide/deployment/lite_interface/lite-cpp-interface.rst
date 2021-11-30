@@ -193,6 +193,8 @@ share_memory_with
 Network 相关 API
 ---------------------
 
+.. _option_config:
+
 创建 Network
 ^^^^^^^^^^^^^^^^^^
 
@@ -261,11 +263,10 @@ Network 相关 API
     * force_output_dynamic_alloc：强制最后输出的 Tensor 的内存为动态申请，这样输出 Tensor 不用 copy 到用户的内存中，可以直接代理到返回内存给用户
     * force_output_use_user_specified_memory：强制让输出 Tensor 的内存由用户指定，这样输出 Tensor 将不需要 copy 到用户内存，在最后一个 Kernel 计算时就写到了用户的内存地址中
     * no_profiling_on_shape_change：当 Network 的输入 Tensor 的 shape 改变的时候，这时候 fast-run 将不会进行重新搜索最优的 kernel 算法实现
-    * jit_level：JIT 的级别，设置为 0 时：将关闭 JIT，设置为 1 时：仅仅只开启基本的 elemwise 的 JIT，当是指为 2 时：将开启 elemwise 和 reduce Operator 的 JIT
+    * jit_level：JIT 的级别，设置为 0 时：将关闭 JIT，设置为 1 时：仅仅只开启基本的 elemwise 的 JIT，当设置为 2 时：将开启 elemwise 和 reduce Operator 的 JIT
     * comp_node_seq_record_level：设置 MegEngine 的录制模式，当设置为 0 时：将不开启录制模式，设置为 1 时：将开启录制模式，不会析构这个计算图结构，当设置为 2 时：将开启录制模式，并释放掉整个计算图
     * graph_opt_level：设置图优化等级，当设置为 0 时：关闭图优化，当设置为 1 时：算术计算 inplace 优化，当设置为 2 时：在 1 的基础上在加上全局优化，当设置为 3 时：在 2 的基础上再使能 JIT
     * enable_xxxx：开启对应的 layout 转换优化，不同的平台上不同的 layout 性能差异较大，见下表：
-
 
 +-------------------+----------------------------------------------------+-------------+
 | 参数              | 作用                                               | 适用平台    |
@@ -469,6 +470,8 @@ use_tensorrt
     static void use_tensorrt(std::shared_ptr<Network> dst_network);
 
 设置 dst_network 使用 TensorRT 引擎进行推理
+
+.. _set_network_algo_policy_cpp:
 
 set_network_algo_policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

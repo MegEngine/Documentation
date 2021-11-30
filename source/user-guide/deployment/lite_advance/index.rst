@@ -12,13 +12,17 @@ Inference 接口进行了一层封装，对用户提供更加友好的接口，�
 
 * 性能优化
 * 内存优化
-* NPU/第三方硬件推理支持
 * 二进制库大小优化
+* 跨设备模型运行
 * 模型打包加密功能
 
 文档目录
 -----------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
+   lite_performance_optimize/index
+   memory_optimize
+   binary_optimize
+   pack_lite_model
