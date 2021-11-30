@@ -702,6 +702,8 @@ set_network_algo_workspace_limit
 
 模型运行时候，模型中每一个 Operator 运行时候选择的算法最大能够用到的 workspace 大小，超过 size_limit 大小的算法将不会被选择，其中 size_limit 的单位为字节。
 
+.. _set_network_algo_policy_python:
+
 set_network_algo_policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
