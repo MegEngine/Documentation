@@ -10,5 +10,5 @@
 .. toctree::
    :maxdepth: 2
 
-   memory_copy_optimize
-   execution_optimize
+   memory-copy-optimize
+   execution-optimize

@@ -48,7 +48,6 @@
    deployment/lite/index
    deployment/lite_interface/index
    deployment/lite_advance/index
-   deployment/midout
 
 .. toctree::
    :caption: 工具与插件篇
