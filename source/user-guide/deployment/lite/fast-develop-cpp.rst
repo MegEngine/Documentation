@@ -10,6 +10,8 @@ MegEngine 的一大核心优势是 “训练推理一体化”，其中 “训�
 
 本文将从获取一个训练好的 shufflenet_v2 模型出发，讲解如何使用 MegEngine Lite 的 C++ 接口将其部署到 CPU（Linux x86 和 Android·Arm）环境下运行。
 
+.. _model_dump:
+
 模型准备
 --------
 
@@ -153,6 +155,7 @@ MegEngine 的一大核心优势是 “训练推理一体化”，其中 “训�
 
 至此完成了一个 shufflenet_v2 模型的推理过程的 cpp 代码编写，真正运行起来，还需要编译该 cpp 源文件，并链接 MegEngine Lite 库文件。
 
+.. _build_megengine_lite:
 
 编译 MegEngine Lite
 -------------------

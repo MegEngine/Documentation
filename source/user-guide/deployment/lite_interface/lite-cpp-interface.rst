@@ -414,6 +414,8 @@ enable_profile_performance
 
 测量 Network 运行该模型时候的每个 Op 的耗时信息，该信息将以 json 文件形式保存在指定的 profile_file_path 中
 
+.. _get_model_extra_info:
+
 get_model_extra_info
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: cpp
@@ -527,6 +529,8 @@ set_memory_allocator
 
 设置 dst_network 运行时，使用用户自定义的内存分配器
 
+.. _share_runtime_memory_with:
+
 share_runtime_memory_with
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -537,6 +541,8 @@ share_runtime_memory_with
 
 设置 dst_network 运行和 src_network 共享运行时候的内存， **这时 dst_network 和 src_network 不能同时执行**，
 运行时内存指：除了保存模型 weights 和图结构以外的所有需要的运行时内存
+
+.. _shared_weight_with_network:
 
 shared_weight_with_network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -610,6 +616,7 @@ register_decryption_and_key
     // 注册 "just_for_test" 的加密算法，解密算法是 decrypt_model，秘钥是 15
     register_decryption_and_key("just_for_test", decrypt_model, {15});
 
+.. _update_decryption_or_key:
 
 update_decryption_or_key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -633,6 +640,8 @@ update_decryption_or_key
         }
     // 更新 "AES_default" 加密算法的秘钥为 key，解密 func 保持不变
     update_decryption_or_key("AES_default", nullptr, key);
+
+.. _register_parse_info_func:
 
 register_parse_info_func
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -156,6 +156,8 @@ Format 优化
 
 如此多的 Format，如何选择正确的 Format 非常困难，目前 MegEngine 正在支持自动选择最合适的 Format，即：全局图优化。
 
+.. _record_optimize:
+
 Record 优化：
 --------------------------------
 
