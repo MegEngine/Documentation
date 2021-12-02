@@ -156,5 +156,9 @@ Network 的 IO 中 input 名字为 "data" 和 output 名字为 "TRUE_DIV" 的 IO
   
 实现这个功能主要为两步：
 
-* 设置 force_output_use_user_specified_memory 为 True
-* 模型运行之前通过 LiteTensor 的 reset 接口设置设置自己管理的内存到输入输出 Tensor 中，在 python 中可以调用 set_data_by_share 达到相同的功能
+* 设置 force_output_use_user_specified_memory 为 True。
+* 模型运行之前通过 LiteTensor 的 reset 接口设置设置自己管理的内存到输入输出 Tensor 中，在 python 中可以调用 set_data_by_share 达到相同的功能。
+
+.. warning::
+
+    使用 force_output_use_user_specified_memory 这个参数时，只能获取模型计算的输出 Tensor 的结果，获取中间 Tensor 的计算结果是不被允许的。
