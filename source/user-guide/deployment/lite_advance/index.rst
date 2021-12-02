@@ -23,6 +23,6 @@ Inference 接口进行了一层封装，对用户提供更加友好的接口，�
    :maxdepth: 1
 
    lite_performance_optimize/index
-   memory_optimize
-   binary_optimize
-   pack_lite_model
+   memory-optimize
+   binary-optimize
+   pack-lite-model
