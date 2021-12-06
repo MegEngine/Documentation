@@ -141,7 +141,8 @@ mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 bibtex_bibfiles = ['refs.bib']
 
 # Setting for sphinxcontrib-mermaid
-mermaid_version = "latest"  # from CDN unpkg.com
+# The lib won't be automatically included from the CDN service if value is ""
+mermaid_version = ""
 
 # Setting for sphinx.ext.intersphinx
 # Useful for refenrece other projects, eg. :py:class:`zipfile.ZipFile`
@@ -196,6 +197,7 @@ html_theme = "pydata_sphinx_theme"
 html_theme_path = ["_themes"]
 html_static_path = ["_static"]
 html_extra_path = ["google940c72af103ac75f.html"]
+html_js_files = ["js/mermaid.js"]
 html_css_files = ["css/custom.css"]
 html_additional_pages = {
     'index': 'indexcontent.html',
