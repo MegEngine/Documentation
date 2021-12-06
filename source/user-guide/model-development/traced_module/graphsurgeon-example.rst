@@ -1,16 +1,32 @@
 .. _graphsurgeon-example:
 
-==============
-图手术 Example
-==============
+========================
+TracedModule 常见图手术
+========================
+
+.. note::
+
+   阅读本文所展示的图手术例子，需要先了解 TracedMdoule 图手术的相关接口和用法，
+   请参考 :ref:`tracedmodule-find-expr-and-node` 和 :ref:`tracedmodule-graph-transform-method`。
+
+修改 Node 的名字
+==============================
+
+修改 graph 中的 Node 的名字，可以直接对 Node.name 赋值即可，但在赋值时要确保新的名字未被 graph 中其它的 Node 所使用。
+
+例如修改某 graph 第一个输出的 Node 的名字，可以通过直接获取 graph 的 outputs，来获得输出 Node，
+再直接重新设置 Node 的 name 就可对其重命名。
+
+>>> out_node = traced_net.graph.outputs[0]
+>>> out_node.name = "I_am_output"
 
 为模型添加前后处理
 ==================
 
-TracedModule 可以被反复的 trace，因此在加前后处理时，推荐以新写一个 Module 的形式给模型加前后处理。
+由于 TracedModule 可以被重新 trace，因此在加前后处理时，可以新写一个 Module ，并将前处理，主体模型和后处理作为新 Module 的 3 个子 Module，
+并在新 module 的 forward 函数中分别调用 3 个 module 就完成了前后处理的添加。例子如下：
 
-.. admonition:: 在 Module 里加前后处理
-    :class: dropdown
+.. dropdown:: 添加前后处理
 
     .. code:: python
 
@@ -70,76 +86,14 @@ TracedModule 可以被反复的 trace，因此在加前后处理时，推荐以�
             predict = traced_module(x, y)
             np.testing.assert_equal(x.numpy(), predict.numpy())
 
-当然也可以用图手术的方式添加前后处理，最终效果是一样的。
 
-.. admonition:: 图手术加前后处理
-    :class: dropdown
-
-    .. code:: python
-
-        import numpy as np
-        import pickle
-        
-        import megengine.functional as F
-        import megengine.module as M
-        import megengine.traced_module as tm
-        
-        class Main(M.Module):
-            def forward(self, x):
-                return x
-        
-        def pre_process(x, y):
-                x = x*y
-                return x
-        
-        def post_process(x, y):
-                x = x/y
-                return x
-        
-        if __name__ == "__main__":
-            module = Main()
-            x = F.zeros((1, 14, 8, 8))
-            traced_module = tm.trace_module(module, x)
-            obj = pickle.dumps(traced_module)
-            traced_module = pickle.loads(obj)
-        
-            graph = traced_module.graph
-            x_node = graph.inputs[1]
-            
-        
-            # 为 graph 新增一个 input
-            y_node = graph.add_input_node(shape = (1, 14, 8, 8), name="y")
-            
-            with graph.insert_exprs():
-                new_x_node = pre_process(x_node, y_node)
-        
-            # 将使用了 x_node 的 Expr 替换为 new_x_node
-            graph.replace_node({x_node: new_x_node})
-        
-            # 由于后处理中涉及到 /y，不能将 y 自动生成为 0，因此特别的给 y_node 设置 value
-            y = F.ones((1, 14, 8, 8))
-            y_node.value = y
-            orig_net_out_node = graph.outputs[0]
-            with graph.insert_exprs():
-                new_out_node = post_process(orig_net_out_node, y_node)
-            
-            # 通过 replace_node 将 graph.outputs 替换掉
-            # 或者调用 graph.reset_outputs(new_out_node), 重新设置 graph 的输出
-            graph.replace_node({orig_net_out_node:new_out_node})
-        
-            # 调用 compile 清理掉 graph 中与 outputs 无关的 Expr
-            graph.compile()
-            predict = traced_module(x, y)
-            np.testing.assert_equal(x.numpy(), predict.numpy())
-
-
-把一些常量吸收到卷积里
+将一些常量吸收到卷积里
 ======================
 
-对于一些基于 anchor 的检测算法，经常会在卷积的输出后，对卷积结果乘 ``stride`` 或除 ``anchor_size``，在推理部署时，可以将这些常量吸收到卷积里，基于 TracedModule 可以较容易的实现这些转换, 如下面的例子。
+对于一些基于 anchor 的检测算法，经常会在卷积的输出后，对卷积结果乘 ``stride`` 或除 ``anchor_size``，
+在推理部署时，可以将这些常量吸收到卷积里，基于 TracedModule 可以较容易的实现这些转换，如下面的例子：
 
-.. admonition:: 吸常量
-    :class: dropdown
+.. dropdown:: 吸常量到卷积中
 
     .. code:: python
 
@@ -206,10 +160,9 @@ TracedModule 可以被反复的 trace，因此在加前后处理时，推荐以�
 将一些 OP 转换为 fp16
 =====================
 
-对于一些计算量特别大的全连接层，会占用较多的存储资源，可以通过将其转换为 fp16 计算减少其占用的资源, 如下面的例子。
+对于一些计算量特别大的全连接层，会占用较多的存储资源，可以通过将其转换为 fp16 计算减少其占用的资源, 如下面的例子：
 
-.. admonition:: 转 fp16
-    :class: dropdown
+.. dropdown:: 将 Linear 转为 fp16 计算
 
     .. code:: python
 
@@ -277,13 +230,12 @@ TracedModule 可以被反复的 trace，因此在加前后处理时，推荐以�
         if __name__ == "__main__":
             to_fp16()
 
-通过 InternalGraph  确定数据流向
+通过 Graph  确定数据流向
 ================================
 
 在量化训练时，常常会对 concat 的输入做某些约束，通过 TracedModule 可以轻易的找到这些 concat 的输入是来自于哪个内置的 function 或 Module 的输出，如下面的例子。
 
-.. admonition:: find inputs
-    :class: dropdown
+.. dropdown:: 查找 concat 的输入
 
     .. code:: python
 
@@ -335,8 +287,7 @@ Conv 和 BN 融合
 
 在 推理 或 量化训练 时，常常需要将 Conv 和 Bn 融合到一起，基于 TracedModule 的 Graph 可以找到满足融合条件的 Conv 和 Bn，并以图手术的方式将其融合，如下面的例子。
 
-.. admonition:: fuse bn
-    :class: dropdown
+.. dropdown:: 将 BN 融合到 Conv 中
 
     .. code:: python
 
