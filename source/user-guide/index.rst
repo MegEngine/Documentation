@@ -36,6 +36,7 @@
    model-development/quantization/index
    model-development/amp/index
    model-development/profiler/index
+   model-development/traced_module/index
    model-development/jit/index
 
 .. toctree::
@@ -44,7 +45,6 @@
    :maxdepth: 1
    
    deployment/index
-   deployment/traced_module/index
    deployment/lite/index
    deployment/lite/interface/index
    deployment/lite/advance/index
