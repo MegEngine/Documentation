@@ -31,7 +31,7 @@
    :hidden:
    :maxdepth: 1
 
-   model-development/dtr/index
+   model-development/recomputation.rst
    model-development/distributed/index
    model-development/quantization/index
    model-development/amp/index
@@ -106,8 +106,7 @@ MegEngine Cookbook
 
 .. dropdown:: :fa:`eye,mr-1` 如何在使用 MegEngine 训练模型时节省显存？
 
-   * 你可以选择开启动态图 Sublinear 显存优化，参考 :ref:`dtr-guide`.
-   * 在使用 :ref:`jit-guide` 时，也可以开启静态图 Sublinear 显存优化，参考 TBD.
+   请参考 :ref:`recomputation-guide` 。
 
 .. dropdown:: :fa:`eye,mr-1` 如何在使用调试、优化、验证模型的性能？
 
@@ -117,10 +116,8 @@ MegEngine Cookbook
 
 .. dropdown:: :fa:`eye,mr-1` 如何对 MegEngine 的功能进行拓展？
 
-   * 如果你希望为 MegEngine 添加新的算子，请参考 TBD.
-   * 如果你希望为 MegEngine 添加新的 Optimizer, 请参考 TBD.
-   * 如果你希望优化 MegEngine 中的 Kernel, 请参考 TBD.
-   * 如果你希望参与到 MegEngine 的开发中来，请参考 :ref:`development`.
+   * 如果你希望为 MegEngine 添加新的算子，请参考 :ref:`add-an-operator` 。
+   * 如果你希望参与到 MegEngine 的开发中来，请参考 :ref:`development`  
 
 寻求更多支持
 ------------
