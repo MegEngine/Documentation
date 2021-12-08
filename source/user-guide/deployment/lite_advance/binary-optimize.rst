@@ -19,13 +19,7 @@ midout 通过记录模型推理时用到的 opr 和执行流，使用 ``if(0)`` 
 
 .. code-block:: bash
 
-    export EXTRA_CMAKE_ARGS="-DBUILD_SHARED_LIBS=OFF"
-
-否则，MegEngine 会自动编译成动态库。然后执行：
-
-.. code-block:: bash
-
-    ./cross_build_android_arm_inference.sh
+    EXTRA_CMAKE_ARGS="-DBUILD_SHARED_LIBS=OFF" ./cross_build_android_arm_inference.sh
 
 查看一下 load_and_run 的大小：
 
@@ -50,8 +44,8 @@ MegEngine 的裁剪可以从两方面进行：
 
 1. 第一步，dump 模型，获得模型 opr 信息；通过一次推理，获得 trace 文件。
 2. 第二步，使用MegEngine的头文件生成工具 ``tools/gen_header_for_bin_reduce.py`` 将 opr 信息和 trace 文件作为输入，
-   生成 ``bin_reduce.h`` 并将该头文件加入编译 Release 版的应用程序。
-   当然也可以单独使用模型 opr 信息或是 trace 文件来生成 ``bin_reduce.h`` ，
+   生成 ``src/bin_reduce_cmake.h`` CMake 会自动维护这个文件，用户无需关心。
+   当然也可以单独使用模型 opr 信息或是 trace 文件来生成 ``src/bin_reduce_cmake.h`` ，
    单独使用 opr 信息时，默认保留所有 kernel，单独使用 trace 文件时，默认保留所有 opr.
 
 dump 模型获得 opr 类型名称
@@ -102,8 +96,7 @@ dump 模型获得 opr 类型名称
 
    .. code-block:: bash
 
-      export EXTRA_CMAKE_ARGS="-DMGE_WITH_MIDOUT_PROFILE=ON -DBUILD_SHARED_LIBS=OFF"
-      ./cross_build_android_arm_inference.sh -r
+      EXTRA_CMAKE_ARGS="-DMGE_WITH_MIDOUT_PROFILE=ON -DBUILD_SHARED_LIBS=OFF" ./cross_build_android_arm_inference.sh -r
 
    编译完成后，将 ``build_dir/android/arm64-v8a/Release/install/bin`` 下的 ``load_and_run`` 推至设备并执行：
 
@@ -138,26 +131,18 @@ dump 模型获得 opr 类型名称
 
    注意到执行模型后，生成了 ``midout_trace.20717`` 文件，该文件记录了模型在底层执行了哪些 kernel.
 
-2. 生成 ``bin_recude.h`` 并再次编译 load_and_run：
+2. 生成 ``src/bin_reduce_cmake.h`` 并再次编译 load_and_run：
 
    将生成的 ``midout_trace.20717`` 拷贝至本地，
-   使用上文提到的头文件生成工具 ``gen_header_for_bin_reduce.py`` 生成 ``bin_reduce.h`` . 
+   使用上文提到的头文件生成工具 ``gen_header_for_bin_reduce.py`` 生成 ``src/bin_reduce_cmake.h`` . 
 
    .. code-block:: bash
 
-      python3 ./tools/gen_header_for_bin_reduce.py resnet50.mge.json midout_trace.20717 -o bin_reduce.h
+      python3 ./tools/gen_header_for_bin_reduce.py resnet50.mge.json midout_trace.20717 -o src/bin_reduce_cmake.h
 
-   再次编译 load_and_run，注意要将 ``bin_reduce.h`` 加入并编译 Release 版本。设置 CMake 编译选项：
+      EXTRA_CMAKE_ARGS="-DMGE_WITH_MINIMUM_SIZE=ON -DBUILD_SHARED_LIBS=OFF" ./scripts/cmake-build/cross_build_android_arm_inference.sh -r
 
-   .. code-block:: bash
-
-      export EXTRA_CMAKE_ARGS="-DMGE_BIN_REDUCE=/absolute/path/to/bin_reduce.h -DBUILD_SHARED_LIBS=OFF"
-
-   .. code-block:: bash
-
-      ./scripts/cmake-build/cross_build_android_arm_inference.sh -r
-
-   编译完成后，检查 load_and_run 的大小：
+   编译完成后，检查 load_and_run 的大小, 注意 MGE_WITH_MINIMUM_SIZE 不是非必须的，加上它 size 会更小，但同时会关闭一些编译选项：
 
    .. code-block:: bash
 
@@ -225,7 +210,7 @@ dump 模型获得 opr 类型名称
 
        ./load_and_run resnet50.mge --fast-run-algo-policy resnet50.cache --winograd-transform
 
-3. 如上节，将 trace 文件拷贝回本机，生成 ``bin_reduce.h`` ，再次编译 load_and_run 并推至设备。
+3. 如上节，将 trace 文件拷贝回本机，生成 ``src/bin_reduce_cmake.h`` ，再次编译 load_and_run 并推至设备。
 
 4. 使用裁剪后的 load_and_run 的 fast-run 功能，执行同 2 的命令，得到如下输出：
 
@@ -262,21 +247,7 @@ dump 模型获得 opr 类型名称
 
 .. code-block:: bash
 
-   python3 ./tools/gen_header_for_bin_reduce.py A.mge.json A.trace B.mge.json B.trace -o bin_reduce.h
-
-编译选项
---------
-
-MegEngine 的 CMake 中有一些开关是默认打开的，它们提供了 RTTI、异常抛出等特性，
-可以在第二次构建时关闭它们，以获得体积更小的 load_and_run. 它们是：
-
-* ``MGB_WITH_FLATBUFFERS`` : FLABUFFERS格式支持
-* ``MGE_ENABLE_RTTI`` : C++ RTTI特性
-* ``MGE_ENABLE_LOGGING`` : 日志功能
-* ``MGE_ENABLE_EXCEPTIONS`` : 异常功能
-
-MegEngine 提供一个总开关 ``MGE_WITH_MINIMUM_SIZE`` 来关闭上述特性。
-需要注意的是，只有在 ``MGE_BIN_REDUCE`` 被设置时，此开关才会被检查并生效。
+   python3 ./tools/gen_header_for_bin_reduce.py A.mge.json A.trace B.mge.json B.trace -o src/bin_reduce_cmake.h
 
 裁剪基于 MegEngine Lite 的应用
 ------------------------------------
@@ -304,3 +275,4 @@ MegEngine 提供一个总开关 ``MGE_WITH_MINIMUM_SIZE`` 来关闭上述特性�
 .. note::
 
     如果裁减的应用程序需要在不同的 shape 下面都能成功运行，需要在裁减 :ref:`generator_tance` 中所有的输入都运行一次。
+
