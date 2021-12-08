@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-08 20:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/user-guide/model-development/recomputation.rst:5
+msgid "通过重计算节省显存（Recomputation）"
+msgstr ""
+
+#: ../../source/user-guide/model-development/recomputation.rst:7
+msgid "通常而言，使用更大的模型和更大的 Batch size 可以取得更好的训练效果，但随之而来的是更大的显存占用。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/recomputation.rst:9
+msgid ""
+"重计算（Recomputation）本质上是一种用时间换空间的策略，可以将它类比成一种 Tensor 缓存（Cache）策略， "
+"当显存空间不足时，可以选择把一些前向计算的结果清除； 当需要再次用到这些计算结果时，再根据之前缓存的检查点（Checkpoint）去重新计算它们。"
+" 参考下面这个示意图，蓝色为占用的显存（ `图片来源 "
+"<https://www.zhihu.com/question/274635237/answer/755102181>`_ ）："
+msgstr ""
+
+#: ../../source/user-guide/model-development/recomputation.rst:18
+msgid "Vanilla backprop"
+msgstr ""
+
+#: ../../source/user-guide/model-development/recomputation.rst:24
+msgid "Checkpointed backprop"
+msgstr ""
+
+#: ../../source/user-guide/model-development/recomputation.rst:29
+msgid "MegEngine 将经典的重计算策略应用到了工程实现中，具体使用方式请参考以下页面："
+msgstr ""
+

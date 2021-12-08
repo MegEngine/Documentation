@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-09 06:43\n"
+"POT-Creation-Date: 2021-12-08 20:45+0800\n"
+"PO-Revision-Date: 2021-11-09 06:43+0000\n"
 "Last-Translator: \n"
-"Language: zh_CN\n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.full.po\n"
-"X-Crowdin-File-ID: 2140\n"
 
 #: ../../source/reference/api/megengine.functional.full.rst:2
 msgid "megengine.functional.full"
@@ -30,27 +26,33 @@ msgstr ""
 msgid "参数"
 msgstr ""
 
-#: megengine.functional.tensor.full:3 of
-msgid "a list, tuple or integer defining the shape of the output tensor."
-msgstr ""
-
 #: megengine.functional.tensor.full:4 of
-msgid "the value to fill the output tensor with."
-msgstr ""
-
-#: megengine.functional.tensor.full:5 of
-msgid "the desired data type of the output tensor. Default: ``float32``."
+msgid "output tensor shape."
 msgstr ""
 
 #: megengine.functional.tensor.full:6 of
-msgid "the desired device of the output tensor. Default: if ``None``, use the default device (see :func:`~.megengine.get_default_device`)."
+msgid "fill value."
+msgstr ""
+
+#: megengine.functional.tensor.full:7 of
+msgid ""
+"output tensor data type. If ``dtype`` is ``None``, the output tensor data"
+" type must be inferred from ``value``. If the value is an ``int``, the "
+"output tensor data type must be the default integer data type. If the "
+"value is a ``float``, the output tensor data type must be the default "
+"floating-point data type. If the value is a ``bool``, the output tensor "
+"must have boolean data type. Default: ``None``."
+msgstr ""
+
+#: megengine.functional.tensor.full:13 of
+msgid "device on which to place the created tensor. Default: ``None``."
 msgstr ""
 
 #: megengine.functional.tensor.full of
 msgid "返回类型"
 msgstr ""
 
-#: megengine.functional.tensor.full:9 of
+#: megengine.functional.tensor.full:15 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ""
 
@@ -58,15 +60,15 @@ msgstr ""
 msgid "返回"
 msgstr ""
 
-#: megengine.functional.tensor.full:10 of
-msgid "output tensor."
+#: megengine.functional.tensor.full:16 of
+msgid "a tensor where every element is equal to ``value``."
 msgstr ""
 
-#: megengine.functional.tensor.full:13 of
+#: megengine.functional.tensor.full:19 of
 msgid "实际案例"
 msgstr ""
 
-#: megengine.functional.tensor.full:22 of
+#: megengine.functional.tensor.full:28 of
 msgid "Outputs:"
 msgstr ""
 
@@ -78,4 +80,23 @@ msgstr ""
 
 #~ msgid "Returns a tensor with given shape and value."
 #~ msgstr "返回一个给定形状和值的张量"
+
+#~ msgid "a list, tuple or integer defining the shape of the output tensor."
+#~ msgstr ""
+
+#~ msgid "the value to fill the output tensor with."
+#~ msgstr ""
+
+#~ msgid "the desired data type of the output tensor. Default: ``float32``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "the desired device of the output "
+#~ "tensor. Default: if ``None``, use the"
+#~ " default device (see "
+#~ ":func:`~.megengine.get_default_device`)."
+#~ msgstr ""
+
+#~ msgid "output tensor."
+#~ msgstr ""
 

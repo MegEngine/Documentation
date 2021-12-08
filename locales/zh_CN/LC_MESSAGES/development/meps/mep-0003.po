@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
+"POT-Creation-Date: 2021-12-08 20:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -317,34 +317,44 @@ msgstr ""
 msgid "混合类型提升在《标准》中是未定义行为，而在 MegEngine 用户指南中明确了相关行为。"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:149
-msgid "函数签名与参数（ `Function and method signatures`_ ）"
+#: ../../source/development/meps/mep-0003.rst:152
+msgid "函数与方法签名（ `Function and method signatures`_ ）"
 msgstr ""
 
 #: ../../source/development/meps/mep-0003.rst:141
 msgid ""
 "位置参数必须使用 `PEP 570`_ 中规定的仅位置（Positional-Only）参数，语法为 ``/`` 符。 由于该特性仅在 "
 "Python >= 3.8 版本可用，而 MegEngine 目前仍需要支持一些低于 3.8 的 Python 版本。 "
-"因此现在的做法是在文档中为用户添加指导，让用户以仅位置参数的方式去使用它们。 另一种方式是在文档字符串的第一行重载签名内容，参考 "
-"`autodoc_docstring_signature`_ ."
+"因此现在的做法是在文档中以示例代码的形式为用户添加指导，要求用户以仅位置参数的方式去使用它们。 另一种方式是在文档字符串的第一行重载签名内容，参考"
+" `autodoc_docstring_signature`_ ."
 msgstr ""
 
 #: ../../source/development/meps/mep-0003.rst:145
-msgid ""
-"对于只有单个 Tensor 输入作为位置参数的函数，参数应该被命名为 ``inp``, 对于有多个输入参数的情况，参数应该被命名为 ``inp1,"
-" inp2 ...``, 以此类推。 在标准中要求使用 ``x`` 作为输入位置参数的名字，如果遵循标准，会引入兼容性破坏，因此保留现在的参数名。"
-" 我们认为，由于将来会采取仅位置参数约定，因此位置参数的名称并不关键，这里只是为了历史写法兼容。"
+msgid "关键字参数必须使用仅关键字（Keyword-Only）参数，且保证向后兼容性。"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:149
-msgid "参考示例中使用了 NumPy 风格的文档字符串，MegEngine 中要求使用 Google 风格。"
+#: ../../source/development/meps/mep-0003.rst:146
+msgid ""
+"对于只有单个 Tensor 输入作为位置参数的函数，在标准中要求使用 ``x`` 作为输入位置参数的名字。 而在 MegEngine "
+"中，部分函数签名中的输入已经被命名为 ``inp``, 当前此类参数命名并不统一。 "
+"由于位置参数要求以仅位置参数的形式使用，因此位置参数的名称改动将不被看作是兼容性破坏， 后续会有相应的命名变更，使之符合《标准》的要求。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:150
+msgid ""
+"为了可读性，《标准》要求类型注释被排除在签名本身之外，但是需要被添加到单独的参数描述中。 目前 MegEngine 中 API "
+"的做法是签名中的参数都需要添加类型注释，而不要求写在参数描述中。"
 msgstr ""
 
 #: ../../source/development/meps/mep-0003.rst:152
+msgid "《标准》参考示例中使用了 NumPy 风格的文档字符串，而在 MegEngine 中要求使用 Google 风格。"
+msgstr ""
+
+#: ../../source/development/meps/mep-0003.rst:155
 msgid "向后兼容性处理"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:154
+#: ../../source/development/meps/mep-0003.rst:157
 msgid ""
 "NumPy 的主命名空间下已经实现了非常多的 API, 为了在采用《数组 API 标准》的同时不破坏兼容性， NumPy 在 `NEP 47`_ "
 "中提出了添加一个单独的命名空间 ``numpy.array_api`` 的做法， 类似的做法也出现在一些其它想要采用现有 NumPy "
@@ -352,57 +362,57 @@ msgid ""
 "完全对应，因此不存在这样的历史负担。"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:159
+#: ../../source/development/meps/mep-0003.rst:162
 msgid ""
 "我们可以继续保留现有设计， ``megengine.functional`` 中将负责提供所有与 Tensor 相关的原子操作。 "
 "如果将来用户想要找到 ``numpy.array_api`` 中的对应接口，应当确保能够在 ``megengine.functional`` "
 "中找到。"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:162
+#: ../../source/development/meps/mep-0003.rst:165
 msgid "可能导致的问题是："
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:164
+#: ../../source/development/meps/mep-0003.rst:167
 msgid ""
 "MegEngine 现有的一些接口和设计（未在当前《标准》提及）可能会和后续版本《标准》中的要求起冲突， 比如同一个 API "
 "实现功能不同，或者在后续标准中要求统一支持视图操作，届时无法保证用法完全兼容。"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:167
+#: ../../source/development/meps/mep-0003.rst:170
 msgid "可能的解决方案："
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:169
+#: ../../source/development/meps/mep-0003.rst:172
 msgid ""
 "如果将来《标准》中对于一些概念有了更加具体的规定，或存在着相应的需求，导致无法处理向后兼容问题， MegEngine 中或许会提供 "
 "``megengine.functional.numpy`` 与 ``megengine.functional.array`` 命名空间， "
 "以寻求和 NumPy 以及 Array API 标准的高度统一。也有可能不采用新的《数组 API 标准》，锁定某一个版本。"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:174
+#: ../../source/development/meps/mep-0003.rst:177
 msgid "关于 NN API 的讨论"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:176
+#: ../../source/development/meps/mep-0003.rst:179
 msgid ""
 "目前 MegEngine 有关于神经网络编程的接口实现都存放在 ``megengine.functional.nn`` 命名空间中， 大都以 "
 "``torch.nn.functional`` 作为参考标准（包括命名/分类规则）。 相关 API 在《数组 API 标准》中被划分为 misc "
 "functions 一类，尚未进行具体讨论。 以下是 MegEngine 在处理此类 API 时的基本思路："
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:181
+#: ../../source/development/meps/mep-0003.rst:184
 msgid "PyTorch 中的一些 API 命名规则是不合理的，因此最终命名需要经过 API 委员会的审核。"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:183
+#: ../../source/development/meps/mep-0003.rst:186
 msgid ""
 "例如 Pytorch 中的 ``fold`` 和 ``unfold`` 两个接口， 在 MegEngine 中对应为 "
 "``sliding_window`` 和 ``sliding_window_transpose``. "
 "这样的命名是经过研发人员和用户经过讨论后确定的，相关讨论应该被记录。"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:187
+#: ../../source/development/meps/mep-0003.rst:190
 msgid ""
 "由于 MegEngine 不存在类似 ``torchvision``, ``torchtext`` 这样的领域细分库， "
 "因此规定所有的神经网络领域概念相关接口均统一放在 ``functional.nn`` 命名空间 "
@@ -410,7 +420,30 @@ msgid ""
 "``functional.nn`` 调用；"
 msgstr ""
 
-#: ../../source/development/meps/mep-0003.rst:192
+#: ../../source/development/meps/mep-0003.rst:195
 msgid "相关 API 对比信息应当提供在 :ref:`comparison` 页面，方便用户查询。"
 msgstr ""
+
+#~ msgid "函数签名与参数（ `Function and method signatures`_ ）"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "位置参数必须使用 `PEP 570`_ 中规定的仅位置（Positional-"
+#~ "Only）参数，语法为 ``/`` 符。 由于该特性仅在 Python >="
+#~ " 3.8 版本可用，而 MegEngine 目前仍需要支持一些低于 3.8 "
+#~ "的 Python 版本。 因此现在的做法是在文档中为用户添加指导，让用户以仅位置参数的方式去使用它们。"
+#~ " 另一种方式是在文档字符串的第一行重载签名内容，参考 `autodoc_docstring_signature`_ "
+#~ "."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "对于只有单个 Tensor 输入作为位置参数的函数，参数应该被命名为 ``inp``, "
+#~ "对于有多个输入参数的情况，参数应该被命名为 ``inp1, inp2 ...``, "
+#~ "以此类推。 在标准中要求使用 ``x`` "
+#~ "作为输入位置参数的名字，如果遵循标准，会引入兼容性破坏，因此保留现在的参数名。 "
+#~ "我们认为，由于将来会采取仅位置参数约定，因此位置参数的名称并不关键，这里只是为了历史写法兼容。"
+#~ msgstr ""
+
+#~ msgid "参考示例中使用了 NumPy 风格的文档字符串，MegEngine 中要求使用 Google 风格。"
+#~ msgstr ""
 
