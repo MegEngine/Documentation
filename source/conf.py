@@ -58,7 +58,7 @@ else:
 project = "MegEngine"
 copyright = f"2020-{datetime.now().year}, The MegEngine Open Source Team"
 author = "The MegEngine Open Source Team"
-version = "1.7"
+version = "1.8"
 release = version
 
 # -- General configuration ---------------------------------------------------
