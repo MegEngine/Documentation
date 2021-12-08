@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-10 02:20\n"
+"POT-Creation-Date: 2021-12-08 20:45+0800\n"
+"PO-Revision-Date: 2021-12-08 19:02\n"
 "Last-Translator: \n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/tensor/dtype.po\n"
 "X-Crowdin-File-ID: 8133\n"
-"Language: zh_CN\n"
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:5
 msgid "Tensor 数据类型"
@@ -43,15 +43,15 @@ msgid "根据 :ref:`mep-0003` ，MegEngine 将参考《数组 API 标准》中�
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:23
-msgid "上面提到的数据类型（Data type, :attr:`~.Tensor.dtype` ）是 Tensor 的一种基础属性， 单个 Tensor 内的元素的数据类型完全一致，每个元素占据的内存空间也完全相同。 Tensor 数据类型可以在创建时指定，也可以从已经存在的 Tensor 中指定进行转化，此时 :ref:`dtype-argument` 。 ``float32`` 是 MegEngine 中最经常用到的 Tensor 数据类型。"
+msgid "上面提到的数据类型（Data type, :attr:`~.Tensor.dtype` ）是 Tensor 的一种基础属性， 单个 Tensor 内的元素的数据类型完全一致，每个元素占据的内存空间也完全相同。 Tensor 数据类型可以在创建时指定，也可以从已经存在的 Tensor 中指定进行转化，此时 :ref:`dtype-as-argument` 。 ``float32`` 是 MegEngine 中最经常用到的 Tensor 数据类型。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:33
-msgid "已经支持的类型"
+msgid "数据类型支持情况"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:35
-msgid "目前支持的数据类型如下："
+msgid "在 MegEngine 中尚未支持《数组 API 标准》中需求的所有数据类型，目前状态如下："
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:40
@@ -71,224 +71,327 @@ msgid "数值区间"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:44
-msgid "单精度浮点"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:45
-msgid ":any:`numpy.float32` / :class:`numpy.single`"
+msgid "支持情况"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:46
-msgid "``float32``"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:47
-#: ../../source/user-guide/model-development/tensor/dtype.rst:51
-msgid "参考 IEEE 754-2019"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:48
-msgid "半精度浮点"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:49
-msgid ":any:`numpy.float16` / :class:`numpy.half`"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:50
-msgid "``float16``"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:52
-msgid "无符号 8 位整型"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:53
-msgid ":any:`numpy.uint8`"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:54
-msgid "``uint8``"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:55
-msgid ":math:`[0, 2^{8}-1]`"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:56
-msgid "有符号 8 位整型"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:57
-msgid ":any:`numpy.int8`"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:58
-msgid "``int8``"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:59
-msgid ":math:`[-2^{7}, 2^{7}-1]`"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:60
-msgid "有符号 16 位整型"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:61
-msgid ":any:`numpy.int16`"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:62
-msgid "``int16``"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:63
-msgid ":math:`[−2^{15}, 2^{15}-1]`"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:64
-msgid "有符号 32 位整型"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:65
-msgid ":any:`numpy.int32`"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:66
-msgid "``int32``"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:67
-msgid ":math:`[−2^{31}, 2^{31}-1]`"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:68
 msgid "布尔型"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:69
+#: ../../source/user-guide/model-development/tensor/dtype.rst:47
 msgid ":any:`numpy.bool8` / :class:`numpy.bool_`"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:70
+#: ../../source/user-guide/model-development/tensor/dtype.rst:48
 msgid "``bool``"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:71
+#: ../../source/user-guide/model-development/tensor/dtype.rst:49
 msgid "``True`` 或者 ``False``"
 msgstr ""
 
+#: ../../source/user-guide/model-development/tensor/dtype.rst:50
+#: ../../source/user-guide/model-development/tensor/dtype.rst:55
+#: ../../source/user-guide/model-development/tensor/dtype.rst:60
+#: ../../source/user-guide/model-development/tensor/dtype.rst:65
 #: ../../source/user-guide/model-development/tensor/dtype.rst:75
-msgid "并不是所有的已有算子都支持上述任意数据类型之间的计算（仅保证 ``float32`` 类型全部可用）。"
+#: ../../source/user-guide/model-development/tensor/dtype.rst:95
+#: ../../source/user-guide/model-development/tensor/dtype.rst:100
+msgid "✔"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:51
+msgid "有符号 8 位整型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:52
+msgid ":any:`numpy.int8`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:53
+msgid "``int8``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:54
+msgid ":math:`[-2^{7}, 2^{7}-1]`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:56
+msgid "有符号 16 位整型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:57
+msgid ":any:`numpy.int16`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:58
+msgid "``int16``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:59
+msgid ":math:`[−2^{15}, 2^{15}-1]`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:61
+msgid "有符号 32 位整型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:62
+msgid ":any:`numpy.int32`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:63
+msgid "``int32``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:64
+msgid ":math:`[−2^{31}, 2^{31}-1]`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:66
+msgid "有符号 64 位整型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:67
+msgid ":any:`numpy.int64`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:68
+msgid "``int64``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:69
+msgid ":math:`[−2^{64}, 2^{64}-1]`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:70
+#: ../../source/user-guide/model-development/tensor/dtype.rst:80
+#: ../../source/user-guide/model-development/tensor/dtype.rst:85
+#: ../../source/user-guide/model-development/tensor/dtype.rst:90
+#: ../../source/user-guide/model-development/tensor/dtype.rst:105
+msgid "✖"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:71
+msgid "无符号 8 位整型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:72
+msgid ":any:`numpy.uint8`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:73
+msgid "``uint8``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:74
+msgid ":math:`[0, 2^{8}-1]`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:76
+msgid "无符号 16 位整型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:77
+msgid ":any:`numpy.uint16`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:78
+msgid "``uint16``"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:79
-msgid "我们会在 :mod:`megengine.quantization` 模块中提到对量化数据类型的支持。"
+msgid ":math:`[0, 2^{16}-1]`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:81
+msgid "无符号 32 位整型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:82
+msgid ":any:`numpy.uint32`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:83
+msgid "``uint32``"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:84
-msgid "dtype 作为参数使用"
+msgid ":math:`[0, 2^{32}-1]`"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:86
-msgid ":class:`~.Tensor` 初始化时以及调用 :ref:`创建 Tensor <tensor-creation>` 函数时可接受 ``dtype`` 参数，用来指定数据类型："
+msgid "无符号 64 位整型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:87
+msgid ":any:`numpy.uint64`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:88
+msgid "``uint64``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:89
+msgid ":math:`[0, 2^{64}-1]`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:91
+msgid "半精度浮点"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:92
+msgid ":any:`numpy.float16` / :class:`numpy.half`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:93
+msgid "``float16``"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:94
-msgid "如果使用已经存在的数据来创建 Tensor 而不指定 ``dtype``, 则 Tensor 的数据类型将根据输入的类型推导："
+#: ../../source/user-guide/model-development/tensor/dtype.rst:99
+#: ../../source/user-guide/model-development/tensor/dtype.rst:104
+msgid "IEEE 754 :footcite:p:`IEEE754-2019`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:96
+msgid "单精度浮点"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:97
+msgid ":any:`numpy.float32` / :class:`numpy.single`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:98
+msgid "``float32``"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:101
+msgid "双精度浮点"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:102
-msgid "基本的推导规则为："
+msgid ":any:`numpy.float64` / :class:`numpy.double`"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:104
-msgid "Python scalar bool -> MegEngine Tensor bool"
+#: ../../source/user-guide/model-development/tensor/dtype.rst:103
+msgid "``float64``"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:105
-msgid "Python scalar int -> MegEngine Tensor int32"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:106
-msgid "Python scalar float -> MegEngine Tensor float32"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:107
-msgid "Numpy array dtype -> MegEngine Tensor dtype （保持一致，前提是类型支持）"
+#: ../../source/user-guide/model-development/tensor/dtype.rst:108
+msgid "IEEE. Ieee standard for floating-point arithmetic. IEEE Std 754-2019 (Revision of IEEE 754-2008), pages 1–84, 2019. doi:10.1109/IEEESTD.2019.8766229."
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:111
-msgid "如果使用不支持类型的 NumPy 数组作为输入创建 MegEngine Tensor, 可能会出现非预期行为。 因此最好在做类似转换时每次都指定 ``dtype`` 参数，或先转换 NumPy 数组为支持的数据类型。"
+msgid "并不是所有的已有算子都支持 MegEngine 数据类型之间的计算（仅保证 ``float32`` 类型全部可用）。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:114
-msgid "另外还可以使用 :meth:`~.Tensor.astype` 方法得到转换数据类型后的 Tensor（原 Tensor 不变）："
+#: ../../source/user-guide/model-development/tensor/dtype.rst:115
+msgid "我们会在 :mod:`megengine.quantization` 模块中提到对量化数据类型的支持。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:120
+msgid "默认数据类型"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:122
-msgid "类型提升规则"
+msgid "MegEngine 中对 Tensor 默认数据类型对定义如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:124
+msgid "默认浮点数据类型为 ``float32``;"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:125
+msgid "默认整型数据类型为 ``int32``;"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:126
-msgid "根据 :ref:`mep-0003`, 类型提升规则应当参考《数组 API 标准》 中的 `相关规定 <https://data-apis.org/array-api/latest/API_specification/type_promotion.html>`_ ："
+msgid "默认索引数据类型为 ``int32``."
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:132
-msgid "多个不同数据类型的 Tensor 或 Python 标量作为操作数参与运算时， 所返回的结果类型由上图展示的关系决定—— 沿着箭头方向提升，汇合至最近的数据类型，将其作为返回类型。"
+#: ../../source/user-guide/model-development/tensor/dtype.rst:131
+msgid "dtype 作为参数使用"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:136
-msgid "决定类型提升的关键是参与运算的数据的类型，而不是它们的值；"
+#: ../../source/user-guide/model-development/tensor/dtype.rst:133
+msgid ":class:`~.Tensor` 初始化时以及调用 :ref:`创建 Tensor <tensor-creation>` 函数时可接受 ``dtype`` 参数，用来指定数据类型："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:137
-msgid "图中的虚线表示 Python 标量的行为在溢出时未定义；"
+#: ../../source/user-guide/model-development/tensor/dtype.rst:141
+msgid "如果使用已经存在的数据来创建 Tensor 而不指定 ``dtype``, 则 Tensor 的数据类型将根据 :ref:`default-data-types` 推导："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:138
-msgid "布尔型、整数型和浮点型 ``dtypes`` 之间未连接，表明混合类型提升未定义。"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:140
-msgid "在 MegEngine 中，由于尚未支持《标准》中的所有类型，当前提升规则如下图所示："
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:145
-msgid "遵循 **类型优先** 的原则，存在 bool -> int -> float 的混合类型提升规则；"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:146
-msgid "当 Python 标量类型与 Tensor 进行混合运算时，转换成 Tensor 数据类型；"
-msgstr ""
-
-#: ../../source/user-guide/model-development/tensor/dtype.rst:147
-msgid "布尔型 ``dtype`` 与其它类型之间未连接，表明相关混合类型提升未定义。"
+#: ../../source/user-guide/model-development/tensor/dtype.rst:148
+msgid "如果使用不支持类型的 NumPy 数组作为输入创建 MegEngine Tensor, 可能会出现非预期行为。 因此最好在做类似转换时每次都指定 ``dtype`` 参数，或先转换 NumPy 数组为支持的数据类型。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:151
-msgid "这里讨论的类型提升规则主要适用于 :ref:`element-wise-operations` 的情况。"
+msgid "另外还可以使用 :meth:`~.Tensor.astype` 方法得到转换数据类型后的 Tensor（原 Tensor 不变）："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:153
-msgid "举例如下， ``uint8`` 和 ``int8`` 类型 Tensor 运算会返回 ``int16`` 类型 Tensor:"
+#: ../../source/user-guide/model-development/tensor/dtype.rst:159
+msgid "类型提升规则"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:160
-msgid "``int16`` 和 ``float32`` 类型 Tensor 运算会返回 ``float32`` 类型 Tensor:"
+#: ../../source/user-guide/model-development/tensor/dtype.rst:163
+msgid "根据 :ref:`mep-0003`, 类型提升规则应当参考《数组 API 标准》 中的 `相关规定 <https://data-apis.org/array-api/latest/API_specification/type_promotion.html>`_ ："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:167
-msgid "Python 标量和 Tensor 混合运算时，在种类一致时，会将 Python 标量转为相应的 Tensor 数据类型："
+#: ../../source/user-guide/model-development/tensor/dtype.rst:169
+msgid "多个不同数据类型的 Tensor 或 Python 标量作为操作数参与运算时， 所返回的结果类型由上图展示的关系决定—— 沿着箭头方向提升，汇合至最近的数据类型，将其作为返回类型。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:173
+msgid "决定类型提升的关键是参与运算的数据的类型，而不是它们的值；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:174
+msgid "图中的虚线表示 Python 标量的行为在溢出时未定义；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:175
+msgid "布尔型、整数型和浮点型 ``dtypes`` 之间未连接，表明混合类型提升未定义。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:177
+msgid "在 MegEngine 中，由于尚未支持《标准》中的所有类型，当前提升规则如下图所示："
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:182
+msgid "遵循 **类型优先** 的原则，存在 bool -> int -> float 的混合类型提升规则；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:183
+msgid "当 Python 标量类型与 Tensor 进行混合运算时，转换成 Tensor 数据类型；"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:184
+msgid "布尔型 ``dtype`` 与其它类型之间未连接，表明相关混合类型提升未定义。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:188
+msgid "这里讨论的类型提升规则主要适用于 :ref:`element-wise-operations` 的情况。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:190
+msgid "举例如下， ``uint8`` 和 ``int8`` 类型 Tensor 运算会返回 ``int16`` 类型 Tensor:"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:197
+msgid "``int16`` 和 ``float32`` 类型 Tensor 运算会返回 ``float32`` 类型 Tensor:"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:204
+msgid "Python 标量和 Tensor 混合运算时，在种类一致时，会将 Python 标量转为相应的 Tensor 数据类型："
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:211
 msgid "注意，如果此时 Python 标量是 ``float`` 类型，而 Tensor 为 ``int``, 则按照类型优先原则提升："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:181
-msgid "此时 Python 标量按照 :ref:`上一小节 <dtype-argument>` 的推导规则转为了 ``float32`` Tensor."
+#: ../../source/user-guide/model-development/tensor/dtype.rst:218
+msgid "此时 Python 标量通过使用 :ref:`default-data-types` 转为了 ``float32`` Tensor."
 msgstr ""
 
 #~ msgid "MegEngine 中使用 :class:`numpy.dtype` 来表示数据类型，目前支持的数据类型如下："
@@ -332,4 +435,31 @@ msgstr ""
 
 #~ msgid "并不是所有的已有算子都支持上述任意数据类型的计算，还有一些情况尚未实现。"
 #~ msgstr ""
+
+#~ msgid "已经支持的类型"
+#~ msgstr "Types already supported"
+
+#~ msgid "目前支持的数据类型如下："
+#~ msgstr "The currently supported data types are as follows："
+
+#~ msgid "参考 IEEE 754-2019"
+#~ msgstr "Refer to IEEE 754-2019"
+
+#~ msgid "基本的推导规则为："
+#~ msgstr "The basic derivation rule is："
+
+#~ msgid "Python scalar bool -> MegEngine Tensor bool"
+#~ msgstr "Python scalar bool -> MegEngine Tensor bool"
+
+#~ msgid "Python scalar int -> MegEngine Tensor int32"
+#~ msgstr "Python scalar int -> MegEngine Tensor int32"
+
+#~ msgid "Python scalar float -> MegEngine Tensor float32"
+#~ msgstr "Python scalar float -> MegEngine Tensor float32"
+
+#~ msgid "Numpy array dtype -> MegEngine Tensor dtype （保持一致，前提是类型支持）"
+#~ msgstr ""
+#~ "Numpy array dtype -> MegEngine Tensor"
+#~ " dtype (Keep the same, provided that"
+#~ " the type is supported)"
 
