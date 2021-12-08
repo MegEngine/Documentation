@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-09 13:25\n"
+"POT-Creation-Date: 2021-12-08 20:45+0800\n"
+"PO-Revision-Date: 2021-12-08 19:05\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -23,34 +23,46 @@ msgid "megengine.functional.arange"
 msgstr ""
 
 #: megengine.functional.tensor.arange:1 of
-msgid "Returns a tensor with values from start to stop with adjacent interval step."
+msgid "Returns evenly spaced values within the half-open interval ``[start, stop)`` as a one-dimensional tensor."
+msgstr ""
+
+#: megengine.functional.tensor.arange:5 of
+msgid "This function cannot guarantee that the interval does not include the stop value in those cases where step is not an integer and floating-point rounding errors affect the length of the output tensor."
 msgstr ""
 
 #: megengine.functional.tensor.arange of
 msgid "参数"
 msgstr ""
 
-#: megengine.functional.tensor.arange:4 of
-msgid "starting value of the squence, shoule be scalar."
-msgstr ""
-
-#: megengine.functional.tensor.arange:6 of
-msgid "ending value of the squence, shoule be scalar."
-msgstr ""
-
-#: megengine.functional.tensor.arange:8 of
-msgid "gap between each pair of adjacent values. Default: 1"
-msgstr ""
-
 #: megengine.functional.tensor.arange:9 of
-msgid "result data type."
+msgid "if ``stop`` is specified, the start of interval (inclusive); otherwise, the end of the interval (exclusive). If ``stop`` is not specified, the default starting value is ``0``."
+msgstr ""
+
+#: megengine.functional.tensor.arange:12 of
+msgid "the end of the interval. Default: ``None``."
+msgstr ""
+
+#: megengine.functional.tensor.arange:14 of
+msgid "the distance between two adjacent elements ( ``out[i+1] - out[i]`` ). Must not be 0 ; may be negative, this results i an empty tensor if stop >= start . Default: 1 ."
+msgstr ""
+
+#: megengine.functional.tensor.arange of
+msgid "Keyword Arguments"
+msgstr ""
+
+#: megengine.functional.tensor.arange:17 of
+msgid "output tensor data type. Default: ``float32``."
+msgstr ""
+
+#: megengine.functional.tensor.arange:19 of
+msgid "device on which to place the created tensor. Default: ``None``."
 msgstr ""
 
 #: megengine.functional.tensor.arange of
 msgid "返回类型"
 msgstr ""
 
-#: megengine.functional.tensor.arange:11 of
+#: megengine.functional.tensor.arange:22 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ""
 
@@ -58,16 +70,20 @@ msgstr ""
 msgid "返回"
 msgstr ""
 
-#: megengine.functional.tensor.arange:12 of
-msgid "generated tensor."
+#: megengine.functional.tensor.arange:23 of
+msgid "A one-dimensional tensor containing evenly spaced values.  The length of the output tensor must be ``ceil((stop-start)/step)`` if ``stop - start`` and ``step`` have the same sign, and length 0 otherwise."
 msgstr ""
 
-#: megengine.functional.tensor.arange:15 of
+#: megengine.functional.tensor.arange:23 of
+msgid "A one-dimensional tensor containing evenly spaced values."
+msgstr ""
+
+#: megengine.functional.tensor.arange:25 of
+msgid "The length of the output tensor must be ``ceil((stop-start)/step)`` if ``stop - start`` and ``step`` have the same sign, and length 0 otherwise."
+msgstr ""
+
+#: megengine.functional.tensor.arange:29 of
 msgid "实际案例"
-msgstr ""
-
-#: megengine.functional.tensor.arange:24 of
-msgid "Outputs:"
 msgstr ""
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
@@ -78,4 +94,28 @@ msgstr ""
 
 #~ msgid "Examples:"
 #~ msgstr "例如："
+
+#~ msgid ""
+#~ "Returns a tensor with values from "
+#~ "start to stop with adjacent interval "
+#~ "step."
+#~ msgstr "返回一个数值从 `start` 到  `stop` ，相邻间隔为 `step` 的张量。"
+
+#~ msgid "starting value of the squence, shoule be scalar."
+#~ msgstr "序列的第一个值，应为标量。"
+
+#~ msgid "ending value of the squence, shoule be scalar."
+#~ msgstr "序列的最后一个值，应为标量。"
+
+#~ msgid "gap between each pair of adjacent values. Default: 1"
+#~ msgstr "每对相邻值之间的间隔。默认：1"
+
+#~ msgid "result data type."
+#~ msgstr "结果的数据类型。"
+
+#~ msgid "generated tensor."
+#~ msgstr "生成的张量。"
+
+#~ msgid "Outputs:"
+#~ msgstr "输出："
 
