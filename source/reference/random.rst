@@ -18,6 +18,7 @@ megengine.random
 
    seed
    permutation
+   shuffle
 
 分布（Distribution）
 --------------------
