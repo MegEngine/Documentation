@@ -750,11 +750,11 @@ Sphinx 插件语法
 Bibtex 语法支持
 ~~~~~~~~~~~~~~~
 
-.. _graphviz-ext:
-
 文档已经通过 `sphinxcontrib-bibtex 
 <https://sphinxcontrib-bibtex.readthedocs.io/en/latest/index.html>`_ 插件支持
 `Bibtex <http://www.bibtex.org/>`_ 语法。
+
+.. _graphviz-ext:
 
 Graphviz 语法支持
 ~~~~~~~~~~~~~~~~~
