@@ -22,7 +22,7 @@ Inference 接口进行了一层封装，对用户提供更加友好的接口，�
 .. toctree::
    :maxdepth: 1
 
-   lite_performance_optimize/index
+   performance-optimize/index
    memory-optimize
    binary-optimize
    pack-lite-model

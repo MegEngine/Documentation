@@ -46,8 +46,8 @@
    deployment/index
    deployment/traced_module/index
    deployment/lite/index
-   deployment/lite_interface/index
-   deployment/lite_advance/index
+   deployment/lite/interface/index
+   deployment/lite/advance/index
 
 .. toctree::
    :caption: 工具与插件篇
