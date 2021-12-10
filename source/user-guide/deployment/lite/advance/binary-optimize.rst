@@ -254,7 +254,7 @@ dump 模型获得 opr 类型名称
 
 可以通过如下几种方式集成 MegEngine Lite，对应的裁剪方法相差无几：
 
-1. 参照 :ref:`fast-develop-cpp` ，将整个 MegEngine Lite 集成到用户工程中。
+1. 参照 :ref:`lite-quick-start-cpp` ，将整个 MegEngine Lite 集成到用户工程中。
    只需要按照上文中裁剪 load_and_run 的流程裁剪用户的工程即可。
 2. 可能一个应用想要通过静态库集成 MegEngine Lite。此时需要获得一个裁剪过的 ``liblite_static_all_in_one.a`` . 
    可以依然使用 load_and_run 运行模型获得 trace 文件，
