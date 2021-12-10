@@ -10,5 +10,5 @@ MegEngine Lite 使用接口
 .. toctree::
    :maxdepth: 2
 
-   lite-cpp-interface
-   lite-python-interface
+   cpp
+   python
