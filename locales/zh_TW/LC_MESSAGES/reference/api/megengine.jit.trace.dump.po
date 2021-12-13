@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-06 13:12+0800\n"
-"PO-Revision-Date: 2021-05-06 05:44\n"
+"POT-Creation-Date: 2021-12-08 20:45+0800\n"
+"PO-Revision-Date: 2021-12-13 13:29\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -74,97 +74,101 @@ msgstr "crwdns32712:0crwdne32712:0"
 msgid "enbale optmizations, will skip all optimize options if this is False. Default: True"
 msgstr "crwdns32714:0crwdne32714:0"
 
-#: megengine.jit.tracing.trace.dump of
-msgid "Keyword Arguments"
-msgstr "crwdns32716:0crwdne32716:0"
+#: megengine.jit.tracing.trace.dump:30 of
+msgid "any type object, which will be pickled to bytes."
+msgstr "crwdns70077:0crwdne70077:0"
 
-#: megengine.jit.tracing.trace.dump:34 of
-msgid "enable_io16xc32 --"
-msgstr "crwdns32718:0crwdne32718:0"
+#: megengine.jit.tracing.trace.dump:32 of
+msgid "whether to save metadata into output file."
+msgstr "crwdns70079:0crwdne70079:0"
 
 #: megengine.jit.tracing.trace.dump:33 of
-msgid "whether to use float16 for I/O between oprs and use float32 as internal computation precision. Note the output var would be changed to float16."
-msgstr "crwdns32720:0crwdne32720:0"
+msgid "input test data and current network output would be used as groundtruth. The format is \"var0:file0;var1:file1...\" to specify data files for input vars. It can also be \"#rand(min,max,shape...)\" for generating random input data, for example, \"#rand(0,255)\", \"#rand(0,255,1,3,224,224)\" or \"#rand(0, 255, 1, ...)\" where `...` means the remaining part of the original shape. If the shape is not specified, the shape of corresponding input tensors in the network will be used. If there is only one input var, its name can be omitted. Each data file can either be an image which can be loaded by opencv, or a pickled numpy.ndarray. This option can be given multiple times to add multiple testcases. If you start the data with the letter @, the rest should be a filename, and each line in the file should be a single datum in the format described above. *NOTE* If `input_data` is not None, you can only use load-and-run to run the output file."
+msgstr "crwdns87943:0crwdne87943:0"
 
-#: megengine.jit.tracing.trace.dump:38 of
-msgid "enable_ioc16 --"
-msgstr "crwdns32722:0crwdne32722:0"
-
-#: megengine.jit.tracing.trace.dump:37 of
-msgid "whether to use float16 for both I/O and computation precision."
-msgstr "crwdns32724:0crwdne32724:0"
-
-#: megengine.jit.tracing.trace.dump:41 of
-msgid "enable_hwcd4 --"
-msgstr "crwdns32726:0crwdne32726:0"
-
-#: megengine.jit.tracing.trace.dump:41 of
-msgid "whether to use NHWCD4 data layout. This is faster on some OpenCL backend."
-msgstr "crwdns32728:0crwdne32728:0"
-
-#: megengine.jit.tracing.trace.dump:44 of
-msgid "enable_nchw88 --"
-msgstr "crwdns32730:0crwdne32730:0"
-
-#: megengine.jit.tracing.trace.dump:44 of
-msgid "whether to use NCHW88 data layout, currently used in X86 AVX backend."
-msgstr "crwdns32732:0crwdne32732:0"
+#: megengine.jit.tracing.trace.dump:45 of
+msgid "how many times the input image is repeated. Useful when running benchmark for batch size other than one. Have no effect on randomly generated input data."
+msgstr "crwdns87945:0crwdne87945:0"
 
 #: megengine.jit.tracing.trace.dump:47 of
-msgid "enable_nchw44 --"
-msgstr "crwdns32734:0crwdne32734:0"
+msgid "whether set verbose to False in assert_equal opr."
+msgstr "crwdns87947:0crwdne87947:0"
 
-#: megengine.jit.tracing.trace.dump:47 of
-msgid "whether to use NCHW44 data layout, currently used in arm backend."
-msgstr "crwdns32736:0crwdne32736:0"
-
-#: megengine.jit.tracing.trace.dump:50 of
-msgid "enable_nchw44_dot --"
-msgstr "crwdns32738:0crwdne32738:0"
+#: megengine.jit.tracing.trace.dump:48 of
+msgid "whether insert assert_equal opr to check result; this option is useful for benchmarking."
+msgstr "crwdns87949:0crwdne87949:0"
 
 #: megengine.jit.tracing.trace.dump:50 of
-msgid "whether to use NCHW44_dot data layout, currently used in armv8.2+dotprod backend."
-msgstr "crwdns32740:0crwdne32740:0"
+msgid "max error for assert_equal check during runtime."
+msgstr "crwdns87951:0crwdne87951:0"
 
-#: megengine.jit.tracing.trace.dump:53 of
-msgid "enable_nchw4 --"
-msgstr "crwdns32742:0crwdne32742:0"
+#: megengine.jit.tracing.trace.dump:51 of
+msgid "whether resize input image to fit input var shape."
+msgstr "crwdns87953:0crwdne87953:0"
 
-#: megengine.jit.tracing.trace.dump:53 of
-msgid "whether to use NCHW4 data layout, currently used in nvidia backend(based on cudnn)."
-msgstr "crwdns32744:0crwdne32744:0"
+#: megengine.jit.tracing.trace.dump:52 of
+msgid "a python expression to transform the input data. Example: data / np.std(data)"
+msgstr "crwdns87955:0crwdne87955:0"
 
-#: megengine.jit.tracing.trace.dump:56 of
-msgid "enable_nchw32 --"
-msgstr "crwdns32746:0crwdne32746:0"
+#: megengine.jit.tracing.trace.dump:55 of
+msgid "using different dump formats."
+msgstr "crwdns87957:0crwdne87957:0"
 
-#: megengine.jit.tracing.trace.dump:56 of
-msgid "whether to use NCHW32 data layout, currently used in nvidia backend with tensorcore(based on cudnn)."
-msgstr "crwdns32748:0crwdne32748:0"
-
-#: megengine.jit.tracing.trace.dump:60 of
-msgid "enable_chwn4 --"
-msgstr "crwdns32750:0crwdne32750:0"
+#: megengine.jit.tracing.trace.dump:57 of
+msgid "Keyword Arguments:"
+msgstr "crwdns70081:0crwdne70081:0"
 
 #: megengine.jit.tracing.trace.dump:59 of
-msgid "whether to use CHWN4 data layout, currently used in nvidia backend with tensorcore."
-msgstr "crwdns32752:0crwdne32752:0"
-
-#: megengine.jit.tracing.trace.dump:62 of
-msgid "enable_fuse_conv_bias_nonlinearity: whether to fuse conv+bias+nonlinearty"
-msgstr "crwdns32754:0crwdne32754:0"
+msgid "enable_io16xc32 -- whether to use float16 for I/O between oprs and use float32 as internal computation precision. Note the output var would be changed to float16."
+msgstr "crwdns70083:0crwdne70083:0"
 
 #: megengine.jit.tracing.trace.dump:63 of
-msgid "into one opr."
-msgstr "crwdns32756:0crwdne32756:0"
+msgid "enable_ioc16 -- whether to use float16 for both I/O and computation precision."
+msgstr "crwdns70085:0crwdne70085:0"
 
 #: megengine.jit.tracing.trace.dump:66 of
-msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z"
-msgstr "crwdns32758:0crwdne32758:0"
+msgid "enable_hwcd4 -- whether to use NHWCD4 data layout. This is faster on some OpenCL backend."
+msgstr "crwdns70087:0crwdne70087:0"
 
-#: megengine.jit.tracing.trace.dump:65 of
-msgid "input for inference on nvidia backend(this optimization pass will result in mismatch of the precision of output of training and inference)"
-msgstr "crwdns32760:0crwdne32760:0"
+#: megengine.jit.tracing.trace.dump:69 of
+msgid "enable_nchw88 -- whether to use NCHW88 data layout, currently used in X86 AVX backend."
+msgstr "crwdns70089:0crwdne70089:0"
+
+#: megengine.jit.tracing.trace.dump:72 of
+msgid "enable_nchw44 -- whether to use NCHW44 data layout, currently used in arm backend."
+msgstr "crwdns70091:0crwdne70091:0"
+
+#: megengine.jit.tracing.trace.dump:75 of
+msgid "enable_nchw44_dot -- whether to use NCHW44_dot data layout, currently used in armv8.2+dotprod backend."
+msgstr "crwdns70093:0crwdne70093:0"
+
+#: megengine.jit.tracing.trace.dump:78 of
+msgid "enable_nchw4 -- whether to use NCHW4 data layout, currently used in nvidia backend(based on cudnn)."
+msgstr "crwdns70095:0crwdne70095:0"
+
+#: megengine.jit.tracing.trace.dump:81 of
+msgid "enable_nchw32 -- whether to use NCHW32 data layout, currently used in nvidia backend with tensorcore(based on cudnn)."
+msgstr "crwdns70097:0crwdne70097:0"
+
+#: megengine.jit.tracing.trace.dump:84 of
+msgid "enable_chwn4 -- whether to use CHWN4 data layout, currently used in nvidia backend with tensorcore."
+msgstr "crwdns70099:0crwdne70099:0"
+
+#: megengine.jit.tracing.trace.dump:87 of
+msgid "enable_nchw64 -- whether to use NCHW64 data layout, used for fast int4 support on Nvidia GPU."
+msgstr "crwdns70101:0crwdne70101:0"
+
+#: megengine.jit.tracing.trace.dump:90 of
+msgid "enable_fuse_conv_bias_nonlinearity: whether to fuse conv+bias+nonlinearty into one opr."
+msgstr "crwdns70103:0crwdne70103:0"
+
+#: megengine.jit.tracing.trace.dump:92 of
+msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z input for inference on nvidia backend(this optimization pass will result in mismatch of the precision of output of training and inference)"
+msgstr "crwdns70105:0crwdne70105:0"
+
+#: megengine.jit.tracing.trace.dump:96 of
+msgid "enable_fuse_preprocess: whether to fuse astype\\pad_channel\\dimshuffle and etc opr"
+msgstr "crwdns87959:0crwdne87959:0"
 
 #~ msgid "level for keeping variable names:"
 #~ msgstr "保留变量名的级别:"
@@ -177,4 +181,37 @@ msgstr "crwdns32760:0crwdne32760:0"
 
 #~ msgid "2: keep names of all (output and internal) vars"
 #~ msgstr "2: 保留所有变量 (包括输出和中间变量) 的名字"
+
+#~ msgid "enable_io16xc32 --"
+#~ msgstr "enable_io16xc32 --"
+
+#~ msgid "enable_ioc16 --"
+#~ msgstr "enable_ioc16 --"
+
+#~ msgid "enable_hwcd4 --"
+#~ msgstr "enable_hwcd4 --"
+
+#~ msgid "enable_nchw88 --"
+#~ msgstr "enable_nchw88 --"
+
+#~ msgid "enable_nchw44 --"
+#~ msgstr "enable_nchw44 --"
+
+#~ msgid "enable_nchw44_dot --"
+#~ msgstr "enable_nchw44_dot --"
+
+#~ msgid "enable_nchw4 --"
+#~ msgstr "enable_nchw4 --"
+
+#~ msgid "enable_nchw32 --"
+#~ msgstr "enable_nchw32 --"
+
+#~ msgid "enable_chwn4 --"
+#~ msgstr "enable_chwn4 --"
+
+#~ msgid "into one opr."
+#~ msgstr "成一个算子。"
+
+#~ msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z"
+#~ msgstr "enable_fuse_conv_bias_with_z："
 
