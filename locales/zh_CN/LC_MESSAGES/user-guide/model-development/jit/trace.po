@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-11-09 20:53+0000\n"
+"PO-Revision-Date: 2021-12-13 14:24\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/jit/trace.po\n"
+"X-Crowdin-File-ID: 8195\n"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:5
 msgid "将动态图转为静态图（Trace）"
@@ -47,9 +51,7 @@ msgid "MegEngine 也支持 **静态计算图** 模式，将计算图的构建和
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:24
-msgid ""
-"**原理：** 在构建阶段，MegEngine 根据完整的计算流程对原始的计算图进行优化和调整， 得到更省内存和计算量更少的计算图，这个过程称之为"
-" “编译” 。编译之后图的结构不再改变，也就是所谓的 “静态” 。 在计算阶段，MegEngine 根据输入数据执行编译好的计算图得到计算结果。"
+msgid "**原理：** 在构建阶段，MegEngine 根据完整的计算流程对原始的计算图进行优化和调整， 得到更省内存和计算量更少的计算图，这个过程称之为 “编译” 。编译之后图的结构不再改变，也就是所谓的 “静态” 。 在计算阶段，MegEngine 根据输入数据执行编译好的计算图得到计算结果。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:27
@@ -73,10 +75,7 @@ msgid "下面我们举例说明静态图编译过程中可能进行的内存和�
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:42
-msgid ""
-"在上图左侧的计算图中，为了存储 ``x``, ``w``, ``p``,  ``b``, ``y`` 五个变量， 动态图需要 40 "
-"个字节（假设每个变量占用 8 字节的内存）。 在静态图中，由于我们只需要知道结果 ``y``, 可以让 ``y`` 复用中间变量 ``p`` "
-"的内存， 实现 “原地”（Inplace）修改。这样，静态图所占用的内存就减少为 32 个字节。"
+msgid "在上图左侧的计算图中，为了存储 ``x``, ``w``, ``p``,  ``b``, ``y`` 五个变量， 动态图需要 40 个字节（假设每个变量占用 8 字节的内存）。 在静态图中，由于我们只需要知道结果 ``y``, 可以让 ``y`` 复用中间变量 ``p`` 的内存， 实现 “原地”（Inplace）修改。这样，静态图所占用的内存就减少为 32 个字节。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:50
@@ -120,15 +119,11 @@ msgid "``jit`` ： 即时编译 （Just-in-time compilation）的缩写，这里
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:110
-msgid ""
-"``trace`` ：得到静态图的一种方式，直译为 “追溯”， "
-"含义为通过追溯输出（比如损失值、预测值）所依赖的网络结构，得到整体的计算图，再进行编译。"
+msgid "``trace`` ：得到静态图的一种方式，直译为 “追溯”， 含义为通过追溯输出（比如损失值、预测值）所依赖的网络结构，得到整体的计算图，再进行编译。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:112
-msgid ""
-"参数列表 ： ``trace`` 在编译静态图时会根据传入参数是位置参数还是关键字参数来采取不同的处理方式。 "
-"其中位置参数用于传入网络的输入如数据和标签，关键字参数用于传入其它变量，如网络和优化器等。"
+msgid "参数列表 ： ``trace`` 在编译静态图时会根据传入参数是位置参数还是关键字参数来采取不同的处理方式。 其中位置参数用于传入网络的输入如数据和标签，关键字参数用于传入其它变量，如网络和优化器等。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:118
@@ -156,10 +151,7 @@ msgid "设置为 True 表示 “静态构造” 或者 “根据符号构造” 
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:141
-msgid ""
-"**原理：** 此时，计算图中的所有数据节点（即张量）被视为符号（即 ``symbolic`` ）。 "
-"它们仅仅作为占位符（Placeholder），不产生实际的内存分配，也没有实际的值。 "
-"此时计算图的编译过程完全取决于计算图的结构，而不取决于张量的具体值，是真正的 “静态”。"
+msgid "**原理：** 此时，计算图中的所有数据节点（即张量）被视为符号（即 ``symbolic`` ）。 它们仅仅作为占位符（Placeholder），不产生实际的内存分配，也没有实际的值。 此时计算图的编译过程完全取决于计算图的结构，而不取决于张量的具体值，是真正的 “静态”。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:144
@@ -175,10 +167,7 @@ msgid "设置为 False 表示 “动态构造” 或者 “根据值构造” �
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:149
-msgid ""
-"**原理：** 被装饰的函数在第一次被调用时会根据输入的数据执行一次计算构建出一个动态图。 "
-"接着将这个动态图会被编译静态图。此后该函数的所有调用都会运行这个静态图，而不再依赖调用时输入的值。 此种模式可以视为 "
-"“动态构建第一次，此后静态运行”。"
+msgid "**原理：** 被装饰的函数在第一次被调用时会根据输入的数据执行一次计算构建出一个动态图。 接着将这个动态图会被编译静态图。此后该函数的所有调用都会运行这个静态图，而不再依赖调用时输入的值。 此种模式可以视为 “动态构建第一次，此后静态运行”。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:152
@@ -186,15 +175,11 @@ msgid "**优点：** 根据第一次运行时信息的不同，可以构建出�
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:153
-msgid ""
-"**缺点：** 由于第一次的运行在动态图模式下，无法利用静态图的内存优化，通常会耗费更大的内存。 "
-"这可能导致本来在静态图模式下可以运行的网络，在第一次运行时由于内存不够而失败。"
+msgid "**缺点：** 由于第一次的运行在动态图模式下，无法利用静态图的内存优化，通常会耗费更大的内存。 这可能导致本来在静态图模式下可以运行的网络，在第一次运行时由于内存不够而失败。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:158
-msgid ""
-"在动态构造模式（设置为 False）下，如果条件语句出现在循环语句内，在循环的第一次执行中构造出的静态图将固定不再改变 "
-"（即使在循环的后续执行中，该条件语句的结果发生了变化）"
+msgid "在动态构造模式（设置为 False）下，如果条件语句出现在循环语句内，在循环的第一次执行中构造出的静态图将固定不再改变 （即使在循环的后续执行中，该条件语句的结果发生了变化）"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:164
@@ -206,9 +191,7 @@ msgid "有的时候我们希望将一些参数（比如卷积层的卷积核等�
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:178
-msgid ""
-"如果想要使用 :py:meth:`~.jit.trace.dump` 导出模型序列化文件并进行后续处理， 则必须在 "
-":py:class:`~.jit.trace` 时固定参数。"
+msgid "如果想要使用 :py:meth:`~.jit.trace.dump` 导出模型序列化文件并进行后续处理， 则必须在 :py:class:`~.jit.trace` 时固定参数。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:184
@@ -216,15 +199,11 @@ msgid "减少访存操作实现加速"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:186
-msgid ""
-"通常，模型中不仅含有计算受限的操作，还含有一些访存受限操作（如 Elemwsie ）. MegEngine 内嵌了 Codegen "
-"优化机制，它可以在运行时将模型中多个操作融合起来， 并生成可以在目标机器上运行的代码，以此减少访存操作从而达到加速的目的。"
+msgid "通常，模型中不仅含有计算受限的操作，还含有一些访存受限操作（如 Elemwsie ）. MegEngine 内嵌了 Codegen 优化机制，它可以在运行时将模型中多个操作融合起来， 并生成可以在目标机器上运行的代码，以此减少访存操作从而达到加速的目的。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:192
-msgid ""
-"我们在 :class:`~.trace` 接口中传入 ``symbolic=True, opt_level=3``, 即可打开 Codegen "
-"优化。"
+msgid "我们在 :class:`~.trace` 接口中传入 ``symbolic=True, opt_level=3``, 即可打开 Codegen 优化。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:194
@@ -232,9 +211,7 @@ msgid "关于 ``symbolic`` 参数的说明，请参考 :ref:`symbolic` 。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:196
-msgid ""
-"MegEngine 的 Codegen 目前集成了三种后端，分别是 NVRTC, HALIDE 和 MLIR. 其中 NVRTC 和 HALIDE"
-" 仅支持在 GPU 上使用，MLIR 则同时支持 GPU 和 CPU, 不同的后端生成代码的策略有所不同，所以运行效率也各异。"
+msgid "MegEngine 的 Codegen 目前集成了三种后端，分别是 NVRTC, HALIDE 和 MLIR. 其中 NVRTC 和 HALIDE 仅支持在 GPU 上使用，MLIR 则同时支持 GPU 和 CPU, 不同的后端生成代码的策略有所不同，所以运行效率也各异。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:200
@@ -262,9 +239,7 @@ msgid "指定代码不被转换"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:229
-msgid ""
-"使用 :py:func:`~.exclude_from_trace` ，其中的代码不会被 trace, 且允许访问静态区域的 "
-":py:class:`~megengine.Tensor` ."
+msgid "使用 :py:func:`~.exclude_from_trace` ，其中的代码不会被 trace, 且允许访问静态区域的 :py:class:`~megengine.Tensor` ."
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:231
@@ -296,7 +271,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "亚线性内（显）存优化"
-#~ msgstr ""
+#~ msgstr "Sub-linear internal (video) memory optimization"
 
 #~ msgid ""
 #~ "亚线性内存优化技术的直观好处是能节省显存，换来更大的 Batch size, "
@@ -307,23 +282,52 @@ msgstr ""
 #~ "算法。它们的基本原理都是通过事先搜索最优的计算图节点作为前向传播和反向传播检查点（checkpoints）， "
 #~ "省去其它中间结果存储。"
 #~ msgstr ""
+#~ "The intuitive benefit of sub-linear "
+#~ "memory optimization technology is that "
+#~ "it can save video memory in "
+#~ "exchange for a larger Batch size, "
+#~ "but there is a small amount of "
+#~ "extra time overhead (time for space) "
+#~ "when compiling the calculation graph and"
+#~ " training the model. MegEngine provides "
+#~ "two specific linear alkylene memory "
+#~ "optimization algorithms are Sublinear ` "
+#~ "<https://arxiv.org/abs/1604.06174>` _ and the "
+#~ "DTR ` <https://arxiv.org/abs/2006.09616>` _ "
+#~ "algorithm. Their basic principle is to"
+#~ " search for the optimal computational "
+#~ "graph node in advance as the "
+#~ "forward and backward propagation checkpoints"
+#~ " (checkpoints), eliminating the need for"
+#~ " other intermediate result storage."
 
 #~ msgid ""
 #~ "用户在编译静态图时使用 :class:`~.jit.SublinearMemoryConfig` 设置 "
 #~ ":class:`~.jit.trace` 的参数 ``sublinear_memory_config`` "
 #~ "，就可以打开 Sublinear 优化："
 #~ msgstr ""
+#~ "When compiling static graphs, users use"
+#~ " :class:`~.jit.SublinearMemoryConfig` to set "
+#~ ":class:`~.jit.trace`, then you can turn "
+#~ "on Sublinear optimization："
 
 #~ msgid ""
 #~ "用户在编译静态图时使用 :class:`~.jit.DTRConfig` 设置 "
 #~ ":class:`~.jit.trace` 的参数 ``dtr_config`` ，就可以打开 "
 #~ "DTR 优化："
 #~ msgstr ""
+#~ "When compiling static graphs, users can"
+#~ " use :class:`~.jit.DTRConfig` to set "
+#~ ":class:`~.jit.trace`, then DTR optimization："
 
 #~ msgid ""
 #~ "关于 ``eviction_threshold`` 的含义与设置，请参考 :ref:`动态图 "
 #~ "Sublinear 显存优化 <dtr-guide>`"
 #~ msgstr ""
+#~ "For the meaning and setting of "
+#~ "``eviction_threshold``, please refer to "
+#~ ":ref:`Dynamic graph Sublinear video memory "
+#~ "optimization <dtr-guide>`"
 
 #~ msgid ""
 #~ "经过测试，在 2080Ti GPU （显存容量为 11GB 左右）训练 "
@@ -332,4 +336,14 @@ msgstr ""
 #~ "``batch_size`` 最大为 300 左右； 使用 DTR "
 #~ "优化，可用的 ``batch_size`` 最大为 450 左右，效果十分明显。"
 #~ msgstr ""
+#~ "After testing, the ResNet50 model is "
+#~ "trained on 2080Ti GPU (the memory "
+#~ "capacity is about 11GB), without sub-"
+#~ "linear memory optimization, the maximum "
+#~ "available ``batch_size'' is about 100; "
+#~ "using Sublinear optimization, the maximum "
+#~ "available ``batch_size'' is 300 Around; "
+#~ "using DTR optimization, the maximum "
+#~ "available ``batch_size'' is about 450, "
+#~ "the effect is very obvious."
 
