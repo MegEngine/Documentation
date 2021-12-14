@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 00:54\n"
+"POT-Creation-Date: 2021-12-08 20:45+0800\n"
+"PO-Revision-Date: 2021-12-13 15:08\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -76,8 +76,8 @@ msgid "dilation of the 1D convolution operation. Default: 1"
 msgstr "crwdns33550:0crwdne33550:0"
 
 #: megengine.module.conv.Conv1d:38 of
-msgid "number of groups into which the input and output channels are divided, so as to perform a \"grouped convolution\". When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by ``groups``, and there would be an extra dimension at the beginning of the weight's shape. Default: 1"
-msgstr "crwdns62988:0crwdne62988:0"
+msgid "number of groups to divide input and output channels into, so as to perform a \"grouped convolution\". When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by ``groups``, and the shape of weight should be ``(groups, out_channel // groups, in_channels // groups, kernel_size)``. Default: 1"
+msgstr "crwdns87967:0crwdne87967:0"
 
 #: megengine.module.conv.Conv1d:44 of
 msgid "whether to add a bias onto the result of convolution. Default: True"
@@ -382,4 +382,16 @@ msgstr "crwdns33650:0crwdne33650:0"
 
 #~ msgid "Examples:"
 #~ msgstr "例如："
+
+#~ msgid ""
+#~ "number of groups into which the "
+#~ "input and output channels are divided,"
+#~ " so as to perform a \"grouped "
+#~ "convolution\". When ``groups`` is not 1,"
+#~ " ``in_channels`` and ``out_channels`` must "
+#~ "be divisible by ``groups``, and there"
+#~ " would be an extra dimension at "
+#~ "the beginning of the weight's shape. "
+#~ "Default: 1"
+#~ msgstr ""
 
