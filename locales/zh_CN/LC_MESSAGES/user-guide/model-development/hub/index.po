@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-11-09 20:54+0000\n"
+"PO-Revision-Date: 2021-12-13 14:24\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/hub/index.po\n"
+"X-Crowdin-File-ID: 8177\n"
 
 #: ../../source/user-guide/model-development/hub/index.rst:5
 msgid "使用 Hub 发布和加载预训练模型"
@@ -35,10 +39,7 @@ msgid "加载完成的预训练模型还可以用作迁移学习的微调，或�
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:13
-msgid ""
-"这一小节将以 `ResNet "
-"<https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_"
-" 系列模型为例子，展示模型的发布和加载流程。"
+msgid "这一小节将以 `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ 系列模型为例子，展示模型的发布和加载流程。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:18
@@ -46,10 +47,7 @@ msgid "此处的 “预训练模型” 包括 1. 模型的定义 2. 预训练权
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:20
-msgid ""
-"相较于使用 :meth:`.Module.load_state_dict` 和 :func:`megengine.load` "
-"反序列化并加载模型的状态字典， :func:`megengine.hub.load` 还能够在此之前替用户完成加载模型定义的过程（根据 "
-"``hubconf.py`` ）， 加载后的模型也可被用于 :ref:`dump` ，进而用于高性能的推理部署情景。"
+msgid "相较于使用 :meth:`.Module.load_state_dict` 和 :func:`megengine.load` 反序列化并加载模型的状态字典， :func:`megengine.hub.load` 还能够在此之前替用户完成加载模型定义的过程（根据 ``hubconf.py`` ）， 加载后的模型也可被用于 :ref:`dump` ，进而用于高性能的推理部署情景。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:26
@@ -57,11 +55,7 @@ msgid "Hub 的相关功能也可以用作内部 Git 服务器，需在使用相�
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:30
-msgid ""
-"MegEngine 官网上提供了 `模型中心 <https://megengine.org.cn/model-hub>`_ 板块， "
-"基于旷视研究院领先的深度学习算法，提供满足多业务场景的预训练模型。 实际上即对官方模型库 Models 添加了 "
-":models:`hubconf.py` 配置。 如果你希望将自己的研究模型发布到 MegEngine 官方的模型中心，请参考 `Hub "
-"<https://github.com/MegEngine/Hub>`_ 存储库的 README 文件。"
+msgid "MegEngine 官网上提供了 `模型中心 <https://megengine.org.cn/model-hub>`_ 板块， 基于旷视研究院领先的深度学习算法，提供满足多业务场景的预训练模型。 实际上即对官方模型库 Models 添加了 :models:`hubconf.py` 配置。 如果你希望将自己的研究模型发布到 MegEngine 官方的模型中心，请参考 `Hub <https://github.com/MegEngine/Hub>`_ 存储库的 README 文件。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:37
@@ -89,10 +83,7 @@ msgid "提供入口点"
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:54
-msgid ""
-"以官方 `ResNet "
-"<https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_"
-" 模型为例， 模型定义文件在 :models:`official/vision/classification/resnet/model.py`."
+msgid "以官方 `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ 模型为例， 模型定义文件在 :models:`official/vision/classification/resnet/model.py`."
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:64
@@ -100,10 +91,7 @@ msgid "我们在 ``hubconf.py`` 中可以这样实现一个入口点："
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:74
-msgid ""
-"不过由于 ResNet 的 ``model.py`` 中已经对 ``resnet18``, ``resnet34``, ``resnet50``,"
-" ``resnet101``, ``resnet152`` 等常见的网络结构按照 Hub 风格进行了定义，因此实际的 "
-":models:`hubconf.py` 中只需要进行导入它们即可："
+msgid "不过由于 ResNet 的 ``model.py`` 中已经对 ``resnet18``, ``resnet34``, ``resnet50``, ``resnet101``, ``resnet152`` 等常见的网络结构按照 Hub 风格进行了定义，因此实际的 :models:`hubconf.py` 中只需要进行导入它们即可："
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:87
@@ -119,10 +107,7 @@ msgid "当被装饰的函数具有参数 ``pretrained=True`` 时，调用时将�
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:99
-msgid ""
-"预训练权重可以存在于 Git 存储库中，对于开源在 GitHub / GitLab 的项目， "
-"需要考虑预训练权重的体积整体大小以及用户的下载条件，可根据实际情况判断 —— "
-"选择将预训练权重附加和模型放在一起发布，还是放在其它位置（比如网盘、OSS 等）。"
+msgid "预训练权重可以存在于 Git 存储库中，对于开源在 GitHub / GitLab 的项目， 需要考虑预训练权重的体积整体大小以及用户的下载条件，可根据实际情况判断 —— 选择将预训练权重附加和模型放在一起发布，还是放在其它位置（比如网盘、OSS 等）。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:104
@@ -170,11 +155,9 @@ msgid "可通过设置 ``protocol`` 参数，选择获取代码仓库时所用�
 msgstr ""
 
 #: ../../source/user-guide/model-development/hub/index.rst:142
-msgid ""
-"通常情况下，无需进行额外设置，可以从公开的 GitHub 库以 HTTPS 协议进行 Clone. 如果进行了具体配置（如使用了内部 Git "
-"服务器），请确保你有对应代码仓库的访问权限。"
+msgid "通常情况下，无需进行额外设置，可以从公开的 GitHub 库以 HTTPS 协议进行 Clone. 如果进行了具体配置（如使用了内部 Git 服务器），请确保你有对应代码仓库的访问权限。"
 msgstr ""
 
 #~ msgid "内容正在建设中..."
-#~ msgstr ""
+#~ msgstr "The content is under construction..."
 
