@@ -12,12 +12,12 @@ Tensor 数据类型
    MegEngine 中借助 :class:`numpy.dtype` 来表示基础数据类型，参考如下：
 
    * NumPy 中有着专门实现的 :class:`numpy.dtype`, 参考其对
-     `Data type objects <https://numpy.org/doc/stable/reference/arrays.dtypes.html#arrays-dtypes>`_ 
+     `Data type objects <https://numpy.org/doc/stable/reference/arrays.dtypes.html#arrays-dtypes>`_
      的解释；
-   * NumPy 官方 `Data types <https://numpy.org/doc/stable/user/basics.types.html>`_ 
+   * NumPy 官方 `Data types <https://numpy.org/doc/stable/user/basics.types.html>`_
      文档中对数组类型和转换规则进行了解释。
 
-   根据 :ref:`mep-0003` ，MegEngine 将参考《数组 API 标准》中对 
+   根据 :ref:`mep-0003` ，MegEngine 将参考《数组 API 标准》中对
    `数据类型 <https://data-apis.org/array-api/latest/API_specification/data_types.html>`_ 的规格定义。
 
 上面提到的数据类型（Data type, :attr:`~.Tensor.dtype` ）是 Tensor 的一种基础属性，
@@ -48,7 +48,7 @@ numpy.float32
      - ``bool``
      - ``True`` 或者 ``False``
      - ✔
-   * - 有符号 8 位整型  
+   * - 有符号 8 位整型
      - :any:`numpy.int8`
      - ``int8``
      - :math:`[-2^{7}, 2^{7}-1]`
@@ -77,7 +77,7 @@ numpy.float32
      - :any:`numpy.uint16`
      - ``uint16``
      - :math:`[0, 2^{16}-1]`
-     - ✖
+     - ✔
    * - 无符号 32 位整型
      - :any:`numpy.uint32`
      - ``uint32``
@@ -99,12 +99,15 @@ numpy.float32
      - IEEE 754 :footcite:p:`IEEE754-2019`
      - ✔
    * - 双精度浮点
-     - :any:`numpy.float64` / :class:`numpy.double`  
+     - :any:`numpy.float64` / :class:`numpy.double`
      - ``float64``
      - IEEE 754 :footcite:p:`IEEE754-2019`
      - ✖
 
 .. footbibliography::
+
+.. versionadded:: 1.7
+   新增对 ``uint16`` 类型的支持。
 
 .. warning::
 
@@ -169,7 +172,7 @@ Tensor([1. 2. 3.], device=xpux:0)
    多个不同数据类型的 Tensor 或 Python 标量作为操作数参与运算时，
    所返回的结果类型由上图展示的关系决定——
    沿着箭头方向提升，汇合至最近的数据类型，将其作为返回类型。
-   
+
    * 决定类型提升的关键是参与运算的数据的类型，而不是它们的值；
    * 图中的虚线表示 Python 标量的行为在溢出时未定义；
    * 布尔型、整数型和浮点型 ``dtypes`` 之间未连接，表明混合类型提升未定义。
