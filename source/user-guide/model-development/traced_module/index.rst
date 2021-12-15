@@ -1,4 +1,4 @@
-.. _tracemodule:
+.. _traced_module-guide:
 .. currentmodule:: megengine
 
 ===============================
