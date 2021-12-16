@@ -56,19 +56,29 @@ True
 TracedModule 序列化
 ===================
 
+.. note::
+
+   * 推荐使用 .tm 作为 TracedModule 序列化文件的后缀名
+   * 推荐使用 ``mge.save``，``mge.load`` 保存或加载 TracedModule
+
 可以直接使用 MegEngine 提供的序列化接口 ``mge.save`` 将 TracedModule 模型序列化到文件中。
 
->>> mge.save(traced_resnet, "traced_resnet18.pkl")
+>>> mge.save(traced_resnet, "traced_resnet18.tm")
 
 也可以直接使用 python 内置的 pickle 模块将 TracedModule 序列化到文件中。
 
->>> pickle.dump(traced_resnet, "traced_resnet18.pkl")
+>>> with open("traced_resnet18.tm", "wb") as f:
+...     pickle.dump(traced_resent, f)
 
 对应的，可以分别使用 ``mge.load`` 或 ``pickle.load`` 将序列化的 TracedModule 再 load 回来。
 在脱离模型源码的环境中 load 得到的 TracedModule，依然可以正常被解析与运行。
 
->>> mge.load("traced_resnet18.pkl")
->>> pickle.load("traced_resnet18.pkl")
+>>> traced_resnet = mge.load("traced_resnet18.tm")
+... with open("traced_resnet18.tm", "rb") as f:
+...     traced_resnet = pickle.load(f)
+
+
+
 
 TracedModule 图手术
 ===================
