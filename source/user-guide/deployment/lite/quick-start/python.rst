@@ -24,34 +24,7 @@ MegEngine Lite Python 部署模型快速上手
 导出已经训练好的模型
 --------------------
 
-首先我们需要 :ref:`dump` ，主要使用 MegEngine 的 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 功能将动态图转为静态图，
-同时对静态图进行 Inference 相关的图优化。
-下面将要用到的模型为 MegEngine 预训练的模型，来自 `模型中心 <https://megengine.org.cn/model-hub>`_ 。 
-安装 MegEngine 之后运行下面的 Python 脚本将 dump 出一个预训练的 ``shufflenet_v2.mge`` 模型。
-
-.. code-block:: python
-
-   import numpy as np
-   import megengine.functional as F
-   import megengine.hub
-   from megengine import jit, tensor
-
-   if __name__ == "__main__":
-       net = megengine.hub.load("megengine/models", "shufflenet_v2_x1_0", pretrained=True)
-       net.eval()
-
-       @jit.trace(symbolic=True, capture_as_const=True)
-       def fun(data, *, net):
-           pred = net(data)
-           pred_normalized = F.softmax(pred)
-           return pred_normalized
-
-       data = tensor(np.random.random([1, 3, 224, 224]).astype(np.float32))
-
-       fun(data, net=net)
-       fun.dump("shufflenet_v2.mge", arg_names=["data"])
-
-上面代码最后 dump 模型时将模型命名为 ``shufflenet_v2.mge`` 并设置输入 Tensor 的名字为 ``data``, 后续将通过这个名字获取模型的输入 Tensor.
+请参考 :ref:`get-model`。
 
 .. _lite-infer-code-python:
 
@@ -104,3 +77,72 @@ MegEngine Lite Python 部署模型快速上手
 
 这样这个调用 MegEngine Lite 的 Python 接口的 demo 就完成了。
 
+
+使用 TensorBatchCollector 辅助完成 CUDA 推理
+-----------------------------------------------------
+下面将通过 CUDA 运行 shufflenet.mge 来展示如何使用 TensorBatchCollector 来攒 batch，攒好之后传递到 network 的输入 tensor 中进行推理。
+
+.. code-block:: python
+   :linenos:
+
+   from megenginelite import *
+   import numpy as np
+   import os
+
+   def test_network():
+      model_path = "shufflenet.mge"
+      batch = 4
+
+      # construct LiteOption
+      net_config = LiteConfig(device_type=LiteDeviceType.LITE_CUDA)
+
+      # constuct LiteIO, is_host=False means the input tensor will use device memory
+      ios = LiteNetworkIO()
+      # set the input tensor "data" memory is not in host, but in device
+      ios.add_input(LiteIO("data", is_host=False))
+
+      network = LiteNetwork(config=net_config, io=ios)
+      network.load(model_path)
+
+      dev_input_tensor = network.get_io_tensor("data")
+
+      # read input to input_data
+      input_layout = dev_input_tensor.layout
+      shape = list(input_layout.shapes)[0 : input_layout.ndim]
+      arr = np.ones(shape[1:], "float32")
+
+      shape[0] = batch
+      print(shape)
+      batch_tensor = TensorBatchCollector(
+            shape, dtype=LiteDataType.LITE_FLOAT, device_type=LiteDeviceType.LITE_CUDA
+      )
+      for time in range(3):
+         batch_tensor.free(range(batch))
+         for i in range(batch):
+            batch = batch_tensor.collect(arr)
+            print("collect batch id = {}".format(batch))
+            arr += 1
+
+         # set device input data to input_tensor of the network without copy
+         dev_input_tensor.share_memory_with(batch_tensor.get())
+         network.forward()
+         network.wait()
+
+         output_names = network.get_all_output_name()
+         output_tensor = network.get_io_tensor(output_names[0])
+         output_data = output_tensor.to_numpy()
+         print('shufflenet output shape={}, max={}, sum={}'.format(output_data.shape, output_data.max(), output_data.sum()))
+
+   test_network()
+
+上面示例主要做了以下事情：
+
+* 通过 :ref:`lite_config` 和 :ref:`lite_io` 来创建一个运行在 CUDA 上的 Network，并配置该 Network 中输入名字为 "data" 的 Tensor 在 CUDA 上，这样用户可以直接将 CUDA device 上的内存 share 给它。
+* 通过该 Network 加载 shufflenet 模型，并获取名字为 "data" 的输入 Tensor，以及它的 layout 信息。
+* 通过输入 tensor 的 layout 信息和 batch 信息，将创建一个在 CUDA 上的 TensorBatchCollector，并循环攒了 4 个 batch。
+* 然后将 TensorBatchCollector 中的 tensor 和 Network 的输入 tensor 通过 share_memory_with 进行内存 share。
+* 执行推理，获取输出数据
+
+.. note::
+
+   上面通过 share_memory_with 进行内存共享，将不会产生多余的数据 copy，其中 TensorBatchCollector 的使用请参考 :ref:`lite_utils_api`。

@@ -22,34 +22,7 @@ MegEngine Lite C++ 模型部署快速上手
 导出已经训练好的模型
 --------------------
 
-首先我们需要 :ref:`dump` ，主要使用 MegEngine 的 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 功能将动态图转为静态图，
-同时对静态图进行 Inference 相关的图优化。
-下面将要用到的模型为 MegEngine 预训练的模型，来自 `模型中心 <https://megengine.org.cn/model-hub>`_ 。 
-安装 MegEngine 之后运行下面的 Python 脚本将 dump 出一个预训练的 ``shufflenet_v2.mge`` 模型。
-
-.. code-block:: python
-
-   import numpy as np
-   import megengine.functional as F
-   import megengine.hub
-   from megengine import jit, tensor
-
-   if __name__ == "__main__":
-       net = megengine.hub.load("megengine/models", "shufflenet_v2_x1_0", pretrained=True)
-       net.eval()
-
-       @jit.trace(symbolic=True, capture_as_const=True)
-       def fun(data, *, net):
-           pred = net(data)
-           pred_normalized = F.softmax(pred)
-           return pred_normalized
-
-       data = tensor(np.random.random([1, 3, 224, 224]).astype(np.float32))
-
-       fun(data, net=net)
-       fun.dump("shufflenet_v2.mge", arg_names=["data"])
-
-上面代码最后 dump 模型时将模型命名为 ``shufflenet_v2.mge`` 并设置输入 Tensor 的名字为 ``data``, 后续将通过这个名字获取模型的输入 Tensor.
+请参考 :ref:`get-model`。
 
 .. _lite-infer-code:
 
@@ -204,7 +177,7 @@ Linux x86 动态链接编译
 
    clang++ -o demo_deploy \
      -I$LITE_INSTALL_DIR/include main.cpp \
-     -L$LD_LIBRARY_PATH -llite_shared
+     -llite_shared -L$LITE_INSTALL_DIR/lib/x86_64
 
 编译完成之后，就得到了可执行文件 ``demo_deploy``.
 
