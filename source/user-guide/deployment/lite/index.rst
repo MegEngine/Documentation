@@ -43,5 +43,6 @@ MegEngine 支持多种主流深度学习推理平台，包括 Arm，X86，Cuda�
 .. toctree::
    :maxdepth: 1
 
+   get-model
    quick-start/cpp
    quick-start/python
