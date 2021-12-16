@@ -55,7 +55,7 @@
 
 .. seealso::
 
-   * :ref:`traced_module-guide`
+   * :ref:`tracedmodule-quick-start`
    * :ref:`lite-quick-start-python`
    * :ref:`lite-quick-start-cpp`
    * `mgeconvert <https://github.com/megengine/mgeconvert>`_ : 适用于 MegEngine 的各种转换器。
