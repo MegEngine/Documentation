@@ -26,3 +26,4 @@ Inference 接口进行了一层封装，对用户提供更加友好的接口，�
    memory-optimize
    binary-optimize
    pack-lite-model
+   cv-examples
