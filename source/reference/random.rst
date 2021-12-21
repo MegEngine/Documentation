@@ -8,7 +8,6 @@ megengine.random
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    RNG
 

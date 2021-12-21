@@ -13,7 +13,7 @@ megengine.quantization
 
       model = ... # The pre-trained float model that needs to be quantified
 
-      Q.quantize_qat(model, qconfig=...) # 
+      Q.quantize_qat(model, qconfig=...) #
 
       for _ in range(...):
           train(model)
@@ -27,10 +27,9 @@ megengine.quantization
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    QConfig
-   
+
 .. _qconfig-list:
 
 可用预设配置
@@ -44,7 +43,7 @@ megengine.quantization
 
 ``sync_ema_fakequant_qconfig``
   使用 :class:`~.SyncExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 的预设。
- 
+
 ``ema_lowbit_fakequant_qconfig``
   使用 :class:`~.ExponentialMovingAverageObserver` 和 :class:`~.FakeQuantize` 且数值类型为 ``qint4`` 的预设。
 
@@ -67,7 +66,6 @@ Observer
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Observer
    MinMaxObserver
@@ -83,7 +81,6 @@ FakeQuantize
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    FakeQuantize
    TQT
@@ -113,7 +110,6 @@ Utils
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    QParams
    QuantMode

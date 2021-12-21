@@ -42,10 +42,10 @@ Python API
    dtr
    distributed
    quantization
-   random
    traced_module
    hub
-   utils
+   random
+   config
 
 .. toctree::
    :caption: API 相关说明

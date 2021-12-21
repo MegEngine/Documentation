@@ -41,7 +41,6 @@ MegEngine 中提供了一种名为 “张量” （:class:`Tensor` ）的数据�
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Tensor
    Parameter
@@ -50,38 +49,8 @@ MegEngine 中提供了一种名为 “张量” （:class:`Tensor` ）的数据�
 
 想要了解更多，请参考 :ref:`tensor-guide` 。
 
-.. _core:
-
-Core
-----
-
-在 :mod:`megengine.core` 子包中实现了 MegEngine 的核心功能，包括 Tensor 和 Operators 组成的计算图，自动求导机制等等。
-MegEngine 用户在日常使用中无需直接调用它，因为里面的功能实现已经被其它面向用户的常用子包如进行了封装。
-但出于方便 MegEngine 开发者检索的目的，我们也将 ``core`` 中的 API 列举在此处。
-
-.. toctree::
-   :hidden:
-   
-   core
-
-.. warning::
-
-   我们不承诺 core 模块中 API 的兼容性和稳定性。
-
-.. note::
-
-   任何 MegEngine 的用户都可以尝试成为我们的开发人员，就好像你理解了 Tensor 和 Core 之后，
-   便可以尝试去理解 NVIDIA 的 TensorCore_ 了。冷笑话 +1 (￣▽￣)" 
-
-   .. _TensorCore: https://www.nvidia.cn/data-center/tensor-cores/
-
-.. note::
-
-   你可能在 MegEngine 源代码中经常会看到诸如 MegBrain, MGB 等字样。
-   不用担心，MegBrain 是 MegEngine 的内部代号，二者某种程度上是等价的。
-
-模型保存与加载
---------------
+Serialization
+-------------
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -91,8 +60,8 @@ MegEngine 用户在日常使用中无需直接调用它，因为里面的功能�
 
 .. _device:
 
-设备相关
---------
+Device
+------
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -113,8 +82,8 @@ MegEngine 用户在日常使用中无需直接调用它，因为里面的功能�
 
 .. _logger:
 
-日志相关
---------
+Logger
+------
 .. autosummary::
    :toctree: api
    :nosignatures:
@@ -126,8 +95,8 @@ MegEngine 用户在日常使用中无需直接调用它，因为里面的功能�
 
 .. _version:
 
-查询版本信息
-------------
+Version
+-------
 .. py:data:: __version__
    :annotation: （MegEngine 版本号）
 
