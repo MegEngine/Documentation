@@ -10,7 +10,6 @@ megengine.optimizer
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Optimizer
 
@@ -19,7 +18,6 @@ megengine.optimizer
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    SGD
    AdamW
@@ -32,7 +30,6 @@ megengine.optimizer
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    LRScheduler
    MultiStepLR

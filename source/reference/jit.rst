@@ -10,7 +10,6 @@ megengine.jit
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    trace
 
@@ -19,7 +18,6 @@ Trace Config
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    SublinearMemoryConfig
    DTRConfig

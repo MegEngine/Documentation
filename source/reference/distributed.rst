@@ -19,14 +19,8 @@ megengine.distributed
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Group
-
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
    init_process_group
    new_group
    is_distributed
@@ -43,7 +37,6 @@ megengine.distributed
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    launcher
 
@@ -52,7 +45,6 @@ megengine.distributed
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Client
    Server

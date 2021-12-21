@@ -22,7 +22,6 @@ Containers
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Module
    Sequential
@@ -32,7 +31,6 @@ General operations
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Elemwise
    Concat
@@ -42,7 +40,6 @@ Convolution Layers
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Conv1d
    Conv2d
@@ -59,7 +56,6 @@ Pooling layers
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    AvgPool2d
    MaxPool2d
@@ -72,7 +68,6 @@ Padding layers
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Pad
 
@@ -81,7 +76,6 @@ Non-linear Activations
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Sigmoid
    Softmax
@@ -96,7 +90,6 @@ Normalization Layers
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    BatchNorm1d
    BatchNorm2d
@@ -111,7 +104,6 @@ Linear Layers
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Identity
    Linear
@@ -121,7 +113,6 @@ Dropout Layers
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Dropout
 
@@ -130,7 +121,6 @@ Sparse Layers
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Embedding
 
@@ -139,7 +129,6 @@ Vision Layers
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    PixelShuffle
 
@@ -148,7 +137,6 @@ Fused operations
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    ConvRelu2d
    ConvBn2d
@@ -160,7 +148,6 @@ Quantization
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    QuantStub
    DequantStub
@@ -178,7 +165,6 @@ Containers
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    QATModule
 
@@ -187,7 +173,6 @@ Operations
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Linear
    Elemwise
@@ -210,7 +195,6 @@ Quantized Module
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    QuantizedModule
 
@@ -219,7 +203,6 @@ Operations
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Linear
    Elemwise

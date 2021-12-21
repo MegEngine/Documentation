@@ -1,21 +1,7 @@
-.. py:module:: megengine.dtr
-.. currentmodule:: megengine.dtr
-
 =============
 megengine.dtr
 =============
-.. autosummary::
-   :toctree: api
-   :nosignatures:
+.. automodule:: megengine.dtr
+   :members:
+   :undoc-members:
 
-   enable
-   disable
-
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-   :template: autosummary/mprop.rst
-
-   eviction_threshold
-   evictee_minimum_size
-   enable_sqrt_sampling

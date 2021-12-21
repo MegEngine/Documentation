@@ -13,7 +13,6 @@ DataLoader
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    DataLoader
 
@@ -25,7 +24,6 @@ Dataset
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Dataset
    ArrayDataset
@@ -36,7 +34,6 @@ Vision Dataset
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    VisionDataset
    ImageFolder 
@@ -57,7 +54,6 @@ Sampler
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Sampler
    MapSampler
@@ -75,7 +71,6 @@ Transform
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Transform
    PseudoTransform
@@ -85,7 +80,6 @@ Vision Transform
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    VisionTransform
    Compose
@@ -117,7 +111,5 @@ Collator
 .. autosummary::
    :toctree: api
    :nosignatures:   
-   :template: autosummary/api-class.rst
 
    Collator
-

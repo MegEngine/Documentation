@@ -10,7 +10,6 @@ megengine.traced_module
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    TracedModule
 
@@ -30,7 +29,6 @@ Node
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    ModuleNode
    TensorNode
@@ -43,7 +41,6 @@ Expr
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    Input
    GetAttr
@@ -60,6 +57,5 @@ InternalGraph
 .. autosummary::
    :toctree: api
    :nosignatures:
-   :template: autosummary/api-class.rst
 
    InternalGraph

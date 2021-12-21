@@ -126,7 +126,6 @@ autosummary_generate = True
 napoleon_use_ivar = True
 
 # Setting for sphinx.ext.auotdoc
-autodoc_default_options = {"member-order": "bysource"}
 autoclass_content = "class"
 autodoc_typehints = 'none'
 autodoc_docstring_signature = True
