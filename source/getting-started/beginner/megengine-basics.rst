@@ -358,7 +358,6 @@ Parameter(2.98, device=xpux:0)
 
       def get_point_examples(w=5.0, b=2.0, nums_eample=100, noise=5):
 
-          w, b = 5.0, 2.0
           x = np.zeros((nums_eample,))
           y = np.zeros((nums_eample,))
 
@@ -382,7 +381,7 @@ Parameter(2.98, device=xpux:0)
 
 .. figure:: ../../_static/images/point-data.png
 
-通过可视化分析你发现：这些点的分布很适合用一条直线 :math:`f(x) = w * x + b` 去进行拟合。
+通过可视化分析发现（如上图）：这些点的分布很适合用一条直线 :math:`f(x) = w * x + b` 去进行拟合。
 
 >>> def f(x):
 ...     return w * x + b
@@ -392,7 +391,7 @@ Parameter(2.98, device=xpux:0)
 在本教程中，我们将采取的梯度下降策略是批梯度下降（Batch Gradient Descent）,
 即每次迭代时都将在所有数据点上进行预测的损失累积起来得到整体损失后求平均，以此作为优化目标去计算梯度和优化参数。
 这样的好处是可以避免噪声数据点带来的干扰，每次更新参数时会朝着整体更加均衡的方向去优化。
-以及从计算效率角度来看，可以充分利用一种叫做向量化（Vectorization）的特性，更快地完成计算。
+以及从计算效率角度来看，可以充分利用一种叫做 **向量化（Vectorization）** 的特性，节约时间（拓展材料中进行了验证）。
 
 设计与实现损失函数
 ~~~~~~~~~~~~~~~~~~
@@ -457,6 +456,12 @@ Tensor(9.75, device=xpux:0)
 
 我们同时给出 NumPy 实现和 MegEngine 实现作为对比：
 
+* 在 NumPy 实现中需要手动推导 :math:`\frac{\partial l}{\partial w}` 与 :math:`\frac{\partial l}{\partial b}`,
+  而在 MegEngine 中只需要调用 ``gm.backward(loss)`` 即可;
+* 输入数据 :math:`x` 是形状为 :math:`(100,)` 的向量（1 维数组），
+  与标量 :math:`w` 和 :math:`b` 进行运算时，后者会广播到相同的形状，再进行计算。
+  这样利用了向量化的特性，计算效率更高，相关细节可以参考 :ref:`tensor-broadcasting` 。
+
 .. panels::
    :container: +full-width
    :card:
@@ -486,11 +491,11 @@ Tensor(9.75, device=xpux:0)
 
          # forward and calculate loss
          pred = f(x)
-         loss = np.mean((pred - y) ** 2)
+         loss = ((pred - y) ** 2).mean()
 
          # backward(loss)
-         w_grad += np.mean(2 * (pred - y) * x)
-         b_grad += np.mean(2 * (pred - y))
+         w_grad += (2 * (pred - y) * x).mean()
+         b_grad += (2 * (pred - y)).mean()
 
          # optimizer.step()
          lr = 0.01
@@ -547,7 +552,7 @@ Tensor(9.75, device=xpux:0)
 而在批梯度下降策略下，每趟训练参数只会更新一个 Iter, 后面我们会遇到一个 Epoch 迭代多次的情况，
 这些术语在深度学习领域的交流中非常常见，会在后续的教程中被反复提到。
 
-可以发现，经过 5 趟训练（经过 5 次迭代），我们的损失在不断地下降，参数 :math:`w` 和 :math:`b` 也在不断变化。
+可以发现，经过 5 趟训练（经给定任务 T过 5 次迭代），我们的损失在不断地下降，参数 :math:`w` 和 :math:`b` 也在不断变化。
 
 .. code-block:: shell
 
@@ -566,6 +571,106 @@ Tensor(9.75, device=xpux:0)
 .. seealso::
 
    本教程的对应源码： :docs:`examples/beginner/megengine-basic-fit-line.py`
+
+总结：一元线性回归
+------------------
+一元线性回归模型 :math:`f(x)=w*x+b` 是最简单的机器学习模型，我们借助这个模型完成了直线拟合这一任务。
+
+这时候可以提及 Tom Mitchell 在
+《 `Machine Learning <http://www.cs.cmu.edu/~tom/mlbook.html>`_ :footcite:p:`10.5555/541177`》
+一书中对 “机器学习” 的定义：
+
+ A computer program is said to learn from experience E with respect to
+ some class of tasks T and performance measure P,
+ if its performance at tasks in T, as measured by P, improves with experience E.
+
+ 如果一个计算机程序能够根据经验 E 提升在某类任务 T 上的性能 P,
+ 则我们说程序从经验 E 中进行了学习。
+
+在本教程中，我们的任务 T 是尝试拟合一条直线，经验 E 来自于我们已有的数据点，
+根据数据点的分布，我们自然而然地想到了选择一元线性模型来预测输出，
+我们评估模型好坏（性能 P）时用到了 MSE 损失作为目标函数，并用梯度下降算法来优化损失。
+
+.. admonition:: 任务，模型与优化算法
+
+   机器学习领域有着非常多种类的模型，优化算法也并非只有梯度下降这一种。
+   我们在后面的教程中会接触到多元线性回归模型、以及线性分类模型，从线性模型过渡到深度学习；
+   不同的模型适用于不同的机器学习任务，因此模型选择很重要。
+   深度学习中使用的模型被称为神经网络，神经网络的魅力之一在于：
+   它能够被应用于许多任务，并且有时候能取得比传统机器学习模型好很多的效果。
+   但它模型结构并不复杂，优化模型的流程和本教程大同小异。
+   回忆一下，任何神经网络模型都能够表达成计算图，而我们已经初窥其奥妙。
+
+.. admonition:: 尝试调整超参数
+
+   我们提到了一些概念如超参数（Hyperparameter），超参数是需要人为进行设定，通常无法由模型自己学得的参数。
+   你或许已经发现了，我们在每次迭代参数 :math:`w` 和 :math:`b` 时，使用的是同样的学习率。
+   经过 5 次迭代后，参数 :math:`w` 已经距离理想情况很接近了，而参数 :math:`b` 还需继续更新。
+   尝试改变 `lr` 的值，或者增加训练的 `Epoch` 数，看损失值能否进一步地降低。
+
+.. admonition:: 损失越低，一定意味着越好吗？
+
+   既然我们选择了将损失作为优化目标，理想情况下我们的模型应该拟合现有数据中尽可能多的个点来降低损失。
+   但局限之处在于，我们得到的这些点始终是训练数据，对于一个机器学习任务，
+   我们可能会在训练模型时使用数据集 A, 而在实际使用模型时用到了来自现实世界的数据集 B.
+   在这种时候，将训练模型时的损失优化到极致反而可能会导致过拟合（Overfitting）。
+
+   .. figure:: ../../_static/images/overfitting.png
+
+      Christopher M Bishop `Pattern Recognition and Machine Learning
+      <https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf>`_
+      :footcite:p:`10.5555/1162264` - Figure 1.4
+
+   上图中的数据点分布其实来自于三角函数加上一些噪声，我们选择多项式回归模型并进行优化，
+   希望多项式曲线能够尽可能拟合数据点。可以发现当迭代次数过多时，会出现最后一张图的情况。
+   这个时候虽然在现有数据点上的拟合程度达到了百分百（损失为 0），但对于新输入的数据，
+   其预测性能可能还不如早期的训练情况。因此，不能光靠训练过程中的损失函数来作为模型性能的评估指标。
+
+   我们在后续的教程中，会给出更加科学的解决方案。
+
+拓展材料
+--------
+
+.. dropdown:: 关于向量化优于 for 循环的简单验证
+
+   在 NumPy 内部，向量化运算的速度是优于 for 循环的，我们很容易验证这一点：
+
+   .. code-block:: python
+
+      import time
+
+      n = 1000000
+      a = np.random.rand(n)
+      b = np.random.rand(n)
+      c1 = np.zeros(n)
+
+      time_start = time.time()
+      for i in range(n):
+          c1[i] = a[i] * b[i]
+      time_end = time.time()
+      print('For loop version:', str(1000 * (time_end - time_start)), 'ms')
+
+      time_start = time.time()
+      c2 = a * b
+      time_end = time.time()
+      print('Vectorized version:', str(1000 * (time_end - time_start)), 'ms')
+
+      print(c1 == c2)
+
+   .. code-block:: shell
+
+      For loop version: 460.2222442626953 ms
+      Vectorized version: 3.6432743072509766 ms
+      [ True  True  True ...  True  True  True]
+
+   背后是利用 SIMD 进行数据并行，互联网上有非常多博客详细地进行了解释，推荐阅读：
+
+   * `Why is vectorization, faster in general, than loops?
+     <https://stackoverflow.com/questions/35091979/why-is-vectorization-faster-in-general-than-loops>`_
+   * `Nuts and Bolts of NumPy Optimization Part 1: Understanding Vectorization and Broadcasting
+     <https://blog.paperspace.com/numpy-optimization-vectorization-and-broadcasting/>`_
+
+   同样地，向量化的代码在 MegEngine 中也会比 for 循环写法更快，尤其是利用 GPU 并行计算时。
 
 参考文献
 --------
