@@ -10,7 +10,6 @@ np.random.seed(20200325)
 
 def get_point_examples(w=5.0, b=2.0, nums_eample=100, noise=5):
 
-    w, b = 5.0, 2.0
     x = np.zeros((nums_eample,))
     y = np.zeros((nums_eample,))
 
