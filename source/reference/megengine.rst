@@ -41,6 +41,7 @@ MegEngine 中提供了一种名为 “张量” （:class:`Tensor` ）的数据�
 .. autosummary::
    :toctree: api
    :nosignatures:
+   :template: autosummary/api-class.rst
 
    Tensor
    Parameter

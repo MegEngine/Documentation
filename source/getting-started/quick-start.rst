@@ -4,10 +4,6 @@
 MegEngine 快速上手
 ==================
 
-.. seealso::
-
-   本教程的对应源码： :docs:`examples/quick-start.py`
-
 .. note::
 
    * 本教程假设读者具有最基础的 Python 代码编程经验，以及了解 “深度学习” 基本概念；
@@ -15,6 +11,10 @@ MegEngine 快速上手
 
      >>> import megengine
      >>> print(megengine.__version__)
+
+.. seealso::
+
+   本教程的对应源码： :docs:`examples/quick-start.py`
 
 概览
 ----
@@ -171,8 +171,9 @@ MegEngine 快速上手
        weight_decay=5e-4
    )
 
-接下来训练我们的模型，将训练数据集分批地喂入模型，前向计算得到预测值,
-调用 :meth:`.GradManager.backward` 方法来自动进行反向计算并记录梯度信息，
+接下来训练我们的模型：将训练数据集分批地喂入模型，前向计算得到预测值，
+根据设计好的损失函数（本教程中使用交叉熵 :func:`~.cross_entropy` ）计算。
+接着调用 :meth:`.GradManager.backward` 方法来自动进行反向计算并记录梯度信息，
 然后根据这些梯度信息来更新模型中的参数。
 
 .. code-block:: python
@@ -270,27 +271,13 @@ MegEngine 快速上手
    我们准备了更加基础的 《 :ref:`deep-learning` 》——
    它可以看作是当前教程内容的手把手教学版本，补充了更多细节和概念解释。
    将从机器学习的基本概念开始讲起，循序渐进地帮助你理解整个开发流程，
-   在接触到更多经典模型结构的同时，也会更加了解如何使用 Megengine 框架。
+   在接触到更多经典模型结构的同时，也会更加了解如何使用 MegEngine 框架。
    一些像是 :ref:`serialization-guide` 和 :ref:`hub-guide` 的用法，也会在该系列教程中进行简单介绍。
 
    同时，由于这仅仅是一份快速上手教程，许多模型开发的进阶特性没有进行介绍，例如
    :ref:`distributed-guide` / :ref:`quantization-guide` ... 等专题，可以在 :ref:`user-guide` 中找到。
    值得一提的是，MegEngine 不仅仅是一个深度学习训练框架，同时也支持便捷高效的模型推理部署。
    关于模型推理部署的内容，可以参考 :ref:`deployment` 页面的介绍。
-
-
-.. admonition:: 出现在教程（Tutorials）中的代码未必代表最佳实践
-   :class: warning
-
-   我们在组织 MegEngine 教程时，尽可能以教学为主要目的来提供相关内容。
-   出于易于理解的目的，一些演示代码的写法并不靠近实际工程生产中的最佳实践。
-   当用户度过入门阶段后，可以在 :ref:`user-guide` 中或 :ref:`megengine-reference` 中寻找最佳实践。
-
-   开源社区也是我们学习 MegEngine 使用的好地方，推荐几个 MegEngine 官方维护项目：
-
-   * `Models <https://github.com/MegEngine/Models>`_: 采用 MegEngine 实现的各种主流深度学习模型；
-   * `Awesome MegEngine <https://github.com/MegEngine/awesome-megengine>`_:
-     官方收录的 MegEngine 有关项目。
 
 .. admonition:: 任何人都可以成为 MegEngine 教程的贡献者
    :class: note
