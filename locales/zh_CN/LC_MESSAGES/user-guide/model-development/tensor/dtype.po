@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-12-13 14:24\n"
+"POT-Creation-Date: 2021-12-28 09:14+0000\n"
+"PO-Revision-Date: 2021-12-28 10:01\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-CN\n"
@@ -95,6 +95,7 @@ msgstr ""
 #: ../../source/user-guide/model-development/tensor/dtype.rst:60
 #: ../../source/user-guide/model-development/tensor/dtype.rst:65
 #: ../../source/user-guide/model-development/tensor/dtype.rst:75
+#: ../../source/user-guide/model-development/tensor/dtype.rst:80
 #: ../../source/user-guide/model-development/tensor/dtype.rst:95
 #: ../../source/user-guide/model-development/tensor/dtype.rst:100
 msgid "✔"
@@ -165,7 +166,6 @@ msgid ":math:`[−2^{64}, 2^{64}-1]`"
 msgstr ""
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:70
-#: ../../source/user-guide/model-development/tensor/dtype.rst:80
 #: ../../source/user-guide/model-development/tensor/dtype.rst:85
 #: ../../source/user-guide/model-development/tensor/dtype.rst:90
 #: ../../source/user-guide/model-development/tensor/dtype.rst:105
@@ -282,115 +282,119 @@ msgstr ""
 msgid "IEEE. Ieee standard for floating-point arithmetic. IEEE Std 754-2019 (Revision of IEEE 754-2008), pages 1–84, 2019. doi:10.1109/IEEESTD.2019.8766229."
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:111
+#: ../../source/user-guide/model-development/tensor/dtype.rst:109
+msgid "新增对 ``uint16`` 类型的支持。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:114
 msgid "并不是所有的已有算子都支持 MegEngine 数据类型之间的计算（仅保证 ``float32`` 类型全部可用）。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:115
+#: ../../source/user-guide/model-development/tensor/dtype.rst:118
 msgid "我们会在 :mod:`megengine.quantization` 模块中提到对量化数据类型的支持。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:120
+#: ../../source/user-guide/model-development/tensor/dtype.rst:123
 msgid "默认数据类型"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:122
+#: ../../source/user-guide/model-development/tensor/dtype.rst:125
 msgid "MegEngine 中对 Tensor 默认数据类型对定义如下："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:124
+#: ../../source/user-guide/model-development/tensor/dtype.rst:127
 msgid "默认浮点数据类型为 ``float32``;"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:125
+#: ../../source/user-guide/model-development/tensor/dtype.rst:128
 msgid "默认整型数据类型为 ``int32``;"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:126
+#: ../../source/user-guide/model-development/tensor/dtype.rst:129
 msgid "默认索引数据类型为 ``int32``."
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:131
+#: ../../source/user-guide/model-development/tensor/dtype.rst:134
 msgid "dtype 作为参数使用"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:133
+#: ../../source/user-guide/model-development/tensor/dtype.rst:136
 msgid ":class:`~.Tensor` 初始化时以及调用 :ref:`创建 Tensor <tensor-creation>` 函数时可接受 ``dtype`` 参数，用来指定数据类型："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:141
+#: ../../source/user-guide/model-development/tensor/dtype.rst:144
 msgid "如果使用已经存在的数据来创建 Tensor 而不指定 ``dtype``, 则 Tensor 的数据类型将根据 :ref:`default-data-types` 推导："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:148
+#: ../../source/user-guide/model-development/tensor/dtype.rst:151
 msgid "如果使用不支持类型的 NumPy 数组作为输入创建 MegEngine Tensor, 可能会出现非预期行为。 因此最好在做类似转换时每次都指定 ``dtype`` 参数，或先转换 NumPy 数组为支持的数据类型。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:151
+#: ../../source/user-guide/model-development/tensor/dtype.rst:154
 msgid "另外还可以使用 :meth:`~.Tensor.astype` 方法得到转换数据类型后的 Tensor（原 Tensor 不变）："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:159
+#: ../../source/user-guide/model-development/tensor/dtype.rst:162
 msgid "类型提升规则"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:163
+#: ../../source/user-guide/model-development/tensor/dtype.rst:166
 msgid "根据 :ref:`mep-0003`, 类型提升规则应当参考《数组 API 标准》 中的 `相关规定 <https://data-apis.org/array-api/latest/API_specification/type_promotion.html>`_ ："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:169
+#: ../../source/user-guide/model-development/tensor/dtype.rst:172
 msgid "多个不同数据类型的 Tensor 或 Python 标量作为操作数参与运算时， 所返回的结果类型由上图展示的关系决定—— 沿着箭头方向提升，汇合至最近的数据类型，将其作为返回类型。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:173
+#: ../../source/user-guide/model-development/tensor/dtype.rst:176
 msgid "决定类型提升的关键是参与运算的数据的类型，而不是它们的值；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:174
+#: ../../source/user-guide/model-development/tensor/dtype.rst:177
 msgid "图中的虚线表示 Python 标量的行为在溢出时未定义；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:175
+#: ../../source/user-guide/model-development/tensor/dtype.rst:178
 msgid "布尔型、整数型和浮点型 ``dtypes`` 之间未连接，表明混合类型提升未定义。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:177
+#: ../../source/user-guide/model-development/tensor/dtype.rst:180
 msgid "在 MegEngine 中，由于尚未支持《标准》中的所有类型，当前提升规则如下图所示："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:182
+#: ../../source/user-guide/model-development/tensor/dtype.rst:185
 msgid "遵循 **类型优先** 的原则，存在 bool -> int -> float 的混合类型提升规则；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:183
+#: ../../source/user-guide/model-development/tensor/dtype.rst:186
 msgid "当 Python 标量类型与 Tensor 进行混合运算时，转换成 Tensor 数据类型；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:184
+#: ../../source/user-guide/model-development/tensor/dtype.rst:187
 msgid "布尔型 ``dtype`` 与其它类型之间未连接，表明相关混合类型提升未定义。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:188
+#: ../../source/user-guide/model-development/tensor/dtype.rst:191
 msgid "这里讨论的类型提升规则主要适用于 :ref:`element-wise-operations` 的情况。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:190
+#: ../../source/user-guide/model-development/tensor/dtype.rst:193
 msgid "举例如下， ``uint8`` 和 ``int8`` 类型 Tensor 运算会返回 ``int16`` 类型 Tensor:"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:197
+#: ../../source/user-guide/model-development/tensor/dtype.rst:200
 msgid "``int16`` 和 ``float32`` 类型 Tensor 运算会返回 ``float32`` 类型 Tensor:"
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:204
+#: ../../source/user-guide/model-development/tensor/dtype.rst:207
 msgid "Python 标量和 Tensor 混合运算时，在种类一致时，会将 Python 标量转为相应的 Tensor 数据类型："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:211
+#: ../../source/user-guide/model-development/tensor/dtype.rst:214
 msgid "注意，如果此时 Python 标量是 ``float`` 类型，而 Tensor 为 ``int``, 则按照类型优先原则提升："
 msgstr ""
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:218
+#: ../../source/user-guide/model-development/tensor/dtype.rst:221
 msgid "此时 Python 标量通过使用 :ref:`default-data-types` 转为了 ``float32`` Tensor."
 msgstr ""
 
