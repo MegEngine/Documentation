@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-28 09:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:5
+msgid "TracedModule 常见图手术"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:9
+msgid ""
+"阅读本文所展示的图手术例子，需要先了解 TracedMdoule 图手术的相关接口和用法， 请参考 :ref:`tracedmodule-"
+"find-expr-and-node` 和 :ref:`tracedmodule-graph-transform-method`。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:13
+msgid "修改 Node 的名字"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:15
+msgid ""
+"修改 graph 中的 Node 的名字，可以直接对 Node.name 赋值即可，但在赋值时要确保新的名字未被 graph 中其它的 Node "
+"所使用。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:17
+msgid ""
+"例如修改某 graph 第一个输出的 Node 的名字，可以通过直接获取 graph 的 outputs，来获得输出 Node， 再直接重新设置 "
+"Node 的 name 就可对其重命名。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:24
+msgid "为模型添加前后处理"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:26
+msgid ""
+"由于 TracedModule 可以被重新 trace，因此在加前后处理时，可以新写一个 Module ，并将前处理，主体模型和后处理作为新 "
+"Module 的 3 个子 Module， 并在新 module 的 forward 函数中分别调用 3 个 module "
+"就完成了前后处理的添加。例子如下："
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:91
+msgid "将一些常量吸收到卷积里"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:93
+msgid ""
+"对于一些基于 anchor 的检测算法，经常会在卷积的输出后，对卷积结果乘 ``stride`` 或除 ``anchor_size``， "
+"在推理部署时，可以将这些常量吸收到卷积里，基于 TracedModule 可以较容易的实现这些转换，如下面的例子："
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:161
+msgid "将一些 OP 转换为 fp16"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:163
+msgid "对于一些计算量特别大的全连接层，会占用较多的存储资源，可以通过将其转换为 fp16 计算减少其占用的资源, 如下面的例子："
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:234
+msgid "通过 Graph  确定数据流向"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:236
+msgid ""
+"在量化训练时，常常会对 concat 的输入做某些约束，通过 TracedModule 可以轻易的找到这些 concat 的输入是来自于哪个内置的"
+" function 或 Module 的输出，如下面的例子。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:286
+msgid "Conv 和 BN 融合"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/graphsurgeon-example.rst:288
+msgid ""
+"在 推理 或 量化训练 时，常常需要将 Conv 和 Bn 融合到一起，基于 TracedModule 的 Graph 可以找到满足融合条件的 "
+"Conv 和 Bn，并以图手术的方式将其融合，如下面的例子。"
+msgstr ""
+

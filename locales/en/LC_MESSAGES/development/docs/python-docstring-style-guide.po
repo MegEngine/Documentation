@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 20:45+0800\n"
+"POT-Creation-Date: 2021-12-28 09:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/development/docs/python-docstring-style-guide.rst:5
 msgid "Python 文档字符串风格指南"
@@ -49,7 +49,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/development/docs/python-docstring-style-guide.rst:16
-msgid "在 MegEngine 源码中鼓励使用 Google 风格的文档字符串。 (必须带上类型提示)"
+msgid "在 MegEngine 源码中要求统一使用 Google 风格的文档字符串。"
 msgstr ""
 
 #: ../../source/development/docs/python-docstring-style-guide.rst:20
@@ -110,88 +110,240 @@ msgid "文档字符串应该是描述性风格而不是命令式风格... 等等
 msgstr ""
 
 #: ../../source/development/docs/python-docstring-style-guide.rst:349
-msgid "除此以外，开发者在为 MegEngine 的 Python API 编写 Docstring 时，还需注意以下情况："
+msgid "在提交修改之前，可以使用 MegEngine 自带的脚本进行 Python 代码格式化检查："
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:351
+#: ../../source/development/docs/python-docstring-style-guide.rst:355
 msgid ""
-"**Tensor API 文档字符串优先参考《数组 API 标准》。** 在《 :ref:`mep-0003` 》中，明确了 MegEngine "
-"Tensor API 在设计时将尽量参考 《 `数组 API 标准 <https://data-apis.org/array-"
-"api/latest/>`_ 》中所定义的规格和约定，文档字符串也应当遵循这一原则。 当某个 Tensor API "
-"已经存在于《标准》之中时，文档字符串编辑人员应当仔细确认《标准》中所陈述的行为在 MegEngine 中表现是否一致。 "
-"对于完全一致的行为，应当使用一致的、《标准》中已经提供的文档字符串进行描述；对于不一致的行为，应当以提示或警告的形式进行说明。"
+"语法 & 格式正确是文档基本要求，可参考 :ref:`restructuredtext` 与 :ref:`how-to-build-the-"
+"doc-locally` 。"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:356
+#: ../../source/development/docs/python-docstring-style-guide.rst:357
+msgid "除此以外，开发者在为 MegEngine 的 Python API 编写 Docstring 时，其内容必须满足下列要求："
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:360
+msgid "与社区标准统一，遵循使用许可"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:364
+msgid "在撰写 Docstring 的正式内容之前，通常我们有以下参考源头："
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:366
+msgid "形成广泛共识的社区标准文件，亦或是国际及世界各国的规格/标准组织材料；"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:367
+msgid "当前主流框架、库（如 NumPy, PyTorch 等）中提供的类似接口的注释；"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:368
+msgid "来自已经出版的文献材料中的定义与描述。"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:370
 msgid ""
-"**可适当重写以覆盖 API 源码中提供的类型提示。** 默认情况下，API 文档中的类型提示将根据源码 TypeHint 内容生成。 "
-"一些仅内部使用的类型如 ``SymbolVar``, ``CompNote``... "
-"所涉及的概念会让用户感到迷惑，此时应当在文档字符串中适当重写。 做法是在参数后面空一格，然后用半角圆括号括起重写后的类型提示内容："
+"优先使用第 1 类材料作为最佳实践，其内容可被直接用于文档字符串中，或适当进行修改； 对于第 2 类材料，其内容仅适合作为参考， "
+"**严禁直接复制粘贴受许可协议保护的代码注释；** 对于第 3 类材料，应当充分理解其概念与在 MegEngine "
+"中的接口设计背景，再添加相应注释与引用。"
 msgstr ""
 
 #: ../../source/development/docs/python-docstring-style-guide.rst:374
 msgid ""
-"理想状态下，源码中的每个 API 的参数都应该带上类型提示，这样做对编辑器、集成开发环境更为友好。 覆写 TypeHint "
-"内容会引入额外的维护成本，因此不建议所有的 TypeHint 都进行人为覆写。"
+"在《 :ref:`mep-0003` 》中，明确了 MegEngine Tensor API 块在设计与维护时，将尽量参考 《 `数组 API "
+"标准 <https://data-apis.org/array-api/latest/>`_ "
+"》中所定义的规格和约定提供接口，文档字符串也应当遵循这一原则。 当发现相应 API "
+"已经存在于《标准》中时，文档字符串的编辑人员应当仔细确认《标准》中所陈述的行为在 MegEngine 中表现是否一致 ——"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:377
-msgid "**示范代码必须使用标准 doctest 风格而非 code-output 风格。** 对比如下："
+#: ../../source/development/docs/python-docstring-style-guide.rst:378
+msgid "对于完全一致的行为，应当使用《标准》中已经提供的文档字符串内容进行描述；"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:379
+msgid "对于不一致的行为，应当收集相关信息并同审核人员讨论，最终需以提示或警告的形式进行说明。"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:381
+msgid "其中与《标准》不一致的行为包括但不限于以下几种："
 msgstr ""
 
 #: ../../source/development/docs/python-docstring-style-guide.rst:383
-msgid "错误写法"
+msgid "参数选项、命名不一致，仅位置（Position-obly）和仅关键字（Keyword-only）参数的划分不一致；"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:399
-msgid "正确写法"
+#: ../../source/development/docs/python-docstring-style-guide.rst:384
+msgid "对数据类型的支持情况不一致（通常需要指向 :ref:`tensor-dtype` 页面）；"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:409
-msgid "一些时候可用注释代替上下文；"
+#: ../../source/development/docs/python-docstring-style-guide.rst:385
+msgid "同一使用环境下，使用相同接口、参数，最终效果与预期标准不一致。"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:410
-msgid "可以有多例，以展示不同的用法。"
+#: ../../source/development/docs/python-docstring-style-guide.rst:387
+msgid "对于未在《标准》中的定义 API, 其参数命名与描述风格也应当尽可能与 MegEngine 的整体风格保持一致。"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:413
-msgid "**API 文档首行简述应确保做到 “清晰、准确、概括” 这三点要求。** 错误例子如下："
+#: ../../source/development/docs/python-docstring-style-guide.rst:392
+msgid "对 PEP 484 类型提示进行覆盖"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:420
+#: ../../source/development/docs/python-docstring-style-guide.rst:396
 msgid ""
-"整个文档字符串的内容只有上述这句话，对于一个不了解分布式概念的用户来说， 仅提供这些信息的帮助极其有限。 用户完全不知道这样的 API "
-"能够用在什么地方，也有可能对 “聚合式通信（collective communication）” 的概念一无所知。 "
-"我们希望文档中所提供的概念应该是自包含的（Self-"
-"contained），解释性的文本（或对应的链接）是不可或缺的，尽可能避免让用户去搜索其它材料。"
+"默认情况下，API 文档中的类型提示将按照 `PEP 484 "
+"<https://www.python.org/dev/peps/pep-0484>`_ 格式从 API "
+"函数或方法的签名中生成，方便一些编辑器做代码跳转和提示，但通常不具备语义描述。 这种自动生成的类型提示在 Web "
+"文档中样式不够友好，并且对于一些仅内部接口使用到的类型如 ``SymbolVar`` ... "
+"这些类型是我们不希望用户在使用相关接口时去注意到的，因此要求在文档字符串中对类型提示进行覆盖。"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:424
+#: ../../source/development/docs/python-docstring-style-guide.rst:401
+msgid "具体做法是：在参数后面空一格，然后用半角圆括号括起重写后的类型提示内容："
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:419
 msgid ""
-"对于一些比较复杂的、或需要结合情景使用的 API, 仅靠示范代码不足以帮助用户理解使用情景， "
-"此时可以提供到专门介绍用法的文档页面的链接。常见的做法是使用 ``seealso`` 进行拓展："
+"上例中的类型提示表明了 —— 我们期望用户传入的是 ``Tensor`` 类型，但不是限制用户仅能够传入 ``Tensor`` 类型。 "
+"如果用户传入了其它类型数据比如 ``list of ints`` 等，其能够被转换成预期的 ``Tensor`` 类型并被正常使用。 "
+"只是这些类型也不该出现在类型提示中，因为使用它们作为参数是非预期的行为。"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:423
+msgid ""
+"另一个典型是 :attr:`.Tensor.shape`, 它本身在一些情景下类型可以是一个 :class:`~.Tensor`, "
+"但在大部分接口中其作为参数时的类型提示应当是 ``int or sequence of ints``. 总原则是：一切以推荐使用情景为前提。"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:426
+msgid "下面是一些常被用于覆盖原有提示信息的参数以及对应类型举例："
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:428
+msgid ""
+"``input/output (Tensor, optional)`` - 将会指向 :class:`~.Tensor`, 视实际情况添加 "
+"``optional``."
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:429
+msgid "``inppus/outputs (sequence of Tensors)`` - 表明输入应当是由 ``Tensor`` 组成的序列。"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:430
+msgid "``shape (int or sequence of ints)`` - 表明可以是单个 ``int``, 也可以是 ``int`` 组成的序列"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:431
+msgid "``xxx (Number)`` - 通常覆盖 ``Union[int, float, Tensor]``"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:432
+msgid "``yyy (Number, optional)`` - 通常覆盖 ``Union[int, float, Tensor, None]``"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:433
+msgid "``dtype (:attr:`.Tensor.dtype`, optional)`` - 将会指向 :attr:`.Tensor.dtype`"
 msgstr ""
 
 #: ../../source/development/docs/python-docstring-style-guide.rst:434
-msgid "**合理补充提示（Note）和警告（Warning）信息，善用页面交叉引用，根据用户反馈不断迭代。**"
+msgid ""
+"``device (:attr:`.Tensor.device`, optional)`` - 将会指向 "
+":attr:`.Tensor.device`"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:438
+#: ../../source/development/docs/python-docstring-style-guide.rst:435
+msgid "对于类型为字符串 :py:class:`str` 的参数，通常可以在类型提示中用更具体的语义对类型进行描述。"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:437
+msgid "对于不确定是否要覆盖 PEP 484 类型提示的情景，需要找代码审核人员进行讨论。"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:442
+msgid "提供简明而全面的示范代码"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:444
+msgid ""
+"所有的 API Example 必须使用标准 `doctest "
+"<https://docs.python.org/3/library/doctest.html>`_ 风格："
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:452
+msgid ""
+"简明是第一准则，多余的上下文准备操作可以用注释进行说明，一些情景下允许使用伪代码展示用法。 "
+"全面指的是：一些参数的变化可能会导致用法改变，此时要提供多例 API 示范代码帮助用户理解。 如果有必要的话，在单个的 API "
+"文档页面中可以引用相应的用户指南，甚至是教程页面。"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:458
+msgid ""
+"一些 ``import`` 语句可以省略，参考 :src:`imperative/python/megengine/conftest.py` "
+"中的规则；"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:459
+msgid "能够使用 MegEngine API 生成的数据，尽可能避免使用 NumPy API 来生成（除 ``random`` 以外）；"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:460
+msgid "对于位置参数，统一看作是仅位置参数（将来可能会变成强制要求），使用时不要带上参数名；"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:461
+msgid "示范代码的输入输出要求必须一致，否则将无法通过 CI 中的相关测试。常见的错误如下："
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:468
+msgid "这里为了使得元素对齐，人为加入了多余的空格，实际上测试期望得到的输出应当是："
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:477
+msgid ""
+"MegEngine 源码中可能还有一些 `code-output <https://www.sphinx-"
+"doc.org/en/master/usage/extensions/doctest.html>`_ 风格的示范代码，大都如下形式："
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:494
+msgid "这种风格是历史写法，在源码中占据了太多空间，不够简洁，发现之后应该修改成标准 doctest 形式。"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:499
+msgid "对特殊情况进行说明"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:501
+msgid "一些 API 在特殊情况下行为可能发生变化，或者一些情况下的效果需要做更加进一步说明。例如："
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:505
+msgid "在参数 A 和 B 的关系满足 xxx 条件时，执行逻辑会变成 xxxxxx 情况；"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:506
+msgid "想要使用本接口，还需要设置 XXX 环境变量。"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:510
+msgid "使用本接口可能会导致速度变慢！"
+msgstr ""
+
+#: ../../source/development/docs/python-docstring-style-guide.rst:513
 msgid "Docstring 对文档的意义"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:440
+#: ../../source/development/docs/python-docstring-style-guide.rst:515
 msgid "API 参考页面自动生成"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:443
+#: ../../source/development/docs/python-docstring-style-guide.rst:518
 msgid ""
 "我们借助 Sphinx 来构建整个 MegEngine 文档（参考 :ref:`how-to-build-the-doc-locally` ）， "
 "其中每个 Python API 的单个文档页面（如 :func:`~.functional.add` ）都是提取相应的文档字符串内容自动生成的。"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:446
+#: ../../source/development/docs/python-docstring-style-guide.rst:521
 msgid ""
 "前面提到了，在 MegEngine 源码中鼓励使用 Google 风格的文档字符串。 由于 Sphinx 在根据文档字符串生成 API "
 "页面时，默认只支持 reStructuredText 语法。 因此我们用到了 `sphinx.ext.napoleon <https://www"
@@ -201,21 +353,84 @@ msgid ""
 "之间的交叉引用、超链接、插入图片，甚至加入一些高级的 HTML 视觉样式。"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:454
+#: ../../source/development/docs/python-docstring-style-guide.rst:529
 msgid ""
 "但是，我们也要考虑到习惯直接阅读源码（以及使用 ``help()`` / ``print(*.__doc__)`` 语法）的用户， "
 "使用过多的衍生语法和交叉引用将打破纯文本样式的约定，降低 Python 源码的阅读体验，需克制使用。"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:457
+#: ../../source/development/docs/python-docstring-style-guide.rst:532
 msgid "别忘记提供对应的翻译文本"
 msgstr ""
 
-#: ../../source/development/docs/python-docstring-style-guide.rst:460
+#: ../../source/development/docs/python-docstring-style-guide.rst:535
 msgid ""
 "MegEngine 文档的特点之一是提供了中文 API 翻译，而 Docstring 作为源代码的一部分，当然是用英文撰写的。 因此在 "
 "MegEngine 源代码中修改 Docstring 后我们还需要在 Documentation 文档中更新对应 ``.po`` 文件， "
 "Sphinx 在生成文档时会先检索匹配到的文本，接着自动地将原文替换成对应的译文，这和 WordPress 国际化原理类似， "
 "相关细节和翻译流程请参考 :ref:`translation` 。"
 msgstr ""
+
+#~ msgid "在 MegEngine 源码中鼓励使用 Google 风格的文档字符串。 (必须带上类型提示)"
+#~ msgstr ""
+
+#~ msgid "除此以外，开发者在为 MegEngine 的 Python API 编写 Docstring 时，还需注意以下情况："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Tensor API 文档字符串优先参考《数组 API 标准》。** 在《"
+#~ " :ref:`mep-0003` 》中，明确了 MegEngine Tensor "
+#~ "API 在设计时将尽量参考 《 `数组 API 标准 <https"
+#~ "://data-apis.org/array-api/latest/>`_ "
+#~ "》中所定义的规格和约定，文档字符串也应当遵循这一原则。 当某个 Tensor API "
+#~ "已经存在于《标准》之中时，文档字符串编辑人员应当仔细确认《标准》中所陈述的行为在 MegEngine "
+#~ "中表现是否一致。 "
+#~ "对于完全一致的行为，应当使用一致的、《标准》中已经提供的文档字符串进行描述；对于不一致的行为，应当以提示或警告的形式进行说明。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**可适当重写以覆盖 API 源码中提供的类型提示。** 默认情况下，API "
+#~ "文档中的类型提示将根据源码 TypeHint 内容生成。 一些仅内部使用的类型如 "
+#~ "``SymbolVar``, ``CompNote``... "
+#~ "所涉及的概念会让用户感到迷惑，此时应当在文档字符串中适当重写。 "
+#~ "做法是在参数后面空一格，然后用半角圆括号括起重写后的类型提示内容："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "理想状态下，源码中的每个 API 的参数都应该带上类型提示，这样做对编辑器、集成开发环境更为友好。 覆写"
+#~ " TypeHint 内容会引入额外的维护成本，因此不建议所有的 TypeHint 都进行人为覆写。"
+#~ msgstr ""
+
+#~ msgid "**示范代码必须使用标准 doctest 风格而非 code-output 风格。** 对比如下："
+#~ msgstr ""
+
+#~ msgid "错误写法"
+#~ msgstr ""
+
+#~ msgid "正确写法"
+#~ msgstr ""
+
+#~ msgid "一些时候可用注释代替上下文；"
+#~ msgstr ""
+
+#~ msgid "可以有多例，以展示不同的用法。"
+#~ msgstr ""
+
+#~ msgid "**API 文档首行简述应确保做到 “清晰、准确、概括” 这三点要求。** 错误例子如下："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "整个文档字符串的内容只有上述这句话，对于一个不了解分布式概念的用户来说， 仅提供这些信息的帮助极其有限。 "
+#~ "用户完全不知道这样的 API 能够用在什么地方，也有可能对 “聚合式通信（collective "
+#~ "communication）” 的概念一无所知。 我们希望文档中所提供的概念应该是自包含的（Self-"
+#~ "contained），解释性的文本（或对应的链接）是不可或缺的，尽可能避免让用户去搜索其它材料。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "对于一些比较复杂的、或需要结合情景使用的 API, 仅靠示范代码不足以帮助用户理解使用情景， "
+#~ "此时可以提供到专门介绍用法的文档页面的链接。常见的做法是使用 ``seealso`` 进行拓展："
+#~ msgstr ""
+
+#~ msgid "**合理补充提示（Note）和警告（Warning）信息，善用页面交叉引用，根据用户反馈不断迭代。**"
+#~ msgstr ""
 

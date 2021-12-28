@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-28 09:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:6
+msgid "快速上手 TracedModule"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:8
+msgid ""
+"**TracedModule 本质是一个 Module**, 其由普通的 Module 转换而来。 本文以 shufflenet_v2 "
+"为例，讲解如何使用 TracedModule 进行模型开发与部署。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:12
+msgid "Module 转换为 TracedModule"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:14
+msgid ""
+"本文使用的 shufflenet_v2 模型为 MegEngine 预训练的模型，来自 `模型中心 "
+"<https://megengine.org.cn/model-hub>`_ 。 我们利用 :py:func:`~.trace_module` "
+"方法将 ``shufflenet`` 这个 Module 转换 TracedModule."
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:32
+msgid ""
+":py:func:`~.trace_module` 方法所返回的 ``traced_shufflenet`` 是一个 TracedModule, "
+"但其本质是一个 Module."
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:37
+msgid "我们可以像普通 Module 一样使用 TracedModule, 例如将其作为一个 Module 的子 Module."
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:52
+msgid ""
+"对于任意一个 Module 我们都可以将其转换为 TracedModule, 包括 TracedModule 也可以被再次转换 （再次 "
+"``trace`` 后的模型结构不会发生变化）。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:59
+msgid "TracedModule 序列化"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:63
+msgid "推荐使用 ``.tm`` 作为 TracedModule 序列化文件的后缀名"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:64
+msgid "推荐使用 :func:`megengine.save` 和 :func:`megengine.load` 保存和加载 TracedModule"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:66
+msgid "可以直接使用 MegEngine 提供的序列化接口 :func:`megengine.save` 将 TracedModule 模型序列化到文件中。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:70
+msgid "也可以直接使用 python 内置的 pickle 模块将 TracedModule 序列化到文件中。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:75
+msgid ""
+"对应的，可以分别使用 :func:`megengine.load` 或 :func:`pickle.load` 将序列化的 "
+"TracedModule 再加载回来。 在脱离模型源码的环境中加载得到的 TracedModule, 依然可以被正常解析与运行。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:84
+msgid "TracedModule 图手术"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:86
+msgid ""
+"TracedModule 提供了一些方便的图手术接口来修改 TracedModule 的执行逻辑。 图手术的接口可以直接阅读 :ref"
+":`tracedmodule-graph-transform-method`, 每一个接口下都提供了如何使用该接口的例子。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:90
+msgid ""
+"我们提供了一些常见的图手术例子在 :ref:`graphsurgeon-example` 中，可以了解如何完成对 TracedMdoule "
+"执行逻辑的的修改。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:92
+msgid "同时，我们提供了一些内置的图手术实现来优化模型结构，包括："
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:94
+msgid "FuseConvBn：将 BatchNorm 融合到 Convolution 中"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:95
+msgid "FuseAddMul：融合连续的常量加法或常量乘法"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:96
+msgid "BackwardFoldScale：将卷积之后的常量乘法融合到卷积中"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:98
+msgid "使用这些优化的接口为 ``tm.optimize``, 具体用法请参考 :ref:`tracedmodule_graph_optimize`."
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:101
+msgid "TracedModule 模型部署"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:104
+msgid "使用 MegEngine 进行部署"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:106
+msgid ""
+"**TracedModule 本质是一个 Module**, 使用 MegEngine 进行模型部署与普通 Module 部署方法一致， 可参考 "
+":ref:`trace <trace>` & :ref:`dump <dump>` 将模型转为 c++ 静态图模型。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:109
+msgid ""
+"以 shufflenet_v2 为例，我们可以直接使用上面被转换为 TracedModule 的 shufflenet_v2 模型 "
+"``traced_shufflenet``, 也可以在脱离 shufflenet_v2 源码的环境中直接加载被序列化后并保存的 "
+"``traced_shufflenet.tm``."
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:114
+msgid ""
+"然后调用 :py:class:`~.jit.trace` 方法将 ``traced_shufflenet`` 转换为 MegEngine 静态图，"
+" 调用 :py:meth:`~.jit.trace.dump` 方法将静态图保存为 c++ 模型，同时在 ``dump`` 时可以开启 "
+"Inference 相关的优化。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:133
+msgid ""
+"将模型序列化为 c++ 模型并保存后，可以参考 :ref:`MegEngine Lite C++ 部署模型快速上手 <lite-quick-"
+"start-cpp>` 在 c++ 环境中进行模型部署， 或参考 :ref:`MegEngine Lite Python 部署模型快速上手 "
+"<lite-quick-start-python>` 在 python 环境中进行模型部署。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:137
+msgid "使用第三方平台部署"
+msgstr ""
+
+#: ../../source/user-guide/model-development/traced_module/quick-start.rst:139
+msgid ""
+"对于第三方平台部署，我们开发了基于 TracedModule 的转换器 `mgeconvert "
+"<https://github.com/MegEngine/mgeconvert>`__ ， 可以方便地将 TracedModule "
+"所描述的模型结构和参数转换至其它推理框架，例如：caffe, tflite 和 onnx 等， 未来也将支持更多第三方推理框架的转换。"
+msgstr ""
+

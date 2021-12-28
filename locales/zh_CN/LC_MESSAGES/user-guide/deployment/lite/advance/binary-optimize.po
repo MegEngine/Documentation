@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-28 09:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:5
+msgid "减少 MegEngine Lite 体积"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:7
+msgid ""
+"midout 是 MegEngine 中用来减小生成的二进制文件体积的工具，有助于在空间受限的设备上部署应用。 midout "
+"通过记录模型推理时用到的 opr 和执行流，使用 ``if(0)`` 关闭未被记录的代码段后重新编译， 利用 ``-flto`` "
+"链接参数，可以大幅度减少静态链接的可执行文件的大小。 现在基于 MegEngine Lite 提供模型验证工具 :ref:`Load and "
+"Run <load-and-run>` , 展示怎样在某 AArch64 架构的 Android 端上裁剪 MegEngine 库，Load "
+"and Run 底层集成了 MegEngine Lite，所以 使用裁减了 Load and Run 的 Binary size 的大小其实就是对"
+" MegEngine Lite 进行了裁减。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:15
+msgid "编译静态链接的 load_and_run"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:17
+msgid ""
+"端上裁剪 MegEngine 库需要一个静态连接 MegEngine 的可执行程序，编译方法详见 load-and-run 的编译部分。 "
+"稍有不同的是编译时需要先设置 load_and_run 静态链接 MegEngine."
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:24
+msgid "查看一下 load_and_run 的大小："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:31
+msgid "此时 load_and_run 大小超过 20MB. load_and_run 的执行，请参考下文“代码执行”部分。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:34
+msgid "裁剪 load_and_run"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:36
+msgid "MegEngine 的裁剪可以从两方面进行："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:38
+msgid ""
+"通过opr 裁剪。在 dump 模型时，可以同时将模型用到的 opr 信息以 json 文件的形式输出， midout "
+"在编译期裁掉没有被模型使用到的所有 opr."
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:40
+msgid "通过 trace 流裁剪。运行一次模型推理，根据代码的执行流生成 trace 文件， 通过trace文件，在二次编译时将没有执行的代码段裁剪掉。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:43
+msgid "整个裁剪过程分为两个步骤："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:45
+msgid "第一步，dump 模型，获得模型 opr 信息；通过一次推理，获得 trace 文件。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:46
+msgid ""
+"第二步，使用MegEngine的头文件生成工具 ``tools/gen_header_for_bin_reduce.py`` 将 opr 信息和 "
+"trace 文件作为输入， 生成 ``src/bin_reduce_cmake.h`` CMake 会自动维护这个文件，用户无需关心。 "
+"当然也可以单独使用模型 opr 信息或是 trace 文件来生成 ``src/bin_reduce_cmake.h`` ， 单独使用 opr "
+"信息时，默认保留所有 kernel，单独使用 trace 文件时，默认保留所有 opr."
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:52
+msgid "dump 模型获得 opr 类型名称"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:54
+msgid ""
+"一个模型通常不会用到所有的opr，根据模型使用的opr，可以裁掉那些模型没有使用的 opr。 在模型 dump 时，我们可以获得模型的 opr "
+"信息。 使用 :meth:`~.jit.trace.dump` 模型时候加上 strip_info_file 参数，可以将模型使用的 opr 信息"
+" dump 到一个 JSON 文件中，如果 需要将多个模型的 opr JSON 文件拼接在一起，可以在 "
+":meth:`~.jit.trace.dump` 模型时候再加上 append_json 参数。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:81
+msgid ""
+"执行完毕后，会生成 ``resnet50.mge`` 和 ``resnet50.mge.json`` . 查看这个 JSON "
+"文件，它记录了模型用到的 opr 名称。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:91
+msgid "执行模型获得 trace 文件"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:93
+msgid "基于 trace 的裁剪需要通过一次推理获得模型的执行 trace 文件。具体步骤如下："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:95
+msgid "CMake 构建时，打开 ``MGE_WITH_MIDOUT_PROFILE`` 开关，编译 load_and_run："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:101
+msgid ""
+"编译完成后，将 ``build_dir/android/arm64-v8a/Release/install/bin`` 下的 "
+"``load_and_run`` 推至设备并执行："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:107
+msgid "得到如下输出："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:132
+msgid "注意到执行模型后，生成了 ``midout_trace.20717`` 文件，该文件记录了模型在底层执行了哪些 kernel."
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:134
+msgid "生成 ``src/bin_reduce_cmake.h`` 并再次编译 load_and_run："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:136
+msgid ""
+"将生成的 ``midout_trace.20717`` 拷贝至本地， 使用上文提到的头文件生成工具 "
+"``gen_header_for_bin_reduce.py`` 生成 ``src/bin_reduce_cmake.h`` ."
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:145
+msgid ""
+"编译完成后，检查 load_and_run 的大小, 注意 MGE_WITH_MINIMUM_SIZE 不是非必须的，加上它 size "
+"会更小，但同时会关闭一些编译选项："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:152
+msgid "此时 load_and_run 的大小减小到 2MB 多。推到设备上运行，得到如下输出："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:176
+msgid "可以看到模型依然正常运行，并且运行速度正常。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:179
+msgid "使用裁剪后的 load_and_run"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:181
+msgid ""
+"想要裁剪前后的应用能够正常运行，需要保证裁剪前后两次推理使用同样的命令行参数。 如果使用上文裁剪的 load_and_fun 的 fast-"
+"run功能（详见 :ref:`load-and-run` ）。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:188
+msgid "可能得到如下输出："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:198
+msgid ""
+"这是因为程序运行到了已经被裁剪掉的函数中，未被记录在 trace 文件中的函数的实现已经被替换成 ``trap()`` . 如果想要裁剪与 "
+"fast-run 配合使用，需要按如下流程获得 trace 文件："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:201
+msgid "开启 fast-run 模式，执行未裁剪的 load_and_run 获得 ``.cache`` 文件，注意本次执行生成的 trace 应该被丢弃："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:207
+msgid "使用 ``.cache`` 文件，执行 load_and_run 获得 trace 文件："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:213
+msgid ""
+"如上节，将 trace 文件拷贝回本机，生成 ``src/bin_reduce_cmake.h`` ，再次编译 load_and_run "
+"并推至设备。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:215
+msgid "使用裁剪后的 load_and_run 的 fast-run 功能，执行同 2 的命令，得到如下输出："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:240
+msgid "使用其他 load_and_run 提供的功能也是如此，想要裁剪前后的应用能够正常运行， 需要保证裁剪前后两次推理使用同样的命令行参数。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:244
+msgid "多个模型合并裁剪"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:245
+msgid ""
+"多个模型的合并裁剪与单个模型流程相同。 ``gen_header_for_bin_reduce.py`` 接受多个输入。 假设有模型 A 与模型 "
+"B, 已经获得 ``A.mge.json`` , ``B.mge.json`` 以及 ``A.trace`` , ``B.trace`` . "
+"执行："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:253
+msgid "裁剪基于 MegEngine Lite 的应用"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:255
+msgid "可以通过如下几种方式集成 MegEngine Lite，对应的裁剪方法相差无几："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:257
+msgid ""
+"参照 :ref:`lite-quick-start-cpp` ，将整个 MegEngine Lite 集成到用户工程中。 只需要按照上文中裁剪 "
+"load_and_run 的流程裁剪用户的工程即可。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:259
+msgid ""
+"可能一个应用想要通过静态库集成 MegEngine Lite。此时需要获得一个裁剪过的 "
+"``liblite_static_all_in_one.a`` . 可以依然使用 load_and_run 运行模型获得 trace 文件， 生成"
+" ``bin_reduce.h`` ，并二次编译获得裁剪过的 ``liblite_static_all_in_one.a`` . "
+"此时，用户使用自己编写的构建脚本构建应用程序，并静态链接 ``liblite_static_all_in_one.a`` ， 加上链接参数 "
+"``-flto=full`` . 即可得到裁剪过的基于 MegEngine 的应用。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:264
+msgid ""
+"上述流程亦可以用于 ``liblite_shared.so`` 的裁剪，但是动态库的裁剪效果远不及静态库。 "
+"原因在于动态库并不知道某段代码是否会被调用，因此链接器不会进行激进的优化。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:269
+msgid "midout 裁减之后的应用程序有一些限制："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:271
+msgid "模型的输入数据的 shape 不能改变"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:272
+msgid "模型必须是静态图模型，不是有动态分支"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:273
+msgid "裁减之后的应用程序只能在裁减时候的平台上运行，可他平台改变了程序的运行路径可能会失败"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/advance/binary-optimize.rst:277
+msgid "如果裁减的应用程序需要在不同的 shape 下面都能成功运行，需要在裁减 :ref:`generator_tance` 中所有的输入都运行一次。"
+msgstr ""
+
