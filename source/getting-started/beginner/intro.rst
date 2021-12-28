@@ -35,7 +35,7 @@ MegEngine 深度学习入门教程
    :maxdepth: 1
 
    megengine-basics
-   learning-from-linear-regression
+   linear-regression
    from-linear-regression-to-linear-classification
    how-to-build-a-better-model
    model-construction
