@@ -1,0 +1,698 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2021, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-28 09:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:5
+msgid "MegEngine Lite C++ 接口介绍"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:8
+msgid "Tensor 相关 API"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:11
+msgid "Layout"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:12
+msgid "Layout的 C++ 接口实现如下"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:23
+msgid ""
+"主要成员为： layout 维度信息 ndim （最大维度为7），每一维度的具体信息 shapes，以及数据类型，MegEngine Lite "
+"中包含的数据类型有："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:40
+msgid "Tensor 创建"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:41
+msgid ""
+"创建 Tensor 时候用户可以指定一些 Tensor 的信息，包括创建 Tensor 的设备类型，是否是设备的 `锁页内存 "
+"<https://developer.nvidia.com/blog/how-optimize-data-transfers-cuda-"
+"cc/>`_，以及 Layout 信息等"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:52
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:120
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:208
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:489
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:591
+msgid "参数："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:54
+msgid "LiteDeviceType ：指定创建的 Tensor 所在的设备，默认是：LITE_CPU，目前主持的设备有："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:66
+msgid "device_id：指明 Tensor 创建的设备号"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:67
+msgid ""
+"is_pinned_host：表示该 Tensor 是否为 `锁页内存 <https://developer.nvidia.com/blog"
+"/how-optimize-data-transfers-cuda-cc/>`_，默认为 false。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:70
+msgid "Tensor 信息获取"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:80
+msgid "get_device_type：返回 Tensor 所在的设备类型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:81
+msgid "get_device_id：返回 Tensor 所在的设备 id"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:82
+msgid "get_layout：返回 Tensor 的 layout 信息"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:83
+msgid ""
+"is_pinned_host：判断该 Tensor 的内存是否是 `锁页内存 <https://developer.nvidia.com/blog"
+"/how-optimize-data-transfers-cuda-cc/>`_"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:84
+msgid "get_tensor_total_size_in_byte：获取这个 Tensor 总的内存大小，单位为字节"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:85
+msgid "is_continue_memory：获取这个 Tensor 的内存是否是连续的"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:88
+msgid "get_memory_ptr"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:95
+msgid "无参数 get_memory_ptr：将以 void* 的形式返回 Tensor 的内存地址，如果 Tensor 没有申请内存，将会申请内存"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:96
+msgid ""
+"有参数 get_memory_ptr：返回指定 index 的内存地址， **参数 const std::vector<size_t> 从 "
+"Tensor 高维到低维的 shape 索引**，其长度可以小于 Tensor 中 Layout 的维度，但是需要从高维度到低维度，中间不能有跳跃"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:98
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:153
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:311
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:597
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:633
+msgid "示例："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:112
+msgid "reset"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:113
+msgid "设置用户自己管理的内存地址到 Tensor 中"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:122
+msgid ""
+"prepared_data：用户自己管理的内存， **用户需要确保 prepared_data 生命周期大于 Tensor 持有这段 "
+"prepared_data 内存的生命周期**，Tensor 中不会对这段内存进行管理"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:123
+msgid "data_length_in_byte：这段 prepared_data 内存的长度，单位是字节"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:124
+msgid "layout：这段 prepared_data 的 Layout 信息"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:127
+msgid "reshape"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:133
+msgid ""
+"改变这个 Tensor 的 Layout 中的 shapes 为新的 shape，其中 **新的 shape 中元素个数需要和老的 shape "
+"里面的元素个数相等**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:136
+msgid "slice"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:143
+msgid "对 Tensor 进行切片，返回一个新的 Tensor，新的 Tensor 和原来 Tensor 共享内存， **新的 Tensor 可能不连续**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:145
+msgid ""
+"参数： **start，end 的长度必须相等，长度可以小于 Tensor 的 Layout 的维度，如果传递了 step，则 step 也需要和"
+" start，end 的长度相等**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:147
+msgid "start：Tensor 每一维度的起始 index 组成的数组，从高维到低维"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:148
+msgid "end：Tensor 每一维度的结束 index 组成的数组，从高维到低维"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:149
+msgid "step：Tensor 每一维度切片的间距，从高维到低维，默认为1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:151
+msgid "返回值：返回一个新的 Tensor，类型是一个 std::shared_ptr<Tensor>"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:167
+msgid "fill_zero"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:173
+msgid "将 Tensor 内存里面的数据全部设置为 0"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:176
+msgid "copy_from"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:182
+msgid ""
+"从 src Tensor 中 copy 数据到自己内存中， **如果 src 和自己的 layout 不相同时，会更改自身 Layout 信息为 "
+"src Layout**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:185
+msgid "share_memory_with"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:191
+msgid ""
+"将会和 src_tensor 共享内存数据， **如果 src_tensor 和自己的 Tensor "
+"信息（layout，device_type，device_id等）不相同时，会更改自身信息为 src 的信息**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:194
+msgid "Network 相关 API"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:199
+msgid "创建 Network"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:206
+msgid "根据用户配置的 Config，以及用户配置的 NetworkIO 信息创建 Network"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:210
+msgid "config：可以不指定，不指定为默认值，Config 结构如下："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:228
+msgid ""
+"bare_model_cryption_name：目前 MegEngine Lite "
+"中写了三种加密算法，分别是：\"AES_default\"，\"RC4_default\" 和 "
+"\"SIMPLE_FAST_RC4_default\""
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:229
+msgid "options 定义了对 Network 进行优化的各种参数："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:257
+msgid ""
+"weight_preprocess：在推理时候，部分 Kernel 执行前需要对权重进行转换，或者 "
+"Relayout，开启这个选项之后，将权重处理放到 Kernel 执行之前，优化 Kernel 执行时间，但是 Network 初始化时间变长"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:258
+msgid "fuse_preprocess：开启该选项之后，模型中的部分前后处理 Operator 将会被融合在一起，优化模型执行的性能"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:259
+msgid ""
+"fake_next_exec：下一次执行 Inference "
+"时候，是否为假的执行：仅仅完成内存分配等和计算无关的操作。这次假的执行完成之后将被设置为 false"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:260
+msgid ""
+"var_sanity_check_first_run：第一次执行 Inference 时候是否需要对每一个 Operator 的输入输出 "
+"Tensor 的正确性进行检查，默认为 true"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:261
+msgid "const_shape：指定 Network 的输入 shape 不会变化，这样不用在后面的执行时检查是否需要重新分配内存等操作"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:262
+msgid ""
+"force_dynamic_alloc：强制要求所有的 Tensor 都是运行时动态分配，且不进行内存优化，MegEngine 默认所有的 "
+"Tensor 都是执行前进行内存优化并静态申请"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:263
+msgid ""
+"force_output_dynamic_alloc：强制最后输出的 Tensor 的内存为动态申请，这样输出 Tensor 不用 copy "
+"到用户的内存中，可以直接代理到返回内存给用户"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:264
+msgid ""
+"force_output_use_user_specified_memory：强制让输出 Tensor 的内存由用户指定，这样输出 Tensor "
+"将不需要 copy 到用户内存，在最后一个 Kernel 计算时就写到了用户的内存地址中"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:265
+msgid ""
+"no_profiling_on_shape_change：当 Network 的输入 Tensor 的 shape 改变的时候，这时候 fast-"
+"run 将不会进行重新搜索最优的 kernel 算法实现"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:266
+msgid ""
+"jit_level：JIT 的级别，设置为 0 时：将关闭 JIT，设置为 1 时：仅仅只开启基本的 elemwise 的 JIT，当设置为 2 "
+"时：将开启 elemwise 和 reduce Operator 的 JIT"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:267
+msgid ""
+"comp_node_seq_record_level：设置 MegEngine 的录制模式，当设置为 0 时：将不开启录制模式，设置为 1 "
+"时：将开启录制模式，不会析构这个计算图结构，当设置为 2 时：将开启录制模式，并释放掉整个计算图"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:268
+msgid ""
+"graph_opt_level：设置图优化等级，当设置为 0 时：关闭图优化，当设置为 1 时：算术计算 inplace 优化，当设置为 2 "
+"时：在 1 的基础上在加上全局优化，当设置为 3 时：在 2 的基础上再使能 JIT"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:269
+msgid "enable_xxxx：开启对应的 layout 转换优化，不同的平台上不同的 layout 性能差异较大，见下表："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:272
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:684
+msgid "参数"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:272
+msgid "作用"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:272
+msgid "适用平台"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:274
+msgid "enable-nchw88"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:274
+msgid "将输入nchw layout的模型转为nchw88 layout的模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:274
+msgid "X86 avx256"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:276
+msgid "enable-nchw44"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:276
+msgid "将输入nchw layout的模型转为nchw44 layout的模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:276
+msgid "Arm float32"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:278
+msgid "enable-nchw44-dot"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:278
+msgid "将输入nchw layout的模型转为nchw44-dot layout的模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:278
+msgid "Arm V8.2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:280
+msgid "enable-nchw4"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:280
+msgid "将输入nchw layout的模型转为nchw4 layout的模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:280
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:282
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:284
+msgid "CUDA"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:282
+msgid "enable-chwn4"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:282
+msgid "将输入nchw layout的模型转为chwn4 layout的模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:284
+msgid "enable-nchw32"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:284
+msgid "将输入nchw layout的模型转为nchw32 layout的模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:286
+msgid "enable-nhwcd4"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:286
+msgid "将输入nchw layout的模型转为nhcw4 layout的模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:286
+msgid "移动平台GPU"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:290
+msgid ""
+"networkio：配置 Network 的输入输出信息，主要配置输入 Tensor 的来源从 CPU 还是 device，输出 Tensor "
+"保存在 CPU 端还是 device 端，默认输入输出都在 CPU 端"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:331
+msgid "load_model"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:340
+msgid ""
+"Network 加载模型，可以从一个指定的路径 **model_path**，或者一段内存 **model_mem** 和其对应的 size "
+"进行加载"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:343
+msgid "获取 Network 基本信息"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:368
+msgid "设置 Network 基本信息"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:383
+msgid "Network 执行"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:389
+msgid "执行该 Network 的推理，并等待推理结束"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:392
+msgid "compute_only_configured_output"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:398
+msgid ""
+"配置模型只计算创建 Network 时候指定的 output tensor，其他 Tensor 不计算，不设置 Network 默认计算所有输出 "
+"Tensor 的值"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:401
+msgid "get_static_memory_alloc_info"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:407
+msgid "获取 Network 运行该 模型时候的内存使用信息，该信息将以 json 文件形式保存在指定的 log_dir 中"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:410
+msgid "enable_profile_performance"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:415
+msgid "测量 Network 运行该模型时候的每个 Op 的耗时信息，该信息将以 json 文件形式保存在指定的 profile_file_path 中"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:420
+msgid "get_model_extra_info"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:426
+msgid ""
+"如果 MegEngine Lite 模型在打包模型时候设置了额外的 information，将通过这个接口获得，返回一段 json "
+"字符串，用户自己解析，如果没有额外"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:426
+msgid "information 否则将返回空字符串"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:429
+msgid "Network Runtime 配置"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:431
+msgid ""
+"模型的一部分配置在创建 Network 时候的 Config 中进行配置，另外 Runtime 相关配置封装在 Runtime 类型中，都是 "
+"Runtime 的静态函数"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:434
+msgid "get/set_cpu_threads_number"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:442
+msgid "获取或者设置 dst_network 运行时候的线程数量，dst_network 必须是运行在 CPU 上面"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:445
+msgid "set_runtime_thread_affinity"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:453
+msgid "设置 dst_network 多线程运行时候，绑核的回调函数"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:456
+msgid "set_cpu_inplace_mode"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:465
+msgid ""
+"获取或者设置 dst_network 运行在 CPU 的 **inplace** 模式，inplace "
+"模式为：运行模型时候只有一个线程，这个线程发送 Kernel 任务的同时，inplace 地将"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:464
+msgid ""
+"kernel 执行计算任务。非 inplace 模式：将有2个线程，一个线程发送 Kernel 任务，一个线程执行 Kernel "
+"任务。在一些单核处理器。 或者低端 cpu 上，设置 **inplace 模式性能会好一些**。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:468
+msgid "use_tensorrt"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:474
+msgid "设置 dst_network 使用 TensorRT 引擎进行推理"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:479
+msgid "set_network_algo_policy"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:487
+msgid "设置 dst_network 模型运行时候选择算法的策略"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:491
+msgid "strategy： 选择算法的策略，MegEngine Lite 中支持以下策略："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:506
+msgid "其中上面的策略在不冲突的情况下，可以进行组合"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:508
+msgid "binary_equal_between_batch： 多个 batch 同时进行计算时，如果输入完全一样，保证所有 batch 的计算结果完全一样"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:509
+msgid ""
+"shared_batch_size：binary_equal_between_batch 的时候，选择最优算法所依据的 batch 大小，设置 0"
+" 将使用模型默认的 batch size"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:512
+msgid "set_network_algo_workspace_limit"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:519
+msgid "设置 dst_network 运行选择算法时候，算法能够允许的最大 workspace，超过最大 workspace 的算法将不会选择"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:522
+msgid "set_memory_allocator"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:530
+msgid "设置 dst_network 运行时，使用用户自定义的内存分配器"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:535
+msgid "share_runtime_memory_with"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:542
+msgid ""
+"设置 dst_network 运行和 src_network 共享运行时候的内存， **这时 dst_network 和 src_network "
+"不能同时执行**， 运行时内存指：除了保存模型 weights 和图结构以外的所有需要的运行时内存"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:548
+msgid "shared_weight_with_network"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:555
+msgid "设置 dst_network 运行和 src_network 共享同一份权重，但是可以对不同的输入数据进行推理，这两个 Network 可以同时运行"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:558
+msgid "enable_io_txt_dump"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:565
+msgid "将 dst_network 运行时候的所有 IO tensor 输出到文本文件 io_txt_out_file 中。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:568
+msgid "enable_io_bin_dump"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:575
+msgid "将 dst_network 运行时候的所有 IO tensor 以二进制的形式保存在 io_bin_out_dir 文件夹中。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:578
+msgid "Global 配置"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:581
+msgid "register_decryption_and_key"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:589
+msgid "向 MegEngine Lite 中注册 decrypt_name 名字的解密算法，该解密算法的方法为 func，秘钥为 key"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:593
+msgid "decrypt_name： 新注册的解密算法的名字，字符串"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:594
+msgid "func：新注册的解密算法的方法，函数指针"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:595
+msgid "key：新注册的解密算法的秘钥，uint8_t 的数组"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:622
+msgid "update_decryption_or_key"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:630
+msgid ""
+"更新 MegEngine Lite 中注册的 decrypt_name 名字的解密算法，如果 func 不为空，则将之前的解密算法的方法更新为 "
+"func， 如果 key 的长度大于0，则将解密算法的秘钥更新为 key"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:647
+msgid "register_parse_info_func"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:654
+msgid "向 MegEngine Lite 中注册 info_type 名字的模型信息解析方法，该模型信息解析方法的执行函数为 parse_func"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:657
+msgid "try_coalesce_all_free_memory"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:663
+msgid "配置 MegEngine Lite 将释放所有没有用到的内存，减少内存用量"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:666
+msgid "set_loader_lib_path"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:672
+msgid "设置使用 loader 对应的库文件路径为 loader_path"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:675
+msgid "set_persistent_cache"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:682
+msgid "设置模型运行时候使用到的算法 cache，设置之后运行模型将直接从 cache 中获取对应算法，或者将选择的算法信息保存到该文件中"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:686
+msgid "cache_path： 这个 fast-run cache 文件"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:687
+msgid "always_sync：是否这个 cache 文件时刻保持同步，如果是则：每次写 cache 都将写到文件中"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:690
+msgid "dump_persistent_cache"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:696
+msgid "将内存中的 fast-run cache 写到 cache_path 中"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:699
+msgid "TensorRT cache"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:706
+msgid "设置或者保存 TensorRT 的 cache 文件"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/cpp.rst:710
+msgid "基本信息"
+msgstr ""
+
