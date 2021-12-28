@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-09 13:28\n"
+"POT-Creation-Date: 2021-12-28 09:14+0000\n"
+"PO-Revision-Date: 2021-12-28 10:06\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -11,22 +11,31 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: en\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.Module.po\n"
 "X-Crowdin-File-ID: 2440\n"
 
-#: ../../source/reference/api/megengine.module.Module.rst:2
-msgid "megengine.module.Module"
+#: ../../source/reference/api/megengine.module.Module.rst:5
+msgid "Module"
 msgstr ""
 
 #: megengine.module.module.Module:1 of
 msgid "Base Module class."
 msgstr ""
 
-#: megengine.module.module.Module of
+#: megengine.module.module.Module megengine.module.module.Module.apply
+#: megengine.module.module.Module.buffers
+#: megengine.module.module.Module.named_buffers
+#: megengine.module.module.Module.named_modules
+#: megengine.module.module.Module.named_parameters
+#: megengine.module.module.Module.named_tensors
+#: megengine.module.module.Module.parameters
+#: megengine.module.module.Module.register_forward_pre_hook
+#: megengine.module.module.Module.tensors megengine.module.module.Module.train
+#: of
 msgid "参数"
 msgstr ""
 
@@ -34,167 +43,225 @@ msgstr ""
 msgid "module's name, can be initialized by the ``kwargs`` parameter of child class."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:15
-msgid "Methods"
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`apply <megengine.module.Module.apply>`\\ \\(fn\\)"
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.apply:1 of
 msgid "Applies function ``fn`` to all the modules within this module, including itself."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`buffers <megengine.module.Module.buffers>`\\ \\(\\[recursive\\]\\)"
+#: megengine.module.module.Module.apply:5 of
+msgid "the function to be applied on modules."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.apply megengine.module.module.Module.buffers
+#: megengine.module.module.Module.children megengine.module.module.Module.eval
+#: megengine.module.module.Module.modules
+#: megengine.module.module.Module.named_buffers
+#: megengine.module.module.Module.named_children
+#: megengine.module.module.Module.named_modules
+#: megengine.module.module.Module.named_parameters
+#: megengine.module.module.Module.named_tensors
+#: megengine.module.module.Module.parameters
+#: megengine.module.module.Module.register_forward_hook
+#: megengine.module.module.Module.register_forward_pre_hook
+#: megengine.module.module.Module.tensors megengine.module.module.Module.train
+#: megengine.module.module.Module.zero_grad of
+msgid "返回类型"
+msgstr ""
+
+#: megengine.module.module.Module.apply:8 megengine.module.module.Module.eval:5
+#: megengine.module.module.Module.train:12
+#: megengine.module.module.Module.zero_grad:6 of
+msgid ":py:obj:`None`"
+msgstr ""
+
+#: megengine.module.module.Module.buffers:1 of
 msgid "Returns an iterable for the buffers of the module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`children <megengine.module.Module.children>`\\ \\(\\*\\*kwargs\\)"
+#: megengine.module.module.Module.buffers:3
+#: megengine.module.module.Module.named_buffers:4 of
+msgid "Buffer is defined to be :class:`~.Tensor` excluding :class:`~.Parameter`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.buffers:6 of
+msgid "if ``True``, returns all buffers within this module, else only returns buffers that are direct attributes"
+msgstr ""
+
+#: megengine.module.module.Module.buffers:10 of
+msgid ":py:class:`~typing.Iterable`\\[:py:class:`~megengine.tensor.Tensor`]"
+msgstr ""
+
+#: megengine.module.module.Module.children:1 of
 msgid "Returns an iterable for all the submodules that are direct attributes of this module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`disable_quantize <megengine.module.Module.disable_quantize>`\\ \\(\\[value\\]\\)"
+#: megengine.module.module.Module.children:5
+#: megengine.module.module.Module.modules:4 of
+msgid ":py:class:`~typing.Iterable`\\[:py:class:`~megengine.module.module.Module`]"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
+#: megengine.module.module.Module.disable_quantize:1 of
+msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``. Could be used as a decorator."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`eval <megengine.module.Module.eval>`\\ \\(\\)"
+#: megengine.module.module.Module.eval:1 of
+msgid "Sets training mode of all the modules within this module (including itself) to ``False``. See :meth:`~.Module.train` for details."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
+#: megengine.module.module.Module.load_state_dict:1 of
+msgid "Loads a given dictionary created by :func:`state_dict` into this module. If ``strict`` is ``True``, the keys of :func:`state_dict` must exactly match the keys returned by :func:`state_dict`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`forward <megengine.module.Module.forward>`\\ \\(inputs\\)"
+#: megengine.module.module.Module.load_state_dict:5 of
+msgid "Users can also pass a closure: ``Function[key: str, var: Tensor] -> Optional[np.ndarray]`` as a `state_dict`, in order to handle complex situations. For example, load everything except for the final linear classifier:"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`load_state_dict <megengine.module.Module.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
+#: megengine.module.module.Module.load_state_dict:17 of
+msgid "Here returning ``None`` means skipping parameter ``k``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid "Loads a given dictionary created by :func:`state_dict` into this module."
+#: megengine.module.module.Module.load_state_dict:19 of
+msgid "To prevent shape mismatch (e.g. load PyTorch weights), we can reshape before loading:"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`modules <megengine.module.Module.modules>`\\ \\(\\*\\*kwargs\\)"
+#: megengine.module.module.Module.load_state_dict:28 of
+msgid "We can also perform inplace re-initialization or pruning:"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.modules:1 of
 msgid "Returns an iterable for all the modules within this module, including itself."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`named_buffers <megengine.module.Module.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.named_buffers:1 of
 msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`named_children <megengine.module.Module.named_children>`\\ \\(\\*\\*kwargs\\)"
+#: megengine.module.module.Module.named_buffers:7
+#: megengine.module.module.Module.named_parameters:5
+#: megengine.module.module.Module.named_tensors:5 of
+msgid "prefix prepended to the keys."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.named_buffers:9 of
+msgid "if ``True``, returns all buffers within this module, else only returns buffers that are direct attributes of this module."
+msgstr ""
+
+#: megengine.module.module.Module.named_buffers:12 of
+msgid "Optional[str]:"
+msgstr ""
+
+#: megengine.module.module.Module.named_buffers:15
+#: megengine.module.module.Module.named_tensors:12 of
+msgid ":py:class:`~typing.Iterable`\\[:py:data:`~typing.Tuple`\\[:py:class:`str`, :py:class:`~megengine.tensor.Tensor`]]"
+msgstr ""
+
+#: megengine.module.module.Module.named_children:1 of
 msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`named_modules <megengine.module.Module.named_modules>`\\ \\(\\[prefix\\]\\)"
+#: megengine.module.module.Module.named_children:6
+#: megengine.module.module.Module.named_modules:9 of
+msgid ":py:class:`~typing.Iterable`\\[:py:data:`~typing.Tuple`\\[:py:class:`str`, :py:class:`~megengine.module.module.Module`]]"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.named_modules:1 of
 msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`named_parameters <megengine.module.Module.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
+#: megengine.module.module.Module.named_modules:6 of
+msgid "prefix prepended to the path."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.named_parameters:1 of
 msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`named_tensors <megengine.module.Module.named_tensors>`\\ \\(\\[prefix\\, recursive\\]\\)"
+#: megengine.module.module.Module.named_parameters:7 of
+msgid "if ``True``, returns all :class:`~.Parameter` within this module, else only returns :class:`~.Parameter` that are direct attributes of this module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.named_parameters:12 of
+msgid ":py:class:`~typing.Iterable`\\[:py:data:`~typing.Tuple`\\[:py:class:`str`, :py:class:`~megengine.tensor.Parameter`]]"
+msgstr ""
+
+#: megengine.module.module.Module.named_tensors:1 of
 msgid "Returns an iterable for key tensor pairs of the module, where ``key`` is the dotted path from this module to the tensor."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`parameters <megengine.module.Module.parameters>`\\ \\(\\[recursive\\]\\)"
+#: megengine.module.module.Module.named_tensors:7 of
+msgid "if ``True``, returns all tensors within this module, else only returns tensors that are direct attributes of this module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.parameters:1 of
 msgid "Returns an iterable for the :class:`~.Parameter` of the module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`register_forward_hook <megengine.module.Module.register_forward_hook>`\\ \\(hook\\)"
+#: megengine.module.module.Module.parameters:4 of
+msgid "If ``True``, returns all :class:`~.Parameter` within this module, else only returns :class:`~.Parameter` that are direct attributes of this module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid "Registers a hook to handle forward results."
+#: megengine.module.module.Module.parameters:9
+#: megengine.module.module.Module.tensors:9 of
+msgid ":py:class:`~typing.Iterable`\\[:py:class:`~megengine.tensor.Parameter`]"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`register_forward_pre_hook <megengine.module.Module.register_forward_pre_hook>`\\ \\(hook\\)"
+#: megengine.module.module.Module.register_forward_hook:1 of
+msgid "Registers a hook to handle forward results. `hook` should be a function that receive `module`, `inputs` and `outputs`, then return a modified `outputs` or `None`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid "Registers a hook to handle forward inputs."
+#: megengine.module.module.Module.register_forward_hook:4 of
+msgid "This method return a handler with :meth:`~.HookHandler.remove` interface to delete the hook."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`replace_param <megengine.module.Module.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
+#: megengine.module.module.Module.register_forward_hook:7
+#: megengine.module.module.Module.register_forward_pre_hook:7 of
+msgid ":py:class:`~megengine.utils.hook.HookHandler`"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.register_forward_pre_hook:1 of
+msgid "Registers a hook to handle forward inputs. `hook` should be a function."
+msgstr ""
+
+#: megengine.module.module.Module.register_forward_pre_hook:4 of
+msgid "a function that receive `module` and `inputs`, then return a modified `inputs` or `None`."
+msgstr ""
+
+#: megengine.module.module.Module.register_forward_pre_hook of
+msgid "返回"
+msgstr ""
+
+#: megengine.module.module.Module.register_forward_pre_hook:8 of
+msgid "a handler with :meth:`~.HookHandler.remove` interface to delete the hook."
+msgstr ""
+
+#: megengine.module.module.Module.replace_param:2 of
 msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`state_dict <megengine.module.Module.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+#: megengine.module.module.Module.replace_param:2 of
+msgid "speedup multimachine training."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`tensors <megengine.module.Module.tensors>`\\ \\(\\[recursive\\]\\)"
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.tensors:1 of
 msgid "Returns an iterable for the :class:`~.Tensor` of the module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`train <megengine.module.Module.train>`\\ \\(\\[mode\\, recursive\\]\\)"
+#: megengine.module.module.Module.tensors:4 of
+msgid "If ``True``, returns all :class:`~.Tensor` within this module, else only returns :class:`~.Tensor` that are direct attributes of this module."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
+#: megengine.module.module.Module.train:1 of
+msgid "Sets training mode of all the modules within this module (including itself) to ``mode``. This effectively sets the ``training`` attributes of those modules to ``mode``, but only has effect on certain modules (e.g. :class:`~.BatchNorm2d`, :class:`~.Dropout`, :class:`~.Observer`)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
-msgid ":obj:`zero_grad <megengine.module.Module.zero_grad>`\\ \\(\\)"
+#: megengine.module.module.Module.train:7 of
+msgid "the training mode to be set on modules."
 msgstr ""
 
-#: ../../source/reference/api/megengine.module.Module.rst:81:<autosummary>:1
+#: megengine.module.module.Module.train:9 of
+msgid "whether to recursively call submodules' ``train()``."
+msgstr ""
+
+#: megengine.module.module.Module.zero_grad:1 of
 msgid "Sets all parameters' grads to zero"
 msgstr ""
 
@@ -209,4 +276,149 @@ msgstr ""
 
 #~ msgid "module's name, can be initialized by the ``kwargs`` parameter"
 #~ msgstr "模块名称，子类的 ``kwargs`` 将会保存和传递此关键字参数。"
+
+#~ msgid "megengine.module.Module"
+#~ msgstr "megengine.module.Module"
+
+#~ msgid "Methods"
+#~ msgstr "方法"
+
+#~ msgid ":obj:`apply <megengine.module.Module.apply>`\\ \\(fn\\)"
+#~ msgstr ":obj:`apply <megengine.module.Module.apply>`\\ \\(fn\\)"
+
+#~ msgid ""
+#~ ":obj:`buffers <megengine.module.Module.buffers>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+#~ msgstr ""
+#~ ":obj:`buffers <megengine.module.Module.buffers>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+
+#~ msgid ":obj:`children <megengine.module.Module.children>`\\ \\(\\*\\*kwargs\\)"
+#~ msgstr ":obj:`children <megengine.module.Module.children>`\\ \\(\\*\\*kwargs\\)"
+
+#~ msgid ""
+#~ ":obj:`disable_quantize "
+#~ "<megengine.module.Module.disable_quantize>`\\ \\(\\[value\\]\\)"
+#~ msgstr ""
+#~ ":obj:`disable_quantize "
+#~ "<megengine.module.Module.disable_quantize>`\\ \\(\\[value\\]\\)"
+
+#~ msgid ":obj:`eval <megengine.module.Module.eval>`\\ \\(\\)"
+#~ msgstr ":obj:`eval <megengine.module.Module.eval>`\\ \\(\\)"
+
+#~ msgid ":obj:`forward <megengine.module.Module.forward>`\\ \\(inputs\\)"
+#~ msgstr ":obj:`forward <megengine.module.Module.forward>`\\ \\(inputs\\)"
+
+#~ msgid ""
+#~ ":obj:`load_state_dict "
+#~ "<megengine.module.Module.load_state_dict>`\\ "
+#~ "\\(state\\_dict\\[\\, strict\\]\\)"
+#~ msgstr ""
+#~ ":obj:`load_state_dict "
+#~ "<megengine.module.Module.load_state_dict>`\\ "
+#~ "\\(state\\_dict\\[\\, strict\\]\\)"
+
+#~ msgid ""
+#~ "Loads a given dictionary created by "
+#~ ":func:`state_dict` into this module."
+#~ msgstr "加载一个参数字典，这个字典通常使用 :func:`state_dict` 得到。"
+
+#~ msgid ":obj:`modules <megengine.module.Module.modules>`\\ \\(\\*\\*kwargs\\)"
+#~ msgstr ":obj:`modules <megengine.module.Module.modules>`\\ \\(\\*\\*kwargs\\)"
+
+#~ msgid ""
+#~ ":obj:`named_buffers <megengine.module.Module.named_buffers>`\\"
+#~ " \\(\\[prefix\\, recursive\\]\\)"
+#~ msgstr ""
+#~ ":obj:`named_buffers <megengine.module.Module.named_buffers>`\\"
+#~ " \\(\\[prefix\\, recursive\\]\\)"
+
+#~ msgid ""
+#~ ":obj:`named_children <megengine.module.Module.named_children>`\\"
+#~ " \\(\\*\\*kwargs\\)"
+#~ msgstr ""
+#~ ":obj:`named_children <megengine.module.Module.named_children>`\\"
+#~ " \\(\\*\\*kwargs\\)"
+
+#~ msgid ""
+#~ ":obj:`named_modules <megengine.module.Module.named_modules>`\\"
+#~ " \\(\\[prefix\\]\\)"
+#~ msgstr ""
+#~ ":obj:`named_modules <megengine.module.Module.named_modules>`\\"
+#~ " \\(\\[prefix\\]\\)"
+
+#~ msgid ""
+#~ ":obj:`named_parameters "
+#~ "<megengine.module.Module.named_parameters>`\\ \\(\\[prefix\\,"
+#~ " recursive\\]\\)"
+#~ msgstr ""
+#~ ":obj:`named_parameters "
+#~ "<megengine.module.Module.named_parameters>`\\ \\(\\[prefix\\,"
+#~ " recursive\\]\\)"
+
+#~ msgid ""
+#~ ":obj:`named_tensors <megengine.module.Module.named_tensors>`\\"
+#~ " \\(\\[prefix\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`parameters <megengine.module.Module.parameters>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+#~ msgstr ""
+#~ ":obj:`parameters <megengine.module.Module.parameters>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+
+#~ msgid ""
+#~ ":obj:`register_forward_hook "
+#~ "<megengine.module.Module.register_forward_hook>`\\ \\(hook\\)"
+#~ msgstr ""
+#~ ":obj:`register_forward_hook "
+#~ "<megengine.module.Module.register_forward_hook>`\\ \\(hook\\)"
+
+#~ msgid "Registers a hook to handle forward results."
+#~ msgstr "给模块输出注册一个回调函数。"
+
+#~ msgid ""
+#~ ":obj:`register_forward_pre_hook "
+#~ "<megengine.module.Module.register_forward_pre_hook>`\\ "
+#~ "\\(hook\\)"
+#~ msgstr ""
+#~ ":obj:`register_forward_pre_hook "
+#~ "<megengine.module.Module.register_forward_pre_hook>`\\ "
+#~ "\\(hook\\)"
+
+#~ msgid ""
+#~ ":obj:`replace_param <megengine.module.Module.replace_param>`\\"
+#~ " \\(params\\, start\\_pos\\[\\, seen\\]\\)"
+#~ msgstr ""
+#~ ":obj:`replace_param <megengine.module.Module.replace_param>`\\"
+#~ " \\(params\\, start\\_pos\\[\\, seen\\]\\)"
+
+#~ msgid ""
+#~ ":obj:`state_dict <megengine.module.Module.state_dict>`\\ "
+#~ "\\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+#~ msgstr ""
+#~ ":obj:`state_dict <megengine.module.Module.state_dict>`\\ "
+#~ "\\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+
+#~ msgid ""
+#~ ":obj:`tensors <megengine.module.Module.tensors>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`train <megengine.module.Module.train>`\\ "
+#~ "\\(\\[mode\\, recursive\\]\\)"
+#~ msgstr ""
+#~ ":obj:`train <megengine.module.Module.train>`\\ "
+#~ "\\(\\[mode\\, recursive\\]\\)"
+
+#~ msgid ""
+#~ "Sets training mode of all the "
+#~ "modules within this module (including "
+#~ "itself) to ``mode``."
+#~ msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``mode``。"
+
+#~ msgid ":obj:`zero_grad <megengine.module.Module.zero_grad>`\\ \\(\\)"
+#~ msgstr ":obj:`zero_grad <megengine.module.Module.zero_grad>`\\ \\(\\)"
 
