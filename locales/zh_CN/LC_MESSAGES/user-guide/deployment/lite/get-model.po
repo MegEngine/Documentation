@@ -1,43 +1,37 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2021, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.7\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-12-29 01:33\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/lite/get-model.po\n"
+"X-Crowdin-File-ID: 8379\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:5
 msgid "获得用于 MegEngine Lite 推理的模型"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:6
-msgid ""
-"MegEngine 训练时候使用的动态图进行训练，当模型训练完成之后，需要将动态图转化为静态图，才能在 MegEngine Lite "
-"中进行推理。目前有两种方法可以从 训练的模型转换到推理模型："
+msgid "MegEngine 训练时候使用的动态图进行训练，当模型训练完成之后，需要将动态图转化为静态图，才能在 MegEngine Lite 中进行推理。目前有两种方法可以从 训练的模型转换到推理模型："
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:9
-msgid ""
-"使用 trace_module 方式：通过 MegEngine 的 :ref:`Traced Module <traced_module-"
-"guide>` 将动态图转换为 traced_module IR，在这个 IR 基础上可以进行图手术等，参考 :ref"
-":`graphsurgeon-example`，最后再转化为可以在 MegEngine Lite 上运行的静态图模型。"
+msgid "使用 trace_module 方式：通过 MegEngine 的 :ref:`Traced Module <traced_module-guide>` 将动态图转换为 traced_module IR，在这个 IR 基础上可以进行图手术等，参考 :ref:`graphsurgeon-example`，最后再转化为可以在 MegEngine Lite 上运行的静态图模型。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:10
-msgid ""
-"直接 dump 方式：通过使用 MegEngine 的 :class:`~.jit.trace` 和 :meth:`~.trace.dump` "
-"功能将动态图转为静态图。"
+msgid "直接 dump 方式：通过使用 MegEngine 的 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 功能将动态图转为静态图。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:12
@@ -49,10 +43,7 @@ msgid "使用 trace_module 方式"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:27
-msgid ""
-"参考 :ref:`quick-start` ，下面是对 `模型中心 <https://megengine.org.cn/model-hub>`_ "
-"已经训练好的 resnet18 转换为 trace_module ，然后再 dump 成为 MegEngine Lite "
-"可以加载的静态模型的示例。"
+msgid "参考 :ref:`quick-start` ，下面是对 `模型中心 <https://megengine.org.cn/model-hub>`_ 已经训练好的 resnet18 转换为 trace_module ，然后再 dump 成为 MegEngine Lite 可以加载的静态模型的示例。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:57
@@ -60,30 +51,19 @@ msgid "上面代码完成了如下步骤："
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:59
-msgid ""
-"首先通过从 MegEngine 的 `模型中心 <https://megengine.org.cn/model-hub>`_ 下载了 "
-"``resnet18`` 的预训练模型， **用户可以用自己预训练的模型代替** 。"
+msgid "首先通过从 MegEngine 的 `模型中心 <https://megengine.org.cn/model-hub>`_ 下载了 ``resnet18`` 的预训练模型， **用户可以用自己预训练的模型代替** 。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:60
-msgid ""
-"将 resnet18 转换为 ``trace_module`` 的模型 ``traced_resnet``，用户可以在 "
-"``traced_resnet`` 中做一些图手术以及模型转换，图手术参考 :ref:`graphsurgeon-example`，模型转换参考 "
-"`mgeconvert <https://github.com/megengine/mgeconvert>`_ ， "
-"**上面的示例没有做任何图手术和模型转换** 。"
+msgid "将 resnet18 转换为 ``trace_module`` 的模型 ``traced_resnet``，用户可以在 ``traced_resnet`` 中做一些图手术以及模型转换，图手术参考 :ref:`graphsurgeon-example`，模型转换参考 `mgeconvert <https://github.com/megengine/mgeconvert>`_ ， **上面的示例没有做任何图手术和模型转换** 。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:61
-msgid ""
-"将 ``traced_resnet`` 通过 :class:`~.jit.trace` 和 :meth:`~.trace.dump` "
-"将模型序列化到文件 ``resnet18.mge`` 中。"
+msgid "将 ``traced_resnet`` 通过 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 将模型序列化到文件 ``resnet18.mge`` 中。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:65
-msgid ""
-"如果需要 dump 自己的模型而不是 `模型中心 <https://megengine.org.cn/model-hub>`_ "
-"的模型，这时候可以通过 MegEngine 中 :ref:`serialization-guide` "
-"来加载和序列化已经训练好的模型，然后替换上面的 ``resnet`` 即可。"
+msgid "如果需要 dump 自己的模型而不是 `模型中心 <https://megengine.org.cn/model-hub>`_ 的模型，这时候可以通过 MegEngine 中 :ref:`serialization-guide` 来加载和序列化已经训练好的模型，然后替换上面的 ``resnet`` 即可。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:69
@@ -91,22 +71,14 @@ msgid "直接 dump 的方式"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:70
-msgid ""
-"直接 dump 过程比上面使用 ``trace_module`` 方式仅仅少了转换为 trace_module "
-"的过程，省掉这个过程，将牺牲掉对模型做图手术和模型转换的能力，参考下面的示例。"
+msgid "直接 dump 过程比上面使用 ``trace_module`` 方式仅仅少了转换为 trace_module 的过程，省掉这个过程，将牺牲掉对模型做图手术和模型转换的能力，参考下面的示例。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:96
-msgid ""
-"上面代码将从 `模型中心 <https://megengine.org.cn/model-hub>`_ 下载 "
-"``shufflenet_v2_x1_0`` 模型并 进行 :class:`~.jit.trace` 和 :meth:`~.trace.dump`"
-" 完成从动态图模型到静态图模型装换。"
+msgid "上面代码将从 `模型中心 <https://megengine.org.cn/model-hub>`_ 下载 ``shufflenet_v2_x1_0`` 模型并 进行 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 完成从动态图模型到静态图模型装换。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:101
-msgid ""
-"同样如果需要 dump 自己的模型而不是 `模型中心 <https://megengine.org.cn/model-hub>`_ "
-"的模型，这时可以通过 MegEngine 中 :ref:`serialization-guide` 来加载已经训练好的模型，或者使用 "
-":ref:`Traced Module <traced_module-guide>` 中的方法得到模型，然后替换上面的 ``net`` 即可。"
+msgid "同样如果需要 dump 自己的模型而不是 `模型中心 <https://megengine.org.cn/model-hub>`_ 的模型，这时可以通过 MegEngine 中 :ref:`serialization-guide` 来加载已经训练好的模型，或者使用 :ref:`Traced Module <traced_module-guide>` 中的方法得到模型，然后替换上面的 ``net`` 即可。"
 msgstr ""
 
