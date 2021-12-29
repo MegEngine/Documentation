@@ -10,6 +10,8 @@ MegEngine Lite 中的内存拷贝优化主要指输入输出 Tensor 内存拷贝
 
 * 输入输出零拷贝：希望模型的推理结果保存在用户提供的内存中，避免将数据保存在 MegEngine 自己申请的内存中，然后再将内存拷贝到用户指定的内存中。
 
+.. _device-io-optimize:
+
 Device IO 优化
 -----------------------
 
@@ -64,22 +66,22 @@ MegEngine Lite 支持模型的输入输出配置，用户可以根据实际情�
     # construct LiteOption
     net_config = LiteConfig(device_type=LiteDeviceType.LITE_CUDA)
  
-    # constuct LiteIO, is_host=False means the input tensor will use device memory
-    ios = LiteNetworkIO()
     # set the input tensor "data" memory is not in host, but in device
-    ios.add_input(LiteIO("data", is_host=False))
+    io_input = LiteIO("data", is_host=False)
     # set the output tensor "TRUE_DIV" memory is in device
-    ios.add_output(LiteIO("TRUE_DIV", is_host=False))
+    io_output = LiteIO("TRUE_DIV", is_host=False)
+    # constuct LiteIO with LiteIO
+    ios = LiteNetworkIO(inputs=[io_input], outputs=[io_output])
  
     network = LiteNetwork(config=net_config, io=ios)
     network.load(model_path)
 
+    dev_input_tensor = network.get_io_tensor("data") 
     # read input to input_data
-    dev_input_data = LiteTensor(layout=input_layout, device_type=LiteDeviceType.LITE_CUDA)
+    dev_input_data = LiteTensor(layout=dev_input_tensor.layout, device_type=LiteDeviceType.LITE_CUDA)
     # fill dev_input_data with device memory
     #......
 
-    dev_input_tensor = network.get_io_tensor("data") 
     # set device input data to input_tensor of the network without copy
     dev_input_tensor.share_memory_with(dev_input_data)
 
@@ -119,20 +121,21 @@ MegEngine Lite 支持模型的输入输出配置，用户可以根据实际情�
 Network 的 IO 中 input 名字为 "data" 和 output 名字为 "TRUE_DIV" 的 IO 的 is_host 属性为 false，host 默认指 CPU 端，
 为 flase 则表述输入或者输出的内存为设备端。
 
-输入输出零拷贝
+输入输出拷贝优化
 -----------------------
 
-输入输出零拷贝，指用户的输入数据可以不用拷贝到 MegEngine Lite 中，模型推理完成的输出数据可以直接写到用户指定的内存中，
-减少将输出数据拷贝到用户的内存中的过程，用户的内存 MegEngine Lite 不会进行管理，用户需要确保 **内存的生命周期大于模型推理的生命周期**。
+.. _device-io-memcopy-optimize:
 
-.. warning::
+Device 上输入输出优化
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    force_output_use_user_specified_memory 参数目前只在 CPU 测试通过使用，其他设备上没有充分的进行测试。
+Device 上进行模型推理除了 :ref:`device-io-optimize` 的情况外，都需要将输入从 CPU 拷贝到 Device 上，然后执行模型推理，执行完成之后，将
+输出数据拷贝到 CPU 上，这是在 Device 上执行推理不可缺少的情况，(除了 :ref:`device-io-optimize` )。但是我们可以优化输入从真实数据拷贝
+到模型的 CPU 输入数据和输出从 CPU 再拷贝到用户指定的内存中这些内存拷贝操作。
 
 .. code-block:: cpp
 
     Config config;
-    config.options.force_output_use_user_specified_memory = true;
     std::string model_path = ...;
     std::string input_name = "data";
     std::string output_name = "TRUE_DIV";
@@ -153,12 +156,57 @@ Network 的 IO 中 input 名字为 "data" 和 output 名字为 "TRUE_DIV" 的 IO
 
     network->forward();
     network->wait();
+
+    delete src_ptr;
+    delete out_data;
+
+.. code-block:: python
+
+    from megenginelite import *
+    import numpy as np
+    import os
+
+    model_path = "./shufflenet.mge"
+    # construct LiteOption
+    net_config = LiteConfig()
+
+    network = LiteNetwork(config=net_config)
+    network.load(model_path)
+
+    input_tensor = network.get_io_tensor("data")
+    # read input to input_data
+    input_data = LiteTensor(layout=input_tensor.layout)
+    # fill input_data with device data
+
+    # set device input data to input_tensor of the network without copy
+    input_tensor.share_memory_with(input_data)
+
+    output_tensor = network.get_io_tensor(network.get_output_name(0))
+    out_array = np.zeros(output_tensor.layout.shapes, output_tensor.layout.dtype)
+
+    output_tensor.set_data_by_share(out_array)
+
+    # inference
+    network.forward()
+    network.wait()
+
+    print('output max={}, sum={}'.format(out_array.max(), out_array.sum()))
+
+该优化主要是使用 LiteTensor 的 reset 或者 memory share 的接口，将用户的内存共享到 Network 中的输入输出 LiteTensor 中。
+
+CPU 上输入输出零拷贝
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+输入输出零拷贝，指用户的输入数据可以不用拷贝到 MegEngine Lite 中，模型推理完成的输出数据可以直接写到用户指定的内存中，
+减少将输出数据拷贝到用户的内存中的过程，用户的内存 MegEngine Lite 不会进行管理，用户需要确保 **内存的生命周期大于模型推理的生命周期**。
   
-实现这个功能主要为两步：
+实现这个功能主要将上面 :ref:`device-io-memcopy-optimize` 优化中配置 network 时，使能 force_output_use_user_specified_memory 选项：
 
 * 设置 force_output_use_user_specified_memory 为 True。
 * 模型运行之前通过 LiteTensor 的 reset 接口设置设置自己管理的内存到输入输出 Tensor 中，在 python 中可以调用 set_data_by_share 达到相同的功能。
 
 .. warning::
 
-    使用 force_output_use_user_specified_memory 这个参数时，只能获取模型计算的输出 Tensor 的结果，获取中间 Tensor 的计算结果是不被允许的。
+    * 使用 force_output_use_user_specified_memory 这个参数时，只能获取模型计算的输出 Tensor 的结果，获取中间 Tensor 的计算结果是不被允许的。
+    * 模型必须是静态模型，输出 LiteTensor 的 layout 需要在模型载入之后就能够被推导出来。
+    * force_output_use_user_specified_memory 参数目前只在 CPU 使用，其他 Device 上不能使用。

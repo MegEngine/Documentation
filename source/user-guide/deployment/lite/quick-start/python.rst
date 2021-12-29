@@ -97,9 +97,8 @@ MegEngine Lite Python 部署模型快速上手
       net_config = LiteConfig(device_type=LiteDeviceType.LITE_CUDA)
 
       # constuct LiteIO, is_host=False means the input tensor will use device memory
-      ios = LiteNetworkIO()
-      # set the input tensor "data" memory is not in host, but in device
-      ios.add_input(LiteIO("data", is_host=False))
+      # set the input tensor "data" memory is not from host, but from device
+      ios = LiteNetworkIO(inputs=[["data", is_host=False]])
 
       network = LiteNetwork(config=net_config, io=ios)
       network.load(model_path)
