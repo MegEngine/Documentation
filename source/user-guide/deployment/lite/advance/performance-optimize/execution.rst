@@ -50,12 +50,11 @@ MegEngine Lite 中有多个关于模型执行效率优化的选项，在追求�
 
 .. code-block:: python
 
-    option = LiteOptions()
+    config = LiteConfig()
     # 1. config the network here
-    option.weight_preprocess = 1
-    option.xxxxx = ...
+    config.options.weight_preprocess = 1
+    config.options.xxxxx = ...
 
-    config = LiteConfig(option=option)
     network = LiteNetwork(config=config)
     network.load(self.model_path)
 
