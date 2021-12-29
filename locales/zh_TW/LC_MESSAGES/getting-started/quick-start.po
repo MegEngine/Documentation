@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 00:55\n"
+"POT-Creation-Date: 2021-12-28 09:14+0000\n"
+"PO-Revision-Date: 2021-12-29 01:33\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,192 +11,220 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/quick-start.po\n"
 "X-Crowdin-File-ID: 2838\n"
 
-#: ../../source/getting-started/quick-start.ipynb:9
-msgid "MegEngine 10 分钟快速上手"
-msgstr "crwdns64086:0crwdne64086:0"
+#: ../../source/getting-started/quick-start.rst:5
+msgid "MegEngine 快速上手"
+msgstr "crwdns88507:0crwdne88507:0"
 
-#: ../../source/getting-started/quick-start.ipynb:21
-msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/5424>`__"
-msgstr "crwdns47882:0crwdne47882:0"
+#: ../../source/getting-started/quick-start.rst:9
+msgid "本教程假设读者具有最基础的 Python 代码编程经验，以及了解 “深度学习” 基本概念；"
+msgstr "crwdns88509:0crwdne88509:0"
 
-#: ../../source/getting-started/quick-start.ipynb:31
-msgid "image0"
-msgstr "crwdns47968:0crwdne47968:0"
+#: ../../source/getting-started/quick-start.rst:10
+msgid "在进行下面的步骤之前，请确认你已经按照 :ref:`install` 页面的指示安装好 MegEngine."
+msgstr "crwdns88511:0:ref:crwdne88511:0"
 
-#: ../../source/getting-started/quick-start.ipynb:21
-msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/quick-start.ipynb>`__"
-msgstr "crwdns47884:0crwdne47884:0"
+#: ../../source/getting-started/quick-start.rst:17
+msgid "本教程的对应源码： :docs:`examples/quick-start.py`"
+msgstr "crwdns88513:0:docs:crwdne88513:0"
 
-#: ../../source/getting-started/quick-start.ipynb:32
-msgid "image1"
-msgstr "crwdns47970:0crwdne47970:0"
+#: ../../source/getting-started/quick-start.rst:20
+msgid "概览"
+msgstr "crwdns88515:0crwdne88515:0"
 
-#: ../../source/getting-started/quick-start.ipynb:25
-msgid "本教程假定你具备一定的 Python 编程基础，并了解深度学习的基础概念。"
-msgstr "crwdns64088:0crwdne64088:0"
+#: ../../source/getting-started/quick-start.rst:22
+msgid "这份快速上手教程将引导你：1. 使用 MegEngine 框架开发出经典的 LeNet 神经网络模型； 2. 使用它在 MNIST 手写数字数据集上完成训练和测试；3. 将模型用于实际的手写数字分类任务。"
+msgstr "crwdns88517:0crwdne88517:0"
 
-#: ../../source/getting-started/quick-start.ipynb:27
-msgid "我们将向你介绍使用 MegEngine 实现的完整的机器学习工作流程，以便你快速地熟悉 MegEngine 常见 `Python API <https://megengine.org.cn/doc/stable/zh/reference/index.html>`__ 的使用方式。"
-msgstr "crwdns47856:0crwdne47856:0"
+#: ../../source/getting-started/quick-start.rst:25
+msgid "在最开始，我们会对 MNIST 数据集有一个最基本的了解，并尝试使用 MegEngine 中的 :mod:`~.data` 模块完成 MNIST 数据集的获取和预处理，将其划分成训练数据集和测试数据集； 同时你还会准备好相应的 :class:`~.DataLoader`, 负责在后续训练和测试模型时完成数据供给。 紧接着你会用 :mod:`~.functional` 和 :mod:`~.module` 模块设计好 LeNet 模型结构。 接下来的步骤也很简单，对模型进行训练！训练的过程中我们需要用到 :mod:`~.autodiff` 模块和 :mod:`~.optimizer` 模块，前者在训练的过程中会记录梯度信息， 后者负责根据梯度信息对模型中的参数进行更新，以达到优化的目的。 最终，我们会对训练好的模型进行测试，你也可以用自己的手写数字样本来试试效果~"
+msgstr "crwdns88519:0:mod:crwdnd88519:0:class:crwdnd88519:0:mod:crwdnd88519:0:mod:crwdnd88519:0:mod:crwdnd88519:0:mod:crwdne88519:0"
 
-#: ../../source/getting-started/quick-start.ipynb:29
-msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
-msgstr "crwdns67819:0crwdne67819:0"
+#: ../../source/getting-started/quick-start.rst:34
+msgid "注意：本教程的目的是为 MegEngine 初见用户展示框架最基本的使用流程， 因此不会对每个步骤以及背后的原理进行非常详细的解释，也不会展现出 MegEngine 的全部特性。 如果你对整个深度学习的流程不是很清楚，不用担心，可以尝试跑通这个教程，最后会有进一步的指引。"
+msgstr "crwdns88521:0crwdne88521:0"
 
-#: ../../source/getting-started/quick-start.ipynb:74
-msgid "接下来我们将通过 MNIST 手写数字识别的案例帮助你快速上手 MegEngine 的使用。"
-msgstr "crwdns47858:0crwdne47858:0"
+#: ../../source/getting-started/quick-start.rst:39
+msgid "数据加载和预处理"
+msgstr "crwdns88523:0crwdne88523:0"
 
-#: ../../source/getting-started/quick-start.ipynb:77
-msgid "数据的加载和预处理"
-msgstr "crwdns44332:0crwdne44332:0"
+#: ../../source/getting-started/quick-start.rst:41
+msgid "数据集介绍"
+msgstr "crwdns88525:0crwdne88525:0"
 
-#: ../../source/getting-started/quick-start.ipynb:79
-msgid "数据的加载和预处理往往会耗费大量的精力， MegEngine 提供了一系列接口来规范化这些处理工作："
-msgstr "crwdns44334:0crwdne44334:0"
+#: ../../source/getting-started/quick-start.rst:43
+msgid "`MNIST <http://yann.lecun.com/exdb/mnist/>`_ :footcite:p:`lecun2010mnist` 手写数字数据集中包含 60,000 张训练图像和 10,000 张测试图像，每张图片是 28x28 像素的灰度图。 如今 MNIST 已然成为机器学习领域的 “Hello, world!”, 用来验证框架和库的可用性。"
+msgstr "crwdns88527:0crwdne88527:0"
 
-#: ../../source/getting-started/quick-start.ipynb:81
-msgid "`megengine.data.dataset.Dataset <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.data.dataset.Dataset.html>`__ 是 MegEngine 中表示数据集的抽象类，存储样本和相应的标签；"
-msgstr "crwdns44336:0crwdne44336:0"
+#: ../../source/getting-started/quick-start.rst:49
+msgid "By `Josef Steppan - Own work <https://commons.wikimedia.org/w/index.php?curid=64810040>`_ , CC BY-SA 4.0"
+msgstr "crwdns88529:0crwdne88529:0"
 
-#: ../../source/getting-started/quick-start.ipynb:82
-msgid "`megengine.data.DataLoader <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.data.DataLoader.html>`__ 负责根据传入的 ``Dataset`` 等参数生成一个可迭代的对象。"
-msgstr "crwdns44338:0crwdne44338:0"
+#: ../../source/getting-started/quick-start.rst:52
+msgid "获取 MNIST 数据集"
+msgstr "crwdns88531:0crwdne88531:0"
 
-#: ../../source/getting-started/quick-start.ipynb:84
-msgid "在 `megengine.data.dataset <https://megengine.org.cn/doc/stable/zh/reference/data.html#dataset>`__ 模块中为用户提供了非常多经典的数据集，比如本次教程中用到的 `MNIST <http://yann.lecun.com/exdb/mnist/>`__ 数据集。"
-msgstr "crwdns68239:0crwdne68239:0"
+#: ../../source/getting-started/quick-start.rst:54
+msgid "在 MegEngine 中可以 :ref:`megengine-dataset` 来获取 MNIST 数据集："
+msgstr "crwdns88533:0:ref:crwdne88533:0"
 
-#: ../../source/getting-started/quick-start.ipynb:86
-msgid "注：这一步如果是在国内网络下进行，可能会出现有的压缩包下载失败的情况，这种情况下有两种解决方案："
-msgstr "crwdns68241:0crwdne68241:0"
+#: ../../source/getting-started/quick-start.rst:67
+msgid "调用 MegEngine 中的 :class:`~.MNIST` 接口将从 MNIST 官网下载数据集，MegEngine 不提供镜像或加速服务。 本质上可以看作是运行了一份单独的 MNIST 数据集获取与处理脚本（你也可以自己编写脚本来搞定这件事）。"
+msgstr "crwdns88535:0:class:crwdne88535:0"
 
-#: ../../source/getting-started/quick-start.ipynb:88
-msgid "1.反复运行这段代码几次。"
-msgstr "crwdns68243:0crwdne68243:0"
+#: ../../source/getting-started/quick-start.rst:70
+msgid "在 `MegStudio <https://studio.brainpp.com/>`_ 平台中提供了 MNIST 数据集镜像，需注意："
+msgstr "crwdns88537:0crwdne88537:0"
 
-#: ../../source/getting-started/quick-start.ipynb:90
-msgid "2.手动下载MNIST数据集的几个压缩包到对应文件夹。"
-msgstr "crwdns68245:0crwdne68245:0"
+#: ../../source/getting-started/quick-start.rst:72
+msgid "在创建项目时选择 MNIST 数据集，将 ``MNIST_DATA_PATH`` 设置为 ``/home/megstudio/dataset/MNIST/``;"
+msgstr "crwdns88539:0crwdne88539:0"
 
-#: ../../source/getting-started/quick-start.ipynb:152
-msgid "对于如何加载自定义的 ``Dataset`` ，请参考用户指南 `使用 Data 处理 I/O 与数据集 <https://megengine.org.cn/doc/stable/zh/user-guide/model-development/data/index.html>`__ 。"
-msgstr "crwdns68247:0crwdne68247:0"
+#: ../../source/getting-started/quick-start.rst:73
+msgid "在调用 :class:`~.MNIST` 接口时将 ``download`` 参数设置为 ``False``, 避免再次下载。"
+msgstr "crwdns88541:0:class:crwdne88541:0"
 
-#: ../../source/getting-started/quick-start.ipynb:154
-msgid "将 ``Dataset`` 作为参数传给 ``DataLoader`` 时，我们还需要为其指定数据预处理和抽样逻辑："
-msgstr "crwdns44344:0crwdne44344:0"
+#: ../../source/getting-started/quick-start.rst:76
+msgid "准备 DataLoader"
+msgstr "crwdns88543:0crwdne88543:0"
 
-#: ../../source/getting-started/quick-start.ipynb:156
-msgid "`megengine.data.transfrom <https://megengine.org.cn/doc/stable/zh/reference/data.html#transform>`__ 提供了常见的数据变换操作，作为预处理手段，支持 ``Compose`` 组合；"
-msgstr "crwdns44346:0crwdne44346:0"
+#: ../../source/getting-started/quick-start.rst:78
+msgid "我们将上一步得到的训练集和测试集作为参数输入给 :class:`~.DataLoader`:"
+msgstr "crwdns88545:0:class:crwdne88545:0"
 
-#: ../../source/getting-started/quick-start.ipynb:157
-msgid "`megengine.data.sampler <https://megengine.org.cn/doc/stable/zh/reference/data.html#sampler>`__ 提供了常见的采样方法，如顺序采样和随机采样等，可指定 ``batch_size`` 参数。"
-msgstr "crwdns44348:0crwdne44348:0"
+#: ../../source/getting-started/quick-start.rst:98
+msgid "在上面的代码中，我们对数据集的抽样规则和预处理策略也进行了定义， 例如指定了训练集的 ``batch_size`` 为 64, 抽样方式为随机抽样... 并分别将对应的 ``sampler`` 和 ``transform`` 作为构造 ``DataLoader`` 的初始化参数提供。"
+msgstr "crwdns88547:0crwdne88547:0"
 
-#: ../../source/getting-started/quick-start.ipynb:232
-msgid "定义网络结构"
-msgstr "crwdns44350:0crwdne44350:0"
+#: ../../source/getting-started/quick-start.rst:104
+msgid "想要了解更多细节，可以参考 :ref:`data-guide` 。"
+msgstr "crwdns88549:0:ref:crwdne88549:0"
 
-#: ../../source/getting-started/quick-start.ipynb:234
-msgid "在 MegEngine 中定义网络最常见的方式是创建一个继承自 `megengine.module.Module <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.module.Module.html>`__ 的类，接着："
-msgstr "crwdns44352:0crwdne44352:0"
+#: ../../source/getting-started/quick-start.rst:107
+msgid "定义模型结构"
+msgstr "crwdns88551:0crwdne88551:0"
 
-#: ../../source/getting-started/quick-start.ipynb:236
-msgid "在 ``__init__`` 中定义网络的层，各类算子可以在 `functional <https://megengine.org.cn/doc/stable/zh/reference/functional.html>`__ 和 `module <https://megengine.org.cn/doc/stable/zh/reference/module.html>`__ 模块中找到；"
-msgstr "crwdns44354:0__init__crwdne44354:0"
+#: ../../source/getting-started/quick-start.rst:109
+msgid "`LeNet <https://ieeexplore.ieee.org/abstract/document/726791>`_ :footcite:p:`lecun1998gradient` 网络模型的结构如下图所示（图片截取自论文）："
+msgstr "crwdns88553:0crwdne88553:0"
 
-#: ../../source/getting-started/quick-start.ipynb:237
-msgid "通过 ``forward`` 方法描述数据通过网络前向传播时依次执行的算子，从而就定义了网络的结构。"
-msgstr "crwdns44356:0crwdne44356:0"
+#: ../../source/getting-started/quick-start.rst:114
+msgid "Architecture of LeNet a Convolutional Neural Network here for digits recognition. Each plane is a feature map ie a set of units whose weights are constrained to be identical."
+msgstr "crwdns88555:0crwdne88555:0"
 
-#: ../../source/getting-started/quick-start.ipynb:337
-msgid "定义损失函数、优化器"
-msgstr "crwdns44358:0crwdne44358:0"
+#: ../../source/getting-started/quick-start.rst:117
+msgid "在 MegEngine 中定义网络最常见的方式是创建一个继承自 :class:`~.module.Module` 的类："
+msgstr "crwdns88557:0:class:crwdne88557:0"
 
-#: ../../source/getting-started/quick-start.ipynb:339
-msgid "为了实现对模型的训练（即对模型中参数的优化），我们还需要定义："
-msgstr "crwdns44360:0crwdne44360:0"
+#: ../../source/getting-started/quick-start.rst:148
+msgid "需要在 ``__init__`` 方法中调用 ``super().__init__``;"
+msgstr "crwdns88559:0__init__crwdnd88559:0__init__crwdne88559:0"
 
-#: ../../source/getting-started/quick-start.ipynb:341
-msgid "损失函数（Loss Function），大部分常见的损失函数实现在 `megengine.function.loss <https://megengine.org.cn/doc/stable/zh/reference/functional.html#loss>`__ 模块中；"
-msgstr "crwdns44362:0crwdne44362:0"
+#: ../../source/getting-started/quick-start.rst:149
+msgid "需要在 ``__init__`` 方法中定义需要用到的结构，并在 ``forward`` 中定义前向计算过程。"
+msgstr "crwdns88561:0__init__crwdne88561:0"
 
-#: ../../source/getting-started/quick-start.ipynb:342
-msgid "优化器（Optimizer），常见的优化器实现在 `megengine.optimizer <https://megengine.org.cn/doc/stable/zh/reference/optimizer.html>`__, 且支持不同的优化策略；"
-msgstr "crwdns44364:0crwdne44364:0"
+#: ../../source/getting-started/quick-start.rst:153
+msgid "想要了解更多细节，可以参考 :ref:`module-guide` 。"
+msgstr "crwdns88563:0:ref:crwdne88563:0"
 
-#: ../../source/getting-started/quick-start.ipynb:343
-msgid "MegEngine 的自动求导功能由 `megengine.autodiff <https://megengine.org.cn/doc/stable/zh/reference/autodiff.html>`__ 模块实现，其中 `GradManager <https://megengine.org.cn/doc/stable/zh/reference/autodiff.html#gradmanager>`__ 负责管理梯度。"
-msgstr "crwdns44366:0crwdne44366:0"
+#: ../../source/getting-started/quick-start.rst:156
+msgid "训练：优化模型参数"
+msgstr "crwdns88565:0crwdne88565:0"
 
-#: ../../source/getting-started/quick-start.ipynb:370
-msgid "模型训练"
-msgstr "crwdns44368:0crwdne44368:0"
+#: ../../source/getting-started/quick-start.rst:158
+msgid "得到前向计算输出后，为了优化模型参数，我们还需借助 :class:`~.GradManager` 和 :class:`~.Optimizer` 进行反向传播："
+msgstr "crwdns88567:0:class:crwdnd88567:0:class:crwdne88567:0"
 
-#: ../../source/getting-started/quick-start.ipynb:372
-msgid "MegEngine 中的计算默认以张量（\\ `Tensor <https://megengine.org.cn/doc/stable/zh/reference/tensor.html>`__\\ ）作为基础数据结构，因此记得将我们输入的数据转化为 Tensor."
-msgstr "crwdns44370:0crwdne44370:0"
+#: ../../source/getting-started/quick-start.rst:174
+msgid "接下来训练我们的模型：将训练数据集分批地喂入模型，前向计算得到预测值， 根据设计好的损失函数（本教程中使用交叉熵 :func:`~.cross_entropy` ）计算。 接着调用 :meth:`.GradManager.backward` 方法来自动进行反向计算并记录梯度信息， 然后根据这些梯度信息来更新模型中的参数。"
+msgstr "crwdns88569:0:func:crwdnd88569:0:meth:crwdne88569:0"
 
-#: ../../source/getting-started/quick-start.ipynb:374
-msgid "当检测到 GPU 环境时，MegEngine 会自动将相应的计算过程在 GPU 中执行 **（无需手动指定设备）** 从而实现加速。"
-msgstr "crwdns44372:0crwdne44372:0"
+#: ../../source/getting-started/quick-start.rst:199
+msgid "记得将数据转为 MegEngine :class:`~.Tensor` 格式，参考 :ref:`tensor-guide` 。"
+msgstr "crwdns88571:0:class:crwdnd88571:0:ref:crwdne88571:0"
 
-#: ../../source/getting-started/quick-start.ipynb:375
-msgid "如果需要查询 Tensor 所在设备，可以使用 `Tensor.device <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.device.html>`__ ;"
-msgstr "crwdns44374:0crwdne44374:0"
+#: ../../source/getting-started/quick-start.rst:203
+msgid "想要了解更多细节，可以参考 :ref:`autodiff-guide` / :ref:`optimizer-guide` 。"
+msgstr "crwdns88573:0:ref:crwdnd88573:0:ref:crwdne88573:0"
 
-#: ../../source/getting-started/quick-start.ipynb:376
-msgid "如果需要改变 Tensor 所在设备，可以使用 `Tensor.to <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.to.html>`__ 或 `functional.copy <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.functional.copy.html>`__ ."
-msgstr "crwdns44376:0crwdne44376:0"
+#: ../../source/getting-started/quick-start.rst:206
+msgid "测试：评估模型性能"
+msgstr "crwdns88575:0crwdne88575:0"
 
-#: ../../source/getting-started/quick-start.ipynb:378
-msgid "我们设置 10 个训练周期，整个过程中将对训练数据集分批次进行预测，根据反向传播算法更新模型的参数。"
-msgstr "crwdns44378:0crwdne44378:0"
+#: ../../source/getting-started/quick-start.rst:208
+msgid "在测试集上验证一下我们刚才训练好的 LeNet 模型的性能："
+msgstr "crwdns88577:0crwdne88577:0"
 
-#: ../../source/getting-started/quick-start.ipynb:380
-msgid "在没有GPU加速时，尤其是用个人计算机运行时，一个epoch的运行速度比较慢，请耐心等待。建议安装CUDA(>=10.1), cuDNN(>=7.6)进行加速。"
-msgstr "crwdns68249:0crwdne68249:0"
+#: ../../source/getting-started/quick-start.rst:225
+msgid "通常会得到一个在测试集上接近甚至超过 99% 预测正确率的模型。"
+msgstr "crwdns88579:0crwdne88579:0"
 
-#: ../../source/getting-started/quick-start.ipynb:382
-msgid "以Kaggle NoteBook为例进行测试，CPU型号为Intel(R) Xeon(R) CPU @ 2.00GHz，GPU型号为Tesla P100 PCIe 16GB."
-msgstr "crwdns68251:0crwdne68251:0"
+#: ../../source/getting-started/quick-start.rst:228
+msgid "（可选）用图片进行验证"
+msgstr "crwdns88581:0crwdne88581:0"
 
-#: ../../source/getting-started/quick-start.ipynb:384
-msgid "CPU训练时间：121.9s/epoch"
-msgstr "crwdns68253:0crwdne68253:0"
+#: ../../source/getting-started/quick-start.rst:230
+msgid "我们也可以选择使用自己的手写数字图片来验证模型效果（你可以选择使用自己的图片）："
+msgstr "crwdns88583:0crwdne88583:0"
 
-#: ../../source/getting-started/quick-start.ipynb:386
-msgid "GPU训练时间：67.7s/epoch"
-msgstr "crwdns68255:0crwdne68255:0"
+#: ../../source/getting-started/quick-start.rst:251
+msgid "我们训练好的模型要求输入图片是形状为 32x32 的灰度图（单通道），且黑白底色要对应。 比如将白底黑字变换成黑底白字，就会对 255 这个值求差（因为表示范围为 [0, 255] ）。"
+msgstr "crwdns88585:0crwdne88585:0"
 
-#: ../../source/getting-started/quick-start.ipynb:463
-msgid "模型的保存与加载"
-msgstr "crwdns44382:0crwdne44382:0"
+#: ../../source/getting-started/quick-start.rst:254
+msgid "上面是针对输入图片样本所做的一些必要预处理步骤，接下来将其输入模型进行推理："
+msgstr "crwdns88587:0crwdne88587:0"
 
-#: ../../source/getting-started/quick-start.ipynb:465
-msgid "在 MegEngine 中通过使用 `megengine.save <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.save.html>`__ 和 `megengine.load <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.load.html>`__ 进行模型的保存与加载。"
-msgstr "crwdns44384:0crwdne44384:0"
+#: ../../source/getting-started/quick-start.rst:260
+msgid "可以发现，我们训练出的 LeNet 模型成功地将手写该数字图片的标签类别预测为 6 ！"
+msgstr "crwdns88589:0crwdne88589:0"
 
-#: ../../source/getting-started/quick-start.ipynb:467
-msgid "我们首先将训练好的模型的保存到本地："
-msgstr "crwdns44386:0crwdne44386:0"
+#: ../../source/getting-started/quick-start.rst:263
+msgid "接下来做些什么？"
+msgstr "crwdns88591:0crwdne88591:0"
 
-#: ../../source/getting-started/quick-start.ipynb:488
-msgid "接着我们可以加载本地的模型文件，在测试集上进行预测，以检测模型的性能。"
-msgstr "crwdns44388:0crwdne44388:0"
+#: ../../source/getting-started/quick-start.rst:265
+msgid "我们已经成功地使用 MegEngine 框架完成了手写数字分类任务，很简单吧~"
+msgstr "crwdns88593:0crwdne88593:0"
 
-#: ../../source/getting-started/quick-start.ipynb:490
-msgid "注：如果需要调用C++进行模型部署和推理，不能仅仅直接调用\\ `megengine.save <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.save.html>`__\\ 保存，而是调用\\ `megengine.jit.trace.dump <https://megengine.org.cn/doc/stable/zh/reference/api/megengine.jit.trace.dump.html#megengine-jit-trace-dump>`__\\ 序列化整个计算图。"
-msgstr "crwdns68257:0crwdne68257:0"
+#: ../../source/getting-started/quick-start.rst:267
+msgid "文档中还提供了更多内容"
+msgstr "crwdns88595:0crwdne88595:0"
+
+#: ../../source/getting-started/quick-start.rst:270
+msgid "如果你对整个机器学习（深度学习）的流程依旧不是很清楚，导致阅读本教程有些吃力，不用担心。 我们准备了更加基础的 《 :ref:`deep-learning` 》—— 它可以看作是当前教程内容的手把手教学版本，补充了更多细节和概念解释。 将从机器学习的基本概念开始讲起，循序渐进地帮助你理解整个开发流程， 在接触到更多经典模型结构的同时，也会更加了解如何使用 MegEngine 框架。 一些像是 :ref:`serialization-guide` 和 :ref:`hub-guide` 的用法，也会在该系列教程中进行简单介绍。"
+msgstr "crwdns88597:0:ref:crwdnd88597:0:ref:crwdnd88597:0:ref:crwdne88597:0"
+
+#: ../../source/getting-started/quick-start.rst:277
+msgid "同时，由于这仅仅是一份快速上手教程，许多模型开发的进阶特性没有进行介绍，例如 :ref:`distributed-guide` / :ref:`quantization-guide` ... 等专题，可以在 :ref:`user-guide` 中找到。 值得一提的是，MegEngine 不仅仅是一个深度学习训练框架，同时也支持便捷高效的模型推理部署。 关于模型推理部署的内容，可以参考 :ref:`deployment` 页面的介绍。"
+msgstr "crwdns88599:0:ref:crwdnd88599:0:ref:crwdnd88599:0:ref:crwdnd88599:0:ref:crwdne88599:0"
+
+#: ../../source/getting-started/quick-start.rst:282
+msgid "任何人都可以成为 MegEngine 教程的贡献者"
+msgstr "crwdns88601:0crwdne88601:0"
+
+#: ../../source/getting-started/quick-start.rst:285
+msgid "由于开发者视角所带来的一些局限性，我们无法做到完全以用户视角来撰写文档中的各块内容，尽善尽美是长期追求。 如果你在阅读 MegEngine 教程的过程中产生了疑惑，或是有任何的建议，欢迎你加入 MegEngine 文档建设中来。"
+msgstr "crwdns88603:0crwdne88603:0"
+
+#: ../../source/getting-started/quick-start.rst:288
+msgid "参考 :ref:`docs` 页面了解更多细节。"
+msgstr "crwdns88605:0:ref:crwdne88605:0"
+
+#: ../../source/getting-started/quick-start.rst:291
+msgid "参考文献"
+msgstr "crwdns88607:0crwdne88607:0"
+
+#: ../../source/getting-started/quick-start.rst:296
+msgid "Yann LeCun, Corinna Cortes, and CJ Burges. Mnist handwritten digit database. ATT Labs [Online]. Available: http://yann.lecun.com/exdb/mnist, 2010.Yann LeCun, Léon Bottou, Yoshua Bengio, and Patrick Haffner. Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11):2278–2324, 1998."
+msgstr "crwdns88609:0[Online]crwdne88609:0"
 
 #~ msgid "对于如何加载自定义的 ``Dataset`` ，请参考用户指南 利用 Dataset 封装一个数据集。"
 #~ msgstr ""
@@ -235,4 +263,363 @@ msgstr "crwdns68257:0crwdne68257:0"
 #~ "the static graph very conveniently. "
 #~ "<https://megengine.org.cn/doc/stable/zh/user-guide/model-"
 #~ "development/trace.html#trace>`__\\."
+
+#~ msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/5424>`__"
+#~ msgstr "|image0| `Run <https://studio.brainpp.com/project/5424>in MegStudio `__"
+
+#~ msgid "image0"
+#~ msgstr "image0"
+
+#~ msgid ""
+#~ "|image1| `查看源文件 "
+#~ "<https://github.com/MegEngine/Documentation/blob/main/source"
+#~ "/getting-started/quick-start.ipynb>`__"
+#~ msgstr ""
+#~ "|image1| `View source file "
+#~ "<https://github.com/MegEngine/Documentation/blob/main/source"
+#~ "/getting-started/quick-start.ipynb>`__"
+
+#~ msgid "image1"
+#~ msgstr "image1"
+
+#~ msgid ""
+#~ "我们将向你介绍使用 MegEngine 实现的完整的机器学习工作流程，以便你快速地熟悉 "
+#~ "MegEngine 常见 `Python API "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/index.html>`__ "
+#~ "的使用方式。"
+#~ msgstr ""
+#~ "We will introduce you to the "
+#~ "complete machine learning workflow implemented"
+#~ " with MegEngine, so that you can "
+#~ "quickly become familiar with the common"
+#~ " <https://megengine.org.cn/doc/stable/zh/reference/index.html>`__."
+
+#~ msgid ""
+#~ "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 "
+#~ "<https://megengine.org.cn/doc/stable/zh/user-"
+#~ "guide/install/>`__\\ ）："
+#~ msgstr ""
+#~ "Please run the following code first "
+#~ "to verify whether MegEngine has been "
+#~ "installed in your environment (\\ "
+#~ "`Installation Tutorial "
+#~ "<https://megengine.org.cn/doc/stable/zh/user-"
+#~ "guide/install/>`__\\)："
+
+#~ msgid "接下来我们将通过 MNIST 手写数字识别的案例帮助你快速上手 MegEngine 的使用。"
+#~ msgstr ""
+#~ "Next, we will use the case of "
+#~ "MNIST handwritten digit recognition to "
+#~ "help you quickly get started with "
+#~ "the use of MegEngine."
+
+#~ msgid "数据的加载和预处理往往会耗费大量的精力， MegEngine 提供了一系列接口来规范化这些处理工作："
+#~ msgstr ""
+#~ "And pre-loading data tend to spend"
+#~ " a lot of energy, MegEngine provides"
+#~ " a set of standardized interfaces to"
+#~ " these processes work："
+
+#~ msgid ""
+#~ "`megengine.data.dataset.Dataset "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.data.dataset.Dataset.html>`__"
+#~ " 是 MegEngine 中表示数据集的抽象类，存储样本和相应的标签；"
+#~ msgstr ""
+#~ "`megengine.data.dataset.Dataset "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.data.dataset.Dataset.html>`__"
+#~ " is an abstract class representing a"
+#~ " data set in MegEngine, storing "
+#~ "samples and corresponding labels;"
+
+#~ msgid ""
+#~ "`megengine.data.DataLoader "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.data.DataLoader.html>`__"
+#~ " 负责根据传入的 ``Dataset`` 等参数生成一个可迭代的对象。"
+#~ msgstr ""
+#~ "`megengine.data.DataLoader "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.data.DataLoader.html>`__"
+#~ " is responsible for generating an "
+#~ "iterable object based on the passed "
+#~ "``Dataset`` and other parameters."
+
+#~ msgid ""
+#~ "在 `megengine.data.dataset "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/data.html#dataset>`__"
+#~ " 模块中为用户提供了非常多经典的数据集，比如本次教程中用到的 `MNIST "
+#~ "<http://yann.lecun.com/exdb/mnist/>`__ 数据集。"
+#~ msgstr ""
+#~ "The `megengine.data.dataset "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/data.html#dataset>`__"
+#~ " module provides users with a lot "
+#~ "of classic data sets, such as the"
+#~ " `MNIST <http://yann.lecun.com/exdb/mnist/>`__ data "
+#~ "set used in this tutorial."
+
+#~ msgid "注：这一步如果是在国内网络下进行，可能会出现有的压缩包下载失败的情况，这种情况下有两种解决方案："
+#~ msgstr ""
+#~ "Note：If this step is carried out "
+#~ "under the domestic network, some "
+#~ "compressed package downloads may fail. "
+#~ "In this case, there are two "
+#~ "solutions："
+
+#~ msgid "1.反复运行这段代码几次。"
+#~ msgstr "1. Run this code several times."
+
+#~ msgid "2.手动下载MNIST数据集的几个压缩包到对应文件夹。"
+#~ msgstr ""
+#~ "2. Manually download several compressed "
+#~ "packages of the MNIST data set to"
+#~ " the corresponding folder."
+
+#~ msgid ""
+#~ "对于如何加载自定义的 ``Dataset`` ，请参考用户指南 `使用 Data "
+#~ "处理 I/O 与数据集 <https://megengine.org.cn/doc/stable/zh"
+#~ "/user-guide/model-development/data/index.html>`__ 。"
+#~ msgstr ""
+#~ "For how to load a customized "
+#~ "``Dataset``, please refer to the user"
+#~ " guide `Use Data to process I/O "
+#~ "and data set <https://megengine.org.cn/doc/stable/zh"
+#~ "/user-guide/model-development/data/index.html>`__."
+
+#~ msgid "将 ``Dataset`` 作为参数传给 ``DataLoader`` 时，我们还需要为其指定数据预处理和抽样逻辑："
+#~ msgstr ""
+#~ "When `` Dataset`` as a parameter "
+#~ "to `` DataLoader``, we also need "
+#~ "to assign the data pre-processing "
+#~ "and sampling logic："
+
+#~ msgid ""
+#~ "`megengine.data.transfrom "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/data.html#transform>`__"
+#~ " 提供了常见的数据变换操作，作为预处理手段，支持 ``Compose`` 组合；"
+#~ msgstr ""
+#~ "`megengine.data.transfrom "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/data.html#transform>`__"
+#~ " provides common data transformation "
+#~ "operations, as a preprocessing method, "
+#~ "supports ``Compose`` combination;"
+
+#~ msgid ""
+#~ "`megengine.data.sampler "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/data.html#sampler>`__"
+#~ " 提供了常见的采样方法，如顺序采样和随机采样等，可指定 ``batch_size`` 参数。"
+#~ msgstr ""
+#~ "`megengine.data.sampler "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/data.html#sampler>`__"
+#~ " Provides common sampling methods, such "
+#~ "as sequential sampling and random "
+#~ "sampling, etc. The ``batch_size`` parameter"
+#~ " can be specified."
+
+#~ msgid ""
+#~ "在 MegEngine 中定义网络最常见的方式是创建一个继承自 "
+#~ "`megengine.module.Module "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.module.Module.html>`__"
+#~ " 的类，接着："
+#~ msgstr ""
+#~ "The most common way to define a"
+#~ " network in MegEngine is to create"
+#~ " a "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.module.Module.html>`__,"
+#~ " then："
+
+#~ msgid ""
+#~ "在 ``__init__`` 中定义网络的层，各类算子可以在 `functional "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/functional.html>`__"
+#~ " 和 `module "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/module.html>`__ "
+#~ "模块中找到；"
+#~ msgstr ""
+#~ "In the layer where the network is"
+#~ " defined in ``__init__``, various operators"
+#~ " can be found in the `functional "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/functional.html>`__"
+#~ " and `module "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/module.html>`__ "
+#~ "modules;"
+
+#~ msgid "通过 ``forward`` 方法描述数据通过网络前向传播时依次执行的算子，从而就定义了网络的结构。"
+#~ msgstr ""
+#~ "The ``forward'' method describes the "
+#~ "operators that are executed in sequence"
+#~ " when data is forwarded through the"
+#~ " network, thereby defining the structure"
+#~ " of the network."
+
+#~ msgid "定义损失函数、优化器"
+#~ msgstr "Define loss function, optimizer"
+
+#~ msgid "为了实现对模型的训练（即对模型中参数的优化），我们还需要定义："
+#~ msgstr ""
+#~ "In order to achieve the training "
+#~ "of the model (that is, the "
+#~ "optimization of the parameters in the"
+#~ " model), we also need to define："
+
+#~ msgid ""
+#~ "损失函数（Loss Function），大部分常见的损失函数实现在 `megengine.function.loss"
+#~ " "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/functional.html#loss>`__"
+#~ " 模块中；"
+#~ msgstr ""
+#~ "Loss Function, most common loss "
+#~ "functions are implemented in the "
+#~ "`megengine.function.loss "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/functional.html#loss>`__"
+#~ " module;"
+
+#~ msgid ""
+#~ "优化器（Optimizer），常见的优化器实现在 `megengine.optimizer "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/optimizer.html>`__,"
+#~ " 且支持不同的优化策略；"
+#~ msgstr ""
+#~ "Optimizer (Optimizer), the common optimizer"
+#~ " is implemented in `megengine.optimizer "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/optimizer.html>`__,"
+#~ " and supports different optimization "
+#~ "strategies;"
+
+#~ msgid ""
+#~ "MegEngine 的自动求导功能由 `megengine.autodiff "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/autodiff.html>`__"
+#~ " 模块实现，其中 `GradManager "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/autodiff.html#gradmanager>`__"
+#~ " 负责管理梯度。"
+#~ msgstr ""
+#~ "The automatic derivative function of "
+#~ "MegEngine is "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/autodiff.html>`__"
+#~ " module, where `GradManager "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/autodiff.html#gradmanager>`__"
+#~ " is responsible for managing the "
+#~ "gradient."
+
+#~ msgid "模型训练"
+#~ msgstr "Model training"
+
+#~ msgid ""
+#~ "MegEngine 中的计算默认以张量（\\ `Tensor "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/tensor.html>`__\\"
+#~ " ）作为基础数据结构，因此记得将我们输入的数据转化为 Tensor."
+#~ msgstr ""
+#~ "The calculation in MegEngine uses tensor"
+#~ " (\\ `Tensor "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/tensor.html>`__\\)"
+#~ " as the basic data structure by "
+#~ "default, so remember to convert the "
+#~ "data we input into Tensor."
+
+#~ msgid "当检测到 GPU 环境时，MegEngine 会自动将相应的计算过程在 GPU 中执行 **（无需手动指定设备）** 从而实现加速。"
+#~ msgstr ""
+#~ "When the GPU environment is detected,"
+#~ " MegEngine will automatically execute the"
+#~ " corresponding calculation process in the"
+#~ " GPU** (no need to manually specify"
+#~ " the device)** to achieve acceleration."
+
+#~ msgid ""
+#~ "如果需要查询 Tensor 所在设备，可以使用 `Tensor.device "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.device.html>`__"
+#~ " ;"
+#~ msgstr ""
+#~ "If you need to query the device"
+#~ " where Tensor is located, you can "
+#~ "use `Tensor.device "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.device.html>`__;"
+
+#~ msgid ""
+#~ "如果需要改变 Tensor 所在设备，可以使用 `Tensor.to "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.to.html>`__"
+#~ " 或 `functional.copy "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.functional.copy.html>`__"
+#~ " ."
+#~ msgstr ""
+#~ "If you need to change the device"
+#~ " where the Tensor is located, you "
+#~ "can use `Tensor.to "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.Tensor.to.html>`__"
+#~ " or `functional.copy "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.functional.copy.html>`__."
+
+#~ msgid "我们设置 10 个训练周期，整个过程中将对训练数据集分批次进行预测，根据反向传播算法更新模型的参数。"
+#~ msgstr ""
+#~ "We set up 10 training cycles, the"
+#~ " training data set will be predicted"
+#~ " in batches during the whole process,"
+#~ " and the parameters of the model "
+#~ "will be updated according to the "
+#~ "backpropagation algorithm."
+
+#~ msgid ""
+#~ "在没有GPU加速时，尤其是用个人计算机运行时，一个epoch的运行速度比较慢，请耐心等待。建议安装CUDA(>=10.1), "
+#~ "cuDNN(>=7.6)进行加速。"
+#~ msgstr ""
+#~ "When there is no GPU acceleration, "
+#~ "especially when running on a personal"
+#~ " computer, the running speed of an"
+#~ " epoch is relatively slow, please be"
+#~ " patient. It is recommended to "
+#~ "install CUDA (>=10.1), cuDNN (>=7.6) for"
+#~ " acceleration."
+
+#~ msgid ""
+#~ "以Kaggle NoteBook为例进行测试，CPU型号为Intel(R) Xeon(R) CPU"
+#~ " @ 2.00GHz，GPU型号为Tesla P100 PCIe 16GB."
+#~ msgstr ""
+#~ "Take Kaggle NoteBook as an example "
+#~ "for testing. The CPU model is "
+#~ "Intel(R) Xeon(R) CPU @ 2.00GHz, and "
+#~ "the GPU model is Tesla P100 PCIe"
+#~ " 16GB."
+
+#~ msgid "CPU训练时间：121.9s/epoch"
+#~ msgstr "CPU training time：121.9s/epoch"
+
+#~ msgid "GPU训练时间：67.7s/epoch"
+#~ msgstr "GPU training time：67.7s/epoch"
+
+#~ msgid "模型的保存与加载"
+#~ msgstr "Model saving and loading"
+
+#~ msgid ""
+#~ "在 MegEngine 中通过使用 `megengine.save "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.save.html>`__"
+#~ " 和 `megengine.load "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.load.html>`__"
+#~ " 进行模型的保存与加载。"
+#~ msgstr ""
+#~ "Save and load the model by using"
+#~ " `megengine.save "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.save.html>`__"
+#~ " and `megengine.load "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.load.html>"
+
+#~ msgid "我们首先将训练好的模型的保存到本地："
+#~ msgstr "We first save the trained model to local："
+
+#~ msgid "接着我们可以加载本地的模型文件，在测试集上进行预测，以检测模型的性能。"
+#~ msgstr ""
+#~ "Then we can load the local model"
+#~ " file and make predictions on the "
+#~ "test set to test the performance "
+#~ "of the model."
+
+#~ msgid ""
+#~ "注：如果需要调用C++进行模型部署和推理，不能仅仅直接调用\\ `megengine.save "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.save.html>`__\\"
+#~ " 保存，而是调用\\ `megengine.jit.trace.dump "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.jit.trace.dump.html"
+#~ "#megengine-jit-trace-dump>`__\\ 序列化整个计算图。"
+#~ msgstr ""
+#~ "Note：If you need to call C++ for"
+#~ " model deployment and inference, you "
+#~ "can't just call \\ `megengine.save "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.save.html>`__\\"
+#~ " directly to save, but call \\ "
+#~ "`megengine.jit.trace.dump "
+#~ "<https://megengine.org.cn/doc/stable/zh/reference/api/megengine.jit.trace.dump.html"
+#~ "#megengine-jit-trace-dump>`__\\ to "
+#~ "serialize the entire calculation graph."
 
