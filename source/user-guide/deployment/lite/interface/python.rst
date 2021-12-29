@@ -37,9 +37,12 @@ LiteTensor
         device_type=LiteDeviceType.LITE_CPU,
         device_id=0,
         is_pinned_host=False,
+        shapes=None,
+        dtype=None,
     ):
 
-构造 LiteTensor 时候可以指定 layout， device_type，device_id，以及是否内存是 `锁页内存 <https://developer.nvidia.com/blog/how-optimize-data-transfers-cuda-cc/>`_。
+构造 LiteTensor 时候可以指定 layout， device_type，device_id，以及是否内存是 `锁页内存 <https://developer.nvidia.com/blog/how-optimize-data-transfers-cuda-cc/>`_，另外
+如果也可以通过传递关键词参数 shapes 和 dtype 在 MegEngineLite 内部构造 layout，让后再构造 Tensor。
 
 参数
 
@@ -65,7 +68,10 @@ LiteTensor
 示例：
 
     .. code-block:: python
-
+        
+        # 直接从 shapes 创建 LiteTensor
+        tensor_cuda2 = LiteTensor(shapes=[4,16], dtype="float32", device_type=LiteDeviceType.LITE_CUDA)
+        # 从 layout 创建 LiteTensor
         layout = LiteLayout([4, 16], "float32")
         tensor = LiteTensor(layout, LiteDeviceType.LITE_CPU)
         tensor_cuda = LiteTensor(layout=layout, device_type=LiteDeviceType.LITE_CUDA)
@@ -286,6 +292,48 @@ set_data_by_share
     for i in range(32):
         assert real_data[i // 16][i % 16] == i
 
+get_data_by_share
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    def get_data_by_share(self):
+
+将 LiteTensor 中的数据以 **共享** 的方式构建一个 numpy 的数组，并返回给用户， **当这个 LiteTensor 中内存数据被修改时候，返回的这个 numpy 数组中的
+数据也将会被修改**。
+
+返回值：
+
+* 返回一个和 LiteTensor 共享内存的 numpy ndarray。
+
+.. warning::
+    
+    * 当这个 LiteTensor 中内存数据被修改时候，返回的这个 numpy 数组中的数据也将会被修改，如：
+    * 当第一次 Network Forward 之后通过输出 LiteTensor 获得的这个 numpy 数组，在下一次 Network Forward 的时候会被修改
+
+示例：
+
+.. code-block:: python
+
+    layout = LiteLayout([4, 32], "int16") 
+    tensor = LiteTensor(layout)
+    assert tensor.nbytes == 4 * 32 * 2
+
+    arr = np.ones([4, 32], "int16")
+    for i in range(128):
+        arr[i // 32][i % 32] = i
+    tensor.set_data_by_copy(arr)
+    test_data = tensor.get_data_by_share()
+
+    for i in range(128):
+        assert test_data[i // 32][i % 32] == i
+
+    arr[1][18] = 5
+    arr[3][7] = 345
+    tensor.set_data_by_copy(arr)
+    assert test_data[1][18] == 5
+    assert test_data[3][7] == 345
+
 to_numpy
 ^^^^^^^^^^^^^^^^^
 
@@ -412,11 +460,9 @@ LiteNetworkIO
 
     .. code-block:: python
 
-        def __init__(self):
-            self.inputs = []
-            self.outputs = []
+        def __init__(self, inputs=None, outputs=None):
 
-为 LiteNetwork 构造时候的 IO 信息的集合，包含 inputs 和 outputs，为用户指定的上述 LiteIO，用户可以通过 add_input，add_output
+LiteNetworkIO 是 LiteNetwork 构造时候的 IO 信息的集合，包含 inputs 和 outputs，为用户指定的上述 LiteIO，另外用户可以通过 add_input，add_output
 接口添加 LiteIO 到 LiteNetworkIO 中。
 
 示例：
@@ -430,15 +476,10 @@ LiteNetworkIO
             io_type=LiteIOType.LITE_IO_SHAPE,
             layout=LiteLayout([2, 4, 4]),
         )
-        io = LiteNetworkIO()
-        io.add_input(input_io1)
-        io.add_input(input_io2)
+        io = LiteNetworkIO([input_io1, input_io2])
 
-        output_io1 = LiteIO("out1", is_host=False)
-        output_io2 = LiteIO("out2", is_host=True, layout=LiteLayout([1, 1000]))
-
-        io.add_output(output_io1)
-        io.add_output(output_io2)
+        io.add_output("out1", is_host=False)
+        io.add_output("out2", is_host=True, layout=LiteLayout([1, 1000]))
 
         assert len(io.inputs) == 2
         assert len(io.outputs) == 2
@@ -465,14 +506,11 @@ LiteNetwork
 
 .. code-block:: python
 
-    option = LiteOptions()
-    option.var_sanity_check_first_run = 0
-    config = LiteConfig(option=option)
-
+    config = LiteConfig()
+    config.options.var_sanity_check_first_run = 0
     config.device_type = LiteDeviceType.LITE_CUDA
-    input_io = LiteIO("data")
-    ios = LiteNetworkIO()
-    ios.add_input(input_io)
+
+    ios = LiteNetworkIO(inputs=[LiteIO("data", False)])
     network = LiteNetwork(config=config, io=ios)
 
 load
@@ -628,9 +666,8 @@ async_with_callback
         finished = True
         return 0
 
-    option = LiteOptions()
-    option.var_sanity_check_first_run = 0
-    config = LiteConfig(option=option)
+    config = LiteConfig()
+    config.options.var_sanity_check_first_run = 0
 
     network = LiteNetwork(config=config)
     network.load(model_path)
@@ -1044,16 +1081,18 @@ to_numpy
             [4, 8, 8], dtype=LiteDataType.LITE_INT, device_type=LiteDeviceType.LITE_CUDA
         )
         arr = np.ones([8, 8], "int32")
-        for i in range(4):
-            batch_tensor.collect(arr)
-            arr += 1
+        for j in range(2):
+            for i in range(4):
+                batch_tensor.collect(arr)
+                arr += 1
+            batch_tensor.free(range(4))
         data = batch_tensor.to_numpy()
         assert data.shape[0] == 4
         assert data.shape[1] == 8
         assert data.shape[2] == 8
         for i in range(4):
             for j in range(64):
-                assert data[i][j // 8][j % 8] == i + 1
+                assert data[i][j // 8][j % 8] == i + 4 + 1
 
 * 示例2：通过指定 batch_id 进行攒 batch
 
@@ -1073,6 +1112,7 @@ to_numpy
         batch_tensor.collect_id(arr, 3)
 
         data = batch_tensor.to_numpy()
+        batch_tensor.free(range(4))
         assert data.shape[0] == 4
         assert data.shape[1] == 8
         assert data.shape[2] == 8
@@ -1090,16 +1130,18 @@ to_numpy
         )
         batch_tensor = TensorBatchCollector([4, 6, 8], tensor=all_tensor)
         nparr = np.ones([6, 8], "int32")
-        for i in range(4):
-            batch_tensor.collect(nparr)
-            nparr += 1
+        for j in range(2):
+            for i in range(4):
+                batch_tensor.collect(nparr)
+                nparr += 1
+            batch_tensor.free(range(4))
         data = batch_tensor.to_numpy()
         assert data.shape[0] == 4
         assert data.shape[1] == 6
         assert data.shape[2] == 8
         for i in range(4):
             for j in range(48):
-                assert data[i][j // 8][j % 8] == i + 1
+                assert data[i][j // 8][j % 8] == i + 4 + 1
 
 * 示例4：通过 LiteTensor 进行攒 batch
 
@@ -1110,14 +1152,16 @@ to_numpy
         )
         nparr = np.ones([6, 8], "int32")
         tensor = LiteTensor(LiteLayout([6, 8], LiteDataType.LITE_INT))
-        for i in range(4):
-            tensor.set_data_by_share(nparr)
-            batch_tensor.collect(tensor)
-            nparr += 1
+        for j in range(2):
+            for i in range(4):
+                tensor.set_data_by_share(nparr)
+                batch_tensor.collect(tensor)
+                nparr += 1
+            batch_tensor.free(range(4))
         data = batch_tensor.to_numpy()
         assert data.shape[0] == 4
         assert data.shape[1] == 6
         assert data.shape[2] == 8
         for i in range(4):
             for j in range(48):
-                assert data[i][j // 8][j % 8] == i + 1
+                assert data[i][j // 8][j % 8] == i + 4 + 1
