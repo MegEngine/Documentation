@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-12-13 13:29\n"
+"POT-Creation-Date: 2021-12-28 09:14+0000\n"
+"PO-Revision-Date: 2021-12-29 09:02\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,22 +11,27 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.distributed.Client.po\n"
 "X-Crowdin-File-ID: 1994\n"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:2
-msgid "megengine.distributed.Client"
-msgstr "crwdns29668:0crwdne29668:0"
+#: ../../source/reference/api/megengine.distributed.Client.rst:5
+msgid "Client"
+msgstr "crwdns88857:0crwdne88857:0"
 
 #: megengine.distributed.server.Client:1 of
 msgid "Distributed Client for distributed training."
 msgstr "crwdns29672:0crwdne29672:0"
 
-#: megengine.distributed.server.Client of
+#: megengine.distributed.server.Client
+#: megengine.distributed.server.Client.check_is_grad
+#: megengine.distributed.server.Client.check_remote_tracer
+#: megengine.distributed.server.Client.group_barrier
+#: megengine.distributed.server.Client.set_is_grad
+#: megengine.distributed.server.Client.set_remote_tracer of
 msgid "参数"
 msgstr "crwdns29674:0crwdne29674:0"
 
@@ -38,91 +43,66 @@ msgstr "crwdns29676:0crwdne29676:0"
 msgid "port of server at master node."
 msgstr "crwdns29678:0crwdne29678:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:15
-msgid "Methods"
-msgstr "crwdns29680:0crwdne29680:0"
-
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`bcast_val <megengine.distributed.Client.bcast_val>`\\ \\(val\\, key\\, size\\)"
-msgstr "crwdns62714:0:obj:crwdne62714:0"
-
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`check_is_grad <megengine.distributed.Client.check_is_grad>`\\ \\(key\\)"
-msgstr "crwdns29686:0:obj:crwdne29686:0"
-
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
+#: megengine.distributed.server.Client.check_is_grad:1 of
 msgid "Check whether send/recv need gradiants."
 msgstr "crwdns29688:0crwdne29688:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`check_remote_tracer <megengine.distributed.Client.check_remote_tracer>`\\ \\(key\\)"
-msgstr "crwdns29690:0:obj:crwdne29690:0"
+#: megengine.distributed.server.Client.check_is_grad:3
+#: megengine.distributed.server.Client.check_remote_tracer:3
+#: megengine.distributed.server.Client.set_is_grad:3
+#: megengine.distributed.server.Client.set_remote_tracer:3 of
+msgid "key to match send/recv op."
+msgstr "crwdns88859:0crwdne88859:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
+#: megengine.distributed.server.Client.check_remote_tracer:1 of
 msgid "Get tracer dict for send/recv op."
 msgstr "crwdns29692:0crwdne29692:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`connect <megengine.distributed.Client.connect>`\\ \\(\\)"
-msgstr "crwdns29694:0:obj:crwdne29694:0"
-
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
+#: megengine.distributed.server.Client.connect:1 of
 msgid "Check connection success."
 msgstr "crwdns29696:0crwdne29696:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`get_mm_server_port <megengine.distributed.Client.get_mm_server_port>`\\ \\(\\)"
-msgstr "crwdns29698:0:obj:crwdne29698:0"
-
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
+#: megengine.distributed.server.Client.get_mm_server_port:1 of
 msgid "Get multiple machine server port."
 msgstr "crwdns29700:0crwdne29700:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`group_barrier <megengine.distributed.Client.group_barrier>`\\ \\(key\\, size\\)"
-msgstr "crwdns29702:0:obj:crwdne29702:0"
-
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
+#: megengine.distributed.server.Client.group_barrier:1 of
 msgid "A barrier wait for all group member."
 msgstr "crwdns29704:0crwdne29704:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`set_is_grad <megengine.distributed.Client.set_is_grad>`\\ \\(key\\, is\\_grad\\)"
-msgstr "crwdns29706:0:obj:crwdne29706:0"
+#: megengine.distributed.server.Client.group_barrier:3 of
+msgid "group key to match each other."
+msgstr "crwdns88861:0crwdne88861:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
+#: megengine.distributed.server.Client.group_barrier:4 of
+msgid "group size."
+msgstr "crwdns88863:0crwdne88863:0"
+
+#: megengine.distributed.server.Client.set_is_grad:1 of
 msgid "Mark send/recv need gradiants by key."
 msgstr "crwdns29708:0crwdne29708:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`set_remote_tracer <megengine.distributed.Client.set_remote_tracer>`\\ \\(key\\, tracer\\_set\\)"
-msgstr "crwdns29710:0:obj:crwdne29710:0"
+#: megengine.distributed.server.Client.set_is_grad:4 of
+msgid "whether this op need grad."
+msgstr "crwdns88865:0crwdne88865:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
+#: megengine.distributed.server.Client.set_remote_tracer:1 of
 msgid "Set tracer dict for tracing send/recv op."
 msgstr "crwdns29712:0crwdne29712:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`user_get <megengine.distributed.Client.user_get>`\\ \\(key\\)"
-msgstr "crwdns29714:0:obj:crwdne29714:0"
+#: megengine.distributed.server.Client.set_remote_tracer:4 of
+msgid "valid tracer set."
+msgstr "crwdns88867:0crwdne88867:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
+#: megengine.distributed.server.Client.user_get:1 of
 msgid "Get user defined key-value pairs across processes."
 msgstr "crwdns29716:0crwdne29716:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`user_pop <megengine.distributed.Client.user_pop>`\\ \\(key\\)"
-msgstr "crwdns68657:0:obj:crwdne68657:0"
-
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
+#: megengine.distributed.server.Client.user_pop:1 of
 msgid "Get user defined key-value pairs and delete the resources when the get is done"
 msgstr "crwdns68659:0crwdne68659:0"
 
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
-msgid ":obj:`user_set <megengine.distributed.Client.user_set>`\\ \\(key\\, val\\)"
-msgstr "crwdns29718:0:obj:crwdne29718:0"
-
-#: ../../source/reference/api/megengine.distributed.Client.rst:51:<autosummary>:1
+#: megengine.distributed.server.Client.user_set:1 of
 msgid "Set user defined key-value pairs across processes."
 msgstr "crwdns29720:0crwdne29720:0"
 
@@ -141,4 +121,77 @@ msgstr "crwdns29720:0crwdne29720:0"
 
 #~ msgid "Initialize self."
 #~ msgstr "初始化方法。"
+
+#~ msgid "megengine.distributed.Client"
+#~ msgstr "megengine.distributed.Client"
+
+#~ msgid "Methods"
+#~ msgstr "方法"
+
+#~ msgid ""
+#~ ":obj:`bcast_val <megengine.distributed.Client.bcast_val>`\\ "
+#~ "\\(val\\, key\\, size\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`check_is_grad "
+#~ "<megengine.distributed.Client.check_is_grad>`\\ \\(key\\)"
+#~ msgstr ""
+#~ ":obj:`check_is_grad "
+#~ "<megengine.distributed.Client.check_is_grad>`\\ \\(key\\)"
+
+#~ msgid ""
+#~ ":obj:`check_remote_tracer "
+#~ "<megengine.distributed.Client.check_remote_tracer>`\\ \\(key\\)"
+#~ msgstr ""
+#~ ":obj:`check_remote_tracer "
+#~ "<megengine.distributed.Client.check_remote_tracer>`\\ \\(key\\)"
+
+#~ msgid ":obj:`connect <megengine.distributed.Client.connect>`\\ \\(\\)"
+#~ msgstr ":obj:`connect <megengine.distributed.Client.connect>`\\ \\(\\)"
+
+#~ msgid ""
+#~ ":obj:`get_mm_server_port "
+#~ "<megengine.distributed.Client.get_mm_server_port>`\\ \\(\\)"
+#~ msgstr ""
+#~ ":obj:`get_mm_server_port "
+#~ "<megengine.distributed.Client.get_mm_server_port>`\\ \\(\\)"
+
+#~ msgid ""
+#~ ":obj:`group_barrier "
+#~ "<megengine.distributed.Client.group_barrier>`\\ \\(key\\, "
+#~ "size\\)"
+#~ msgstr ""
+#~ ":obj:`group_barrier "
+#~ "<megengine.distributed.Client.group_barrier>`\\ \\(key\\, "
+#~ "size\\)"
+
+#~ msgid ""
+#~ ":obj:`set_is_grad <megengine.distributed.Client.set_is_grad>`\\"
+#~ " \\(key\\, is\\_grad\\)"
+#~ msgstr ""
+#~ ":obj:`set_is_grad <megengine.distributed.Client.set_is_grad>`\\"
+#~ " \\(key\\, is\\_grad\\)"
+
+#~ msgid ""
+#~ ":obj:`set_remote_tracer "
+#~ "<megengine.distributed.Client.set_remote_tracer>`\\ \\(key\\,"
+#~ " tracer\\_set\\)"
+#~ msgstr ""
+#~ ":obj:`set_remote_tracer "
+#~ "<megengine.distributed.Client.set_remote_tracer>`\\ \\(key\\,"
+#~ " tracer\\_set\\)"
+
+#~ msgid ":obj:`user_get <megengine.distributed.Client.user_get>`\\ \\(key\\)"
+#~ msgstr ":obj:`user_get <megengine.distributed.Client.user_get>`\\ \\(key\\)"
+
+#~ msgid ":obj:`user_pop <megengine.distributed.Client.user_pop>`\\ \\(key\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`user_set <megengine.distributed.Client.user_set>`\\ "
+#~ "\\(key\\, val\\)"
+#~ msgstr ""
+#~ ":obj:`user_set <megengine.distributed.Client.user_set>`\\ "
+#~ "\\(key\\, val\\)"
 
