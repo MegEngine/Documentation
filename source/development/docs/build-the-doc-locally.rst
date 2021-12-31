@@ -117,9 +117,9 @@ nbsphinx_ 是 Sphinx 的一个插件，可以帮助我们对 ``.ipynb`` 格式�
 Graphviz 绘图工具
 ~~~~~~~~~~~~~~~~~
 
-Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经常会用他制作一些可视化图片。
+Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经常会用它制作一些可视化图片。
 
-如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Graphviz:
+如果你使用的是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Graphviz:
 
 .. code-block:: shell
 
