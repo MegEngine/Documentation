@@ -350,7 +350,8 @@ Parameter(2.98, device=xpux:0)
 练习：拟合一条直线
 ------------------
 
-假设你得到了 100 个二维点 :math:`(x_i, y_i)`, 其中 :math:`i \in [0, 100)`, 希望将来给出输入数据 :math:`x`, 能够预测出合适的 :math:`y` 值。
+假设你得到了数据集 :math:`\mathcal{D}=\{ (x_i, y_i) \}`, 其中 :math:`i \in \{1, \ldots, 100 \}`,
+希望将来给出输入 :math:`x`, 能够预测出合适的 :math:`y` 值。
 
 .. dropdown:: get_point_examples() 源码
 
