@@ -540,7 +540,7 @@ Python 官方提案 `PEP 465
                gm.backward(loss)
                optimizer.step().clear_grad()
 
-           training_loss += loss.item() * X.shape[0]
+           training_loss += loss.item() * len(X)
 
            if step % 30 == 0:
                print(f"Epoch = {epoch}, step = {step}, loss = {loss.item()}")
@@ -553,16 +553,16 @@ Python 官方提案 `PEP 465
            pred = linear_model(X)
            loss = F.nn.l1_loss(y, pred)
 
-           validation_loss += loss.item() * X.shape[0]
+           validation_loss += loss.item() * len(X)
 
-       training_loss /= X_train.shape[0]
-       validation_loss /= X_val.shape[0]
+       training_loss /= len(X_train)
+       validation_loss /= len(X_val)
 
        print(f"Epoch = {epoch},"
              f"training_loss = {training_loss},"
              f"validation_loss = {validation_loss}")
 
-注意：由于最后一个 Batch 的样本数量 ``X.shape[0]`` 可能不足 Batch size 个数，
+注意：由于最后一个 Batch 的样本数量 ``len(X)`` 可能不足 Batch size 个数，
 因此我们在统计损失的总体平均值时，为了严谨性，做法是将每个 Batch 整体损失累加，最后除以总样本数。
 
 在每一轮（Epoch）训练中，我们会有多个 ``train_step``, 或者说，会对参数完成多次迭代（Iteration）。
@@ -587,9 +587,9 @@ Python 官方提案 `PEP 465
 
       pred = linear_model(X)
       loss = F.nn.l1_loss(y, pred)
-      test_loss += loss.item() * X.shape[0]
+      test_loss += loss.item() * len(X)
 
-   test_loss /= X_test.shape[0]
+   test_loss /= len(X_test)
 
    print(f"Test_loss = {test_loss}")
 

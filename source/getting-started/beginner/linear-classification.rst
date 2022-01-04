@@ -219,7 +219,7 @@ MNIST 数据集中的图像均为位图图像（Bitmap），也叫光栅图像�
    操作一样， :func:`~.flatten` 操作也可以通过 :func:`~.reshape` 实现。
    但考虑到代码语义，此时应当尽量使用 :func:`~.flatten` 而不是 :func:`~.reshape`.
 
-MegEngine 中的扁平化操作可以直接用于多个样本的情况（向量化计算（））：
+MegEngine 中的扁平化操作可以直接用于多个样本的情况（以便支持向量化计算）：
 
 .. code-block:: python
 

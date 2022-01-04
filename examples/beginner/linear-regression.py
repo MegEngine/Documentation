@@ -72,7 +72,7 @@ for epoch in range(nums_epoch):
             gm.backward(loss)
             optimizer.step().clear_grad()
 
-        training_loss += loss.item() * X.shape[0]
+        training_loss += loss.item() * len(X)
 
         if step % 30 == 0:
             print(f"Epoch = {epoch}, step = {step}, loss = {loss.item()}")
@@ -84,10 +84,10 @@ for epoch in range(nums_epoch):
         pred = linear_model(X)
         loss = F.nn.l1_loss(y, pred)
 
-        validation_loss += loss.item() * X.shape[0]
+        validation_loss += loss.item() * len(X)
 
-    training_loss /= X_train.shape[0]
-    validation_loss /= X_val.shape[0]
+    training_loss /= len(X_train)
+    validation_loss /= len(X_val)
 
     print(f"Epoch = {epoch},"
           f"training_loss = {training_loss},"
@@ -102,8 +102,8 @@ for X, y in test_dataloader:
 
     pred = linear_model(X)
     loss = F.nn.l1_loss(y, pred)
-    test_loss += loss.item() * X.shape[0]
+    test_loss += loss.item() * len(X)
 
-test_loss /= X_test.shape[0]
+test_loss /= len(X_test)
 
 print(f"Test_loss = {test_loss}")

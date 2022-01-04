@@ -56,11 +56,11 @@ for epoch in range(nums_epoch):
             gm.backward(loss)
             optimizer.step().clear_grad()
 
-        training_loss += loss.item() * image.shape[0]
+        training_loss += loss.item() * len(image)
 
         pred = F.argmax(score, axis=1)
         nums_train_correct += (pred == label).sum().item()
-        nums_train_example += image.shape[0]
+        nums_train_example += len(image)
 
     training_acc = nums_train_correct / nums_train_example
     training_loss /= nums_train_example
@@ -71,11 +71,11 @@ for epoch in range(nums_epoch):
         pred = F.argmax(linear_cls(image), axis=1)
 
         nums_val_correct += (pred == label).sum().item()
-        nums_val_example += image.shape[0]
+        nums_val_example += len(image)
 
     val_acc = nums_val_correct / nums_val_example
 
     print(f"Epoch = {epoch}, "
           f"train_loss = {training_loss:.3f}, "
-          f"train_acc = {training_acc:.3f}",
-          f"train_acc = {val_acc:.3f}")
+          f"train_acc = {training_acc:.3f}, "
+          f"val_acc = {val_acc:.3f}")
