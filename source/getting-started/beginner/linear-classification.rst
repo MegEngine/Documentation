@@ -248,7 +248,7 @@ MegEngine 中的扁平化操作可以直接用于多个样本的情况（以便�
 
 假定我们的手写数字分类任务简化成标记只含有 0 和 1 的情况，即 :math:`y \in \left\{ 0, 1 \right\}`.
 其中 0 意味着这张图片是手写数字 0, 而 1 意味着这张图片不是手写数字 0.
-对于离散的标记，我们可以引入非线性的决策函数 :math:`g(\cdot)` 来将线性输出映射为类别。
+对于离散的标记，我们可以引入非线性的链接函数 :math:`g(\cdot)` 来将线性输出映射为类别。
 比如，可以将 :math:`f(\boldsymbol{x})=\boldsymbol{x} \cdot \boldsymbol{w}+b` 的输出以 0 为阈值（Threshold）
 进行划分，认为凡是计算结果大于 0 的样本，都代表这张图片是手写数字 0；
 而凡是计算结果小于 0 的样本，都代表这张图片不是手写数字 0.
@@ -262,14 +262,14 @@ MegEngine 中的扁平化操作可以直接用于多个样本的情况（以便�
    0 & \text { if } & f(\boldsymbol{x})<\text { threshold }
    \end{array}\right.
 
-其中 :math:`\mathbb I` 是指示函数（也叫示性函数），也是我们这里用到的决策函数，但它并不常用。
+其中 :math:`\mathbb I` 是指示函数（也叫示性函数），也是我们这里用到的链接函数，但它并不常用。
 原因很多，对于优化问题来说，它的数学性质并不好，不适合被用于梯度下降算法。
 对于线性模型的输出 -100 和 -1000, 这种分段函数将二者都决策成标记为 0 的这个类别，
 并不能体现出两个样本类内的区别 ——
 举例来说，尽管二者都不是 0，但输出为 -1000 的样本应该比输出为 -100 的样本更加不像 0.
 前者可能是 1, 后者可能是 6.
 
-在实践中，我们更常使用的决策函数是 Sigmoid 函数 :math:`\sigma(\cdot)` (也叫 Logistic 函数)：
+在实践中，我们更常使用的链接函数是 Sigmoid 函数 :math:`\sigma(\cdot)` (也叫 Logistic 函数)：
 
 .. math::
 
@@ -597,13 +597,14 @@ Tensor([ True  True False False False], dtype=bool, device=xpux:0)
      - MAE
 
    * - 手写数字识别
-     - .. math::
-
-          \mathsf{I} \in \mathbb{R}^{H \times W \times C} \stackrel{\operatorname{flatten}}{\mapsto}
-          \boldsymbol{x} \in \mathbb{R}^{d} \stackrel{W,\boldsymbol{b}}{\mapsto} \boldsymbol{y} \in \mathbb{R}^{c}
-
+     - :math:`\boldsymbol{x} \in \mathbb{R}^{d} \stackrel{W,\boldsymbol{b}}{\mapsto} \boldsymbol{y} \in \mathbb{R}^{c}`
      - CE
      - Accuracy
+
+
+注：默认图片信息已经展平为向量，
+即 :math:`\mathsf{I} \in \mathbb{R}^{H \times W \times C} \stackrel{\operatorname{flatten}}{\mapsto}
+\boldsymbol{x} \in \mathbb{R}^{d}`
 
 在用 MegEngine 进行实现时，我们需要关注单个样本数据在整个计算图中的流动，
 尤其需要关注 Tensor 形状的变化（本质上这些都是线性代数中常见的变换），
@@ -616,7 +617,7 @@ Tensor([ True  True False False False], dtype=bool, device=xpux:0)
 
 .. admonition:: 看来线性模型就能搞定一切？
 
-   非也非也。由于这几个教程中数据集都过于简单，
+   答案是否定的。由于这几个教程中数据集都过于简单，
    因此即使使用最简单的线性模型来训练，最终也能取得比较不错的效果。
    在下一个教程中，我们将选用更加复杂的数据集（相较于 MNIST 只复杂了一些些），
    同样是分类任务，看线性模型是否依旧那么强大。
