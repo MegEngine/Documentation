@@ -7,7 +7,6 @@
    :hidden:
    :maxdepth: 1
 
-   about/index
    install/index
    transfer-from/index
    faq/index
@@ -43,7 +42,7 @@
    :caption: 推理部署篇
    :hidden:
    :maxdepth: 1
-   
+
    deployment/index
    deployment/lite/index
    deployment/lite/interface/index
@@ -118,7 +117,7 @@ MegEngine Cookbook
 .. dropdown:: :fa:`eye,mr-1` 如何对 MegEngine 的功能进行拓展？
 
    * 如果你希望为 MegEngine 添加新的算子，请参考 :ref:`add-an-operator` 。
-   * 如果你希望参与到 MegEngine 的开发中来，请参考 :ref:`development`  
+   * 如果你希望参与到 MegEngine 的开发中来，请参考 :ref:`development`
 
 寻求更多支持
 ------------
