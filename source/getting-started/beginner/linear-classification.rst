@@ -312,8 +312,10 @@ MegEngine 中的扁平化操作可以直接用于多个样本的情况（以便�
 
    选择 Sigmoid 的另一原因是它从信息论角度具有良好的数学解释（本教程中不会具体介绍），
    可以根据最大熵（Maximum entroy）原则从伯努利分布和广义线性模型的假设下推导得出。
-   使用了 Sigmoid / Logistic 函数的回归模型也被我们称为 Logistic 回归模型（LR 模型）。
-   很多地方将其翻译为 “逻辑回归”，这就和将 Robustness 翻译成 “鲁棒性” 一样迷惑。
+   使用了 Sigmoid / Logistic 函数的模型也被我们称为 Logistic 回归模型（LR 模型）。
+   很多地方将其翻译为 “逻辑回归”，这就和将 Robustness 翻译成 “鲁棒性” 一样迷惑，
+   从数学性质上看更适合翻译为对数几率回归。
+
    在本教程中将不对这个 Logistic 术语进行翻译。
 
 我们发现，对于二分类任务，Sigmoid 函数具有以下的优点：
@@ -334,7 +336,8 @@ MegEngine 中的扁平化操作可以直接用于多个样本的情况（以便�
 
 .. warning::
 
-   Logistic 回归模型最终的输出只有一个值，表示预测为正例的概率。
+   二分类 Logistic 回归最终的输出只有一个值，表示预测为某基类的概率。
+   接下来我们将介绍多分类 Logistic 回归（Multinational Logistic Regression）。
 
 多分类任务
 ~~~~~~~~~~
