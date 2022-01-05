@@ -37,9 +37,6 @@ MegEngine 深度学习入门教程
    megengine-basics
    linear-regression
    linear-classification
-   how-to-build-a-better-model
-   model-construction
-   neural-network-traning-tricks
-   pretrained-model-and-deployment
+   neural-network
 
 
