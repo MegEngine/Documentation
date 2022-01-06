@@ -13,8 +13,12 @@ Pull Request 的一生
 
 .. code-block:: shell
 
+   # 将 MegEngine 官方存储库添加为上游分支
+   git remote add upstream git@github.com:MegEngine/Documentation.git
+   git remote -v
+
    # 基于上游的 master 分支，创建并切换到一个新分支用于开发
-   git fetch upstream  
+   git fetch upstream
    git checkout -b <branch-name> upstream/master
 
    # 做一些相应的代码修改
@@ -33,7 +37,7 @@ Pull Request 的一生
    # 如果无需新的改动，则会被合入上游 master 分支
 
    # 删除本地分支和远端分支
-   git branch -D <branch-name> 
+   git branch -D <branch-name>
    git push origin -d <branch-name>
 
 如果你在发起 Pull Request 后有新增的改动，如果 Commits 记录很混乱，
@@ -41,7 +45,7 @@ Pull Request 的一生
 
 .. note::
 
-   一些开源项目要求避免使用 ``squash`` 和 ``rebase`` 
+   一些开源项目要求避免使用 ``squash`` 和 ``rebase``
    以保证历史记录的完整性，在 MegEngine 中提倡使用这些操作，
    目的是防止出现过多的 ``fix`` 性质的提交历史，请勿滥用。
 
