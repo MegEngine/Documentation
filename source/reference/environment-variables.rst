@@ -15,10 +15,10 @@
 .. note::
 
    MegEngine 中使用的环境变量可分为 “动态” 与 “非动态” 两类：
-   
+
    * 动态环境变量可以动态地进行读取，即在代码运行过程中修改可即时生效。
    * 非动态环境变量在整个过程中只读取一次，后续对其进行修改将无法生效。
-    
+
    对于非动态环境变量，我们会标注为 :ref:`nd-environ` 。
 
 .. _nd-environ:
@@ -41,7 +41,7 @@
         os.environ['MGE_ENV_VAR']="value"  # Put this line before import megengine
 
         import megengine  # Read some environment variables
-   
+
 
 编译相关
 --------
@@ -203,17 +203,23 @@ DTR 相关
 
   默认从 ``PATH``, ``LIBRARY_PATH`` 环境变量中寻找，也可人为指定路径如 ``"/data/opt/cuda/bin/"``.
 
-``MGB_JIT_BACKEND`` 
+``MGB_JIT_BACKEND``
   jit fuse kernel 的编译后端选项，可设置为 ``HALIDE``, ``NVRTC``, ``MLIR``.
 
 ``MGB_JIT_KEEP_INTERM`` （ :ref:`nd-environ` ）
   是否保存 jit 产生的临时文件，默认为空，不保存。
 
 ``MGB_JIT_WORKDIR`` （ :ref:`nd-environ` ）
-  jit 产生的临时文件目录路径，默认为 ``/tmp/mgbjit-XXXXXX``. 
+  jit 产生的临时文件目录路径，默认为 ``/tmp/mgbjit-XXXXXX``.
 
 ``MGB_DUMP_INPUT`` （ :ref:`nd-environ` ）
   是否在 Dump 的同时导出每个算子时输入值，默认为空，不开启。
+
+``MGE_FASTRUN_CACHE_TYPE`` （ :ref:`nd-environ` ）
+  使用何种方式存储 fastrun cache, 可设置为 ``FILE`` （进程退出时会将内容保存到文件里）或 ``MEMORY`` （不保存）
+
+``MGE_FASTRUN_CACHE_DIR`` （ :ref:`nd-environ` ）
+  更改 fastrun cache 的存储路径，默认为 ``~/.cache/megengine/persistent_cache``
 
 调试相关
 --------
