@@ -115,17 +115,17 @@ array([   8.3252    ,   41.        ,    6.98412698,    1.02380952,
 
 住房数据集的中的每个示例我们也称之为样本（Sample），因此样本容量 :math:`n` 为 20640.
 每个样本中记录的属性信息可以用一个特征向量
-:math:`\mathbf{x}=\left(x_{1}, x_{2}, \ldots, x_{d}\right)` 来表示，
+:math:`\boldsymbol{x}=\left(x_{1}, x_{2}, \ldots, x_{d}\right)` 来表示，
 里面的每个元素对应着该样本的某一维特征，我们将特征的维数简记为 :math:`d`, 其值为 8.
 因此我们的数据集可以用一个数据矩阵 :math:`X` 来表示，预测目标又叫做标记（Label）：
 
 .. math::
 
    X=\left[\begin{array}{c}
-    -\mathbf{x}_{1}^{T}- \\
-    -\mathbf{x}_{2}^{T}- \\
+    -\boldsymbol{x}_{1}^{T}- \\
+    -\boldsymbol{x}_{2}^{T}- \\
     \vdots \\
-    -\mathbf{x}_{n}^{T}-
+    -\boldsymbol{x}_{n}^{T}-
     \end{array}\right]
     =\left[\begin{array}{cccc}
     x_{1,1} & x_{1,2} & \cdots & x_{1, d} \\
@@ -133,11 +133,11 @@ array([   8.3252    ,   41.        ,    6.98412698,    1.02380952,
     \vdots & & & \vdots \\
     x_{n, 1} & x_{n, 2} & \cdots & x_{n, d}
     \end{array}\right] \quad
-    \mathbf{y}=\left(y_{1}, y_{2}, \ldots, y_{n}\right)
+    \boldsymbol{y}=\left(y_{1}, y_{2}, \ldots, y_{n}\right)
 
 其中 :math:`x_{i,j}` 表示第 :math:`i` 个样本的第 :math:`j` 维特征，
-标量 :math:`y_i` 为样本 :math:`\mathbf{x}_{i}` 对应的标记值，
-:math:`(\mathbf{x}, y)` 组成了样例（Example）。
+标量 :math:`y_i` 为样本 :math:`\boldsymbol{x}_{i}` 对应的标记值，
+:math:`(\boldsymbol{x}, y)` 组成了样例（Example）。
 在进行矩阵运算时，向量默认是列向量
 
 
@@ -145,13 +145,13 @@ array([   8.3252    ,   41.        ,    6.98412698,    1.02380952,
 --------------------
 
 我们任务是用线性回归模型 :math:`Y=X \beta+\varepsilon` 来预测房价，其中 :math:`\varepsilon` 是随机扰动。
-与一元线性回归的区别在于，此时的自变量 :math:`x` 有多个，我们的参数 :math:`\mathbf{w}` 也由标量变成了向量，
-对单个样本 :math:`\mathbf{x}` 有：
+与一元线性回归的区别在于，此时的自变量 :math:`x` 有多个，我们的参数 :math:`\boldsymbol{w}` 也由标量变成了向量，
+对单个样本 :math:`\boldsymbol{x}` 有：
 
 .. math::
 
    \begin{aligned}
-   \hat{y} &=f(\mathbf{x})=\mathbf{w} \cdot \mathbf{x}+b \\
+   \hat{y} &=f(\boldsymbol{x})=\boldsymbol{w} \cdot \boldsymbol{x}+b \\
      &=\left(w_{1}, w_{2}, \ldots, w_{d}\right) \cdot\left(x_{1}, x_{2}, \ldots, x_{d}\right)+b \\
      &=w_{1} x_{1}+w_{2} x_{2}+\ldots+w_{d} x_{d}+b
    \end{aligned}
@@ -179,7 +179,7 @@ Tensor(0.0, device=xpux:0) ()
 
 .. math::
 
-   \hat{\mathbf{y}}=
+   \hat{\boldsymbol{y}}=
    \left(\hat{y}_{1}, \hat{y}_{2}, \ldots, \hat{y}_{n}\right)
    =\left[\begin{array}{cccc}
    x_{1,1} & x_{1,2} & \cdots & x_{1, d} \\
@@ -383,9 +383,9 @@ Python 官方提案 `PEP 465
 我们更加希望我们的模型具有比较好的泛化（Generalization）能力，
 在面对 **全新的、从未见过的** 数据时，也能进行准确的预测。
 如果单纯地去基于已经观测到的这些数据进行求解，
-对于线性回归模型 :math:`\hat{y} = \theta^{T} \cdot \mathbf{x}`,
-我们其实完全可以基于样本 :math:`X` 和标记 :math:`\mathbf{y}`
-求得一个解析解 :math:`\theta = (X^{T}X)^{-1}X^{T}\mathbf{y}`.
+对于线性回归模型 :math:`\hat{y} = \theta^{T} \cdot \boldsymbol{x}`,
+我们其实完全可以基于样本 :math:`X` 和标记 :math:`\boldsymbol{y}`
+求得一个解析解 :math:`\theta = (X^{T}X)^{-1}X^{T}\boldsymbol{y}`.
 这个结果也可以从概率模型视角用极大然估计（Maximum Likelihood Estimation）求得 ——
 利用已知的样本结果，反推最有可能（最大概率）导致这样结果的参数值。
 （本教程不需要知道详细的推导和证明过程，感兴趣的读者可以查看 CS229
@@ -657,7 +657,7 @@ Python 官方提案 `PEP 465
    :math:`x^{(i)}_j` 表示第 :math:`i` 个样本的第 :math:`j` 维特征， :math:`\theta` 为参数。
 
    * 注意到上面的向量用上加箭头 :math:`\vec{x}` 的形式来表示，这是因为在板书的过程中，
-     粗体的 :math:`\mathbf{x}` 与 :math:`x` 很难区分，因此采用了这种形式；
+     粗体的 :math:`\boldsymbol{x}` 与 :math:`x` 很难区分，因此采用了这种形式；
      而在印刷体材料中，粗体字还是很容易区分的，因此本教程使用粗体罗马字表示向量。
      但我们在使用 Tensor 实际编程时，
      标量、向量、列向量和行向量 :ref:`有实质区别 <tensor-shape>` 。

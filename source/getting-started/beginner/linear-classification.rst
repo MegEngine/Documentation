@@ -232,7 +232,7 @@ MegEngine 中的扁平化操作可以直接用于多个样本的情况（以便�
 (10, 28, 28, 1) (10, 784)
 
 经过简单处理，就能够把单个样本的线性预测模型和上一个教程中的
-:math:`\hat{y} = \mathbf{w} \cdot \mathbf{x}+b` 形式相互联系起来了。
+:math:`\hat{y} = \boldsymbol{w} \cdot \boldsymbol{x}+b` 形式相互联系起来了。
 
 分类任务的输出形式
 ------------------
@@ -249,17 +249,17 @@ MegEngine 中的扁平化操作可以直接用于多个样本的情况（以便�
 假定我们的手写数字分类任务简化成标记只含有 0 和 1 的情况，即 :math:`y \in \left\{ 0, 1 \right\}`.
 其中 0 意味着这张图片是手写数字 0, 而 1 意味着这张图片不是手写数字 0.
 对于离散的标记，我们可以引入非线性的决策函数 :math:`g(\cdot)` 来将线性输出映射为类别。
-比如，可以将 :math:`f(\mathbf{x})=\mathbf{x} \cdot \mathbf{w}+b` 的输出以 0 为阈值（Threshold）
+比如，可以将 :math:`f(\boldsymbol{x})=\boldsymbol{x} \cdot \boldsymbol{w}+b` 的输出以 0 为阈值（Threshold）
 进行划分，认为凡是计算结果大于 0 的样本，都代表这张图片是手写数字 0；
 而凡是计算结果小于 0 的样本，都代表这张图片不是手写数字 0.
 故可以得到这样的预测模型：
 
 .. math::
 
-   \hat{y}=\mathbb{I}(f(\mathbf{x})-\text { threshold })=
+   \hat{y}=\mathbb{I}(f(\boldsymbol{x})-\text { threshold })=
    \left\{\begin{array}{lll}
-   1 & \text { if } & f(\mathbf{x})>\text { threshold } \\
-   0 & \text { if } & f(\mathbf{x})<\text { threshold }
+   1 & \text { if } & f(\boldsymbol{x})>\text { threshold } \\
+   0 & \text { if } & f(\boldsymbol{x})<\text { threshold }
    \end{array}\right.
 
 其中 :math:`\mathbb I` 是指示函数（也叫示性函数），也是我们这里用到的决策函数，但它并不常用。
@@ -327,7 +327,7 @@ MegEngine 中的扁平化操作可以直接用于多个样本的情况（以便�
 
 .. math::
 
-   p(y=1 \mid \mathbf{x})=\sigma(f(\mathbf{x}))=\frac{1}{1+\exp (-f(\mathbf{x}))}
+   p(y=1 \mid \boldsymbol{x})=\sigma(f(\boldsymbol{x}))=\frac{1}{1+\exp (-f(\boldsymbol{x}))}
 
 继续使用我们上面给出的例子：对于线性模型的输出, 经过 Sigmoid 函数的映射后，
 :math:`\sigma(-1000)` 比 :math:`\sigma(-100)` 要更加接近 0，表示前者不是 0 的概率要更高一些。
@@ -368,19 +368,19 @@ Logistic 回归中最终的输出只有一个概率 :math:`p`, 代表预测为�
 
    经过这样的处理，每个样本的标记就变成了一个 10 分类的概率向量，可与模型预测输出进行比较。
 
-回忆一下线性回归的形式，对于单个样本 :math:`\mathbf x \in \mathbb{R}^d`,
-借助于权重向量 :math:`\mathbf{w} \in \mathbb{R}^d` 和偏置 :math:`b`,
-可以得到一个线性输出 :math:`\mathbf {w} \cdot \mathbf {x} + b`,
+回忆一下线性回归的形式，对于单个样本 :math:`\boldsymbol x \in \mathbb{R}^d`,
+借助于权重向量 :math:`\boldsymbol{w} \in \mathbb{R}^d` 和偏置 :math:`b`,
+可以得到一个线性输出 :math:`\boldsymbol {w} \cdot \boldsymbol {x} + b`,
 现在我们可以将这个输出看作是预测当前样本是某个分类的得分 :math:`s`, 或者说预测为该分类的可信度。
 对于 :math:`c` 分类任务，我们希望得到 :math:`c` 个这样的得分，因此可以借助矩阵运算的形式实现：
 
 .. math::
 
   \left[\begin{array}{c}
-  -\mathbf{w}_{1}^{T}- \\
-  -\mathbf{w}_{2}^{T}- \\
+  -\boldsymbol{w}_{1}^{T}- \\
+  -\boldsymbol{w}_{2}^{T}- \\
   \vdots \\
-  -\mathbf{w}_{c}^{T}-
+  -\boldsymbol{w}_{c}^{T}-
   \end{array}\right]
   \left[\begin{array}{c}
   x_{1} \\ x_{2} \\ \vdots \\ x_{d}
@@ -389,10 +389,10 @@ Logistic 回归中最终的输出只有一个概率 :math:`p`, 代表预测为�
   b_{1} \\ b_{2} \\ \vdots \\ b_{c}
   \end{array}\right] =
   \left[\begin{array}{c}
-  \mathbf{w}_{1}^{T} \mathbf{x} + b_1 \\
-  \mathbf{w}_{2}^{T} \mathbf{x} + b_2 \\
+  \boldsymbol{w}_{1}^{T} \boldsymbol{x} + b_1 \\
+  \boldsymbol{w}_{2}^{T} \boldsymbol{x} + b_2 \\
   \vdots \\
-  \mathbf{w}_{c}^{T} \mathbf{x} + b_c
+  \boldsymbol{w}_{c}^{T} \boldsymbol{x} + b_c
   \end{array}\right] =
   \left[\begin{array}{c}
   s_{1} \\ s_{2} \\ \vdots \\ s_{c}
@@ -430,7 +430,7 @@ Sigmoid 函数能够将单个输出从实数域 :math:`\mathbb R` 映射到概�
 
 .. math::
 
-   p(y=c \mid \mathbf{x})
+   p(y=c \mid \boldsymbol{x})
    =\operatorname{Softmax}\left(s_{c}\right)
    =\frac{\exp s_{c}}{\sum_{i} \exp s_{i}}
 
@@ -448,8 +448,8 @@ Tensor([0.0321 0.0871 0.2369 0.6439], device=xpux:0)
 分类任务的优化目标
 ------------------
 
-我们已经得到了模型在多分类上预测的概率向量 :math:`\hat{\mathbf{y}}`,
-也对真实标记通过使用 One-hot 编码得到了概率向量 :math:`\mathbf{y}`.
+我们已经得到了模型在多分类上预测的概率向量 :math:`\hat{\boldsymbol{y}}`,
+也对真实标记通过使用 One-hot 编码得到了概率向量 :math:`\boldsymbol{y}`.
 二者各表示一种概率分布。我们的优化目标是，让预测值和真实标记尽可能地接近，需设计合适的损失函数。
 
 .. admonition:: 信息论中的相对熵与交叉熵
@@ -476,7 +476,7 @@ Tensor([0.0321 0.0871 0.2369 0.6439], device=xpux:0)
 
    .. math::
 
-      \ell_{\mathrm{CE}}=H(\mathbf{y}, \hat{\mathbf{y}})=-\sum_{i=1}^{c} y_{i} \ln \hat{y}_{i}
+      \ell_{\mathrm{CE}}=H(\boldsymbol{y}, \hat{\boldsymbol{y}})=-\sum_{i=1}^{c} y_{i} \ln \hat{y}_{i}
 
    这即是分类任务经常使用的损失函数，对应 MegEngine 中的 :func:`.functional.nn.cross_entropy` 接口。
 
@@ -592,7 +592,7 @@ Tensor([ True  True False False False], dtype=bool, device=xpux:0)
      - 观察拟合度
 
    * - 房价预测
-     - :math:`\mathbf{x} \in \mathbb{R}^{d} \stackrel{\mathbf{w},b}{\mapsto} y \in \mathbb{R}`
+     - :math:`\boldsymbol{x} \in \mathbb{R}^{d} \stackrel{\boldsymbol{w},b}{\mapsto} y \in \mathbb{R}`
      - MSE
      - MAE
 
@@ -600,7 +600,7 @@ Tensor([ True  True False False False], dtype=bool, device=xpux:0)
      - .. math::
 
           \mathsf{I} \in \mathbb{R}^{H \times W \times C} \stackrel{\operatorname{flatten}}{\mapsto}
-          \mathbf{x} \in \mathbb{R}^{d} \stackrel{W,\mathbf{b}}{\mapsto} \mathbf{y} \in \mathbb{R}^{c}
+          \boldsymbol{x} \in \mathbb{R}^{d} \stackrel{W,\boldsymbol{b}}{\mapsto} \boldsymbol{y} \in \mathbb{R}^{c}
 
      - CE
      - Accuracy
