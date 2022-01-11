@@ -54,7 +54,7 @@ def linear_model(X):
 
 # GradManager and Optimizer setting
 gm = autodiff.GradManager().attach([w, b])
-optimizer = optim.Adam([w, b], lr=0.01)
+optimizer = optim.SGD([w, b], lr=0.01)
 
 # Training
 nums_epoch = 10

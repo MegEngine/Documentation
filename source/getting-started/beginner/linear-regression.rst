@@ -499,25 +499,7 @@ Python 官方提案 `PEP 465
        return F.matmul(X, w) + b
 
    gm = autodiff.GradManager().attach([w, b])
-   optimizer = optim.Adam([w, b], lr=0.01)
-
-.. dropdown:: :fa:`eye,mr-1` 我们这里换用了 Adam 优化器！
-
-   尽管我们已经得出了梯度下降的变体形式，即小批量梯度下降来解决一部分的已知问题。
-   但在 MegEngine 的 :mod:`~.optimizer` 模块中却提供了更多类型的优化器，代表不同的优化算法。
-   SGD 一个让人诟病的问题就是收敛速度不太理想，而且学习率是一个需要频繁调优的超参数。
-   你可以自己试着使用 SGD 优化器来训练现在我们定义好的线性回归模型（推荐感兴趣的读者玩一玩），
-   看看会遇到什么样的问题。
-
-
-   .. figure:: ../../_static/images/loss-surface-optimization.gif
-
-   .. figure:: ../../_static/images/sgd-saddle-point.gif
-
-   本教程不会详细地讲解各种优化算法的差异，读者可以简单理解成
-   :class:`~.Adam` 是一个加强版的 :class:`~.SGD`,
-   其学习率会随着参数的更新进行一些自适应的调整，让初学者可以专注学习其它概念。
-   （图片来源： `Alec Radford <https://twitter.com/alecrad>`_ )
+   optimizer = optim.SGD([w, b], lr=0.01)
 
 万事俱备，可以开始训练我们的模型了：
 
