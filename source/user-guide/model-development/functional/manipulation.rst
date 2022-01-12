@@ -211,7 +211,7 @@ Tensor([1 2], dtype=int32, device=xpux:0)
 
 .. warning::
 
-   使用 :py:func:`~.squeeze` 新增维度时要注意轴长度，只能去掉轴长度为 1 的冗余维度。
+   使用 :py:func:`~.squeeze` 去除维度时要注意轴长度，只能去掉轴长度为 1 的冗余维度。
 
 .. _tensor-broadcasting:
 
