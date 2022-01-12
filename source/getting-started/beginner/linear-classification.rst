@@ -622,6 +622,22 @@ Tensor([ True  True False False False], dtype=bool, device=xpux:0)
    在下一个教程中，我们将选用更加复杂的数据集（相较于 MNIST 只复杂了一些些），
    同样是分类任务，看线性模型是否依旧那么强大。
 
+拓展材料
+--------
+
+.. dropdown:: :fa:`eye,mr-1` 尝试使用其它的机器学习算法完成分类任务
+
+   请尝试去了解一下 K 近邻（K nearest neighbor, KNN）算法与支撑向量机（Support vector machine, SVM）算法，
+   并尝试用 MegEngine 进行具体实现，一个比较好的参考材料是 CS231n 课程。
+   比如用 SVM 完成本教程中的手写数字分类任务，你会发现模型的预测输出不一定需要表示为概率；
+   用 KNN 完成手写数字分类，你更会惊讶地发现它不需要创建模型，也不需要进行训练！
+   那么代价是什么呢？进阶地，你可以对比不同的机器学习算法，看看彼此之间的优劣和适用情景。
+
+
+.. dropdown:: :fa:`eye,mr-1` Sigmoid 与 Softmax 之间的联系
+
+   对于二分类 :math:`y \in \{0, 1\}` 的情况，使用 Softmax 将退化成 Sigmoid. 请尝试证明。
+
 参考文献
 --------
 

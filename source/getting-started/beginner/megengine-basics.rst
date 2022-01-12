@@ -654,7 +654,7 @@ Tensor(9.75, device=xpux:0)
 拓展材料
 --------
 
-.. dropdown:: 关于向量化优于 for 循环的简单验证
+.. dropdown:: :fa:`eye,mr-1` 关于向量化优于 for 循环的简单验证
 
    在 NumPy 内部，向量化运算的速度是优于 for 循环的，我们很容易验证这一点：
 
@@ -694,6 +694,15 @@ Tensor(9.75, device=xpux:0)
      <https://blog.paperspace.com/numpy-optimization-vectorization-and-broadcasting/>`_
 
    同样地，向量化的代码在 MegEngine 中也会比 for 循环写法更快，尤其是利用 GPU 并行计算时。
+
+.. dropdown:: :fa:`eye,mr-1` Scikit-learn 文档：欠拟合和过拟合
+
+   Scikit-learn 是非常有名的 Python 机器学习库，里面实现了许多经典机器学习算法。
+   在 Scikit-learn 的模型选择文档中，给出了解释模型欠拟合和过拟合的代码：
+
+   https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html
+
+   感兴趣的读者可以借此去了解一下 Scikit-learn, 我们在下一个教程中会用到它提供的数据集接口。
 
 参考文献
 --------
