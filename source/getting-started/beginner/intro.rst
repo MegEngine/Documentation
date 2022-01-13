@@ -10,18 +10,48 @@ MegEngine 深度学习入门教程
    借助一系列的代码实战，你将循序渐进地熟悉这个领域，并掌握 MegEngine 框架的基本使用。
    在阅读本套教程前，你需要具备一定的 Python 基础，了解最基本的大学工科数学知识。
 
-内容安排与组织
---------------
-
-这套 MegEngine 深度学习入门教程由多个章节组成：
-
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    megengine-basics
    linear-regression
    linear-classification
    neural-network
+   convolutional-neural-network
+
+内容安排与组织
+--------------
+
+这套 MegEngine 深度学习入门教程由多个章节组成：
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 40 40
+
+   * - 核心主题
+     - 知识点
+     - 编程练习
+
+   * - :ref:`框架基础使用 <megengine-basics>`
+     - :class:`~.Tensor` / :mod:`~.functional` / :mod:`~.autodiff`
+       / :mod:`~.optimizer` / 计算图 / 损失函数...
+     - 基于随机数据拟合一条直线
+   * - :ref:`线性回归 <linear-regression>`
+     - 机器学习概念与流程 / MiniBatch 梯度下降 / 准备 :class:`~.DataLoader` / 评估指标...
+     - 预测 California 房价
+   * - :ref:`线性分类 <linear-classification>`
+     - 计算机视觉图像编码 / :mod:`.data.dataset` / 特征处理
+       / Softmax / Cross Entropy / ...
+     - MNIST 手写数字分类
+   * - :ref:`神经网络 <neural-network>`
+     - 非线性激活函数 / 全连接神经网络 / 随机初始化
+       / 使用 :mod:`~.module` / 深度学习调参...
+     - Fashion-MNIST 服饰分类
+   * - :ref:`卷积神经网络 <convolutional-neural-network>`
+     - 卷积运算 / 模型保存与加载...
+     - CIFAR-10 彩色图片分类
+
 
 每个章节中将专注于向你解释一定的概念、示范相应的代码，
 并且在章节末会提供一个综合性的编程实践任务，以帮助你将当前章节中提到的概念串联起来。
@@ -50,7 +80,7 @@ MegEngine 深度学习入门教程
 想要直接从高度抽象凝练的段落中学习和吸收知识，可能会比较困难；
 可如果我们亲手去编码、去调试，就能够更快地掌握这些概念。
 
-我们会使用与 CS229 中不完全一致的数学符号（文末有对照表），以便于在实践时更容易写出形式相似的代码。
+我们会使用与 CS229 中不完全一致的数学符号（文末有参考表），以便于在实践时更容易写出形式相似的代码。
 
 CS 229 中的其它机器学习模型与算法也可以使用 MegEngine 实现，但我们仅仅关注线性模型部分。
 从 Logistic 回归后，我们开始过渡到神经网络模型，这一部分的叙述灵感来自于 CS230.
