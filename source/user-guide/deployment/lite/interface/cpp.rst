@@ -38,7 +38,7 @@ Layout的 C++ 接口实现如下
 
 Tensor 创建
 ^^^^^^^^^^^^^^^^
-创建 Tensor 时候用户可以指定一些 Tensor 的信息，包括创建 Tensor 的设备类型，是否是设备的 
+创建 Tensor 时候用户可以指定一些 Tensor 的信息，包括创建 Tensor 的设备类型，是否是设备的
 `锁页内存 <https://developer.nvidia.com/blog/how-optimize-data-transfers-cuda-cc/>`_，以及 Layout 信息等
 
 .. code-block:: cpp
@@ -52,7 +52,7 @@ Tensor 创建
 参数：
 
 *  LiteDeviceType ：指定创建的 Tensor 所在的设备，默认是：LITE_CPU，目前主持的设备有：
-    
+
     .. code-block:: cpp
 
         typedef enum {
@@ -139,7 +139,7 @@ slice
     std::shared_ptr<Tensor> slice(
         const std::vector<size_t>& start, const std::vector<size_t>& end,
         const std::vector<size_t>& step = {});
- 
+
 对 Tensor 进行切片，返回一个新的 Tensor，新的 Tensor 和原来 Tensor 共享内存， **新的 Tensor 可能不连续**
 
 参数： **start，end 的长度必须相等，长度可以小于 Tensor 的 Layout 的维度，如果传递了 step，则 step 也需要和 start，end 的长度相等**
@@ -224,7 +224,7 @@ Network 相关 API
             // 优化选项
             Options options = {};
         };
-    
+
     * bare_model_cryption_name：目前 MegEngine Lite 中写了三种加密算法，分别是："AES_default"，"RC4_default" 和 "SIMPLE_FAST_RC4_default"
     * options 定义了对 Network 进行优化的各种参数：
 
@@ -310,7 +310,7 @@ Network 相关 API
 
 示例：
 
-.. code-block:: cpp
+.. code-block::
 
     std::string model_path = "./shufflenet.mge";
     std::string input_name = "data";
@@ -483,7 +483,7 @@ set_network_algo_policy
     static void set_network_algo_policy(
             std::shared_ptr<Network> dst_network, LiteAlgoSelectStrategy strategy,
             uint32_t shared_batch_size = 0, bool binary_equal_between_batch = false);
-    
+
 设置 dst_network 模型运行时候选择算法的策略
 
 参数：
@@ -627,7 +627,7 @@ update_decryption_or_key
         std::string decrypt_name, const DecryptionFunc& func,
         const std::vector<uint8_t>& key);
 
-更新 MegEngine Lite 中注册的 decrypt_name 名字的解密算法，如果 func 不为空，则将之前的解密算法的方法更新为 func， 
+更新 MegEngine Lite 中注册的 decrypt_name 名字的解密算法，如果 func 不为空，则将之前的解密算法的方法更新为 func，
 如果 key 的长度大于0，则将解密算法的秘钥更新为 key
 
 示例：
@@ -660,7 +660,7 @@ try_coalesce_all_free_memory
 
     void try_coalesce_all_free_memory();
 
-配置 MegEngine Lite 将释放所有没有用到的内存，减少内存用量 
+配置 MegEngine Lite 将释放所有没有用到的内存，减少内存用量
 
 set_loader_lib_path
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
