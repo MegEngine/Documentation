@@ -35,7 +35,6 @@ MegEngine Lite Python 部署模型快速上手
 注意输入数据 ``input_tensor`` 是随机生成的，不用在乎计算结果。
 
 .. code-block:: python
-   :linenos:
 
    from megenginelite import *
    import numpy as np
@@ -69,21 +68,60 @@ MegEngine Lite Python 部署模型快速上手
 
 上面代码主要完成了几个步骤，包括：
 
-* 创建默认配置的 Network （第 10 行）；
-* 载入模型，MegEngine Lite 将读取并解析模型文件，并创建计算图（第 11 行）；
-* 通过输入 Tensor 的名字获取模型的输入 Tensor, 并设置随机数作为输入数据（第 13~16 行）
-* 执行 Inference 逻辑（第 19~20 行）；
-* 获取模型输出 Tensor, 并处理输出数据（第 22~426 行）。
+* 创建默认配置的 Network；
+* 载入模型，MegEngine Lite 将读取并解析模型文件，并创建计算图；
+* 通过输入 Tensor 的名字获取模型的输入 Tensor, 并设置随机数作为输入数据；
+* 执行 Inference 逻辑；
+* 获取模型输出 Tensor, 并处理输出数据。
 
 这样这个调用 MegEngine Lite 的 Python 接口的 demo 就完成了。
 
+使用 CUDA 进行推理
+-----------------------------------------------------
+下面将通过 CUDA 运行 shufflenet.mge 来展示如何使用 TensorBatchCollector 来攒 batch，攒好之后传递到 network 的输入 tensor 中进行推理。
+
+.. code-block:: python
+
+   from megenginelite import *
+   import numpy as np
+   import argparse
+
+   def main():
+      parser = argparse.ArgumentParser(description='test the lite python interface')
+      parser.add_argument('input', help='the inference model file')
+      args = parser.parse_args()
+
+      # construct LiteOption
+      net_config = LiteConfig(device_type=LiteDeviceType.LITE_CUDA)
+
+      network = LiteNetwork(config=net_config)
+      network.load(args.input)
+
+      input_tensor = network.get_io_tensor("data")
+      # copy input data to input_tensor of the network
+      input_data = np.random.uniform(0, 1, (1, 3, 224, 224)).astype("float32")
+      input_tensor.set_data_by_copy(input_data)
+
+      # forward the model
+      network.forward()
+      network.wait()
+
+      output_names = network.get_all_output_name()
+      output_tensor = network.get_io_tensor(output_names[0])
+
+      output_data = output_tensor.to_numpy()
+      print('shufflenet output max={}, sum={}'.format(output_data.max(), output_data.sum()))
+
+   if __name__ == '__main__':
+      main()
+
+上面示例主要演示在 CUDA 设备上进行 Inference 的接口调用过程。
 
 使用 TensorBatchCollector 辅助完成 CUDA 推理
 -----------------------------------------------------
 下面将通过 CUDA 运行 shufflenet.mge 来展示如何使用 TensorBatchCollector 来攒 batch，攒好之后传递到 network 的输入 tensor 中进行推理。
 
 .. code-block:: python
-   :linenos:
 
    from megenginelite import *
    import numpy as np
