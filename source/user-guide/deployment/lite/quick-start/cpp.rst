@@ -33,7 +33,6 @@ MegEngine Lite C++ 模型部署快速上手
 输入数据 ``input_tensor`` 是随机生成的，所以不用在乎计算结果。
 
 .. code-block:: cpp
-   :linenos:
 
    #include <stdlib.h>
    #include <iostream>
@@ -87,11 +86,11 @@ MegEngine Lite C++ 模型部署快速上手
 
 上面代码主要完成了几个步骤，包括：
 
-#. 创建默认配置的 Network（第 16 行）；
-#. 载入模型，MegEngine Lite 将读取并解析模型文件，并创建计算图（第 19 行）；
-#. 通过输入 Tensor 的名字获取模型的输入 Tensor, 并设置随机数作为输入数据（第 22~32 行）；
-#. 执行 Inference 逻辑（第 35~36 行）;
-#. 获取模型输出 Tensor, 并处理输出数据（第 39~48 行）。
+#. 创建默认配置的 Network；
+#. 载入模型，MegEngine Lite 将读取并解析模型文件，并创建计算图；
+#. 通过输入 Tensor 的名字获取模型的输入 Tensor, 并设置随机数作为输入数据；
+#. 执行 Inference 逻辑;
+#. 获取模型输出 Tensor, 并处理输出数据。
 
 至此完成了一个 ``shufflenet_v2`` 模型的推理过程的 C++ 代码编写。
 
