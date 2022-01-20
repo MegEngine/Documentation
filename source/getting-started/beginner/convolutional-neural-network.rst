@@ -219,7 +219,10 @@ CIFAR-10 数据集与 MNIST 一样，可以直接通过 :mod:`.data.dataset` 来
 
    * 全连接神经网络的输入必须是一个展平后的特征向量，
      因此我们之前采取的处理是 :func:`~.functional.flatten` 操作，并没有考虑可能产生的影响。
-     这样的操作可以看作是对图片数据进行了一次降维，会丢失掉非常多的信息 —— 比如各个相邻居像素之间的 **空间信息** 。
+     这样的操作可以看作是对图片数据进行了一次降维，会丢失掉非常多的信息 —— 比如各个相邻居像素之间的局部 **空间信息** 。
+
+   * 全连接神经网络对图像中像素位置的变化比较敏感，两张图片如果彼此之间的差异仅仅是做了些上下平移，
+     对全连接神经网络而言就可能会认为这些空间信息已经截然不同，不具备空间 **平移不变性** 。
 
 让我们从传统计算机视觉领域获得一些启发，是人们是如何利用图片的空间信息的。
 
@@ -288,6 +291,11 @@ CIFAR-10 数据集与 MNIST 一样，可以直接通过 :mod:`.data.dataset` 来
    在 :class:`~.module.Conv2d` 中还有着：步幅（Stride），表示每次滤波器移动的距离；
    以及还有 ``dilation``, ``groups`` 等等参数，输入需要为 NCHW 布局，具体说明请查阅 API 文档。
 
+.. warning::
+
+   严格来说，深度学习中所指的输入数据和卷积核之间执行的这种运算过程其实是互相关（Cross-correlation）运算，
+   而不是卷积运算（真实的卷积运算需要先将卷积核沿对角线翻转），而我们通常不采用互相关这个说法，习惯称之为卷积。
+
 下面来看一个在 MegEngine 中使用卷积运算的例子：
 
 .. code-block:: python
@@ -340,6 +348,8 @@ CIFAR-10 数据集与 MNIST 一样，可以直接通过 :mod:`.data.dataset` 来
    Architecture of LeNet a Convolutional Neural Network here for digits recognition.
    Each plane is a feature map ie a set of units whose weights are constrained to be identical.
 
+注意：我们在数据预处理时使用了 :class:`~.transform.Compose` 来对各种变换进行组合。
+
 .. literalinclude:: ../../../examples/beginner/conv-network-cifar10.py
 
 经过接近 50 轮训练，通常能够得到一个准确率超过 60% 的 LeNet 模型，比单纯使用全连接神经网络要好一些。
@@ -355,7 +365,7 @@ CIFAR-10 数据集与 MNIST 一样，可以直接通过 :mod:`.data.dataset` 来
 总结：炼丹不完全是玄学
 ----------------------
 
-深度学习领域，模型是丹方，数据是丹药，GPU 设备是三昧真火，而 MegEngine 则是强大的炼丹炉。
+深度学习领域，模型是丹方，数据是灵材，GPU 设备是三昧真火，而 MegEngine 则是强大的炼丹炉。
 
 作为炼丹人员，或许在 “调参” 这一步确实会花费掉非常多的时间，且总是会发生一些玄学现象。
 但经过这一系列教程，相信你也认识到了一些更深层次的内容，让我们再次回顾一下机器学习的概念：
