@@ -23,7 +23,7 @@
    借助数据变换，我们可以达成各种目标，包括但不限于：
 
    * 通过 ``Resize`` 操作，使得输入数据的形状满足模型对形状的要求；
-   * 实现 :ref:`数据增强 <data-augmentation>`_ （Data augmentation），更多的数据往往能提升模型的性能...
+   * 实现 :ref:`数据增强 <data-augmentation>` （Data augmentation），更多的数据往往能提升模型的性能...
 
 .. seealso::
 
