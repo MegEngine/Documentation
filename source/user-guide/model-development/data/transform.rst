@@ -23,8 +23,7 @@
    借助数据变换，我们可以达成各种目标，包括但不限于：
 
    * 通过 ``Resize`` 操作，使得输入数据的形状满足模型对形状的要求；
-   * 实现 `数据增广 <https://megengine.org.cn/doc/stable/zh/getting-started/beginner/neural-network-traning-tricks.html#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%B9%BF>`_
-     （Data augmentation），更多的数据往往能提升模型的性能...
+   * 实现 :ref:`数据增强 <data-augmentation>`_ （Data augmentation），更多的数据往往能提升模型的性能...
 
 .. seealso::
 
@@ -90,7 +89,7 @@ array([[ 2,  3,  4],
 最终，我们的各种 ``Transform`` 实现应当被应用于 ``DataLoader``:
 
 >>> dataloader = DataLoader(dataset, transform=composed_transform)
-       
+
 .. warning::
 
    我们这里给出的例子比较简单，假设样本都是单个元素，实际上 ``apply`` 方法支持 Tuple 类型的输入，
@@ -98,7 +97,7 @@ array([[ 2,  3,  4],
 
 .. seealso::
 
-   可以在官方 `ResNet 
+   可以在官方 `ResNet
    <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>`_
    训练代码中找到 ``DataLoader`` 通过组合数据变换对数据进行预处理的例子。
 
