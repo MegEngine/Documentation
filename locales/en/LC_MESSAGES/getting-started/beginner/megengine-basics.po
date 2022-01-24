@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 01:33\n"
+"PO-Revision-Date: 2022-01-24 12:34\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:5
 msgid "MegEngine 基础概念"
-msgstr ""
+msgstr "MegEngine basic concepts"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:7
 msgid "本教程涉及的内容"
@@ -56,11 +56,11 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:34
 msgid "数学"
-msgstr ""
+msgstr "math"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:34
 msgid "计算机科学"
-msgstr ""
+msgstr "computer science"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:34
 msgid "几何概念"
@@ -68,55 +68,55 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:34
 msgid "具象化例子"
-msgstr ""
+msgstr "Concrete example"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:36
 msgid "标量（scalar）"
-msgstr ""
+msgstr "Scalar"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:36
 msgid "数字（number）"
-msgstr ""
+msgstr "Number"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:36
 msgid "点"
-msgstr ""
+msgstr "point"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:36
 msgid "得分、概率"
-msgstr ""
+msgstr "Score, probability"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:37
 msgid "向量（vector）"
-msgstr ""
+msgstr "Vector"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:37
 msgid "数组（array）"
-msgstr ""
+msgstr "Array"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:37
 msgid "线"
-msgstr ""
+msgstr "String"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:37
 msgid "列表"
-msgstr ""
+msgstr "List"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:38
 msgid "矩阵（matrix）"
-msgstr ""
+msgstr "Matrix"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:38
 msgid "2 维数组（2d-array）"
-msgstr ""
+msgstr "2 dimensional array (2d-array)"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:38
 msgid "面"
-msgstr ""
+msgstr "noodle"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:38
 msgid "Excel 表格"
-msgstr ""
+msgstr "Excel spreadsheet"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:39
 msgid "3 维张量"
@@ -144,7 +144,7 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:41
 msgid "n 维数组（nd-array）"
-msgstr ""
+msgstr "n-dimensional array (nd-array)"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:41
 msgid "高维空间"
@@ -160,11 +160,11 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:52
 msgid "我们可以基于 Tensor 数据结构，进行各式各样的科学计算；"
-msgstr ""
+msgstr "We can perform various scientific calculations based on the Tensor data structure;"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:53
 msgid "Tensor 也是神经网络编程时所用的主要数据结构，网络的输入、输出和转换都使用 Tensor 表示。"
-msgstr ""
+msgstr "Tensor is also the main data structure used in neural network programming. The input, output and conversion of the network are all represented by Tensor."
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:59
 msgid "与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效的计算。 当 GPU 和 CPU 设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。 另外 MegEngine 还支持自动微分（Autodiff）等特性，我们将在后续教程适当的环节进行介绍。"
@@ -216,7 +216,7 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:123
 msgid "在深度学习领域，任何复杂的深度神经网络模型本质上都可以用一个计算图表示出来。"
-msgstr ""
+msgstr "In the field of deep learning, any complex deep neural network model can essentially be represented by a computational graph."
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:125
 msgid "我们先通过一个简单的数学表达式 :math:`y=w*x+b` 作为例子，来介绍计算图的基本概念："
@@ -352,7 +352,7 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:248
 msgid "参数（Parameter）"
-msgstr ""
+msgstr "Parameter"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:250
 msgid "你可能注意到了这样一个细节：我们在前面的介绍中，使用参数（Parameter）来称呼 :math:`w` 和 :math:`b`. 因为与输入数据 :math:`x` 不同，它们是需要在模型训练过程中被优化更新的变量。 在 MegEngine 中有 :class:`~.Parameter` 类专门和 :class:`~.Tensor` 进行区分，但它本质上是一种特殊的张量。 因此梯度管理器也支持维护计算过程中 :class:`~.Parameter` 的梯度信息。"
@@ -376,7 +376,7 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:288
 msgid "优化器（Optimizer）"
-msgstr ""
+msgstr "Optimizer"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:290
 msgid "MegEngine 的 :mod:`~.optimizer` 模块提供了基于各种常见优化策略的优化器，如 :class:`~.SGD` 和 :class:`~.Adam` 等。 它们的基类是 :class:`~.Optimizer`，其中 :class:`~.SGD` 对应随机梯度下降算法，也是本教程中将会用到的优化器。"
