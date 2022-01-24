@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-28 12:20\n"
+"PO-Revision-Date: 2022-01-24 11:07\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -80,23 +80,26 @@ msgstr "序列化被追溯 (trace) 的模型并保存到文件。"
 
 #: megengine.jit.tracing.trace.dump:3 of
 msgid "output file, could be file object or filename."
-msgstr ""
+msgstr "输出文件，可以是文件对象或文件名"
 
 #: megengine.jit.tracing.trace.dump:4 of
 msgid "names of the input tensors in the traced function."
-msgstr ""
+msgstr "被追溯（traced）函数的输入张量的名字。"
 
 #: megengine.jit.tracing.trace.dump:5 of
 msgid "names of the output tensors in the traced function, use the default name if not specified."
-msgstr ""
+msgstr "被追溯（traced）函数的输出张量的名字，如果未指明则使用默认名字。"
 
 #: megengine.jit.tracing.trace.dump:7 of
 msgid "whether output is appended to ``file``. Only works when ``file`` is str."
-msgstr ""
+msgstr "是否在 ``file`` 后追加输出。仅当 ``file`` 是文件名时可用。"
 
 #: megengine.jit.tracing.trace.dump:10 of
 msgid "level for keeping variable names:  * 0: none of the names are kept * 1: (default)keep names of output vars * 2: keep names of all (output and internal) vars"
-msgstr ""
+msgstr "保留变量名的级别: \n\n"
+"* 0: 不保留任何变量名\n\n"
+"* 1(默认): 保留输出变量的名字\n\n"
+"* 2: 保留所有变量 (包括输出和中间变量) 的名字"
 
 #: megengine.jit.tracing.trace.dump:10 of
 msgid "level for keeping variable names:"
@@ -116,27 +119,27 @@ msgstr ""
 
 #: megengine.jit.tracing.trace.dump:16 of
 msgid "whether to keep operator names."
-msgstr ""
+msgstr "是否要保留算子的名字"
 
 #: megengine.jit.tracing.trace.dump:18 of
 msgid "whether to keep param names, so param values can be easily manipulated after loading model"
-msgstr ""
+msgstr "是否要保留参数的名字，为了加载模型后可以简单地对参数做操作"
 
 #: megengine.jit.tracing.trace.dump:21 of
 msgid "whether to keep priority setting for operators"
-msgstr ""
+msgstr "是否保留算子的优先级设置"
 
 #: megengine.jit.tracing.trace.dump:22 of
 msgid "a string for path or a file handler. if is not None, then the dump information for code strip would be written to ``strip_info_file``"
-msgstr ""
+msgstr "路径地址或文件句柄。如果不为空，则导出的代码条信息会被写入``strip_info_file``中。"
 
 #: megengine.jit.tracing.trace.dump:24 of
 msgid "will be check when `strip_info_file` is not None. if set true, the information for code strip will be append to strip_info_file. if set false, will rewrite strip_info_file"
-msgstr ""
+msgstr "当 `strip_info_file` 非空时会做检查。如果是真，代码条信息就会被添加到 `strip_info_file` 的尾部；如果是假，就会覆盖掉 `strip_info_file`."
 
 #: megengine.jit.tracing.trace.dump:27 of
 msgid "enbale optmizations, will skip all optimize options if this is False. Default: True"
-msgstr ""
+msgstr "打开推理优化，如果是False则关闭所有优化选项。默认：True"
 
 #: megengine.jit.tracing.trace.dump:30 of
 msgid "any type object, which will be pickled to bytes."
@@ -244,7 +247,7 @@ msgstr ""
 
 #: megengine.jit.tracing.trace.get_profile:3 of
 msgid "a json compatible object."
-msgstr ""
+msgstr "一个兼容json的对象。"
 
 #~ msgid "基类：:class:`object`"
 #~ msgstr "基类：:class:`object`"
