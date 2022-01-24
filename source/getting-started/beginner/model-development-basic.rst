@@ -4,8 +4,6 @@
 MegEngine 虚拟炼丹挑战
 ======================
 
-.. warning:: 本页面内容还在撰写中...
-
 .. admonition:: 本教程涉及的内容
    :class: note
 
@@ -129,6 +127,9 @@ AlexNet 使用了 2 个 GPU 进行训练！ **“我们需要更多的 GPU 来�
       <https://www.cs.toronto.edu/~kriz/imagenet_classification_with_deep_convolutional.pdf>`_
 
    如今的 GPU 设备内存容量足以放下完整的 AlexNet 结构，大部分单卡 GPU 即可进行复现。
+   但 AlexNet 是第一个利用 GPU 来加速神经网络计算的实验，因此其历史意义非凡，
+   它标志着一个新的时代已经到来，正所谓 “炼丹用上 GPU, 敢教日月换新天。”
+   曾经不可行的网络计算，如今已成为家常便饭。赞！感叹！
 
 .. seealso::
 
@@ -142,6 +143,12 @@ AlexNet 使用了 2 个 GPU 进行训练！ **“我们需要更多的 GPU 来�
       if dist.get_world_size() > 1:
           dist.bcast_list_(model.parameters())
           dist.bcast_list_(model.buffers())
+
+      # Autodiff gradient manager
+      gm = autodiff.GradManager().attach(
+          model.parameters(),
+          callbacks=dist.make_allreduce_cb("mean") if dist.get_world_size() > 1 else None,
+      )
 
    从单卡到多卡，需要用到 :class:`~.distributed.launcher` 装饰器，更多介绍请参考 :ref:`distributed-guide` 。
 
@@ -202,9 +209,6 @@ MegEngine 的 :mod:`.data.transform` 模块中对常见的图片数据变换都�
    将验证集（甚至是测试集，如果你能得到）的数据加入训练集中不能够算作是数据增强，
    反而是数据泄露（Data leakage），你的模型可能会在这些数据集上过拟合。
 
-   顺便提一下，AlexNet 中使用到了 :class:`~.module.Dropout` 来防止过拟合，
-   我们在 ResNet 模型中不会使用这个技巧。
-
 数据清洗
 ~~~~~~~~
 
@@ -212,7 +216,7 @@ MegEngine 的 :mod:`.data.transform` 模块中对常见的图片数据变换都�
 
 数据的内容和标注质量将对模型的效果造成无法忽视的影响，由于 ImageNet 本质上是一个网络图片数据集，
 因此其中会有大量的脏数据 —— 图片内容质量不好，格式不一致（灰度图和彩图混合），标记错误等等情况都存在。
-你化身为数据清洗小能手，尝试去人工地清洗这些脏数据，但这样做的效率太低了，于是偏很快放弃。
+你化身为数据清洗小能手，尝试去人工地清洗这些脏数据，但这样做的效率太低了，于是理智地放弃。
 
 .. seealso::
 
@@ -228,8 +232,256 @@ MegEngine 的 :mod:`.data.transform` 模块中对常见的图片数据变换都�
 
    在工业界，你会在一些机器学习团队中看到有专门的数据团队，负责提高数据集质量。合作万岁！
 
+秘制高阶丹方
+------------
+
+当你和韶卿忙活完一阵数据有关的处理后，简单比对了一下实验结果，确实涨了几个点，有效！
+但这只能算是和其它人站在了同样的起跑线上，毕竟类似的操作大家都可以用上，也没什么特别的。
+接着众人开始继续研究起 AlexNet 和 LeNet5 模型之间的差异。
+你发现 AlexNet 中使用到了 :class:`~.module.Dropout` 来防止过拟合，它的思想很简单：
+在每次迭代时随机地 “丢掉” 一些神经元，让它失去活性，不参与到计算过程中来。
+换而言之，也可以理解成每次训练时只训练一部分神经元，最终等于多个弱分类器装袋在一起发挥功力。
+
+“但是卷积核中的神经元相较于全连接层比较少，用 Dropout 的收益并没有那么明显吧。” 恺铭喃喃了几句。
+
+Batch Normalization
+~~~~~~~~~~~~~~~~~~~
+
+大家决定继续思考数据特征层面的问题，在输入数据时通常会进行一次 :class:`.transform.Normalize` 归一化，
+这样可以让数据的特征分布较为统一，可以加速收敛。但数据之间必然还存在着差异，
+而神经网络中隐藏层参数的更新会导致输出数据的分布发生变化，随着层数的增加，这种偏移现象会更严重。
+“如果说神经网络的本质就是在对数据的分布进行学习的话，隐藏层的计算使得数据分布变化后，
+就不得不学习变化后的分布了，这可能会导致训练不够稳定，难以收敛。”恺铭发出了疑惑。这时祥禹补充道：
+“我记得 VGGNet 的模型结构最深做到了 19 层，但再继续加深下去，就很难取得更好的效果了。”
+随即他将 VGGNet 论文中的模型结构给展示了出来：
+
+.. figure:: ../../_static/images/vgg-config.png
+
+   VGGNet 配置，来自论文《Very Deep Convolutional Networks for Large-Scale Image Recognition》
+
+“除了结构更深了，它和 AlexNet 的区别还在于卷积的 ``kernel_size`` 没有像 AlexNet 那么大，统一改成了固定的
+:math:`3 \times 3` 卷积核，一些地方是 :math:`1 \times 1` 的。 ” 你仔细一看，思索起刚才关于数据的讨论。
+
+孙老师此时给出了建议：“既然预处理的时候做归一化有用，你们每层变化完之后也这样处理一下，是不是会有帮助呢？”
+祥禹立即开始上手写代码，在 Conv2d 层计算完后，基于当前 Batch 的数据统计出了均值和方差，进行 Normalize 操作。
+然后将这个接口添加到了 MegEngine 中，名为 :class:`~.module.BatchNorm2d`.
+
+给 VGGNet 加上 BN 层后，虽然每个 Epoch 多了些计算，但整个训练过程收敛得更快了，最终真的涨点了！
+
+.. dropdown:: :fa:`eye,mr-1` 真实情况是...
+
+   Batch Normalization 其实来自论文
+   《Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift》,
+   作者是 Sergey Ioffe 和 Christian Szegedy. 只是因为 ResNet 模型中用到了它，因此这里强加了一些设定。
+   BN 在实践上确实有着能够加快训练稳定性、收敛速度，以及防止过拟合的作用。
+   最开始的框架并没有现成的接口，因此研究人员需要自己实现 BN 的计算和反传逻辑。
+   （当时张祥雨是 ResNet 作者中编码功力最强的人，还懂得 CUDA，负责底层框架和编码实现。）
+
+   关于 BN 的更多介绍可以参考下面这个视频：
+
+   .. raw:: html
+
+      <div class="bilibili">
+      <iframe src="//player.bilibili.com/player.html?aid=934642855&bvid=BV1DM4y1w7J4&cid=457588460&page=1&high_quality=1"
+      scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+      </div>
+
+   .. note::
+
+      这个视频的制作者是来自旷视研究员的王枫研究员，使用的软件是 `Manim <Internal Covariate Shift>`_.
+      欢迎读者们制作更多类似的小视频，我很乐意将其作为 MegEngine 文档、教程中的补充知识。
+
+   .. admonition:: 更多关于 Batch Normalization 的解释
+
+      * `How Does Batch Normalization Help Optimization? <https://arxiv.org/abs/1805.11604>`_
+      * `Understanding Batch Normalization <https://arxiv.org/abs/1806.02375>`_
+
+      曾经一种热门的解释是 Batch Norm 可以解决深度神经网络训练是内部存在的协方差偏移（Internal Covariate Shift）现象，
+      但后来也有相关论文用实验证明这个结论不成立。因此 BN 更多地变成了一种人们常用的技巧（Trick），
+      深度学习领域还有很多类似的技巧没能得到严谨的理论支撑，也有不少学者正在研究神经网络的可解释性。
+      事物的发展总是螺旋上升的，或许没有永久成立的理论（可能在一个更大的框架中被推翻），但却有着当下有用的理论。
+      实践是检验真理的唯一标准，深度学习领域目前还需要人们多想多实践，等待理论解释的到来。
+
+      同样地，在使用了 :class:`~.module.BatchNorm2d` 后，通常可以不再使用 :class:`~.Dropout` （这也是实践经验）。
+
+.. dropdown:: :fa:`eye,mr-1` 还有的真实情况是...
+
+   VGGNet 中将大 Kernel 改成小 Kernel 确实有一定的实践层面的解释，但就像大数据和小数据、大模型和小模型之间的讨论一样，
+   目前人们还没有一个严格的理论能证明小 Kernel 一定比大 Kernel 有效，换而言之，
+   从其它的一些层面来看，或许大 Kernel 在特定的情景下将会比小 Kernel 更加适用。
+
+   已经发布的论文中的观点如果没有严谨的数学证明，那么很有可能在将来被新的观点取代。
+   因此在阅读论文时，更多地是需要代入到作者当时的环境，在当时的实验条件和背景下，理解作者解决问题的思路。
+
+.. seealso::
+
+   在 BaseCls 的 `VGG <https://github.com/megvii-research/basecls/blob/main/basecls/models/vgg.py>`_
+   模型代码中，你可以看到带 BN 层的 VGGNet 与不带 BN 层的 VGGNet 模型。
+
+.. warning::
+
+   BN 和 Dropout 存在的一个共同点是：在训练时要用到它们，而实际评估和使用时则不需要。
+   在 MegEngine 的 :class:`~.module.Module` 中提供了
+   :meth:`~.module.Module.train` 和 :meth:`~.module.Module.eval` 两个方法，来切换训练和评估模式。
+
+奇妙的初始化策略
+~~~~~~~~~~~~~~~~
+
+大家都意识到：神经网络想提升能力就得持续加深，但加深就难收敛，BN 的改进只是一小步。
+
+某天夜半时分，MegEngine 炼丹炉微信群里突然收到了祥禹发来的一条消息：“我有点子了！”
+接着过了十几分钟，群里又传来了几张图片，里面是几张潦草的手写草稿。
+祥禹提到：“我做了一些独立性的假设，推出了一套参数初始化法则，要不要试试看！”
+果不其然，经过验证，使用了祥禹的初始化策略后，整体效果又变好了。
+你刚想发个表情包庆祝，结果恺铭、韶卿和孙老师都使用微信拍了拍祥禹 “还没读完的 Paper”,
+表示 “我们都没睡呢”。
+
+那就... 趁热打铁吧。大伙又一齐开始研究，设计出了一种新的激活函数 :func:`~.nn.prelu`,
+对非线性特征进行建模，推导出了符合理论的初始化方法。
+你们将新方法应用到了比赛中，结果错误率降低到了 4.94%.
+这已经超越了人类识别图像分类的水平（错误率 5.1%），这是 Google 在 2014
+年都没能做到的事情！它们的最好成绩只有 6.67%!
+
+.. code-block:: python
+
+   for m in self.modules():
+       if isinstance(m, M.Conv2d):
+           M.init.msra_normal_(m.weight, mode="fan_out", nonlinearity="relu")
+           if m.bias is not None:
+               fan_in, _ = M.init.calculate_fan_in_and_fan_out(m.weight)
+               bound = 1 / math.sqrt(fan_in)
+               M.init.uniform_(m.bias, -bound, bound)
+           elif isinstance(m, M.BatchNorm2d):
+               M.init.ones_(m.weight)
+               M.init.zeros_(m.bias)
+           elif isinstance(m, M.Linear):
+               M.init.msra_uniform_(m.weight, a=math.sqrt(5))
+               if m.bias is not None:
+                   fan_in, _ = M.init.calculate_fan_in_and_fan_out(m.weight)
+                   bound = 1 / math.sqrt(fan_in)
+                   M.init.uniform_(m.bias, -bound, bound)
+
+.. seealso::
+
+   相关实现对应于 :mod:`.module.init` 模块中的 :func:`~.init.msra_normal_`,
+   :func:`~.init.msra_uniform_` 接口。
+
+.. dropdown:: :fa:`eye,mr-1` 真实情况是...
+
+
+   RPeLU 和 MSRA 初始化的工作被发表在论文
+   《Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification》
+   中，根据标题就可以发现，这项工作在当时的影响是独特的。
+
+   当时 ResNet 的几名作者都在微软亚洲研究院（MSRA）工作，
+   在内部这个初始化方法被称为 “Xiangyu” 初始化，但后来何恺明去了 FaceBook 工作，
+   FaceBook 的深度学习框架 PyTorch 中将接口命名为 ``kaiming_uniform_`` 和 ``kaiming_normal_``.
+   这也是一件奇闻轶事，张祥雨后来来到了旷视研究院，作为旷视科技的深度学习框架，
+   MegEngine 中也自然可以提供 ``xiangyu_uniform_`` 和 ``xiangyu_normal_`` 接口，
+   不过为了避免认知负担，外加将人名作为接口不太普遍，最终还是选用了 MSRA 初始化的命名。
+
+   *（P.S：微信拍一拍功能是 2020 年上线的，故这块的情节显然是刻意虚构的。）*
+
+   *（P.P.S：如果你不知道 FaceBook 是哪家公司的话，可以搜一搜它的新名字—— META.）*
+
+残差连接的诞生
+~~~~~~~~~~~~~~
+
+打破纪录固然可喜可贺，但挑战到后面已经慢慢变成了一个工程问题。
+祥禹认真地表示：“其实我个人是非常不满意的，因为虽然打败了人类，
+但更多是一个噱头，我们也知道这些方法并不很 work，主要是靠调参和堆模型。”
+
+于是祥禹又重新复盘，他发现 2014 年的 ImageNet 冠军谷歌 GoogLeNet 模型复杂度不高，却实现了非常高的准确率，
+“GoogLeNet 可能是其他几个模型的必经之路。” 他的眼中透流出坚定的目光。
+经过几个月的研究，祥禹发现，GoogLeNet 最本质的是它那条 1x1 的 shortcut.
+“说白了，把它简化到最简单，可以发现 GoogLeNet 只有两条路，一条是 1×1, 另一条路是一个 1x1 和一个 3x3.”
+
+.. figure:: ../../_static/images/inception_module.png
+
+   GoogLeNet 中的 Inception 模块，图片来自《Going Deeper with Convolutions》
+
+
+“到底是什么在很低的复杂度上支撑起了 GoogLeNet 这么高的性能？”
+
+祥禹猜想，它的性能由它的深度决定，为了让 GoogLeNet 22 层的网络也能够成功地训练起来，它必须得有一条足够短的直路。
+基于这个思路，祥禹开始设计一个模型，利用一个构造单元不断的往上分，虽然模型结构的会非常复杂，
+但是不管怎么复杂，它永远有一条路，但深度可以非常深。祥禹找到队友们，分享了这个观点：
+“我认为这种结构就可以保持足够的精度，同时也非常好训练，我把这个网络称为分形网。”
+
+但恺铭觉得：结构还是过于复杂。 **“复杂的东西往往得不到本质。”**
+
+一语中的。凯铭建议进一步对这个模型进行化简，用它的一个简化形式。于是祥禹又延伸之前的假设：
+“最短的路，决定容易优化的程度；最长的路，决定模型的能力，因此能不能把最短路尽可能的短，短到层数为零？
+把最深的路，无限的变深？” 基于这个思路，有一条路没有任何参数，可以认为层数是 0 的模型结构诞生了 —— ResNet.
+
+.. figure:: ../../_static/images/residual-module.jpg
+
+   ResNet 中的残差连接，图片来自《Deep Residual Learning for Image Recognition》
+
+队友们决定让你来实现 ResNet 的模型结构，你把实现的代码放在了 :models:`official/vision/classification/resnet/model.py`
+
+残差连接的前向计算的逻辑，简洁而优雅，而反向求导过程将由 MegEngine 自动地完成：
+
+.. code-block:: python
+
+   def forward(self, x):
+       identity = x
+       x = self.conv1(x)
+       x = self.bn1(x)
+       x = F.relu(x)
+       x = self.conv2(x)
+       x = self.bn2(x)
+       identity = self.downsample(identity)
+       x += identity
+       x = F.relu(x)
+       return x
+
+借助这个基本结构，你们开始尝试加深网络并训练，看是否能够如期发挥效果。
+
+18 层、34层... 残差连接相较普通结构，在验证集上得到的 Top-1 错误率下降了 3.5%, 且能够收敛，继续加深！
+50 层、101 层，效果还在进一步变好！最终你们停在了 152 层结构... 并将测试结果提交给了比赛平台。
+
+ILSVRC’15 分类挑战赛的最终结果出来了，BN-inception（Google 改进后的 GoogLeNet）
+在 ImageNet 测试集上的 Top-5 成绩是 4.82, 而 ResNet 的最终成绩是 —— 3.57!
+你们士气大涨，使用 ResNet 夺下了 5 项挑战赛的第一。
+在孙老师的指导下，你们将 ResNet 的论文投稿到 CVPR 2016, 拿下了最佳论文奖！
+
+“何恺明老师的研究思路对我启发很大，从纷繁的结构中找出最 work 的本质属性，
+这种极简化的思想是 ResNet 的核心，并且使得 ResNet 有很强的泛化能力，
+任何人都可以在基础上做各种修改，能启发别人的研究。” 祥禹说道。
+后来，祥禹和孙老师去了中国一家初创公司，立志在打造东半球最强的计算机视觉研究院。
+恺铭去了美国一家科技巨头企业，从事自己的研究工作。韶卿决定投身自动驾驶领域...
+你有了这次比赛的经验之后，对炼丹炉 MegEngine 的使用也更加得心应手了，
+不论是科研还是工程，你都信心满满，大家都有光明的未来。
+
+.. dropdown:: :fa:`eye,mr-1` 真实情况是...
+
+   这里所描述的情节参考自《孙剑首个深度学习博士张祥雨：3 年看 1800 篇论文，28 岁掌舵旷视基础模型研究》一文，
+   部分内容有进行修改，大都为真实历史背景。ResNet 的变体非常多，
+   其中提出的残差连接的思路，已经在 “深度学习” 魔法世界的大街小巷随处可见。
+
 改进控火技术
 ------------
+
+在比赛时，你们还使用到了常用的与模型优化算法有关的技巧。
+例如对于 :class:`~.SGD` 优化器，你们使用了权重衰减（Weight
+decaty）技术，引入了动量（Momentum）（这些参数的意义可查阅文档理解）：
+
+.. code-block:: python
+
+   # Optimizer
+   opt = optim.SGD(
+       model.parameters(),
+       lr=args.lr * dist.get_world_size(),
+       momentum=args.momentum,
+       weight_decay=args.weight_decay,
+   )
+
+使用到这些技巧时，具体的火候总是不好控制，炼出来的丹药总是奇形怪状的。
+但姜还是老的辣，这种情况孙老师早已屡见不鲜，只见他沉声一喝：“调！”，
+再用内力一催，丹药在丹炉的火焰中肉眼可见地，缓缓成型。
+其余众人喜出望外，孙老师擦去额头汗水，拿出一篇《梯度下降葵花宝典》，说道：
+“优化算法的实践和理论可多着呢，这算是一篇综述，有空的时候好好研读。”
 
 .. panels::
    :container: +full-width text-center
@@ -244,18 +496,29 @@ MegEngine 的 :mod:`.data.transform` 模块中对常见的图片数据变换都�
    《`An overview of gradient descent optimization algorithms
    <https://arxiv.org/abs/1609.04747>`_》是一篇挂在 Arxiv 上的文章，
    原文形式本是一篇 `博客 <https://ruder.io/optimizing-gradient-descent/index.html>`_ ，
-   发布时间是 2016 年，因此这里读论文的情节是虚构的。
+   发布时间是 2016 年，这里只提到了 SGD 的一些改进。
    但是其中的一些优化方法如 Momentum 确实在 2013~2015 年就被陆续提出并不断改进。
-   MegEngine 中的 :mod:`~.optimizer` 模块是高度可灵活拓展的。
+   MegEngine 中的 :mod:`~.optimizer` 模块实现了常见的优化器，
+   比如 :class:`~.SGD`, :class:`~.Adam` 等等，
+   其功能是可以根据实际需求灵活扩展，用户可以自行设计优化算法。
 
-
-秘制高阶丹方
-------------
+   优化算法孰优孰劣目前还没有定论，学习率调整似乎也存在规律可循，这些都会影响模型的收敛情况。
 
 
 拓展材料
 --------
 
+.. dropdown:: :fa:`eye,mr-1` 重视 Benchmark 产生的影响
+
+   ImageNet 作为计算机视觉领域的经典基准测试数据集，对推动领域发展有着深远意义。
+   但是研究发展到最后，很容易演变成通过不断实验与调参，达到在验证集上比较高的点。
+   从某种意义上来说，这也是一种过拟合现象，只不过对象变成了验证集数据。
+
+   另外也有实践表明，不少在 ImageNet 上表现良好的模型，用于实际生产任务却不如预期。
+   这与数据集分布之间的差异有很大关系，比如用油画训练出来的模型可能在素描数据上表现不佳。
+   因此对于一个特定的深度学习工业情景，需要搞清楚在实际的生产环境中，输入的数据通常是什么样的。
+   这样在标采用于训练和验证数据时，能尽可能地使得数据的分布相似，建立准确的 Benchmark.
+   很多时候并不是模型结构本身出现了问题，而有可能是 Benchmark 设置得不够科学。
 
 参考文献
 --------
