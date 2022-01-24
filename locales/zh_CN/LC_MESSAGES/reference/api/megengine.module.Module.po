@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-28 12:20\n"
+"PO-Revision-Date: 2022-01-24 11:08\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -49,7 +49,7 @@ msgstr "对当前模块中的所有模块应用函数 ``fn``，包括当前模�
 
 #: megengine.module.module.Module.apply:5 of
 msgid "the function to be applied on modules."
-msgstr ""
+msgstr "多个模块上要应用的函数。"
 
 #: megengine.module.module.Module.apply megengine.module.module.Module.buffers
 #: megengine.module.module.Module.children megengine.module.module.Module.eval
@@ -65,7 +65,7 @@ msgstr ""
 #: megengine.module.module.Module.tensors megengine.module.module.Module.train
 #: megengine.module.module.Module.zero_grad of
 msgid "返回类型"
-msgstr ""
+msgstr "返回类型"
 
 #: megengine.module.module.Module.apply:8 megengine.module.module.Module.eval:5
 #: megengine.module.module.Module.train:12
@@ -80,7 +80,7 @@ msgstr "返回该模块中对于buffers的一个可迭代对象。"
 #: megengine.module.module.Module.buffers:3
 #: megengine.module.module.Module.named_buffers:4 of
 msgid "Buffer is defined to be :class:`~.Tensor` excluding :class:`~.Parameter`."
-msgstr ""
+msgstr "Buffer被定义为是 :class:`~.Tensor` 且不是 :class:`~.Parameter`"
 
 #: megengine.module.module.Module.buffers:6 of
 msgid "if ``True``, returns all buffers within this module, else only returns buffers that are direct attributes"
@@ -101,31 +101,31 @@ msgstr ""
 
 #: megengine.module.module.Module.disable_quantize:1 of
 msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``. Could be used as a decorator."
-msgstr ""
+msgstr "设置 ``module`` 的 ``quantize_diabled`` 属性，并返回 ``module`` 。可以作为装饰器使用。"
 
 #: megengine.module.module.Module.eval:1 of
 msgid "Sets training mode of all the modules within this module (including itself) to ``False``. See :meth:`~.Module.train` for details."
-msgstr ""
+msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``False`` ，并将其切换为推理模式。请参阅 :meth:`~.Module.train` 了解详情。"
 
 #: megengine.module.module.Module.load_state_dict:1 of
 msgid "Loads a given dictionary created by :func:`state_dict` into this module. If ``strict`` is ``True``, the keys of :func:`state_dict` must exactly match the keys returned by :func:`state_dict`."
-msgstr ""
+msgstr "向当前模块中加载由 :func:`state_dict` 创建的给定字典。若 ``strict`` 为 ``True`` ， :func:`state_dict` 的键则必须与 :func:`state_dict` 返回的键准确匹配。"
 
 #: megengine.module.module.Module.load_state_dict:5 of
 msgid "Users can also pass a closure: ``Function[key: str, var: Tensor] -> Optional[np.ndarray]`` as a `state_dict`, in order to handle complex situations. For example, load everything except for the final linear classifier:"
-msgstr ""
+msgstr "为了处理复杂情况，用户可以传入闭包 `Function[key: str, var: Tensor] -> Optional[np.ndarray]` 作为 `state_dict` 。例如，欲加载除了最后线性分类器外的所有部分："
 
 #: megengine.module.module.Module.load_state_dict:17 of
 msgid "Here returning ``None`` means skipping parameter ``k``."
-msgstr ""
+msgstr "这里返回 ``None`` 意味着忽略参数 `k` 。"
 
 #: megengine.module.module.Module.load_state_dict:19 of
 msgid "To prevent shape mismatch (e.g. load PyTorch weights), we can reshape before loading:"
-msgstr ""
+msgstr "为了防止形状不匹配（例如加载PyTorch权重），我们可以在加载之前重塑（reshape）："
 
 #: megengine.module.module.Module.load_state_dict:28 of
 msgid "We can also perform inplace re-initialization or pruning:"
-msgstr ""
+msgstr "我们还可以进行原位重初始化或修剪（pruning）："
 
 #: megengine.module.module.Module.modules:1 of
 msgid "Returns an iterable for all the modules within this module, including itself."
@@ -139,11 +139,11 @@ msgstr "返回可遍历模块中 key 与 buffer 的键值对的可迭代对象�
 #: megengine.module.module.Module.named_parameters:5
 #: megengine.module.module.Module.named_tensors:5 of
 msgid "prefix prepended to the keys."
-msgstr ""
+msgstr "加在每个键（key）前的前缀。"
 
 #: megengine.module.module.Module.named_buffers:9 of
 msgid "if ``True``, returns all buffers within this module, else only returns buffers that are direct attributes of this module."
-msgstr ""
+msgstr "如果为 ``True`` ，则返回所有当前模块中的buffer，否则只返回属于该模块的直接属性。"
 
 #: megengine.module.module.Module.named_buffers:12 of
 msgid "Optional[str]:"
@@ -169,7 +169,7 @@ msgstr "返回可迭代对象，可以遍历当前模块包括自身在内的所
 
 #: megengine.module.module.Module.named_modules:6 of
 msgid "prefix prepended to the path."
-msgstr ""
+msgstr "加在路径前的前缀。"
 
 #: megengine.module.module.Module.named_parameters:1 of
 msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
@@ -177,7 +177,7 @@ msgstr "返回一个可迭代对象，可以遍历当前模块中key与 :class:`
 
 #: megengine.module.module.Module.named_parameters:7 of
 msgid "if ``True``, returns all :class:`~.Parameter` within this module, else only returns :class:`~.Parameter` that are direct attributes of this module."
-msgstr ""
+msgstr "如果为 ``True`` ， 则返回在此模块内的所有 :class:`~.Parameter` ; 否则，只返回属于当前模块直接属性的 :class:`~.Parameter` 。"
 
 #: megengine.module.module.Module.named_parameters:12 of
 msgid ":py:class:`~typing.Iterable`\\[:py:data:`~typing.Tuple`\\[:py:class:`str`, :py:class:`~megengine.tensor.Parameter`]]"
@@ -197,7 +197,7 @@ msgstr "返回一个可迭代对象，遍历当前模块中的所有 :class:`~.P
 
 #: megengine.module.module.Module.parameters:4 of
 msgid "If ``True``, returns all :class:`~.Parameter` within this module, else only returns :class:`~.Parameter` that are direct attributes of this module."
-msgstr ""
+msgstr "如果为 ``True`` ， 则返回在此模块内的所有 :class:`~.Parameter` ; 否则，只返回属于当前模块直接属性的 :class:`~.Parameter` 。"
 
 #: megengine.module.module.Module.parameters:9
 #: megengine.module.module.Module.tensors:9 of
@@ -251,15 +251,15 @@ msgstr ""
 
 #: megengine.module.module.Module.train:1 of
 msgid "Sets training mode of all the modules within this module (including itself) to ``mode``. This effectively sets the ``training`` attributes of those modules to ``mode``, but only has effect on certain modules (e.g. :class:`~.BatchNorm2d`, :class:`~.Dropout`, :class:`~.Observer`)"
-msgstr ""
+msgstr "将该模块中的所有模块(包括它自身)的训练模式设置为 ``mode`` 。 可便捷地将这些模块的 ``training`` 属性设置为 ``mode`` ，但仅对某些模块有效(例如  :class:`~.BatchNorm2d`, :class:`~.Dropout`, :class:`~.Observer`)"
 
 #: megengine.module.module.Module.train:7 of
 msgid "the training mode to be set on modules."
-msgstr ""
+msgstr "为模块设置的训练模式。"
 
 #: megengine.module.module.Module.train:9 of
 msgid "whether to recursively call submodules' ``train()``."
-msgstr ""
+msgstr "是否要递归调用子模块的 ``train()`` 。"
 
 #: megengine.module.module.Module.zero_grad:1 of
 msgid "Sets all parameters' grads to zero"

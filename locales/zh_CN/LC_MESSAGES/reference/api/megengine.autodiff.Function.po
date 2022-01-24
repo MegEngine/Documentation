@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-28 12:45\n"
+"PO-Revision-Date: 2022-01-24 11:40\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -40,7 +40,7 @@ msgstr ""
 
 #: megengine.core.autodiff.grad.Function.backward:1 of
 msgid "Compute the gradient of the forward function. It must be overriden by all subclasses."
-msgstr ""
+msgstr "计算前向函数的梯度。此方法需要被所有派生类重写。"
 
 #: megengine.core.autodiff.grad.Function.backward
 #: megengine.core.autodiff.grad.Function.forward of
@@ -49,23 +49,23 @@ msgstr ""
 
 #: megengine.core.autodiff.grad.Function.backward:3 of
 msgid "gradients of outputs that are returned by :meth:`forward`."
-msgstr ""
+msgstr ":meth:`forward` 的输出的梯度。"
 
 #: megengine.core.autodiff.grad.Function.backward:7 of
 msgid "In case when some tensors of outputs are not related to loss function, the corresponding values in ``output_grads`` would be ``None``."
-msgstr ""
+msgstr "如果一些输出 Tensor 不影响 loss 函数，那么 ``output_grads`` 中的对应值会是 ``None``。"
 
 #: megengine.core.autodiff.grad.Function.backward:9 of
 msgid "This method should return a tuple which containing the gradients of all inputs, in the same order as the ``inputs`` argument of :meth:`forward` . A ``Tensor`` could be returned instead if there is only one input. If users want to stop the propagation of some gradients, the corresponding returned values should be set ``None`` ."
-msgstr ""
+msgstr "此方法应该返回一个包含所有输入的梯度的元组，其顺序应该和 :meth:`forward` 的 ``inputs`` 参数一致。如果只有一个输入，那么返回值也可以是单个 ``Tensor``。如果用户希望组织某些梯度的传播，相应的返回值可以被设为 ``None``。"
 
 #: megengine.core.autodiff.grad.Function.forward:1 of
 msgid "Applies operations to ``inputs`` and returns results. It must be overriden by all subclasses."
-msgstr ""
+msgstr "对 ``inputs`` 应用操作并返回结果。此方法应该被所有派生类重写。"
 
 #: megengine.core.autodiff.grad.Function.forward:3 of
 msgid "input tensors."
-msgstr ""
+msgstr "输入张量。"
 
 #: megengine.core.autodiff.grad.Function.forward of
 msgid "返回"
@@ -73,11 +73,11 @@ msgstr ""
 
 #: megengine.core.autodiff.grad.Function.forward:5 of
 msgid "a tuple of Tensor or a single Tensor."
-msgstr ""
+msgstr "一个 Tensor 的元组或者单个 Tensor"
 
 #: megengine.core.autodiff.grad.Function.forward:9 of
 msgid "This method should return a tuple of Tensor or a single Tensor representing the output of the function."
-msgstr ""
+msgstr "此方法应该返回一个 Tensor 的元组或者单个 Tensor，表示函数的输出。"
 
 #: megengine.core.autodiff.grad.Function.forward:11 of
 msgid "positional arguments should all be Tensor"
