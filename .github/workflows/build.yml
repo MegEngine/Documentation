@@ -16,7 +16,6 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 1
-          lfs: true
           submodules: recursive
 
       - name: Setup Python
@@ -51,11 +50,20 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 1
-          lfs: true
           submodules: recursive
 
-      - name: Checkout LFS objects
-        run: git lfs checkout
+      - name: LFS - Create hash files
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+
+      - name: LFS - Restore cache
+        uses: actions/cache@v2
+        id: lfs-cache
+        with:
+          path: .git/lfs
+          key: ${{ hashFiles('.lfs-assets-id') }}
+
+      - name: LFS - pull missed files
+        run: git lfs pull
 
       - name: Setup Python
         uses: actions/setup-python@v2
