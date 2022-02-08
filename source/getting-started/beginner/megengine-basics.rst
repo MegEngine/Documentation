@@ -79,14 +79,14 @@ Tensor 操作与计算
 Tensor([[4 8 4]
  [3 6 3]], dtype=int32, device=xpux:0)
 >>> a - b
-Tensor([[1 2 1]
+Tensor([[0 0 0]
  [1 2 1]], dtype=int32, device=xpux:0)
 >>> a * b
-Tensor([[2 8 2]
- [2 8 2]], dtype=int32, device=xpux:0)
+Tensor([[ 4 16  4]
+ [ 2  8  2]], dtype=int32, device=xpux:0)
 >>> a / b
-Tensor([[2 2 2]
- [2 2 2]], dtype=int32, device=xpux:0)
+Tensor([[1. 1. 1.]
+ [2. 2. 2.]], device=xpux:0)
 
 :class:`~.Tensor` 类中提供了一些比较常见的方法，比如 :meth:`.Tensor.reshape` 方法，
 可以用来改变 Tensor 的形状（该操作不会改变 Tensor 元素总数目以及各个元素的值）：
