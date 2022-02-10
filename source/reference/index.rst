@@ -15,6 +15,10 @@ Python API
 
    MegEngine 在 GitHub 上的 Python 包源码位置在：:src:`imperative/python/megengine`
 
+   WEB 文档中仅仅列举出了面向用户提供的公开接口，并提供兼容性保证。
+   私有模块（如 Core）以及不做兼容性保证的模块（如 Utils）中的接口将不会在此出现，
+   但你始终可以在源码中找到它们。
+
 .. note::
 
    如果你发现部分 API 内容未被及时更新成中文，欢迎通过 Crowdin_ 平台协助翻译。
