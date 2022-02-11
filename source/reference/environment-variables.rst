@@ -174,9 +174,6 @@ DTR 相关
 
   设置为 ``0`` 表示关闭，为 ``1`` 表示开启。
 
-``MEGENGINE_COMMAND_BUFFER_LENGTH`` （ :ref:`nd-environ` ）
-  延迟执行最后面计算算子的个数（默认为 ``3`` ），用于做局部优化。
-
 ``MEGENGINE_RECORD_COMPUTING_PATH`` （ :ref:`nd-environ` ）
   是否记录 tensor 的历史计算路径，默认关闭。
 
