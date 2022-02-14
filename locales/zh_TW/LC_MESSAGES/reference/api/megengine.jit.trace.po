@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 09:02\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-02-14 09:49\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -98,22 +98,6 @@ msgstr "crwdns88897:0crwdne88897:0"
 msgid "level for keeping variable names:  * 0: none of the names are kept * 1: (default)keep names of output vars * 2: keep names of all (output and internal) vars"
 msgstr "crwdns88899:0crwdne88899:0"
 
-#: megengine.jit.tracing.trace.dump:10 of
-msgid "level for keeping variable names:"
-msgstr "crwdns88901:0crwdne88901:0"
-
-#: megengine.jit.tracing.trace.dump:12 of
-msgid "0: none of the names are kept"
-msgstr "crwdns88903:0crwdne88903:0"
-
-#: megengine.jit.tracing.trace.dump:13 of
-msgid "1: (default)keep names of output vars"
-msgstr "crwdns88905:0crwdne88905:0"
-
-#: megengine.jit.tracing.trace.dump:14 of
-msgid "2: keep names of all (output and internal) vars"
-msgstr "crwdns88907:0crwdne88907:0"
-
 #: megengine.jit.tracing.trace.dump:16 of
 msgid "whether to keep operator names."
 msgstr "crwdns88909:0crwdne88909:0"
@@ -175,76 +159,64 @@ msgid "a python expression to transform the input data. Example: data / np.std(d
 msgstr "crwdns88937:0crwdne88937:0"
 
 #: megengine.jit.tracing.trace.dump:55 of
-msgid "using different dump formats."
-msgstr "crwdns88939:0crwdne88939:0"
+msgid "using different dump formats. the open source MegEngine defaults to the FBS format. internal MegEngine have a choice of FBS and internal proprietary formats"
+msgstr "crwdns90672:0crwdne90672:0"
 
-#: megengine.jit.tracing.trace.dump:57 of
+#: megengine.jit.tracing.trace.dump:58 of
 msgid "Keyword Arguments:"
 msgstr "crwdns88941:0crwdne88941:0"
 
-#: megengine.jit.tracing.trace.dump:59 of
+#: megengine.jit.tracing.trace.dump:60 of
 msgid "enable_io16xc32 -- whether to use float16 for I/O between oprs and use float32 as internal computation precision. Note the output var would be changed to float16."
 msgstr "crwdns88943:0crwdne88943:0"
 
-#: megengine.jit.tracing.trace.dump:63 of
+#: megengine.jit.tracing.trace.dump:64 of
 msgid "enable_ioc16 -- whether to use float16 for both I/O and computation precision."
 msgstr "crwdns88945:0crwdne88945:0"
 
-#: megengine.jit.tracing.trace.dump:66 of
+#: megengine.jit.tracing.trace.dump:67 of
 msgid "enable_hwcd4 -- whether to use NHWCD4 data layout. This is faster on some OpenCL backend."
 msgstr "crwdns88947:0crwdne88947:0"
 
-#: megengine.jit.tracing.trace.dump:69 of
+#: megengine.jit.tracing.trace.dump:70 of
 msgid "enable_nchw88 -- whether to use NCHW88 data layout, currently used in X86 AVX backend."
 msgstr "crwdns88949:0crwdne88949:0"
 
-#: megengine.jit.tracing.trace.dump:72 of
+#: megengine.jit.tracing.trace.dump:73 of
 msgid "enable_nchw44 -- whether to use NCHW44 data layout, currently used in arm backend."
 msgstr "crwdns88951:0crwdne88951:0"
 
-#: megengine.jit.tracing.trace.dump:75 of
+#: megengine.jit.tracing.trace.dump:76 of
 msgid "enable_nchw44_dot -- whether to use NCHW44_dot data layout, currently used in armv8.2+dotprod backend."
 msgstr "crwdns88953:0crwdne88953:0"
 
-#: megengine.jit.tracing.trace.dump:78 of
+#: megengine.jit.tracing.trace.dump:79 of
 msgid "enable_nchw4 -- whether to use NCHW4 data layout, currently used in nvidia backend(based on cudnn)."
 msgstr "crwdns88955:0crwdne88955:0"
 
-#: megengine.jit.tracing.trace.dump:81 of
+#: megengine.jit.tracing.trace.dump:82 of
 msgid "enable_nchw32 -- whether to use NCHW32 data layout, currently used in nvidia backend with tensorcore(based on cudnn)."
 msgstr "crwdns88957:0crwdne88957:0"
 
-#: megengine.jit.tracing.trace.dump:84 of
+#: megengine.jit.tracing.trace.dump:85 of
 msgid "enable_chwn4 -- whether to use CHWN4 data layout, currently used in nvidia backend with tensorcore."
 msgstr "crwdns88959:0crwdne88959:0"
 
-#: megengine.jit.tracing.trace.dump:87 of
+#: megengine.jit.tracing.trace.dump:88 of
 msgid "enable_nchw64 -- whether to use NCHW64 data layout, used for fast int4 support on Nvidia GPU."
 msgstr "crwdns88961:0crwdne88961:0"
 
-#: megengine.jit.tracing.trace.dump:90 of
+#: megengine.jit.tracing.trace.dump:91 of
 msgid "enable_fuse_conv_bias_nonlinearity: whether to fuse conv+bias+nonlinearty into one opr."
 msgstr "crwdns88963:0crwdne88963:0"
 
-#: megengine.jit.tracing.trace.dump:92 of
+#: megengine.jit.tracing.trace.dump:93 of
 msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z input for inference on nvidia backend(this optimization pass will result in mismatch of the precision of output of training and inference)"
 msgstr "crwdns88965:0crwdne88965:0"
 
-#: megengine.jit.tracing.trace.dump:96 of
+#: megengine.jit.tracing.trace.dump:97 of
 msgid "enable_fuse_preprocess: whether to fuse astype\\pad_channel\\dimshuffle and etc opr"
 msgstr "crwdns88967:0crwdne88967:0"
-
-#: megengine.jit.tracing.trace.get_profile:1 of
-msgid "Get profiling result for compiled trace."
-msgstr "crwdns32806:0crwdne32806:0"
-
-#: megengine.jit.tracing.trace.get_profile of
-msgid "返回"
-msgstr "crwdns88969:0crwdne88969:0"
-
-#: megengine.jit.tracing.trace.get_profile:3 of
-msgid "a json compatible object."
-msgstr "crwdns88971:0crwdne88971:0"
 
 #~ msgid "基类：:class:`object`"
 #~ msgstr "基类：:class:`object`"
@@ -277,4 +249,28 @@ msgstr "crwdns88971:0crwdne88971:0"
 
 #~ msgid ":obj:`get_profile <megengine.jit.trace.get_profile>`\\ \\(\\)"
 #~ msgstr ":obj:`get_profile <megengine.jit.trace.get_profile>`\\ \\(\\)"
+
+#~ msgid "level for keeping variable names:"
+#~ msgstr ""
+
+#~ msgid "0: none of the names are kept"
+#~ msgstr ""
+
+#~ msgid "1: (default)keep names of output vars"
+#~ msgstr ""
+
+#~ msgid "2: keep names of all (output and internal) vars"
+#~ msgstr ""
+
+#~ msgid "using different dump formats."
+#~ msgstr ""
+
+#~ msgid "Get profiling result for compiled trace."
+#~ msgstr "获取被追溯（trace）函数在编译后运行的性能结果。"
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "a json compatible object."
+#~ msgstr "一个兼容json的对象。"
 
