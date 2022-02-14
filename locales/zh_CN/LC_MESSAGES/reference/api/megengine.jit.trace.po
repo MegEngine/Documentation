@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2022-01-24 11:07\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-02-14 08:34\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -101,22 +101,6 @@ msgstr "保留变量名的级别: \n\n"
 "* 1(默认): 保留输出变量的名字\n\n"
 "* 2: 保留所有变量 (包括输出和中间变量) 的名字"
 
-#: megengine.jit.tracing.trace.dump:10 of
-msgid "level for keeping variable names:"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:12 of
-msgid "0: none of the names are kept"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:13 of
-msgid "1: (default)keep names of output vars"
-msgstr ""
-
-#: megengine.jit.tracing.trace.dump:14 of
-msgid "2: keep names of all (output and internal) vars"
-msgstr ""
-
 #: megengine.jit.tracing.trace.dump:16 of
 msgid "whether to keep operator names."
 msgstr "是否要保留算子的名字"
@@ -178,76 +162,64 @@ msgid "a python expression to transform the input data. Example: data / np.std(d
 msgstr ""
 
 #: megengine.jit.tracing.trace.dump:55 of
-msgid "using different dump formats."
+msgid "using different dump formats. the open source MegEngine defaults to the FBS format. internal MegEngine have a choice of FBS and internal proprietary formats"
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:57 of
+#: megengine.jit.tracing.trace.dump:58 of
 msgid "Keyword Arguments:"
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:59 of
+#: megengine.jit.tracing.trace.dump:60 of
 msgid "enable_io16xc32 -- whether to use float16 for I/O between oprs and use float32 as internal computation precision. Note the output var would be changed to float16."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:63 of
+#: megengine.jit.tracing.trace.dump:64 of
 msgid "enable_ioc16 -- whether to use float16 for both I/O and computation precision."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:66 of
+#: megengine.jit.tracing.trace.dump:67 of
 msgid "enable_hwcd4 -- whether to use NHWCD4 data layout. This is faster on some OpenCL backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:69 of
+#: megengine.jit.tracing.trace.dump:70 of
 msgid "enable_nchw88 -- whether to use NCHW88 data layout, currently used in X86 AVX backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:72 of
+#: megengine.jit.tracing.trace.dump:73 of
 msgid "enable_nchw44 -- whether to use NCHW44 data layout, currently used in arm backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:75 of
+#: megengine.jit.tracing.trace.dump:76 of
 msgid "enable_nchw44_dot -- whether to use NCHW44_dot data layout, currently used in armv8.2+dotprod backend."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:78 of
+#: megengine.jit.tracing.trace.dump:79 of
 msgid "enable_nchw4 -- whether to use NCHW4 data layout, currently used in nvidia backend(based on cudnn)."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:81 of
+#: megengine.jit.tracing.trace.dump:82 of
 msgid "enable_nchw32 -- whether to use NCHW32 data layout, currently used in nvidia backend with tensorcore(based on cudnn)."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:84 of
+#: megengine.jit.tracing.trace.dump:85 of
 msgid "enable_chwn4 -- whether to use CHWN4 data layout, currently used in nvidia backend with tensorcore."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:87 of
+#: megengine.jit.tracing.trace.dump:88 of
 msgid "enable_nchw64 -- whether to use NCHW64 data layout, used for fast int4 support on Nvidia GPU."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:90 of
+#: megengine.jit.tracing.trace.dump:91 of
 msgid "enable_fuse_conv_bias_nonlinearity: whether to fuse conv+bias+nonlinearty into one opr."
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:92 of
+#: megengine.jit.tracing.trace.dump:93 of
 msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z input for inference on nvidia backend(this optimization pass will result in mismatch of the precision of output of training and inference)"
 msgstr ""
 
-#: megengine.jit.tracing.trace.dump:96 of
+#: megengine.jit.tracing.trace.dump:97 of
 msgid "enable_fuse_preprocess: whether to fuse astype\\pad_channel\\dimshuffle and etc opr"
 msgstr ""
-
-#: megengine.jit.tracing.trace.get_profile:1 of
-msgid "Get profiling result for compiled trace."
-msgstr "获取被追溯（trace）函数在编译后运行的性能结果。"
-
-#: megengine.jit.tracing.trace.get_profile of
-msgid "返回"
-msgstr ""
-
-#: megengine.jit.tracing.trace.get_profile:3 of
-msgid "a json compatible object."
-msgstr "一个兼容json的对象。"
 
 #~ msgid "基类：:class:`object`"
 #~ msgstr "基类：:class:`object`"
@@ -280,4 +252,28 @@ msgstr "一个兼容json的对象。"
 
 #~ msgid ":obj:`get_profile <megengine.jit.trace.get_profile>`\\ \\(\\)"
 #~ msgstr ":obj:`get_profile <megengine.jit.trace.get_profile>`\\ \\(\\)"
+
+#~ msgid "level for keeping variable names:"
+#~ msgstr ""
+
+#~ msgid "0: none of the names are kept"
+#~ msgstr ""
+
+#~ msgid "1: (default)keep names of output vars"
+#~ msgstr ""
+
+#~ msgid "2: keep names of all (output and internal) vars"
+#~ msgstr ""
+
+#~ msgid "using different dump formats."
+#~ msgstr ""
+
+#~ msgid "Get profiling result for compiled trace."
+#~ msgstr "获取被追溯（trace）函数在编译后运行的性能结果。"
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "a json compatible object."
+#~ msgstr "一个兼容json的对象。"
 
