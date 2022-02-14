@@ -2,31 +2,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2022-01-24 11:52\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-02-14 09:08\n"
 "Last-Translator: \n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.traced_module.traced_module.InternalGraph.po\n"
 "X-Crowdin-File-ID: 8041\n"
-"Language: zh_CN\n"
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:2
-msgid "megengine.traced\\_module.traced\\_module.InternalGraph"
+#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:5
+msgid "InternalGraph"
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph:1 of
 msgid "``InternalGraph`` is the main data structure used in the TracedModule. It is used to represent the execution procedure of Module's forward method."
 msgstr ""
 
-#: megengine.traced_module.traced_module.InternalGraph:4 of
+#: megengine.traced_module.traced_module.InternalGraph:4
+#: megengine.traced_module.traced_module.InternalGraph.add_output_node:7
+#: megengine.traced_module.traced_module.InternalGraph.reset_outputs:11 of
 msgid "For example, the following code"
 msgstr ""
 
@@ -34,171 +36,430 @@ msgstr ""
 msgid "Will produce the following ``InternalGraph``::"
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:11
-msgid "Attributes"
-msgstr "属性"
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:28:<autosummary>:1
-msgid ":obj:`inputs <megengine.traced_module.traced_module.InternalGraph.inputs>`\\"
-msgstr ""
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:28:<autosummary>:1
-msgid "Get the list of input Nodes of this graph."
-msgstr ""
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:28:<autosummary>:1
-msgid ":obj:`outputs <megengine.traced_module.traced_module.InternalGraph.outputs>`\\"
-msgstr ""
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:28:<autosummary>:1
-msgid "Get the list of output Nodes of this graph."
-msgstr ""
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:28:<autosummary>:1
-msgid ":obj:`top_graph <megengine.traced_module.traced_module.InternalGraph.top_graph>`\\"
-msgstr ""
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:28:<autosummary>:1
-msgid "Get the parent graph of this graph."
-msgstr ""
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:30
-msgid "Methods"
-msgstr "方法"
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`add_input_node <megengine.traced_module.traced_module.InternalGraph.add_input_node>`\\ \\(shape\\[\\, dtype\\, name\\]\\)"
-msgstr ""
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.add_input_node:1 of
 msgid "Add an input node to the graph."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`add_output_node <megengine.traced_module.traced_module.InternalGraph.add_output_node>`\\ \\(node\\)"
+#: megengine.traced_module.traced_module.InternalGraph.add_input_node:3 of
+msgid "The new Node will be the last of the positional arguments."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.add_input_node
+#: megengine.traced_module.traced_module.InternalGraph.eval
+#: megengine.traced_module.traced_module.InternalGraph.exprs
+#: megengine.traced_module.traced_module.InternalGraph.get_dep_exprs
+#: megengine.traced_module.traced_module.InternalGraph.get_expr_by_id
+#: megengine.traced_module.traced_module.InternalGraph.get_function_by_type
+#: megengine.traced_module.traced_module.InternalGraph.get_method_by_type
+#: megengine.traced_module.traced_module.InternalGraph.get_module_by_type
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_id
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_name
+#: megengine.traced_module.traced_module.InternalGraph.insert_exprs
+#: megengine.traced_module.traced_module.InternalGraph.nodes
+#: megengine.traced_module.traced_module.InternalGraph.replace_node
+#: megengine.traced_module.traced_module.InternalGraph.reset_outputs of
+msgid "参数"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.add_input_node:6 of
+msgid "the shape of the new input Node."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.add_input_node:8 of
+msgid "the dtype of the new input Node. Default: float32"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.add_input_node:11 of
+msgid "the name of the new input Node. When the name is used in the graph, a suffix will be added to it."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.add_output_node:1 of
 msgid "Add an output node to the Graph."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`compile <megengine.traced_module.traced_module.InternalGraph.compile>`\\ \\(\\)"
+#: megengine.traced_module.traced_module.InternalGraph.add_output_node:3 of
+msgid "The Graph output will become a ``tuple`` after calling ``add_output_node``. The first element of the ``tuple`` is the original output, and the second is the ``node``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.add_output_node:31
+#: megengine.traced_module.traced_module.InternalGraph.reset_outputs:34 of
+msgid "Will produce the following ``InternalGraph`` and ``out``::"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.compile:1 of
 msgid "Delete unused expr."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`eval <megengine.traced_module.traced_module.InternalGraph.eval>`\\ \\(\\*inputs\\)"
-msgstr ""
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.eval:1 of
 msgid "Call this method to execute the graph."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`exprs <megengine.traced_module.traced_module.InternalGraph.exprs>`\\ \\(\\[recursive\\]\\)"
+#: megengine.traced_module.traced_module.InternalGraph.eval:4 of
+msgid "the tensors corresponding to the ``graph.inputs[1:]``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.exprs:1 of
 msgid "Get the Exprs that constitute this graph."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`get_dep_exprs <megengine.traced_module.traced_module.InternalGraph.get_dep_exprs>`\\ \\(nodes\\)"
+#: megengine.traced_module.traced_module.InternalGraph.exprs:3
+#: megengine.traced_module.traced_module.InternalGraph.get_expr_by_id:5
+#: megengine.traced_module.traced_module.InternalGraph.get_function_by_type:5
+#: megengine.traced_module.traced_module.InternalGraph.get_method_by_type:5 of
+msgid "whether to get the Exprs in the subgraph. Default: True"
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.exprs
+#: megengine.traced_module.traced_module.InternalGraph.get_dep_exprs
+#: megengine.traced_module.traced_module.InternalGraph.get_expr_by_id
+#: megengine.traced_module.traced_module.InternalGraph.get_function_by_type
+#: megengine.traced_module.traced_module.InternalGraph.get_method_by_type
+#: megengine.traced_module.traced_module.InternalGraph.get_module_by_type
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_id
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_name
+#: megengine.traced_module.traced_module.InternalGraph.inputs
+#: megengine.traced_module.traced_module.InternalGraph.insert_exprs
+#: megengine.traced_module.traced_module.InternalGraph.nodes
+#: megengine.traced_module.traced_module.InternalGraph.outputs
+#: megengine.traced_module.traced_module.InternalGraph.top_graph of
+msgid "返回"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.exprs:6 of
+msgid "A ``ExprFilter`` containing all Exprs of this graph."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_dep_exprs:1 of
 msgid "Get the dependent Exprs of the ``nodes``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`get_expr_by_id <megengine.traced_module.traced_module.InternalGraph.get_expr_by_id>`\\ \\(\\[expr\\_id\\, recursive\\]\\)"
+#: megengine.traced_module.traced_module.InternalGraph.get_dep_exprs:4 of
+msgid "a list of :class:`Node`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.get_dep_exprs
+#: megengine.traced_module.traced_module.InternalGraph.inputs
+#: megengine.traced_module.traced_module.InternalGraph.name
+#: megengine.traced_module.traced_module.InternalGraph.outputs
+#: megengine.traced_module.traced_module.InternalGraph.qualname of
+msgid "返回类型"
+msgstr "返回类型"
+
+#: megengine.traced_module.traced_module.InternalGraph.get_dep_exprs:6 of
+msgid ":py:class:`~typing.List`\\[:py:class:`~megengine.traced_module.expr.Expr`]"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_dep_exprs:7 of
+msgid "A list of dependent :class:`Expr`."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_expr_by_id:1 of
 msgid "Filter Exprs by their ``id``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`get_function_by_type <megengine.traced_module.traced_module.InternalGraph.get_function_by_type>`\\ \\(\\[func\\, recursive\\]\\)"
+#: megengine.traced_module.traced_module.InternalGraph.get_expr_by_id:4
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_id:15 of
+msgid "a list of :class:`int`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.get_expr_by_id:8 of
+msgid "A :class:`~.TracedModule.ExprFilterExprId`."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_function_by_type:1
+#: of
 msgid "Filter Exprs by the type of ``CallFunction``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`get_method_by_type <megengine.traced_module.traced_module.InternalGraph.get_method_by_type>`\\ \\(\\[method\\, recursive\\]\\)"
+#: megengine.traced_module.traced_module.InternalGraph.get_function_by_type:4
+#: of
+msgid "a built-in function, such as ``F.relu``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.get_function_by_type:8
+#: of
+msgid "A :class:`~.TracedModule.ExprFilterCallFunction`."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_method_by_type:1 of
 msgid "Filter Exprs by the type of ``CallMethod``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`get_module_by_type <megengine.traced_module.traced_module.InternalGraph.get_module_by_type>`\\ \\(module\\_cls\\[\\, recursive\\]\\)"
+#: megengine.traced_module.traced_module.InternalGraph.get_method_by_type:4 of
+msgid "a method string, such as \"__add__\"."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.get_method_by_type:8 of
+msgid "A :class:`~.TracedModule.ExprFilterCallMethod`."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_module_by_type:1 of
 msgid "Filter Nodes by the ``module_type`` of ``ModuleNode``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`get_node_by_id <megengine.traced_module.traced_module.InternalGraph.get_node_by_id>`\\ \\(\\[node\\_id\\, recursive\\]\\)"
+#: megengine.traced_module.traced_module.InternalGraph.get_module_by_type:4 of
+msgid "a subclass of :class:`~.Module`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.get_module_by_type:5
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_id:16
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_name:20
+#: megengine.traced_module.traced_module.InternalGraph.nodes:3 of
+msgid "whether to get the Nodes in the subgraph. Default: True"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_module_by_type:8 of
+msgid "A :class:`~.TracedModule.NodeFilterType`."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_id:1 of
 msgid "Filter Nodes by their ``id``."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`get_node_by_name <megengine.traced_module.traced_module.InternalGraph.get_node_by_name>`\\ \\(\\[name\\, ignorecase\\, recursive\\]\\)"
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_id:3 of
+msgid "The ``id`` of the ``Node`` can be obtained by the following code"
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_id:19 of
+msgid "A :class:`~.TracedModule.NodeFilterNodeId`."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_name:1 of
 msgid "Filter Nodes by their full name."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`insert_exprs <megengine.traced_module.traced_module.InternalGraph.insert_exprs>`\\ \\(\\[expr\\]\\)"
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_name:3 of
+msgid "The full name of the ``Node`` can be obtained by the following code"
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_name:15 of
+msgid "a string in glob syntax that can contain ``?`` and ``*`` to match a single or arbitrary characters."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_name:18 of
+msgid "whether to ignroe case. Default: True"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.get_node_by_name:23 of
+msgid "A :class:`~.TracedModule.NodeFilterName`."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.inputs:1 of
+msgid "Get the list of input Nodes of this graph."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.inputs:3
+#: megengine.traced_module.traced_module.InternalGraph.outputs:3 of
+msgid ":py:class:`~typing.List`\\[:py:class:`~megengine.traced_module.node.Node`]"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.inputs:4
+#: megengine.traced_module.traced_module.InternalGraph.outputs:4 of
+msgid "A list of ``Node``."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.insert_exprs:1 of
 msgid "Initialize the trace mode and insertion position."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`interpret <megengine.traced_module.traced_module.InternalGraph.interpret>`\\ \\(\\*inputs\\)"
+#: megengine.traced_module.traced_module.InternalGraph.insert_exprs:3 of
+msgid "When used within a 'with' statement, this will temporary set the trace mode and then restore normal mode when the with statement exits::"
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`nodes <megengine.traced_module.traced_module.InternalGraph.nodes>`\\ \\(\\[recursive\\]\\)"
+#: megengine.traced_module.traced_module.InternalGraph.insert_exprs:11 of
+msgid "the ``expr`` after which to insert. If None, the insertion position will be automatically set based on the input node."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.insert_exprs:14 of
+msgid "A resource manager that will initialize trace mode on ``__enter__`` and restore normal mode on ``__exit__``."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.name:1 of
+msgid "Get the name of this graph."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.name:3
+#: megengine.traced_module.traced_module.InternalGraph.qualname:38 of
+msgid ":py:class:`str`"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.nodes:1 of
 msgid "Get the Nodes that constitute this graph."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`replace_node <megengine.traced_module.traced_module.InternalGraph.replace_node>`\\ \\(repl\\_dict\\)"
+#: megengine.traced_module.traced_module.InternalGraph.nodes:6 of
+msgid "A ``NodeFilter`` containing all Nodes of this graph."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.outputs:1 of
+msgid "Get the list of output Nodes of this graph."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.qualname:1 of
+msgid "Get the `qualname` of this graph. The `qualname` can be used to get the submodule from the traced Module or Module."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.qualname:5 of
+msgid "示例"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.replace_node:1 of
 msgid "Replace the Nodes in the graph."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`reset_inputs <megengine.traced_module.traced_module.InternalGraph.reset_inputs>`\\ \\(\\*args\\, \\*\\*kwargs\\)"
+#: megengine.traced_module.traced_module.InternalGraph.replace_node:4 of
+msgid "the map {old_Node: new_Node} that specifies how to replace the Nodes."
 msgstr ""
 
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
-msgid ":obj:`reset_outputs <megengine.traced_module.traced_module.InternalGraph.reset_outputs>`\\ \\(outputs\\)"
-msgstr ""
-
-#: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:87:<autosummary>:1
+#: megengine.traced_module.traced_module.InternalGraph.reset_outputs:1 of
 msgid "Reset the output Nodes of the graph."
 msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.reset_outputs:5 of
+msgid "This method only supports resetting the output of graphs that do not have a parent graph."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.reset_outputs:8 of
+msgid "an object which inner element is Node. Support tuple, list dict, etc."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.top_graph:1 of
+msgid "Get the parent graph of this graph."
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph.top_graph:3 of
+msgid "An ``InternalGraph``."
+msgstr ""
+
+#~ msgid "megengine.traced\\_module.traced\\_module.InternalGraph"
+#~ msgstr ""
+
+#~ msgid "Attributes"
+#~ msgstr "属性"
+
+#~ msgid ""
+#~ ":obj:`inputs "
+#~ "<megengine.traced_module.traced_module.InternalGraph.inputs>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`outputs "
+#~ "<megengine.traced_module.traced_module.InternalGraph.outputs>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`top_graph "
+#~ "<megengine.traced_module.traced_module.InternalGraph.top_graph>`\\"
+#~ msgstr ""
+
+#~ msgid "Methods"
+#~ msgstr "方法"
+
+#~ msgid ""
+#~ ":obj:`add_input_node "
+#~ "<megengine.traced_module.traced_module.InternalGraph.add_input_node>`\\"
+#~ " \\(shape\\[\\, dtype\\, name\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`add_output_node "
+#~ "<megengine.traced_module.traced_module.InternalGraph.add_output_node>`\\"
+#~ " \\(node\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`compile "
+#~ "<megengine.traced_module.traced_module.InternalGraph.compile>`\\ "
+#~ "\\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`eval "
+#~ "<megengine.traced_module.traced_module.InternalGraph.eval>`\\ "
+#~ "\\(\\*inputs\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`exprs "
+#~ "<megengine.traced_module.traced_module.InternalGraph.exprs>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`get_dep_exprs "
+#~ "<megengine.traced_module.traced_module.InternalGraph.get_dep_exprs>`\\"
+#~ " \\(nodes\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`get_expr_by_id "
+#~ "<megengine.traced_module.traced_module.InternalGraph.get_expr_by_id>`\\"
+#~ " \\(\\[expr\\_id\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`get_function_by_type "
+#~ "<megengine.traced_module.traced_module.InternalGraph.get_function_by_type>`\\"
+#~ " \\(\\[func\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`get_method_by_type "
+#~ "<megengine.traced_module.traced_module.InternalGraph.get_method_by_type>`\\"
+#~ " \\(\\[method\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`get_module_by_type "
+#~ "<megengine.traced_module.traced_module.InternalGraph.get_module_by_type>`\\"
+#~ " \\(module\\_cls\\[\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`get_node_by_id "
+#~ "<megengine.traced_module.traced_module.InternalGraph.get_node_by_id>`\\"
+#~ " \\(\\[node\\_id\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`get_node_by_name "
+#~ "<megengine.traced_module.traced_module.InternalGraph.get_node_by_name>`\\"
+#~ " \\(\\[name\\, ignorecase\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`insert_exprs "
+#~ "<megengine.traced_module.traced_module.InternalGraph.insert_exprs>`\\"
+#~ " \\(\\[expr\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`interpret "
+#~ "<megengine.traced_module.traced_module.InternalGraph.interpret>`\\ "
+#~ "\\(\\*inputs\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`nodes "
+#~ "<megengine.traced_module.traced_module.InternalGraph.nodes>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`replace_node "
+#~ "<megengine.traced_module.traced_module.InternalGraph.replace_node>`\\"
+#~ " \\(repl\\_dict\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`reset_inputs "
+#~ "<megengine.traced_module.traced_module.InternalGraph.reset_inputs>`\\"
+#~ " \\(\\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`reset_outputs "
+#~ "<megengine.traced_module.traced_module.InternalGraph.reset_outputs>`\\"
+#~ " \\(outputs\\)"
+#~ msgstr ""
 
