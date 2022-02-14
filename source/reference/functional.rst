@@ -206,6 +206,7 @@ Linear Algebra Functions
    dot
    matinv
    matmul
+   diag
    svd
    norm
    normalize
