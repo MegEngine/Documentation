@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,14 +34,14 @@ msgid "指定 shape 和 dtype，将构造出一个 LiteLayout。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/interface/python.rst:19
-#: ../../source/user-guide/deployment/lite/interface/python.rst:222
-#: ../../source/user-guide/deployment/lite/interface/python.rst:259
-#: ../../source/user-guide/deployment/lite/interface/python.rst:459
-#: ../../source/user-guide/deployment/lite/interface/python.rst:582
-#: ../../source/user-guide/deployment/lite/interface/python.rst:722
-#: ../../source/user-guide/deployment/lite/interface/python.rst:795
-#: ../../source/user-guide/deployment/lite/interface/python.rst:967
-#: ../../source/user-guide/deployment/lite/interface/python.rst:985
+#: ../../source/user-guide/deployment/lite/interface/python.rst:228
+#: ../../source/user-guide/deployment/lite/interface/python.rst:265
+#: ../../source/user-guide/deployment/lite/interface/python.rst:500
+#: ../../source/user-guide/deployment/lite/interface/python.rst:620
+#: ../../source/user-guide/deployment/lite/interface/python.rst:759
+#: ../../source/user-guide/deployment/lite/interface/python.rst:832
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1004
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1022
 msgid "参数："
 msgstr ""
 
@@ -77,913 +77,957 @@ msgstr ""
 msgid "LiteTensor"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:42
+#: ../../source/user-guide/deployment/lite/interface/python.rst:44
 msgid ""
 "构造 LiteTensor 时候可以指定 layout， device_type，device_id，以及是否内存是 `锁页内存 "
 "<https://developer.nvidia.com/blog/how-optimize-data-transfers-cuda-"
-"cc/>`_。"
-msgstr ""
-
-#: ../../source/user-guide/deployment/lite/interface/python.rst:44
-#: ../../source/user-guide/deployment/lite/interface/python.rst:349
-msgid "参数"
-msgstr ""
-
-#: ../../source/user-guide/deployment/lite/interface/python.rst:46
-msgid "layout：LiteTensor 对应的 layout 信息。"
+"cc/>`_，另外 如果也可以通过传递关键词参数 shapes 和 dtype 在 MegEngineLite 内部构造 layout，让后再构造"
+" Tensor。"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/interface/python.rst:47
+#: ../../source/user-guide/deployment/lite/interface/python.rst:397
+msgid "参数"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/python.rst:49
+msgid "layout：LiteTensor 对应的 layout 信息。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/python.rst:50
 msgid "device_type：LiteDeviceType 对应的数据类型，包含："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:58
+#: ../../source/user-guide/deployment/lite/interface/python.rst:61
 msgid "device_id：LiteTensor 所在设备的 id。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:59
+#: ../../source/user-guide/deployment/lite/interface/python.rst:62
 msgid ""
 "is_pinned_host：LiteTensor 是否为 `锁页内存 <https://developer.nvidia.com/blog"
 "/how-optimize-data-transfers-cuda-cc/>`_。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:63
+#: ../../source/user-guide/deployment/lite/interface/python.rst:66
 msgid "LiteTensor 构造之后，内存没有立即申请，只有当 LiteTensor 需要用到内存时候才会申请。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:65
-#: ../../source/user-guide/deployment/lite/interface/python.rst:142
-#: ../../source/user-guide/deployment/lite/interface/python.rst:190
-#: ../../source/user-guide/deployment/lite/interface/python.rst:237
-#: ../../source/user-guide/deployment/lite/interface/python.rst:275
-#: ../../source/user-guide/deployment/lite/interface/python.rst:422
-#: ../../source/user-guide/deployment/lite/interface/python.rst:464
-#: ../../source/user-guide/deployment/lite/interface/python.rst:619
-#: ../../source/user-guide/deployment/lite/interface/python.rst:666
-#: ../../source/user-guide/deployment/lite/interface/python.rst:801
-#: ../../source/user-guide/deployment/lite/interface/python.rst:836
+#: ../../source/user-guide/deployment/lite/interface/python.rst:68
+#: ../../source/user-guide/deployment/lite/interface/python.rst:148
+#: ../../source/user-guide/deployment/lite/interface/python.rst:196
+#: ../../source/user-guide/deployment/lite/interface/python.rst:243
+#: ../../source/user-guide/deployment/lite/interface/python.rst:281
+#: ../../source/user-guide/deployment/lite/interface/python.rst:314
+#: ../../source/user-guide/deployment/lite/interface/python.rst:468
+#: ../../source/user-guide/deployment/lite/interface/python.rst:505
+#: ../../source/user-guide/deployment/lite/interface/python.rst:657
+#: ../../source/user-guide/deployment/lite/interface/python.rst:703
+#: ../../source/user-guide/deployment/lite/interface/python.rst:838
+#: ../../source/user-guide/deployment/lite/interface/python.rst:873
 msgid "示例："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:74
+#: ../../source/user-guide/deployment/lite/interface/python.rst:80
 msgid "LiteTensor 信息获取"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:105
+#: ../../source/user-guide/deployment/lite/interface/python.rst:111
 msgid ""
 "上面 LiteTensor 的 layout 信息具有装饰器 @property 和 "
 "@layout.setter，可以直接作为成员一样访问和赋值， 其他信息都具有 @property 的装饰器，因此都可以通过成员一样的访问。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:109
+#: ../../source/user-guide/deployment/lite/interface/python.rst:115
 msgid "get_ctypes_memory"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:115
+#: ../../source/user-guide/deployment/lite/interface/python.rst:121
 msgid ""
 "get_ctypes_memory：将返回 ctypes.c_void_p 类型，其指向 Tensor 的内存地址，如果 Tensor "
 "没有申请内存，将会申请内存。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:118
+#: ../../source/user-guide/deployment/lite/interface/python.rst:124
 msgid "reshape"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:124
+#: ../../source/user-guide/deployment/lite/interface/python.rst:130
 msgid ""
 "改变这个 LiteTensor 的 LiteLayout 中的 shape 为新的 shape，其中 **新的 shape 中元素个数需要和老的 "
 "shape 里面的元素个数相等**。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:127
+#: ../../source/user-guide/deployment/lite/interface/python.rst:133
 msgid "slice"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:132
+#: ../../source/user-guide/deployment/lite/interface/python.rst:138
 msgid ""
 "对 LiteTensor 进行切片，返回一个新的 LiteTensor，新的 LiteTensor 和原来 LiteTensor 共享内存， "
 "**新的 LiteTensor 可能不连续**"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:134
+#: ../../source/user-guide/deployment/lite/interface/python.rst:140
 msgid ""
 "参数： **start，end 的长度必须相等，长度可以小于 Tensor 的 Layout 的维度，如果传递了 step，则 step 也需要和"
 " start，end 的长度相等**。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:136
+#: ../../source/user-guide/deployment/lite/interface/python.rst:142
 msgid "start：Tensor 每一维度的起始 index 组成的数组，从高维到低维。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:137
+#: ../../source/user-guide/deployment/lite/interface/python.rst:143
 msgid "end：Tensor 每一维度的结束 index 组成的数组，从高维到低维。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:138
+#: ../../source/user-guide/deployment/lite/interface/python.rst:144
 msgid "step：Tensor 每一维度切片的间距，从高维到低维，默认为1。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:140
+#: ../../source/user-guide/deployment/lite/interface/python.rst:146
 msgid "返回值：返回一个新的 LiteTensor。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:164
+#: ../../source/user-guide/deployment/lite/interface/python.rst:170
 msgid "fill_zero"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:170
+#: ../../source/user-guide/deployment/lite/interface/python.rst:176
 msgid "将 LiteTensor 内存里面的数据全部设置为 0。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:173
+#: ../../source/user-guide/deployment/lite/interface/python.rst:179
 msgid "copy_from"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:179
+#: ../../source/user-guide/deployment/lite/interface/python.rst:185
 msgid ""
 "从 src_Tensor 中拷贝数据到自己内存中， **如果 src_tensor 和自己的 layout 不相同时，会更改自身 Layout "
 "信息为 src layout**。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:182
+#: ../../source/user-guide/deployment/lite/interface/python.rst:188
 msgid "share_memory_with"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:188
+#: ../../source/user-guide/deployment/lite/interface/python.rst:194
 msgid ""
 "将会和 src_tensor 共享内存数据， **如果 src_tensor 和自己的 LiteTensor "
 "信息（layout，device_type，device_id等）不相同时，会更改自身信息为 src 的信息**。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:205
+#: ../../source/user-guide/deployment/lite/interface/python.rst:211
 msgid "update"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:211
+#: ../../source/user-guide/deployment/lite/interface/python.rst:217
 msgid ""
 "将 LiteTensor 底层的信息更新到 python 中的 LiteTensor 中，包括 LiteTensor 的设备，设备 "
 "id，layout等信息。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:214
+#: ../../source/user-guide/deployment/lite/interface/python.rst:220
 msgid "set_data_by_copy"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:220
+#: ../../source/user-guide/deployment/lite/interface/python.rst:226
 msgid "将用户指定的 data 以 **复制的方式** 到该 LiteTensor 中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:224
+#: ../../source/user-guide/deployment/lite/interface/python.rst:230
 msgid "data： data 可以是 list 或者 numpy ndarray 或者 ctypes 的 c_void_p。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:226
+#: ../../source/user-guide/deployment/lite/interface/python.rst:232
 msgid ""
 "当 data 类型为 list 时候，LiteTensor 的 Layout 不会被修改，用户需要保证 tensor 的内存大小大于 list "
 "的长度。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:227
-#: ../../source/user-guide/deployment/lite/interface/python.rst:263
+#: ../../source/user-guide/deployment/lite/interface/python.rst:233
+#: ../../source/user-guide/deployment/lite/interface/python.rst:269
 msgid ""
 "当 data 为 numpy ndarray 时候，如果 data 的长度和 LiteTensor 的内存大小不等时，将修改 LiteTensor"
 " 的 layout 为 data 的 layout。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:228
-#: ../../source/user-guide/deployment/lite/interface/python.rst:264
+#: ../../source/user-guide/deployment/lite/interface/python.rst:234
+#: ../../source/user-guide/deployment/lite/interface/python.rst:270
 msgid ""
 "当 data 为 ctypes 的 c_void_p 时候，用户要么设置 data_length 并且必须 data_length "
 "LiteTensor 的长度相等，要么设置新的 Layout。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:230
-#: ../../source/user-guide/deployment/lite/interface/python.rst:266
+#: ../../source/user-guide/deployment/lite/interface/python.rst:236
+#: ../../source/user-guide/deployment/lite/interface/python.rst:272
 msgid "data_length：当用户输入的 data 为 ctypes 的 c_void_p 时候，指明数据长度。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:231
-#: ../../source/user-guide/deployment/lite/interface/python.rst:267
+#: ../../source/user-guide/deployment/lite/interface/python.rst:237
+#: ../../source/user-guide/deployment/lite/interface/python.rst:273
 msgid "layout 当需要改变 LiteTensor 的 layout 时，可以通过这个接口传递新的 layout。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:235
+#: ../../source/user-guide/deployment/lite/interface/python.rst:241
 msgid ""
 "LiteTensor 必须是 `锁页内存 <https://developer.nvidia.com/blog/how-optimize-"
 "data-transfers-cuda-cc/>`_ 或者是 CPU 上的内存"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:251
+#: ../../source/user-guide/deployment/lite/interface/python.rst:257
 msgid "set_data_by_share"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:257
+#: ../../source/user-guide/deployment/lite/interface/python.rst:263
 msgid "将用户传递进来的 data 通过 **共享的方式** 保存在 LiteTensor 中，避免 copy 带来的性能影响。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:261
+#: ../../source/user-guide/deployment/lite/interface/python.rst:267
 msgid "data： data 可以是 numpy ndarray 或者 ctypes 的 c_void_p。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:271
+#: ../../source/user-guide/deployment/lite/interface/python.rst:277
 msgid ""
 "当 data 为 numpy ndarray 时候，LiteTensor 要么是 `锁页内存 "
 "<https://developer.nvidia.com/blog/how-optimize-data-transfers-cuda-"
 "cc/>`_ 要么是 CPU 上的内存"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:272
+#: ../../source/user-guide/deployment/lite/interface/python.rst:278
 msgid "当 data 为 ctypes 的 c_void_p 时候，对 LiteTensor 没有要求，这时候需要用户自己保证内存的设备属性。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:290
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1031
+#: ../../source/user-guide/deployment/lite/interface/python.rst:296
+msgid "get_data_by_share"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/python.rst:302
+msgid ""
+"将 LiteTensor 中的数据以 **共享** 的方式构建一个 numpy 的数组，并返回给用户， **当这个 LiteTensor "
+"中内存数据被修改时候，返回的这个 numpy 数组中的 数据也将会被修改**。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/python.rst:305
+msgid "返回值："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/python.rst:307
+msgid "返回一个和 LiteTensor 共享内存的 numpy ndarray。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/python.rst:311
+msgid "当这个 LiteTensor 中内存数据被修改时候，返回的这个 numpy 数组中的数据也将会被修改，如："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/python.rst:312
+msgid ""
+"当第一次 Network Forward 之后通过输出 LiteTensor 获得的这个 numpy 数组，在下一次 Network "
+"Forward 的时候会被修改"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/python.rst:338
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1068
 msgid "to_numpy"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:296
+#: ../../source/user-guide/deployment/lite/interface/python.rst:344
 msgid "将 LiteTensor 中数据 copy 到一个 numpy 的 ndarray 中，可以方便查看 LiteTensor 中的数据。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:300
+#: ../../source/user-guide/deployment/lite/interface/python.rst:348
 msgid ""
 "当 LiteTensor 是 `锁页内存 <https://developer.nvidia.com/blog/how-optimize-"
 "data-transfers-cuda-cc/>`_ 或者是 CPU 上的 LiteTensor，则会直接 copy 到 numpy "
 "ndarray 中"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:301
+#: ../../source/user-guide/deployment/lite/interface/python.rst:349
 msgid ""
 "当 LiteTensor 在其他设备上，这时会先 copy 到 CPU LiteTensor 中，再从新的 LiteTensor copy 到 "
 "numpy ndarray 中，所以可能有 **性能问题**。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:304
+#: ../../source/user-guide/deployment/lite/interface/python.rst:352
 msgid "LiteOptions"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:332
+#: ../../source/user-guide/deployment/lite/interface/python.rst:380
 msgid "LiteOptions 是一个包含 MegEngine Network 优化选项集合的结构体，每个选项的解释如下："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:334
+#: ../../source/user-guide/deployment/lite/interface/python.rst:382
 msgid ""
 "weight_preprocess：在推理时候，部分 Kernel 执行前需要对权重进行转换，或者 "
 "Relayout，开启这个选项之后，将权重处理放到 Kernel 执行之前， **优化 Kernel** 执行时间，但是 Network "
 "初始化时间变长。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:335
+#: ../../source/user-guide/deployment/lite/interface/python.rst:383
 msgid "fuse_preprocess：开启该选项之后，模型中的部分前后处理 Operator 将会被融合在一起，优化模型执行的性能。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:336
+#: ../../source/user-guide/deployment/lite/interface/python.rst:384
 msgid ""
 "fake_next_exec：下一次执行 Inference "
 "时候，是否为假的执行：仅仅完成内存分配等和计算无关的操作。这次假的执行完成之后将被设置为 false。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:337
+#: ../../source/user-guide/deployment/lite/interface/python.rst:385
 msgid ""
 "var_sanity_check_first_run：第一次执行 Inference 时候是否需要对每一个 Operator 的输入输出 "
 "Tensor 的正确性进行检查，默认为 true。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:338
+#: ../../source/user-guide/deployment/lite/interface/python.rst:386
 msgid "const_shape：指定 Network 的输入 shape 不会变化，这样不用在后面的执行时检查是否需要重新分配内存等操作。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:339
+#: ../../source/user-guide/deployment/lite/interface/python.rst:387
 msgid ""
 "force_dynamic_alloc：强制要求所有的 Tensor 都是运行时动态分配，且不进行内存优化，MegEngine 默认所有的 "
 "Tensor 都是执行前进行内存优化并静态申请。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:340
+#: ../../source/user-guide/deployment/lite/interface/python.rst:388
 msgid ""
 "force_output_dynamic_alloc：强制最后输出的 Tensor 的内存为动态申请，这样输出 Tensor 不用 copy "
 "到用户的内存中，可以直接代理到返回内存给用户。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:341
+#: ../../source/user-guide/deployment/lite/interface/python.rst:389
 msgid ""
 "force_output_use_user_specified_memory：强制让输出 Tensor 的内存由用户指定，这样输出 Tensor "
 "将不需要 copy 到用户内存，在最后一个 Kernel 计算时就写到了用户的内存地址中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:342
+#: ../../source/user-guide/deployment/lite/interface/python.rst:390
 msgid ""
 "no_profiling_on_shape_change：当 Network 的输入 Tensor 的 shape 改变的时候，这时候 fast-"
 "run 将不会进行重新搜索最优的 kernel 算法实现。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:343
+#: ../../source/user-guide/deployment/lite/interface/python.rst:391
 msgid ""
 "jit_level：JIT 的级别，设置为 0 时：将关闭 JIT，设置为 1 时：仅仅只开启基本的 elemwise 的 JIT，当是指为 2 "
 "时：将开启 elemwise 和 reduce Operator 的 JIT。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:344
+#: ../../source/user-guide/deployment/lite/interface/python.rst:392
 msgid ""
 "comp_node_seq_record_level：设置 MegEngine 的录制模式，当设置为 0 时：将不开启录制模式，设置为 1 "
 "时：将开启录制模式，不会析构这个计算图结构，当设置为 2 时：将开启录制模式，并释放掉整个计算图。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:345
+#: ../../source/user-guide/deployment/lite/interface/python.rst:393
 msgid ""
 "graph_opt_level：设置图优化等级，当设置为 0 时：关闭图优化，当设置为 1 时：算术计算 inplace 优化，当设置为 2 "
 "时：在 1 的基础上在加上全局优化，当设置为 3 时：在 2 的基础上再使能 JIT。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:346
+#: ../../source/user-guide/deployment/lite/interface/python.rst:394
 msgid "enable_xxxx：开启对应的 layout 转换优化，不同的平台上不同的 layout 性能差异较大，见下表："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:349
+#: ../../source/user-guide/deployment/lite/interface/python.rst:397
 msgid "作用"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:349
+#: ../../source/user-guide/deployment/lite/interface/python.rst:397
 msgid "适用平台"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:351
+#: ../../source/user-guide/deployment/lite/interface/python.rst:399
 msgid "enable-nchw88"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:351
+#: ../../source/user-guide/deployment/lite/interface/python.rst:399
 msgid "将输入nchw layout的模型转为nchw88 layout的模型"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:351
+#: ../../source/user-guide/deployment/lite/interface/python.rst:399
 msgid "X86 avx256"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:353
+#: ../../source/user-guide/deployment/lite/interface/python.rst:401
 msgid "enable-nchw44"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:353
+#: ../../source/user-guide/deployment/lite/interface/python.rst:401
 msgid "将输入nchw layout的模型转为nchw44 layout的模型"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:353
+#: ../../source/user-guide/deployment/lite/interface/python.rst:401
 msgid "Arm float32"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:355
+#: ../../source/user-guide/deployment/lite/interface/python.rst:403
 msgid "enable-nchw44-dot"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:355
+#: ../../source/user-guide/deployment/lite/interface/python.rst:403
 msgid "将输入nchw layout的模型转为nchw44-dot layout的模型"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:355
+#: ../../source/user-guide/deployment/lite/interface/python.rst:403
 msgid "Arm V8.2"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:357
+#: ../../source/user-guide/deployment/lite/interface/python.rst:405
 msgid "enable-nchw4"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:357
+#: ../../source/user-guide/deployment/lite/interface/python.rst:405
 msgid "将输入nchw layout的模型转为nchw4 layout的模型"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:357
-#: ../../source/user-guide/deployment/lite/interface/python.rst:359
-#: ../../source/user-guide/deployment/lite/interface/python.rst:361
+#: ../../source/user-guide/deployment/lite/interface/python.rst:405
+#: ../../source/user-guide/deployment/lite/interface/python.rst:407
+#: ../../source/user-guide/deployment/lite/interface/python.rst:409
 msgid "CUDA"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:359
+#: ../../source/user-guide/deployment/lite/interface/python.rst:407
 msgid "enable-chwn4"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:359
+#: ../../source/user-guide/deployment/lite/interface/python.rst:407
 msgid "将输入nchw layout的模型转为chwn4 layout的模型"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:361
+#: ../../source/user-guide/deployment/lite/interface/python.rst:409
 msgid "enable-nchw32"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:361
+#: ../../source/user-guide/deployment/lite/interface/python.rst:409
 msgid "将输入nchw layout的模型转为nchw32 layout的模型"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:363
+#: ../../source/user-guide/deployment/lite/interface/python.rst:411
 msgid "enable-nhwcd4"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:363
+#: ../../source/user-guide/deployment/lite/interface/python.rst:411
 msgid "将输入nchw layout的模型转为nhcw4 layout的模型"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:363
+#: ../../source/user-guide/deployment/lite/interface/python.rst:411
 msgid "移动平台GPU"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:369
+#: ../../source/user-guide/deployment/lite/interface/python.rst:417
 msgid "LiteConfig"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:382
+#: ../../source/user-guide/deployment/lite/interface/python.rst:430
 msgid "has_compression： 模型是否压缩过。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:383
+#: ../../source/user-guide/deployment/lite/interface/python.rst:431
 msgid "device_id： LiteNetwork 创建所在的设备 id。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:384
+#: ../../source/user-guide/deployment/lite/interface/python.rst:432
 msgid "device_type：LiteNetwork 创建所在的设备类型。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:385
+#: ../../source/user-guide/deployment/lite/interface/python.rst:433
 msgid "backend：指运行 LiteNetwork 的后端推理框架，目前默认是：MegEngine。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:386
+#: ../../source/user-guide/deployment/lite/interface/python.rst:434
 msgid "bare_model_cryption_name：如果模型有加密，则指明加密算法的名字，如果没有加密，则不用配置。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:387
+#: ../../source/user-guide/deployment/lite/interface/python.rst:435
 msgid "options 模型的优化参数，如上面所示。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:392
+#: ../../source/user-guide/deployment/lite/interface/python.rst:440
 msgid "LiteIO"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:403
+#: ../../source/user-guide/deployment/lite/interface/python.rst:451
 msgid ""
 "LiteIO 为指定模型中输入输出 LiteTensor 所在的位置，可以在 device 端，也可以配置在 CPU 端，如果不配置，默认为 "
 "CPU 端。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:405
+#: ../../source/user-guide/deployment/lite/interface/python.rst:453
 msgid "name：LiteTensor 的名字，字符串。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:406
+#: ../../source/user-guide/deployment/lite/interface/python.rst:454
 msgid "is_host：LiteNetwork 创建所在的设备 id。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:407
+#: ../../source/user-guide/deployment/lite/interface/python.rst:455
 msgid ""
 "io_type：指定该 LiteTensor 对应的IO类型，目前支持两种类型，分别是：LITE_IO_VALUE 和 "
 "LITE_IO_SHAPE，默认为 LITE_IO_VALUE 。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:408
+#: ../../source/user-guide/deployment/lite/interface/python.rst:456
 msgid "config_layout：提前配置好的 layout，不配置默认为模型中的 layout。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:411
+#: ../../source/user-guide/deployment/lite/interface/python.rst:459
 msgid "LiteNetworkIO"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:419
+#: ../../source/user-guide/deployment/lite/interface/python.rst:465
 msgid ""
-"为 LiteNetwork 构造时候的 IO 信息的集合，包含 inputs 和 outputs，为用户指定的上述 LiteIO，用户可以通过 "
-"add_input，add_output 接口添加 LiteIO 到 LiteNetworkIO 中。"
+"LiteNetworkIO 是 LiteNetwork 构造时候的 IO 信息的集合，包含 inputs 和 outputs，为用户指定的上述 "
+"LiteIO，另外用户可以通过 add_input，add_output 接口添加 LiteIO 到 LiteNetworkIO 中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:448
+#: ../../source/user-guide/deployment/lite/interface/python.rst:489
 msgid "LiteNetwork 相关 API"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:451
+#: ../../source/user-guide/deployment/lite/interface/python.rst:492
 msgid "LiteNetwork"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:457
+#: ../../source/user-guide/deployment/lite/interface/python.rst:498
 msgid "构造一个 LiteNetwork，可以传递两个参数分别是 config 和 io。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:461
+#: ../../source/user-guide/deployment/lite/interface/python.rst:502
 msgid "config：模型优化需要的 LiteConfig 类型配置，默认为 None。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:462
+#: ../../source/user-guide/deployment/lite/interface/python.rst:503
 msgid "io： LiteNetworkIO 类型，指定用户输入输出 LiteTensor 的信息。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:479
+#: ../../source/user-guide/deployment/lite/interface/python.rst:517
 msgid "load"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:485
+#: ../../source/user-guide/deployment/lite/interface/python.rst:523
 msgid "指定创建 LiteNetwork 的模型路径，并解析这个模型，加载到内存中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:488
+#: ../../source/user-guide/deployment/lite/interface/python.rst:526
 msgid "forward"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:494
+#: ../../source/user-guide/deployment/lite/interface/python.rst:532
 msgid "对指定创建 LiteNetwork 进行 forward。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:497
+#: ../../source/user-guide/deployment/lite/interface/python.rst:535
 msgid "wait"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:503
+#: ../../source/user-guide/deployment/lite/interface/python.rst:541
 msgid "等待指定创建 LiteNetwork 进行 forward 完成。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:506
+#: ../../source/user-guide/deployment/lite/interface/python.rst:544
 msgid "获取 LiteNetwork 相关信息"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:542
+#: ../../source/user-guide/deployment/lite/interface/python.rst:580
 msgid ""
 "inplace 模式为：运行模型时候只有一个线程，这个线程发送 Kernel 任务的同时，inplace 地将 kernel 执行计算任务。非 "
 "inplace 模式：将有2个线程，一个线程发送 Kernel 任务，一个线程执行 Kernel 任务。在一些单核处理器 或者低端 cpu "
 "上，设置 **inplace 模式性能会好一些**。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:547
+#: ../../source/user-guide/deployment/lite/interface/python.rst:585
 msgid "设置 LiteNetwork 相关信息"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:571
+#: ../../source/user-guide/deployment/lite/interface/python.rst:609
 msgid "上面这些 LiteNetwork 的运行时的信息设置需要在 LiteNetwork 创建之后，模型 load 之前进行设置，否则将报错。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:574
+#: ../../source/user-guide/deployment/lite/interface/python.rst:612
 msgid "get_io_tensor"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:580
+#: ../../source/user-guide/deployment/lite/interface/python.rst:618
 msgid "获取 LiteNetwork 中名字为 name 的输入或者输出 LiteTensor。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:584
+#: ../../source/user-guide/deployment/lite/interface/python.rst:622
 msgid "name：字符串，指定输入或者输出 LiteTensor 的名字。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:585
+#: ../../source/user-guide/deployment/lite/interface/python.rst:623
 msgid "phase：当有输入和输出 LiteTensor 名字重复时候，指明获取的 LiteTensor 来自输入或者输出，可以设置为："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:587
+#: ../../source/user-guide/deployment/lite/interface/python.rst:625
 msgid ""
 "LiteTensorPhase.LITE_IO：在输入和输出的所有 LiteTensor 中寻找指定 name 的 "
 "LiteTensor，名字不会重复的情况下。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:588
+#: ../../source/user-guide/deployment/lite/interface/python.rst:626
 msgid "LiteTensorPhase.LITE_INPUT：在输入的所有 LiteTensor 中寻找指定 name 的 LiteTensor。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:589
+#: ../../source/user-guide/deployment/lite/interface/python.rst:627
 msgid "LiteTensorPhase.LITE_OUTPUT：在输出的所有 LiteTensor 中寻找指定 name 的 LiteTensor。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:592
+#: ../../source/user-guide/deployment/lite/interface/python.rst:630
 msgid "share_weights_with"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:598
+#: ../../source/user-guide/deployment/lite/interface/python.rst:636
 msgid ""
 "设置 LiteNetwork 运行和 src_network 共享同一份权重，两个 LiteNetwork "
 "可以对不同的输入数据进行推理，也可以同时运行。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:601
+#: ../../source/user-guide/deployment/lite/interface/python.rst:639
 msgid "share_runtime_memroy"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:607
+#: ../../source/user-guide/deployment/lite/interface/python.rst:645
 msgid ""
 "设置 LiteNetwork 运行和 src_network 共享运行时候的内存， **这时 self 和 src_network "
 "不能同时执行**， 运行时内存指：除了保存模型 weights 和图结构以外的所有需要的运行时内存。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:611
+#: ../../source/user-guide/deployment/lite/interface/python.rst:649
 msgid "async_with_callback"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:617
+#: ../../source/user-guide/deployment/lite/interface/python.rst:655
 msgid ""
 "设置模型 forward 运行在异步模式，异步模式中，主线程将不会被阻塞，当 LiteNetwork 执行完成之后将执行 "
 "async_callback，告诉主线程执行完成。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:649
+#: ../../source/user-guide/deployment/lite/interface/python.rst:686
 msgid "set_start_callback"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:655
+#: ../../source/user-guide/deployment/lite/interface/python.rst:692
 msgid "设置模型运行之前的回调函数，用户可以通过这个回调函数检查输入数据是否满足要求。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:658
+#: ../../source/user-guide/deployment/lite/interface/python.rst:695
 msgid "set_finish_callback"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:664
+#: ../../source/user-guide/deployment/lite/interface/python.rst:701
 msgid "设置模型运行之后的回调函数，用户可以通过这个回调函数检查输出数据是否满足要求。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:691
+#: ../../source/user-guide/deployment/lite/interface/python.rst:728
 msgid "enable_profile_performance"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:697
+#: ../../source/user-guide/deployment/lite/interface/python.rst:734
 msgid ""
 "模型运行时候，对模型中的各个 Operator 进行速度测试，并将测试结果写到指定的 profile_file 中，得到的这个 profile "
 "文件为 json 文件， 可以使用 MegEngine 中指定的 tool 进行解析。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:701
+#: ../../source/user-guide/deployment/lite/interface/python.rst:738
 msgid "set_network_algo_workspace_limit"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:707
+#: ../../source/user-guide/deployment/lite/interface/python.rst:744
 msgid ""
 "模型运行时候，模型中每一个 Operator 运行时候选择的算法最大能够用到的 workspace 大小，超过 size_limit "
 "大小的算法将不会被选择，其中 size_limit 的单位为字节。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:712
+#: ../../source/user-guide/deployment/lite/interface/python.rst:749
 msgid "set_network_algo_policy"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:720
+#: ../../source/user-guide/deployment/lite/interface/python.rst:757
 msgid "设置模型运行时候选择每个 Operator 算法的策略。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:724
+#: ../../source/user-guide/deployment/lite/interface/python.rst:761
 msgid "policy 选择算法的策略，MegEngine Lite 中支持以下策略："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:757
+#: ../../source/user-guide/deployment/lite/interface/python.rst:794
 msgid "其中上面的策略在不冲突的情况下，可以进行与操作，然后组合在一起。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:759
+#: ../../source/user-guide/deployment/lite/interface/python.rst:796
 msgid ""
 "shared_batch_size：binary_equal_between_batch 的时候，选择最优算法所依据的 batch 大小，设置 0"
 " 将使用模型默认的 batch size。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:760
+#: ../../source/user-guide/deployment/lite/interface/python.rst:797
 msgid ""
 "binary_equal_between_batch： 多个 batch 同时进行计算时，如果输入完全一样，保证所有 batch "
 "的计算结果完全一样。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:764
+#: ../../source/user-guide/deployment/lite/interface/python.rst:801
 msgid "io_txt_dump"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:770
+#: ../../source/user-guide/deployment/lite/interface/python.rst:807
 msgid "将 LiteNetwork 运行时候的所有 IO tensor 输出到文本文件 io_txt_out_file 中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:773
+#: ../../source/user-guide/deployment/lite/interface/python.rst:810
 msgid "io_bin_dump"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:779
+#: ../../source/user-guide/deployment/lite/interface/python.rst:816
 msgid "将 LiteNetwork 运行时候的所有 IO tensor 以二进制的形式保存在 bin_dir 文件夹中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:782
+#: ../../source/user-guide/deployment/lite/interface/python.rst:819
 msgid "全局设置相关 API"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:783
+#: ../../source/user-guide/deployment/lite/interface/python.rst:820
 msgid "全局接口在 MegEngine Lite 中都封装在 LiteGlobal 中，都作为它的静态函数存在。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:786
+#: ../../source/user-guide/deployment/lite/interface/python.rst:823
 msgid "register_decryption_and_key"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:793
+#: ../../source/user-guide/deployment/lite/interface/python.rst:830
 msgid "注册用户自定义的模型解密算法到 MegEngine Lite 中，包括解密方法和解密需要的秘钥。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:797
+#: ../../source/user-guide/deployment/lite/interface/python.rst:834
 msgid "decryption_name：解密算法的名字，字符串。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:798
+#: ../../source/user-guide/deployment/lite/interface/python.rst:835
 msgid "decryption_func：解密算法的方法，以及闭包函数。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:799
+#: ../../source/user-guide/deployment/lite/interface/python.rst:836
 msgid "key：解密算法的秘钥。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:824
+#: ../../source/user-guide/deployment/lite/interface/python.rst:861
 msgid "update_decryption_key"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:831
+#: ../../source/user-guide/deployment/lite/interface/python.rst:868
 msgid "更新 MegEngine Lite 中 build-in 的解密算法的秘钥。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:833
+#: ../../source/user-guide/deployment/lite/interface/python.rst:870
 msgid ""
 "decryption_name：解密算法的名字，目前 MegEngine Lite "
 "中写了三种加密算法，分别是：\"AES_default\"，\"RC4_default\" 和 "
 "\"SIMPLE_FAST_RC4_default\"。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:834
+#: ../../source/user-guide/deployment/lite/interface/python.rst:871
 msgid ""
 "对应的秘钥：\"AES_default\" 为 32 字节数组，\"RC4_default\" 和 "
 "\"SIMPLE_FAST_RC4_default\" 为 16 自己数组。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:861
+#: ../../source/user-guide/deployment/lite/interface/python.rst:898
 msgid "set_loader_lib_path"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:868
+#: ../../source/user-guide/deployment/lite/interface/python.rst:905
 msgid ""
 "当第三方硬件以 loader 的形式接入到 MegEngine 中，该接口用于用户设置对应 loader 的执行动态库，path "
 "为执行的动态库的路径。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:871
+#: ../../source/user-guide/deployment/lite/interface/python.rst:908
 msgid "set_persistent_cache"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:878
+#: ../../source/user-guide/deployment/lite/interface/python.rst:915
 msgid ""
 "设置当前 MegEngine Lite 中模型运行的算法 cache，模型运行时将从这个 cache 中取出对应 Operator "
 "的算法信息，并解析找到执行算法，并运行， 这将节省模型运行时候搜索最优的算法时候，用户可以提前搜索好对应的 cache。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:882
-#: ../../source/user-guide/deployment/lite/interface/python.rst:893
+#: ../../source/user-guide/deployment/lite/interface/python.rst:919
+#: ../../source/user-guide/deployment/lite/interface/python.rst:930
 msgid "dump_persistent_cache"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:889
+#: ../../source/user-guide/deployment/lite/interface/python.rst:926
 msgid ""
 "将当前 MegEngine Lite 中模型运行的算法的 cache 从内存中 dump 到指定文件中，该方法可以用户用户提前所有最优算法的 "
 "cache。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:900
+#: ../../source/user-guide/deployment/lite/interface/python.rst:937
 msgid "获取指定 device_type 类型的设备数量。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:903
+#: ../../source/user-guide/deployment/lite/interface/python.rst:940
 msgid "try_coalesce_all_free_memory"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:909
+#: ../../source/user-guide/deployment/lite/interface/python.rst:946
 msgid "释放当前 MegEngine Lite 中所有不在需要的内存，这样将减少当前系统内存使用峰值。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:912
+#: ../../source/user-guide/deployment/lite/interface/python.rst:949
 msgid "tensorrt_cache"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:919
+#: ../../source/user-guide/deployment/lite/interface/python.rst:956
 msgid "设置以及下载 tensorRT 的 cache。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:922
+#: ../../source/user-guide/deployment/lite/interface/python.rst:959
 msgid "set_log_level"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:941
+#: ../../source/user-guide/deployment/lite/interface/python.rst:978
 msgid "设置 MegEngine Lite 的 log 级别，改函数不在 LiteGlobal 类中，是一个独立的全局函数。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:946
+#: ../../source/user-guide/deployment/lite/interface/python.rst:983
 msgid "Utils API"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:947
+#: ../../source/user-guide/deployment/lite/interface/python.rst:984
 msgid ""
 "MegEngine Lite 现在有一个 utils ，TensorBatchCollector，主要为方便用户在进行推理之前收集多个 batch"
 " 数据，然后将攒出来的一个多个 batch 的数据 同时放到 LiteNetwork 中进行推理，避免不必要的内存拷贝。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:951
+#: ../../source/user-guide/deployment/lite/interface/python.rst:988
 msgid "TensorBatchCollector"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:965
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1002
 msgid "创建一个 TensorBatchCollector，这个 TensorBatchCollector 默认数据类型是 INT8，设备为 CUDA。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:969
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1006
 msgid "shape：用户指定 TensorBatchCollector 的 shape。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:970
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1007
 msgid ""
 "dtype：具体的数据类型，可以是 "
 "LITE_FLOAT，LITE_HALF，LITE_INT，LITE_INT16，LITE_INT8，LITE_UINT8，LITE_UINT16。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:971
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1008
 msgid "device_type：具体的设备类型。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:972
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1009
 msgid "device_id：TensorBatchCollector 所在的设备 id。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:973
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1010
 msgid ""
 "is_pinned_host：该 TensorBatchCollector 申请的内存是否为： `锁页内存 "
 "<https://developer.nvidia.com/blog/how-optimize-data-transfers-cuda-"
 "cc/>`_ 。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:974
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1011
 msgid "tensor：可选的用户设置已经创建好的 LiteTensor 到 TensorBatchCollector 中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:977
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1014
 msgid "collect_id"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:983
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1020
 msgid "设置该 TensorBatchCollector 中指定 batch_id 的数据为用户输入的 array。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:987
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1024
 msgid "array：可以是 numpy 的 ndarry，也可以是 LiteTensor 类型。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:989
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1026
 msgid ""
 "如果是 numpy 的 ndarry，MegEngine Lite 将调用 LiteTensor 的 set_data_by_copy 将数据 "
 "copy 到指定的 batch_id 的内存中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:990
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1027
 msgid "如果是 LiteTensor 类型，MegEngine Lite 将调用 LiteTensor 的 copy_from 完成数据 copy。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:992
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1029
 msgid "batch_id：用户指定将要拷贝 array 数据的目标 batch。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:995
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1032
 msgid "collect_by_ctypes"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1001
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1038
 msgid "当用户的数据为 ctypes 的 c_void_p，可以调用该接口将数据设置到第一个空着的 batch 中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1004
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1041
 msgid "collect"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1010
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1047
 msgid "当用户需要顺序的搜集batch，如从 0 一直到最大 batch，可以直接调用该接口。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1013
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1050
 msgid "free"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1019
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1056
 msgid "释放指定的 indexes，indexes 是一个 list。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1022
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1059
 msgid "get"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1028
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1065
 msgid "获得该 TensorBatchCollector 中内部存储数据的完整 LiteTensor。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1037
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1074
 msgid "获得该 TensorBatchCollector 中的数据保存在 numpy 的 array 中，并返回。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1039
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1076
 msgid "示例1：顺序的进行攒 batch"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1058
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1097
 msgid "示例2：通过指定 batch_id 进行攒 batch"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1083
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1123
 msgid "示例3：通过 ctpes 进行攒 batch"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1104
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1146
 msgid "示例4：通过 LiteTensor 进行攒 batch"
 msgstr ""
+
+#~ msgid ""
+#~ "构造 LiteTensor 时候可以指定 layout， "
+#~ "device_type，device_id，以及是否内存是 `锁页内存 "
+#~ "<https://developer.nvidia.com/blog/how-optimize-data-"
+#~ "transfers-cuda-cc/>`_。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "为 LiteNetwork 构造时候的 IO 信息的集合，包含 inputs"
+#~ " 和 outputs，为用户指定的上述 LiteIO，用户可以通过 "
+#~ "add_input，add_output 接口添加 LiteIO 到 "
+#~ "LiteNetworkIO 中。"
+#~ msgstr ""
 
