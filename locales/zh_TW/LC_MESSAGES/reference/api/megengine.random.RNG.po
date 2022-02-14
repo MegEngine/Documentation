@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-12-13 15:09\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-02-14 09:49\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,22 +11,25 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.random.RNG.po\n"
 "X-Crowdin-File-ID: 7048\n"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:2
-msgid "megengine.random.RNG"
-msgstr "crwdns63638:0crwdne63638:0"
+#: ../../source/reference/api/megengine.random.RNG.rst:5
+msgid "RNG"
+msgstr "crwdns90836:0crwdne90836:0"
 
 #: megengine.random.rng.RNG:1 of
 msgid ":class:`RNG` exposes a number of methods for generating random numbers."
 msgstr "crwdns79141:0:class:crwdne79141:0"
 
-#: megengine.random.rng.RNG of
+#: megengine.random.rng.RNG megengine.random.rng.RNG.beta
+#: megengine.random.rng.RNG.gamma megengine.random.rng.RNG.normal
+#: megengine.random.rng.RNG.permutation megengine.random.rng.RNG.poisson
+#: megengine.random.rng.RNG.shuffle megengine.random.rng.RNG.uniform of
 msgid "参数"
 msgstr "crwdns79143:0crwdne79143:0"
 
@@ -38,77 +41,210 @@ msgstr "crwdns79145:0crwdne79145:0"
 msgid "the device of generated tensor. Default: None"
 msgstr "crwdns79147:0crwdne79147:0"
 
-#: megengine.random.rng.RNG:9 of
+#: megengine.random.rng.RNG:9 megengine.random.rng.RNG.beta:28
+#: megengine.random.rng.RNG.gamma:30 megengine.random.rng.RNG.normal:14
+#: megengine.random.rng.RNG.permutation:14 megengine.random.rng.RNG.poisson:21
+#: megengine.random.rng.RNG.shuffle:9 megengine.random.rng.RNG.uniform:13 of
 msgid "实际案例"
 msgstr "crwdns79149:0crwdne79149:0"
 
-#: megengine.random.rng.RNG:17 of
+#: megengine.random.rng.RNG:17 megengine.random.rng.RNG.beta:47
+#: megengine.random.rng.RNG.gamma:49 megengine.random.rng.RNG.normal:23
+#: megengine.random.rng.RNG.permutation:31 megengine.random.rng.RNG.poisson:39
+#: megengine.random.rng.RNG.shuffle:23 megengine.random.rng.RNG.uniform:22 of
 msgid "Outputs:"
 msgstr "crwdns79151:0crwdne79151:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:15
-msgid "Methods"
-msgstr "crwdns63640:0crwdne63640:0"
-
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
-msgid ":obj:`beta <megengine.random.RNG.beta>`\\ \\(alpha\\, beta\\[\\, size\\]\\)"
-msgstr "crwdns79153:0:obj:crwdne79153:0"
-
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
+#: megengine.random.rng.RNG.beta:1 of
 msgid "Random variable with Beta distribution :math:`\\operatorname{Beta}(\\alpha, \\beta)`."
 msgstr "crwdns79155:0:math:crwdnd79155:0{Beta}crwdne79155:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
-msgid ":obj:`gamma <megengine.random.RNG.gamma>`\\ \\(shape\\[\\, scale\\, size\\]\\)"
-msgstr "crwdns79157:0:obj:crwdne79157:0"
+#: megengine.random.rng.RNG.beta:3 megengine.random.rng.RNG.gamma:3
+#: megengine.random.rng.RNG.poisson:3 of
+msgid "The corresponding probability density function is"
+msgstr "crwdns90838:0crwdne90838:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
+#: megengine.random.rng.RNG.beta:5 of
+msgid "p(x)=\\frac{1}{\\mathrm{~B}(\\alpha, \\beta)} x^{\\alpha-1}(1-x)^{\\beta-1}\n"
+"\\quad \\text { for } \\alpha, \\beta>0,"
+msgstr "crwdns90840:0{1}crwdnd90840:0{ for }crwdne90840:0"
+
+#: megengine.random.rng.RNG.beta:10 of
+msgid "where :math:`\\mathrm{~B}(\\alpha, \\beta)` is the beta function,"
+msgstr "crwdns90842:0:math:crwdne90842:0"
+
+#: megengine.random.rng.RNG.beta:12 of
+msgid "\\mathrm{~B}(\\alpha, \\beta)=\\int_{0}^{1} t^{\\alpha-1}(1-t)^{\\beta-1} d t."
+msgstr "crwdns90844:0{0}crwdnd90844:0{1}crwdne90844:0"
+
+#: megengine.random.rng.RNG.beta:17 of
+msgid "the alpha parameter of the distribution. Must be non-negative."
+msgstr "crwdns90846:0crwdne90846:0"
+
+#: megengine.random.rng.RNG.beta:19 of
+msgid "the beta parameter of the distribution. Must be non-negative."
+msgstr "crwdns90848:0crwdne90848:0"
+
+#: megengine.random.rng.RNG.beta:21 of
+msgid "the size of output tensor. If alpha and beta are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If alpha or beta is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(alpha, beta).shape`."
+msgstr "crwdns90850:0crwdne90850:0"
+
+#: megengine.random.rng.RNG.beta megengine.random.rng.RNG.gamma
+#: megengine.random.rng.RNG.normal megengine.random.rng.RNG.permutation
+#: megengine.random.rng.RNG.poisson megengine.random.rng.RNG.uniform of
+msgid "返回"
+msgstr "crwdns90852:0crwdne90852:0"
+
+#: megengine.random.rng.RNG.beta:25 megengine.random.rng.RNG.gamma:27
+#: megengine.random.rng.RNG.normal:11 megengine.random.rng.RNG.permutation:11
+#: megengine.random.rng.RNG.poisson:18 megengine.random.rng.RNG.uniform:10 of
+msgid "the output tensor."
+msgstr "crwdns90854:0crwdne90854:0"
+
+#: megengine.random.rng.RNG.gamma:1 of
 msgid "Random variable with Gamma distribution :math:`\\Gamma(k, \\theta)`."
 msgstr "crwdns79159:0:math:crwdne79159:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
-msgid ":obj:`normal <megengine.random.RNG.normal>`\\ \\(\\[mean\\, std\\, size\\]\\)"
-msgstr "crwdns63642:0:obj:crwdne63642:0"
+#: megengine.random.rng.RNG.gamma:5 of
+msgid "p(x)=x^{k-1} \\frac{e^{-x / \\theta}}{\\theta^{k} \\Gamma(k)}\n"
+"\\quad \\text { for } x>0 \\quad k, \\theta>0,"
+msgstr "crwdns90856:0{k-1}crwdnd90856:0{k}crwdnd90856:0{ for }crwdne90856:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
+#: megengine.random.rng.RNG.gamma:10 of
+msgid "where :math:`\\Gamma(k)` is the gamma function,"
+msgstr "crwdns90858:0:math:crwdne90858:0"
+
+#: megengine.random.rng.RNG.gamma:12 of
+msgid "\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k>0.\n\n"
+msgstr "crwdns90860:0{ for }crwdne90860:0"
+
+#: megengine.random.rng.RNG.gamma:16 of
+msgid "the shape parameter (sometimes designated \"k\") of the distribution. Must be non-negative."
+msgstr "crwdns90862:0crwdne90862:0"
+
+#: megengine.random.rng.RNG.gamma:19 of
+msgid "the scale parameter (sometimes designated \"theta\") of the distribution. Must be non-negative. Default: 1"
+msgstr "crwdns90864:0crwdne90864:0"
+
+#: megengine.random.rng.RNG.gamma:22 of
+msgid "the size of output tensor. If shape and scale are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If shape or scale is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(shape, scale).shape`. The broadcast rules are consistent with `numpy.broadcast`. Default: None"
+msgstr "crwdns90866:0crwdne90866:0"
+
+#: megengine.random.rng.RNG.normal:1 of
 msgid "Random variable with Gaussian distribution :math:`N(\\mu, \\sigma)`."
 msgstr "crwdns79161:0:math:crwdne79161:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
-msgid ":obj:`permutation <megengine.random.RNG.permutation>`\\ \\(n\\, \\*\\[\\, dtype\\]\\)"
-msgstr "crwdns79163:0:obj:crwdne79163:0"
+#: megengine.random.rng.RNG.normal:4 of
+msgid "the mean or expectation of the distribution. Default: 0"
+msgstr "crwdns90868:0crwdne90868:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
+#: megengine.random.rng.RNG.normal:6 of
+msgid "the standard deviation of the distribution (variance = :math:`\\sigma ^ 2`). Default: 1"
+msgstr "crwdns90870:0:math:crwdne90870:0"
+
+#: megengine.random.rng.RNG.normal:9 megengine.random.rng.RNG.uniform:8 of
+msgid "the size of output tensor. Default: None"
+msgstr "crwdns90872:0crwdne90872:0"
+
+#: megengine.random.rng.RNG.permutation:2 of
 msgid "Randomly permute a sequence, or return a permuted range."
 msgstr "crwdns87991:0crwdne87991:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
-msgid ":obj:`poisson <megengine.random.RNG.poisson>`\\ \\(lam\\[\\, size\\]\\)"
-msgstr "crwdns79167:0:obj:crwdne79167:0"
+#: megengine.random.rng.RNG.permutation:2 of
+msgid "If ``n`` is a multi-dimensional tensor, it is only shuffled along its first index."
+msgstr "crwdns90874:0crwdne90874:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
+#: megengine.random.rng.RNG.permutation:5 of
+msgid "If ``n`` is an integer, random permutation of integers from :math:`0` to :math:`n - 1`. If ``n`` is an tensor, make a copy and shuffle the elements randomly."
+msgstr "crwdns90876:0:math:crwdnd90876:0:math:crwdne90876:0"
+
+#: megengine.random.rng.RNG.permutation:8 of
+msgid "the output data type when ``n`` is an integer. int32, int16 and float32 are supported. Default: int32"
+msgstr "crwdns90878:0crwdne90878:0"
+
+#: megengine.random.rng.RNG.poisson:1 of
 msgid "Random variable with poisson distribution :math:`\\operatorname{Poisson}(\\lambda)`."
 msgstr "crwdns79169:0:math:crwdnd79169:0{Poisson}crwdne79169:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
-msgid ":obj:`shuffle <megengine.random.RNG.shuffle>`\\ \\(inp\\)"
-msgstr "crwdns87993:0:obj:crwdne87993:0"
+#: megengine.random.rng.RNG.poisson:5 of
+msgid "f(k ; \\lambda)=\\frac{\\lambda^{k} e^{-\\lambda}}{k !},"
+msgstr "crwdns90880:0{k}crwdne90880:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
-msgid "Modify a sequence in-place by shuffling its contents."
-msgstr "crwdns87995:0crwdne87995:0"
+#: megengine.random.rng.RNG.poisson:9 of
+msgid "where k is the number of occurrences :math:`({\\displaystyle k=0,1,2...})`."
+msgstr "crwdns90882:0:math:crwdne90882:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
-msgid ":obj:`uniform <megengine.random.RNG.uniform>`\\ \\(\\[low\\, high\\, size\\]\\)"
-msgstr "crwdns63644:0:obj:crwdne63644:0"
+#: megengine.random.rng.RNG.poisson:12 of
+msgid "the lambda parameter of the distribution. Must be non-negative."
+msgstr "crwdns90884:0crwdne90884:0"
 
-#: ../../source/reference/api/megengine.random.RNG.rst:39:<autosummary>:1
+#: megengine.random.rng.RNG.poisson:14 of
+msgid "the size of output tensor. If lam is a scalar and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If lam is a Tensor with shape `(k, v)` and given size is, e.g., `(m, n)`, then the output shape is `(m, n, k, v)`. Default: None."
+msgstr "crwdns90886:0crwdne90886:0"
+
+#: megengine.random.rng.RNG.shuffle:1 of
+msgid "Modify a sequence in-place by shuffling its contents. This function only shuffles the Tensor along the first axis of a multi-dimensional Tensor. The order of sub-Tensors is changed but their contents remains the same."
+msgstr "crwdns90888:0crwdne90888:0"
+
+#: megengine.random.rng.RNG.shuffle:6 of
+msgid "input tensor."
+msgstr "crwdns90890:0crwdne90890:0"
+
+#: megengine.random.rng.RNG.uniform:1 of
 msgid "Random variable with uniform distribution $U(0, 1)$."
 msgstr "crwdns79171:0$Ucrwdne79171:0"
+
+#: megengine.random.rng.RNG.uniform:4 of
+msgid "lower range. Default: 0"
+msgstr "crwdns90892:0crwdne90892:0"
+
+#: megengine.random.rng.RNG.uniform:6 of
+msgid "upper range. Default: 1"
+msgstr "crwdns90894:0crwdne90894:0"
 
 #~ msgid ""
 #~ "Generates a random permutation of "
 #~ "integers from :math:`0` to :math:`n -"
 #~ " 1`."
+#~ msgstr ""
+
+#~ msgid "megengine.random.RNG"
+#~ msgstr ""
+
+#~ msgid "Methods"
+#~ msgstr "方法"
+
+#~ msgid ""
+#~ ":obj:`beta <megengine.random.RNG.beta>`\\ \\(alpha\\, "
+#~ "beta\\[\\, size\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`gamma <megengine.random.RNG.gamma>`\\ \\(shape\\[\\,"
+#~ " scale\\, size\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`normal <megengine.random.RNG.normal>`\\ "
+#~ "\\(\\[mean\\, std\\, size\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`permutation <megengine.random.RNG.permutation>`\\ "
+#~ "\\(n\\, \\*\\[\\, dtype\\]\\)"
+#~ msgstr ""
+
+#~ msgid ":obj:`poisson <megengine.random.RNG.poisson>`\\ \\(lam\\[\\, size\\]\\)"
+#~ msgstr ""
+
+#~ msgid ":obj:`shuffle <megengine.random.RNG.shuffle>`\\ \\(inp\\)"
+#~ msgstr ""
+
+#~ msgid "Modify a sequence in-place by shuffling its contents."
+#~ msgstr "打乱张量的内容原地修改张量"
+
+#~ msgid ""
+#~ ":obj:`uniform <megengine.random.RNG.uniform>`\\ "
+#~ "\\(\\[low\\, high\\, size\\]\\)"
 #~ msgstr ""
 
