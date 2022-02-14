@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,160 +71,175 @@ msgid ""
 "``shufflenet_v2.mge`` 模型， 输入数据 ``input_tensor`` 是随机生成的，所以不用在乎计算结果。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:88
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:87
 msgid "上面代码主要完成了几个步骤，包括："
 msgstr ""
 
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:89
+msgid "创建默认配置的 Network；"
+msgstr ""
+
 #: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:90
-msgid "创建默认配置的 Network（第 16 行）；"
+msgid "载入模型，MegEngine Lite 将读取并解析模型文件，并创建计算图；"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:91
-msgid "载入模型，MegEngine Lite 将读取并解析模型文件，并创建计算图（第 19 行）；"
+msgid "通过输入 Tensor 的名字获取模型的输入 Tensor, 并设置随机数作为输入数据；"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:92
-msgid "通过输入 Tensor 的名字获取模型的输入 Tensor, 并设置随机数作为输入数据（第 22~32 行）；"
+msgid "执行 Inference 逻辑;"
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:93
-msgid "执行 Inference 逻辑（第 35~36 行）;"
+msgid "获取模型输出 Tensor, 并处理输出数据。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:94
-msgid "获取模型输出 Tensor, 并处理输出数据（第 39~48 行）。"
-msgstr ""
-
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:96
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:95
 msgid "至此完成了一个 ``shufflenet_v2`` 模型的推理过程的 C++ 代码编写。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:98
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:97
 msgid "但在真正运行这段代码之前，还需要编译该 C++ 源文件，并链接 MegEngine Lite 库文件。 ⬇️  ⬇️  ⬇️"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:103
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:102
 msgid "编译 MegEngine Lite"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:107
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:106
 msgid ""
 "这一步的目的是获得 MegEngine Lite 的静态链接库和动态链接库，供我们上面代码编译时候进行链接； 编译的过程和 :ref:`从源码编译"
 " MegEngine <build-from-source>` 中的介绍是一致的。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:109
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:108
 msgid "下面将演示在 Linux x86 下使用动态链接，Android Arm 上使用静态链接的流程："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:112
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:111
 msgid "首先需要 Clone 整个 MegEngine 工程，并进入到 MegEngine 的根目录："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:117
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:116
 msgid "环境准备 & 执行编译："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:123
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:122
 msgid "Linux x86"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:125
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:139
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:124
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:138
 msgid "准备编译依赖的子模块："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:129
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:128
 msgid "安装英特尔数学核心库（MKL）:"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:133
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:132
 msgid "本机编译 MegEngine Lite:"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:137
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:136
 msgid "Android Arm"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:143
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:142
 msgid ""
 "从安卓 `官网 <https://developer.android.google.cn/ndk/downloads/>`_ 下载 NDK "
 "并解压到某路径， 并将改路径设置为 ``NDK_ROOT`` 环境变量："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:148
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:147
 msgid "交叉编译 MegEngine Lite:"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:152
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:151
 msgid "编译完成之后 MegEngine Lite 库和头文件路径 /path/to/megenginelite-lib"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:155
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:154
 msgid ""
 "Linux x86:   "
 "``build_dir/host/MGE_WITH_CUDA_OFF/MGE_INFERENCE_ONLY_ON/Release/install/lite/``"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:156
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:155
 msgid "Android Arm: ``build_dir/android/arm64-v8a/Release/install/lite/``"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:161
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:160
 msgid "编译 Inference 代码"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:163
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:162
 msgid ""
 "有了上一步得到的 MegEngine Lite 库文件，我们就可以在编译 Inference 代码的时候进行动态链接或静态链接。 下面分别用 "
 "Linux x86 和 Android Arm 来展示两种链接方式，演示编译 Inference 代码的步骤："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:167
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:166
 msgid "Linux x86 动态链接编译"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:169
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:168
 msgid "根据自身环境选择编译器（这里使用的是 clang++, 也可以用 g++），动态链接 ``liblite_shared.so`` 文件："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:182
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:181
 msgid "编译完成之后，就得到了可执行文件 ``demo_deploy``."
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:185
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:184
 msgid "Android Arm 静态链接编译"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:187
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:186
 msgid "Android Arm 编译为交叉编译（在 Linux 主机上编译 Android Arm 中运行的可执行程序）。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:189
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:188
 msgid "以链接 MegEngine Lite 的静态库作为示例，需要确保 NDK 环境准备完成，"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:204
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:203
 msgid ""
 "编译完成之后，需要将 ``demo_deploy`` 和模型文件 ``shufflenet_v2.mge`` 拷贝到 Android Arm "
 "机器上。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:209
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:208
 msgid "执行 Inference 文件，验证结果"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:211
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:210
 msgid "最后执行编译好的文件，就可以看到推理结果："
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:217
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:216
 msgid "这样就快速完成了 X86 和 Arm 上简单的 demo 部署。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:219
+#: ../../source/user-guide/deployment/lite/quick-start/cpp.rst:218
 msgid ""
 "在本例中，最后计算结果可以看到：经过 ``softmax`` 之后，输出的结果中 ``sum = 1``, 符合 ``softmax`` "
 "的输出特点。"
 msgstr ""
+
+#~ msgid "创建默认配置的 Network（第 16 行）；"
+#~ msgstr ""
+
+#~ msgid "载入模型，MegEngine Lite 将读取并解析模型文件，并创建计算图（第 19 行）；"
+#~ msgstr ""
+
+#~ msgid "通过输入 Tensor 的名字获取模型的输入 Tensor, 并设置随机数作为输入数据（第 22~32 行）；"
+#~ msgstr ""
+
+#~ msgid "执行 Inference 逻辑（第 35~36 行）;"
+#~ msgstr ""
+
+#~ msgid "获取模型输出 Tensor, 并处理输出数据（第 39~48 行）。"
+#~ msgstr ""
 
