@@ -14,7 +14,8 @@ MegEngine 快速上手
 
 .. seealso::
 
-   本教程的对应源码： :docs:`examples/quick-start.py`
+   * 本教程展示模型开发基本流程，对应源码： :docs:`examples/quick-start.py`
+   * 只关注模型部署流程的用户可以阅读 :ref:`megengine-deploy` 🚀🚀🚀
 
 概览
 ----
@@ -155,8 +156,10 @@ MegEngine 快速上手
 训练：优化模型参数
 ------------------
 
-得到前向计算输出后，为了优化模型参数，我们还需借助
-:class:`~.GradManager` 和 :class:`~.Optimizer` 进行反向传播：
+得到前向计算输出后，为了优化模型参数，我们还需要：
+
+* 使用 :class:`~.GradManager` 对参数梯度进行管理；
+* 使用 :class:`~.Optimizer` 进行反向传播和参数更新（以 :class:`~.SGD` 为例）。
 
 .. code-block:: python
 
@@ -174,7 +177,7 @@ MegEngine 快速上手
 接下来训练我们的模型：将训练数据集分批地喂入模型，前向计算得到预测值，
 根据设计好的损失函数（本教程中使用交叉熵 :func:`~.cross_entropy` ）计算。
 接着调用 :meth:`.GradManager.backward` 方法来自动进行反向计算并记录梯度信息，
-然后根据这些梯度信息来更新模型中的参数。
+然后根据这些梯度信息来更新模型中的参数，即调用 :meth:`.Optimizer.step` 方法。
 
 .. code-block:: python
 
@@ -196,7 +199,7 @@ MegEngine 快速上手
 
        print(f"Epoch: {epoch}, loss: {total_loss/len(train_dataset)}")
 
-.. note:: 记得将数据转为 MegEngine :class:`~.Tensor` 格式，参考 :ref:`tensor-guide` 。
+.. warning:: 记得将数据转为 MegEngine :class:`~.Tensor` 格式，参考 :ref:`tensor-guide` 。
 
 .. seealso::
 
@@ -224,8 +227,10 @@ MegEngine 快速上手
 
 通常会得到一个在测试集上接近甚至超过 99% 预测正确率的模型。
 
-（可选）用图片进行验证
-~~~~~~~~~~~~~~~~~~~~~~
+注：通常的训练流程中应当使用验证集，每训练一段时间就及时验证，这里简化了这一步。
+
+推理：用单张图片验证
+--------------------
 
 我们也可以选择使用自己的手写数字图片来验证模型效果（你可以选择使用自己的图片）：
 
@@ -259,6 +264,11 @@ MegEngine 快速上手
 
 可以发现，我们训练出的 LeNet 模型成功地将手写该数字图片的标签类别预测为 6 ！
 
+.. seealso::
+
+   这里展示的是最简单的模型推理情景，MegEngine 是一个训练推理一体化的框架，
+   能将训练好的模型导出，在 C++ 环境下高效地进行推理部署，可参考 :ref:`deployment` 中的介绍。
+
 接下来做些什么？
 ----------------
 
@@ -277,7 +287,8 @@ MegEngine 快速上手
    同时，由于这仅仅是一份快速上手教程，许多模型开发的进阶特性没有进行介绍，例如
    :ref:`distributed-guide` / :ref:`quantization-guide` ... 等专题，可以在 :ref:`user-guide` 中找到。
    值得一提的是，MegEngine 不仅仅是一个深度学习训练框架，同时也支持便捷高效的模型推理部署。
-   关于模型推理部署的内容，可以参考 :ref:`deployment` 页面的介绍。
+   关于模型推理部署的内容，可以参考 :ref:`deployment` 页面的介绍与
+   《 :ref:`megengine-deploy` 》。
 
 .. admonition:: 任何人都可以成为 MegEngine 教程的贡献者
    :class: note

@@ -8,6 +8,7 @@
 
    quick-start
    beginner/intro
+   deploy/index
 
 我们为带有不同学习需求的用户提供了对应的新手入门教程，共同成长。
 
