@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-09 08:06\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-02-14 09:02\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-CN\n"
@@ -114,7 +114,7 @@ msgstr ""
 #: ../../source/reference/environment-variables.rst:154
 #: ../../source/reference/environment-variables.rst:175
 #: ../../source/reference/environment-variables.rst:183
-#: ../../source/reference/environment-variables.rst:229
+#: ../../source/reference/environment-variables.rst:235
 msgid "设置为 ``0`` 表示关闭，为 ``1`` 表示开启。"
 msgstr ""
 
@@ -443,30 +443,46 @@ msgid "是否在 Dump 的同时导出每个算子时输入值，默认为空，�
 msgstr ""
 
 #: ../../source/reference/environment-variables.rst:219
+msgid "``MGE_FASTRUN_CACHE_TYPE`` （ :ref:`nd-environ` ）"
+msgstr ""
+
+#: ../../source/reference/environment-variables.rst:219
+msgid "使用何种方式存储 fastrun cache, 可设置为 ``FILE`` （进程退出时会将内容保存到文件里）或 ``MEMORY`` （不保存）"
+msgstr ""
+
+#: ../../source/reference/environment-variables.rst:222
+msgid "``MGE_FASTRUN_CACHE_DIR`` （ :ref:`nd-environ` ）"
+msgstr ""
+
+#: ../../source/reference/environment-variables.rst:222
+msgid "更改 fastrun cache 的存储路径，默认为 ``~/.cache/megengine/persistent_cache``"
+msgstr ""
+
+#: ../../source/reference/environment-variables.rst:225
 msgid "调试相关"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:221
+#: ../../source/reference/environment-variables.rst:227
 msgid "``MGB_WAIT_TERMINATE`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:221
+#: ../../source/reference/environment-variables.rst:227
 msgid "在 MegEngine 崩溃的时候进入等待，此时可以用 gdb attch 进行 debug, 默认为空，不开启。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:224
+#: ../../source/reference/environment-variables.rst:230
 msgid "``MGB_THROW_ON_FORK`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:224
+#: ../../source/reference/environment-variables.rst:230
 msgid "是否在 Fork 进程中抛出异常，默认为空，不开启。"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:231
+#: ../../source/reference/environment-variables.rst:237
 msgid "``MGB_THROW_ON_SCALAR_IDX`` （ :ref:`nd-environ` ）"
 msgstr ""
 
-#: ../../source/reference/environment-variables.rst:227
+#: ../../source/reference/environment-variables.rst:233
 msgid "Tensor index 的下标如 果是scalar, 则可以使用 subtensor, 选择是否抛出异常，默认关闭。"
 msgstr ""
 
