@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-12-28 12:20\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-02-14 08:35\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -11,16 +11,16 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.qat.QATModule.po\n"
 "X-Crowdin-File-ID: 2518\n"
 
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:2
-msgid "megengine.module.qat.QATModule"
-msgstr "megengine.module.qat.QATModule"
+#: ../../source/reference/api/megengine.module.qat.QATModule.rst:5
+msgid "QATModule"
+msgstr ""
 
 #: megengine.module.qat.module.QATModule:1 of
 msgid "Base class of quantized-float related :class:`~.Module`, basically for QAT and Calibration."
@@ -34,257 +34,38 @@ msgstr "使用 :meth:`from_float_module` 从浮点数型 :class:`~.Module` 中�
 msgid "Can also be converted to :class:`~.QuantizedModule` for deployment using :func:`~.quantize.quantize` further."
 msgstr "可之后使用  :func:`~.quantize.quantize` 将该模块转为 :class:`~.QuantizedModule` 用于部署。"
 
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:11
-msgid "Attributes"
-msgstr "属性。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:25:<autosummary>:1
-msgid ":obj:`with_act <megengine.module.qat.QATModule.with_act>`\\"
-msgstr ":obj:`with_act <megengine.module.qat.QATModule.with_act>`\\"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:25:<autosummary>:1
-msgid ":obj:`with_weight <megengine.module.qat.QATModule.with_weight>`\\"
-msgstr ":obj:`with_weight <megengine.module.qat.QATModule.with_weight>`\\"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:27
-msgid "Methods"
-msgstr "方法"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`apply <megengine.module.qat.QATModule.apply>`\\ \\(fn\\)"
-msgstr ":obj:`apply <megengine.module.qat.QATModule.apply>`\\ \\(fn\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Applies function ``fn`` to all the modules within this module, including itself."
-msgstr "对当前模块中的所有模块应用函数 ``fn``，包括当前模块本身。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`apply_quant_activation <megengine.module.qat.QATModule.apply_quant_activation>`\\ \\(target\\)"
-msgstr ":obj:`apply_quant_activation <megengine.module.qat.QATModule.apply_quant_activation>`\\ \\(target\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
+#: megengine.module.qat.module.QATModule.apply_quant_activation:1
+#: megengine.module.qat.module.QATModule.apply_quant_weight:1 of
 msgid "Apply weight's observer and fake_quant from ``qconfig`` on ``target``."
 msgstr "在 ``target`` 上根据 ``qconfig`` 应用权重 observer 以及 fake_quant."
 
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`apply_quant_bias <megengine.module.qat.QATModule.apply_quant_bias>`\\ \\(target\\, inp\\, w\\_qat\\)"
-msgstr ":obj:`apply_quant_bias <megengine.module.qat.QATModule.apply_quant_bias>`\\ \\(target\\, inp\\, w\\_qat\\)"
+#: megengine.module.qat.module.QATModule.apply_quant_bias:1 of
+msgid "Use :func:`~.fake_quant_bias` to process ``target``. Only valid when ``act_fake_quant`` and ``weight_fake_quant`` are both enabled."
+msgstr "使用 :func:`~.fake_quant_bias` 来处理 ``target``. 只有当 ``act_fake_quant`` 和 ``weight_fake_quant`` 都启动时合法。"
 
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Use :func:`~.fake_quant_bias` to process ``target``."
-msgstr "使用 :func:`~.fake_quant_bias` 来处理 ``target``."
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`apply_quant_weight <megengine.module.qat.QATModule.apply_quant_weight>`\\ \\(target\\)"
-msgstr ":obj:`apply_quant_weight <megengine.module.qat.QATModule.apply_quant_weight>`\\ \\(target\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`buffers <megengine.module.qat.QATModule.buffers>`\\ \\(\\[recursive\\]\\)"
-msgstr ":obj:`buffers <megengine.module.qat.QATModule.buffers>`\\ \\(\\[recursive\\]\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Returns an iterable for the buffers of the module."
-msgstr "返回该模块中对于 buffers 的一个可迭代对象。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`children <megengine.module.qat.QATModule.children>`\\ \\(\\*\\*kwargs\\)"
-msgstr ":obj:`children <megengine.module.qat.QATModule.children>`\\ \\(\\*\\*kwargs\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Returns an iterable for all the submodules that are direct attributes of this module."
-msgstr "返回一个可迭代对象，可遍历所有属于当前模块的直接属性的子模块。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`disable_quantize <megengine.module.qat.QATModule.disable_quantize>`\\ \\(\\[value\\]\\)"
-msgstr ":obj:`disable_quantize <megengine.module.qat.QATModule.disable_quantize>`\\ \\(\\[value\\]\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
-msgstr "设置 ``module`` 的 ``quantize_diabled`` 属性，并返回 ``module``."
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`eval <megengine.module.qat.QATModule.eval>`\\ \\(\\)"
-msgstr ":obj:`eval <megengine.module.qat.QATModule.eval>`\\ \\(\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
-msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``False`` ，并将其切换为推理模式。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`forward <megengine.module.qat.QATModule.forward>`\\ \\(inputs\\)"
-msgstr ":obj:`forward <megengine.module.qat.QATModule.forward>`\\ \\(inputs\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`from_float_module <megengine.module.qat.QATModule.from_float_module>`\\ \\(float\\_module\\)"
-msgstr ":obj:`from_float_module <megengine.module.qat.QATModule.from_float_module>`\\ \\(float\\_module\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
+#: megengine.module.qat.module.QATModule.from_float_module:1 of
 msgid "Return a :class:`~.QATModule` instance converted from a float :class:`~.Module` instance."
 msgstr "返回从浮点型 :class:`~.Module` 实例转换而来的 :class:`~.QATModule` 实例。"
 
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`get_activation_dtype <megengine.module.qat.QATModule.get_activation_dtype>`\\ \\(\\)"
-msgstr ":obj:`get_activation_dtype <megengine.module.qat.QATModule.get_activation_dtype>`\\ \\(\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
+#: megengine.module.qat.module.QATModule.get_activation_dtype:1 of
 msgid "Get activation's quantization dtype as the method from ``qconfig``."
 msgstr "按照 qconfig 指定的方法，从 ``qconfig`` 中获取激活值的量化数据类型。"
 
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`get_activation_qparams <megengine.module.qat.QATModule.get_activation_qparams>`\\ \\(\\)"
-msgstr ":obj:`get_activation_qparams <megengine.module.qat.QATModule.get_activation_qparams>`\\ \\(\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
+#: megengine.module.qat.module.QATModule.get_activation_qparams:1 of
 msgid "Get activation's quantization parameters."
 msgstr "获取激活值的量化参数。"
 
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`get_weight_dtype <megengine.module.qat.QATModule.get_weight_dtype>`\\ \\(\\)"
-msgstr ":obj:`get_weight_dtype <megengine.module.qat.QATModule.get_weight_dtype>`\\ \\(\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
+#: megengine.module.qat.module.QATModule.get_weight_dtype:1 of
 msgid "Get weight's quantization dtype as the method from ``qconfig``."
 msgstr "从 ``qconfig`` 中获取权重的量化数据类型。"
 
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`get_weight_qparams <megengine.module.qat.QATModule.get_weight_qparams>`\\ \\(\\)"
-msgstr ":obj:`get_weight_qparams <megengine.module.qat.QATModule.get_weight_qparams>`\\ \\(\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
+#: megengine.module.qat.module.QATModule.get_weight_qparams:1 of
 msgid "Get weight's quantization parameters."
 msgstr "获取权重的量化参数。"
 
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`load_state_dict <megengine.module.qat.QATModule.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
-msgstr ":obj:`load_state_dict <megengine.module.qat.QATModule.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Loads a given dictionary created by :func:`state_dict` into this module."
-msgstr "加载一个参数字典，这个字典通常使用 :func:`state_dict` 得到。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`modules <megengine.module.qat.QATModule.modules>`\\ \\(\\*\\*kwargs\\)"
-msgstr ":obj:`modules <megengine.module.qat.QATModule.modules>`\\ \\(\\*\\*kwargs\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Returns an iterable for all the modules within this module, including itself."
-msgstr "返回一个可迭代对象，可以遍历当前模块中的所有模块，包括其本身。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`named_buffers <megengine.module.qat.QATModule.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
-msgstr ":obj:`named_buffers <megengine.module.qat.QATModule.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
-msgstr "返回可遍历模块中 key 与 buffer 的键值对的可迭代对象，其中 ``key`` 为从该模块至 buffer 的点路径（dotted path）。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`named_children <megengine.module.qat.QATModule.named_children>`\\ \\(\\*\\*kwargs\\)"
-msgstr ":obj:`named_children <megengine.module.qat.QATModule.named_children>`\\ \\(\\*\\*kwargs\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
-msgstr "返回可迭代对象，可以遍历属于当前模块的直接属性的所有子模块（submodule）与键（key）组成的”key-submodule”对，其中'key'是子模块对应的属性名。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`named_modules <megengine.module.qat.QATModule.named_modules>`\\ \\(\\[prefix\\]\\)"
-msgstr ":obj:`named_modules <megengine.module.qat.QATModule.named_modules>`\\ \\(\\[prefix\\]\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
-msgstr "返回可迭代对象，可以遍历当前模块包括自身在内的所有其内部模块所组成的key-module键-模块对，其中'key'是从当前模块到各子模块的点路径（dotted path）。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`named_parameters <megengine.module.qat.QATModule.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
-msgstr ":obj:`named_parameters <megengine.module.qat.QATModule.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
-msgstr "返回一个可迭代对象，可以遍历当前模块中key与 :class:`~.Parameter` 组成的键值对。其中  ``key`` 是从模块到 :class:`~.Parameter` 的点路径（dotted path）。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`named_tensors <megengine.module.qat.QATModule.named_tensors>`\\ \\(\\[prefix\\, recursive\\]\\)"
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Returns an iterable for key tensor pairs of the module, where ``key`` is the dotted path from this module to the tensor."
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`parameters <megengine.module.qat.QATModule.parameters>`\\ \\(\\[recursive\\]\\)"
-msgstr ":obj:`parameters <megengine.module.qat.QATModule.parameters>`\\ \\(\\[recursive\\]\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Returns an iterable for the :class:`~.Parameter` of the module."
-msgstr "返回一个可迭代对象，遍历当前模块中的所有 :class:`~.Parameter`."
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`register_forward_hook <megengine.module.qat.QATModule.register_forward_hook>`\\ \\(hook\\)"
-msgstr ":obj:`register_forward_hook <megengine.module.qat.QATModule.register_forward_hook>`\\ \\(hook\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Registers a hook to handle forward results."
-msgstr "给模块输出注册一个回调函数。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`register_forward_pre_hook <megengine.module.qat.QATModule.register_forward_pre_hook>`\\ \\(hook\\)"
-msgstr ":obj:`register_forward_pre_hook <megengine.module.qat.QATModule.register_forward_pre_hook>`\\ \\(hook\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Registers a hook to handle forward inputs."
-msgstr "给模块输入注册一个回调函数。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`replace_param <megengine.module.qat.QATModule.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
-msgstr ":obj:`replace_param <megengine.module.qat.QATModule.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to"
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`set_fake_quant <megengine.module.qat.QATModule.set_fake_quant>`\\ \\(enable\\)"
-msgstr ":obj:`set_fake_quant <megengine.module.qat.QATModule.set_fake_quant>`\\ \\(enable\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`set_observer <megengine.module.qat.QATModule.set_observer>`\\ \\(enable\\)"
-msgstr ":obj:`set_observer <megengine.module.qat.QATModule.set_observer>`\\ \\(enable\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`set_qconfig <megengine.module.qat.QATModule.set_qconfig>`\\ \\(qconfig\\)"
-msgstr ":obj:`set_qconfig <megengine.module.qat.QATModule.set_qconfig>`\\ \\(qconfig\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
+#: megengine.module.qat.module.QATModule.set_qconfig:1 of
 msgid "Set quantization related configs with ``qconfig``, including observer and fake_quant for weight and activation."
 msgstr "使用 ``qconfig`` 更改量化相关配置。包含权重和激活值的 observer 和 fake_quant 。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`state_dict <megengine.module.qat.QATModule.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
-msgstr ":obj:`state_dict <megengine.module.qat.QATModule.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`tensors <megengine.module.qat.QATModule.tensors>`\\ \\(\\[recursive\\]\\)"
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Returns an iterable for the :class:`~.Tensor` of the module."
-msgstr ""
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`train <megengine.module.qat.QATModule.train>`\\ \\(\\[mode\\, recursive\\]\\)"
-msgstr ":obj:`train <megengine.module.qat.QATModule.train>`\\ \\(\\[mode\\, recursive\\]\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
-msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``mode``。"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid ":obj:`zero_grad <megengine.module.qat.QATModule.zero_grad>`\\ \\(\\)"
-msgstr ":obj:`zero_grad <megengine.module.qat.QATModule.zero_grad>`\\ \\(\\)"
-
-#: ../../source/reference/api/megengine.module.qat.QATModule.rst:126:<autosummary>:1
-msgid "Sets all parameters' grads to zero"
-msgstr "将所有参数的梯度置0。"
 
 #~ msgid "基类：:class:`megengine.module.module.Module`"
 #~ msgstr "基类：:class:`megengine.module.module.Module`"
@@ -301,4 +82,365 @@ msgstr "将所有参数的梯度置0。"
 
 #~ msgid "module's name, can be initialized by the ``kwargs`` parameter"
 #~ msgstr "模块名称，子类的 ``kwargs`` 将会保存和传递此关键字参数。"
+
+#~ msgid "megengine.module.qat.QATModule"
+#~ msgstr "megengine.module.qat.QATModule"
+
+#~ msgid "Attributes"
+#~ msgstr "属性。"
+
+#~ msgid ":obj:`with_act <megengine.module.qat.QATModule.with_act>`\\"
+#~ msgstr ":obj:`with_act <megengine.module.qat.QATModule.with_act>`\\"
+
+#~ msgid ":obj:`with_weight <megengine.module.qat.QATModule.with_weight>`\\"
+#~ msgstr ":obj:`with_weight <megengine.module.qat.QATModule.with_weight>`\\"
+
+#~ msgid "Methods"
+#~ msgstr "方法"
+
+#~ msgid ":obj:`apply <megengine.module.qat.QATModule.apply>`\\ \\(fn\\)"
+#~ msgstr ":obj:`apply <megengine.module.qat.QATModule.apply>`\\ \\(fn\\)"
+
+#~ msgid ""
+#~ "Applies function ``fn`` to all the "
+#~ "modules within this module, including "
+#~ "itself."
+#~ msgstr "对当前模块中的所有模块应用函数 ``fn``，包括当前模块本身。"
+
+#~ msgid ""
+#~ ":obj:`apply_quant_activation "
+#~ "<megengine.module.qat.QATModule.apply_quant_activation>`\\ "
+#~ "\\(target\\)"
+#~ msgstr ""
+#~ ":obj:`apply_quant_activation "
+#~ "<megengine.module.qat.QATModule.apply_quant_activation>`\\ "
+#~ "\\(target\\)"
+
+#~ msgid ""
+#~ ":obj:`apply_quant_bias "
+#~ "<megengine.module.qat.QATModule.apply_quant_bias>`\\ "
+#~ "\\(target\\, inp\\, w\\_qat\\)"
+#~ msgstr ""
+#~ ":obj:`apply_quant_bias "
+#~ "<megengine.module.qat.QATModule.apply_quant_bias>`\\ "
+#~ "\\(target\\, inp\\, w\\_qat\\)"
+
+#~ msgid "Use :func:`~.fake_quant_bias` to process ``target``."
+#~ msgstr "使用 :func:`~.fake_quant_bias` 来处理 ``target``."
+
+#~ msgid ""
+#~ ":obj:`apply_quant_weight "
+#~ "<megengine.module.qat.QATModule.apply_quant_weight>`\\ "
+#~ "\\(target\\)"
+#~ msgstr ""
+#~ ":obj:`apply_quant_weight "
+#~ "<megengine.module.qat.QATModule.apply_quant_weight>`\\ "
+#~ "\\(target\\)"
+
+#~ msgid ""
+#~ ":obj:`buffers <megengine.module.qat.QATModule.buffers>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+#~ msgstr ""
+#~ ":obj:`buffers <megengine.module.qat.QATModule.buffers>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+
+#~ msgid "Returns an iterable for the buffers of the module."
+#~ msgstr "返回该模块中对于 buffers 的一个可迭代对象。"
+
+#~ msgid ""
+#~ ":obj:`children <megengine.module.qat.QATModule.children>`\\ "
+#~ "\\(\\*\\*kwargs\\)"
+#~ msgstr ""
+#~ ":obj:`children <megengine.module.qat.QATModule.children>`\\ "
+#~ "\\(\\*\\*kwargs\\)"
+
+#~ msgid ""
+#~ "Returns an iterable for all the "
+#~ "submodules that are direct attributes of"
+#~ " this module."
+#~ msgstr "返回一个可迭代对象，可遍历所有属于当前模块的直接属性的子模块。"
+
+#~ msgid ""
+#~ ":obj:`disable_quantize "
+#~ "<megengine.module.qat.QATModule.disable_quantize>`\\ "
+#~ "\\(\\[value\\]\\)"
+#~ msgstr ""
+#~ ":obj:`disable_quantize "
+#~ "<megengine.module.qat.QATModule.disable_quantize>`\\ "
+#~ "\\(\\[value\\]\\)"
+
+#~ msgid ""
+#~ "Sets ``module``'s ``quantize_disabled`` attribute"
+#~ " and return ``module``."
+#~ msgstr "设置 ``module`` 的 ``quantize_diabled`` 属性，并返回 ``module``."
+
+#~ msgid ":obj:`eval <megengine.module.qat.QATModule.eval>`\\ \\(\\)"
+#~ msgstr ":obj:`eval <megengine.module.qat.QATModule.eval>`\\ \\(\\)"
+
+#~ msgid ""
+#~ "Sets training mode of all the "
+#~ "modules within this module (including "
+#~ "itself) to ``False``."
+#~ msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``False`` ，并将其切换为推理模式。"
+
+#~ msgid ":obj:`forward <megengine.module.qat.QATModule.forward>`\\ \\(inputs\\)"
+#~ msgstr ":obj:`forward <megengine.module.qat.QATModule.forward>`\\ \\(inputs\\)"
+
+#~ msgid ""
+#~ ":obj:`from_float_module "
+#~ "<megengine.module.qat.QATModule.from_float_module>`\\ "
+#~ "\\(float\\_module\\)"
+#~ msgstr ""
+#~ ":obj:`from_float_module "
+#~ "<megengine.module.qat.QATModule.from_float_module>`\\ "
+#~ "\\(float\\_module\\)"
+
+#~ msgid ""
+#~ ":obj:`get_activation_dtype "
+#~ "<megengine.module.qat.QATModule.get_activation_dtype>`\\ \\(\\)"
+#~ msgstr ""
+#~ ":obj:`get_activation_dtype "
+#~ "<megengine.module.qat.QATModule.get_activation_dtype>`\\ \\(\\)"
+
+#~ msgid ""
+#~ ":obj:`get_activation_qparams "
+#~ "<megengine.module.qat.QATModule.get_activation_qparams>`\\ "
+#~ "\\(\\)"
+#~ msgstr ""
+#~ ":obj:`get_activation_qparams "
+#~ "<megengine.module.qat.QATModule.get_activation_qparams>`\\ "
+#~ "\\(\\)"
+
+#~ msgid ""
+#~ ":obj:`get_weight_dtype "
+#~ "<megengine.module.qat.QATModule.get_weight_dtype>`\\ \\(\\)"
+#~ msgstr ""
+#~ ":obj:`get_weight_dtype "
+#~ "<megengine.module.qat.QATModule.get_weight_dtype>`\\ \\(\\)"
+
+#~ msgid ""
+#~ ":obj:`get_weight_qparams "
+#~ "<megengine.module.qat.QATModule.get_weight_qparams>`\\ \\(\\)"
+#~ msgstr ""
+#~ ":obj:`get_weight_qparams "
+#~ "<megengine.module.qat.QATModule.get_weight_qparams>`\\ \\(\\)"
+
+#~ msgid ""
+#~ ":obj:`load_state_dict "
+#~ "<megengine.module.qat.QATModule.load_state_dict>`\\ "
+#~ "\\(state\\_dict\\[\\, strict\\]\\)"
+#~ msgstr ""
+#~ ":obj:`load_state_dict "
+#~ "<megengine.module.qat.QATModule.load_state_dict>`\\ "
+#~ "\\(state\\_dict\\[\\, strict\\]\\)"
+
+#~ msgid ""
+#~ "Loads a given dictionary created by "
+#~ ":func:`state_dict` into this module."
+#~ msgstr "加载一个参数字典，这个字典通常使用 :func:`state_dict` 得到。"
+
+#~ msgid ""
+#~ ":obj:`modules <megengine.module.qat.QATModule.modules>`\\ "
+#~ "\\(\\*\\*kwargs\\)"
+#~ msgstr ""
+#~ ":obj:`modules <megengine.module.qat.QATModule.modules>`\\ "
+#~ "\\(\\*\\*kwargs\\)"
+
+#~ msgid ""
+#~ "Returns an iterable for all the "
+#~ "modules within this module, including "
+#~ "itself."
+#~ msgstr "返回一个可迭代对象，可以遍历当前模块中的所有模块，包括其本身。"
+
+#~ msgid ""
+#~ ":obj:`named_buffers "
+#~ "<megengine.module.qat.QATModule.named_buffers>`\\ "
+#~ "\\(\\[prefix\\, recursive\\]\\)"
+#~ msgstr ""
+#~ ":obj:`named_buffers "
+#~ "<megengine.module.qat.QATModule.named_buffers>`\\ "
+#~ "\\(\\[prefix\\, recursive\\]\\)"
+
+#~ msgid ""
+#~ "Returns an iterable for key buffer "
+#~ "pairs of the module, where ``key`` "
+#~ "is the dotted path from this "
+#~ "module to the buffer."
+#~ msgstr ""
+#~ "返回可遍历模块中 key 与 buffer 的键值对的可迭代对象，其中 "
+#~ "``key`` 为从该模块至 buffer 的点路径（dotted path）。"
+
+#~ msgid ""
+#~ ":obj:`named_children "
+#~ "<megengine.module.qat.QATModule.named_children>`\\ "
+#~ "\\(\\*\\*kwargs\\)"
+#~ msgstr ""
+#~ ":obj:`named_children "
+#~ "<megengine.module.qat.QATModule.named_children>`\\ "
+#~ "\\(\\*\\*kwargs\\)"
+
+#~ msgid ""
+#~ "Returns an iterable of key-submodule "
+#~ "pairs for all the submodules that "
+#~ "are direct attributes of this module,"
+#~ " where 'key' is the attribute name"
+#~ " of submodules."
+#~ msgstr ""
+#~ "返回可迭代对象，可以遍历属于当前模块的直接属性的所有子模块（submodule）与键（key）组成的”key-"
+#~ "submodule”对，其中'key'是子模块对应的属性名。"
+
+#~ msgid ""
+#~ ":obj:`named_modules "
+#~ "<megengine.module.qat.QATModule.named_modules>`\\ "
+#~ "\\(\\[prefix\\]\\)"
+#~ msgstr ""
+#~ ":obj:`named_modules "
+#~ "<megengine.module.qat.QATModule.named_modules>`\\ "
+#~ "\\(\\[prefix\\]\\)"
+
+#~ msgid ""
+#~ "Returns an iterable of key-module "
+#~ "pairs for all the modules within "
+#~ "this module, including itself, where "
+#~ "'key' is the dotted path from this"
+#~ " module to the submodules."
+#~ msgstr ""
+#~ "返回可迭代对象，可以遍历当前模块包括自身在内的所有其内部模块所组成的key-"
+#~ "module键-模块对，其中'key'是从当前模块到各子模块的点路径（dotted path）。"
+
+#~ msgid ""
+#~ ":obj:`named_parameters "
+#~ "<megengine.module.qat.QATModule.named_parameters>`\\ "
+#~ "\\(\\[prefix\\, recursive\\]\\)"
+#~ msgstr ""
+#~ ":obj:`named_parameters "
+#~ "<megengine.module.qat.QATModule.named_parameters>`\\ "
+#~ "\\(\\[prefix\\, recursive\\]\\)"
+
+#~ msgid ""
+#~ "Returns an iterable for key "
+#~ ":class:`~.Parameter` pairs of the module, "
+#~ "where ``key`` is the dotted path "
+#~ "from this module to the "
+#~ ":class:`~.Parameter`."
+#~ msgstr ""
+#~ "返回一个可迭代对象，可以遍历当前模块中key与 :class:`~.Parameter` 组成的键值对。其中"
+#~ "  ``key`` 是从模块到 :class:`~.Parameter` 的点路径（dotted"
+#~ " path）。"
+
+#~ msgid ""
+#~ ":obj:`named_tensors "
+#~ "<megengine.module.qat.QATModule.named_tensors>`\\ "
+#~ "\\(\\[prefix\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns an iterable for key tensor "
+#~ "pairs of the module, where ``key`` "
+#~ "is the dotted path from this "
+#~ "module to the tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`parameters <megengine.module.qat.QATModule.parameters>`\\"
+#~ " \\(\\[recursive\\]\\)"
+#~ msgstr ""
+#~ ":obj:`parameters <megengine.module.qat.QATModule.parameters>`\\"
+#~ " \\(\\[recursive\\]\\)"
+
+#~ msgid "Returns an iterable for the :class:`~.Parameter` of the module."
+#~ msgstr "返回一个可迭代对象，遍历当前模块中的所有 :class:`~.Parameter`."
+
+#~ msgid ""
+#~ ":obj:`register_forward_hook "
+#~ "<megengine.module.qat.QATModule.register_forward_hook>`\\ "
+#~ "\\(hook\\)"
+#~ msgstr ""
+#~ ":obj:`register_forward_hook "
+#~ "<megengine.module.qat.QATModule.register_forward_hook>`\\ "
+#~ "\\(hook\\)"
+
+#~ msgid "Registers a hook to handle forward results."
+#~ msgstr "给模块输出注册一个回调函数。"
+
+#~ msgid ""
+#~ ":obj:`register_forward_pre_hook "
+#~ "<megengine.module.qat.QATModule.register_forward_pre_hook>`\\ "
+#~ "\\(hook\\)"
+#~ msgstr ""
+#~ ":obj:`register_forward_pre_hook "
+#~ "<megengine.module.qat.QATModule.register_forward_pre_hook>`\\ "
+#~ "\\(hook\\)"
+
+#~ msgid "Registers a hook to handle forward inputs."
+#~ msgstr "给模块输入注册一个回调函数。"
+
+#~ msgid ""
+#~ ":obj:`replace_param "
+#~ "<megengine.module.qat.QATModule.replace_param>`\\ \\(params\\,"
+#~ " start\\_pos\\[\\, seen\\]\\)"
+#~ msgstr ""
+#~ ":obj:`replace_param "
+#~ "<megengine.module.qat.QATModule.replace_param>`\\ \\(params\\,"
+#~ " start\\_pos\\[\\, seen\\]\\)"
+
+#~ msgid ""
+#~ "Replaces module's parameters with ``params``,"
+#~ " used by :class:`~.ParamPack` to"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`set_fake_quant "
+#~ "<megengine.module.qat.QATModule.set_fake_quant>`\\ \\(enable\\)"
+#~ msgstr ""
+#~ ":obj:`set_fake_quant "
+#~ "<megengine.module.qat.QATModule.set_fake_quant>`\\ \\(enable\\)"
+
+#~ msgid ""
+#~ ":obj:`set_observer "
+#~ "<megengine.module.qat.QATModule.set_observer>`\\ \\(enable\\)"
+#~ msgstr ""
+#~ ":obj:`set_observer "
+#~ "<megengine.module.qat.QATModule.set_observer>`\\ \\(enable\\)"
+
+#~ msgid ""
+#~ ":obj:`set_qconfig "
+#~ "<megengine.module.qat.QATModule.set_qconfig>`\\ \\(qconfig\\)"
+#~ msgstr ""
+#~ ":obj:`set_qconfig "
+#~ "<megengine.module.qat.QATModule.set_qconfig>`\\ \\(qconfig\\)"
+
+#~ msgid ""
+#~ ":obj:`state_dict <megengine.module.qat.QATModule.state_dict>`\\"
+#~ " \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+#~ msgstr ""
+#~ ":obj:`state_dict <megengine.module.qat.QATModule.state_dict>`\\"
+#~ " \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+
+#~ msgid ""
+#~ ":obj:`tensors <megengine.module.qat.QATModule.tensors>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Returns an iterable for the :class:`~.Tensor` of the module."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`train <megengine.module.qat.QATModule.train>`\\ "
+#~ "\\(\\[mode\\, recursive\\]\\)"
+#~ msgstr ""
+#~ ":obj:`train <megengine.module.qat.QATModule.train>`\\ "
+#~ "\\(\\[mode\\, recursive\\]\\)"
+
+#~ msgid ""
+#~ "Sets training mode of all the "
+#~ "modules within this module (including "
+#~ "itself) to ``mode``."
+#~ msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``mode``。"
+
+#~ msgid ":obj:`zero_grad <megengine.module.qat.QATModule.zero_grad>`\\ \\(\\)"
+#~ msgstr ":obj:`zero_grad <megengine.module.qat.QATModule.zero_grad>`\\ \\(\\)"
+
+#~ msgid "Sets all parameters' grads to zero"
+#~ msgstr "将所有参数的梯度置0。"
 
