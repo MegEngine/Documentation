@@ -59,6 +59,7 @@
         # 定义单层线性分类网络
         class Linear(M.Module):
             def __init__(self):
+                super().__init__()
                 # 初始化参数
                 self.w = mge.Parameter(np.zeros((num_features, num_classes)))
                 self.b = mge.Parameter(np.zeros((num_classes,)))
