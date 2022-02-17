@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:27\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-02-17 04:49\n"
 "Last-Translator: \n"
+"Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/data/transform.po\n"
 "X-Crowdin-File-ID: 8163\n"
-"Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/data/transform.rst:5
 msgid "使用 Transform 定义数据变换"
@@ -55,99 +55,112 @@ msgid "通过 ``Resize`` 操作，使得输入数据的形状满足模型对形�
 msgstr "crwdns84791:0crwdne84791:0"
 
 #: ../../source/user-guide/model-development/data/transform.rst:26
-#, python-format
-msgid "实现 `数据增广 <https://megengine.org.cn/doc/stable/zh/getting-started/beginner/neural-network-traning-tricks.html#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%B9%BF>`_ （Data augmentation），更多的数据往往能提升模型的性能..."
-msgstr "crwdns84793:0%Ecrwdnd84793:0%95crwdnd84793:0%Bcrwdnd84793:0%Ecrwdnd84793:0%8crwdnd84793:0%AE%crwdnd84793:0%A2%crwdnd84793:0%Ecrwdnd84793:0%Bcrwdnd84793:0%Bcrwdne84793:0"
+msgid "实现 :ref:`数据增强 <data-augmentation>` （Data augmentation），更多的数据往往能提升模型的性能..."
+msgstr "crwdns90506:0:ref:crwdne90506:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:31
+#: ../../source/user-guide/model-development/data/transform.rst:30
 msgid "MegEngine 中提供了大量的 :py:class:`VisionTransform` 实现，用户也可参考 API 文档进行拓展；"
 msgstr "crwdns84795:0crwdne84795:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:32
+#: ../../source/user-guide/model-development/data/transform.rst:31
 msgid "一些数据变换的实现参考自 `torchvision <https://pytorch.org/vision/stable/index.html>`_ 以及 `OpenMMLab <https://github.com/open-mmlab>`_ ."
 msgstr "crwdns84797:0crwdne84797:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:34
+#: ../../source/user-guide/model-development/data/transform.rst:33
 msgid "MegEngine 中也提供了 :py:class:`TorchTransformCompose` 实现，方便使用 ``torchvision`` 中的实现。"
 msgstr "crwdns84799:0crwdne84799:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:38
+#: ../../source/user-guide/model-development/data/transform.rst:37
 msgid ":ref:`transform-vs-functional`"
 msgstr "crwdns84801:0:ref:crwdne84801:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:39
+#: ../../source/user-guide/model-development/data/transform.rst:38
 msgid ":ref:`when-preprocess-data`"
 msgstr "crwdns84803:0:ref:crwdne84803:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:44
+#: ../../source/user-guide/model-development/data/transform.rst:43
 msgid "举例：伪变换和自定义变换"
 msgstr "crwdns84805:0crwdne84805:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:46
+#: ../../source/user-guide/model-development/data/transform.rst:45
 msgid "MegEngine 中提供了 :class:`~.PseudoTransform` 作为默认实现，它没有对输入进行任何处理，而是直接返回："
 msgstr "crwdns84807:0:class:crwdne84807:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:54
+#: ../../source/user-guide/model-development/data/transform.rst:53
 msgid "我们构造一个数据 ``data`` 进行测试："
 msgstr "crwdns84809:0crwdne84809:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:68
+#: ../../source/user-guide/model-development/data/transform.rst:67
 msgid "如果我们要实现自定义的变换操作，只需要自己实现相应的 ``apply`` 逻辑。"
 msgstr "crwdns84811:0crwdne84811:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:70
+#: ../../source/user-guide/model-development/data/transform.rst:69
 msgid "比如我们实现一个 ``AddOneTransform``:"
 msgstr "crwdns84813:0crwdne84813:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:81
+#: ../../source/user-guide/model-development/data/transform.rst:80
 msgid "可以使用 ``Compose`` 对数据变换进行组合："
 msgstr "crwdns84815:0crwdne84815:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:90
+#: ../../source/user-guide/model-development/data/transform.rst:89
 msgid "最终，我们的各种 ``Transform`` 实现应当被应用于 ``DataLoader``:"
 msgstr "crwdns84817:0crwdne84817:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:96
+#: ../../source/user-guide/model-development/data/transform.rst:95
 msgid "我们这里给出的例子比较简单，假设样本都是单个元素，实际上 ``apply`` 方法支持 Tuple 类型的输入， 代码逻辑中完全可以处理更加一些复杂的样本结构，可以参考 :py:class:`VisionTransform` 的实现。"
 msgstr "crwdns84819:0crwdne84819:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:101
+#: ../../source/user-guide/model-development/data/transform.rst:100
 msgid "可以在官方 `ResNet <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>`_ 训练代码中找到 ``DataLoader`` 通过组合数据变换对数据进行预处理的例子。"
 msgstr "crwdns84821:0crwdne84821:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:108
+#: ../../source/user-guide/model-development/data/transform.rst:107
 msgid "注意与 Functional 的区别"
 msgstr "crwdns84823:0crwdne84823:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:110
+#: ../../source/user-guide/model-development/data/transform.rst:109
 msgid "用户不应当将 ``megengine.data.transform`` 与 ``megengine.functional`` 中的接口搞混淆："
 msgstr "crwdns84825:0crwdne84825:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:112
+#: ../../source/user-guide/model-development/data/transform.rst:111
 msgid "``megengine.data.transform`` 可以看作是一个独立的子库，可以对 NumPy 的 ndarray 数据进行各种处理；"
 msgstr "crwdns84827:0crwdne84827:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:113
+#: ../../source/user-guide/model-development/data/transform.rst:112
 msgid "``megengine.functional`` 中的实现都是围绕着 MegEngine 的 Tensor 数据结构进行的。"
 msgstr "crwdns84829:0crwdne84829:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:115
+#: ../../source/user-guide/model-development/data/transform.rst:114
 msgid "从流程上看，用户可以将原始数据转换成 ndarray 作为输入，经过 ``megengine.data.transform`` 做一些处理。 如果需要参与模型训练，得到的结果需要人为地转换成 Tensor 才能够被用于 ``megengine.functional`` 中的接口。"
 msgstr "crwdns84831:0crwdne84831:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:121
+#: ../../source/user-guide/model-development/data/transform.rst:120
 msgid "数据预处理应该在何时发生"
 msgstr "crwdns84833:0crwdne84833:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:123
+#: ../../source/user-guide/model-development/data/transform.rst:122
 msgid "当我们从 ``DataLoader`` 中获取批数据时，如果定义了 ``Transform``, 则会在每次加载完样本后立即对其进行变换。"
 msgstr "crwdns84835:0crwdne84835:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:125
+#: ../../source/user-guide/model-development/data/transform.rst:124
 msgid "数据变换操作也是有计算开销的，且该流程通常在 CPU 设备上进行，以及有些操作会调用类似 ``OpenCV`` 的库。 如果我们对每个样本进行多次加载（比如训练多个周期），那么变换操作也会被执行多次，这可能会带来额外的开销。 因此在有些时候，我们会选择将预处理操作在更早的流程中进行，即直接对原始数据先进行一次预处理操作， 这样在 ``DataLoader`` 中获取的输入便已经是经过预处理的数据了，这样可以尽可能地减少 ``Transform`` 操作。"
 msgstr "crwdns84837:0crwdne84837:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:130
+#: ../../source/user-guide/model-development/data/transform.rst:129
 msgid "用户应当考虑到，原始数据相关的 I/O 和处理也有可能成为模型训练整体流程中的瓶颈。"
 msgstr "crwdns84839:0crwdne84839:0"
+
+#~ msgid ""
+#~ "实现 `数据增广 <https://megengine.org.cn/doc/stable/zh"
+#~ "/getting-started/beginner/neural-network-traning-"
+#~ "tricks.html#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%B9%BF>`_ （Data "
+#~ "augmentation），更多的数据往往能提升模型的性能..."
+#~ msgstr ""
+#~ "`Achieve data augmented "
+#~ "<https://megengine.org.cn/doc/stable/zh/getting-started/beginner"
+#~ "/neural-network-traning-"
+#~ "tricks.html#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%B9%BF>` _ (the"
+#~ " Data Augmentation), more data can "
+#~ "often improve the performance of the "
+#~ "model ..."
 
