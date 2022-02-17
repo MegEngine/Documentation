@@ -1,48 +1,39 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-01-24 11:47+0000\n"
+"PO-Revision-Date: 2022-02-17 05:23\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.SlidingWindowTranspose.po\n"
+"X-Crowdin-File-ID: 7473\n"
 
 #: ../../source/reference/api/megengine.module.SlidingWindowTranspose.rst:5
 msgid "SlidingWindowTranspose"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:1 of
-msgid ""
-"Opposite opration of SlidingWindow, sum over the sliding windows on the "
-"corresponding input location. Given an input of the size :math:`(N, C,  "
-"IH, IW, window_h, window_w)` and :attr:`output_size`, the output shape "
-"would be :math:`(N, C, output\\_size_{h}, output\\_size_{w})` and the "
-"arguments must satisfy"
+msgid "Opposite opration of SlidingWindow, sum over the sliding windows on the corresponding input location. Given an input of the size :math:`(N, C,  IH, IW, window_h, window_w)` and :attr:`output_size`, the output shape would be :math:`(N, C, output\\_size_{h}, output\\_size_{w})` and the arguments must satisfy"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:7 of
-msgid ""
-"\\text{IH} = \\lfloor \\frac{\\text{output_size}_{h} + 2 * "
-"\\text{padding}_{h} -\n"
-"\\text{dilation}_{h} * (\\text{kernel_size}_{h} - 1) - "
-"1}{\\text{stride}_{h}} + 1 \\rfloor\n"
-"\n"
+msgid "\\text{IH} = \\lfloor \\frac{\\text{output_size}_{h} + 2 * \\text{padding}_{h} -\n"
+"\\text{dilation}_{h} * (\\text{kernel_size}_{h} - 1) - 1}{\\text{stride}_{h}} + 1 \\rfloor\n\n"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:11 of
-msgid ""
-"\\text{IW} = \\lfloor \\frac{\\text{output_size}_{w} + 2 * "
-"\\text{padding}_{w} -\n"
-"\\text{dilation}_{w} * (\\text{kernel_size}_{w} - 1) - "
-"1}{\\text{stride}_{w}} + 1 \\rfloor\n"
-"\n"
+msgid "\\text{IW} = \\lfloor \\frac{\\text{output_size}_{w} + 2 * \\text{padding}_{w} -\n"
+"\\text{dilation}_{w} * (\\text{kernel_size}_{w} - 1) - 1}{\\text{stride}_{w}} + 1 \\rfloor\n\n"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:15 of
@@ -50,20 +41,13 @@ msgid "For each output location, we have:"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:17 of
-msgid ""
-"\\text{out}_{n, c, oh, ow} = \\sum_{n,c,oh,ow=location(n, c, ih, iw, wh, "
-"ww)}\\text{src}_{n, c, ih, iw, wh, ww}\n"
-"\n"
+msgid "\\text{out}_{n, c, oh, ow} = \\sum_{n,c,oh,ow=location(n, c, ih, iw, wh, ww)}\\text{src}_{n, c, ih, iw, wh, ww}\n\n"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:20 of
-msgid ""
-"\\text{location}(n, c, ih, iw, wh, ww) &= (n, c, oh+wh, ow+ww) \\\\\n"
-"\\text{where } & oh=-pad_h+ih \\times stride_h + (wh-1) \\times "
-"(dilation_h-1) \\\\\n"
-"               & ow=-pad_w+iw \\times stride_w + (ww-1) \\times "
-"(dilation_w-1)\n"
-"\n"
+msgid "\\text{location}(n, c, ih, iw, wh, ww) &= (n, c, oh+wh, ow+ww) \\\\\n"
+"\\text{where } & oh=-pad_h+ih \\times stride_h + (wh-1) \\times (dilation_h-1) \\\\\n"
+"               & ow=-pad_w+iw \\times stride_w + (ww-1) \\times (dilation_w-1)\n\n"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindowTranspose of
