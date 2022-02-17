@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 00:56\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-02-17 04:19\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,22 +11,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.quantization.Observer.po\n"
 "X-Crowdin-File-ID: 2888\n"
 
-#: ../../source/reference/api/megengine.quantization.Observer.rst:2
-msgid "megengine.quantization.Observer"
-msgstr "crwdns47060:0crwdne47060:0"
+#: ../../source/reference/api/megengine.quantization.Observer.rst:5
+msgid "Observer"
+msgstr "crwdns90804:0crwdne90804:0"
 
 #: megengine.quantization.observer.Observer:1 of
 msgid "A base class for Observer Module. Used to record input tensor's statistics for quantization."
 msgstr "crwdns47064:0crwdne47064:0"
 
-#: megengine.quantization.observer.Observer of
+#: megengine.quantization.observer.Observer
+#: megengine.quantization.observer.Observer.train of
 msgid "参数"
 msgstr "crwdns47066:0crwdne47066:0"
 
@@ -34,193 +35,25 @@ msgstr "crwdns47066:0crwdne47066:0"
 msgid "a string indicating which dtype to collect scale and zero_point of."
 msgstr "crwdns47068:0crwdne47068:0"
 
-#: ../../source/reference/api/megengine.quantization.Observer.rst:15
-msgid "Methods"
-msgstr "crwdns47070:0crwdne47070:0"
+#: megengine.quantization.observer.Observer.train:1 of
+msgid "Sets training mode of all the modules within this module (including itself) to ``mode``. This effectively sets the ``training`` attributes of those modules to ``mode``, but only has effect on certain modules (e.g. :class:`~.BatchNorm2d`, :class:`~.Dropout`, :class:`~.Observer`)"
+msgstr "crwdns90806:0:class:crwdnd90806:0:class:crwdnd90806:0:class:crwdne90806:0"
 
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`apply <megengine.quantization.Observer.apply>`\\ \\(fn\\)"
-msgstr "crwdns47078:0:obj:crwdne47078:0"
+#: megengine.quantization.observer.Observer.train:7 of
+msgid "the training mode to be set on modules."
+msgstr "crwdns90808:0crwdne90808:0"
 
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Applies function ``fn`` to all the modules within this module, including itself."
-msgstr "crwdns47080:0crwdne47080:0"
+#: megengine.quantization.observer.Observer.train:9 of
+msgid "whether to recursively call submodules' ``train()``."
+msgstr "crwdns90810:0crwdne90810:0"
 
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`buffers <megengine.quantization.Observer.buffers>`\\ \\(\\[recursive\\]\\)"
-msgstr "crwdns47082:0:obj:crwdne47082:0"
+#: megengine.quantization.observer.Observer.train of
+msgid "返回类型"
+msgstr "crwdns90812:0crwdne90812:0"
 
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Returns an iterable for the buffers of the module."
-msgstr "crwdns47084:0crwdne47084:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`children <megengine.quantization.Observer.children>`\\ \\(\\*\\*kwargs\\)"
-msgstr "crwdns47086:0:obj:crwdne47086:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Returns an iterable for all the submodules that are direct attributes of this module."
-msgstr "crwdns47088:0crwdne47088:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`disable <megengine.quantization.Observer.disable>`\\ \\(\\)"
-msgstr "crwdns47090:0:obj:crwdne47090:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`disable_quantize <megengine.quantization.Observer.disable_quantize>`\\ \\(\\[value\\]\\)"
-msgstr "crwdns47092:0:obj:crwdne47092:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``."
-msgstr "crwdns47094:0crwdne47094:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`enable <megengine.quantization.Observer.enable>`\\ \\(\\)"
-msgstr "crwdns47096:0:obj:crwdne47096:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`eval <megengine.quantization.Observer.eval>`\\ \\(\\)"
-msgstr "crwdns47098:0:obj:crwdne47098:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Sets training mode of all the modules within this module (including itself) to ``False``."
-msgstr "crwdns47100:0crwdne47100:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`forward <megengine.quantization.Observer.forward>`\\ \\(x\\)"
-msgstr "crwdns47102:0:obj:crwdne47102:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`get_qparams <megengine.quantization.Observer.get_qparams>`\\ \\(\\)"
-msgstr "crwdns47104:0:obj:crwdne47104:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>
-msgid "rtype"
-msgstr "crwdns78573:0crwdne78573:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":py:class:`~megengine.quantization.utils.QParams`"
-msgstr "crwdns78575:0crwdne78575:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`get_quantized_dtype <megengine.quantization.Observer.get_quantized_dtype>`\\ \\(\\)"
-msgstr "crwdns47110:0:obj:crwdne47110:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`load_state_dict <megengine.quantization.Observer.load_state_dict>`\\ \\(state\\_dict\\[\\, strict\\]\\)"
-msgstr "crwdns47112:0:obj:crwdne47112:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Loads a given dictionary created by :func:`state_dict` into this module."
-msgstr "crwdns47114:0:func:crwdne47114:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`modules <megengine.quantization.Observer.modules>`\\ \\(\\*\\*kwargs\\)"
-msgstr "crwdns47116:0:obj:crwdne47116:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Returns an iterable for all the modules within this module, including itself."
-msgstr "crwdns47118:0crwdne47118:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`named_buffers <megengine.quantization.Observer.named_buffers>`\\ \\(\\[prefix\\, recursive\\]\\)"
-msgstr "crwdns47120:0:obj:crwdne47120:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
-msgstr "crwdns47122:0crwdne47122:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`named_children <megengine.quantization.Observer.named_children>`\\ \\(\\*\\*kwargs\\)"
-msgstr "crwdns47124:0:obj:crwdne47124:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
-msgstr "crwdns47126:0crwdne47126:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`named_modules <megengine.quantization.Observer.named_modules>`\\ \\(\\[prefix\\]\\)"
-msgstr "crwdns47128:0:obj:crwdne47128:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
-msgstr "crwdns47130:0crwdne47130:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`named_parameters <megengine.quantization.Observer.named_parameters>`\\ \\(\\[prefix\\, recursive\\]\\)"
-msgstr "crwdns47132:0:obj:crwdne47132:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
-msgstr "crwdns47134:0:class:crwdnd47134:0:class:crwdne47134:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`named_tensors <megengine.quantization.Observer.named_tensors>`\\ \\(\\[prefix\\, recursive\\]\\)"
-msgstr "crwdns78577:0:obj:crwdne78577:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Returns an iterable for key tensor pairs of the module, where ``key`` is the dotted path from this module to the tensor."
-msgstr "crwdns78579:0crwdne78579:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`parameters <megengine.quantization.Observer.parameters>`\\ \\(\\[recursive\\]\\)"
-msgstr "crwdns47136:0:obj:crwdne47136:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Returns an iterable for the :class:`~.Parameter` of the module."
-msgstr "crwdns47138:0:class:crwdne47138:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`register_forward_hook <megengine.quantization.Observer.register_forward_hook>`\\ \\(hook\\)"
-msgstr "crwdns47140:0:obj:crwdne47140:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Registers a hook to handle forward results."
-msgstr "crwdns47142:0crwdne47142:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`register_forward_pre_hook <megengine.quantization.Observer.register_forward_pre_hook>`\\ \\(hook\\)"
-msgstr "crwdns47144:0:obj:crwdne47144:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Registers a hook to handle forward inputs."
-msgstr "crwdns47146:0crwdne47146:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`replace_param <megengine.quantization.Observer.replace_param>`\\ \\(params\\, start\\_pos\\[\\, seen\\]\\)"
-msgstr "crwdns47148:0:obj:crwdne47148:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to"
-msgstr "crwdns78581:0:class:crwdne78581:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`state_dict <megengine.quantization.Observer.state_dict>`\\ \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
-msgstr "crwdns47152:0:obj:crwdne47152:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`tensors <megengine.quantization.Observer.tensors>`\\ \\(\\[recursive\\]\\)"
-msgstr "crwdns78583:0:obj:crwdne78583:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Returns an iterable for the :class:`~.Tensor` of the module."
-msgstr "crwdns78585:0:class:crwdne78585:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`train <megengine.quantization.Observer.train>`\\ \\(\\[mode\\, recursive\\]\\)"
-msgstr "crwdns47154:0:obj:crwdne47154:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Sets training mode of all the modules within this module (including itself) to ``mode``."
-msgstr "crwdns47156:0crwdne47156:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid ":obj:`zero_grad <megengine.quantization.Observer.zero_grad>`\\ \\(\\)"
-msgstr "crwdns47158:0:obj:crwdne47158:0"
-
-#: ../../source/reference/api/megengine.quantization.Observer.rst:93:<autosummary>:1
-msgid "Sets all parameters' grads to zero"
-msgstr "crwdns47160:0crwdne47160:0"
+#: megengine.quantization.observer.Observer.train:12 of
+msgid ":py:obj:`None`"
+msgstr "crwdns90814:0crwdne90814:0"
 
 #~ msgid ""
 #~ "基类：:class:`megengine.module.module.Module`, "
@@ -241,8 +74,247 @@ msgstr "crwdns47160:0crwdne47160:0"
 #~ msgstr "模块名称，子类的 ``kwargs`` 将会保存和传递此关键字参数。"
 
 #~ msgid "rtype"
-#~ msgstr "返回类型"
+#~ msgstr ""
 
 #~ msgid ":py:class:`~megengine.quantization.utils.QParams`"
-#~ msgstr ":py:class:`~megengine.quantization.utils.QParams`"
+#~ msgstr ""
+
+#~ msgid "megengine.quantization.Observer"
+#~ msgstr ""
+
+#~ msgid "Methods"
+#~ msgstr "方法"
+
+#~ msgid ":obj:`apply <megengine.quantization.Observer.apply>`\\ \\(fn\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Applies function ``fn`` to all the "
+#~ "modules within this module, including "
+#~ "itself."
+#~ msgstr "对当前模块中的所有模块应用函数 ``fn``，包括当前模块本身。"
+
+#~ msgid ""
+#~ ":obj:`buffers <megengine.quantization.Observer.buffers>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Returns an iterable for the buffers of the module."
+#~ msgstr "返回该模块中对于buffers的一个可迭代对象。"
+
+#~ msgid ""
+#~ ":obj:`children <megengine.quantization.Observer.children>`\\ "
+#~ "\\(\\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns an iterable for all the "
+#~ "submodules that are direct attributes of"
+#~ " this module."
+#~ msgstr "返回一个可迭代对象，可遍历所有属于当前模块的直接属性的子模块。"
+
+#~ msgid ":obj:`disable <megengine.quantization.Observer.disable>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`disable_quantize "
+#~ "<megengine.quantization.Observer.disable_quantize>`\\ "
+#~ "\\(\\[value\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Sets ``module``'s ``quantize_disabled`` attribute"
+#~ " and return ``module``."
+#~ msgstr "设置 ``module`` 的 ``quantize_diabled`` 属性，并返回 ``module`` 。"
+
+#~ msgid ":obj:`enable <megengine.quantization.Observer.enable>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":obj:`eval <megengine.quantization.Observer.eval>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Sets training mode of all the "
+#~ "modules within this module (including "
+#~ "itself) to ``False``."
+#~ msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``False`` ，并将其切换为推理模式。"
+
+#~ msgid ":obj:`forward <megengine.quantization.Observer.forward>`\\ \\(x\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`get_qparams "
+#~ "<megengine.quantization.Observer.get_qparams>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`get_quantized_dtype "
+#~ "<megengine.quantization.Observer.get_quantized_dtype>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`load_state_dict "
+#~ "<megengine.quantization.Observer.load_state_dict>`\\ "
+#~ "\\(state\\_dict\\[\\, strict\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Loads a given dictionary created by "
+#~ ":func:`state_dict` into this module."
+#~ msgstr "加载一个参数字典，这个字典通常使用 :func:`state_dict` 得到。"
+
+#~ msgid ""
+#~ ":obj:`modules <megengine.quantization.Observer.modules>`\\ "
+#~ "\\(\\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns an iterable for all the "
+#~ "modules within this module, including "
+#~ "itself."
+#~ msgstr "返回一个可迭代对象，可以遍历当前模块中的所有模块，包括其本身。"
+
+#~ msgid ""
+#~ ":obj:`named_buffers "
+#~ "<megengine.quantization.Observer.named_buffers>`\\ "
+#~ "\\(\\[prefix\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns an iterable for key buffer "
+#~ "pairs of the module, where ``key`` "
+#~ "is the dotted path from this "
+#~ "module to the buffer."
+#~ msgstr ""
+#~ "返回可遍历模块中 key 与 buffer 的键值对的可迭代对象，其中 "
+#~ "``key`` 为从该模块至 buffer 的点路径（dotted path）。"
+
+#~ msgid ""
+#~ ":obj:`named_children "
+#~ "<megengine.quantization.Observer.named_children>`\\ "
+#~ "\\(\\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns an iterable of key-submodule "
+#~ "pairs for all the submodules that "
+#~ "are direct attributes of this module,"
+#~ " where 'key' is the attribute name"
+#~ " of submodules."
+#~ msgstr ""
+#~ "返回可迭代对象，可以遍历属于当前模块的直接属性的所有子模块（submodule）与键（key）组成的”key-"
+#~ "submodule”对，其中'key'是子模块对应的属性名。"
+
+#~ msgid ""
+#~ ":obj:`named_modules "
+#~ "<megengine.quantization.Observer.named_modules>`\\ "
+#~ "\\(\\[prefix\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns an iterable of key-module "
+#~ "pairs for all the modules within "
+#~ "this module, including itself, where "
+#~ "'key' is the dotted path from this"
+#~ " module to the submodules."
+#~ msgstr ""
+#~ "返回可迭代对象，可以遍历当前模块包括自身在内的所有其内部模块所组成的key-"
+#~ "module键-模块对，其中'key'是从当前模块到各子模块的点路径（dotted path）。"
+
+#~ msgid ""
+#~ ":obj:`named_parameters "
+#~ "<megengine.quantization.Observer.named_parameters>`\\ "
+#~ "\\(\\[prefix\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns an iterable for key "
+#~ ":class:`~.Parameter` pairs of the module, "
+#~ "where ``key`` is the dotted path "
+#~ "from this module to the "
+#~ ":class:`~.Parameter`."
+#~ msgstr ""
+#~ "返回一个可迭代对象，可以遍历当前模块中key与 :class:`~.Parameter` 组成的键值对。其中"
+#~ "  ``key`` 是从模块到 :class:`~.Parameter` 的点路径（dotted"
+#~ " path）。"
+
+#~ msgid ""
+#~ ":obj:`named_tensors "
+#~ "<megengine.quantization.Observer.named_tensors>`\\ "
+#~ "\\(\\[prefix\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns an iterable for key tensor "
+#~ "pairs of the module, where ``key`` "
+#~ "is the dotted path from this "
+#~ "module to the tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`parameters <megengine.quantization.Observer.parameters>`\\"
+#~ " \\(\\[recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Returns an iterable for the :class:`~.Parameter` of the module."
+#~ msgstr "返回一个可迭代对象，遍历当前模块中的所有 :class:`~.Parameter`"
+
+#~ msgid ""
+#~ ":obj:`register_forward_hook "
+#~ "<megengine.quantization.Observer.register_forward_hook>`\\ "
+#~ "\\(hook\\)"
+#~ msgstr ""
+
+#~ msgid "Registers a hook to handle forward results."
+#~ msgstr "给模块输出注册一个回调函数。"
+
+#~ msgid ""
+#~ ":obj:`register_forward_pre_hook "
+#~ "<megengine.quantization.Observer.register_forward_pre_hook>`\\ "
+#~ "\\(hook\\)"
+#~ msgstr ""
+
+#~ msgid "Registers a hook to handle forward inputs."
+#~ msgstr "给模块输入注册一个回调函数。"
+
+#~ msgid ""
+#~ ":obj:`replace_param "
+#~ "<megengine.quantization.Observer.replace_param>`\\ \\(params\\,"
+#~ " start\\_pos\\[\\, seen\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Replaces module's parameters with ``params``,"
+#~ " used by :class:`~.ParamPack` to"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`state_dict <megengine.quantization.Observer.state_dict>`\\"
+#~ " \\(\\[rst\\, prefix\\, keep\\_var\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`tensors <megengine.quantization.Observer.tensors>`\\ "
+#~ "\\(\\[recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Returns an iterable for the :class:`~.Tensor` of the module."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`train <megengine.quantization.Observer.train>`\\ "
+#~ "\\(\\[mode\\, recursive\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Sets training mode of all the "
+#~ "modules within this module (including "
+#~ "itself) to ``mode``."
+#~ msgstr "当前模块中所有模块的 ``training`` 属性（包括自身）置为 ``mode``。"
+
+#~ msgid ":obj:`zero_grad <megengine.quantization.Observer.zero_grad>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Sets all parameters' grads to zero"
+#~ msgstr "将所有参数的梯度置0。"
 
