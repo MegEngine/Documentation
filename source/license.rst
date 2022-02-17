@@ -8,9 +8,7 @@ License
 
 MegEngine is licensed under the Apache License Version 2.0, 
 
-except for the third-party components listed in `ACKNOWLEDGMENTS`_.
-
-.. _ACKNOWLEDGMENTS: https://github.com/MegEngine/MegEngine/blob/master/ACKNOWLEDGMENTS
+except for the third-party components listed in :src:`ACKNOWLEDGMENTS`.
 
 .. code-block:: text
 

@@ -97,9 +97,8 @@ array([[ 2,  3,  4],
 
 .. seealso::
 
-   可以在官方 `ResNet
-   <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>`_
-   训练代码中找到 ``DataLoader`` 通过组合数据变换对数据进行预处理的例子。
+   可以在官方 ResNet 训练代码 :models:`official/vision/classification/resnet/train.py`
+   中找到 ``DataLoader`` 通过组合数据变换对数据进行预处理的例子。
 
 .. _transform-vs-functional:
 
