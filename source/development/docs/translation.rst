@@ -111,13 +111,12 @@ Crowdin 不可用时的做法
 对应的 API Docstring 部分内容翻译有误/没有翻译，标准的处理流程应该如下：
 
 1. 判断 ``.po`` 文件位置（在这个例子中，属于 API Docstring 英文翻译中文的情况）：
-   `locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.add.po
-   <https://github.com/MegEngine/Documentation/blob/main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.add.po>`_
+   :docs:`locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.add.po`
 
 2. 根据 ``msgstr`` 找到对应位置，根据 ``msgid`` 原文修改 ``msgstr`` 为正确内容；
 3. 按照 Git 工作流向 Documentation 库发起 Pull Request.
 
-更多细节请参考 :ref:`docs` 和 :ref:`commit-message` 。s
+更多细节请参考 :ref:`docs` 和 :ref:`commit-message` 。
 
 翻译注意事项
 ------------

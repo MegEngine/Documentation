@@ -219,9 +219,8 @@
 
 .. seealso::
 
-   可以在官方 `ResNet 
-   <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>`_
-   训练代码中找到 ``DataLoader`` 通过无限采样器加载 ImageNet 数据的示例。
+   可以在官方 ResNet 训练代码 :models:`official/vision/classification/resnet/train.py` 
+   中找到 ``DataLoader`` 通过无限采样器加载 ImageNet 数据的示例。
 
 自定义 MapSampler 示例
 ----------------------

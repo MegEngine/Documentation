@@ -7,7 +7,7 @@ TracedModule 接口介绍
 
    注意：TracedModule API 在未来一段时间会根据使用反馈进行调整，请关注 github release note 获取变更。欢迎在文档或 Github 提交使用反馈，一起让模型到应用更快更便捷！
 
-以 resnet18 为例介绍 TracedModule 的使用方式，model.py 可从 `这里 <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/model.py>`__ 下载。
+以 resnet18 为例介绍 TracedModule 的使用方式，model.py 可从 :models:`official/vision/classification/resnet/model.py` 下载。
 通过 :py:func:`~.trace_module` 方法将 Module 转为 TracedModule，接口形式如下：
 
 .. code-block:: python
