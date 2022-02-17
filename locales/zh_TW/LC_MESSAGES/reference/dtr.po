@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:19\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-02-17 04:48\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,56 +11,41 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/dtr.po\n"
 "X-Crowdin-File-ID: 7054\n"
 
-#: ../../source/reference/dtr.rst:6
+#: ../../source/reference/dtr.rst:3
 msgid "megengine.dtr"
 msgstr "crwdns63844:0crwdne63844:0"
 
-#: ../../source/reference/dtr.rst:13:<autosummary>:1
-msgid ":obj:`enable <megengine.dtr.enable>`"
-msgstr "crwdns63846:0:obj:crwdne63846:0"
+#: ../../docstring megengine.dtr.enable_sqrt_sampling:1 of
+msgid "Get or set whether sqrt sampling is allowed. Sqrt sampling means that given the size of the candidate set is N, only enumerate sqrt(N) tensors. When the number of tensors is very high, enabling this optimization will speed up the training."
+msgstr "crwdns91042:0crwdne91042:0"
 
-#: ../../source/reference/dtr.rst:13:<autosummary>:1
-msgid "Enable to record computing path of tensors and to perform DTR policy."
-msgstr "crwdns63848:0crwdne63848:0"
+#: ../../docstring megengine.dtr.enable_sqrt_sampling:7
+#: megengine.dtr.evictee_minimum_size:12 megengine.dtr.eviction_threshold:12 of
+msgid "实际案例"
+msgstr "crwdns91044:0crwdne91044:0"
 
-#: ../../source/reference/dtr.rst:13:<autosummary>:1
-msgid ":obj:`disable <megengine.dtr.disable>`"
-msgstr "crwdns63850:0:obj:crwdne63850:0"
+#: ../../docstring megengine.dtr.evictee_minimum_size:1 of
+msgid "Get or set the memory threshold of tensors in bytes. It can also be set to a string, whose formatting supports byte(B), kilobyte(KB), megabyte(MB) and gigabyte(GB) units."
+msgstr "crwdns91046:0crwdne91046:0"
 
-#: ../../source/reference/dtr.rst:13:<autosummary>:1
-msgid "Stop recording computing path of tensors and performing DTR policy."
-msgstr "crwdns63852:0crwdne63852:0"
+#: ../../docstring megengine.dtr.evictee_minimum_size:7 of
+msgid "Only tensors whose size exceeds this threshold will be added to the candidate set. A tensor that is not added to the candidate set will never be evicted during its lifetime."
+msgstr "crwdns91048:0crwdne91048:0"
 
-#: ../../source/reference/dtr.rst:21:<autosummary>:1
-msgid ":obj:`eviction_threshold <megengine.dtr.eviction_threshold>`"
-msgstr "crwdns82437:0:obj:crwdne82437:0"
+#: ../../docstring megengine.dtr.eviction_threshold:1 of
+msgid "Get or set the eviction threshold in bytes. It can also be set to a string, whose formatting supports byte(B), kilobyte(KB), megabyte(MB) and gigabyte(GB) units."
+msgstr "crwdns91050:0crwdne91050:0"
 
-#: ../../source/reference/dtr.rst:21:<autosummary>:1
-msgid "Get or set the eviction threshold in bytes."
-msgstr "crwdns82439:0crwdne82439:0"
-
-#: ../../source/reference/dtr.rst:21:<autosummary>:1
-msgid ":obj:`evictee_minimum_size <megengine.dtr.evictee_minimum_size>`"
-msgstr "crwdns82441:0:obj:crwdne82441:0"
-
-#: ../../source/reference/dtr.rst:21:<autosummary>:1
-msgid "Get or set the memory threshold of tensors in bytes."
-msgstr "crwdns82443:0crwdne82443:0"
-
-#: ../../source/reference/dtr.rst:21:<autosummary>:1
-msgid ":obj:`enable_sqrt_sampling <megengine.dtr.enable_sqrt_sampling>`"
-msgstr "crwdns82445:0:obj:crwdne82445:0"
-
-#: ../../source/reference/dtr.rst:21:<autosummary>:1
-msgid "Get or set whether sqrt sampling is allowed."
-msgstr "crwdns82447:0crwdne82447:0"
+#: ../../docstring megengine.dtr.eviction_threshold:7 of
+msgid "When GPU memory usage exceeds this value, DTR will heuristically select and evict resident tensors until the amount of used memory falls below this threshold."
+msgstr "crwdns91052:0crwdne91052:0"
 
 #~ msgid ""
 #~ "Get or set the eviction threshold "
@@ -104,5 +89,35 @@ msgstr "crwdns82447:0crwdne82447:0"
 #~ "not added to the candidate set "
 #~ "will never be evicted during its "
 #~ "lifetime."
+#~ msgstr ""
+
+#~ msgid ":obj:`enable <megengine.dtr.enable>`"
+#~ msgstr ""
+
+#~ msgid "Enable to record computing path of tensors and to perform DTR policy."
+#~ msgstr ""
+
+#~ msgid ":obj:`disable <megengine.dtr.disable>`"
+#~ msgstr ""
+
+#~ msgid "Stop recording computing path of tensors and performing DTR policy."
+#~ msgstr ""
+
+#~ msgid ":obj:`eviction_threshold <megengine.dtr.eviction_threshold>`"
+#~ msgstr ""
+
+#~ msgid "Get or set the eviction threshold in bytes."
+#~ msgstr ""
+
+#~ msgid ":obj:`evictee_minimum_size <megengine.dtr.evictee_minimum_size>`"
+#~ msgstr ""
+
+#~ msgid "Get or set the memory threshold of tensors in bytes."
+#~ msgstr ""
+
+#~ msgid ":obj:`enable_sqrt_sampling <megengine.dtr.enable_sqrt_sampling>`"
+#~ msgstr ""
+
+#~ msgid "Get or set whether sqrt sampling is allowed."
 #~ msgstr ""
 
