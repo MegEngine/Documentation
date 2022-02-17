@@ -1,27 +1,29 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2021-06-03 10:20+0000\n"
+"PO-Revision-Date: 2022-02-17 05:30\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.mul.po\n"
+"X-Crowdin-File-ID: 2222\n"
 
 #: ../../source/reference/api/megengine.functional.mul.rst:2
 msgid "megengine.functional.mul"
 msgstr ""
 
 #: megengine.functional.elemwise.mul:1 of
-msgid ""
-"Calculates the product for each element :math:`x_i` of the input tensor "
-"`x` with the respective element :math:`y_i` of the input tensor `y`."
+msgid "Calculates the product for each element :math:`x_i` of the input tensor `x` with the respective element :math:`y_i` of the input tensor `y`."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:5 of
@@ -29,58 +31,35 @@ msgid "If either :math:`x_i` or :math:`y_i` is `NaN`, the result is `NaN`."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:6 of
-msgid ""
-"If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is "
-"either `+0` or `-0`, the result is `NaN`."
+msgid "If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is either `+0` or `-0`, the result is `NaN`."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:7 of
-msgid ""
-"If :math:`x_i` is either `+0` or `-0` and :math:`y_i` is either "
-"`+infinity` or `-infinity`, the result is `NaN`."
+msgid "If :math:`x_i` is either `+0` or `-0` and :math:`y_i` is either `+infinity` or `-infinity`, the result is `NaN`."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:8 of
-msgid ""
-"If :math:`x_i` and :math:`y_i` have different mathematical signs, the "
-"result has a negative mathematical sign, unless the result is `NaN`."
+msgid "If :math:`x_i` and :math:`y_i` have different mathematical signs, the result has a negative mathematical sign, unless the result is `NaN`."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:9 of
-msgid ""
-"If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is "
-"either `+infinity` or `-infinity`, the result is a signed infinity with "
-"the mathematical sign determined by the rule already stated above."
+msgid "If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is either `+infinity` or `-infinity`, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:11 of
-msgid ""
-"If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is a "
-"nonzero finite number, the result is a signed infinity with the "
-"mathematical sign determined by the rule already stated above."
+msgid "If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is a nonzero finite number, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:13 of
-msgid ""
-"If :math:`x_i` is a nonzero finite number and :math:`y_i` is either "
-"`+infinity` or `-infinity`, the result is a signed infinity with the "
-"mathematical sign determined by the rule already stated above."
+msgid "If :math:`x_i` is a nonzero finite number and :math:`y_i` is either `+infinity` or `-infinity`, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:15 of
-msgid ""
-"In the remaining cases, where neither `infinity` nor `NaN` is involved, "
-"the product must be computed and rounded to the nearest representable "
-"value according to IEEE 754-2019 and a supported rounding mode. If the "
-"magnitude is too large to represent, the result is an `infinity` of "
-"appropriate mathematical sign. If the magnitude is too small to "
-"represent, the result is a zero of appropriate mathematical sign."
+msgid "In the remaining cases, where neither `infinity` nor `NaN` is involved, the product must be computed and rounded to the nearest representable value according to IEEE 754-2019 and a supported rounding mode. If the magnitude is too large to represent, the result is an `infinity` of appropriate mathematical sign. If the magnitude is too small to represent, the result is a zero of appropriate mathematical sign."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:19 of
-msgid ""
-"Floating-point multiplication is not always associative due to finite "
-"precision."
+msgid "Floating-point multiplication is not always associative due to finite precision."
 msgstr ""
 
 #: megengine.functional.elemwise.mul of
@@ -92,9 +71,7 @@ msgid "first input tensor. Should have a numeric data type."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:24 of
-msgid ""
-"second input tensor. Must be compatible with `x` (see :ref:`broadcasting-"
-"rule` ). Should have a numeric data type."
+msgid "second input tensor. Must be compatible with `x` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
 msgstr ""
 
 #: megengine.functional.elemwise.mul of
@@ -110,9 +87,7 @@ msgid "返回"
 msgstr ""
 
 #: megengine.functional.elemwise.mul:27 of
-msgid ""
-"A tensor containing the element-wise products. The returned array must "
-"have a data type determined by :ref:`dtype-promotion`."
+msgid "A tensor containing the element-wise products. The returned array must have a data type determined by :ref:`dtype-promotion`."
 msgstr ""
 
 #: megengine.functional.elemwise.mul:30 of
@@ -120,11 +95,9 @@ msgid "实际案例"
 msgstr ""
 
 #: megengine.functional.elemwise.mul:43 of
-msgid ""
-"The `*` operator can be used as a shorthand for :func:`~.functional.mul` "
-"on tensors."
+msgid "The `*` operator can be used as a shorthand for :func:`~.functional.mul` on tensors."
 msgstr ""
 
 #~ msgid "Element-wise `multiplication`."
-#~ msgstr ""
+#~ msgstr "逐元素相乘。"
 

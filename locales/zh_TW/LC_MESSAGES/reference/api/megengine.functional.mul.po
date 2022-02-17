@@ -2,27 +2,102 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 09:00\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-02-17 04:17\n"
 "Last-Translator: \n"
-"Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
+"Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"Generated-By: Babel 2.4.0\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.mul.po\n"
-"X-Crowdin-File-ID: 2222\n"
-"X-Crowdin-Language: zh-TW\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.mul.po\n"
+"X-Crowdin-File-ID: 2222\n"
 
 #: ../../source/reference/api/megengine.functional.mul.rst:2
 msgid "megengine.functional.mul"
 msgstr "crwdns31522:0crwdne31522:0"
 
 #: megengine.functional.elemwise.mul:1 of
-msgid "Element-wise `multiplication`."
-msgstr "crwdns31524:0crwdne31524:0"
+msgid "Calculates the product for each element :math:`x_i` of the input tensor `x` with the respective element :math:`y_i` of the input tensor `y`."
+msgstr "crwdns90576:0:math:crwdnd90576:0:math:crwdne90576:0"
+
+#: megengine.functional.elemwise.mul:5 of
+msgid "If either :math:`x_i` or :math:`y_i` is `NaN`, the result is `NaN`."
+msgstr "crwdns90578:0:math:crwdnd90578:0:math:crwdne90578:0"
+
+#: megengine.functional.elemwise.mul:6 of
+msgid "If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is either `+0` or `-0`, the result is `NaN`."
+msgstr "crwdns90580:0:math:crwdnd90580:0:math:crwdne90580:0"
+
+#: megengine.functional.elemwise.mul:7 of
+msgid "If :math:`x_i` is either `+0` or `-0` and :math:`y_i` is either `+infinity` or `-infinity`, the result is `NaN`."
+msgstr "crwdns90582:0:math:crwdnd90582:0:math:crwdne90582:0"
+
+#: megengine.functional.elemwise.mul:8 of
+msgid "If :math:`x_i` and :math:`y_i` have different mathematical signs, the result has a negative mathematical sign, unless the result is `NaN`."
+msgstr "crwdns90584:0:math:crwdnd90584:0:math:crwdne90584:0"
+
+#: megengine.functional.elemwise.mul:9 of
+msgid "If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is either `+infinity` or `-infinity`, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
+msgstr "crwdns90586:0:math:crwdnd90586:0:math:crwdne90586:0"
+
+#: megengine.functional.elemwise.mul:11 of
+msgid "If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is a nonzero finite number, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
+msgstr "crwdns90588:0:math:crwdnd90588:0:math:crwdne90588:0"
+
+#: megengine.functional.elemwise.mul:13 of
+msgid "If :math:`x_i` is a nonzero finite number and :math:`y_i` is either `+infinity` or `-infinity`, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
+msgstr "crwdns90590:0:math:crwdnd90590:0:math:crwdne90590:0"
+
+#: megengine.functional.elemwise.mul:15 of
+msgid "In the remaining cases, where neither `infinity` nor `NaN` is involved, the product must be computed and rounded to the nearest representable value according to IEEE 754-2019 and a supported rounding mode. If the magnitude is too large to represent, the result is an `infinity` of appropriate mathematical sign. If the magnitude is too small to represent, the result is a zero of appropriate mathematical sign."
+msgstr "crwdns90592:0crwdne90592:0"
+
+#: megengine.functional.elemwise.mul:19 of
+msgid "Floating-point multiplication is not always associative due to finite precision."
+msgstr "crwdns90594:0crwdne90594:0"
+
+#: megengine.functional.elemwise.mul of
+msgid "参数"
+msgstr "crwdns90596:0crwdne90596:0"
+
+#: megengine.functional.elemwise.mul:22 of
+msgid "first input tensor. Should have a numeric data type."
+msgstr "crwdns90598:0crwdne90598:0"
+
+#: megengine.functional.elemwise.mul:24 of
+msgid "second input tensor. Must be compatible with `x` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
+msgstr "crwdns90600:0:ref:crwdne90600:0"
+
+#: megengine.functional.elemwise.mul of
+msgid "返回类型"
+msgstr "crwdns90602:0crwdne90602:0"
+
+#: megengine.functional.elemwise.mul:26 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr "crwdns90604:0crwdne90604:0"
+
+#: megengine.functional.elemwise.mul of
+msgid "返回"
+msgstr "crwdns90606:0crwdne90606:0"
+
+#: megengine.functional.elemwise.mul:27 of
+msgid "A tensor containing the element-wise products. The returned array must have a data type determined by :ref:`dtype-promotion`."
+msgstr "crwdns90608:0:ref:crwdne90608:0"
+
+#: megengine.functional.elemwise.mul:30 of
+msgid "实际案例"
+msgstr "crwdns90610:0crwdne90610:0"
+
+#: megengine.functional.elemwise.mul:43 of
+msgid "The `*` operator can be used as a shorthand for :func:`~.functional.mul` on tensors."
+msgstr "crwdns90612:0:func:crwdne90612:0"
+
+#~ msgid "Element-wise `multiplication`."
+#~ msgstr "逐元素相乘。"
 
