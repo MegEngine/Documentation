@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-12-13 14:33\n"
+"PO-Revision-Date: 2022-02-18 11:21\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -24,7 +24,7 @@ msgstr "Reduce the size of binary files"
 
 #: ../../source/user-guide/deployment/midout.rst:7
 msgid "midout 是 MegEngine 中用来减小生成的二进制文件体积的工具，有助于在空间受限的设备上部署应用。 midout 通过记录模型推理时用到的 opr 和执行流，使用 ``if(0)`` 关闭未被记录的代码段后重新编译， 利用 ``-ffunction-sections -fdata-sections -Wl,--gc-sections -flto`` 链接参数，可以大幅度减少静态链接的可执行文件的大小。 现在基于 MegEngine 提供模型验证工具 :ref:`Load and Run <load-and-run>` , 展示怎样在某 AArch64 架构的 Android 端上裁剪 MegEngine 库。"
-msgstr ""
+msgstr "midout is a tool in MegEngine to reduce the size of the generated binaries, which is helpful for deploying applications on space-constrained devices. midout records the opr and execution flow used in model inference, uses ``if(0)`` to close unrecorded code segments and recompiles, and uses ``-ffunction-sections -fdata-sections -Wl,-- The gc-sections -flto link parameter can drastically reduce the size of statically linked executables. Now provides model verification tool :ref:`Load and Run 1` based <load-and-run>MegEngine, showing how to tailor MegEngine library on the Android side of an AArch64 architecture."
 
 #: ../../source/user-guide/deployment/midout.rst:14
 msgid "编译静态链接的 load_and_run"
@@ -68,7 +68,7 @@ msgstr "The first step is to dump the model to obtain model opr information; to 
 
 #: ../../source/user-guide/deployment/midout.rst:45
 msgid "第二步，使用MegEngine的头文件生成工具 ``tools/gen_header_for_bin_reduce.py`` 将 opr 信息和 trace 文件作为输入， 生成 ``src/bin_reduce_cmake.h`` CMake 会自动维护这个文件，用户无需关心。 当然也可以单独使用模型 opr 信息或是 trace 文件来生成 ``src/bin_reduce_cmake.h`` ， 单独使用 opr 信息时，默认保留所有 kernel，单独使用 trace 文件时，默认保留所有 opr."
-msgstr ""
+msgstr "In the second step, use MegEngine's header file generation tool ``tools/gen_header_for_bin_reduce.py`` to take the opr information and trace file as input, and generate ``src/bin_reduce_cmake.h`` CMake will automatically maintain this file, and the user does not need to care. Of course, you can also use the model opr information or trace file alone to generate ``src/bin_reduce_cmake.h``. When using opr information alone, all kernels are retained by default, and when trace files are used alone, all opr are retained by default."
 
 #: ../../source/user-guide/deployment/midout.rst:51
 msgid "dump 模型获得 opr 类型名称"
@@ -76,7 +76,7 @@ msgstr "dump model to get the opr type name"
 
 #: ../../source/user-guide/deployment/midout.rst:53
 msgid "一个模型通常不会用到所有的opr，根据模型使用的opr，可以裁掉那些模型没有使用的 opr. 在转换模型时，我们可以通过如下方式获得模型的 opr 信息。 使用 ``megengine.jit.trace.dump`` 准备模型时，设置 ``strip_info_file`` 参数。"
-msgstr ""
+msgstr "A model usually does not use all opr. According to the opr used by the model, the opr that is not used by the model can be cut off. When converting the model, we can obtain the opr information of the model in the following ways. When using ``megengine.jit.trace.dump`` to prepare the model, set the ``strip_info_file`` parameter."
 
 #: ../../source/user-guide/deployment/midout.rst:61
 msgid "执行完毕后，会生成 ``resnet50.mge`` 和 ``resnet50.mge.json`` . 查看这个 JSON 文件，它记录了模型用到的 opr 名称。"
@@ -108,15 +108,15 @@ msgstr "After noticing that the model is executed, the ``midout_trace.20717'' fi
 
 #: ../../source/user-guide/deployment/midout.rst:112
 msgid "生成 ``src/bin_reduce_cmake.h`` 并再次编译 load_and_run："
-msgstr ""
+msgstr "Generate ``src/bin_reduce_cmake.h`` and compile load_and_run：again"
 
 #: ../../source/user-guide/deployment/midout.rst:114
 msgid "将生成的 ``midout_trace.20717`` 拷贝至本地， 使用上文提到的头文件生成工具 ``gen_header_for_bin_reduce.py`` 生成 ``src/bin_reduce_cmake.h`` ."
-msgstr ""
+msgstr "Copy the generated ``midout_trace.20717`` to the local, and use the above-mentioned header file generation tool ``gen_header_for_bin_reduce.py`` to generate ``src/bin_reduce_cmake.h``."
 
 #: ../../source/user-guide/deployment/midout.rst:123
 msgid "编译完成后，检查 load_and_run 的大小, 注意 MGE_WITH_MINIMUM_SIZE 不是非必须的，加上它 size 会更小，但同时会关闭一些编译选项："
-msgstr ""
+msgstr "After the compilation is complete, check the size of load_and_run, note that MGE_WITH_MINIMUM_SIZE is not necessary, plus its size will be smaller, but at the same time some compilation options will be turned off："
 
 #: ../../source/user-guide/deployment/midout.rst:130
 msgid "此时 load_and_run 的大小减小到 2MB 多。推到设备上运行，得到如下输出："
@@ -152,7 +152,7 @@ msgstr "Use the ``.cache`` file, execute load_and_run to get the trace file："
 
 #: ../../source/user-guide/deployment/midout.rst:193
 msgid "如上节，将 trace 文件拷贝回本机，生成 ``src/bin_reduce_cmake.h`` ，再次编译 load_and_run 并推至设备。"
-msgstr ""
+msgstr "As in the previous section, copy the trace file back to the local machine, generate ``src/bin_reduce_cmake.h``, compile load_and_run again and push it to the device."
 
 #: ../../source/user-guide/deployment/midout.rst:195
 msgid "使用裁剪后的 load_and_run 的 fast-run 功能，执行同 2 的命令，得到如下输出："
@@ -184,23 +184,23 @@ msgstr "Refer to ``CMakeLists.txt`` to integrate the application into the entire
 
 #: ../../source/user-guide/deployment/midout.rst:241
 msgid "可能一个应用想要通过静态库集成 MegEngine。此时需要获得一个裁剪过的 ``libmegengine.a`` . 可以依然使用 load_and_run 运行模型获得 trace 文件， 生成 ``src/bin_reduce_cmake.h`` ，并二次编译获得裁剪过的 ``libmegengine.a`` . 此时，用户使用自己编写的构建脚本构建应用程序，并静态链接 ``libmegengine.a`` ， 加上链接参数 ``-flto=full -ffunction-sections -fdata-sections -Wl,--gc-sections`` . 即可得到裁剪过的基于 MegEngine 的应用。"
-msgstr ""
+msgstr "Maybe an application wants to integrate MegEngine via a static library. At this point, you need to get a trimmed ``libmegengine.a``. You can still use load_and_run to run the model to get the trace file, generate ``src/bin_reduce_cmake.h``, and compile it again to get the trimmed ``libmegengine.a' `` . At this point, the user builds the application using the build script written by himself, and statically links ``libmegengine.a``, plus the link parameter ``-flto=full -ffunction-sections -fdata-sections -Wl,- -gc-sections`` . You can get a tailored MegEngine-based application."
 
 #: ../../source/user-guide/deployment/midout.rst:246
 msgid "上述流程亦可以用于 ``libmegengine.so`` 的裁剪，但是动态库的裁剪效果远不及静态库。 原因在于 libmegengine.so 没有做符号隐藏，因此链接器不会进行激进的优化。"
-msgstr ""
+msgstr "The above process can also be used for clipping of ``libmegengine.so``, but the clipping effect of dynamic libraries is far less than that of static libraries. The reason is that libmegengine.so doesn't do symbol hiding, so the linker doesn't do aggressive optimizations."
 
 #: ../../source/user-guide/deployment/midout.rst:248
 msgid "经过上述流程，同样会在 build_dir 目录生成 liblite_shared.so, 此库裁剪力度和app裁剪效果相当，推荐这种方式。"
-msgstr ""
+msgstr "After the above process, liblite_shared.so will also be generated in the build_dir directory. The clipping force of this library is equivalent to the app clipping effect. This method is recommended."
 
 #: ../../source/user-guide/deployment/midout.rst:249
 msgid "经过上述流程，同样会在 build_dir 目录生成 liblite_static_all_in_one.a, 此库裁剪力度和app裁剪效果相当，也推荐这种方式, 同样需要在自己集成的构建系统加上链接参数 ``-flto=full -ffunction-sections -fdata-sections -Wl,--gc-sections``"
-msgstr ""
+msgstr "After the above process, liblite_static_all_in_one.a will also be generated in the build_dir directory. The clipping effect of this library is equivalent to the app clipping effect. This method is also recommended. It is also necessary to add the link parameter ``-flto=full -ffunction to the integrated build system. -sections -fdata-sections -Wl,--gc-sections``"
 
 #: ../../source/user-guide/deployment/midout.rst:251
 msgid "所有基于静态库集成的地方， 如果输出是一个动态库， 则需要自己维护最终目标的符号隐藏，才能达到最佳裁剪效果， 为了方便， 强烈建议直接集成 liblite_shared.so."
-msgstr ""
+msgstr "All places based on static library integration, if the output is a dynamic library, you need to maintain the symbol hiding of the final target to achieve the best cutting effect. For convenience, it is strongly recommended to directly integrate liblite_shared.so."
 
 #~ msgid "否则，MegEngine 会自动编译成动态库。然后执行："
 #~ msgstr ""
