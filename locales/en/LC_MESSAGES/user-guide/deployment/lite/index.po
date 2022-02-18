@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 09:00\n"
+"PO-Revision-Date: 2022-02-18 11:52\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/user-guide/deployment/lite/index.rst:5
 msgid "使用 MegEngine Lite 部署模型"
-msgstr ""
+msgstr "Deploy the model with MegEngine Lite"
 
 #: ../../source/user-guide/deployment/lite/index.rst:8
 msgid "简介"
@@ -28,39 +28,39 @@ msgstr "Introduction"
 
 #: ../../source/user-guide/deployment/lite/index.rst:10
 msgid "MegEngine Lite 是 MegEngine 的一层接口封装，主要目的是为用户提供更加简洁、易用、高效的推理接口，充分发挥 MegEngine 的多平台的推理能力，其结构如下:"
-msgstr ""
+msgstr "MegEngine Lite is a layer of interface encapsulation of MegEngine. The main purpose is to provide users with a more concise, easy-to-use and efficient reasoning interface, and give full play to the multi-platform reasoning capabilities of MegEngine. Its structure is as follows:"
 
 #: ../../source/user-guide/deployment/lite/index.rst:15
 msgid "MegEngine Lite 主要是对训推一体的 MegEngine 框架进行一层很薄的封装，并对用户提供多种模型推理接口，包括： C++ / C / Python 接口，同时 MegEngine Lite 底层也可以接入其它的推理框架，以及其他的 NPU 支持。 相比较直接调用 MegEngine 的接口进行推理，使用 MegEngine Lite 的接口有使用方便、接口简单、功能齐全等优点， 其底层实现依然是 MegEngine, 因此继承了 MegEngine 的所有优点，MegEngine 在推理层面具有以下特点："
-msgstr ""
+msgstr "MegEngine Lite mainly encapsulates the MegEngine framework integrated with training and pushing in a thin layer, and provides users with a variety of model inference interfaces, including： C++ / C / Python interfaces, and the bottom layer of MegEngine Lite can also access other inference frameworks , and other NPU support. Compared with directly calling the interface of MegEngine for reasoning, the interface using MegEngine Lite has the advantages of convenient use, simple interface and complete functions. Its underlying implementation is still MegEngine, so it inherits all the advantages of MegEngine. MegEngine has the following characteristics at the inference level："
 
 #: ../../source/user-guide/deployment/lite/index.rst:21
 msgid "高性能"
-msgstr ""
+msgstr "high performance"
 
 #: ../../source/user-guide/deployment/lite/index.rst:23
 msgid "MegEngine 首先在计算图中对 Inference 做了很多高效的优化，例如： 将 BN 融合到 Convolution 中，将 Activation 融合到 Convolution 中等... 这些优化能有效地减少访存，提高计算访存比。 另外 MegEngine 还对底层的 Kernel 做了细粒度的优化，从算法到指令都进行深入优化， 卷积算法层面 Convolution 就有直接卷积，Im2col, Winograd 等优化， 在 Kernel 层面有粗粒度的 Intrinsic 级别的优化，在一些关键的算子会进行汇编，深入指令集优化。"
-msgstr ""
+msgstr "MegEngine first made a lot of efficient optimizations on Inference in the calculation graph, such as： fused BN into Convolution, Activation into Convolution, etc. These optimizations can effectively reduce memory access and improve the computing memory access ratio. In addition, MegEngine has also made fine-grained optimization to the underlying Kernel, in-depth optimization from algorithms to instructions. Convolution at the convolution algorithm level includes direct convolution, Im2col, Winograd and other optimizations. At the Kernel level, there are coarse-grained Intrinsic level Optimization, in some key operators will be assembled, in-depth instruction set optimization."
 
 #: ../../source/user-guide/deployment/lite/index.rst:30
 msgid "多平台支持"
-msgstr ""
+msgstr "Multi-platform support"
 
 #: ../../source/user-guide/deployment/lite/index.rst:32
 msgid "MegEngine 支持多种主流深度学习推理平台，包括 Arm，X86，Cuda，Rocm，Atlas，Cambricom 等平台，另外 MegEngine Lite 还支持以 RuntimeOpr/Loader 的形式接入第三方推理框架以及NPU。"
-msgstr ""
+msgstr "MegEngine supports a variety of mainstream deep learning inference platforms, including Arm, X86, Cuda, Rocm, Atlas, Cambricom and other platforms. In addition, MegEngine Lite also supports access to third-party inference frameworks and NPUs in the form of RuntimeOpr/Loader."
 
 #: ../../source/user-guide/deployment/lite/index.rst:35
 msgid "高精度"
-msgstr ""
+msgstr "High precision"
 
 #: ../../source/user-guide/deployment/lite/index.rst:37
 msgid "使用 MegEngine 训练的模型可以不需要进行任何模型转换，就可以直接进行推理， 有效地避免由于模型转换以及量化等带来的模型精度的损失，降低了模型部署的难度。"
-msgstr ""
+msgstr "Models trained with MegEngine can be directly inferred without any model conversion, which effectively avoids the loss of model accuracy due to model conversion and quantization, and reduces the difficulty of model deployment."
 
 #: ../../source/user-guide/deployment/lite/index.rst:41
 msgid "接下来：快速上手"
-msgstr ""
+msgstr "Next：get started quickly"
 
 #~ msgid "MegEngine Lite 是对 MegEngine 的推理功能的封装，具有配置统一、接口完备、化繁为简、支持第三方硬件等优点。"
 #~ msgstr ""
