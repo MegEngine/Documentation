@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 08:53\n"
+"PO-Revision-Date: 2022-02-18 11:46\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -76,11 +76,11 @@ msgstr "In the neural network model, there are often many very similar structure
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:82
 msgid "与 ``add()``, ``sub()``\\ … 等通用的 ``functional`` 算子不同，网络层结构中通常存在着需要被管理的参数 ``Parameter``, 包括初始化和更新等操作；"
-msgstr ""
+msgstr "Unlike the general ``functional`` operators such as ``add()``, ``sub()``\\ … , there are usually parameters ``Parameter`` that need to be managed in the network layer structure, including initialization and update operations;"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:83
 msgid "我们此前一直关注于“单个”的概念，即计算图中的“单个”计算节点/数据节点，神经网络中“单个”神经元/层… 现在我们需要想一想复杂规模下的情景；"
-msgstr ""
+msgstr "We have previously focused on the concept of \"single\", that is, a \"single\" compute node/data node in a computational graph, a \"single\" neuron/layer… in a neural network Now we need to think about scenarios at complex scales;"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:84
 msgid "当模型结构变得越来越复杂，如果依旧通过枚举的方式来初始化和绑定参数，依靠 ``funtional`` API 写出完整的结构，代码非常不优雅，且和工程化的理念不符；"
@@ -252,7 +252,7 @@ msgstr "In addition, methods such as ``buffers()``, ``children()``, etc. are als
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:549
 msgid "modules() 与 named_modules()"
-msgstr ""
+msgstr "modules() and named_modules()"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:551
 msgid "我们首先看一下使用 ``module`` 方式实现的 LeNet 结构中存在着哪些模块："
@@ -260,7 +260,7 @@ msgstr "We first look at the `` presence LeNet structure module`` manner in whic
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:615
 msgid "parameters() 与 named_parameters（）"
-msgstr ""
+msgstr "parameters() vs named_parameters()"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:617
 msgid "接下来我们需要关注一下模型中的参数（具体来说是权重 ``weight`` 和偏置 ``bias``\\ ）："
@@ -280,7 +280,7 @@ msgstr "More common usage scenario is that we can define in the derivation and o
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:749
 msgid "使用 state_dict() 获取信息"
-msgstr ""
+msgstr "Use state_dict() to get information"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:760
 msgid "调用 ``Module.state_dict()`` 将返回一个有序字典，因此我们可以先看看内部的键有什么："
@@ -740,7 +740,7 @@ msgstr "You have plenty of time, but too long training can easily lead to overfi
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1928
 msgid "你需要将训练的模型部署到其它的设备上进行使用（这是另外的使用情景，我们在当前系列的教程中不会接触到）…"
-msgstr ""
+msgstr "You need to deploy the trained model to other devices for use (this is another use case that we won't touch in the current series of tutorials)…"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1930
 msgid "最简单的办法是，使用 MegEngine 中提供的 ``save`` 和 ``load`` 接口，我们以最简单的 ``Tensor`` 进行举例："
@@ -752,7 +752,7 @@ msgstr "During the execution of the above code, ``megengine.save()'' is responsi
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1977
 msgid "文件的后缀名其实可以随意选取，比如 ``.mge``, ``.megengine``, ``.pkl``\\ … 等，关键是要让使用的人从后缀名中能判断出加载方式。"
-msgstr ""
+msgstr "The suffix name of the file can actually be selected at will, such as ``.mge``, ``.megengine``, ``.pkl``\\ … , etc. The key is to allow the user to determine the loading method from the suffix name. ."
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1979
 msgid "我们回顾一下教程开始提到的一个知识点，在每个 ``Module``/``Optimizer`` 对象中，都提供了 ``state_dict()`` 方法来获取内部的状态信息："
@@ -896,7 +896,7 @@ msgstr "There is still a lot of room for improvement in the accuracy of CIFAR10 
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2232
 msgid "你是否思考过这样一个明显的问题：VGG 论文中设计出了 VGG11, VGG13, VGG16, VGG19… 为什么不搞出一个 VGG100 模型呢？直接 VGG6666 岂不是无敌？"
-msgstr ""
+msgstr "Have you thought about such an obvious question：VGG11, VGG13, VGG16, VGG19 are designed in the… paper. Why not come up with a VGG100 model? Isn't VGG6666 invincible directly?"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2234
 msgid "一个比较直接的原因是，大模型的计算量更大，训练起来的时间成本和经济成本也更高，耗电也多（我们需要有环保意识）；"
@@ -932,7 +932,7 @@ msgstr "My Loss has been displayed as NaN since the first epoch, what happened?"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2247
 msgid "训练一个 epoch 的成本比之前高了很多，寻找合适的超参数会花掉很多时间…"
-msgstr ""
+msgstr "The cost of training an epoch is much higher than before, and finding the right…takes a lot of time."
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2249
 msgid "除此以外，在不改变模型结构的情况下，我们还在代码中进行了一些修改，比如我们改变了超参数，对输入数据进行了预处理，模型参数使用了除零值之外其它的初始化策略。这些修改背后的直觉是什么，当我们需要用神经网络解决不同的任务时，有没有什么经验可循？对于这些深度学习炼丹老师傅们再熟悉不过的一些 “玄学” 现象，如果能分析出问题背后可能的原因，一定会很有成就感。"

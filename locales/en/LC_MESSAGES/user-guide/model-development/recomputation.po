@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-12-13 15:08\n"
+"PO-Revision-Date: 2022-02-18 11:52\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
@@ -20,25 +20,25 @@ msgstr ""
 
 #: ../../source/user-guide/model-development/recomputation.rst:5
 msgid "通过重计算节省显存（Recomputation）"
-msgstr ""
+msgstr "Saving memory by recomputing (Recomputation)"
 
 #: ../../source/user-guide/model-development/recomputation.rst:7
 msgid "通常而言，使用更大的模型和更大的 Batch size 可以取得更好的训练效果，但随之而来的是更大的显存占用。"
-msgstr ""
+msgstr "Generally speaking, using a larger model and a larger batch size can achieve better training results, but with it comes a larger memory footprint."
 
 #: ../../source/user-guide/model-development/recomputation.rst:9
 msgid "重计算（Recomputation）本质上是一种用时间换空间的策略，可以将它类比成一种 Tensor 缓存（Cache）策略， 当显存空间不足时，可以选择把一些前向计算的结果清除； 当需要再次用到这些计算结果时，再根据之前缓存的检查点（Checkpoint）去重新计算它们。 参考下面这个示意图，蓝色为占用的显存（ `图片来源 <https://www.zhihu.com/question/274635237/answer/755102181>`_ ）："
-msgstr ""
+msgstr "Recomputation is essentially a strategy of exchanging time for space. It can be compared to a Tensor Cache strategy. When the video memory space is insufficient, you can choose to clear the results of some forward calculations; When these calculation results are used, they are recalculated based on the previously cached checkpoint (Checkpoint). Refer to the following diagram, blue is the occupied video memory ( `Image source <https://www.zhihu.com/question/274635237/answer/755102181>`_ )："
 
 #: ../../source/user-guide/model-development/recomputation.rst:18
 msgid "Vanilla backprop"
-msgstr ""
+msgstr "Vanilla backprop"
 
 #: ../../source/user-guide/model-development/recomputation.rst:24
 msgid "Checkpointed backprop"
-msgstr ""
+msgstr "Checkpointed backprop"
 
 #: ../../source/user-guide/model-development/recomputation.rst:29
 msgid "MegEngine 将经典的重计算策略应用到了工程实现中，具体使用方式请参考以下页面："
-msgstr ""
+msgstr "MegEngine applies the classic recalculation strategy to the project implementation. For details, please refer to the following page："
 

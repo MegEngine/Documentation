@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 01:33\n"
+"PO-Revision-Date: 2022-02-18 11:53\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
@@ -20,65 +20,65 @@ msgstr ""
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:5
 msgid "获得用于 MegEngine Lite 推理的模型"
-msgstr ""
+msgstr "Get a model for MegEngine Lite inference"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:6
 msgid "MegEngine 训练时候使用的动态图进行训练，当模型训练完成之后，需要将动态图转化为静态图，才能在 MegEngine Lite 中进行推理。目前有两种方法可以从 训练的模型转换到推理模型："
-msgstr ""
+msgstr "The dynamic graph used in MegEngine training is used for training. After the model training is completed, the dynamic graph needs to be converted into a static graph before inference can be performed in MegEngine Lite. There are currently two ways to switch from a trained model to an inference model："
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:9
 msgid "使用 trace_module 方式：通过 MegEngine 的 :ref:`Traced Module <traced_module-guide>` 将动态图转换为 traced_module IR，在这个 IR 基础上可以进行图手术等，参考 :ref:`graphsurgeon-example`，最后再转化为可以在 MegEngine Lite 上运行的静态图模型。"
-msgstr ""
+msgstr "Use trace_module mode：to convert the dynamic graph to traced_module IR through MegEngine :ref:`Traced Module <traced_module-guide>`, on the basis of this IR, you can perform graph surgery, etc., refer to :ref:`graphsurgeon-example`, and finally convert it to run on MegEngine Lite static graph model."
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:10
 msgid "直接 dump 方式：通过使用 MegEngine 的 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 功能将动态图转为静态图。"
-msgstr ""
+msgstr "Direct dump mode：converts dynamic graphs to static graphs by using MegEngine's :class:`~.jit.trace` and :meth:`~.trace.dump` functions."
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:12
 msgid "如下图所示："
-msgstr ""
+msgstr "as shown below："
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:26
 msgid "使用 trace_module 方式"
-msgstr ""
+msgstr "Use trace_module method"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:27
 msgid "参考 :ref:`quick-start` ，下面是对 `模型中心 <https://megengine.org.cn/model-hub>`_ 已经训练好的 resnet18 转换为 trace_module ，然后再 dump 成为 MegEngine Lite 可以加载的静态模型的示例。"
-msgstr ""
+msgstr "Referring to :ref:`quick-start`, the following is an example of converting the already trained resnet18 to trace_module for `model center <https://megengine.org.cn/model-hub>`_, and then dumping it into a static model that MegEngine Lite can load."
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:57
 msgid "上面代码完成了如下步骤："
-msgstr ""
+msgstr "The above code completes the following step："
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:59
 msgid "首先通过从 MegEngine 的 `模型中心 <https://megengine.org.cn/model-hub>`_ 下载了 ``resnet18`` 的预训练模型， **用户可以用自己预训练的模型代替** 。"
-msgstr ""
+msgstr "First, by downloading the pre-trained model of ``resnet18`` from `Model Center <https://megengine.org.cn/model-hub>of MegEngine, **Users can replace** with their own pre-trained model."
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:60
 msgid "将 resnet18 转换为 ``trace_module`` 的模型 ``traced_resnet``，用户可以在 ``traced_resnet`` 中做一些图手术以及模型转换，图手术参考 :ref:`graphsurgeon-example`，模型转换参考 `mgeconvert <https://github.com/megengine/mgeconvert>`_ ， **上面的示例没有做任何图手术和模型转换** 。"
-msgstr ""
+msgstr "Convert resnet18 to the model ``traced_resnet`` of ``trace_module``, users can do some graph surgery and model conversion in `` :ref:, refer to `graphsurgeon-example` for graph surgery, and `mgeconvert <https://github.com/megengine/mgeconvert>for model conversion` `_ , **The above example does not do any graph surgery and model transformation**."
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:61
 msgid "将 ``traced_resnet`` 通过 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 将模型序列化到文件 ``resnet18.mge`` 中。"
-msgstr ""
+msgstr "Serialize the ``traced_resnet`` model into the file ``resnet18.mge`` with :class:`~.jit.trace` and :meth:`~.trace.dump`."
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:65
 msgid "如果需要 dump 自己的模型而不是 `模型中心 <https://megengine.org.cn/model-hub>`_ 的模型，这时候可以通过 MegEngine 中 :ref:`serialization-guide` 来加载和序列化已经训练好的模型，然后替换上面的 ``resnet`` 即可。"
-msgstr ""
+msgstr "If you need to dump your own model instead of the `model center <https://megengine.org.cn/model-hub>`_ model, you can load and serialize the trained model through :ref:`serialization-guide` in MegEngine, and then replace the above ``resnet`` ie Can."
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:69
 msgid "直接 dump 的方式"
-msgstr ""
+msgstr "Direct dump method"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:70
 msgid "直接 dump 过程比上面使用 ``trace_module`` 方式仅仅少了转换为 trace_module 的过程，省掉这个过程，将牺牲掉对模型做图手术和模型转换的能力，参考下面的示例。"
-msgstr ""
+msgstr "Compared with the ``trace_module`` method above, the direct dump process only has less process of converting to trace_module, omitting this process will sacrifice the ability to perform graph operations and model conversion on the model, refer to the following example."
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:96
 msgid "上面代码将从 `模型中心 <https://megengine.org.cn/model-hub>`_ 下载 ``shufflenet_v2_x1_0`` 模型并 进行 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 完成从动态图模型到静态图模型装换。"
-msgstr ""
+msgstr "The above code will download the ``shufflenet_v2_x1_0`` model from `model center <https://megengine.org.cn/model-hub>`_ and perform :class:`~.jit.trace` and :meth:`~.trace.dump` to complete the conversion from the dynamic graph model to the static graph model."
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:101
 msgid "同样如果需要 dump 自己的模型而不是 `模型中心 <https://megengine.org.cn/model-hub>`_ 的模型，这时可以通过 MegEngine 中 :ref:`serialization-guide` 来加载已经训练好的模型，或者使用 :ref:`Traced Module <traced_module-guide>` 中的方法得到模型，然后替换上面的 ``net`` 即可。"
-msgstr ""
+msgstr "Similarly, if you need to dump your own model instead of the model of `model center <https://megengine.org.cn/model-hub>`_, you can load the trained model through :ref:`serialization-guide` in MegEngine, or use the method in :ref:`Traced Module <traced_module-guide>` to get model, and then replace the ``net`` above."
 
