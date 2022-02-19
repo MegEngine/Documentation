@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2022-01-24 12:33\n"
+"PO-Revision-Date: 2022-02-18 11:51\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -24,91 +24,91 @@ msgstr "Use Hub to publish and load pre-trained models"
 
 #: ../../source/user-guide/model-development/hub/index.rst:7
 msgid "借助于 MegEngine 提供的 :mod:`~.hub` 模块，研究人员能够很方便地："
-msgstr ""
+msgstr "With the help of the :mod:`~.hub` module provided by MegEngine, researchers can easily："
 
 #: ../../source/user-guide/model-development/hub/index.rst:9
 msgid "通过添加一个 ``hubconf.py`` 文件，对自己开源在 GitHub 或 GitLab 上的预训练模型进行发布；"
-msgstr ""
+msgstr "Publish your own open source pretrained models on GitHub or GitLab by adding a ``hubconf.py`` file;"
 
 #: ../../source/user-guide/model-development/hub/index.rst:10
 msgid "通过 :func:`megengine.hub.load` 接口加载其他研究人员发布的预训练模型，有利于进行研究结果的复现；"
-msgstr ""
+msgstr "Load pre-trained models released by other researchers through the ` :func:interface, which is conducive to the reproduction of research results;"
 
 #: ../../source/user-guide/model-development/hub/index.rst:11
 msgid "加载完成的预训练模型还可以用作迁移学习的微调，或是进行预测。"
-msgstr ""
+msgstr "The loaded pretrained model can also be used as fine-tuning for transfer learning, or for prediction."
 
 #: ../../source/user-guide/model-development/hub/index.rst:13
 msgid "这一小节将以 `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ 系列模型为例子，展示模型的发布和加载流程。"
-msgstr ""
+msgstr "This section will use the `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ series model as an example to show the model publishing and loading process."
 
 #: ../../source/user-guide/model-development/hub/index.rst:18
 msgid "此处的 “预训练模型” 包括 1. 模型的定义 2. 预训练权重。"
-msgstr ""
+msgstr "The \"pre-trained model\" here includes 1. the definition of the model 2. the pre-trained weights."
 
 #: ../../source/user-guide/model-development/hub/index.rst:20
 msgid "相较于使用 :meth:`.Module.load_state_dict` 和 :func:`megengine.load` 反序列化并加载模型的状态字典， :func:`megengine.hub.load` 还能够在此之前替用户完成加载模型定义的过程（根据 ``hubconf.py`` ）， 加载后的模型也可被用于 :ref:`dump` ，进而用于高性能的推理部署情景。"
-msgstr ""
+msgstr "Compared to using :meth:`.Module.load_state_dict` and :func:`megengine.load` to deserialize and load the model's state dictionary, :func:`megengine.hub.load` can also complete the process of loading model definitions for the user before this ( According to ``hubconf.py``), the loaded model can also be used in :ref:`dump` for high performance inference deployment scenarios."
 
 #: ../../source/user-guide/model-development/hub/index.rst:26
 msgid "Hub 的相关功能也可以用作内部 Git 服务器，需在使用相关接口时配置相应的参数。"
-msgstr ""
+msgstr "The related functions of the Hub can also be used as an internal Git server, and corresponding parameters need to be configured when using the related interfaces."
 
 #: ../../source/user-guide/model-development/hub/index.rst:30
 msgid "MegEngine 官网上提供了 `模型中心 <https://megengine.org.cn/model-hub>`_ 板块， 基于旷视研究院领先的深度学习算法，提供满足多业务场景的预训练模型。 实际上即对官方模型库 Models 添加了 :models:`hubconf.py` 配置。 如果你希望将自己的研究模型发布到 MegEngine 官方的模型中心，请参考 `Hub <https://github.com/MegEngine/Hub>`_ 存储库的 README 文件。"
-msgstr ""
+msgstr "The official website of MegEngine provides the `Model Center <https://megengine.org.cn/model-hub>section, which is based on the leading deep learning algorithm of the Megvii Research Institute and provides pre-training models that meet multiple business scenarios. In fact, :models:`hubconf.py` configuration has been added to the official model library Models. If you wish to publish your research models to the official MegEngine model center, please refer to the README file of the `Hub <https://github.com/MegEngine/Hub>`_ repository."
 
 #: ../../source/user-guide/model-development/hub/index.rst:37
 msgid "发布预训练模型"
-msgstr ""
+msgstr "Publish pretrained models"
 
 #: ../../source/user-guide/model-development/hub/index.rst:39
 msgid "在 ``hubconf.py`` 文件中，需要将提供至少一个入口点（Entrypoint），形式如下："
-msgstr ""
+msgstr "In the ``hubconf.py`` file, at least one entry point (Entrypoint) needs to be provided, in the form of："
 
 #: ../../source/user-guide/model-development/hub/index.rst:47
 msgid "调用入口点时，通常返回一个模型 ( M.Module ), 也可以是其他希望通过 Hub 加载的对象；"
-msgstr ""
+msgstr "When calling the entry point, it usually returns a model ( M.Module ), or other objects that you want to load through the Hub;"
 
 #: ../../source/user-guide/model-development/hub/index.rst:48
 msgid "加载模型时 ``*args`` 和 ``**kwargs`` 参数将被传递给真正的可调用对象；"
-msgstr ""
+msgstr "``*args`` and ``**kwargs`` arguments will be passed to the real callable when loading the model;"
 
 #: ../../source/user-guide/model-development/hub/index.rst:49
 msgid "入口点的文档字符串会在调用 :func:`.hub.help` 接口时显示。"
-msgstr ""
+msgstr "The docstring for the entry point is displayed when the :func:`.hub.help` interface is called."
 
 #: ../../source/user-guide/model-development/hub/index.rst:52
 msgid "提供入口点"
-msgstr ""
+msgstr "provide entry point"
 
 #: ../../source/user-guide/model-development/hub/index.rst:54
 msgid "以官方 `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ 模型为例， 模型定义文件在 :models:`official/vision/classification/resnet/model.py`."
-msgstr ""
+msgstr "Take the official `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ model as an example, the model definition file is in :models:`official/vision/classification/resnet/model.py`."
 
 #: ../../source/user-guide/model-development/hub/index.rst:64
 msgid "我们在 ``hubconf.py`` 中可以这样实现一个入口点："
-msgstr ""
+msgstr "We can implement an entry point：in ``hubconf.py`` like this"
 
 #: ../../source/user-guide/model-development/hub/index.rst:74
 msgid "不过由于 ResNet 的 ``model.py`` 中已经对 ``resnet18``, ``resnet34``, ``resnet50``, ``resnet101``, ``resnet152`` 等常见的网络结构按照 Hub 风格进行了定义，因此实际的 :models:`hubconf.py` 中只需要进行导入它们即可："
-msgstr ""
+msgstr "However, because ResNet's ``model.py`` has already defined ``resnet18``, ``resnet34``, ``resnet50``, ``resnet101``, ``resnet152`` and other common network structures according to the Hub styles are defined, so in actual :models:`hubconf.py` only need to import them："
 
 #: ../../source/user-guide/model-development/hub/index.rst:87
 msgid "提供预训练权重"
-msgstr ""
+msgstr "Provides pretrained weights"
 
 #: ../../source/user-guide/model-development/hub/index.rst:89
 msgid "通过给入口点添加 :class:`.hub.pretrained` 装饰器，来标识预训练权重的 URL 地址："
-msgstr ""
+msgstr "Identifies the URL address of the pretrained weights by adding :class:`.hub.pretrained` decorator to the entry："
 
 #: ../../source/user-guide/model-development/hub/index.rst:98
 msgid "当被装饰的函数具有参数 ``pretrained=True`` 时，调用时将自动下载并对返回的模型填入预训练的权重；"
-msgstr ""
+msgstr "When the decorated function has the parameter ``pretrained=True``, it will automatically download and fill the returned model with the pretrained weights when it is called;"
 
 #: ../../source/user-guide/model-development/hub/index.rst:99
 msgid "预训练权重可以存在于 Git 存储库中，对于开源在 GitHub / GitLab 的项目， 需要考虑预训练权重的体积整体大小以及用户的下载条件，可根据实际情况判断 —— 选择将预训练权重附加和模型放在一起发布，还是放在其它位置（比如网盘、OSS 等）。"
-msgstr ""
+msgstr "Pre-training weights can exist in the Git repository. For open source projects on GitHub/GitLab, you need to consider the overall size of the pre-training weights and the user's download conditions, which can be judged according to the actual situation - choose to attach the pre-training weights to the model Publish together, or in other locations (such as network disk, OSS, etc.)."
 
 #: ../../source/user-guide/model-development/hub/index.rst:104
 msgid "加载预训练模型"
@@ -116,47 +116,47 @@ msgstr "Load the pre-trained model"
 
 #: ../../source/user-guide/model-development/hub/index.rst:106
 msgid "通过 :func:`.hub.list` 接口可以列举出指定的 GitHub 库中 ``hubconf.py`` 中提供的预训练模型入口。"
-msgstr ""
+msgstr "The pre-trained model entries provided in ``hubconf.py`` in the specified GitHub repository can be listed through the ` :func:interface."
 
 #: ../../source/user-guide/model-development/hub/index.rst:108
 msgid "例如运行下面这个命令，可以找到 GitHub 的 MegEngine/Models 库中所有发布的预训练模型："
-msgstr ""
+msgstr "For example, run the following command to find all published pre-trained models：in the MegEngine/Models repository on GitHub"
 
 #: ../../source/user-guide/model-development/hub/index.rst:119
 msgid "假定我们需要的是 ``resnet18`` 预训练模型，使用 :func:`.hub.help` 接口，可以查看对应入口点的文档字符串信息："
-msgstr ""
+msgstr "Assuming what we need is the ``resnet18`` pretrained model, use the :func:`.hub.help` interface, you can view the docstring information for the corresponding entry point："
 
 #: ../../source/user-guide/model-development/hub/index.rst:124
 msgid "只需要使用 :func:`.hub.load` 接口，便可以一次性地完成对应预训练模型的加载："
-msgstr ""
+msgstr "Only need to use :func:`.hub.load` interface, you can complete the loading of the corresponding pre-training model at one："
 
 #: ../../source/user-guide/model-development/hub/index.rst:131
 msgid "在推理之前，记得调用 ``model.eval()`` 将模型切换到评估模式。"
-msgstr ""
+msgstr "Before inference, remember to call ``model.eval()`` to switch the model to evaluation mode."
 
 #: ../../source/user-guide/model-development/hub/index.rst:135
 msgid "默认情况下， 将从 GitHub 对应存储库的 master 分支进行 ``hubconf.py`` 等文件的拉取："
-msgstr ""
+msgstr "By default, files such as ``：will be pulled from the master branch of the corresponding GitHub repository."
 
 #: ../../source/user-guide/model-development/hub/index.rst:137
 msgid "可通过形如 ``megengine/models:dev`` 的形式指定到 dev 分支名（或标签名）；"
-msgstr ""
+msgstr "It can be specified to the dev branch name (or tag name) in the form of ``megengine/models:dev``;"
 
 #: ../../source/user-guide/model-development/hub/index.rst:138
 msgid "可通过设置 ``git_host`` 参数，选择使用指定的 Git 服务器；"
-msgstr ""
+msgstr "You can choose to use the specified Git server by setting the ``git_host`` parameter;"
 
 #: ../../source/user-guide/model-development/hub/index.rst:139
 msgid "可通过设置 ``commit`` 参数，选择使用指定的 commit 位置；"
-msgstr ""
+msgstr "You can choose to use the specified commit position by setting the ``commit`` parameter;"
 
 #: ../../source/user-guide/model-development/hub/index.rst:140
 msgid "可通过设置 ``protocol`` 参数，选择获取代码仓库时所用的协议。"
-msgstr ""
+msgstr "By setting the ``protocol`` parameter, you can choose the protocol used to obtain the code repository."
 
 #: ../../source/user-guide/model-development/hub/index.rst:142
 msgid "通常情况下，无需进行额外设置，可以从公开的 GitHub 库以 HTTPS 协议进行 Clone. 如果进行了具体配置（如使用了内部 Git 服务器），请确保你有对应代码仓库的访问权限。"
-msgstr ""
+msgstr "Normally, no additional setup is required, and you can clone from a public GitHub repository with HTTPS protocol. If you configure it specifically (such as using an internal Git server), make sure you have access to the corresponding code repository."
 
 #~ msgid "内容正在建设中..."
 #~ msgstr "The content is under construction..."

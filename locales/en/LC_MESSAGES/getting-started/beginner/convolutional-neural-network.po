@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 12:16\n"
+"PO-Revision-Date: 2022-02-18 11:53\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
@@ -20,333 +20,333 @@ msgstr ""
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:5
 msgid "MegEngine 实现卷积神经网络"
-msgstr ""
+msgstr "MegEngine implements convolutional neural network"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:7
 msgid "本教程涉及的内容"
-msgstr ""
+msgstr "What this tutorial covers"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:10
 msgid "理解 3 通道彩色图片与对应的 Tensor 表示，认识 Tensor 内存布局形式；"
-msgstr ""
+msgstr "Understand the 3-channel color image and the corresponding Tensor representation, and understand the Tensor memory layout form;"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:11
 msgid "结合计算机视觉传统领域知识，在神经网络中使用 2D 卷积（Convolution）算子；"
-msgstr ""
+msgstr "Combined with traditional domain knowledge of computer vision, use 2D convolution operator in neural network;"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:12
 msgid "根据前面的介绍，使用 MegEngine 实现卷积神经网络，完成 CIFAR-10 图片分类任务。"
-msgstr ""
+msgstr "According to the previous introduction, use MegEngine to implement convolutional neural network to complete the CIFAR-10 image classification task."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:16
 msgid "从本篇教程开始，模型更为复杂，训练时计算量将变得巨大，建议使用 GPU 环境运行代码。"
-msgstr ""
+msgstr "Starting from this tutorial, the model is more complex, and the amount of computation during training will become huge. It is recommended to use the GPU environment to run the code."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:19
 msgid "获取原始数据集"
-msgstr ""
+msgstr "Get the original dataset"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:21
 msgid "CIFAR-10 数据集与 MNIST 一样，可以直接通过 :mod:`.data.dataset` 来获取："
-msgstr ""
+msgstr "The CIFAR-10 dataset is the same as MNIST, you can get：directly through :mod:`.data.dataset`"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:32
 msgid "与 MNIST 的处理类似，此处得到的是已经划分好的训练集和测试集， 且都封装成了 MegEngine 中的 :class:`~.Dataset` 类型， 为了方便进行分析，我们这里将其转换成 NumPy 的 ndarray 数据格式："
-msgstr ""
+msgstr "Similar to the processing of MNIST, the divided training set and test set are obtained here, and they are encapsulated into the :class:`~.Dataset` type in MegEngine. For the convenience of analysis, we convert them into NumPy's ndarray data format："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:46
 msgid "了解数据集信息"
-msgstr ""
+msgstr "Learn about dataset information"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:48
 msgid "可以发现，CIFAR-10 中每个图片样本的形状为 :math:`(32, 32, 3)`, 与 MNIST 数据集中形状为 :math:`(28, 28, 1)` 的样本的高度、高度、以及 **通道（Channel）** 数量都有差异，让我们进一步了解 CIFAR-10 的样本信息："
-msgstr ""
+msgstr "It can be found that the shape of each image sample in CIFAR-10 is :math:`(32, 32, 3)`, and the height, height, and * of samples with shape :math:`(28, 28, 1)` in the MNIST dataset *Channels** vary in number, let's learn more about CIFAR-10 sample information："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:53
 msgid "`CIFAR-10 <https://www.cs.toronto.edu/~kriz/cifar.html>`_ :footcite:p:`cifar10` 数据集包含共计 10 个类别的 60000 张 32x32 彩色图像， 每个类别包含 6000 个图像，对应有 50000 张训练图像和 10000 张测试图像。"
-msgstr ""
+msgstr "The `CIFAR-10 <https://www.cs.toronto.edu/~kriz/cifar.html>`_ :footcite:p:`cifar10` dataset contains 60,000 32x32 color images in a total of 10 categories, each category contains 6,000 images, corresponding to 50,000 training images and 10,000 test images."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:57
 msgid "我们先尝试对每个类别进行抽样，并进行可视化显示（这个代码与 MNIST 教程类似）："
-msgstr ""
+msgstr "Let's first try to sample each class and visualize it (this code is similar to the MNIST tutorial)："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:84
 msgid "我们可以像探索 MNIST 一样在 Google 的 Know Your Data 中对 `CIFAR-10 数据集 <https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dataset=cifar10>`_ 进行探索性分析。"
-msgstr ""
+msgstr "We can do exploratory analysis on the `CIFAR-10 dataset <https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dataset=cifar10>`_ in Google's Know Your Data just like MNIST."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:90
 msgid "在上面的可视化代码中，我们使用到了 OpenCV_ 的 Python 接口来改变图像的颜色（准确说是通道顺序），如果不做相应的转换， 可视化得到的图片颜色可能会很奇怪（偏蓝），接下来我们即将进行相关的解释。"
-msgstr ""
+msgstr "In the above visualization code, we use the Python interface of OpenCV_ to change the color of the image (to be precise, the channel order). We are about to explain about it."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:96
 msgid "3 通道 RGB 图片"
-msgstr ""
+msgstr "3 channel RGB image"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:98
 msgid "RGB 颜色模型（RGB color model）"
-msgstr ""
+msgstr "RGB color model"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:100
 msgid "RGB 颜色模型或红绿蓝颜色模型，是一种加色模型， 将红（Red）、绿（Green）、蓝（Blue）三原色的色光以不同的比例相加，以合成产生各种色彩光。 （下图来自 `维基百科 <https://commons.wikimedia.org/wiki/File:RGB_colors.gif>`_ ， CC-BY-SA 4.0）"
-msgstr ""
+msgstr "The RGB color model or the red, green, and blue color model is an additive color model that adds the three primary colors of red (Red), green (Green), and blue (Blue) in different proportions to synthesize light of various colors. (The image below is from `Wikipedia <https://commons.wikimedia.org/wiki/File:RGB_colors.gif>, CC-BY-SA 4.0)"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:106
 msgid "RGB 颜色模型的主要目的是在电子系统中检测、表示和显示图像，比如电视和电脑， 利用大脑强制视觉生理模糊化（失焦），将红绿蓝三原色子象素合成为一色彩象素，产生感知色彩。 其实此真彩色并非加色法所产生的合成色彩，原因为该三原色光从来没有重叠在一起， 只是人类为了 “想” 看到色彩，大脑强制眼睛失焦而形成。 三原色的原理不是出于物理原因，而是由于生理原因造成的。"
-msgstr ""
+msgstr "The main purpose of the RGB color model is to detect, represent, and display images in electronic systems, such as televisions and computers, using the brain to force visual physiological blurring (out-of-focus), synthesizing red, green, and blue primary color sub-pixels into a color pixel, Produces perceptual color. In fact, this true color is not a synthetic color produced by the additive color method. The reason is that the three primary colors of light never overlap, but are formed by the human brain forcing the eyes to lose focus in order to \"want\" to see the color. The principle of the three primary colors is not due to physical reasons, but due to physiological reasons."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:114
 msgid "MegEngine 底层处理图像使用的是 OpenCV_ . 由于历史原因，OpenCV 在图像为 3 通道的情况下， 解码后将以 **B G R** 顺序进行存储，得到 NumPy 的 ndarray 格式数据 （ `查阅文档 <https://docs.opencv.org/3.4/d4/da8/group__imgcodecs.html>`_ ）。 MegEngine 中沿袭了 OpenCV 的处理习惯，因此大部分情况下都默认图片为 BGR 顺序，需要特别注意。"
-msgstr ""
+msgstr "MegEngine uses OpenCV_ to process images at the bottom layer. Due to historical reasons, OpenCV will store images in **BGR** order after decoding when the image is 3-channel, and get NumPy ndarray format data ( `See document <https://docs.opencv.org/3.4/d4/da8/group__imgcodecs.html>`_ ) . MegEngine follows the processing habits of OpenCV, so in most cases, the default image is BGR order, which needs special attention."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:120
 msgid "我们可以选一张图片分别用 OpenCV 和 Matplotlib 解码，进行验证："
-msgstr ""
+msgstr "We can choose a picture to decode with OpenCV and Matplotlib respectively, and verify："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:124
 msgid "此时如果调用 ``plt.imshow`` （该接口以 RGB 顺序显示图片），则会得到不一致的结果："
-msgstr ""
+msgstr "At this point, if you call ``plt.imshow`` (this interface displays pictures in RGB order), you will get inconsistent results："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:130
 msgid "OpenCV 采用 BGR 顺序"
-msgstr ""
+msgstr "OpenCV uses BGR order"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:139
 msgid "Matplotlib 采用 RGB 顺序"
-msgstr ""
+msgstr "Matplotlib uses RGB order"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:147
 msgid "**读写图片数据时，需要使用同样的通道顺序。** 如果你使用 OpenCV 的 ``cv2.imshow`` 来显示左图，则会正常地展示颜色。 而我们可视化时使用的是 ``plt.imshow``, 其以 RGB 顺序显示图片，因此需要转换。"
-msgstr ""
+msgstr "**When reading and writing image data, you need to use the same channel order. ** If you use OpenCV's ``cv2.imshow`` to display the left image, the colors will be displayed normally. And our visualization is using ``plt.imshow``, which displays the image in RGB order, so it needs to be converted."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:153
 msgid "阅读官网和文档的说明很重要，CIFAR10 主页上的原始数据是以 RGB 顺序存储的， 而 MegEngine 中的 :class:`~.CIFAR10` 接口在处理数据时， 会有一个将原本 RGB 顺序变为 BGR 顺序的操作，从而得到 BGR 通道顺序的数据。"
-msgstr ""
+msgstr "It is very important to read the instructions on the official website and documentation. The original data on the CIFAR10 homepage is stored in RGB order, while the :class:`~.CIFAR10` interface in MegEngine will have a function that changes the original RGB order to BGR order when processing data. operation to obtain BGR channel sequence data."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:157
 msgid "相较于单通道图片，我们在做归一化处理时，需要每个通道分别计算相应的统计量，这里提前统计好："
-msgstr ""
+msgstr "Compared with single-channel images, when we do normalization, we need to calculate the corresponding statistics for each channel separately. Here we count：in advance."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:167
 msgid "查询 :class:`.transform.Normalize` API 文档你会发现，它能够接受上述 ``mean`` 和 ``std`` 作为输入，用于每个通道。"
-msgstr ""
+msgstr "Consult the ` :class:API documentation and you will find that it accepts the above ``mean`` and ``std`` as input, for each channel."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:170
 msgid "图片 Tensor 布局"
-msgstr ""
+msgstr "Image Tensor layout"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:172
 msgid "目前的 CIFAR10 数据集中，每张图片的形状为 $(32, 32, 3)$, 又称为 HWC 布局（Layout）或格式（Mode）。 但在 MegEngine 中，处理 3 通道图像 Tensor 数据的绝大部分算子都要求默认为 CHW 布局输入（目前不用了解原因）， 因此我们在预处理的最后一步，还需要对图片数据做 Layout 的变换，用到 :class:`~.ToMode` 接口："
-msgstr ""
+msgstr "In the current CIFAR10 dataset, the shape of each image is $(32, 32, 3)$, also known as HWC layout (Layout) or format (Mode). However, in MegEngine, most of the operators that process 3-channel image Tensor data require the default CHW layout input (no need to understand the reason for now). Therefore, in the last step of preprocessing, we also need to transform the Layout of the image data. Use :class:`~.ToMode` interface："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:188
 msgid "再次提醒，此时的数据依旧是 ndarray 格式，通常在提供给模型时才会被转换成 Tensor 格式。"
-msgstr ""
+msgstr "Again, the data at this time is still in ndarray format, which is usually converted to Tensor format when it is provided to the model."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:192
 msgid "更多的预处理阶段的变换操作，可参考 :ref:`data-transform-guide` ；"
-msgstr ""
+msgstr "For more transformation operations in the preprocessing stage, please refer to :ref:`data-transform-guide` ;"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:193
 msgid "更多对 Layout 的介绍，可参考 :ref:`tensor-layout` 页面的介绍。"
-msgstr ""
+msgstr "For more introduction to Layout, please refer to the introduction of :ref:`tensor-layout` page."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:195
 msgid "但对于全连接神经网络，不论是 CHW 布局还是 HWC 布局，使用线性层， 其经过 :func:`~.functional.flatten` 后进行线性运算， 只会得到排列顺序不同的神经元，最终产生的效果是一样的，接下来我们将看看全连接神经网络有什么不足。"
-msgstr ""
+msgstr "But for the fully connected neural network, whether it is the CHW layout or the HWC layout, the linear layer is used. After :func:`~.functional.flatten`, the linear operation will only get neurons in different order, and the final effect will be the same. Yes, next we will see what the shortcomings of fully connected neural networks are."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:200
 msgid "再次思考 flatten 处理"
-msgstr ""
+msgstr "Think Flatten Handling Again"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:204
 msgid "我们使用上一个教程中的全连接神经网络在 CIFAR10 上进行训练 （源码在 :docs:`examples/beginner/neural-network-cifar10.py` ）， 这里直接使用提前统计好的均值和标准差进行归一化："
-msgstr ""
+msgstr "We use the fully connected neural network in the previous tutorial to train on CIFAR10 (the source code is in :docs:`examples/beginner/neural-network-cifar10.py` ), here we directly use the pre-statistic mean and standard deviation for normalization："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:210
 msgid "我们在上一个教程中定义的全连接神经网络结构，在 CIFAR10 上仅仅能够取得 50% 左右的分类准确率，意味着不合格。 神经网络模型中还存在着除全连接以外的计算模式，在处理不同类型的任务和数据时，能产生不同的效果。 这就要求我们对任务和数据有着更深的理解和思考，而不是完全寄希望于加深网络结构，调整超参数。"
-msgstr ""
+msgstr "The fully connected neural network structure we defined in the previous tutorial can only achieve a classification accuracy of about 50% on CIFAR10, which means it is not qualified. There are also computing modes other than full connections in the neural network model, which can produce different effects when dealing with different types of tasks and data. This requires us to have a deeper understanding and thinking about tasks and data, rather than completely hoping to deepen the network structure and adjust hyperparameters."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:216
 msgid "全连接神经网络不能够很好地应用于分辨率更高的图像数据。更大尺寸的图像会导致全连接网络中的神经元数量变得更多， 这意味着模型中的 **参数量** 和训练时的 **计算量** 会变得巨大，成本可能无法接受； 另外，大量的参数可能会导致模型训练时很快产生过拟合现象。"
-msgstr ""
+msgstr "Fully connected neural networks do not work well for higher resolution image data. The larger size of the image will lead to more neurons in the fully connected network, which means that the **parameters** in the model and the **computation amount** during training will become huge, and the cost may not be able to Accepted; also, a large number of parameters may cause the model to overfit very quickly during training."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:220
 msgid "全连接神经网络的输入必须是一个展平后的特征向量， 因此我们之前采取的处理是 :func:`~.functional.flatten` 操作，并没有考虑可能产生的影响。 这样的操作可以看作是对图片数据进行了一次降维，会丢失掉非常多的信息 —— 比如各个相邻居像素之间的局部 **空间信息** 。"
-msgstr ""
+msgstr "The input of the fully connected neural network must be a flattened feature vector, so the processing we took before was :func:`~.functional.flatten` operation, and did not consider the possible impact. Such an operation can be regarded as a dimensionality reduction of the image data, which will lose a lot of information - such as the local **spatial information** between each adjacent pixel."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:224
 msgid "全连接神经网络对图像中像素位置的变化比较敏感，两张图片如果彼此之间的差异仅仅是做了些上下平移， 对全连接神经网络而言就可能会认为这些空间信息已经截然不同，不具备空间 **平移不变性** 。"
-msgstr ""
+msgstr "The fully connected neural network is more sensitive to the change of the pixel position in the image. If the difference between the two pictures is only shifted up and down, the fully connected neural network may think that the spatial information is completely different. Has spatial **translation invariance**."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:227
 msgid "让我们从传统计算机视觉领域获得一些启发，是人们是如何利用图片的空间信息的。"
-msgstr ""
+msgstr "Let's take some inspiration from the traditional field of computer vision, how people exploit the spatial information of images."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:230
 msgid "数字图像处理：滤波"
-msgstr ""
+msgstr "digital image processing：filtering"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:232
 msgid "数字图像处理（Digital Image Processing）是通过计算机对图像进行去除噪声、增强、复原、分割、提取特征等处理的方法和技术。 本教程中不会对这个领域进行过多的介绍，而将专注于介绍其中的滤波（Filtering）和卷积（Convolution）操作。 首先让我们使用 OpenCV 中的 ``cv2.filter2D`` 接口，来有一个直观的认识："
-msgstr ""
+msgstr "Digital image processing (Digital Image Processing) is a method and technology for removing noise, enhancing, restoring, segmenting, and extracting features through a computer. I won't cover this area too much in this tutorial, but will focus on filtering and convolution operations in it. First let's use the ``：interface in OpenCV to have an intuitive understanding."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:260
 msgid "注： ``cv2.filter2D`` 中的 -1 表示自动地将滤波器矩阵应用到图片的每个通道。"
-msgstr ""
+msgstr "Note： The -1 in ``cv2.filter2D`` means to automatically apply the filter matrix to each channel of the picture."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:262
 msgid "可以直观地感受到，滤波操作能够对图像的特征进行很好地处理。其步骤是：即首先对原图周围进行 0 值填充， 然后计算图像中每个像素的邻域像素矩阵和滤波器矩阵的对应乘积，然后求和作为该像素位置的值。 作为验证，像素和我们上面的第一个滤波器矩阵进行计算，得到的还是原始值，因此最终的输出为原图。"
-msgstr ""
+msgstr "It can be intuitively felt that the filtering operation can process the characteristics of the image well. The steps are：, that is, first fill the original image with 0 value, then calculate the corresponding product of the neighborhood pixel matrix and the filter matrix of each pixel in the image, and then sum it up as the value of the pixel position. As a verification, the pixel is calculated with our first filter matrix above, and the original value is obtained, so the final output is the original image."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:266
 msgid "在滤波过程中利用了图片的空间信息，且使用不同的滤波器将得到不同的效果，如边缘提取、模糊、锐化等等。"
-msgstr ""
+msgstr "In the filtering process, the spatial information of the image is used, and different filters will be used to obtain different effects, such as edge extraction, blurring, sharpening, and so on."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:269
 msgid "理解卷积算子"
-msgstr ""
+msgstr "Understanding Convolution Operators"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:271
 msgid "滤波操作可以理解成是填充（Padding）与卷积（Convolution）操作的结合："
-msgstr ""
+msgstr "The filtering operation can be understood as a combination of：and Convolution operations."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:276
 msgid "以上图为例子，帮助我们更好地理解卷积计算的过程。 图中的蓝色部分（底部）表示输入通道，蓝色部分上的阴影表示 :math:`3 \\times 3` 卷积核（Kernel）， 绿色部分（顶部）表示输出通道。对于蓝色输入通道上的每个位置，都会进行卷积运算， 即将蓝色输入通道的阴影部分映射到绿色输出通道的相应阴影部分。"
-msgstr ""
+msgstr "The above figure is an example to help us better understand the process of convolution calculation. The blue part (bottom) in the figure represents the input channel, the shading on the blue part represents the :math:`3 \\times 3` convolution kernel (Kernel), and the green part (top) represents the output channel. For each location on the blue input channel, a convolution operation is performed, that is, the shaded part of the blue input channel is mapped to the corresponding shaded part of the green output channel."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:281
 msgid "在 CIFAR10 中，输入图像为 3 通道的，因此我们需要使用形状为 :math:`3 \\times 3 \\times 3` 的卷积核， 卷积核深度为 3 意味着卷积核中有 3 个不同的滤波器与每个通道分别进行计算，同一位置不同通道计算出的值相加， 最终依旧会得到一个形状为 :math:`32 \\times 32` 的 2D 输出（假定填充宽度为 1），我们称之为特征图（Feature map）。"
-msgstr ""
+msgstr "In CIFAR10, the input image is 3-channel, so we need to use a kernel of shape :math:`3 \\times 3 \\times 3`, a kernel depth of 3 means that there are 3 different filters in the kernel The processor calculates separately with each channel, and the values calculated by different channels at the same position are added together, and finally a 2D output with a shape of :math:`32 \\times 32` will be obtained (assuming the padding width is 1), which we call features Feature map."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:287
 msgid "在 MegEngine 中实现的对应 Tensor 操作接口为 :func:`~.functional.nn.pad` 和 :func:`~.functional.nn.conv2d` （在调用 :func:`~.functional.nn.conv2d` 时可通过 ``padding`` 参数达到同样的效果）， 后者即对图像这种形式的 Tensor 数据进行 2D 卷积操作的接口， 其对应的 :class:`~.module.Module` 为 :class:`~.module.Conv2d`. 在 :class:`~.module.Conv2d` 中还有着：步幅（Stride），表示每次滤波器移动的距离； 以及还有 ``dilation``, ``groups`` 等等参数，输入需要为 NCHW 布局，具体说明请查阅 API 文档。"
-msgstr ""
+msgstr "The corresponding Tensor operation interfaces implemented in MegEngine are :func:`~.functional.nn.pad` and :func:`~.functional.nn.conv2d` (when calling :func:`~.functional.nn.conv2d`, you can pass ``padding\" `` parameter to achieve the same effect), the latter is the interface for performing 2D convolution operations on Tensor data in the form of images, and its corresponding :class:`~.module.Module` is :class:`~.module.Conv2d`. In :class:`~.module.Conv2d` There are also：strides (Stride), indicating the distance that the filter moves each time; and there are ``dilation``, ``groups`` and other parameters, the input needs to be NCHW layout , please refer to the API documentation for specific instructions."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:296
 msgid "严格来说，深度学习中所指的输入数据和卷积核之间执行的这种运算过程其实是互相关（Cross-correlation）运算， 而不是卷积运算（真实的卷积运算需要先将卷积核沿对角线翻转），而我们通常不采用互相关这个说法，习惯称之为卷积。"
-msgstr ""
+msgstr "Strictly speaking, the operation process performed between the input data and the convolution kernel referred to in deep learning is actually a cross-correlation operation, not a convolution operation (the real convolution operation requires The product kernel is flipped diagonally), and we usually do not use the term cross-correlation, which is used to call it convolution."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:299
 msgid "下面来看一个在 MegEngine 中使用卷积运算的例子："
-msgstr ""
+msgstr "Let's see an example of using convolution operation in："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:316
 msgid "可以发现，我们的通道数由 3 变为了 10，如果改变 ``stride`` 和 ``padding`` 参数的设置， 输出特征图的高度和宽度也会改变，这一点和滤波操作是不一样的。 而相较于全连接层，卷积层中的每个神经元在计算时只关注自己感兴趣的部分，更加能利用图像的空间信息。 卷积操作可以理解成是一种特征提取操作， `能够从图像中学得信息 <https://cs231n.github.io/understanding-cnn/>`_ 。"
-msgstr ""
+msgstr "It can be found that the number of channels has changed from 3 to 10. If you change the settings of the ``stride`` and ``padding`` parameters, the height and width of the output feature map will also change, which is different from the filtering operation. . Compared with the fully connected layer, each neuron in the convolutional layer only pays attention to the part of interest when calculating, and can make better use of the spatial information of the image. The convolution operation can be understood as a feature extraction operation, which can learn information from the image <https://cs231n.github.io/understanding-cnn/>`_ ."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:322
 msgid "卷积神经网络架构模式"
-msgstr ""
+msgstr "Convolutional Neural Network Architecture Patterns"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:324
 msgid "目前最为流行的卷积神经网络架构模式为 ——"
-msgstr ""
+msgstr "The most popular convolutional neural network architecture patterns are:"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:326
 msgid "[Conv->Actication->Pooling]->flatten->[Linear->Actication]->Score."
-msgstr ""
+msgstr "[Conv->Actication->Pooling]->flatten->[Linear->Actication]->Score."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:328
 msgid "在神经网络中，想要为模型引入非线性，需要在计算完成后加入激活函数，卷积层也一样；"
-msgstr ""
+msgstr "In the neural network, if you want to introduce nonlinearity into the model, you need to add an activation function after the calculation is completed, and the same is true for the convolutional layer;"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:329
 msgid "另外在使用卷积层对特征完成提取后，通常还会使用 :class:`~.module.MaxPool2d` 等池化（Pooling）操作。 其逻辑是沿着空间维度（高度、宽度）执行下采样操作，即一片区域中仅仅保留一块局部信息作为代表。 一种解释是，这样的操作能够使得卷积神经网络模型能够具有更好的泛化能力； 它逐步减少了图像空间的大小，以减少网络中的参数量和计算量，从而控制了过拟合。"
-msgstr ""
+msgstr "In addition, after the feature extraction is completed using the convolutional layer, a pooling (Pooling) operation such as :class:`~.module.MaxPool2d` is usually used. The logic is to perform downsampling operations along the spatial dimension (height, width), that is, only a piece of local information is retained in an area as a representative. One explanation is that such an operation enables the convolutional neural network model to have better generalization capabilities; it gradually reduces the size of the image space to reduce the amount of parameters and computation in the network, thereby controlling overfitting ."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:333
 msgid "当使用卷积层提取到足够原始的特征后，便可以像 MNIST 数据一样使用全连接层进行分类。"
-msgstr ""
+msgstr "When enough raw features are extracted using convolutional layers, fully connected layers can be used for classification like MNIST data."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:335
 msgid "此处的介绍有些简略，更加详细的解释可以参考 Stanford CS231n 课程的 `官方笔记 <https://cs231n.github.io/convolutional-networks/>`_ 。"
-msgstr ""
+msgstr "The introduction here is a bit brief. For a more detailed explanation, please refer to the `Official Note <https://cs231n.github.io/convolutional-networks/>`_ of the Stanford CS231n course."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:339
 msgid "练习：卷积神经网络"
-msgstr ""
+msgstr "Practice：Convolutional Neural Networks"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:341
 msgid "接下来我们要做的事情是 “看图说话”，实现一个卷积神经网络并对 CIFAR10 进行分类："
-msgstr ""
+msgstr "The next thing we have to do is \"see pictures and talk\", implement a convolutional neural network and classify："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:343
 msgid "我们参考的是 `LeNet <https://ieeexplore.ieee.org/abstract/document/726791>`_ :footcite:p:`lecun1998gradient` 网络，其模型的结构如下图所示（图片截取自论文）："
-msgstr ""
+msgstr "We refer to the `LeNet <https://ieeexplore.ieee.org/abstract/document/726791>`_ :footcite:p:`lecun1998gradient` network, and the structure of its model is shown in the figure below (the picture is taken from the paper)："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:348
 msgid "Architecture of LeNet a Convolutional Neural Network here for digits recognition. Each plane is a feature map ie a set of units whose weights are constrained to be identical."
-msgstr ""
+msgstr "Architecture of LeNet a Convolutional Neural Network here for digits recognition. Each plane is a feature map ie a set of units whose weights are constrained to be identical."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:351
 msgid "注意：我们在数据预处理时使用了 :class:`~.transform.Compose` 来对各种变换进行组合。"
-msgstr ""
+msgstr "Note：that we used :class:`~.transform.Compose` in data preprocessing to compose the various transformations."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:355
 msgid "经过接近 50 轮训练，通常能够得到一个准确率超过 60% 的 LeNet 模型，比单纯使用全连接神经网络要好一些。"
-msgstr ""
+msgstr "After nearly 50 rounds of training, a LeNet model with an accuracy rate of more than 60% can usually be obtained, which is better than simply using a fully connected neural network."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:357
 msgid "在本教程中，向你介绍了卷积神经网络的基本概念，并且使用 LeNet 模型在 CIFAR10 数据集上进行了训练和评估。 实际上，LeNet 模型在 MNIST 数据集上能够取得超过 99% 的分类准确率， 这也是我们在《:ref:`megengine-quick-start` 》中给出的例子，你现在应当能够完全理解这个教程了。"
-msgstr ""
+msgstr "In this tutorial, you were introduced to the basic concepts of Convolutional Neural Networks and were trained and evaluated on the CIFAR10 dataset using the LeNet model. In fact, the LeNet model can achieve over 99% classification accuracy on the MNIST dataset, which is also the example we gave in \":ref:`megengine-quick-start`\", you should be able to fully understand this tutorial by now."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:363
 msgid "本教程的对应源码： :docs:`examples/beginner/linear-classification.py`"
-msgstr ""
+msgstr "The corresponding source code for this tutorial： :docs:`examples/beginner/linear-classification.py`"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:366
 msgid "总结：炼丹不完全是玄学"
-msgstr ""
+msgstr "Summary：Alchemy is not entirely metaphysical"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:368
 msgid "深度学习领域，模型是丹方，数据是灵材，GPU 设备是三昧真火，而 MegEngine 则是强大的炼丹炉。"
-msgstr ""
+msgstr "In the field of deep learning, the model is the alchemy formula, the data is the spiritual material, the GPU device is the real fire of samadhi, and the MegEngine is a powerful alchemy furnace."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:370
 msgid "作为炼丹人员，或许在 “调参” 这一步确实会花费掉非常多的时间，且总是会发生一些玄学现象。 但经过这一系列教程，相信你也认识到了一些更深层次的内容，让我们再次回顾一下机器学习的概念："
-msgstr ""
+msgstr "As an alchemist, it may indeed take a lot of time in the \"parameter adjustment\" step, and some metaphysical phenomena will always occur. But after this series of tutorials, I believe you have also recognized some deeper content, let us review the concept of machine learning again："
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:373
 msgid "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E."
-msgstr ""
+msgstr "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:377
 msgid "如果一个计算机程序能够根据经验 E 提升在某类任务 T 上的性能 P, 则我们说程序从经验 E 中进行了学习。"
-msgstr ""
+msgstr "A computer program is said to have learned from experience E if it can improve its performance P on some class of tasks T based on experience E."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:380
 msgid "在指导机器进行学习的过程中，我们对经验、任务和性能需要有更加深刻的理解："
-msgstr ""
+msgstr "In guiding machines to learn, we need a deeper understanding of experience,：, and performance."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:382
 msgid "经验：深度学习的模型经验通常来自于数据集和损失（从犯错中学习）。 在本教程中没有涉及到太多关于数据标采、预处理等相关的知识， 然而在实际工程实践中，数据的质量也十分关键，越多的数据通常能带来越好的性能。 设计科学的损失函数也很重要，它直接决定了我们的优化目标。"
-msgstr ""
+msgstr "Experience：Model experience in deep learning usually comes from datasets and losses (learning from mistakes). In this tutorial, there is not much knowledge about data standardization and preprocessing. However, in practical engineering practice, the quality of data is also very critical, and more data usually brings better performance. It is also important to design a scientific loss function, which directly determines our optimization goals."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:386
 msgid "任务：很多时候，传统领域的知识会给我们带来很多的其它，机器在一些任务上能做得比人类更高效；"
-msgstr ""
+msgstr "Task：Many times, knowledge in traditional fields will bring us a lot of other things, and machines can do some tasks more efficiently than humans;"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:387
 msgid "性能：我们对于不同的任务会选用评估指标，本系列教程中介绍的只是冰山一角。"
-msgstr ""
+msgstr "Performance：We use evaluation metrics for different tasks, and this series of tutorials is just the tip of the iceberg."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:390
 msgid "拓展材料"
-msgstr ""
+msgstr "Expansion material"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:394
 msgid "尽管 GPU 设备相较于 CPU 能获得几十倍甚至更好的加速效果， 但或许你已经发现了一些问题，随着神经网络模型越来越复杂，数据集规模越来越大， 训练模型所需要的时间会越来越久，如何统计参数量和计算量，以及如何保存和加载我们的模型呢？ 请通过查阅 MegEngine 文档找到解决方案，并进行实现。"
-msgstr ""
+msgstr "Although GPU devices can achieve dozens of times or even better acceleration than CPUs, you may have found some problems. The time will be longer and longer, how to count the amount of parameters and calculations, and how to save and load our model? Please find a solution by consulting the MegEngine documentation, and implement it."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:401
 msgid "我们还没有接触到一些经典的卷积神经网络架构如 AlexNet, GoogLeNet, VGGNet, ResNet 等等。 复现这些模型是非常棒的锻炼形式，建议自己搜寻相关材料完成这个挑战。 另外，在旷视科技研究院的 `BaseCls <https://github.com/megvii-research/basecls>`_ 代码库中， 我们能够找到非常多的基于 MegEngine 的 **预训练模型** ，使用预训练模型可以做很多事情。 这些内容在成为炼丹师的路上也是必不可少的技能，我们将在下个教程进行更加具体的介绍。"
-msgstr ""
+msgstr "We haven't touched some classic convolutional neural network architectures like AlexNet, GoogLeNet, VGGNet, ResNet, etc. Reproducing these models is a great form of exercise, and it is recommended that you scour the material for this challenge yourself. In addition, in the `BaseCls <https://github.com/megvii-research/basecls>`_ code base of Megvii Science and Technology Research Institute, we can find a lot of **pre-training models** based on MegEngine, and you can do many things with pre-training models. These contents are also essential skills on the way to become an alchemist, and we will introduce them in more detail in the next tutorial."
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:408
 msgid "参考文献"
-msgstr ""
+msgstr "references"
 
 #: ../../source/getting-started/beginner/convolutional-neural-network.rst:410
 msgid "Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton. Cifar-10 (canadian institute for advanced research). URL: http://www.cs.toronto.edu/~kriz/cifar.html.Yann LeCun, Léon Bottou, Yoshua Bengio, and Patrick Haffner. Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11):2278–2324, 1998."
-msgstr ""
+msgstr "Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton. Cifar-10 (canadian institute for advanced research). URL: http://www.cs.toronto.edu/~kriz/cifar.html. Yann LeCun, Léon Bottou, Yoshua Bengio , and Patrick Haffner. Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11):2278–2324, 1998."
 

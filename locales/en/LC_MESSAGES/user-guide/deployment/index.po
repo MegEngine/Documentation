@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-28 13:02\n"
+"PO-Revision-Date: 2022-02-18 11:21\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -20,99 +20,99 @@ msgstr ""
 
 #: ../../source/user-guide/deployment/index.rst:5
 msgid "模型部署总览与流程建议"
-msgstr ""
+msgstr "Model Deployment Overview and Process Recommendations"
 
 #: ../../source/user-guide/deployment/index.rst:7
 msgid "当使用 MegEngine 完成模型的训练过程后，为了让模型可以实现它的价值，我们需要对模型进行“部署”， 即在特定的硬件设备和系统环境限制下，使用模型进行推理。"
-msgstr ""
+msgstr "After using MegEngine to complete the model training process, in order for the model to realize its value, we need to \"deploy\" the model, that is, use the model for inference under the constraints of specific hardware devices and system environments."
 
 #: ../../source/user-guide/deployment/index.rst:10
 msgid "根据最终部署设备的不同，我们可能将会经历不同的部署路线："
-msgstr ""
+msgstr "Depending on the final deployment device, we may go through different deployment："
 
 #: ../../source/user-guide/deployment/index.rst:16
 msgid "计算硬件"
-msgstr ""
+msgstr "computing hardware"
 
 #: ../../source/user-guide/deployment/index.rst:17
 msgid "举例"
-msgstr ""
+msgstr "Example"
 
 #: ../../source/user-guide/deployment/index.rst:18
 msgid "适用场景"
-msgstr ""
+msgstr "Applicable scene"
 
 #: ../../source/user-guide/deployment/index.rst:20
 msgid "有 Python 环境的设备"
-msgstr ""
+msgstr "Devices with a Python environment"
 
 #: ../../source/user-guide/deployment/index.rst:21
 msgid "GPU 服务器"
-msgstr ""
+msgstr "GPU server"
 
 #: ../../source/user-guide/deployment/index.rst:22
 msgid "希望尽量简单，不在意 Python 性能上的限制"
-msgstr ""
+msgstr "I want it to be as simple as possible, and I don't care about Python performance limitations"
 
 #: ../../source/user-guide/deployment/index.rst:23
 msgid "C / C++ 环境的设备"
-msgstr ""
+msgstr "Devices for the C/C++ environment"
 
 #: ../../source/user-guide/deployment/index.rst:24
 msgid "任何设备，尤其是嵌入式芯片、TEE 环境等"
-msgstr ""
+msgstr "Any device, especially embedded chips, TEE environments, etc."
 
 #: ../../source/user-guide/deployment/index.rst:25
 msgid "希望性能尽量高、资源占用低，能接受编译 C++ 库的复杂性"
-msgstr ""
+msgstr "I hope the performance is as high as possible, the resource usage is low, and I can accept the complexity of compiling C++ libraries"
 
 #: ../../source/user-guide/deployment/index.rst:26
 msgid "NPU"
-msgstr ""
+msgstr "NPU"
 
 #: ../../source/user-guide/deployment/index.rst:27
 msgid "Atlas / RockChip / 寒武纪等芯片"
-msgstr ""
+msgstr "Atlas / RockChip / Cambrian and other chips"
 
 #: ../../source/user-guide/deployment/index.rst:28
 msgid "需要利用 NPU 的算力，接受稍复杂的转换步骤"
-msgstr ""
+msgstr "Need to use the computing power of NPU, accept slightly complicated conversion steps"
 
 #: ../../source/user-guide/deployment/index.rst:30
 msgid "在下面这张流程图中，可以了解到不同部署路线中的几个基本步骤："
-msgstr ""
+msgstr "In the following flow chart, you can understand several basic steps in different deployment：."
 
 #: ../../source/user-guide/deployment/index.rst:48
 msgid "为了更好的选择模型部署，需要了解到以下几点："
-msgstr ""
+msgstr "In order to better choose model deployment, you need to know the following points："
 
 #: ../../source/user-guide/deployment/index.rst:50
 msgid "最推荐的路线为训练代码 -> ``.tm`` 文件 -> ``.mge`` 文件 -> Lite 执行；"
-msgstr ""
+msgstr "The most recommended route is training code -> ``.tm`` file -> ``.mge`` file -> Lite execution;"
 
 #: ../../source/user-guide/deployment/index.rst:51
 msgid "如果你的团队中存在研究员 / 工程人员的分工，建议以 ``.tm`` 文件做为分界面 —— 研究员负责交付 ``.tm`` 模型（永久存档），工程人员负责后续的部署流程；"
-msgstr ""
+msgstr "If there is a researcher/engineering division of labor in your team, it is recommended to use the ``.tm`` file as the interface - the researcher is responsible for delivering the ``.tm`` model (permanently archived), and the engineering staff is responsible for the subsequent deployment process ;"
 
 #: ../../source/user-guide/deployment/index.rst:53
 msgid "如果你独立负责完整的训练到部署过程，且不在意长期存档模型。 为了快捷，可以直接从训练代码生成 ``.mge`` 文件（即上述虚线），结果是等价的。"
-msgstr ""
+msgstr "If you are solely responsible for the complete training-to-deployment process and don't care about archiving the model long-term. For convenience, the ``.mge`` file (ie the dashed line above) can be generated directly from the training code, and the results are equivalent."
 
 #: ../../source/user-guide/deployment/index.rst:58
 msgid ":ref:`tracedmodule-quick-start`"
-msgstr ""
+msgstr ":ref:`tracedmodule-quick-start`"
 
 #: ../../source/user-guide/deployment/index.rst:59
 msgid ":ref:`lite-quick-start-python`"
-msgstr ""
+msgstr ":ref:`lite-quick-start-python`"
 
 #: ../../source/user-guide/deployment/index.rst:60
 msgid ":ref:`lite-quick-start-cpp`"
-msgstr ""
+msgstr ":ref:`lite-quick-start-cpp`"
 
 #: ../../source/user-guide/deployment/index.rst:61
 msgid "`mgeconvert <https://github.com/megengine/mgeconvert>`_ : 适用于 MegEngine 的各种转换器。"
-msgstr ""
+msgstr "`mgeconvert <https://github.com/megengine/mgeconvert>`_ : Various converters for MegEngine."
 
 #~ msgid "将模型部署到 C++ 环境"
 #~ msgstr "Deploy the model to the C++ environment"
