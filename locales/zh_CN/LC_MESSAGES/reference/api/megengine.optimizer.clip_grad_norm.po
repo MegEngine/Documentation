@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-06-03 10:19\n"
+"PO-Revision-Date: 2022-02-21 09:22\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: megengine.optimizer.clip_grad.clip_grad_norm:1 of
 msgid "Clips gradient norm of an iterable of parameters. The norm is computed over all gradients together, as if they were concatenated into a single vector. Gradients are modified in-place."
-msgstr ""
+msgstr "通过限制范数最大值裁剪梯度。会统计所有的梯度，就像所有梯度被合并为一个向量。梯度修改是原地进行。"
 
 #: megengine.optimizer.clip_grad.clip_grad_norm of
 msgid "参数"
@@ -32,15 +32,15 @@ msgstr ""
 
 #: megengine.optimizer.clip_grad.clip_grad_norm:5 of
 msgid "an iterable of Tensors or a single Tensor."
-msgstr ""
+msgstr "可迭代的 Tensor 对象或一个 Tensor"
 
 #: megengine.optimizer.clip_grad.clip_grad_norm:6 of
 msgid "max norm of the gradients."
-msgstr ""
+msgstr "梯度的最大范数。"
 
 #: megengine.optimizer.clip_grad.clip_grad_norm:7 of
 msgid "type of the used p-norm. Can be ``'inf'`` for infinity norm."
-msgstr ""
+msgstr "范数值， 可以用 ``'inf'`` 表示无穷范数。"
 
 #: megengine.optimizer.clip_grad.clip_grad_norm of
 msgid "返回"
@@ -48,5 +48,5 @@ msgstr ""
 
 #: megengine.optimizer.clip_grad.clip_grad_norm:8 of
 msgid "total norm of the parameters (viewed as a single vector)."
-msgstr ""
+msgstr "所有梯度范数（使用单向量形式）。"
 
