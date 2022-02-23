@@ -708,6 +708,7 @@ TensorRT cache
 
 基本信息
 ^^^^^^^^^^^
+
 .. code-block:: cpp
 
     // 获取 MegEngine Lite 的版本信息
@@ -718,3 +719,24 @@ TensorRT cache
     LiteLogLevel get_log_level();
     // 获取指定设备类别的设备数量
     size_t get_device_count(LiteDeviceType device_type);
+
+物理地址和虚拟地址设置
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: cpp
+
+    // 全局设置 vir_ptr, phy_ptr 对到 MegEngine 对应的 device 和 backend 中
+    bool register_memory_pair(
+            void* vir_ptr, void* phy_ptr, size_t length, LiteDeviceType device,
+            LiteBackend backend = LiteBackend::LITE_DEFAULT);
+    // 全局清除 MegEngine 对应的 device 和 backend 中的 vir_ptr, phy_ptr 对 
+    bool clear_memory_pair(
+            void* vir_ptr, void* phy_ptr, LiteDeviceType device,
+            LiteBackend backend = LiteBackend::LITE_DEFAULT);
+    // 通过虚拟地址查询对应 device 和 backend 中的物理地址，并返回
+    void* lookup_physic_ptr(void* vir_ptr, LiteDeviceType device, LiteBackend backend);
+
+部分设备上有虚拟地址和物理地址的概念，这里提供用户操作虚拟地址和物理地址的接口，主要有：
+* 设置全局的物理地址和虚拟地址对
+* 清除这些地址对
+* 通过虚拟地址查询物理地址
