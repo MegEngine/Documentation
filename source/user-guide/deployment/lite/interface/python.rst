@@ -977,6 +977,22 @@ set_log_level
 
 设置 MegEngine Lite 的 log 级别，改函数不在 LiteGlobal 类中，是一个独立的全局函数。
 
+物理地址和虚拟地址操作
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+    
+    def register_memory_pair(
+            vir_ptr, phy_ptr, length, device, backend=LiteBackend.LITE_DEFAULT
+        ):
+    def clear_memory_pair(vir_ptr, phy_ptr, device, backend=LiteBackend.LITE_DEFAULT):
+    def lookup_physic_ptr(vir_ptr, device, backend=LiteBackend.LITE_DEFAULT):
+
+部分设备上有虚拟地址和物理地址的概念，这里提供用户操作虚拟地址和物理地址的接口，主要有：
+* 设置全局的物理地址和虚拟地址对
+* 清除这些地址对
+* 通过虚拟地址查询物理地址
+
 .. _lite_utils_api:
 
 Utils API 
