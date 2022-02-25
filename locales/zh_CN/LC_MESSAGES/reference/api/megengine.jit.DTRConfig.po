@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-28 12:55\n"
+"PO-Revision-Date: 2022-02-24 15:14\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,31 +20,31 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.jit.DTRConfig.rst:5
 msgid "DTRConfig"
-msgstr ""
+msgstr "DTRConfig"
 
 #: megengine.jit.dtr_config.DTRConfig:1 of
 msgid "Configuration for DTR memory optimization."
-msgstr ""
+msgstr "DTR 内存优化的配置。"
 
 #: megengine.jit.dtr_config.DTRConfig of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.jit.dtr_config.DTRConfig:4 of
 msgid "eviction threshold in bytes. When GPU memory usage exceeds this value, DTR will heuristically select and evict resident tensors until the amount of used memory falls below this threshold."
-msgstr ""
+msgstr "驱逐阈值（以字节为单位）。 当 GPU 显存使用量超过此值时，DTR 将启发式地选择并驱逐常驻Tensor，直到使用的显存量低于此阈值。"
 
 #: megengine.jit.dtr_config.DTRConfig:8 of
 msgid "memory threshold of tensors in bytes. Only tensors whose size exceeds this threshold will be added to the candidate set. A tensor that is not added to the candidate set will never be evicted during its lifetime. Default: 1048576."
-msgstr ""
+msgstr "tensor 的内存阈值（以字节为单位）。 只有大小超过此阈值的 tensor 才会被添加到候选集中。 未添加到候选集中的 tensor 在其生命周期内永远不会被驱逐。 默认：1048576"
 
 #: megengine.jit.dtr_config.DTRConfig:13 of
 msgid "hyperparameter of the estimated memory of recomputing the tensor. The larger this value is, the less memory-consuming tensor will be evicted in heuristic strategies. This value is greater than or equal to 0. Default: 1."
-msgstr ""
+msgstr "重新计算 Tensor 估计内存的超参数。该值越大，在启发式策略中被驱逐的 Tensor 内存消耗量就越少。此值大于或等于 0。默认：1"
 
 #: megengine.jit.dtr_config.DTRConfig:18 of
 msgid "hyperparameter of the estimated time of recomputing the tensor. The larger this value is, the less time-consuming tensor will be evicted in heuristic strategies. This value is greater than or equal to 0. Default: 1."
-msgstr ""
+msgstr "重新计算 Tensor 的估计时间的超参数。 该值越大，启发式策略中驱逐的 Tensor 耗时越少。 此值大于或等于 0。默认：1"
 
 #~ msgid "megengine.jit.DTRConfig"
 #~ msgstr ""
