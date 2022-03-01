@@ -143,7 +143,12 @@
 
 .. note::
 
-   通常我们约定使用 ``.mge`` / ``.pkl`` 文件扩展名保存模型。
+   通常我们约定使用 ``.pkl`` 文件扩展名保存模型，如 ``mge_checkpoint_xxx.pkl`` 形式。
+
+.. admonition:: 注意 ``.pkl`` 与 ``.mge`` 文件的区别
+   :class: warning
+
+   ``.mge`` 文件通常是 MegEngine 模型经过 :ref:`dump` 得到的文件，用于推理部署。
 
 什么是状态字典
 ~~~~~~~~~~~~~~
