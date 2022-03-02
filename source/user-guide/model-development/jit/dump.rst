@@ -11,8 +11,8 @@
 
 考虑到推理部署需求，使用 :py:meth:`~.jit.trace.dump`, 即可将训练好的模型序列化到一个文件或文件对象中：
 
-我们以 `ResNet50 <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_
-为例子，参考代码片段如下：
+我们以使用 `ResNet50 <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_
+的预训练模型为例子，参考代码片段如下：
 
 .. code-block:: python
 
