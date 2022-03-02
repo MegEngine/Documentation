@@ -64,26 +64,19 @@
 什么是即时编译
 --------------
 
-即时（Just-In-Time, JIT）是源自编译（Compiling）中的概念。
+即时编译（Just-in-time compilation）是源自编译（Compiling）中的概念。
 
 以传统的 C/C++ 语言为例，我们写完代码之后，
 一般会通过编译器编译生成可执行文件，然后再执行该可执行文件获得执行结果。
 如果我们将从源代码编译生成可执行文件袋过称为 build 阶段，
-将执行可执行文件叫做 runtime 阶段的话，JIT 是没有 build 阶段的，只存在于 runtime 阶段，如下图所示：
-
-.. mermaid::
-   :align: center
-
-   flowchart LR
-    SC[Source Code] -- build --> EF[Executable file]
-    subgraph runtime
-    EF -- execute with JIT --> HS{HotSpot}
-    HS -- faster --> ER[Executed result]
-    EF -- execute without JIT --> ER
-    end
-
+将执行可执行文件叫做 runtime 阶段的话，JIT 是没有 build 阶段的，只存在于 runtime 阶段。
 JIT 一般被用在解释执行的语言如 Python 中，JIT 会在代码执行的过程中检测热点函数（HotSpot），
 随后对热点函数进行重编译，下次运行时遇到热点函数则直接执行编译结果即可。这样做可以显著加快代码执行的速度。
+
+.. seealso::
+
+   维基百科： `Just-in-time compilation 
+   <https://en.wikipedia.org/wiki/Just-in-time_compilation>`_
 
 .. _tracing-optim-example:
 
@@ -102,7 +95,7 @@ JIT 一般被用在解释执行的语言如 Python 中，JIT 会在代码执行�
 
 .. seealso::
 
-   MegEngine 官方博客 《 `JIT in MegEngine 
+   更多相关解释可参考 MegEngine 官方博客 《 `JIT in MegEngine 
    <https://megengine.org.cn/blog/jit-in-megengine>`_ 》
 
 
