@@ -17,7 +17,7 @@ Python 文档字符串风格指南
 
 .. warning::
 
-   * 由于历史原因，MegEngine 曾选择了使用 reStructuredText 文档字符串风格； 
+   * 由于历史原因，MegEngine 曾选择了使用 reStructuredText 文档字符串风格描述参数与返回值；
    * 在 >=1.6 版本的 MegEngine, 所有文档字符串将统一迁移成 Google 风格；
    * 如果你发现了 MegEngine 仍然存在 ReST 风格的参数/返回值写法，欢迎帮我们改正过来。
 
@@ -346,13 +346,21 @@ Docstring 撰写指南
 * 文档字符串应描述函数的调用语法及其语义，但通常不描述其实现细节；
 * 文档字符串应该是描述性风格而不是命令式风格... 等等。
 
+格式化检查与排版预览
+~~~~~~~~~~~~~~~~~~~~
+
 在提交修改之前，可以使用 MegEngine 自带的脚本进行 Python 代码格式化检查：
 
 .. code-block:: shell
    
    ./imperative/python/scripts/format.sh
 
-语法 & 格式正确是文档基本要求，可参考 :ref:`restructuredtext` 与 :ref:`how-to-build-the-doc-locally` 。
+语法 & 格式正确是文档基本底线要求，不能在构建过程中引入 Warning 信息。
+
+.. seealso::
+
+   * :ref:`restructuredtext` —— 掌握 ReST 语法的基础样式排版要求
+   * :ref:`how-to-build-the-doc-locally` —— 验证你的排版是否符合预期视觉效果
 
 除此以外，开发者在为 MegEngine 的 Python API 编写 Docstring 时，其内容必须满足下列要求：
 
@@ -388,11 +396,12 @@ Docstring 撰写指南
 
 .. _docstring-typehint:
 
-对 PEP 484 类型提示进行覆盖
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+酌情覆盖 PEP 484 类型提示
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
+   **这是少数情况。**
    默认情况下，API 文档中的类型提示将按照 `PEP 484 <https://www.python.org/dev/peps/pep-0484>`_ 
    格式从 API 函数或方法的签名中生成，方便一些编辑器做代码跳转和提示，但通常不具备语义描述。
    这种自动生成的类型提示在 Web 文档中样式不够友好，并且对于一些仅内部接口使用到的类型如 ``SymbolVar`` ...
