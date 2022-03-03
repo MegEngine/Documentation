@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-12-13 14:15\n"
+"PO-Revision-Date: 2022-03-03 04:19\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: megengine.functional.debug_param.set_execution_strategy:1 of
 msgid "Sets the execution strategy of :class:`~module.Conv2d` and :func:`~.matmul`"
-msgstr ""
+msgstr "设置用于 :class:`~.module.Conv2d` and :func:`~.matmul` 等算子的执行策略算法"
 
 #: megengine.functional.debug_param.set_execution_strategy of
 msgid "参数"
@@ -32,7 +32,11 @@ msgstr ""
 
 #: megengine.functional.debug_param.set_execution_strategy:3 of
 msgid "Decides how :class:`~.module.Conv2d`and :func:`~.matmul` algorithms are chosen. Available value Strategy      * HEURISTIC uses heuristic to choose the fastest algorithm.     * PROFILE runs possible algorithms on real device to find the best one.     * REPRODUCIBLE uses the algorithms that is reproducible.     * OPTIMIZED uses the algorithms that is optimized."
-msgstr ""
+msgstr "描述如何选择 :class:`~.module.Conv2d` and :func:`~.matmul` 等算子的执行算法。可选的策略为：\n"
+"  * HEURISTIC：使用启发式方式来选择最快的算法。\n"
+"  * PROFILE：在当前真实设备上运行所有可能的算法来确定最优算法。\n"
+"  * REPRODUCIBLE：使用具有可复现特性的算法。\n"
+"  * OPTIMIZED：使用被优化过的算法。"
 
 #: megengine.functional.debug_param.set_execution_strategy:3 of
 msgid "Decides how :class:`~.module.Conv2d`and :func:`~.matmul` algorithms are chosen. Available value Strategy"
@@ -40,51 +44,51 @@ msgstr ""
 
 #: megengine.functional.debug_param.set_execution_strategy:6 of
 msgid "HEURISTIC uses heuristic to choose the fastest algorithm."
-msgstr ""
+msgstr "HEURISTIC：使用启发式方式来选择最快的算法。"
 
 #: megengine.functional.debug_param.set_execution_strategy:7 of
 msgid "PROFILE runs possible algorithms on real device to find the best one."
-msgstr ""
+msgstr "PROFILE：在当前真实设备上运行所有可能的算法来确定最优算法。"
 
 #: megengine.functional.debug_param.set_execution_strategy:8 of
 msgid "REPRODUCIBLE uses the algorithms that is reproducible."
-msgstr ""
+msgstr "REPRODUCIBLE：使用具有可复现特性的算法。"
 
 #: megengine.functional.debug_param.set_execution_strategy:9 of
 msgid "OPTIMIZED uses the algorithms that is optimized."
-msgstr ""
+msgstr "OPTIMIZED：使用被优化过的算法。"
 
 #: megengine.functional.debug_param.set_execution_strategy:11 of
 msgid "The default strategy is HEURISTIC, this options can be combined to form a combination option, e.g. PROFILE | REPRODUCIBLE can combined a option that uses the fastest of profiling result that is also reproducible."
-msgstr ""
+msgstr "默认策略是 HEURISTIC，一个维度的选项可与其它维度的选项相结合，比如： PROFILE | REPRODUCIBLE 可以合并得到一个新策略，使用根据测速结果最快的，并且可复现的算法。"
 
 #: megengine.functional.debug_param.set_execution_strategy:15 of
 msgid "Available values string:"
-msgstr ""
+msgstr "可选的字符串值为："
 
 #: megengine.functional.debug_param.set_execution_strategy:17 of
 msgid "'HEURISTIC' uses heuristic to choose the fastest algorithm."
-msgstr ""
+msgstr "HEURISTIC：使用启发式方式来选择最快的算法。"
 
 #: megengine.functional.debug_param.set_execution_strategy:18 of
 msgid "'PROFILE' runs possible algorithms on real device to find the best one."
-msgstr ""
+msgstr "PROFILE：在当前真实设备上运行所有可能的算法来确定最优算法。"
 
 #: megengine.functional.debug_param.set_execution_strategy:19 of
 msgid "'PROFILE_REPRODUCIBLE' uses the fastest of profiling result that is also reproducible."
-msgstr ""
+msgstr "PROFILE_REPRODUCIBLE：使用根据测速结果最快的，并且具有可复现性的算法"
 
 #: megengine.functional.debug_param.set_execution_strategy:20 of
 msgid "'HEURISTIC_REPRODUCIBLE' uses heuristic to choose the fastest algorithm that is also reproducible."
-msgstr ""
+msgstr "HEURISTIC_REPRODUCIBLE：使用启发式方式选择具有可复现性的算法"
 
 #: megengine.functional.debug_param.set_execution_strategy:22 of
 msgid "The default strategy is 'HEURISTIC'."
-msgstr ""
+msgstr "默认策略是 HEURISTIC。"
 
 #: megengine.functional.debug_param.set_execution_strategy:24 of
 msgid "It can also be set through the environment variable 'MEGENGINE_EXECUTION_STRATEGY'."
-msgstr ""
+msgstr "该选项也可以通过设置环境变量 ``MEGENGINE_EXECUTION_STRATEGY`` 来进行修改。"
 
 #~ msgid "Sets the execution strategy of :class:`~.Conv2d` and :func:`~.matmul`"
 #~ msgstr ""
