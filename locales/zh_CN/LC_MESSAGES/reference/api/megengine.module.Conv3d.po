@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-28 12:23\n"
+"PO-Revision-Date: 2022-03-04 09:57\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.Conv3d.rst:5
 msgid "Conv3d"
-msgstr ""
+msgstr "Conv3d"
 
 #: megengine.module.conv.Conv3d:1 of
 msgid "Applies a 3D convolution over an input tensor."
@@ -28,16 +28,17 @@ msgstr "对输入 tensor 进行三维卷积"
 
 #: megengine.module.conv.Conv3d:3 of
 msgid "For instance, given an input of the size :math:`(N, C_{\\text{in}}, T, H, W)`, this layer generates an output of the size :math:`(N, C_{\\text{out}}, T_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` through the process described as below:"
-msgstr ""
+msgstr "例如，给一个大小为 :math:`(N, C_{\\text{in}}, T, H, W)`的输入, 该层会通过下述过程生成大小为 :math:`(N, C_{\\text{out}}, T_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` 的输出:"
 
 #: megengine.module.conv.Conv3d:8 of
 msgid "\\text{out}(N_i, C_{\\text{out}_j}) = \\text{bias}(C_{\\text{out}_j}) +\n"
 "\\sum_{k = 0}^{C_{\\text{in}} - 1} \\text{weight}(C_{\\text{out}_j}, k) \\star \\text{input}(N_i, k)\n\n"
-msgstr ""
+msgstr "\\text{out}(N_i, C_{\\text{out}_j}) = \\text{bias}(C_{\\text{out}_j}) +\n"
+"\\sum_{k = 0}^{C_{\\text{in}} - 1} \\text{weight}(C_{\\text{out}_j}, k) \\star \\text{input}(N_i, k)\n\n"
 
 #: megengine.module.conv.Conv3d:12 of
 msgid "where :math:`\\star` is the valid 3D cross-correlation operator, :math:`N` is batch size, :math:`C` denotes number of channels."
-msgstr ""
+msgstr "在此式子中 :math:`\\star` 是有效的 3D 互相关（cross-correlation） 运算符, :math:`N` 是 batch 大小, :math:`C` 表示 channels 数量。"
 
 #: megengine.module.conv.Conv3d:15 of
 msgid "When `groups == in_channels` and `out_channels == K * in_channels`, where K is a positive integer, this operation is also known as depthwise convolution."
@@ -85,7 +86,7 @@ msgstr "是否将偏置（bias）加入卷积的结果中。默认：True"
 
 #: megengine.module.conv.Conv3d:47 of
 msgid "Supports `cross_correlation`. Default: `cross_correlation`"
-msgstr ""
+msgstr "支持 `cross_correlation`. 默认: `cross_correlation`"
 
 #: megengine.module.conv.Conv3d:51 of
 msgid "``weight`` usually has shape ``(out_channels, in_channels, depth, height, width)`` , if groups is not 1, shape will be ``(groups, out_channels // groups, in_channels // groups, depth, height, width)``"
@@ -97,7 +98,7 @@ msgstr ""
 
 #: megengine.module.conv.Conv3d:56 of
 msgid "实际案例"
-msgstr ""
+msgstr "实际案例"
 
 #: megengine.module.conv.Conv3d:68 of
 msgid "Outputs:"
