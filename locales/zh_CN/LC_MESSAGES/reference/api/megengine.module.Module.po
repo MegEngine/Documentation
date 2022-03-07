@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2022-03-07 05:42\n"
+"PO-Revision-Date: 2022-03-07 11:58\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -84,7 +84,7 @@ msgstr "Buffer被定义为是 :class:`~.Tensor` 且不是 :class:`~.Parameter`"
 
 #: megengine.module.module.Module.buffers:6 of
 msgid "if ``True``, returns all buffers within this module, else only returns buffers that are direct attributes"
-msgstr ""
+msgstr "如果设置为 ``True``，返回此 module 及其所有子 module 的 buffer，否则仅返回作为此 module 属性的 buffer。"
 
 #: megengine.module.module.Module.buffers:10 of
 msgid ":py:class:`~typing.Iterable`\\[:py:class:`~megengine.tensor.Tensor`]"
@@ -185,11 +185,11 @@ msgstr ""
 
 #: megengine.module.module.Module.named_tensors:1 of
 msgid "Returns an iterable for key tensor pairs of the module, where ``key`` is the dotted path from this module to the tensor."
-msgstr ""
+msgstr "返回一个以从 module 到 tensor 的点路径作为 ``key``的键值对的可迭代对象，"
 
 #: megengine.module.module.Module.named_tensors:7 of
 msgid "if ``True``, returns all tensors within this module, else only returns tensors that are direct attributes of this module."
-msgstr ""
+msgstr "如果设置为 ``True``，返回此 module 及其所有子 module 的 tensor，否则仅返回作为此 module 属性的 tensor。"
 
 #: megengine.module.module.Module.parameters:1 of
 msgid "Returns an iterable for the :class:`~.Parameter` of the module."
@@ -206,11 +206,11 @@ msgstr ""
 
 #: megengine.module.module.Module.register_forward_hook:1 of
 msgid "Registers a hook to handle forward results. `hook` should be a function that receive `module`, `inputs` and `outputs`, then return a modified `outputs` or `None`."
-msgstr ""
+msgstr "注册一个处理推理输出的钩子函数。此函数接受 `module` ， `inputs` 和 `outputs` 作为输入，返回修改过的 `outputs` 或是 `None`。"
 
 #: megengine.module.module.Module.register_forward_hook:4 of
 msgid "This method return a handler with :meth:`~.HookHandler.remove` interface to delete the hook."
-msgstr ""
+msgstr "一个带有 :meth:`~.HookHandler.remove` 接口以删除该钩子函数的句柄。"
 
 #: megengine.module.module.Module.register_forward_hook:7
 #: megengine.module.module.Module.register_forward_pre_hook:7 of
@@ -219,27 +219,27 @@ msgstr ""
 
 #: megengine.module.module.Module.register_forward_pre_hook:1 of
 msgid "Registers a hook to handle forward inputs. `hook` should be a function."
-msgstr ""
+msgstr "注册一个处理推理输入的钩子函数。"
 
 #: megengine.module.module.Module.register_forward_pre_hook:4 of
 msgid "a function that receive `module` and `inputs`, then return a modified `inputs` or `None`."
-msgstr ""
+msgstr "一个接受 `module` 和 `inputs` 作为输入，返回修改过的 `inputs` 或是 `None` 的函数。"
 
 #: megengine.module.module.Module.register_forward_pre_hook of
 msgid "返回"
-msgstr ""
+msgstr "返回"
 
 #: megengine.module.module.Module.register_forward_pre_hook:8 of
 msgid "a handler with :meth:`~.HookHandler.remove` interface to delete the hook."
-msgstr ""
+msgstr "一个带有 :meth:`~.HookHandler.remove` 接口以删除该钩子函数的句柄。"
 
 #: megengine.module.module.Module.replace_param:2 of
 msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to"
-msgstr ""
+msgstr "用 ``params`` 替代此 module 的各参数，被 :class:`~.ParamPack` 使用以加速多机训练。"
 
 #: megengine.module.module.Module.replace_param:2 of
 msgid "speedup multimachine training."
-msgstr ""
+msgstr "提速多机训练"
 
 #: megengine.module.module.Module.tensors:1 of
 msgid "Returns an iterable for the :class:`~.Tensor` of the module."
