@@ -240,6 +240,22 @@ FastAPI 框架的另一个便捷之处在于，你可以通过访问 http://loca
 并且序列化导出，使之能够部署到对性能和资源占用要求都比较高的环境中去，我们将接触到
 MegEngine Lite 来充分发挥 MegEngine 的多平台推理能力，同时兼顾高精度和高性能的要求。
 
+拓展材料
+--------
+
+.. dropdown:: :fa:`eye,mr-1` 尝试其它的 Web/ML 应用框架
+
+   本篇教程中选择了使用 FastAPI 作为 Python Web 框架来搭建服务，
+   实际上你也可以根据自己的实际需求情景选着使用其它的框架，
+   比如 `Flask <https://flask.palletsprojects.com/>`_ ,
+   `Django <https://www.djangoproject.com/>`_ 等等。
+
+   Hugging Face 的 `Spaces <https://huggingface.co/spaces>`_
+   提供了一种方便快捷地展示源自社区的 ML 应用的方式，可以体验一下。
+   你还会接触到 
+   `Gradio <https://gradio.app/>`_ 和 `Streamlit <https://streamlit.io/>`_.
+   对于 ML Apps 的部署，它们非常合适。
+
 参考文献
 --------
 
