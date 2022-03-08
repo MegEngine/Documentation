@@ -169,6 +169,9 @@ DTR 相关
   设置为 0 将使 MegEngine 上层的任务队列变成同步执行，即 Python 调用一个 Op, C++ 层执行一个 Op,
   没执行完前 Python 层不会走到下一句，便于定位 Python 层报错的位置，但会影响速度。
 
+``MEGENGINE_ASYNC_QUEUE_SIZE`` （ :ref:`nd-environ` ）
+  异步队列的大小，默认值为 ``10000``。增加该值会发现内存占用持续增长，是正常现象。
+
 ``MEGENGINE_CATCH_WORKER_EXEC`` （ :ref:`nd-environ` ）
   是否捕获动态图 worker 的异常，默认开启，Debug 时可将其关闭。
 
