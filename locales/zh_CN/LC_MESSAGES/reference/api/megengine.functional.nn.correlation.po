@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2022-01-24 11:44\n"
+"PO-Revision-Date: 2022-03-08 08:32\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: megengine.functional.vision.correlation:1 of
 msgid "Applies correlation to inputs."
-msgstr ""
+msgstr "计算两特征图之间的相关系数。"
 
 #: megengine.functional.vision.correlation of
 msgid "参数"
@@ -32,35 +32,35 @@ msgstr ""
 
 #: megengine.functional.vision.correlation:4 of
 msgid "Input data1 to the correlation. format must be nchw"
-msgstr ""
+msgstr "格式为 `NCHW` 的特征图1"
 
 #: megengine.functional.vision.correlation:6 of
 msgid "Input data2 to the correlation. format must be nchw"
-msgstr ""
+msgstr "格式为 `NCHW` 的特征图2"
 
 #: megengine.functional.vision.correlation:8 of
 msgid "int (non-negative), optional, default=1) – kernel size for Correlation must be an odd number"
-msgstr ""
+msgstr "非负奇整数，表示 patch 的大小，即计算时邻域大小。默认值为 1"
 
 #: megengine.functional.vision.correlation:10 of
 msgid "int (non-negative), optional, default=1) – Max displacement of Correlation"
-msgstr ""
+msgstr "非负整数，计算时的窗口大小。默认值为 1"
 
 #: megengine.functional.vision.correlation:12 of
 msgid "int (non-negative), optional, default=1) – stride1 quantize data1 globally"
-msgstr ""
+msgstr "非负整数，特征图 1 上取值的步长。其值决定输出的宽和高。默认值为 1。"
 
 #: megengine.functional.vision.correlation:14 of
 msgid "int (non-negative), optional, default=1) – stride2 quantize data2 within the neighborhood centered around data1"
-msgstr ""
+msgstr "非负整数，在特征图 2 中取特征图 1 的邻域的步长。默认值为1。"
 
 #: megengine.functional.vision.correlation:16 of
 msgid "int (non-negative), optional, default=0) – pad for Correlation"
-msgstr ""
+msgstr "非负整数，在四个方向分别对两输入补 0 的数量"
 
 #: megengine.functional.vision.correlation:18 of
 msgid "boolean, optional, default=True) – operation type is either multiplication or absolute difference"
-msgstr ""
+msgstr "布尔值，设置为 ``True`` 时累积对应点的乘积，否则累积对应点差值的绝对值。默认为 ``True``。"
 
 #: megengine.functional.vision.correlation of
 msgid "返回类型"

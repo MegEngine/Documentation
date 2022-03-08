@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 05:23\n"
+"PO-Revision-Date: 2022-03-08 08:32\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,43 +20,47 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.SlidingWindowTranspose.rst:5
 msgid "SlidingWindowTranspose"
-msgstr ""
+msgstr "SlidingWindowTranspose"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:1 of
 msgid "Opposite opration of SlidingWindow, sum over the sliding windows on the corresponding input location. Given an input of the size :math:`(N, C,  IH, IW, window_h, window_w)` and :attr:`output_size`, the output shape would be :math:`(N, C, output\\_size_{h}, output\\_size_{w})` and the arguments must satisfy"
-msgstr ""
+msgstr "SlidingWindow 的相反操作，对相应输入位置的滑动窗口求和。给定一个大小 :math:`(N, C,  IH, IW, window_h, window_w)` 的input 和 :attr:`output_size`, output shape 应该是 :math:`(N, C, output\\_size_{h}, output\\_size_{w})` 并且参数必须满足"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:7 of
 msgid "\\text{IH} = \\lfloor \\frac{\\text{output_size}_{h} + 2 * \\text{padding}_{h} -\n"
 "\\text{dilation}_{h} * (\\text{kernel_size}_{h} - 1) - 1}{\\text{stride}_{h}} + 1 \\rfloor\n\n"
-msgstr ""
+msgstr "\\text{IH} = \\lfloor \\frac{\\text{output_size}_{h} + 2 * \\text{padding}_{h} -\n"
+"\\text{dilation}_{h} * (\\text{kernel_size}_{h} - 1) - 1}{\\text{stride}_{h}} + 1 \\rfloor\n\n"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:11 of
 msgid "\\text{IW} = \\lfloor \\frac{\\text{output_size}_{w} + 2 * \\text{padding}_{w} -\n"
 "\\text{dilation}_{w} * (\\text{kernel_size}_{w} - 1) - 1}{\\text{stride}_{w}} + 1 \\rfloor\n\n"
-msgstr ""
+msgstr "\\text{IW} = \\lfloor \\frac{\\text{output_size}_{w} + 2 * \\text{padding}_{w} -\n"
+"\\text{dilation}_{w} * (\\text{kernel_size}_{w} - 1) - 1}{\\text{stride}_{w}} + 1 \\rfloor\n\n"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:15 of
 msgid "For each output location, we have:"
-msgstr ""
+msgstr "对于每个output 位置，有："
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:17 of
 msgid "\\text{out}_{n, c, oh, ow} = \\sum_{n,c,oh,ow=location(n, c, ih, iw, wh, ww)}\\text{src}_{n, c, ih, iw, wh, ww}\n\n"
-msgstr ""
+msgstr "\\text{out}_{n, c, oh, ow} = \\sum_{n,c,oh,ow=location(n, c, ih, iw, wh, ww)}\\text{src}_{n, c, ih, iw, wh, ww}\n\n"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:20 of
 msgid "\\text{location}(n, c, ih, iw, wh, ww) &= (n, c, oh+wh, ow+ww) \\\\\n"
 "\\text{where } & oh=-pad_h+ih \\times stride_h + (wh-1) \\times (dilation_h-1) \\\\\n"
 "               & ow=-pad_w+iw \\times stride_w + (ww-1) \\times (dilation_w-1)\n\n"
-msgstr ""
+msgstr "\\text{location}(n, c, ih, iw, wh, ww) &= (n, c, oh+wh, ow+ww) \\\\\n"
+"\\text{where } & oh=-pad_h+ih \\times stride_h + (wh-1) \\times (dilation_h-1) \\\\\n"
+"               & ow=-pad_w+iw \\times stride_w + (ww-1) \\times (dilation_w-1)\n\n"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:26 of
 msgid "the size of the output tensor."
-msgstr ""
+msgstr "output tensor的大小"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:28 of
 msgid "the size of the window to take a max over."
@@ -64,15 +68,15 @@ msgstr "从中取最大值的窗口大小。"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:30 of
 msgid "implicit zero padding to be added on both sides. Default: 0"
-msgstr ""
+msgstr "在两侧隐式添加零填充（zero padding）。默认：0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:32 of
 msgid "the stride of the window. Default: 1"
-msgstr ""
+msgstr "window的步长. 默认: 1"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:34 of
 msgid "the dilation of the window. Default: 1"
-msgstr ""
+msgstr "window的扩张。默认：1"
 
 #~ msgid "Example:"
 #~ msgstr ""

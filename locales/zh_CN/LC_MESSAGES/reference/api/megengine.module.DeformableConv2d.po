@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-28 12:20\n"
+"PO-Revision-Date: 2022-03-08 08:25\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.DeformableConv2d.rst:5
 msgid "DeformableConv2d"
-msgstr ""
+msgstr "DeformableConv2d"
 
 #: megengine.module.conv.DeformableConv2d:1 of
 msgid "Deformable Convolution."
@@ -40,7 +40,7 @@ msgstr "输出数据中的通道数。"
 
 #: megengine.module.conv.DeformableConv2d:8 of
 msgid "size of weight on spatial dimensions. If kernel_size is an :class:`int`, the actual kernel size would be ``(kernel_size, kernel_size)``."
-msgstr ""
+msgstr "空间维度上的权重大小。如果kernel_size 是一个 :class:`int`, 实际的kernel大小为 ``(kernel_size, kernel_size)``."
 
 #: megengine.module.conv.DeformableConv2d:12 of
 msgid "stride of the 2D convolution operation. Default: 1"
@@ -56,7 +56,7 @@ msgstr "二维卷积运算的空洞（dilation）。默认：1"
 
 #: megengine.module.conv.DeformableConv2d:19 of
 msgid "number of groups into which the input and output channels are divided, so as to perform a ``grouped convolution``. When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by groups, and the shape of weight should be ``(groups, out_channel // groups, in_channels // groups, height, width)``. Default: 1"
-msgstr ""
+msgstr "输入输出的通道被划分的组的数量, 以便执行 ``grouped convolution``. 当 ``groups`` 不为 1, ``in_channels`` 和 ``out_channels`` 必须能被``groups``整除, 并且weight的shape应该是``(groups, out_channel // groups, in_channels // groups, height, width)``. 默认值: 1"
 
 #: megengine.module.conv.DeformableConv2d:25 of
 msgid "whether to add a bias onto the result of convolution. Default: True"
@@ -64,19 +64,19 @@ msgstr "是否将偏置（bias）加入卷积的结果中。默认：True"
 
 #: megengine.module.conv.DeformableConv2d:27 of
 msgid "Supports `cross_correlation`. Default: `cross_correlation`"
-msgstr ""
+msgstr "支持 `cross_correlation`. 默认: `cross_correlation`"
 
 #: megengine.module.conv.DeformableConv2d:29 of
 msgid "When set to \"default\", no special requirements will be placed on the precision of intermediate results. When set to \"float32\", \"float32\" would be used for accumulator and intermediate result, but only effective when input and output are of float16 dtype."
-msgstr ""
+msgstr "当设置 \"default\" 时, 不会对中间结果的精度有特殊要求。当设置 \"float32\" 时, \"float32\" 将被用作中间结果的累加器, 但是只有当输入和输出的dtype是float16时有效。"
 
 #: megengine.module.conv.DeformableConv2d:36 of
 msgid "``weight`` usually has shape ``(out_channels, in_channels, height, width)`` , if groups is not 1, shape will be ``(groups, out_channels // groups, in_channels // groups, height, width)``"
-msgstr ""
+msgstr "``weight`` 的shape通常是 ``(out_channels, in_channels, height, width)`` , 如果 groups 不为 1, shape 应是 ``(groups, out_channels // groups, in_channels // groups, height, width)``"
 
 #: megengine.module.conv.DeformableConv2d:38 of
 msgid "``bias`` usually has shape ``(1, out_channels, *1)``"
-msgstr ""
+msgstr "``bias`` 的shape通常是 ``(1, out_channels, *1)``"
 
 #~ msgid "基类：:class:`megengine.module.conv._ConvNd`"
 #~ msgstr "基类：:class:`megengine.module.conv._ConvNd`"
