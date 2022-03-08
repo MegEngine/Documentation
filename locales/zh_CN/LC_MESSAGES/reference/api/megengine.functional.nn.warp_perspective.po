@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2022-01-24 11:44\n"
+"PO-Revision-Date: 2022-03-08 14:33\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.functional.nn.warp_perspective.rst:2
 msgid "megengine.functional.nn.warp\\_perspective"
-msgstr ""
+msgstr "megengine.functional.nn.warp\\_perspective"
 
 #: megengine.functional.vision.warp_perspective:1 of
 msgid "Applies perspective transformation to batched 2D images."
@@ -35,15 +35,18 @@ msgid "\\text{output}(n, c, h, w) = \\text{input} \\left( n, c,\n"
 "    \\frac{M_{00}w + M_{01}h + M_{02}}{M_{20}w + M_{21}h + M_{22}},\n"
 "    \\frac{M_{10}w + M_{11}h + M_{12}}{M_{20}w + M_{21}h + M_{22}}\n"
 "    \\right)\n\n"
-msgstr ""
+msgstr "\\text{output}(n, c, h, w) = \\text{input} \\left( n, c,\n"
+"    \\frac{M_{00}w + M_{01}h + M_{02}}{M_{20}w + M_{21}h + M_{22}},\n"
+"    \\frac{M_{10}w + M_{11}h + M_{12}}{M_{20}w + M_{21}h + M_{22}}\n"
+"    \\right)\n\n"
 
 #: megengine.functional.vision.warp_perspective:11 of
 msgid "Optionally, we can set `mat_idx` to assign different transformations to the same image, otherwise the input images and transformations should be one-to-one correnspondence."
-msgstr ""
+msgstr "可选地，我们可以通过设置 `mat_idx` 来对同一图像不同batch指定不同的变换矩阵， 不然输入图像和变换矩阵之间就会是一一对应的关系"
 
 #: megengine.functional.vision.warp_perspective of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.functional.vision.warp_perspective:15 of
 msgid "input image."
@@ -51,19 +54,19 @@ msgstr "输入图像。"
 
 #: megengine.functional.vision.warp_perspective:17 of
 msgid "batch, 3, 3)` transformation matrix."
-msgstr ""
+msgstr "batch, 3, 3)` 的变换矩阵。"
 
 #: megengine.functional.vision.warp_perspective:19 of
 msgid "h, w)` size of the output image."
-msgstr ""
+msgstr "h, w)` 输出图像的大小。"
 
 #: megengine.functional.vision.warp_perspective:21 of
 msgid "batch, )` image batch idx assigned to each matrix. Default: None"
-msgstr ""
+msgstr "batch, )` 每个矩阵对应的图像批次。默认是：None。"
 
 #: megengine.functional.vision.warp_perspective:23 of
 msgid "pixel extrapolation method. Default: \"replicate\". Currently also support \"constant\", \"reflect\", \"reflect_101\", \"wrap\"."
-msgstr ""
+msgstr "边界处理方式。默认是：“replicate”。现在也支持“constant”，“reflect”，“reflect_101”，“wrap”。"
 
 #: megengine.functional.vision.warp_perspective:27 of
 msgid "value used in case of a constant border. Default: 0"
@@ -71,11 +74,11 @@ msgstr "边界填充值。 默认：0"
 
 #: megengine.functional.vision.warp_perspective:29 of
 msgid "NHWC\" is also supported. Default: \"NCHW\"."
-msgstr ""
+msgstr "NHWC“ 也支持。默认：”NCHW“。"
 
 #: megengine.functional.vision.warp_perspective:31 of
 msgid "interpolation methods. Default: \"linear\". Currently only support \"linear\" mode."
-msgstr ""
+msgstr "插值方式。默认：”linear“。现在只支持 \"linear\" 的模式。"
 
 #: megengine.functional.vision.warp_perspective of
 msgid "返回类型"
@@ -87,7 +90,7 @@ msgstr ":py:class:`~megengine.tensor.Tensor`"
 
 #: megengine.functional.vision.warp_perspective of
 msgid "返回"
-msgstr ""
+msgstr "返回"
 
 #: megengine.functional.vision.warp_perspective:35 of
 msgid "output tensor."
@@ -99,7 +102,7 @@ msgstr "转换矩阵是 `cv2.warpPerspective` 使用的矩阵的逆矩阵。"
 
 #: megengine.functional.vision.warp_perspective:40 of
 msgid "实际案例"
-msgstr ""
+msgstr "实际案例"
 
 #: megengine.functional.vision.warp_perspective:57 of
 msgid "Outputs:"
