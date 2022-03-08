@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 05:20\n"
+"PO-Revision-Date: 2022-03-08 08:31\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,21 +20,23 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.SlidingWindow.rst:5
 msgid "SlidingWindow"
-msgstr ""
+msgstr "SlidingWindow"
 
 #: megengine.module.sliding_window.SlidingWindow:1 of
 msgid "Apply a sliding window to input tensor and copy content in the window to corresponding output location. Assume input shape is :math:`(N, C, IH, IW)`, then output shape would be :math:`(N, C, OH, OW, window_h, window_w)` where :math:`(OH, OW)` would be computed from padding, stride, window and :math:`(IH, IW)`, as in convolution. For each output location, we have;"
-msgstr ""
+msgstr "将滑动窗口应用于input tensor并将窗口中的内容复制到相应的output 位置. 假设 input shape 是 :math:`(N, C, IH, IW)`, 那么 output shape 应该是 :math:`(N, C, OH, OW, window_h, window_w)` 其中 :math:`(OH, OW)` 应该由 padding, stride, window 和 :math:`(IH, IW)` 计算得到, 和卷积一样，对于每个output 位置，有："
 
 #: megengine.module.sliding_window.SlidingWindow:7 of
 msgid "out_{n, c, oh, ow, wh, ww} &= src_{n, c, ih+wh, iw+ww} \\\\\n"
 "\\text{where } & ih=-pad_h+oh \\times stride_h + (wh-1) \\times (dilation_h-1) \\\\\n"
 "               & iw=-pad_w+ow \\times stride_w + (ww-1) \\times (dilation_w-1)"
-msgstr ""
+msgstr "out_{n, c, oh, ow, wh, ww} &= src_{n, c, ih+wh, iw+ww} \\\\\n"
+"\\text{where } & ih=-pad_h+oh \\times stride_h + (wh-1) \\times (dilation_h-1) \\\\\n"
+"               & iw=-pad_w+ow \\times stride_w + (ww-1) \\times (dilation_w-1)"
 
 #: megengine.module.sliding_window.SlidingWindow of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.sliding_window.SlidingWindow:14 of
 msgid "the size of the window to take a max over."
@@ -42,19 +44,19 @@ msgstr "从中取最大值的窗口大小。"
 
 #: megengine.module.sliding_window.SlidingWindow:16 of
 msgid "implicit zero padding to be added on both sides. Default: 0"
-msgstr ""
+msgstr "在两侧隐式添加零填充（zero padding）。默认：0"
 
 #: megengine.module.sliding_window.SlidingWindow:18 of
 msgid "the stride of the window. Default: 1"
-msgstr ""
+msgstr "window的步长. 默认: 1"
 
 #: megengine.module.sliding_window.SlidingWindow:20 of
 msgid "the dilation of the window. Default: 1"
-msgstr ""
+msgstr "window的扩张。默认：1"
 
 #: megengine.module.sliding_window.SlidingWindow:23 of
 msgid "示例"
-msgstr ""
+msgstr "示例"
 
 #: megengine.module.sliding_window.SlidingWindow:35 of
 msgid "Outputs:"
