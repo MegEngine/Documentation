@@ -76,7 +76,7 @@ def main():
     for rank, (prob, classid) in enumerate(
         zip(top_probs.numpy().reshape(-1), classes.numpy().reshape(-1))
     ):
-        print("{}: class = {:20s} with probability = {:4.1f} %".format(
+        print("{}: class = {:20s} with probability = {:4.7f} %".format(
             rank, imagenet_class_index[str(classid)][1], 100 * prob
         ))
 
