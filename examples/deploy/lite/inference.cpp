@@ -1,11 +1,9 @@
-#include <cstdlib>
-#include <memory>
-#include <stdlib.h>
+#include <cstdint>
 #include <iostream>
+#include <opencv2/core/matx.hpp>
 #include <opencv2/core/types.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
-#include <opencv2//opencv.hpp>
 #include "lite/network.h"
 #include "lite/tensor.h"
 #include "ImageNetLabels.h"
@@ -32,9 +30,9 @@ int main (int argc, char *argv[]) {
   //! Read image data, preprocess and fill to input tensor
   cv::Mat image = cv::imread(argv[2], cv::IMREAD_COLOR);
 
-  //! 1. Resize --
+  //! 1. Resize 
   const int resizeWidth = 256, resizeHeight = 256;
-  cv::Size scale(256, 256);
+  cv::Size scale(resizeWidth, resizeHeight);
   cv::resize(image, image, scale, 0, 0, cv::INTER_LINEAR);
 
   //! 2. Center crop
@@ -43,22 +41,27 @@ int main (int argc, char *argv[]) {
   const int offsetH = (image.rows - cropSize) / 2.0;
   const cv::Rect roi(offsetW, offsetH, cropSize, cropSize);
   image = image(roi).clone();
-  image.convertTo(image, CV_32FC3);  // Usigned int to float
-  
+  image.convertTo(image, CV_32FC2);  // Usigned int to float
+
   //! Fill image data to input tensor
   float* imgptr = image.ptr<float>();
   float* in_data_ptr = static_cast<float*>(input_tesnor->get_memory_ptr());
 
-  //! 3 & 4. Normalize and ToMode("HWC" to "CHW")
+  //! 4. Normalize and ToMode("HWC" to "CHW")
   const float mean[] = {103.530f, 116.280f, 123.675f}; // BGR
   const float std[] = {57.375f, 57.120f, 58.395f};
-  size_t pixels = cropSize * cropSize;
-  for (size_t i = 0; i < pixels; i++) {
+
+  //！The following code can be processed in parallel,
+  //! not done here for ease of understanding
+  size_t pixelsPerChannel = image.cols * image.rows;
+  for (size_t i = 0; i < pixelsPerChannel; i++) {
     for (size_t j = 0; j < 3; j++) {
-      in_data_ptr[i + pixels * j] = (imgptr[3 * i + j] - mean[j]) / std[j];
+      float value = imgptr[3 * i + j];
+      float normalized_value = (value - mean[j]) / std[j];
+      in_data_ptr[i + pixelsPerChannel * j] = normalized_value;
     }
   }
-  
+
   //! Forward (inference)
   network->forward();
   network->wait();
@@ -73,7 +76,7 @@ int main (int argc, char *argv[]) {
   std::string max_class = label.imagenet_labelstring(0);
 
   const int numClasses = 1000;
-  const float threshold = 0.02;
+  const float threshold = 0.025;
   for (size_t i = 0; i < numClasses; i++) {
     float cur_prob = predict_ptr[i];
     std::string cur_label = label.imagenet_labelstring(i);

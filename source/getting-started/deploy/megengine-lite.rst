@@ -80,7 +80,7 @@ MegEngine Lite 是 MegEngine 的一层接口封装，主要目的是为用户提
       data = np.random.random([1, 3, 224, 224]).astype(np.float32)
       infer_func(Tensor(data), model=net)
 
-   注：为了方便和 Lite 接口调用结果对比，实际执行脚本时默认会使用一张暹罗猫作为输入样本。
+   注：为了方便和 Lite 接口调用结果对比，实际执行脚本时默认会使用一张暹罗猫图片作为输入样本。
 
 #. 将静态图通过 :meth:`~.trace.dump` 接口序列化导出成最终所需要的 ``.mge`` 模型：
 
@@ -88,7 +88,16 @@ MegEngine Lite 是 MegEngine 的一层接口封装，主要目的是为用户提
 
       infer_func.dump("snetv2_x100_deploy.mge", arg_names=["data"])
 
-   你会在当前目录下得到 ``snetv2_x100_deploy.mge`` 文件，并看到分类的预测输出。
+   你会在当前目录下得到 ``snetv2_x100_deploy.mge`` 文件，并看到分类的预测输出（数值仅供参考）。
+
+   .. code-block::
+
+      0: class = Siamese_cat          with probability = 20.2 %
+      1: class = lynx                 with probability = 13.3 %
+      2: class = Egyptian_cat         with probability =  9.5 %
+      3: class = Persian_cat          with probability =  4.9 %
+      4: class = Angora               with probability =  3.0 %
+
 
 使用 megenginelite 验证
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -201,6 +210,25 @@ MegEngine Lite 的 C++ 接口和 Python 接口设计基本一致，因此整个�
 使用图片数据作为输入
 ~~~~~~~~~~~~~~~~~~~~
 
+.. admonition:: 使用 C++ 推理时的注意事项
+   :class: warning
+
+   由于我们在执行推理前，存在着一些对输入图片进行预处理的步骤，
+   可能存在着对应的 Python 接口在 C++ 环境中没有提供，需要自行比对实现。
+   为了保证整个推理过程的一致性，我们需要保证输入数据的预处理也是一致的。
+   MegEngine 中对图片的预处理底层使用到了 ``opencv-python``,
+   其本质上是对 OpenCV 的 C++ 库做了语言绑定，在底层调用了一致的接口。
+   比如 ``imread``, ``resize`` 等等...
+
+   同理，如果你的输入数据是其它的格式，也需要保证预处理的步骤是一致的，
+   这样输入模型中的 Lite Tensor 的初始状态才能与 Python 推理一致。
+
+.. admonition:: 将预处理流程作为模型的一部分
+
+   另一种处理方式是，在被 :class:`~.trace` 的推理函数中加入预处理逻辑，
+   即图片读入转为 Tensor 后，借助 :mod:`~.functional` 模块，
+   在模型最开始进行预处理操作，这样就不用考虑编写一致的 C++ 预处理代码。
+
 接下来我们需要用真实的图片进行验证，过程中需要用到 OpenCV C++ 库来处理图片：
 
 .. code-block:: shell
@@ -208,8 +236,10 @@ MegEngine Lite 的 C++ 接口和 Python 接口设计基本一致，因此整个�
    export OpenCV_DIR=/path/to/opencv-lib/
 
 获取 OpenCV C++ 库的步骤不会在这里进行介绍，请参考 `OpenCV
-<https://github.com/opencv/opencv>`_ 官方说明进行操作，
-你可以自行编译，也可以选择使用预构建好的版本，或是可靠的精简过的特定版本。
+<https://github.com/opencv/opencv>`_ 文档进行操作。
+为了保证 Lite 的推理结果高度一致，建议在同样的环境下进行相同版本 OpenCV 的编译。
+如果使用第三方提供的预编译版本，可能会导致图片读取进来的像素值存在细微差异，
+最终导致推理的结果值有较大误差（尽管可能依旧预测出正确的分类）。
 
 .. dropdown:: :fa:`eye,mr-1` 展开完整代码
 
@@ -219,13 +249,6 @@ MegEngine Lite 的 C++ 接口和 Python 接口设计基本一致，因此整个�
       :language: cpp
 
    在同一目录下提供了 CMakeLists.txt 文件，可点开了解细节。
-
-   .. admonition:: 使用 C++ 推理时的注意事项
-      :class: warning
-
-      由于我们在执行推理前，存在着一些对输入图片进行预处理的步骤，
-      可能存在着对应的 Python 接口在 C++ 环境中没有提供，需要自行比对实现。
-      为了保证整个推理过程的一致性，我们需要保证输入数据的预处理也是一致的。
 
 我们在这一步选择借助 CMake 来编译构建 C++ 推理代码：
 
@@ -242,7 +265,13 @@ MegEngine Lite 的 C++ 接口和 Python 接口设计基本一致，因此整个�
 
 就能看到最终的推理结果，对暹罗猫图片的类别进行了正确的预测。
 
+.. code-block:: 
 
-
-
+   The class tabby, tabby catwith probability = 2.5972%
+   The class Persian catwith probability = 4.90259%
+   The class Siamese cat, Siamesewith probability = 20.1514%
+   The class Egyptian catwith probability = 9.49989%
+   The class lynx, catamountwith probability = 13.277%
+   The class Angora, Angora rabbitwith probability = 2.99404%
+   The final predicted class is Siamese cat, Siamese with probability = 20.1514%
 
