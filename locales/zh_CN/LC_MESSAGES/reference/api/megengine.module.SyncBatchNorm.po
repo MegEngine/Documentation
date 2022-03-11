@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 04:53\n"
+"PO-Revision-Date: 2022-03-11 09:27\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,15 +20,15 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.SyncBatchNorm.rst:5
 msgid "SyncBatchNorm"
-msgstr ""
+msgstr "SyncBatchNorm"
 
 #: megengine.module.batchnorm.SyncBatchNorm:1 of
 msgid "Applies Synchronized Batch Normalization for distributed training."
-msgstr "对于分布式训练执行组同步Batch Normalization操作。"
+msgstr "对于分布式训练执行组多机同步版本的 BatchNormalization 操作。"
 
 #: megengine.module.batchnorm.SyncBatchNorm of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.batchnorm.SyncBatchNorm:3 of
 msgid "usually :math:`C` from an input of shape :math:`(N, C, H, W)` or the highest ranked dimension of an input less than 4D."
@@ -56,7 +56,7 @@ msgstr "设置为True时，此模块不会更新运行运行时平均值和运�
 
 #: megengine.module.batchnorm.SyncBatchNorm:22 of
 msgid "communication group, caculate mean and variance between this group. Default: :obj:`~.distributed.WORLD`"
-msgstr ""
+msgstr "多机通信中的分组，用于计算组内的均值和方差。默认为全局分组 :obj:`~.distributed.WORLD`"
 
 #~ msgid "基类：:class:`megengine.module.batchnorm._BatchNorm`"
 #~ msgstr "基类：:class:`megengine.module.batchnorm._BatchNorm`"
