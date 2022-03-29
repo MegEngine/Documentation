@@ -3,6 +3,11 @@
 ==========
 开发者指南
 ==========
+.. meta::
+   :description lang=zh-Hans: 天元 MegEngine 框架开发者的参考说明书。
+   :description lang=en: MegEngine developer reference manual.
+   :keywords lang=zh-Hans: 天元, 深度学习, 框架, 开发者, 参考, 手册, 说明书
+   :keywords lang=en: MegEngine, deep learning, framework, developer, reference, manual
 
 .. toctree::
    :maxdepth: 1
