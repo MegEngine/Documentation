@@ -40,6 +40,7 @@ MegEngine 模型推理部署教程
 
    fast-api
    megengine-lite
+   android
 
 在用户指南的 :ref:`deployment` 页面中，对常见情况进行了总结，并给出了最佳实践。
 而本套教程将从最原始的情况 —— 即使用与模型训练完全一致环境的，向你演示模型部署的最简概念与形式。
