@@ -3,6 +3,12 @@
 ========
 用户指南
 ========
+.. meta::
+   :description lang=zh-Hans: 天元 MegEngine 用户指南，能够引导用户在不同需求下完成相应的目标。
+   :description lang=en: MegEngine guides that help users accomplish the corresponding goals in different situations.
+   :keywords lang=zh-Hans: 天元, 深度学习, 指南, 用户指南, 使用手册, 案例, 示范, 如何完成
+   :keywords lang=en: MegEngine, deep learning, guide, user guide, how-to, example, step-by-step
+
 .. toctree::
    :hidden:
    :maxdepth: 1
