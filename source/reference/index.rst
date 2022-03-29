@@ -3,6 +3,12 @@
 ========
 API 参考
 ========
+.. meta::
+   :description lang=zh-Hans: 天元 MegEngine API 定义与使用介绍，提供权威参考信息。
+   :description lang=en: MegEngine API manual and official reference.
+   :keywords lang=zh-Hans: 天元, 深度学习, 接口, 规格, 定义, 查询, 引用, 参考, 用例
+   :keywords lang=en: MegEngine, deep learning, interface, specification, define, reference, example
+
 :对应版本: |version|
 :更新时间: |today|
 
