@@ -351,15 +351,15 @@ Batch Normalization
                fan_in, _ = M.init.calculate_fan_in_and_fan_out(m.weight)
                bound = 1 / math.sqrt(fan_in)
                M.init.uniform_(m.bias, -bound, bound)
-           elif isinstance(m, M.BatchNorm2d):
-               M.init.ones_(m.weight)
-               M.init.zeros_(m.bias)
-           elif isinstance(m, M.Linear):
-               M.init.msra_uniform_(m.weight, a=math.sqrt(5))
-               if m.bias is not None:
-                   fan_in, _ = M.init.calculate_fan_in_and_fan_out(m.weight)
-                   bound = 1 / math.sqrt(fan_in)
-                   M.init.uniform_(m.bias, -bound, bound)
+       elif isinstance(m, M.BatchNorm2d):
+           M.init.ones_(m.weight)
+           M.init.zeros_(m.bias)
+       elif isinstance(m, M.Linear):
+           M.init.msra_uniform_(m.weight, a=math.sqrt(5))
+           if m.bias is not None:
+               fan_in, _ = M.init.calculate_fan_in_and_fan_out(m.weight)
+               bound = 1 / math.sqrt(fan_in)
+               M.init.uniform_(m.bias, -bound, bound)
 
 .. seealso::
 
