@@ -45,6 +45,16 @@ jobs:
       matrix:
         language: ["zh_CN", "en"]
     steps:
+
+      # TODO: This step is only working for zh_CN website now (it should always be on ideally).
+      # Because there are still lots of warnings should be fixed in en site.
+      # They were caused by machine translation generated contents and need to be fixed in the future.
+      # Finally, any warning case should break the building process.
+      - name: Set env for Sphinx build args
+        if: ${{ contains(matrix.language, 'zh') }}
+        run: |
+          echo "buildExtraArgs=-W --keep-going" >> $GITHUB_ENV
+
       - name: Checkout repsitory
         uses: actions/checkout@v2
         with:
@@ -82,7 +92,7 @@ jobs:
 
       - name: Generate HTML files
         run: |
-          make LANGUAGE=${{ matrix.language }} html --keep-going
+          make html SPHINXOPTS="-j auto -D language=${{ matrix.language }} ${{ env.buildExtraArgs }}"
           mv build/html ${{ matrix.language }}
           tar czf ${{ matrix.language }}.tgz ${{ matrix.language }}
 
