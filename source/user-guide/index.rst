@@ -53,6 +53,7 @@
    deployment/lite/index
    deployment/lite/interface/index
    deployment/lite/advance/index
+   deployment/lite/load_and_run/index
 
 .. toctree::
    :caption: 工具与插件篇
@@ -61,8 +62,6 @@
 
    tools/stats
    tools/runtimeopr
-   tools/load-and-run
-   tools/load-and-run-py
    tools/customop
 
 用户指南是一份较为通用的 MegEngine 操作手册，
