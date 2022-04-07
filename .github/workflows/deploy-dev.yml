@@ -63,7 +63,8 @@ jobs:
 
       - name: Generate static.tgz
         run: |
-          export PYTHONPATH=./megengine/imperative/python
+          export PYTHONPATH=./megengine/imperative/python:$PYTHONPATH
+          export PYTHONPATH=./megengine/lite/pylite:$PYTHONPATH
           export MGE_DOC_MODE="FULL"
           ./scripts/oss/build_for_oss.sh
 

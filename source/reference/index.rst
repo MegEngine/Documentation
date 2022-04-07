@@ -15,8 +15,8 @@ API 参考
 当前板块详细列举了 MegEngine 中包含的模块、对象和方法，描述了它们的功能和作用，以便于检索和浏览。
 想要了解如何使用 MegEngine, 请参阅 :ref:`getting-started` 和 :ref:`user-guide` 页面。
 
-Python API
-----------
+模型开发接口
+------------
 .. note::
 
    MegEngine 在 GitHub 上的 Python 包源码位置在：:src:`imperative/python/megengine`
@@ -36,7 +36,15 @@ Python API
    * 对于具有 NumPy / Pytorch 等框架使用经验的用户，推荐参考 :ref:`comparison` 页面；
    * 如果你正在从旧版本的 MegEngine 迁移到最新版本，请务必阅读 :ref:`deprecated` 页面。
 
+推理部署接口
+------------
+.. note:: 
+
+   * 用户可以选择直接调用 MegEngine 底层的 C++ 接口，但更推荐使用封装好的 Lite 接口执行推理；
+   * 如果有对 Lite 接口的开发需求与建议，欢迎你在社区中通过官方渠道进行反馈。
+
 .. toctree::
+   :caption: 模型开发接口
    :hidden:
    :maxdepth: 1
 
@@ -56,6 +64,21 @@ Python API
    hub
    random
    config
+
+.. toctree::
+   :caption: 推理部署接口
+   :hidden:
+   :maxdepth: 1
+
+   lite/tensor
+   lite/network
+   lite/global
+   lite/common
+   pylite/tensor
+   pylite/network
+   pylite/global
+   pylite/struct
+   pylite/utils
 
 .. toctree::
    :caption: API 相关说明
