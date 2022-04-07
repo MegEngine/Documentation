@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classlite_1_1LiteAny" kind="class" language="C++" prot="public">
+    <compoundname>lite::LiteAny</compoundname>
+    <includes refid="tensor_8h" local="no">tensor.h</includes>
+    <innerclass refid="classlite_1_1LiteAny_1_1AnyHolder" prot="public">lite::LiteAny::AnyHolder</innerclass>
+    <innerclass refid="classlite_1_1LiteAny_1_1HolderBase" prot="public">lite::LiteAny::HolderBase</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5f" prot="public" static="no">
+        <name>Type</name>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa159ad5c50ccab5bb41523f4494b870e0" prot="public">
+          <name>STRING</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa9d5505f85dd7289f866219f543f2eb31" prot="public">
+          <name>INT32</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa646479c6595f7a4b702dda4a4617768d" prot="public">
+          <name>UINT32</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa00fcec1f5914136177f54c0ca55d99ca" prot="public">
+          <name>UINT8</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa81b46b2ac5cd9a65788aff8e13dc5e51" prot="public">
+          <name>INT8</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa80bee4528cbf4e174e95addbdf03d97f" prot="public">
+          <name>INT64</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa14ae453b94717fa15967a40e5dfc7707" prot="public">
+          <name>UINT64</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fabba72eba4f74bd0ad9306d75a7328da6" prot="public">
+          <name>BOOL</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5faca01d894a22f73a869c0b1c98fb36b77" prot="public">
+          <name>VOID_PTR</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa896c5376fc6b29cbcb3e80dcc88b09e0" prot="public">
+          <name>FLOAT</name>
+          <initializer>= 9</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa4c6cf020ddcf213c1e3d13ff5c746371" prot="public">
+          <name>NONE_SUPPORT</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="152" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="152" bodyend="164"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classlite_1_1LiteAny_1afc75a81c77ecfab6fb99ba9c62a768a9" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classlite_1_1LiteAny_1_1HolderBase" kindref="compound">HolderBase</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;HolderBase&gt; lite::LiteAny::m_holder</definition>
+        <argsstring></argsstring>
+        <name>m_holder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="225" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1LiteAny_1a8febae488092a40ee9fd64794585d388" prot="private" static="no" mutable="no">
+        <type>Type</type>
+        <definition>Type lite::LiteAny::m_type</definition>
+        <argsstring></argsstring>
+        <name>m_type</name>
+        <initializer>= NONE_SUPPORT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="226" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlite_1_1LiteAny_1a7cfebfc862c6b5c4705de482b6a4af7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::LiteAny::LiteAny</definition>
+        <argsstring>()=default</argsstring>
+        <name>LiteAny</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="165" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1LiteAny_1accc2d78b7f69fc18c002abfdd2233df6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>lite::LiteAny::LiteAny</definition>
+        <argsstring>(T value)</argsstring>
+        <name>LiteAny</name>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="167" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="167" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1LiteAny_1a7bd3122b9303d5c071465454faaf8c5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>lite::LiteAny::LiteAny</definition>
+        <argsstring>(const LiteAny &amp;any)</argsstring>
+        <name>LiteAny</name>
+        <param>
+          <type>const <ref refid="classlite_1_1LiteAny" kindref="compound">LiteAny</ref> &amp;</type>
+          <declname>any</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="171" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1LiteAny_1aadab60476ecfad8234e3d88d5c0a4b52" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classlite_1_1LiteAny" kindref="compound">LiteAny</ref> &amp;</type>
+        <definition>LiteAny&amp; lite::LiteAny::operator=</definition>
+        <argsstring>(const LiteAny &amp;any)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classlite_1_1LiteAny" kindref="compound">LiteAny</ref> &amp;</type>
+          <declname>any</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="175" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="175" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1LiteAny_1ab991a56f48f9a604177961bf7375e727" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>Type</type>
+        <definition>Type lite::LiteAny::get_type</definition>
+        <argsstring>() const</argsstring>
+        <name>get_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="182" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1LiteAny_1acd46a38da609bd1f233635153b4251fe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::LiteAny::type_missmatch</definition>
+        <argsstring>(size_t expect, size_t get) const</argsstring>
+        <name>type_missmatch</name>
+        <param>
+          <type>size_t</type>
+          <declname>expect</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>get</declname>
+        </param>
+        <briefdescription>
+<para>if type is miss matching, it will throw </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="202" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1LiteAny_1aa5d7630efa4621cf4f99a57be4346960" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T lite::LiteAny::safe_cast</definition>
+        <argsstring>() const</argsstring>
+        <name>safe_cast</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="205" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="205" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1LiteAny_1a2f98550c41a26e6076c82b32816b8895" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool lite::LiteAny::try_cast</definition>
+        <argsstring>() const</argsstring>
+        <name>try_cast</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="212" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="212" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1LiteAny_1a94c6c3aa41b38f5e7398f26dc7234245" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* lite::LiteAny::cast_void_ptr</definition>
+        <argsstring>() const</argsstring>
+        <name>cast_void_ptr</name>
+        <briefdescription>
+<para>only check the storage type and the visit type length, so it&apos;s not safe </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="220" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="220" bodyend="222"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>a class can hold any type data, but not check whether the visit type is valid </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="150" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="150" bodyend="227"/>
+    <listofallmembers>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fabba72eba4f74bd0ad9306d75a7328da6" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>BOOL</name></member>
+      <member refid="classlite_1_1LiteAny_1a94c6c3aa41b38f5e7398f26dc7234245" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>cast_void_ptr</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa896c5376fc6b29cbcb3e80dcc88b09e0" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>FLOAT</name></member>
+      <member refid="classlite_1_1LiteAny_1ab991a56f48f9a604177961bf7375e727" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>get_type</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa9d5505f85dd7289f866219f543f2eb31" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>INT32</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa80bee4528cbf4e174e95addbdf03d97f" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>INT64</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa81b46b2ac5cd9a65788aff8e13dc5e51" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>INT8</name></member>
+      <member refid="classlite_1_1LiteAny_1a7cfebfc862c6b5c4705de482b6a4af7b" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>LiteAny</name></member>
+      <member refid="classlite_1_1LiteAny_1accc2d78b7f69fc18c002abfdd2233df6" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>LiteAny</name></member>
+      <member refid="classlite_1_1LiteAny_1a7bd3122b9303d5c071465454faaf8c5f" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>LiteAny</name></member>
+      <member refid="classlite_1_1LiteAny_1afc75a81c77ecfab6fb99ba9c62a768a9" prot="private" virt="non-virtual"><scope>lite::LiteAny</scope><name>m_holder</name></member>
+      <member refid="classlite_1_1LiteAny_1a8febae488092a40ee9fd64794585d388" prot="private" virt="non-virtual"><scope>lite::LiteAny</scope><name>m_type</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa4c6cf020ddcf213c1e3d13ff5c746371" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>NONE_SUPPORT</name></member>
+      <member refid="classlite_1_1LiteAny_1aadab60476ecfad8234e3d88d5c0a4b52" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>operator=</name></member>
+      <member refid="classlite_1_1LiteAny_1aa5d7630efa4621cf4f99a57be4346960" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>safe_cast</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa159ad5c50ccab5bb41523f4494b870e0" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>STRING</name></member>
+      <member refid="classlite_1_1LiteAny_1a2f98550c41a26e6076c82b32816b8895" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>try_cast</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5f" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>Type</name></member>
+      <member refid="classlite_1_1LiteAny_1acd46a38da609bd1f233635153b4251fe" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>type_missmatch</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa646479c6595f7a4b702dda4a4617768d" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>UINT32</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa14ae453b94717fa15967a40e5dfc7707" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>UINT64</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5fa00fcec1f5914136177f54c0ca55d99ca" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>UINT8</name></member>
+      <member refid="classlite_1_1LiteAny_1ab66348e280757ee1f98ec00b8d774c5faca01d894a22f73a869c0b1c98fb36b77" prot="public" virt="non-virtual"><scope>lite::LiteAny</scope><name>VOID_PTR</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

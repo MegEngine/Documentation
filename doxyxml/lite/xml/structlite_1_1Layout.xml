@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlite_1_1Layout" kind="struct" language="C++" prot="public">
+    <compoundname>lite::Layout</compoundname>
+    <includes refid="tensor_8h" local="no">tensor.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structlite_1_1Layout_1a0f6efe56616c3e99a367d4fa88becb8a" prot="public" static="yes" mutable="no">
+        <type>constexpr uint32_t</type>
+        <definition>constexpr uint32_t lite::Layout::MAXDIM</definition>
+        <argsstring></argsstring>
+        <name>MAXDIM</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="27" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlite_1_1Layout_1a55effe650a6f6ce2f3acc338c91ade57" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t lite::Layout::shapes[MAXDIM]</definition>
+        <argsstring>[MAXDIM]</argsstring>
+        <name>shapes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="28" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlite_1_1Layout_1a676d0fd941c95caf5a60a8d14e10db7c" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t lite::Layout::ndim</definition>
+        <argsstring></argsstring>
+        <name>ndim</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="29" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlite_1_1Layout_1a19751c874088df00b9bf39c581dba1eb" prot="public" static="no" mutable="no">
+        <type>LiteDataType</type>
+        <definition>LiteDataType lite::Layout::data_type</definition>
+        <argsstring></argsstring>
+        <name>data_type</name>
+        <initializer>= LiteDataType::LITE_FLOAT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="30" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structlite_1_1Layout_1addbce42438e1e3a829419fd9a6e62c1e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t lite::Layout::get_elem_size</definition>
+        <argsstring>() const</argsstring>
+        <name>get_elem_size</name>
+        <briefdescription>
+<para>get the total byte of a layout </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="33" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structlite_1_1Layout_1a25370dc328d20854bcdbbd19b5327bd0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool lite::Layout::operator==</definition>
+        <argsstring>(const Layout &amp;other) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="structlite_1_1Layout" kindref="compound">Layout</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>compare whether the two layout is equal </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="36" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>the simple layout description </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="26" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="26" bodyend="37"/>
+    <listofallmembers>
+      <member refid="structlite_1_1Layout_1a19751c874088df00b9bf39c581dba1eb" prot="public" virt="non-virtual"><scope>lite::Layout</scope><name>data_type</name></member>
+      <member refid="structlite_1_1Layout_1addbce42438e1e3a829419fd9a6e62c1e" prot="public" virt="non-virtual"><scope>lite::Layout</scope><name>get_elem_size</name></member>
+      <member refid="structlite_1_1Layout_1a0f6efe56616c3e99a367d4fa88becb8a" prot="public" virt="non-virtual"><scope>lite::Layout</scope><name>MAXDIM</name></member>
+      <member refid="structlite_1_1Layout_1a676d0fd941c95caf5a60a8d14e10db7c" prot="public" virt="non-virtual"><scope>lite::Layout</scope><name>ndim</name></member>
+      <member refid="structlite_1_1Layout_1a25370dc328d20854bcdbbd19b5327bd0" prot="public" virt="non-virtual"><scope>lite::Layout</scope><name>operator==</name></member>
+      <member refid="structlite_1_1Layout_1a55effe650a6f6ce2f3acc338c91ade57" prot="public" virt="non-virtual"><scope>lite::Layout</scope><name>shapes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

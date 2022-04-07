@@ -40,6 +40,7 @@ from datetime import datetime
 if mode == "AUTO":
     try:
         import megengine
+        import megenginelite
     except ImportError:
         print("MegEngine not found. Use mini mode.")
         mode = "MINI"
@@ -51,6 +52,7 @@ if mode == "MINI":
     suppress_warnings = ['ref.ref']
 else:
     import megengine
+    import megenginelite
     print("MegEngine path:", os.path.dirname(megengine.__file__))
 
 # -- Project information -----------------------------------------------------
@@ -85,6 +87,7 @@ extensions = [
     "sphinx_panels",
     "sphinx_tabs.tabs",
     "sphinx_remove_toctrees",
+    "breathe",
 ]
 
 source_suffix = {
@@ -114,6 +117,13 @@ if mode == "MINI":
 language = "zh_CN"
 locale_dirs = ["../locales/"]
 gettext_compact = False
+
+# -- Options for Breathe (C++ API) -------------------------------------------
+breathe_default_project = "lite"
+breathe_projects = {
+    "lite": "../doxyxml/lite/xml/"
+}
+breathe_default_members = ('members', 'undoc-members')
 
 # -- Options for Extensions -------------------------------------------------
 

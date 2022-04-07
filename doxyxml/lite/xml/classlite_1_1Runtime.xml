@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classlite_1_1Runtime" kind="class" language="C++" prot="public">
+    <compoundname>lite::Runtime</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classlite_1_1Runtime_1af14407aeb2954260cecc5feb6d843ea1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::set_cpu_threads_number</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network, size_t nr_threads)</argsstring>
+        <name>set_cpu_threads_number</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nr_threads</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>When device is CPU, this interface will set the to be loaded model run in multi thread mode with the given thread number. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="312" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a83ca31b78dcb9edcbf507b3b533f8571" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>static size_t lite::Runtime::get_cpu_threads_number</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network)</argsstring>
+        <name>get_cpu_threads_number</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="314" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a6abb9df11f01710747fbb71616916097" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::set_runtime_thread_affinity</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; network, const ThreadAffinityCallback &amp;thread_affinity_callback)</argsstring>
+        <name>set_runtime_thread_affinity</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>network</declname>
+        </param>
+        <param>
+          <type>const ThreadAffinityCallback &amp;</type>
+          <declname>thread_affinity_callback</declname>
+        </param>
+        <briefdescription>
+<para>set threads affinity callback; </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="317" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1aa080483b249426322a042337c7f04cd8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::set_cpu_inplace_mode</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network)</argsstring>
+        <name>set_cpu_inplace_mode</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set cpu default mode when device is CPU, in some low computation device or single core device, this mode will get good performace </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="323" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a4d58177f2bbdd3a0d124026f2ec917d0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool lite::Runtime::is_cpu_inplace_mode</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network)</argsstring>
+        <name>is_cpu_inplace_mode</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="324" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a810313f4882e2542f2871af4a17f6e4c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::use_tensorrt</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network)</argsstring>
+        <name>use_tensorrt</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <briefdescription>
+<para>Set use tensorrt forward. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="327" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a9c4207a61a54a21df10c2975bd2c092c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::set_network_algo_policy</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network, LiteAlgoSelectStrategy strategy, uint32_t shared_batch_size=0, bool binary_equal_between_batch=false)</argsstring>
+        <name>set_network_algo_policy</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <param>
+          <type>LiteAlgoSelectStrategy</type>
+          <declname>strategy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>shared_batch_size</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>binary_equal_between_batch</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>set opr algorithm selection strategy in the network shared_batch_size: the batch size used by fastrun, Non-zero value means that fastrun use this batch size regardless of the batch size of the model. Zero means fastrun use batch size of the model binary_equal_between_batch: if the content of each input batch is binary equal,whether the content of each output batch is promised to be equal </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="337" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1aa4d8862c76a5614639778fe84019602c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::set_network_algo_workspace_limit</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network, size_t workspace_limit)</argsstring>
+        <name>set_network_algo_workspace_limit</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>workspace_limit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>set workspace_limit for oprs with multiple algorithms, set workspace limitation can save memory but may influence the performance </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="343" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a266d181ca4973fa574a0aef823e42732" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::set_memory_allocator</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network, std::shared_ptr&lt; Allocator &gt; user_allocator)</argsstring>
+        <name>set_memory_allocator</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Allocator" kindref="compound">Allocator</ref> &gt;</type>
+          <declname>user_allocator</declname>
+        </param>
+        <briefdescription>
+<para>set the network memroy allocator, the allocator is defined by user </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="347" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a2105a001971a30ca35dc735584ca2e2a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::share_runtime_memory_with</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network, std::shared_ptr&lt; Network &gt; src_network)</argsstring>
+        <name>share_runtime_memory_with</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>src_network</declname>
+        </param>
+        <briefdescription>
+<para>share the runtime memory with other network, the weights is not shared </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="352" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a4053b5c93605a3b94b3c5063e95ae31a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::enable_io_txt_dump</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network, std::string io_txt_out_file)</argsstring>
+        <name>enable_io_txt_dump</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>io_txt_out_file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dump input/output values of all internal variables to output file, in txt format </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="357" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a5c291ea6ebd36c14619b32b417759d64" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::enable_io_bin_dump</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network, std::string io_bin_out_dir)</argsstring>
+        <name>enable_io_bin_dump</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>io_bin_out_dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dump input/output values of all internal variables to output directory, in binary format </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="362" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1aaaf8db5d06843cc599ac17e941f1fc19" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::shared_weight_with_network</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; dst_network, const std::shared_ptr&lt; Network &gt; src_network)</argsstring>
+        <name>shared_weight_with_network</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>dst_network</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>src_network</declname>
+        </param>
+        <briefdescription>
+<para>load a new network which will share weights with src network </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="366" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1ad2aadcbef4fa40d716cbc627a9c15b95" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::enable_global_layout_transform</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; network)</argsstring>
+        <name>enable_global_layout_transform</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>network</declname>
+        </param>
+        <briefdescription>
+<para>set global layout transform optimization for network </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="371" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1abfdbb3c2a112b5d3022e72372369b14a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::dump_layout_transform_model</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; network, std::string optimized_model_path)</argsstring>
+        <name>dump_layout_transform_model</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>network</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>optimized_model_path</declname>
+        </param>
+        <briefdescription>
+<para>dump network after global layout transform optimization </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="374" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a81b39f1b7b745323a2a8774055156677" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref></type>
+        <definition>static NetworkIO lite::Runtime::get_model_io_info</definition>
+        <argsstring>(const std::string &amp;model_path, const Config &amp;config={})</argsstring>
+        <name>get_model_io_info</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>model_path</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structlite_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>get the model io information before model loaded by model path. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="378" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Runtime_1a84eaa297dca882055c9670f25ffadf99" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref></type>
+        <definition>static NetworkIO lite::Runtime::get_model_io_info</definition>
+        <argsstring>(const void *model_mem, size_t size, const Config &amp;config={})</argsstring>
+        <name>get_model_io_info</name>
+        <param>
+          <type>const void *</type>
+          <declname>model_mem</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structlite_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>get the model io information before model loaded by model memory. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="382" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/data/github/MegEngine/lite/include/lite/network.h" line="308" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="308" bodyend="384"/>
+    <listofallmembers>
+      <member refid="classlite_1_1Runtime_1abfdbb3c2a112b5d3022e72372369b14a" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>dump_layout_transform_model</name></member>
+      <member refid="classlite_1_1Runtime_1ad2aadcbef4fa40d716cbc627a9c15b95" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>enable_global_layout_transform</name></member>
+      <member refid="classlite_1_1Runtime_1a5c291ea6ebd36c14619b32b417759d64" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>enable_io_bin_dump</name></member>
+      <member refid="classlite_1_1Runtime_1a4053b5c93605a3b94b3c5063e95ae31a" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>enable_io_txt_dump</name></member>
+      <member refid="classlite_1_1Runtime_1a83ca31b78dcb9edcbf507b3b533f8571" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>get_cpu_threads_number</name></member>
+      <member refid="classlite_1_1Runtime_1a81b39f1b7b745323a2a8774055156677" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>get_model_io_info</name></member>
+      <member refid="classlite_1_1Runtime_1a84eaa297dca882055c9670f25ffadf99" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>get_model_io_info</name></member>
+      <member refid="classlite_1_1Runtime_1a4d58177f2bbdd3a0d124026f2ec917d0" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>is_cpu_inplace_mode</name></member>
+      <member refid="classlite_1_1Runtime_1aa080483b249426322a042337c7f04cd8" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>set_cpu_inplace_mode</name></member>
+      <member refid="classlite_1_1Runtime_1af14407aeb2954260cecc5feb6d843ea1" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>set_cpu_threads_number</name></member>
+      <member refid="classlite_1_1Runtime_1a266d181ca4973fa574a0aef823e42732" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>set_memory_allocator</name></member>
+      <member refid="classlite_1_1Runtime_1a9c4207a61a54a21df10c2975bd2c092c" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>set_network_algo_policy</name></member>
+      <member refid="classlite_1_1Runtime_1aa4d8862c76a5614639778fe84019602c" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>set_network_algo_workspace_limit</name></member>
+      <member refid="classlite_1_1Runtime_1a6abb9df11f01710747fbb71616916097" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>set_runtime_thread_affinity</name></member>
+      <member refid="classlite_1_1Runtime_1a2105a001971a30ca35dc735584ca2e2a" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>share_runtime_memory_with</name></member>
+      <member refid="classlite_1_1Runtime_1aaaf8db5d06843cc599ac17e941f1fc19" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>shared_weight_with_network</name></member>
+      <member refid="classlite_1_1Runtime_1a810313f4882e2542f2871af4a17f6e4c" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>use_tensorrt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
