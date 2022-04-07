@@ -1,0 +1,638 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacelite" kind="namespace" language="C++">
+    <compoundname>lite</compoundname>
+    <innerclass refid="classlite_1_1Allocator" prot="public">lite::Allocator</innerclass>
+    <innerclass refid="structlite_1_1Config" prot="public">lite::Config</innerclass>
+    <innerclass refid="structlite_1_1IO" prot="public">lite::IO</innerclass>
+    <innerclass refid="structlite_1_1Layout" prot="public">lite::Layout</innerclass>
+    <innerclass refid="classlite_1_1LiteAny" prot="public">lite::LiteAny</innerclass>
+    <innerclass refid="classlite_1_1Network" prot="public">lite::Network</innerclass>
+    <innerclass refid="structlite_1_1NetworkIO" prot="public">lite::NetworkIO</innerclass>
+    <innerclass refid="structlite_1_1Options" prot="public">lite::Options</innerclass>
+    <innerclass refid="classlite_1_1Runtime" prot="public">lite::Runtime</innerclass>
+    <innerclass refid="classlite_1_1Tensor" prot="public">lite::Tensor</innerclass>
+    <innerclass refid="classlite_1_1TensorUtils" prot="public">lite::TensorUtils</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="global_8h_1a8d715b73d11dc07dd20b9d823b82d568" prot="public" static="no">
+        <type>std::function&lt; std::vector&lt; uint8_t &gt;(const void *, size_t, const std::vector&lt; uint8_t &gt; &amp;)&gt;</type>
+        <definition>using lite::DecryptionFunc = typedef std::function&lt;std::vector&lt;uint8_t&gt;( const void*, size_t, const std::vector&lt;uint8_t&gt;&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>DecryptionFunc</name>
+        <briefdescription>
+<para>Model decryption function. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void* is the decrypted model memory pointer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">size_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the size the decrypted model memory in byte </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>std::vector&lt;uint8_t&gt;&amp; the decryption key vector </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="30" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/global.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="global_8h_1a65b70ff53bc6444072a7ae0656782837" prot="public" static="no">
+        <type>std::function&lt; bool(const void *, size_t, const std::string model_name, <ref refid="structlite_1_1Config" kindref="compound">Config</ref> &amp;config, <ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref> &amp;network_io, std::unordered_map&lt; std::string, <ref refid="classlite_1_1LiteAny" kindref="compound">LiteAny</ref> &gt; &amp;isolated_config_map, std::string &amp;extra_info)&gt;</type>
+        <definition>using lite::ParseInfoFunc = typedef std::function&lt;bool( const void*, size_t, const std::string model_name, Config&amp; config, NetworkIO&amp; network_io, std::unordered_map&lt;std::string, LiteAny&gt;&amp; isolated_config_map, std::string&amp; extra_info)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ParseInfoFunc</name>
+        <briefdescription>
+<para>Model information parse function. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void* is the information memory </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">size_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the size the information memory </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>std::string the model name used for check whether the infomation match the model </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in"><ref refid="structlite_1_1Config" kindref="compound">Config</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the model config, ParseInfoFunc can fill it with the information in json, the config will influence <ref refid="classlite_1_1Network" kindref="compound">Network</ref> loading later </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in"><ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the model <ref refid="structlite_1_1IO" kindref="compound">IO</ref>, ParseInfoFunc can fill it with the information in json, the networkio will influence <ref refid="classlite_1_1Network" kindref="compound">Network</ref> forwarding later </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">std::unordered_map&lt;std::string</parametername>
+<parametername direction="in">LiteAny&gt;&amp;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>isolated_config_map, the other config not inclue in config and networkIO, ParseInfoFunc can fill it with the information in json, now support: &quot;device_id&quot; : int, default 0 &quot;number_threads&quot; : uint32_t, default 1 &quot;is_inplace_model&quot; : bool, default false &quot;use_tensorrt&quot; : bool, default false </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="84" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/global.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="network_8h_1a8eccf6421b9abc3557d2199bd11ec588" prot="public" static="no">
+        <type>std::function&lt; void(int thread_id)&gt;</type>
+        <definition>using lite::ThreadAffinityCallback = typedef std::function&lt;void(int thread_id)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ThreadAffinityCallback</name>
+        <briefdescription>
+<para>the thread affinith callback type </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>thread_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>thread_id is the a number begin from 0 to (nr_threads - 1), thread_id of (nr_threads - 1) is the main worker thread. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="186" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="network_8h_1af69af1289d22aeeb3f31b8c5d2e17271" prot="public" static="no">
+        <type>std::function&lt; void(void)&gt;</type>
+        <definition>using lite::AsyncCallback = typedef std::function&lt;void(void)&gt;</definition>
+        <argsstring></argsstring>
+        <name>AsyncCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="188" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="network_8h_1abc8e743e58cb28f8d57d793e8f2567ff" prot="public" static="no">
+        <type>std::function&lt; void(const std::unordered_map&lt; std::string, std::pair&lt; <ref refid="structlite_1_1IO" kindref="compound">IO</ref>, std::shared_ptr&lt; <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &gt; &gt;&gt; &amp;)&gt;</type>
+        <definition>using lite::StartCallback = typedef std::function&lt;void(const std::unordered_map&lt; std::string, std::pair&lt;IO, std::shared_ptr&lt;Tensor&gt; &gt;&gt;&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>StartCallback</name>
+        <briefdescription>
+<para>the start/finish callback function </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>unordered_map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>map from the io tensor name to the pair of which is the corresponding <ref refid="structlite_1_1IO" kindref="compound">IO</ref> of user config and the realy input or output tensor. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="195" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="network_8h_1a4d40ddf65fd0816d278ae8a0fc74308c" prot="public" static="no">
+        <type>std::function&lt; void(const std::unordered_map&lt; std::string, std::pair&lt; <ref refid="structlite_1_1IO" kindref="compound">IO</ref>, std::shared_ptr&lt; <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &gt; &gt;&gt; &amp;)&gt;</type>
+        <definition>using lite::FinishCallback = typedef std::function&lt;void(const std::unordered_map&lt; std::string, std::pair&lt;IO, std::shared_ptr&lt;Tensor&gt; &gt;&gt;&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>FinishCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="198" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="global_8h_1afc2f9d029ae76878d356f5c899de83c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool lite::register_decryption_and_key</definition>
+        <argsstring>(std::string decrypt_name, const DecryptionFunc &amp;func, const std::vector&lt; uint8_t &gt; &amp;key)</argsstring>
+        <name>register_decryption_and_key</name>
+        <param>
+          <type>std::string</type>
+          <declname>decrypt_name</declname>
+        </param>
+        <param>
+          <type>const DecryptionFunc &amp;</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>register a custom decryption method and key to lite. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">decrypt_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the decryption, which will act as the hash key to find the decryption method.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the decryption function, which will decrypt the model with the registered key, return a vector that contain the decrypted model.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the decryption key of the method </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a586ed47e842714e8fd074f7bc9aa8274" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool lite::update_decryption_or_key</definition>
+        <argsstring>(std::string decrypt_name, const DecryptionFunc &amp;func, const std::vector&lt; uint8_t &gt; &amp;key)</argsstring>
+        <name>update_decryption_or_key</name>
+        <param>
+          <type>std::string</type>
+          <declname>decrypt_name</declname>
+        </param>
+        <param>
+          <type>const DecryptionFunc &amp;</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>update decryption function or key of a custom decryption method. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">decrypt_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the decryption, which will act as the hash key to find the decryption method.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the decryption function, which will decrypt the model with the registered key, return a vector that contain the decrypted model. if function is nullptr, it will not be updated.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the decryption key of the method, if the size of key is zero, it will not be updated </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a4ba8fdceeba6cee2dcecdfa0eb36e66c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool lite::register_parse_info_func</definition>
+        <argsstring>(std::string info_type, const ParseInfoFunc &amp;parse_func)</argsstring>
+        <name>register_parse_info_func</name>
+        <param>
+          <type>std::string</type>
+          <declname>info_type</declname>
+        </param>
+        <param>
+          <type>const ParseInfoFunc &amp;</type>
+          <declname>parse_func</declname>
+        </param>
+        <briefdescription>
+<para>register a custom parser function to lite. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">info_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the parser function, which will act as the hash key to find the parser method.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">parse_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the parser function, which will parse the given information and modify the <ref refid="classlite_1_1Network" kindref="compound">Network</ref> <ref refid="structlite_1_1Config" kindref="compound">Config</ref> and <ref refid="structlite_1_1IO" kindref="compound">IO</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="100" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1ac2f5d40923929add580e2b99513b238f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::get_version</definition>
+        <argsstring>(int &amp;major, int &amp;minor, int &amp;patch)</argsstring>
+        <name>get_version</name>
+        <param>
+          <type>int &amp;</type>
+          <declname>major</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>minor</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>patch</declname>
+        </param>
+        <briefdescription>
+<para>Get version. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="105" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a3edd46c1ee5dd1c736324895bdb0ad3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::set_log_level</definition>
+        <argsstring>(LiteLogLevel level)</argsstring>
+        <name>set_log_level</name>
+        <param>
+          <type>LiteLogLevel</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Set the current log level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new log level </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="110" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a7b0511271ffad72c5898780b1c85e324" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LiteLogLevel</type>
+        <definition>LiteLogLevel lite::get_log_level</definition>
+        <argsstring>()</argsstring>
+        <name>get_log_level</name>
+        <briefdescription>
+<para>Get the current log level. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current log level </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="115" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a929b3eb940356ed60e5af34d1ab184ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t lite::get_device_count</definition>
+        <argsstring>(LiteDeviceType device_type)</argsstring>
+        <name>get_device_count</name>
+        <param>
+          <type>LiteDeviceType</type>
+          <declname>device_type</declname>
+        </param>
+        <briefdescription>
+<para>Get device count. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">device_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>device type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the device count </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="121" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a3cb342614ef2ba80661923eb36467b5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::try_coalesce_all_free_memory</definition>
+        <argsstring>()</argsstring>
+        <name>try_coalesce_all_free_memory</name>
+        <briefdescription>
+<para>try to coalesce all free memory in megenine </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="125" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1ae79933f7b6a06c0d010bbbead86f099a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::set_loader_lib_path</definition>
+        <argsstring>(const std::string &amp;loader_path)</argsstring>
+        <name>set_loader_lib_path</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>loader_path</declname>
+        </param>
+        <briefdescription>
+<para>Set the loader to the lite. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loader_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the file path which store the cache </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="131" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a3fdd18359460cab10d9c35303c118cd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::set_persistent_cache</definition>
+        <argsstring>(const std::string &amp;cache_path, bool always_sync=false)</argsstring>
+        <name>set_persistent_cache</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cache_path</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>always_sync</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Set the algo policy cache file for CPU/CUDA ... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cache_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the file path which store the cache </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>always_sync</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sync the cache when model run </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="138" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a80924d13d619bc95d45aa62389b353ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::dump_persistent_cache</definition>
+        <argsstring>(const std::string &amp;cache_path)</argsstring>
+        <name>dump_persistent_cache</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cache_path</declname>
+        </param>
+        <briefdescription>
+<para>dump the PersistentCache policy cache to file, if the network is set to profile when forward, though this the algo policy will dump to file </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="145" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a1f74b8cd08dcbaa2ff08c3124eb2f4d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::set_tensor_rt_cache</definition>
+        <argsstring>(std::string tensorrt_cache_path)</argsstring>
+        <name>set_tensor_rt_cache</name>
+        <param>
+          <type>std::string</type>
+          <declname>tensorrt_cache_path</declname>
+        </param>
+        <briefdescription>
+<para>Set the TensorRT engine cache path for serialized prebuilt ICudaEngine. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="150" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1aafe6bf3a53cc3f2a8526fb0965ea15dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::dump_tensor_rt_cache</definition>
+        <argsstring>()</argsstring>
+        <name>dump_tensor_rt_cache</name>
+        <briefdescription>
+<para>dump the TensorRT cache to the file set in set_tensor_rt_cache </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="155" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a10edea9f7636af226795e9bddcd97a99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool lite::register_memory_pair</definition>
+        <argsstring>(void *vir_ptr, void *phy_ptr, size_t length, LiteDeviceType device, LiteBackend backend=LiteBackend::LITE_DEFAULT)</argsstring>
+        <name>register_memory_pair</name>
+        <param>
+          <type>void *</type>
+          <declname>vir_ptr</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>phy_ptr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>LiteDeviceType</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type>LiteBackend</type>
+          <declname>backend</declname>
+          <defval>LiteBackend::LITE_DEFAULT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>register the physical and virtual address pair to the mge, some device need the map from physical to virtual. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="161" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a2f3c0a79e300cf93e3c2eabf61170477" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool lite::clear_memory_pair</definition>
+        <argsstring>(void *vir_ptr, void *phy_ptr, LiteDeviceType device, LiteBackend backend=LiteBackend::LITE_DEFAULT)</argsstring>
+        <name>clear_memory_pair</name>
+        <param>
+          <type>void *</type>
+          <declname>vir_ptr</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>phy_ptr</declname>
+        </param>
+        <param>
+          <type>LiteDeviceType</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type>LiteBackend</type>
+          <declname>backend</declname>
+          <defval>LiteBackend::LITE_DEFAULT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>clear the physical and virtual address pair in mge. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="168" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="global_8h_1a8d12298bc8ba239987a2c4fb9cec074f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* lite::lookup_physic_ptr</definition>
+        <argsstring>(void *vir_ptr, LiteDeviceType device, LiteBackend backend)</argsstring>
+        <name>lookup_physic_ptr</name>
+        <param>
+          <type>void *</type>
+          <declname>vir_ptr</declname>
+        </param>
+        <param>
+          <type>LiteDeviceType</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type>LiteBackend</type>
+          <declname>backend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>get the physic address by the virtual address in mge. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/global.h" line="175" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="network_8h_1ad62223f0103f117273475fd154792274" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>LiteAlgoSelectStrategy</type>
+        <definition>LiteAlgoSelectStrategy lite::operator|</definition>
+        <argsstring>(LiteAlgoSelectStrategy x, LiteAlgoSelectStrategy y)</argsstring>
+        <name>operator|</name>
+        <param>
+          <type>LiteAlgoSelectStrategy</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>LiteAlgoSelectStrategy</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="25" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="25" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/data/github/MegEngine/lite/include/lite/global.h" line="21" column="1"/>
+  </compounddef>
+</doxygen>

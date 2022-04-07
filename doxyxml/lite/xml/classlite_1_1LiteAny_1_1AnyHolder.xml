@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classlite_1_1LiteAny_1_1AnyHolder" kind="class" language="C++" prot="public">
+    <compoundname>lite::LiteAny::AnyHolder</compoundname>
+    <basecompoundref refid="classlite_1_1LiteAny_1_1HolderBase" prot="public" virt="non-virtual">lite::LiteAny::HolderBase</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classlite_1_1LiteAny_1_1AnyHolder_1a6ce9c786ca78e61759238167eb8517d6" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T lite::LiteAny::AnyHolder&lt; T &gt;::m_value</definition>
+        <argsstring></argsstring>
+        <name>m_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="199" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlite_1_1LiteAny_1_1AnyHolder_1a42d6fc6b09a3cd1e49efb7d3d972eeda" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>lite::LiteAny::AnyHolder&lt; T &gt;::AnyHolder</definition>
+        <argsstring>(const T value)</argsstring>
+        <name>AnyHolder</name>
+        <param>
+          <type>const T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="193" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="193" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1LiteAny_1_1AnyHolder_1a8047f4664812c842cee2ca42445184aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlite_1_1LiteAny_1_1HolderBase" kindref="compound">HolderBase</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;HolderBase&gt; lite::LiteAny::AnyHolder&lt; T &gt;::clone</definition>
+        <argsstring>() override</argsstring>
+        <name>clone</name>
+        <reimplements refid="classlite_1_1LiteAny_1_1HolderBase_1ac93027d2c6a47c6e3e52cde8b7a74873">clone</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="194" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="194" bodyend="196"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>lite::LiteAny::HolderBase</label>
+        <link refid="classlite_1_1LiteAny_1_1HolderBase"/>
+      </node>
+      <node id="2">
+        <label>lite::LiteAny::AnyHolder&lt; T &gt;</label>
+        <link refid="classlite_1_1LiteAny_1_1AnyHolder"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>lite::LiteAny::HolderBase</label>
+        <link refid="classlite_1_1LiteAny_1_1HolderBase"/>
+      </node>
+      <node id="4">
+        <label>lite::LiteAny::AnyHolder&lt; T &gt;</label>
+        <link refid="classlite_1_1LiteAny_1_1AnyHolder"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="191" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="191" bodyend="200"/>
+    <listofallmembers>
+      <member refid="classlite_1_1LiteAny_1_1AnyHolder_1a42d6fc6b09a3cd1e49efb7d3d972eeda" prot="public" virt="non-virtual"><scope>lite::LiteAny::AnyHolder</scope><name>AnyHolder</name></member>
+      <member refid="classlite_1_1LiteAny_1_1AnyHolder_1a8047f4664812c842cee2ca42445184aa" prot="public" virt="virtual"><scope>lite::LiteAny::AnyHolder</scope><name>clone</name></member>
+      <member refid="classlite_1_1LiteAny_1_1AnyHolder_1a6ce9c786ca78e61759238167eb8517d6" prot="public" virt="non-virtual"><scope>lite::LiteAny::AnyHolder</scope><name>m_value</name></member>
+      <member refid="classlite_1_1LiteAny_1_1HolderBase_1ab41efaf3ab280d8748b2b2cad0cc5e4b" prot="public" virt="virtual"><scope>lite::LiteAny::AnyHolder</scope><name>~HolderBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
