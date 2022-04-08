@@ -33,11 +33,11 @@ Deprecated APIs
    * - megengine.Tensor.reset_zero
      - 1.0
      - 待定
-     - 
+     - tensor_name[:] = 0
    * - megengine.Tensor.set_value
      - 1.0
      - 待定
-     - 
+     - tensor_name[:] = value
 
 .. _deprecation-policy:
 
