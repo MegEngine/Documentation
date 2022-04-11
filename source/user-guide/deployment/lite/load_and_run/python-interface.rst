@@ -1,8 +1,8 @@
 .. _load-and-run-py:
 
-===============================
-如何使用 Load and Run（Python）
-===============================
+========================
+Load and run Python 接口
+========================
 
 Python 版 Load and Run 的主要功能和用法与 :ref:`C++ 版本 <load-and-run>` 基本一致。
 
