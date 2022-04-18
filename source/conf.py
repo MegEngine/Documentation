@@ -85,6 +85,7 @@ extensions = [
     "sphinx_panels",
     "sphinx_tabs.tabs",
     "sphinx_remove_toctrees",
+    "sphinx_sitemap",
 ]
 
 source_suffix = {
@@ -188,6 +189,12 @@ remove_from_toctrees = [
     "reference/api/*",
     "development/meps/*",
 ]
+
+# Settign for sphinx_sitemap
+sitemap_filename = "sitemap.xml"
+sitemap_locales = ["en", "zh"]
+html_baseurl = "https://www.megengine.org.cn/doc/"
+sitemap_url_scheme = "{version}{lang}{link}"
 
 # -- Options for HTML output -------------------------------------------------
 html_logo = "logo.png"
