@@ -65,8 +65,9 @@ Load and run 设置选项列表及说明
 
    .. code:: json
 
-      {"data_f32":
-           
+      {
+        "data_f32":
+          {
           "shape": [1,3],
           "type": "int32",
           "raw": [3,4,5]
