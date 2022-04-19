@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 04:49\n"
+"POT-Creation-Date: 2022-04-19 16:51+0800\n"
+"PO-Revision-Date: 2022-04-19 12:45\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -111,42 +111,42 @@ msgid "我们这里给出的例子比较简单，假设样本都是单个元素�
 msgstr "crwdns84819:0crwdne84819:0"
 
 #: ../../source/user-guide/model-development/data/transform.rst:100
-msgid "可以在官方 `ResNet <https://github.com/MegEngine/Models/blob/master/official/vision/classification/resnet/train.py>`_ 训练代码中找到 ``DataLoader`` 通过组合数据变换对数据进行预处理的例子。"
-msgstr "crwdns84821:0crwdne84821:0"
+msgid "可以在官方 ResNet 训练代码 :models:`official/vision/classification/resnet/train.py` 中找到 ``DataLoader`` 通过组合数据变换对数据进行预处理的例子。"
+msgstr "crwdns91696:0:models:crwdne91696:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:107
+#: ../../source/user-guide/model-development/data/transform.rst:106
 msgid "注意与 Functional 的区别"
 msgstr "crwdns84823:0crwdne84823:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:109
+#: ../../source/user-guide/model-development/data/transform.rst:108
 msgid "用户不应当将 ``megengine.data.transform`` 与 ``megengine.functional`` 中的接口搞混淆："
 msgstr "crwdns84825:0crwdne84825:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:111
+#: ../../source/user-guide/model-development/data/transform.rst:110
 msgid "``megengine.data.transform`` 可以看作是一个独立的子库，可以对 NumPy 的 ndarray 数据进行各种处理；"
 msgstr "crwdns84827:0crwdne84827:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:112
+#: ../../source/user-guide/model-development/data/transform.rst:111
 msgid "``megengine.functional`` 中的实现都是围绕着 MegEngine 的 Tensor 数据结构进行的。"
 msgstr "crwdns84829:0crwdne84829:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:114
+#: ../../source/user-guide/model-development/data/transform.rst:113
 msgid "从流程上看，用户可以将原始数据转换成 ndarray 作为输入，经过 ``megengine.data.transform`` 做一些处理。 如果需要参与模型训练，得到的结果需要人为地转换成 Tensor 才能够被用于 ``megengine.functional`` 中的接口。"
 msgstr "crwdns84831:0crwdne84831:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:120
+#: ../../source/user-guide/model-development/data/transform.rst:119
 msgid "数据预处理应该在何时发生"
 msgstr "crwdns84833:0crwdne84833:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:122
+#: ../../source/user-guide/model-development/data/transform.rst:121
 msgid "当我们从 ``DataLoader`` 中获取批数据时，如果定义了 ``Transform``, 则会在每次加载完样本后立即对其进行变换。"
 msgstr "crwdns84835:0crwdne84835:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:124
+#: ../../source/user-guide/model-development/data/transform.rst:123
 msgid "数据变换操作也是有计算开销的，且该流程通常在 CPU 设备上进行，以及有些操作会调用类似 ``OpenCV`` 的库。 如果我们对每个样本进行多次加载（比如训练多个周期），那么变换操作也会被执行多次，这可能会带来额外的开销。 因此在有些时候，我们会选择将预处理操作在更早的流程中进行，即直接对原始数据先进行一次预处理操作， 这样在 ``DataLoader`` 中获取的输入便已经是经过预处理的数据了，这样可以尽可能地减少 ``Transform`` 操作。"
 msgstr "crwdns84837:0crwdne84837:0"
 
-#: ../../source/user-guide/model-development/data/transform.rst:129
+#: ../../source/user-guide/model-development/data/transform.rst:128
 msgid "用户应当考虑到，原始数据相关的 I/O 和处理也有可能成为模型训练整体流程中的瓶颈。"
 msgstr "crwdns84839:0crwdne84839:0"
 
