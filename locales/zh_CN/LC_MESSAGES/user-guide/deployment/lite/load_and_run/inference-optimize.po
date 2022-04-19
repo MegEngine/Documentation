@@ -1,0 +1,1179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2022, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-19 16:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:4
+msgid "使用 Load and run 进行推理优化实验"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:6
+msgid ""
+"MegEngine 提供了大量的推理优化设置，针对不同的模型设置合适的推理优化选项能够十分有效的提升推理时的性能. Load and run "
+"提供了很多推理优化的接口，可以用于探索各种设置对与推理性能的影响，获取在特定模型， "
+"特定后端上比较合适的优化设置方案，为模型最终部署时性能的保证提供相应依据。下面就常用的一些优化设置方法进行介绍。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:11
+msgid "fast-run 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:13
+msgid ""
+"MegEngine 在底层提供了一套用于在多种算法中选择最优算法的一种机制， 称为 fast-run 机制。 该机制为具有多种算法实现的算子，如 "
+"conv，matmul 等，提供了一套算法选择的机制。 通过设置相应的算法选择策略实现对不同模型多算法算子的配置，从而达到推理优化的目标。 "
+"其具体使用方法参考 :py:func:`~.set_execution_strategy` , :ref:`execution_optimize`"
+" ，这里主要介绍 Load and run 中的使用。选项说明参考 :ref:`fast-run-options`"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:19
+msgid "在优化后的算法中根据 profile 的时间选择算法( fast-run 策略)"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:20
+msgid ""
+"MegEngine 在通用算法的基础上为 conv，matmul 以及 pooling 等算子，提供了大量优化的算法。 "
+"。这些算法在性能上往往优于通用的算法实现，fast-run 策略在就是在这些优化的算法中根据 profile 的时间，选择最优的一种。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:25
+msgid "fast-run 机制发生在模型推理之前，因为需要 profile 各个算法的性能，所以算法搜索过程成中会有一定耗时。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:26
+msgid ""
+"fast-run "
+"提供了一套离线缓存机制来减少这部分耗时，该机制将一次或多次搜索的结果缓存下来，下次运行时可以直接加载缓存中的搜索结果，进而减少搜索耗时"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:28
+msgid "**使用 Load and run 运行 fast-run 策略**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:34
+msgid ""
+"对于 float32 的 resnet50 网络模型，在 cuda 上，使用 fast-run 和不使用 fast-run "
+"时各个阶段的用时（多次测试的平均值）如下："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:41
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:74
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:100
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:166
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:189
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:213
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:252
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:307
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:328
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:349
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:370
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:415
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:464
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:505
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:527
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:566
+msgid "模型配置（ms）"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:42
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:75
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:101
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:167
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:190
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:214
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:253
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:308
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:329
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:350
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:371
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:416
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:506
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:528
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:567
+msgid "模型预热（ms）"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:43
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:76
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:102
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:168
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:191
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:215
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:254
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:309
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:330
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:351
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:372
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:417
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:466
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:507
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:529
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:568
+msgid "模型推理（ms）"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:44
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:107
+msgid "开启 fast-run"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:45
+msgid "1.4"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:46
+msgid "``1821.5``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:47
+msgid "``3.9``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:48
+msgid "不开启 fast-run"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:49
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:104
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:221
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:361
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:517
+msgid "1.6"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:50
+msgid "28.5"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:51
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:321
+msgid "5.2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:53
+msgid ""
+"可以看出开启 fast-run "
+"时，在模型预热过程耗时巨大，但经过算法搜索后，模型推理时的性能时有一定提升的。模型预热过程中的耗时可以通过离线缓存机制来减少。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:55
+msgid "**获取离线缓存**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:61
+msgid "**使用离线缓存**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:67
+msgid "这时模型运行各个阶段的耗时如下："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:77
+msgid "使用 fast-run 离线缓存"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:78
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:319
+msgid "1.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:79
+msgid "28.9"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:80
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:106
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:110
+msgid "``3.8``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:81
+msgid "不使用 fast-run 离线缓存"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:82
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:112
+msgid "1.5"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:83
+msgid "28.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:84
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:114
+msgid "4.9"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:86
+msgid "可以看出在保证模型配置和模型预热时间基本不变的情况下，fast-run 策略与离线缓存机制组合使用可以有效的提高模型推理时的性能。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:89
+msgid "直接根据 profile 的时间选择算法( full-run 策略)"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:91
+msgid "full-run 策略与fast-run 策略类似，差别在与算法选择的范围更大，包含了算子的一些通用算法。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:93
+msgid ""
+"同样有对于 float32 的 resnet50 网络模型，在 cuda 上，使用 full-run 和不使用 full-run "
+"时各个阶段的用时（多次测试的平均值）如下："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:103
+msgid "开启 full-run"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:105
+msgid "``1964.4``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:108
+msgid "1.8"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:109
+msgid "``1883.1``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:111
+msgid "不开启 full-run 或 fast-run"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:113
+msgid "28.6"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:116
+msgid ""
+"可以看出，full-run 在模型预热阶段相比于 fast-run 耗时增大。 而使用离线缓存后，full-run 与 fast-run "
+"策略的模型运行各个阶段的耗时相差不多，但同样的，相比于不使用离线缓存是有性能提升的。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:121
+msgid "layout相关优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:123
+msgid ""
+"对于不同的推理后端以及不同数据类型，不同的内存布局 （layout）对于提高数据搬运的效率，最大化计算资源的利用有着很大的影响。 "
+"如：NVIDIA显卡上 fp32 的 conv 在 NCHW 的 layout 下性能最佳，但 int8 的 conv 在 NCHW4 下的 "
+"layout 下性能最佳。 因而针对不同的推理后端以及不同的数据类型选择合适的 layout 对于模型的推理性能也会产生很大的提升。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:127
+msgid ""
+"模型各个算子的 layout 在 MegEngine 中是有默认值的，默认 layout 下的算法不一定是性能最优的算法。 为了解决 layout"
+" 带来的性能差异的问题，MegEngine 提供了 layout 转换机制用于切换不同的 layout，期望通过 layout "
+"的切换，达到提升推理性能的目的。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:130
+msgid ""
+"Load and run 中集成了这些 layout 转换的接口，因而可以用 Load and run 来探索 layout "
+"转换可能带来的推理性能提升。接口相关说明参考 :ref:`layout-optimize-options`"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:133
+msgid "单一 layout 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:135
+msgid ""
+"开启单一 layout 优化目前有两种方式，其一是使用 MegEngine 提供的 :ref:`dump` 函数来开启，其二是通过 Load "
+"and run 的设置选项开启。 MegEngine 提供的 :ref:`dump` 函数开启的方法可以参考 "
+":py:meth:`~.jit.trace.dump` 。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:139
+msgid "CPU 平台"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:141
+msgid "如下为 CPU 平台上可以用到 layout 优化选项"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:147
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:234
+msgid "设置选项"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:148
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:235
+msgid "平台架构与模型类型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:149
+msgid "``--enable-nchw44``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:150
+msgid "Arm CPU float32/int8 量化模型。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:151
+msgid "``--enable-nchw88``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:152
+msgid "x86 CPU（支持 avx256）flloat32模型。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:153
+msgid "``--enable-nchw44-dot``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:154
+msgid "Arm CPU arch>=8.2 量化模型。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:156
+msgid "**ARM64 CPU 平台 layout 优化**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:159
+msgid ""
+"float32 resnet50 模型下 nchw44 和 nchw44-dot 都会在推理时有加速，但因为模型 layout "
+"的转换，模型配置阶段需要更多时间"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:165
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:212
+msgid "float32 模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:169
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:192
+msgid "nchw44 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:170
+msgid "819.9"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:171
+msgid "``485.3``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:172
+msgid "``236.5``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:173
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:196
+msgid "nchw44-dot 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:174
+msgid "803.5"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:175
+msgid "``483.5``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:176
+msgid "``236.6``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:177
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:200
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:220
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:275
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:318
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:339
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:360
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:381
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:430
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:483
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:516
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:538
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:577
+msgid "无优化设置"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:178
+msgid "4.5"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:179
+msgid "478.6"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:180
+msgid "247.3"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:182
+msgid ""
+"对于量化 int8 resnet50 模型而言，nchw44 会有负优化，而 nchw44-dot "
+"会有明显加速，但同样的会在模型配置阶段耗时会有一定提升。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:188
+msgid "量化int8 模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:193
+msgid "439.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:194
+msgid "``332.6``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:195
+msgid "``212.1``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:197
+msgid "625.5"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:198
+msgid "``200.9``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:199
+msgid "``69.7``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:201
+msgid "4.3"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:202
+msgid "257.8"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:203
+msgid "82.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:206
+msgid "**x86 CPU 平台上 layout 优化**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:216
+msgid "nchw88 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:217
+msgid "464.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:218
+msgid "``238.3``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:219
+msgid "``120.1``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:222
+msgid "325.2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:223
+msgid "136.9"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:225
+msgid "通过调用 mkl 的卷积算子，x86 上的 float32 模型有一定加速提升。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:228
+msgid "NVIDIA GPU 平台"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:236
+msgid "``--enable-nchw4``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:237
+msgid "GPU int8 模型。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:238
+msgid "``--enable-chwn4``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:239
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:241
+msgid "NVIDIA tensorcore int8模型。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:240
+msgid "``--enable-nchw32``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:242
+msgid "``--enable-nchw64``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:243
+msgid ""
+"NVIDIA tensorcore`` `fast int4 <https://developer.nvidia.com/blog/int4"
+"-for-ai-inference/>`__ 模型。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:245
+msgid "对于不同模型 NVIDIA GPU 上相关 layout 优化性能如下所示。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:251
+msgid "量化 int8 模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:255
+msgid "nchw4 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:256
+msgid "70.3"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:257
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:269
+msgid "``29.7``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:258
+msgid "``5.0``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:259
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:263
+msgid "chwn4 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:260
+msgid "98.6"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:261
+msgid "``42.6``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:262
+msgid "``23.3``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:264
+msgid "95.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:265
+msgid "``29.8``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:266
+msgid "``14.9``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:267
+msgid "nchw32 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:268
+msgid "114.2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:270
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:274
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:313
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:317
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:533
+msgid "``4.3``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:271
+msgid "nchw64 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:272
+msgid "64.6"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:273
+msgid "``28.1``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:276
+msgid "1.1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:277
+msgid "103.5"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:278
+msgid "40.8"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:280
+msgid "可以看出使用优化设置后，模型推理性能均有一定的提升。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:283
+msgid "全局 layout 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:285
+msgid ""
+"单个 layout 优化的只有在特定平台以及特定模型下有加速，这些设定比较繁琐， 使用时对于初步接触 MegEngine "
+"的读者而言，使用不是很方便。另外这些单个的优化知识局部最优的一个解，并没有达到整个计算图上的最优。 全局 layout "
+"优化可以很好的解决些问题。选项说明参考 :ref:`layout-optimize-options`"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:289
+msgid "基本用法如下："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:300
+msgid "下面是各个平台上的推理性能（模型为resnet50）"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:306
+msgid "``CUDA`` float 模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:310
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:331
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:352
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:373
+msgid "在线全局 layout 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:311
+msgid "2517.4"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:312
+msgid "``21.8``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:314
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:335
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:356
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:377
+msgid "模型离线 layout 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:315
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:340
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:357
+msgid "1.2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:316
+msgid "``27.8``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:320
+msgid "29.8"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:327
+msgid "``CUDA`` int8 模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:332
+msgid "1470.1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:333
+msgid "``16.2``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:334
+msgid "``2.1``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:336
+msgid "1.3"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:337
+msgid "``21.6``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:338
+msgid "``2.5``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:341
+msgid "75.2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:342
+msgid "45.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:348
+msgid "``x86 CPU`` float 模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:353
+msgid "10166.1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:354
+msgid "``223.6``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:355
+msgid "``112.1``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:358
+msgid "``280.5``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:359
+msgid "``114.2``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:362
+msgid "328.4"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:363
+msgid "130.9"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:369
+msgid "``arm CPU`` float 模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:374
+msgid "18038.3"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:375
+msgid "``449.8``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:376
+msgid "``235.8``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:378
+msgid "7.5"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:379
+msgid "``527.7``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:380
+msgid "``235.9``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:382
+msgid "8.9"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:383
+msgid "548.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:384
+msgid "248.2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:386
+msgid ""
+"由上述几个表中数据可以看出，全局 layout 优化在各类推理后端上都可以有很大的性能提升，且相比于单一 layout "
+"只需要指定相关推理后端即可。 另外全局图优化后的模型可以 dump 离线，使用 dump "
+"后的模型可以在减少优化过程的用时的同时，提升模型推理性能。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:390
+msgid "算子融合以及其他优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:393
+msgid "使用 weight 预处理优化加快卷积运算"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:395
+msgid ""
+"MegEngine 中针对 conv 算子的实现，有 winograd/im2col/direct 等一系列不同的实现。 对于 "
+"winograd/im2col "
+"的实现而言，其算法在真正做卷积计算之前需要对卷积核的权重做预先的处理，推理时，模型卷积核的权重大部分情况下都是常量， "
+"因此通过集中的权重预处理可以进一步加快整个推理的算法性能。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:399
+msgid "**使用 Load and run 进行 weight 预处理过程**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:408
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:457
+msgid "在 arm64 CPU 设备上，对于 float32 的 resnet50 网络模型，模型运行各个阶段的用时如下所示："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:418
+msgid "fast-run 缓存 + weight 预处理"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:419
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:427
+msgid "8.4"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:420
+msgid "``652.4``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:421
+msgid "``186.4``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:422
+msgid "只使用 fast-run 缓存"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:423
+msgid "11.3"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:424
+msgid "``571.3``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:425
+msgid "``227.9``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:426
+msgid "只使用 weight 预处理"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:428
+msgid "``581.1``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:429
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:478
+msgid "``229.8``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:431
+msgid "8.6"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:432
+msgid "562.4"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:433
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:482
+msgid "245.8"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:435
+msgid ""
+"可以看出，weight 预处理在 arm64 CPU "
+"设备上能够有效的提高推理性能，代价是预热阶段的耗时变大了。但预热在实际应用中相比于推理占比较小，所以整体性能是有很大提升的。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:439
+msgid ""
+"weight 预处理只针对使用 winograd/im2col 实现的卷积算法，因此只有在对应推理后端上有相应实现时才能有加速。相应实现在 "
+"MegEngine 的 `dnn "
+"<https://github.com/MegEngine/MegEngine/tree/master/dnn/src>`__ 中。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:442
+msgid "使用 fake-first 加速预热过程"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:444
+msgid ""
+"无论是 fast-run，还是 weight 前处理，在提升推理性能的同时，不免会引起预热阶段的一些耗时增加。 "
+"虽然预热部分在应用中占比不高，但有些应用下不免会成为瓶颈所在。 fake-first 这一优化， "
+"可以用于预先执行内存分配，队列初始化等操作，在此过程中不会进行计算任务，从而减少预热时间，提升整体性能。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:448
+msgid "**使用 Load and run 加速预热过程**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:465
+msgid "模型预热（首次/第二次 ms）"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:467
+msgid "fast-run 缓存 + weight 预处理 + fake-fisrt"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:468
+msgid "7.8"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:469
+msgid "30.1/410.1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:470
+msgid "``184.8``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:471
+msgid "只使用 fast-run 缓存 + fake-first"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:472
+msgid "9.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:473
+msgid "29.9/298.8"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:474
+msgid "``226.4``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:475
+msgid "只使用 weight 预处理 + fake-first"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:476
+msgid "11.2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:477
+msgid "31.3/361.8"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:479
+msgid "无优化设置 + fake-first"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:480
+msgid "8.1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:481
+msgid "36/316.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:484
+msgid "7.1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:485
+msgid "551.6/----"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:486
+msgid "246.4"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:488
+msgid "可以看出，使用fake-fisrt 时，能够很好的降低预热所需时间，唯一的问题时预热部分需要执行至少两次。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:491
+msgid "使用算子融合优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:492
+msgid ""
+"对于一些常见的算子，其往往以某一固定组合的形式出现，这样的算子通常可以融合为一个算子，从而减少数据搬运，提升整体的资源利用率。 常见的融合包括 "
+"elemwise 算子与shape 或者 type 变换算子的融合，卷积与非线性算子的融合，卷积，加法以及非线性算子的融合（类 resnet "
+"的网络中大量存在）。 Load and run 为这几类算子融合的设置提供了相应配置选项，参考 :ref:`preprocess-fuse-"
+"options`"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:496
+msgid ""
+"``--enable-fuse-preprocess`` "
+"选项用于前处理相关的，如类型转换，dimshuffle等算子的融合。对于单个模型而言性能变化不大。 这里主要介绍后两种算子融合的优化。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:504
+msgid "``CPU`` float模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:508
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:530
+msgid "卷积与非线性算子的融合"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:509
+msgid "3.3"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:510
+msgid "286.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:511
+msgid "``129.1``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:512
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:534
+msgid "卷积，加法以及非线性算子的融合"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:513
+msgid "3.4"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:514
+msgid "314.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:515
+msgid "``127.2``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:518
+msgid "313.6"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:519
+msgid "130.3"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:526
+msgid "``CUDA`` float模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:531
+msgid "3.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:532
+msgid "26.9"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:535
+msgid "4.1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:536
+msgid "28.2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:537
+msgid "``4.7``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:539
+msgid "2.1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:540
+msgid "29.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:541
+msgid "5.0"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:543
+msgid "算子融合有一定优化，但总体提升有限。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:546
+msgid "kern record 优化"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:548
+msgid ""
+"MegEngine 算法在运行时会根据传入的运行时信息分配相应的 kern 进行计算。这一过程是运行时决定的。所以会有一定耗时。 "
+"针对这部分耗时，MegEngine 提供了 record 的机制来记录运行时分配的 kern。在后面运行时直接使用 这部分 kern "
+"的记录来加速推理。 Load and run 选项说明参考 :ref:`preprocess-fuse-options`"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:552
+msgid "record 优化通常在一些低端平台上有一定优化。主要的使用方法："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:565
+msgid "``arm64 CPU`` float模型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:569
+msgid "开启 record level 1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:570
+msgid "7.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:571
+msgid "564.2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:572
+msgid "``245.2``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:573
+msgid "开启record level 2"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:574
+msgid "37.1"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:575
+msgid "311.7"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:576
+msgid "``243.5``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:578
+msgid "6.8"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:579
+msgid "540.3"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:580
+msgid "245.5"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:584
+msgid "有关常见推理测速的优化设置总结"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:586
+msgid "**x86 CPU 平台推理测速**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:594
+msgid "**ARM CPU 平台推理测速**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/inference-optimize.rst:602
+msgid "**NVIDIA GPU 平台推理测速**"
+msgstr ""
+

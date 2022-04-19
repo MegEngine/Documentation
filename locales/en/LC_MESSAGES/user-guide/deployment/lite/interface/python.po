@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"POT-Creation-Date: 2022-04-19 16:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,8 +40,8 @@ msgstr ""
 #: ../../source/user-guide/deployment/lite/interface/python.rst:620
 #: ../../source/user-guide/deployment/lite/interface/python.rst:759
 #: ../../source/user-guide/deployment/lite/interface/python.rst:832
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1004
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1022
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1020
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1038
 msgid "参数："
 msgstr ""
 
@@ -327,7 +327,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/user-guide/deployment/lite/interface/python.rst:338
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1068
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1084
 msgid "to_numpy"
 msgstr ""
 
@@ -892,128 +892,138 @@ msgstr ""
 msgid "设置 MegEngine Lite 的 log 级别，改函数不在 LiteGlobal 类中，是一个独立的全局函数。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:983
+#: ../../source/user-guide/deployment/lite/interface/python.rst:981
+msgid "物理地址和虚拟地址操作"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/python.rst:991
+msgid ""
+"部分设备上有虚拟地址和物理地址的概念，这里提供用户操作虚拟地址和物理地址的接口，主要有： * 设置全局的物理地址和虚拟地址对 * 清除这些地址对 "
+"* 通过虚拟地址查询物理地址"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/interface/python.rst:999
 msgid "Utils API"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:984
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1000
 msgid ""
 "MegEngine Lite 现在有一个 utils ，TensorBatchCollector，主要为方便用户在进行推理之前收集多个 batch"
 " 数据，然后将攒出来的一个多个 batch 的数据 同时放到 LiteNetwork 中进行推理，避免不必要的内存拷贝。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:988
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1004
 msgid "TensorBatchCollector"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1002
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1018
 msgid "创建一个 TensorBatchCollector，这个 TensorBatchCollector 默认数据类型是 INT8，设备为 CUDA。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1006
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1022
 msgid "shape：用户指定 TensorBatchCollector 的 shape。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1007
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1023
 msgid ""
 "dtype：具体的数据类型，可以是 "
 "LITE_FLOAT，LITE_HALF，LITE_INT，LITE_INT16，LITE_INT8，LITE_UINT8，LITE_UINT16。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1008
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1024
 msgid "device_type：具体的设备类型。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1009
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1025
 msgid "device_id：TensorBatchCollector 所在的设备 id。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1010
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1026
 msgid ""
 "is_pinned_host：该 TensorBatchCollector 申请的内存是否为： `锁页内存 "
 "<https://developer.nvidia.com/blog/how-optimize-data-transfers-cuda-"
 "cc/>`_ 。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1011
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1027
 msgid "tensor：可选的用户设置已经创建好的 LiteTensor 到 TensorBatchCollector 中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1014
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1030
 msgid "collect_id"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1020
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1036
 msgid "设置该 TensorBatchCollector 中指定 batch_id 的数据为用户输入的 array。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1024
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1040
 msgid "array：可以是 numpy 的 ndarry，也可以是 LiteTensor 类型。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1026
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1042
 msgid ""
 "如果是 numpy 的 ndarry，MegEngine Lite 将调用 LiteTensor 的 set_data_by_copy 将数据 "
 "copy 到指定的 batch_id 的内存中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1027
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1043
 msgid "如果是 LiteTensor 类型，MegEngine Lite 将调用 LiteTensor 的 copy_from 完成数据 copy。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1029
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1045
 msgid "batch_id：用户指定将要拷贝 array 数据的目标 batch。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1032
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1048
 msgid "collect_by_ctypes"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1038
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1054
 msgid "当用户的数据为 ctypes 的 c_void_p，可以调用该接口将数据设置到第一个空着的 batch 中。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1041
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1057
 msgid "collect"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1047
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1063
 msgid "当用户需要顺序的搜集batch，如从 0 一直到最大 batch，可以直接调用该接口。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1050
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1066
 msgid "free"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1056
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1072
 msgid "释放指定的 indexes，indexes 是一个 list。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1059
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1075
 msgid "get"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1065
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1081
 msgid "获得该 TensorBatchCollector 中内部存储数据的完整 LiteTensor。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1074
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1090
 msgid "获得该 TensorBatchCollector 中的数据保存在 numpy 的 array 中，并返回。"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1076
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1092
 msgid "示例1：顺序的进行攒 batch"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1097
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1113
 msgid "示例2：通过指定 batch_id 进行攒 batch"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1123
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1139
 msgid "示例3：通过 ctpes 进行攒 batch"
 msgstr ""
 
-#: ../../source/user-guide/deployment/lite/interface/python.rst:1146
+#: ../../source/user-guide/deployment/lite/interface/python.rst:1162
 msgid "示例4：通过 LiteTensor 进行攒 batch"
 msgstr ""
 
