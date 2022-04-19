@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2022, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-19 16:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:4
+msgid "使用 Load and run 进行模型性能分析"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:6
+msgid ""
+"``--profile`` 以及 ``--profile-host`` 可以获取推理时模型各个算子运行时间等一系列信息。 "
+"利用这一信息可以分析模型中各个算子的性能，获取影响模型推理性能的瓶颈所在，为后续的性能优化提供依据。下面就模型性能分析的一些常见场景进行介绍。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:11
+msgid ""
+"MegEngine 提供了 profile 相关的 python 接口， 使用方法可以参考 :ref:`profiler-"
+"guide`，这里只介绍与 Load and run 有关的一些内容的补充"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:14
+msgid "获取模型运行性能相关信息"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:16
+msgid ""
+"使用 ``--profile`` 或 ``--profile-host`` （仅获取host上的运行信息）获取模型运行性能相关的 json "
+"文件（参考 :ref:`plugin-options` ）。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:22
+msgid "生成的 json 相应的格式大致如下所示："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:87
+msgid "其中包含各个算子在 host 和 device 上对应的运行时间，以及其他的一些重要信息。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:90
+msgid "使用 MegEngine 提供的分析工具进行性能分析"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:92
+msgid ""
+"MegEngine 提供了内置的 `megengine.tools.profile_analyze "
+"<https://github.com/MegEngine/MegEngine/blob/master/imperative/python/megengine/tools/profile_analyze.py>`__"
+" 用于分析上述 json 文件中包含的相关信息。该工具提供了多种角度的性能展示方式。"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:96
+msgid "基本用法"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:106
+msgid "这时会默认输出前三个耗时最高的算子的相关信息以及总的运行时间信息:"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:134
+msgid "脚本的使用方法可以通过运行脚本的 ``--help`` 查看，常见的一些设置选项如下："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:140
+msgid "选项"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:141
+msgid "用途"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:142
+msgid "可选参数"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:143
+msgid "``-t`` 或 ``--top``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:144
+msgid "设置需要展示的算子数目，默认为 ``3``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:145
+msgid "数字"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:146
+msgid "``--opr-name <name_regex_string>``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:147
+msgid "筛选与给定名称正则表达式匹配的 opr"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:148
+msgid "带关键字的正则字符串"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:149
+msgid "``--type <opr_type>``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:150
+msgid "筛选给定类型的算子展示"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:151
+msgid "``”ConvolutionForward“`` ，``”PoolingForward“`` ，``”MatrixMul“`` 等"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:152
+msgid "``--order-by <table_column_name>``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:153
+msgid "按照表格中的某一列降序排列（前面带 ``+`` 时表示升序排列）"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:154
+msgid ""
+"``”computation“`` ，``“FLOPS”`` ，``“memory”`` ，``“bandwidth“`` 等（选项说明参考 "
+"::`profile-analyze`）"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:155
+msgid "``--aggregate-by type --aggregate <op_name>``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:156
+msgid "根据类型进行收缩，收缩时以<op_name>中的规则为收缩标准"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:157
+msgid "``“max”`` ，``“min”`` ，``“sum”`` ，``“mean”``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:158
+msgid "``--top-end-key <end_desc>``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:159
+msgid "设置计算时间的范围，包括 device 上全部的用时以及仅 kern 在 device 上执行的时间"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:160
+msgid "``“end”`` (device 上全部用时)，``“kern”`` (仅 kern 执行用时)"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:161
+msgid "``--min-time <number_of_time>``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:162
+msgid "设置输出到界面上的最小用时阈值"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:163
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:166
+msgid "浮点数"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:164
+msgid "``--max-time <number_of_time>``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:165
+msgid "设置输出到界面上的最大用时阈值"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:167
+msgid "``--print-only <key_word>``"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:168
+msgid "设置需要输出的信息类型"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:169
+msgid "``“summary”`` （简短的总结）， ``“device”`` （device 上的时间），``“host”`` （host 上的时间）"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:172
+msgid "常见使用场景"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:174
+msgid "**分析模型中 conv 算子的性能**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:181
+msgid "得到如下输出："
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:209
+msgid "**分析模型中各类算子的总耗时的多少**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:217
+msgid "输出用时总和降序排列的各个算子的信息"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:219
+msgid "**分析模型中内存占用最多的算子**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:228
+msgid "输出用时占用内存降序或升序排列的各个算子的信息"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:230
+msgid "**分析用时超过给定阈值的算子**"
+msgstr ""
+
+#: ../../source/user-guide/deployment/lite/load_and_run/profile-model.rst:238
+msgid "输出用时超过给定阈值的各个算子的信息"
+msgstr ""
+
