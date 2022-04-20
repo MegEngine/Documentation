@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-04-12 04:54+0000\n"
+"PO-Revision-Date: 2022-04-19 12:29\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.data.DataLoader.po\n"
+"X-Crowdin-File-ID: 1910\n"
 
 #: ../../source/reference/api/megengine.data.DataLoader.rst:5
 msgid "DataLoader"
@@ -23,13 +27,8 @@ msgid "Provides a convenient way to iterate on a given dataset."
 msgstr "可用于在给定数据集上遍历并取得数据。"
 
 #: megengine.data.dataloader.DataLoader:3 of
-msgid ""
-"DataLoader combines a dataset with :class:`~.Sampler`, "
-":class:`~.Transform` and :class:`~.Collator`, make it flexible to get "
-"minibatch continually from a dataset."
-msgstr ""
-"DataLoader 将数据集与 :class:`~.Sampler`, :class:`~.Transform` 和 "
-":class:`~.Collator` 组合在一起，使其可以灵活地从数据集中连续获取小批量数据。"
+msgid "DataLoader combines a dataset with :class:`~.Sampler`, :class:`~.Transform` and :class:`~.Collator`, make it flexible to get minibatch continually from a dataset."
+msgstr "DataLoader 将数据集与 :class:`~.Sampler`, :class:`~.Transform` 和 :class:`~.Collator` 组合在一起，使其可以灵活地从数据集中连续获取小批量数据。"
 
 #: megengine.data.dataloader.DataLoader of
 msgid "参数"
@@ -52,15 +51,11 @@ msgid "defined the merging strategy for a transformed batch. Default: None"
 msgstr "定义了转换批次的合并策略。 默认：None"
 
 #: megengine.data.dataloader.DataLoader:18 of
-msgid ""
-"the number of sub-process to load, transform and collate the batch. ``0``"
-" means using single-process. Default: 0"
+msgid "the number of sub-process to load, transform and collate the batch. ``0`` means using single-process. Default: 0"
 msgstr "加载、转换和整理批次的子进程数量。 ``0`` 表示使用单进程。 默认：0"
 
 #: megengine.data.dataloader.DataLoader:21 of
-msgid ""
-"if positive, means the timeout value(second) for collecting a batch from "
-"workers. Default: 0"
+msgid "if positive, means the timeout value(second) for collecting a batch from workers. Default: 0"
 msgstr "如果为正，则表示从  worker 那里收集批次的超时值（秒）。 默认：0"
 
 #: megengine.data.dataloader.DataLoader:24 of
@@ -68,32 +63,15 @@ msgid "callback function triggered by timeout, default to raise runtime error."
 msgstr "超时触发的回调函数，默认引发运行时错误。"
 
 #: megengine.data.dataloader.DataLoader:27 of
-msgid ""
-"define the paralleling strategy in multi-processing mode. ``True`` means "
-"one batch is divided into :attr:`num_workers` pieces, and the workers "
-"will process these pieces parallelly. ``False`` means different sub-"
-"process will process different batch. Default: False"
-msgstr ""
-"定义多进程模式下的并行策略。 ``True`` 表示一个批次被分成 :attr:`num_workers` 块，worker 将并行处理这些块。 "
-"``False`` 表示不同的子进程会处理不同的批次。 默认：False"
+msgid "define the paralleling strategy in multi-processing mode. ``True`` means one batch is divided into :attr:`num_workers` pieces, and the workers will process these pieces parallelly. ``False`` means different sub-process will process different batch. Default: False"
+msgstr "定义多进程模式下的并行策略。 ``True`` 表示一个批次被分成 :attr:`num_workers` 块，worker 将并行处理这些块。 ``False`` 表示不同的子进程会处理不同的批次。 默认：False"
 
 #: megengine.data.dataloader.DataLoader:32 of
-msgid ""
-"whether to enable the preloading strategy of the dataloader. When "
-"enabling, the dataloader will preload one batch to the device memory to "
-"speed up the whole training process. All values in the map, list, and "
-"tuple will be converted to :class:`~.Tensor` by preloading, and you will "
-"get :class:`~.Tensor` instead of the original Numpy array or Python "
-"number."
+msgid "whether to enable the preloading strategy of the dataloader. When enabling, the dataloader will preload one batch to the device memory to speed up the whole training process. All values in the map, list, and tuple will be converted to :class:`~.Tensor` by preloading, and you will get :class:`~.Tensor` instead of the original Numpy array or Python number."
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:37 of
-msgid ""
-"By enabling preload, tensors' host2device copy and device kernel "
-"execution will be overlapped, which will improve the training speed at "
-"the cost of higher device memory usage (due to one more batch data on "
-"device memory). This feature saves more time when your NN training time "
-"is short or your machine's host PCIe bandwidth for each device is low."
+msgid "By enabling preload, tensors' host2device copy and device kernel execution will be overlapped, which will improve the training speed at the cost of higher device memory usage (due to one more batch data on device memory). This feature saves more time when your NN training time is short or your machine's host PCIe bandwidth for each device is low."
 msgstr ""
 
 #~ msgid "基类：:class:`object`"

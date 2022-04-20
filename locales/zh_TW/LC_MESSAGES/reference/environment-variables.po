@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 04:48\n"
+"POT-Creation-Date: 2022-04-19 16:51+0800\n"
+"PO-Revision-Date: 2022-04-19 12:45\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -112,7 +112,7 @@ msgstr "crwdns66811:0crwdne66811:0"
 #: ../../source/reference/environment-variables.rst:144
 #: ../../source/reference/environment-variables.rst:149
 #: ../../source/reference/environment-variables.rst:154
-#: ../../source/reference/environment-variables.rst:175
+#: ../../source/reference/environment-variables.rst:178
 #: ../../source/reference/environment-variables.rst:183
 #: ../../source/reference/environment-variables.rst:235
 msgid "设置为 ``0`` 表示关闭，为 ``1`` 表示开启。"
@@ -330,21 +330,21 @@ msgstr "crwdns66917:0:ref:crwdne66917:0"
 msgid "动态图的执行并行度，``0`` 是完全串行，``1`` 是计算异步，``2`` 是用户代码和计算都异步（默认）。 设置为 0 将使 MegEngine 上层的任务队列变成同步执行，即 Python 调用一个 Op, C++ 层执行一个 Op, 没执行完前 Python 层不会走到下一句，便于定位 Python 层报错的位置，但会影响速度。"
 msgstr "crwdns82449:0crwdne82449:0"
 
-#: ../../source/reference/environment-variables.rst:175
+#: ../../source/reference/environment-variables.rst:173
+msgid "``MEGENGINE_ASYNC_QUEUE_SIZE`` （ :ref:`nd-environ` ）"
+msgstr "crwdns92162:0:ref:crwdne92162:0"
+
+#: ../../source/reference/environment-variables.rst:173
+msgid "异步队列的大小，默认值为 ``10000``。增加该值会发现内存占用持续增长，是正常现象。"
+msgstr "crwdns92164:0crwdne92164:0"
+
+#: ../../source/reference/environment-variables.rst:178
 msgid "``MEGENGINE_CATCH_WORKER_EXEC`` （ :ref:`nd-environ` ）"
 msgstr "crwdns66921:0:ref:crwdne66921:0"
 
-#: ../../source/reference/environment-variables.rst:173
+#: ../../source/reference/environment-variables.rst:176
 msgid "是否捕获动态图 worker 的异常，默认开启，Debug 时可将其关闭。"
 msgstr "crwdns66923:0crwdne66923:0"
-
-#: ../../source/reference/environment-variables.rst:178
-msgid "``MEGENGINE_COMMAND_BUFFER_LENGTH`` （ :ref:`nd-environ` ）"
-msgstr "crwdns66925:0:ref:crwdne66925:0"
-
-#: ../../source/reference/environment-variables.rst:178
-msgid "延迟执行最后面计算算子的个数（默认为 ``3`` ），用于做局部优化。"
-msgstr "crwdns66927:0crwdne66927:0"
 
 #: ../../source/reference/environment-variables.rst:183
 msgid "``MEGENGINE_RECORD_COMPUTING_PATH`` （ :ref:`nd-environ` ）"
@@ -487,5 +487,11 @@ msgid "Tensor index 的下标如 果是scalar, 则可以使用 subtensor, 选择
 msgstr "crwdns66989:0crwdne66989:0"
 
 #~ msgid "动态图的执行并行度，``0`` 是完全串行，``1`` 是计算异步，``2`` 是用户代码和计算都异步（默认）。"
+#~ msgstr ""
+
+#~ msgid "``MEGENGINE_COMMAND_BUFFER_LENGTH`` （ :ref:`nd-environ` ）"
+#~ msgstr ""
+
+#~ msgid "延迟执行最后面计算算子的个数（默认为 ``3`` ），用于做局部优化。"
 #~ msgstr ""
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-12-13 15:10\n"
+"POT-Creation-Date: 2022-04-19 16:51+0800\n"
+"PO-Revision-Date: 2022-04-19 12:45\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
@@ -120,13 +120,13 @@ msgstr "crwdns87749:0crwdne87749:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:98
 #: ../../source/user-guide/model-development/serialization/index.rst:123
-#: ../../source/user-guide/model-development/serialization/index.rst:185
+#: ../../source/user-guide/model-development/serialization/index.rst:190
 msgid "保存："
 msgstr "crwdns87751:0crwdne87751:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:102
 #: ../../source/user-guide/model-development/serialization/index.rst:127
-#: ../../source/user-guide/model-development/serialization/index.rst:197
+#: ../../source/user-guide/model-development/serialization/index.rst:202
 msgid "加载："
 msgstr "crwdns87753:0crwdne87753:0"
 
@@ -155,66 +155,74 @@ msgid "加载状态字典成功后，记得调用 ``model.eval()`` 将模型切�
 msgstr "crwdns87765:0crwdne87765:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:146
-msgid "通常我们约定使用 ``.mge`` / ``.pkl`` 文件扩展名保存模型。"
-msgstr "crwdns87767:0crwdne87767:0"
+msgid "通常我们约定使用 ``.pkl`` 文件扩展名保存模型，如 ``mge_checkpoint_xxx.pkl`` 形式。"
+msgstr "crwdns91762:0crwdne91762:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:149
+#: ../../source/user-guide/model-development/serialization/index.rst:148
+msgid "注意 ``.pkl`` 与 ``.mge`` 文件的区别"
+msgstr "crwdns91764:0crwdne91764:0"
+
+#: ../../source/user-guide/model-development/serialization/index.rst:151
+msgid "``.mge`` 文件通常是 MegEngine 模型经过 :ref:`dump` 得到的文件，用于推理部署。"
+msgstr "crwdns91766:0:ref:crwdne91766:0"
+
+#: ../../source/user-guide/model-development/serialization/index.rst:154
 msgid "什么是状态字典"
 msgstr "crwdns87769:0crwdne87769:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:151
+#: ../../source/user-guide/model-development/serialization/index.rst:156
 msgid "由于使用 ``pickle`` 直接 :ref:`save-load-entire-model` 时存在受到路径影响的局限性， 我们则需要考虑使用原生的 Python 数据结构来记录模型内部的状态信息，方便进行序列化和反序列化。 在 :ref:`module-design` 中，我们提到了每个 Module 有一个状态字典成员， 记录着模型内部的 Tensor 信息（即 :ref:`parameter-and-buffer` ）："
 msgstr "crwdns87771:0:ref:crwdnd87771:0:ref:crwdnd87771:0:ref:crwdne87771:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:167
+#: ../../source/user-guide/model-development/serialization/index.rst:172
 msgid "状态字典是一个简单的 Python 字典对象，因此可以借助 ``pickle`` 轻松地保存和加载。"
 msgstr "crwdns87773:0crwdne87773:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:172
+#: ../../source/user-guide/model-development/serialization/index.rst:177
 msgid "每个优化器 ``Optimzer`` 也有一个状态字典，其中包含有关优化器状态的信息，以及使用的超参数； 如果后续有恢复模型并且继续训练的需求，仅保存模型的状态字典是不行的 —— 我们同时还需要保存优化器的状态字典等信息，即下面提到的 “检查点” 技术。"
 msgstr "crwdns87775:0crwdne87775:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:178
+#: ../../source/user-guide/model-development/serialization/index.rst:183
 msgid "关于状态字典的进一步解释： :ref:`module-state-dict` / :ref:`optimizer-state-dict`"
 msgstr "crwdns87777:0:ref:crwdnd87777:0:ref:crwdne87777:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:183
+#: ../../source/user-guide/model-development/serialization/index.rst:188
 msgid "保存/加载检查点"
 msgstr "crwdns87779:0crwdne87779:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:214
+#: ../../source/user-guide/model-development/serialization/index.rst:219
 msgid "保存检查点是为了能够恢复到和训练时一致的状态： 需要恢复的不仅仅是 :ref:`module-state-dict` ，:ref:`optimizer-state-dict`. 根据实际需求，还可以记录训练时达到的 ``epoch`` 以及最新的 ``loss`` 信息。"
 msgstr "crwdns87781:0:ref:crwdnd87781:0:ref:crwdne87781:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:217
+#: ../../source/user-guide/model-development/serialization/index.rst:222
 msgid "加载检查点后，根据是希望继续训练，还是用作推理来设置模型为训练或评估模式。"
 msgstr "crwdns87783:0crwdne87783:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:221
+#: ../../source/user-guide/model-development/serialization/index.rst:226
 msgid "相较于仅保存模型的状态字典，保存完整检查点会占据比较多的硬盘空间。 因此如果你十分确定以后只需要进行模型推理时，可以不必保存检查点。 亦或者设定不同的保存频率，例如每 10 个 Epochs 保存一次状态字典， 每 100 个 Epochs 保存一次完整的检查点，这取决于你的实际需求。"
 msgstr "crwdns87785:0crwdne87785:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:228
+#: ../../source/user-guide/model-development/serialization/index.rst:233
 msgid "参考官方 ResNet 模型中如何保存和加载检查点："
 msgstr "crwdns87787:0crwdne87787:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:230
+#: ../../source/user-guide/model-development/serialization/index.rst:235
 msgid ":models:`official/vision/classification/resnet`"
 msgstr "crwdns87789:0:models:crwdne87789:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:232
+#: ../../source/user-guide/model-development/serialization/index.rst:237
 msgid "在 ``train/test/inference.py`` 可找到相关接口。"
 msgstr "crwdns87791:0crwdne87791:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:237
+#: ../../source/user-guide/model-development/serialization/index.rst:242
 msgid "导出静态图模型"
 msgstr "crwdns87793:0crwdne87793:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:239
+#: ../../source/user-guide/model-development/serialization/index.rst:244
 msgid "为了将最终训练好的模型部署到生产环境，模型开发的最后一步需要导出静态图模型："
 msgstr "crwdns87795:0crwdne87795:0"
 
-#: ../../source/user-guide/model-development/serialization/index.rst:262
+#: ../../source/user-guide/model-development/serialization/index.rst:267
 msgid "更加具体的解释请参考： :ref:`dump` 。"
 msgstr "crwdns87797:0:ref:crwdne87797:0"
 
@@ -223,4 +231,7 @@ msgstr "crwdns87797:0:ref:crwdne87797:0"
 
 #~ msgid "内容正在建设中..."
 #~ msgstr "The content is under construction..."
+
+#~ msgid "通常我们约定使用 ``.mge`` / ``.pkl`` 文件扩展名保存模型。"
+#~ msgstr "Usually we use the ``.mge`` / ``.pkl`` file extension to save models."
 
