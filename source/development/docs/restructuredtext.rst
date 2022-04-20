@@ -599,6 +599,21 @@ MegEngine 文档按照 Sphinx `Python Domain <https://www.sphinx-doc.org/en/mast
 
    对于 ``Conv2d`` 这种存在多个前缀的 API, 请补全部分前缀以防止冲突，比如 ``:py:class:`.module.Conv2d```.
 
+交叉引用 C++ 对象
+~~~~~~~~~~~~~~~~~~~~~
+
+与 Python API 的交叉引用方法类似，语法形如：
+
+.. code-block:: rst
+
+   指向 :cpp:class:`lite::Tensor` 的 API 文档。
+
+指向 :cpp:class:`lite::Tensor` 的 API 文档。
+
+.. seealso::
+
+   `Cross-referencing <https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#cross-referencing>`_
+
 .. _footnotes-rst:
 
 脚注（Footnotes）

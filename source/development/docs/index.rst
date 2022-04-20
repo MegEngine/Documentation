@@ -10,6 +10,7 @@
 
    document-style-guide/index
    python-docstring-style-guide
+   cpp-doc-style-guide
    restructuredtext
    commit-message
    build-the-doc-locally
