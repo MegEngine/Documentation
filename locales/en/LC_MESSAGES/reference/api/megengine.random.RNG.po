@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-20 12:44+0800\n"
-"PO-Revision-Date: 2022-04-19 12:39+0000\n"
+"PO-Revision-Date: 2022-04-20 05:25\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.random.RNG.po\n"
+"X-Crowdin-File-ID: 7048\n"
 
 #: ../../source/reference/api/megengine.random.RNG.rst:5
 msgid "RNG"
@@ -30,9 +34,7 @@ msgid "参数"
 msgstr ""
 
 #: megengine.random.rng.RNG:4 of
-msgid ""
-"random seed used to initialize the pseudo-random number generator. "
-"Default: None"
+msgid "random seed used to initialize the pseudo-random number generator. Default: None"
 msgstr ""
 
 #: megengine.random.rng.RNG:6 of
@@ -54,9 +56,7 @@ msgid "Outputs:"
 msgstr ""
 
 #: megengine.random.rng.RNG.beta:1 of
-msgid ""
-"Random variable with Beta distribution "
-":math:`\\operatorname{Beta}(\\alpha, \\beta)`."
+msgid "Random variable with Beta distribution :math:`\\operatorname{Beta}(\\alpha, \\beta)`."
 msgstr ""
 
 #: megengine.random.rng.RNG.beta:3 megengine.random.rng.RNG.gamma:3
@@ -65,9 +65,7 @@ msgid "The corresponding probability density function is"
 msgstr ""
 
 #: megengine.random.rng.RNG.beta:5 of
-msgid ""
-"p(x)=\\frac{1}{\\mathrm{~B}(\\alpha, \\beta)} "
-"x^{\\alpha-1}(1-x)^{\\beta-1}\n"
+msgid "p(x)=\\frac{1}{\\mathrm{~B}(\\alpha, \\beta)} x^{\\alpha-1}(1-x)^{\\beta-1}\n"
 "\\quad \\text { for } \\alpha, \\beta>0,"
 msgstr ""
 
@@ -76,9 +74,7 @@ msgid "where :math:`\\mathrm{~B}(\\alpha, \\beta)` is the beta function,"
 msgstr ""
 
 #: megengine.random.rng.RNG.beta:12 of
-msgid ""
-"\\mathrm{~B}(\\alpha, \\beta)=\\int_{0}^{1} t^{\\alpha-1}(1-t)^{\\beta-1}"
-" d t."
+msgid "\\mathrm{~B}(\\alpha, \\beta)=\\int_{0}^{1} t^{\\alpha-1}(1-t)^{\\beta-1} d t."
 msgstr ""
 
 #: megengine.random.rng.RNG.beta:17 of
@@ -90,11 +86,7 @@ msgid "the beta parameter of the distribution. Must be non-negative."
 msgstr ""
 
 #: megengine.random.rng.RNG.beta:21 of
-msgid ""
-"the size of output tensor. If alpha and beta are scalars and given size "
-"is, e.g., `(m, n)`, then the output shape is `(m, n)`. If alpha or beta "
-"is a Tensor and given size is, e.g., `(m, n)`, then the output shape is "
-"`(m, n) + broadcast(alpha, beta).shape`."
+msgid "the size of output tensor. If alpha and beta are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If alpha or beta is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(alpha, beta).shape`."
 msgstr ""
 
 #: megengine.random.rng.RNG.beta megengine.random.rng.RNG.gamma
@@ -114,8 +106,7 @@ msgid "Random variable with Gamma distribution :math:`\\Gamma(k, \\theta)`."
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma:5 of
-msgid ""
-"p(x)=x^{k-1} \\frac{e^{-x / \\theta}}{\\theta^{k} \\Gamma(k)}\n"
+msgid "p(x)=x^{k-1} \\frac{e^{-x / \\theta}}{\\theta^{k} \\Gamma(k)}\n"
 "\\quad \\text { for } x>0 \\quad k, \\theta>0,"
 msgstr ""
 
@@ -124,30 +115,19 @@ msgid "where :math:`\\Gamma(k)` is the gamma function,"
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma:12 of
-msgid ""
-"\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k>0.\n"
-"\n"
+msgid "\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k>0.\n\n"
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma:16 of
-msgid ""
-"the shape parameter (sometimes designated \"k\") of the distribution. "
-"Must be non-negative."
+msgid "the shape parameter (sometimes designated \"k\") of the distribution. Must be non-negative."
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma:19 of
-msgid ""
-"the scale parameter (sometimes designated \"theta\") of the distribution."
-" Must be non-negative. Default: 1"
+msgid "the scale parameter (sometimes designated \"theta\") of the distribution. Must be non-negative. Default: 1"
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma:22 of
-msgid ""
-"the size of output tensor. If shape and scale are scalars and given size "
-"is, e.g., `(m, n)`, then the output shape is `(m, n)`. If shape or scale "
-"is a Tensor and given size is, e.g., `(m, n)`, then the output shape is "
-"`(m, n) + broadcast(shape, scale).shape`. The broadcast rules are "
-"consistent with `numpy.broadcast`. Default: None"
+msgid "the size of output tensor. If shape and scale are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If shape or scale is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(shape, scale).shape`. The broadcast rules are consistent with `numpy.broadcast`. Default: None"
 msgstr ""
 
 #: megengine.random.rng.RNG.normal:1 of
@@ -159,9 +139,7 @@ msgid "the mean or expectation of the distribution. Default: 0"
 msgstr ""
 
 #: megengine.random.rng.RNG.normal:6 of
-msgid ""
-"the standard deviation of the distribution (variance = :math:`\\sigma ^ "
-"2`). Default: 1"
+msgid "the standard deviation of the distribution (variance = :math:`\\sigma ^ 2`). Default: 1"
 msgstr ""
 
 #: megengine.random.rng.RNG.normal:9 megengine.random.rng.RNG.uniform:8 of
@@ -173,28 +151,19 @@ msgid "Randomly permute a sequence, or return a permuted range."
 msgstr ""
 
 #: megengine.random.rng.RNG.permutation:2 of
-msgid ""
-"If ``n`` is a multi-dimensional tensor, it is only shuffled along its "
-"first index."
+msgid "If ``n`` is a multi-dimensional tensor, it is only shuffled along its first index."
 msgstr ""
 
 #: megengine.random.rng.RNG.permutation:5 of
-msgid ""
-"If ``n`` is an integer, random permutation of integers from :math:`0` to "
-":math:`n - 1`. If ``n`` is an tensor, make a copy and shuffle the "
-"elements randomly."
+msgid "If ``n`` is an integer, random permutation of integers from :math:`0` to :math:`n - 1`. If ``n`` is an tensor, make a copy and shuffle the elements randomly."
 msgstr ""
 
 #: megengine.random.rng.RNG.permutation:8 of
-msgid ""
-"the output data type when ``n`` is an integer. int32, int16 and float32 "
-"are supported. Default: int32"
+msgid "the output data type when ``n`` is an integer. int32, int16 and float32 are supported. Default: int32"
 msgstr ""
 
 #: megengine.random.rng.RNG.poisson:1 of
-msgid ""
-"Random variable with poisson distribution "
-":math:`\\operatorname{Poisson}(\\lambda)`."
+msgid "Random variable with poisson distribution :math:`\\operatorname{Poisson}(\\lambda)`."
 msgstr ""
 
 #: megengine.random.rng.RNG.poisson:5 of
@@ -202,9 +171,7 @@ msgid "f(k ; \\lambda)=\\frac{\\lambda^{k} e^{-\\lambda}}{k !},"
 msgstr ""
 
 #: megengine.random.rng.RNG.poisson:9 of
-msgid ""
-"where k is the number of occurrences :math:`({\\displaystyle "
-"k=0,1,2...})`."
+msgid "where k is the number of occurrences :math:`({\\displaystyle k=0,1,2...})`."
 msgstr ""
 
 #: megengine.random.rng.RNG.poisson:12 of
@@ -212,18 +179,11 @@ msgid "the lambda parameter of the distribution. Must be non-negative."
 msgstr ""
 
 #: megengine.random.rng.RNG.poisson:14 of
-msgid ""
-"the size of output tensor. If lam is a scalar and given size is, e.g., "
-"`(m, n)`, then the output shape is `(m, n)`. If lam is a Tensor with "
-"shape `(k, v)` and given size is, e.g., `(m, n)`, then the output shape "
-"is `(m, n, k, v)`. Default: None."
+msgid "the size of output tensor. If lam is a scalar and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If lam is a Tensor with shape `(k, v)` and given size is, e.g., `(m, n)`, then the output shape is `(m, n, k, v)`. Default: None."
 msgstr ""
 
 #: megengine.random.rng.RNG.shuffle:1 of
-msgid ""
-"Modify a sequence in-place by shuffling its contents. This function only "
-"shuffles the Tensor along the first axis of a multi-dimensional Tensor. "
-"The order of sub-Tensors is changed but their contents remains the same."
+msgid "Modify a sequence in-place by shuffling its contents. This function only shuffles the Tensor along the first axis of a multi-dimensional Tensor. The order of sub-Tensors is changed but their contents remains the same."
 msgstr ""
 
 #: megengine.random.rng.RNG.shuffle:6 of
