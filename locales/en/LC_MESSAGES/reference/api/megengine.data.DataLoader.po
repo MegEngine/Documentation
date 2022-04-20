@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2021-12-28 12:56+0000\n"
+"PO-Revision-Date: 2022-04-19 12:29\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.data.DataLoader.po\n"
+"X-Crowdin-File-ID: 1910\n"
 
 #: ../../source/reference/api/megengine.data.DataLoader.rst:5
 msgid "DataLoader"
@@ -23,10 +27,7 @@ msgid "Provides a convenient way to iterate on a given dataset."
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:3 of
-msgid ""
-"DataLoader combines a dataset with :class:`~.Sampler`, "
-":class:`~.Transform` and :class:`~.Collator`, make it flexible to get "
-"minibatch continually from a dataset."
+msgid "DataLoader combines a dataset with :class:`~.Sampler`, :class:`~.Transform` and :class:`~.Collator`, make it flexible to get minibatch continually from a dataset."
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader of
@@ -50,15 +51,11 @@ msgid "defined the merging strategy for a transformed batch. Default: None"
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:18 of
-msgid ""
-"the number of sub-process to load, transform and collate the batch. ``0``"
-" means using single-process. Default: 0"
+msgid "the number of sub-process to load, transform and collate the batch. ``0`` means using single-process. Default: 0"
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:21 of
-msgid ""
-"if positive, means the timeout value(second) for collecting a batch from "
-"workers. Default: 0"
+msgid "if positive, means the timeout value(second) for collecting a batch from workers. Default: 0"
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:24 of
@@ -66,30 +63,15 @@ msgid "callback function triggered by timeout, default to raise runtime error."
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:27 of
-msgid ""
-"define the paralleling strategy in multi-processing mode. ``True`` means "
-"one batch is divided into :attr:`num_workers` pieces, and the workers "
-"will process these pieces parallelly. ``False`` means different sub-"
-"process will process different batch. Default: False"
+msgid "define the paralleling strategy in multi-processing mode. ``True`` means one batch is divided into :attr:`num_workers` pieces, and the workers will process these pieces parallelly. ``False`` means different sub-process will process different batch. Default: False"
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:32 of
-msgid ""
-"whether to enable the preloading strategy of the dataloader. When "
-"enabling, the dataloader will preload one batch to the device memory to "
-"speed up the whole training process. All values in the map, list, and "
-"tuple will be converted to :class:`~.Tensor` by preloading, and you will "
-"get :class:`~.Tensor` instead of the original Numpy array or Python "
-"number."
+msgid "whether to enable the preloading strategy of the dataloader. When enabling, the dataloader will preload one batch to the device memory to speed up the whole training process. All values in the map, list, and tuple will be converted to :class:`~.Tensor` by preloading, and you will get :class:`~.Tensor` instead of the original Numpy array or Python number."
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:37 of
-msgid ""
-"By enabling preload, tensors' host2device copy and device kernel "
-"execution will be overlapped, which will improve the training speed at "
-"the cost of higher device memory usage (due to one more batch data on "
-"device memory). This feature saves more time when your NN training time "
-"is short or your machine's host PCIe bandwidth for each device is low."
+msgid "By enabling preload, tensors' host2device copy and device kernel execution will be overlapped, which will improve the training speed at the cost of higher device memory usage (due to one more batch data on device memory). This feature saves more time when your NN training time is short or your machine's host PCIe bandwidth for each device is low."
 msgstr ""
 
 #~ msgid "基类：:class:`object`"
@@ -129,4 +111,8 @@ msgstr ""
 #~ "int,float,list[int,float],tuple[int,float],and another "
 #~ "type is not supported."
 #~ msgstr ""
+#~ "定义是否应用 dataloader 的预加载策略，并在 kernel 执行时并行化 "
+#~ "host2device 以提高加载速度。 默认设置为 False，输出将从 "
+#~ "np.ndarry 更改为 dtype 张量。 预加载支持的 dtype "
+#~ "是 int,float,list[int,float],tuple[int,float]，不支持其他类型。"
 

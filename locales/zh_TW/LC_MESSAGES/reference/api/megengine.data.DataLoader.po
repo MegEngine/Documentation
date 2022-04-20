@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 09:01\n"
+"POT-Creation-Date: 2022-04-19 16:51+0800\n"
+"PO-Revision-Date: 2022-04-19 12:44\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -67,8 +67,12 @@ msgid "define the paralleling strategy in multi-processing mode. ``True`` means 
 msgstr "crwdns62600:0:attr:crwdne62600:0"
 
 #: megengine.data.dataloader.DataLoader:32 of
-msgid "Defines whether to apply the preloading strategy of dataloader, and parallelize the copy of host2device while kernal is executed to improve the loading speed. default is seted False the output will change from np.ndarry to dtype tensor. the support dtypes for preload are int,float,list[int,float],tuple[int,float],and another type is not supported."
-msgstr "crwdns68545:0crwdne68545:0"
+msgid "whether to enable the preloading strategy of the dataloader. When enabling, the dataloader will preload one batch to the device memory to speed up the whole training process. All values in the map, list, and tuple will be converted to :class:`~.Tensor` by preloading, and you will get :class:`~.Tensor` instead of the original Numpy array or Python number."
+msgstr "crwdns91876:0:class:crwdnd91876:0:class:crwdne91876:0"
+
+#: megengine.data.dataloader.DataLoader:37 of
+msgid "By enabling preload, tensors' host2device copy and device kernel execution will be overlapped, which will improve the training speed at the cost of higher device memory usage (due to one more batch data on device memory). This feature saves more time when your NN training time is short or your machine's host PCIe bandwidth for each device is low."
+msgstr "crwdns91878:0crwdne91878:0"
 
 #~ msgid "基类：:class:`object`"
 #~ msgstr "基类：:class:`object`"
@@ -94,4 +98,21 @@ msgstr "crwdns68545:0crwdne68545:0"
 
 #~ msgid "Methods"
 #~ msgstr "方法"
+
+#~ msgid ""
+#~ "Defines whether to apply the preloading"
+#~ " strategy of dataloader, and parallelize"
+#~ " the copy of host2device while kernal"
+#~ " is executed to improve the loading"
+#~ " speed. default is seted False the"
+#~ " output will change from np.ndarry to"
+#~ " dtype tensor. the support dtypes for"
+#~ " preload are "
+#~ "int,float,list[int,float],tuple[int,float],and another "
+#~ "type is not supported."
+#~ msgstr ""
+#~ "定义是否应用 dataloader 的预加载策略，并在 kernel 执行时并行化 "
+#~ "host2device 以提高加载速度。 默认设置为 False，输出将从 "
+#~ "np.ndarry 更改为 dtype 张量。 预加载支持的 dtype "
+#~ "是 int,float,list[int,float],tuple[int,float]，不支持其他类型。"
 

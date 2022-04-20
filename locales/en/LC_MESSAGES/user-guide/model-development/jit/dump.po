@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-02-18 11:52+0000\n"
+"PO-Revision-Date: 2022-04-19 12:43\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/jit/dump.po\n"
+"X-Crowdin-File-ID: 8191\n"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:5
 msgid "导出序列化模型文件（Dump）"
@@ -20,40 +24,23 @@ msgstr "Export serialized model file (Dump)"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:9
 msgid "序列化操作依赖于 :py:class:`~.jit.trace` 进行的 :ref:`将动态图转为静态图 <trace>` 操作；"
-msgstr ""
-"Sequence of operation is dependent on: py: class: `~ .jit.trace` "
-"performed :ref:'into static dynamic FIG FIG <trace>` operation;"
+msgstr "Sequence of operation is dependent on: py: class: `~ .jit.trace` performed :ref:'into static dynamic FIG FIG <trace>` operation;"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:10
 msgid "与此同时，需要在 :py:class:`~.jit.trace` 中指定 ``capture_as_const = True`` 以将参数固化下来。"
-msgstr ""
-"At the same time, you need to specify ``capture_as_const = True'' in "
-":py:class:`~.jit.trace` to solidify the parameters."
+msgstr "At the same time, you need to specify ``capture_as_const = True'' in :py:class:`~.jit.trace` to solidify the parameters."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:12
 msgid "考虑到推理部署需求，使用 :py:meth:`~.jit.trace.dump`, 即可将训练好的模型序列化到一个文件或文件对象中："
-msgstr ""
-"Considering the reasoning deployment requirements, use: py: meth: `~ "
-".jit.trace.dump` , to the trained model serialization to a file or "
-"object："
+msgstr "Considering the reasoning deployment requirements, use: py: meth: `~ .jit.trace.dump` , to the trained model serialization to a file or object："
 
 #: ../../source/user-guide/model-development/jit/dump.rst:14
-#, fuzzy
-msgid ""
-"我们以使用 `ResNet50 "
-"<https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_"
-" 的预训练模型为例子，参考代码片段如下："
+msgid "我们以使用 `ResNet50 <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ 的预训练模型为例子，参考代码片段如下："
 msgstr ""
-"We take `ResNet50 "
-"<https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_"
-" as an example, the reference code snippet is as follows："
 
 #: ../../source/user-guide/model-development/jit/dump.rst:39
 msgid "执行脚本，并完成模型转换后，我们就获得了 MegEngine C++ API 可识别的预训练模型文件 ``resnet50.mge`` ."
-msgstr ""
-"After executing the script and completing the model conversion, we have "
-"obtained the pre-trained model file ``resnet50.mge`` which can be "
-"recognized by the MegEngine C++ API."
+msgstr "After executing the script and completing the model conversion, we have obtained the pre-trained model file ``resnet50.mge`` which can be recognized by the MegEngine C++ API."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:42
 msgid "Dump 常用参数说明"
@@ -61,48 +48,27 @@ msgstr "Dump common parameter description"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:44
 msgid "使用 :meth:`~.jit.trace.dump` 时，可传入多个参数，其中最常用的有如下两个："
-msgstr ""
-"When using :meth:`~.jit.trace.dump`, multiple parameters can be passed "
-"in, among which the most commonly used are the following two："
+msgstr "When using :meth:`~.jit.trace.dump`, multiple parameters can be passed in, among which the most commonly used are the following two："
 
 #: ../../source/user-guide/model-development/jit/dump.rst:48
 msgid "``arg_names``"
 msgstr "``arg_names``"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:47
-msgid ""
-"在序列化的时候统一设置模型输入 Tensor 的名字。由于不同的模型的差异，会导致输入 Tensor 的名字千差万别。 "
-"为了减少理解和使用难度，可使用此参数统一设置模型输入为诸如 ``arg_0``, ``arg_1``, ..."
-msgstr ""
-"Set the name of the model input Tensor uniformly during serialization. "
-"Due to the differences of different models, the names of the input Tensor"
-" will be very different. In order to reduce the difficulty of "
-"understanding and use, this parameter can be used to uniformly set the "
-"model input to such as ``arg_0``, ``arg_1``, ..."
+msgid "在序列化的时候统一设置模型输入 Tensor 的名字。由于不同的模型的差异，会导致输入 Tensor 的名字千差万别。 为了减少理解和使用难度，可使用此参数统一设置模型输入为诸如 ``arg_0``, ``arg_1``, ..."
+msgstr "Set the name of the model input Tensor uniformly during serialization. Due to the differences of different models, the names of the input Tensor will be very different. In order to reduce the difficulty of understanding and use, this parameter can be used to uniformly set the model input to such as ``arg_0``, ``arg_1``, ..."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:53
 msgid "``optimize_for_inference``"
 msgstr "``optimize_for_inference''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:51
-msgid ""
-"训练出的模型往往在部署时不能发挥最优的性能， 而我们提供 ``optimize_for_inference`` "
-"来保证序列化出的模型是经特定优化的。 详细的键值参数可见下方的 :ref:`optimieze-for-inference-options` ."
-msgstr ""
-"The trained model often cannot play the best performance during "
-"deployment, and we provide ``optimize_for_inference'' to ensure that the "
-"serialized model is specifically optimized. For detailed key-value "
-"parameters, see :ref:`optimieze-for-inference-options` below."
+msgid "训练出的模型往往在部署时不能发挥最优的性能， 而我们提供 ``optimize_for_inference`` 来保证序列化出的模型是经特定优化的。 详细的键值参数可见下方的 :ref:`optimieze-for-inference-options` ."
+msgstr "The trained model often cannot play the best performance during deployment, and we provide ``optimize_for_inference'' to ensure that the serialized model is specifically optimized. For detailed key-value parameters, see :ref:`optimieze-for-inference-options` below."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:57
-msgid ""
-"``optimize_for_inference`` 参数默认是 ``True`` ， 所以即使不给任何键值优化参数，仍然会做一些基础的优化操作，"
-" 这会导致序列化出来的模型相较之前的定义有细微的差别。"
-msgstr ""
-"The ``optimize_for_inference`` parameter defaults to ``True``, so even if"
-" you don't optimize the parameters for any key value, you will still do "
-"some basic optimization operations, which will cause the serialized model"
-" to be slightly different from the previous definition ."
+msgid "``optimize_for_inference`` 参数默认是 ``True`` ， 所以即使不给任何键值优化参数，仍然会做一些基础的优化操作， 这会导致序列化出来的模型相较之前的定义有细微的差别。"
+msgstr "The ``optimize_for_inference`` parameter defaults to ``True``, so even if you don't optimize the parameters for any key value, you will still do some basic optimization operations, which will cause the serialized model to be slightly different from the previous definition ."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:62
 msgid "Dump 带有测试数据的模型文件"
@@ -118,50 +84,27 @@ msgstr "``input_data``"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:67
 msgid "这是一个字符串列表，列表中的每个字符串都代表一组测试数据。"
-msgstr ""
-"This is a list of strings, each string in the list represents a set of "
-"test data."
+msgstr "This is a list of strings, each string in the list represents a set of test data."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:69
 msgid "字符串支持三种格式："
 msgstr "String supports three formats："
 
 #: ../../source/user-guide/model-development/jit/dump.rst:71
-msgid ""
-"``var0:file0;var1:file1...`` 指定每个输入变量对应的文件名。文件可以是能被 opencv 加载的图片，也可以是 "
-"numpy.ndarray 的 pickle 文件。如果只有一个输入，输入的变量名可以省略。"
-msgstr ""
-"``var0:file0;var1:file1...`` specifies the filename for each input "
-"variable. The file can be an image that can be loaded by opencv, or a "
-"pickle file of numpy.ndarray. If there is only one input, the variable "
-"name of the input can be omitted."
+msgid "``var0:file0;var1:file1...`` 指定每个输入变量对应的文件名。文件可以是能被 opencv 加载的图片，也可以是 numpy.ndarray 的 pickle 文件。如果只有一个输入，输入的变量名可以省略。"
+msgstr "``var0:file0;var1:file1...`` specifies the filename for each input variable. The file can be an image that can be loaded by opencv, or a pickle file of numpy.ndarray. If there is only one input, the variable name of the input can be omitted."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:73
-msgid ""
-"``var0:#rand(min, max, shape);var1:#rand...`` 指定每个输入变量的数据随机生成方式，形状是 "
-"``shape``，值域是 ``[min, max)``。例如 ``rand(0, 255)``, ``rand(0, 255, 1, 3, "
-"224, 224)`` 或 ``#rand(0, 255, 1, ...)`` （其中 ``...`` 表示 shape "
-"的剩余部分）。如果形状没有被指定，就会使用网络中输入张量的形状。如果只有一个输入，输入的变量名可以省略。"
-msgstr ""
-"``var0:#rand(min, max, shape);var1:#rand...`` specifies how the data of "
-"each input variable is randomly generated, the shape is ``shape``, and "
-"the value range is ``[min, max)``. For example ``rand(0, 255)``, "
-"``rand(0, 255, 1, 3, 224, 224)`` or ``#rand(0, 255, 1, ...)`` (where "
-"``...`` means the remainder of the shape). If shape is not specified, the"
-" shape of the input tensor in the network is used. If there is only one "
-"input, the variable name of the input can be omitted."
+msgid "``var0:#rand(min, max, shape);var1:#rand...`` 指定每个输入变量的数据随机生成方式，形状是 ``shape``，值域是 ``[min, max)``。例如 ``rand(0, 255)``, ``rand(0, 255, 1, 3, 224, 224)`` 或 ``#rand(0, 255, 1, ...)`` （其中 ``...`` 表示 shape 的剩余部分）。如果形状没有被指定，就会使用网络中输入张量的形状。如果只有一个输入，输入的变量名可以省略。"
+msgstr "``var0:#rand(min, max, shape);var1:#rand...`` specifies how the data of each input variable is randomly generated, the shape is ``shape``, and the value range is ``[min, max)``. For example ``rand(0, 255)``, ``rand(0, 255, 1, 3, 224, 224)`` or ``#rand(0, 255, 1, ...)`` (where ``...`` means the remainder of the shape). If shape is not specified, the shape of the input tensor in the network is used. If there is only one input, the variable name of the input can be omitted."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:75
 msgid "``@filename`` 指定输入文件名，文件中的每一行都是一个符合上面两种格式的字符串。"
-msgstr ""
-"``@filename`` specifies the input filename, each line in the file is a "
-"string that conforms to the above two formats."
+msgstr "``@filename`` specifies the input filename, each line in the file is a string that conforms to the above two formats."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:77
 msgid "更多相关的参数设置，请参考 :meth:`~.jit.trace.dump`."
-msgstr ""
-"For more related parameter settings, please refer to "
-":meth:`~.jit.trace.dump`."
+msgstr "For more related parameter settings, please refer to :meth:`~.jit.trace.dump`."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:82
 msgid "推理优化选项表"
@@ -173,9 +116,7 @@ msgstr "``--enable-io16xc32''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:85
 msgid "采用 float16 作为算子之间的数据传输类型，使用 float32 作为计算类型。"
-msgstr ""
-"Use float16 as the data transfer type between operators and float32 as "
-"the calculation type."
+msgstr "Use float16 as the data transfer type between operators and float32 as the calculation type."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:88
 msgid "``--enable-ioc16``"
@@ -183,9 +124,7 @@ msgstr "``--enable-ioc16''"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:88
 msgid "采用 float16 作为算子之间的数据传输类型以及计算类型。"
-msgstr ""
-"Use float16 as the data transmission type and calculation type between "
-"operators."
+msgstr "Use float16 as the data transmission type and calculation type between operators."
 
 #: ../../source/user-guide/model-development/jit/dump.rst:91
 msgid "``--enable-fuse-conv-bias-nonlinearity``"
@@ -249,7 +188,5 @@ msgstr "``--enable-fuse-conv-bias-with-z``"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:112
 msgid "仅在使用 GPU 平台下可用，把 conv，bias (elemwise add)，z(elemwise add) 融合成一个算子。"
-msgstr ""
-"Only available under the GPU platform, conv, bias (elemwise add), z "
-"(elemwise add) are merged into one operator."
+msgstr "Only available under the GPU platform, conv, bias (elemwise add), z (elemwise add) are merged into one operator."
 

@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2021-12-13 14:24+0000\n"
+"PO-Revision-Date: 2022-04-19 12:43\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/jit/trace.po\n"
+"X-Crowdin-File-ID: 8195\n"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:5
 msgid "将动态图转为静态图（Trace）"
@@ -63,15 +67,11 @@ msgid "``jit`` ： 即时编译 （Just-in-time compilation）的缩写，这里
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:74
-msgid ""
-"``trace`` ：得到静态图的一种方式，直译为 “追溯”， "
-"含义为通过追溯输出（比如损失值、预测值）所依赖的网络结构，得到整体的计算图，再进行编译。"
+msgid "``trace`` ：得到静态图的一种方式，直译为 “追溯”， 含义为通过追溯输出（比如损失值、预测值）所依赖的网络结构，得到整体的计算图，再进行编译。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:76
-msgid ""
-"参数列表 ： ``trace`` 在编译静态图时会根据传入参数是位置参数还是关键字参数来采取不同的处理方式。 "
-"其中位置参数用于传入网络的输入如数据和标签，关键字参数用于传入其它变量，如网络和优化器等。"
+msgid "参数列表 ： ``trace`` 在编译静态图时会根据传入参数是位置参数还是关键字参数来采取不同的处理方式。 其中位置参数用于传入网络的输入如数据和标签，关键字参数用于传入其它变量，如网络和优化器等。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:82
@@ -99,10 +99,7 @@ msgid "设置为 True 表示 “静态构造” 或者 “根据符号构造” 
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:105
-msgid ""
-"**原理：** 此时，计算图中的所有数据节点（即张量）被视为符号（即 ``symbolic`` ）。 "
-"它们仅仅作为占位符（Placeholder），不产生实际的内存分配，也没有实际的值。 "
-"此时计算图的编译过程完全取决于计算图的结构，而不取决于张量的具体值，是真正的 “静态”。"
+msgid "**原理：** 此时，计算图中的所有数据节点（即张量）被视为符号（即 ``symbolic`` ）。 它们仅仅作为占位符（Placeholder），不产生实际的内存分配，也没有实际的值。 此时计算图的编译过程完全取决于计算图的结构，而不取决于张量的具体值，是真正的 “静态”。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:108
@@ -118,10 +115,7 @@ msgid "设置为 False 表示 “动态构造” 或者 “根据值构造” �
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:113
-msgid ""
-"**原理：** 被装饰的函数在第一次被调用时会根据输入的数据执行一次计算构建出一个动态图。 "
-"接着将这个动态图会被编译静态图。此后该函数的所有调用都会运行这个静态图，而不再依赖调用时输入的值。 此种模式可以视为 "
-"“动态构建第一次，此后静态运行”。"
+msgid "**原理：** 被装饰的函数在第一次被调用时会根据输入的数据执行一次计算构建出一个动态图。 接着将这个动态图会被编译静态图。此后该函数的所有调用都会运行这个静态图，而不再依赖调用时输入的值。 此种模式可以视为 “动态构建第一次，此后静态运行”。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:116
@@ -129,15 +123,11 @@ msgid "**优点：** 根据第一次运行时信息的不同，可以构建出�
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:117
-msgid ""
-"**缺点：** 由于第一次的运行在动态图模式下，无法利用静态图的内存优化，通常会耗费更大的内存。 "
-"这可能导致本来在静态图模式下可以运行的网络，在第一次运行时由于内存不够而失败。"
+msgid "**缺点：** 由于第一次的运行在动态图模式下，无法利用静态图的内存优化，通常会耗费更大的内存。 这可能导致本来在静态图模式下可以运行的网络，在第一次运行时由于内存不够而失败。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:122
-msgid ""
-"在动态构造模式（设置为 False）下，如果条件语句出现在循环语句内，在循环的第一次执行中构造出的静态图将固定不再改变 "
-"（即使在循环的后续执行中，该条件语句的结果发生了变化）"
+msgid "在动态构造模式（设置为 False）下，如果条件语句出现在循环语句内，在循环的第一次执行中构造出的静态图将固定不再改变 （即使在循环的后续执行中，该条件语句的结果发生了变化）"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:128
@@ -149,9 +139,7 @@ msgid "有的时候我们希望将一些参数（比如卷积层的卷积核等�
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:142
-msgid ""
-"如果想要使用 :py:meth:`~.jit.trace.dump` 导出模型序列化文件并进行后续处理， 则必须在 "
-":py:class:`~.jit.trace` 时固定参数。"
+msgid "如果想要使用 :py:meth:`~.jit.trace.dump` 导出模型序列化文件并进行后续处理， 则必须在 :py:class:`~.jit.trace` 时固定参数。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:148
@@ -159,15 +147,11 @@ msgid "减少访存操作实现加速"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:150
-msgid ""
-"通常，模型中不仅含有计算受限的操作，还含有一些访存受限操作（如 Elemwsie ）. MegEngine 内嵌了 Codegen "
-"优化机制，它可以在运行时将模型中多个操作融合起来， 并生成可以在目标机器上运行的代码，以此减少访存操作从而达到加速的目的。"
+msgid "通常，模型中不仅含有计算受限的操作，还含有一些访存受限操作（如 Elemwsie ）. MegEngine 内嵌了 Codegen 优化机制，它可以在运行时将模型中多个操作融合起来， 并生成可以在目标机器上运行的代码，以此减少访存操作从而达到加速的目的。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:156
-msgid ""
-"我们在 :class:`~.trace` 接口中传入 ``symbolic=True, opt_level=3``, 即可打开 Codegen "
-"优化；"
+msgid "我们在 :class:`~.trace` 接口中传入 ``symbolic=True, opt_level=3``, 即可打开 Codegen 优化；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:157
@@ -175,10 +159,7 @@ msgid "关于 ``symbolic`` 参数的说明，请参考 :ref:`symbolic` 。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:159
-msgid ""
-"MegEngine 的 Codegen 目前集成了三种后端，分别是 NVRTC, HALIDE 和 MLIR. 其中 NVRTC 和 HALIDE"
-" 仅支持在 GPU 上使用，MLIR 则同时支持 GPU 和 CPU, 不同的后端生成代码的策略有所不同，所以运行效率也各异。 我们可以通过设置 "
-"``MGB_JIT_BACKEND`` 环境变量来改变 Codegen 的后端，例如："
+msgid "MegEngine 的 Codegen 目前集成了三种后端，分别是 NVRTC, HALIDE 和 MLIR. 其中 NVRTC 和 HALIDE 仅支持在 GPU 上使用，MLIR 则同时支持 GPU 和 CPU, 不同的后端生成代码的策略有所不同，所以运行效率也各异。 我们可以通过设置 ``MGB_JIT_BACKEND`` 环境变量来改变 Codegen 的后端，例如："
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:168
@@ -202,9 +183,7 @@ msgid "指定代码不被转换"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:191
-msgid ""
-"使用 :py:func:`~.exclude_from_trace` ，其中的代码不会被 trace, 且允许访问静态区域的 "
-":py:class:`~megengine.Tensor` ."
+msgid "使用 :py:func:`~.exclude_from_trace` ，其中的代码不会被 trace, 且允许访问静态区域的 :py:class:`~megengine.Tensor` ."
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/trace.rst:193
@@ -314,45 +293,102 @@ msgstr ""
 
 #~ msgid "一般的模型训练中推荐用动态图，只有在有必要的情况下才编译静态图。（ :ref:`直接跳转到用法 <trace>` ）"
 #~ msgstr ""
+#~ "It is recommended to use dynamic "
+#~ "graphs in general model training, and"
+#~ " compile static graphs only when "
+#~ "necessary. ( :ref:`Jump directly to "
+#~ "usage <trace>`)"
 
 #~ msgid "动态图和静态图"
-#~ msgstr ""
+#~ msgstr "Dynamic graph and static graph"
 
 #~ msgid "MegEngine 默认使用 **动态计算图** ，其核心特点是计算图的构建和计算同时发生（Define by run）。"
 #~ msgstr ""
+#~ "MegEngine uses **dynamic calculation graph**"
+#~ " by default, and its core feature "
+#~ "is that the construction and calculation"
+#~ " of the calculation graph occur at"
+#~ " the same time (Define by run)."
 
 #~ msgid "**原理：** 在计算图中定义一个 :py:class:`~megengine.Tensor` 时，其值就已经被计算且确定了。"
 #~ msgstr ""
+#~ "**Principle：** When defining a: "
+#~ "py:class:`~megengine.Tensor` in the calculation "
+#~ "graph, its value has been calculated "
+#~ "and determined."
 
 #~ msgid "**优点：** 这种模式在调试模型时较为方便，能够实时得到中间结果的值。"
 #~ msgstr ""
+#~ "**Advantage：** This mode is more "
+#~ "convenient when debugging the model, and"
+#~ " can get the value of the "
+#~ "intermediate result in real time."
 
 #~ msgid "**缺点：** 但是由于所有节点都需要被保存，这就导致我们难以对整个计算图进行优化。"
 #~ msgstr ""
+#~ "**Disadvantages：** But because all nodes "
+#~ "need to be saved, this makes it"
+#~ " difficult for us to optimize the "
+#~ "entire calculation graph."
 
 #~ msgid "MegEngine 也支持 **静态计算图** 模式，将计算图的构建和实际计算分开（Define and run）。"
 #~ msgstr ""
+#~ "MegEngine also supports the **static "
+#~ "calculation graph** mode, which separates "
+#~ "the construction of the calculation "
+#~ "graph from the actual calculation "
+#~ "(Define and run)."
 
 #~ msgid ""
 #~ "**原理：** 在构建阶段，MegEngine 根据完整的计算流程对原始的计算图进行优化和调整， "
 #~ "得到更省内存和计算量更少的计算图，这个过程称之为 “编译” 。编译之后图的结构不再改变，也就是所谓的 "
 #~ "“静态” 。 在计算阶段，MegEngine 根据输入数据执行编译好的计算图得到计算结果。"
 #~ msgstr ""
+#~ "**Principle：** In the construction phase, "
+#~ "MegEngine optimizes and adjusts the "
+#~ "original calculation graph according to "
+#~ "the complete calculation process to "
+#~ "obtain a calculation graph that saves"
+#~ " more memory and has less "
+#~ "calculation. This process is called "
+#~ "\"compilation\". The structure of the "
+#~ "graph does not change after compilation,"
+#~ " which is the so-called \"static\"."
+#~ " In the calculation phase, MegEngine "
+#~ "executes the compiled calculation graph "
+#~ "according to the input data to "
+#~ "obtain the calculation result."
 
 #~ msgid "**优点：** 静态图相比起动态图，对全局的信息掌握更丰富，可做的优化也会更多。"
 #~ msgstr ""
+#~ "**Advantages：** Compared with dynamic images,"
+#~ " static images have a richer grasp"
+#~ " of global information and can do "
+#~ "more optimizations."
 
 #~ msgid "**缺点：** 但中间过程对于用户来说是个黑盒，无法像动态图一样随时拿到中间计算结果。"
 #~ msgstr ""
+#~ "**Disadvantages：** However, the intermediate "
+#~ "process is a black box for the "
+#~ "user, and the intermediate calculation "
+#~ "result cannot be obtained at any "
+#~ "time like a dynamic graph."
 
 #~ msgid "通过浏览本小节末尾的 :ref:`trace-advanced-setting` 部分，你可以了解到静态图的更多使用情景。"
 #~ msgstr ""
+#~ ":ref:`trace-advanced-setting` section at "
+#~ "the end of this section, you can"
+#~ " learn more about the usage scenarios"
+#~ " of static graphs."
 
 #~ msgid "静态图编译优化举例"
-#~ msgstr ""
+#~ msgstr "Examples of static graph compilation optimization"
 
 #~ msgid "下面我们举例说明静态图编译过程中可能进行的内存和计算优化："
 #~ msgstr ""
+#~ "Below we illustrate in FIG static "
+#~ "memory and computing compiler optimization "
+#~ "process may be："
 
 #~ msgid ""
 #~ "在上图左侧的计算图中，为了存储 ``x``, ``w``, ``p``,  ``b``,"
@@ -361,17 +397,21 @@ msgstr ""
 #~ " 复用中间变量 ``p`` 的内存， 实现 "
 #~ "“原地”（Inplace）修改。这样，静态图所占用的内存就减少为 32 个字节。"
 #~ msgstr ""
-
-#~ msgid "将循环内的网络计算和优化代码提取成一个单独的训练函数，如下面例子中的 ``train_func()`` ；"
-#~ msgstr ""
-
-#~ msgid "将网络所需输入作为训练函数的参数，并返回任意你需要的结果（如计算图的结果和损失函数值）；"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "我们在 :class:`~.trace` 接口中传入 ``symbolic=True, "
-#~ "opt_level=3``, 即可打开 Codegen 优化。"
-#~ msgstr ""
+#~ "In the calculation diagram on the "
+#~ "left side of the above figure, in"
+#~ " order to store the five variables"
+#~ " of ``x``, ``w``, ``p``, ``b``, "
+#~ "``y``, the dynamic graph needs 40 "
+#~ "Bytes (assuming that each variable "
+#~ "occupies 8 bytes of memory). In "
+#~ "the static diagram, since we only "
+#~ "need to know the result ``y``, we"
+#~ " can make ``y`` reuse the memory "
+#~ "of the intermediate variable ``p`` to"
+#~ " achieve \"inplace\" modification. In this"
+#~ " way, the memory occupied by the "
+#~ "static image is reduced to 32 "
+#~ "bytes."
 
 #~ msgid ""
 #~ "MegEngine 的 Codegen 目前集成了三种后端，分别是 NVRTC, "
@@ -379,7 +419,18 @@ msgstr ""
 #~ " 仅支持在 GPU 上使用，MLIR 则同时支持 GPU 和 "
 #~ "CPU, 不同的后端生成代码的策略有所不同，所以运行效率也各异。"
 #~ msgstr ""
+#~ "MegEngine’s Codegen currently integrates three"
+#~ " backends, namely NVRTC, HALIDE and "
+#~ "MLIR. Among them, NVRTC and HALIDE "
+#~ "only support the use on GPU, while"
+#~ " MLIR supports both GPU and CPU. "
+#~ "Different backends have different code "
+#~ "generation strategies. Therefore, the "
+#~ "operating efficiency is also different."
 
 #~ msgid "我们可以通过设置 ``MGB_JIT_BACKEND`` 环境变量来改变 Codegen 的后端，例如："
 #~ msgstr ""
+#~ "We can change the backend of "
+#~ "Codegen by setting the ``MGB_JIT_BACKEND'' "
+#~ "environment variable, such as："
 
