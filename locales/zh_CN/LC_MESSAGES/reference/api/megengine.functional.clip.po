@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 04:50\n"
+"PO-Revision-Date: 2022-04-21 05:23\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,7 +24,7 @@ msgstr "megengine.functional.clip"
 
 #: megengine.functional.elemwise.clip:1 of
 msgid "Clamps all elements in input tensor into the range ``[ lower, upper ]`` and returns a resulting tensor:"
-msgstr ""
+msgstr "将输入tensor的所有元素限制在 ``[ lower, upper ]``区间并且返回一个结果tensor:"
 
 #: megengine.functional.elemwise.clip:4 of
 msgid "y_i = \\begin{cases}\n"
@@ -32,7 +32,11 @@ msgid "y_i = \\begin{cases}\n"
 "    x_i & \\text{if } \\text{lower} \\leq x_i \\leq \\text{upper} \\\\\n"
 "    \\text{upper} & \\text{if } x_i > \\text{upper}\n"
 "\\end{cases}"
-msgstr ""
+msgstr "y_i = \\begin{cases}\n"
+"    \\text{lower} & \\text{if } x_i < \\text{lower} \\\\\n"
+"    x_i & \\text{if } \\text{lower} \\leq x_i \\leq \\text{upper} \\\\\n"
+"    \\text{upper} & \\text{if } x_i > \\text{upper}\n"
+"\\end{cases}"
 
 #: megengine.functional.elemwise.clip of
 msgid "参数"
@@ -40,23 +44,23 @@ msgstr "参数"
 
 #: megengine.functional.elemwise.clip:13 of
 msgid "(Tensor): The input tensor."
-msgstr ""
+msgstr "(Tensor): 输入tensor。"
 
 #: megengine.functional.elemwise.clip:14 of
 msgid "(Numberic，optional): lower-bound of the range to be clamped to."
-msgstr ""
+msgstr "(Numberic，optional): 限制区间的下界。"
 
 #: megengine.functional.elemwise.clip:15 of
 msgid "(Numberic，optional): upper-bound of the range to be clamped to."
-msgstr ""
+msgstr "(Numberic，optional): 限制区间的上界。"
 
 #: megengine.functional.elemwise.clip:19 of
 msgid "If both `lower` and `upper` are None, raises an AssertionError."
-msgstr ""
+msgstr "如果`lower` 和 `upper` 都是 None, 触发 AssertionError。"
 
 #: megengine.functional.elemwise.clip:20 of
 msgid "If `lower` is bigger than `upper`, the result is same as `clip(Tensor(), upper, upper)`."
-msgstr ""
+msgstr "如果 `lower` 大于 `upper`，结果和 `clip(Tensor(), upper, upper)`相同。"
 
 #: megengine.functional.elemwise.clip of
 msgid "返回类型"
@@ -72,11 +76,11 @@ msgstr "返回"
 
 #: megengine.functional.elemwise.clip:23 of
 msgid "output clamped tensor. The result must have a data type determined by :ref:`dtype-promotion`."
-msgstr ""
+msgstr "输出限制区间的tensor。 结果必须是以下的数据类型 :ref:`dtype-promotion`."
 
 #: megengine.functional.elemwise.clip:26 of
 msgid "实际案例"
-msgstr ""
+msgstr "实际案例"
 
 #~ msgid ""
 #~ "y_i = \\begin{cases}     \\text{lower} & "
