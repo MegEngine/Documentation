@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-28 12:18\n"
+"PO-Revision-Date: 2022-04-22 08:31\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.data.transform.VisionTransform.rst:5
 msgid "VisionTransform"
-msgstr ""
+msgstr "VisionTransform"
 
 #: megengine.data.transform.vision.transform.VisionTransform:1 of
 msgid "Base class of all transforms used in computer vision. Calling logic: apply_batch() -> apply() -> _apply_image() and other _apply_*() method. If you want to implement a self-defined transform method for image, rewrite _apply_image method in subclass."
@@ -34,7 +34,15 @@ msgstr "参数"
 
 #: megengine.data.transform.vision.transform.VisionTransform:6 of
 msgid "input type order. Input is a tuple containing different structures, order is used to specify the order of structures. For example, if your input is (image, boxes) type, then the ``order`` should be (\"image\", \"boxes\"). Current available strings and data type are describe below:  * \"image\": input image, with shape of `(H, W, C)`. * \"coords\": coordinates, with shape of `(N, 2)`. * \"boxes\": bounding boxes, with shape of `(N, 4)`, \"xyxy\" format,   the 1st \"xy\" represents top left point of a box,   the 2nd \"xy\" represents right bottom point. * \"mask\": map used for segmentation, with shape of `(H, W, 1)`. * \"keypoints\": keypoints with shape of `(N, K, 3)`, N for number of instances,   and K for number of keypoints in one instance. The first two dimensions   of last axis is coordinate of keypoints and the the 3rd dimension is   the label of keypoints. * \"polygons\": a sequence containing numpy arrays, its length is the number of instances.   Each numpy array represents polygon coordinate of one instance. * \"category\": categories for some data type. For example, \"image_category\"   means category of the input image and \"boxes_category\" means categories of   bounding boxes. * \"info\": information for images such as image shapes and image path."
-msgstr ""
+msgstr "输入数据中各类型的顺序。输入数据是由不同类型数据组成元组，order 则可以用来指明其中 各类数据类型出现的顺序。比如，如果输入为 (image, boxes) 类型，那么 ``order`` 应该相应地设为 (“image”, “boxes”) 。目前支持的字符串类型与数据类型有：\n"
+"* ”image”：输入图像，形为 `(H, W, C)` 。\n"
+"* ”coords”：坐标，形为 `(N, 2)` 。\n"
+"* ”boxes”：bounding boxes，形为 `(N, 4)` ，采用 “xyxy” 格式，第一个 ”xy” 代表box的左上角，第二个 ”xy” 代表右下角。\n"
+"* ”mask”：用于图像分割的 mask map，形为 `(H, W, 1)` 。\n"
+"* ”keypoints”：特征点，形为 `(N, K, 3)` ，其中 N 为实例数量，K 为一个实例中的特征点数量。最后一轴对应的数据前两维是特征点的坐标，第三维则是特征点的标签。\n"
+"* ”polygons”：包含numpy数组的序列，其长为实例的数目，每个 numpy 数组代表一个实例的多边形坐标。\n"
+"* ”category”：某些数据类型的标签。比如，”image_category” 表示输入图像的类别，”boxes_category” 表示 bounding box 的类别。\n"
+"* ”info”：关于图像的信息，比如图像形状与图像路径。"
 
 #: megengine.data.transform.vision.transform.VisionTransform:6 of
 msgid "input type order. Input is a tuple containing different structures, order is used to specify the order of structures. For example, if your input is (image, boxes) type, then the ``order`` should be (\"image\", \"boxes\"). Current available strings and data type are describe below:"
