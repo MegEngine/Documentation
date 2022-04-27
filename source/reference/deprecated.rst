@@ -30,27 +30,30 @@ Deprecated APIs
      - 移除
      - 替代品
 
-   * - megengine.Tensor.reset_zero
+   * - Tensor.reset_zero
      - 1.0
      - 待定
-     - tensor_name[:] = 0
-   * - megengine.Tensor.set_value
+     - ``tensor_name[:] = 0``
+   * - Tensor.set_value
      - 1.0
      - 待定
-     - tensor_name[:] = value
-   * - get_execution_strategy
+     - ``tensor_name[:] = value``
+   * - functional.debug_param.get_execution_strategy  [1]_
      - 1.9
      - 待定
-     - * :attr:`~.config.benchmark_kernel` [1]_
+     - * :attr:`~.config.benchmark_kernel`
        * :attr:`~.config.deterministic_kernel`
-   * - set_execution_strategy
+   * - functional.debug_param.set_execution_strategy [1]_
      - 1.9
      - 待定
-     - * :attr:`~.config.benchmark_kernel` [1]_
+     - * :attr:`~.config.benchmark_kernel`
        * :attr:`~.config.deterministic_kernel`
 
-.. [1] * ``benchmark_kernel = False`` 对应 ``HEURISTIC``, 否则对应 ``PROFILE``;
-       * ``deterministic_kernel = True`` 对应 ``REPRODUCIBLE``.
+.. [1] 这两个接口尚未移除，但已经在文档 API 页面中隐藏（表明不再推荐），
+       替换为 :mod:`~.config` 配置：
+
+       * ``benchmark_kernel = False`` 对应 ``HEURISTIC`` 策略，否则对应 ``PROFILE``;
+       * ``deterministic_kernel = True`` 对应 ``REPRODUCIBLE`` 配置。
 
 .. _deprecation-policy:
 
