@@ -20,15 +20,15 @@ Deprecated APIs
 
 .. tabularcolumns:: |>{\raggedright}\Y{.4}|>{\centering}\Y{.1}|>{\centering}\Y{.12}|>{\raggedright\arraybackslash}\Y{.38}|
 
-.. list-table:: deprecated APIs
+.. list-table::
    :header-rows: 1
    :class: deprecated
    :widths: 40, 10, 10, 40
 
-   * - 目标
+   * - 曾使用
      - 已弃用
-     - 将被删除
-     - 备选方案
+     - 移除
+     - 替代品
 
    * - megengine.Tensor.reset_zero
      - 1.0
@@ -38,6 +38,19 @@ Deprecated APIs
      - 1.0
      - 待定
      - tensor_name[:] = value
+   * - get_execution_strategy
+     - 1.9
+     - 待定
+     - * :attr:`~.config.benchmark_kernel` [1]_
+       * :attr:`~.config.deterministic_kernel`
+   * - set_execution_strategy
+     - 1.9
+     - 待定
+     - * :attr:`~.config.benchmark_kernel` [1]_
+       * :attr:`~.config.deterministic_kernel`
+
+.. [1] * ``benchmark_kernel = False`` 对应 ``HEURISTIC``, 否则对应 ``PROFILE``;
+       * ``deterministic_kernel = True`` 对应 ``REPRODUCIBLE``.
 
 .. _deprecation-policy:
 
