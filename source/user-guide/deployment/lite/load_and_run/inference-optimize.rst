@@ -13,7 +13,8 @@ fast-run 优化
 MegEngine 在底层提供了一套用于在多种算法中选择最优算法的一种机制， 称为 fast-run 机制。
 该机制为具有多种算法实现的算子，如 conv，matmul 等，提供了一套算法选择的机制。
 通过设置相应的算法选择策略实现对不同模型多算法算子的配置，从而达到推理优化的目标。
-其具体使用方法参考 :py:func:`~.set_execution_strategy` , :ref:`execution_optimize` ，这里主要介绍 Load and run 中的使用。选项说明参考 :ref:`fast-run-options`
+其具体使用方法参考 :py:attr:`~.config.benchmark_kernel`, :py:attr:`~.config.deterministic_kernel`, :ref:`execution_optimize`,
+这里主要介绍 Load and run 中的使用。选项说明参考 :ref:`fast-run-options`
 
 在优化后的算法中根据 profile 的时间选择算法( fast-run 策略)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
