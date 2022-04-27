@@ -425,15 +425,3 @@ Distributed functions
    scatter
    reduce_scatter_sum
 
-.. currentmodule:: megengine.functional.debug_param
-
-Debug Setting
--------------
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   get_execution_strategy
-   set_execution_strategy
-
-
