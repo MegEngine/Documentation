@@ -240,7 +240,7 @@ MegEngine 快速上手
 .. code-block:: python
 
    import cv2
-   import numpy
+   import numpy as np
 
    def process(image):
        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -260,6 +260,7 @@ MegEngine 快速上手
 
 >>> logit = model(megengine.Tensor(processed_image).reshape(1, 1, 32, 32))
 >>> pred = F.argmax(logit, axis=1).item()
+>>> pred
 6
 
 可以发现，我们训练出的 LeNet 模型成功地将手写该数字图片的标签类别预测为 6 ！
