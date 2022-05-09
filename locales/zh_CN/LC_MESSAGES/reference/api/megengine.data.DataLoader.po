@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-04-19 12:29\n"
+"PO-Revision-Date: 2022-05-09 07:21\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -68,11 +68,11 @@ msgstr "定义多进程模式下的并行策略。 ``True`` 表示一个批次�
 
 #: megengine.data.dataloader.DataLoader:32 of
 msgid "whether to enable the preloading strategy of the dataloader. When enabling, the dataloader will preload one batch to the device memory to speed up the whole training process. All values in the map, list, and tuple will be converted to :class:`~.Tensor` by preloading, and you will get :class:`~.Tensor` instead of the original Numpy array or Python number."
-msgstr ""
+msgstr "是否开启 dataloader 的预加载策略。 开启该策略时， dataloader 将提前把一个 batch 的数据加载到 device memory 里， 这样可以加速训练过程。 预加载过程中，所有 map、list、tuple 里的值都会被转化成 :class:`~.Tensor`, 你会得到 :class:`~.Tensor` 而不是原先的 Numpy array 或者 Python number."
 
 #: megengine.data.dataloader.DataLoader:37 of
 msgid "By enabling preload, tensors' host2device copy and device kernel execution will be overlapped, which will improve the training speed at the cost of higher device memory usage (due to one more batch data on device memory). This feature saves more time when your NN training time is short or your machine's host PCIe bandwidth for each device is low."
-msgstr ""
+msgstr "通过开启预加载策略， tensor 的 host2device 拷贝和 device 上 kernel 执行将会部分重叠， 这将会加速训练， 代价是较高的 device 内存占用（因为会多出一个 batch 的数据）。 当你的训练时间很短或者你的每个 device 的 PCIe 带宽很低的时候， 这个策略将会省很多训练的时间。"
 
 #~ msgid "基类：:class:`object`"
 #~ msgstr "基类：:class:`object`"
