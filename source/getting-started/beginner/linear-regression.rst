@@ -167,7 +167,7 @@ array([   8.3252    ,   41.        ,    6.98412698,    1.02380952,
 
    n, d = X.shape
    x = megengine.Tensor(X[0])
-   w = F.zeros_like((d,))
+   w = F.zeros((d, ))
    b = 0.0
 
    y = F.dot(w, x) + b
@@ -272,6 +272,8 @@ Python 官方提案 `PEP 465
 
 由于存在着 PEP 465 的推荐定义，因此 MegEngine 的 :func:`~.matmul` 也兼容非矩阵形式的输入：
 
+>>> X = megengine.Tensor(X)
+>>> w = F.zeros((d,))
 >>> y = F.matmul(X, w) + b
 >>> y.shape
 (20640,)
