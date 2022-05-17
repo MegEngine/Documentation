@@ -144,7 +144,7 @@ Tensor([[1. 1. 1.]
    #. 中间结果 :math:`p` 和参数 :math:`b` 经过加法运算得到输出结果 :math:`y`;
    #. 对于更加复杂的计算图结构，其前向计算的依赖关系本质上就是一个拓扑排序。
 
-.. dropdown:: 反向传播（Forward propagation）
+.. dropdown:: 反向传播（Back propagation）
 
    根据需要优化的目标（这里我们简单假定为 :math:`y`），通过链式求导法则，
    求出模型中所有参数所对应的梯度，在上面的例子中即计算 :math:`\nabla y(w, b)`, 由偏导
