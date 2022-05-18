@@ -144,7 +144,7 @@ autodoc_mock_imports = ["mprop"]
 
 # Setting for sphinx.ext.mathjax
 # The path to the JavaScript file to include in the HTML files in order to load MathJax.
-mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+mathjax_path = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.min.js"
 
 # Setting for sphinxcontrib-bibtex
 bibtex_bibfiles = ['refs.bib']
