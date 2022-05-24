@@ -4,9 +4,13 @@
 lite/global.h
 =============
 
+.. doxygentypedef:: lite::DecryptionFunc
+
 .. doxygenfunction:: lite::register_decryption_and_key
 
 .. doxygenfunction:: lite::update_decryption_or_key
+
+.. doxygentypedef:: lite::ParseInfoFunc
 
 .. doxygenfunction:: lite::register_parse_info_func
 
