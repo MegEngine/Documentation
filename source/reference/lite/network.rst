@@ -4,15 +4,24 @@
 lite/network.h
 ==============
 
-.. doxygenclass:: lite::Network
+.. doxygentypedef:: lite::StartCallback
+
+.. doxygentypedef:: lite::FinishCallback
+
+.. doxygentypedef:: lite::AsyncCallback
+
+.. doxygentypedef:: lite::ThreadAffinityCallback
 
 .. doxygenstruct:: lite::Options
 
 .. doxygenstruct:: lite::IO
 
-.. doxygenstruct:: lite::NetworkIO
+.. doxygenstruct:: lite::Config
 
-.. doxygenclass:: lite::Runtime
+.. doxygenstruct:: lite::NetworkIO
 
 .. doxygenclass:: lite::Allocator
 
+.. doxygenclass:: lite::Network
+
+.. doxygenclass:: lite::Runtime
