@@ -233,7 +233,7 @@ IO相关设置
       std::string file_name = ssprintf(“run%zu-var%zd”, iteration_ID, var_ID);
 
 
-   细节参考 `outdumper <https://github.com/MegEngine/MegEngine/blob/master/Lite/load_and_run/src/helpers/outdumper.cpp>`__
+   细节参考 `outdumper <https://github.com/MegEngine/MegEngine/blob/master/lite/load_and_run/src/helpers/outdumper.cpp>`__
 
 
     

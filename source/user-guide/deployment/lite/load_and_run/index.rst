@@ -41,8 +41,12 @@
    accuracy-analysis
    debug
    python-interface
+   fitting-mode
 
 在使用 Load and run 之前，我们还需要了解如何获取和编译它。
+
+
+.. _compile-load-and-run:
 
 Load and run 获取与编译
 -----------------------
