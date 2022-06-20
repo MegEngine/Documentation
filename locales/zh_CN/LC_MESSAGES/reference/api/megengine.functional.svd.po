@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-05-18 04:27\n"
+"PO-Revision-Date: 2022-06-20 04:14\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,7 +24,7 @@ msgstr "megengine.functional.svd"
 
 #: megengine.functional.math.svd:1 of
 msgid "Returns a singular value decomposition ``A = USVh`` of a matrix (or a stack of matrices) ``x`` , where ``U`` is a matrix (or a stack of matrices) with orthonormal columns, ``S`` is a vector of non-negative numbers (or stack of vectors), and ``Vh`` is a matrix (or a stack of matrices) with orthonormal rows."
-msgstr ""
+msgstr "返回一个矩阵 ``x``(或一个矩阵堆) 的奇异值分解 ``A = USVh`` , 其中 ``U`` 是一个具有正交列的矩阵 (或一个矩阵堆) , ``S`` 是一个非负数的向量 (或一个向量堆), ``Vh`` 是一个具有正交行的矩阵 (或一个矩阵堆)。"
 
 #: megengine.functional.math.svd of
 msgid "参数"
@@ -32,19 +32,19 @@ msgstr "参数"
 
 #: megengine.functional.math.svd:3 of
 msgid "A input real tensor having the shape ``(..., M, N)`` with ``x.ndim >= 2`` ."
-msgstr ""
+msgstr "输入tensor的shape为 ``(..., M, N)``， 并且 ``x.ndim >= 2`` ."
 
 #: megengine.functional.math.svd:5 of
 msgid "If ``False`` , ``U`` and ``Vh`` have the shapes  ``(..., M, K)`` and ``(..., K, N)`` , respectively, where ``K = min(M, N)`` . If ``True`` , the shapes  are ``(..., M, M)`` and ``(..., N, N)`` , respectively. Default: ``False`` ."
-msgstr ""
+msgstr "如果是 ``False`` , ``U`` 和 ``Vh`` 的shape分别是  ``(..., M, K)`` 和 ``(..., K, N)`` , 其中 ``K = min(M, N)`` 。 如果是 ``True`` , shape 分别是 ``(..., M, M)`` 和 ``(..., N, N)`` 。 默认: ``False`` 。"
 
 #: megengine.functional.math.svd:7 of
 msgid "Whether or not to compute ``U`` and ``Vh`` in addition to ``S`` . Default: ``True`` ."
-msgstr ""
+msgstr "除了 ``S``，是否要计算``U`` 和 ``Vh`` 。 默认: ``True`` ."
 
 #: megengine.functional.math.svd:10 of
 msgid "naive does not support ``full_matrices`` and ``compute_uv`` as ``True`` ."
-msgstr ""
+msgstr "不支持 ``full_matrices``和 ``compute_uv`` 为 ``True`` ."
 
 #: megengine.functional.math.svd of
 msgid "返回类型"
@@ -60,15 +60,15 @@ msgstr "返回"
 
 #: megengine.functional.math.svd:13 of
 msgid "Returns a tuple ( ``U`` , ``S`` , ``Vh`` ), which are  SVD factors ``U`` , ``S``, ``Vh`` of  input matrix ``x``. ( ``U`` , ``Vh`` only returned when ``compute_uv`` is True).     ``U`` contains matrices orthonormal columns (i.e., the columns are left singular vectors). If ``full_matrices`` is ``True`` , the array must have shape ``(..., M, M)`` . If ``full_matrices`` is ``False`` , the array must have shape ``(..., M, K)`` , where ``K = min(M, N)`` ."
-msgstr ""
+msgstr "返回一个元组 ( ``U`` , ``S`` , ``Vh`` ), ``U`` , ``S``, ``Vh`` 是输入 ``x``的SVD因子 。 ( ``U`` , ``Vh`` 只有当``compute_uv`` 是 True时返回).。    ``U`` 包含矩阵正交列 (即，列是左奇异向量)。如果 ``full_matrices`` 是 ``True`` , 数组的shape必须是 ``(..., M, M)`` . 如果 ``full_matrices`` 是 ``False`` , 数组的shape必须是 ``(..., M, K)`` , 其中 ``K = min(M, N)`` 。"
 
 #: megengine.functional.math.svd:16 of
 msgid "Returns a tuple ( ``U`` , ``S`` , ``Vh`` ), which are  SVD factors ``U`` , ``S``, ``Vh`` of  input matrix ``x``. ( ``U`` , ``Vh`` only returned when ``compute_uv`` is True)."
-msgstr ""
+msgstr "返回一个元组 ( ``U`` , ``S`` , ``Vh`` ), ``U`` , ``S``, ``Vh`` 是输入 ``x``的SVD因子 。 ( ``U`` , ``Vh`` 只有当``compute_uv`` 是 True时返回)。"
 
 #: megengine.functional.math.svd:16 of
 msgid "``U`` contains matrices orthonormal columns (i.e., the columns are left singular vectors). If ``full_matrices`` is ``True`` , the array must have shape ``(..., M, M)`` . If ``full_matrices`` is ``False`` , the array must have shape ``(..., M, K)`` , where ``K = min(M, N)`` ."
-msgstr ""
+msgstr "``U`` 包含矩阵正交列 (即，列是左奇异向量)。 如果 ``full_matrices`` 是 ``True`` , 数组的shape必须是 ``(..., M, M)`` 。如果 ``full_matrices`` 是 ``False`` , 数组的shape必须是 ``(..., M, K)`` , 其中 ``K = min(M, N)`` 。"
 
 #: megengine.functional.math.svd:19 of
 msgid "实际案例"
@@ -76,11 +76,11 @@ msgstr "实际案例"
 
 #: megengine.functional.math.svd:24 of
 msgid "Reconstruction based on reduced SVD, 2D case: >>> U, S, Vh = F.svd(x, full_matrices=False) >>> print(U._tuple_shape, S._tuple_shape, Vh._tuple_shape) (9, 6) (6,) (6, 6)"
-msgstr ""
+msgstr "基于 reduced SVD, 2D 情形的重构: >>> U, S, Vh = F.svd(x, full_matrices=False) >>> print(U._tuple_shape, S._tuple_shape, Vh._tuple_shape) (9, 6) (6,) (6, 6)"
 
 #: megengine.functional.math.svd:29 of
 msgid "Reconsturction based on reduced SVD, 4D case: >>> u, s, vh = F.svd(y, full_matrices=False) >>> print(u._tuple_shape, s._tuple_shape, vh._tuple_shape) (2, 7, 8, 3) (2, 7, 3) (2, 7, 3, 3)"
-msgstr ""
+msgstr "基于 reduced SVD, 4D 情形的重构: >>> u, s, vh = F.svd(y, full_matrices=False) >>> print(u._tuple_shape, s._tuple_shape, vh._tuple_shape) (2, 7, 8, 3) (2, 7, 3) (2, 7, 3, 3)"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
