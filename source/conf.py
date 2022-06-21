@@ -41,8 +41,9 @@ if mode == "AUTO":
     try:
         import megengine
         import megenginelite
-    except ImportError:
-        print("MegEngine not found. Use mini mode.")
+    except ImportError as e:
+        print("MegEngine or lite lib not found. Use mini mode.")
+        print(e)
         mode = "MINI"
     else:
         print("MegEngine found. Use full mode.")
