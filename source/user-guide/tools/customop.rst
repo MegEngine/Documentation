@@ -76,17 +76,19 @@ MegEngine 中提供了非常丰富的与机器学习、神经网络、张量计�
 其中前者会根据输入 ``Tensor`` 的属性（比如 ``shape``）去推导输出 ``Tensor`` 的对应属性，而后者则是在其中调用 CUDA kernel，完成计算。
 第二部分是 Op 的注册，主要用于定义 Op 有几个输入输出 ``Tensor``，有几个 ``Param``，并将上面定义的属性推断函数和计算函数的指针也注册给 Op.
 
-之后可以使用 Custom Op 所提供的 makefile 模板将 CUDA kernel 以及上面的 C++ 文件一起编译成一个库文件，我们将之命名为 matmul_scale.so.
-然后在 python 中，我们可以编写如下的代码去使用它：
+之后可以使用 Custom Op 所提供的编译与加载函数 ``build_and_load`` 将 CUDA kernel 以及上面的 C++ 文件一起编译成一个库文件.
+我们可以在 python 中，编写如下的代码去完成编译和加载的工作：
 
 .. code-block::
 
    from megengine.core._imperative_rt.core2 import apply
    from megengine.core.ops import custom
+   from megengine.utils import custom_op_tools
    from megengine.tensor import Tensor
    import numpy as np
 
-   custom.load("matmul_scale.so")         # 加载我们所编译出来的库
+   # 该函数会编译我们编写的 cpp/cu 文件成 .so 并完成对其的加载
+   custom_op_tools.build_and_load("matmul_scale", ["matmul_scale.cpp", "matmul_scale.cu"])
    op = custom.MatMulScale(scale = 0.1)   # custom.your_op_name，就是我们在 C++ 中定义的那个 Op 的名字
    lhs = Tensor(np.random.uniform(size=(128, 256)))
    rhs = Tensor(np.random.uniform(size=(256, 512)))
