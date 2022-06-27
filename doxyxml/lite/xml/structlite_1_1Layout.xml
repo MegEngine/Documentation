@@ -11,12 +11,12 @@
         <name>MAXDIM</name>
         <initializer>= 7</initializer>
         <briefdescription>
-        </briefdescription>
+<para>max dims </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="27" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="27" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="18" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/tensor.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -26,12 +26,12 @@
         <argsstring>[MAXDIM]</argsstring>
         <name>shapes</name>
         <briefdescription>
-        </briefdescription>
+<para>shape of each dim </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="28" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="28" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="19" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/tensor.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlite_1_1Layout_1a676d0fd941c95caf5a60a8d14e10db7c" prot="public" static="no" mutable="no">
         <type>size_t</type>
@@ -40,12 +40,12 @@
         <name>ndim</name>
         <initializer>= 0</initializer>
         <briefdescription>
-        </briefdescription>
+<para>actual number of dims </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="29" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="29" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="20" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/tensor.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlite_1_1Layout_1a19751c874088df00b9bf39c581dba1eb" prot="public" static="no" mutable="no">
         <type>LiteDataType</type>
@@ -54,12 +54,12 @@
         <name>data_type</name>
         <initializer>= LiteDataType::LITE_FLOAT</initializer>
         <briefdescription>
-        </briefdescription>
+<para>date type </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="30" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="30" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="21" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/tensor.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -69,12 +69,13 @@
         <argsstring>() const</argsstring>
         <name>get_elem_size</name>
         <briefdescription>
-<para>get the total byte of a layout </para>        </briefdescription>
+<para>get number of elements of this <ref refid="structlite_1_1Layout" kindref="compound">Layout</ref> </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>number of elements </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="33" column="1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="28" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structlite_1_1Layout_1a25370dc328d20854bcdbbd19b5327bd0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -86,19 +87,30 @@
           <declname>other</declname>
         </param>
         <briefdescription>
-<para>compare whether the two layout is equal </para>        </briefdescription>
+<para>compare equality of two layouts </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>other layout</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result of comparation<itemizedlist>
+<listitem><para>true this layout is equal to other</para></listitem><listitem><para>flase this layout is not equal to other </para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="36" column="1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="39" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>the simple layout description </para>    </briefdescription>
+<para>Description of the way of data organized in a tensor. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="26" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="26" bodyend="37"/>
+    <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="17" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/tensor.h" bodystart="17" bodyend="40"/>
     <listofallmembers>
       <member refid="structlite_1_1Layout_1a19751c874088df00b9bf39c581dba1eb" prot="public" virt="non-virtual"><scope>lite::Layout</scope><name>data_type</name></member>
       <member refid="structlite_1_1Layout_1addbce42438e1e3a829419fd9a6e62c1e" prot="public" virt="non-virtual"><scope>lite::Layout</scope><name>get_elem_size</name></member>

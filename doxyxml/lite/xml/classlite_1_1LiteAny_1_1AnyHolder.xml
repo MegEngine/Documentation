@@ -3,6 +3,7 @@
   <compounddef id="classlite_1_1LiteAny_1_1AnyHolder" kind="class" language="C++" prot="public">
     <compoundname>lite::LiteAny::AnyHolder</compoundname>
     <basecompoundref refid="classlite_1_1LiteAny_1_1HolderBase" prot="public" virt="non-virtual">lite::LiteAny::HolderBase</basecompoundref>
+    <includes refid="tensor_8h" local="no">tensor.h</includes>
     <templateparamlist>
       <param>
         <type>class T</type>
@@ -15,12 +16,12 @@
         <argsstring></argsstring>
         <name>m_value</name>
         <briefdescription>
-        </briefdescription>
+<para>value </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="199" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="199" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="348" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/tensor.h" bodystart="348" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -34,12 +35,12 @@
           <declname>value</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>default constructor </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="193" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="193" bodyend="193"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="336" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/tensor.h" bodystart="336" bodyend="336"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1LiteAny_1_1AnyHolder_1a8047f4664812c842cee2ca42445184aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>std::shared_ptr&lt; <ref refid="classlite_1_1LiteAny_1_1HolderBase" kindref="compound">HolderBase</ref> &gt;</type>
@@ -48,16 +49,17 @@
         <name>clone</name>
         <reimplements refid="classlite_1_1LiteAny_1_1HolderBase_1ac93027d2c6a47c6e3e52cde8b7a74873">clone</reimplements>
         <briefdescription>
-        </briefdescription>
+<para>clone data of this holder </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>a ref pointer of m_value </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="194" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="194" bodyend="196"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="343" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/tensor.h" bodystart="343" bodyend="345"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>template class that holds any type of data </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
@@ -84,7 +86,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="191" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="191" bodyend="200"/>
+    <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="331" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/tensor.h" bodystart="331" bodyend="349"/>
     <listofallmembers>
       <member refid="classlite_1_1LiteAny_1_1AnyHolder_1a42d6fc6b09a3cd1e49efb7d3d972eeda" prot="public" virt="non-virtual"><scope>lite::LiteAny::AnyHolder</scope><name>AnyHolder</name></member>
       <member refid="classlite_1_1LiteAny_1_1AnyHolder_1a8047f4664812c842cee2ca42445184aa" prot="public" virt="virtual"><scope>lite::LiteAny::AnyHolder</scope><name>clone</name></member>

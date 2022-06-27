@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="171" column="1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="195" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Allocator_1a6eb29f0ccc6317909983eb34ef726fe0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void *</type>
@@ -41,10 +41,39 @@
         <briefdescription>
 <para>allocate memory of size in the given device with the given align </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>device_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the device type the memory will allocate from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>device_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the device id the memory will allocate from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte size of memory will be allocated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>align</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the align size require when allocate the memory </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="174" column="1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="204" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Allocator_1a54531d5c3e198db5fcb6aa1acea9bc81" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -66,17 +95,39 @@
         <briefdescription>
 <para>free the memory pointed by ptr in the given device </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>device_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the device type the memory will allocate from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>device_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the device id the memory will allocate from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the memory pointer to be free </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="178" column="1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="213" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A user-implemented allocator interface. </para>    </briefdescription>
+<para>A user-implemented allocator interface, user can register an allocator to the megengine, then all the runtime memory will allocate by this allocator. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/data/github/MegEngine/lite/include/lite/network.h" line="169" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="169" bodyend="179"/>
+    <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="193" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/network.h" bodystart="193" bodyend="214"/>
     <listofallmembers>
       <member refid="classlite_1_1Allocator_1a6eb29f0ccc6317909983eb34ef726fe0" prot="public" virt="pure-virtual"><scope>lite::Allocator</scope><name>allocate</name></member>
       <member refid="classlite_1_1Allocator_1a54531d5c3e198db5fcb6aa1acea9bc81" prot="public" virt="pure-virtual"><scope>lite::Allocator</scope><name>free</name></member>

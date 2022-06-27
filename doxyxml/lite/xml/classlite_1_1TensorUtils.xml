@@ -2,7 +2,76 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classlite_1_1TensorUtils" kind="class" language="C++" prot="public">
     <compoundname>lite::TensorUtils</compoundname>
+    <includes refid="tensor_8h" local="no">tensor.h</includes>
       <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classlite_1_1TensorUtils_1af26f21cd79adcb4618692237394c7469" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_map&lt; std::string, <ref refid="classlite_1_1LiteAny" kindref="compound">LiteAny</ref> &gt;</type>
+        <definition>static std::unordered_map&lt;std::string, LiteAny&gt; lite::TensorUtils::get_tensor_attribute</definition>
+        <argsstring>(const std::shared_ptr&lt; Tensor &gt; tensor)</argsstring>
+        <name>get_tensor_attribute</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &gt;</type>
+          <declname>tensor</declname>
+        </param>
+        <briefdescription>
+<para>get tensor attribute </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input tensor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>map from the attribute name to its value<itemizedlist>
+<listitem><para>[&quot;index&quot;, uint32_t] the input or output index in correspond network</para></listitem><listitem><para>[&quot;n_dims&quot;, uint32_t] the dims of the tensor layout</para></listitem><listitem><para>[&quot;dims0&quot;, uint32_t] size of the dim 0</para></listitem><listitem><para>[&quot;dims1&quot;, uint32_t] size of the dim 0</para></listitem><listitem><para>[&quot;names&quot;, string] the name of tensor in correspond network</para></listitem><listitem><para>[&quot;n_elems&quot;, uint32_t] number of element in the tensor</para></listitem><listitem><para>[&quot;n_size&quot;, uint32_t] the bytes size of tensor</para></listitem><listitem><para>[&quot;fmt&quot;, int] the tensor format(rknn_tensor_format)</para></listitem><listitem><para>[&quot;type&quot;, int] the tensor data type(rknn_tensor_type)</para></listitem><listitem><para>[&quot;qnt_type&quot;, int] the quantitative type of tensor</para></listitem><listitem><para>[&quot;fl&quot;, int8_t] fractional length for RKNN_TENSOR_QNT_DFP</para></listitem><listitem><para>[&quot;zp&quot;, uint32_t] zero point for RKNN_TENSOR_QNT_AFFINE_ASYMMETRIC</para></listitem><listitem><para>[&quot;scale&quot;, float] scale for RKNN_TENSOR_QNT_AFFINE_ASYMMETRIC</para></listitem><listitem><para>[&quot;stride&quot;, uint32_t] the stride of tensor, 0 means equal to width</para></listitem><listitem><para>[&quot;size_with_stride&quot;, uint32_t] the bytes size of tensor with stride</para></listitem><listitem><para>[&quot;pass_through&quot;, uint32_t] pass through mode, for rknn_set_io_mem interface. if TRUE, the buf data is passed directly to the input node of the rknn model without any conversion. the following variables do not need to be set. if FALSE, the buf data is converted into an input consistent with the model according to the following type and fmt. so the following variables need to be set. Other implement add here</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="note"><para>different backend has different implement, attribute can add any type for any tensor </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="503" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1TensorUtils_1ace1ee85edb90f7d5a9d26eb0ca367576" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::TensorUtils::set_tensor_information</definition>
+        <argsstring>(std::shared_ptr&lt; Tensor &gt; tensor, const std::unordered_map&lt; std::string, LiteAny &gt; attribute)</argsstring>
+        <name>set_tensor_information</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &gt;</type>
+          <declname>tensor</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; std::string, <ref refid="classlite_1_1LiteAny" kindref="compound">LiteAny</ref> &gt;</type>
+          <declname>attribute</declname>
+        </param>
+        <briefdescription>
+<para>set tensor information, through a map from the information name to its value </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>tensor will be set information</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attribute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>tensor information<itemizedlist>
+<listitem><para>[&quot;pass_through&quot;, uint8_t] input pass through mode</para></listitem><listitem><para>[&quot;fmt&quot;, int] the tensor format when no pass through mode(rknn_tensor_format)</para></listitem><listitem><para>[&quot;type&quot;, int] the tensor data type when no pass through mode(rknn_tensor_type)</para></listitem><listitem><para>[&quot;want_float&quot;, uint8_t] whether the output convert to float</para></listitem><listitem><para>[&quot;is_prealloc&quot;, uint8_t] whether the output is preallocated</para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>different backend has different implement, attribute can add any type for any tensor </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="522" column="1"/>
+      </memberdef>
       <memberdef kind="function" id="classlite_1_1TensorUtils_1a8ef728c9eceba690bccd4d4c1df19503" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &gt;</type>
         <definition>static std::shared_ptr&lt;Tensor&gt; lite::TensorUtils::concat</definition>
@@ -27,21 +96,54 @@
           <defval>-1</defval>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>concat all the input tensor to one on the specified dim. </para>        </briefdescription>
         <detaileddescription>
-<para>concat all the input tensor to one on the specified dim, the result tensor reside in dst_device_id of dst_device, if dst_device is LITE_DEVICE_DEFAULT, the device will get from the first tensor </para>        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tensors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input tensors</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specified dim</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dst_device</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of output tensor</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dst_device_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of output tensor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>concated tensor</para></simplesect>
+<simplesect kind="note"><para>the result tensor reside in dst_device_id of dst_device, if dst_device is LITE_DEVICE_DEFAULT, the device will get from the first tensor </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="235" column="1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="543" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>provide special tensor tool functions </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="230" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="230" bodyend="239"/>
+    <location file="/data/gitcore/MegBrain/lite/include/lite/tensor.h" line="469" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/tensor.h" bodystart="469" bodyend="547"/>
     <listofallmembers>
       <member refid="classlite_1_1TensorUtils_1a8ef728c9eceba690bccd4d4c1df19503" prot="public" virt="non-virtual"><scope>lite::TensorUtils</scope><name>concat</name></member>
+      <member refid="classlite_1_1TensorUtils_1af26f21cd79adcb4618692237394c7469" prot="public" virt="non-virtual"><scope>lite::TensorUtils</scope><name>get_tensor_attribute</name></member>
+      <member refid="classlite_1_1TensorUtils_1ace1ee85edb90f7d5a9d26eb0ca367576" prot="public" virt="non-virtual"><scope>lite::TensorUtils</scope><name>set_tensor_information</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
