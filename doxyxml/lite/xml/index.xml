@@ -18,6 +18,21 @@
     <member refid="structlite_1_1Config_1af6f254f9899289b9055a24a5589ff840" kind="variable"><name>bare_model_cryption_name</name></member>
     <member refid="structlite_1_1Config_1a944d7c70094112a9285fd372d01ed270" kind="variable"><name>options</name></member>
   </compound>
+  <compound refid="structlite_1_1ExtraConfig" kind="struct"><name>lite::ExtraConfig</name>
+    <member refid="structlite_1_1ExtraConfig_1a93bd3c90a8b486031114998b2f3c7650" kind="variable"><name>disable_configure_by_model_info</name></member>
+  </compound>
+  <compound refid="structlite_1_1FeatureBits32" kind="struct"><name>lite::FeatureBits32</name>
+    <member refid="structlite_1_1FeatureBits32_1a75772e728fd538553baf6b35eef1d8e3" kind="variable"><name>is_fast_run_cache</name></member>
+    <member refid="structlite_1_1FeatureBits32_1a2dc3300e526ed19da2063732c3786cc4" kind="variable"><name>__pad0__</name></member>
+  </compound>
+  <compound refid="structlite_1_1Header" kind="struct"><name>lite::Header</name>
+    <member refid="structlite_1_1Header_1ac5cc2d39fdebbbecebf95f26b333554c" kind="variable"><name>name</name></member>
+    <member refid="structlite_1_1Header_1a5738192e4ea5067929ac9dbe2d3adc49" kind="variable"><name>model_decryption_method</name></member>
+    <member refid="structlite_1_1Header_1a97a2f0ff287de069a10fabfdd351d639" kind="variable"><name>info_decryption_method</name></member>
+    <member refid="structlite_1_1Header_1acbee03f1472577dc0bfc05feb2ae6fdf" kind="variable"><name>info_parse_method</name></member>
+    <member refid="structlite_1_1Header_1ad8a5ecb76af2c6aaccea292daeff09af" kind="variable"><name>info_cache_parse_method</name></member>
+    <member refid="structlite_1_1Header_1ad91c902a028aad9362b06c19d24dcfdf" kind="variable"><name>fb32</name></member>
+  </compound>
   <compound refid="classlite_1_1LiteAny_1_1HolderBase" kind="class"><name>lite::LiteAny::HolderBase</name>
     <member refid="classlite_1_1LiteAny_1_1HolderBase_1ab41efaf3ab280d8748b2b2cad0cc5e4b" kind="function"><name>~HolderBase</name></member>
     <member refid="classlite_1_1LiteAny_1_1HolderBase_1ac93027d2c6a47c6e3e52cde8b7a74873" kind="function"><name>clone</name></member>
@@ -61,16 +76,30 @@
     <member refid="classlite_1_1LiteAny_1a2f98550c41a26e6076c82b32816b8895" kind="function"><name>try_cast</name></member>
     <member refid="classlite_1_1LiteAny_1a94c6c3aa41b38f5e7398f26dc7234245" kind="function"><name>cast_void_ptr</name></member>
   </compound>
+  <compound refid="classlite_1_1ModelPacker" kind="class"><name>lite::ModelPacker</name>
+    <member refid="classlite_1_1ModelPacker_1a3d8096f20ac7e608663fb388f75b483d" kind="variable"><name>m_info_data</name></member>
+    <member refid="classlite_1_1ModelPacker_1a824766d0c30367403723e2f61c02710c" kind="variable"><name>m_algo_policy_data</name></member>
+    <member refid="classlite_1_1ModelPacker_1a50da04e7639d95f84700e834446be133" kind="variable"><name>m_binary_cache_data</name></member>
+    <member refid="classlite_1_1ModelPacker_1aa116952e1a0d8b4fe848ef7f23573b4f" kind="variable"><name>m_packed_model_path</name></member>
+    <member refid="classlite_1_1ModelPacker_1a0c0f4d821474af04164ee9ed2e5cb113" kind="variable"><name>m_header</name></member>
+    <member refid="classlite_1_1ModelPacker_1a70149802cb9c05aca7262664778f39a9" kind="variable"><name>m_fbs_helper</name></member>
+    <member refid="classlite_1_1ModelPacker_1a595d7639efed3d9b244f6ad56ca7b453" kind="friend"><name>FbsHelper</name></member>
+    <member refid="classlite_1_1ModelPacker_1a2e1e73f7153d3a33f5ef24a3b85d49bd" kind="function"><name>ModelPacker</name></member>
+    <member refid="classlite_1_1ModelPacker_1a446f5052f804cf299e90b8b79987d92f" kind="function"><name>ModelPacker</name></member>
+    <member refid="classlite_1_1ModelPacker_1a8c94ee008270d3dbb9f60cc3aea6daf3" kind="function"><name>set_header</name></member>
+    <member refid="classlite_1_1ModelPacker_1ad578de22d153e5a113e9e49324405eed" kind="function"><name>pack_model</name></member>
+  </compound>
   <compound refid="classlite_1_1Network" kind="class"><name>lite::Network</name>
-    <member refid="classlite_1_1Network_1a238138e8de101ece3e24052354dd0393" kind="friend"><name>NetworkHelper</name></member>
+    <member refid="classlite_1_1Network_1af397fb532031046bc524e0332a64133f" kind="function"><name>Network</name></member>
+    <member refid="classlite_1_1Network_1af36390d7dfff486d4400d56999dfc594" kind="function"><name>Network</name></member>
+    <member refid="classlite_1_1Network_1a7044b9d5290834262318f7320aae5ce0" kind="friend"><name>NetworkHelper</name></member>
     <member refid="classlite_1_1Network_1af9a60224ce62ab2291bd5eda138b0747" kind="variable"><name>m_loaded</name></member>
     <member refid="classlite_1_1Network_1adab25abde306ecfad18aebc4240e83ea" kind="variable"><name>m_config</name></member>
+    <member refid="classlite_1_1Network_1a271381976bc0c8d6831318feaed9a750" kind="variable"><name>m_extra_config</name></member>
     <member refid="classlite_1_1Network_1afd89a464c0c585e86e19c63d4481d180" kind="variable"><name>m_network_io</name></member>
     <member refid="classlite_1_1Network_1afb1beabeeed280b860e0120c112bfc9c" kind="variable"><name>m_impl</name></member>
     <member refid="classlite_1_1Network_1ad380300c6b455eb7d1e4f63635bc553b" kind="variable"><name>m_extra_info</name></member>
     <member refid="classlite_1_1Network_1a1aad621b0361b5b3f9c887436f34f811" kind="function"><name>~Network</name></member>
-    <member refid="classlite_1_1Network_1af397fb532031046bc524e0332a64133f" kind="function"><name>Network</name></member>
-    <member refid="classlite_1_1Network_1af36390d7dfff486d4400d56999dfc594" kind="function"><name>Network</name></member>
     <member refid="classlite_1_1Network_1a83cd18c386da6fcfb3cc510c19f61265" kind="function"><name>load_model</name></member>
     <member refid="classlite_1_1Network_1a1d5171446ba4b3b50f50df0a968b898f" kind="function"><name>load_model</name></member>
     <member refid="classlite_1_1Network_1a8f35f03a1ac99a570e8e44fbec4f3e9d" kind="function"><name>compute_only_configured_output</name></member>
@@ -94,6 +123,7 @@
     <member refid="classlite_1_1Network_1abe5acd86e9c57bd24eed5405acdf0a5c" kind="function"><name>get_model_extra_info</name></member>
     <member refid="classlite_1_1Network_1acc3d23e5d3ad691aace0c0cb4b681678" kind="function"><name>get_device_type</name></member>
     <member refid="classlite_1_1Network_1a63c89725a49b14bc935fbd42806fd65c" kind="function"><name>get_static_memory_alloc_info</name></member>
+    <member refid="classlite_1_1Network_1aed6246c27485b22104b1455a16b58b3a" kind="function"><name>extra_configure</name></member>
     <member refid="classlite_1_1Network_1aa10227a97ab4113e9d083f0905006b7b" kind="function"><name>update_from_implement</name></member>
     <member refid="classlite_1_1Network_1a40d9584ce621b0bb7665fa0e3359084b" kind="function"><name>prase_model</name></member>
   </compound>
@@ -126,9 +156,9 @@
   <compound refid="classlite_1_1Runtime" kind="class"><name>lite::Runtime</name>
     <member refid="classlite_1_1Runtime_1af14407aeb2954260cecc5feb6d843ea1" kind="function"><name>set_cpu_threads_number</name></member>
     <member refid="classlite_1_1Runtime_1a83ca31b78dcb9edcbf507b3b533f8571" kind="function"><name>get_cpu_threads_number</name></member>
-    <member refid="classlite_1_1Runtime_1a6abb9df11f01710747fbb71616916097" kind="function"><name>set_runtime_thread_affinity</name></member>
     <member refid="classlite_1_1Runtime_1aa080483b249426322a042337c7f04cd8" kind="function"><name>set_cpu_inplace_mode</name></member>
     <member refid="classlite_1_1Runtime_1a4d58177f2bbdd3a0d124026f2ec917d0" kind="function"><name>is_cpu_inplace_mode</name></member>
+    <member refid="classlite_1_1Runtime_1a6abb9df11f01710747fbb71616916097" kind="function"><name>set_runtime_thread_affinity</name></member>
     <member refid="classlite_1_1Runtime_1a810313f4882e2542f2871af4a17f6e4c" kind="function"><name>use_tensorrt</name></member>
     <member refid="classlite_1_1Runtime_1a9c4207a61a54a21df10c2975bd2c092c" kind="function"><name>set_network_algo_policy</name></member>
     <member refid="classlite_1_1Runtime_1aa4d8862c76a5614639778fe84019602c" kind="function"><name>set_network_algo_workspace_limit</name></member>
@@ -143,27 +173,28 @@
     <member refid="classlite_1_1Runtime_1a84eaa297dca882055c9670f25ffadf99" kind="function"><name>get_model_io_info</name></member>
   </compound>
   <compound refid="classlite_1_1Tensor" kind="class"><name>lite::Tensor</name>
-    <member refid="classlite_1_1Tensor_1a59ba23980841c2a5a2e841b63cf29717" kind="friend"><name>TensorHelper</name></member>
-    <member refid="classlite_1_1Tensor_1a51deedf8298329747f97edc07ba4565e" kind="variable"><name>m_tensor_impl</name></member>
-    <member refid="classlite_1_1Tensor_1ac68d36ef5857375e556c4cd28b1f1dcc" kind="variable"><name>m_is_pinned_host</name></member>
-    <member refid="classlite_1_1Tensor_1abdd9251ebe85b3199058eae821748eed" kind="variable"><name>m_device_id</name></member>
-    <member refid="classlite_1_1Tensor_1ab73edc047a3a64370905fda835e49e54" kind="variable"><name>m_layout</name></member>
-    <member refid="classlite_1_1Tensor_1a6a4175affae2c9dc5f5ed4d1fcfc739f" kind="variable"><name>m_device_type</name></member>
     <member refid="classlite_1_1Tensor_1a2faa72389731098a30600585e8c0f116" kind="function"><name>Tensor</name></member>
     <member refid="classlite_1_1Tensor_1ac5380387575f8d9eb975f0fc29888a1f" kind="function"><name>Tensor</name></member>
     <member refid="classlite_1_1Tensor_1a412598f475f00fb20a333e4e636e7986" kind="function"><name>Tensor</name></member>
     <member refid="classlite_1_1Tensor_1ae98782ffcba1e46b3369a66f7ce7feb0" kind="function"><name>Tensor</name></member>
     <member refid="classlite_1_1Tensor_1a026a9f4a62f7903f2558eaa113980c61" kind="function"><name>Tensor</name></member>
     <member refid="classlite_1_1Tensor_1a8c3b62eb31f97e9f1586a7c55068e0b2" kind="function"><name>Tensor</name></member>
+    <member refid="classlite_1_1Tensor_1a59ba23980841c2a5a2e841b63cf29717" kind="friend"><name>TensorHelper</name></member>
+    <member refid="classlite_1_1Tensor_1a51deedf8298329747f97edc07ba4565e" kind="variable"><name>m_tensor_impl</name></member>
+    <member refid="classlite_1_1Tensor_1ac68d36ef5857375e556c4cd28b1f1dcc" kind="variable"><name>m_is_pinned_host</name></member>
+    <member refid="classlite_1_1Tensor_1abdd9251ebe85b3199058eae821748eed" kind="variable"><name>m_device_id</name></member>
+    <member refid="classlite_1_1Tensor_1ab73edc047a3a64370905fda835e49e54" kind="variable"><name>m_layout</name></member>
+    <member refid="classlite_1_1Tensor_1a6a4175affae2c9dc5f5ed4d1fcfc739f" kind="variable"><name>m_device_type</name></member>
     <member refid="classlite_1_1Tensor_1af1012b6850f3d75577246df5d53471ae" kind="function"><name>~Tensor</name></member>
     <member refid="classlite_1_1Tensor_1a5977d571a711e23c80ddd7445790e67d" kind="function"><name>get_device_type</name></member>
     <member refid="classlite_1_1Tensor_1abf95d4eebe736132f10962edfbab4efb" kind="function"><name>get_device_id</name></member>
     <member refid="classlite_1_1Tensor_1acef9775cdfdc8522c7b01092b5f3eba1" kind="function"><name>get_layout</name></member>
     <member refid="classlite_1_1Tensor_1a59b119f4a87dd90b3b6baa112594ed68" kind="function"><name>is_pinned_host</name></member>
-    <member refid="classlite_1_1Tensor_1abadf7f50feed19f575328e0eaef151d8" kind="function"><name>set_layout</name></member>
     <member refid="classlite_1_1Tensor_1a11b06c7b99ae848b155a7941fca44737" kind="function"><name>get_memory_ptr</name></member>
     <member refid="classlite_1_1Tensor_1aded3126ef668ff4207080952c5377817" kind="function"><name>get_memory_ptr</name></member>
     <member refid="classlite_1_1Tensor_1a0daf5326ec7b2b04ddfe132b922ff8d5" kind="function"><name>get_tensor_total_size_in_byte</name></member>
+    <member refid="classlite_1_1Tensor_1ad6a74b4274b3d9b437e0f9b95f18c44b" kind="function"><name>is_continue_memory</name></member>
+    <member refid="classlite_1_1Tensor_1abadf7f50feed19f575328e0eaef151d8" kind="function"><name>set_layout</name></member>
     <member refid="classlite_1_1Tensor_1a7810cfa51ace5ddeb478743586ee9cfe" kind="function"><name>reset</name></member>
     <member refid="classlite_1_1Tensor_1a6543592ae74f827ed1f7dfe97de0782e" kind="function"><name>reset</name></member>
     <member refid="classlite_1_1Tensor_1aea98aee896de9e3483516893b89e0c1a" kind="function"><name>reshape</name></member>
@@ -171,19 +202,18 @@
     <member refid="classlite_1_1Tensor_1a6b3a5b7ffda0937735a78693ab4a4c64" kind="function"><name>fill_zero</name></member>
     <member refid="classlite_1_1Tensor_1a8cd3c2f0329274836707a47bf8ab0516" kind="function"><name>copy_from</name></member>
     <member refid="classlite_1_1Tensor_1aa6ffe13781fc7e96d7002baf0b75d6a2" kind="function"><name>share_memory_with</name></member>
-    <member refid="classlite_1_1Tensor_1ad6a74b4274b3d9b437e0f9b95f18c44b" kind="function"><name>is_continue_memory</name></member>
     <member refid="classlite_1_1Tensor_1a95724ba2f04f8f39ead23bff97bc9e0f" kind="function"><name>update_from_implement</name></member>
   </compound>
   <compound refid="classlite_1_1TensorUtils" kind="class"><name>lite::TensorUtils</name>
     <member refid="classlite_1_1TensorUtils_1a8ef728c9eceba690bccd4d4c1df19503" kind="function"><name>concat</name></member>
   </compound>
   <compound refid="namespacelite" kind="namespace"><name>lite</name>
+    <member refid="network_8h_1abc8e743e58cb28f8d57d793e8f2567ff" kind="typedef"><name>StartCallback</name></member>
+    <member refid="network_8h_1a4d40ddf65fd0816d278ae8a0fc74308c" kind="typedef"><name>FinishCallback</name></member>
     <member refid="global_8h_1a8d715b73d11dc07dd20b9d823b82d568" kind="typedef"><name>DecryptionFunc</name></member>
     <member refid="global_8h_1a65b70ff53bc6444072a7ae0656782837" kind="typedef"><name>ParseInfoFunc</name></member>
     <member refid="network_8h_1a8eccf6421b9abc3557d2199bd11ec588" kind="typedef"><name>ThreadAffinityCallback</name></member>
     <member refid="network_8h_1af69af1289d22aeeb3f31b8c5d2e17271" kind="typedef"><name>AsyncCallback</name></member>
-    <member refid="network_8h_1abc8e743e58cb28f8d57d793e8f2567ff" kind="typedef"><name>StartCallback</name></member>
-    <member refid="network_8h_1a4d40ddf65fd0816d278ae8a0fc74308c" kind="typedef"><name>FinishCallback</name></member>
     <member refid="global_8h_1afc2f9d029ae76878d356f5c899de83c0" kind="function"><name>register_decryption_and_key</name></member>
     <member refid="global_8h_1a586ed47e842714e8fd074f7bc9aa8274" kind="function"><name>update_decryption_or_key</name></member>
     <member refid="global_8h_1a4ba8fdceeba6cee2dcecdfa0eb36e66c" kind="function"><name>register_parse_info_func</name></member>
@@ -255,6 +285,8 @@
     <member refid="macro_8h_1a81ad725e27b05972eb5fac5e3d8208fd" kind="define"><name>LITE_API</name></member>
   </compound>
   <compound refid="network_8h" kind="file"><name>network.h</name>
+  </compound>
+  <compound refid="pack__model_8h" kind="file"><name>pack_model.h</name>
   </compound>
   <compound refid="tensor_8h" kind="file"><name>tensor.h</name>
   </compound>

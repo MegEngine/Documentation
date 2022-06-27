@@ -3,6 +3,7 @@
   <compounddef id="classlite_1_1LiteAny_1_1HolderBase" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>lite::LiteAny::HolderBase</compoundname>
     <derivedcompoundref refid="classlite_1_1LiteAny_1_1AnyHolder" prot="public" virt="non-virtual">lite::LiteAny::AnyHolder&lt; T &gt;</derivedcompoundref>
+    <includes refid="tensor_8h" local="no">tensor.h</includes>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classlite_1_1LiteAny_1_1HolderBase_1ab41efaf3ab280d8748b2b2cad0cc5e4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -10,12 +11,12 @@
         <argsstring>()=default</argsstring>
         <name>~HolderBase</name>
         <briefdescription>
-        </briefdescription>
+<para>virtual deconstructor </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="186" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="313" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1LiteAny_1_1HolderBase_1ac93027d2c6a47c6e3e52cde8b7a74873" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>std::shared_ptr&lt; <ref refid="classlite_1_1LiteAny_1_1HolderBase" kindref="compound">HolderBase</ref> &gt;</type>
@@ -24,31 +25,33 @@
         <name>clone</name>
         <reimplementedby refid="classlite_1_1LiteAny_1_1AnyHolder_1a8047f4664812c842cee2ca42445184aa">clone</reimplementedby>
         <briefdescription>
-        </briefdescription>
+<para>clone data </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>a new ref pointer of the data</para></simplesect>
+<simplesect kind="note"><para>pure virtual interface </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="187" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="322" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Base class for holding any type of data. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="9">
+      <node id="16">
         <label>lite::LiteAny::HolderBase</label>
         <link refid="classlite_1_1LiteAny_1_1HolderBase"/>
       </node>
-      <node id="10">
+      <node id="17">
         <label>lite::LiteAny::AnyHolder&lt; T &gt;</label>
         <link refid="classlite_1_1LiteAny_1_1AnyHolder"/>
-        <childnode refid="9" relation="public-inheritance">
+        <childnode refid="16" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="184" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="184" bodyend="188"/>
+    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="308" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="308" bodyend="323"/>
     <listofallmembers>
       <member refid="classlite_1_1LiteAny_1_1HolderBase_1ac93027d2c6a47c6e3e52cde8b7a74873" prot="public" virt="pure-virtual"><scope>lite::LiteAny::HolderBase</scope><name>clone</name></member>
       <member refid="classlite_1_1LiteAny_1_1HolderBase_1ab41efaf3ab280d8748b2b2cad0cc5e4b" prot="public" virt="virtual"><scope>lite::LiteAny::HolderBase</scope><name>~HolderBase</name></member>

@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classlite_1_1TensorUtils" kind="class" language="C++" prot="public">
     <compoundname>lite::TensorUtils</compoundname>
+    <includes refid="tensor_8h" local="no">tensor.h</includes>
       <sectiondef kind="public-static-func">
       <memberdef kind="function" id="classlite_1_1TensorUtils_1a8ef728c9eceba690bccd4d4c1df19503" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &gt;</type>
@@ -27,19 +28,50 @@
           <defval>-1</defval>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>concat all the input tensor to one on the specified dim. </para>        </briefdescription>
         <detaileddescription>
-<para>concat all the input tensor to one on the specified dim, the result tensor reside in dst_device_id of dst_device, if dst_device is LITE_DEVICE_DEFAULT, the device will get from the first tensor </para>        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tensors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input tensors</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specified dim</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dst_device</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of output tensor</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dst_device_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of output tensor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>concated tensor</para></simplesect>
+<simplesect kind="note"><para>the result tensor reside in dst_device_id of dst_device, if dst_device is LITE_DEVICE_DEFAULT, the device will get from the first tensor </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="235" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="488" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>provide special tensor tool functions </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="230" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="230" bodyend="239"/>
+    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="469" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="469" bodyend="492"/>
     <listofallmembers>
       <member refid="classlite_1_1TensorUtils_1a8ef728c9eceba690bccd4d4c1df19503" prot="public" virt="non-virtual"><scope>lite::TensorUtils</scope><name>concat</name></member>
     </listofallmembers>
