@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="123" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="123" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="119" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/network.h" bodystart="119" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlite_1_1Config_1a6498a4b15758dcaea639426879881968" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="124" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="124" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="120" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/network.h" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlite_1_1Config_1a2fac430c944756e990df6957258a084f" prot="public" static="no" mutable="no">
         <type>LiteDeviceType</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="125" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="125" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="121" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/network.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlite_1_1Config_1a346f31308ff57f2edf65aad1b8991fa8" prot="public" static="no" mutable="no">
         <type>LiteBackend</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="126" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="126" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="122" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/network.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlite_1_1Config_1af6f254f9899289b9055a24a5589ff840" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="127" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="127" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="123" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/network.h" bodystart="123" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structlite_1_1Config_1a944d7c70094112a9285fd372d01ed270" prot="public" static="no" mutable="no">
         <type><ref refid="structlite_1_1Options" kindref="compound">Options</ref></type>
@@ -86,25 +86,53 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="128" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="128" bodyend="-1"/>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="124" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/network.h" bodystart="124" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Configuration when load and compile the graph. </para>    </briefdescription>
+<para>Configuration when load and compile a network. </para>    </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>bare_model_cryption_name</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>is the bare model cryption method name, bare model is not pack json info inside</para></parameterdescription>
-</parameteritem>
-<parameteritem>
 <parameternamelist>
 <parametername>has_compression</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>flag whether the model is compressed, the compress method will read form the model </para></parameterdescription>
+<para>flag whether the model is compressed, the compress method is stored in the model</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>device_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>configure the device id of a network </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>device_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>configure the device type of a network </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>backend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>configure the inference backend of a network, now only support megengine</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bare_model_cryption_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the bare model encryption method name, bare model is not pack json information data inside</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>configuration of <ref refid="structlite_1_1Options" kindref="compound">Options</ref> </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 </para>    </detaileddescription>
@@ -121,7 +149,7 @@
         <link refid="structlite_1_1Options"/>
       </node>
     </collaborationgraph>
-    <location file="/data/github/MegEngine/lite/include/lite/network.h" line="122" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="122" bodyend="129"/>
+    <location file="/data/gitcore/MegBrain/lite/include/lite/network.h" line="118" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/network.h" bodystart="118" bodyend="125"/>
     <listofallmembers>
       <member refid="structlite_1_1Config_1a346f31308ff57f2edf65aad1b8991fa8" prot="public" virt="non-virtual"><scope>lite::Config</scope><name>backend</name></member>
       <member refid="structlite_1_1Config_1af6f254f9899289b9055a24a5589ff840" prot="public" virt="non-virtual"><scope>lite::Config</scope><name>bare_model_cryption_name</name></member>

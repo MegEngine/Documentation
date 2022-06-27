@@ -13,17 +13,10 @@
       </node>
       <node id="6">
         <label>macro.h</label>
-        <link refid="macro_8h"/>
+        <link refid="macro_8h_source"/>
       </node>
       <node id="15">
         <label>string</label>
-      </node>
-      <node id="12">
-        <label>vector</label>
-      </node>
-      <node id="9">
-        <label>common_enum_c.h</label>
-        <link refid="common__enum__c_8h_source"/>
       </node>
       <node id="7">
         <label>network.h</label>
@@ -44,7 +37,7 @@
         </childnode>
       </node>
       <node id="5">
-        <label>/data/github/MegEngine/lite/include/lite/global.h</label>
+        <label>/data/gitcore/MegBrain/lite/include/lite/global.h</label>
         <link refid="global_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
@@ -56,6 +49,13 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
+      </node>
+      <node id="9">
+        <label>common_enum_c.h</label>
+        <link refid="common__enum__c_8h_source"/>
+      </node>
+      <node id="12">
+        <label>vector</label>
       </node>
       <node id="11">
         <label>unordered_map</label>
@@ -87,73 +87,106 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"></codeline>
-<codeline lineno="12"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="macro_8h" kindref="compound">macro.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;network.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelite" kindref="compound">lite</ref><sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>DecryptionFunc<sp/>=<sp/>std::function&lt;std::vector&lt;uint8_t&gt;(</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>size_t,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;)&gt;;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>register_decryption_and_key(</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>decrypt_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DecryptionFunc&amp;<sp/>func,</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>key);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>update_decryption_or_key(</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>decrypt_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DecryptionFunc&amp;<sp/>func,</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>key);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ParseInfoFunc<sp/>=<sp/>std::function&lt;bool(</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>model_name,<sp/>Config&amp;<sp/>config,</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NetworkIO&amp;<sp/>network_io,</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>LiteAny&gt;&amp;<sp/>isolated_config_map,</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string&amp;<sp/>extra_info)&gt;;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>register_parse_info_func(</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>info_type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParseInfoFunc&amp;<sp/>parse_func);</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>get_version(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>major,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>minor,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>patch);</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_log_level(LiteLogLevel<sp/>level);</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal">LITE_API<sp/>LiteLogLevel<sp/>get_log_level();</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>get_device_count(LiteDeviceType<sp/>device_type);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>try_coalesce_all_free_memory();</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_loader_lib_path(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>loader_path);</highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;macro.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;network.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelite" kindref="compound">lite</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>DecryptionFunc<sp/>=<sp/>std::function&lt;std::vector&lt;uint8_t&gt;(</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>size_t,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;)&gt;;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>register_decryption_and_key(</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>decrypt_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DecryptionFunc&amp;<sp/>func,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>update_decryption_or_key(</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>decrypt_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DecryptionFunc&amp;<sp/>func,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ParseInfoFunc<sp/>=<sp/>std::function&lt;bool(</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>model_name,<sp/>Config&amp;<sp/>config,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NetworkIO&amp;<sp/>network_io,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>LiteAny&gt;&amp;<sp/>isolated_config_map,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string&amp;<sp/>extra_info)&gt;;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>register_parse_info_func(</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>info_type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParseInfoFunc&amp;<sp/>parse_func);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>get_version(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>major,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>minor,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>patch);</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_persistent_cache(</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>cache_path,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>always_sync<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>dump_persistent_cache(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>cache_path);</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_tensor_rt_cache(std::string<sp/>tensorrt_cache_path);</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>dump_tensor_rt_cache();</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>register_memory_pair(</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>vir_ptr,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>phy_ptr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length,<sp/>LiteDeviceType<sp/>device,</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LiteBackend<sp/>backend<sp/>=<sp/>LiteBackend::LITE_DEFAULT);</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"></highlight></codeline>
-<codeline lineno="168"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clear_memory_pair(</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>vir_ptr,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>phy_ptr,<sp/>LiteDeviceType<sp/>device,</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LiteBackend<sp/>backend<sp/>=<sp/>LiteBackend::LITE_DEFAULT);</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"></highlight></codeline>
-<codeline lineno="175"><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>lookup_physic_ptr(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>vir_ptr,<sp/>LiteDeviceType<sp/>device,<sp/>LiteBackend<sp/>backend);</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"></highlight></codeline>
-<codeline lineno="177"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>lite</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"></highlight></codeline>
-<codeline lineno="179"><highlight class="normal"></highlight><highlight class="comment">//<sp/>vim:<sp/>syntax=cpp.doxygen<sp/>foldmethod=marker<sp/>foldmarker=f{{{,f}}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_log_level(LiteLogLevel<sp/>level);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal">LITE_API<sp/>LiteLogLevel<sp/>get_log_level();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>get_device_count(LiteDeviceType<sp/>device_type);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>try_coalesce_all_free_memory();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_loader_lib_path(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>loader_path);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_persistent_cache(</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>cache_path,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>always_sync<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">//<sp/>BEGIN-INTERNAL</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"></highlight><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_redis_cache(</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>redis_ip,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>port,<sp/>std::string<sp/>redis_password);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="comment">//<sp/>END-INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>dump_persistent_cache(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>cache_path);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_tensor_rt_cache(std::string<sp/>tensorrt_cache_path);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>dump_tensor_rt_cache();</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="comment">//<sp/>BEGIN-INTERNAL</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"></highlight><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>opencl_set_binary_cache_file_name(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>opencl_set_binary_cache_file_name_with_cache_compat_level(</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename,<sp/>LiteOpenCLCacheCompatLevel<sp/>level);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>opencl_set_binary_cache_with_cache_compat_level(</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>kernel_cache_bin,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bin_size,</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LiteOpenCLCacheCompatLevel<sp/>level<sp/>=<sp/>LiteOpenCLCacheCompatLevel::LITE_NOT_COMPAT);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>opencl_set_algo_policy(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>algo_policy);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>opencl_set_algo_policy(</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>algo_policy_bin,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bin_size);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>enable_opencl_search(</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>algo_cache_path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>mode<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;FAST&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>disable_opencl_search();</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>opencl_clear_global_data();</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_opencl_perf_hint(</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>perf_hint<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;perf_high&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>priority_hint<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;priority_high&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>enable_opencl_deploy(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>is_deploy);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight><highlight class="comment">//<sp/>END-INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>register_memory_pair(</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>vir_ptr,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>phy_ptr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length,<sp/>LiteDeviceType<sp/>device,</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LiteBackend<sp/>backend<sp/>=<sp/>LiteBackend::LITE_DEFAULT);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clear_memory_pair(</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>vir_ptr,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>phy_ptr,<sp/>LiteDeviceType<sp/>device,</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LiteBackend<sp/>backend<sp/>=<sp/>LiteBackend::LITE_DEFAULT);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>lookup_physic_ptr(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>vir_ptr,<sp/>LiteDeviceType<sp/>device,<sp/>LiteBackend<sp/>backend);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>lite</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="comment">//<sp/>vim:<sp/>syntax=cpp.doxygen<sp/>foldmethod=marker<sp/>foldmarker=f{{{,f}}}</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/data/github/MegEngine/lite/include/lite/global.h"/>
+    <location file="/data/gitcore/MegBrain/lite/include/lite/global.h"/>
   </compounddef>
 </doxygen>

@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classlite_1_1ModelPacker" kind="class" language="C++" prot="public">
+    <compoundname>lite::ModelPacker</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classlite_1_1ModelPacker_1a3d8096f20ac7e608663fb388f75b483d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; lite::ModelPacker::m_info_data</definition>
+        <argsstring></argsstring>
+        <name>m_info_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="51" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1ModelPacker_1a824766d0c30367403723e2f61c02710c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; lite::ModelPacker::m_algo_policy_data</definition>
+        <argsstring></argsstring>
+        <name>m_algo_policy_data</name>
+        <briefdescription>
+<para>fastrun cache / algo policy </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="53" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1ModelPacker_1a50da04e7639d95f84700e834446be133" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; lite::ModelPacker::m_binary_cache_data</definition>
+        <argsstring></argsstring>
+        <name>m_binary_cache_data</name>
+        <briefdescription>
+<para>binary cache </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="55" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1ModelPacker_1aa116952e1a0d8b4fe848ef7f23573b4f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string lite::ModelPacker::m_packed_model_path</definition>
+        <argsstring></argsstring>
+        <name>m_packed_model_path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="56" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1ModelPacker_1a0c0f4d821474af04164ee9ed2e5cb113" prot="private" static="no" mutable="no">
+        <type><ref refid="structlite_1_1Header" kindref="compound">Header</ref></type>
+        <definition>Header lite::ModelPacker::m_header</definition>
+        <argsstring></argsstring>
+        <name>m_header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="57" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1ModelPacker_1a70149802cb9c05aca7262664778f39a9" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; FbsHelper &gt;</type>
+        <definition>std::shared_ptr&lt;FbsHelper&gt; lite::ModelPacker::m_fbs_helper</definition>
+        <argsstring></argsstring>
+        <name>m_fbs_helper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="60" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classlite_1_1ModelPacker_1a595d7639efed3d9b244f6ad56ca7b453" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class FbsHelper</definition>
+        <argsstring></argsstring>
+        <name>FbsHelper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="59" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlite_1_1ModelPacker_1a2e1e73f7153d3a33f5ef24a3b85d49bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::ModelPacker::ModelPacker</definition>
+        <argsstring>(std::string model_path, std::string packed_model_path, std::string info_data_path=&quot;&quot;, std::string info_algo_policy_path=&quot;&quot;, std::string info_binary_cache_path=&quot;&quot;)</argsstring>
+        <name>ModelPacker</name>
+        <param>
+          <type>std::string</type>
+          <declname>model_path</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>packed_model_path</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>info_data_path</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>info_algo_policy_path</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>info_binary_cache_path</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="34" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1ModelPacker_1a446f5052f804cf299e90b8b79987d92f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::ModelPacker::ModelPacker</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; model_data, std::string packed_model_path, std::vector&lt; uint8_t &gt; info_data={}, std::vector&lt; uint8_t &gt; info_algo_policy_data={}, std::vector&lt; uint8_t &gt; info_binary_cache_data={})</argsstring>
+        <name>ModelPacker</name>
+        <param>
+          <type>std::vector&lt; uint8_t &gt;</type>
+          <declname>model_data</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>packed_model_path</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt;</type>
+          <declname>info_data</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt;</type>
+          <declname>info_algo_policy_data</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt;</type>
+          <declname>info_binary_cache_data</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1ModelPacker_1a8c94ee008270d3dbb9f60cc3aea6daf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::ModelPacker::set_header</definition>
+        <argsstring>(std::string model_decryption_method=&quot;NONE&quot;, std::string info_decryption_method=&quot;NONE&quot;, bool is_fast_run_cache=true)</argsstring>
+        <name>set_header</name>
+        <param>
+          <type>std::string</type>
+          <declname>model_decryption_method</declname>
+          <defval>&quot;NONE&quot;</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>info_decryption_method</declname>
+          <defval>&quot;NONE&quot;</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_fast_run_cache</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1ModelPacker_1ad578de22d153e5a113e9e49324405eed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::ModelPacker::pack_model</definition>
+        <argsstring>()</argsstring>
+        <name>pack_model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="48" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" line="32" column="1" bodyfile="/data/gitcore/MegBrain/lite/include/lite/pack_model.h" bodystart="32" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classlite_1_1ModelPacker_1a595d7639efed3d9b244f6ad56ca7b453" prot="private" virt="non-virtual"><scope>lite::ModelPacker</scope><name>FbsHelper</name></member>
+      <member refid="classlite_1_1ModelPacker_1a824766d0c30367403723e2f61c02710c" prot="private" virt="non-virtual"><scope>lite::ModelPacker</scope><name>m_algo_policy_data</name></member>
+      <member refid="classlite_1_1ModelPacker_1a50da04e7639d95f84700e834446be133" prot="private" virt="non-virtual"><scope>lite::ModelPacker</scope><name>m_binary_cache_data</name></member>
+      <member refid="classlite_1_1ModelPacker_1a70149802cb9c05aca7262664778f39a9" prot="private" virt="non-virtual"><scope>lite::ModelPacker</scope><name>m_fbs_helper</name></member>
+      <member refid="classlite_1_1ModelPacker_1a0c0f4d821474af04164ee9ed2e5cb113" prot="private" virt="non-virtual"><scope>lite::ModelPacker</scope><name>m_header</name></member>
+      <member refid="classlite_1_1ModelPacker_1a3d8096f20ac7e608663fb388f75b483d" prot="private" virt="non-virtual"><scope>lite::ModelPacker</scope><name>m_info_data</name></member>
+      <member refid="classlite_1_1ModelPacker_1aa116952e1a0d8b4fe848ef7f23573b4f" prot="private" virt="non-virtual"><scope>lite::ModelPacker</scope><name>m_packed_model_path</name></member>
+      <member refid="classlite_1_1ModelPacker_1a2e1e73f7153d3a33f5ef24a3b85d49bd" prot="public" virt="non-virtual"><scope>lite::ModelPacker</scope><name>ModelPacker</name></member>
+      <member refid="classlite_1_1ModelPacker_1a446f5052f804cf299e90b8b79987d92f" prot="public" virt="non-virtual"><scope>lite::ModelPacker</scope><name>ModelPacker</name></member>
+      <member refid="classlite_1_1ModelPacker_1ad578de22d153e5a113e9e49324405eed" prot="public" virt="non-virtual"><scope>lite::ModelPacker</scope><name>pack_model</name></member>
+      <member refid="classlite_1_1ModelPacker_1a8c94ee008270d3dbb9f60cc3aea6daf3" prot="public" virt="non-virtual"><scope>lite::ModelPacker</scope><name>set_header</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
