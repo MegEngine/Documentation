@@ -3,10 +3,15 @@
 ===================
 自动混合精度（AMP）
 ===================
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   nhwc
 
 混合精度（Mix Precision）训练是指在训练时，对网络不同的部分采用不同的数值精度，对追求速度的算子（比如 conv、matmul）可以用较低精度（比如 float16）从而获得明显的性能提升，而对其它更看重精度的算子（比如 log、softmax）则保留较高的精度（比如 float32）。
 
-得益于 NVIDIA TensorCore 的存在（需要 Volta, Turing, Ampere 架构 GPU），对于 conv、matmul 占比较多的网络，混合精度训练一般能使网络整体的训练速度有较大的提升（2-3X)。
+得益于 NVIDIA TensorCore 的存在（需要 Volta, Turing, Ampere 架构 GPU），对于 conv、matmul 占比较多的网络，混合精度训练一般能使网络整体的训练速度有较大的提升（2-3X）。
 
 接口介绍
 --------
