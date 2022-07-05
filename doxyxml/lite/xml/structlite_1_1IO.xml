@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlite_1_1IO" kind="struct" language="C++" prot="public">
+    <compoundname>lite::IO</compoundname>
+    <includes refid="network_8h" local="no">network.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlite_1_1IO_1a506dfedf66a7d3b9632456e11b6c30b5" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string lite::IO::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="168" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlite_1_1IO_1a75db6db920daa406fafa409b76eadc7e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool lite::IO::is_host</definition>
+        <argsstring></argsstring>
+        <name>is_host</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="170" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlite_1_1IO_1ab20c51078e0867258d06bdaec663c74c" prot="public" static="no" mutable="no">
+        <type>LiteIOType</type>
+        <definition>LiteIOType lite::IO::io_type</definition>
+        <argsstring></argsstring>
+        <name>io_type</name>
+        <initializer>= LiteIOType::LITE_IO_VALUE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="172" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlite_1_1IO_1a540288f55fd91d1a719a10df822ea531" prot="public" static="no" mutable="no">
+        <type><ref refid="structlite_1_1Layout" kindref="compound">Layout</ref></type>
+        <definition>Layout lite::IO::config_layout</definition>
+        <argsstring></argsstring>
+        <name>config_layout</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="174" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>config the network input and output item, the input and output tensor information will describe there </para>    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the input/output tensor name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_host</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Used to mark where the input tensor comes from and where the output tensor will copy to, if is_host is true, the input is from host and output copy to host, otherwise in device. Sometimes the input is from device and output no need copy to host, default is true.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>io_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structlite_1_1IO" kindref="compound">IO</ref> type, it can be SHAPE or VALUE, when SHAPE is set, the input or output tensor value is invaid, only shape will be set, default is VALUE</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config_layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The layout of input or output tensor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<verbatim>embed:rst:leading-asterisk
+*
+*  .. note::
+*
+*      * if other layout is set to input tensor before forwarding, this layout will not
+*        work
+*      * if no layout is set before forwarding, the model will forward with its origin
+*        layout
+*      * if layout is set in output tensor, it will used to check whether the
+*        layout computed from the network is correct
+*
+* </verbatim> </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="20">
+        <label>lite::IO</label>
+        <link refid="structlite_1_1IO"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>config_layout</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>lite::Layout</label>
+        <link refid="structlite_1_1Layout"/>
+      </node>
+    </collaborationgraph>
+    <location file="/data/github/MegEngine/lite/include/lite/network.h" line="167" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="167" bodyend="175"/>
+    <listofallmembers>
+      <member refid="structlite_1_1IO_1a540288f55fd91d1a719a10df822ea531" prot="public" virt="non-virtual"><scope>lite::IO</scope><name>config_layout</name></member>
+      <member refid="structlite_1_1IO_1ab20c51078e0867258d06bdaec663c74c" prot="public" virt="non-virtual"><scope>lite::IO</scope><name>io_type</name></member>
+      <member refid="structlite_1_1IO_1a75db6db920daa406fafa409b76eadc7e" prot="public" virt="non-virtual"><scope>lite::IO</scope><name>is_host</name></member>
+      <member refid="structlite_1_1IO_1a506dfedf66a7d3b9632456e11b6c30b5" prot="public" virt="non-virtual"><scope>lite::IO</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlite_1_1Config" kind="struct" language="C++" prot="public">
+    <compoundname>lite::Config</compoundname>
+    <includes refid="network_8h" local="no">network.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlite_1_1Config_1a01f41b802e0a06524556b93cc6cd9983" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool lite::Config::has_compression</definition>
+        <argsstring></argsstring>
+        <name>has_compression</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="119" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlite_1_1Config_1a6498a4b15758dcaea639426879881968" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int lite::Config::device_id</definition>
+        <argsstring></argsstring>
+        <name>device_id</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="120" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlite_1_1Config_1a2fac430c944756e990df6957258a084f" prot="public" static="no" mutable="no">
+        <type>LiteDeviceType</type>
+        <definition>LiteDeviceType lite::Config::device_type</definition>
+        <argsstring></argsstring>
+        <name>device_type</name>
+        <initializer>= LiteDeviceType::LITE_CPU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="121" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlite_1_1Config_1a346f31308ff57f2edf65aad1b8991fa8" prot="public" static="no" mutable="no">
+        <type>LiteBackend</type>
+        <definition>LiteBackend lite::Config::backend</definition>
+        <argsstring></argsstring>
+        <name>backend</name>
+        <initializer>= LiteBackend::LITE_DEFAULT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="122" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlite_1_1Config_1af6f254f9899289b9055a24a5589ff840" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string lite::Config::bare_model_cryption_name</definition>
+        <argsstring></argsstring>
+        <name>bare_model_cryption_name</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="123" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlite_1_1Config_1a944d7c70094112a9285fd372d01ed270" prot="public" static="no" mutable="no">
+        <type><ref refid="structlite_1_1Options" kindref="compound">Options</ref></type>
+        <definition>Options lite::Config::options</definition>
+        <argsstring></argsstring>
+        <name>options</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="124" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Configuration when load and compile a network. </para>    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>has_compression</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flag whether the model is compressed, the compress method is stored in the model</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>device_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>configure the device id of a network </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>device_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>configure the device type of a network </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>backend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>configure the inference backend of a network, now only support megengine</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bare_model_cryption_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the bare model encryption method name, bare model is not pack json information data inside</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>configuration of <ref refid="structlite_1_1Options" kindref="compound">Options</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>lite::Config</label>
+        <link refid="structlite_1_1Config"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>options</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>lite::Options</label>
+        <link refid="structlite_1_1Options"/>
+      </node>
+    </collaborationgraph>
+    <location file="/data/github/MegEngine/lite/include/lite/network.h" line="118" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="118" bodyend="125"/>
+    <listofallmembers>
+      <member refid="structlite_1_1Config_1a346f31308ff57f2edf65aad1b8991fa8" prot="public" virt="non-virtual"><scope>lite::Config</scope><name>backend</name></member>
+      <member refid="structlite_1_1Config_1af6f254f9899289b9055a24a5589ff840" prot="public" virt="non-virtual"><scope>lite::Config</scope><name>bare_model_cryption_name</name></member>
+      <member refid="structlite_1_1Config_1a6498a4b15758dcaea639426879881968" prot="public" virt="non-virtual"><scope>lite::Config</scope><name>device_id</name></member>
+      <member refid="structlite_1_1Config_1a2fac430c944756e990df6957258a084f" prot="public" virt="non-virtual"><scope>lite::Config</scope><name>device_type</name></member>
+      <member refid="structlite_1_1Config_1a01f41b802e0a06524556b93cc6cd9983" prot="public" virt="non-virtual"><scope>lite::Config</scope><name>has_compression</name></member>
+      <member refid="structlite_1_1Config_1a944d7c70094112a9285fd372d01ed270" prot="public" virt="non-virtual"><scope>lite::Config</scope><name>options</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

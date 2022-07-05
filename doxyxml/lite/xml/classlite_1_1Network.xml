@@ -1,0 +1,666 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classlite_1_1Network" kind="class" language="C++" prot="public">
+    <compoundname>lite::Network</compoundname>
+    <includes refid="network_8h" local="no">network.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Constructor</header>
+      <description><para>Construct a network with given configuration and <ref refid="structlite_1_1IO" kindref="compound">IO</ref> information</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The configuration to create the network </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>networkio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref> to describe the input and output tensor of the network </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para></description>
+      <memberdef kind="function" id="classlite_1_1Network_1af397fb532031046bc524e0332a64133f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::Network::Network</definition>
+        <argsstring>(const Config &amp;config={}, const NetworkIO &amp;networkio={})</argsstring>
+        <name>Network</name>
+        <param>
+          <type>const <ref refid="structlite_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const <ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref> &amp;</type>
+          <declname>networkio</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="264" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1af36390d7dfff486d4400d56999dfc594" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::Network::Network</definition>
+        <argsstring>(const NetworkIO &amp;networkio, const Config &amp;config={})</argsstring>
+        <name>Network</name>
+        <param>
+          <type>const <ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref> &amp;</type>
+          <declname>networkio</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structlite_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="265" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classlite_1_1Network_1a7044b9d5290834262318f7320aae5ce0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>NetworkHelper</definition>
+        <argsstring></argsstring>
+        <name>NetworkHelper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="251" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classlite_1_1Network_1af9a60224ce62ab2291bd5eda138b0747" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool lite::Network::m_loaded</definition>
+        <argsstring></argsstring>
+        <name>m_loaded</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="367" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="367" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1Network_1adab25abde306ecfad18aebc4240e83ea" prot="private" static="no" mutable="no">
+        <type><ref refid="structlite_1_1Config" kindref="compound">Config</ref></type>
+        <definition>Config lite::Network::m_config</definition>
+        <argsstring></argsstring>
+        <name>m_config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="368" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="368" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1Network_1a271381976bc0c8d6831318feaed9a750" prot="private" static="no" mutable="no">
+        <type><ref refid="structlite_1_1ExtraConfig" kindref="compound">ExtraConfig</ref></type>
+        <definition>ExtraConfig lite::Network::m_extra_config</definition>
+        <argsstring></argsstring>
+        <name>m_extra_config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="369" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="369" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1Network_1afd89a464c0c585e86e19c63d4481d180" prot="private" static="no" mutable="no">
+        <type><ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref></type>
+        <definition>NetworkIO lite::Network::m_network_io</definition>
+        <argsstring></argsstring>
+        <name>m_network_io</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="370" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1Network_1afb1beabeeed280b860e0120c112bfc9c" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; NetworkImplBase &gt;</type>
+        <definition>std::unique_ptr&lt;NetworkImplBase&gt; lite::Network::m_impl</definition>
+        <argsstring></argsstring>
+        <name>m_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="371" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1Network_1ad380300c6b455eb7d1e4f63635bc553b" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string lite::Network::m_extra_info</definition>
+        <argsstring></argsstring>
+        <name>m_extra_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="372" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="372" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlite_1_1Network_1a1aad621b0361b5b3f9c887436f34f811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::Network::~Network</definition>
+        <argsstring>()</argsstring>
+        <name>~Network</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="253" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a83cd18c386da6fcfb3cc510c19f61265" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Network::load_model</definition>
+        <argsstring>(void *model_mem, size_t size)</argsstring>
+        <name>load_model</name>
+        <param>
+          <type>void *</type>
+          <declname>model_mem</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>load the model form memory </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="269" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a1d5171446ba4b3b50f50df0a968b898f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Network::load_model</definition>
+        <argsstring>(std::string model_path)</argsstring>
+        <name>load_model</name>
+        <param>
+          <type>std::string</type>
+          <declname>model_path</declname>
+        </param>
+        <briefdescription>
+<para>load the model from a model path </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="272" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a8f35f03a1ac99a570e8e44fbec4f3e9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Network::compute_only_configured_output</definition>
+        <argsstring>()</argsstring>
+        <name>compute_only_configured_output</name>
+        <briefdescription>
+<para>only compute the output tensor configured by the <ref refid="structlite_1_1IO" kindref="compound">IO</ref> information </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="275" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1af5c3cd9c0b1152e1f25bdd3f726c507d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Tensor&gt; lite::Network::get_io_tensor</definition>
+        <argsstring>(std::string io_name, LiteTensorPhase phase=LiteTensorPhase::LITE_IO)</argsstring>
+        <name>get_io_tensor</name>
+        <param>
+          <type>std::string</type>
+          <declname>io_name</declname>
+        </param>
+        <param>
+          <type>LiteTensorPhase</type>
+          <declname>phase</declname>
+          <defval>LiteTensorPhase::LITE_IO</defval>
+        </param>
+        <briefdescription>
+<para>get the network input and output tensor, the layout of which is sync from megengine tensor, when the name of input and output tensor are the same, use LiteTensorPhase to separate them </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>io_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the tensor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>phase</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indicate whether the tensor is input tensor or output tensor, maybe the input tensor name is the same with the output tensor name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="285" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a27d2f5132d0d58a82b003b80f5836d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Tensor&gt; lite::Network::get_input_tensor</definition>
+        <argsstring>(size_t index)</argsstring>
+        <name>get_input_tensor</name>
+        <param>
+          <type>size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>get the network input tensor by index </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="289" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a63687d50c28c74066d538c16716acd5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Tensor&gt; lite::Network::get_output_tensor</definition>
+        <argsstring>(size_t index)</argsstring>
+        <name>get_output_tensor</name>
+        <param>
+          <type>size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>get the network output tensor by index </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="292" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a9c150dccec085b7bba0d36343e449f07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlite_1_1Network" kindref="compound">Network</ref> &amp;</type>
+        <definition>Network&amp; lite::Network::set_async_callback</definition>
+        <argsstring>(const AsyncCallback &amp;async_callback)</argsstring>
+        <name>set_async_callback</name>
+        <param>
+          <type>const AsyncCallback &amp;</type>
+          <declname>async_callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>set the network forwarding in async mode and set the AsyncCallback callback function </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="296" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1ab2f6e298ed0f05b3bb82c03f07cde147" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlite_1_1Network" kindref="compound">Network</ref> &amp;</type>
+        <definition>Network&amp; lite::Network::set_start_callback</definition>
+        <argsstring>(const StartCallback &amp;start_callback)</argsstring>
+        <name>set_start_callback</name>
+        <param>
+          <type>const StartCallback &amp;</type>
+          <declname>start_callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>set the start forwarding callback function of type StartCallback, which will be execute before forward. this can be used to check network input or dump model inputs for debug </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="301" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1ad35d0f45e8e616cd02176cbda113146d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlite_1_1Network" kindref="compound">Network</ref> &amp;</type>
+        <definition>Network&amp; lite::Network::set_finish_callback</definition>
+        <argsstring>(const FinishCallback &amp;finish_callback)</argsstring>
+        <name>set_finish_callback</name>
+        <param>
+          <type>const FinishCallback &amp;</type>
+          <declname>finish_callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>set the finish forwarding callback function of type FinishCallback, which will be execute after forward. this can be used to dump model outputs for debug </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="305" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a825c5300e10e14fb71e7e7e34e7daf1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Network::forward</definition>
+        <argsstring>()</argsstring>
+        <name>forward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>forward the network with filled input data and fill the output data to the output tensor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="309" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1ad9f9bbd11fb1157d7ac5451f41981717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Network::wait</definition>
+        <argsstring>()</argsstring>
+        <name>wait</name>
+        <briefdescription>
+<para>waite until forward finish in sync model </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="312" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a19a62f979367db7ffeba9cc2bdcff359" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string lite::Network::get_input_name</definition>
+        <argsstring>(size_t index) const</argsstring>
+        <name>get_input_name</name>
+        <param>
+          <type>size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>get the input tensor name by index </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="315" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a41eb205be4a6c639ed6c5533cf608a50" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string lite::Network::get_output_name</definition>
+        <argsstring>(size_t index) const</argsstring>
+        <name>get_output_name</name>
+        <param>
+          <type>size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>get the output tensor name by index </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="318" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a30751f1863e38eb9380c28bf8b96bb30" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; lite::Network::get_all_input_name</definition>
+        <argsstring>() const</argsstring>
+        <name>get_all_input_name</name>
+        <briefdescription>
+<para>get all the input tensor names </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="321" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a0640fbf7a63b34d23912b5d183cb4493" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; lite::Network::get_all_output_name</definition>
+        <argsstring>() const</argsstring>
+        <name>get_all_output_name</name>
+        <briefdescription>
+<para>get all the output tensor names </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="324" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1acd63daf3de98534bd81ac9bd5c647996" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlite_1_1Network" kindref="compound">Network</ref> &amp;</type>
+        <definition>Network&amp; lite::Network::set_device_id</definition>
+        <argsstring>(int device_id)</argsstring>
+        <name>set_device_id</name>
+        <param>
+          <type>int</type>
+          <declname>device_id</declname>
+        </param>
+        <briefdescription>
+<para>set the network forwarding device id, default device id = 0 </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="327" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a2edca32c08e3129b057376ec5d250773" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int lite::Network::get_device_id</definition>
+        <argsstring>() const</argsstring>
+        <name>get_device_id</name>
+        <briefdescription>
+<para>get the network forwarding device id </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="330" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a01074fc606b3527b15c45ca749f0c5b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlite_1_1Network" kindref="compound">Network</ref> &amp;</type>
+        <definition>Network&amp; lite::Network::set_stream_id</definition>
+        <argsstring>(int stream_id)</argsstring>
+        <name>set_stream_id</name>
+        <param>
+          <type>int</type>
+          <declname>stream_id</declname>
+        </param>
+        <briefdescription>
+<para>set the network stream id, default stream id = 0 </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="333" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a8a77522c5bc6074d635e7de8a50b0b66" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int lite::Network::get_stream_id</definition>
+        <argsstring>() const</argsstring>
+        <name>get_stream_id</name>
+        <briefdescription>
+<para>get the network stream id </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="336" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1aa601aaaea63501e8b2029a8a02491e4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Network::enable_profile_performance</definition>
+        <argsstring>(std::string profile_file_path)</argsstring>
+        <name>enable_profile_performance</name>
+        <param>
+          <type>std::string</type>
+          <declname>profile_file_path</declname>
+        </param>
+        <briefdescription>
+<para>enable profile the network, a file will be generated to the given path </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="339" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1abe5acd86e9c57bd24eed5405acdf0a5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; lite::Network::get_model_extra_info</definition>
+        <argsstring>()</argsstring>
+        <name>get_model_extra_info</name>
+        <briefdescription>
+<para>get model extra info, the extra information is packed into model by user </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="342" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1acc3d23e5d3ad691aace0c0cb4b681678" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LiteDeviceType</type>
+        <definition>LiteDeviceType lite::Network::get_device_type</definition>
+        <argsstring>() const</argsstring>
+        <name>get_device_type</name>
+        <briefdescription>
+<para>get the network device type </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="345" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a63c89725a49b14bc935fbd42806fd65c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Network::get_static_memory_alloc_info</definition>
+        <argsstring>(const std::string &amp;log_dir=&quot;logs/test&quot;) const</argsstring>
+        <name>get_static_memory_alloc_info</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>log_dir</declname>
+          <defval>&quot;logs/test&quot;</defval>
+        </param>
+        <briefdescription>
+<para>get static peak memory info showed by Graph visualization </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="348" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1aed6246c27485b22104b1455a16b58b3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Network::extra_configure</definition>
+        <argsstring>(const ExtraConfig &amp;extra_config)</argsstring>
+        <name>extra_configure</name>
+        <param>
+          <type>const <ref refid="structlite_1_1ExtraConfig" kindref="compound">ExtraConfig</ref> &amp;</type>
+          <declname>extra_config</declname>
+        </param>
+        <briefdescription>
+<para>the extra configuration </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>extra_config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the extra configuration to set into the network </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="354" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classlite_1_1Network_1aa10227a97ab4113e9d083f0905006b7b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Network::update_from_implement</definition>
+        <argsstring>()</argsstring>
+        <name>update_from_implement</name>
+        <briefdescription>
+<para>update member from implement </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="361" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Network_1a40d9584ce621b0bb7665fa0e3359084b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Network::prase_model</definition>
+        <argsstring>(std::shared_ptr&lt; void &gt; model_data, size_t size)</argsstring>
+        <name>prase_model</name>
+        <param>
+          <type>std::shared_ptr&lt; void &gt;</type>
+          <declname>model_data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>decrypt and parse the model file </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="364" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The network is the main class to perform forwarding, which is construct form a model, and implement model load, init, forward, and display some model information. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/data/github/MegEngine/lite/include/lite/network.h" line="248" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="248" bodyend="373"/>
+    <listofallmembers>
+      <member refid="classlite_1_1Network_1a8f35f03a1ac99a570e8e44fbec4f3e9d" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>compute_only_configured_output</name></member>
+      <member refid="classlite_1_1Network_1aa601aaaea63501e8b2029a8a02491e4b" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>enable_profile_performance</name></member>
+      <member refid="classlite_1_1Network_1aed6246c27485b22104b1455a16b58b3a" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>extra_configure</name></member>
+      <member refid="classlite_1_1Network_1a825c5300e10e14fb71e7e7e34e7daf1e" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>forward</name></member>
+      <member refid="classlite_1_1Network_1a30751f1863e38eb9380c28bf8b96bb30" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_all_input_name</name></member>
+      <member refid="classlite_1_1Network_1a0640fbf7a63b34d23912b5d183cb4493" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_all_output_name</name></member>
+      <member refid="classlite_1_1Network_1a2edca32c08e3129b057376ec5d250773" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_device_id</name></member>
+      <member refid="classlite_1_1Network_1acc3d23e5d3ad691aace0c0cb4b681678" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_device_type</name></member>
+      <member refid="classlite_1_1Network_1a19a62f979367db7ffeba9cc2bdcff359" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_input_name</name></member>
+      <member refid="classlite_1_1Network_1a27d2f5132d0d58a82b003b80f5836d01" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_input_tensor</name></member>
+      <member refid="classlite_1_1Network_1af5c3cd9c0b1152e1f25bdd3f726c507d" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_io_tensor</name></member>
+      <member refid="classlite_1_1Network_1abe5acd86e9c57bd24eed5405acdf0a5c" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_model_extra_info</name></member>
+      <member refid="classlite_1_1Network_1a41eb205be4a6c639ed6c5533cf608a50" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_output_name</name></member>
+      <member refid="classlite_1_1Network_1a63687d50c28c74066d538c16716acd5c" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_output_tensor</name></member>
+      <member refid="classlite_1_1Network_1a63c89725a49b14bc935fbd42806fd65c" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_static_memory_alloc_info</name></member>
+      <member refid="classlite_1_1Network_1a8a77522c5bc6074d635e7de8a50b0b66" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>get_stream_id</name></member>
+      <member refid="classlite_1_1Network_1a83cd18c386da6fcfb3cc510c19f61265" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>load_model</name></member>
+      <member refid="classlite_1_1Network_1a1d5171446ba4b3b50f50df0a968b898f" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>load_model</name></member>
+      <member refid="classlite_1_1Network_1adab25abde306ecfad18aebc4240e83ea" prot="private" virt="non-virtual"><scope>lite::Network</scope><name>m_config</name></member>
+      <member refid="classlite_1_1Network_1a271381976bc0c8d6831318feaed9a750" prot="private" virt="non-virtual"><scope>lite::Network</scope><name>m_extra_config</name></member>
+      <member refid="classlite_1_1Network_1ad380300c6b455eb7d1e4f63635bc553b" prot="private" virt="non-virtual"><scope>lite::Network</scope><name>m_extra_info</name></member>
+      <member refid="classlite_1_1Network_1afb1beabeeed280b860e0120c112bfc9c" prot="private" virt="non-virtual"><scope>lite::Network</scope><name>m_impl</name></member>
+      <member refid="classlite_1_1Network_1af9a60224ce62ab2291bd5eda138b0747" prot="private" virt="non-virtual"><scope>lite::Network</scope><name>m_loaded</name></member>
+      <member refid="classlite_1_1Network_1afd89a464c0c585e86e19c63d4481d180" prot="private" virt="non-virtual"><scope>lite::Network</scope><name>m_network_io</name></member>
+      <member refid="classlite_1_1Network_1af397fb532031046bc524e0332a64133f" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>Network</name></member>
+      <member refid="classlite_1_1Network_1af36390d7dfff486d4400d56999dfc594" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>Network</name></member>
+      <member refid="classlite_1_1Network_1a7044b9d5290834262318f7320aae5ce0" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>NetworkHelper</name></member>
+      <member refid="classlite_1_1Network_1a40d9584ce621b0bb7665fa0e3359084b" prot="private" virt="non-virtual"><scope>lite::Network</scope><name>prase_model</name></member>
+      <member refid="classlite_1_1Network_1a9c150dccec085b7bba0d36343e449f07" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>set_async_callback</name></member>
+      <member refid="classlite_1_1Network_1acd63daf3de98534bd81ac9bd5c647996" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>set_device_id</name></member>
+      <member refid="classlite_1_1Network_1ad35d0f45e8e616cd02176cbda113146d" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>set_finish_callback</name></member>
+      <member refid="classlite_1_1Network_1ab2f6e298ed0f05b3bb82c03f07cde147" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>set_start_callback</name></member>
+      <member refid="classlite_1_1Network_1a01074fc606b3527b15c45ca749f0c5b2" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>set_stream_id</name></member>
+      <member refid="classlite_1_1Network_1aa10227a97ab4113e9d083f0905006b7b" prot="private" virt="non-virtual"><scope>lite::Network</scope><name>update_from_implement</name></member>
+      <member refid="classlite_1_1Network_1ad9f9bbd11fb1157d7ac5451f41981717" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>wait</name></member>
+      <member refid="classlite_1_1Network_1a1aad621b0361b5b3f9c887436f34f811" prot="public" virt="non-virtual"><scope>lite::Network</scope><name>~Network</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,488 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="common__enum__c_8h" kind="file" language="C++">
+    <compoundname>common_enum_c.h</compoundname>
+    <includedby refid="tensor_8h" local="yes">/data/github/MegEngine/lite/include/lite/tensor.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>/data/github/MegEngine/lite/include/lite/network.h</label>
+        <link refid="network_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/data/github/MegEngine/lite/include/lite/common_enum_c.h</label>
+        <link refid="common__enum__c_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/data/github/MegEngine/lite/include/lite/global.h</label>
+        <link refid="global_8h_source"/>
+      </node>
+      <node id="2">
+        <label>/data/github/MegEngine/lite/include/lite/tensor.h</label>
+        <link refid="tensor_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="common__enum__c_8h_1a442f73d6f9cb2e5cd5a2b54306859f9c" prot="public" static="no">
+        <name>LiteLogLevel</name>
+        <enumvalue id="common__enum__c_8h_1a442f73d6f9cb2e5cd5a2b54306859f9ca0593585da9181e972974c1274d8f2b4f" prot="public">
+          <name>DEBUG</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>the lowest level and most verbose </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a442f73d6f9cb2e5cd5a2b54306859f9ca748005382152808a72b1a9177d9dc806" prot="public">
+          <name>INFO</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>print information, warning and errors </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a442f73d6f9cb2e5cd5a2b54306859f9ca74dac7ac23d5b810db6d4067f14e8676" prot="public">
+          <name>WARN</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>print only warning and errors </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a442f73d6f9cb2e5cd5a2b54306859f9ca2fd6f336d08340583bd620a7f5694c90" prot="public">
+          <name>ERROR</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>print only errors </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The log level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/common_enum_c.h" line="7" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/common_enum_c.h" bodystart="7" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="enum" id="common__enum__c_8h_1a59e56af19e754a6aa26a612ebf91d05f" prot="public" static="no">
+        <name>ErrorCode</name>
+        <enumvalue id="common__enum__c_8h_1a59e56af19e754a6aa26a612ebf91d05fa2bc49ec37d6a5715dd23e85f1ff5bb59" prot="public">
+          <name>OK</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>no error </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a59e56af19e754a6aa26a612ebf91d05fa8d48dc515f2398a969da7ba0fd7397f5" prot="public">
+          <name>LITE_INTERNAL_ERROR</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>internal error </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a59e56af19e754a6aa26a612ebf91d05fade8d61c1097353b0d6a569c18622a1d3" prot="public">
+          <name>LITE_UNKNOWN_ERROR</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>unknown error </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/common_enum_c.h" line="17" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/common_enum_c.h" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="enum" id="common__enum__c_8h_1ab76f548273586467d263620e52fb4fa5" prot="public" static="no">
+        <name>LiteBackend</name>
+        <enumvalue id="common__enum__c_8h_1ab76f548273586467d263620e52fb4fa5abde0f3c54e80fe477ed3f172791c9e61" prot="public">
+          <name>LITE_DEFAULT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>default backend is mge </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The backend type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/common_enum_c.h" line="27" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/common_enum_c.h" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="enum" id="common__enum__c_8h_1ac03a562f93874ef831d25893a1e6426f" prot="public" static="no">
+        <name>LiteDeviceType</name>
+        <enumvalue id="common__enum__c_8h_1ac03a562f93874ef831d25893a1e6426faa4e7f74e4ed5135682347ef09250c16e" prot="public">
+          <name>LITE_CPU</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>the device used is cpu </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1ac03a562f93874ef831d25893a1e6426fa6a55567acea3bdda212c1d3116650fdc" prot="public">
+          <name>LITE_CUDA</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>the device used is cuda </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1ac03a562f93874ef831d25893a1e6426fa1a3b2c7756a24a2907e755443b6e6451" prot="public">
+          <name>LITE_ATLAS</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>the device used is atlas </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1ac03a562f93874ef831d25893a1e6426fa7dfc850883ee2189f1f38066359d66c6" prot="public">
+          <name>LITE_NPU</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>the device used is npu </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1ac03a562f93874ef831d25893a1e6426fa5c74f757b56a8f01583d03320ac39a0d" prot="public">
+          <name>LITE_CAMBRICON</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>the device used is cambricon when the device information is set in model, so set LITE_DEVICE_DEFAULT in lite, which equal to xpu in megengine </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1ac03a562f93874ef831d25893a1e6426fa2cdb6c095622f4b36e757d042dc129c2" prot="public">
+          <name>LITE_DEVICE_DEFAULT</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The device type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/common_enum_c.h" line="35" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/common_enum_c.h" bodystart="35" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="enum" id="common__enum__c_8h_1a527afb2808f4bfb7de56639c7c8bdba3" prot="public" static="no">
+        <name>LiteDataType</name>
+        <enumvalue id="common__enum__c_8h_1a527afb2808f4bfb7de56639c7c8bdba3a0e958e48df8a04b1ce10d61b39c2d0fe" prot="public">
+          <name>LITE_FLOAT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>data type is float32 </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a527afb2808f4bfb7de56639c7c8bdba3a0a2e7447d97783402ad56c90c8563975" prot="public">
+          <name>LITE_HALF</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>data type is float16 </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a527afb2808f4bfb7de56639c7c8bdba3a55aae5eeb2da77af3f36a9de4a92d620" prot="public">
+          <name>LITE_INT</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>data type is int32 </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a527afb2808f4bfb7de56639c7c8bdba3ab5de3f5e865153d7a49e661aa1c6dfd4" prot="public">
+          <name>LITE_INT16</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>data type is int16 </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a527afb2808f4bfb7de56639c7c8bdba3ab610e9be1c19fe272b861a64754a4672" prot="public">
+          <name>LITE_INT8</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>data type is int8 </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a527afb2808f4bfb7de56639c7c8bdba3a5c0eb2f9c8f470f92afc8648b2404da2" prot="public">
+          <name>LITE_UINT8</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>data type is uint8 </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a527afb2808f4bfb7de56639c7c8bdba3a551ef8f7f90a0cb76064a22954c7ce44" prot="public">
+          <name>LITE_UINT</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>data type is uint32 </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a527afb2808f4bfb7de56639c7c8bdba3a4d16db2cb18157ba6a53418db9baf032" prot="public">
+          <name>LITE_UINT16</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+<para>data type is uint16 </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a527afb2808f4bfb7de56639c7c8bdba3acdb6877292e3d10798d46e60f358ab92" prot="public">
+          <name>LITE_INT64</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+<para>data type is int64 </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The data type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/common_enum_c.h" line="50" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/common_enum_c.h" bodystart="50" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="enum" id="common__enum__c_8h_1a1d58484a2782196abd2c3d8662563fa5" prot="public" static="no">
+        <name>LiteTensorPhase</name>
+        <enumvalue id="common__enum__c_8h_1a1d58484a2782196abd2c3d8662563fa5ac7b1972f99c17d4a2ea880b3e21035a9" prot="public">
+          <name>LITE_IO</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>tensor maybe input or output </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a1d58484a2782196abd2c3d8662563fa5ab9c8daaedba5070fa49ff5ce0c5184de" prot="public">
+          <name>LITE_INPUT</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>tensor is input </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a1d58484a2782196abd2c3d8662563fa5af6e16ee0505bb276fee6639f77d50573" prot="public">
+          <name>LITE_OUTPUT</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>tensor is output </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The tensor phase. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/common_enum_c.h" line="66" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/common_enum_c.h" bodystart="66" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="enum" id="common__enum__c_8h_1a4bd205c5a9ac30330b1d7756d56192fd" prot="public" static="no">
+        <name>LiteIOType</name>
+        <enumvalue id="common__enum__c_8h_1a4bd205c5a9ac30330b1d7756d56192fdaa341d1fd71757ca29cdac92db636e3ab" prot="public">
+          <name>LITE_IO_VALUE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>the type of input or output is value </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1a4bd205c5a9ac30330b1d7756d56192fdaa693b38de5eef7efa5d334a536edc1ba" prot="public">
+          <name>LITE_IO_SHAPE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>the type of input or output is shape </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>the input and output type, include SHAPE and VALUE sometimes user only need the shape of the output tensor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/common_enum_c.h" line="76" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/common_enum_c.h" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="enum" id="common__enum__c_8h_1ae97e2456a5d477cfd9764b691f8614f6" prot="public" static="no">
+        <name>LiteAlgoSelectStrategy</name>
+        <enumvalue id="common__enum__c_8h_1ae97e2456a5d477cfd9764b691f8614f6ad09ebc2183d59d3302afd2de52902663" prot="public">
+          <name>LITE_ALGO_HEURISTIC</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1ae97e2456a5d477cfd9764b691f8614f6a7112a844f31da64a223aaef3d12ba18e" prot="public">
+          <name>LITE_ALGO_PROFILE</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1ae97e2456a5d477cfd9764b691f8614f6a0f2948f1f76ab1b84185b05db40566ab" prot="public">
+          <name>LITE_ALGO_REPRODUCIBLE</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1ae97e2456a5d477cfd9764b691f8614f6aa87954014b5c2e74fe9cfca5f2364382" prot="public">
+          <name>LITE_ALGO_OPTIMIZED</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Operation algorithm seletion strategy type, some operations have multi algorithms, different algorithm has different attribute, according to the strategy, the best algorithm will be selected. </para>        </briefdescription>
+        <detaileddescription>
+<para>Note: These strategies can be combined</para><para><orderedlist>
+<listitem><para>LITE_ALGO_HEURISTIC | LITE_ALGO_PROFILE means: if profile cache not valid, use heuristic instead</para></listitem><listitem><para>LITE_ALGO_HEURISTIC | LITE_ALGO_REPRODUCIBLE means: heuristic choice the reproducible algo</para></listitem><listitem><para>LITE_ALGO_PROFILE | LITE_ALGO_REPRODUCIBLE means: profile the best algorithm from the reproducible algorithms set</para></listitem><listitem><para>LITE_ALGO_PROFILE | LITE_ALGO_OPTIMIZED means: profile the best algorithm form the optimzed algorithms, thus profile will process fast</para></listitem><listitem><para>LITE_ALGO_PROFILE | LITE_ALGO_OPTIMIZED | LITE_ALGO_REPRODUCIBLE means: profile the best algorithm form the optimzed and reproducible algorithms </para></listitem></orderedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/common_enum_c.h" line="103" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/common_enum_c.h" bodystart="103" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="enum" id="common__enum__c_8h_1af90481b1d5b5276c1df127fbaacdc795" prot="public" static="no">
+        <name>LiteOpenCLCacheCompatLevel</name>
+        <enumvalue id="common__enum__c_8h_1af90481b1d5b5276c1df127fbaacdc795a833be2199b70e8ec7684f31259b610a8" prot="public">
+          <name>LITE_NOT_COMPAT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>default not compat for series and vendor </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1af90481b1d5b5276c1df127fbaacdc795a06fff23f958b615b39ad891542e3fcac" prot="public">
+          <name>LITE_SERIES_COMPAT</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>for scene adreno 640 use adreno 630 cache </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1af90481b1d5b5276c1df127fbaacdc795ab373601ebe670d078c57aa328aa40a5f" prot="public">
+          <name>LITE_VENDOR_COMPAT</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>for scene adreno 630 use adreno 506 cache </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="common__enum__c_8h_1af90481b1d5b5276c1df127fbaacdc795aa4af787f85aa355ce7421b98fb43c2d8" prot="public">
+          <name>LITE_CACHE_COMPAT_LEVEL_CNT</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum for cache compat level, for example: adreno 630 cache may be apply to adreno 640, if you do not want search cache for adreno 640, just config SERIES_COMPAT or VENDOR_COMPAT, adreno 506 cache may be apply to adreno 630, if you do not want search cache for adreno 630, just config VENDOR_COMPAT. </para>        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>WARN</computeroutput>: this config just let program_cache_io try use a old cache for device compile the cache do not means MegEngine will insure the compile will be ok! it&apos;s a device CL driver behavior, if compile failed!, MegEngine will try build from source, What&apos;s more, even though compile from binary success, this cross-use-cache may affect performance, VENDOR_COMPAT will contain SERIES_COMPAT </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/common_enum_c.h" line="122" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/common_enum_c.h" bodystart="122" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>LITE_COMMON_ENUM_C_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LITE_COMMON_ENUM_C_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>DEBUG<sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>INFO<sp/>=<sp/>1,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>WARN<sp/>=<sp/>2,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>ERROR<sp/>=<sp/>3,<sp/><sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}<sp/>LiteLogLevel;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>OK<sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_INTERNAL_ERROR<sp/>=<sp/>1,<sp/><sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_UNKNOWN_ERROR<sp/>=<sp/>2,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}<sp/>ErrorCode;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_DEFAULT<sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}<sp/>LiteBackend;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_CPU<sp/>=<sp/>0,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_CUDA<sp/>=<sp/>1,<sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_ATLAS<sp/>=<sp/>3,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_NPU<sp/>=<sp/>4,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_CAMBRICON<sp/>=<sp/>5,<sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_DEVICE_DEFAULT<sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}<sp/>LiteDeviceType;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_FLOAT<sp/>=<sp/>0,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_HALF<sp/>=<sp/>1,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_INT<sp/>=<sp/>2,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_INT16<sp/>=<sp/>3,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_INT8<sp/>=<sp/>4,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_UINT8<sp/>=<sp/>5,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_UINT<sp/>=<sp/>6,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_UINT16<sp/>=<sp/>7,<sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_INT64<sp/>=<sp/>8,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}<sp/>LiteDataType;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_IO<sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_INPUT<sp/>=<sp/>1,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_OUTPUT<sp/>=<sp/>2,<sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}<sp/>LiteTensorPhase;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_IO_VALUE<sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_IO_SHAPE<sp/>=<sp/>1,<sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}<sp/>LiteIOType;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_ALGO_HEURISTIC<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>0,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_ALGO_PROFILE<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>1,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_ALGO_REPRODUCIBLE<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>2,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_ALGO_OPTIMIZED<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>3,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}<sp/>LiteAlgoSelectStrategy;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_NOT_COMPAT<sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_SERIES_COMPAT<sp/>=<sp/>1,<sp/><sp/></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_VENDOR_COMPAT<sp/>=<sp/>2,<sp/><sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>LITE_CACHE_COMPAT_LEVEL_CNT<sp/>=<sp/>3</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}<sp/>LiteOpenCLCacheCompatLevel;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="comment">//<sp/>vim:<sp/>syntax=cpp.doxygen<sp/>foldmethod=marker<sp/>foldmarker=f{{{,f}}}</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/data/github/MegEngine/lite/include/lite/common_enum_c.h"/>
+  </compounddef>
+</doxygen>

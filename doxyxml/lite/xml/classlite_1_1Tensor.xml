@@ -1,0 +1,748 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classlite_1_1Tensor" kind="class" language="C++" prot="public">
+    <compoundname>lite::Tensor</compoundname>
+    <includes refid="tensor_8h" local="no">tensor.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Constructor</header>
+      <description><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">device_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired device type of created <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>.<itemizedlist>
+<listitem><para>LITE_CPU CPU <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_CUDA CUDA <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_OPENCL OpenCL <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_ATLAS Atlas <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_NPU NPU <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_CAMBRICON Cambricon <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_AX AX <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_DEVICE_DEFAULT <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> on default device</para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">device_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired device id of created <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stream_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired stream id of created <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> on disired device</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">backend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>desired backend of created <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>.<itemizedlist>
+<listitem><para>LITE_DEFAULT backend is MegEngine</para></listitem><listitem><para>LITE_RK_NPU backend is RKNN NPU</para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_pinned_host</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to use pinned memory.<itemizedlist>
+<listitem><para>false use nornal memory</para></listitem><listitem><para>true use pinned memory[main on CUDA]</para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired layout of created <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para></description>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a2faa72389731098a30600585e8c0f116" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::Tensor::Tensor</definition>
+        <argsstring>()</argsstring>
+        <name>Tensor</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1ac5380387575f8d9eb975f0fc29888a1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::Tensor::Tensor</definition>
+        <argsstring>(LiteDeviceType device_type, bool is_pinned_host=false)</argsstring>
+        <name>Tensor</name>
+        <param>
+          <type>LiteDeviceType</type>
+          <declname>device_type</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_pinned_host</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="107" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a412598f475f00fb20a333e4e636e7986" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::Tensor::Tensor</definition>
+        <argsstring>(LiteDeviceType device_type, const Layout &amp;layout, bool is_pinned_host=false)</argsstring>
+        <name>Tensor</name>
+        <param>
+          <type>LiteDeviceType</type>
+          <declname>device_type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structlite_1_1Layout" kindref="compound">Layout</ref> &amp;</type>
+          <declname>layout</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_pinned_host</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="110" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1ae98782ffcba1e46b3369a66f7ce7feb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::Tensor::Tensor</definition>
+        <argsstring>(int device_id, LiteDeviceType device_type, const Layout &amp;layout={}, bool is_pinned_host=false)</argsstring>
+        <name>Tensor</name>
+        <param>
+          <type>int</type>
+          <declname>device_id</declname>
+        </param>
+        <param>
+          <type>LiteDeviceType</type>
+          <declname>device_type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structlite_1_1Layout" kindref="compound">Layout</ref> &amp;</type>
+          <declname>layout</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_pinned_host</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="114" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a026a9f4a62f7903f2558eaa113980c61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::Tensor::Tensor</definition>
+        <argsstring>(int device_id, int stream_id, LiteDeviceType device_type, bool is_pinned_host=false)</argsstring>
+        <name>Tensor</name>
+        <param>
+          <type>int</type>
+          <declname>device_id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stream_id</declname>
+        </param>
+        <param>
+          <type>LiteDeviceType</type>
+          <declname>device_type</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_pinned_host</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="118" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a8c3b62eb31f97e9f1586a7c55068e0b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::Tensor::Tensor</definition>
+        <argsstring>(LiteBackend backend, LiteDeviceType device_type=LiteDeviceType::LITE_CPU, int device_id=0, const Layout &amp;layout={}, bool is_pinned_host=false)</argsstring>
+        <name>Tensor</name>
+        <param>
+          <type>LiteBackend</type>
+          <declname>backend</declname>
+        </param>
+        <param>
+          <type>LiteDeviceType</type>
+          <declname>device_type</declname>
+          <defval>LiteDeviceType::LITE_CPU</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>device_id</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>const <ref refid="structlite_1_1Layout" kindref="compound">Layout</ref> &amp;</type>
+          <declname>layout</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_pinned_host</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="122" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classlite_1_1Tensor_1a59ba23980841c2a5a2e841b63cf29717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class TensorHelper</definition>
+        <argsstring></argsstring>
+        <name>TensorHelper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="261" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classlite_1_1Tensor_1a51deedf8298329747f97edc07ba4565e" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; TensorImplBase &gt;</type>
+        <definition>std::shared_ptr&lt;TensorImplBase&gt; lite::Tensor::m_tensor_impl</definition>
+        <argsstring></argsstring>
+        <name>m_tensor_impl</name>
+        <briefdescription>
+<para>tensor implementation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="264" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1Tensor_1ac68d36ef5857375e556c4cd28b1f1dcc" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool lite::Tensor::m_is_pinned_host</definition>
+        <argsstring></argsstring>
+        <name>m_is_pinned_host</name>
+        <initializer>=
+            false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>flag whether the storage of the tensor is pinned, this is only used when the compnode is not in CPU. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="265" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1Tensor_1abdd9251ebe85b3199058eae821748eed" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int lite::Tensor::m_device_id</definition>
+        <argsstring></argsstring>
+        <name>m_device_id</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>device id of this <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="268" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1Tensor_1ab73edc047a3a64370905fda835e49e54" prot="private" static="no" mutable="no">
+        <type><ref refid="structlite_1_1Layout" kindref="compound">Layout</ref></type>
+        <definition>Layout lite::Tensor::m_layout</definition>
+        <argsstring></argsstring>
+        <name>m_layout</name>
+        <briefdescription>
+<para>layout of this <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="269" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlite_1_1Tensor_1a6a4175affae2c9dc5f5ed4d1fcfc739f" prot="private" static="no" mutable="no">
+        <type>LiteDeviceType</type>
+        <definition>LiteDeviceType lite::Tensor::m_device_type</definition>
+        <argsstring></argsstring>
+        <name>m_device_type</name>
+        <initializer>=
+            LiteDeviceType::LITE_CPU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>devie type of this <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>. should not change after constructing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="270" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="270" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlite_1_1Tensor_1af1012b6850f3d75577246df5d53471ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lite::Tensor::~Tensor</definition>
+        <argsstring>()</argsstring>
+        <name>~Tensor</name>
+        <briefdescription>
+<para>Deconstructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="127" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a5977d571a711e23c80ddd7445790e67d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>LiteDeviceType</type>
+        <definition>LiteDeviceType lite::Tensor::get_device_type</definition>
+        <argsstring>() const</argsstring>
+        <name>get_device_type</name>
+        <briefdescription>
+<para>Get device type of this <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>device type<itemizedlist>
+<listitem><para>LITE_CPU CPU <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_CUDA CUDA <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_OPENCL OpenCL <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_ATLAS Atlas <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_NPU NPU <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_CAMBRICON Cambricon <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_AX AX <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></listitem><listitem><para>LITE_DEVICE_DEFAULT <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> on default device </para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="142" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="142" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1abf95d4eebe736132f10962edfbab4efb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int lite::Tensor::get_device_id</definition>
+        <argsstring>() const</argsstring>
+        <name>get_device_id</name>
+        <briefdescription>
+<para>Get device id of this <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="145" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="145" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1acef9775cdfdc8522c7b01092b5f3eba1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structlite_1_1Layout" kindref="compound">Layout</ref></type>
+        <definition>Layout lite::Tensor::get_layout</definition>
+        <argsstring>() const</argsstring>
+        <name>get_layout</name>
+        <briefdescription>
+<para>Get layout of this <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="148" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a59b119f4a87dd90b3b6baa112594ed68" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool lite::Tensor::is_pinned_host</definition>
+        <argsstring>() const</argsstring>
+        <name>is_pinned_host</name>
+        <briefdescription>
+<para>whether <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> is on pinned memory </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>whether <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> is on pinned memory<itemizedlist>
+<listitem><para>false nornal memory</para></listitem><listitem><para>true pinned memory </para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="157" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="157" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a11b06c7b99ae848b155a7941fca44737" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* lite::Tensor::get_memory_ptr</definition>
+        <argsstring>() const</argsstring>
+        <name>get_memory_ptr</name>
+        <briefdescription>
+<para>Get memory address of data of this <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>address pointer</para></simplesect>
+<simplesect kind="note"><para>this function will trigger memory alloc in tensor implement </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="166" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1aded3126ef668ff4207080952c5377817" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* lite::Tensor::get_memory_ptr</definition>
+        <argsstring>(const std::vector&lt; size_t &gt; &amp;idx) const</argsstring>
+        <name>get_memory_ptr</name>
+        <param>
+          <type>const std::vector&lt; size_t &gt; &amp;</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+<para>Get the memory with the offset describe in idx of this <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indeces of tensor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>address pointer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="175" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a0daf5326ec7b2b04ddfe132b922ff8d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t lite::Tensor::get_tensor_total_size_in_byte</definition>
+        <argsstring>() const</argsstring>
+        <name>get_tensor_total_size_in_byte</name>
+        <briefdescription>
+<para>Get capacity of the Tenosr in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="178" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1ad6a74b4274b3d9b437e0f9b95f18c44b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool lite::Tensor::is_continue_memory</definition>
+        <argsstring>() const</argsstring>
+        <name>is_continue_memory</name>
+        <briefdescription>
+<para>Check whether the memory of tensor is contigous. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="181" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1abadf7f50feed19f575328e0eaef151d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Tensor::set_layout</definition>
+        <argsstring>(const Layout &amp;layout)</argsstring>
+        <name>set_layout</name>
+        <param>
+          <type>const <ref refid="structlite_1_1Layout" kindref="compound">Layout</ref> &amp;</type>
+          <declname>layout</declname>
+        </param>
+        <briefdescription>
+<para>set layout to this <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>layout that will set into this <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>this will change the layout and reallocate memory of the tensor </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="190" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a7810cfa51ace5ddeb478743586ee9cfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Tensor::reset</definition>
+        <argsstring>(void *prepared_data, size_t data_length_in_byte)</argsstring>
+        <name>reset</name>
+        <param>
+          <type>void *</type>
+          <declname>prepared_data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>data_length_in_byte</declname>
+        </param>
+        <briefdescription>
+<para>reset layout with user alloced memory </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">prepared_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>user prepared data pointer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_length_in_byte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of this memory</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>the memory will not be managed by the lite, later, the user should delete it </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="201" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a6543592ae74f827ed1f7dfe97de0782e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Tensor::reset</definition>
+        <argsstring>(void *prepared_data, const Layout &amp;layout)</argsstring>
+        <name>reset</name>
+        <param>
+          <type>void *</type>
+          <declname>prepared_data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structlite_1_1Layout" kindref="compound">Layout</ref> &amp;</type>
+          <declname>layout</declname>
+        </param>
+        <briefdescription>
+<para>reset layout with user alloced memory and corresponding layout </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">prepared_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>user prepared data pointer</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>desired layout</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>the memory will not be managed by the lite, later, the user should delete it </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="212" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1aea98aee896de9e3483516893b89e0c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Tensor::reshape</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;shape)</argsstring>
+        <name>reshape</name>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>shape</declname>
+        </param>
+        <briefdescription>
+<para>reshape the tensor with new shape </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">shape</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>target shape</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>the data type will keep unchanged </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="221" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1ac2a7afcb0c510bac683d941bb989b686" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Tensor&gt; lite::Tensor::slice</definition>
+        <argsstring>(const std::vector&lt; size_t &gt; &amp;start, const std::vector&lt; size_t &gt; &amp;end, const std::vector&lt; size_t &gt; &amp;step={})</argsstring>
+        <name>slice</name>
+        <param>
+          <type>const std::vector&lt; size_t &gt; &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; size_t &gt; &amp;</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; size_t &gt; &amp;</type>
+          <declname>step</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>get a slice from the origin tensor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start idx of each dim</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>end idx of each dim</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">step</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>step of each dim</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>ref pointer of a new <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref></para></simplesect>
+<simplesect kind="note"><para>if tensor = [[1, 2, 3], [4, 5, 6], [7, 8, 9]], start = {0, 0}, end = {2, 2}, step = {1, 2}. Then result = [[1, 3], [4, 6], [7, 9]] </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="237" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a6b3a5b7ffda0937735a78693ab4a4c64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Tensor::fill_zero</definition>
+        <argsstring>()</argsstring>
+        <name>fill_zero</name>
+        <briefdescription>
+<para>memset <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> with zero </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="242" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a8cd3c2f0329274836707a47bf8ab0516" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Tensor::copy_from</definition>
+        <argsstring>(const Tensor &amp;src)</argsstring>
+        <name>copy_from</name>
+        <param>
+          <type>const <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+<para>copy data from another tensor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>source tensor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>the best way for tensor copy is just set the dst device left layout empty. <ref refid="structlite_1_1Layout" kindref="compound">Layout</ref> will be set the same as src when copying </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="252" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1aa6ffe13781fc7e96d7002baf0b75d6a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Tensor::share_memory_with</definition>
+        <argsstring>(const Tensor &amp;src_tensor)</argsstring>
+        <name>share_memory_with</name>
+        <param>
+          <type>const <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> &amp;</type>
+          <declname>src_tensor</declname>
+        </param>
+        <briefdescription>
+<para>share memory with other tensor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="255" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classlite_1_1Tensor_1a95724ba2f04f8f39ead23bff97bc9e0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lite::Tensor::update_from_implement</definition>
+        <argsstring>()</argsstring>
+        <name>update_from_implement</name>
+        <briefdescription>
+<para>update the menbers from the implement </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="258" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>warpper of the MegEngine <ref refid="classlite_1_1Tensor" kindref="compound">Tensor</ref> </para>    </briefdescription>
+    <detaileddescription>
+<para><verbatim>embed:rst:leading-asterisk
+*
+* Some more things here.
+*
+* .. note::
+*
+*    * If the tensor memory is set through :cpp:func:`~reset()` interface, the memory
+*      is managed by the user, it will not be freed by the tensor;
+*    * If the ``device_type`` or ``layout`` is not set, when copy form other source
+*      tensor, its device and layout will be copy form the source tensor;
+*    * If ``is_pinned_host`` is set, the storage memory of the tensor is pinned memory,
+*      this is used to Optimize the H2D or D2H memory copy, if the device or layout
+*      is not set, when copy form other device(CUDA) tensor, this tensor
+*      will be automatically set to pinned tensor.
+*
+* .. warning::
+*
+*    The memory is not alloc directly, when call :cpp:func:`get_memory_ptr()` the
+*    memory will be allocated in tensor implement, which will be deleted automatically.
+*
+* </verbatim> </para>    </detaileddescription>
+    <location file="/data/github/MegEngine/lite/include/lite/tensor.h" line="67" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/tensor.h" bodystart="67" bodyend="273"/>
+    <listofallmembers>
+      <member refid="classlite_1_1Tensor_1a8cd3c2f0329274836707a47bf8ab0516" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>copy_from</name></member>
+      <member refid="classlite_1_1Tensor_1a6b3a5b7ffda0937735a78693ab4a4c64" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>fill_zero</name></member>
+      <member refid="classlite_1_1Tensor_1abf95d4eebe736132f10962edfbab4efb" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>get_device_id</name></member>
+      <member refid="classlite_1_1Tensor_1a5977d571a711e23c80ddd7445790e67d" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>get_device_type</name></member>
+      <member refid="classlite_1_1Tensor_1acef9775cdfdc8522c7b01092b5f3eba1" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>get_layout</name></member>
+      <member refid="classlite_1_1Tensor_1a11b06c7b99ae848b155a7941fca44737" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>get_memory_ptr</name></member>
+      <member refid="classlite_1_1Tensor_1aded3126ef668ff4207080952c5377817" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>get_memory_ptr</name></member>
+      <member refid="classlite_1_1Tensor_1a0daf5326ec7b2b04ddfe132b922ff8d5" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>get_tensor_total_size_in_byte</name></member>
+      <member refid="classlite_1_1Tensor_1ad6a74b4274b3d9b437e0f9b95f18c44b" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>is_continue_memory</name></member>
+      <member refid="classlite_1_1Tensor_1a59b119f4a87dd90b3b6baa112594ed68" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>is_pinned_host</name></member>
+      <member refid="classlite_1_1Tensor_1abdd9251ebe85b3199058eae821748eed" prot="private" virt="non-virtual"><scope>lite::Tensor</scope><name>m_device_id</name></member>
+      <member refid="classlite_1_1Tensor_1a6a4175affae2c9dc5f5ed4d1fcfc739f" prot="private" virt="non-virtual"><scope>lite::Tensor</scope><name>m_device_type</name></member>
+      <member refid="classlite_1_1Tensor_1ac68d36ef5857375e556c4cd28b1f1dcc" prot="private" virt="non-virtual"><scope>lite::Tensor</scope><name>m_is_pinned_host</name></member>
+      <member refid="classlite_1_1Tensor_1ab73edc047a3a64370905fda835e49e54" prot="private" virt="non-virtual"><scope>lite::Tensor</scope><name>m_layout</name></member>
+      <member refid="classlite_1_1Tensor_1a51deedf8298329747f97edc07ba4565e" prot="private" virt="non-virtual"><scope>lite::Tensor</scope><name>m_tensor_impl</name></member>
+      <member refid="classlite_1_1Tensor_1a7810cfa51ace5ddeb478743586ee9cfe" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>reset</name></member>
+      <member refid="classlite_1_1Tensor_1a6543592ae74f827ed1f7dfe97de0782e" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>reset</name></member>
+      <member refid="classlite_1_1Tensor_1aea98aee896de9e3483516893b89e0c1a" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>reshape</name></member>
+      <member refid="classlite_1_1Tensor_1abadf7f50feed19f575328e0eaef151d8" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>set_layout</name></member>
+      <member refid="classlite_1_1Tensor_1aa6ffe13781fc7e96d7002baf0b75d6a2" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>share_memory_with</name></member>
+      <member refid="classlite_1_1Tensor_1ac2a7afcb0c510bac683d941bb989b686" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>slice</name></member>
+      <member refid="classlite_1_1Tensor_1a2faa72389731098a30600585e8c0f116" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>Tensor</name></member>
+      <member refid="classlite_1_1Tensor_1ac5380387575f8d9eb975f0fc29888a1f" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>Tensor</name></member>
+      <member refid="classlite_1_1Tensor_1a412598f475f00fb20a333e4e636e7986" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>Tensor</name></member>
+      <member refid="classlite_1_1Tensor_1ae98782ffcba1e46b3369a66f7ce7feb0" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>Tensor</name></member>
+      <member refid="classlite_1_1Tensor_1a026a9f4a62f7903f2558eaa113980c61" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>Tensor</name></member>
+      <member refid="classlite_1_1Tensor_1a8c3b62eb31f97e9f1586a7c55068e0b2" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>Tensor</name></member>
+      <member refid="classlite_1_1Tensor_1a59ba23980841c2a5a2e841b63cf29717" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>TensorHelper</name></member>
+      <member refid="classlite_1_1Tensor_1a95724ba2f04f8f39ead23bff97bc9e0f" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>update_from_implement</name></member>
+      <member refid="classlite_1_1Tensor_1af1012b6850f3d75577246df5d53471ae" prot="public" virt="non-virtual"><scope>lite::Tensor</scope><name>~Tensor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
