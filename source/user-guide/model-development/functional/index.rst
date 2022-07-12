@@ -10,7 +10,13 @@
    * 除了 :ref:`Tensor <tensor-guide>` 内置的方法，我们还可以调用 Functional 包中实现的有关操作与计算接口。
    * 想要快速浏览或检索所有相关 API 和例程，请参考 :py:mod:`megengine.functional` 页面。
 
-.. warning::
+.. admonition:: 注意 Tensor 数据类型
+   :class: warning
+
+   Tensor 之间进行计算时需要考虑到对输入数据类型的支持情况，通常默认输入 Tesnor 为 ``float32`` 类型，
+   将不支持的数据类型 Tensor 作为输入可能将无法进行计算，请参考 :ref:`tensor-dtype` 中的介绍。
+
+.. admonition:: 术语概念区分
 
    大部分时候，我们会将对 Tensor 的操作和运算区分为两个概念：
 
@@ -18,7 +24,9 @@
    * Tensor 之间可以进行运算（Operation），通常基于 Tensor 内元素的数值进行了计算。
 
    而有些时候它们概念一致，彼此之间可以互相指代（取决于上下文）。
-   但可以确定的一点是，不论如何称呼这些行为，它们都可以从 :py:mod:`~.functional` 包中能找到。
+   但可以确定的一点是，不论如何称呼这些行为，它们都可以从 :py:mod:`~.functional` 包中能找到，
+   也可用 “算子（Operators）” 来称呼相关行为。
+
 
 区别于 API 参考中的分类方式，本文档中将 Tensor 的常见操作/运算分为以下类型进行介绍：
 
