@@ -58,7 +58,7 @@ MegEngine 快速上手
 
    from megengine.data.dataset import MNIST
 
-   MNIST_DATA_PATH = "/data/datasets/MNIST"
+   MNIST_DATA_PATH = None     # MegEngine will download it to $HOME automatically for you
 
    train_dataset = MNIST(MNIST_DATA_PATH, train=True)
    test_dataset = MNIST(MNIST_DATA_PATH, train=False)
@@ -181,6 +181,9 @@ MegEngine 快速上手
 
 .. code-block:: python
 
+   import megengine
+   
+   
    epochs = 10
    model.train()
    for epoch in range(epochs):
