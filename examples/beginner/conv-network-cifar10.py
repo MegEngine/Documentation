@@ -6,10 +6,12 @@ import megengine.module as M
 import megengine.optimizer as optim
 import megengine.autodiff as autodiff
 
-DATA_PATH = "/data/datasets/CIFAR10/"
 
-train_dataset = data.dataset.CIFAR10(root=DATA_PATH, train=True)
-test_dataset = data.dataset.CIFAR10(root=DATA_PATH, train=False)
+from os.path import expanduser
+DATA_PATH = expanduser("~/data/datasets/CIFAR10")
+
+train_dataset = data.dataset.CIFAR10(DATA_PATH, train=True)
+test_dataset = data.dataset.CIFAR10(DATA_PATH, train=False)
 
 train_sampler = data.RandomSampler(train_dataset, batch_size=64)
 test_sampler = data.SequentialSampler(test_dataset, batch_size=64)
