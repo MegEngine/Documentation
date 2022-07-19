@@ -7,10 +7,11 @@ import megengine.autodiff as autodiff
 
 
 # Get train and test dataset and prepare dataloader
-DATA_PATH = "/data/datasets/MNIST/"
+from os.path import expanduser
+DATA_PATH = expanduser("~/data/datasets/MNIST")
 
-train_dataset = data.dataset.MNIST(root=DATA_PATH, train=True)
-test_dataset = data.dataset.MNIST(root=DATA_PATH, train=False)
+train_dataset = data.dataset.MNIST(DATA_PATH, train=True)
+test_dataset = data.dataset.MNIST(DATA_PATH, train=False)
 
 train_sampler = data.RandomSampler(train_dataset, batch_size=64)
 test_sampler = data.SequentialSampler(test_dataset, batch_size=64)

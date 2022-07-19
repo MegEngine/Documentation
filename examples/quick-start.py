@@ -1,3 +1,4 @@
+from posixpath import expanduser
 import megengine
 import megengine.data as data
 import megengine.data.transform as T
@@ -8,10 +9,11 @@ import megengine.autodiff as autodiff
 
 from megengine.data.dataset import MNIST
 
-MNIST_DATA_PATH = "/data/datasets/MNIST"
+from os.path import expanduser
+DATA_PATH = expanduser("~/data/datasets/MNIST")
 
-train_dataset = MNIST(MNIST_DATA_PATH, train=True, download=False)
-test_dataset = MNIST(MNIST_DATA_PATH, train=False, download=False)
+train_dataset = MNIST(DATA_PATH, train=True, download=False)
+test_dataset = MNIST(DATA_PATH, train=False, download=False)
 
 train_sampler = data.RandomSampler(train_dataset, batch_size=64)
 test_sampler = data.SequentialSampler(test_dataset, batch_size=4)

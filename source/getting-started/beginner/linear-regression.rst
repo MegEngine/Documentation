@@ -38,8 +38,9 @@ MegEngine 实现线性回归
 .. code-block:: python
 
    from sklearn.datasets import fetch_california_housing
+   from os.path import expanduser
 
-   DATA_PATH = "/data/datasets/california/"
+   DATA_PATH = expanduser("~/data/datasets/california")
 
    X, y = fetch_california_housing(data_home=DATA_PATH, return_X_y=True)
 
@@ -111,7 +112,7 @@ MegEngine 实现线性回归
 
 >>> X[0]  # a sample
 array([   8.3252    ,   41.        ,    6.98412698,    1.02380952,
-        322.        ,    2.55555556,   37.88      , -122.23      ])
+        1.          ,    2.55555556,   37.88      , -122.23      ])
 
 住房数据集的中的每个示例我们也称之为样本（Sample），因此样本容量 :math:`n` 为 20640.
 每个样本中记录的属性信息可以用一个特征向量
@@ -344,7 +345,10 @@ Python 官方提案 `PEP 465
    from megengine.data.dataset import ArrayDataset
    from megengine.data.sampler import SequentialSampler
 
-   DATA_PATH = "/data/datasets/california/"
+   from os.path import expanduser
+
+   DATA_PATH = expanduser("~/data/datasets/california")
+
    X, y = fetch_california_housing(DATA_PATH, return_X_y=True)
 
    house_dataset = ArrayDataset(X, y)

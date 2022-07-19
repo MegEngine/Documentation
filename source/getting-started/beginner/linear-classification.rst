@@ -27,11 +27,12 @@ MegEngine 也不例外，在 :mod:`.data.dataset` 模块中，可以 :ref:`megen
 .. code-block:: python
 
    from megengine.data.dataset import MNIST
+   from os.path import expanduser
 
-   DATA_PATH = "/data/datasets/MNIST/"
+   DATA_PATH = expanduser("~/data/datasets/MNIST")
 
-   train_dataset = MNIST(root=DATA_PATH, train=True)
-   test_dataset = MNIST(root=DATA_PATH, train=False)
+   train_dataset = MNIST(DATA_PATH, train=True)
+   test_dataset = MNIST(DATA_PATH, train=False)
 
 和上个教程中得到的数据格式不同，这里得到的是已经划分好的训练集
 ``train_dataset`` 和测试集 ``test_dataset``, 且均已经封装成了 MegEngine

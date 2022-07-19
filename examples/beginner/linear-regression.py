@@ -13,7 +13,8 @@ from megengine.data.sampler import SequentialSampler
 
 
 # Get thr original dataset
-DATA_PATH = "/data/datasets/california/"
+from os.path import expanduser
+DATA_PATH = expanduser("~/data/datasets/california")
 X, y = fetch_california_housing(data_home=DATA_PATH, return_X_y=True)
 
 # Split dataset to train/val/test dataset

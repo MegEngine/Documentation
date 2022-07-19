@@ -34,7 +34,8 @@ def load_mnist(path, kind='train'):
 # Make sure that you have downloaded data and placed it in `DATA_PATH`
 # GitHub link: https://github.com/zalandoresearch/fashion-mnist
 
-DATA_PATH = "/data/datasets/Fashion-MNIST/"
+from os.path import expanduser
+DATA_PATH = expanduser("~/data/datasets/Fashion-MNIST")
 
 X_train, y_train = load_mnist(DATA_PATH, kind='train')
 X_test, y_test = load_mnist(DATA_PATH, kind='t10k')
@@ -86,7 +87,7 @@ for epoch in range(nums_epoch):
 
     for step, (image, label) in enumerate(train_dataloader):
         image = F.flatten(megengine.Tensor(image), 1)
-        label = megengine.Tensor(label)
+        label = megengine.Tensor(label).astype("int32")
 
         with gm:
             score = model(image)
@@ -105,7 +106,7 @@ for epoch in range(nums_epoch):
 
     for image, label in test_dataloader:
         image = F.flatten(megengine.Tensor(image), 1)
-        label = megengine.Tensor(label)
+        label = megengine.Tensor(label).astype("int32")
         pred = F.argmax(model(image), axis=1)
 
         nums_val_correct += (pred == label).sum().item()

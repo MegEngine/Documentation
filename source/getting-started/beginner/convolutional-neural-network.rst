@@ -23,11 +23,12 @@ CIFAR-10 数据集与 MNIST 一样，可以直接通过 :mod:`.data.dataset` 来
 .. code-block:: python
 
    from megengine.data.dataset import CIFAR10
+   from os.path import expanduser
 
-   DATA_PATH = "/data/datasets/CIFAR10/"
+   DATA_PATH = expanduser("~/data/datasets/CIFAR10")
 
-   train_dataset = CIFAR10(root=DATA_PATH, train=True)
-   test_dataset = CIFAR10(root=DATA_PATH, train=False)
+   train_dataset = CIFAR10(DATA_PATH, train=True)
+   test_dataset = CIFAR10(DATA_PATH, train=False)
 
 与 MNIST 的处理类似，此处得到的是已经划分好的训练集和测试集，
 且都封装成了 MegEngine 中的 :class:`~.Dataset` 类型，
