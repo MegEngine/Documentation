@@ -80,6 +80,9 @@ Device
    reset_max_memory_stats
    set_prealloc_config
    coalesce_free_memory
+   get_cuda_version
+   get_cudnn_version
+   get_tensorrt_version
 
 .. _logger:
 
