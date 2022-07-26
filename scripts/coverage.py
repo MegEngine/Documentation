@@ -83,7 +83,7 @@ class PublicInterfaceFinder():
                                 self._api_info[api_id] = set()
                             self._api_info[api_id].add(api_name)
 
-                if module is not self._top_module and module not in visited_mem:
+                if module not in visited_mem:
                     search_module(module)
 
         search_module(self._top_module)
@@ -143,5 +143,10 @@ if __name__ == "__main__":
     ungenerated_api.sort()
 
     # Now we have put the elephant into the fridge
-    for idx, item in enumerate(ungenerated_api):
-        print(idx, item)
+    import csv
+    with open("output.csv", "w") as file:
+        wr = csv.writer(file, dialect='excel')
+        for idx, item in enumerate(ungenerated_api):
+            print(idx, item)
+            wr.writerow(item)
+    print("Saved in output.csv")
