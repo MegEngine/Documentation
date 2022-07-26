@@ -1,30 +1,89 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 12:44+0800\n"
-"PO-Revision-Date: 2022-07-02 04:42\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-07-02 04:42+0000\n"
 "Last-Translator: \n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/lite/tensor.po\n"
-"X-Crowdin-File-ID: 8436\n"
-"Language: zh_CN\n"
 
 #: ../../source/reference/lite/tensor.rst:5
 msgid "lite/tensor.h"
 msgstr "lite/tensor.h"
 
+#: ../../<breathe>:1
+msgid ""
+"If the tensor memory is set through :cpp:func:`~reset()` interface, the "
+"memory is managed by the user, it will not be freed by the tensor;"
+msgstr ""
+
+#: ../../<breathe>:1
+msgid ""
+"If the ``device_type`` or ``layout`` is not set, when copy form other "
+"source tensor, its device and layout will be copy form the source tensor;"
+msgstr ""
+
+#: ../../<breathe>:1
+msgid ""
+"If ``is_pinned_host`` is set, the storage memory of the tensor is pinned "
+"memory, this is used to Optimize the H2D or D2H memory copy, if the "
+"device or layout is not set, when copy form other device(CUDA) tensor, "
+"this tensor will be automatically set to pinned tensor."
+msgstr ""
+
+#: ../../<breathe>:1
+msgid ""
+"The memory is not alloc directly, when call :cpp:func:`get_memory_ptr()` "
+"the memory will be allocated in tensor implement, which will be deleted "
+"automatically."
+msgstr ""
+
+#: ../../source/reference/lite/tensor.rst
+msgid "Constructor"
+msgstr ""
+
+#: ../../source/reference/lite/tensor.rst
+msgid "param device_type"
+msgstr ""
+
+#: ../../source/reference/lite/tensor.rst
+msgid "param device_id"
+msgstr ""
+
+#: ../../source/reference/lite/tensor.rst
+msgid "param stream_id"
+msgstr ""
+
+#: ../../source/reference/lite/tensor.rst
+msgid "param backend"
+msgstr ""
+
+#: ../../source/reference/lite/tensor.rst
+msgid "param is_pinned_host"
+msgstr ""
+
+#: ../../source/reference/lite/tensor.rst
+msgid "param layout"
+msgstr ""
+
 #: ../../source/reference/lite/tensor.rst
 msgid "Public Functions"
 msgstr "公开函数"
+
+#: ../../source/reference/lite/tensor.rst
+msgid "返回"
+msgstr ""
+
+#: ../../source/reference/lite/tensor.rst
+msgid "参数"
+msgstr ""
 
 #: ../../source/reference/lite/tensor.rst
 msgid "Friends"

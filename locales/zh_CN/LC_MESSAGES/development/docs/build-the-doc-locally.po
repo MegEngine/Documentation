@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MegEngine 1.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,136 +84,141 @@ msgid "这一步将会拉取文档所依赖的第三方子模块，比如文档�
 msgstr ""
 
 #: ../../source/development/docs/build-the-doc-locally.rst:60
-msgid "设置 MegEngine 路径（可选）"
+msgid "指定 MegEngine 路径（可选）"
 msgstr ""
 
 #: ../../source/development/docs/build-the-doc-locally.rst:62
 msgid ""
-"在构建文档时，会尝试执行 ``import megengine`` 来判断使用 ``FULL`` 还是 ``MINI`` 模式。 "
-"在检测到本地环境没有 MegEngine 时，将采用 ``MINI`` 模式，该模式将跳过所有 API 文档页面的生成， "
-"同时也会忽略掉一些警告信息的检查，因此它仅适用于修改幅度极其小的情况（如单页面，不存在交叉引用等）。 在绝大部分情况下，推荐使用 ``FULL``"
-" 模式，以便进行完整的文档内容生成和语法、样式检查。"
+"在构建文档时，会尝试执行 ``import megengine`` 和 ``import megenginelite`` 来判断使用 "
+"``FULL`` 还是 ``MINI`` 模式。在检测到本地环境没有 MegEngine 时， 将采用 ``MINI`` 模式，该模式将跳过所有 "
+"API 文档页面的生成， 同时也会忽略掉一些警告信息的检查，因此它仅适用于修改幅度极其小的情况（如单页面，不存在交叉引用等）。 "
+"在绝大部分情况下，推荐使用 ``FULL`` 模式，以便进行完整的文档内容生成和语法、样式检查。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:67
+#: ../../source/development/docs/build-the-doc-locally.rst:68
 msgid "根据不同的需求，有两种方式将用于构建文档的 MegEngine 导入当前 Python 环境（任选其一即可）："
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:69
+#: ../../source/development/docs/build-the-doc-locally.rst:70
 msgid ""
 "如果你是框架用户，不需要改动 MegEngine 源码，只想在本地完整地构建和预览所有文档的内容， 或进行简单的增删查改，建议安装最新发布的 "
 "MegEngine 稳定版 Wheel 包。 可以直接使用对应的 ``pip intall`` 命令将已经打包好的 MegEngine "
 "安装到当前的 Python 环境中。 ➡️  :ref:`了解如何进行使用 pip 安装 <install>` 。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:73
+#: ../../source/development/docs/build-the-doc-locally.rst:74
 msgid ""
 "如果你是研发人员，需要在指定的 MegEngine 分支源代码上生成对应文档，则需要克隆对应分支进行编译构建。 通过 ``export "
-"PYTHONPATH`` 的形式来临时指定特定的 MegEngine 源代码路径， 这种方式适合开发者需要同时对源码和文档进行维护的情况。➡️  "
-":ref:`了解如何进行从源码构建 <install>` 。"
+"PYTHONPATH/LITE_LIB_PATH`` 的形式来临时指定特定源代码路径，例如："
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:78
+#: ../../source/development/docs/build-the-doc-locally.rst:83
+msgid ""
+"**注意一定要使用版本一致的 MegEngine 与 Lite** , 否则可能导致产生符号冲突。 "
+"这种方式适合开发者需要同时对源码和文档进行维护的情况。➡️  :ref:`了解如何进行从源码构建 <install>` 。"
+msgstr ""
+
+#: ../../source/development/docs/build-the-doc-locally.rst:87
 msgid "安装 Sphinx 与 Pydata 主题"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:80
+#: ../../source/development/docs/build-the-doc-locally.rst:89
 msgid "MegEngine 文档使用 Sphinx_ 进行整个网站的构建，请运行下面的指令，安装 Sphinx 和相关依赖："
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:90
+#: ../../source/development/docs/build-the-doc-locally.rst:99
 msgid ""
 "MegEgnine 文档使用了 Fork 后修改过的 `pydata-sphinx-theme "
 "<https://github.com/MegEngine/pydata-sphinx-theme/tree/dev>`_ 主题， "
 "如果你的本地环境已经存在该主题，可能需要提前删除该主题或使用额外的 Python 虚拟环境。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:95
+#: ../../source/development/docs/build-the-doc-locally.rst:104
 msgid "安装相关软件包"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:98
+#: ../../source/development/docs/build-the-doc-locally.rst:107
 msgid "Pandoc 转换工具"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:100
+#: ../../source/development/docs/build-the-doc-locally.rst:109
 msgid "nbsphinx_ 是 Sphinx 的一个插件，可以帮助我们对 ``.ipynb`` 格式的 Jupyter Notebook_ 文件进行解析。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:105
+#: ../../source/development/docs/build-the-doc-locally.rst:114
 msgid "我们在安装依赖环境时已经安装好了 nbsphinx, 但还需要通过依赖项目 Pandoc_ 来支持转换 Markdown 格式。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:109
+#: ../../source/development/docs/build-the-doc-locally.rst:118
 msgid "如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Pandoc:"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:115
+#: ../../source/development/docs/build-the-doc-locally.rst:124
 msgid ""
 "如果你使用的是其它操作系统，想要安装 Pandoc，请参考 Pandoc 官方的 `Installing "
 "<https://pandoc.org/installing.html>`_ 页面。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:118
+#: ../../source/development/docs/build-the-doc-locally.rst:127
 msgid "Graphviz 绘图工具"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:120
+#: ../../source/development/docs/build-the-doc-locally.rst:129
 msgid "Graphviz_ 是非常流行的图形可视化软件，在 MegEngine 文档中经常会用它制作一些可视化图片。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:122
+#: ../../source/development/docs/build-the-doc-locally.rst:131
 msgid "如果你使用的是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Graphviz:"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:128
+#: ../../source/development/docs/build-the-doc-locally.rst:137
 msgid ""
 "如果你使用的是其它操作系统，想要安装 Graphviz，请参考 Graphviz 官方的 `Download "
 "<https://graphviz.org/download/>`_ 页面。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:133
+#: ../../source/development/docs/build-the-doc-locally.rst:142
 msgid "使用 Sphinx 进行文档构建"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:135
+#: ../../source/development/docs/build-the-doc-locally.rst:144
 msgid "运行 ``make help`` 指令，可看到相应的帮助和参数信息；"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:136
+#: ../../source/development/docs/build-the-doc-locally.rst:145
 msgid "在文档目录下使用 ``make html`` 指令，会在 ``build`` 目录下生成 HTML 文件夹。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:137
+#: ../../source/development/docs/build-the-doc-locally.rst:146
 msgid "文档生成成功后，打开 ``build/html/index.html`` 文件便可访问主页。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:141
+#: ../../source/development/docs/build-the-doc-locally.rst:150
 msgid "Sphinx 默认支持增量构建，当你再次执行 ``make html`` 时将仅对变化的文件进行更新；"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:145
+#: ../../source/development/docs/build-the-doc-locally.rst:154
 msgid ""
 "Sphinx 不会检测增量模式下非文档文件的更改，例如主题文件、静态文件和与 autodoc 一起使用的源代码； "
 "如果发现一些页面的元素仍被缓存而没有被更新，请尝试通过传入 ``-a`` 参数禁用增量模式（但构建速度会相应地变慢）， 或者通过 ``make "
 "clean`` 指令清除掉已经构建出的内容。"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:150
+#: ../../source/development/docs/build-the-doc-locally.rst:159
 msgid "自动构建和实时预览页面"
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:152
+#: ../../source/development/docs/build-the-doc-locally.rst:161
 msgid ""
 "你也可以使用 ``make livehtml`` 指令，在监测到文件变化时自动重新构建，而且可以通过浏览器进行实时的预览。 其中 ``HOST``"
 " 参数默认为 ``127.0.0.1``, ``PORT`` 参数默认为 ``8000``, 可人为指定："
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:159
+#: ../../source/development/docs/build-the-doc-locally.rst:168
 msgid "运行上面这个代码将得到类似的实时监控输出："
 msgstr ""
 
-#: ../../source/development/docs/build-the-doc-locally.rst:169
+#: ../../source/development/docs/build-the-doc-locally.rst:178
 msgid "背后的原理是：我们使用了 sphinx-autobuild_ 对原有 sphinx-build_ 进行了增强。"
 msgstr ""
 
@@ -221,5 +226,23 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "如果你使用的是是 Ubuntu（Debian）操作系统，可以直接使用 ``apt`` 命令进行安装 Graphviz:"
+#~ msgstr ""
+
+#~ msgid "设置 MegEngine 路径（可选）"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "在构建文档时，会尝试执行 ``import megengine`` 来判断使用 "
+#~ "``FULL`` 还是 ``MINI`` 模式。 在检测到本地环境没有 "
+#~ "MegEngine 时，将采用 ``MINI`` 模式，该模式将跳过所有 API "
+#~ "文档页面的生成， 同时也会忽略掉一些警告信息的检查，因此它仅适用于修改幅度极其小的情况（如单页面，不存在交叉引用等）。 "
+#~ "在绝大部分情况下，推荐使用 ``FULL`` 模式，以便进行完整的文档内容生成和语法、样式检查。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "如果你是研发人员，需要在指定的 MegEngine 分支源代码上生成对应文档，则需要克隆对应分支进行编译构建。"
+#~ " 通过 ``export PYTHONPATH`` 的形式来临时指定特定的 "
+#~ "MegEngine 源代码路径， 这种方式适合开发者需要同时对源码和文档进行维护的情况。➡️  "
+#~ ":ref:`了解如何进行从源码构建 <install>` 。"
 #~ msgstr ""
 

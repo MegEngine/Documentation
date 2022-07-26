@@ -1,33 +1,77 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 12:44+0800\n"
-"PO-Revision-Date: 2022-04-20 05:28\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-04-20 05:28+0000\n"
 "Last-Translator: \n"
+"Language: en_US\n"
 "Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/pylite/tensor.po\n"
-"X-Crowdin-File-ID: 8444\n"
-"Language: en_US\n"
 
 #: ../../source/reference/pylite/tensor.rst:6
 msgid "megenginelite.tensor"
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor:1 of
-msgid "the tensor to hold a block of data"
+msgid "Description of a block of data with neccessary information."
+msgstr ""
+
+#: megenginelite.tensor.LiteLayout megenginelite.tensor.LiteTensor
+#: megenginelite.tensor.LiteTensor.copy_from
+#: megenginelite.tensor.LiteTensor.reshape
+#: megenginelite.tensor.LiteTensor.set_data_by_copy
+#: megenginelite.tensor.LiteTensor.set_data_by_share
+#: megenginelite.tensor.LiteTensor.share_memory_with
+#: megenginelite.tensor.LiteTensor.slice of
+msgid "参数"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor:3 of
+msgid "layout of Tensor"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor:4 of
+msgid "device type of Tensor"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor:5 of
+msgid "device id of Tensor"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor:6 of
+msgid ""
+"when set, the storage memory of the tensor is pinned memory. This is used"
+" to Optimize the H2D or D2H memory copy, if the device or layout is not "
+"set, when copy form other device(CUDA) tensor, this tensor will be "
+"automatically set to pinned tensor"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor:10 of
+msgid "the shape of data"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor:11 of
+msgid "data type"
+msgstr ""
+
+#: megenginelite.tensor.LiteLayout:9 megenginelite.tensor.LiteTensor:15 of
+msgid ""
+"Dims of shape should be less than 8. The supported data type defines at "
+"LiteDataType"
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor.copy_from:1 of
 msgid "copy memory form the src_tensor"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.copy_from:3 of
+msgid "source tensor"
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor.device_id:1 of
@@ -35,7 +79,7 @@ msgid "get device id of the tensor"
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor.device_type:1 of
-msgid "get device of the tensor"
+msgid "get device type of the tensor"
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor.fill_zero:1 of
@@ -46,8 +90,20 @@ msgstr ""
 msgid "get the memory of the tensor, return c_void_p of the tensor memory"
 msgstr ""
 
-#: megenginelite.tensor.LiteTensor.get_data_by_share:1 of
-msgid "get the data in the tensor, add share the data with a new numpy, and return the numpy arrray, be careful, the data in numpy is valid before the tensor memory is write again, such as LiteNetwok forward next time."
+#: megenginelite.tensor.LiteTensor.get_data_by_share:2 of
+msgid "get the data in the tensor, add share the data with a new numpy, and"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.get_data_by_share:2 of
+msgid "return the numpy arrray"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.get_data_by_share:6 of
+msgid "Be careful, the data in numpy is valid before the tensor memory is"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.get_data_by_share:7 of
+msgid "write again, such as LiteNetwok forward next time."
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor.is_continue:1 of
@@ -63,23 +119,67 @@ msgid "get the length of the meomry in byte"
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor.reshape:1 of
-msgid "reshape the tensor with data not change, only change the shape :param shape: int arrary of dst_shape"
+msgid "reshape the tensor with data not change."
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.reshape:3 of
+msgid "target shape"
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor.set_data_by_copy:1 of
-msgid "copy the data to the tensor param data: the data to copy to tensor, it should be list, numpy.ndarraya or ctypes with length"
+msgid "copy the data to the tensor"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.set_data_by_copy:3 of
+msgid ""
+"the data to copy to tensor, it should be list, numpy.ndarraya or ctypes "
+"with length"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.set_data_by_copy:5 of
+msgid "length of data in bytes"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.set_data_by_copy:6 of
+msgid "layout of data"
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor.set_data_by_share:1 of
-msgid "share the data to the tensor param data: the data will shared to the tensor, it should be a numpy.ndarray or ctypes data"
+msgid "share the data to the tensor"
 msgstr ""
 
-#: megenginelite.tensor.LiteTensor.share_memory_with:1 of
-msgid "share the same memory with the src_tensor, the self memory will be freed"
+#: megenginelite.tensor.LiteTensor.set_data_by_share:3 of
+msgid ""
+"the data will shared to the tensor, it should be a numpy.ndarray or "
+"ctypes data"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.share_memory_with:2 of
+msgid "share the same memory with the ``src_tensor``, the self memory will be"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.share_memory_with:2 of
+msgid "freed"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.share_memory_with:4 of
+msgid "the source tensor that will share memory with this tensor"
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor.slice:1 of
-msgid "slice the tensor with gaven start, end, step :param start: silce begin index of each dim :param end: silce end index of each dim :param step: silce step of each dim"
+msgid "slice the tensor with gaven start, end, step"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.slice:3 of
+msgid "silce begin index of each dim"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.slice:4 of
+msgid "silce end index of each dim"
+msgstr ""
+
+#: megenginelite.tensor.LiteTensor.slice:5 of
+msgid "silce step of each dim"
 msgstr ""
 
 #: megenginelite.tensor.LiteTensor.to_numpy:1 of
@@ -90,12 +190,81 @@ msgstr ""
 msgid "update the member from C, this will auto used after slice, share"
 msgstr ""
 
-#: megenginelite.tensor.LiteLayout:1 of
-msgid "the simple layout description"
+#: megenginelite.tensor.LiteLayout:2 of
+msgid "Description of layout using in Lite. A Lite layout will be totally defined"
+msgstr ""
+
+#: megenginelite.tensor.LiteLayout:2 of
+msgid "by shape and data type."
+msgstr ""
+
+#: megenginelite.tensor.LiteLayout:4 of
+msgid "the shape of data."
+msgstr ""
+
+#: megenginelite.tensor.LiteLayout:5 of
+msgid "data type."
+msgstr ""
+
+#: megenginelite.tensor.LiteLayout:13 of
+msgid "实际案例"
 msgstr ""
 
 #: ../../docstring megenginelite.tensor.LiteLayout.data_type:1
 #: megenginelite.tensor.LiteLayout.ndim:1 of
 msgid "Structure/Union member"
 msgstr ""
+
+#~ msgid "the tensor to hold a block of data"
+#~ msgstr ""
+
+#~ msgid "get device of the tensor"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "get the data in the tensor, add"
+#~ " share the data with a new "
+#~ "numpy, and return the numpy arrray, "
+#~ "be careful, the data in numpy is"
+#~ " valid before the tensor memory is"
+#~ " write again, such as LiteNetwok "
+#~ "forward next time."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "reshape the tensor with data not "
+#~ "change, only change the shape :param "
+#~ "shape: int arrary of dst_shape"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "copy the data to the tensor param"
+#~ " data: the data to copy to "
+#~ "tensor, it should be list, "
+#~ "numpy.ndarraya or ctypes with length"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "share the data to the tensor param"
+#~ " data: the data will shared to "
+#~ "the tensor, it should be a "
+#~ "numpy.ndarray or ctypes data"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "share the same memory with the "
+#~ "src_tensor, the self memory will be "
+#~ "freed"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "slice the tensor with gaven start, "
+#~ "end, step :param start: silce begin "
+#~ "index of each dim :param end: "
+#~ "silce end index of each dim :param"
+#~ " step: silce step of each dim"
+#~ msgstr ""
+
+#~ msgid "the simple layout description"
+#~ msgstr ""
 

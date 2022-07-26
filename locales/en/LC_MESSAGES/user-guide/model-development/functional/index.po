@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 00:51\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2021-11-12 00:51+0000\n"
 "Last-Translator: \n"
-"Language-Team: English\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/functional/index.po\n"
-"X-Crowdin-File-ID: 8151\n"
 "Language: en_US\n"
+"Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/user-guide/model-development/functional/index.rst:6
 msgid "使用 Functional 操作与计算"
@@ -24,31 +20,66 @@ msgstr "Use Functional operations and calculations"
 
 #: ../../source/user-guide/model-development/functional/index.rst:10
 msgid "除了 :ref:`Tensor <tensor-guide>` 内置的方法，我们还可以调用 Functional 包中实现的有关操作与计算接口。"
-msgstr "Apart :ref:`the Tensor <tensor-guide>` built-in methods, we can also call on the operation and calculation packages Functional Interface implemented."
+msgstr ""
+"Apart :ref:`the Tensor <tensor-guide>` built-in methods, we can also call"
+" on the operation and calculation packages Functional Interface "
+"implemented."
 
 #: ../../source/user-guide/model-development/functional/index.rst:11
 msgid "想要快速浏览或检索所有相关 API 和例程，请参考 :py:mod:`megengine.functional` 页面。"
-msgstr "To quickly browse or retrieve all related APIs and routines, please refer to the :py:mod:`megengine.functional` page."
+msgstr ""
+"To quickly browse or retrieve all related APIs and routines, please refer"
+" to the :py:mod:`megengine.functional` page."
 
-#: ../../source/user-guide/model-development/functional/index.rst:15
+#: ../../source/user-guide/model-development/functional/index.rst:13
+msgid "注意 Tensor 数据类型"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/index.rst:16
+msgid ""
+"Tensor 之间进行计算时需要考虑到对输入数据类型的支持情况，通常默认输入 Tesnor 为 ``float32`` 类型， 将不支持的数据类型"
+" Tensor 作为输入可能将无法进行计算，请参考 :ref:`tensor-dtype` 中的介绍。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/index.rst:19
+msgid "术语概念区分"
+msgstr ""
+
+#: ../../source/user-guide/model-development/functional/index.rst:21
 msgid "大部分时候，我们会将对 Tensor 的操作和运算区分为两个概念："
-msgstr "Most of the time, we will of Tensor operations and operations divided into two concepts："
-
-#: ../../source/user-guide/model-development/functional/index.rst:17
-msgid "对单个 Tensor 进行操作（Manipulation），通常其属性（如形状、设备、类型等）发生了变化；"
-msgstr "Manipulation of a single Tensor, usually its attributes (such as shape, equipment, type, etc.) have changed;"
-
-#: ../../source/user-guide/model-development/functional/index.rst:18
-msgid "Tensor 之间可以进行运算（Operation），通常基于 Tensor 内元素的数值进行了计算。"
-msgstr "Operations can be performed between Tensors, which are usually calculated based on the values of the elements in the Tensor."
-
-#: ../../source/user-guide/model-development/functional/index.rst:20
-msgid "而有些时候它们概念一致，彼此之间可以互相指代（取决于上下文）。 但可以确定的一点是，不论如何称呼这些行为，它们都可以从 :py:mod:`~.functional` 包中能找到。"
-msgstr "Sometimes they have the same concept and can refer to each other (depending on the context). But what is certain is that no matter how you call these behaviors, they can be found in the :py:mod:`~.functional` package."
+msgstr ""
+"Most of the time, we will of Tensor operations and operations divided "
+"into two concepts："
 
 #: ../../source/user-guide/model-development/functional/index.rst:23
+msgid "对单个 Tensor 进行操作（Manipulation），通常其属性（如形状、设备、类型等）发生了变化；"
+msgstr ""
+"Manipulation of a single Tensor, usually its attributes (such as shape, "
+"equipment, type, etc.) have changed;"
+
+#: ../../source/user-guide/model-development/functional/index.rst:24
+msgid "Tensor 之间可以进行运算（Operation），通常基于 Tensor 内元素的数值进行了计算。"
+msgstr ""
+"Operations can be performed between Tensors, which are usually calculated"
+" based on the values of the elements in the Tensor."
+
+#: ../../source/user-guide/model-development/functional/index.rst:26
+#, fuzzy
+msgid ""
+"而有些时候它们概念一致，彼此之间可以互相指代（取决于上下文）。 但可以确定的一点是，不论如何称呼这些行为，它们都可以从 "
+":py:mod:`~.functional` 包中能找到， 也可用 “算子（Operators）” 来称呼相关行为。"
+msgstr ""
+"Sometimes they have the same concept and can refer to each other "
+"(depending on the context). But what is certain is that no matter how you"
+" call these behaviors, they can be found in the :py:mod:`~.functional` "
+"package."
+
+#: ../../source/user-guide/model-development/functional/index.rst:31
 msgid "区别于 API 参考中的分类方式，本文档中将 Tensor 的常见操作/运算分为以下类型进行介绍："
-msgstr "Common API Reference operate differently than classification, the present document will Tensor / calculation of the following types are introduced："
+msgstr ""
+"Common API Reference operate differently than classification, the present"
+" document will Tensor / calculation of the following types are "
+"introduced："
 
 #~ msgid "使用 Functional 进行计算"
 #~ msgstr ""
