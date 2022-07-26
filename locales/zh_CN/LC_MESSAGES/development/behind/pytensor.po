@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2022, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/development/behind/pytensor.rst:5
+msgid "MegEngine Python 层 Tensor 行为"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:7
+msgid "从逻辑上来讲，各层之间的引用关系如下图所示："
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:21
+msgid "三者均通过 refcount 进行资源管理，在引用归零时就释放资源，其中："
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:23
+msgid "Python Tensor 只包含对 C++ Tensor 的引用；用户可通过 ``id(a)`` 是否一直来验证是否发生了变化"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:24
+msgid "C++ Tensor 包含：shape / stride / 对 Storage 的引用指针"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:25
+msgid "Storage 包含：一段显存，即 ptr + length"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:27
+msgid "在各种情况中，各层变量之间的指向关系变化如下表所示："
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:30
+msgid "解释器变量行为"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:30
+msgid "Python Tensor"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:30
+msgid "C++ Tensor"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:30
+msgid "Storage"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:32
+msgid "``a += 1``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:32
+#: ../../source/development/behind/pytensor.rst:44
+#: ../../source/development/behind/pytensor.rst:46
+msgid "不变"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:32
+#: ../../source/development/behind/pytensor.rst:34
+#: ../../source/development/behind/pytensor.rst:36
+#: ../../source/development/behind/pytensor.rst:38
+#: ../../source/development/behind/pytensor.rst:40
+#: ../../source/development/behind/pytensor.rst:42
+#: ../../source/development/behind/pytensor.rst:44
+msgid "新建"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:32
+#: ../../source/development/behind/pytensor.rst:34
+msgid "新建，老的 ref - 1"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:34
+msgid "``a = a + 1``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:34
+msgid "新建，老的 ref -1"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:36
+msgid "``b = a[0] （<=v1.8)``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:36
+msgid "新建并拷贝必须的部分"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:38
+msgid "``b = a[0] (>=v1.9)``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:38
+msgid "复用老的，即 ref + 1"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:40
+msgid "``b = a.reshape(...) (>=v1.9)``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:40
+#: ../../source/development/behind/pytensor.rst:42
+msgid "复用老的"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:42
+msgid "``b = F.transpose(a) (>=v1.9)``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:44
+msgid "``a[0] = 1``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:44
+msgid "新建并拷贝，老 ref - 1"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:46
+msgid "``b = a``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:49
+msgid "习题：基于以上的内容，就比较容易推导出以下的一些组合的行为了："
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:51
+msgid "``a = mge.tensor([1, 2]); b = a; b += 1; print(a)``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:52
+msgid "``a = mge.tensor([1, 2]); b = a; b = b + 1; print(a)``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:53
+msgid "``a = mge.tensor([1, 2]); b = a[0]; b += 1; print(a)``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:54
+msgid "``a = mge.tensor([1, 2]);  b = a; a[0] += 1; print(b)``"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:56
+msgid "正确答案"
+msgstr ""
+
+#: ../../source/development/behind/pytensor.rst:65
+msgid "如果你觉得这个行为很奇怪，你可能会希望了解 Python 可变/不可变变量的行为区别。"
+msgstr ""
+

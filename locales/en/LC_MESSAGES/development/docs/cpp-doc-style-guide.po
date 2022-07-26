@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2022, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:5
+msgid "C++ 文档 Doxygen/Breathe 语法"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:9
+msgid ""
+"本手册用来给 MegEngine 开发者提供常见的 C++ 接口文档的语法模板作为参考， 帮助其高效地撰写和修改符合 MegEngine "
+"工程规范的面向用户的 C++ 接口文档。"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:14
+msgid ""
+"不是所有的 Doxygen 语法（如折叠等）都能够在 MegEngine 文档中被使用， 我们仅使用它来提取信息，而用 Breathe "
+"来构建文档，参考 :ref:`cpp-doc-process` 小节。"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:18
+msgid "一份参考模板"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:20
+msgid ""
+"下面这个例子修改自 Breathe 官方文档的 `Nutshell "
+"<https://breathe.readthedocs.io/en/latest/index.html#in-a-nutshell>`_ 示例："
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:70
+msgid "注意事项"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:73
+msgid "多行注释中带有前导星号（leading-asterisk） ``*``, 而非单纯的空行；"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:74
+msgid "使用 ``@param`` 代替 ``\\param`` 写法，避免遇到后者形式在其它解析工具中被转义的情况；"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:75
+msgid "MegEngine 文档中只要是公开接口、成员，不论是否有相应备注，都会生成对应的 API 文档。"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:78
+msgid "使用 Breathe 语法"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:80
+msgid "Breathe 文档中提供了一些简单的语法模板，可以在 C++ 接口文档中添加数学公式、列表、表格等样式，在简单情况下可以使用。"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:82
+msgid ""
+"参考 `Breathe Features "
+"<https://breathe.readthedocs.io/en/latest/index.html#features>`_ "
+"页面中给出的各种样例。"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:84
+msgid "对于比较复杂的文档内容编辑和排版需求，推荐使用下一小节提到的 ReST 语法，即 MegEngine 文档中最常使用的语法。"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:87
+msgid "使用 ReST 语法和组件"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:89
+msgid ""
+"MegEngine 文档中使用了比较多的 Sphinx 拓展样式，使用时通过 ReStructuredtext 语法来解析。 "
+"当默认的样式不满足需求时，可以使用 :ref:`restructuredtext` 中展示的各种语法作为拓展。 "
+"但需要注意的是，由于使用了前导星号，为了能够被正常解析，需要使用 ``embed:rst:leading-asterisk`` 标记："
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:106
+msgid "它等同于在 C++ 接口文档中插入了如下 ReST 语法："
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:114
+msgid "会得到对应的 ``note`` 样式块内容。同理，你还可以使用这种方法来插入 `数学公式 <math-rst>`_ 和图片等等内容。"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:119
+msgid "从源码到文档的流程"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:121
+msgid "MegEngine 的 C++ 源码经历了如下流程变成 MegEngine 文档中的 API 参考页面："
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:130
+msgid ""
+"由于 MegEngine 文档与 MegEngine 源码不在同一处维护， 因此开发人员通常会规律性地使用 Doxygen 从 MegEngine"
+" 的 C++ 源码中生成最新的 XML 文件 （位于 :docs:`doxyxml` 目录中）。 平时撰写文档只需要使用 Breathe 将 "
+"XML 中的信息转换成 Sphinx 的 RST 文档， 体验上与从 MegEngine 的 Python Package 生成 API "
+"文档类似。"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:136
+msgid "以 Tensor 为例子，添加 Python 接口和 C++ 接口（生成文档）的 Sphinx 语法对比如下："
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:144
+msgid "使用自动生成的文档的好处之一是，方便在文档其它的任何地方进行引用——"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:150
+msgid "比如此处直接引用 :class:`megengine.Tensor` 与 :cpp:class:`lite::Tensor` 的 API 文档。"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:152
+msgid "详细的 Sphinx 和 Breathe 文档语法对比"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:154
+msgid ""
+"`sphinx.ext.autodoc <https://www.sphinx-"
+"doc.org/en/master/usage/extensions/autodoc.html>`_ – Include "
+"documentation from docstrings"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:155
+msgid ""
+"`Breathe Directives & Config Variables "
+"<https://breathe.readthedocs.io/en/latest/directives.html>`_ – Breathe "
+"directives and config variables"
+msgstr ""
+
+#: ../../source/development/docs/cpp-doc-style-guide.rst:156
+msgid "`交叉引用 <cross-reference-rst>`_ - 在 MegEngine 文档中引用 API 页面"
+msgstr ""
+

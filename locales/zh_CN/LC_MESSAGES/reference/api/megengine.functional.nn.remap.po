@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-05-09 07:35\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-05-09 07:35+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.nn.remap.po\n"
-"X-Crowdin-File-ID: 7145\n"
 
 #: ../../source/reference/api/megengine.functional.nn.remap.rst:2
 msgid "megengine.functional.nn.remap"
@@ -27,7 +23,9 @@ msgid "Applies remap transformation to batched 2D images."
 msgstr "对按批组织的二维图像进行重映射变换。"
 
 #: megengine.functional.vision.remap:3 of
-msgid "The input images are transformed to the output images by the tensor map_xy. The output's H and W are same as map_xy's H and W."
+msgid ""
+"The input images are transformed to the output images by the tensor "
+"map_xy. The output's H and W are same as map_xy's H and W."
 msgstr "输入图像通过张量 ``map_xy`` 变换为输出图像。输出的高度与宽度与 ``map_xy`` 中一致。"
 
 #: megengine.functional.vision.remap of
@@ -39,26 +37,43 @@ msgid "input image"
 msgstr "输入图像"
 
 #: megengine.functional.vision.remap:9 of
-msgid "batch, oh, ow, 2) transformation matrix"
-msgstr "变换矩阵。 变化矩阵的shape是[批数, 输出高度, 输出宽度]。"
-
-#: megengine.functional.vision.remap:11 of
-msgid "pixel extrapolation method. Default: \"replicate\". Currently also support \"constant\", \"reflect\", \"reflect_101\", \"wrap\"."
-msgstr "边界处理方法。 默认值是\"replicate\"，目前还支持 \"constant\", \"reflect\", \"reflect_101\", \"wrap\"的边界处理方法。"
+msgid ""
+"transformation matrix, its shape represents [batch_size, H, W, 2]. "
+"map_xy's H and W are the same as output's H and W. For each output "
+"location output[n, h, w], the vector map_xy[n, h, w] specifies input "
+"pixel location x and y, which are used to interpolate the output value "
+"output[n, h, w]. In the case of 2D inputs, map_xy[n, h, w] specifies the "
+"x, y pixel locations for interpolating output[n, h, w], map_xy specifies "
+"the sampling pixel locations normalized by the inp spatial dimensions. "
+"Therefore, it should have most values in the range of [0, h - 1) and [0, "
+"w - 1)."
+msgstr ""
 
 #: megengine.functional.vision.remap:15 of
+msgid ""
+"pixel extrapolation method. Default: \"replicate\". Currently also "
+"support \"constant\", \"reflect\", \"reflect_101\", \"wrap\". "
+"\"replicate\": repeatedly fills the edge pixel values of the duplicate "
+"image, expanding the new boundary pixel values with the edge pixel "
+"values. \"constant\": fills the edges of the image with a fixed numeric "
+"value."
+msgstr ""
+
+#: megengine.functional.vision.remap:20 of
 msgid "value used in case of a constant border. Default: 0"
 msgstr "边界填充值。 默认：0"
 
-#: megengine.functional.vision.remap:17 of
-msgid "interpolation methods. Default: \"linear\". Currently also support \"nearest\" mode."
+#: megengine.functional.vision.remap:22 of
+msgid ""
+"interpolation methods. Default: \"linear\". Currently also support "
+"\"nearest\" mode."
 msgstr "插值方法。默认值: \"linear\", 目前支持参数: \"linear\" 和 \"nearest\""
 
 #: megengine.functional.vision.remap of
 msgid "返回类型"
 msgstr "返回类型"
 
-#: megengine.functional.vision.remap:20 of
+#: megengine.functional.vision.remap:24 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ":py:class:`~megengine.tensor.Tensor`"
 
@@ -66,15 +81,26 @@ msgstr ":py:class:`~megengine.tensor.Tensor`"
 msgid "返回"
 msgstr "返回"
 
-#: megengine.functional.vision.remap:21 of
+#: megengine.functional.vision.remap:25 of
 msgid "output tensor."
 msgstr "输出张量。"
 
-#: megengine.functional.vision.remap:24 of
+#: megengine.functional.vision.remap:28 of
 msgid "实际案例"
 msgstr "实际案例"
 
-#: megengine.functional.vision.remap:39 of
-msgid "Outputs:"
-msgstr "输出："
+#~ msgid "batch, oh, ow, 2) transformation matrix"
+#~ msgstr "变换矩阵。 变化矩阵的shape是[批数, 输出高度, 输出宽度]。"
+
+#~ msgid ""
+#~ "pixel extrapolation method. Default: "
+#~ "\"replicate\". Currently also support "
+#~ "\"constant\", \"reflect\", \"reflect_101\", "
+#~ "\"wrap\"."
+#~ msgstr ""
+#~ "边界处理方法。 默认值是\"replicate\"，目前还支持 \"constant\", "
+#~ "\"reflect\", \"reflect_101\", \"wrap\"的边界处理方法。"
+
+#~ msgid "Outputs:"
+#~ msgstr "输出："
 
