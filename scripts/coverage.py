@@ -67,7 +67,7 @@ class PublicInterfaceFinder():
 
             for module_name, module in getmembers(cur_module, ismodule):
                 
-                if isbuiltin(module) or module_name.startswith("_") \
+                if module_name.startswith("_") or isbuiltin(module)  \
                     or self._ignore_name(module.__name__, self._ingore_keywords) \
                     or not module.__name__.startswith(self._top_module_name):
                     continue
@@ -76,12 +76,16 @@ class PublicInterfaceFinder():
 
                 for predicate in [isfunction, isclass]:
                     for obj_name, obj in getmembers(module, predicate):
-                        if not obj_name.startswith("_") and not isbuiltin(obj) \
-                            and obj.__module__.startswith(self._top_module_name):
-                            api_name, api_id = prefix + obj_name, id(obj)
-                            if api_id not in self._api_info:
-                                self._api_info[api_id] = set()
-                            self._api_info[api_id].add(api_name)
+                        
+                        if obj_name.startswith("_") or isbuiltin(obj) \
+                            or self._ignore_name(obj.__module__, self._ingore_keywords) \
+                            or not obj.__module__.startswith(self._top_module_name):
+                            continue
+
+                        api_name, api_id = prefix + obj_name, id(obj)
+                        if api_id not in self._api_info:
+                            self._api_info[api_id] = set()
+                        self._api_info[api_id].add(api_name)
 
                 if module not in visited_mem:
                     search_module(module)
