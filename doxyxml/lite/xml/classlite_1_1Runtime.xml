@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classlite_1_1Runtime" kind="class" language="C++" prot="public">
     <compoundname>lite::Runtime</compoundname>
     <includes refid="network_8h" local="no">network.h</includes>
-      <sectiondef kind="user-defined">
+      <sectiondef kind="public-static-func">
       <memberdef kind="function" id="classlite_1_1Runtime_1af14407aeb2954260cecc5feb6d843ea1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void lite::Runtime::set_cpu_threads_number</definition>
@@ -18,27 +18,31 @@
           <declname>nr_threads</declname>
         </param>
         <briefdescription>
-<para>The multithread number setter and getter interface When device is CPU, this interface will set the network running in multi thread mode with the given thread number. </para>        </briefdescription>
+<para>The multithread number setter and getter interface When device is CPU, this interface will set the network running in multi thread mode with the given thread number. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dst_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the target network to set/get the thread number </para></parameterdescription>
+<para>the target network to set/get the thread number </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>nr_threads</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the thread number set to the target network </para></parameterdescription>
+<para>the thread number set to the target network </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="390" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="390" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1a83ca31b78dcb9edcbf507b3b533f8571" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>size_t</type>
@@ -55,10 +59,48 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="392" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="392" column="19"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
+      <memberdef kind="function" id="classlite_1_1Runtime_1a6abb9df11f01710747fbb71616916097" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void lite::Runtime::set_runtime_thread_affinity</definition>
+        <argsstring>(std::shared_ptr&lt; Network &gt; network, const ThreadAffinityCallback &amp;thread_affinity_callback)</argsstring>
+        <name>set_runtime_thread_affinity</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
+          <declname>network</declname>
+        </param>
+        <param>
+          <type>const ThreadAffinityCallback &amp;</type>
+          <declname>thread_affinity_callback</declname>
+        </param>
+        <briefdescription>
+<para>set threads affinity callback </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst_network</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the target network to set the thread affinity callback </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>thread_affinity_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ThreadAffinityCallback callback to set the thread affinity </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="401" column="17"/>
+      </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1aa080483b249426322a042337c7f04cd8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void lite::Runtime::set_cpu_inplace_mode</definition>
@@ -69,20 +111,23 @@
           <declname>dst_network</declname>
         </param>
         <briefdescription>
-<para>Set cpu default mode when device is CPU, in some low computation device or single core device, this mode will get good performace. </para>        </briefdescription>
+<para>Set cpu default mode when device is CPU, in some low computation device or single core device, this mode will get good performace. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dst_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the target network to set/get cpu inplace model </para></parameterdescription>
+<para>the target network to set/get cpu inplace model </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="411" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="411" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1a4d58177f2bbdd3a0d124026f2ec917d0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -99,45 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="412" column="1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classlite_1_1Runtime_1a6abb9df11f01710747fbb71616916097" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>static void lite::Runtime::set_runtime_thread_affinity</definition>
-        <argsstring>(std::shared_ptr&lt; Network &gt; network, const ThreadAffinityCallback &amp;thread_affinity_callback)</argsstring>
-        <name>set_runtime_thread_affinity</name>
-        <param>
-          <type>std::shared_ptr&lt; <ref refid="classlite_1_1Network" kindref="compound">Network</ref> &gt;</type>
-          <declname>network</declname>
-        </param>
-        <param>
-          <type>const ThreadAffinityCallback &amp;</type>
-          <declname>thread_affinity_callback</declname>
-        </param>
-        <briefdescription>
-<para>set threads affinity callback </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>dst_network</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the target network to set the thread affinity callback </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>thread_affinity_callback</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the ThreadAffinityCallback callback to set the thread affinity </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="401" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="412" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1a810313f4882e2542f2871af4a17f6e4c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -149,12 +156,13 @@
           <declname>dst_network</declname>
         </param>
         <briefdescription>
-<para>Set the network forwarding use tensorrt. </para>        </briefdescription>
+<para>Set the network forwarding use tensorrt. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="416" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="416" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1a9c4207a61a54a21df10c2975bd2c092c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -180,41 +188,47 @@
           <defval>false</defval>
         </param>
         <briefdescription>
-<para>set opr algorithm selection strategy in the target network </para>        </briefdescription>
+<para>set opr algorithm selection strategy in the target network </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dst_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the target network to set the algorithm strategy </para></parameterdescription>
+<para>the target network to set the algorithm strategy </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>strategy</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the algorithm strategy will set to the network, if multi strategy should set, use | operator can pack them together </para></parameterdescription>
+<para>the algorithm strategy will set to the network, if multi strategy should set, use | operator can pack them together </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>shared_batch_size</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the batch size used by fast-run, Non-zero value means that fast-run use this batch size regardless of the batch size of the model, if set to zero means fast-run use batch size of the model</para></parameterdescription>
+<para>the batch size used by fast-run, Non-zero value means that fast-run use this batch size regardless of the batch size of the model, if set to zero means fast-run use batch size of the model</para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>binary_equal_between_batch</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>if set true means if the content of each input batch is binary equal, whether the content of each output batch is promised to be equal, otherwise not </para></parameterdescription>
+<para>if set true means if the content of each input batch is binary equal, whether the content of each output batch is promised to be equal, otherwise not </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="431" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="431" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1aa4d8862c76a5614639778fe84019602c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -230,27 +244,31 @@
           <declname>workspace_limit</declname>
         </param>
         <briefdescription>
-<para>set the opr workspace limitation in the target network, some opr maybe use large of workspace to get good performance, set workspace limitation can save memory but may influence the performance </para>        </briefdescription>
+<para>set the opr workspace limitation in the target network, some opr maybe use large of workspace to get good performance, set workspace limitation can save memory but may influence the performance </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dst_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the target network to set/get workspace limitation </para></parameterdescription>
+<para>the target network to set/get workspace limitation </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>workspace_limit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the byte size of workspace limitation </para></parameterdescription>
+<para>the byte size of workspace limitation </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="442" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="442" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1a266d181ca4973fa574a0aef823e42732" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -266,27 +284,31 @@
           <declname>user_allocator</declname>
         </param>
         <briefdescription>
-<para>set the network runtime memory <ref refid="classlite_1_1Allocator" kindref="compound">Allocator</ref>, the <ref refid="classlite_1_1Allocator" kindref="compound">Allocator</ref> is defined by user, through this method, user can implement a memory pool for network forwarding </para>        </briefdescription>
+<para>set the network runtime memory <ref refid="classlite_1_1Allocator" kindref="compound">Allocator</ref>, the <ref refid="classlite_1_1Allocator" kindref="compound">Allocator</ref> is defined by user, through this method, user can implement a memory pool for network forwarding </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dst_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the target network </para></parameterdescription>
+<para>the target network </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>user_allocator</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the user defined <ref refid="classlite_1_1Allocator" kindref="compound">Allocator</ref> </para></parameterdescription>
+<para>the user defined <ref refid="classlite_1_1Allocator" kindref="compound">Allocator</ref> </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="452" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="452" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1a2105a001971a30ca35dc735584ca2e2a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -302,7 +324,8 @@
           <declname>src_network</declname>
         </param>
         <briefdescription>
-<para>share the runtime memory with other network, the weights is not shared </para>        </briefdescription>
+<para>share the runtime memory with other network, the weights is not shared </para>
+        </briefdescription>
         <detaileddescription>
 <para><verbatim>embed:rst:leading-asterisk
 *
@@ -310,25 +333,29 @@
 *
 *     the src network and the dst network can not execute in simultaneous
 *
-* </verbatim></para><para><parameterlist kind="param"><parameteritem>
+* </verbatim></para>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dst_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the target network to share the runtime memory from src_network </para></parameterdescription>
+<para>the target network to share the runtime memory from src_network </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>src_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the source network to shared runtime memory to dst_network </para></parameterdescription>
+<para>the source network to shared runtime memory to dst_network </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="470" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="470" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1a4053b5c93605a3b94b3c5063e95ae31a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -344,27 +371,31 @@
           <declname>io_txt_out_file</declname>
         </param>
         <briefdescription>
-<para>dump all input/output tensor of all operators to the output file, in txt format, user can use this function to debug compute error </para>        </briefdescription>
+<para>dump all input/output tensor of all operators to the output file, in txt format, user can use this function to debug compute error </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dst_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the target network to dump its tensors </para></parameterdescription>
+<para>the target network to dump its tensors </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>io_txt_out_file</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the txt file </para></parameterdescription>
+<para>the txt file </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="479" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="479" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1a5c291ea6ebd36c14619b32b417759d64" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -380,27 +411,31 @@
           <declname>io_bin_out_dir</declname>
         </param>
         <briefdescription>
-<para>dump all input/output tensor of all operators to the output file, in binary format, user can use this function to debug compute error </para>        </briefdescription>
+<para>dump all input/output tensor of all operators to the output file, in binary format, user can use this function to debug compute error </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dst_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the target network to dump its tensors </para></parameterdescription>
+<para>the target network to dump its tensors </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>io_bin_out_dir</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the binary file director </para></parameterdescription>
+<para>the binary file director </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="488" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="488" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1aaaf8db5d06843cc599ac17e941f1fc19" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -416,27 +451,31 @@
           <declname>src_network</declname>
         </param>
         <briefdescription>
-<para>load a new network which will share weights with src network, this can reduce memory usage when user want to load the same model multi times </para>        </briefdescription>
+<para>load a new network which will share weights with src network, this can reduce memory usage when user want to load the same model multi times </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dst_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the target network to share weights from src_network </para></parameterdescription>
+<para>the target network to share weights from src_network </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>src_network</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the source network to shared weights to dst_network </para></parameterdescription>
+<para>the source network to shared weights to dst_network </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="498" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="498" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1ad2aadcbef4fa40d716cbc627a9c15b95" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -448,12 +487,13 @@
           <declname>network</declname>
         </param>
         <briefdescription>
-<para>set global layout transform optimization for network, global layout optimization can auto determine the layout of every operator in the network by profile, thus it can improve the performance of the network forwarding </para>        </briefdescription>
+<para>set global layout transform optimization for network, global layout optimization can auto determine the layout of every operator in the network by profile, thus it can improve the performance of the network forwarding </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="507" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="507" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1abfdbb3c2a112b5d3022e72372369b14a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -469,12 +509,13 @@
           <declname>optimized_model_path</declname>
         </param>
         <briefdescription>
-<para>dump network after global layout transform optimization to the specific path </para>        </briefdescription>
+<para>dump network after global layout transform optimization to the specific path </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="512" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="512" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1a81b39f1b7b745323a2a8774055156677" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref></type>
@@ -491,28 +532,33 @@
           <defval>{}</defval>
         </param>
         <briefdescription>
-<para>get the model io information before model loaded by model path. </para>        </briefdescription>
+<para>get the model io information before model loaded by model path. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>model_path</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the model path to get the model <ref refid="structlite_1_1IO" kindref="compound">IO</ref> information </para></parameterdescription>
+<para>the model path to get the model <ref refid="structlite_1_1IO" kindref="compound">IO</ref> information </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>config</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the model configuration</para></parameterdescription>
+<para>the model configuration</para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>the model <ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref> information </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>the model <ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref> information </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="522" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="522" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classlite_1_1Runtime_1a84eaa297dca882055c9670f25ffadf99" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref></type>
@@ -533,42 +579,49 @@
           <defval>{}</defval>
         </param>
         <briefdescription>
-<para>get the model io information before model loaded by model memory. </para>        </briefdescription>
+<para>get the model io information before model loaded by model memory. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>model_mem</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the model memory to get the model <ref refid="structlite_1_1IO" kindref="compound">IO</ref> information </para></parameterdescription>
+<para>the model memory to get the model <ref refid="structlite_1_1IO" kindref="compound">IO</ref> information </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>size</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>model memory size in byte </para></parameterdescription>
+<para>model memory size in byte </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>config</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the model configuration</para></parameterdescription>
+<para>the model configuration</para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>the model <ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref> information </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>the model <ref refid="structlite_1_1NetworkIO" kindref="compound">NetworkIO</ref> information </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="533" column="1"/>
+        <location file="/data/github/MegEngine/lite/include/lite/network.h" line="533" column="22"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>All the runtime configuration function is define in <ref refid="classlite_1_1Runtime" kindref="compound">Runtime</ref> class, as a static member function. </para>    </briefdescription>
+<para>All the runtime configuration function is define in <ref refid="classlite_1_1Runtime" kindref="compound">Runtime</ref> class, as a static member function. </para>
+    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/data/github/MegEngine/lite/include/lite/network.h" line="380" column="1" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="380" bodyend="535"/>
+    <location file="/data/github/MegEngine/lite/include/lite/network.h" line="380" column="15" bodyfile="/data/github/MegEngine/lite/include/lite/network.h" bodystart="380" bodyend="535"/>
     <listofallmembers>
       <member refid="classlite_1_1Runtime_1abfdbb3c2a112b5d3022e72372369b14a" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>dump_layout_transform_model</name></member>
       <member refid="classlite_1_1Runtime_1ad2aadcbef4fa40d716cbc627a9c15b95" prot="public" virt="non-virtual"><scope>lite::Runtime</scope><name>enable_global_layout_transform</name></member>

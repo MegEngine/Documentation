@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="network_8h" kind="file" language="C++">
     <compoundname>network.h</compoundname>
     <includes refid="macro_8h" local="yes">macro.h</includes>
@@ -11,73 +11,73 @@
     <includes local="no">unordered_map</includes>
     <includedby refid="global_8h" local="yes">/data/github/MegEngine/lite/include/lite/global.h</includedby>
     <incdepgraph>
-      <node id="29">
+      <node id="8">
         <label>functional</label>
       </node>
-      <node id="23">
+      <node id="2">
         <label>macro.h</label>
         <link refid="macro_8h_source"/>
       </node>
-      <node id="31">
+      <node id="10">
         <label>string</label>
       </node>
-      <node id="28">
+      <node id="7">
         <label>vector</label>
       </node>
-      <node id="25">
+      <node id="4">
         <label>common_enum_c.h</label>
         <link refid="common__enum__c_8h_source"/>
       </node>
-      <node id="22">
+      <node id="1">
         <label>/data/github/MegEngine/lite/include/lite/network.h</label>
         <link refid="network_8h"/>
-        <childnode refid="23" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="27">
+      <node id="6">
         <label>unordered_map</label>
       </node>
-      <node id="30">
+      <node id="9">
         <label>mutex</label>
       </node>
-      <node id="24">
+      <node id="3">
         <label>tensor.h</label>
         <link refid="tensor_8h_source"/>
-        <childnode refid="25" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="5">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="32">
+      <node id="1">
         <label>/data/github/MegEngine/lite/include/lite/network.h</label>
         <link refid="network_8h"/>
-        <childnode refid="33" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="33">
+      <node id="2">
         <label>/data/github/MegEngine/lite/include/lite/global.h</label>
         <link refid="global_8h_source"/>
       </node>
@@ -107,12 +107,12 @@
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacelite" kindref="compound">lite</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">lite<sp/>{</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal">LITE_API<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>LiteAlgoSelectStrategy<sp/>operator|(</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LiteAlgoSelectStrategy<sp/>x,<sp/>LiteAlgoSelectStrategy<sp/>y)<sp/>{</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">LiteAlgoSelectStrategy</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(x)<sp/>|<sp/>static_cast&lt;uint32_t&gt;(y));</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(x)<sp/>|<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(y));</highlight></codeline>
 <codeline lineno="18"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77" refid="structlite_1_1Options" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal">LITE_API<sp/><ref refid="structlite_1_1Options" kindref="compound">Options</ref><sp/>{</highlight></codeline>
@@ -177,9 +177,9 @@
 <codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>free(LiteDeviceType<sp/>device_type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>device_id,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr)<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="214"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"></highlight></codeline>
-<codeline lineno="222"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ThreadAffinityCallback<sp/>=<sp/>std::function&lt;void(int<sp/>thread_id)&gt;;</highlight></codeline>
+<codeline lineno="222"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ThreadAffinityCallback<sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>thread_id)&gt;;</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"></highlight></codeline>
-<codeline lineno="227"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>AsyncCallback<sp/>=<sp/>std::function&lt;void(void)&gt;;</highlight></codeline>
+<codeline lineno="227"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>AsyncCallback<sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)&gt;;</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"></highlight></codeline>
 <codeline lineno="236"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>StartCallback<sp/>=</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;</highlight></codeline>
