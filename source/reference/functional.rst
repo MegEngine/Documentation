@@ -247,6 +247,16 @@ Sorting Functions
    argsort
    topk
 
+.. _metric-functions:
+
+Metric functions
+~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   topk_accuracy
+
 .. py:module:: megengine.functional.nn
 .. currentmodule:: megengine.functional.nn
 
@@ -354,16 +364,6 @@ Sparse functions
    one_hot
    indexing_one_hot
    embedding
-
-.. _metric-functions:
-
-Metric functions
-~~~~~~~~~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   topk_accuracy
 
 .. _loss-functions:
 
