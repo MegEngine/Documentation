@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-04-19 12:29\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-07-27 05:40\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -26,232 +26,268 @@ msgstr ""
 msgid "A tensor object represents a multidimensional, homogeneous array of fixed-size items."
 msgstr ""
 
+#: megengine.tensor.Tensor:3 of
+msgid "Tensor is the primary MegEngine data structure. Data type(dtype) describes the format of each element, such as ``float32``, ``int8`` and so on, see :ref:`tensor-dtype` for more details. It is similar to :class:`numpy.ndarray` but not the same in the design. For example, GPU devices can be used to store Tensors and execute calculations in MegEngine. The concept of `view <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_ does not exist in MegEngine so indexing and other behaviors might be different with NumPy. All manipulations and operations on/between Tensors could be found in the :mod:`~.megengine.functional` module. Keep in mind that they are **not in-place**, a new Tensor will always be returned and the original data will remain constant."
+msgstr ""
+
+#: megengine.tensor.Tensor:14 of
+msgid "For more information, refer to the :ref:`tensor-guide` topic."
+msgstr ""
+
 #: megengine.tensor.Tensor of
 msgid "参数"
 msgstr ""
 
-#: megengine.tensor.Tensor:4 of
-msgid "The value of returned Tensor."
+#: megengine.tensor.Tensor:17 of
+msgid "The data used for construcing Tensor. Tensor could be constructed from a Python :class:`list` / :class:`tuple` or sequence; a NumPy :class:`~.numpy.ndarray` data structure; MegEngine builtin methods and so on. Refer to :ref:`tensor-creation` for more details."
 msgstr ""
 
-#: megengine.tensor.Tensor:7 of
-msgid "The dtype of returned Tensor. Uses data's dtype if not specified."
+#: megengine.tensor.Tensor:23 of
+msgid "The data type of returned Tensor. Infer from ``data`` if not specified."
 msgstr ""
 
-#: megengine.tensor.Tensor:9 of
+#: megengine.tensor.Tensor:26 of
 msgid "The desired device of returned Tensor. Uses :func:`get_default_device` if not specified."
 msgstr ""
 
-#: megengine.tensor.Tensor:11 of
-msgid "Whether make it a ``ImutableTensor`` in tracing mode."
+#: megengine.tensor.Tensor:29 of
+msgid "Whether make it a ``ImutableTensor`` in tracing mode, refer to :class:`.jit.trace`."
 msgstr ""
 
-#: megengine.tensor.Tensor:13 of
+#: megengine.tensor.Tensor:31 of
 msgid "Whether cache it for memory sharing."
 msgstr ""
 
-#: megengine.tensor.Tensor:15 of
+#: megengine.tensor.Tensor:33 of
 msgid "Used to improve convenience in graph operation on dumped model."
+msgstr ""
+
+#: megengine.tensor.Tensor:35 of
+msgid "Used to indicate which memory format Tensor uses. It will not affect actual memory order or stride, but may affect some operators related to indexing and dimension. Only support \"default\", \"nchw\" and \"nhwc\"."
+msgstr ""
+
+#: megengine.tensor.Tensor:40 of
+msgid "There are some methods like :meth:`~.Tensor.reshape` / :meth:`~.Tensor.flatten` / :meth:`~.Tensor.transpose` / :meth:`~.Tensor.min` / :meth:`~.Tensor.max` / :meth:`~.Tensor.mean` / :meth:`~.Tensor.sum` / :meth:`~.Tensor.prod` implemented in ``Tensor`` class for convenience and historical reasons. But other methods implemented in the :mod:`~.megengine.functional` module will not be added here anymore, it is hard for maintaining and too many candidates will affect code completion experience."
 msgstr ""
 
 #: ../../source/reference/api/megengine.Tensor.rst:11
 msgid "Attributes"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`T <megengine.Tensor.T>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "alias of :attr:`~.Tensor.transpose`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`device <megengine.Tensor.device>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a string represents the device a :class:`~.Tensor` storaged on."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`dmap_callback <megengine.Tensor.dmap_callback>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`dtype <megengine.Tensor.dtype>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a :class:`numpy.dtype` object represents the data type of a :class:`~.Tensor`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
+msgid ":py:obj:`format <megengine.Tensor.format>`\\"
+msgstr ""
+
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>
+msgid "rtype"
+msgstr ""
+
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
+msgid ":py:class:`str`"
+msgstr ""
+
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`grad <megengine.Tensor.grad>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`name <megengine.Tensor.name>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`ndim <megengine.Tensor.ndim>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns the number of dimensions of self :class:`~.Tensor`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`qparams <megengine.Tensor.qparams>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a :class:`~.QParams` object containing quantization params of a :class:`~.Tensor`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`requires_grad <megengine.Tensor.requires_grad>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`shape <megengine.Tensor.shape>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a :class:`tuple` or a :class:`~.Tensor` represents tensor dimensions."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`size <megengine.Tensor.size>`\\"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns the size of the self :class:`~.Tensor`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:54
+#: ../../source/reference/api/megengine.Tensor.rst:57
 msgid "Methods"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`astype <megengine.Tensor.astype>`\\ \\(dtype\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns a :class:`Tensor` with the same data and number of elements with the specified :attr:`~.Tensor.dtype`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`detach <megengine.Tensor.detach>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns a new :class:`~.Tensor`, detached from the current graph."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`flatten <megengine.Tensor.flatten>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.flatten`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid ":py:obj:`graph <megengine.Tensor.graph>`\\"
+msgstr ""
+
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`item <megengine.Tensor.item>`\\ \\(\\*args\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns the value of this :class:`~.Tensor` as a standard Python :class:`numbers.Number`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`max <megengine.Tensor.max>`\\ \\(\\[axis\\, keepdims\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid "Returns the max value of each row of the input tensor in the given dimension ``axis``."
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid "See :func:`~.max`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`mean <megengine.Tensor.mean>`\\ \\(\\[axis\\, keepdims\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid "Returns the mean value of each row of the input tensor in the given dimension ``axis``."
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid "See :func:`~.mean`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`min <megengine.Tensor.min>`\\ \\(\\[axis\\, keepdims\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid "Returns the min value of each row of the input tensor in the given dimension ``axis``."
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid "See :func:`~.min`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`numpy <megengine.Tensor.numpy>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns self :class:`~.Tensor` as a :class:`numpy.ndarray`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`prod <megengine.Tensor.prod>`\\ \\(\\[axis\\, keepdims\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid "Returns the product of each row of the input tensor in the given dimension ``axis``."
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid "See :func:`~.prod`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`reset_zero <megengine.Tensor.reset_zero>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`reshape <megengine.Tensor.reshape>`\\ \\(\\*args\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.reshape`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`set_value <megengine.Tensor.set_value>`\\ \\(value\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`sum <megengine.Tensor.sum>`\\ \\(\\[axis\\, keepdims\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid "Returns the sum of each row of the input tensor in the given dimension ``axis``."
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid "See :func:`~.sum`."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid ":py:obj:`to <megengine.Tensor.to>`\\ \\(device\\)"
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid ":py:obj:`to <megengine.Tensor.to>`\\ \\(device\\, \\*\\[\\, \\_borrow\\]\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Copy self :class:`~.Tensor` to specified device."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`tolist <megengine.Tensor.tolist>`\\ \\(\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns the tensor as a (nested) list."
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`transpose <megengine.Tensor.transpose>`\\ \\(\\*args\\)"
 msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.transpose`."
+msgstr ""
+
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid ":py:obj:`var <megengine.Tensor.var>`\\"
 msgstr ""
 
 #~ msgid ""
@@ -273,4 +309,37 @@ msgstr ""
 
 #~ msgid ":obj:`c_name <megengine.Tensor.c_name>`\\"
 #~ msgstr ":obj:`c_name <megengine.Tensor.c_name>`\\"
+
+#~ msgid "The value of returned Tensor."
+#~ msgstr "返回张量的值。"
+
+#~ msgid ""
+#~ "Returns the max value of each row"
+#~ " of the input tensor in the "
+#~ "given dimension ``axis``."
+#~ msgstr "返回当前张量在给定轴上所有元素求最大值后的结果。"
+
+#~ msgid ""
+#~ "Returns the mean value of each row"
+#~ " of the input tensor in the "
+#~ "given dimension ``axis``."
+#~ msgstr "返回当前张量在给定轴上所有元素求平均值后的结果。"
+
+#~ msgid ""
+#~ "Returns the min value of each row"
+#~ " of the input tensor in the "
+#~ "given dimension ``axis``."
+#~ msgstr "返回当前张量在给定轴上所有元素求最小值后的结果。"
+
+#~ msgid ""
+#~ "Returns the product of each row of"
+#~ " the input tensor in the given "
+#~ "dimension ``axis``."
+#~ msgstr "返回当前张量在给定轴上所有元素求乘积后的结果。"
+
+#~ msgid ""
+#~ "Returns the sum of each row of "
+#~ "the input tensor in the given "
+#~ "dimension ``axis``."
+#~ msgstr "返回当前张量在给定轴上所有元素求和后的结果。"
 
