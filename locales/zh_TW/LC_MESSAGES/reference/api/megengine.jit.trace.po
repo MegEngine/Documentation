@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 12:16\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-07-27 05:47\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -110,111 +110,131 @@ msgstr "crwdns88911:0crwdne88911:0"
 msgid "whether to keep priority setting for operators"
 msgstr "crwdns88913:0crwdne88913:0"
 
-#: megengine.jit.tracing.trace.dump:22 of
+#: megengine.jit.tracing.trace.dump:23 of
+msgid "whether to change the compute graph when dump, for model compatibility, some operators will convert to its compatible format in this version.  * if set False, some operators maybe convert to other operator for   compatibility, all operators will ensure compatibility. * if set True, no operator will change in the graph when dump."
+msgstr "crwdns93704:0crwdne93704:0"
+
+#: megengine.jit.tracing.trace.dump:23 of
+msgid "whether to change the compute graph when dump, for model compatibility, some operators will convert to its compatible format in this version."
+msgstr "crwdns93706:0crwdne93706:0"
+
+#: megengine.jit.tracing.trace.dump:27 of
+msgid "if set False, some operators maybe convert to other operator for compatibility, all operators will ensure compatibility."
+msgstr "crwdns93708:0crwdne93708:0"
+
+#: megengine.jit.tracing.trace.dump:29 of
+msgid "if set True, no operator will change in the graph when dump."
+msgstr "crwdns93710:0crwdne93710:0"
+
+#: megengine.jit.tracing.trace.dump:30 of
 msgid "a string for path or a file handler. if is not None, then the dump information for code strip would be written to ``strip_info_file``"
 msgstr "crwdns88915:0crwdne88915:0"
 
-#: megengine.jit.tracing.trace.dump:24 of
+#: megengine.jit.tracing.trace.dump:32 of
 msgid "will be check when `strip_info_file` is not None. if set true, the information for code strip will be append to strip_info_file. if set false, will rewrite strip_info_file"
 msgstr "crwdns88917:0crwdne88917:0"
 
-#: megengine.jit.tracing.trace.dump:27 of
+#: megengine.jit.tracing.trace.dump:35 of
 msgid "enbale optmizations, will skip all optimize options if this is False. Default: True"
 msgstr "crwdns88919:0crwdne88919:0"
 
-#: megengine.jit.tracing.trace.dump:30 of
+#: megengine.jit.tracing.trace.dump:38 of
 msgid "any type object, which will be pickled to bytes."
 msgstr "crwdns88921:0crwdne88921:0"
 
-#: megengine.jit.tracing.trace.dump:32 of
+#: megengine.jit.tracing.trace.dump:40 of
 msgid "whether to save metadata into output file."
 msgstr "crwdns88923:0crwdne88923:0"
 
-#: megengine.jit.tracing.trace.dump:33 of
+#: megengine.jit.tracing.trace.dump:41 of
 msgid "input test data and current network output would be used as groundtruth. The format is \"var0:file0;var1:file1...\" to specify data files for input vars. It can also be \"#rand(min,max,shape...)\" for generating random input data, for example, \"#rand(0,255)\", \"#rand(0,255,1,3,224,224)\" or \"#rand(0, 255, 1, ...)\" where `...` means the remaining part of the original shape. If the shape is not specified, the shape of corresponding input tensors in the network will be used. If there is only one input var, its name can be omitted. Each data file can either be an image which can be loaded by opencv, or a pickled numpy.ndarray. This option can be given multiple times to add multiple testcases. If you start the data with the letter @, the rest should be a filename, and each line in the file should be a single datum in the format described above. *NOTE* If `input_data` is not None, you can only use load-and-run to run the output file."
 msgstr "crwdns88925:0crwdne88925:0"
 
-#: megengine.jit.tracing.trace.dump:45 of
+#: megengine.jit.tracing.trace.dump:53 of
 msgid "how many times the input image is repeated. Useful when running benchmark for batch size other than one. Have no effect on randomly generated input data."
 msgstr "crwdns88927:0crwdne88927:0"
 
-#: megengine.jit.tracing.trace.dump:47 of
+#: megengine.jit.tracing.trace.dump:55 of
 msgid "whether set verbose to False in assert_equal opr."
 msgstr "crwdns88929:0crwdne88929:0"
 
-#: megengine.jit.tracing.trace.dump:48 of
+#: megengine.jit.tracing.trace.dump:56 of
 msgid "whether insert assert_equal opr to check result; this option is useful for benchmarking."
 msgstr "crwdns88931:0crwdne88931:0"
 
-#: megengine.jit.tracing.trace.dump:50 of
+#: megengine.jit.tracing.trace.dump:58 of
 msgid "max error for assert_equal check during runtime."
 msgstr "crwdns88933:0crwdne88933:0"
 
-#: megengine.jit.tracing.trace.dump:51 of
+#: megengine.jit.tracing.trace.dump:59 of
 msgid "whether resize input image to fit input var shape."
 msgstr "crwdns88935:0crwdne88935:0"
 
-#: megengine.jit.tracing.trace.dump:52 of
+#: megengine.jit.tracing.trace.dump:60 of
 msgid "a python expression to transform the input data. Example: data / np.std(data)"
 msgstr "crwdns88937:0crwdne88937:0"
 
-#: megengine.jit.tracing.trace.dump:55 of
-msgid "using different dump formats. the open source MegEngine defaults to the FBS format. internal MegEngine have a choice of FBS and internal proprietary formats"
-msgstr "crwdns90672:0crwdne90672:0"
+#: megengine.jit.tracing.trace.dump:63 of
+msgid "using different dump formats. the open source MegEngine defaults to the FBS_V2 format, there are two format FBS_V2 and FBS to choose, internal MegEngine have an other choice of internal proprietary formats"
+msgstr "crwdns93712:0crwdne93712:0"
 
-#: megengine.jit.tracing.trace.dump:58 of
+#: megengine.jit.tracing.trace.dump:67 of
+msgid "the model version of FBS_V2, begin with version 2, this works only when dump format is FBS_V2."
+msgstr "crwdns93714:0crwdne93714:0"
+
+#: megengine.jit.tracing.trace.dump:70 of
 msgid "Keyword Arguments:"
 msgstr "crwdns88941:0crwdne88941:0"
 
-#: megengine.jit.tracing.trace.dump:60 of
+#: megengine.jit.tracing.trace.dump:72 of
 msgid "enable_io16xc32 -- whether to use float16 for I/O between oprs and use float32 as internal computation precision. Note the output var would be changed to float16."
 msgstr "crwdns88943:0crwdne88943:0"
 
-#: megengine.jit.tracing.trace.dump:64 of
+#: megengine.jit.tracing.trace.dump:76 of
 msgid "enable_ioc16 -- whether to use float16 for both I/O and computation precision."
 msgstr "crwdns88945:0crwdne88945:0"
 
-#: megengine.jit.tracing.trace.dump:67 of
+#: megengine.jit.tracing.trace.dump:79 of
 msgid "enable_hwcd4 -- whether to use NHWCD4 data layout. This is faster on some OpenCL backend."
 msgstr "crwdns88947:0crwdne88947:0"
 
-#: megengine.jit.tracing.trace.dump:70 of
+#: megengine.jit.tracing.trace.dump:82 of
 msgid "enable_nchw88 -- whether to use NCHW88 data layout, currently used in X86 AVX backend."
 msgstr "crwdns88949:0crwdne88949:0"
 
-#: megengine.jit.tracing.trace.dump:73 of
+#: megengine.jit.tracing.trace.dump:85 of
 msgid "enable_nchw44 -- whether to use NCHW44 data layout, currently used in arm backend."
 msgstr "crwdns88951:0crwdne88951:0"
 
-#: megengine.jit.tracing.trace.dump:76 of
+#: megengine.jit.tracing.trace.dump:88 of
 msgid "enable_nchw44_dot -- whether to use NCHW44_dot data layout, currently used in armv8.2+dotprod backend."
 msgstr "crwdns88953:0crwdne88953:0"
 
-#: megengine.jit.tracing.trace.dump:79 of
+#: megengine.jit.tracing.trace.dump:91 of
 msgid "enable_nchw4 -- whether to use NCHW4 data layout, currently used in nvidia backend(based on cudnn)."
 msgstr "crwdns88955:0crwdne88955:0"
 
-#: megengine.jit.tracing.trace.dump:82 of
+#: megengine.jit.tracing.trace.dump:94 of
 msgid "enable_nchw32 -- whether to use NCHW32 data layout, currently used in nvidia backend with tensorcore(based on cudnn)."
 msgstr "crwdns88957:0crwdne88957:0"
 
-#: megengine.jit.tracing.trace.dump:85 of
+#: megengine.jit.tracing.trace.dump:97 of
 msgid "enable_chwn4 -- whether to use CHWN4 data layout, currently used in nvidia backend with tensorcore."
 msgstr "crwdns88959:0crwdne88959:0"
 
-#: megengine.jit.tracing.trace.dump:88 of
+#: megengine.jit.tracing.trace.dump:100 of
 msgid "enable_nchw64 -- whether to use NCHW64 data layout, used for fast int4 support on Nvidia GPU."
 msgstr "crwdns88961:0crwdne88961:0"
 
-#: megengine.jit.tracing.trace.dump:91 of
+#: megengine.jit.tracing.trace.dump:103 of
 msgid "enable_fuse_conv_bias_nonlinearity: whether to fuse conv+bias+nonlinearty into one opr."
 msgstr "crwdns88963:0crwdne88963:0"
 
-#: megengine.jit.tracing.trace.dump:93 of
+#: megengine.jit.tracing.trace.dump:105 of
 msgid "enable_fuse_conv_bias_with_z: whether to fuse conv_bias with z input for inference on nvidia backend(this optimization pass will result in mismatch of the precision of output of training and inference)"
 msgstr "crwdns88965:0crwdne88965:0"
 
-#: megengine.jit.tracing.trace.dump:97 of
+#: megengine.jit.tracing.trace.dump:109 of
 msgid "enable_fuse_preprocess: whether to fuse astype\\pad_channel\\dimshuffle and etc opr"
 msgstr "crwdns88967:0crwdne88967:0"
 
