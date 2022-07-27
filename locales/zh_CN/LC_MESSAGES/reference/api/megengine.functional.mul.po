@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-04-18 12:17\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-07-27 05:32\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -23,62 +23,26 @@ msgid "megengine.functional.mul"
 msgstr "megengine.functional.mul"
 
 #: megengine.functional.elemwise.mul:1 of
-msgid "Calculates the product for each element :math:`x_i` of the input tensor `x` with the respective element :math:`y_i` of the input tensor `y`."
-msgstr "计算输入张量 `x` 的每个元素 :math:`x_i` 与输入张量 `y` 的相应元素 :math:`y_i` 的积。"
-
-#: megengine.functional.elemwise.mul:5 of
-msgid "If either :math:`x_i` or :math:`y_i` is `NaN`, the result is `NaN`."
-msgstr "如果 :math:`x_i` 或 :math:`y_i` 是 `NaN`, 结果是 `NaN`."
-
-#: megengine.functional.elemwise.mul:6 of
-msgid "If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is either `+0` or `-0`, the result is `NaN`."
-msgstr "如果 :math:`x_i` 是 `+infinity` 或 `-infinity`, 并且 :math:`y_i` 是 `+0` 或 `-0`, 结果是 `NaN`."
-
-#: megengine.functional.elemwise.mul:7 of
-msgid "If :math:`x_i` is either `+0` or `-0` and :math:`y_i` is either `+infinity` or `-infinity`, the result is `NaN`."
-msgstr "如果 :math:`x_i` 是 `+0` 或 `-0`, 并且 :math:`y_i` 是 `+infinity` 或 `-infinity`, 结果是 `NaN`."
-
-#: megengine.functional.elemwise.mul:8 of
-msgid "If :math:`x_i` and :math:`y_i` have different mathematical signs, the result has a negative mathematical sign, unless the result is `NaN`."
-msgstr "如果 :math:`x_i` 和 :math:`y_i` 有不同的正负号，则结果有一个负号，除非结果是 `NaN`."
-
-#: megengine.functional.elemwise.mul:9 of
-msgid "If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is either `+infinity` or `-infinity`, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
-msgstr "如果 :math:`x_i` 是 `+infinity` 或 `-infinity`, 并且 :math:`y_i` 是 `+infinity` 或 `-infinity`, 结果是一个有符号的无穷大，其正负由上面的规则决定。"
-
-#: megengine.functional.elemwise.mul:11 of
-msgid "If :math:`x_i` is either `+infinity` or `-infinity` and :math:`y_i` is a nonzero finite number, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
-msgstr "如果 :math:`x_i` 是 `+infinity` 或 `-infinity`, 并且 :math:`y_i` 是一个非零的有限数，结果是一个有符号的无穷大，其正负号由上述规则决定。"
-
-#: megengine.functional.elemwise.mul:13 of
-msgid "If :math:`x_i` is a nonzero finite number and :math:`y_i` is either `+infinity` or `-infinity`, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
-msgstr "如果 :math:`x_i` 是一个非零的有限数，并且 :math:`y_i` 是 `+infinity` 或 `-infinity`, 结果是一个有符号的无穷大，其正负号由上述规则决定。"
-
-#: megengine.functional.elemwise.mul:15 of
-msgid "In the remaining cases, where neither `infinity` nor `NaN` is involved, the product must be computed and rounded to the nearest representable value according to IEEE 754-2019 and a supported rounding mode. If the magnitude is too large to represent, the result is an `infinity` of appropriate mathematical sign. If the magnitude is too small to represent, the result is a zero of appropriate mathematical sign."
-msgstr "其余情况下，如果既不涉及 `infinity` 也不涉及 `NaN`, 则必须根据 IEEE 754-2019 和支持的四舍五入模式计算乘积并将其四舍五入到最接近的可表示值。如果幅度太大无法表示，结果是一个适当的数学符号的 `infinity`. 如果幅度太小无法表示，结果是一个适当的数学符号的零。"
-
-#: megengine.functional.elemwise.mul:19 of
-msgid "Floating-point multiplication is not always associative due to finite precision."
-msgstr "由于精度有限，浮点乘法并不总是满足乘法交换律。"
+msgid "Calculates the product for each element :math:`x_i` of the input tensor `x` with the respective element :math:`y_i` of the input tensor :math:`y`."
+msgstr ""
 
 #: megengine.functional.elemwise.mul of
 msgid "参数"
 msgstr "参数"
 
-#: megengine.functional.elemwise.mul:22 of
+#: megengine.functional.elemwise.mul:4 of
 msgid "first input tensor. Should have a numeric data type."
 msgstr "第一个输入张量。应该有一个数值数据类型。"
 
-#: megengine.functional.elemwise.mul:24 of
-msgid "second input tensor. Must be compatible with `x` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
-msgstr "第二个输入张量。必须与 `x` 兼容（见 :ref:`broadcasting-rule` ）。应该有一个数值数据类型。"
+#: megengine.functional.elemwise.mul:6 of
+msgid "second input tensor. Must be compatible with ``x`` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
+msgstr ""
 
 #: megengine.functional.elemwise.mul of
 msgid "返回类型"
 msgstr "返回类型"
 
-#: megengine.functional.elemwise.mul:26 of
+#: megengine.functional.elemwise.mul:8 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ":py:class:`~megengine.tensor.Tensor`"
 
@@ -86,17 +50,61 @@ msgstr ":py:class:`~megengine.tensor.Tensor`"
 msgid "返回"
 msgstr "返回"
 
-#: megengine.functional.elemwise.mul:27 of
-msgid "A tensor containing the element-wise products. The returned array must have a data type determined by :ref:`dtype-promotion`."
-msgstr "一个包含按元素乘法结果的张量。返回的数组必须是由 :ref:`dtype-promotion` 决定的数据类型。"
+#: megengine.functional.elemwise.mul:9 of
+msgid "A tensor containing the element-wise products. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
+msgstr ""
 
-#: megengine.functional.elemwise.mul:30 of
+#: megengine.functional.elemwise.mul:11 of
+msgid "Special cases"
+msgstr ""
+
+#: megengine.functional.elemwise.mul:13 of
+msgid "For floating-point operands,"
+msgstr ""
+
+#: megengine.functional.elemwise.mul:15 of
+msgid "If either :math:`x_i` or :math:`y_i` is ``NaN``, the result is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.mul:16 of
+msgid "If :math:`x_i` is either ``+infinity`` or ``-infinity`` and :math:`y_i` is either ``+0`` or ``-0``, the result is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.mul:17 of
+msgid "If :math:`x_i` is either ``+0`` or ``-0`` and :math:`y_i` is either ``+infinity`` or ``-infinity``, the result is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.mul:18 of
+msgid "If :math:`x_i` and :math:`y_i` have different mathematical signs, the result has a negative mathematical sign, unless the result is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.mul:19 of
+msgid "If :math:`x_i` is either ``+infinity`` or ``-infinity`` and :math:`y_i` is either ``+infinity`` or ``-infinity``, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
+msgstr ""
+
+#: megengine.functional.elemwise.mul:21 of
+msgid "If :math:`x_i` is either ``+infinity`` or ``-infinity`` and :math:`y_i` is a nonzero finite number, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
+msgstr ""
+
+#: megengine.functional.elemwise.mul:23 of
+msgid "If :math:`x_i` is a nonzero finite number and :math:`y_i` is either ``+infinity`` or ``-infinity``, the result is a signed infinity with the mathematical sign determined by the rule already stated above."
+msgstr ""
+
+#: megengine.functional.elemwise.mul:25 of
+msgid "In the remaining cases, where neither ``infinity`` nor ``NaN`` is involved, the product must be computed and rounded to the nearest representable value according to IEEE 754-2019 and a supported rounding mode. If the magnitude is too large to represent, the result is an `infinity` of appropriate mathematical sign. If the magnitude is too small to represent, the result is a zero of appropriate mathematical sign."
+msgstr ""
+
+#: megengine.functional.elemwise.mul:32 of
+msgid "Floating-point multiplication is not always associative due to finite precision."
+msgstr "由于精度有限，浮点乘法并不总是满足乘法交换律。"
+
+#: megengine.functional.elemwise.mul:33 of
+msgid "The ``*`` operator can be used as a shorthand for ``mul`` on tensors."
+msgstr ""
+
+#: megengine.functional.elemwise.mul:36 of
 msgid "实际案例"
 msgstr "实际案例"
-
-#: megengine.functional.elemwise.mul:43 of
-msgid "The `*` operator can be used as a shorthand for :func:`~.functional.mul` on tensors."
-msgstr "`*` 运算符可以作为 :func:`~.functional.mul` 在张量上的简化写法。"
 
 #~ msgid "Element-wise `multiplication`."
 #~ msgstr "逐元素相乘。"
