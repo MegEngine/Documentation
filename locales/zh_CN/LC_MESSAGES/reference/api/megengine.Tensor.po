@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-05-09 07:20\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-07-27 05:31\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -26,233 +26,269 @@ msgstr "megengine.Tensor"
 msgid "A tensor object represents a multidimensional, homogeneous array of fixed-size items."
 msgstr "一个张量对象表示固定大小元素的多维同构数组。"
 
+#: megengine.tensor.Tensor:3 of
+msgid "Tensor is the primary MegEngine data structure. Data type(dtype) describes the format of each element, such as ``float32``, ``int8`` and so on, see :ref:`tensor-dtype` for more details. It is similar to :class:`numpy.ndarray` but not the same in the design. For example, GPU devices can be used to store Tensors and execute calculations in MegEngine. The concept of `view <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_ does not exist in MegEngine so indexing and other behaviors might be different with NumPy. All manipulations and operations on/between Tensors could be found in the :mod:`~.megengine.functional` module. Keep in mind that they are **not in-place**, a new Tensor will always be returned and the original data will remain constant."
+msgstr ""
+
+#: megengine.tensor.Tensor:14 of
+msgid "For more information, refer to the :ref:`tensor-guide` topic."
+msgstr ""
+
 #: megengine.tensor.Tensor of
 msgid "参数"
 msgstr "参数"
 
-#: megengine.tensor.Tensor:4 of
-msgid "The value of returned Tensor."
-msgstr "返回张量的值。"
+#: megengine.tensor.Tensor:17 of
+msgid "The data used for construcing Tensor. Tensor could be constructed from a Python :class:`list` / :class:`tuple` or sequence; a NumPy :class:`~.numpy.ndarray` data structure; MegEngine builtin methods and so on. Refer to :ref:`tensor-creation` for more details."
+msgstr ""
 
-#: megengine.tensor.Tensor:7 of
-msgid "The dtype of returned Tensor. Uses data's dtype if not specified."
-msgstr "张量的类型。如果没有特别指定，则使用输入数据的类型。"
+#: megengine.tensor.Tensor:23 of
+msgid "The data type of returned Tensor. Infer from ``data`` if not specified."
+msgstr ""
 
-#: megengine.tensor.Tensor:9 of
+#: megengine.tensor.Tensor:26 of
 msgid "The desired device of returned Tensor. Uses :func:`get_default_device` if not specified."
 msgstr "张量的所在设备。如果没有特别指定则为 :func:`get_default_device` 返回值。"
 
-#: megengine.tensor.Tensor:11 of
-msgid "Whether make it a ``ImutableTensor`` in tracing mode."
-msgstr "是否在 tracing 的模式下作为一个不可变张量。"
+#: megengine.tensor.Tensor:29 of
+msgid "Whether make it a ``ImutableTensor`` in tracing mode, refer to :class:`.jit.trace`."
+msgstr ""
 
-#: megengine.tensor.Tensor:13 of
+#: megengine.tensor.Tensor:31 of
 msgid "Whether cache it for memory sharing."
 msgstr "是否为了内存共享缓存张量。"
 
-#: megengine.tensor.Tensor:15 of
+#: megengine.tensor.Tensor:33 of
 msgid "Used to improve convenience in graph operation on dumped model."
 msgstr "张量的名字可用来简化存储的模型上的图操作。"
+
+#: megengine.tensor.Tensor:35 of
+msgid "Used to indicate which memory format Tensor uses. It will not affect actual memory order or stride, but may affect some operators related to indexing and dimension. Only support \"default\", \"nchw\" and \"nhwc\"."
+msgstr ""
+
+#: megengine.tensor.Tensor:40 of
+msgid "There are some methods like :meth:`~.Tensor.reshape` / :meth:`~.Tensor.flatten` / :meth:`~.Tensor.transpose` / :meth:`~.Tensor.min` / :meth:`~.Tensor.max` / :meth:`~.Tensor.mean` / :meth:`~.Tensor.sum` / :meth:`~.Tensor.prod` implemented in ``Tensor`` class for convenience and historical reasons. But other methods implemented in the :mod:`~.megengine.functional` module will not be added here anymore, it is hard for maintaining and too many candidates will affect code completion experience."
+msgstr ""
 
 #: ../../source/reference/api/megengine.Tensor.rst:11
 msgid "Attributes"
 msgstr "属性"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`T <megengine.Tensor.T>`\\"
 msgstr ":py:obj:`T <megengine.Tensor.T>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "alias of :attr:`~.Tensor.transpose`."
 msgstr ":attr:`~.Tensor.transpose` 的别名。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`device <megengine.Tensor.device>`\\"
 msgstr ":py:obj:`device <megengine.Tensor.device>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a string represents the device a :class:`~.Tensor` storaged on."
 msgstr "返回一个字符串，表示当前 :class:`~.Tensor` 所存储在的设备。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`dmap_callback <megengine.Tensor.dmap_callback>`\\"
 msgstr ":py:obj:`dmap_callback <megengine.Tensor.dmap_callback>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`dtype <megengine.Tensor.dtype>`\\"
 msgstr ":py:obj:`dtype <megengine.Tensor.dtype>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a :class:`numpy.dtype` object represents the data type of a :class:`~.Tensor`."
 msgstr "返回一个 :class:`numpy.dtype` 对象，表示当前 :class:`~.Tensor` 的数据类型。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
+msgid ":py:obj:`format <megengine.Tensor.format>`\\"
+msgstr ""
+
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>
+msgid "rtype"
+msgstr ""
+
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
+msgid ":py:class:`str`"
+msgstr ":py:class:`str`"
+
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`grad <megengine.Tensor.grad>`\\"
 msgstr ":py:obj:`grad <megengine.Tensor.grad>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`name <megengine.Tensor.name>`\\"
 msgstr ":py:obj:`name <megengine.Tensor.name>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`ndim <megengine.Tensor.ndim>`\\"
 msgstr ":py:obj:`ndim <megengine.Tensor.ndim>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns the number of dimensions of self :class:`~.Tensor`."
 msgstr "返回自身 :class:`~.Tensor` 的维数。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`qparams <megengine.Tensor.qparams>`\\"
 msgstr ":py:obj:`qparams <megengine.Tensor.qparams>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a :class:`~.QParams` object containing quantization params of a :class:`~.Tensor`."
 msgstr "返回一个 :class:`~.QParams` 对象，其中包含当前 :class:`~.Tensor` 的量化参数。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`requires_grad <megengine.Tensor.requires_grad>`\\"
 msgstr ":py:obj:`requires_grad <megengine.Tensor.requires_grad>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`shape <megengine.Tensor.shape>`\\"
 msgstr ":py:obj:`shape <megengine.Tensor.shape>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a :class:`tuple` or a :class:`~.Tensor` represents tensor dimensions."
 msgstr "返回一个 :class:`tuple` 或 :class:`~.Tensor`,  表示当前张量的维度信息。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`size <megengine.Tensor.size>`\\"
 msgstr ":py:obj:`size <megengine.Tensor.size>`\\"
 
-#: ../../source/reference/api/megengine.Tensor.rst:52:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns the size of the self :class:`~.Tensor`."
 msgstr "返回当前 :class:`~.Tensor` 的大小。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:54
+#: ../../source/reference/api/megengine.Tensor.rst:57
 msgid "Methods"
 msgstr "方法"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`astype <megengine.Tensor.astype>`\\ \\(dtype\\)"
 msgstr ":py:obj:`astype <megengine.Tensor.astype>`\\ \\(dtype\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns a :class:`Tensor` with the same data and number of elements with the specified :attr:`~.Tensor.dtype`."
 msgstr "返回一个含有完全相同的数据和元素数目，但是数据类型被 :attr:`~.Tensor.dtype` 指定的新 :class:`Tensor`. "
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`detach <megengine.Tensor.detach>`\\ \\(\\)"
 msgstr ":py:obj:`detach <megengine.Tensor.detach>`\\ \\(\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns a new :class:`~.Tensor`, detached from the current graph."
 msgstr "返回一个与当前图解绑后的新 :class:`~.Tensor` ."
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`flatten <megengine.Tensor.flatten>`\\ \\(\\)"
 msgstr ":py:obj:`flatten <megengine.Tensor.flatten>`\\ \\(\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.flatten`."
 msgstr "参考 :func:`~.flatten`."
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid ":py:obj:`graph <megengine.Tensor.graph>`\\"
+msgstr ""
+
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`item <megengine.Tensor.item>`\\ \\(\\*args\\)"
 msgstr ":py:obj:`item <megengine.Tensor.item>`\\ \\(\\*args\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns the value of this :class:`~.Tensor` as a standard Python :class:`numbers.Number`."
 msgstr "以标准 Python :class:`numbers.Number` 类型返回当前 :class:`~.Tensor` 元素的值。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`max <megengine.Tensor.max>`\\ \\(\\[axis\\, keepdims\\]\\)"
 msgstr ":py:obj:`max <megengine.Tensor.max>`\\ \\(\\[axis\\, keepdims\\]\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid "Returns the max value of each row of the input tensor in the given dimension ``axis``."
-msgstr "返回当前张量在给定轴上所有元素求最大值后的结果。"
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid "See :func:`~.max`."
+msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`mean <megengine.Tensor.mean>`\\ \\(\\[axis\\, keepdims\\]\\)"
 msgstr ":py:obj:`mean <megengine.Tensor.mean>`\\ \\(\\[axis\\, keepdims\\]\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid "Returns the mean value of each row of the input tensor in the given dimension ``axis``."
-msgstr "返回当前张量在给定轴上所有元素求平均值后的结果。"
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid "See :func:`~.mean`."
+msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`min <megengine.Tensor.min>`\\ \\(\\[axis\\, keepdims\\]\\)"
 msgstr ":py:obj:`min <megengine.Tensor.min>`\\ \\(\\[axis\\, keepdims\\]\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid "Returns the min value of each row of the input tensor in the given dimension ``axis``."
-msgstr "返回当前张量在给定轴上所有元素求最小值后的结果。"
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid "See :func:`~.min`."
+msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`numpy <megengine.Tensor.numpy>`\\ \\(\\)"
 msgstr ":py:obj:`numpy <megengine.Tensor.numpy>`\\ \\(\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns self :class:`~.Tensor` as a :class:`numpy.ndarray`."
 msgstr "返回一个将当前 :class:`~.Tensor` 转换为 :class:`numpy.ndarray` 后的结果。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`prod <megengine.Tensor.prod>`\\ \\(\\[axis\\, keepdims\\]\\)"
 msgstr ":py:obj:`prod <megengine.Tensor.prod>`\\ \\(\\[axis\\, keepdims\\]\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid "Returns the product of each row of the input tensor in the given dimension ``axis``."
-msgstr "返回当前张量在给定轴上所有元素求乘积后的结果。"
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid "See :func:`~.prod`."
+msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`reset_zero <megengine.Tensor.reset_zero>`\\ \\(\\)"
 msgstr ":py:obj:`reset_zero <megengine.Tensor.reset_zero>`\\ \\(\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`reshape <megengine.Tensor.reshape>`\\ \\(\\*args\\)"
 msgstr ":py:obj:`reshape <megengine.Tensor.reshape>`\\ \\(\\*args\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.reshape`."
 msgstr "参考 :func:`~.reshape`."
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`set_value <megengine.Tensor.set_value>`\\ \\(value\\)"
 msgstr ":py:obj:`set_value <megengine.Tensor.set_value>`\\ \\(value\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`sum <megengine.Tensor.sum>`\\ \\(\\[axis\\, keepdims\\]\\)"
 msgstr ":py:obj:`sum <megengine.Tensor.sum>`\\ \\(\\[axis\\, keepdims\\]\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid "Returns the sum of each row of the input tensor in the given dimension ``axis``."
-msgstr "返回当前张量在给定轴上所有元素求和后的结果。"
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid "See :func:`~.sum`."
+msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
-msgid ":py:obj:`to <megengine.Tensor.to>`\\ \\(device\\)"
-msgstr ":py:obj:`to <megengine.Tensor.to>`\\ \\(device\\)"
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid ":py:obj:`to <megengine.Tensor.to>`\\ \\(device\\, \\*\\[\\, \\_borrow\\]\\)"
+msgstr ""
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Copy self :class:`~.Tensor` to specified device."
 msgstr "将当前 :class:`~.Tensor` 拷贝到指定设备。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`tolist <megengine.Tensor.tolist>`\\ \\(\\)"
 msgstr ":py:obj:`tolist <megengine.Tensor.tolist>`\\ \\(\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns the tensor as a (nested) list."
 msgstr "返回将当前张量转换成（嵌套）列表后的结果。"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`transpose <megengine.Tensor.transpose>`\\ \\(\\*args\\)"
 msgstr ":py:obj:`transpose <megengine.Tensor.transpose>`\\ \\(\\*args\\)"
 
-#: ../../source/reference/api/megengine.Tensor.rst:105:<autosummary>:1
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.transpose`."
 msgstr "参考 :func:`~.transpose`."
+
+#: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
+msgid ":py:obj:`var <megengine.Tensor.var>`\\"
+msgstr ""
 
 #~ msgid ""
 #~ "基类：:class:`Tensor`, "
@@ -273,4 +309,37 @@ msgstr "参考 :func:`~.transpose`."
 
 #~ msgid ":obj:`c_name <megengine.Tensor.c_name>`\\"
 #~ msgstr ":obj:`c_name <megengine.Tensor.c_name>`\\"
+
+#~ msgid "The value of returned Tensor."
+#~ msgstr "返回张量的值。"
+
+#~ msgid ""
+#~ "Returns the max value of each row"
+#~ " of the input tensor in the "
+#~ "given dimension ``axis``."
+#~ msgstr "返回当前张量在给定轴上所有元素求最大值后的结果。"
+
+#~ msgid ""
+#~ "Returns the mean value of each row"
+#~ " of the input tensor in the "
+#~ "given dimension ``axis``."
+#~ msgstr "返回当前张量在给定轴上所有元素求平均值后的结果。"
+
+#~ msgid ""
+#~ "Returns the min value of each row"
+#~ " of the input tensor in the "
+#~ "given dimension ``axis``."
+#~ msgstr "返回当前张量在给定轴上所有元素求最小值后的结果。"
+
+#~ msgid ""
+#~ "Returns the product of each row of"
+#~ " the input tensor in the given "
+#~ "dimension ``axis``."
+#~ msgstr "返回当前张量在给定轴上所有元素求乘积后的结果。"
+
+#~ msgid ""
+#~ "Returns the sum of each row of "
+#~ "the input tensor in the given "
+#~ "dimension ``axis``."
+#~ msgstr "返回当前张量在给定轴上所有元素求和后的结果。"
 
