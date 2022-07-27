@@ -2,27 +2,170 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-06-03 10:20\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-07-27 05:41\n"
 "Last-Translator: \n"
-"Language-Team: English\n"
 "Language: en_US\n"
+"Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.4.0\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.pow.po\n"
-"X-Crowdin-File-ID: 2240\n"
-"X-Crowdin-Language: en\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.pow.po\n"
+"X-Crowdin-File-ID: 2240\n"
 
 #: ../../source/reference/api/megengine.functional.pow.rst:2
 msgid "megengine.functional.pow"
 msgstr ""
 
 #: megengine.functional.elemwise.pow:1 of
-msgid "Element-wise `power`."
+msgid "Calculates an implementation-dependent approximation of exponentiation by raising each element :math:`x_i` (the base) of the input tensor :math:`x` to the power of :math:`y_i` (the exponent), where :math:`y_i` is the corresponding element of the input tensor :math:`y`."
 msgstr ""
+
+#: megengine.functional.elemwise.pow of
+msgid "参数"
+msgstr ""
+
+#: megengine.functional.elemwise.pow:6 of
+msgid "first input tensor whose elements correspond to the exponentiation base. Should have a numeric data type."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:8 of
+msgid "second input tensor whose elements correspond to the exponentiation exponent. Must be compatible with `x` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
+msgstr ""
+
+#: megengine.functional.elemwise.pow of
+msgid "返回类型"
+msgstr ""
+
+#: megengine.functional.elemwise.pow:10 of
+msgid ":py:class:`~megengine.tensor.Tensor`"
+msgstr ""
+
+#: megengine.functional.elemwise.pow of
+msgid "返回"
+msgstr ""
+
+#: megengine.functional.elemwise.pow:11 of
+msgid "A tensor containing the element-wise results. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:15 of
+msgid "The unary ``**`` operator can be used as a shorthand for ``pow`` on tensors."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:17 of
+msgid "Special cases"
+msgstr ""
+
+#: megengine.functional.elemwise.pow:19 of
+msgid "For floating-point operands,"
+msgstr ""
+
+#: megengine.functional.elemwise.pow:21 of
+msgid "If :math:`x_i` is not equal to ``1`` and :math:`y_i` is ``NaN``, the result is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:22 of
+msgid "If :math:`y_i` is ``+0``, the result is ``1``, even if ``x_i`` is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:23 of
+msgid "If :math:`y_i` is ``-0``, the result is ``1``, even if ``x_i`` is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:24 of
+msgid "If :math:`x_i` is ``NaN`` and ``y_i`` is not equal to ``0``, the result is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:25 of
+msgid "If ``abs(x_i)`` is greater than ``1`` and ``y_i`` is ``+infinity``, the result is ``+infinity``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:26 of
+msgid "If ``abs(x_i)`` is greater than ``1`` and ``y_i`` is ``-infinity``, the result is ``+0``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:27 of
+msgid "If ``abs(x_i)`` is ``1`` and ``y_i`` is ``+infinity``, the result is ``1``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:28 of
+msgid "If ``abs(x_i)`` is ``1`` and ``y_i`` is ``-infinity``, the result is ``1``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:29 of
+msgid "If ``x_i`` is ``1`` and ``y_i`` is not ``NaN``, the result is ``1``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:30 of
+msgid "If ``abs(x_i)`` is less than ``1`` and ``y_i`` is ``+infinity``, the result is ``+0``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:31 of
+msgid "If ``abs(x_i)`` is less than ``1`` and ``y_i`` is ``-infinity``, the result is ``+infinity``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:32 of
+msgid "If ``x_i`` is ``+infinity`` and ``y_i`` is greater than 0, the result is ``+infinity``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:33 of
+msgid "If ``x_i`` is ``+infinity`` and ``y_i`` is less than 0, the result is ``+0``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:34 of
+msgid "If ``x_i`` is ``-infinity``, ``y_i`` is greater than 0, and ``y_i`` is an odd integer value, the result is ``-infinity``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:35 of
+msgid "If ``x_i`` is ``-infinity``, ``y_i`` is greater than 0, and ``y_i`` is not an odd integer value, the result is ``+infinity``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:36 of
+msgid "If ``x_i`` is ``-infinity``, ``y_i`` is less than 0, and ``y_i`` is an odd integer value, the result is ``-0``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:37 of
+msgid "If ``x_i`` is ``-infinity``, ``y_i`` is less than 0, and ``y_i`` is not an odd integer value, the result is ``+0``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:38 of
+msgid "If ``x_i`` is ``+0`` and ``y_i`` is greater than 0, the result is ``+0``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:39 of
+msgid "If ``x_i`` is ``+0`` and ``y_i`` is less than 0, the result is ``+infinity``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:40 of
+msgid "If ``x_i`` is ``-0``, ``y_i`` is greater than 0, and ``y_i`` is an odd integer value, the result is ``-0``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:41 of
+msgid "If ``x_i`` is ``-0``, ``y_i`` is greater than 0, and ``y_i`` is not an odd integer value, the result is ``+0``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:42 of
+msgid "If ``x_i`` is ``-0``, ``y_i`` is less than 0, and ``y_i`` is an odd integer value, the result is ``-infinity``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:43 of
+msgid "If ``x_i`` is ``-0``, ``y_i`` is less than 0, and ``y_i`` is not an odd integer value, the result is ``+infinity``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:44 of
+msgid "If ``x_i`` is less than 0, ``x_i`` is a finite number, ``y_i`` is a finite number, and ``y_i`` is not an integer value, the result is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.pow:47 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Element-wise `power`."
+#~ msgstr "逐元素进行指数运算。"
 
