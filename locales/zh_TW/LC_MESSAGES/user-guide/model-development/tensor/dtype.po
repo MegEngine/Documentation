@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-28 12:17\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-07-27 05:48\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -278,123 +278,127 @@ msgstr "crwdns87847:0:any:crwdnd87847:0:class:crwdne87847:0"
 msgid "``float64``"
 msgstr "crwdns87849:0crwdne87849:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:108
-msgid "IEEE. Ieee standard for floating-point arithmetic. IEEE Std 754-2019 (Revision of IEEE 754-2008), pages 1–84, 2019. doi:10.1109/IEEESTD.2019.8766229."
-msgstr "crwdns87851:0crwdne87851:0"
-
 #: ../../source/user-guide/model-development/tensor/dtype.rst:109
 msgid "新增对 ``uint16`` 类型的支持。"
 msgstr "crwdns88679:0crwdne88679:0"
 
 #: ../../source/user-guide/model-development/tensor/dtype.rst:114
-msgid "并不是所有的已有算子都支持 MegEngine 数据类型之间的计算（仅保证 ``float32`` 类型全部可用）。"
-msgstr "crwdns87853:0crwdne87853:0"
+msgid "并不是所有的已有算子都支持上述 MegEngine 数据类型之间的计算（仅保证 ``float32`` 类型全部可用）。 这可能对一些实验或测试性的样例代码造成了不便，例如 :func:`~.matmul` 运算不支持输入均为 ``int32`` 类型， 用户如果希望两个 ``int32`` 类型的矩阵能够进行矩阵乘法，则需要手动地对它们进行显式类型转换："
+msgstr "crwdns93156:0:func:crwdne93156:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:118
+#: ../../source/user-guide/model-development/tensor/dtype.rst:125
+msgid "类似的情况可能会让人产生疑惑，已有算子为什么不支持所有的数据类型？理想情况下应当如此。 但对各种数据类型的适配和优化会造成代码体积的膨胀，因此一般只对最常见的数据类型进行支持。 继续以 ``int32`` 的矩阵乘法为例，在实际的矩阵乘情景中其实很少使用到 ``int32`` 类型， 原因包括计算结果容易溢出等等，目前最常见的是 ``float32`` 类型，也是算子支持最广泛的类型。"
+msgstr "crwdns93158:0crwdne93158:0"
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:130
+msgid "*注意：上述类型转换将会导致精度丢失，使用者需要考虑到其影响。*"
+msgstr "crwdns93160:0crwdne93160:0"
+
+#: ../../source/user-guide/model-development/tensor/dtype.rst:134
 msgid "我们会在 :mod:`megengine.quantization` 模块中提到对量化数据类型的支持。"
 msgstr "crwdns83263:0:mod:crwdne83263:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:123
+#: ../../source/user-guide/model-development/tensor/dtype.rst:139
 msgid "默认数据类型"
 msgstr "crwdns87855:0crwdne87855:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:125
-msgid "MegEngine 中对 Tensor 默认数据类型对定义如下："
-msgstr "crwdns87857:0crwdne87857:0"
+#: ../../source/user-guide/model-development/tensor/dtype.rst:141
+msgid "MegEngine 中对 Tensor 默认数据类型的定义如下："
+msgstr "crwdns93162:0crwdne93162:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:127
+#: ../../source/user-guide/model-development/tensor/dtype.rst:143
 msgid "默认浮点数据类型为 ``float32``;"
 msgstr "crwdns87859:0crwdne87859:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:128
+#: ../../source/user-guide/model-development/tensor/dtype.rst:144
 msgid "默认整型数据类型为 ``int32``;"
 msgstr "crwdns87861:0crwdne87861:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:129
+#: ../../source/user-guide/model-development/tensor/dtype.rst:145
 msgid "默认索引数据类型为 ``int32``."
 msgstr "crwdns87863:0crwdne87863:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:134
+#: ../../source/user-guide/model-development/tensor/dtype.rst:150
 msgid "dtype 作为参数使用"
 msgstr "crwdns83265:0crwdne83265:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:136
+#: ../../source/user-guide/model-development/tensor/dtype.rst:152
 msgid ":class:`~.Tensor` 初始化时以及调用 :ref:`创建 Tensor <tensor-creation>` 函数时可接受 ``dtype`` 参数，用来指定数据类型："
 msgstr "crwdns83267:0:class:crwdnd83267:0:ref:crwdne83267:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:144
+#: ../../source/user-guide/model-development/tensor/dtype.rst:160
 msgid "如果使用已经存在的数据来创建 Tensor 而不指定 ``dtype``, 则 Tensor 的数据类型将根据 :ref:`default-data-types` 推导："
 msgstr "crwdns87865:0:ref:crwdne87865:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:151
+#: ../../source/user-guide/model-development/tensor/dtype.rst:167
 msgid "如果使用不支持类型的 NumPy 数组作为输入创建 MegEngine Tensor, 可能会出现非预期行为。 因此最好在做类似转换时每次都指定 ``dtype`` 参数，或先转换 NumPy 数组为支持的数据类型。"
 msgstr "crwdns83281:0crwdne83281:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:154
+#: ../../source/user-guide/model-development/tensor/dtype.rst:170
 msgid "另外还可以使用 :meth:`~.Tensor.astype` 方法得到转换数据类型后的 Tensor（原 Tensor 不变）："
 msgstr "crwdns83283:0:meth:crwdne83283:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:162
+#: ../../source/user-guide/model-development/tensor/dtype.rst:178
 msgid "类型提升规则"
 msgstr "crwdns83285:0crwdne83285:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:166
+#: ../../source/user-guide/model-development/tensor/dtype.rst:182
 msgid "根据 :ref:`mep-0003`, 类型提升规则应当参考《数组 API 标准》 中的 `相关规定 <https://data-apis.org/array-api/latest/API_specification/type_promotion.html>`_ ："
 msgstr "crwdns83287:0:ref:crwdne83287:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:172
+#: ../../source/user-guide/model-development/tensor/dtype.rst:188
 msgid "多个不同数据类型的 Tensor 或 Python 标量作为操作数参与运算时， 所返回的结果类型由上图展示的关系决定—— 沿着箭头方向提升，汇合至最近的数据类型，将其作为返回类型。"
 msgstr "crwdns83289:0crwdne83289:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:176
+#: ../../source/user-guide/model-development/tensor/dtype.rst:192
 msgid "决定类型提升的关键是参与运算的数据的类型，而不是它们的值；"
 msgstr "crwdns83291:0crwdne83291:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:177
+#: ../../source/user-guide/model-development/tensor/dtype.rst:193
 msgid "图中的虚线表示 Python 标量的行为在溢出时未定义；"
 msgstr "crwdns83293:0crwdne83293:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:178
+#: ../../source/user-guide/model-development/tensor/dtype.rst:194
 msgid "布尔型、整数型和浮点型 ``dtypes`` 之间未连接，表明混合类型提升未定义。"
 msgstr "crwdns83295:0crwdne83295:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:180
+#: ../../source/user-guide/model-development/tensor/dtype.rst:196
 msgid "在 MegEngine 中，由于尚未支持《标准》中的所有类型，当前提升规则如下图所示："
 msgstr "crwdns83297:0crwdne83297:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:185
+#: ../../source/user-guide/model-development/tensor/dtype.rst:201
 msgid "遵循 **类型优先** 的原则，存在 bool -> int -> float 的混合类型提升规则；"
 msgstr "crwdns83299:0crwdne83299:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:186
+#: ../../source/user-guide/model-development/tensor/dtype.rst:202
 msgid "当 Python 标量类型与 Tensor 进行混合运算时，转换成 Tensor 数据类型；"
 msgstr "crwdns83301:0crwdne83301:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:187
+#: ../../source/user-guide/model-development/tensor/dtype.rst:203
 msgid "布尔型 ``dtype`` 与其它类型之间未连接，表明相关混合类型提升未定义。"
 msgstr "crwdns83303:0crwdne83303:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:191
+#: ../../source/user-guide/model-development/tensor/dtype.rst:207
 msgid "这里讨论的类型提升规则主要适用于 :ref:`element-wise-operations` 的情况。"
 msgstr "crwdns83305:0:ref:crwdne83305:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:193
+#: ../../source/user-guide/model-development/tensor/dtype.rst:209
 msgid "举例如下， ``uint8`` 和 ``int8`` 类型 Tensor 运算会返回 ``int16`` 类型 Tensor:"
 msgstr "crwdns83307:0crwdne83307:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:200
+#: ../../source/user-guide/model-development/tensor/dtype.rst:216
 msgid "``int16`` 和 ``float32`` 类型 Tensor 运算会返回 ``float32`` 类型 Tensor:"
 msgstr "crwdns83309:0crwdne83309:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:207
+#: ../../source/user-guide/model-development/tensor/dtype.rst:223
 msgid "Python 标量和 Tensor 混合运算时，在种类一致时，会将 Python 标量转为相应的 Tensor 数据类型："
 msgstr "crwdns83311:0crwdne83311:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:214
+#: ../../source/user-guide/model-development/tensor/dtype.rst:230
 msgid "注意，如果此时 Python 标量是 ``float`` 类型，而 Tensor 为 ``int``, 则按照类型优先原则提升："
 msgstr "crwdns83313:0crwdne83313:0"
 
-#: ../../source/user-guide/model-development/tensor/dtype.rst:221
+#: ../../source/user-guide/model-development/tensor/dtype.rst:237
 msgid "此时 Python 标量通过使用 :ref:`default-data-types` 转为了 ``float32`` Tensor."
 msgstr "crwdns87867:0:ref:crwdne87867:0"
 
@@ -466,4 +470,22 @@ msgstr "crwdns87867:0:ref:crwdne87867:0"
 #~ "Numpy array dtype -> MegEngine Tensor"
 #~ " dtype (Keep the same, provided that"
 #~ " the type is supported)"
+
+#~ msgid ""
+#~ "IEEE. Ieee standard for floating-point"
+#~ " arithmetic. IEEE Std 754-2019 (Revision"
+#~ " of IEEE 754-2008), pages 1–84, 2019."
+#~ " doi:10.1109/IEEESTD.2019.8766229."
+#~ msgstr ""
+#~ "IEEE. Ieee standard for floating-point"
+#~ " arithmetic. IEEE Std 754-2019 (Revision"
+#~ " of IEEE 754-2008), pages 1–84, 2019."
+#~ " doi:10.1109/IEEESTD.2019.8766229."
+
+#~ msgid "并不是所有的已有算子都支持 MegEngine 数据类型之间的计算（仅保证 ``float32`` 类型全部可用）。"
+#~ msgstr ""
+#~ "Not all existing operators support "
+#~ "computation between MegEngine data types "
+#~ "(only ``float32`` types are guaranteed "
+#~ "to be available)."
 
