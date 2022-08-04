@@ -69,6 +69,7 @@ Manipulation Functions
    reshape
    flatten
    transpose
+   swapaxes
    broadcast_to
    expand_dims
    squeeze
@@ -412,16 +413,33 @@ Distributed functions
    :toctree: api
    :nosignatures:
 
+   all_gather
    all_reduce_max
    all_reduce_min
    all_reduce_sum
+   all_to_all
    broadcast
+   reduce_scatter_sum
+   collective_comm
    remote_send
    remote_recv
-   all_gather
-   all_to_all
    reduce_sum
    gather
    scatter
-   reduce_scatter_sum
+   
+.. py:module:: megengine.functional.external
+.. currentmodule:: megengine.functional.external
 
+.. _external-functions:
+
+External functions
+---------------------
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   extern_opr_subgraph
+   tensorrt_runtime_opr
+   cambricon_runtime_opr
+   atlas_runtime_opr
+   magicmind_runtime_opr

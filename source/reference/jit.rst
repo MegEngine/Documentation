@@ -12,6 +12,7 @@ megengine.jit
    :nosignatures:
 
    trace
+   exclude_from_trace
 
 Trace Config
 ------------

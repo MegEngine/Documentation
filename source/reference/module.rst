@@ -99,6 +99,17 @@ Normalization Layers
    LayerNorm
    LocalResponseNorm
 
+Recurrent Layers
+~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   RNN
+   RNNCell
+   LSTM
+   LSTMCell
+
 Linear Layers
 ~~~~~~~~~~~~~
 .. autosummary::
@@ -131,6 +142,10 @@ Vision Layers
    :nosignatures:
 
    PixelShuffle
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
 
 Fused operations
 ~~~~~~~~~~~~~~~~
@@ -215,3 +230,19 @@ Operations
    QuantStub
    DequantStub
 
+
+.. py:module:: megengine.module.external
+.. currentmodule:: megengine.module.external
+
+External Layers
+~~~~~~~~~~~~~~~
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   ExternOprSubgraph
+   TensorrtRuntimeSubgraph
+   CambriconRuntimeSubgraph
+   AtlasRuntimeSubgraph
+   MagicMindRuntimeSubgraph
