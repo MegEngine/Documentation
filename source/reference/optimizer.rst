@@ -24,6 +24,8 @@ megengine.optimizer
    Adam
    Adagrad
    Adadelta
+   LAMB
+   LAMBFp16
 
 学习率调整
 ----------

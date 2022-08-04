@@ -72,6 +72,7 @@ Device
    get_default_device
    set_default_device
    get_mem_status_bytes
+   get_cuda_device_property
    get_cuda_compute_capability
    get_allocated_memory
    get_reserved_memory
@@ -80,6 +81,15 @@ Device
    reset_max_memory_stats
    set_prealloc_config
    coalesce_free_memory
+
+.. TODO: These interfaces are not called as expected now:
+
+   megengine.device.is_cambricon_available
+   megengine.device.is_atlas_available
+   megengine.device.is_rocm_available
+   megengine.device.what_is_xpu
+
+   Should could be called in ``megengine.xxx``.
 
 .. _logger:
 

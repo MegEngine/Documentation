@@ -23,6 +23,8 @@ megengine.distributed
    Group
    init_process_group
    new_group
+   group_barrier
+   override_backend
    is_distributed
    get_backend
    get_client
@@ -30,7 +32,7 @@ megengine.distributed
    get_py_server_addr
    get_rank
    get_world_size
-   group_barrier
+
 
 运行器（Launcher）
 ------------------
