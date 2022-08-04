@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2022, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.10\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-08-04 09:20\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/amp/nhwc.po\n"
+"X-Crowdin-File-ID: 8448\n"
+"Language: zh_CN\n"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:5
 msgid "使用 NHWC 格式进一步提速"
@@ -26,22 +27,15 @@ msgid "该功能目前仍不完善，支持的模型种类有限，欢迎积极�
 msgstr ""
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:11
-msgid ""
-"在 :ref:`amp-guide` 文档中，我们介绍了基础的 AMP "
-"加速功能，这是一种代价低、效果好的训练速度提升方法，在大部分卷积神经网络上都能有可观的作用。本文则会在此基础上介绍一种代价稍高、限制更大，但效果能更好的提速方法。"
+msgid "在 :ref:`amp-guide` 文档中，我们介绍了基础的 AMP 加速功能，这是一种代价低、效果好的训练速度提升方法，在大部分卷积神经网络上都能有可观的作用。本文则会在此基础上介绍一种代价稍高、限制更大，但效果能更好的提速方法。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:13
-msgid ""
-"我们知道目前在训练大部分视觉领域的卷积神经网络时，输入都是 NCHW 格式的， 然而在推理部署时，往往会采用 NHWC、NHWCD4 "
-"等等完全不同的输入格式，这是因为硬件和软件算法层面都能从这些格式上获得更多的性能加速。所以我们为什么不能在训练时也用上这些格式呢？"
+msgid "我们知道目前在训练大部分视觉领域的卷积神经网络时，输入都是 NCHW 格式的， 然而在推理部署时，往往会采用 NHWC、NHWCD4 等等完全不同的输入格式，这是因为硬件和软件算法层面都能从这些格式上获得更多的性能加速。所以我们为什么不能在训练时也用上这些格式呢？"
 msgstr ""
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:15
-msgid ""
-"目前已经较为成熟的方案是采用 NHWC 代替 NCHW "
-"成为训练时的内存格式进行计算，一方面需要对模型做的改动比较小，一方面性能的提升效果也足够不错，在 fp16 AMP 的基础上一般能再获得 22% "
-"以上的性能提升 [1]_。"
+msgid "目前已经较为成熟的方案是采用 NHWC 代替 NCHW 成为训练时的内存格式进行计算，一方面需要对模型做的改动比较小，一方面性能的提升效果也足够不错，在 fp16 AMP 的基础上一般能再获得 22% 以上的性能提升 [1]_。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:17
@@ -73,9 +67,7 @@ msgid "后面的训练部分和基础的 AMP 用法没有区别："
 msgstr ""
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:62
-msgid ""
-"在实际计算时，会根据算子输入 Tensor 的 format 类型做相应的处理，并给输出加上正确的 format，从而使得网络能一步步始终使用 "
-"NHWC 格式进行计算。"
+msgid "在实际计算时，会根据算子输入 Tensor 的 format 类型做相应的处理，并给输出加上正确的 format，从而使得网络能一步步始终使用 NHWC 格式进行计算。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:64
@@ -91,8 +83,6 @@ msgid "NHWC 格式在部分网络中可能存在计算卡死的现象，还在�
 msgstr ""
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:69
-msgid ""
-"如果你在使用中有什么疑问或者发现一些具体的错误样例，欢迎提 `issue "
-"<https://github.com/MegEngine/MegEngine/issues>`_ ~"
+msgid "如果你在使用中有什么疑问或者发现一些具体的错误样例，欢迎提 `issue <https://github.com/MegEngine/MegEngine/issues>`_ ~"
 msgstr ""
 
