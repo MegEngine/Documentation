@@ -1,40 +1,35 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-02-17 05:59+0000\n"
+"POT-Creation-Date: 2022-02-14 16:12+0800\n"
+"PO-Revision-Date: 2022-08-04 09:26\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.SlidingWindow.po\n"
+"X-Crowdin-File-ID: 7028\n"
 
 #: ../../source/reference/api/megengine.module.SlidingWindow.rst:5
 msgid "SlidingWindow"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindow:1 of
-msgid ""
-"Apply a sliding window to input tensor and copy content in the window to "
-"corresponding output location. Assume input shape is :math:`(N, C, IH, "
-"IW)`, then output shape would be :math:`(N, C, OH, OW, window_h, "
-"window_w)` where :math:`(OH, OW)` would be computed from padding, stride,"
-" window and :math:`(IH, IW)`, as in convolution. For each output "
-"location, we have;"
+msgid "Apply a sliding window to input tensor and copy content in the window to corresponding output location. Assume input shape is :math:`(N, C, IH, IW)`, then output shape would be :math:`(N, C, OH, OW, window_h, window_w)` where :math:`(OH, OW)` would be computed from padding, stride, window and :math:`(IH, IW)`, as in convolution. For each output location, we have;"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindow:7 of
-msgid ""
-"out_{n, c, oh, ow, wh, ww} &= src_{n, c, ih+wh, iw+ww} \\\\\n"
-"\\text{where } & ih=-pad_h+oh \\times stride_h + (wh-1) \\times "
-"(dilation_h-1) \\\\\n"
-"               & iw=-pad_w+ow \\times stride_w + (ww-1) \\times "
-"(dilation_w-1)"
+msgid "out_{n, c, oh, ow, wh, ww} &= src_{n, c, ih+wh, iw+ww} \\\\\n"
+"\\text{where } & ih=-pad_h+oh \\times stride_h + (wh-1) \\times (dilation_h-1) \\\\\n"
+"               & iw=-pad_w+ow \\times stride_w + (ww-1) \\times (dilation_w-1)"
 msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindow of
@@ -59,6 +54,10 @@ msgstr ""
 
 #: megengine.module.sliding_window.SlidingWindow:23 of
 msgid "示例"
+msgstr ""
+
+#: megengine.module.sliding_window.SlidingWindow:35 of
+msgid "Outputs:"
 msgstr ""
 
 #~ msgid "Example:"
@@ -286,7 +285,4 @@ msgstr ""
 
 #~ msgid "Sets all parameters' grads to zero"
 #~ msgstr "将所有参数的梯度置0。"
-
-#~ msgid "Outputs:"
-#~ msgstr ""
 
