@@ -1,142 +1,66 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-04-20 05:28+0000\n"
+"POT-Creation-Date: 2022-04-20 12:44+0800\n"
+"PO-Revision-Date: 2022-08-04 09:19\n"
 "Last-Translator: \n"
-"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/pylite/struct.po\n"
+"X-Crowdin-File-ID: 8442\n"
+"Language: zh_CN\n"
 
 #: ../../source/reference/pylite/struct.rst:6
 msgid "megenginelite.struct"
 msgstr ""
 
-#: megenginelite.struct.LiteBackend:1 of
-msgid "The backend type enum, default only"
-msgstr ""
-
-#: megenginelite.struct.LiteDeviceType:1 of
-msgid "The backend device type enum"
-msgstr ""
-
-#: megenginelite.struct.LiteDeviceType:3 of
-msgid "compute and storage will base on the device"
-msgstr ""
-
-#: megenginelite.struct.LiteDataType:1 of
-msgid "The tensor data type enum"
-msgstr ""
-
-#: megenginelite.struct.LiteDataType:3 of
-msgid "half for float16, int for int32"
-msgstr ""
-
-#: megenginelite.struct.LiteTensorPhase:1 of
-msgid "The tensor type enum .. note:: LITE_IO for both LITE_INPUT and LITE_OUTPUT"
+#: megenginelite.struct.LiteBackend:1 megenginelite.struct.LiteDataType:1
+#: megenginelite.struct.LiteDeviceType:1 megenginelite.struct.LiteTensorPhase:1
+#: of
+msgid "An enumeration."
 msgstr ""
 
 #: megenginelite.struct.LiteIOType:1 of
-msgid ""
-"The input and output type enum, include SHAPE and VALUE sometimes user "
-"only need the shape of the output tensor"
+msgid "the input and output type, include SHAPE and VALUE sometimes user only need the shape of the output tensor"
 msgstr ""
 
 #: megenginelite.struct.LiteAlgoSelectStrategy:1 of
-msgid ""
-"Operation algorithm seletion strategy type enum, some operations have "
-"multi algorithms, different algorithm has different attribute, according "
-"to the strategy, the best algorithm will be selected."
+msgid "operation algorithm seletion strategy type, some operations have multi algorithms, different algorithm has different attribute, according to the strategy, the best algorithm will be selected."
+msgstr ""
+
+#: megenginelite.struct.LiteAlgoSelectStrategy:5 of
+msgid "Note: These strategies can be combined"
 msgstr ""
 
 #: megenginelite.struct.LiteAlgoSelectStrategy:7 of
-msgid ""
-"These strategies can be combined LITE_ALGO_HEURISTIC | LITE_ALGO_PROFILE "
-"means: if profile cache not valid, use heuristic instead"
+msgid "LITE_ALGO_HEURISTIC | LITE_ALGO_PROFILE means: if profile cache not valid, use heuristic instead"
 msgstr ""
 
-#: megenginelite.struct.LiteAlgoSelectStrategy:11 of
-msgid ""
-"LITE_ALGO_HEURISTIC | LITE_ALGO_REPRODUCIBLE means: heuristic choice the "
-"reproducible algo"
+#: megenginelite.struct.LiteAlgoSelectStrategy:10 of
+msgid "LITE_ALGO_HEURISTIC | LITE_ALGO_REPRODUCIBLE means: heuristic choice the reproducible algo"
 msgstr ""
 
-#: megenginelite.struct.LiteAlgoSelectStrategy:14 of
-msgid ""
-"LITE_ALGO_PROFILE | LITE_ALGO_REPRODUCIBLE means: profile the best "
-"algorithm from the reproducible algorithms set"
+#: megenginelite.struct.LiteAlgoSelectStrategy:13 of
+msgid "LITE_ALGO_PROFILE | LITE_ALGO_REPRODUCIBLE means: profile the best algorithm from the reproducible algorithms set"
 msgstr ""
 
-#: megenginelite.struct.LiteAlgoSelectStrategy:17 of
-msgid ""
-"LITE_ALGO_PROFILE | LITE_ALGO_OPTIMIZED means: profile the best algorithm"
-" form the optimzed algorithms, thus profile will process fast"
+#: megenginelite.struct.LiteAlgoSelectStrategy:16 of
+msgid "LITE_ALGO_PROFILE | LITE_ALGO_OPTIMIZED means: profile the best algorithm form the optimzed algorithms, thus profile will process fast"
 msgstr ""
 
-#: megenginelite.struct.LiteAlgoSelectStrategy:20 of
-msgid ""
-"LITE_ALGO_PROFILE | LITE_ALGO_OPTIMIZED | LITE_ALGO_REPRODUCIBLE means: "
-"profile the best algorithm form the optimzed and reproducible algorithms"
+#: megenginelite.struct.LiteAlgoSelectStrategy:19 of
+msgid "LITE_ALGO_PROFILE | LITE_ALGO_OPTIMIZED | LITE_ALGO_REPRODUCIBLE means: profile the best algorithm form the optimzed and reproducible algorithms"
 msgstr ""
 
 #: megenginelite.struct.LiteLogLevel:1 of
-msgid "Log level enum"
+msgid "DEBUG: The most verbose level, printing debugging info INFO: The default level WARN: Printing warnings ERROR: The least verbose level, printing errors only"
 msgstr ""
-
-#: megenginelite.struct.LiteLogLevel:5 of
-msgid "DEBUG: The most verbose level, printing debugging info"
-msgstr ""
-
-#: megenginelite.struct.LiteLogLevel:7 of
-msgid "INFO: The default level"
-msgstr ""
-
-#: megenginelite.struct.LiteLogLevel:9 of
-msgid "WARN: Printing warnings"
-msgstr ""
-
-#: megenginelite.struct.LiteLogLevel:11 of
-msgid "ERROR: The least verbose level, printing errors only"
-msgstr ""
-
-#~ msgid "An enumeration."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "the input and output type, include "
-#~ "SHAPE and VALUE sometimes user only "
-#~ "need the shape of the output "
-#~ "tensor"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "operation algorithm seletion strategy type,"
-#~ " some operations have multi algorithms, "
-#~ "different algorithm has different attribute,"
-#~ " according to the strategy, the best"
-#~ " algorithm will be selected."
-#~ msgstr ""
-
-#~ msgid "Note: These strategies can be combined"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "LITE_ALGO_HEURISTIC | LITE_ALGO_PROFILE means: "
-#~ "if profile cache not valid, use "
-#~ "heuristic instead"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "DEBUG: The most verbose level, printing"
-#~ " debugging info INFO: The default "
-#~ "level WARN: Printing warnings ERROR: The"
-#~ " least verbose level, printing errors "
-#~ "only"
-#~ msgstr ""
 
