@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:26\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-08-05 09:24\n"
 "Last-Translator: \n"
+"Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/customop.po\n"
 "X-Crowdin-File-ID: 8079\n"
-"Language: zh_TW\n"
 
 #: ../../source/user-guide/tools/customop.rst:5
 msgid "自定义算子（Custom Op）"
@@ -63,186 +63,186 @@ msgid "这段代码中，其首先 include Custom Op 头文件，然后使用两
 msgstr "crwdns82811:0crwdne82811:0"
 
 #: ../../source/user-guide/tools/customop.rst:79
-msgid "之后可以使用 Custom Op 所提供的 makefile 模板将 CUDA kernel 以及上面的 C++ 文件一起编译成一个库文件，我们将之命名为 matmul_scale.so. 然后在 python 中，我们可以编写如下的代码去使用它："
-msgstr "crwdns82813:0crwdne82813:0"
+msgid "之后可以使用 Custom Op 所提供的编译与加载函数 ``build_and_load`` 将 CUDA kernel 以及上面的 C++ 文件一起编译成一个库文件. 我们可以在 python 中，编写如下的代码去完成编译和加载的工作："
+msgstr "crwdns93164:0crwdne93164:0"
 
-#: ../../source/user-guide/tools/customop.rst:95
+#: ../../source/user-guide/tools/customop.rst:97
 msgid "当然，我们也可以将 Custom Op 与 MegEngine 已有的 Python 组件如 ``autodiff.Function`` 以及 ``module.Module`` 结合起来，以支持训练和构建更大规模的模型："
 msgstr "crwdns82815:0crwdne82815:0"
 
-#: ../../source/user-guide/tools/customop.rst:129
+#: ../../source/user-guide/tools/customop.rst:131
 msgid "接口介绍"
 msgstr "crwdns82817:0crwdne82817:0"
 
-#: ../../source/user-guide/tools/customop.rst:132
+#: ../../source/user-guide/tools/customop.rst:134
 msgid "属性推断函数"
 msgstr "crwdns82819:0crwdne82819:0"
 
-#: ../../source/user-guide/tools/customop.rst:134
+#: ../../source/user-guide/tools/customop.rst:136
 msgid "Custom Op 的输出 ``Tensor`` 属性推导主要是根据输入 ``Tensor`` 的一些属性（``Shape``，``DType``，``Device``）以及 Op 的参数来计算输出 ``Tensor`` 的对应相关属性。 其中 ``Shape`` 代表的是 ``Tensor`` 维度信息，``DType`` 对应 Tensor 的数据类型，``Device`` 表示这个 ``Tensor`` 在什么设备（cpu/gpu）上。 比如卷积中我们可以根据输入 ``Tensor`` 的 ``Shape`` 以及 ``stride``，``padding`` 等参数计算出输出 ``Tensor`` 的 ``Shape`` 信息。"
 msgstr "crwdns82821:0crwdne82821:0"
 
-#: ../../source/user-guide/tools/customop.rst:138
+#: ../../source/user-guide/tools/customop.rst:140
 msgid "这些输出属性推导的过程目前需要使用者以 C++ 函数的形式给出，而这些函数的函数签名（即函数的输入参数与返回值的类型）是固定的，其分别如下："
 msgstr "crwdns82823:0crwdne82823:0"
 
-#: ../../source/user-guide/tools/customop.rst:146
+#: ../../source/user-guide/tools/customop.rst:148
 msgid "我们编写自己 Custom Op 的相关属性推导函数时需要确保自己的相关函数的函数签名应该与上述例子中对应函数的函数签名保持一致。 这几个函数的函数签名基本是类似的，以 ``Shape`` 推导来说，其参数传入了输入的 ``Tensor`` 的 ``Shape`` 信息和其 ``param``，以及输出 ``Shape`` 的引用。 其中这两个 ``vector`` 的长度即分别为输入 ``Tensor`` 的数量和输出 ``Tensor`` 的数量。 我们在这个函数中可以计算出输出 ``Tensor`` ``Shape``，并将之赋值给对应引用。"
 msgstr "crwdns82825:0crwdne82825:0"
 
-#: ../../source/user-guide/tools/customop.rst:151
+#: ../../source/user-guide/tools/customop.rst:153
 msgid "**Device**"
 msgstr "crwdns82827:0crwdne82827:0"
 
-#: ../../source/user-guide/tools/customop.rst:153
+#: ../../source/user-guide/tools/customop.rst:155
 msgid "目前 Custom Op 支持的 ``Device`` 支持的设备类型包括 ``x86`` 和 ``cuda``. 我们可以像使用字符串的方式去使用它，下面是几个 ``Device`` 的使用案例。"
 msgstr "crwdns82829:0crwdne82829:0"
 
-#: ../../source/user-guide/tools/customop.rst:163
+#: ../../source/user-guide/tools/customop.rst:165
 msgid "而 Custom Op 还为输出 ``Tensor`` 的 ``Device`` 类型推导提供了一种默认的行为，即所有输出 ``Tensor`` 的 ``Device`` 都与第 0 个输入 ``Tensor`` 的 ``Device`` 类型相等。 如果没有输入 ``Tensor``，则所有输出 ``Tensor`` 的 ``Device`` 都为 ``x86``. 而在上面的 ``MatMulScale`` 的例子中，我们并没有为之定义 ``Device`` 推导函数，故而其就使用了这种默认的 ``Device`` 推导行为。"
 msgstr "crwdns82831:0crwdne82831:0"
 
-#: ../../source/user-guide/tools/customop.rst:167
+#: ../../source/user-guide/tools/customop.rst:169
 msgid "**DType**"
 msgstr "crwdns82833:0crwdne82833:0"
 
-#: ../../source/user-guide/tools/customop.rst:169
+#: ../../source/user-guide/tools/customop.rst:171
 msgid "目前 Custom Op 支持的 ``DType`` 支持的设备类型包括 ``float16``，``bfloat16``，``float32``，``uint8``，``int8``，``int16``，``uint16``，``int32``， 以及四种量化类型``qint8``，``quint8``，``qint16``，``qint32``.其中 ``quint8`` 是非对称量化数据类型，而其他三者是对称量化数据类型。 我们也可以像使用字符串的方式去使用它，下面是几个 ``DType`` 的使用案例。"
 msgstr "crwdns82835:0crwdne82835:0"
 
-#: ../../source/user-guide/tools/customop.rst:186
+#: ../../source/user-guide/tools/customop.rst:188
 msgid "与 ``Device`` 类似，而 Custom Op 也为输出 ``Tensor`` 的 ``DType`` 类型推导提供了一种默认的行为，即所有输出 ``Tensor`` 的 ``DType`` 都与第 0 个输入 ``Tensor`` 的 ``DType`` 类型相等。 如果没有输入 ``Tensor``，则所有输出 ``Tensor`` 的 ``DType`` 都为 ``float32``. 而在上面的 ``MatMulScale`` 的例子中，我们同样并没有为之定义 ``DType`` 推导函数，故而其也使用了这种默认的 ``DType`` 推导行为。"
 msgstr "crwdns82837:0crwdne82837:0"
 
-#: ../../source/user-guide/tools/customop.rst:190
+#: ../../source/user-guide/tools/customop.rst:192
 msgid "**Shape**"
 msgstr "crwdns82839:0crwdne82839:0"
 
-#: ../../source/user-guide/tools/customop.rst:192
+#: ../../source/user-guide/tools/customop.rst:194
 msgid "在 Custom Op 中我们可以以类似于 vector 或 C++ 原生数组的方式去构建和使用 ``Shape``，下面是几个 ``Shape`` 的使用案例。"
 msgstr "crwdns82841:0crwdne82841:0"
 
-#: ../../source/user-guide/tools/customop.rst:203
+#: ../../source/user-guide/tools/customop.rst:205
 msgid "Custom Op 也为 ``Shape`` 推导提供的默认的行为是，让所有输出 ``Tensor`` 的 ``Shape`` 都与第 0 个输入 ``Tensor`` 的 ``Shape`` 类型相等。 如果没有输入 ``Tensor``，则所有输出 ``Tensor`` 的 ``Shape`` 都为 ``[1]``. 而在上面的 ``MatMulScale`` 的例子中，显然默认的 ``Shape`` 推导函数不符合我们的需求，所以我们自行定义了我们同样并没有为之定义 ``DType`` 推导函数，故而其也使用了这种默认的 ``DType`` 推导行为。"
 msgstr "crwdns82843:0[1]crwdne82843:0"
 
-#: ../../source/user-guide/tools/customop.rst:208
+#: ../../source/user-guide/tools/customop.rst:210
 msgid "计算函数"
 msgstr "crwdns82845:0crwdne82845:0"
 
-#: ../../source/user-guide/tools/customop.rst:210
+#: ../../source/user-guide/tools/customop.rst:212
 msgid "Custom Op 的计算函数的主要功能其实就是如何调用我们已经编写好的 Kernel 的接口函数。 这些过程也是需要使用者以 C++ 函数的形式给出，而这个函数的函数签名也是固定的："
 msgstr "crwdns82847:0crwdne82847:0"
 
-#: ../../source/user-guide/tools/customop.rst:217
+#: ../../source/user-guide/tools/customop.rst:219
 msgid "同样的 Custom Op 的计算函数并无返回值，该函数传入输入 ``Tensor`` 以及 ``Param``，然后计算出输出 ``Tensor`` 的值并将之作为引用返回。 这里主要涉及到两个概念，分别是 ``Tensor`` 和 ``Param``，下面将分别对其进行介绍。"
 msgstr "crwdns82849:0crwdne82849:0"
 
-#: ../../source/user-guide/tools/customop.rst:220
+#: ../../source/user-guide/tools/customop.rst:222
 msgid "**Tensor**"
 msgstr "crwdns82851:0crwdne82851:0"
 
-#: ../../source/user-guide/tools/customop.rst:222
+#: ../../source/user-guide/tools/customop.rst:224
 msgid "Custom Op中的 ``Tensor`` 可以视为数据（``data``）以及数据的属性（即上面 ``Device``，``DType``，``Shape``）的集合。 我们可以用下面的代码去获取 ``Tensor`` 的相关信息："
 msgstr "crwdns82853:0crwdne82853:0"
 
-#: ../../source/user-guide/tools/customop.rst:236
+#: ../../source/user-guide/tools/customop.rst:238
 msgid "我们使用上述函数获取 ``Tensor`` 的相关属性如 ``Device``，``DType``，``Shape``，或者是一些更细节的信息如 ``Tensor`` 中元素的数量，``Tensor`` 中各个维度的 ``stride`` 等。 然后我们可以利用这些信息来帮助我们进行 kernel 的编写。"
 msgstr "crwdns82855:0crwdne82855:0"
 
-#: ../../source/user-guide/tools/customop.rst:239
+#: ../../source/user-guide/tools/customop.rst:241
 msgid "另外我们可以使用下面的代码去获取 ``Tensor`` 中所存储的数据："
 msgstr "crwdns82857:0crwdne82857:0"
 
-#: ../../source/user-guide/tools/customop.rst:246
+#: ../../source/user-guide/tools/customop.rst:248
 msgid "这里提供了两个 ``data()`` 函数，分别是不支持模板参数的和支持模板参数的，这两者均会返回实际数据的指针。"
 msgstr "crwdns82859:0crwdne82859:0"
 
-#: ../../source/user-guide/tools/customop.rst:248
+#: ../../source/user-guide/tools/customop.rst:250
 msgid "其中前者返回的是 ``void*`` 类型，我们使用时可以将之强制成转换成自己所需的实际类型，这提供给我们自行定义自己数据类型的能力。"
 msgstr "crwdns82861:0crwdne82861:0"
 
-#: ../../source/user-guide/tools/customop.rst:250
+#: ../../source/user-guide/tools/customop.rst:252
 msgid "而后者返回的是模板参数所指定的类型的指针，比如在此例中模板参数是 ``float``，所以其返回 ``float*`` 类型的指针。 在这种情况下，Custom Op 会检测模板参数类型的正确性，即此时 ``Tensor`` 中实际存储的数据类型也必须是 ``float`` 类型，否则就会出错。 而获取到的指针则指向一片这个 ``Tensor`` 的 ``Device`` 属性所对应的设备上的内存。"
 msgstr "crwdns82863:0crwdne82863:0"
 
-#: ../../source/user-guide/tools/customop.rst:254
+#: ../../source/user-guide/tools/customop.rst:256
 msgid "在获取到这个原始指针之后，结合上面可以获取的诸如 ``Shape``，``stride`` 之类的信息，我们就可以去正常的去计算各个元素的下标，读取/存储数据，编写 kernel，完成计算。 不过下标计算总是繁琐而容易出错的，故而 Custom Op 中还提供了一个叫 ``TensorAccessor`` 的工具，允许我们可以以类似于 C++ 数组的方式访问 ``Tensor`` 中的对应元素。 下面这段代码展示了如何使用 ``TensorAccessor`` 去访问一个 4 维 ``Tensor`` 中第 ``(n, c, h, w)`` 个元素"
 msgstr "crwdns82865:0crwdne82865:0"
 
-#: ../../source/user-guide/tools/customop.rst:264
+#: ../../source/user-guide/tools/customop.rst:266
 msgid "这里的 ``accessor()`` 函数一般需要提供两个模板参数，其中第一个参数表示 ``Tensor`` 的数据类型，第二个参数表示 ``Tensor`` 的维度。 在此例中，因为 ``tensor`` 是一个 ``float`` 类型的 4 维 ``Tensor``，故而此处这两个模板参数分别为 ``float`` 和 ``4``."
 msgstr "crwdns82867:0crwdne82867:0"
 
-#: ../../source/user-guide/tools/customop.rst:267
+#: ../../source/user-guide/tools/customop.rst:269
 msgid "如果想要使用 ``TensorAccessor`` 的话，我们可以将之作为 kernel 的参数传递给 kernel，然后在 kernel 内部去使用 accessor 去访问数据。 当然，使用 ``TensorAccessor`` 相对于自行计算元素下标会引入一点额外的 overhead，大家可以根据自己的需要选择是否使用 ``TensorAccessor``."
 msgstr "crwdns82869:0crwdne82869:0"
 
-#: ../../source/user-guide/tools/customop.rst:270
+#: ../../source/user-guide/tools/customop.rst:272
 msgid "最后需要强调的一件事情是，为了方便进行内存管理，目前在 Custom Op 的代码中是不允许自己构造 ``Tensor`` 的。 MegEngine 中会自动的为 Custom Op 构造 ``Tensor``，分配内存，然后将构造好的 ``Tensor`` 传递给我们，我们再调用上述接口对 ``Tensor`` 进行操作。"
 msgstr "crwdns82871:0crwdne82871:0"
 
-#: ../../source/user-guide/tools/customop.rst:273
+#: ../../source/user-guide/tools/customop.rst:275
 msgid "**Param**"
 msgstr "crwdns82873:0crwdne82873:0"
 
-#: ../../source/user-guide/tools/customop.rst:275
+#: ../../source/user-guide/tools/customop.rst:277
 msgid "``Param`` 用于记录 Custom Op 的一些非 ``Tensor`` 的输入，比如卷积中的 padding，stride 等等。 其实际上是一个 ``map``，其 ``key`` 为 ``std::string`` 类型，表示某个 ``param`` 元素的名字, 而 ``value`` 为 ``ParamVal`` 类型，这个类可视为一个支持有限类型的 Any. 通过下面的代码可以简单的展示 ``ParamVal`` 的一些特性："
 msgstr "crwdns82875:0crwdne82875:0"
 
-#: ../../source/user-guide/tools/customop.rst:292
+#: ../../source/user-guide/tools/customop.rst:294
 msgid "目前 ``ParamVal`` 支持的类型包括 ``int32_t``，``uint32_t``，``int64_t``，``uint64_t``，``float``，``double``，``bool``，``std::string``，以及这些类型对应的 ``std::vector`` 类型（比如 ``std::vector<int32_t>``）。"
 msgstr "crwdns82877:0crwdne82877:0"
 
-#: ../../source/user-guide/tools/customop.rst:294
+#: ../../source/user-guide/tools/customop.rst:296
 msgid "``Param`` 可以使用 ``[]`` 运算符去根据名字获取 ``Param`` 中对应元素（``ParamVal`` 类型），我们可以以如下的方式去读写其中的数据："
 msgstr "crwdns82879:0crwdne82879:0"
 
-#: ../../source/user-guide/tools/customop.rst:302
+#: ../../source/user-guide/tools/customop.rst:304
 msgid "Custom Op 的注册"
 msgstr "crwdns82881:0crwdne82881:0"
 
-#: ../../source/user-guide/tools/customop.rst:304
+#: ../../source/user-guide/tools/customop.rst:306
 msgid "上面我们为 Custom Op 定义了诸如属性推导函数，计算函数等信息，然而这些信息是彼此孤立的，Custom Op 的注册会将这些信息组合成一个整体。"
 msgstr "crwdns82883:0crwdne82883:0"
 
-#: ../../source/user-guide/tools/customop.rst:306
+#: ../../source/user-guide/tools/customop.rst:308
 msgid "**Op 的注册**"
 msgstr "crwdns82885:0crwdne82885:0"
 
-#: ../../source/user-guide/tools/customop.rst:308
+#: ../../source/user-guide/tools/customop.rst:310
 msgid "我们为 Custom Op 提供了一个宏，``CUSTOM_OP_REG(your_op_name)``，使用这个宏我们可以定义一个指定名字的 Custom Op."
 msgstr "crwdns82887:0crwdne82887:0"
 
-#: ../../source/user-guide/tools/customop.rst:314
+#: ../../source/user-guide/tools/customop.rst:316
 msgid "**为 Op 添加输入输出**"
 msgstr "crwdns82889:0crwdne82889:0"
 
-#: ../../source/user-guide/tools/customop.rst:316
+#: ../../source/user-guide/tools/customop.rst:318
 msgid "我们可以使用 ``add_input()`` 函数为 Op 添加一个输入 ``Tensor``，使用 ``add_output()`` 函数为 Op 添加输出 ``Tensor`` 的信息。 也可以使用 ``add_inputs()`` 和 ``add_outputs()`` 去批量添加输入输出。"
 msgstr "crwdns82891:0crwdne82891:0"
 
-#: ../../source/user-guide/tools/customop.rst:331
+#: ../../source/user-guide/tools/customop.rst:333
 msgid "**为 Op 添加 Param**"
 msgstr "crwdns82893:0crwdne82893:0"
 
-#: ../../source/user-guide/tools/customop.rst:333
+#: ../../source/user-guide/tools/customop.rst:335
 msgid "我们可以使用 ``add_param()`` 函数为 Op 添加一个 ``Param`` 元素，其示例代码如下："
 msgstr "crwdns82895:0crwdne82895:0"
 
-#: ../../source/user-guide/tools/customop.rst:340
+#: ../../source/user-guide/tools/customop.rst:342
 msgid "在这里我们为 ``MatMulScale`` Op 添加了一个名为 \"scale\" 的参数，其默认值为 1.0f， 之后我们就可以在我们的相关属性推导函数和计算函数中使用 param[\"scale\"] 去访问这个参数。"
 msgstr "crwdns82897:0crwdne82897:0"
 
-#: ../../source/user-guide/tools/customop.rst:343
+#: ../../source/user-guide/tools/customop.rst:345
 msgid "**为 Op 添加属性推导与计算函数**"
 msgstr "crwdns82899:0crwdne82899:0"
 
-#: ../../source/user-guide/tools/customop.rst:345
+#: ../../source/user-guide/tools/customop.rst:347
 msgid "对于属性推导函数的添加，Custom Op 提供了 ``set_shape_infer()``，``set_device_infer()``， ``set_dtype_infer()`` 三个函数分别用于设置 ``Shape``，``Device``，``DType`` 的属性推导函数。 而对于计算函数，Custom Op 提供了 ``set_compute()`` 函数用于设置进行设置。 其中属性推导函数只可以调用相关接口添加一次，而 ``set_compute()`` 函数则可以多次调用以添加不同平台上的计算函数。 相关示例代码如"
 msgstr "crwdns82901:0crwdne82901:0"
 
-#: ../../source/user-guide/tools/customop.rst:360
+#: ../../source/user-guide/tools/customop.rst:362
 msgid "在这里 ``MatMulScale`` 算子并未使用默认的属性推导函数，而是分别调用相关接口为 ``Shape``，``Device``，``DType`` 的属性推导函数另行做了设置。 同时，这里还分别设置了 ``MatMulScale`` 在 ``x86`` 和 ``cuda`` 上的计算函数。"
 msgstr "crwdns82903:0crwdne82903:0"
 
