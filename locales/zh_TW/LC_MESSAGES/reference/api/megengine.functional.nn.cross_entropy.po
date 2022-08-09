@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:18\n"
+"POT-Creation-Date: 2022-07-26 13:50+0800\n"
+"PO-Revision-Date: 2022-08-05 09:24\n"
 "Last-Translator: \n"
+"Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.nn.cross_entropy.po\n"
 "X-Crowdin-File-ID: 7129\n"
-"Language: zh_TW\n"
 
 #: ../../source/reference/api/megengine.functional.nn.cross_entropy.rst:2
 msgid "megengine.functional.nn.cross\\_entropy"
@@ -27,22 +27,14 @@ msgid "Computes the multi-class cross entropy loss (using logits by default)."
 msgstr "crwdns69289:0crwdne69289:0"
 
 #: megengine.functional.loss.cross_entropy:3 of
-msgid "By default(``with_logitis`` is True), ``pred`` is assumed to be logits, class probabilities are given by softmax."
-msgstr "crwdns69291:0crwdne69291:0"
-
-#: megengine.functional.loss.cross_entropy:6 of
-msgid "It has better numerical stability compared with sequential calls to :func:`~.softmax` and :func:`~.cross_entropy`."
-msgstr "crwdns69293:0:func:crwdnd69293:0:func:crwdne69293:0"
-
-#: megengine.functional.loss.cross_entropy:8 of
 msgid "When using label smoothing, the label distribution is as follows:"
 msgstr "crwdns69295:0crwdne69295:0"
 
-#: megengine.functional.loss.cross_entropy:10 of
+#: megengine.functional.loss.cross_entropy:5 of
 msgid "y^{LS}_{k}=y_{k}\\left(1-\\alpha\\right)+\\alpha/K\n\n"
 msgstr "crwdns69297:0{LS}crwdnd69297:0{k}crwdnd69297:0{k}crwdne69297:0"
 
-#: megengine.functional.loss.cross_entropy:12 of
+#: megengine.functional.loss.cross_entropy:7 of
 msgid "where :math:`y^{LS}` and :math:`y` are new label distribution and origin label distribution respectively. k is the index of label distribution. :math:`\\alpha` is ``label_smooth`` and :math:`K` is the number of classes."
 msgstr "crwdns69299:0:math:crwdnd69299:0{LS}crwdnd69299:0:math:crwdnd69299:0:math:crwdnd69299:0:math:crwdne69299:0"
 
@@ -50,35 +42,35 @@ msgstr "crwdns69299:0:math:crwdnd69299:0{LS}crwdnd69299:0:math:crwdnd69299:0:mat
 msgid "参数"
 msgstr "crwdns69301:0crwdne69301:0"
 
-#: megengine.functional.loss.cross_entropy:16 of
-msgid "input tensor representing the predicted probability."
-msgstr "crwdns69303:0crwdne69303:0"
+#: megengine.functional.loss.cross_entropy:11 of
+msgid "input tensor representing the predicted value."
+msgstr "crwdns93552:0crwdne93552:0"
 
-#: megengine.functional.loss.cross_entropy:18 of
+#: megengine.functional.loss.cross_entropy:13 of
 msgid "input tensor representing the classification label."
 msgstr "crwdns69305:0crwdne69305:0"
 
-#: megengine.functional.loss.cross_entropy:20 of
+#: megengine.functional.loss.cross_entropy:15 of
 msgid "an axis along which softmax will be applied. Default: 1"
 msgstr "crwdns69307:0crwdne69307:0"
 
-#: megengine.functional.loss.cross_entropy:22 of
+#: megengine.functional.loss.cross_entropy:17 of
 msgid "whether to apply softmax first. Default: True"
 msgstr "crwdns69309:0crwdne69309:0"
 
-#: megengine.functional.loss.cross_entropy:24 of
+#: megengine.functional.loss.cross_entropy:19 of
 msgid "a label smoothing of parameter that can re-distribute target distribution. Default: 0"
 msgstr "crwdns69311:0crwdne69311:0"
 
-#: megengine.functional.loss.cross_entropy:26 of
-msgid "the reduction to apply to the output: 'none' | 'mean' | 'sum'. Default: 'mean'"
-msgstr "crwdns69313:0crwdne69313:0"
+#: megengine.functional.loss.cross_entropy:21 of
+msgid "the reduction to apply to the output: 'none' | 'mean' | 'sum'."
+msgstr "crwdns93554:0crwdne93554:0"
 
 #: megengine.functional.loss.cross_entropy of
 msgid "返回类型"
 msgstr "crwdns69315:0crwdne69315:0"
 
-#: megengine.functional.loss.cross_entropy:28 of
+#: megengine.functional.loss.cross_entropy:23 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr "crwdns69317:0crwdne69317:0"
 
@@ -86,15 +78,28 @@ msgstr "crwdns69317:0crwdne69317:0"
 msgid "返回"
 msgstr "crwdns69319:0crwdne69319:0"
 
-#: megengine.functional.loss.cross_entropy:29 of
+#: megengine.functional.loss.cross_entropy:24 of
 msgid "loss value."
 msgstr "crwdns69321:0crwdne69321:0"
 
-#: megengine.functional.loss.cross_entropy:32 of
+#: megengine.functional.loss.cross_entropy:27 of
 msgid "实际案例"
 msgstr "crwdns69323:0crwdne69323:0"
 
-#: megengine.functional.loss.cross_entropy:46 of
-msgid "Outputs:"
-msgstr "crwdns69325:0crwdne69325:0"
+#: megengine.functional.loss.cross_entropy:28 of
+msgid "By default(``with_logitis`` is True), ``pred`` is assumed to be logits, class probabilities are given by softmax. It has better numerical stability compared with sequential calls to :func:`~.softmax` and :func:`~.cross_entropy`."
+msgstr "crwdns93556:0:func:crwdnd93556:0:func:crwdne93556:0"
+
+#: megengine.functional.loss.cross_entropy:40 of
+msgid "If the ``pred`` value has been probabilities, set ``with_logits`` to False:"
+msgstr "crwdns93558:0crwdne93558:0"
+
+#~ msgid ""
+#~ "It has better numerical stability "
+#~ "compared with sequential calls to "
+#~ ":func:`~.softmax` and :func:`~.cross_entropy`."
+#~ msgstr "与顺序调用 :func:`~.softmax` 和  :func:`~.cross_entropy` 相比，具有更好的数值稳定性。"
+
+#~ msgid "Outputs:"
+#~ msgstr "输出："
 
