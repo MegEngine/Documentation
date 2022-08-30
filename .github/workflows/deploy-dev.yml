@@ -58,13 +58,14 @@ jobs:
           cd megengine
           ./third_party/prepare.sh
           ./third_party/install-mkl.sh
-          cmake -S . -B build -DMGE_WITH_CUDA=OFF -DMGE_WITH_MKLDNN=OFF
+          cmake -S . -B build -DMGE_WITH_DISTRIBUTED=OFF -DMGE_WITH_CUDA=OFF -DMGE_WITH_MKLDNN=OFF
           make -C build -j$(($(nproc) * 2)) develop
 
       - name: Generate static.tgz
         run: |
           export PYTHONPATH=./megengine/imperative/python:$PYTHONPATH
           export PYTHONPATH=./megengine/lite/pylite:$PYTHONPATH
+          export LITE_LIB_PATH=./megengine/build/lite/liblite_shared.so
           export MGE_DOC_MODE="FULL"
           ./scripts/oss/build_for_oss.sh
 
