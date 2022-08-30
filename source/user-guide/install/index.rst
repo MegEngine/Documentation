@@ -8,8 +8,8 @@
 
    MegEngine 目前支持在以下环境安装 Python 包：
 
-   * 操作系统： Linux-64bit/Windows-64bit/MacOS-10.14 及其以上
-   * Python 版本：3.5 到 3.8
+   * 操作系统： Linux-64 位 / Windows-64 位 / MacOS-10.14 及其以上
+   * Python 版本：3.6 到 3.9
 
    其中 MacOS 只支持 Intel x86 CPU；
    此外，MegEngine 也支持在很多其它平台上进行推理运算。
@@ -32,8 +32,7 @@
 
 .. warning::
  
-   * MegEngine 包中集成了 CUDA 环境，但用户需确保环境中已经正确地安装好 GPU 设备相关驱动；
-   * 由于 EAR 限制，目前官方发布的预编译包是基于 CUDA 10.1 的，参考 :ref:`cuda-compiling` 。
+   MegEngine 包中集成了 CUDA 环境，但用户需确保环境中已经正确地安装好 GPU :ref:`设备 <tensor-device>` 相关驱动。
 
 .. _build-from-source:
 
