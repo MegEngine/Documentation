@@ -12,11 +12,15 @@ MegEngine for PyTorch users
 Tensor 数据结构相关
 -------------------
 
+.. admonition:: 关于 Inplace 修改的做法
+   :class: warning
+
+   MegEngine 中没有 ``Tensor.data = new_data`` 这样的操作，请使用 ``Tensor[...] = new_data`` 代替。
+
 .. admonition:: MegEngine Tensor 默认不需要 ``.to(device)`` 操作
    :class: warning
 
    MegEngine 在设备处理上兼容性良好，默认会将 Tensor 放在算力最高的 :ref:`设备 <tensor-device>` 上。
-
 
 .. admonition:: MegEngine Tensor 类中没有实现所有操作方法
    :class: warning
