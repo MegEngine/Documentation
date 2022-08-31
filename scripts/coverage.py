@@ -1,4 +1,7 @@
 
+import ast
+import inspect
+
 import os
 import argparse
 
@@ -91,6 +94,19 @@ class PublicInterfaceFinder():
                             or not self._is_public_api(obj.__module__):
                             continue
 
+                        try:
+                            deprecated_flag = False
+                            decorators = self.get_decorators(obj)
+                            for k, v in decorators.items():
+                                if "deprecated" in v:
+                                    deprecated_flag = True
+                            if deprecated_flag:
+                                continue
+                        except SyntaxError:
+                            pass  # IndentationError will occur in some cases
+                        else:
+                            pass
+
                         api_name, api_id = prefix + obj_name, id(obj)
                         if api_id not in self._api_info:
                             self._api_info[api_id] = set()
@@ -113,9 +129,31 @@ class PublicInterfaceFinder():
                 return False
         return True
 
+    def get_decorators(self, cls) -> Dict:
+        # Stack Overflow: https://stackoverflow.com/a/31197273
+        # Introspection to get decorator names on a method?
+
+        target = cls
+        decorators = {}
+
+        def visit_FunctionDef(node):
+            decorators[node.name] = []
+            for n in node.decorator_list:
+                name = ''
+                if isinstance(n, ast.Call):
+                    name = n.func.attr if isinstance(n.func, ast.Attribute) else n.func.id
+                else:
+                    name = n.attr if isinstance(n, ast.Attribute) else n.id
+
+                decorators[node.name].append(name)
+
+        node_iter = ast.NodeVisitor()
+        node_iter.visit_FunctionDef = visit_FunctionDef
+        node_iter.visit(ast.parse(inspect.getsource(target)))
+        return decorators
+
     def get_api_info(self):
         return self._api_info
-
 
 def get_generated_api_from_doc(path: str = None) -> Set[str]:
     """Return a list including name of APIs that exists in current document."""
