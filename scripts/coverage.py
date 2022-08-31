@@ -1,5 +1,6 @@
 
 import os
+import argparse
 
 from inspect import getmembers, isbuiltin, isclass, isfunction, ismodule
 from types import ModuleType
@@ -33,6 +34,11 @@ class PublicInterfaceFinder():
         So we choose an object's ``id()`` as the dict key making it easier to bind API with its brothers.
         Calling ``api_info[id]`` will return a set of different API names with same id.
 
+        Corner Case:
+
+        * #1 megengine.module.traced_module.Module
+        * #2 from megengine.data.transform.vision import _functional as F
+
     Warning:
 
         Only function and class interface would be recorded in ``api_info`` by default.
@@ -61,15 +67,17 @@ class PublicInterfaceFinder():
         def search_module(cur_module: ModuleType):
 
             visited_mem.add(cur_module)
-            
-            if not cur_module.__name__.startswith(self._top_module_name):
+
+            if not cur_module.__name__.startswith(self._top_module_name) \
+                or not self._is_public_api(cur_module.__name__):
                 return
 
             for module_name, module in getmembers(cur_module, ismodule):
                 
                 if module_name.startswith("_") or isbuiltin(module)  \
                     or self._ignore_name(module.__name__, self._ingore_keywords) \
-                    or not module.__name__.startswith(self._top_module_name):
+                    or not module.__name__.startswith(self._top_module_name) \
+                    or not self._is_public_api(cur_module.__name__):
                     continue
 
                 prefix = module.__name__ + "."
@@ -79,7 +87,8 @@ class PublicInterfaceFinder():
                         
                         if obj_name.startswith("_") or isbuiltin(obj) \
                             or self._ignore_name(obj.__module__, self._ingore_keywords) \
-                            or not obj.__module__.startswith(self._top_module_name):
+                            or not obj.__module__.startswith(self._top_module_name) \
+                            or not self._is_public_api(obj.__module__):
                             continue
 
                         api_name, api_id = prefix + obj_name, id(obj)
@@ -97,6 +106,12 @@ class PublicInterfaceFinder():
             if item in name.split("."):
                 return True
         return False
+
+    def _is_public_api(self, input: str) -> bool:
+        for s in input.split('.'):
+            if s.startswith('_'):
+                return False
+        return True
 
     def get_api_info(self):
         return self._api_info
@@ -119,8 +134,13 @@ def get_generated_api_from_doc(path: str = None) -> Set[str]:
             generated_api.add(os.path.splitext(filename)[0])
     return generated_api
 
-
 if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description="Get unadded MegEngine Public APIs in doc.")
+    parser.add_argument("-s", "--save", default=False, type=bool, help="save the output content to csv file")
+    parser.add_argument("-v", "--verbose", default=True, type=bool, help="show detailss")
+
+    args = parser.parse_args()
 
     # Step 1: Find generated APIs
     generated_api = get_generated_api_from_doc()
@@ -128,7 +148,11 @@ if __name__ == "__main__":
     # Step 2: See the whole world
     import megengine
     finder = PublicInterfaceFinder(megengine, 
-        ingore_keywords = ["core", "utils"],
+        ingore_keywords = [
+            "core", 
+            "utils", 
+            "traced_module"
+        ],
     )
     api_info = finder.get_api_info()
 
@@ -147,10 +171,15 @@ if __name__ == "__main__":
     ungenerated_api.sort()
 
     # Now we have put the elephant into the fridge
-    import csv
-    with open("output.csv", "w") as file:
-        wr = csv.writer(file, dialect='excel')
+
+    if args.save:
+        import csv
+
+        with open("/tmp/output.csv", "w") as file:
+            wr = csv.writer(file, dialect='excel')
+            wr.writerow(item for item in ungenerated_api)
+        print("Saved in /tmp/output.csv")
+    
+    if args.verbose:
         for idx, item in enumerate(ungenerated_api):
             print(idx, item)
-            wr.writerow(item)
-    print("Saved in output.csv")
