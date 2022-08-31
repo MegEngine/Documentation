@@ -67,7 +67,11 @@ Device
    :toctree: api
    :nosignatures:
 
+   device.what_is_xpu
    is_cuda_available
+   is_atlas_available
+   is_cambricon_available
+   is_rocm_available
    get_device_count
    get_default_device
    set_default_device
@@ -81,15 +85,9 @@ Device
    reset_max_memory_stats
    set_prealloc_config
    coalesce_free_memory
-
-.. TODO: These interfaces are not called as expected now:
-
-   megengine.device.is_cambricon_available
-   megengine.device.is_atlas_available
-   megengine.device.is_rocm_available
-   megengine.device.what_is_xpu
-
-   Should could be called in ``megengine.xxx``.
+   get_cuda_version
+   get_cudnn_version
+   get_tensorrt_version
 
 .. _logger:
 
