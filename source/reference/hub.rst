@@ -18,7 +18,34 @@ megengine.hub
    pretrained
    import_module
 
+.. py:module:: megengine.hub.fetcher
+.. currentmodule:: megengine.hub.fetcher
 
+Fetcher
+--------
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   synchronized
+   GitSSHFetcher
+   GitHTTPSFetcher
+
+.. py:module:: megengine.hub.tools
+.. currentmodule:: megengine.hub.tools
+
+Tools
+--------
+
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   load_module
+   check_module_exists
+   cd
+   
 .. py:module:: megengine.hub.exceptions
 .. currentmodule:: megengine.hub.exceptions
 
