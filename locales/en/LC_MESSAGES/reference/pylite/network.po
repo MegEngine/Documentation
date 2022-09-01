@@ -1,32 +1,193 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 12:44+0800\n"
-"PO-Revision-Date: 2022-08-04 09:28\n"
+"POT-Creation-Date: 2022-09-01 21:02+0800\n"
+"PO-Revision-Date: 2022-08-04 09:28+0000\n"
 "Last-Translator: \n"
+"Language: en_US\n"
 "Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/pylite/network.po\n"
-"X-Crowdin-File-ID: 8440\n"
-"Language: en_US\n"
 
 #: ../../source/reference/pylite/network.rst:6
 msgid "megenginelite.network"
 msgstr ""
 
 #: megenginelite.network.LiteOptions:1 of
-msgid "the inference options will be used to config a network"
+msgid ""
+"the inference options which can optimize the network forwarding "
+"performance"
 msgstr ""
 
-#: ../../docstring megenginelite.network.LiteConfig.backend:1
+#: megenginelite.network.LiteConfig megenginelite.network.LiteIO
+#: megenginelite.network.LiteNetworkIO megenginelite.network.LiteOptions of
+msgid "变量"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:4 of
+msgid ""
+"is the option which optimize the inference performance with processing "
+"the weights of the network ahead"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:7 of
+msgid "fuse preprocess patten, like astype + pad_channel + dimshuffle"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:10 of
+msgid ""
+"whether only to perform non-computing tasks (like memory allocation and "
+"queue initialization) for next exec. This will be reset to false when the"
+" graph is executed."
+msgstr ""
+
+#: megenginelite.network.LiteOptions:14 of
+msgid ""
+"Disable var sanity check on the first run. Var sanity check is enabled on"
+" the first-time execution by default, and can be used to find some "
+"potential memory access errors in the operator"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:18 of
+msgid ""
+"used to reduce memory usage and improve performance since some static "
+"inference data structures can be omitted and some operators can be "
+"compute before forwarding"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:22 of
+msgid "force dynamic allocate memory for all vars"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:24 of
+msgid ""
+"force dynamic allocate memory for output tensor which are used as the "
+"input of CallbackCaller Operator"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:27 of
+msgid ""
+"do not re-profile to select best implement algo when input shape changes "
+"(use previous algo)"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:30 of
+msgid ""
+"Execute supported operators with JIT (support MLIR, NVRTC). Can only be "
+"used on Nvidia GPUs and X86 CPU, this value indicates JIT level:  level "
+"1: for JIT execute with basic elemwise operator  level 2: for JIT execute"
+" elemwise and reduce operators"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:30 of
+msgid ""
+"Execute supported operators with JIT (support MLIR, NVRTC). Can only be "
+"used on Nvidia GPUs and X86 CPU, this value indicates JIT level:"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:33 of
+msgid "level 1: for JIT execute with basic elemwise operator"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:35 of
+msgid "level 2: for JIT execute elemwise and reduce operators"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:37 of
+msgid ""
+"flags to optimize the inference performance with record the kernel tasks "
+"in first run, hereafter the inference all need is to execute the recorded"
+" tasks.  level = 0 means the normal inference  level = 1 means use record"
+" inference  level = 2 means record inference with free the extra memory"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:37 of
+msgid ""
+"flags to optimize the inference performance with record the kernel tasks "
+"in first run, hereafter the inference all need is to execute the recorded"
+" tasks."
+msgstr ""
+
+#: megenginelite.network.LiteOptions:41 of
+msgid "level = 0 means the normal inference"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:43 of
+msgid "level = 1 means use record inference"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:45 of
+msgid "level = 2 means record inference with free the extra memory"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:48 of
+msgid ""
+"network optimization level:  0: disable  1: level-1: inplace arith "
+"transformations during graph construction  2: level-2: level-1, plus "
+"global optimization before graph compiling  3: also enable JIT"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:48 of
+msgid "network optimization level:"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:50 of
+msgid "0: disable"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:52 of
+msgid "1: level-1: inplace arith transformations during graph construction"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:54 of
+msgid "2: level-2: level-1, plus global optimization before graph compiling"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:56 of
+msgid "3: also enable JIT"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:58 of
+msgid ""
+"level of dispatch on separate threads for different comp_node.  0: do not"
+" perform async dispatch  1: dispatch async if there are more than one "
+"comp node with limited queue  mask 0b10: async if there are multiple comp"
+" nodes with  mask 0b100: always async"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:58 of
+msgid "level of dispatch on separate threads for different comp_node."
+msgstr ""
+
+#: megenginelite.network.LiteOptions:60 of
+msgid "0: do not perform async dispatch"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:62 of
+msgid "1: dispatch async if there are more than one comp node with limited queue"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:64 of
+msgid "mask 0b10: async if there are multiple comp nodes with"
+msgstr ""
+
+#: megenginelite.network.LiteOptions:66 of
+msgid "mask 0b100: always async"
+msgstr ""
+
+#: megenginelite.network.LiteConfig:23 megenginelite.network.LiteIO:29
+#: megenginelite.network.LiteNetwork:4 megenginelite.network.LiteNetworkIO:10
+#: megenginelite.network.LiteOptions:70 of
+msgid "实际案例"
+msgstr ""
+
+#: ../../docstring megenginelite.network.LiteConfig.auto_optimize_inference:1
+#: megenginelite.network.LiteConfig.backend:1
 #: megenginelite.network.LiteConfig.device_id:1
 #: megenginelite.network.LiteConfig.device_type:1
 #: megenginelite.network.LiteConfig.has_compression:1
@@ -58,122 +219,495 @@ msgid "Structure/Union member"
 msgstr ""
 
 #: megenginelite.network.LiteConfig:1 of
-msgid "Configuration when load and compile the graph"
+msgid "Configuration when load and compile a network"
 msgstr ""
 
 #: megenginelite.network.LiteConfig:3 of
-msgid "bare_model_cryption_name: is the bare model cryption method name, bare model is not pack model info inside"
+msgid ""
+"flag whether the model is compressed, the compress method is stored in "
+"the model"
 msgstr ""
 
 #: megenginelite.network.LiteConfig:6 of
-msgid "use_loader_dynamic_param: when model forward with device loader of npu, use_loader_dynamic_param used to flag whether the loader use device input or output, if use device input or output it will set Non-zero , else set zero"
+msgid "configure the device id of a network"
+msgstr ""
+
+#: megenginelite.network.LiteConfig:8 of
+msgid "configure the device type of a network"
 msgstr ""
 
 #: megenginelite.network.LiteConfig:10 of
-msgid "has_compression: flag whether the model is compressed, the compress method will used to read the model"
+msgid "configure the inference backend of a network, now only support megengine"
+msgstr ""
+
+#: megenginelite.network.LiteConfig:13 of
+msgid ""
+"is the bare model encryption method name, bare model is not packed with "
+"json information, this encryption method name is useful to decrypt the "
+"encrypted bare model"
+msgstr ""
+
+#: megenginelite.network.LiteConfig:17 of
+msgid "configuration of Options"
+msgstr ""
+
+#: megenginelite.network.LiteConfig:19 of
+msgid "lite will detect the device information add set the options heuristically"
 msgstr ""
 
 #: megenginelite.network.LiteIO:1 of
-msgid "config the network input and output item"
+msgid ""
+"config the network input and output item, the input and output tensor "
+"information will describe there"
 msgstr ""
 
-#: megenginelite.network.LiteIO:3 of
-msgid "name: the tensor name in the graph corresponding to the IO"
-msgstr ""
-
-#: megenginelite.network.LiteIO:5 of
-msgid "is_host: Used to mark where the input tensor comes from and the output where copy to, if is_host is true, the input is from host and output copy to host, otherwise device. Sometimes The input is from device and output no need copy to host, default is true."
+#: megenginelite.network.LiteIO:4 of
+msgid ""
+"the tensor name in the graph corresponding to the IO is_host: Used to "
+"mark where the input tensor comes from and where the output tensor will "
+"copy to, if is_host is true, the input is from host and output copy to "
+"host, otherwise in device. Sometimes the input is from device and output "
+"no need copy to host, default is true."
 msgstr ""
 
 #: megenginelite.network.LiteIO:10 of
-msgid "io_type: The IO type, it can be SHAPE or VALUE, when SHAPE is set, the input or output tensor value is invaid, only shape will be set, default is VALUE"
+msgid ""
+"The IO type, it can be SHAPE or VALUE, when SHAPE is set, the input or "
+"output tensor value is invaid, only shape will be set, default is VALUE"
 msgstr ""
 
 #: megenginelite.network.LiteIO:13 of
-msgid "config_layout: The layout of the config from user, if other layout is set before forward or get after forward, this layout will by pass. if no other layout is set before forward, this layout will work. if this layout is no set, the model will forward with its origin layout. if in output, it will used to check."
+msgid ""
+"The layout of the config from user, if other layout is set before forward"
+" or get after forward, this layout will by pass. if no other layout is "
+"set before forward, this layout will work. if this layout is no set, the "
+"model will forward with its origin layout. if in output, it will used to "
+"check."
+msgstr ""
+
+#: megenginelite.network.LiteIO:22 of
+msgid ""
+"if other layout is set to input tensor before forwarding, this layout "
+"will not work"
+msgstr ""
+
+#: megenginelite.network.LiteIO:24 of
+msgid ""
+"if no layout is set before forwarding, the model will forward with its "
+"origin layout"
+msgstr ""
+
+#: megenginelite.network.LiteIO:26 of
+msgid ""
+"if layout is set in output tensor, it will used to check whether the "
+"layout computed from the network is correct"
+msgstr ""
+
+#: megenginelite.network.LiteIO.name:1 of
+msgid "get the name of IO item"
 msgstr ""
 
 #: megenginelite.network.LiteNetworkIO:1 of
-msgid "the input and output information for user to construct _LiteNetWorkIO"
+msgid ""
+"the input and output information when load the network for user the "
+"NetworkIO will remain in the network until the network is destroyed."
+msgstr ""
+
+#: megenginelite.network.LiteNetworkIO:4 of
+msgid "The all input tensors information that will configure to the network"
+msgstr ""
+
+#: megenginelite.network.LiteNetworkIO:6 of
+msgid "The all output tensors information that will configure to the network"
+msgstr ""
+
+#: megenginelite.network.LiteNetworkIO.add_input:1 of
+msgid "add input information into LiteNetworkIO"
+msgstr ""
+
+#: megenginelite.network.LiteNetworkIO.add_output:1 of
+msgid "add output information into LiteNetworkIO"
 msgstr ""
 
 #: megenginelite.network.LiteNetwork:1 of
 msgid "the network to load a model and forward"
 msgstr ""
 
+#: megenginelite.network.LiteNetwork.async_with_callback:1 of
+msgid ""
+"set the network forwarding in async mode and set the AsyncCallback "
+"callback function"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.async_with_callback
+#: megenginelite.network.LiteNetwork.dump_layout_transform_model
+#: megenginelite.network.LiteNetwork.enable_profile_performance
+#: megenginelite.network.LiteNetwork.get_input_name
+#: megenginelite.network.LiteNetwork.get_io_tensor
+#: megenginelite.network.LiteNetwork.get_output_name
+#: megenginelite.network.LiteNetwork.get_static_memory_alloc_info
+#: megenginelite.network.LiteNetwork.io_bin_dump
+#: megenginelite.network.LiteNetwork.io_txt_dump
+#: megenginelite.network.LiteNetwork.set_finish_callback
+#: megenginelite.network.LiteNetwork.set_network_algo_policy
+#: megenginelite.network.LiteNetwork.set_network_algo_workspace_limit
+#: megenginelite.network.LiteNetwork.set_start_callback
+#: megenginelite.network.LiteNetwork.share_runtime_memroy
+#: megenginelite.network.LiteNetwork.share_weights_with of
+msgid "参数"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.async_with_callback:4
+#: megenginelite.network.LiteNetwork.set_finish_callback:5
+#: megenginelite.network.LiteNetwork.set_start_callback:5 of
+msgid "the callback to set for network"
+msgstr ""
+
 #: megenginelite.network.LiteNetwork.device_id:1 of
 msgid "get the device id"
 msgstr ""
 
+#: megenginelite.network.LiteNetwork.device_id
+#: megenginelite.network.LiteNetwork.get_all_input_name
+#: megenginelite.network.LiteNetwork.get_all_output_name
+#: megenginelite.network.LiteNetwork.get_input_name
+#: megenginelite.network.LiteNetwork.get_io_tensor
+#: megenginelite.network.LiteNetwork.get_output_name
+#: megenginelite.network.LiteNetwork.is_cpu_inplace_mode
+#: megenginelite.network.LiteNetwork.stream_id
+#: megenginelite.network.LiteNetwork.threads_number of
+msgid "返回"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.device_id:3 of
+msgid "the device id of current network used"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.dump_layout_transform_model:1 of
+msgid ""
+"dump network after global layout transform optimization to the specific "
+"path"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.dump_layout_transform_model:4 of
+msgid "the file path to dump model"
+msgstr ""
+
 #: megenginelite.network.LiteNetwork.enable_cpu_inplace_mode:1 of
-msgid "set cpu forward in inplace mode with which cpu forward only create one thread Note: this must be set before the network loaded"
+msgid ""
+"set cpu forward in inplace mode with which cpu forward only create one "
+"thread"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.enable_cpu_inplace_mode:4
+#: megenginelite.network.LiteNetwork.use_tensorrt:3 of
+msgid "this must be set before the network loaded"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.enable_global_layout_transform:1 of
+msgid ""
+"set global layout transform optimization for network, global layout "
+"optimization can auto determine the layout of every operator in the "
+"network by profile, thus it can improve the performance of the network "
+"forwarding"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.enable_profile_performance:1 of
+msgid ""
+"enable get the network performance profiled information and save into "
+"given file"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.enable_profile_performance:3 of
+msgid "the file to save profile information"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.extra_configure:1 of
+msgid "Extra Configuration to the network."
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.forward:1 of
+msgid ""
+"forward the network with filled input data and fill the output data to "
+"the output tensor"
 msgstr ""
 
 #: megenginelite.network.LiteNetwork.get_all_input_name:1 of
 msgid "get all the input tensor name in the network"
 msgstr ""
 
+#: megenginelite.network.LiteNetwork.get_all_input_name:3 of
+msgid "the names of all input tesor in the network"
+msgstr ""
+
 #: megenginelite.network.LiteNetwork.get_all_output_name:1 of
 msgid "get all the output tensor name in the network"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.get_all_output_name:3 of
+msgid "the names of all output tesor in the network"
 msgstr ""
 
 #: megenginelite.network.LiteNetwork.get_input_name:1 of
 msgid "get the input name by the index in the network"
 msgstr ""
 
+#: megenginelite.network.LiteNetwork.get_input_name:3 of
+msgid "the index of the input name"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.get_input_name:5 of
+msgid "the name of input tesor with given index"
+msgstr ""
+
 #: megenginelite.network.LiteNetwork.get_io_tensor:1 of
 msgid "get input or output tensor by its name"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.get_io_tensor:3 of
+msgid "the name of io tensor"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.get_io_tensor:4 of
+msgid ""
+"the type of LiteTensor, this is useful to separate input or output tensor"
+" with the same name"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.get_io_tensor:6 of
+msgid "the tensor with given name and type"
 msgstr ""
 
 #: megenginelite.network.LiteNetwork.get_output_name:1 of
 msgid "get the output name by the index in the network"
 msgstr ""
 
+#: megenginelite.network.LiteNetwork.get_output_name:3 of
+msgid "the index of the output name"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.get_output_name:5 of
+msgid "the name of output tesor with given index"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.get_static_memory_alloc_info:1 of
+msgid "get static peak memory info showed by Graph visualization"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.get_static_memory_alloc_info:3 of
+msgid "the directory to save information log"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.io_bin_dump:1 of
+msgid ""
+"dump all input/output tensor of all operators to the output file, in "
+"binary format, user can use this function to debug compute error"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.io_bin_dump:4 of
+msgid "the binary file directory"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.io_txt_dump:1 of
+msgid ""
+"dump all input/output tensor of all operators to the output file, in txt "
+"format, user can use this function to debug compute error"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.io_txt_dump:4 of
+msgid "the txt file"
+msgstr ""
+
 #: megenginelite.network.LiteNetwork.is_cpu_inplace_mode:1 of
 msgid "whether the network run in cpu inpalce mode"
 msgstr ""
 
+#: megenginelite.network.LiteNetwork.is_cpu_inplace_mode:3 of
+msgid "if use inpalce mode return True, else return False"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.load:1 of
+msgid "load network from given path"
+msgstr ""
+
 #: megenginelite.network.LiteNetwork.set_finish_callback:1 of
-msgid "when the network finish forward, the callback will be called, the finish_callback with param mapping from LiteIO to the corresponding LiteTensor"
+msgid ""
+"when the network finish forward, the callback will be called, the "
+"finish_callback with param mapping from LiteIO to the corresponding "
+"LiteTensor"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.set_network_algo_policy:1 of
+msgid "set the network algorithm search policy for fast-run"
 msgstr ""
 
 #: megenginelite.network.LiteNetwork.set_network_algo_policy:3 of
-msgid "shared_batch_size: the batch size used by fastrun,"
+msgid ""
+"the batch size used by fastrun, Non-zero value means that fastrun use "
+"this batch size regardless of the batch size of the model. Zero means "
+"fastrun use batch size of the model"
 msgstr ""
 
-#: megenginelite.network.LiteNetwork.set_network_algo_policy:2 of
-msgid "Non-zero value means that fastrun use this batch size regardless of the batch size of the model. Zero means fastrun use batch size of the model"
+#: megenginelite.network.LiteNetwork.set_network_algo_policy:7 of
+msgid ""
+"if the content of each input batch is binary equal,whether the content of"
+" each output batch is promised to be equal"
 msgstr ""
 
-#: megenginelite.network.LiteNetwork.set_network_algo_policy:6 of
-msgid "binary_equal_between_batch: if the content of each input batch is"
+#: megenginelite.network.LiteNetwork.set_network_algo_workspace_limit:1 of
+msgid ""
+"set the opr workspace limitation in the target network, some opr maybe "
+"use large of workspace to get good performance, set workspace limitation "
+"can save memory but may influence the performance"
 msgstr ""
 
-#: megenginelite.network.LiteNetwork.set_network_algo_policy:6 of
-msgid "binary equal,whether the content of each output batch is promised to be equal"
+#: megenginelite.network.LiteNetwork.set_network_algo_workspace_limit:5 of
+msgid "the byte size of workspace limitation"
 msgstr ""
 
 #: megenginelite.network.LiteNetwork.set_start_callback:1 of
-msgid "when the network start forward, the callback will be called, the start_callback with param mapping from LiteIO to the corresponding LiteTensor"
+msgid ""
+"when the network start forward, the callback will be called, the "
+"start_callback with param mapping from LiteIO to the corresponding "
+"LiteTensor"
 msgstr ""
 
 #: megenginelite.network.LiteNetwork.share_runtime_memroy:1 of
 msgid "share runtime memory with the srouce network"
 msgstr ""
 
+#: megenginelite.network.LiteNetwork.share_runtime_memroy:3 of
+msgid "the network to share runtime memory"
+msgstr ""
+
 #: megenginelite.network.LiteNetwork.share_weights_with:1 of
 msgid "share weights with the loaded network"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.share_weights_with:3 of
+msgid "the network to share weights"
 msgstr ""
 
 #: megenginelite.network.LiteNetwork.stream_id:1 of
 msgid "get the stream id"
 msgstr ""
 
+#: megenginelite.network.LiteNetwork.stream_id:3 of
+msgid "the value of stream id set for detwork"
+msgstr ""
+
 #: megenginelite.network.LiteNetwork.threads_number:1 of
 msgid "get the thread number of the netwrok"
 msgstr ""
 
-#: megenginelite.network.LiteNetwork.use_tensorrt:1 of
-msgid "Note: this must be set before the network loaded"
+#: megenginelite.network.LiteNetwork.threads_number:3 of
+msgid "the number of thread set in the network"
 msgstr ""
+
+#: megenginelite.network.LiteNetwork.use_tensorrt:1 of
+msgid "use TensorRT"
+msgstr ""
+
+#: megenginelite.network.LiteNetwork.wait:1 of
+msgid "wait until forward finish in sync model"
+msgstr ""
+
+#~ msgid "the inference options will be used to config a network"
+#~ msgstr ""
+
+#~ msgid "Configuration when load and compile the graph"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "bare_model_cryption_name: is the bare model"
+#~ " cryption method name, bare model is"
+#~ " not pack model info inside"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "use_loader_dynamic_param: when model forward "
+#~ "with device loader of npu, "
+#~ "use_loader_dynamic_param used to flag whether"
+#~ " the loader use device input or "
+#~ "output, if use device input or "
+#~ "output it will set Non-zero , "
+#~ "else set zero"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "has_compression: flag whether the model "
+#~ "is compressed, the compress method will"
+#~ " used to read the model"
+#~ msgstr ""
+
+#~ msgid "config the network input and output item"
+#~ msgstr ""
+
+#~ msgid "name: the tensor name in the graph corresponding to the IO"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "is_host: Used to mark where the "
+#~ "input tensor comes from and the "
+#~ "output where copy to, if is_host "
+#~ "is true, the input is from host"
+#~ " and output copy to host, otherwise"
+#~ " device. Sometimes The input is from"
+#~ " device and output no need copy "
+#~ "to host, default is true."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "io_type: The IO type, it can be"
+#~ " SHAPE or VALUE, when SHAPE is "
+#~ "set, the input or output tensor "
+#~ "value is invaid, only shape will "
+#~ "be set, default is VALUE"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "config_layout: The layout of the config"
+#~ " from user, if other layout is "
+#~ "set before forward or get after "
+#~ "forward, this layout will by pass. "
+#~ "if no other layout is set before"
+#~ " forward, this layout will work. if"
+#~ " this layout is no set, the "
+#~ "model will forward with its origin "
+#~ "layout. if in output, it will used"
+#~ " to check."
+#~ msgstr ""
+
+#~ msgid "the input and output information for user to construct _LiteNetWorkIO"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "set cpu forward in inplace mode "
+#~ "with which cpu forward only create "
+#~ "one thread Note: this must be set"
+#~ " before the network loaded"
+#~ msgstr ""
+
+#~ msgid "shared_batch_size: the batch size used by fastrun,"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Non-zero value means that fastrun "
+#~ "use this batch size regardless of "
+#~ "the batch size of the model. Zero"
+#~ " means fastrun use batch size of "
+#~ "the model"
+#~ msgstr ""
+
+#~ msgid "binary_equal_between_batch: if the content of each input batch is"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "binary equal,whether the content of each"
+#~ " output batch is promised to be "
+#~ "equal"
+#~ msgstr ""
+
+#~ msgid "Note: this must be set before the network loaded"
+#~ msgstr ""
 

@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2022, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-01 21:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:4
+msgid "Autodiff 高阶使用"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:6
+msgid ""
+"v1.5 开始，MegEngine 提供了实验性的高阶微分支持，允许多个GradManager进行协作。使用场景介绍如下。 你可以利用这个特性， "
+"实现高阶微分、前向微分和多个一阶微分"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:10
+msgid "高阶微分"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:12
+msgid ""
+"对于 :py:class:`~.GradManager` 来说，它只关心并如实的记录在启用范围内的全部 Tensor 计算操作，并不会区分这个 "
+"Tensor 是通过 forward 计算得到还是另一个 :py:class:`~.GradManager` 求导得到（即求导器可以对 "
+"x.grad 再次进行求导）。 通过嵌套两层 :py:class:`~.GradManager` ，我们可以实现求二阶导的效果。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:43
+msgid ""
+"从外部gm的视角来看，它并不关心求导对象是在 backward 阶段产生还是从 forward 阶段产生的，只要是在 gm scope "
+"内的计算都会被记录下来，如下图所示。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:69
+msgid "求二阶导时，需要注意嵌套顺序"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:71
+msgid ""
+"我们调换 ``gm`` 与 ``gm2`` 的顺序，可以看到，在 ``gm.backward()`` 之后， ``x.grad`` 为空，也就是说"
+" ``gm`` 没有求出 ``x`` 对 ``x.grad`` 的梯度。这是因为此时 ``gm`` 被放在内层，无法观测到 "
+"``gm2.backward`` 这个行为。因此在 ``gm`` 眼里 ``x.grad`` 就好似凭空产生的（和 ``x.grad = "
+"Tensor(3)`` 一样），当然无法对其求导。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:95
+msgid "多次反向微分来模拟前向微分"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:128
+msgid "求两个一阶导"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:130
+msgid ""
+"如果你希望在一次计算中，分别对不同的一批参数求导，那么你可以使用 ``gm | gm2`` 的写法，可分别求两个一阶导。 和 ``with gm:"
+" with gm2`` 写法相比，可以在不求高阶导的形式下节省一点代码，此外这两种写法其实语义上有微妙的差别： ``gm | gm2`` "
+"中两个求导器是平等的（没有内外层之分），自然也是相互不可见的，有时可以避免一些意料之外的行为。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:150
+msgid "此时两个 :py:class:`~.GradManager` 观测到的内容如下所示："
+msgstr ""
+
+#: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:174
+msgid ""
+"``gm | gm2`` 中两个求导器是平等的（没有内外层之分），相互是不可见的。因此，在下面的代码中由于 ``gm2`` 对 ``gm`` "
+"不可见，导致无法求出 ``x`` 对于 ``x_grad`` 的梯度。"
+msgstr ""
+

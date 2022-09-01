@@ -1,68 +1,91 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-04 09:12\n"
+"POT-Creation-Date: 2022-09-01 21:02+0800\n"
+"PO-Revision-Date: 2022-08-04 09:12+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.nn.roi_align.po\n"
-"X-Crowdin-File-ID: 7147\n"
 
 #: ../../source/reference/api/megengine.functional.nn.roi_align.rst:2
 msgid "megengine.functional.nn.roi\\_align"
 msgstr "megengine.functional.nn.roi\\_align"
 
 #: megengine.functional.vision.roi_align:1 of
-msgid "Applies roi align on input feature."
-msgstr "对输入进行 roi align。"
+msgid ""
+"Applies RoI (Region of Interest) align on input feature, as described in "
+"Mask R-CNN."
+msgstr ""
+
+#: megengine.functional.vision.roi_align:5 of
+msgid "`RoIAlign <https://paperswithcode.com/method/roi-align>`_"
+msgstr ""
+
+#: megengine.functional.vision.roi_align:6 of
+msgid "`Mask R-CNN <https://arxiv.org/abs/1703.06870v3>`_"
+msgstr ""
 
 #: megengine.functional.vision.roi_align of
 msgid "参数"
 msgstr "参数"
 
-#: megengine.functional.vision.roi_align:4 of
-msgid "tensor that represents the input feature, shape is `(N, C, H, W)`."
+#: megengine.functional.vision.roi_align:9 of
+#, fuzzy
+msgid ""
+"the input tensor that represents the input feature with ``(n, c, h, w)`` "
+"shape."
 msgstr "表示输入特征的张量，形状为 `(N, C, H, W)`。"
 
-#: megengine.functional.vision.roi_align:6 of
-msgid "`(N, 5)` boxes. First column is the box index. The other 4 columns are ``xyxy``."
+#: megengine.functional.vision.roi_align:11 of
+msgid ""
+"a tensor represents Regions of Interest with shape ``(K, 5)``, which "
+"means total ``K`` box coordinates in ``(idx, x1, y1, x2, y2)`` format "
+"where the regions will be taken from. The coordinate including ``(x1, "
+"y1)`` and ``(x2, y2)`` must satisfy ``0 <= x1 < x2`` and ``0 <= y1 < "
+"y2``. The first column ``idx`` should contain the index of the "
+"corresponding element in the input batch, i.e. a number in ``[0, n - "
+"1]``."
 msgstr ""
 
-#: megengine.functional.vision.roi_align:8 of
-msgid "`(height, width)` shape of output rois feature."
+#: megengine.functional.vision.roi_align:15 of
+msgid "``(height, width)`` shape of output rois feature."
 msgstr ""
 
-#: megengine.functional.vision.roi_align:10 of
-msgid "\"max\" or \"average\", use max/average align just like max/average pooling. Default: \"average\""
+#: megengine.functional.vision.roi_align:17 of
+msgid ""
+"\"max\" or \"average\", use max/average align just like max/average "
+"pooling. Default: \"average\""
 msgstr ""
 
-#: megengine.functional.vision.roi_align:12 of
+#: megengine.functional.vision.roi_align:19 of
 msgid "scale the input boxes by this number. Default: 1.0"
 msgstr "使用这个数值放缩输入框。默认：1.0"
 
-#: megengine.functional.vision.roi_align:14 of
-msgid "number of inputs samples to take for each output sample. 0 to take samples densely. Default: 2"
+#: megengine.functional.vision.roi_align:21 of
+msgid ""
+"number of inputs samples to take for each output sample. 0 to take "
+"samples densely. Default: 2"
 msgstr "每个输出样本要采取的输入样本数。0 表示密集采样。默认：2"
 
-#: megengine.functional.vision.roi_align:17 of
-msgid "wheather to align the input feature, with `aligned=True`, we first appropriately scale the ROI and then shift it by -0.5. Default: True"
+#: megengine.functional.vision.roi_align:24 of
+#, fuzzy
+msgid ""
+"wheather to align the input feature, with ``aligned=True``, we first "
+"appropriately scale the ROI and then shift it by -0.5. Default: True"
 msgstr "是否对齐输入特征，如果 `aligned=True`，首先选取合适的参数放缩 ROI 然后以 -0.5 的偏移量进行偏移。默认：True"
 
 #: megengine.functional.vision.roi_align of
 msgid "返回类型"
 msgstr "返回类型"
 
-#: megengine.functional.vision.roi_align:20 of
+#: megengine.functional.vision.roi_align:27 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ":py:class:`~megengine.tensor.Tensor`"
 
@@ -70,14 +93,26 @@ msgstr ":py:class:`~megengine.tensor.Tensor`"
 msgid "返回"
 msgstr "返回"
 
-#: megengine.functional.vision.roi_align:21 of
+#: megengine.functional.vision.roi_align:28 of
 msgid "output tensor."
 msgstr "输出张量。"
 
-#: megengine.functional.vision.roi_align:24 of
+#: megengine.functional.vision.roi_align:31 of
 msgid "实际案例"
 msgstr "实际案例"
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid "Applies roi align on input feature."
+#~ msgstr "对输入进行 roi align。"
+
+#~ msgid ""
+#~ "`(N, 5)` boxes. First column is "
+#~ "the box index. The other 4 columns"
+#~ " are ``xyxy``."
+#~ msgstr ""
+
+#~ msgid "`(height, width)` shape of output rois feature."
+#~ msgstr ""
 
