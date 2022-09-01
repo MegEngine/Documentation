@@ -39,7 +39,7 @@ GitHub 存储库变动
    * 修改 ``README.md`` 中对分支名的解释，对 ``main`` 和 ``dev`` 分支名含义进行更新；
    * 修改 ``source/conf.py`` 中的 ``version`` 变量值，在本例中为 ``"1.10"`` 改为 ``"1.11"``;
    * 修改 ``requirements.txt`` 中的第一行 Cache key, 使 CI 获取最新版本的 Wheel 包；
-   * 记录并推送更改，建议 ``commit`` 消息为内容 ``ci: bump version`` 之类
+   * 记录并推送更改，建议 ``commit`` 消息为内容 ``chore: bump version`` 之类
 #. *翻译相关。* 在 ``main`` 分支上进行如下修改：
 
    * 执行 ``make gettext`` 提取出可被翻译的消息模版；
