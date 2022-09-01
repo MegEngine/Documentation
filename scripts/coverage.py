@@ -94,6 +94,9 @@ class PublicInterfaceFinder():
                             or not self._is_public_api(obj.__module__):
                             continue
 
+                        if hasattr(obj, "__deprecated__"):
+                            continue
+
                         try:
                             deprecated_flag = False
                             decorators = self.get_decorators(obj)
