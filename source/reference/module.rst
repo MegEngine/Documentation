@@ -196,6 +196,7 @@ Operations
    ConvRelu2d
    ConvBn2d
    ConvBnRelu2d
+   ConvTranspose2d
    BatchMatMulActivation
    QuantStub
    DequantStub
@@ -226,6 +227,7 @@ Operations
    ConvRelu2d
    ConvBn2d
    ConvBnRelu2d
+   ConvTranspose2d
    BatchMatMulActivation
    QuantStub
    DequantStub
