@@ -402,6 +402,21 @@ Vision functions
    correlation
    nvof
 
+.. py:module:: megengine.functional.quantized
+.. currentmodule:: megengine.functional.quantized
+
+.. _quantized-function:
+
+Quantized functions
+-------------------
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   conv_bias_activation
+   batch_conv_bias_activation
+   conv_transpose2d
+
 .. py:module:: megengine.functional.distributed
 .. currentmodule:: megengine.functional.distributed
 
