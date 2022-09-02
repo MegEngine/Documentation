@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:24\n"
+"POT-Creation-Date: 2022-09-01 21:02+0800\n"
+"PO-Revision-Date: 2022-09-02 12:12\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -23,38 +23,42 @@ msgid "megengine.functional.nn.roi\\_pooling"
 msgstr "crwdns69615:0crwdne69615:0"
 
 #: megengine.functional.vision.roi_pooling:1 of
-msgid "Applies roi pooling on input feature."
-msgstr "crwdns69617:0crwdne69617:0"
+msgid "Applies RoI (Region of Interest) pooling on input feature, as described in Faster RCNN."
+msgstr "crwdns94698:0crwdne94698:0"
+
+#: megengine.functional.vision.roi_pooling:5 of
+msgid "`Region of interest pooling explained <https://deepsense.ai/region-of-interest-pooling-explained/>`_"
+msgstr "crwdns94700:0crwdne94700:0"
+
+#: megengine.functional.vision.roi_pooling:6 of
+msgid "`Faster R-CNN <https://arxiv.org/abs/1506.01497>`_"
+msgstr "crwdns94702:0crwdne94702:0"
 
 #: megengine.functional.vision.roi_pooling of
 msgid "参数"
 msgstr "crwdns69619:0crwdne69619:0"
 
-#: megengine.functional.vision.roi_pooling:4 of
-msgid "tensor that represents the input feature, `(N, C, H, W)` images."
-msgstr "crwdns69621:0crwdne69621:0"
+#: megengine.functional.vision.roi_pooling:9 of
+msgid "the input tensor that represents the input feature with ``(n, c, h, w)`` shape."
+msgstr "crwdns94704:0crwdne94704:0"
 
-#: megengine.functional.vision.roi_pooling:6 of
-msgid "`(K, 5)` boxes. First column is the index into N. The other 4 columns are xyxy."
-msgstr "crwdns93582:0crwdne93582:0"
+#: megengine.functional.vision.roi_pooling:11 of
+msgid "a tensor represents Regions of Interest with shape ``(K, 5)``, which means total ``K`` box coordinates in ``(idx, x1, y1, x2, y2)`` format where the regions will be taken from. The coordinate including ``(x1, y1)`` and ``(x2, y2)`` must satisfy ``0 <= x1 < x2`` and ``0 <= y1 < y2``. The first column ``idx`` should contain the index of the corresponding element in the input batch, i.e. a number in ``[0, n - 1]``."
+msgstr "crwdns94706:0crwdne94706:0"
 
-#: megengine.functional.vision.roi_pooling:8 of
-msgid "`(height, width)` of output rois feature."
-msgstr "crwdns93584:0crwdne93584:0"
+#: megengine.functional.vision.roi_pooling:15 of
+msgid "\"max\" or \"average\", the pooling mode to be used. Default: \"max\""
+msgstr "crwdns94708:0crwdne94708:0"
 
-#: megengine.functional.vision.roi_pooling:10 of
-msgid "\"max\" or \"average\", use max/average align just like max/average pooling. Default: \"max\""
-msgstr "crwdns93586:0crwdne93586:0"
-
-#: megengine.functional.vision.roi_pooling:12 of
-msgid "scale the input boxes by this number. Default: 1.0"
-msgstr "crwdns69629:0crwdne69629:0"
+#: megengine.functional.vision.roi_pooling:17 of
+msgid "It is a scale that maps output rois feature to input feature. For example, if the output is 224 * 224 image, and the input is a 112 * 112 feature map, then the scale should be set to 0.5. The default value is 1.0"
+msgstr "crwdns94710:0crwdne94710:0"
 
 #: megengine.functional.vision.roi_pooling of
 msgid "返回类型"
 msgstr "crwdns69631:0crwdne69631:0"
 
-#: megengine.functional.vision.roi_pooling:14 of
+#: megengine.functional.vision.roi_pooling:19 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr "crwdns69633:0crwdne69633:0"
 
@@ -62,14 +66,35 @@ msgstr "crwdns69633:0crwdne69633:0"
 msgid "返回"
 msgstr "crwdns69635:0crwdne69635:0"
 
-#: megengine.functional.vision.roi_pooling:15 of
-msgid "``K, C, output_shape[0], output_shape[1])`` feature of rois."
-msgstr "crwdns69637:0[0]crwdnd69637:0[1]crwdne69637:0"
+#: megengine.functional.vision.roi_pooling:20 of
+msgid "output tensor. ``(K, C, output_shape[0], output_shape[1])`` feature of rois."
+msgstr "crwdns94712:0[0]crwdnd94712:0[1]crwdne94712:0"
 
-#: megengine.functional.vision.roi_pooling:18 of
+#: megengine.functional.vision.roi_pooling:23 of
 msgid "实际案例"
 msgstr "crwdns69639:0crwdne69639:0"
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid "Applies roi pooling on input feature."
+#~ msgstr "对输入进行 roi pooling。"
+
+#~ msgid ""
+#~ "`(K, 5)` boxes. First column is "
+#~ "the index into N. The other 4 "
+#~ "columns are xyxy."
+#~ msgstr ""
+
+#~ msgid "`(height, width)` of output rois feature."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\"max\" or \"average\", use max/average "
+#~ "align just like max/average pooling. "
+#~ "Default: \"max\""
+#~ msgstr ""
+
+#~ msgid "scale the input boxes by this number. Default: 1.0"
+#~ msgstr "使用这个数值放缩输入框。默认：1.0"
 
