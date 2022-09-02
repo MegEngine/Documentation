@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 09:02\n"
+"POT-Creation-Date: 2022-09-01 21:02+0800\n"
+"PO-Revision-Date: 2022-09-02 12:12\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -23,12 +23,56 @@ msgid "Dataset"
 msgstr "crwdns88795:0crwdne88795:0"
 
 #: megengine.data.dataset.meta_dataset.Dataset:1 of
-msgid "An abstract base class for all datasets."
-msgstr "crwdns28882:0crwdne28882:0"
+msgid "An abstract base class for all map-style datasets."
+msgstr "crwdns94602:0crwdne94602:0"
 
 #: megengine.data.dataset.meta_dataset.Dataset:3 of
-msgid "__getitem__ and __len__ method are aditionally needed."
-msgstr "crwdns28884:0__getitem__crwdnd28884:0__len__crwdne28884:0"
+msgid "Abstract methods"
+msgstr "crwdns94604:0crwdne94604:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:5 of
+msgid "All subclasses should overwrite these two methods:"
+msgstr "crwdns94606:0crwdne94606:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:7 of
+msgid "``__getitem__()``: fetch a data sample for a given key."
+msgstr "crwdns94608:0__getitem__crwdne94608:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:8 of
+msgid "``__len__()``: return the size of the dataset."
+msgstr "crwdns94610:0__len__crwdne94610:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:10 of
+msgid "They play roles in the data pipeline, see the description below."
+msgstr "crwdns94612:0crwdne94612:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:12 of
+msgid "Dataset in the Data Pipline"
+msgstr "crwdns94614:0crwdne94614:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:14 of
+msgid "Usually a dataset works with :class:`~.DataLoader`, :class:`~.Sampler`, :class:`~.Collator` and other components."
+msgstr "crwdns94616:0:class:crwdnd94616:0:class:crwdnd94616:0:class:crwdne94616:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:16 of
+msgid "For example, the sampler generates **indexes** of batches in advance according to the size of the dataset (calling ``__len__``), When dataloader need to yield a batch of data, pass indexes into the ``__getitem__`` method, then collate them to a batch."
+msgstr "crwdns94618:0__len__crwdnd94618:0__getitem__crwdne94618:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:19 of
+msgid "Highly recommended reading :ref:`dataset-guide` for more details;"
+msgstr "crwdns94620:0:ref:crwdne94620:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:20 of
+msgid "It might helpful to read the implementation of :class:`~.MNIST`, :class:`~.CIFAR10` and other existed subclass."
+msgstr "crwdns94622:0:class:crwdnd94622:0:class:crwdne94622:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:24 of
+msgid "By default, all elements in a dataset would be :class:`numpy.ndarray`. It means that if you want to do Tensor operations, it's better to do the conversion explicitly, such as:"
+msgstr "crwdns94624:0:class:crwdne94624:0"
+
+#: megengine.data.dataset.meta_dataset.Dataset:35 of
+msgid "Tensor ops on ndarray directly are undefined behaviors."
+msgstr "crwdns94626:0crwdne94626:0"
 
 #~ msgid "基类：:class:`abc.ABC`"
 #~ msgstr "基类：:class:`abc.ABC`"
@@ -44,4 +88,7 @@ msgstr "crwdns28884:0__getitem__crwdnd28884:0__len__crwdne28884:0"
 
 #~ msgid "Methods"
 #~ msgstr "方法"
+
+#~ msgid "__getitem__ and __len__ method are aditionally needed."
+#~ msgstr "__getitem__ 与 __len__ 方法是额外需要的。"
 
