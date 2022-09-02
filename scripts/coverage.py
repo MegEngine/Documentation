@@ -9,6 +9,22 @@ from inspect import getmembers, isbuiltin, isclass, isfunction, ismodule
 from types import ModuleType
 from typing import Dict, List, Set
 
+# -- Monkey patch for `mprop` package ----------------------------------------
+# It will make some module to be a instance for getting or setting property
+# That is good for improving user experience but Sphinx can not handle with it
+# So we add a monkey patch then mprop will do nothing while building the doc.
+
+def doNothing(*args):
+    return
+
+try:
+    import mprop
+except ImportError:
+    pass
+else:
+    mprop.init = doNothing
+    mprop.mproperty = property
+    mprop.auto_init = doNothing
 
 class PublicInterfaceFinder():
     """A cool finder that can help you find (nearly) all public API under specific Python module.

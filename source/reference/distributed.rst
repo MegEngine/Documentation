@@ -50,6 +50,7 @@ megengine.distributed
 
    Client
    Server
+   Methods
 
 辅助功能（Helper）
 ------------------
@@ -61,3 +62,6 @@ megengine.distributed
    synchronized
    make_allreduce_cb
    helper.AllreduceCallback
+   helper.param_pack_split
+   helper.param_pack_concat
+   helper.pack_allreduce_split
