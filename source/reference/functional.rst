@@ -248,16 +248,6 @@ Sorting Functions
    argsort
    topk
 
-.. _metric-functions:
-
-Metric functions
-~~~~~~~~~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   topk_accuracy
-
 .. py:module:: megengine.functional.nn
 .. currentmodule:: megengine.functional.nn
 
@@ -380,6 +370,16 @@ Loss functions
    binary_cross_entropy
    cross_entropy
    ctc_loss
+
+. _metric-functions:
+
+Metric functions
+~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   topk_accuracy
 
 .. _vision-functions:
 
