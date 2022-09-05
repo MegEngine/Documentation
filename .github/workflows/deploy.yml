@@ -125,5 +125,7 @@ jobs:
           version=`python3 -c "from source.conf import version; print(version)"`
           python3 scripts/oss/update.py -v ${version} -c ${GIT_HASH}
           python3 scripts/oss/update.py -v "stable" -c ${GIT_HASH}
+          python3 scripts/oss/gen_version.py
+          ./ossutil64 cp -f version.json oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/version.json
           ./ossutil64 cp -f mapping.json oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/mapping.json
 
