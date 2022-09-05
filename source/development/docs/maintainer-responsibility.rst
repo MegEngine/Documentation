@@ -49,8 +49,8 @@ GitHub 存储库变动
 
 完成上述流程后，Documentation 的 GitHub 存储库上所需做的修改已经完成。
 
-更新 JSON 文件配置
-~~~~~~~~~~~~~~~~~~~
+更新 JSON 文件配置【一般无需关注】
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 想要使用户能够访问到不同版本（包括新发布）的 MegEngine 文档，还需要对两个 JSON 文件进行维护：
 
@@ -58,6 +58,7 @@ GitHub 存储库变动
   `可直接访问 <https://www.megengine.org.cn/doc/version.json>`_ ；
 * ``mapping.json``: 对 OSS 上部署的多个文档实例与官网线上所部署的版本进行正确映射。
 
+``mapping.json`` 和 ``version.json`` 的内容更新已经能够由 CI （用到了 ``scripts/oss/update.py`` 和 ``scripts/oss/gen_version.py`` 脚本） 自动地更新，默认无需额外关注。
 
 .. seealso::
 
@@ -65,16 +66,20 @@ GitHub 存储库变动
      并搞懂目前的 `CI 部署 <https://github.com/MegEngine/Documentation/blob/main/.github/workflows/deploy.yml>`_ 逻辑；
    * 想要了解 ``version.json`` 的设计初衷，需要搞清楚 :ref:`megengine-doc-theme` 的一些背景。
 
-.. note::
-
-   想要修改相关文件，必须拥有相关 OSS Bucket 的访问权限，
-   其中 ``mapping.json`` 的内容更新已经能够由 CI （用到了 ``scripts/oss/update.py`` 脚本） 自动地更新，默认无需额外关注。
-   而 ``version.json`` 则需要在每次发版时手动地更新其内容：将新发布的版本号（v1.11）添加进去，并设置为默认。
-
 .. warning::
 
    ``mapping.json`` 通过 ``source/conf.py`` 中的 ``version`` 变量来获取每次更新映射时所用到的 key 值，
    因此请确保该值的绝对正确性，否则可能导致一些意想不到的后果（如将已归档的文档进行了更新）。
+
+.. note::
+
+   ``mapping.json`` 和 ``version.json`` 依赖一些约定俗成来确保行为的正常：
+
+   * ``mapping.json`` 会在每个 commit 写入 ``source/conf.py`` 中的版本号，因此随着仓库的推移， ``mapping.json`` 中会逐渐存下全部历史的 ``v1.x`` 的最后一个文档 commit ID
+   * ``mapping.json`` 中还会额外保存 main 分支写入的 ``stable`` key 和 dev 分支写入的 ``master`` key
+   * ``version.json`` 生成时，会要求 ``mapping.json`` 必须只包含上述的 key，随后提取出所有的 key 生成对应的结构
+
+   如需要调整上述逻辑，开发人员需要去 OSS 中修改对应的文件，确保文件是符合修改后的代码逻辑的。
 
 .. _megengine-doc-theme:
 
