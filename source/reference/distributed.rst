@@ -42,18 +42,6 @@ megengine.distributed
 
    launcher
 
-客户端与服务端(C/S)
--------------------
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   Client
-   Server
-
-.. TODO: Add methods after it was public in dist  
-.. Methods
-
 辅助功能（Helper）
 ------------------
 .. autosummary::
