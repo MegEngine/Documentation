@@ -50,7 +50,9 @@ megengine.distributed
 
    Client
    Server
-   Methods
+
+.. TODO: Add methods after it was public in dist  
+.. Methods
 
 辅助功能（Helper）
 ------------------

@@ -248,6 +248,19 @@ Sorting Functions
    argsort
    topk
 
+.. _metric-functions:
+
+.. TODO: metric functions should could be called in F.nn.xxx format
+.. It will be fixed in v1.12 and later version
+
+Metric functions
+~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   topk_accuracy
+
 .. py:module:: megengine.functional.nn
 .. currentmodule:: megengine.functional.nn
 
@@ -370,16 +383,6 @@ Loss functions
    binary_cross_entropy
    cross_entropy
    ctc_loss
-
-. _metric-functions:
-
-Metric functions
-~~~~~~~~~~~~~~~~
-.. autosummary::
-   :toctree: api
-   :nosignatures:
-
-   topk_accuracy
 
 .. _vision-functions:
 
