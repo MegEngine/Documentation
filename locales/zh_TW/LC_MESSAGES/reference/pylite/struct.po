@@ -2,65 +2,130 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 12:44+0800\n"
-"PO-Revision-Date: 2022-04-20 05:28\n"
+"POT-Creation-Date: 2022-09-01 21:02+0800\n"
+"PO-Revision-Date: 2022-09-02 12:13\n"
 "Last-Translator: \n"
+"Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/pylite/struct.po\n"
 "X-Crowdin-File-ID: 8442\n"
-"Language: zh_TW\n"
 
 #: ../../source/reference/pylite/struct.rst:6
 msgid "megenginelite.struct"
 msgstr "crwdns93004:0crwdne93004:0"
 
-#: megenginelite.struct.LiteBackend:1 megenginelite.struct.LiteDataType:1
-#: megenginelite.struct.LiteDeviceType:1 megenginelite.struct.LiteTensorPhase:1
-#: of
-msgid "An enumeration."
-msgstr "crwdns93006:0crwdne93006:0"
+#: megenginelite.struct.LiteBackend:1 of
+msgid "The backend type enum, default only"
+msgstr "crwdns95154:0crwdne95154:0"
+
+#: megenginelite.struct.LiteDeviceType:1 of
+msgid "The backend device type enum"
+msgstr "crwdns95156:0crwdne95156:0"
+
+#: megenginelite.struct.LiteDeviceType:3 of
+msgid "compute and storage will base on the device"
+msgstr "crwdns95158:0crwdne95158:0"
+
+#: megenginelite.struct.LiteDataType:1 of
+msgid "The tensor data type enum"
+msgstr "crwdns95160:0crwdne95160:0"
+
+#: megenginelite.struct.LiteDataType:3 of
+msgid "half for float16, int for int32"
+msgstr "crwdns95162:0crwdne95162:0"
+
+#: megenginelite.struct.LiteTensorPhase:1 of
+msgid "The tensor type enum .. note:: LITE_IO for both LITE_INPUT and LITE_OUTPUT"
+msgstr "crwdns95164:0crwdne95164:0"
 
 #: megenginelite.struct.LiteIOType:1 of
-msgid "the input and output type, include SHAPE and VALUE sometimes user only need the shape of the output tensor"
-msgstr "crwdns93008:0crwdne93008:0"
+msgid "The input and output type enum, include SHAPE and VALUE sometimes user only need the shape of the output tensor"
+msgstr "crwdns95166:0crwdne95166:0"
 
 #: megenginelite.struct.LiteAlgoSelectStrategy:1 of
-msgid "operation algorithm seletion strategy type, some operations have multi algorithms, different algorithm has different attribute, according to the strategy, the best algorithm will be selected."
-msgstr "crwdns93010:0crwdne93010:0"
-
-#: megenginelite.struct.LiteAlgoSelectStrategy:5 of
-msgid "Note: These strategies can be combined"
-msgstr "crwdns93012:0crwdne93012:0"
+msgid "Operation algorithm seletion strategy type enum, some operations have multi algorithms, different algorithm has different attribute, according to the strategy, the best algorithm will be selected."
+msgstr "crwdns95168:0crwdne95168:0"
 
 #: megenginelite.struct.LiteAlgoSelectStrategy:7 of
-msgid "LITE_ALGO_HEURISTIC | LITE_ALGO_PROFILE means: if profile cache not valid, use heuristic instead"
-msgstr "crwdns93014:0crwdne93014:0"
+msgid "These strategies can be combined LITE_ALGO_HEURISTIC | LITE_ALGO_PROFILE means: if profile cache not valid, use heuristic instead"
+msgstr "crwdns95170:0crwdne95170:0"
 
-#: megenginelite.struct.LiteAlgoSelectStrategy:10 of
+#: megenginelite.struct.LiteAlgoSelectStrategy:11 of
 msgid "LITE_ALGO_HEURISTIC | LITE_ALGO_REPRODUCIBLE means: heuristic choice the reproducible algo"
 msgstr "crwdns93016:0crwdne93016:0"
 
-#: megenginelite.struct.LiteAlgoSelectStrategy:13 of
+#: megenginelite.struct.LiteAlgoSelectStrategy:14 of
 msgid "LITE_ALGO_PROFILE | LITE_ALGO_REPRODUCIBLE means: profile the best algorithm from the reproducible algorithms set"
 msgstr "crwdns93018:0crwdne93018:0"
 
-#: megenginelite.struct.LiteAlgoSelectStrategy:16 of
+#: megenginelite.struct.LiteAlgoSelectStrategy:17 of
 msgid "LITE_ALGO_PROFILE | LITE_ALGO_OPTIMIZED means: profile the best algorithm form the optimzed algorithms, thus profile will process fast"
 msgstr "crwdns93020:0crwdne93020:0"
 
-#: megenginelite.struct.LiteAlgoSelectStrategy:19 of
+#: megenginelite.struct.LiteAlgoSelectStrategy:20 of
 msgid "LITE_ALGO_PROFILE | LITE_ALGO_OPTIMIZED | LITE_ALGO_REPRODUCIBLE means: profile the best algorithm form the optimzed and reproducible algorithms"
 msgstr "crwdns93022:0crwdne93022:0"
 
 #: megenginelite.struct.LiteLogLevel:1 of
-msgid "DEBUG: The most verbose level, printing debugging info INFO: The default level WARN: Printing warnings ERROR: The least verbose level, printing errors only"
-msgstr "crwdns93024:0crwdne93024:0"
+msgid "Log level enum"
+msgstr "crwdns95172:0crwdne95172:0"
+
+#: megenginelite.struct.LiteLogLevel:5 of
+msgid "DEBUG: The most verbose level, printing debugging info"
+msgstr "crwdns95174:0crwdne95174:0"
+
+#: megenginelite.struct.LiteLogLevel:7 of
+msgid "INFO: The default level"
+msgstr "crwdns95176:0crwdne95176:0"
+
+#: megenginelite.struct.LiteLogLevel:9 of
+msgid "WARN: Printing warnings"
+msgstr "crwdns95178:0crwdne95178:0"
+
+#: megenginelite.struct.LiteLogLevel:11 of
+msgid "ERROR: The least verbose level, printing errors only"
+msgstr "crwdns95180:0crwdne95180:0"
+
+#~ msgid "An enumeration."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "the input and output type, include "
+#~ "SHAPE and VALUE sometimes user only "
+#~ "need the shape of the output "
+#~ "tensor"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "operation algorithm seletion strategy type,"
+#~ " some operations have multi algorithms, "
+#~ "different algorithm has different attribute,"
+#~ " according to the strategy, the best"
+#~ " algorithm will be selected."
+#~ msgstr ""
+
+#~ msgid "Note: These strategies can be combined"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "LITE_ALGO_HEURISTIC | LITE_ALGO_PROFILE means: "
+#~ "if profile cache not valid, use "
+#~ "heuristic instead"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "DEBUG: The most verbose level, printing"
+#~ " debugging info INFO: The default "
+#~ "level WARN: Printing warnings ERROR: The"
+#~ " least verbose level, printing errors "
+#~ "only"
+#~ msgstr ""
 

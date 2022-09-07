@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:24\n"
+"POT-Creation-Date: 2022-09-01 21:02+0800\n"
+"PO-Revision-Date: 2022-09-02 12:12\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -23,46 +23,54 @@ msgid "megengine.functional.nn.roi\\_align"
 msgstr "crwdns69583:0crwdne69583:0"
 
 #: megengine.functional.vision.roi_align:1 of
-msgid "Applies roi align on input feature."
-msgstr "crwdns69585:0crwdne69585:0"
+msgid "Applies RoI (Region of Interest) align on input feature, as described in Mask R-CNN."
+msgstr "crwdns94684:0crwdne94684:0"
+
+#: megengine.functional.vision.roi_align:5 of
+msgid "`RoIAlign <https://paperswithcode.com/method/roi-align>`_"
+msgstr "crwdns94686:0crwdne94686:0"
+
+#: megengine.functional.vision.roi_align:6 of
+msgid "`Mask R-CNN <https://arxiv.org/abs/1703.06870v3>`_"
+msgstr "crwdns94688:0crwdne94688:0"
 
 #: megengine.functional.vision.roi_align of
 msgid "参数"
 msgstr "crwdns69587:0crwdne69587:0"
 
-#: megengine.functional.vision.roi_align:4 of
-msgid "tensor that represents the input feature, shape is `(N, C, H, W)`."
-msgstr "crwdns69589:0crwdne69589:0"
+#: megengine.functional.vision.roi_align:9 of
+msgid "the input tensor that represents the input feature with ``(n, c, h, w)`` shape."
+msgstr "crwdns94690:0crwdne94690:0"
 
-#: megengine.functional.vision.roi_align:6 of
-msgid "`(N, 5)` boxes. First column is the box index. The other 4 columns are ``xyxy``."
-msgstr "crwdns93576:0crwdne93576:0"
+#: megengine.functional.vision.roi_align:11 of
+msgid "a tensor represents Regions of Interest with shape ``(K, 5)``, which means total ``K`` box coordinates in ``(idx, x1, y1, x2, y2)`` format where the regions will be taken from. The coordinate including ``(x1, y1)`` and ``(x2, y2)`` must satisfy ``0 <= x1 < x2`` and ``0 <= y1 < y2``. The first column ``idx`` should contain the index of the corresponding element in the input batch, i.e. a number in ``[0, n - 1]``."
+msgstr "crwdns94692:0crwdne94692:0"
 
-#: megengine.functional.vision.roi_align:8 of
-msgid "`(height, width)` shape of output rois feature."
-msgstr "crwdns93578:0crwdne93578:0"
+#: megengine.functional.vision.roi_align:15 of
+msgid "``(height, width)`` shape of output rois feature."
+msgstr "crwdns94694:0crwdne94694:0"
 
-#: megengine.functional.vision.roi_align:10 of
+#: megengine.functional.vision.roi_align:17 of
 msgid "\"max\" or \"average\", use max/average align just like max/average pooling. Default: \"average\""
 msgstr "crwdns93580:0crwdne93580:0"
 
-#: megengine.functional.vision.roi_align:12 of
+#: megengine.functional.vision.roi_align:19 of
 msgid "scale the input boxes by this number. Default: 1.0"
 msgstr "crwdns69597:0crwdne69597:0"
 
-#: megengine.functional.vision.roi_align:14 of
+#: megengine.functional.vision.roi_align:21 of
 msgid "number of inputs samples to take for each output sample. 0 to take samples densely. Default: 2"
 msgstr "crwdns69599:0crwdne69599:0"
 
-#: megengine.functional.vision.roi_align:17 of
-msgid "wheather to align the input feature, with `aligned=True`, we first appropriately scale the ROI and then shift it by -0.5. Default: True"
-msgstr "crwdns69601:0crwdne69601:0"
+#: megengine.functional.vision.roi_align:24 of
+msgid "wheather to align the input feature, with ``aligned=True``, we first appropriately scale the ROI and then shift it by -0.5. Default: True"
+msgstr "crwdns94696:0crwdne94696:0"
 
 #: megengine.functional.vision.roi_align of
 msgid "返回类型"
 msgstr "crwdns69603:0crwdne69603:0"
 
-#: megengine.functional.vision.roi_align:20 of
+#: megengine.functional.vision.roi_align:27 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr "crwdns69605:0crwdne69605:0"
 
@@ -70,14 +78,26 @@ msgstr "crwdns69605:0crwdne69605:0"
 msgid "返回"
 msgstr "crwdns69607:0crwdne69607:0"
 
-#: megengine.functional.vision.roi_align:21 of
+#: megengine.functional.vision.roi_align:28 of
 msgid "output tensor."
 msgstr "crwdns69609:0crwdne69609:0"
 
-#: megengine.functional.vision.roi_align:24 of
+#: megengine.functional.vision.roi_align:31 of
 msgid "实际案例"
 msgstr "crwdns69611:0crwdne69611:0"
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid "Applies roi align on input feature."
+#~ msgstr "对输入进行 roi align。"
+
+#~ msgid ""
+#~ "`(N, 5)` boxes. First column is "
+#~ "the box index. The other 4 columns"
+#~ " are ``xyxy``."
+#~ msgstr ""
+
+#~ msgid "`(height, width)` shape of output rois feature."
+#~ msgstr ""
 
