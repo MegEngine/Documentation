@@ -20,6 +20,7 @@ megengine.distributed
    :toctree: api
    :nosignatures:
 
+   Server
    Group
    init_process_group
    new_group
