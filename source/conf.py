@@ -69,8 +69,9 @@ release = version
 
 # -- Version Check -----------------------------------------------------------
 
-assert load_version.split(".")[1] == version.split(".")[1], \
-    "The version of MegEngine and MegEngine documentation should be same."
+if doc_mode == "FULL":
+    assert load_version.split(".")[1] == version.split(".")[1], \
+        "The version of MegEngine and MegEngine documentation should be same."
 
 # -- General configuration ---------------------------------------------------
 add_function_parentheses = False
