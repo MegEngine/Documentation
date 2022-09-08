@@ -19,11 +19,18 @@ Tensor 所在设备
 
 >>> import megengine
 >>> a = megengine.Tensor([1., 2., 3.])
-WRN cuda unavailable: no CUDA-capable device is detected(100) ndev=-1
+info: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+info: + Failed to load CUDA driver library, MegEngine works under CPU mode now.      +
+info: + To use CUDA mode, please make sure NVIDIA GPU driver was installed properly. +
+info: + Refer to https://discuss.megengine.org.cn/t/topic/1264 for more information. +
+info: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+debug: failed to load cuda func: cuDeviceGetCount
+debug: failed to load cuda func: cuDeviceGetCount
+debug: failed to load cuda func: cuGetErrorString
 >>> a.device
-"cpu0:0" from "xpux:0"
+CompNode("cpu0:0" from "xpux:0")
 
-对于日常的 MegEngine 使用情景，我们不需要关注冒号 ``:`` 后面编号的含义。
+对于日常的 MegEngine 使用情景，我们不需要关注冒号 ``:`` 后面编号的含义。'
 
 设备相关接口
 ------------
@@ -36,9 +43,15 @@ WRN cuda unavailable: no CUDA-capable device is detected(100) ndev=-1
 
 借助这些接口，我们可以有选择地在 CPU 上或 GPU 上进行 Tensor 计算。比如指定为 CPU:
 
+>>> import megengine
 >>> megengine.set_default_device("cpux")
 >>> megengine.get_default_device()
 'cpux'
+>>> a = megengine.Tensor([1., 2., 3.])
+>>> a.device
+CompNode("cpu0:0" from "cpux:0")
+
+由于指定了设备为 CPU, 则不会出现加载 CUDA 驱动失败的提醒。
 
 .. seealso::
 
