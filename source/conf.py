@@ -7,8 +7,9 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import os
 
-mode = os.getenv("MGE_DOC_MODE", "AUTO")
-assert mode in ("AUTO", "FULL", "MINI"), 'MGE_DOC_MODE only support "AUTO" / "FULL" / "MINI"'
+doc_mode = os.getenv("MGE_DOC_MODE", "AUTO")
+assert doc_mode in ("AUTO", "FULL", "MINI"), \
+    'MGE_DOC_MODE only support "AUTO" / "FULL" / "MINI"'
 
 # -- Monkey patch for `mprop` package ----------------------------------------
 # It will make some module to be a instance for getting or setting property
@@ -37,24 +38,26 @@ from datetime import datetime
 # But MegEngine source code and documentation are stored in two different
 #   repository and it's recommended to import megengine package to match.
 
-if mode == "AUTO":
+if doc_mode == "AUTO":
     try:
         import megengine
         import megenginelite
     except ImportError as e:
         print("MegEngine or lite lib not found. Use mini mode.")
         print(e)
-        mode = "MINI"
+        doc_mode = "MINI"
     else:
         print("MegEngine found. Use full mode.")
-        mode = "FULL"
+        doc_mode = "FULL"
 
-if mode == "MINI":
+if doc_mode == "MINI":
     suppress_warnings = ['ref.ref']
-else:
+elif doc_mode == "FULL":
     import megengine
     import megenginelite
+    load_version = megengine.__version__
     print("MegEngine path:", os.path.dirname(megengine.__file__))
+    print("MegEngine version:", load_version)
 
 # -- Project information -----------------------------------------------------
 
@@ -63,6 +66,11 @@ copyright = f"2020-{datetime.now().year}, The MegEngine Open Source Team"
 author = "The MegEngine Open Source Team"
 version = "1.11"
 release = version
+
+# -- Version Check -----------------------------------------------------------
+
+assert load_version.split(".")[1] == version.split(".")[1], \
+    "The version of MegEngine and MegEngine documentation should be same."
 
 # -- General configuration ---------------------------------------------------
 add_function_parentheses = False
@@ -111,7 +119,7 @@ exclude_patterns = [
     "**.ipynb_checkpoints",
 ]
 
-if mode == "MINI":
+if doc_mode == "MINI":
     exclude_patterns.append("reference")
 
 # -- Options for internationalization ----------------------------------------
