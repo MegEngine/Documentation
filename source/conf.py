@@ -69,8 +69,9 @@ release = version
 
 # -- Version Check -----------------------------------------------------------
 
-if doc_mode == "FULL":
-    assert load_version.split(".")[1] == version.split(".")[1], \
+if doc_mode == "FULL":  # "9999" means nightly build on dev branch
+    assert load_version.split(".")[1] == version.split(".")[1] or \
+        load_version.split(".")[1] == "9999" , \
         "The version of MegEngine and MegEngine documentation should be same."
 
 # -- General configuration ---------------------------------------------------
