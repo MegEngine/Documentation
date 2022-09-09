@@ -240,3 +240,5 @@ if __name__ == "__main__":
     if args.verbose:
         for idx, item in enumerate(ungenerated_api):
             print(idx, item)
+        if (ungenerated_api == []):
+            print("Congratulation! All APIs are converaged now :)")
