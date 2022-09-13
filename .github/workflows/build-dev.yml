@@ -5,6 +5,9 @@ on:
     branches:
       - dev
 
+  schedule:
+      - cron: '0 0/24 * * *'
+
 jobs:
   Flow:
     name: Build master branches MegEngine and dev docs
@@ -71,3 +74,45 @@ jobs:
           export MGE_DOC_MODE="FULL"
           cd ${GITHUB_WORKSPACE}
           make html
+
+      - name: Generate HTML files - Message WebHook
+      if: ${{ failure() }}
+      uses: zcong1993/actions-ding@master
+      with:
+        dingToken: ${{ secrets.DING_TALK_BOT_TOKEN }}
+        body: |
+          {
+            "msgtype": "link",
+            "link": {
+                "title": "Oops! 文档构建失败...",
+                "text": "请检查任何 Warning 或 Error 信息 :(",
+                "picUrl": "",
+                "messageUrl": "https://github.com/MegEngine/Documentation/actions/runs/${{ github.run_id }}"
+            }
+          }
+
+      - name: API Coverage Test
+        id: api-coverage
+        run: |
+          export PYTHONPATH=${GITHUB_WORKSPACE}/megengine/imperative/python:$PYTHONPATH
+          export PYTHONPATH=${GITHUB_WORKSPACE}/megengine/lite/pylite:$PYTHONPATH
+          export LITE_LIB_PATH=${GITHUB_WORKSPACE}/megengine/build/lite/liblite_shared.so
+          export MGE_DOC_MODE="FULL"
+          cd ${GITHUB_WORKSPACE}
+          python3 ./scripts/coverage.py
+
+      - name: API Coverage Test Failure - Message WebHook
+        if: ${{ failure() }}
+        uses: zcong1993/actions-ding@master
+        with:
+          dingToken: ${{ secrets.DING_TALK_BOT_TOKEN }}
+          body: |
+            {
+              "msgtype": "link",
+              "link": {
+                  "title": "Oops! 文档构建失败...",
+                  "text": "未能通过 API 覆盖率测试 :(",
+                  "picUrl": "",
+                  "messageUrl": "https://github.com/MegEngine/Documentation/actions/runs/${{ github.run_id }}"
+              }
+            }
