@@ -85,4 +85,9 @@ jobs:
           python3 scripts/oss/update.py -v "master" -c ${GIT_HASH}
           ./ossutil64 cp -f mapping.json oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/mapping.json
 
-
+        - name: API Coverage Test
+          id: api-coverage
+          run: |
+            cd ${GITHUB_WORKSPACE}
+            make html
+            python3 ./scripts/coverage.py

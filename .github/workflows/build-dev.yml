@@ -74,4 +74,6 @@ jobs:
 
       - name: API Coverage Test
         id: api-coverage
-        run: python3 ./scripts/coverage.py
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          python3 ./scripts/coverage.py
