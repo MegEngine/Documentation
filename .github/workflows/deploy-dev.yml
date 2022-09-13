@@ -84,5 +84,3 @@ jobs:
           version=`python3 -c "from source.conf import version; print(version)"`
           python3 scripts/oss/update.py -v "master" -c ${GIT_HASH}
           ./ossutil64 cp -f mapping.json oss://${{ secrets.OSS_PROD_BUCKET }}/documentation/mapping.json
-
-
