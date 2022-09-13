@@ -1,9 +1,10 @@
 
 import ast
-import inspect
-
-import os
 import argparse
+import inspect
+import os
+import sys
+
 
 from inspect import getmembers, isbuiltin, isclass, isfunction, ismodule
 from types import ModuleType
@@ -246,3 +247,5 @@ if __name__ == "__main__":
                     print(idx + 1, item)
                     wr.writerow(item)
             print("Saved in /tmp/output.csv")
+
+            sys.exit(1)
