@@ -93,8 +93,44 @@ jobs:
       - name: Generate HTML files
         run: |
           make html SPHINXOPTS="-j auto -D language=${{ matrix.language }} ${{ env.buildExtraArgs }}"
-          mv build/html ${{ matrix.language }}
+          cp -r build/html ${{ matrix.language }}
           tar czf ${{ matrix.language }}.tgz ${{ matrix.language }}
+
+      - name: DingTalk Bot - Build No Pass
+        if: ${{ failure() }}
+        uses: zcong1993/actions-ding@master
+        with:
+          dingToken: ${{ secrets.DING_TALK_BOT_TOKEN }}
+          body: |
+            {
+              "msgtype": "link",
+              "link": {
+                  "title": "Oops! 文档构建失败...",
+                  "text": "请检查任何 Warning 或 Error 信息 :(",
+                  "picUrl": "",
+                  "messageUrl": "https://github.com/MegEngine/Documentation/actions/runs/${{ github.run_id }}"
+              }
+            }
+
+      - name: API Coverage Test
+        id: api-coverage
+        run: python3 ./scripts/coverage.py
+
+      - name: DingTalk Bot - API Coverage No Pass
+        if: ${{ failure() }}
+        uses: zcong1993/actions-ding@master
+        with:
+          dingToken: ${{ secrets.DING_TALK_BOT_TOKEN }}
+          body: |
+            {
+              "msgtype": "link",
+              "link": {
+                  "title": "Oops! 文档构建失败...",
+                  "text": "未能通过 API 覆盖率测试 :(",
+                  "picUrl": "",
+                  "messageUrl": "https://github.com/MegEngine/Documentation/actions/runs/${{ github.run_id }}"
+              }
+            }
 
       - name: Upload aritifacts
         uses: actions/upload-artifact@v2
