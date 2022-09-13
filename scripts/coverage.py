@@ -191,11 +191,14 @@ def get_generated_api_from_doc(path: str = None) -> Set[str]:
             generated_api.add(os.path.splitext(filename)[0])
     return generated_api
 
+
+class APICoverageError(RuntimeError):
+    def __init__(self, arg):
+        self.arg = arg
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Get unadded MegEngine Public APIs in doc.")
-    parser.add_argument("-s", "--save", default=False, type=bool, help="save the output content to csv file")
-    parser.add_argument("-v", "--verbose", default=True, type=bool, help="show detailss")
 
     args = parser.parse_args()
 
@@ -228,17 +231,18 @@ if __name__ == "__main__":
     ungenerated_api.sort()
 
     # Now we have put the elephant into the fridge
+    if (ungenerated_api == []):
+        print("Congratulation! All APIs are converaged now :)")
+    else:
+        try:
+            raise APICoverageError("There are some APIs that are not covered in doc. Please check the output below.")
+        except APICoverageError as e:
+            print(e)
 
-    if args.save:
-        import csv
-
-        with open("/tmp/output.csv", "w") as file:
-            wr = csv.writer(file, dialect='excel')
-            wr.writerow(item for item in ungenerated_api)
-        print("Saved in /tmp/output.csv")
-    
-    if args.verbose:
-        for idx, item in enumerate(ungenerated_api):
-            print(idx, item)
-        if (ungenerated_api == []):
-            print("Congratulation! All APIs are converaged now :)")
+            import csv
+            with open("/tmp/output.csv", "w") as file:
+                wr = csv.writer(file, dialect='excel')
+                for idx, item in enumerate(ungenerated_api):
+                    print(idx + 1, item)
+                    wr.writerow(item)
+            print("Saved in /tmp/output.csv")
