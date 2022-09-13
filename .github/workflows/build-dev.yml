@@ -71,3 +71,7 @@ jobs:
           export MGE_DOC_MODE="FULL"
           cd ${GITHUB_WORKSPACE}
           make html
+
+      - name: API Coverage Test
+        id: api-coverage
+        run: python3 ./scripts/coverage.py
