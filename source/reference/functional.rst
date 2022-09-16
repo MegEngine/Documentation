@@ -184,13 +184,15 @@ Statistical Functions
    :nosignatures:
 
    sum
+   cumsum
    prod
    mean
    min
    max
    var
    std
-   cumsum
+   norm
+   normalize
 
 .. seealso::
 
@@ -209,8 +211,6 @@ Linear Algebra Functions
    matmul
    diag
    svd
-   norm
-   normalize
 
 .. _indexing-functions:
 
