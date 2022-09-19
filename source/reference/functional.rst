@@ -46,6 +46,7 @@ Creation Functions
    arange
    linspace
    eye
+   diag
    zeros
    zeros_like
    ones
@@ -209,7 +210,6 @@ Linear Algebra Functions
    dot
    matinv
    matmul
-   diag
    svd
 
 .. _indexing-functions:
