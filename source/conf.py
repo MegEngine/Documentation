@@ -207,6 +207,7 @@ nbsphinx_requirejs_path = ""
 remove_from_toctrees = [
     "reference/core.rst",
     "reference/api/*",
+    "reference/comparison/*",
     "development/meps/*",
 ]
 

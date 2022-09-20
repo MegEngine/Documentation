@@ -4,6 +4,13 @@
 与其它框架 API 进行对比
 =======================
 
+.. toctree::
+   :glob:
+   :hidden:
+   :maxdepth: 1
+
+   comparison/*
+
 .. warning::
 
    MegEngine 的 API 设计遵循 :ref:`mep-0003` , 向《数组 API 标准》靠齐。
@@ -1022,13 +1029,13 @@ Convolution Layers
 
    * - :py:class:`~torch.nn.Conv1d`
      - :py:class:`~megengine.module.Conv1d`
-     -
+     - :ref:`差异对比 <comparison-nn-conv>`
    * - :py:class:`~torch.nn.Conv2d`
      - :py:class:`~megengine.module.Conv2d`
-     -
+     - :ref:`差异对比 <comparison-nn-conv>`
    * - :py:class:`~torch.nn.Conv3d`
      - :py:class:`~megengine.module.Conv3d`
-     -
+     - :ref:`差异对比 <comparison-nn-conv>`
    * - :py:class:`~torch.nn.ConvTranspose1d`
      - :ref:`not-implemented`
      -
