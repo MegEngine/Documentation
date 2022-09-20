@@ -536,6 +536,7 @@ Sorting Functions
 
 NN Funtional Operations
 -----------------------
+
 Convolution functions
 ~~~~~~~~~~~~~~~~~~~~~
 .. list-table::
@@ -634,6 +635,12 @@ Pooling functions
      - :py:func:`~megengine.functional.nn.adaptive_avg_pool2d`
      -
    * - :py:func:`~torch.nn.functional.adaptive_avg_pool3d`
+     - :ref:`not-implemented`
+     - 
+   * - :py:func:`~torch.nn.functional.fractional_max_pool2d`
+     - :ref:`not-implemented`
+     -
+   * - :py:func:`~torch.nn.functional.fractional_max_pool3d`
      - :ref:`not-implemented`
      -
 
@@ -736,16 +743,19 @@ Normalization functions
 
    * - :py:func:`~torch.nn.functional.batch_norm`
      - :py:func:`~megengine.functional.nn.batch_norm`
-     -
+     - 
+   * - :py:func:`~torch.nn.functional.group_norm`
+     - :ref:`not-implemented`
+     - See :py:func:`~megengine.module.GroupNorm`
    * - :py:func:`~torch.nn.functional.instance_norm`
      - :ref:`not-implemented`
-     -
+     - See :py:func:`~megengine.module.InstanceNorm`
    * - :py:func:`~torch.nn.functional.layer_norm`
      - :ref:`not-implemented`
-     -
+     - See :py:func:`~megengine.module.LayerNorm`
    * - :py:func:`~torch.nn.functional.local_response_norm`
      - :ref:`not-implemented`
-     -
+     - See :py:func:`~megengine.module.LocalResponseNorm`
    * - :py:func:`~torch.nn.functional.normalize`
      - :py:func:`~megengine.functional.normalize`
      -
@@ -838,6 +848,9 @@ Loss functions
      - MegEngine
      - Comment
 
+   * - :py:func:`~torch.nn.functional.binary_cross_entropy`
+     - :py:func:`~megengine.functional.nn.binary_cross_entropy`
+     -
    * - :py:func:`~torch.nn.functional.binary_cross_entropy_with_logits`
      - :py:func:`~megengine.functional.nn.binary_cross_entropy`
      -
@@ -852,6 +865,9 @@ Loss functions
      -
    * - :py:func:`~torch.nn.functional.ctc_loss`
      - :py:func:`~megengine.functional.nn.ctc_loss`
+     - 
+   * - :py:func:`~torch.nn.functional.gaussian_nll_loss`
+     - :ref:`not-implemented`
      -
    * - :py:func:`~torch.nn.functional.hinge_embedding_loss`
      - :ref:`not-implemented`
@@ -875,9 +891,12 @@ Loss functions
      - :ref:`not-implemented`
      -
    * - :py:func:`~torch.nn.functional.multi_margin_loss`
-     - :py:func:`~megengine.functional.nn.hinge_loss`
+     - :ref:`not-implemented`
      -
    * - :py:func:`~torch.nn.functional.nll_loss`
+     - :ref:`not-implemented`
+     - 
+   * - :py:func:`~torch.nn.functional.huber_loss`
      - :ref:`not-implemented`
      -
    * - :py:func:`~torch.nn.functional.smooth_l1_loss`
@@ -1019,6 +1038,24 @@ Convolution Layers
    * - :py:class:`~torch.nn.ConvTranspose3d`
      - :py:class:`~megengine.module.ConvTranspose3d`
      -
+   * - :py:class:`~torch.nn.LazyConv1d`
+     - :ref:`not-implemented`
+     -
+   * - :py:class:`~torch.nn.LazyConv2d`
+     - :ref:`not-implemented`
+     -
+   * - :py:class:`~torch.nn.LazyConv3d`
+     - :ref:`not-implemented`
+     -
+   * - :py:class:`~torch.nn.LazyConvTranspose1d`
+     - :ref:`not-implemented`
+     -
+   * - :py:class:`~torch.nn.LazyConvTranspose2d`
+     - :ref:`not-implemented`
+     -
+   * - :py:class:`~torch.nn.LazyConvTranspose3d`
+     - :ref:`not-implemented`
+     -
    * - LocalConv2d
      - :py:class:`~megengine.module.LocalConv2d`
      -
@@ -1072,6 +1109,9 @@ Pooling layers
      - :ref:`not-implemented`
      -
    * - :py:class:`~torch.nn.FractionalMaxPool2d`
+     - :ref:`not-implemented`
+     -
+   * - :py:class:`~torch.nn.FractionalMaxPool3d`
      - :ref:`not-implemented`
      -
    * - :py:class:`~torch.nn.LPPool1d`
@@ -1251,6 +1291,15 @@ Normalization Layers
    * - :py:class:`~torch.nn.BatchNorm3d`
      - :ref:`not-implemented`
      -
+   * - :py:class:`~torch.nn.LazyBatchNorm1d`
+     - :py:class:`~megengine.module.BatchNorm1d`
+     -
+   * - :py:class:`~torch.nn.LazyBatchNorm2d`
+     - :py:class:`~megengine.module.BatchNorm2d`
+     -
+   * - :py:class:`~torch.nn.LazyBatchNorm3d`
+     - :ref:`not-implemented`
+     -
    * - :py:class:`~torch.nn.GroupNorm`
      - :py:class:`~megengine.module.GroupNorm`
      -
@@ -1283,22 +1332,22 @@ Recurrent Layers
      - Comment
 
    * - :py:class:`~torch.nn.RNNBase`
-     - :ref:`not-implemented`
+     - :py:class:`~megengine.module.RNNBase`
      -
    * - :py:class:`~torch.nn.RNN`
-     - :ref:`not-implemented`
+     - :py:class:`~megengine.module.RNN`
      -
    * - :py:class:`~torch.nn.LSTM`
-     - :ref:`not-implemented`
+     - :py:class:`~megengine.module.LSTM`
      -
    * - :py:class:`~torch.nn.GRU`
      - :ref:`not-implemented`
      -
    * - :py:class:`~torch.nn.RNNCell`
-     - :ref:`not-implemented`
+     - :py:class:`~megengine.module.RNNCell`
      -
    * - :py:class:`~torch.nn.LSTMCell`
-     - :ref:`not-implemented`
+     - :py:class:`~megengine.module.LSTMCell`
      -
    * - :py:class:`~torch.nn.GRUCell`
      - :ref:`not-implemented`
@@ -1347,6 +1396,9 @@ Linear Layers
    * - :py:class:`~torch.nn.Bilinear`
      - :ref:`not-implemented`
      -
+   * - :py:class:`~torch.nn.LazyLinear`
+     - :ref:`not-implemented`
+     -
 
 Dropout Layers
 ~~~~~~~~~~~~~~
@@ -1360,6 +1412,9 @@ Dropout Layers
    * - :py:class:`~torch.nn.Dropout`
      - :py:class:`~megengine.module.Dropout`
      -
+   * - :py:class:`~torch.nn.Dropout1d`
+     - :ref:`not-implemented`
+     -
    * - :py:class:`~torch.nn.Dropout2d`
      - :ref:`not-implemented`
      -
@@ -1367,6 +1422,9 @@ Dropout Layers
      - :ref:`not-implemented`
      -
    * - :py:class:`~torch.nn.AlphaDropout`
+     - :ref:`not-implemented`
+     -
+   * - :py:class:`~torch.nn.FeatureAlphaDropout`
      - :ref:`not-implemented`
      -
 
@@ -1485,9 +1543,12 @@ Vision functions
 
    * - :py:func:`~torch.nn.functional.pixel_shuffle`
      - :py:func:`~megengine.functional.nn.pixel_shuffle`
+     - 
+   * - :py:func:`~torch.nn.functional.pixel_unshuffle`
+     - :ref:`not-implemented`
      -
    * - :py:func:`~torch.nn.functional.pad`
-     - :ref:`not-implemented`
+     - :py:func:`~megengine.functional.nn.pad`
      -
    * - :py:func:`~torch.nn.functional.interpolate`
      - :py:func:`~megengine.functional.nn.interpolate`
@@ -1507,13 +1568,13 @@ Vision functions
    * - :py:func:`~torch.nn.functional.affine_grid`
      - :py:func:`~megengine.functional.nn.warp_affine`
      -
-   * - :py:func:`~torchnn.ops.nms`
+   * - :py:func:`~torchvision.ops.nms`
      - :py:func:`~megengine.functional.nn.nms`
      -
-   * - :py:func:`~torchnn.ops.roi_align`
+   * - :py:func:`~torchvision.ops.roi_align`
      - :py:func:`~megengine.functional.nn.roi_align`
      -
-   * - :py:func:`~torchnn.ops.roi_pool`
+   * - :py:func:`~torchvision.ops.roi_pool`
      - :py:func:`~megengine.functional.nn.roi_pooling`
      -
 
