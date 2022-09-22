@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:01\n"
+"PO-Revision-Date: 2022-09-22 06:36\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,15 +24,15 @@ msgstr "megengine.functional.nn.roi\\_pooling"
 
 #: megengine.functional.vision.roi_pooling:1 of
 msgid "Applies RoI (Region of Interest) pooling on input feature, as described in Faster RCNN."
-msgstr ""
+msgstr "在指定输入的感兴趣区域上执行池化，并获得固定大小的特征图， 如Faster RCNN中所述"
 
 #: megengine.functional.vision.roi_pooling:5 of
 msgid "`Region of interest pooling explained <https://deepsense.ai/region-of-interest-pooling-explained/>`_"
-msgstr ""
+msgstr "`Region of interest pooling explained <https://deepsense.ai/region-of-interest-pooling-explained/>`_"
 
 #: megengine.functional.vision.roi_pooling:6 of
 msgid "`Faster R-CNN <https://arxiv.org/abs/1506.01497>`_"
-msgstr ""
+msgstr "`Faster R-CNN <https://arxiv.org/abs/1506.01497>`_"
 
 #: megengine.functional.vision.roi_pooling of
 msgid "参数"
@@ -40,19 +40,19 @@ msgstr "参数"
 
 #: megengine.functional.vision.roi_pooling:9 of
 msgid "the input tensor that represents the input feature with ``(n, c, h, w)`` shape."
-msgstr ""
+msgstr "输入的特征图，形状为 ``(n, c, h, w)``"
 
 #: megengine.functional.vision.roi_pooling:11 of
 msgid "a tensor represents Regions of Interest with shape ``(K, 5)``, which means total ``K`` box coordinates in ``(idx, x1, y1, x2, y2)`` format where the regions will be taken from. The coordinate including ``(x1, y1)`` and ``(x2, y2)`` must satisfy ``0 <= x1 < x2`` and ``0 <= y1 < y2``. The first column ``idx`` should contain the index of the corresponding element in the input batch, i.e. a number in ``[0, n - 1]``."
-msgstr ""
+msgstr "一个形状为 ``(K, 5)`` 的张量，其表示从坐标为 ``(idx, x1, y1, x2, y2)`` 的图像框中要提取的区域，坐标中的 ``(x1, y1)`` 和 ``(x2, y2)`` 必须满足 ``0 <= x1 < x2`` 和 ``0 <= y1 < y2``. 第一列 ``idx`` 应包含输入批处理中相应元素的索引，即 ``[0, n - 1]`` 中的数字。"
 
 #: megengine.functional.vision.roi_pooling:15 of
 msgid "\"max\" or \"average\", the pooling mode to be used. Default: \"max\""
-msgstr ""
+msgstr "\"max\" 或者 \"average\", 要使用的池化方式。默认值: \"max\""
 
 #: megengine.functional.vision.roi_pooling:17 of
 msgid "It is a scale that maps output rois feature to input feature. For example, if the output is 224 * 224 image, and the input is a 112 * 112 feature map, then the scale should be set to 0.5. The default value is 1.0"
-msgstr ""
+msgstr "将一个输出 roi 特征映射到输入特征的比例。例如，如果输出是 224*224 的图像，输入是 112*112 的特征图，则缩放值应该设置为 0.5. 默认为 1.0"
 
 #: megengine.functional.vision.roi_pooling of
 msgid "返回类型"
@@ -68,7 +68,7 @@ msgstr "返回"
 
 #: megengine.functional.vision.roi_pooling:20 of
 msgid "output tensor. ``(K, C, output_shape[0], output_shape[1])`` feature of rois."
-msgstr ""
+msgstr "输出的向量。形状为 ``(K, C, output_shape[0], output_shape[1])`` "
 
 #: megengine.functional.vision.roi_pooling:23 of
 msgid "实际案例"
