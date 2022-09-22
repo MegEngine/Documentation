@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:01\n"
+"PO-Revision-Date: 2022-09-22 06:35\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,11 +24,11 @@ msgstr "megengine.functional.nn.remap"
 
 #: megengine.functional.vision.remap:1 of
 msgid "Applies remap transformation to batched 2D images. Remap is an operation that relocates pixels in a image to another location in a new image."
-msgstr ""
+msgstr "对一批 2D 图像使用重映射。重映射指的是将图像中的像素重新定位到新图像中另一个位置。"
 
 #: megengine.functional.vision.remap:3 of
 msgid "The input images are transformed to the output images by the tensor ``map_xy``. The output's H and W are same as ``map_xy``'s H and W."
-msgstr ""
+msgstr "输入图像通过向量 ``map_xy`` 转换为输出图像。输出向量的 H 和 W 与 ``map_xy`` 的 H 和 W 相同"
 
 #: megengine.functional.vision.remap of
 msgid "参数"
@@ -36,15 +36,15 @@ msgstr "参数"
 
 #: megengine.functional.vision.remap:7 of
 msgid "input image, its shape represents ``[b, c, in_h, in_w]``."
-msgstr ""
+msgstr "输入图像，其形状表示为 ``[b, c, in_h, in_w]``"
 
 #: megengine.functional.vision.remap:9 of
 msgid "transformation matrix, its shape shoule be ``[b, o_h, o_w, 2]``. The shape of output is determined by o_h and o_w. For each element in output, its value is determined by inp and ``map_xy``. ``map_xy[..., 0]`` and ``map_xy[..., 1]`` are the positions of the current element in inp, respectively. Therefore, their ranges are ``[0, in_w - 1]`` and ``[0, in_h - 1]``."
-msgstr ""
+msgstr "转换矩阵，其形状应该是 ``[b, o_h, o_w, 2]``. 输出向量的形状由 o_h 和 o_w 来决定。对于输出中的每个元素，其值由 inp 和 ``map_xy`` 来决定， ``map_xy[..., 0]`` 以及 ``map_xy[..., 1]`` 分别是 inp 当前元素的位置。因此，结果的取值范围在 ``[0, in_w - 1]`` 以及 ``[0, in_h - 1]`` 之间。"
 
 #: megengine.functional.vision.remap:14 of
 msgid "pixel extrapolation method. Default: \"replicate\". Currently also support \"constant\", \"reflect\", \"reflect_101\", \"wrap\". \"replicate\": repeatedly fills the edge pixel values of the duplicate image, expanding the new boundary pixel values with the edge pixel values. \"constant\": fills the edges of the image with a fixed numeric value."
-msgstr ""
+msgstr "像素填充方式。默认值为 \"replicate\"， 目前也支持 \"constant\", \"reflect\", \"reflect_101\", \"wrap\". \"replicate\" 表示重复填充图像的边缘像素值，来展开新的边界。\"constant\" 表示用固定的数值来填充图像的边缘。"
 
 #: megengine.functional.vision.remap:19 of
 msgid "value used in case of a constant border. Default: 0"
@@ -68,7 +68,7 @@ msgstr "返回"
 
 #: megengine.functional.vision.remap:24 of
 msgid "output tensor. [b, c, o_h, o_w]"
-msgstr ""
+msgstr "输出向量，形状为 [b, c, o_h, o_w]"
 
 #: megengine.functional.vision.remap:27 of
 msgid "实际案例"
