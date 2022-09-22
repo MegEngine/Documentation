@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:01\n"
+"PO-Revision-Date: 2022-09-22 06:36\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,15 +24,15 @@ msgstr "megengine.functional.nn.roi\\_align"
 
 #: megengine.functional.vision.roi_align:1 of
 msgid "Applies RoI (Region of Interest) align on input feature, as described in Mask R-CNN."
-msgstr ""
+msgstr "RoI Align 是在指定输入的感兴趣区域上获得特征图，如 Mask R-CNN 论文中所述。"
 
 #: megengine.functional.vision.roi_align:5 of
 msgid "`RoIAlign <https://paperswithcode.com/method/roi-align>`_"
-msgstr ""
+msgstr "`RoIAlign <https://paperswithcode.com/method/roi-align>`_"
 
 #: megengine.functional.vision.roi_align:6 of
 msgid "`Mask R-CNN <https://arxiv.org/abs/1703.06870v3>`_"
-msgstr ""
+msgstr "`Mask R-CNN <https://arxiv.org/abs/1703.06870v3>`_"
 
 #: megengine.functional.vision.roi_align of
 msgid "参数"
@@ -40,19 +40,19 @@ msgstr "参数"
 
 #: megengine.functional.vision.roi_align:9 of
 msgid "the input tensor that represents the input feature with ``(n, c, h, w)`` shape."
-msgstr ""
+msgstr "输入的特征图，形状为 ``(n, c, h, w)``"
 
 #: megengine.functional.vision.roi_align:11 of
 msgid "a tensor represents Regions of Interest with shape ``(K, 5)``, which means total ``K`` box coordinates in ``(idx, x1, y1, x2, y2)`` format where the regions will be taken from. The coordinate including ``(x1, y1)`` and ``(x2, y2)`` must satisfy ``0 <= x1 < x2`` and ``0 <= y1 < y2``. The first column ``idx`` should contain the index of the corresponding element in the input batch, i.e. a number in ``[0, n - 1]``."
-msgstr ""
+msgstr "一个形状为 ``(K, 5)`` 的张量，其表示从坐标为 ``(idx, x1, y1, x2, y2)`` 的图像框中要提取的区域，坐标中的 ``(x1, y1)`` 和 ``(x2, y2)`` 必须满足 ``0 <= x1 < x2`` 和 ``0 <= y1 < y2``. 第一列 ``idx`` 应包含输入批处理中相应元素的索引，即 ``[0, n - 1]`` 中的数字。"
 
 #: megengine.functional.vision.roi_align:15 of
 msgid "``(height, width)`` shape of output rois feature."
-msgstr ""
+msgstr "输出 rois 的形状： ``(height, width)``"
 
 #: megengine.functional.vision.roi_align:17 of
 msgid "\"max\" or \"average\", use max/average align just like max/average pooling. Default: \"average\""
-msgstr ""
+msgstr "\"max\" 或者 \"average\", 作用同池化，默认为 \"average\""
 
 #: megengine.functional.vision.roi_align:19 of
 msgid "scale the input boxes by this number. Default: 1.0"
@@ -64,7 +64,7 @@ msgstr "每个输出样本要采取的输入样本数。0 表示密集采样。�
 
 #: megengine.functional.vision.roi_align:24 of
 msgid "wheather to align the input feature, with ``aligned=True``, we first appropriately scale the ROI and then shift it by -0.5. Default: True"
-msgstr ""
+msgstr "通过 ``aligned=True`` 来表明是否对齐输入特征，如果为 True 则首先适当缩放 ROI，然后再移动 -0.5. 默认为 True."
 
 #: megengine.functional.vision.roi_align of
 msgid "返回类型"
