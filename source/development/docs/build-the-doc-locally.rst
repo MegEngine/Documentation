@@ -77,7 +77,7 @@
   .. code-block:: shell
 
      export PYTHONPATH=/data/MegEngine/imperative/python:$PYTHONPATH
-     export PYTHONPATH=/data/MegEngine/lite/pylite$:$PYTHONPATH
+     export PYTHONPATH=/data/MegEngine/lite/pylite:$PYTHONPATH
      export LITE_LIB_PATH=/data/MegEngine/build/lite/liblite_shared.so  
 
   **注意一定要使用版本一致的 MegEngine 与 Lite** , 否则可能导致产生符号冲突。
