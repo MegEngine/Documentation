@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-04 09:14\n"
+"PO-Revision-Date: 2022-09-26 10:02\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,19 +24,19 @@ msgstr "megengine.functional.svd"
 
 #: megengine.functional.math.svd:1 of
 msgid "Computes the singular value decomposition of a matrix (or a stack of matrices) ``inp``."
-msgstr ""
+msgstr "计算矩阵(或一组矩阵) ``inp`` 的奇异值分解。"
 
 #: megengine.functional.math.svd:3 of
 msgid "Let :math:`X` be the input matrix (or a stack of input matrices), the output should satisfies:"
-msgstr ""
+msgstr "令 :math:`X` 为输入矩阵(或者一组矩阵)，奇异值分解的输出满足："
 
 #: megengine.functional.math.svd:5 of
 msgid "X = U * diag(S) * Vh\n\n"
-msgstr ""
+msgstr "X = U * diag(S) * Vh\n\n"
 
 #: megengine.functional.math.svd:8 of
 msgid "where ``U`` is a matrix (or stack of vectors) with orthonormal columns, ``S`` is a vector of non-negative numbers (or stack of vectors), and ``Vh`` is a matrix (or a stack of matrices) with orthonormal rows."
-msgstr ""
+msgstr "其中， ``U`` 是一个列向量正交的矩阵(或一组矩阵)， ``S`` 是一个元素均为非负值的向量的向量(或一组向量)，而 ``Vh`` 是一个行向量正交的矩阵(或一组矩阵)。"
 
 #: megengine.functional.math.svd of
 msgid "参数"
@@ -44,11 +44,11 @@ msgstr "参数"
 
 #: megengine.functional.math.svd:13 of
 msgid "A input real tensor having the shape ``(..., M, N)`` with ``inp.ndim >= 2`` ."
-msgstr ""
+msgstr "输入可以是 shape 形如 ``(..., M, N)`` 的矩阵，需满足 ``inp.ndim >= 2`` ."
 
 #: megengine.functional.math.svd:15 of
 msgid "If ``False`` , ``U`` and ``Vh`` have the shapes  ``(..., M, K)`` and ``(..., K, N)`` , respectively, where ``K = min(M, N)`` . If ``True`` , the shapes are ``(..., M, M)`` and ``(..., N, N)`` , respectively. Default: ``False`` ."
-msgstr ""
+msgstr "如果取 ``False``，则 ``U`` 和 ``Vh`` 的 shape 分别为  ``(..., M, K)`` 、 ``(..., K, N)`` ，其中 ``K = min(M, N)``. 如果取 ``True``，则 shape 分别为 ``(..., M, M)`` 、 ``(..., N, N)`` . 默认值： ``False`` ."
 
 #: megengine.functional.math.svd:19 of
 msgid "Whether or not to compute ``U`` and ``Vh`` in addition to ``S`` . Default: ``True`` ."
@@ -72,7 +72,7 @@ msgstr "返回"
 
 #: megengine.functional.math.svd:25 of
 msgid "Returns a tuple ( ``U`` , ``S`` , ``Vh`` ), which are SVD factors ``U`` , ``S``, ``Vh`` of  input matrix ``inp``. ( ``U`` , ``Vh`` only returned when ``compute_uv`` is True). ``U`` contains matrices orthonormal columns (i.e., the columns are left singular vectors). If ``full_matrices`` is ``True`` , the array must have shape ``(..., M, M)`` . If ``full_matrices`` is ``False`` , the array must have shape ``(..., M, K)`` , where ``K = min(M, N)`` ."
-msgstr ""
+msgstr "返回值是一个tuple ( ``U`` , ``S`` , ``Vh`` )， ``U`` ， ``S``， ``Vh`` 为输入矩阵``inp`` 的奇异值分解的结果。( 当 ``compute_uv`` 为 True 的时，只会返回 ``U`` 和 ``Vh`` )。 ``U`` 包含输入矩阵的正交列向量(列向量为输入矩阵的左奇异向量)。如果 ``full_matrices`` 为  ``True`` ，则矩阵的 shape 必须为 ``(..., M, M)`` 。如果 ``full_matrices`` 为  ``False`` ，则矩阵的 shape  必须为  ``(..., M, K)`` ，其中 ``K = min(M, N)`` ."
 
 #: megengine.functional.math.svd:31 of
 msgid "实际案例"
