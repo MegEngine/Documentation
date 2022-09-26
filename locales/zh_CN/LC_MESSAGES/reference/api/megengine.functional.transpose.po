@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 11:57\n"
+"PO-Revision-Date: 2022-09-26 10:02\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -40,43 +40,43 @@ msgstr "一个由 0、1、...、``ndim``-1 的整数和任意个的 ``'x'`` 字�
 
 #: megengine.functional.tensor.transpose:6 of
 msgid "a list of integers including 0, 1, ... , ``ndim``-1, and any number of ``'x'`` char in dimensions where this tensor should be broadcasted. For examples:"
-msgstr ""
+msgstr "一个由 0, 1, ... , ``ndim``-1 的整数，以及任意个表征对应维度需要进行广播的 ``'x'`` 字符组成的列表。例如："
 
 #: megengine.functional.tensor.transpose:10 of
 msgid "(``'x'``) -> make a 0d (scalar) into a 1d vector"
-msgstr ""
+msgstr "(``'x'``) -> 将一个0维数据 (标量) 广播成一维向量。"
 
 #: megengine.functional.tensor.transpose:11 of
 msgid "(0, 1) -> identity for 2d vectors"
-msgstr ""
+msgstr "(0, 1) -> 二维 tensor 的不变映射。"
 
 #: megengine.functional.tensor.transpose:12 of
 msgid "(1, 0) -> inverts the first and second dimensions"
-msgstr ""
+msgstr "(1, 0) -> 交换第一维和第二维。"
 
 #: megengine.functional.tensor.transpose:13 of
 msgid "(``'x'``, 0) -> make a row out of a 1d vector (N to 1xN)"
-msgstr ""
+msgstr "(0, ``'x'``) -> 把一个一维向量广播成一个的二维 tensor，一维向量作为 tensor 的行向量 (N to 1xN)."
 
 #: megengine.functional.tensor.transpose:14 of
 msgid "(0, ``'x'``) -> make a column out of a 1d vector (N to Nx1)"
-msgstr ""
+msgstr "(0, ``'x'``) -> 把一个一维向量广播成一个的二维 tensor，一维向量作为 tensor 的列向量 (N to Nx1)."
 
 #: megengine.functional.tensor.transpose:15 of
 msgid "(2, 0, 1) -> AxBxC to CxAxB"
-msgstr ""
+msgstr "(2, 0, 1) -> AxBxC to CxAxB"
 
 #: megengine.functional.tensor.transpose:16 of
 msgid "(0, ``'x'``, 1) -> AxB to Ax1xB"
-msgstr ""
+msgstr "(0, ``'x'``, 1) -> AxB to Ax1xB"
 
 #: megengine.functional.tensor.transpose:17 of
 msgid "(1, ``'x'``, 0) -> AxB to Bx1xA"
-msgstr ""
+msgstr "(1, ``'x'``, 0) -> AxB to Bx1xA"
 
 #: megengine.functional.tensor.transpose:18 of
 msgid "(1,) -> this removes dimensions 0. It must be a broadcastable dimension (1xA to A)"
-msgstr ""
+msgstr "(1,) -> 移除最低维。必须保证其是一个可广播的维度 (1xA to A)。"
 
 #: megengine.functional.tensor.transpose of
 msgid "返回类型"
