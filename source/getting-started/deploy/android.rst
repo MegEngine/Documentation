@@ -142,6 +142,12 @@ CameraXApp 中的用例代码主要参考自 Google 官方文档 `CameraX overvi
 * ``loadModel``: 即加载模型，在 Android APK 开发中我们有几种常见的思路获取和加载 ``.mge`` 模型。
   一种是允许用户从手机储存卡或网络地址中加载模型文件，但这需要 APP 向用户请求对应的读取和加载权限；
   另一种做法是将模型作为资源文件打包内置到 APK 中，这也是本教程所采取的做法，理解和实现起来更加简单；
+
+  .. code-block:: shell
+
+     CameraXApp/app/src/main/assets       <----- Make sure the path is correct
+     └── dummpy.mge                       <----- The model file (replace the dummpy one)
+
 * ``predict``: 根据模型和输入的图片信息，进行预测，并且返回相应的结果。
 
 ImageClassifier 将在我们的 APP 启动后实例化并加载好 ``.mge`` 模型文件，
