@@ -5,7 +5,9 @@ list see the documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
 
+import logging
 import os
+import traceback
 
 doc_mode = os.getenv("MGE_DOC_MODE", "AUTO")
 assert doc_mode in ("AUTO", "FULL", "MINI"), \
@@ -38,26 +40,35 @@ from datetime import datetime
 # But MegEngine source code and documentation are stored in two different
 #   repository and it's recommended to import megengine package to match.
 
+logging.basicConfig(format="%(levelname)s: %(message)s",
+                    level=logging.INFO)
+
 if doc_mode == "AUTO":
     try:
         import megengine
         import megenginelite
-    except ImportError as e:
-        print("MegEngine or lite lib not found. Use mini mode.")
-        print(e)
+    except Exception  as e:
+        logging.info("MegEngine or lite lib not found. Use mini mode.")
+        logging.error(traceback.format_exc())
         doc_mode = "MINI"
     else:
-        print("MegEngine found. Use full mode.")
+        logging.info("MegEngine and lite lib found. Use full mode.")
         doc_mode = "FULL"
 
 if doc_mode == "MINI":
     suppress_warnings = ['ref.ref']
 elif doc_mode == "FULL":
-    import megengine
-    import megenginelite
-    load_version = megengine.__version__
-    print("MegEngine path:", os.path.dirname(megengine.__file__))
-    print("MegEngine version:", load_version)
+    try:
+        import megengine
+        import megenginelite
+    except Exception as e:
+        logging.error("MegEngine or lite lib not found.")
+        logging.error(traceback.format_exc())
+    else:
+        load_version = megengine.__version__
+        logging.info("MegEngine path: " + os.path.dirname(megengine.__file__))
+        logging.info("Lite path: " + os.path.dirname(megenginelite.__file__))
+        logging.info("Version: " + load_version)
 
 # -- Project information -----------------------------------------------------
 
