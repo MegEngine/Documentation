@@ -80,6 +80,12 @@
      export PYTHONPATH=/data/MegEngine/lite/pylite:$PYTHONPATH
      export LITE_LIB_PATH=/data/MegEngine/build/lite/liblite_shared.so  
 
+  同时需要手动安装 MegEngine Python Package 的依赖文件：
+
+  .. code-block:: shell
+
+     pip install -r /data/MegEngine/imperative/python/requires.txt
+
   **注意一定要使用版本一致的 MegEngine 与 Lite** , 否则可能导致产生符号冲突。
   这种方式适合开发者需要同时对源码和文档进行维护的情况。➡️  :ref:`了解如何进行从源码构建 <install>` 。
 
