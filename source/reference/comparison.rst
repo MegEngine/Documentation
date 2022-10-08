@@ -1291,18 +1291,18 @@ Normalization Layers
 
    * - :py:class:`~torch.nn.BatchNorm1d`
      - :py:class:`~megengine.module.BatchNorm1d`
-     -
+     - :ref:`差异对比 <comparison-batch-norm>`
    * - :py:class:`~torch.nn.BatchNorm2d`
      - :py:class:`~megengine.module.BatchNorm2d`
-     -
+     - :ref:`差异对比 <comparison-batch-norm>`
    * - :py:class:`~torch.nn.BatchNorm3d`
      - :ref:`not-implemented`
-     -
+     - 
    * - :py:class:`~torch.nn.LazyBatchNorm1d`
-     - :py:class:`~megengine.module.BatchNorm1d`
+     - :ref:`not-implemented`
      -
    * - :py:class:`~torch.nn.LazyBatchNorm2d`
-     - :py:class:`~megengine.module.BatchNorm2d`
+     - :ref:`not-implemented`
      -
    * - :py:class:`~torch.nn.LazyBatchNorm3d`
      - :ref:`not-implemented`
