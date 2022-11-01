@@ -23,7 +23,7 @@ MegEngine 的 :py:mod:`optimizer` 模块中实现了大量的优化算法，
        with gm:
            pred = model(data)
            loss = loss_fn(pred, label)
-           gm.backward()
+           gm.backward(loss)
            optimizer.step().clear_grad()
 
 * 我们需要构造一个优化器，并且传入需要被优化的参数 ``Parameter`` 或其迭代；
