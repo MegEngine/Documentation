@@ -16,6 +16,7 @@
    architecture-design/index
    behind/index
    roadmap/index
+   imperative/index
    meps
    environment/index
    workflow
