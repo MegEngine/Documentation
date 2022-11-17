@@ -110,7 +110,7 @@ MegEngine Lite C++ 模型部署快速上手
 
 #. 首先需要 Clone 整个 MegEngine 工程，并进入到 MegEngine 的根目录：
 
-   >>> git clone --depth=1 git@github.com:MegEngine/MegEngine.git
+   >>> git clone --depth=1 https://github.com/MegEngine/MegEngine.git
    >>> cd MegEngine
 
 #. 环境准备 & 执行编译：
