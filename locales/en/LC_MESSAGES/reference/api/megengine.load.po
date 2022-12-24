@@ -1,29 +1,25 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-09 13:27\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2021-11-09 13:27+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.load.po\n"
-"X-Crowdin-File-ID: 2358\n"
 
 #: ../../source/reference/api/megengine.load.rst:2
 msgid "megengine.load"
 msgstr ""
 
 #: megengine.serialization.load:1 of
-msgid "Load an object saved with :func:~.megengine.save` from a file."
+msgid "Load an object saved with :func:`~.megengine.save` from a file."
 msgstr ""
 
 #: megengine.serialization.load of
@@ -35,25 +31,83 @@ msgid "a string of file name or a text file object from which to load."
 msgstr ""
 
 #: megengine.serialization.load:4 of
-msgid "Default: ``None``."
+msgid "defines device mapping. See examples for usage."
 msgstr ""
 
 #: megengine.serialization.load:5 of
-msgid "Default: ``pickle``."
+msgid "the module to use for pickling."
 msgstr ""
 
 #: megengine.serialization.load:9 of
-msgid "``map_location`` defines device mapping. See examples for usage."
+msgid ""
+"If you will call :func:`~.megengine.set_default_device()`, please do it "
+"before :func:`~.megengine.load()`."
 msgstr ""
 
-#: megengine.serialization.load:10 of
-msgid "If you will call :func:`~.megengine.set_default_device()`, please do it before :func:`~.megengine.load()`."
+#: megengine.serialization.load:12 of
+msgid "If you are using MegEngine with different Python versions"
 msgstr ""
 
-#: megengine.serialization.load:14 of
+#: megengine.serialization.load:15 of
+msgid ""
+"Different Python version may use different DEFAULT/HIGHEST pickle "
+"protocol. If you want to :func:`~megengine.load` the saved object in "
+"another Python version, please make sure you have used the same protocol."
+msgstr ""
+
+#: megengine.serialization.load:19 of
+msgid "You can select to use ``pickle`` module directly"
+msgstr ""
+
+#: megengine.serialization.load:21 of
+msgid ""
+"This interface is a wrapper of :func:`pickle.load`. If you want to use "
+"``pickle``, See :py:mod:`pickle` for more information about how to set "
+"``pickle_protocol``:"
+msgstr ""
+
+#: megengine.serialization.load:24 of
+msgid ""
+":py:data:`pickle.HIGHEST_PROTOCOL` - the highest protocol version "
+"available."
+msgstr ""
+
+#: megengine.serialization.load:25 of
+msgid ""
+":py:data:`pickle.DEFAULT_PROTOCOL` - the default protocol version used "
+"for pickling."
+msgstr ""
+
+#: megengine.serialization.load:28 of
 msgid "实际案例"
+msgstr ""
+
+#: megengine.serialization.load:29 of
+msgid "This example shows how to load tenors to different devices:"
+msgstr ""
+
+#: megengine.serialization.load:47 of
+msgid ""
+"If you are using a lower version of Python (<3.8), you can use other "
+"pickle module like ``pickle5`` to load object saved in pickle 5 protocol:"
+msgstr ""
+
+#: megengine.serialization.load:52 of
+msgid "Or you can use ``pickle5`` in this way (only used with this interface)："
 msgstr ""
 
 #~ msgid "Examples:"
 #~ msgstr "例如："
+
+#~ msgid "Load an object saved with :func:~.megengine.save` from a file."
+#~ msgstr ""
+
+#~ msgid "Default: ``None``."
+#~ msgstr ""
+
+#~ msgid "Default: ``pickle``."
+#~ msgstr ""
+
+#~ msgid "``map_location`` defines device mapping. See examples for usage."
+#~ msgstr ""
 

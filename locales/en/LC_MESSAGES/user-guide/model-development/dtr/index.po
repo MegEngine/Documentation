@@ -1,34 +1,32 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:10\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2022-09-02 12:10+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/dtr/index.po\n"
-"X-Crowdin-File-ID: 8179\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: ../../source/user-guide/model-development/dtr/index.rst:5
 msgid "使用 DTR 进行显存优化"
 msgstr "Memory optimization using DTR"
 
 #: ../../source/user-guide/model-development/dtr/index.rst:7
-msgid "MegEngine 通过引入 `DTR <https://arxiv.org/pdf/2006.09616.pdf>`_ :footcite:p:`kirisame2021dynamic` 技术来进行动态图下的显存优化，同时也支持在静态图下开启。"
-msgstr "MegEngine optimizes video memory in dynamic graphs by introducing `DTR <https://arxiv.org/pdf/2006.09616.pdf>`_ :footcite:p:`kirisame2021dynamic` technology, and also supports opening in static graphs."
-
-#: ../../source/user-guide/model-development/dtr/index.rst:10
-msgid "Marisa Kirisame, Steven Lyubomirsky, Altan Haan, Jennifer Brennan, Mike He, Jared Roesch, Tianqi Chen, and Zachary Tatlock. Dynamic tensor rematerialization. In International Conference on Learning Representations. 2021. URL: https://openreview.net/forum?id=Vfs_2RnOD0H."
+msgid ""
+"MegEngine 通过引入 `DTR <https://arxiv.org/pdf/2006.09616.pdf>`_ "
+":footcite:p:`kirisame2021dynamic` 技术来进行动态图下的显存优化，同时也支持在静态图下开启。"
 msgstr ""
+"MegEngine optimizes video memory in dynamic graphs by introducing `DTR "
+"<https://arxiv.org/pdf/2006.09616.pdf>`_ "
+":footcite:p:`kirisame2021dynamic` technology, and also supports opening "
+"in static graphs."
 
 #: ../../source/user-guide/model-development/dtr/index.rst:12
 msgid "DTR 使用与配置方式"
@@ -36,47 +34,97 @@ msgstr "How to use and configure DTR"
 
 #: ../../source/user-guide/model-development/dtr/index.rst:14
 msgid "在训练代码之前添加一行代码，即可启用动态图的 DTR 显存优化："
-msgstr "Add a line of code before the training code to enable DTR memory optimization for dynamic："
+msgstr ""
+"Add a line of code before the training code to enable DTR memory "
+"optimization for dynamic："
 
 #: ../../source/user-guide/model-development/dtr/index.rst:18
-msgid "用户现在可以直接开启 DTR 优化，不再需要设置一个显存阈值  :py:data:`~.dtr.eviction_threshold` 作为触发条件。 MegEngine 默认会在当前空闲的显存无法满足一次申请时尝试进行优化，根据 DTR 策略找出最优的 Tensor 并释放其显存，直到该次显存申请成功。"
-msgstr "Users can now directly enable DTR optimization without setting a memory threshold: py:data:`~.dtr.eviction_threshold` as a trigger condition. By default, MegEngine will try to optimize when the currently idle video memory cannot meet an application, find the optimal Tensor according to the DTR strategy and release its video memory until the video memory application is successful."
+msgid ""
+"用户现在可以直接开启 DTR 优化，不再需要设置一个显存阈值  :py:data:`~.dtr.eviction_threshold` "
+"作为触发条件。 MegEngine 默认会在当前空闲的显存无法满足一次申请时尝试进行优化，根据 DTR 策略找出最优的 Tensor "
+"并释放其显存，直到该次显存申请成功。"
+msgstr ""
+"Users can now directly enable DTR optimization without setting a memory "
+"threshold: py:data:`~.dtr.eviction_threshold` as a trigger condition. By "
+"default, MegEngine will try to optimize when the currently idle video "
+"memory cannot meet an application, find the optimal Tensor according to "
+"the DTR strategy and release its video memory until the video memory "
+"application is successful."
 
 #: ../../source/user-guide/model-development/dtr/index.rst:22
 msgid "而在 1.4 版本中，必须提前设置好显存阈值，才能开启 DTR 显存优化："
-msgstr "In version 1.4, the video memory threshold must be set in advance to enable DTR video memory optimization："
+msgstr ""
+"In version 1.4, the video memory threshold must be set in advance to "
+"enable DTR video memory optimization："
 
 #: ../../source/user-guide/model-development/dtr/index.rst:27
 msgid "显存阈值的设置技巧"
 msgstr "Video memory threshold setting skills"
 
 #: ../../source/user-guide/model-development/dtr/index.rst:30
-msgid "一般情况下，显存阈值设得越小，显存峰值就越低，训练耗时也会越大；显存阈值设得越大，显存峰值就越高，训练耗时也会越小。 但值得注意的是，当显存阈值接近显卡容量时，容易引发碎片问题。因为 DTR 是根据活跃的显存大小来执行释放操作的，释放掉的 Tensor 在显卡上的物理地址很可能不连续。 例如：释放了两个物理位置不相邻的 100MB 的 Tensor, 仍然无法满足一次 200MB 显存的申请。此时就会自动触发碎片整理操作，对性能造成巨大影响。"
-msgstr "In general, the smaller the memory threshold is set, the lower the peak memory value and the longer the training time; the larger the memory threshold is, the higher the memory peak value and the shorter the training time. But it is worth noting that when the memory threshold is close to the capacity of the graphics card, it is easy to cause fragmentation problems. Because DTR performs the release operation according to the active video memory size, the physical addresses of the released Tensors on the graphics card are likely to be discontinuous. For example,：releases two 100MB Tensors whose physical locations are not adjacent, but still cannot satisfy a 200MB video memory application. At this point, the defragmentation operation is automatically triggered, which has a huge impact on performance."
+msgid ""
+"一般情况下，显存阈值设得越小，显存峰值就越低，训练耗时也会越大；显存阈值设得越大，显存峰值就越高，训练耗时也会越小。 "
+"但值得注意的是，当显存阈值接近显卡容量时，容易引发碎片问题。因为 DTR 是根据活跃的显存大小来执行释放操作的，释放掉的 Tensor "
+"在显卡上的物理地址很可能不连续。 例如：释放了两个物理位置不相邻的 100MB 的 Tensor, 仍然无法满足一次 200MB "
+"显存的申请。此时就会自动触发碎片整理操作，对性能造成巨大影响。"
+msgstr ""
+"In general, the smaller the memory threshold is set, the lower the peak "
+"memory value and the longer the training time; the larger the memory "
+"threshold is, the higher the memory peak value and the shorter the "
+"training time. But it is worth noting that when the memory threshold is "
+"close to the capacity of the graphics card, it is easy to cause "
+"fragmentation problems. Because DTR performs the release operation "
+"according to the active video memory size, the physical addresses of the "
+"released Tensors on the graphics card are likely to be discontinuous. For"
+" example,：releases two 100MB Tensors whose physical locations are not "
+"adjacent, but still cannot satisfy a 200MB video memory application. At "
+"this point, the defragmentation operation is automatically triggered, "
+"which has a huge impact on performance."
 
 #: ../../source/user-guide/model-development/dtr/index.rst:34
 msgid "结合分布式训练"
 msgstr "Combined with distributed training"
 
 #: ../../source/user-guide/model-development/dtr/index.rst:37
-msgid "在分布式情景下，我们通常会使用 :class:`~.distributed.launcher` 将一个函数包装成一个多进程运行的函数， 此时如果想要开启 DTR 显存优化，需要在被包装的函数中定义 DTR 的参数："
-msgstr "In distributed scenarios, we usually use :class:`~.distributed.launcher` to wrap a function into a multi-process running function. At this time, if you want to enable DTR memory optimization, you need to define DTR in the wrapped function. parameter："
+msgid ""
+"在分布式情景下，我们通常会使用 :class:`~.distributed.launcher` 将一个函数包装成一个多进程运行的函数， "
+"此时如果想要开启 DTR 显存优化，需要在被包装的函数中定义 DTR 的参数："
+msgstr ""
+"In distributed scenarios, we usually use :class:`~.distributed.launcher` "
+"to wrap a function into a multi-process running function. At this time, "
+"if you want to enable DTR memory optimization, you need to define DTR in "
+"the wrapped function. parameter："
 
 #: ../../source/user-guide/model-development/dtr/index.rst:47
 msgid "如果你还不清楚相关概念，可参考 :ref:`distributed-guide` 页面了解细节。"
-msgstr "If you are not clear about the related concepts, you can refer to the :ref:`distributed-guide` page for details."
+msgstr ""
+"If you are not clear about the related concepts, you can refer to the "
+":ref:`distributed-guide` page for details."
 
 #: ../../source/user-guide/model-development/dtr/index.rst:51
-msgid "还有一些其它的接口如 :py:data:`~.dtr.evictee_minimum_size`, :py:data:`~.dtr.enable_sqrt_sampling` ... 可以对 DTR 策略进行自定义，更多配置说明请参考 :py:mod:`~.dtr` 模块的 API 文档页面。"
-msgstr "There are some other interfaces such as :py:data:`~.dtr.evictee_minimum_size`, :py:data:`~.dtr.enable_sqrt_sampling` ... You can customize the DTR strategy, for more configuration instructions, please refer to: API documentation page for the py:mod:`~.dtr` module."
+msgid ""
+"还有一些其它的接口如 :py:data:`~.dtr.evictee_minimum_size`, "
+":py:data:`~.dtr.enable_sqrt_sampling` ... 可以对 DTR 策略进行自定义，更多配置说明请参考 "
+":py:mod:`~.dtr` 模块的 API 文档页面。"
+msgstr ""
+"There are some other interfaces such as "
+":py:data:`~.dtr.evictee_minimum_size`, "
+":py:data:`~.dtr.enable_sqrt_sampling` ... You can customize the DTR "
+"strategy, for more configuration instructions, please refer to: API "
+"documentation page for the py:mod:`~.dtr` module."
 
 #: ../../source/user-guide/model-development/dtr/index.rst:55
 msgid "在静态图下开启 DTR"
 msgstr "Enable DTR in static images"
 
 #: ../../source/user-guide/model-development/dtr/index.rst:57
-msgid "用户在编译静态图时使用 :class:`~.jit.DTRConfig` 设置 :class:`~.jit.trace` 的参数 ``dtr_config``, 就可以打开 DTR 优化："
-msgstr "Users can use :class:`~.jit.DTRConfig` to set the parameter `` :class:of `~.jit.trace` when compiling static images, you can turn on DTR optimization："
+msgid ""
+"用户在编译静态图时使用 :class:`~.jit.DTRConfig` 设置 :class:`~.jit.trace` 的参数 "
+"``dtr_config``, 就可以打开 DTR 优化："
+msgstr ""
+"Users can use :class:`~.jit.DTRConfig` to set the parameter `` :class:of "
+"`~.jit.trace` when compiling static images, you can turn on DTR "
+"optimization："
 
 #~ msgid "参数设置"
 #~ msgstr ""
@@ -395,11 +443,4 @@ msgstr "Users can use :class:`~.jit.DTRConfig` to set the parameter `` :class:of
 #~ "Representations. 2021. URL: "
 #~ "https://openreview.net/forum?id=Vfs_2RnOD0H."
 #~ msgstr ""
-#~ "Marisa Kirisame, Steven Lyubomirsky, Altan "
-#~ "Haan, Jennifer Brennan, Mike He, Jared"
-#~ " Roesch, Tianqi Chen, and Zachary "
-#~ "Tatlock. Dynamic tensor rematerialization. In"
-#~ " International Conference on Learning "
-#~ "Representations. 2021. URL: "
-#~ "https://openreview.net/forum? id=Vfs_2RnOD0H."
 

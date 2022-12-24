@@ -1,52 +1,56 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-04 09:13\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2022-08-04 09:13+0000\n"
 "Last-Translator: \n"
-"Language: zh_CN\n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.prod.po\n"
-"X-Crowdin-File-ID: 2244\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: ../../source/reference/api/megengine.functional.prod.rst:2
 msgid "megengine.functional.prod"
 msgstr "megengine.functional.prod"
 
 #: megengine.functional.math.prod:1 of
-msgid "Returns the product of input tensor along given axis. If axis is a list of dimensions, reduce over all of them."
-msgstr "返回在给定轴 ``axis`` 上 ``inp`` 张量每一行的乘积。如果给定的轴是一个维度列表，则规约所有维度。"
+msgid "Calculates the product of tensor elements over a given axis (or axes)."
+msgstr ""
 
 #: megengine.functional.math.prod of
 msgid "参数"
 msgstr "参数"
 
-#: megengine.functional.math.prod:5 of
-msgid "input tensor."
-msgstr "输入张量。"
+#: megengine.functional.math.prod:4 of
+msgid "input tensor. Should have a numeric data type."
+msgstr ""
 
-#: megengine.functional.math.prod:7 of
-msgid "dimension to reduce. If None, all dimensions will be reduced. Default: None"
-msgstr "要进行规约的维度。如果设置为 None，则所有的维度都将规约。默认：None"
+#: megengine.functional.math.prod:6 of
+msgid ""
+"axis or axes along which products must be computed. By default, the "
+"product must be computed over the entire tensor. If a sequence of "
+"integers, products must be computed over multiple axes."
+msgstr ""
 
-#: megengine.functional.math.prod:8 of
-msgid "whether the output tensor has axis retained or not. Default: False"
-msgstr "输出张量是否保留了轴 *axis* 。默认：False"
+#: megengine.functional.math.prod:9 of
+msgid ""
+"if ``True``, the reduced axes (dimensions) must be included in the result"
+" as singleton dimensions, and, accordingly, the result must be compatible"
+" with the input tensor (see :ref:`broadcasting-rule`). Otherwise, if "
+"``False``, the reduced axes (dimensions) must not be included in the "
+"result."
+msgstr ""
 
 #: megengine.functional.math.prod of
 msgid "返回类型"
 msgstr "返回类型"
 
-#: megengine.functional.math.prod:10 of
+#: megengine.functional.math.prod:13 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ":py:class:`~megengine.tensor.Tensor`"
 
@@ -54,13 +58,53 @@ msgstr ":py:class:`~megengine.tensor.Tensor`"
 msgid "返回"
 msgstr "返回"
 
-#: megengine.functional.math.prod:11 of
-msgid "output tensor."
-msgstr "输出张量。"
-
 #: megengine.functional.math.prod:14 of
+msgid ""
+"if the product was computed over the entire tensor, a zero-dimensional "
+"tensor containing the products; otherwise, a non-zero-dimensional tensor "
+"containing the products. The returned tensor must have a data type "
+"determined by :ref:`dtype-promotion`."
+msgstr ""
+
+#: megengine.functional.math.prod:18 of
+msgid "Special Cases"
+msgstr ""
+
+#: megengine.functional.math.prod:20 of
+msgid "Let ``N`` equal the number of elements over which to compute the product."
+msgstr ""
+
+#: megengine.functional.math.prod:22 of
+msgid "If ``N`` is 0, the product is ``1`` (i.e., the empty product)."
+msgstr ""
+
+#: megengine.functional.math.prod:23 of
+msgid ""
+"If :math:`x_i` is ``NaN``, the product is ``NaN`` (i.e., ``NaN`` values "
+"propagate)."
+msgstr ""
+
+#: megengine.functional.math.prod:27 of
+msgid ""
+"Arithmetic is modular when using integer types, and no error is raised on"
+" overflow:"
+msgstr ""
+
+#: megengine.functional.math.prod:34 of
 msgid "实际案例"
 msgstr "实际案例"
+
+#: megengine.functional.math.prod:35 of
+msgid "The product of an empty tensor is the neutral element 1:"
+msgstr ""
+
+#: megengine.functional.math.prod:40 of
+msgid "Normal case:"
+msgstr ""
+
+#: megengine.functional.math.prod:47 of
+msgid "Along an axis:"
+msgstr ""
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
@@ -73,4 +117,26 @@ msgstr "实际案例"
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid ""
+#~ "Returns the product of input tensor "
+#~ "along given axis. If axis is a "
+#~ "list of dimensions, reduce over all "
+#~ "of them."
+#~ msgstr "返回在给定轴 ``axis`` 上 ``inp`` 张量每一行的乘积。如果给定的轴是一个维度列表，则规约所有维度。"
+
+#~ msgid "input tensor."
+#~ msgstr "输入张量。"
+
+#~ msgid ""
+#~ "dimension to reduce. If None, all "
+#~ "dimensions will be reduced. Default: "
+#~ "None"
+#~ msgstr "要进行规约的维度。如果设置为 None，则所有的维度都将规约。默认：None"
+
+#~ msgid "whether the output tensor has axis retained or not. Default: False"
+#~ msgstr "输出张量是否保留了轴 *axis* 。默认：False"
+
+#~ msgid "output tensor."
+#~ msgstr "输出张量。"
 

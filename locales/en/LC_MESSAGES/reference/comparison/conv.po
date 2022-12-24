@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2022, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/reference/comparison/conv.rst:5
+msgid "Conv 差异对比"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:7
+msgid "背景：卷积运算"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:9
+msgid ""
+"对于形状为 :math:`(N, C_\\text {in}, ...)` 的输入和形状为 :math:`(N, C_\\text {out}, "
+"...)` 的输出，有："
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:11
+msgid ""
+"\\operatorname{out}\\left(N_i, C_{\\text {out }_j}\\right)\n"
+"=\\operatorname{bias}\\left(C_{\\text {out }_j}\\right)+\n"
+"\\sum_{k=0}^{C_{\\text {in }}-1} \\text { weight }\\left(C_{\\text {out "
+"}_j}, k\\right) \\star \\operatorname{input}\\left(N_i, k\\right)"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:17
+msgid "其中 :math:`\\star` 表示互相关计算，具体的计算方式可参考以下接口文档："
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:19
+msgid ""
+"MegEngine - :class:`~megengine.module.Conv1d` / "
+":class:`~megengine.module.Conv2d` / :class:`~megengine.module.Conv3d` ..."
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:20
+msgid ""
+"Pytorch - :class:`~torch.nn.Conv1d` / :class:`~torch.nn.Conv2d` / "
+":class:`~torch.nn.Conv3d` ..."
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:22
+msgid "但 MegEngine 的 Conv 和 Pytorch 的 Conv 存在如下差异——"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:25
+msgid "Weight 形状不同"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:28
+msgid ""
+"Pytorch 的 weight 形状为 ``(out_channels, in_channels // groups, "
+"kernel_size...)``, 而 MegEngine 的 weight 在 ``groups=1`` 时为 "
+"``(out_channels, in_channels, kernel_size)``, 其它情况下为 ``(groups, "
+"out_channels // groups, in_channels // groups, kernel_size...)``."
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:32
+msgid "其中 ``kernel_size`` 满足："
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:34
+msgid "Conv1d - ``kernel_size`` 为 ``kernel_length``"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:35
+msgid "Conv2d - ``kernel_size`` 为 ``kernel_height, kernel_width``"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:36
+msgid "Conv3d - ``kernel_size`` 为 ``kernel_depth, kernel_height, kernel_width``"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:48
+msgid "Bias 形状不同"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:51
+msgid ""
+"Pytorch 的 bias 形状为 ``(out_channels,)``, 而 MegEngine 的 bias 形状为 ``(1, "
+"out_channels, dims...)``, 省略的维度为多个 1."
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:54
+msgid "其中 ``dims`` 满足："
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:56
+msgid "Conv1d - ``dims`` 为 ``1``"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:57
+msgid "Conv2d - ``dims`` 为 ``1, 1``"
+msgstr ""
+
+#: ../../source/reference/comparison/conv.rst:58
+msgid "Conv3d - ``dims`` 为 ``1, 1, 1``"
+msgstr ""
+

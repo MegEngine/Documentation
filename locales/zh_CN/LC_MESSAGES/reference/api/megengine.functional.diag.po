@@ -1,48 +1,64 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-03-25 15:10\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2022-03-25 15:10+0000\n"
 "Last-Translator: \n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.diag.po\n"
-"X-Crowdin-File-ID: 8390\n"
-"Language: zh_CN\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: ../../source/reference/api/megengine.functional.diag.rst:2
 msgid "megengine.functional.diag"
 msgstr "megengine.functional.diag"
 
 #: megengine.functional.tensor.diag:1 of
-msgid "If ``inp`` is a 1D tensor, then returns a 2D tensor with the elements of ``inp`` as the diagonal. If ``inp`` is a 2D tensor, then returns a 1D tensor with the diagonal elements of ``inp``."
-msgstr "如果 ``inp`` 是 1 维张量，则返回由 ``inp`` 中元素作为对角线的 2 维张量。如果 ``inp`` 是 2 维张量，则返回 ``inp`` 对角线元素构成的 1 维张量。"
+#, fuzzy
+msgid "Extract a diagonal or construct a diagonal tensor."
+msgstr "提取出的对角线或构造出的对角矩阵。"
+
+#: megengine.functional.tensor.diag:3 of
+msgid ""
+"If ``inp`` is a 1D tensor, then returns a 2D tensor with the elements of "
+"``inp`` as the diagonal. If ``inp`` is a 2D tensor, then returns a 1D "
+"tensor with the diagonal elements of ``inp``."
+msgstr ""
+"如果 ``inp`` 是 1 维张量，则返回由 ``inp`` 中元素作为对角线的 2 维张量。如果 ``inp`` 是 2 维张量，则返回 "
+"``inp`` 对角线元素构成的 1 维张量。"
 
 #: megengine.functional.tensor.diag of
 msgid "参数"
 msgstr "参数"
 
-#: megengine.functional.tensor.diag:4 of
+#: megengine.functional.tensor.diag:6 of
 msgid "input tensor."
 msgstr "输入张量。"
 
-#: megengine.functional.tensor.diag:5 of
-msgid "diagonal in consider. Use :math:`k=0` for the main diagonal, :math:`k>0` for diagonals above the main diagonal, and :math:`k<0` for diagonals below the main diagonal. Default: 0."
-msgstr "对角线偏移量。使用 :math:`k=0` 则表示在主对角线上， :math:`k>0` 表示在主对角线上方， :math:`k<0` 表示在主对角线下方。默认：0."
+#: megengine.functional.tensor.diag:8 of
+#, fuzzy
+msgid ""
+"diagonal in consider. Use :math:`k=0` for the main diagonal, :math:`k>0` "
+"for diagonals above the main diagonal, and :math:`k<0` for diagonals "
+"below the main diagonal."
+msgstr ""
+"对角线偏移量。使用 :math:`k=0` 则表示在主对角线上， :math:`k>0` 表示在主对角线上方， :math:`k<0` "
+"表示在主对角线下方。默认：0."
+
+#: megengine.functional.tensor.diag:11 of
+msgid "If you want to create a identity matrix, see :func:`~.functional.eye`."
+msgstr ""
 
 #: megengine.functional.tensor.diag of
 msgid "返回类型"
 msgstr "返回类型"
 
-#: megengine.functional.tensor.diag:8 of
+#: megengine.functional.tensor.diag:13 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ":py:class:`~megengine.tensor.Tensor`"
 
@@ -50,11 +66,26 @@ msgstr ":py:class:`~megengine.tensor.Tensor`"
 msgid "返回"
 msgstr "返回"
 
-#: megengine.functional.tensor.diag:9 of
-msgid "the extracted diagonal or constructed diagonal array."
+#: megengine.functional.tensor.diag:14 of
+#, fuzzy
+msgid "the extracted diagonal or constructed diagonal tensor."
 msgstr "提取出的对角线或构造出的对角矩阵。"
 
-#: megengine.functional.tensor.diag:12 of
+#: megengine.functional.tensor.diag:17 of
 msgid "实际案例"
 msgstr "实际案例"
+
+#: megengine.functional.tensor.diag:18 of
+#, fuzzy
+msgid "Input is a 1D tensor:"
+msgstr "输入张量。"
+
+#: megengine.functional.tensor.diag:30 of
+#, fuzzy
+msgid "Input is a 2D tensor:"
+msgstr "输入张量。"
+
+#: megengine.functional.tensor.diag:40 of
+msgid "Get the k-th diagonal of a given matrix:"
+msgstr ""
 

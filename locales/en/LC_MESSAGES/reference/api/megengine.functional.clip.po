@@ -1,68 +1,91 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-04 09:21\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2022-08-04 09:21+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.clip.po\n"
-"X-Crowdin-File-ID: 2068\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: ../../source/reference/api/megengine.functional.clip.rst:2
 msgid "megengine.functional.clip"
 msgstr ""
 
 #: megengine.functional.elemwise.clip:1 of
-msgid "Clamps all elements in input tensor into the range ``[ lower, upper ]`` and returns a resulting tensor:"
+msgid "Element-wise clipping function."
 msgstr ""
 
-#: megengine.functional.elemwise.clip:4 of
-msgid "y_i = \\begin{cases}\n"
+#: megengine.functional.elemwise.clip:3 of
+msgid ""
+"Clamps(limits) all elements :math:`x_i` of the input tensor :math:`x` "
+"into the range ``[ lower, upper ]``. For example, if a range of ``[0, "
+"1]`` is specified, values smaller than ``0`` become ``0``, and values "
+"larger than ``1`` become ``1``."
+msgstr ""
+
+#: megengine.functional.elemwise.clip:7 of
+msgid ""
+"y_i = \\begin{cases}\n"
 "    \\text{lower} & \\text{if } x_i < \\text{lower} \\\\\n"
 "    x_i & \\text{if } \\text{lower} \\leq x_i \\leq \\text{upper} \\\\\n"
 "    \\text{upper} & \\text{if } x_i > \\text{upper}\n"
 "\\end{cases}"
 msgstr ""
 
+#: megengine.functional.elemwise.clip:15 of
+msgid "Equivalent to ``F.minimum(upper, np.maximum(x, upper))`` right now."
+msgstr ""
+
 #: megengine.functional.elemwise.clip of
 msgid "参数"
 msgstr ""
 
-#: megengine.functional.elemwise.clip:13 of
-msgid "(Tensor): The input tensor."
-msgstr ""
-
-#: megengine.functional.elemwise.clip:14 of
-msgid "(Numberic，optional): lower-bound of the range to be clamped to."
-msgstr ""
-
-#: megengine.functional.elemwise.clip:15 of
-msgid "(Numberic，optional): upper-bound of the range to be clamped to."
+#: megengine.functional.elemwise.clip:18 of
+msgid "The input tensor."
 msgstr ""
 
 #: megengine.functional.elemwise.clip:19 of
-msgid "If both `lower` and `upper` are None, raises an AssertionError."
+msgid ""
+"lower-bound of the range to be clamped to. Should have a numeric data "
+"type."
 msgstr ""
 
 #: megengine.functional.elemwise.clip:20 of
-msgid "If `lower` is bigger than `upper`, the result is same as `clip(Tensor(), upper, upper)`."
+msgid ""
+"upper-bound of the range to be clamped to. Should have a numeric data "
+"type."
+msgstr ""
+
+#: megengine.functional.elemwise.clip:24 of
+msgid "If both ``lower`` and ``upper`` are None, raises an ``AssertionError``."
+msgstr ""
+
+#: megengine.functional.elemwise.clip:25 of
+msgid "If ``lower`` is None, equivalent to ``F.minimum(x, upper)``."
+msgstr ""
+
+#: megengine.functional.elemwise.clip:26 of
+msgid "If ``upper`` is None, equivalent to ``F.maximum(x, lower)``."
+msgstr ""
+
+#: megengine.functional.elemwise.clip:27 of
+msgid ""
+"If ``lower`` is bigger than ```upper``, the result is same as "
+"``clip(Tensor(), upper, upper)``."
 msgstr ""
 
 #: megengine.functional.elemwise.clip of
 msgid "返回类型"
 msgstr ""
 
-#: megengine.functional.elemwise.clip:22 of
+#: megengine.functional.elemwise.clip:29 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ""
 
@@ -70,8 +93,10 @@ msgstr ""
 msgid "返回"
 msgstr ""
 
-#: megengine.functional.elemwise.clip:23 of
-msgid "output clamped tensor. The result must have a data type determined by :ref:`dtype-promotion`."
+#: megengine.functional.elemwise.clip:30 of
+msgid ""
+"output clamped tensor. The result must have a data type determined by "
+":ref:`dtype-promotion`."
 msgstr ""
 
 #~ msgid ""
@@ -121,4 +146,28 @@ msgstr ""
 
 #~ msgid "实际案例"
 #~ msgstr "实际案例"
+
+#~ msgid ""
+#~ "Clamps all elements in input tensor "
+#~ "into the range ``[ lower, upper "
+#~ "]`` and returns a resulting tensor:"
+#~ msgstr ""
+
+#~ msgid "(Tensor): The input tensor."
+#~ msgstr ""
+
+#~ msgid "(Numberic，optional): lower-bound of the range to be clamped to."
+#~ msgstr ""
+
+#~ msgid "(Numberic，optional): upper-bound of the range to be clamped to."
+#~ msgstr ""
+
+#~ msgid "If both `lower` and `upper` are None, raises an AssertionError."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If `lower` is bigger than `upper`, "
+#~ "the result is same as `clip(Tensor(),"
+#~ " upper, upper)`."
+#~ msgstr ""
 

@@ -1,28 +1,109 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-06-03 10:18\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2021-06-03 10:18+0000\n"
 "Last-Translator: \n"
+"Language: zh_Hans_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.log1p.po\n"
-"X-Crowdin-File-ID: 2176\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
 
 #: ../../source/reference/api/megengine.functional.log1p.rst:2
 msgid "megengine.functional.log1p"
 msgstr "megengine.functional.log1p"
 
 #: megengine.functional.elemwise.log1p:1 of
-msgid "Element-wise `log(x+1) (base e)`."
-msgstr "逐元素计算 `(x+1)` 以 `e` 为底的对数。"
+msgid "Element-wise :math:`\\log(1 + x)` function."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:3 of
+msgid "Calculates an approximation to :math:`\\log(1 + x)`:"
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:5 of
+msgid "y_i = \\log(1 + x_i)"
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:9 of
+msgid ""
+"where log refers to the natural (base :math:`e`) logarithm, for each "
+"element :math:`x_i` of the input tensor :math:`x`."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:12 of
+msgid ""
+"This function has domain ``[-1, +infinity]`` and codomain ``[-infinity, "
+"+infinity]``."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p of
+msgid "参数"
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:14 of
+msgid "input tensor. Should have a floating-point data type."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p of
+msgid "返回"
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:16 of
+msgid ""
+"a tensor containing the evaluated result for each element in :math:`x`. "
+"The returned tensor must have a floating-point data type determined by "
+":ref:`dtype-promotion`."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:21 of
+msgid ""
+"This function is more accurate than :math:`\\log(1+x)` for small values "
+"of input. See FDLIBM, or some other IEEE 754-2019 compliant mathematical "
+"library, for a potential reference implementation."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:25 of
+msgid "Special cases"
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:27 of
+msgid "For floating-point operands,"
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:29 of
+msgid "If :math:`x_i` is ``NaN``, the result is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:30 of
+msgid "If :math:`x_i` is less than ``-1``, the result is ``NaN``."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:31 of
+msgid "If :math:`x_i` is ``-1``, the result is ``-infinity``."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:32 of
+msgid "If :math:`x_i` is ``-0``, the result is ``-0``."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:33 of
+msgid "If :math:`x_i` is ``+0``, the result is ``+0``."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:34 of
+msgid "If :math:`x_i` is ``+infinity``, the result is ``+infinity``."
+msgstr ""
+
+#: megengine.functional.elemwise.log1p:37 of
+msgid "实际案例"
+msgstr ""
+
+#~ msgid "Element-wise `log(x+1) (base e)`."
+#~ msgstr "逐元素计算 `(x+1)` 以 `e` 为底的对数。"
 
