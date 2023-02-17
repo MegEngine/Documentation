@@ -104,11 +104,11 @@ dump 模型获得 opr 类型名称
 
       ./load_and_run ./resnet50.mge
 
-   得到如下输出：
+   得到如下输出（x.x.x 指代当前版本信息,下同）：
 
    .. code-block:: bash
 
-      mgb load-and-run: using MegBrain MegBrain 8.4.1(0) and MegDNN 9.3.0
+      mgb load-and-run: using MegEngine MegEngine x.x.x and MegDNN x.x.x
       load model: 70.888ms
       === going to run 1 testcases; output vars: ADD(reshape[2655],reshape[2663])[2665]{1,1000}
       === prepare: 4.873ms; going to warmup
@@ -153,7 +153,7 @@ dump 模型获得 opr 类型名称
 
    .. code-block:: bash
 
-      mgb load-and-run: using MegBrain 8.4.1(0) and MegDNN 9.3.0
+      mgb load-and-run: using MegEngine x.x.x and MegDNN x.x.x
       load model: 74.208ms
       === going to run 1 testcases; output vars: ADD(reshape[2655],reshape[2663])[2665]{1,1000}
       === prepare: 1.251ms; going to warmup
@@ -189,7 +189,7 @@ dump 模型获得 opr 类型名称
 
 .. code-block:: bash
 
-   mgb load-and-run: using MegBrain 8.4.1(0) and MegDNN 9.3.0
+   mgb load-and-run: using MegEngine x.x.x and MegDNN x.x.x
    load model: 71.927ms
    === going to run 1 testcases; output vars: ADD(reshape[2655],reshape[2663])[2665]{1,1000}
    === prepare: 1.251ms; going to warmup
@@ -216,7 +216,7 @@ dump 模型获得 opr 类型名称
 
    .. code-block:: bash
 
-      mgb load-and-run: using MegBrain 8.4.1(0) and MegDNN 9.3.0
+      mgb load-and-run: using MegEngine x.x.x and MegDNN x.x.x
       [04 15:34:18 from_argv@mgblar.cpp:1392][WARN] enable winograd transform
       load model: 64.228ms
       === going to run 1 testcases; output vars: ADD(reshape[2655],reshape[2663])[2665]{1,1000}
