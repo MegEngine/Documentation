@@ -61,6 +61,7 @@
    :maxdepth: 1
 
    tools/stats
+   tools/viewmodel
    tools/runtimeopr
    tools/customop
 
@@ -116,6 +117,7 @@ MegEngine Cookbook
 .. dropdown:: :fa:`eye,mr-1` 如何在使用调试、优化、验证模型的性能？
 
    * 通过 Profiler, 我们可以对模型进行性能分析，请参考 :ref:`profiler-guide` ；
+   * 如果想进行 MegEngine 模型的可视化，请参考 :ref:`viewmodel` ；
    * MegEngine 中提供了一些统计工具，请参考 :ref:`stats` ；
    * 如果你希望在不同的平台测试验证模型性能，请参考 :ref:`load-and-run` 。
 
