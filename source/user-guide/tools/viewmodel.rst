@@ -26,7 +26,7 @@ MegEngine 模型可视化
 ~~~~~~~~~~~~
 netron 作者很贴心地做了一个 `在线demo网站 <https://netron.app>`_ ，可以直接上传模型文件查看可视化结果，能够得到完整的模型结构图，并点击查看每层结构的细节参数。
 
-python sever
+Python Server
 ~~~~~~~~~~~~~
 将 netron 作为 python 库进行安装，在 python 代码调用 netron 库来载入模型进行可视化。可以通过``pip install netron`` 进行安装。
 在命令行输入：
