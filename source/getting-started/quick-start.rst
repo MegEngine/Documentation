@@ -59,7 +59,7 @@ MegEngine 快速上手
    from megengine.data.dataset import MNIST
 
    from os.path import expanduser
-   DATA_PATH = expanduser("~/data/datasets/MNIST")
+   MNIST_DATA_PATH = expanduser("~/data/datasets/MNIST")
 
    train_dataset = MNIST(MNIST_DATA_PATH, train=True)
    test_dataset = MNIST(MNIST_DATA_PATH, train=False)
