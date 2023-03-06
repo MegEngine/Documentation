@@ -28,6 +28,7 @@ Dataset
    Dataset
    ArrayDataset
    StreamDataset
+   ConcatDataset
 
 Vision Dataset
 ~~~~~~~~~~~~~~
