@@ -9,7 +9,7 @@ jobs:
   Prepare:
     name: Setup environment
     if: ${{ github.event.label.name != 'no-build' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repsitory
         uses: actions/checkout@v2
@@ -40,7 +40,7 @@ jobs:
   Generate:
     name: Build HTML files
     needs: Prepare
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         language: ["zh_CN", "en"]
