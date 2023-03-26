@@ -27,7 +27,7 @@
    from megengine.utils.module_stats import module_stats
 
    # 构建一个 net module，这里从 model hub 中获取 resnet18 模型
-   net = load("megengine/models", "resnet18", pretrained=True)
+   model = load("megengine/models", "resnet18", pretrained=True)
 
    # 指定输入
    input_data = np.random.rand(1, 3, 224, 224).astype("float32")
