@@ -5,8 +5,8 @@
 ===========================
 
 midout 是 MegEngine 中用来减小生成的二进制文件体积的工具，有助于在空间受限的设备上部署应用。
-midout 通过记录模型推理时用到的 opr 和执行流，使用 ``if(0)`` 关闭未被记录的代码段后重新编译，
-利用 ``-flto`` 链接参数，可以大幅度减少静态链接的可执行文件的大小。
+midout 通过记录模型推理时用到的 opr 和执行流，使用 ``if(0)`` 来关闭未被记录的代码段后重新编译，
+重新编译时利用 ``-flto -ffunction-sections -fdata-sections -Wl,--gc-sections`` 编译参数，可以大幅度减少目标文件的体积大小(动态库和可执行程序)。
 现在基于 MegEngine Lite 提供模型验证工具 :ref:`Load and Run <load-and-run>` ,
 展示怎样在某 AArch64 架构的 Android 端上裁剪 MegEngine 库，Load and Run 底层集成了 MegEngine Lite，所以
 使用裁减了 Load and Run 的 Binary size 的大小其实就是对 MegEngine Lite 进行了裁减。
@@ -14,12 +14,11 @@ midout 通过记录模型推理时用到的 opr 和执行流，使用 ``if(0)`` 
 编译静态链接的 load_and_run
 -------------------------------
 
-端上裁剪 MegEngine 库需要一个静态连接 MegEngine 的可执行程序，编译方法详见 load-and-run 的编译部分。
-稍有不同的是编译时需要先设置 load_and_run 静态链接 MegEngine.
+编译方法详见 load-and-run 的编译部分。
 
 .. code-block:: bash
 
-    EXTRA_CMAKE_ARGS="-DBUILD_SHARED_LIBS=OFF" ./cross_build_android_arm_inference.sh
+    ./cross_build_android_arm_inference.sh
 
 查看一下 load_and_run 的大小：
 
@@ -51,7 +50,7 @@ MegEngine 的裁剪可以从两方面进行：
 dump 模型获得 opr 类型名称
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-一个模型通常不会用到所有的opr，根据模型使用的opr，可以裁掉那些模型没有使用的 opr。
+一个模型通常不会用到所有的 opr，根据模型使用的 opr，可以裁掉那些模型没有使用的 opr。
 在模型 dump 时，我们可以获得模型的 opr 信息。
 使用 :meth:`~.jit.trace.dump` 模型时候加上 strip_info_file 参数，可以将模型使用的 opr 信息 dump 到一个 JSON 文件中，如果
 需要将多个模型的 opr JSON 文件拼接在一起，可以在 :meth:`~.jit.trace.dump` 模型时候再加上 append_json 参数。
@@ -96,7 +95,7 @@ dump 模型获得 opr 类型名称
 
    .. code-block:: bash
 
-      EXTRA_CMAKE_ARGS="-DMGE_WITH_MIDOUT_PROFILE=ON -DBUILD_SHARED_LIBS=OFF" ./cross_build_android_arm_inference.sh -r
+      EXTRA_CMAKE_ARGS="-DMGE_WITH_MIDOUT_PROFILE=ON" ./cross_build_android_arm_inference.sh -r
 
    编译完成后，将 ``build_dir/android/arm64-v8a/Release/install/bin`` 下的 ``load_and_run`` 推至设备并执行：
 
@@ -129,7 +128,7 @@ dump 模型获得 opr 类型名称
       === total time: 4802.333ms
       midout: 110 items written to midout_trace.20717
 
-   注意到执行模型后，生成了 ``midout_trace.20717`` 文件，该文件记录了模型在底层执行了哪些 kernel.
+   注意到执行模型后，生成了 ``midout_trace.20717`` 文件(20717 是进程的 PID，每次运行可能不一样)，该文件记录了模型在底层执行了哪些 kernel。
 
 2. 生成 ``src/bin_reduce_cmake.h`` 并再次编译 load_and_run：
 
@@ -140,9 +139,9 @@ dump 模型获得 opr 类型名称
 
       python3 ./tools/gen_header_for_bin_reduce.py resnet50.mge.json midout_trace.20717 -o src/bin_reduce_cmake.h
 
-      EXTRA_CMAKE_ARGS="-DMGE_WITH_MINIMUM_SIZE=ON -DBUILD_SHARED_LIBS=OFF" ./scripts/cmake-build/cross_build_android_arm_inference.sh -r
+      EXTRA_CMAKE_ARGS="-DMGE_WITH_MINIMUM_SIZE=ON" ./scripts/cmake-build/cross_build_android_arm_inference.sh -r
 
-   编译完成后，检查 load_and_run 的大小, 注意 MGE_WITH_MINIMUM_SIZE 不是非必须的，加上它 size 会更小，但同时会关闭一些编译选项：
+   编译完成后，检查 load_and_run 的大小, 注意 MGE_WITH_MINIMUM_SIZE 不是非必须的，加上它 size 会更小，但同时会关闭一些编译选项(详情可参考 MegEngine 工程根目录的 `CMakeLists.txt`)：
 
    .. code-block:: bash
 
@@ -178,7 +177,7 @@ dump 模型获得 opr 类型名称
 使用裁剪后的 load_and_run
 -------------------------
 
-想要裁剪前后的应用能够正常运行，需要保证裁剪前后两次推理使用同样的命令行参数。
+想要裁剪前后的应用能够正常运行，需要保证裁剪前后两次推理使用同样的命令行参数以及相同的 CPU 平台。
 如果使用上文裁剪的 load_and_fun 的 fast-run功能（详见 :ref:`load-and-run` ）。
 
 .. code-block:: bash
@@ -208,7 +207,7 @@ dump 模型获得 opr 类型名称
 
    .. code-block:: bash
 
-       ./load_and_run resnet50.mge --fast-run-algo-policy resnet50.cache --winograd-transform
+       ./load_and_run resnet50.mge --fast-run-algo-policy resnet50.cache
 
 3. 如上节，将 trace 文件拷贝回本机，生成 ``src/bin_reduce_cmake.h`` ，再次编译 load_and_run 并推至设备。
 
@@ -260,9 +259,9 @@ dump 模型获得 opr 类型名称
    可以依然使用 load_and_run 运行模型获得 trace 文件，
    生成 ``bin_reduce.h`` ，并二次编译获得裁剪过的 ``liblite_static_all_in_one.a`` .
    此时，用户使用自己编写的构建脚本构建应用程序，并静态链接 ``liblite_static_all_in_one.a`` ，
-   加上链接参数 ``-flto=full`` . 即可得到裁剪过的基于 MegEngine 的应用。
-3. 上述流程亦可以用于 ``liblite_shared.so`` 的裁剪，但是动态库的裁剪效果远不及静态库。
-   原因在于动态库并不知道某段代码是否会被调用，因此链接器不会进行激进的优化。
+   加上链接参数 ``-flto=full -ffunction-sections -fdata-sections -Wl,--gc-sections`` . 即可得到裁剪过的基于 MegEngine 的应用。
+3. 上述流程亦可以用于 ``liblite_shared.so`` 的裁剪，当使用动态库进行裁剪时, 用户自己的编译脚本不再强求添加 
+   ``-flto=full -ffunction-sections -fdata-sections -Wl,--gc-sections`` 的编译选项。
 
 .. warning::
 
@@ -270,7 +269,7 @@ dump 模型获得 opr 类型名称
 
     * 模型的输入数据的 shape 不能改变
     * 模型必须是静态图模型，不是有动态分支
-    * 裁减之后的应用程序只能在裁减时候的平台上运行，可他平台改变了程序的运行路径可能会失败
+    * 裁减之后的应用程序只能在裁减时候的平台上运行，其他平台改变了程序的运行路径可能会失败, 比如 CPU 架构的不同。
   
 .. note::
 

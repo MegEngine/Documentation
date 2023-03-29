@@ -72,19 +72,18 @@
   可以直接使用对应的 ``pip intall`` 命令将已经打包好的 MegEngine 安装到当前的 Python 环境中。
   ➡️  :ref:`了解如何进行使用 pip 安装 <install>` 。
 * 如果你是研发人员，需要在指定的 MegEngine 分支源代码上生成对应文档，则需要克隆对应分支进行编译构建。
-  通过 ``export PYTHONPATH/LITE_LIB_PATH`` 的形式来临时指定特定源代码路径，例如：
+  通过 ``export PYTHONPATH`` 的形式来临时指定特定源代码路径，例如：
 
   .. code-block:: shell
 
      export PYTHONPATH=/data/MegEngine/imperative/python:$PYTHONPATH
      export PYTHONPATH=/data/MegEngine/lite/pylite:$PYTHONPATH
-     export LITE_LIB_PATH=/data/MegEngine/build/lite/liblite_shared.so  
 
   同时需要手动安装 MegEngine Python Package 的依赖文件：
 
   .. code-block:: shell
 
-     pip install -r /data/MegEngine/imperative/python/requires.txt
+     python3 -m pip install -r /data/MegEngine/imperative/python/requires.txt
 
   **注意一定要使用版本一致的 MegEngine 与 Lite** , 否则可能导致产生符号冲突。
   这种方式适合开发者需要同时对源码和文档进行维护的情况。➡️  :ref:`了解如何进行从源码构建 <install>` 。
