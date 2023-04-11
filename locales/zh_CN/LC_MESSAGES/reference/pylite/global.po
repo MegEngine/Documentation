@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:02\n"
+"PO-Revision-Date: 2023-04-11 05:45\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,15 +20,15 @@ msgstr ""
 
 #: ../../source/reference/pylite/global.rst:6
 msgid "megenginelite.global_setting"
-msgstr ""
+msgstr "megenginelite.global_setting"
 
 #: megenginelite.global_setting.LiteGlobal:1 of
 msgid "Some global config in lite"
-msgstr ""
+msgstr "Megenginelite 全局配置"
 
 #: megenginelite.global_setting.LiteGlobal.clear_memory_pair:1 of
 msgid "Clear the physical and virtual address pair in MegEngine."
-msgstr ""
+msgstr "清理MegEngine中虚拟地址与物理地址映射对"
 
 #: megenginelite.global_setting.LiteGlobal.clear_memory_pair
 #: megenginelite.global_setting.LiteGlobal.dump_persistent_cache
@@ -47,23 +47,23 @@ msgstr "参数"
 #: megenginelite.global_setting.LiteGlobal.lookup_physic_ptr:3
 #: megenginelite.global_setting.LiteGlobal.register_memory_pair:4 of
 msgid "the virtual ptr to set to MegEngine."
-msgstr ""
+msgstr "MegEngine需要设置的虚拟地址指针"
 
 #: megenginelite.global_setting.LiteGlobal.clear_memory_pair:4
 #: megenginelite.global_setting.LiteGlobal.register_memory_pair:5 of
 msgid "the physical ptr to set to MegEngine."
-msgstr ""
+msgstr "MegEngine需要设置的虚物理地址指针"
 
 #: megenginelite.global_setting.LiteGlobal.clear_memory_pair:5
 #: megenginelite.global_setting.LiteGlobal.lookup_physic_ptr:4
 #: megenginelite.global_setting.LiteGlobal.register_memory_pair:7 of
 msgid "the the device to set the pair memory."
-msgstr ""
+msgstr "设置内存映射的设备"
 
 #: megenginelite.global_setting.LiteGlobal.clear_memory_pair:6
 #: megenginelite.global_setting.LiteGlobal.lookup_physic_ptr:5 of
 msgid "the backend to set the pair memory."
-msgstr ""
+msgstr "设置内存映射的后端"
 
 #: megenginelite.global_setting.LiteGlobal.clear_memory_pair
 #: megenginelite.global_setting.LiteGlobal.get_device_count
@@ -74,112 +74,112 @@ msgstr "返回"
 
 #: megenginelite.global_setting.LiteGlobal.clear_memory_pair:8 of
 msgid "Whether the clear is operation successful."
-msgstr ""
+msgstr "清理操作是否完成"
 
 #: megenginelite.global_setting.LiteGlobal.dump_persistent_cache:1 of
 msgid "Dump the PersistentCache policy cache to the specific file. If the network is set to profile when forward, though this the algo policy will dump to file."
-msgstr ""
+msgstr "保存PersistentCache policy cache到指定文件中，模型推理时设置了profile, 算法策略的缓存会被保存到文件中"
 
 #: megenginelite.global_setting.LiteGlobal.dump_persistent_cache:5 of
 msgid "the cache file path to be dumped."
-msgstr ""
+msgstr "保存的cache 文件路径"
 
 #: megenginelite.global_setting.LiteGlobal.dump_tensorrt_cache:1 of
 msgid "Dump the TensorRT cache to the file set in :py:func:`~.set_tensorrt_cache`."
-msgstr ""
+msgstr "调用:py:func:`~.set_tensorrt_cache` 接口保存TensorRT cache到文件中"
 
 #: megenginelite.global_setting.LiteGlobal.get_device_count:1 of
 msgid "Get the number of device of the given device type in current context."
-msgstr ""
+msgstr "获取当前上下文指定设备类型上的设备数量"
 
 #: megenginelite.global_setting.LiteGlobal.get_device_count:3 of
 msgid "the device type to be counted."
-msgstr ""
+msgstr "需要计量的设备类型"
 
 #: megenginelite.global_setting.LiteGlobal.get_device_count:5 of
 msgid "the number of device."
-msgstr ""
+msgstr "设备数量"
 
 #: megenginelite.global_setting.LiteGlobal.lookup_physic_ptr:1 of
 msgid "Get the physic address by the virtual address in MegEngine."
-msgstr ""
+msgstr "通过MegEngine 虚拟地址获取物理地址"
 
 #: megenginelite.global_setting.LiteGlobal.lookup_physic_ptr:7 of
 msgid "The physic address to lookup."
-msgstr ""
+msgstr "待查询的物理地址"
 
 #: megenginelite.global_setting.LiteGlobal.register_decryption_and_key:1 of
 msgid "Register a custom decryption method and key to lite"
-msgstr ""
+msgstr "在Megenginelite中注册解密方案以及解密密钥"
 
 #: megenginelite.global_setting.LiteGlobal.register_decryption_and_key:3
 #: megenginelite.global_setting.LiteGlobal.update_decryption_key:3 of
 msgid "the name of the decryption, which will act as the hash key to find the decryption method."
-msgstr ""
+msgstr "解密方案名称，作为查询解密方法的哈希键值"
 
 #: megenginelite.global_setting.LiteGlobal.register_decryption_and_key:5 of
 msgid "the decryption function, which will decrypt the model with the registered key, then return the decrypted model. See :py:func:`~.decryption_func` for more details."
-msgstr ""
+msgstr "解密方法，用于使用注册密钥对模型进行解密并返回解密后的模型，参考:py:func:`~.decryption_func` 查看更多细节"
 
 #: megenginelite.global_setting.LiteGlobal.register_decryption_and_key:8 of
 msgid "the decryption key of the method."
-msgstr ""
+msgstr "解密方法的密钥"
 
 #: megenginelite.global_setting.LiteGlobal.register_memory_pair:1 of
 msgid "Register the physical and virtual address pair to the MegEngine, some device need the map from physical to virtual."
-msgstr ""
+msgstr "注册虚拟地址物理地址映射对到MegEngine 中，部分设备需要虚拟地址到物理地址的映射表"
 
 #: megenginelite.global_setting.LiteGlobal.register_memory_pair:6 of
 msgid "the length of bytes to set pair memory."
-msgstr ""
+msgstr "内存地址对设置的字节数"
 
 #: megenginelite.global_setting.LiteGlobal.register_memory_pair:8 of
 msgid "the backend to set the pair memory"
-msgstr ""
+msgstr "内存地址对设置的后端"
 
 #: megenginelite.global_setting.LiteGlobal.register_memory_pair:10 of
 msgid "Whether the register operation is successful."
-msgstr ""
+msgstr "注册操作是否成功"
 
 #: megenginelite.global_setting.LiteGlobal.set_loader_lib_path:1 of
 msgid "Set the loader path to be used in lite."
-msgstr ""
+msgstr "设置lite中用到的loader 路径"
 
 #: megenginelite.global_setting.LiteGlobal.set_loader_lib_path:3 of
 msgid "the file path which store the loader library."
-msgstr ""
+msgstr "loader 库所在路径"
 
 #: megenginelite.global_setting.LiteGlobal.set_persistent_cache:1 of
 msgid "Set the algo policy cache file for CPU/CUDA, the algo policy cache is produced by MegEngine fast-run."
-msgstr ""
+msgstr "设置 CPU/CUDA的算法缓存文件路径，该文件通过MegEngine的fast-run机制生成"
 
 #: megenginelite.global_setting.LiteGlobal.set_persistent_cache:4 of
 msgid "the file path which store the cache."
-msgstr ""
+msgstr "persistent 缓存文件路径"
 
 #: megenginelite.global_setting.LiteGlobal.set_persistent_cache:5 of
 msgid "always update the cache file when model runs."
-msgstr ""
+msgstr "是否在模型运行后更新persistent缓存"
 
 #: megenginelite.global_setting.LiteGlobal.set_tensorrt_cache:1 of
 msgid "Set the TensorRT engine cache path for serialized prebuilt ICudaEngine."
-msgstr ""
+msgstr "设置用于序列化预构建ICudaEngine的TensorRT 缓存文件路径"
 
 #: megenginelite.global_setting.LiteGlobal.set_tensorrt_cache:3 of
 msgid "the cache file path to set"
-msgstr ""
+msgstr "待设置的TensorRT 缓存文件路径"
 
 #: megenginelite.global_setting.LiteGlobal.try_coalesce_all_free_memory:1 of
 msgid "Try to coalesce all free memory in MegEngine. When call it MegEnine Lite will try to free all the unused memory thus decrease the runtime memory usage."
-msgstr ""
+msgstr "收集MegEngine 所有已释放的内存，调用时，MegEnine Lite会尝试释放所有不再使用的内存以降低运行时内存消耗"
 
 #: megenginelite.global_setting.LiteGlobal.update_decryption_key:1 of
 msgid "Update decryption key of a custom decryption method."
-msgstr ""
+msgstr "更新当前解密方法的解密密钥"
 
 #: megenginelite.global_setting.LiteGlobal.update_decryption_key:5 of
 msgid "the decryption key of the method, if the length of key is zero, the key will not be updated."
-msgstr ""
+msgstr "解密方法的解密密钥，当密钥长度为0时，密钥不会进行更新"
 
 #~ msgid "some global config in lite"
 #~ msgstr ""

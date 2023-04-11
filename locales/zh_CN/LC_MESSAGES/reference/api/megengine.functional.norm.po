@@ -1,34 +1,34 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2022-08-04 09:14+0000\n"
+"PO-Revision-Date: 2023-04-11 05:49\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.norm.po\n"
+"X-Crowdin-File-ID: 2228\n"
 
 #: ../../source/reference/api/megengine.functional.norm.rst:2
 msgid "megengine.functional.norm"
 msgstr "megengine.functional.norm"
 
 #: megengine.functional.math.norm:1 of
-#, fuzzy
 msgid "Calculates the norm of tensor elements over a given axis."
-msgstr "计算在给定轴 ``axis`` 上 ``inp`` 张量每一行的 ``p``-范数。"
+msgstr "计算张量在给定轴上的范数。"
 
 #: megengine.functional.math.norm:3 of
-msgid ""
-"This function is able to return different matrix norms, or one of an "
-"infinite number of vector norms (described below), depending on the value"
-" of the ord parameter."
-msgstr ""
+msgid "This function is able to return different matrix norms, or one of an infinite number of vector norms (described below), depending on the value of the ord parameter."
+msgstr "这个函数能够返回不同的矩阵范数，或者无限多的向量范数中的一个（如下所述），这取决于 ord 参数的值。"
 
 #: megengine.functional.math.norm of
 msgid "参数"
@@ -36,25 +36,19 @@ msgstr "参数"
 
 #: megengine.functional.math.norm:7 of
 msgid "input tensor. Should have a numeric data type."
-msgstr ""
+msgstr "输入张量。 应该有一个数字数据类型。"
 
 #: megengine.functional.math.norm:9 of
-msgid ""
-"Order of the norm (see table under Notes). If not specified, the default "
-"is 2."
-msgstr ""
+msgid "Order of the norm (see table under Notes). If not specified, the default is 2."
+msgstr "范数的阶数（见注释下的表格）。如果没有指定，默认为 2 阶范数。"
 
 #: megengine.functional.math.norm:11 of
-msgid ""
-"Axis along which to compute vector norms. If axis is an integer, it "
-"specifies the axis of inp along which to compute the vector norms."
-msgstr ""
+msgid "Axis along which to compute vector norms. If axis is an integer, it specifies the axis of inp along which to compute the vector norms."
+msgstr "用于计算向量范数的轴。如果 axis 是一个整数，它指定了计算输入张量范数的轴。"
 
 #: megengine.functional.math.norm:13 of
-msgid ""
-"If this is set to ``True``, the axes which are normed over are left in "
-"the result as dimensions with size one."
-msgstr ""
+msgid "If this is set to ``True``, the axes which are normed over are left in the result as dimensions with size one."
+msgstr "如果设置为 \"True\"，被计算范数的轴将作为尺寸为 1 的维度留在结果中。"
 
 #: megengine.functional.math.norm of
 msgid "返回"
@@ -62,37 +56,35 @@ msgstr "返回"
 
 #: megengine.functional.math.norm:16 of
 msgid "Norm of the matrix or vector(s)."
-msgstr ""
+msgstr "矩阵或向量的范数。"
 
 #: megengine.functional.math.norm:20 of
 msgid "Now the following norms can be calculated:"
-msgstr ""
+msgstr "当前支持计算一下范数："
 
 #: megengine.functional.math.norm:22 of
 msgid "inf: norm-:math:`\\infty` (maximum of absolute values)."
-msgstr ""
+msgstr "inf: 无穷范数（绝对值的最大值）。"
 
 #: megengine.functional.math.norm:23 of
 msgid "-inf: norm-:math:`-\\infty` (minimum of absolute values)."
-msgstr ""
+msgstr "-inf: 负无穷范数（绝对值的最小值）。"
 
 #: megengine.functional.math.norm:24 of
 msgid "2: 2-norm (largest singluar value)."
-msgstr ""
+msgstr "2：二阶范数（最大单值）。"
 
 #: megengine.functional.math.norm:26 of
 msgid "The Frobenius norm is given by to ``sum(abs(x)**ord)**(1./ord)``:"
-msgstr ""
+msgstr "Frobenius 范数由 ``sum(abs(x)**ord)**(1./ord)`` 给出。"
 
 #: megengine.functional.math.norm:28 of
-msgid ""
-"\\|A\\|_F=\\left[\\sum_{i, j} a b s\\left(a_{i, j}\\right)^2\\right]^{1 /"
-" 2}"
-msgstr ""
+msgid "\\|A\\|_F=\\left[\\sum_{i, j} a b s\\left(a_{i, j}\\right)^2\\right]^{1 / 2}"
+msgstr "\\|A\\|_F=\\left[\\sum_{i, j} a b s\\left(a_{i, j}\\right)^2\\right]^{1 / 2}"
 
 #: megengine.functional.math.norm:32 of
 msgid ":func:`numpy.linalg.norm` / :func:`~.functional.normalize`"
-msgstr ""
+msgstr ":func:`numpy.linalg.norm` / :func:`~.functional.normalize`"
 
 #: megengine.functional.math.norm:35 of
 msgid "实际案例"

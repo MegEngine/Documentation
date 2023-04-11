@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2022-08-04 09:22+0000\n"
+"PO-Revision-Date: 2023-04-11 05:49\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.mod.po\n"
+"X-Crowdin-File-ID: 2220\n"
 
 #: ../../source/reference/api/megengine.functional.mod.rst:2
 msgid "megengine.functional.mod"
@@ -23,19 +27,12 @@ msgid "Element-wise :math:`\\operatorname{mod}(x, y)` function."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:3 of
-msgid ""
-"Returns the remainder of division for each element :math:`x_i` of the "
-"input tensor :math:`x` and the respective element :math:`y_i` of the "
-"input tensor :math:`y`."
+msgid "Returns the remainder of division for each element :math:`x_i` of the input tensor :math:`x` and the respective element :math:`y_i` of the input tensor :math:`y`."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:8 of
 #, python-format
-msgid ""
-"In general, similar to Python’s % operator, this function is not "
-"recommended for floating-point operands as semantics do not follow IEEE "
-"754. That this function is specified to accept floating-point operands is"
-" primarily for reasons of backward compatibility."
+msgid "In general, similar to Python’s % operator, this function is not recommended for floating-point operands as semantics do not follow IEEE 754. That this function is specified to accept floating-point operands is primarily for reasons of backward compatibility."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:10 of
@@ -55,9 +52,7 @@ msgid "dividend input tensor. Should have a numeric data type."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:17 of
-msgid ""
-"divisor input tensor. Must be compatible with :math:`x` (see :ref"
-":`broadcasting-rule` ). Should have a numeric data type."
+msgid "divisor input tensor. Must be compatible with :math:`x` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
 msgstr ""
 
 #: megengine.functional.elemwise.mod of
@@ -73,9 +68,7 @@ msgid "返回"
 msgstr ""
 
 #: megengine.functional.elemwise.mod:20 of
-msgid ""
-"A tensor containing the element-wise results. The returned tensor must "
-"have a data type determined by :ref:`dtype-promotion`."
+msgid "A tensor containing the element-wise results. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:23 of
@@ -91,121 +84,79 @@ msgid "If either :math:`x_i` or :math:`y_i` is ``NaN``, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:28 of
-msgid ""
-"If :math:`x_i` is either ``+infinity`` or ``-infinity`` and :math:`y_i` "
-"is either ``+infinity`` or ``-infinity``, the result is ``NaN``."
+msgid "If :math:`x_i` is either ``+infinity`` or ``-infinity`` and :math:`y_i` is either ``+infinity`` or ``-infinity``, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:29 of
-msgid ""
-"If :math:`x_i` is either ``+0`` or ``-0`` and :math:`y_i` is either "
-"``+0`` or ``-0``, the result is ``NaN``."
+msgid "If :math:`x_i` is either ``+0`` or ``-0`` and :math:`y_i` is either ``+0`` or ``-0``, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:30 of
-msgid ""
-"If :math:`x_i` is ``+0`` and :math:`y_i` is greater than 0, the result is"
-" ``+0``."
+msgid "If :math:`x_i` is ``+0`` and :math:`y_i` is greater than 0, the result is ``+0``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:31 of
-msgid ""
-"If :math:`x_i` is ``-0`` and :math:`y_i` is greater than 0, the result is"
-" ``+0``."
+msgid "If :math:`x_i` is ``-0`` and :math:`y_i` is greater than 0, the result is ``+0``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:32 of
-msgid ""
-"If :math:`x_i` is ``+0`` and :math:`y_i` is less than 0, the result is "
-"``-0``."
+msgid "If :math:`x_i` is ``+0`` and :math:`y_i` is less than 0, the result is ``-0``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:33 of
-msgid ""
-"If :math:`x_i` is ``-0`` and :math:`y_i` is less than 0, the result is "
-"``-0``."
+msgid "If :math:`x_i` is ``-0`` and :math:`y_i` is less than 0, the result is ``-0``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:34 of
-msgid ""
-"If :math:`x_i` is greater than ``0`` and :math:`y_i` is ``+0``, the "
-"result is ``NaN``."
+msgid "If :math:`x_i` is greater than ``0`` and :math:`y_i` is ``+0``, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:35 of
-msgid ""
-"If :math:`x_i` is greater than ``0`` and :math:`y_i` is ``-0``, the "
-"result is ``NaN``."
+msgid "If :math:`x_i` is greater than ``0`` and :math:`y_i` is ``-0``, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:36 of
-msgid ""
-"If :math:`x_i` is less than ``0`` and :math:`y_i` is ``+0``, the result "
-"is ``NaN``."
+msgid "If :math:`x_i` is less than ``0`` and :math:`y_i` is ``+0``, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:37 of
-msgid ""
-"If :math:`x_i` is less than ``0`` and :math:`y_i` is ``-0``, the result "
-"is ``NaN``."
+msgid "If :math:`x_i` is less than ``0`` and :math:`y_i` is ``-0``, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:38 of
-msgid ""
-"If :math:`x_i` is ``+infinity`` and :math:`y_i` is a positive (i.e., "
-"greater than 0) finite number, the result is ``NaN``."
+msgid "If :math:`x_i` is ``+infinity`` and :math:`y_i` is a positive (i.e., greater than 0) finite number, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:39 of
-msgid ""
-"If :math:`x_i` is ``+infinity`` and :math:`y_i` is a negative (i.e., less"
-" than 0) finite number, the result is ``NaN``."
+msgid "If :math:`x_i` is ``+infinity`` and :math:`y_i` is a negative (i.e., less than 0) finite number, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:40 of
-msgid ""
-"If :math:`x_i` is ``-infinity`` and :math:`y_i` is a positive (i.e., "
-"greater than 0) finite number, the result is ``NaN``."
+msgid "If :math:`x_i` is ``-infinity`` and :math:`y_i` is a positive (i.e., greater than 0) finite number, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:41 of
-msgid ""
-"If :math:`x_i` is ``-infinity`` and :math:`y_i` is a negative (i.e., less"
-" than 0) finite number, the result is ``NaN``."
+msgid "If :math:`x_i` is ``-infinity`` and :math:`y_i` is a negative (i.e., less than 0) finite number, the result is ``NaN``."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:42 of
-msgid ""
-"If :math:`x_i` is a positive (i.e., greater than ``0``) finite number and"
-" :math:`y_i` is ``+infinity``, the result is :math:`x_i`. (note: this "
-"result matches Python behavior.)"
+msgid "If :math:`x_i` is a positive (i.e., greater than ``0``) finite number and :math:`y_i` is ``+infinity``, the result is :math:`x_i`. (note: this result matches Python behavior.)"
 msgstr ""
 
 #: megengine.functional.elemwise.mod:44 of
-msgid ""
-"If :math:`x_i` is a positive (i.e., greater than ``0``) finite number and"
-" :math:`y_i` is ``-infinity``, the result is :math:`y_i`. (note: this "
-"result matches Python behavior.)"
+msgid "If :math:`x_i` is a positive (i.e., greater than ``0``) finite number and :math:`y_i` is ``-infinity``, the result is :math:`y_i`. (note: this result matches Python behavior.)"
 msgstr ""
 
 #: megengine.functional.elemwise.mod:46 of
-msgid ""
-"If :math:`x_i` is a negative (i.e., less than ``0``) finite number and "
-":math:`y_i` is ``+infinity``, the result is :math:`y_i`. (note: this "
-"results matches Python behavior.)"
+msgid "If :math:`x_i` is a negative (i.e., less than ``0``) finite number and :math:`y_i` is ``+infinity``, the result is :math:`y_i`. (note: this results matches Python behavior.)"
 msgstr ""
 
 #: megengine.functional.elemwise.mod:48 of
-msgid ""
-"If :math:`x_i` is a negative (i.e., less than ``0``) finite number and "
-":math:`y_i` is ``-infinity``, the result is :math:`x_i`. (note: this "
-"result matches Python behavior.)"
+msgid "If :math:`x_i` is a negative (i.e., less than ``0``) finite number and :math:`y_i` is ``-infinity``, the result is :math:`x_i`. (note: this result matches Python behavior.)"
 msgstr ""
 
 #: megengine.functional.elemwise.mod:50 of
-msgid ""
-"In the remaining cases, the result must match that of the Python ``%`` "
-"operator."
+msgid "In the remaining cases, the result must match that of the Python ``%`` operator."
 msgstr ""
 
 #: megengine.functional.elemwise.mod:53 of
@@ -222,19 +173,4 @@ msgstr ""
 
 #~ msgid "Element-wise `remainder of division`."
 #~ msgstr "返回逐元素相除所得的余数。"
-
-#~ msgid ""
-#~ "Returns the remainder of division for"
-#~ " each element ``x_i`` of the input"
-#~ " tensor ``x`` and the respective "
-#~ "element ``y_i`` of the input tensor "
-#~ "``y``."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "divisor input tensor. Must be compatible"
-#~ " with ``x`` (see :ref:`broadcasting-rule`"
-#~ " ). Should have a numeric data "
-#~ "type."
-#~ msgstr ""
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:02\n"
+"PO-Revision-Date: 2023-04-11 05:45\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: ../../source/reference/pylite/tensor.rst:6
 msgid "megenginelite.tensor"
-msgstr ""
+msgstr "megenginelite.tensor"
 
 #: megenginelite.tensor.LiteTensor:1 of
 msgid "Description of a block of data with neccessary information."
-msgstr ""
+msgstr "带有必要信息的数据块描述"
 
 #: megenginelite.tensor.LiteLayout megenginelite.tensor.LiteTensor
 #: megenginelite.tensor.LiteTensor.copy_from
@@ -38,167 +38,167 @@ msgstr "参数"
 
 #: megenginelite.tensor.LiteTensor:3 of
 msgid "layout of Tensor"
-msgstr ""
+msgstr "tensor 内存布局"
 
 #: megenginelite.tensor.LiteTensor:4 of
 msgid "device type of Tensor"
-msgstr ""
+msgstr "tensor 设备类型"
 
 #: megenginelite.tensor.LiteTensor:5 of
 msgid "device id of Tensor"
-msgstr ""
+msgstr "tensor 设备ID"
 
 #: megenginelite.tensor.LiteTensor:6 of
 msgid "when set, the storage memory of the tensor is pinned memory. This is used to Optimize the H2D or D2H memory copy, if the device or layout is not set, when copy form other device(CUDA) tensor, this tensor will be automatically set to pinned tensor"
-msgstr ""
+msgstr "设置该选项后，存储内存会被设置为页锁定内存，可以用于H2D和D2H内存拷贝的优化，若从其他如CUDA设备上拷回的tensor没有设置layout和shape时，默认设为页锁定内存"
 
 #: megenginelite.tensor.LiteTensor:10 of
 msgid "the shape of data"
-msgstr ""
+msgstr "数据形状"
 
 #: megenginelite.tensor.LiteTensor:11 of
 msgid "data type"
-msgstr ""
+msgstr "数据类型"
 
 #: megenginelite.tensor.LiteLayout:9 megenginelite.tensor.LiteTensor:15 of
 msgid "Dims of shape should be less than 8. The supported data type defines at LiteDataType"
-msgstr ""
+msgstr "数据形状维度少于8，当前支持的数据类型定义在LiteDataType中"
 
 #: megenginelite.tensor.LiteTensor.copy_from:1 of
 msgid "copy memory form the src_tensor"
-msgstr ""
+msgstr "从src_tensor 拷贝内存"
 
 #: megenginelite.tensor.LiteTensor.copy_from:3 of
 msgid "source tensor"
-msgstr ""
+msgstr "拷贝来源tensor"
 
 #: megenginelite.tensor.LiteTensor.device_id:1 of
 msgid "get device id of the tensor"
-msgstr ""
+msgstr "获取tensor 设备ID"
 
 #: megenginelite.tensor.LiteTensor.device_type:1 of
 msgid "get device type of the tensor"
-msgstr ""
+msgstr "获取tensor 设备类型"
 
 #: megenginelite.tensor.LiteTensor.fill_zero:1 of
 msgid "fill the buffer memory with zero"
-msgstr ""
+msgstr "对tesnor buffer内存填0"
 
 #: megenginelite.tensor.LiteTensor.get_ctypes_memory:1 of
 msgid "get the memory of the tensor, return c_void_p of the tensor memory"
-msgstr ""
+msgstr "获取tensor 内存，返回tensor的内存c_void_p指针"
 
 #: megenginelite.tensor.LiteTensor.get_data_by_share:2 of
 msgid "get the data in the tensor, add share the data with a new numpy, and"
-msgstr ""
+msgstr "获取tensor 数据并共享到新的numpy 数组"
 
 #: megenginelite.tensor.LiteTensor.get_data_by_share:2 of
 msgid "return the numpy arrray"
-msgstr ""
+msgstr "返回对应numpy 数组"
 
 #: megenginelite.tensor.LiteTensor.get_data_by_share:6 of
 msgid "Be careful, the data in numpy is valid before the tensor memory is"
-msgstr ""
+msgstr "注意numpy数组的数据只在tensor 内存再次写入前有效"
 
 #: megenginelite.tensor.LiteTensor.get_data_by_share:7 of
 msgid "write again, such as LiteNetwok forward next time."
-msgstr ""
+msgstr "如 LiteNetwok再次推理之前"
 
 #: megenginelite.tensor.LiteTensor.is_continue:1 of
 msgid "whether the tensor memory is continue"
-msgstr ""
+msgstr "tensor 内存是否连续"
 
 #: megenginelite.tensor.LiteTensor.is_pinned_host:1 of
 msgid "whether the tensor is pinned tensor"
-msgstr ""
+msgstr "tensor是否为页锁定内存tensor"
 
 #: megenginelite.tensor.LiteTensor.nbytes:1 of
 msgid "get the length of the meomry in byte"
-msgstr ""
+msgstr "获取内存字节数"
 
 #: megenginelite.tensor.LiteTensor.reshape:1 of
 msgid "reshape the tensor with data not change."
-msgstr ""
+msgstr "变化tensor 形状不改动数据内容"
 
 #: megenginelite.tensor.LiteTensor.reshape:3 of
 msgid "target shape"
-msgstr ""
+msgstr "目标形状"
 
 #: megenginelite.tensor.LiteTensor.set_data_by_copy:1 of
 msgid "copy the data to the tensor"
-msgstr ""
+msgstr "拷贝数据到tensor中"
 
 #: megenginelite.tensor.LiteTensor.set_data_by_copy:3 of
 msgid "the data to copy to tensor, it should be list, numpy.ndarraya or ctypes with length"
-msgstr ""
+msgstr "待拷贝到tensor的数据，可以是list, numpy.ndarray 或者带长度的buffer"
 
 #: megenginelite.tensor.LiteTensor.set_data_by_copy:5 of
 msgid "length of data in bytes"
-msgstr ""
+msgstr "数据字节数"
 
 #: megenginelite.tensor.LiteTensor.set_data_by_copy:6 of
 msgid "layout of data"
-msgstr ""
+msgstr "数据内存布局"
 
 #: megenginelite.tensor.LiteTensor.set_data_by_share:1 of
 msgid "share the data to the tensor"
-msgstr ""
+msgstr "共享数据到指定tensor"
 
 #: megenginelite.tensor.LiteTensor.set_data_by_share:3 of
 msgid "the data will shared to the tensor, it should be a numpy.ndarray or ctypes data"
-msgstr ""
+msgstr "待共享的数据，可以是numpy.ndarray 或者 C buffer"
 
 #: megenginelite.tensor.LiteTensor.share_memory_with:2 of
 msgid "share the same memory with the ``src_tensor``, the self memory will be"
-msgstr ""
+msgstr "同``src_tensor``共享内存，自身的内存将被释放"
 
 #: megenginelite.tensor.LiteTensor.share_memory_with:2 of
 msgid "freed"
-msgstr ""
+msgstr "freed"
 
 #: megenginelite.tensor.LiteTensor.share_memory_with:4 of
 msgid "the source tensor that will share memory with this tensor"
-msgstr ""
+msgstr "待与当前tensor共享内存的tensor"
 
 #: megenginelite.tensor.LiteTensor.slice:1 of
 msgid "slice the tensor with gaven start, end, step"
-msgstr ""
+msgstr "用指定起始位置和步长切分tensor"
 
 #: megenginelite.tensor.LiteTensor.slice:3 of
 msgid "silce begin index of each dim"
-msgstr ""
+msgstr "各个维度切分起始索引"
 
 #: megenginelite.tensor.LiteTensor.slice:4 of
 msgid "silce end index of each dim"
-msgstr ""
+msgstr "各维度终止索引"
 
 #: megenginelite.tensor.LiteTensor.slice:5 of
 msgid "silce step of each dim"
-msgstr ""
+msgstr "各维度切分步长"
 
 #: megenginelite.tensor.LiteTensor.to_numpy:1 of
 msgid "get the buffer of the tensor"
-msgstr ""
+msgstr "获取tensor buffer"
 
 #: megenginelite.tensor.LiteTensor.update:1 of
 msgid "update the member from C, this will auto used after slice, share"
-msgstr ""
+msgstr "更新来自C 接口的内存，在slice和share等操作后自动调用"
 
 #: megenginelite.tensor.LiteLayout:2 of
 msgid "Description of layout using in Lite. A Lite layout will be totally defined"
-msgstr ""
+msgstr "Lite中数据内存布局的完整定义"
 
 #: megenginelite.tensor.LiteLayout:2 of
 msgid "by shape and data type."
-msgstr ""
+msgstr "数据内存布局将由形状和数据类型完全决定"
 
 #: megenginelite.tensor.LiteLayout:4 of
 msgid "the shape of data."
-msgstr ""
+msgstr "数据形状"
 
 #: megenginelite.tensor.LiteLayout:5 of
 msgid "data type."
-msgstr ""
+msgstr "数据类型"
 
 #: megenginelite.tensor.LiteLayout:13 of
 msgid "实际案例"
@@ -207,7 +207,7 @@ msgstr "实际案例"
 #: ../../docstring megenginelite.tensor.LiteLayout.data_type:1
 #: megenginelite.tensor.LiteLayout.ndim:1 of
 msgid "Structure/Union member"
-msgstr ""
+msgstr "Structure/Union 成员"
 
 #~ msgid "the tensor to hold a block of data"
 #~ msgstr ""

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 11:55\n"
+"PO-Revision-Date: 2023-04-11 05:45\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,55 +24,55 @@ msgstr "Dataset"
 
 #: megengine.data.dataset.meta_dataset.Dataset:1 of
 msgid "An abstract base class for all map-style datasets."
-msgstr ""
+msgstr "所有映射式(map-style)数据集的抽象基类"
 
 #: megengine.data.dataset.meta_dataset.Dataset:3 of
 msgid "Abstract methods"
-msgstr ""
+msgstr "Abstract methods"
 
 #: megengine.data.dataset.meta_dataset.Dataset:5 of
 msgid "All subclasses should overwrite these two methods:"
-msgstr ""
+msgstr "所有子类都应该重写这两个方法："
 
 #: megengine.data.dataset.meta_dataset.Dataset:7 of
 msgid "``__getitem__()``: fetch a data sample for a given key."
-msgstr ""
+msgstr "``__getitem__()``: 获取给定索引对应的数据样本"
 
 #: megengine.data.dataset.meta_dataset.Dataset:8 of
 msgid "``__len__()``: return the size of the dataset."
-msgstr ""
+msgstr "``__len__()``: 返回数据集的大小"
 
 #: megengine.data.dataset.meta_dataset.Dataset:10 of
 msgid "They play roles in the data pipeline, see the description below."
-msgstr ""
+msgstr "他们是在数据队列中发挥作用，详见下面的说明。"
 
 #: megengine.data.dataset.meta_dataset.Dataset:12 of
 msgid "Dataset in the Data Pipline"
-msgstr ""
+msgstr "Dataset in the Data Pipline"
 
 #: megengine.data.dataset.meta_dataset.Dataset:14 of
 msgid "Usually a dataset works with :class:`~.DataLoader`, :class:`~.Sampler`, :class:`~.Collator` and other components."
-msgstr ""
+msgstr "通常加载数据集会使用 :class:`~.DataLoader`，:class:`~.Sampler`，:class:`~.Collator` 以及其他组件"
 
 #: megengine.data.dataset.meta_dataset.Dataset:16 of
 msgid "For example, the sampler generates **indexes** of batches in advance according to the size of the dataset (calling ``__len__``), When dataloader need to yield a batch of data, pass indexes into the ``__getitem__`` method, then collate them to a batch."
-msgstr ""
+msgstr "例如，采样器会根据数据集的大小(调用 ``__len__``) 提前生成batch数据的**索引**。当dataloader需要返回一个batch的数据时，其会将索引传递给``__getitem__`` 方法，最后将数据处理为一个batch。"
 
 #: megengine.data.dataset.meta_dataset.Dataset:19 of
 msgid "Highly recommended reading :ref:`dataset-guide` for more details;"
-msgstr ""
+msgstr "强烈推荐阅读 :ref:`dataset-guide` 来了解更多细节"
 
 #: megengine.data.dataset.meta_dataset.Dataset:20 of
 msgid "It might helpful to read the implementation of :class:`~.MNIST`, :class:`~.CIFAR10` and other existed subclass."
-msgstr ""
+msgstr "阅读 :class:`~.MNIST`, :class:`~.CIFAR10` 和其他的子类实现可能会有所帮助"
 
 #: megengine.data.dataset.meta_dataset.Dataset:24 of
 msgid "By default, all elements in a dataset would be :class:`numpy.ndarray`. It means that if you want to do Tensor operations, it's better to do the conversion explicitly, such as:"
-msgstr ""
+msgstr "默认情况下，数据集中所有的元素都是 :class:`numpy.ndarray`。这耶意味着如果你想做张量运算，最好是显示的进行转换，例如："
 
 #: megengine.data.dataset.meta_dataset.Dataset:35 of
 msgid "Tensor ops on ndarray directly are undefined behaviors."
-msgstr ""
+msgstr "在ndarray上进行张量运算是未定义的行为"
 
 #~ msgid "基类：:class:`abc.ABC`"
 #~ msgstr "基类：:class:`abc.ABC`"

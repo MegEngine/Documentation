@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2022-09-22 06:32+0000\n"
+"PO-Revision-Date: 2023-04-11 05:48\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.div.po\n"
+"X-Crowdin-File-ID: 2116\n"
 
 #: ../../source/reference/api/megengine.functional.div.rst:2
 msgid "megengine.functional.div"
@@ -20,13 +24,10 @@ msgstr "megengine.functional.div"
 
 #: megengine.functional.elemwise.div:1 of
 msgid "Element-wise division."
-msgstr ""
+msgstr "逐元素除法。"
 
 #: megengine.functional.elemwise.div:3 of
-msgid ""
-"Calculates the division for each element :math:`x_i` of the input tensor "
-":math:`x` with the respective element :math:`y_i` of the input tensor "
-":math:`y`."
+msgid "Calculates the division for each element :math:`x_i` of the input tensor :math:`x` with the respective element :math:`y_i` of the input tensor :math:`y`."
 msgstr "计算输入 :math:`x` 与输入 :math:`y` 的逐元素除。"
 
 #: megengine.functional.elemwise.div of
@@ -38,13 +39,8 @@ msgid "dividend input tensor. Should have a numeric data type."
 msgstr "被除的输入 Tensor，其应有一个数值类型。"
 
 #: megengine.functional.elemwise.div:8 of
-#, fuzzy
-msgid ""
-"divisor input tensor. Must be compatible with :math:`x`` (see :ref"
-":`broadcasting-rule` ). Should have a numeric data type."
-msgstr ""
-"除数 Tensor，其 shape 必须与 ``x`` 的 shape 满足 broadcast 规则，见 :ref:`broadcasting-"
-"rule`。该 Tensor 应该有一个数值数据类型。"
+msgid "divisor input tensor. Must be compatible with :math:`x`` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
+msgstr "作为除数的输入张量。Layout 必须跟 :math:`x`` 兼容(具体参见 :ref:`broadcasting-rule` )。应该有一个数值数据类型。"
 
 #: megengine.functional.elemwise.div of
 msgid "返回类型"
@@ -59,9 +55,7 @@ msgid "返回"
 msgstr "返回"
 
 #: megengine.functional.elemwise.div:11 of
-msgid ""
-"A tensor containing the element-wise results. The returned tensor must "
-"have a data type determined by :ref:`dtype-promotion`."
+msgid "A tensor containing the element-wise results. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
 msgstr "返回一个逐元素运算之后的 Tensor，其数值类型由 :ref:`dtype-promotion` 规则决定。"
 
 #: megengine.functional.elemwise.div:14 of
@@ -77,151 +71,95 @@ msgid "If either :math:`x` or :math:`y` is ``NaN``, the result is ``NaN``."
 msgstr "如果输入 :math:`x` 或 :math:`y` 为 ``Nan``，结果为 ``Nan``。"
 
 #: megengine.functional.elemwise.div:19 of
-msgid ""
-"If :math:`x` is either ``+infinity`` or ``-infinity`` and :math:`y` is "
-"either ``+infinity`` or ``-infinity``, the result is ``NaN``."
-msgstr ""
-"如果 :math:`x` 是 ``+infinity`` 或 ``-infinity``，并且 :math:`y` 是 ``+infinity``"
-" 或 ``-infinity``, 则计算结果为 ``NaN``。"
+msgid "If :math:`x` is either ``+infinity`` or ``-infinity`` and :math:`y` is either ``+infinity`` or ``-infinity``, the result is ``NaN``."
+msgstr "如果 :math:`x` 是 ``+infinity`` 或 ``-infinity``，并且 :math:`y` 是 ``+infinity`` 或 ``-infinity``, 则计算结果为 ``NaN``。"
 
 #: megengine.functional.elemwise.div:20 of
-msgid ""
-"If :math:`x` is either ``+0`` or ``-0`` and :math:`y` is either ``+0`` or"
-" ``-0``, the result is ``NaN``."
-msgstr ""
-"如果 :math:`x` 是 ``+0`` 或 ``-0``，并且 :math:`y` 是 ``+0`` 或 ``-0``, 则计算结果为 "
-"``NaN``。"
+msgid "If :math:`x` is either ``+0`` or ``-0`` and :math:`y` is either ``+0`` or ``-0``, the result is ``NaN``."
+msgstr "如果 :math:`x` 是 ``+0`` 或 ``-0``，并且 :math:`y` 是 ``+0`` 或 ``-0``, 则计算结果为 ``NaN``。"
 
 #: megengine.functional.elemwise.div:21 of
-msgid ""
-"If :math:`x` is ``+0`` and :math:`y` is greater than ``0``, the result is"
-" ``+0``."
+msgid "If :math:`x` is ``+0`` and :math:`y` is greater than ``0``, the result is ``+0``."
 msgstr "如果 :math:`x` 是 ``+0``，:math:`y` 大于 ``0``, 则计算结果为 ``+0``。"
 
 #: megengine.functional.elemwise.div:22 of
-msgid ""
-"If :math:`x` is ``-0`` and :math:`y` is greater than ``0``, the result is"
-" ``-0``."
+msgid "If :math:`x` is ``-0`` and :math:`y` is greater than ``0``, the result is ``-0``."
 msgstr "如果 :math:`x` 是 ``-0``，:math:`y` 大于 ``0``, 则计算结果为 ``-0``。"
 
 #: megengine.functional.elemwise.div:23 of
-msgid ""
-"If :math:`x` is ``+0`` and :math:`y` is less than ``0``, the result is "
-"``-0``."
+msgid "If :math:`x` is ``+0`` and :math:`y` is less than ``0``, the result is ``-0``."
 msgstr "如果 :math:`x` 是 ``+0``， :math:`y` 小于 ``0``, 则计算结果为 ``-0``。"
 
 #: megengine.functional.elemwise.div:24 of
-msgid ""
-"If :math:`x` is ``-0`` and :math:`y` is less than ``0``, the result is "
-"``+0``."
+msgid "If :math:`x` is ``-0`` and :math:`y` is less than ``0``, the result is ``+0``."
 msgstr "如果 :math:`x` 是 ``-0``， :math:`y` 小于 ``0``, 则计算结果为 ``+0``。"
 
 #: megengine.functional.elemwise.div:25 of
-msgid ""
-"If :math:`x` is greater than ``0`` and :math:`y` is ``+0``, the result is"
-" ``+infinity``."
+msgid "If :math:`x` is greater than ``0`` and :math:`y` is ``+0``, the result is ``+infinity``."
 msgstr "如果 :math:`x` 大于 ``0``，:math:`y` 是 ``+0``, 则计算结果为 ``+infinity``。"
 
 #: megengine.functional.elemwise.div:26 of
-msgid ""
-"If :math:`x` is greater than ``0`` and :math:`y` is ``-0``, the result is"
-" ``-infinity``."
+msgid "If :math:`x` is greater than ``0`` and :math:`y` is ``-0``, the result is ``-infinity``."
 msgstr "如果 :math:`x` 大于 ``0``， :math:`y` 是 ``-0``, 则计算结果为 ``-infinity``。"
 
 #: megengine.functional.elemwise.div:27 of
-msgid ""
-"If :math:`x` is less than ``0`` and :math:`y` is ``+0``, the result is "
-"``-infinity``."
+msgid "If :math:`x` is less than ``0`` and :math:`y` is ``+0``, the result is ``-infinity``."
 msgstr "如果 :math:`x` 小于 ``0``， :math:`y` 是 ``+0``, 则计算结果为 ``-infinity``。"
 
 #: megengine.functional.elemwise.div:28 of
-msgid ""
-"If :math:`x` is less than ``0`` and :math:`y` is ``-0``, the result is "
-"``+infinity``."
+msgid "If :math:`x` is less than ``0`` and :math:`y` is ``-0``, the result is ``+infinity``."
 msgstr "如果 :math:`x` 小于 ``0``， :math:`y` 是 ``-0``, 则计算结果为 ``+infinity``。"
 
 #: megengine.functional.elemwise.div:29 of
-msgid ""
-"If :math:`x` is ``+infinity`` and :math:`y` is a positive (i.e., greater "
-"than ``0``) finite number, the result is ``+infinity``."
+msgid "If :math:`x` is ``+infinity`` and :math:`y` is a positive (i.e., greater than ``0``) finite number, the result is ``+infinity``."
 msgstr "如果 :math:`x` 是 ``+infinity``，:math:`y` 是一个大于 0 的有限数，则计算结果为 ``+infinity``。"
 
 #: megengine.functional.elemwise.div:30 of
-msgid ""
-"If :math:`x` is ``+infinity`` and :math:`y` is a negative (i.e., less "
-"than ``0``) finite number, the result is ``-infinity``."
+msgid "If :math:`x` is ``+infinity`` and :math:`y` is a negative (i.e., less than ``0``) finite number, the result is ``-infinity``."
 msgstr "如果 :math:`x` 是 ``+infinity``，:math:`y` 是一个小于 0 的有限数，则计算结果为 ``-infinity``。"
 
 #: megengine.functional.elemwise.div:31 of
-msgid ""
-"If :math:`x` is ``-infinity`` and :math:`y` is a positive (i.e., greater "
-"than ``0``) finite number, the result is ``-infinity``."
+msgid "If :math:`x` is ``-infinity`` and :math:`y` is a positive (i.e., greater than ``0``) finite number, the result is ``-infinity``."
 msgstr "如果 :math:`x` 是 ``-infinity``，:math:`y` 是一个大于 0 的有限数，则计算结果为 ``-infinity``。"
 
 #: megengine.functional.elemwise.div:32 of
-msgid ""
-"If :math:`x` is ``-infinity`` and :math:`y` is a negative (i.e., less "
-"than ``0``) finite number, the result is ``+infinity``."
+msgid "If :math:`x` is ``-infinity`` and :math:`y` is a negative (i.e., less than ``0``) finite number, the result is ``+infinity``."
 msgstr "如果 :math:`x` 是 ``-infinity``，:math:`y` 是一个小于 0 的有限数，则计算结果为 ``+infinity``。"
 
 #: megengine.functional.elemwise.div:33 of
-msgid ""
-"If :math:`x` is a positive (i.e., greater than ``0``) finite number and "
-":math:`y` is ``+infinity``, the result is ``+0``."
+msgid "If :math:`x` is a positive (i.e., greater than ``0``) finite number and :math:`y` is ``+infinity``, the result is ``+0``."
 msgstr "如果 :math:`x` 正有限数，:math:`y` 是 ``+infinity``, 则计算结果为 ``+0``。"
 
 #: megengine.functional.elemwise.div:34 of
-msgid ""
-"If :math:`x` is a positive (i.e., greater than ``0``) finite number and "
-":math:`y` is ``-infinity``, the result is ``-0``."
+msgid "If :math:`x` is a positive (i.e., greater than ``0``) finite number and :math:`y` is ``-infinity``, the result is ``-0``."
 msgstr "如果 :math:`x` 正有限数，:math:`y` 是 ``-infinity``, 则计算结果为 ``-0``。"
 
 #: megengine.functional.elemwise.div:35 of
-msgid ""
-"If :math:`x` is a negative (i.e., less than ``0``) finite number and "
-":math:`y` is ``+infinity``, the result is ``-0``."
+msgid "If :math:`x` is a negative (i.e., less than ``0``) finite number and :math:`y` is ``+infinity``, the result is ``-0``."
 msgstr "如果 :math:`x` 负有限数，:math:`y` 是 ``+infinity``, 则计算结果为 ``-0``。"
 
 #: megengine.functional.elemwise.div:36 of
-msgid ""
-"If :math:`x` is a negative (i.e., less than ``0``) finite number and "
-":math:`y` is ``-infinity``, the result is ``+0``."
+msgid "If :math:`x` is a negative (i.e., less than ``0``) finite number and :math:`y` is ``-infinity``, the result is ``+0``."
 msgstr "如果 :math:`x` 负有限数，:math:`y` 是 ``-infinity``, 则计算结果为 ``+0``。"
 
 #: megengine.functional.elemwise.div:37 of
-msgid ""
-"If :math:`x` and :math:`y` have the same mathematical sign and are both "
-"nonzero finite numbers, the result has a positive mathematical sign."
+msgid "If :math:`x` and :math:`y` have the same mathematical sign and are both nonzero finite numbers, the result has a positive mathematical sign."
 msgstr "如果 :math:`x` 和 :math:`y` 为同一符号的有限数, 则计算结果为正数."
 
 #: megengine.functional.elemwise.div:38 of
-msgid ""
-"If :math:`x` and :math:`y` have different mathematical signs and are both"
-" nonzero finite numbers, the result has a negative mathematical sign."
+msgid "If :math:`x` and :math:`y` have different mathematical signs and are both nonzero finite numbers, the result has a negative mathematical sign."
 msgstr "如果 :math:`x` 和 :math:`y` 为不同符号的有限数, 则计算结果为负数."
 
 #: megengine.functional.elemwise.div:39 of
-msgid ""
-"In the remaining cases, where neither ``-infinity``, ``+0``, ``-0``, nor "
-"``NaN`` is involved, the quotient must be computed and rounded to the "
-"nearest representable value according to IEEE 754-2019 and a supported "
-"rounding mode. If the magnitude is too large to represent, the operation "
-"overflows and the result is an infinity of appropriate mathematical sign."
-" If the magnitude is too small to represent, the operation underflows and"
-" the result is a zero of appropriate mathematical sign."
-msgstr ""
-"在其余情况下，既不涉及 “-infinity”、“+0”、“-0”，也不涉及 “NaN”，则会将计算结果四舍五入为最接近的可表示值 ，符合 "
-"IEEE 754-2019 和支持的舍入模式。 如果数值太大而无法表示，则运算溢出，结果为正无穷大或负无穷大。 "
-"如果数值太小而无法表示，则运算下溢，结果为 ``+0`` 或 ``-0``。"
+msgid "In the remaining cases, where neither ``-infinity``, ``+0``, ``-0``, nor ``NaN`` is involved, the quotient must be computed and rounded to the nearest representable value according to IEEE 754-2019 and a supported rounding mode. If the magnitude is too large to represent, the operation overflows and the result is an infinity of appropriate mathematical sign. If the magnitude is too small to represent, the operation underflows and the result is a zero of appropriate mathematical sign."
+msgstr "在其余情况下，既不涉及 “-infinity”、“+0”、“-0”，也不涉及 “NaN”，则会将计算结果四舍五入为最接近的可表示值 ，符合 IEEE 754-2019 和支持的舍入模式。 如果数值太大而无法表示，则运算溢出，结果为正无穷大或负无穷大。 如果数值太小而无法表示，则运算下溢，结果为 ``+0`` 或 ``-0``。"
 
 #: megengine.functional.elemwise.div:46 of
 msgid "The ``/`` operator can be used as a shorthand for ``div`` on tensors."
 msgstr "``/`` 运算符可以用作 Tensor 上 ``div`` 的简写。"
 
 #: megengine.functional.elemwise.div:50 of
-msgid ""
-"In Python, ``//`` is the floor division operator and ``/`` is the true "
-"division operator. See :func:`~.functional.floor_div`"
+msgid "In Python, ``//`` is the floor division operator and ``/`` is the true division operator. See :func:`~.functional.floor_div`"
 msgstr "在 Python 中，``//`` 是整除运算符，见 :func:`~.functional.floor_div`，``/`` 是除运算符。"
 
 #: megengine.functional.elemwise.div:54 of
@@ -230,11 +168,11 @@ msgstr "实际案例"
 
 #: megengine.functional.elemwise.div:58 of
 msgid "Element-wise division:"
-msgstr ""
+msgstr "逐元素除法："
 
 #: megengine.functional.elemwise.div:66 of
 msgid "Broadcasting:"
-msgstr ""
+msgstr "广播："
 
 #~ msgid "Element-wise `(x / y)`."
 #~ msgstr "逐元素相除。"

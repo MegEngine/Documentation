@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2022-08-04 09:13+0000\n"
+"PO-Revision-Date: 2023-04-11 05:47\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.clip.po\n"
+"X-Crowdin-File-ID: 2068\n"
 
 #: ../../source/reference/api/megengine.functional.clip.rst:2
 msgid "megengine.functional.clip"
@@ -20,25 +24,19 @@ msgstr "megengine.functional.clip"
 
 #: megengine.functional.elemwise.clip:1 of
 msgid "Element-wise clipping function."
-msgstr ""
+msgstr "逐元素裁切函数。"
 
 #: megengine.functional.elemwise.clip:3 of
-msgid ""
-"Clamps(limits) all elements :math:`x_i` of the input tensor :math:`x` "
-"into the range ``[ lower, upper ]``. For example, if a range of ``[0, "
-"1]`` is specified, values smaller than ``0`` become ``0``, and values "
-"larger than ``1`` become ``1``."
-msgstr ""
+msgid "Clamps(limits) all elements :math:`x_i` of the input tensor :math:`x` into the range ``[ lower, upper ]``. For example, if a range of ``[0, 1]`` is specified, values smaller than ``0`` become ``0``, and values larger than ``1`` become ``1``."
+msgstr "将输入张量 :math:`x` 的所有元素 :math:`x_i` 裁切（限制）到 ``[ lower, upper ]`` 范围内。例如，如果范围被指定为 ``[0, 1]`` ，那么小于 ``0`` 的值将变为 ``0`` ，而大于 ``1`` 的值将变为 ``1`` 。"
 
 #: megengine.functional.elemwise.clip:7 of
-msgid ""
-"y_i = \\begin{cases}\n"
+msgid "y_i = \\begin{cases}\n"
 "    \\text{lower} & \\text{if } x_i < \\text{lower} \\\\\n"
 "    x_i & \\text{if } \\text{lower} \\leq x_i \\leq \\text{upper} \\\\\n"
 "    \\text{upper} & \\text{if } x_i > \\text{upper}\n"
 "\\end{cases}"
-msgstr ""
-"y_i = \\begin{cases}\n"
+msgstr "y_i = \\begin{cases}\n"
 "    \\text{lower} & \\text{if } x_i < \\text{lower} \\\\\n"
 "    x_i & \\text{if } \\text{lower} \\leq x_i \\leq \\text{upper} \\\\\n"
 "    \\text{upper} & \\text{if } x_i > \\text{upper}\n"
@@ -46,50 +44,39 @@ msgstr ""
 
 #: megengine.functional.elemwise.clip:15 of
 msgid "Equivalent to ``F.minimum(upper, np.maximum(x, upper))`` right now."
-msgstr ""
+msgstr "目前等价于 ``F.minimum(upper, np.maximum(x, upper))`` 。"
 
 #: megengine.functional.elemwise.clip of
 msgid "参数"
 msgstr "参数"
 
 #: megengine.functional.elemwise.clip:18 of
-#, fuzzy
 msgid "The input tensor."
-msgstr "(Tensor): 输入张量。"
+msgstr "输入张量。"
 
 #: megengine.functional.elemwise.clip:19 of
-#, fuzzy
-msgid ""
-"lower-bound of the range to be clamped to. Should have a numeric data "
-"type."
-msgstr "(Numberic，optional): 限制区间的下界。"
+msgid "lower-bound of the range to be clamped to. Should have a numeric data type."
+msgstr "裁切范围的下界。应具有数值数据类型。"
 
 #: megengine.functional.elemwise.clip:20 of
-#, fuzzy
-msgid ""
-"upper-bound of the range to be clamped to. Should have a numeric data "
-"type."
-msgstr "(Numberic，optional): 限制区间的上界。"
+msgid "upper-bound of the range to be clamped to. Should have a numeric data type."
+msgstr "裁切范围的上界。应具有数值数据类型。"
 
 #: megengine.functional.elemwise.clip:24 of
-#, fuzzy
 msgid "If both ``lower`` and ``upper`` are None, raises an ``AssertionError``."
-msgstr "如果 `lower` 和 `upper` 都是 None, 触发 AssertionError."
+msgstr "如果 ``lower`` 和 ``upper`` 都是 None，抛出 ``AssertionError`` 。"
 
 #: megengine.functional.elemwise.clip:25 of
 msgid "If ``lower`` is None, equivalent to ``F.minimum(x, upper)``."
-msgstr ""
+msgstr "若 ``lower`` 是 None，则等价于 ``F.minimum(x, upper)`` 。"
 
 #: megengine.functional.elemwise.clip:26 of
 msgid "If ``upper`` is None, equivalent to ``F.maximum(x, lower)``."
-msgstr ""
+msgstr "若 ``upper`` 是 None，则等价于 ``F.maximum(x, lower)`` 。"
 
 #: megengine.functional.elemwise.clip:27 of
-#, fuzzy
-msgid ""
-"If ``lower`` is bigger than ```upper``, the result is same as "
-"``clip(Tensor(), upper, upper)``."
-msgstr "如果 `lower` 大于 `upper`, 结果和 `clip(Tensor(), upper, upper)` 相同。"
+msgid "If ``lower`` is bigger than ```upper``, the result is same as ``clip(Tensor(), upper, upper)``."
+msgstr "如果 ``lower`` 大于 ```upper`` ，那么结果与 ``clip(Tensor(), upper, upper)`` 相同。"
 
 #: megengine.functional.elemwise.clip of
 msgid "返回类型"
@@ -104,9 +91,7 @@ msgid "返回"
 msgstr "返回"
 
 #: megengine.functional.elemwise.clip:30 of
-msgid ""
-"output clamped tensor. The result must have a data type determined by "
-":ref:`dtype-promotion`."
+msgid "output clamped tensor. The result must have a data type determined by :ref:`dtype-promotion`."
 msgstr "输出被限制区间后的张量。 返回结果的数据类型由 :ref:`dtype-promotion` 决定。"
 
 #~ msgid ""

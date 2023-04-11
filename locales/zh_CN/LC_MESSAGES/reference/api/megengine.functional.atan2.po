@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2021-06-03 10:18+0000\n"
+"PO-Revision-Date: 2023-04-11 05:47\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.atan2.po\n"
+"X-Crowdin-File-ID: 2056\n"
 
 #: ../../source/reference/api/megengine.functional.atan2.rst:2
 msgid "megengine.functional.atan2"
@@ -20,98 +24,77 @@ msgstr "megengine.functional.atan2"
 
 #: megengine.functional.elemwise.atan2:1 of
 msgid "Element-wise :math:`\\arctan(\\frac{y}{x})` function."
-msgstr ""
+msgstr "逐元素 :math:`\\arctan(\\frac{y}{x})` 函数。"
 
 #: megengine.functional.elemwise.atan2:3 of
-msgid ""
-"Calculates an approximation to the inverse tangent for each element "
-":math:`x_i` of the input tensor :math:`x` with the respective element "
-":math:`y_i` of the input tensor :math:`y`."
-msgstr ""
+msgid "Calculates an approximation to the inverse tangent for each element :math:`x_i` of the input tensor :math:`x` with the respective element :math:`y_i` of the input tensor :math:`y`."
+msgstr "对输入张量 :math:`x` 的每个元素 :math:`x_i` 以及输入张量 :math:`y` 的相应元素 :math:`y_i` 计算正切函数的反函数的近似值。"
 
 #: megengine.functional.elemwise.atan2 of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.functional.elemwise.atan2:6 of
-msgid ""
-"first input tensor whose elements correspond to the dividend. Should have"
-" a numeric data type."
-msgstr ""
+msgid "first input tensor whose elements correspond to the dividend. Should have a numeric data type."
+msgstr "第一个输入张量，其元素为被除数。应具有数值数据类型。"
 
 #: megengine.functional.elemwise.atan2:7 of
-msgid ""
-"second input tensor whose elements correspond to the divisor. Must be "
-"compatible with `x` (see :ref:`broadcasting-rule` ). Should have a "
-"numeric data type."
-msgstr ""
+msgid "second input tensor whose elements correspond to the divisor. Must be compatible with `x` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
+msgstr "第二个输入张量，其元素为除数。必须与 `x` 相容（见 :ref:`broadcasting-rule` ）。应具有数值数据类型。"
 
 #: megengine.functional.elemwise.atan2 of
 msgid "返回"
-msgstr ""
+msgstr "返回"
 
 #: megengine.functional.elemwise.atan2:10 of
 msgid "a tensor containing the inverse tangent of each element in :math:`y/x`."
-msgstr ""
+msgstr "一个包含 :math:`y/x` 中每个元素的反正切的张量。"
 
 #: megengine.functional.elemwise.atan2:12 of
 msgid "Special cases"
-msgstr ""
+msgstr "特殊的案例"
 
 #: megengine.functional.elemwise.atan2:14 of
-msgid ""
-"``atan2`` is identical to the ``atan2`` function of the underlying C "
-"library. The following special values are defined in the C standard:"
-msgstr ""
+msgid "``atan2`` is identical to the ``atan2`` function of the underlying C library. The following special values are defined in the C standard:"
+msgstr "``atan2`` 与底层 C 语言库中的 ``atan2`` 函数相同。以下特殊值在 C 语言标准中定义："
 
 #: megengine.functional.elemwise.atan2:17 of
 msgid "For floating-point operands,"
-msgstr ""
+msgstr "对于浮点数的操作，"
 
 #: megengine.functional.elemwise.atan2:19 of
 msgid "if :math:`y` is `+/-0`` and :math:`x` is ``+0``, the result is ``+/-0``."
-msgstr ""
+msgstr "如果 :math:`y` 是 `+/-0`` 并且 :math:`x` 是 ``+0`` ，那么结果是 ``+/-0`` 。"
 
 #: megengine.functional.elemwise.atan2:20 of
 msgid "if :math:`y` is ``+/-0`` and :math:`x` is ``-0``, the result is ``+/-π``."
-msgstr ""
+msgstr "如果 :math:`y` 是 ``+/-0`` 并且 :math:`x` 是 ``-0`` ，那么结果是 ``+/-π`` 。"
 
 #: megengine.functional.elemwise.atan2:21 of
-msgid ""
-"if :math:`y` is greater than ``0`` and :math:`x` is ``+/-infinity``, the "
-"result is ``+0/+π``."
-msgstr ""
+msgid "if :math:`y` is greater than ``0`` and :math:`x` is ``+/-infinity``, the result is ``+0/+π``."
+msgstr "如果 :math:`y` 大于 ``0`` 并且 :math:`x` 是 ``+/-infinity`` ，那么结果是 ``+0/+π`` 。"
 
 #: megengine.functional.elemwise.atan2:22 of
-msgid ""
-"if :math:`y` is less than ``0`` and :math:`x` is ``+/-infinity``, the "
-"result is ``-0/-π``."
-msgstr ""
+msgid "if :math:`y` is less than ``0`` and :math:`x` is ``+/-infinity``, the result is ``-0/-π``."
+msgstr "如果 :math:`y` 小于 ``0`` 并且 :math:`x` 是 ``+/-infinity`` ，那么结果是 ``-0/-π`` 。"
 
 #: megengine.functional.elemwise.atan2:23 of
-msgid ""
-"if :math:`y` is ``+/-infinity`and :math:`x` is ``+infinity``, tge result "
-"is ``+/-(π/4)``."
-msgstr ""
+msgid "if :math:`y` is ``+/-infinity`and :math:`x` is ``+infinity``, tge result is ``+/-(π/4)``."
+msgstr "如果 :math:`y` 是 ``+/-infinity` 并且 :math:`x` 是 ``+infinity`` ，那么结果是 ``+/-(π/4)`` 。"
 
 #: megengine.functional.elemwise.atan2:24 of
-msgid ""
-"if :math:`y` is ``+/-infinity`and :math:`x` is ``-infinity``, tge result "
-"is ``+/-(3π/4)``."
-msgstr ""
+msgid "if :math:`y` is ``+/-infinity`and :math:`x` is ``-infinity``, tge result is ``+/-(3π/4)``."
+msgstr "如果 :math:`y` 是 ``+/-infinity` 并且 :math:`x` 是 ``-infinity`` ，那么结果是 ``+/-(3π/4)`` 。"
 
 #: megengine.functional.elemwise.atan2:26 of
-msgid ""
-"Note that ``+0`` and ``-0`` are distinct floating point numbers, as are "
-"``+inf`` and ``-inf``."
-msgstr ""
+msgid "Note that ``+0`` and ``-0`` are distinct floating point numbers, as are ``+inf`` and ``-inf``."
+msgstr "注意 ``+0`` 和 ``-0`` 是不同的浮点数， ``+inf`` 和 ``-inf`` 同理。"
 
 #: megengine.functional.elemwise.atan2:29 of
 msgid "实际案例"
-msgstr ""
+msgstr "实际案例"
 
 #: megengine.functional.elemwise.atan2:33 of
-#, fuzzy
 msgid "Element-wise inverse tangent:"
-msgstr "逐元素计算两个参数的反正切函数。"
+msgstr "逐元素反正切函数："
 

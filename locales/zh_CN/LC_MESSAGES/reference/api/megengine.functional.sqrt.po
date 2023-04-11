@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2022-08-04 09:13+0000\n"
+"PO-Revision-Date: 2023-04-11 05:44\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.sqrt.po\n"
+"X-Crowdin-File-ID: 2276\n"
 
 #: ../../source/reference/api/megengine.functional.sqrt.rst:2
 msgid "megengine.functional.sqrt"
@@ -20,28 +24,23 @@ msgstr "megengine.functional.sqrt"
 
 #: megengine.functional.elemwise.sqrt:1 of
 msgid "Element-wise :math:`\\operatorname{sqrt}(x)` function."
-msgstr ""
+msgstr "元素 :math:`\\operatorname{sqrt}(x)` 函数"
 
 #: megengine.functional.elemwise.sqrt:3 of
-msgid ""
-"Calculates the square root for each element :math:`x_i` of the input "
-"tensor :math:`x`. After rounding, each result must be indistinguishable "
-"from the infinitely precise result (as required by IEEE 754)."
-msgstr ""
+msgid "Calculates the square root for each element :math:`x_i` of the input tensor :math:`x`. After rounding, each result must be indistinguishable from the infinitely precise result (as required by IEEE 754)."
+msgstr "计算输入 Tensor :math:`x` 中每个元素 :math:`x_i` 的平方根。取整后，每个计算结果必须与 infinitely precise result(IEEE 754 标准) 保持一致。"
 
 #: megengine.functional.elemwise.sqrt:6 of
-msgid ""
-"This function has domain ``[0, +infinity]`` and codomain ``[0, "
-"+infinity]``."
-msgstr ""
+msgid "This function has domain ``[0, +infinity]`` and codomain ``[0, +infinity]``."
+msgstr "函数的定义域为 ``[0, +infinity]`` ， 值域为 ``[0, +infinity]`` 。"
 
 #: megengine.functional.elemwise.sqrt of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.functional.elemwise.sqrt:9 of
 msgid "input tensor. Should have a floating-point data type."
-msgstr ""
+msgstr "输入 tensor。应该具有 float 数据类型。"
 
 #: megengine.functional.elemwise.sqrt of
 msgid "返回类型"
@@ -52,53 +51,48 @@ msgid ":py:class:`~megengine.tensor.Tensor`"
 msgstr ":py:class:`~megengine.tensor.Tensor`"
 
 #: megengine.functional.elemwise.sqrt of
-#, fuzzy
 msgid "返回"
-msgstr "返回类型"
+msgstr "返回"
 
 #: megengine.functional.elemwise.sqrt:12 of
-msgid ""
-"a tensor containing the evaluated square root result for each element in "
-":math:`x`. The returned tensor must have a floating-point data type "
-"determined by :ref:`dtype-promotion`."
-msgstr ""
+msgid "a tensor containing the evaluated square root result for each element in :math:`x`. The returned tensor must have a floating-point data type determined by :ref:`dtype-promotion`."
+msgstr "一个 Tensor ，包含 :math:`x` 中每个元素的平方根计算结果。返回的 Tensor 将会使用浮点数据类型，具体见 :ref:`dtype-promotion` 。"
 
 #: megengine.functional.elemwise.sqrt:15 of
 msgid "Special cases"
-msgstr ""
+msgstr "特殊的案例"
 
 #: megengine.functional.elemwise.sqrt:17 of
 msgid "For floating-point operands,"
-msgstr ""
+msgstr "对于浮点数的操作，"
 
 #: megengine.functional.elemwise.sqrt:19 of
 msgid "If :math:`x_i` is ``NaN``, the result is ``NaN``."
-msgstr ""
+msgstr "若 :math:`x_i` 是 ``NaN``，则结果为 ``NaN``。"
 
 #: megengine.functional.elemwise.sqrt:20 of
 msgid "If :math:`x_i` is less than ``0``, the result is ``NaN``."
-msgstr ""
+msgstr "如果 :math:`x_i` 小于 ``0``, 结果记为 ``NaN``。"
 
 #: megengine.functional.elemwise.sqrt:21 of
 msgid "If :math:`x_i` is ``+0``, the result is ``+0``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``+0`` ，那么结果是 ``+0`` 。"
 
 #: megengine.functional.elemwise.sqrt:22 of
 msgid "If :math:`x_i` is ``-0``, the result is ``-0``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``-0`` ，那么结果是 ``-0`` 。"
 
 #: megengine.functional.elemwise.sqrt:23 of
 msgid "If :math:`x_i` is ``+infinity``, the result is ``+infinity``."
-msgstr ""
+msgstr "若 :math:`x_i` 是 ``+infinity``，则结果为 ``+infinity``。"
 
 #: megengine.functional.elemwise.sqrt:26 of
 msgid "实际案例"
-msgstr ""
+msgstr "实际案例"
 
 #: megengine.functional.elemwise.sqrt:30 of
-#, fuzzy
 msgid "Element-wise square root:"
-msgstr "逐元素取平方根。"
+msgstr "Element-wise square root:"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"

@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2021-12-28 12:59+0000\n"
+"PO-Revision-Date: 2023-04-11 05:51\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.Module.po\n"
+"X-Crowdin-File-ID: 2440\n"
 
 #: ../../source/reference/api/megengine.module.Module.rst:5
 msgid "Module"
@@ -36,15 +40,11 @@ msgid "参数"
 msgstr ""
 
 #: megengine.module.module.Module:3 of
-msgid ""
-"module's name, can be initialized by the ``kwargs`` parameter of child "
-"class."
+msgid "module's name, can be initialized by the ``kwargs`` parameter of child class."
 msgstr ""
 
 #: megengine.module.module.Module.apply:1 of
-msgid ""
-"Applies function ``fn`` to all the modules within this module, including "
-"itself."
+msgid "Applies function ``fn`` to all the modules within this module, including itself."
 msgstr ""
 
 #: megengine.module.module.Module.apply:5 of
@@ -83,9 +83,7 @@ msgid "Buffer is defined to be :class:`~.Tensor` excluding :class:`~.Parameter`.
 msgstr ""
 
 #: megengine.module.module.Module.buffers:6 of
-msgid ""
-"if ``True``, returns all buffers within this module, else only returns "
-"buffers that are direct attributes"
+msgid "if ``True``, returns all buffers within this module, else only returns buffers that are direct attributes"
 msgstr ""
 
 #: megengine.module.module.Module.buffers:10 of
@@ -93,9 +91,7 @@ msgid ":py:class:`~typing.Iterable`\\[:py:class:`~megengine.tensor.Tensor`]"
 msgstr ""
 
 #: megengine.module.module.Module.children:1 of
-msgid ""
-"Returns an iterable for all the submodules that are direct attributes of "
-"this module."
+msgid "Returns an iterable for all the submodules that are direct attributes of this module."
 msgstr ""
 
 #: megengine.module.module.Module.children:5
@@ -104,30 +100,19 @@ msgid ":py:class:`~typing.Iterable`\\[:py:class:`~megengine.module.module.Module
 msgstr ""
 
 #: megengine.module.module.Module.disable_quantize:1 of
-msgid ""
-"Sets ``module``'s ``quantize_disabled`` attribute and return ``module``. "
-"Could be used as a decorator."
+msgid "Sets ``module``'s ``quantize_disabled`` attribute and return ``module``. Could be used as a decorator."
 msgstr ""
 
 #: megengine.module.module.Module.eval:1 of
-msgid ""
-"Sets training mode of all the modules within this module (including "
-"itself) to ``False``. See :meth:`~.Module.train` for details."
+msgid "Sets training mode of all the modules within this module (including itself) to ``False``. See :meth:`~.Module.train` for details."
 msgstr ""
 
 #: megengine.module.module.Module.load_state_dict:1 of
-msgid ""
-"Loads a given dictionary created by :func:`state_dict` into this module. "
-"If ``strict`` is ``True``, the keys of :func:`state_dict` must exactly "
-"match the keys returned by :func:`state_dict`."
+msgid "Loads a given dictionary created by :func:`state_dict` into this module. If ``strict`` is ``True``, the keys of :func:`state_dict` must exactly match the keys returned by :func:`state_dict`."
 msgstr ""
 
 #: megengine.module.module.Module.load_state_dict:5 of
-msgid ""
-"Users can also pass a closure: ``Function[key: str, var: Tensor] -> "
-"Optional[np.ndarray]`` as a `state_dict`, in order to handle complex "
-"situations. For example, load everything except for the final linear "
-"classifier:"
+msgid "Users can also pass a closure: ``Function[key: str, var: Tensor] -> Optional[np.ndarray]`` as a `state_dict`, in order to handle complex situations. For example, load everything except for the final linear classifier:"
 msgstr ""
 
 #: megengine.module.module.Module.load_state_dict:17 of
@@ -135,9 +120,7 @@ msgid "Here returning ``None`` means skipping parameter ``k``."
 msgstr ""
 
 #: megengine.module.module.Module.load_state_dict:19 of
-msgid ""
-"To prevent shape mismatch (e.g. load PyTorch weights), we can reshape "
-"before loading:"
+msgid "To prevent shape mismatch (e.g. load PyTorch weights), we can reshape before loading:"
 msgstr ""
 
 #: megengine.module.module.Module.load_state_dict:28 of
@@ -145,15 +128,11 @@ msgid "We can also perform inplace re-initialization or pruning:"
 msgstr ""
 
 #: megengine.module.module.Module.modules:1 of
-msgid ""
-"Returns an iterable for all the modules within this module, including "
-"itself."
+msgid "Returns an iterable for all the modules within this module, including itself."
 msgstr ""
 
 #: megengine.module.module.Module.named_buffers:1 of
-msgid ""
-"Returns an iterable for key buffer pairs of the module, where ``key`` is "
-"the dotted path from this module to the buffer."
+msgid "Returns an iterable for key buffer pairs of the module, where ``key`` is the dotted path from this module to the buffer."
 msgstr ""
 
 #: megengine.module.module.Module.named_buffers:7
@@ -163,9 +142,7 @@ msgid "prefix prepended to the keys."
 msgstr ""
 
 #: megengine.module.module.Module.named_buffers:9 of
-msgid ""
-"if ``True``, returns all buffers within this module, else only returns "
-"buffers that are direct attributes of this module."
+msgid "if ``True``, returns all buffers within this module, else only returns buffers that are direct attributes of this module."
 msgstr ""
 
 #: megengine.module.module.Module.named_buffers:12 of
@@ -174,30 +151,20 @@ msgstr ""
 
 #: megengine.module.module.Module.named_buffers:15
 #: megengine.module.module.Module.named_tensors:12 of
-msgid ""
-":py:class:`~typing.Iterable`\\[:py:data:`~typing.Tuple`\\[:py:class:`str`,"
-" :py:class:`~megengine.tensor.Tensor`]]"
+msgid ":py:class:`~typing.Iterable`\\[:py:data:`~typing.Tuple`\\[:py:class:`str`, :py:class:`~megengine.tensor.Tensor`]]"
 msgstr ""
 
 #: megengine.module.module.Module.named_children:1 of
-msgid ""
-"Returns an iterable of key-submodule pairs for all the submodules that "
-"are direct attributes of this module, where 'key' is the attribute name "
-"of submodules."
+msgid "Returns an iterable of key-submodule pairs for all the submodules that are direct attributes of this module, where 'key' is the attribute name of submodules."
 msgstr ""
 
 #: megengine.module.module.Module.named_children:6
 #: megengine.module.module.Module.named_modules:9 of
-msgid ""
-":py:class:`~typing.Iterable`\\[:py:data:`~typing.Tuple`\\[:py:class:`str`,"
-" :py:class:`~megengine.module.module.Module`]]"
+msgid ":py:class:`~typing.Iterable`\\[:py:data:`~typing.Tuple`\\[:py:class:`str`, :py:class:`~megengine.module.module.Module`]]"
 msgstr ""
 
 #: megengine.module.module.Module.named_modules:1 of
-msgid ""
-"Returns an iterable of key-module pairs for all the modules within this "
-"module, including itself, where 'key' is the dotted path from this module"
-" to the submodules."
+msgid "Returns an iterable of key-module pairs for all the modules within this module, including itself, where 'key' is the dotted path from this module to the submodules."
 msgstr ""
 
 #: megengine.module.module.Module.named_modules:6 of
@@ -205,35 +172,23 @@ msgid "prefix prepended to the path."
 msgstr ""
 
 #: megengine.module.module.Module.named_parameters:1 of
-msgid ""
-"Returns an iterable for key :class:`~.Parameter` pairs of the module, "
-"where ``key`` is the dotted path from this module to the "
-":class:`~.Parameter`."
+msgid "Returns an iterable for key :class:`~.Parameter` pairs of the module, where ``key`` is the dotted path from this module to the :class:`~.Parameter`."
 msgstr ""
 
 #: megengine.module.module.Module.named_parameters:7 of
-msgid ""
-"if ``True``, returns all :class:`~.Parameter` within this module, else "
-"only returns :class:`~.Parameter` that are direct attributes of this "
-"module."
+msgid "if ``True``, returns all :class:`~.Parameter` within this module, else only returns :class:`~.Parameter` that are direct attributes of this module."
 msgstr ""
 
 #: megengine.module.module.Module.named_parameters:12 of
-msgid ""
-":py:class:`~typing.Iterable`\\[:py:data:`~typing.Tuple`\\[:py:class:`str`,"
-" :py:class:`~megengine.tensor.Parameter`]]"
+msgid ":py:class:`~typing.Iterable`\\[:py:data:`~typing.Tuple`\\[:py:class:`str`, :py:class:`~megengine.tensor.Parameter`]]"
 msgstr ""
 
 #: megengine.module.module.Module.named_tensors:1 of
-msgid ""
-"Returns an iterable for key tensor pairs of the module, where ``key`` is "
-"the dotted path from this module to the tensor."
+msgid "Returns an iterable for key tensor pairs of the module, where ``key`` is the dotted path from this module to the tensor."
 msgstr ""
 
 #: megengine.module.module.Module.named_tensors:7 of
-msgid ""
-"if ``True``, returns all tensors within this module, else only returns "
-"tensors that are direct attributes of this module."
+msgid "if ``True``, returns all tensors within this module, else only returns tensors that are direct attributes of this module."
 msgstr ""
 
 #: megengine.module.module.Module.parameters:1 of
@@ -241,10 +196,7 @@ msgid "Returns an iterable for the :class:`~.Parameter` of the module."
 msgstr ""
 
 #: megengine.module.module.Module.parameters:4 of
-msgid ""
-"If ``True``, returns all :class:`~.Parameter` within this module, else "
-"only returns :class:`~.Parameter` that are direct attributes of this "
-"module."
+msgid "If ``True``, returns all :class:`~.Parameter` within this module, else only returns :class:`~.Parameter` that are direct attributes of this module."
 msgstr ""
 
 #: megengine.module.module.Module.parameters:9
@@ -253,16 +205,11 @@ msgid ":py:class:`~typing.Iterable`\\[:py:class:`~megengine.tensor.Parameter`]"
 msgstr ""
 
 #: megengine.module.module.Module.register_forward_hook:1 of
-msgid ""
-"Registers a hook to handle forward results. `hook` should be a function "
-"that receive `module`, `inputs` and `outputs`, then return a modified "
-"`outputs` or `None`."
+msgid "Registers a hook to handle forward results. `hook` should be a function that receive `module`, `inputs` and `outputs`, then return a modified `outputs` or `None`."
 msgstr ""
 
 #: megengine.module.module.Module.register_forward_hook:4 of
-msgid ""
-"This method return a handler with :meth:`~.HookHandler.remove` interface "
-"to delete the hook."
+msgid "This method return a handler with :meth:`~.HookHandler.remove` interface to delete the hook."
 msgstr ""
 
 #: megengine.module.module.Module.register_forward_hook:7
@@ -275,9 +222,7 @@ msgid "Registers a hook to handle forward inputs. `hook` should be a function."
 msgstr ""
 
 #: megengine.module.module.Module.register_forward_pre_hook:4 of
-msgid ""
-"a function that receive `module` and `inputs`, then return a modified "
-"`inputs` or `None`."
+msgid "a function that receive `module` and `inputs`, then return a modified `inputs` or `None`."
 msgstr ""
 
 #: megengine.module.module.Module.register_forward_pre_hook of
@@ -289,9 +234,7 @@ msgid "a handler with :meth:`~.HookHandler.remove` interface to delete the hook.
 msgstr ""
 
 #: megengine.module.module.Module.replace_param:2 of
-msgid ""
-"Replaces module's parameters with ``params``, used by "
-":class:`~.ParamPack` to"
+msgid "Replaces module's parameters with ``params``, used by :class:`~.ParamPack` to"
 msgstr ""
 
 #: megengine.module.module.Module.replace_param:2 of
@@ -307,17 +250,11 @@ msgid "Returns an iterable for the :class:`~.Tensor` of the module."
 msgstr ""
 
 #: megengine.module.module.Module.tensors:4 of
-msgid ""
-"If ``True``, returns all :class:`~.Tensor` within this module, else only "
-"returns :class:`~.Tensor` that are direct attributes of this module."
+msgid "If ``True``, returns all :class:`~.Tensor` within this module, else only returns :class:`~.Tensor` that are direct attributes of this module."
 msgstr ""
 
 #: megengine.module.module.Module.train:1 of
-msgid ""
-"Sets training mode of all the modules within this module (including "
-"itself) to ``mode``. This effectively sets the ``training`` attributes of"
-" those modules to ``mode``, but only has effect on certain modules (e.g. "
-":class:`~.BatchNorm2d`, :class:`~.Dropout`, :class:`~.Observer`)"
+msgid "Sets training mode of all the modules within this module (including itself) to ``mode``. This effectively sets the ``training`` attributes of those modules to ``mode``, but only has effect on certain modules (e.g. :class:`~.BatchNorm2d`, :class:`~.Dropout`, :class:`~.Observer`)"
 msgstr ""
 
 #: megengine.module.module.Module.train:7 of
