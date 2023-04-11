@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2021-06-03 10:18+0000\n"
+"PO-Revision-Date: 2023-04-11 05:48\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.log1p.po\n"
+"X-Crowdin-File-ID: 2176\n"
 
 #: ../../source/reference/api/megengine.functional.log1p.rst:2
 msgid "megengine.functional.log1p"
@@ -20,89 +24,79 @@ msgstr "megengine.functional.log1p"
 
 #: megengine.functional.elemwise.log1p:1 of
 msgid "Element-wise :math:`\\log(1 + x)` function."
-msgstr ""
+msgstr "Element-wise :math:`\\log(1 + x)` 方法."
 
 #: megengine.functional.elemwise.log1p:3 of
 msgid "Calculates an approximation to :math:`\\log(1 + x)`:"
-msgstr ""
+msgstr "计算 :math:`\\log(1 + x)`的近似值:"
 
 #: megengine.functional.elemwise.log1p:5 of
 msgid "y_i = \\log(1 + x_i)"
-msgstr ""
+msgstr "y_i = \\log(1 + x_i)"
 
 #: megengine.functional.elemwise.log1p:9 of
-msgid ""
-"where log refers to the natural (base :math:`e`) logarithm, for each "
-"element :math:`x_i` of the input tensor :math:`x`."
-msgstr ""
+msgid "where log refers to the natural (base :math:`e`) logarithm, for each element :math:`x_i` of the input tensor :math:`x`."
+msgstr "其中 log 指的是自然 (base :math:`e`) 对数, 为输入tensor :math:`x` 的每个元素 :math:`x_i` 计算出结果。"
 
 #: megengine.functional.elemwise.log1p:12 of
-msgid ""
-"This function has domain ``[-1, +infinity]`` and codomain ``[-infinity, "
-"+infinity]``."
-msgstr ""
+msgid "This function has domain ``[-1, +infinity]`` and codomain ``[-infinity, +infinity]``."
+msgstr "函数的作用域 ``[-1, +infinity]`` 和陪域 ``[-infinity, +infinity]``."
 
 #: megengine.functional.elemwise.log1p of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.functional.elemwise.log1p:14 of
 msgid "input tensor. Should have a floating-point data type."
-msgstr ""
+msgstr "输入 tensor。应该具有 float 数据类型。"
 
 #: megengine.functional.elemwise.log1p of
 msgid "返回"
-msgstr ""
+msgstr "返回"
 
 #: megengine.functional.elemwise.log1p:16 of
-msgid ""
-"a tensor containing the evaluated result for each element in :math:`x`. "
-"The returned tensor must have a floating-point data type determined by "
-":ref:`dtype-promotion`."
-msgstr ""
+msgid "a tensor containing the evaluated result for each element in :math:`x`. The returned tensor must have a floating-point data type determined by :ref:`dtype-promotion`."
+msgstr "一个承接输入张量 :math:`x` 的每一个元素映射值的张量。返回张量必须是浮点数据类型(具体参考 :ref:`dtype-promotion` )."
 
 #: megengine.functional.elemwise.log1p:21 of
-msgid ""
-"This function is more accurate than :math:`\\log(1+x)` for small values "
-"of input. See FDLIBM, or some other IEEE 754-2019 compliant mathematical "
-"library, for a potential reference implementation."
-msgstr ""
+msgid "This function is more accurate than :math:`\\log(1+x)` for small values of input. See FDLIBM, or some other IEEE 754-2019 compliant mathematical library, for a potential reference implementation."
+msgstr "对于较小的输入比 :math:`\\log(1+x)` 更加精准。 参考实现见： FDLIBM, 或者 IEEE 754-2019 标准的数学库。"
 
 #: megengine.functional.elemwise.log1p:25 of
 msgid "Special cases"
-msgstr ""
+msgstr "特殊的案例"
 
 #: megengine.functional.elemwise.log1p:27 of
 msgid "For floating-point operands,"
-msgstr ""
+msgstr "对于浮点数的操作，"
 
 #: megengine.functional.elemwise.log1p:29 of
 msgid "If :math:`x_i` is ``NaN``, the result is ``NaN``."
-msgstr ""
+msgstr "若 :math:`x_i` 是 ``NaN``，则结果为 ``NaN``。"
 
 #: megengine.functional.elemwise.log1p:30 of
 msgid "If :math:`x_i` is less than ``-1``, the result is ``NaN``."
-msgstr ""
+msgstr "若 :math:`x_i` 小于 ``-1``，则结果为 ``NaN``。"
 
 #: megengine.functional.elemwise.log1p:31 of
 msgid "If :math:`x_i` is ``-1``, the result is ``-infinity``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``-1`` ，那么结果是 ``-infinity`` 。"
 
 #: megengine.functional.elemwise.log1p:32 of
 msgid "If :math:`x_i` is ``-0``, the result is ``-0``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``-0`` ，那么结果是 ``-0`` 。"
 
 #: megengine.functional.elemwise.log1p:33 of
 msgid "If :math:`x_i` is ``+0``, the result is ``+0``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``+0`` ，那么结果是 ``+0`` 。"
 
 #: megengine.functional.elemwise.log1p:34 of
 msgid "If :math:`x_i` is ``+infinity``, the result is ``+infinity``."
-msgstr ""
+msgstr "若 :math:`x_i` 是 ``+infinity``，则结果为 ``+infinity``。"
 
 #: megengine.functional.elemwise.log1p:37 of
 msgid "实际案例"
-msgstr ""
+msgstr "实际案例"
 
 #~ msgid "Element-wise `log(x+1) (base e)`."
 #~ msgstr "逐元素计算 `(x+1)` 以 `e` 为底的对数。"

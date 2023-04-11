@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2022-08-04 09:13+0000\n"
+"PO-Revision-Date: 2023-04-11 05:49\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.prod.po\n"
+"X-Crowdin-File-ID: 2244\n"
 
 #: ../../source/reference/api/megengine.functional.prod.rst:2
 msgid "megengine.functional.prod"
@@ -20,7 +24,7 @@ msgstr "megengine.functional.prod"
 
 #: megengine.functional.math.prod:1 of
 msgid "Calculates the product of tensor elements over a given axis (or axes)."
-msgstr ""
+msgstr "计算张量元素在给定轴上的乘积。"
 
 #: megengine.functional.math.prod of
 msgid "参数"
@@ -28,23 +32,15 @@ msgstr "参数"
 
 #: megengine.functional.math.prod:4 of
 msgid "input tensor. Should have a numeric data type."
-msgstr ""
+msgstr "输入张量。 应该有一个数字数据类型。"
 
 #: megengine.functional.math.prod:6 of
-msgid ""
-"axis or axes along which products must be computed. By default, the "
-"product must be computed over the entire tensor. If a sequence of "
-"integers, products must be computed over multiple axes."
-msgstr ""
+msgid "axis or axes along which products must be computed. By default, the product must be computed over the entire tensor. If a sequence of integers, products must be computed over multiple axes."
+msgstr "用于确定计算哪些元素乘积的轴。默认情况下，乘积必须在整个张量上计算。如果是一个整数序列，则必须在多个轴上计算乘积。"
 
 #: megengine.functional.math.prod:9 of
-msgid ""
-"if ``True``, the reduced axes (dimensions) must be included in the result"
-" as singleton dimensions, and, accordingly, the result must be compatible"
-" with the input tensor (see :ref:`broadcasting-rule`). Otherwise, if "
-"``False``, the reduced axes (dimensions) must not be included in the "
-"result."
-msgstr ""
+msgid "if ``True``, the reduced axes (dimensions) must be included in the result as singleton dimensions, and, accordingly, the result must be compatible with the input tensor (see :ref:`broadcasting-rule`). Otherwise, if ``False``, the reduced axes (dimensions) must not be included in the result."
+msgstr "若为 \"True\"，则指定用来reduce的轴(维度)必须包含在结果中，因此，结果必须与输入tensor兼容(参见:ref:`broadcasting-rule `)。否则，若为 \"False\"，结果中不得包含用于reduce的轴(维度)。"
 
 #: megengine.functional.math.prod of
 msgid "返回类型"
@@ -59,36 +55,28 @@ msgid "返回"
 msgstr "返回"
 
 #: megengine.functional.math.prod:14 of
-msgid ""
-"if the product was computed over the entire tensor, a zero-dimensional "
-"tensor containing the products; otherwise, a non-zero-dimensional tensor "
-"containing the products. The returned tensor must have a data type "
-"determined by :ref:`dtype-promotion`."
-msgstr ""
+msgid "if the product was computed over the entire tensor, a zero-dimensional tensor containing the products; otherwise, a non-zero-dimensional tensor containing the products. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
+msgstr "如累积乘是在整个张量上计算的，则是一个零维张量；否则，是一个非零维张量。返回的张量的类型由:ref:`dtype-promotion`决定。"
 
 #: megengine.functional.math.prod:18 of
 msgid "Special Cases"
-msgstr ""
+msgstr "特殊情况"
 
 #: megengine.functional.math.prod:20 of
 msgid "Let ``N`` equal the number of elements over which to compute the product."
-msgstr ""
+msgstr "让 ``N`` 等于计算乘积的元素数量。"
 
 #: megengine.functional.math.prod:22 of
 msgid "If ``N`` is 0, the product is ``1`` (i.e., the empty product)."
-msgstr ""
+msgstr "如果 \"N\" 为0，则积为 \"1\"（即空积）。"
 
 #: megengine.functional.math.prod:23 of
-msgid ""
-"If :math:`x_i` is ``NaN``, the product is ``NaN`` (i.e., ``NaN`` values "
-"propagate)."
-msgstr ""
+msgid "If :math:`x_i` is ``NaN``, the product is ``NaN`` (i.e., ``NaN`` values propagate)."
+msgstr "如果 :math:`x_i` 是 `NaN`，则累积乘的结果为 `NaN`（即，`NaN`值传播）。"
 
 #: megengine.functional.math.prod:27 of
-msgid ""
-"Arithmetic is modular when using integer types, and no error is raised on"
-" overflow:"
-msgstr ""
+msgid "Arithmetic is modular when using integer types, and no error is raised on overflow:"
+msgstr "使用整数类型时算术是模块化的，溢出时不会引发错误："
 
 #: megengine.functional.math.prod:34 of
 msgid "实际案例"
@@ -96,15 +84,15 @@ msgstr "实际案例"
 
 #: megengine.functional.math.prod:35 of
 msgid "The product of an empty tensor is the neutral element 1:"
-msgstr ""
+msgstr "空张量的累积乘结果是元素1。"
 
 #: megengine.functional.math.prod:40 of
 msgid "Normal case:"
-msgstr ""
+msgstr "普通示例："
 
 #: megengine.functional.math.prod:47 of
 msgid "Along an axis:"
-msgstr ""
+msgstr "沿着某一轴："
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"

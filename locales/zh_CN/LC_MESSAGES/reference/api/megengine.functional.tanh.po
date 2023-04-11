@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2021-06-03 10:18+0000\n"
+"PO-Revision-Date: 2023-04-11 05:44\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.tanh.po\n"
+"X-Crowdin-File-ID: 2296\n"
 
 #: ../../source/reference/api/megengine.functional.tanh.rst:2
 msgid "megengine.functional.tanh"
@@ -20,83 +24,73 @@ msgstr "megengine.functional.tanh"
 
 #: megengine.functional.elemwise.tanh:1 of
 msgid "Element-wise :math:`\\tanh(x)` function."
-msgstr ""
+msgstr "元素 :math:`\\tanh(x)` 函数"
 
 #: megengine.functional.elemwise.tanh:3 of
-msgid ""
-"Calculates the hyperbolic tangent for each element :math:`x_i` of the "
-"input tensor :math:`x`."
-msgstr ""
+msgid "Calculates the hyperbolic tangent for each element :math:`x_i` of the input tensor :math:`x`."
+msgstr "计算输入 Tensor :math:`x` 中每个元素 :math:`x_i` 的双曲切线值"
 
 #: megengine.functional.elemwise.tanh:5 of
 msgid "Equivalent to:"
-msgstr ""
+msgstr "等同于："
 
 #: megengine.functional.elemwise.tanh:7 of
 msgid "\\frac {\\sinh(x)} {\\cosh(x)} =  \\frac {e^{x}-e^{-x}} {e^{x}+e^{-x}}"
-msgstr ""
+msgstr "\\frac {\\sinh(x)} {\\cosh(x)} =  \\frac {e^{x}-e^{-x}} {e^{x}+e^{-x}}"
 
 #: megengine.functional.elemwise.tanh:11 of
-msgid ""
-"This function has domain ``[-infinity, +infinity]`` and codomain ``[-1, "
-"1]``."
-msgstr ""
+msgid "This function has domain ``[-infinity, +infinity]`` and codomain ``[-1, 1]``."
+msgstr "函数的定义域为 ``[-infinity, +infinity]`` ，值域为 ``[-1, 1]``"
 
 #: megengine.functional.elemwise.tanh of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.functional.elemwise.tanh:13 of
-msgid ""
-"input tensor whose elements each represent a hyperbolic angle. Should "
-"have a floating-point data type."
-msgstr ""
+msgid "input tensor whose elements each represent a hyperbolic angle. Should have a floating-point data type."
+msgstr "输入向量，每个值代表一个角度, 应该为一个浮点数据类型。"
 
 #: megengine.functional.elemwise.tanh of
 msgid "返回"
-msgstr ""
+msgstr "返回"
 
 #: megengine.functional.elemwise.tanh:15 of
-msgid ""
-"a tensor containing the hyperbolic tangent of each element in :math:`x`. "
-"The returned tensor must have a floating-point data type determined by "
-":ref:`dtype-promotion`."
-msgstr ""
+msgid "a tensor containing the hyperbolic tangent of each element in :math:`x`. The returned tensor must have a floating-point data type determined by :ref:`dtype-promotion`."
+msgstr "一个 Tensor ，包含 :math:`x` 中每个元素的双曲切线值。返回的 Tensor 将会使用浮点数据类型，具体见 :ref:`dtype-promotion` 。"
 
 #: megengine.functional.elemwise.tanh:18 of
 msgid "Special cases"
-msgstr ""
+msgstr "特殊的案例"
 
 #: megengine.functional.elemwise.tanh:20 of
 msgid "For floating-point operands,"
-msgstr ""
+msgstr "对于浮点数的操作，"
 
 #: megengine.functional.elemwise.tanh:22 of
 msgid "If :math:`x_i` is ``NaN``, the result is ``NaN``."
-msgstr ""
+msgstr "若 :math:`x_i` 是 ``NaN``，则结果为 ``NaN``。"
 
 #: megengine.functional.elemwise.tanh:23 of
 msgid "If :math:`x_i` is ``+0``, the result is ``+0``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``+0`` ，那么结果是 ``+0`` 。"
 
 #: megengine.functional.elemwise.tanh:24 of
 msgid "If :math:`x_i` is ``-0``, the result is ``-0``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``-0`` ，那么结果是 ``-0`` 。"
 
 #: megengine.functional.elemwise.tanh:25 of
 msgid "If :math:`x_i` is ``+infinity``, the result is ``+1``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``+infinity`` ，结果是 ``+1`` 。"
 
 #: megengine.functional.elemwise.tanh:26 of
 msgid "If :math:`x_i` is ``-infinity``, the result is ``+1``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``-infinity`` ，结果是 ``+1``"
 
 #: megengine.functional.elemwise.tanh:29 of
 msgid "实际案例"
-msgstr ""
+msgstr "实际案例"
 
 #: megengine.functional.elemwise.tanh:33 of
-#, fuzzy
 msgid "Element-wise hyperbolic tangent:"
-msgstr "逐元素计算双曲正切值。"
+msgstr "元素求双曲切线值:"
 

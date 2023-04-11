@@ -1,32 +1,34 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2022-04-01 06:24+0000\n"
+"PO-Revision-Date: 2023-04-11 05:56\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.nn.conv_transpose3d.po\n"
+"X-Crowdin-File-ID: 6948\n"
 
 #: ../../source/reference/api/megengine.functional.nn.conv_transpose3d.rst:2
 msgid "megengine.functional.nn.conv\\_transpose3d"
 msgstr "megengine.functional.nn.conv\\_transpose3d"
 
 #: megengine.functional.nn.conv_transpose3d:1 of
-msgid ""
-"3D transposed convolution operation. Only support the case that groups = "
-"1 and conv_mode = \"cross_correlation\"."
-msgstr "二维转置卷积运算。只支持 ``group=1`` 且 ``conv_mode=\"cross_correlation\"``."
+msgid "3D transposed convolution operation. Only support the case that groups = 1 and conv_mode = \"cross_correlation\"."
+msgstr "三维转置卷积运算。只支持 ``group=1`` 且 ``conv_mode=\"cross_correlation\"``。"
 
 #: megengine.functional.nn.conv_transpose3d:4 of
 msgid "Refer to :class:`~.ConvTranspose3d` for more information."
-msgstr "更多信息参见 :class:`~.ConvTranspose3d` for more information."
+msgstr "更多信息参见 :class:`~.ConvTranspose3d`。"
 
 #: megengine.functional.nn.conv_transpose3d of
 msgid "参数"
@@ -37,10 +39,8 @@ msgid "feature map of the convolution operation."
 msgstr "卷积运算的特征图。"
 
 #: megengine.functional.nn.conv_transpose3d:9 of
-msgid ""
-"convolution kernel. weight usually has shape ``(in_channels, "
-"out_channels, depth, height, width)``."
-msgstr "卷积核。形状通常是 ``(in_channels, out_channels, height, width)``."
+msgid "convolution kernel. weight usually has shape ``(in_channels, out_channels, depth, height, width)``."
+msgstr "卷积核。`shape` 通常是 ``(in_channels, out_channels, height, width)``."
 
 #: megengine.functional.nn.conv_transpose3d:12 of
 msgid "bias added to the result of convolution (if given)."
@@ -51,30 +51,20 @@ msgid "stride of the 3D convolution operation. Default: 1"
 msgstr "三维卷积运算中的步长。 默认： 1"
 
 #: megengine.functional.nn.conv_transpose3d:16 of
-msgid ""
-"size of the paddings added to the input on all sides of its spatial "
-"dimensions. Only zero-padding is supported. Default: 0"
+msgid "size of the paddings added to the input on all sides of its spatial dimensions. Only zero-padding is supported. Default: 0"
 msgstr "输入数据空域维度每侧的填充（padding）大小。仅支持填充0值。默认：0"
 
 #: megengine.functional.nn.conv_transpose3d:19 of
 msgid "size of paddings appended to output. Default: 0"
-msgstr ""
+msgstr "padding 到输出的 size。默认：0"
 
 #: megengine.functional.nn.conv_transpose3d:21 of
 msgid "dilation of the 3D convolution operation. Default: 1"
 msgstr "三维卷积运算的扩张值(dilation)。 默认： 1"
 
 #: megengine.functional.nn.conv_transpose3d:23 of
-msgid ""
-"number of groups into which the input and output channels are divided, so"
-" as to perform a ``grouped convolution``. When ``groups`` is not 1, "
-"``in_channels`` and ``out_channels`` must be divisible by groups, and the"
-" shape of weight should be ``(groups, in_channels // groups, out_channels"
-" // groups, depth, height, width)``. Default: 1"
-msgstr ""
-"在进行“分组卷积”时，对输入输出通道的分组数量。当 groups 不是 1 时，in_channels 和 out_channels 必须可被 "
-"groups 整除，卷积核权重的形状将会是 ``(groups, in_channels // groups, out_channels // "
-"groups, depth, height, width)`` 。默认值：1"
+msgid "number of groups into which the input and output channels are divided, so as to perform a ``grouped convolution``. When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by groups, and the shape of weight should be ``(groups, in_channels // groups, out_channels // groups, depth, height, width)``. Default: 1"
+msgstr "在进行“分组卷积”时，对输入输出通道的分组数量。当 groups 不是 1 时，in_channels 和 out_channels 必须可被 groups 整除，卷积核权重的形状将会是 ``(groups, in_channels // groups, out_channels // groups, depth, height, width)`` 。默认值：1"
 
 #: megengine.functional.nn.conv_transpose3d of
 msgid "返回类型"

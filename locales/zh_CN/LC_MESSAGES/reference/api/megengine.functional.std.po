@@ -1,28 +1,30 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2022-08-04 09:13+0000\n"
+"PO-Revision-Date: 2023-04-11 05:44\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.std.po\n"
+"X-Crowdin-File-ID: 2284\n"
 
 #: ../../source/reference/api/megengine.functional.std.rst:2
 msgid "megengine.functional.std"
 msgstr "megengine.functional.std"
 
 #: megengine.functional.math.std:1 of
-msgid ""
-"Calculates the standard deviation of tensor elements over a given axis "
-"(or axes)."
-msgstr ""
+msgid "Calculates the standard deviation of tensor elements over a given axis (or axes)."
+msgstr "在给定的维度 (或坐标轴) 上计算元素的标准差。"
 
 #: megengine.functional.math.std of
 msgid "参数"
@@ -30,24 +32,15 @@ msgstr "参数"
 
 #: megengine.functional.math.std:4 of
 msgid "input tensor. Should have a numeric data type."
-msgstr ""
+msgstr "输入张量。 应该有一个数字数据类型。"
 
 #: megengine.functional.math.std:6 of
-msgid ""
-"axis or axes along which standard deviations must be computed. By "
-"default, the standard deviation must be computed over the entire tensor. "
-"If a sequence of integers, standard deviations must be computed over "
-"multiple axes."
-msgstr ""
+msgid "axis or axes along which standard deviations must be computed. By default, the standard deviation must be computed over the entire tensor. If a sequence of integers, standard deviations must be computed over multiple axes."
+msgstr "计算标准差的维度或坐标轴。默认情况下，标准差计算范围是 Tensor 中的全部元素。如果参数是整数数组，标准差将按照数组中整数给定的维度进行计算。"
 
 #: megengine.functional.math.std:10 of
-msgid ""
-"if ``True``, the reduced axes (dimensions) must be included in the result"
-" as singleton dimensions, and, accordingly, the result must be compatible"
-" with the input tensor (see :ref:`broadcasting-rule`). Otherwise, if "
-"``False``, the reduced axes (dimensions) must not be included in the "
-"result."
-msgstr ""
+msgid "if ``True``, the reduced axes (dimensions) must be included in the result as singleton dimensions, and, accordingly, the result must be compatible with the input tensor (see :ref:`broadcasting-rule`). Otherwise, if ``False``, the reduced axes (dimensions) must not be included in the result."
+msgstr "若为 \"True\"，则指定用来reduce的轴(维度)必须包含在结果中，因此，结果必须与输入tensor兼容(参见:ref:`broadcasting-rule `)。否则，若为 \"False\"，结果中不得包含用于reduce的轴(维度)。"
 
 #: megengine.functional.math.std of
 msgid "返回类型"
@@ -62,18 +55,12 @@ msgid "返回"
 msgstr "返回"
 
 #: megengine.functional.math.std:15 of
-msgid ""
-"if the standard deviation was computed over the entire tensor, a zero-"
-"dimensional tensor containing the standard deviation; otherwise, a non-"
-"zero-dimensional tensor containing the standard deviations."
-msgstr ""
+msgid "if the standard deviation was computed over the entire tensor, a zero-dimensional tensor containing the standard deviation; otherwise, a non-zero-dimensional tensor containing the standard deviations."
+msgstr "如果标准差计算范围是 Tensor 中的全部元素，计算结果将是一个没有维度的 Tensor，否则将是有维度的 Tensor 。"
 
 #: megengine.functional.math.std:20 of
-msgid ""
-"The standard deviation is the square root of the average of the squared "
-"deviations from the mean, i.e., ``std = sqrt(mean(x))``, where ``x = "
-"abs(a - a.mean())**2``."
-msgstr ""
+msgid "The standard deviation is the square root of the average of the squared deviations from the mean, i.e., ``std = sqrt(mean(x))``, where ``x = abs(a - a.mean())**2``."
+msgstr "标准差指的是数据方差的平方根结果，即 ``std = sqrt(mean(x))``, where ``x = abs(a - a.mean())**2``."
 
 #: megengine.functional.math.std:24 of
 msgid "实际案例"

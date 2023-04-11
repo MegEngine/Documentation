@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2022-09-25 09:54+0000\n"
+"PO-Revision-Date: 2023-04-11 05:49\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.pow.po\n"
+"X-Crowdin-File-ID: 2240\n"
 
 #: ../../source/reference/api/megengine.functional.pow.rst:2
 msgid "megengine.functional.pow"
@@ -20,36 +24,23 @@ msgstr "megengine.functional.pow"
 
 #: megengine.functional.elemwise.pow:1 of
 msgid "Element-wise power."
-msgstr ""
+msgstr "逐元素幂。"
 
 #: megengine.functional.elemwise.pow:3 of
-msgid ""
-"Calculates an implementation-dependent approximation of exponentiation by"
-" raising each element :math:`x_i` (the base) of the input tensor "
-":math:`x` to the power of :math:`y_i` (the exponent), where :math:`y_i` "
-"is the corresponding element of the input tensor :math:`y`."
-msgstr ""
-"一种特定实现的近似取幂运算，将张量 :math:`x` 中的每一个元素 :math:`x_i` (底数) 跟张量 :math:`y` 中每一个元素"
-" :math:`y_i` (指数)做幂运算。"
+msgid "Calculates an implementation-dependent approximation of exponentiation by raising each element :math:`x_i` (the base) of the input tensor :math:`x` to the power of :math:`y_i` (the exponent), where :math:`y_i` is the corresponding element of the input tensor :math:`y`."
+msgstr "一种特定实现的近似取幂运算，将张量 :math:`x` 中的每一个元素 :math:`x_i` (底数) 跟张量 :math:`y` 中每一个元素 :math:`y_i` (指数)做幂运算。"
 
 #: megengine.functional.elemwise.pow of
 msgid "参数"
 msgstr "参数"
 
 #: megengine.functional.elemwise.pow:8 of
-msgid ""
-"first input tensor whose elements correspond to the exponentiation base. "
-"Should have a numeric data type."
+msgid "first input tensor whose elements correspond to the exponentiation base. Should have a numeric data type."
 msgstr "第一个输入 tensor 里的元素作为幂运算的底数。要求是数字数据类型。"
 
 #: megengine.functional.elemwise.pow:10 of
-msgid ""
-"second input tensor whose elements correspond to the exponentiation "
-"exponent. Must be compatible with `x` (see :ref:`broadcasting-rule` ). "
-"Should have a numeric data type."
-msgstr ""
-"第二个输入 tensor 里的元素作为幂运算的指数。维度必须兼容 `x` (参见 :ref:`broadcasting-rule` "
-")。要求是数字数据类型。"
+msgid "second input tensor whose elements correspond to the exponentiation exponent. Must be compatible with `x` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
+msgstr "第二个输入 tensor 里的元素作为幂运算的指数。维度必须兼容 `x` (参见 :ref:`broadcasting-rule` )。要求是数字数据类型。"
 
 #: megengine.functional.elemwise.pow of
 msgid "返回类型"
@@ -64,15 +55,11 @@ msgid "返回"
 msgstr "返回"
 
 #: megengine.functional.elemwise.pow:14 of
-msgid ""
-"A tensor containing the element-wise results. The returned tensor must "
-"have a data type determined by :ref:`dtype-promotion`."
+msgid "A tensor containing the element-wise results. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
 msgstr "返回一个逐元素运算之后的 Tensor，其数值类型由 :ref:`dtype-promotion` 规则决定。"
 
 #: megengine.functional.elemwise.pow:19 of
-msgid ""
-"The unary ``**`` operator can be used as a shorthand for ``pow`` on "
-"tensors."
+msgid "The unary ``**`` operator can be used as a shorthand for ``pow`` on tensors."
 msgstr "可以使用 ``**`` 运算符作为 ``pow`` 的简写来进行张量计算。"
 
 #: megengine.functional.elemwise.pow:21 of
@@ -84,184 +71,100 @@ msgid "For floating-point operands,"
 msgstr "对于浮点数的操作，"
 
 #: megengine.functional.elemwise.pow:25 of
-msgid ""
-"If :math:`x_i` is not equal to ``1`` and :math:`y_i` is ``NaN``, the "
-"result is ``NaN``."
+msgid "If :math:`x_i` is not equal to ``1`` and :math:`y_i` is ``NaN``, the result is ``NaN``."
 msgstr "如果 :math:`x_i` 不为 ``1`` 且 :math:`y_i` 为 ``NaN``, 则幂运算的结果为 ``NaN``."
 
 #: megengine.functional.elemwise.pow:26 of
-#, fuzzy
-msgid ""
-"If :math:`y_i` is ``+0``, the result is ``1``, even if :math:`x_i` is "
-"``NaN``."
-msgstr "如果 :math:`y_i` 等于 ``+0``, 则幂运算结果为 ``1``, 即使 ``x_i`` 为 ``NaN``."
+msgid "If :math:`y_i` is ``+0``, the result is ``1``, even if :math:`x_i` is ``NaN``."
+msgstr "如果 :math:`y_i` 是``+0``，结果是 ``1``，即使 :math:`x_i` 是 ``NaN``。"
 
 #: megengine.functional.elemwise.pow:27 of
-#, fuzzy
-msgid ""
-"If :math:`y_i` is ``-0``, the result is ``1``, even if :math:`x_i` is "
-"``NaN``."
-msgstr "如果 :math:`y_i` 等于 ``-0``, 则幂运算的结果为 ``1``, 即使 ``x_i`` 为 ``NaN``."
+msgid "If :math:`y_i` is ``-0``, the result is ``1``, even if :math:`x_i` is ``NaN``."
+msgstr "如果 :math:`y_i` 是 ``-0``，结果是 ``1``，即使 :math:`x_i` 是 ``NaN``。"
 
 #: megengine.functional.elemwise.pow:28 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``NaN`` and :math:`y_i` is not equal to ``0``, the "
-"result is ``NaN``."
-msgstr "如果 :math:`x_i` 等于 ``NaN`` 且 ``y_i`` 不等于 ``0``, 则幂运算的结果为 ``NaN``."
+msgid "If :math:`x_i` is ``NaN`` and :math:`y_i` is not equal to ``0``, the result is ``NaN``."
+msgstr "如果 :math:`x_i` 是 ``NaN``，并且 :math:`y_i` 不等于 ``0``，结果是 ``NaN``。"
 
 #: megengine.functional.elemwise.pow:29 of
-#, fuzzy
-msgid ""
-"If :math:`\\abs{x_i}` is greater than ``1`` and :math:`y_i` is "
-"``+infinity``, the result is ``+infinity``."
-msgstr ""
-"如果 ``abs(x_i)`` 大于 ``1`` 且 ``y_i`` 为 ``+infinity``, 则幂运算的结果为 "
-"``+infinity``."
+msgid "If :math:`\\abs{x_i}` is greater than ``1`` and :math:`y_i` is ``+infinity``, the result is ``+infinity``."
+msgstr "如果 :math:`abs{x_i}` 大于 ``1``，并且 :math:`y_i` 是 ``+无穷大``，结果是 ``+无穷大``。"
 
 #: megengine.functional.elemwise.pow:30 of
-#, fuzzy
-msgid ""
-"If :math:`\\abs{x_i}` is greater than ``1`` and :math:`y_i` is "
-"``-infinity``, the result is ``+0``."
-msgstr "如果 ``abs(x_i)`` 大于 ``1`` 且 ``y_i`` 为 ``-infinity``, 则幂运算的结果为 ``+0``."
+msgid "If :math:`\\abs{x_i}` is greater than ``1`` and :math:`y_i` is ``-infinity``, the result is ``+0``."
+msgstr "如果 :math:`abs{x_i}` 大于 ``1``，并且 :math:`y_i` 是 ``-无穷大``，结果是 ``+0``。"
 
 #: megengine.functional.elemwise.pow:31 of
-#, fuzzy
-msgid ""
-"If :math:`\\abs{x_i}` is ``1`` and :math:`y_i` is ``+infinity``, the "
-"result is ``1``."
-msgstr "如果 ``abs(x_i)`` 等于 ``1`` 且 ``y_i`` 为 ``+infinity``, 则幂运算的结果为 ``1``."
+msgid "If :math:`\\abs{x_i}` is ``1`` and :math:`y_i` is ``+infinity``, the result is ``1``."
+msgstr "如果 :math:`abs{x_i}` 是 ``1`` 和 :math:`y_i` 是 ``+无穷大``，结果是 ``1``。"
 
 #: megengine.functional.elemwise.pow:32 of
-#, fuzzy
-msgid ""
-"If :math:`\\abs{x_i}` is ``1`` and :math:`y_i` is ``-infinity``, the "
-"result is ``1``."
-msgstr "如果 ``abs(x_i)`` 等于 ``1`` 且 ``y_i`` 为 ``-infinity``, 则幂运算结果为 ``1``."
+msgid "If :math:`\\abs{x_i}` is ``1`` and :math:`y_i` is ``-infinity``, the result is ``1``."
+msgstr "如果 :math:`abs{x_i}` 是 ``1`` 和 :math:`y_i` 是 ``-无穷大``，结果是 ``1``。"
 
 #: megengine.functional.elemwise.pow:33 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``1`` and :math:`y_i` is not ``NaN``, the result is "
-"``1``."
-msgstr "如果 ``x_i`` 等于 ``1`` 且 ``y_i`` 不等于 ``NaN``, 则幂运算结果为 ``1``."
+msgid "If :math:`x_i` is ``1`` and :math:`y_i` is not ``NaN``, the result is ``1``."
+msgstr "如果 :math:`x_i` 是 ``1``，并且 :math:`y_i` 不是 ``NaN``，结果是 ``1``。"
 
 #: megengine.functional.elemwise.pow:34 of
-#, fuzzy
-msgid ""
-"If :math:`\\abs{x_i}` is less than ``1`` and :math:`y_i` is "
-"``+infinity``, the result is ``+0``."
-msgstr "如果 ``abs(x_i)`` 小于 ``1`` 且 ``y_i`` 为 ``+infinity``, 则幂运算结果为 ``+0``."
+msgid "If :math:`\\abs{x_i}` is less than ``1`` and :math:`y_i` is ``+infinity``, the result is ``+0``."
+msgstr "如果 :math:`abs{x_i}` 小于``1``，并且 :math:`y_i` 是 ``+无穷大``，结果是 ``+0``。"
 
 #: megengine.functional.elemwise.pow:35 of
-#, fuzzy
-msgid ""
-"If :math:`\\abs{x_i}` is less than ``1`` and :math:`y_i` is "
-"``-infinity``, the result is ``+infinity``."
-msgstr "如果 ``abs(x_i)`` 小于 ``1`` 且 ``y_i`` 为 ``-infinity``, 则幂运算结果为 ``+infinity``."
+msgid "If :math:`\\abs{x_i}` is less than ``1`` and :math:`y_i` is ``-infinity``, the result is ``+infinity``."
+msgstr "如果 :math:`abs{x_i}` 小于 ``1``，并且 :math:`y_i` 是 ``-无穷大``，结果是 ``+无穷大``。"
 
 #: megengine.functional.elemwise.pow:36 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``+infinity`` and :math:`y_i` is greater than ``0``, "
-"the result is ``+infinity``."
-msgstr "如果 ``x_i`` 为 ``+infinity`` 且 ``y_i`` 大于0, 则幂运算结果为 ``+infinity``."
+msgid "If :math:`x_i` is ``+infinity`` and :math:`y_i` is greater than ``0``, the result is ``+infinity``."
+msgstr "如果 :math:`x_i` 是 ``+无穷大``，并且 :math:`y_i` 大于 ``0``，结果是 ``+无穷大``。"
 
 #: megengine.functional.elemwise.pow:37 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``+infinity`` and :math:`y_i` is less than ``0``, the "
-"result is ``+0``."
-msgstr "如果 ``x_i`` 为 ``+infinity`` 且 ``y_i`` 小于0, 则幂运算结果为 ``+0``."
+msgid "If :math:`x_i` is ``+infinity`` and :math:`y_i` is less than ``0``, the result is ``+0``."
+msgstr "如果:math:`x_i`是``+infinity``，并且:math:`y_i`小于``0``，结果是``+0``。"
 
 #: megengine.functional.elemwise.pow:38 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``-infinity``, :math:`y_i` is greater than ``0``, and "
-":math:`y_i` is an odd integer value, the result is ``-infinity``."
-msgstr ""
-"如果 ``x_i`` 为 ``-infinity``, ``y_i`` 大于0, 且 ``y_i`` 是一个奇数, 则幂运算结果为 "
-"``-infinity``."
+msgid "If :math:`x_i` is ``-infinity``, :math:`y_i` is greater than ``0``, and :math:`y_i` is an odd integer value, the result is ``-infinity``."
+msgstr "如果:math:`x_i`是``-无穷大``，:math:`y_i`大于``0``，并且:math:`y_i`是一个奇数整数，结果是``-无穷大``。"
 
 #: megengine.functional.elemwise.pow:39 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``-infinity``, :math:`y_i` is greater than ``0``, and "
-":math:`y_i` is not an odd integer value, the result is ``+infinity``."
-msgstr ""
-"如果 ``x_i`` 为 ``-infinity``, ``y_i`` 大于0, 且 ``y_i`` 不是一个奇整数, 则幂运算结果为 "
-"``+infinity``."
+msgid "If :math:`x_i` is ``-infinity``, :math:`y_i` is greater than ``0``, and :math:`y_i` is not an odd integer value, the result is ``+infinity``."
+msgstr "如果 :math:`x_i` 是``-无穷大``，:math:`y_i`大于``0``，并且:math:`y_i`不是一个奇数整数，结果是``+无穷大``。"
 
 #: megengine.functional.elemwise.pow:40 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``-infinity``, :math:`y_i` is less than ``0``, and "
-":math:`y_i` is an odd integer value, the result is ``-0``."
-msgstr "如果 ``x_i`` 为 ``-infinity``, ``y_i`` 小于0, 且 ``y_i`` 是一个奇整数, 则幂运算结果为 ``-0``."
+msgid "If :math:`x_i` is ``-infinity``, :math:`y_i` is less than ``0``, and :math:`y_i` is an odd integer value, the result is ``-0``."
+msgstr "如果:math:`x_i`是``-无穷大``，:math:`y_i`小于``0``，并且:math:`y_i`是一个奇数整数，结果是``-0``。"
 
 #: megengine.functional.elemwise.pow:41 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``-infinity``, :math:`y_i` is less than ``0``, and "
-":math:`y_i` is not an odd integer value, the result is ``+0``."
-msgstr ""
-"如果 ``x_i`` 为 ``-infinity``, ``y_i`` 小于0, 且 ``y_i`` 不为一个奇整数, 则幂运算结果为 "
-"``+0``."
+msgid "If :math:`x_i` is ``-infinity``, :math:`y_i` is less than ``0``, and :math:`y_i` is not an odd integer value, the result is ``+0``."
+msgstr "如果:math:`x_i`是``-无穷大``，:math:`y_i`小于``0``，并且:math:`y_i`不是一个奇数整数，结果是``+0``。"
 
 #: megengine.functional.elemwise.pow:42 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``+0`` and :math:`y_i` is greater than ``0``, the "
-"result is ``+0``."
-msgstr "如果 ``x_i`` 为 ``+0`` 且 ``y_i`` 大于0, 则幂运算结果为 ``+0``."
+msgid "If :math:`x_i` is ``+0`` and :math:`y_i` is greater than ``0``, the result is ``+0``."
+msgstr "如果:math:`x_i`是``+0``，并且:math:`y_i`大于``0``，结果是``+0``。"
 
 #: megengine.functional.elemwise.pow:43 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``+0`` and :math:`y_i` is less than ``0``, the result "
-"is ``+infinity``."
-msgstr "如果 ``x_i`` 为 ``+0`` 且 ``y_i`` 小于0, 则幂运算结果位 ``+infinity``."
+msgid "If :math:`x_i` is ``+0`` and :math:`y_i` is less than ``0``, the result is ``+infinity``."
+msgstr "如果:math:`x_i`是``+0``，并且:math:`y_i`小于``0``，结果是``+无穷大``。"
 
 #: megengine.functional.elemwise.pow:44 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``-0``, :math:`y_i` is greater than ``0``, and "
-":math:`y_i` is an odd integer value, the result is ``-0``."
-msgstr "如果 ``x_i`` 为 ``-0``, ``y_i`` 大于0, 且 ``y_i`` 是一个奇整数, 则幂运算结果为 ``-0``."
+msgid "If :math:`x_i` is ``-0``, :math:`y_i` is greater than ``0``, and :math:`y_i` is an odd integer value, the result is ``-0``."
+msgstr "如果 :math:`x_i` 是``-0``，:math:`y_i`大于``0``，并且:math:`y_i`是一个奇数整数，结果是``-0``。"
 
 #: megengine.functional.elemwise.pow:45 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``-0``, :math:`y_i` is greater than ``0``, and "
-":math:`y_i` is not an odd integer value, the result is ``+0``."
-msgstr "如果 ``x_i`` 为 ``-0``, ``y_i`` 大于0, 且 ``y_i`` 不是一个奇整数, 则幂运算结果为 ``+0``."
+msgid "If :math:`x_i` is ``-0``, :math:`y_i` is greater than ``0``, and :math:`y_i` is not an odd integer value, the result is ``+0``."
+msgstr "如果:math:`x_i`是``-0``，:math:`y_i`大于``0``，并且:math:`y_i`不是一个奇数的整数，结果是``+0``。"
 
 #: megengine.functional.elemwise.pow:46 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``-0``, :math:`y_i` is less than ``0``, and :math:`y_i`"
-" is an odd integer value, the result is ``-infinity``."
-msgstr "如果 ``x_i`` 为 ``-0``, ``y_i`` 小于0, 且 ``y_i`` 是一个奇整数, 则幂运算结果为 ``-infinity``."
+msgid "If :math:`x_i` is ``-0``, :math:`y_i` is less than ``0``, and :math:`y_i` is an odd integer value, the result is ``-infinity``."
+msgstr "如果:math:`x_i`是``-0``，:math:`y_i`小于``0``，并且:math:`y_i`是一个奇数的整数值，结果是``-无穷大``。"
 
 #: megengine.functional.elemwise.pow:47 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is ``-0``, :math:`y_i` is less than ``0``, and :math:`y_i`"
-" is not an odd integer value, the result is ``+infinity``."
-msgstr ""
-"如果 ``x_i`` 为 ``-0``, ``y_i`` 小于0, 且 ``y_i`` 不是一个奇整数, 则幂运算结果为 "
-"``+infinity``."
+msgid "If :math:`x_i` is ``-0``, :math:`y_i` is less than ``0``, and :math:`y_i` is not an odd integer value, the result is ``+infinity``."
+msgstr "如果:math:`x_i`是``-0``，:math:`y_i`小于`0`，并且:math:`y_i`不是一个奇数整数，结果是``+无穷大`'。"
 
 #: megengine.functional.elemwise.pow:48 of
-#, fuzzy
-msgid ""
-"If :math:`x_i` is less than 0, :math:`x_i` is a finite number, "
-":math:`y_i` is a finite number, and :math:`y_i` is not an integer value, "
-"the result is ``NaN``."
-msgstr ""
-"如果 ``x_i`` 小于 0, ``x_i`` 是一个有限值, ``y_i`` 是一个有限值, 则 ``y_i`` 不是一个整数, "
-"则幂运算结果为 ``NaN``."
+msgid "If :math:`x_i` is less than 0, :math:`x_i` is a finite number, :math:`y_i` is a finite number, and :math:`y_i` is not an integer value, the result is ``NaN``."
+msgstr "如果:math:`x_i`小于0，:math:`x_i`是一个有限数，:math:`y_i`是一个有限数，并且:math:`y_i`不是一个整数，结果是``NaN``。"
 
 #: megengine.functional.elemwise.pow:51 of
 msgid "实际案例"
@@ -269,11 +172,11 @@ msgstr "实际案例"
 
 #: megengine.functional.elemwise.pow:55 of
 msgid "Element-wise power:"
-msgstr ""
+msgstr "逐元素幂："
 
 #: megengine.functional.elemwise.pow:62 of
 msgid "Broadcasting:"
-msgstr ""
+msgstr "广播："
 
 #~ msgid "Element-wise `power`."
 #~ msgstr "逐元素进行指数运算。"

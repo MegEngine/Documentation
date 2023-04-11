@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-04 16:51+0800\n"
-"PO-Revision-Date: 2022-08-04 09:19\n"
+"PO-Revision-Date: 2023-04-11 05:45\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,59 +24,59 @@ msgstr "lite/network.h"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param unordered_map"
-msgstr ""
+msgstr "参数 unordered_map：实际输入输出tensor以及用户配置信息与输入输出名称间的映射表"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param thread_id"
-msgstr ""
+msgstr "参数 thread_id：当前线程的ID，线程 Id 的取值可以从 0 到 nr_threads - 1，Id 为 nr_threads - 1的线程为工作主线程"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param weight_preprocess"
-msgstr "Param weight_preprocess"
+msgstr "参数 weight_preprocess：是否进行权重预处理"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param fuse_preprocess"
-msgstr "Param fuse_preprocess"
+msgstr "参数 fuse_preprocess：是否进行融合预处理"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param fake_next_exec"
-msgstr "Param fake_next_exec"
+msgstr "参数 fake_next_exec：是否进行预热，不做实际推理"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param var_sanity_check_first_run"
-msgstr "Param var_sanity_check_first_run"
+msgstr "参数 var_sanity_check_first_run：是否进行变量合理性检查"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param const_shape"
-msgstr "Param const_shape"
+msgstr "参数 const_shape：模型shape 是否不变"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param force_dynamic_alloc"
-msgstr "Param force_dynamic_alloc"
+msgstr "参数 force_dynamic_alloc：是否进行强制动态内存分配"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param force_output_dynamic_alloc"
-msgstr "Param force_output_dynamic_alloc"
+msgstr "参数 force_output_dynamic_alloc：是否强制动态分配输出内存"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param no_profiling_on_shape_change"
-msgstr "Param no_profiling_on_shape_change"
+msgstr "参数 no_profiling_on_shape_change：tesnor shape 变化时是否不进行profile"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param jit_level"
-msgstr "Param jit_level"
+msgstr "参数 jit_level：JIT 等级"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param record_level"
-msgstr "Param record_level"
+msgstr "参数 record_level：record 等级"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param graph_opt_level"
-msgstr "Param graph_opt_level"
+msgstr "参数 graph_opt_level：图优化等级"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param async_exec_level"
-msgstr "Param async_exec_level"
+msgstr "参数 async_exec_level：异步执行等级"
 
 #: ../../source/reference/lite/network.rst
 msgid "Public Members"
@@ -84,63 +84,63 @@ msgstr "公开成员"
 
 #: ../../<breathe>:1
 msgid "if other layout is set to input tensor before forwarding, this layout will not work"
-msgstr ""
+msgstr "如果前向推理执行前输入tensor被设置成了其他layout，这里的layout 不会生效"
 
 #: ../../<breathe>:1
 msgid "if no layout is set before forwarding, the model will forward with its origin layout"
-msgstr ""
+msgstr "如果前向推理执行前没有设置任何layout，模型推理时会选择原始的layout"
 
 #: ../../<breathe>:1
 msgid "if layout is set in output tensor, it will used to check whether the layout computed from the network is correct"
-msgstr ""
+msgstr "如果这里设置了输出 tensor layout， 该layout 会被用于检查模型网络计算得到的layout的正确性"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param name"
-msgstr ""
+msgstr "参数 name: 输入输出tensor名称"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param is_host"
-msgstr ""
+msgstr "参数 is_host：用于标记输入或输出Tensor 所在设备，当is_host 为 true时，表明输入或输出tensor在host上，否则在device上。主要用于输入输出tesnor 数据同步过程"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param io_type"
-msgstr ""
+msgstr "参数 io_type： IO类型, 其值可以是 Shape 或 Value, 当为 Shape 时, 输入输出tensor的值是无效的，只会设置输入输出tesnor的shape, 默认值是 Value"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param config_layout"
-msgstr ""
+msgstr "参数 配置的layout"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param has_compression"
-msgstr ""
+msgstr "参数 has_compression：模型权重是否被压缩，压缩方法注册在模型中"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param device_id"
-msgstr ""
+msgstr "参数 device_id：模型网络推理所用设备ID"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param device_type"
-msgstr ""
+msgstr "参数 device_id：模型网络推理所用设备类型，主要类型参考LiteDeviceType的定义"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param backend"
-msgstr ""
+msgstr "参数 backend：设备推理后端，具体类型参考LiteBackend定义"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param bare_model_cryption_name"
-msgstr ""
+msgstr "参数 bare_model_cryption_name：裸模型加密方案名称"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param options"
-msgstr ""
+msgstr "参数 options：模型推理优化选项"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param inputs"
-msgstr ""
+msgstr "参数 inputs：输入IO 列表"
 
 #: ../../source/reference/lite/network.rst
 msgid "Param outputs"
-msgstr ""
+msgstr "参数 outputs：输出 IO 列表"
 
 #: ../../source/reference/lite/network.rst
 msgid "Public Functions"
@@ -152,15 +152,15 @@ msgstr "参数"
 
 #: ../../source/reference/lite/network.rst
 msgid "Constructor"
-msgstr ""
+msgstr "构造函数"
 
 #: ../../source/reference/lite/network.rst
 msgid "param config"
-msgstr ""
+msgstr "参数 config：模型推理配置"
 
 #: ../../source/reference/lite/network.rst
 msgid "param networkio"
-msgstr ""
+msgstr "参数 networkio：模型输入输出信息"
 
 #: ../../source/reference/lite/network.rst
 msgid "Public Static Functions"
@@ -168,7 +168,7 @@ msgstr "公开静态函数"
 
 #: ../../<breathe>:1
 msgid "the src network and the dst network can not execute in simultaneous"
-msgstr ""
+msgstr "src 网络不能与 dst 网络同时运行"
 
 #: ../../source/reference/lite/network.rst
 msgid "返回"

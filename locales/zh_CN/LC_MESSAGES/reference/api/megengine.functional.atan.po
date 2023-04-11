@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2021-06-03 10:18+0000\n"
+"PO-Revision-Date: 2023-04-11 05:47\n"
 "Last-Translator: \n"
-"Language: zh_Hans_CN\n"
+"Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.atan.po\n"
+"X-Crowdin-File-ID: 2054\n"
 
 #: ../../source/reference/api/megengine.functional.atan.rst:2
 msgid "megengine.functional.atan"
@@ -20,84 +24,69 @@ msgstr "megengine.functional.atan"
 
 #: megengine.functional.elemwise.atan:1 of
 msgid "Element-wise :math:`\\arctan(x)` function."
-msgstr ""
+msgstr "逐元素 :math:`\\arctan(x)` 函数。"
 
 #: megengine.functional.elemwise.atan:3 of
-msgid ""
-"Calculates an approximation to the inverse tangent for each element "
-":math:`x_i` of the input tensor :math:`x`. Each element-wise result is "
-"expressed in radians."
-msgstr ""
+msgid "Calculates an approximation to the inverse tangent for each element :math:`x_i` of the input tensor :math:`x`. Each element-wise result is expressed in radians."
+msgstr "对输入张量 :math:`x` 的每个元素 :math:`x_i` 计算正切函数的反函数的近似值。每个元素的结果以弧度表示。"
 
 #: megengine.functional.elemwise.atan:6 of
-msgid ""
-"This function has domain ``(-infinity, +infinity)`` and codomain "
-"``[-pi/2, pi/2]``."
-msgstr ""
+msgid "This function has domain ``(-infinity, +infinity)`` and codomain ``[-pi/2, pi/2]``."
+msgstr "这个函数具有定义域 ``(-infinity, +infinity)`` 和值域 ``[-pi/2, pi/2]`` 。"
 
 #: megengine.functional.elemwise.atan:8 of
-msgid ""
-"The inverse of :math:`\\tan` so that, if :math:`y = \\tan(x)`, then "
-":math:`x = \\arctan(y)`."
-msgstr ""
+msgid "The inverse of :math:`\\tan` so that, if :math:`y = \\tan(x)`, then :math:`x = \\arctan(y)`."
+msgstr ":math:`\\tan` 的反函数，使得如果 :math:`y = \\tan(x)` ，那么:math:`x = \\arctan(y)` 。"
 
 #: megengine.functional.elemwise.atan of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.functional.elemwise.atan:10 of
 msgid "input tensor. Should have a floating-point data type."
-msgstr ""
+msgstr "输入 tensor。应该具有 float 数据类型。"
 
 #: megengine.functional.elemwise.atan of
 msgid "返回"
-msgstr ""
+msgstr "返回"
 
 #: megengine.functional.elemwise.atan:12 of
-msgid ""
-"a tensor containing the inverse tangent of each element in :math:`x`. The"
-" returned tensor must have a floating-point data type determined by :ref"
-":`dtype-promotion`."
-msgstr ""
+msgid "a tensor containing the inverse tangent of each element in :math:`x`. The returned tensor must have a floating-point data type determined by :ref:`dtype-promotion`."
+msgstr "一个包含 :math:`x` 中每个元素的反正切的张量。返回的张量一定具有被 :ref:`dtype-promotion` 决定的浮点数据类型"
 
 #: megengine.functional.elemwise.atan:15 of
 msgid "Special cases"
-msgstr ""
+msgstr "特殊的案例"
 
 #: megengine.functional.elemwise.atan:17 of
 msgid "For floating-point operands,"
-msgstr ""
+msgstr "对于浮点数的操作，"
 
 #: megengine.functional.elemwise.atan:19 of
 msgid "If :math:`x_i` is ``NaN``, the result is ``NaN``."
-msgstr ""
+msgstr "若 :math:`x_i` 是 ``NaN``，则结果为 ``NaN``。"
 
 #: megengine.functional.elemwise.atan:20 of
 msgid "If :math:`x_i` is ``+0``, the result is ``+0``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``+0`` ，那么结果是 ``+0`` 。"
 
 #: megengine.functional.elemwise.atan:21 of
 msgid "If :math:`x_i` is ``-0``, the result is ``-0``."
-msgstr ""
+msgstr "如果 :math:`x_i` 是 ``-0`` ，那么结果是 ``-0`` 。"
 
 #: megengine.functional.elemwise.atan:22 of
-msgid ""
-"If :math:`x_i` is ``+infinity``, the result is an approximation to "
-"``+π/2``."
-msgstr ""
+msgid "If :math:`x_i` is ``+infinity``, the result is an approximation to ``+π/2``."
+msgstr "如果 :math:`x_i` 是 ``+infinity`` ，那么结果近似为 ``+π/2`` 。"
 
 #: megengine.functional.elemwise.atan:23 of
-msgid ""
-"If :math:`x_i` is ``-infinity``, the result is an approximation to "
-"``-π/2``."
-msgstr ""
+msgid "If :math:`x_i` is ``-infinity``, the result is an approximation to ``-π/2``."
+msgstr "如果 :math:`x_i` 是 ``-infinity`` ，那么结果近似为 ``-π/2`` 。"
 
 #: megengine.functional.elemwise.atan:26 of
 msgid "实际案例"
-msgstr ""
+msgstr "实际案例"
 
 #: megengine.functional.elemwise.atan:30 of
-#, fuzzy
 msgid "Element-wise inverse tangent:"
-msgstr "逐元素计算反正切函数。"
+msgstr "逐元素反正切函数："
 
