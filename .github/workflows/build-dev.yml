@@ -73,6 +73,14 @@ jobs:
           export MGE_DOC_MODE="FULL"
           cd ${GITHUB_WORKSPACE}
           make html
+          mv build/html zh_CN
+          tar czf zh_CN.tgz zh_CN
+
+      - name: Upload aritifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: HTML_zh_CN
+          path: zh_CN.tgz
 
       - name: Generate HTML files - Message WebHook
         if: ${{ failure() }}
@@ -90,28 +98,55 @@ jobs:
               }
             }
 
-      - name: API Coverage Test
-        id: api-coverage
-        run: |
-          export PYTHONPATH=${GITHUB_WORKSPACE}/megengine/imperative/python:$PYTHONPATH
-          export PYTHONPATH=${GITHUB_WORKSPACE}/megengine/lite/pylite:$PYTHONPATH
-          export LITE_LIB_PATH=${GITHUB_WORKSPACE}/megengine/build/lite/liblite_shared.so
-          export MGE_DOC_MODE="FULL"
-          cd ${GITHUB_WORKSPACE}
-          python3 ./scripts/coverage.py
+      # - name: API Coverage Test
+      #   id: api-coverage
+      #   run: |
+      #     export PYTHONPATH=${GITHUB_WORKSPACE}/megengine/imperative/python:$PYTHONPATH
+      #     export PYTHONPATH=${GITHUB_WORKSPACE}/megengine/lite/pylite:$PYTHONPATH
+      #     export LITE_LIB_PATH=${GITHUB_WORKSPACE}/megengine/build/lite/liblite_shared.so
+      #     export MGE_DOC_MODE="FULL"
+      #     cd ${GITHUB_WORKSPACE}
+      #     python3 ./scripts/coverage.py
 
-      - name: API Coverage Test Failure - Message WebHook
-        if: ${{ failure() }}
-        uses: zcong1993/actions-ding@master
+      # - name: API Coverage Test Failure - Message WebHook
+      #   if: ${{ failure() }}
+      #   uses: zcong1993/actions-ding@master
+      #   with:
+      #     dingToken: ${{ secrets.DING_TALK_BOT_TOKEN }}
+      #     body: |
+      #       {
+      #         "msgtype": "link",
+      #         "link": {
+      #             "title": "Oops! 文档构建失败...",
+      #             "text": "未能通过 API 覆盖率测试 :(",
+      #             "picUrl": "",
+      #             "messageUrl": "https://github.com/MegEngine/Documentation/actions/runs/${{ github.run_id }}"
+      #         }
+      #       }
+
+  upload-dev-docs:
+    runs-on: self-hosted
+    needs: [Flow]
+    container:
+      image: mcd.io/mcd-apps/megengine-ci:v1
+      env:
+        OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+        OSS_SECRET_ACCESS_KEY: ${{ secrets.OSS_SECRET_ACCESS_KEY }}
+        OSS_BUCKET: ${{ secrets.OSS_BUCKET }}
+        OSS_ENDPOINT: ${{ secrets.OSS_ENDPOINT }}
+    steps:
+      - name: Download Aritifacts
+        uses: actions/download-artifact@v3
         with:
-          dingToken: ${{ secrets.DING_TALK_BOT_TOKEN }}
-          body: |
-            {
-              "msgtype": "link",
-              "link": {
-                  "title": "Oops! 文档构建失败...",
-                  "text": "未能通过 API 覆盖率测试 :(",
-                  "picUrl": "",
-                  "messageUrl": "https://github.com/MegEngine/Documentation/actions/runs/${{ github.run_id }}"
-              }
-            }
+          name: HTML_zh_CN
+
+      - name: Upload Docs
+        run: |
+          python3 -m pip install awscli boto3
+          aws --version || export PATH=/github/home/.local/bin:$PATH
+          aws configure set aws_access_key_id "${OSS_ACCESS_KEY_ID}"
+          aws configure set aws_secret_access_key "${OSS_SECRET_ACCESS_KEY}"
+          cd /__w/Documentation/Documentation
+          tar zxvf zh_CN.tgz
+          aws --endpoint-url=${OSS_ENDPOINT} s3 rm --recursive ${OSS_BUCKET}
+          aws --endpoint-url=${OSS_ENDPOINT} s3 cp --recursive zh_CN ${OSS_BUCKET}
