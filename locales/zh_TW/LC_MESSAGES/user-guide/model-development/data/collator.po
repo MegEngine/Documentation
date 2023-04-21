@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:26\n"
+"PO-Revision-Date: 2023-04-21 09:36\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,107 +14,107 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/data/collator.po\n"
-"X-Crowdin-File-ID: 8155\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/data/collator.po\n"
+"X-Crowdin-File-ID: 9947\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/data/collator.rst:5
 msgid "使用 Collator 定义合并策略"
-msgstr "crwdns84481:0crwdne84481:0"
+msgstr "crwdns118489:0crwdne118489:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:9
 msgid "在使用 ``DataLoader`` 获取批数据的整个流程中， ``Collator`` 负责合并样本，最终得到批数据。"
-msgstr "crwdns84483:0crwdne84483:0"
+msgstr "crwdns118491:0crwdne118491:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:13
 msgid "通常用户不用实现自己的 ``Collator``, 使用默认合并策略就可以处理大部分批数据合并的情况。 但遇到一些默认合并策略难以处理的情景时，用户可以使用自己实现的 ``Collator``. 参考 :ref:`custom-collator`."
-msgstr "crwdns84485:0:ref:crwdne84485:0"
+msgstr "crwdns118493:0:ref:crwdne118493:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:19
 msgid "``Collator`` 仅适用于 Map-style 的数据集，因为 Iterable-style 数据集的批数据必然是逐个合并的。"
-msgstr "crwdns84487:0crwdne84487:0"
+msgstr "crwdns118495:0crwdne118495:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:22
 msgid "默认合并策略"
-msgstr "crwdns84489:0crwdne84489:0"
+msgstr "crwdns118497:0crwdne118497:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:24
 msgid "经过前面的处理流程后， ``Collator`` 通常会接收到一个列表："
-msgstr "crwdns84491:0crwdne84491:0"
+msgstr "crwdns118499:0crwdne118499:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:26
 msgid "如果你的 ``Dataset`` 子类的 ``__getitem__`` 方法返回的是单个元素，则 ``Collator`` 得到一个普通列表；"
-msgstr "crwdns84493:0__getitem__crwdne84493:0"
+msgstr "crwdns118501:0__getitem__crwdne118501:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:27
 msgid "如果你的 ``Dataset`` 子类的 ``__getitem__`` 方法返回的是一个元组，则 ``Collator`` 得到一个元组列表。"
-msgstr "crwdns84495:0__getitem__crwdne84495:0"
+msgstr "crwdns118503:0__getitem__crwdne118503:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:29
 msgid "MegEngine 中使用 :py:class:`~.Collator` 作为默认实现，通过调用 ``apply`` 方法来将列表数据合并成批数据："
-msgstr "crwdns84497:0crwdne84497:0"
+msgstr "crwdns118505:0crwdne118505:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:34
 msgid "其实现逻辑中使用 :py:func:`numpy.stack` 函数来将列表中包含的所有样例在第一个维度（ ``axis=0`` ）合并。"
-msgstr "crwdns84499:0crwdne84499:0"
+msgstr "crwdns118507:0crwdne118507:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:38
 msgid "MegEngine 中也提供了类似的 :py:func:`~.functional.stack` 函数，不过它仅适用于 Tensor 数据。"
-msgstr "crwdns84501:0crwdne84501:0"
+msgstr "crwdns118509:0crwdne118509:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:42
 msgid "默认的 ``Collator`` 支持 NumPy ndarrays, Numbers, Unicode strings, bytes, dicts 或 lists 数据类型。 要求输入必须包含至少一种上述数据类型，否则用户需要使用自己定义的 ``Collator``."
-msgstr "crwdns84503:0crwdne84503:0"
+msgstr "crwdns118511:0crwdne118511:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:46
 msgid "Collator 效果示范"
-msgstr "crwdns84505:0crwdne84505:0"
+msgstr "crwdns118513:0crwdne118513:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:47
 msgid "如果此时每个样本是形状为 :math:`(C, H, W)` 的图片 ``image``, 且在 ``Sampler`` 中指定了 ``batch_size`` 为 :math:`N`. 那么 ``Collator`` 的主要目的就是将获得的该样本列表合并成一个形状为 :math:`(N, C, H, W)` 的批样本结构。"
-msgstr "crwdns84507:0:math:crwdnd84507:0:math:crwdnd84507:0:math:crwdne84507:0"
+msgstr "crwdns118515:0:math:crwdnd118515:0:math:crwdnd118515:0:math:crwdne118515:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:50
 msgid "我们可以模拟得到这样一个 ``image_list`` 数据，并借助 ``Collator`` 得到 ``batch_image``:"
-msgstr "crwdns84509:0crwdne84509:0"
+msgstr "crwdns118517:0crwdne118517:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:63
 msgid "如果样本带有标签，则 ``Collator`` 就需要将由 ``(image, label)`` 元组构成的列表合并， 形成一个大的 ``(batch_image, bacth_label)`` 元组。这也是我们对 ``DataLoader`` 进行迭代时通常会获得的东西。"
-msgstr "crwdns84511:0crwdne84511:0"
+msgstr "crwdns118519:0crwdne118519:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:66
 msgid "在下面的示例代码中，``sample_list`` 中每个元素都是一个元组（假设所有的标签都用整型 ``1`` 来表示）："
-msgstr "crwdns84513:0crwdne84513:0"
+msgstr "crwdns118521:0crwdne118521:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:76
 msgid "MegEngine 提供的默认 ``Collator`` 也能够很好地处理这种情况："
-msgstr "crwdns84515:0crwdne84515:0"
+msgstr "crwdns118523:0crwdne118523:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:84
 msgid "需要注意的是，此时 ``batch_label`` 已经被转换成了 ndarray 数据结构。"
-msgstr "crwdns84517:0crwdne84517:0"
+msgstr "crwdns118525:0crwdne118525:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:89
 msgid "自定义 Collator"
-msgstr "crwdns84519:0crwdne84519:0"
+msgstr "crwdns118527:0crwdne118527:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:91
 msgid "当默认的 ``stack`` 合并策略无法满足我们的需求时，我们则需要考虑自定义 ``Collator``:"
-msgstr "crwdns84521:0crwdne84521:0"
+msgstr "crwdns118529:0crwdne118529:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:93
 msgid "需要继承 ``Collator`` 类，并在子类中实现 ``apply`` 方法；"
-msgstr "crwdns84523:0crwdne84523:0"
+msgstr "crwdns118531:0crwdne118531:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:94
 msgid "我们实现的 ``apply`` 方法将被 ``DataLoader`` 调用。"
-msgstr "crwdns84525:0crwdne84525:0"
+msgstr "crwdns118533:0crwdne118533:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:98
 msgid ":models:`official/vision/keypoints/dataset.py#L167` - ``HeatmapCollator``"
-msgstr "crwdns84527:0:models:crwdne84527:0"
+msgstr "crwdns118535:0:models:crwdne118535:0"
 
 #: ../../source/user-guide/model-development/data/collator.rst:99
 msgid ":models:`official/vision/detection/tools/utils.py#L125` - ``DetectionPadCollator``"
-msgstr "crwdns84529:0:models:crwdne84529:0"
+msgstr "crwdns118537:0:models:crwdne118537:0"
 
