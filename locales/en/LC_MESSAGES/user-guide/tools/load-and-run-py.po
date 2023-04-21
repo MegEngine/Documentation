@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2023-04-11 05:54\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/load-and-run-py.po\n"
-"X-Crowdin-File-ID: 2868\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/tools/load-and-run-py.po\n"
+"X-Crowdin-File-ID: 9899\n"
 "Language: en_US\n"
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:5
@@ -36,7 +36,7 @@ msgstr "The parameter list and introduction are as："
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:18
 msgid "``net``"
-msgstr "``net``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:18
 msgid "**必需参数** ，指定 mge graph 文件路径"
@@ -76,7 +76,7 @@ msgstr "Similar to --input-desc, but only batchsize is specified"
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:33
 msgid "``--seed SEED``"
-msgstr "``--seed SEED``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:33
 msgid "指定生成随机 inputs 数据的随机数种子"
@@ -92,7 +92,7 @@ msgstr "Specify the configuration for generating random numbers, including range
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:39
 msgid "``--profile PROFILE``"
-msgstr "``--profile PROFILE``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:39
 msgid "开启后使用 GraphProfiler 记录 profile 信息，并将结果的 json 内容写到 PROFILE 文件路径中，可后续用于 profile_analyze.py 分析"
@@ -100,7 +100,7 @@ msgstr "After opening, use GraphProfiler to record profile information, and writ
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:42
 msgid "``--focused-nvprof``"
-msgstr "``--focused-nvprof``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:42
 msgid "会在最后额外跑一个用 pycuda.driver profiler 包起来的 iter，用于外部 nvprof 进行测速"
@@ -108,7 +108,7 @@ msgstr "An additional iter wrapped with pycuda.driver profiler will be run at th
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:45
 msgid "``--warm-up``"
-msgstr "``--warm-up``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:45
 msgid "在开始测速前，先跑一个迭代，减少设备缓存等因素带来的性能影响"
@@ -116,7 +116,7 @@ msgstr "Before starting the speed test, run an iteration to reduce the performan
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:48
 msgid "``--iter ITER``"
-msgstr "``--iter ITER``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:48
 msgid "正式运行测速的迭代数"
@@ -132,7 +132,7 @@ msgstr "The results of the outputs RMS (root meam square) value are attached to 
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:54
 msgid "``--device``"
-msgstr "``--device``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:54
 msgid "（目前无效）指定 mge graph 加载时使用的 device，等同于 MGE_DEFAULT_DEVICE 环境变量"
@@ -140,7 +140,7 @@ msgstr "(Currently invalid) Specify the device used when mge graph is loaded, wh
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:57
 msgid "``--fast-run``"
-msgstr "``--fast-run``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:57
 msgid "设置网络中 conv、matmul 等支持修改 execution strategy 选项的算子的执行算法，开启后会对当前平台的多个算法进行运行测速，选出最快的算法"
@@ -148,7 +148,7 @@ msgstr "Set the execution algorithm of the operator that supports modification o
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:60
 msgid "``--reproducible``"
-msgstr "``--reproducible``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:60
 msgid "影响 --fast-run 选项中的算法选择，开启后只选择带\"reproducible\"标签的算法进行比较"
@@ -164,7 +164,7 @@ msgstr "Optimizing the mge graph will cause the graph nodes to be replaced and m
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:67
 msgid "``--embed-input``"
-msgstr "``--embed-input``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:66
 msgid "是否将 inputs data 作为 SharedDeviceTensor 嵌入网络中替换 Host2Device 节点，以兼容 C++ 版 load-and-run， 不开启时 h2d 会被替换为 InputCallback 节点以支持 set_value"
@@ -188,7 +188,7 @@ msgstr "Set log level to DEBUG, output more information (including fast-run spee
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:75
 msgid "``--log LOG``"
-msgstr "``--log LOG``"
+msgstr ""
 
 #: ../../source/user-guide/tools/load-and-run-py.rst:76
 msgid "指定 log 输出的保存路径，不指定则不保存"
