@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:12\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:12\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,76 +11,72 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.data.DataLoader.po\n"
-"X-Crowdin-File-ID: 1910\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.data.DataLoader.po\n"
+"X-Crowdin-File-ID: 8877\n"
 
 #: ../../source/reference/api/megengine.data.DataLoader.rst:5
 msgid "DataLoader"
-msgstr "crwdns88749:0crwdne88749:0"
+msgstr "crwdns98211:0crwdne98211:0"
 
 #: megengine.data.dataloader.DataLoader:1 of
 msgid "Provides a convenient way to iterate on a given dataset. The process is as follows:"
-msgstr "crwdns94584:0crwdne94584:0"
+msgstr "crwdns98213:0crwdne98213:0"
 
 #: megengine.data.dataloader.DataLoader:13 of
 msgid "DataLoader combines a :class:`~.Dataset` with :class:`~.Sampler`, :class:`~.Transform` and :class:`~.Collator`, make it flexible to get minibatch continually from a dataset. See :ref:`data-guide` for more details."
-msgstr "crwdns94586:0:class:crwdnd94586:0:class:crwdnd94586:0:class:crwdnd94586:0:class:crwdnd94586:0:ref:crwdne94586:0"
+msgstr "crwdns98215:0:class:crwdnd98215:0:class:crwdnd98215:0:class:crwdnd98215:0:class:crwdnd98215:0:ref:crwdne98215:0"
 
 #: megengine.data.dataloader.DataLoader of
 msgid "参数"
-msgstr "crwdns62584:0crwdne62584:0"
+msgstr "crwdns98217:0crwdne98217:0"
 
 #: megengine.data.dataloader.DataLoader:19 of
 msgid "dataset from which to load the minibatch."
-msgstr "crwdns62586:0crwdne62586:0"
+msgstr "crwdns98219:0crwdne98219:0"
 
 #: megengine.data.dataloader.DataLoader:21 of
 msgid "defines the strategy to sample data from the dataset. If ``None``, it will sequentially sample from the dataset one by one."
-msgstr "crwdns94588:0crwdne94588:0"
+msgstr "crwdns98221:0crwdne98221:0"
 
 #: megengine.data.dataloader.DataLoader:24 of
 msgid "defined the transforming strategy for a sampled batch."
-msgstr "crwdns94590:0crwdne94590:0"
+msgstr "crwdns98223:0crwdne98223:0"
 
 #: megengine.data.dataloader.DataLoader:26 of
 msgid "defined the merging strategy for a transformed batch."
-msgstr "crwdns94592:0crwdne94592:0"
+msgstr "crwdns98225:0crwdne98225:0"
 
 #: megengine.data.dataloader.DataLoader:28 of
 msgid "the number of sub-process to load, transform and collate the batch. ``0`` means using single-process. Default: 0"
-msgstr "crwdns62594:0crwdne62594:0"
+msgstr "crwdns98227:0crwdne98227:0"
 
 #: megengine.data.dataloader.DataLoader:31 of
 msgid "if positive, means the timeout value(second) for collecting a batch from workers. Default: 0"
-msgstr "crwdns62596:0crwdne62596:0"
+msgstr "crwdns98229:0crwdne98229:0"
 
 #: megengine.data.dataloader.DataLoader:34 of
-msgid "callback function triggered by timeout, default to raise runtime error."
-msgstr "crwdns62598:0crwdne62598:0"
+msgid "whether to enable the preloading strategy of the dataloader. When enabling, the dataloader will preload one batch to the device memory to speed up the whole training process."
+msgstr "crwdns98231:0crwdne98231:0"
 
 #: megengine.data.dataloader.DataLoader:37 of
-msgid "define the paralleling strategy in multi-processing mode. ``True`` means one batch is divided into :attr:`num_workers` pieces, and the workers will process these pieces parallelly. ``False`` means different sub-process will process different batch. Default: False"
-msgstr "crwdns62600:0:attr:crwdne62600:0"
+msgid "whether to splitting workload across all workers when dataset is streamdataset and num_workers > 0. When enabling, each worker will collect data from different dataset in order to speed up the whole loading process. See ref:`streamdataset-example` for more details"
+msgstr "crwdns98233:0crwdne98233:0"
 
-#: megengine.data.dataloader.DataLoader:42 of
-msgid "whether to enable the preloading strategy of the dataloader. When enabling, the dataloader will preload one batch to the device memory to speed up the whole training process."
-msgstr "crwdns94594:0crwdne94594:0"
-
-#: megengine.data.dataloader.DataLoader:45 of
+#: megengine.data.dataloader.DataLoader:41 of
 msgid "The effect of enabling preload"
-msgstr "crwdns94596:0crwdne94596:0"
+msgstr "crwdns98235:0crwdne98235:0"
 
-#: megengine.data.dataloader.DataLoader:48 of
+#: megengine.data.dataloader.DataLoader:44 of
 msgid "All elements in :class:`map`, :class:`list`, and :class:`tuple` will be converted to :class:`~.Tensor` by preloading, and you will get :class:`~.Tensor` instead of the original Numpy array or Python built-in data structrure."
-msgstr "crwdns94598:0:class:crwdnd94598:0:class:crwdnd94598:0:class:crwdnd94598:0:class:crwdnd94598:0:class:crwdne94598:0"
+msgstr "crwdns98237:0:class:crwdnd98237:0:class:crwdnd98237:0:class:crwdnd98237:0:class:crwdnd98237:0:class:crwdne98237:0"
 
-#: megengine.data.dataloader.DataLoader:50 of
+#: megengine.data.dataloader.DataLoader:46 of
 msgid "Tensors' host2device copy and device kernel execution will be overlapped, which will improve the training speed at the cost of **higher device memory usage** (due to one more batch data on device memory). This feature saves more time when your NN training time is short or your machine's host PCIe bandwidth for each device is low."
-msgstr "crwdns94600:0crwdne94600:0"
+msgstr "crwdns98239:0crwdne98239:0"
 
 #~ msgid "基类：:class:`object`"
 #~ msgstr "基类：:class:`object`"
@@ -141,4 +137,20 @@ msgstr "crwdns94600:0crwdne94600:0"
 #~ "代价是较高的 device 内存占用（因为会多出一个 batch 的数据）。 "
 #~ "当你的训练时间很短或者你的每个 device 的 PCIe 带宽很低的时候， "
 #~ "这个策略将会省很多训练的时间。"
+
+#~ msgid "callback function triggered by timeout, default to raise runtime error."
+#~ msgstr "超时触发的回调函数，默认引发运行时错误。"
+
+#~ msgid ""
+#~ "define the paralleling strategy in "
+#~ "multi-processing mode. ``True`` means one"
+#~ " batch is divided into :attr:`num_workers`"
+#~ " pieces, and the workers will process"
+#~ " these pieces parallelly. ``False`` means"
+#~ " different sub-process will process "
+#~ "different batch. Default: False"
+#~ msgstr ""
+#~ "定义多进程模式下的并行策略。 ``True`` 表示一个批次被分成 "
+#~ ":attr:`num_workers` 块，worker 将并行处理这些块。 ``False`` "
+#~ "表示不同的子进程会处理不同的批次。 默认：False"
 
