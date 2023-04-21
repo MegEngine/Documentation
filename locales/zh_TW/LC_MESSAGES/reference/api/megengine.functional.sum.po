@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-09-07 10:08\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:23\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,56 +11,88 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.sum.po\n"
-"X-Crowdin-File-ID: 2288\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.sum.po\n"
+"X-Crowdin-File-ID: 9353\n"
 
 #: ../../source/reference/api/megengine.functional.sum.rst:2
 msgid "megengine.functional.sum"
-msgstr "crwdns32020:0crwdne32020:0"
+msgstr "crwdns103311:0crwdne103311:0"
 
 #: megengine.functional.math.sum:1 of
-msgid "Returns the sum of input tensor along given axis. If axis is a list of dimensions, reduce over all of them."
-msgstr "crwdns32022:0crwdne32022:0"
+msgid "Calculates the sum of tensor elements over a given axis (or axes)."
+msgstr "crwdns103313:0crwdne103313:0"
 
 #: megengine.functional.math.sum of
 msgid "参数"
-msgstr "crwdns32024:0crwdne32024:0"
+msgstr "crwdns103315:0crwdne103315:0"
 
-#: megengine.functional.math.sum:5 of
-msgid "input tensor."
-msgstr "crwdns32026:0crwdne32026:0"
+#: megengine.functional.math.sum:4 of
+msgid "input tensor. Should have a numeric data type."
+msgstr "crwdns103317:0crwdne103317:0"
 
-#: megengine.functional.math.sum:7 of
-msgid "dimension to reduce. If None, all dimensions will be reduced. Default: None"
-msgstr "crwdns32028:0crwdne32028:0"
+#: megengine.functional.math.sum:6 of
+msgid "axis or axes along which sums must be computed. By default, the sum must be computed over the entire tensor. If a sequence of integers, sums must be computed over multiple axes."
+msgstr "crwdns103319:0crwdne103319:0"
 
 #: megengine.functional.math.sum:10 of
-msgid "whether the output tensor has axis retained or not. Default: False"
-msgstr "crwdns32030:0crwdne32030:0"
+msgid "if ``True``, the reduced axes (dimensions) must be included in the result as singleton dimensions, and, accordingly, the result must be compatible with the input tensor (see :ref:`broadcasting-rule`). Otherwise, if ``False``, the reduced axes (dimensions) must not be included in the result."
+msgstr "crwdns103321:0:ref:crwdne103321:0"
 
 #: megengine.functional.math.sum of
 msgid "返回类型"
-msgstr "crwdns69953:0crwdne69953:0"
+msgstr "crwdns103323:0crwdne103323:0"
 
-#: megengine.functional.math.sum:13 of
+#: megengine.functional.math.sum:14 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr "crwdns69955:0crwdne69955:0"
+msgstr "crwdns103325:0crwdne103325:0"
 
 #: megengine.functional.math.sum of
 msgid "返回"
-msgstr "crwdns32036:0crwdne32036:0"
+msgstr "crwdns103327:0crwdne103327:0"
 
-#: megengine.functional.math.sum:14 of
-msgid "output tensor."
-msgstr "crwdns32038:0crwdne32038:0"
+#: megengine.functional.math.sum:15 of
+msgid "if the sum was computed over the entire tensor, a zero-dimensional tensor containing the sum; otherwise, a tensor containing the sums. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
+msgstr "crwdns103329:0:ref:crwdne103329:0"
 
-#: megengine.functional.math.sum:17 of
+#: megengine.functional.math.sum:19 of
+msgid "Special Cases"
+msgstr "crwdns103331:0crwdne103331:0"
+
+#: megengine.functional.math.sum:21 of
+msgid "Let ``N`` equal the number of elements over which to compute the sum."
+msgstr "crwdns103333:0crwdne103333:0"
+
+#: megengine.functional.math.sum:23 of
+msgid "If ``N`` is 0, the sum is ``0`` (i.e., the empty sum)."
+msgstr "crwdns103335:0crwdne103335:0"
+
+#: megengine.functional.math.sum:24 of
+msgid "If :math:`x_i` is ``NaN``, the sum is ``NaN`` (i.e., ``NaN`` values propagate)."
+msgstr "crwdns103337:0:math:crwdne103337:0"
+
+#: megengine.functional.math.sum:28 of
+msgid "If the accumulator is too small, overflow occurs:"
+msgstr "crwdns103339:0crwdne103339:0"
+
+#: megengine.functional.math.sum:35 of
 msgid "实际案例"
-msgstr "crwdns69957:0crwdne69957:0"
+msgstr "crwdns103341:0crwdne103341:0"
+
+#: megengine.functional.math.sum:36 of
+msgid "The sum of an empty tensor is the neutral element 0:"
+msgstr "crwdns103343:0crwdne103343:0"
+
+#: megengine.functional.math.sum:41 of
+msgid "Normal case:"
+msgstr "crwdns103345:0crwdne103345:0"
+
+#: megengine.functional.math.sum:48 of
+msgid "Along an axis:"
+msgstr "crwdns103347:0crwdne103347:0"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
@@ -73,4 +105,26 @@ msgstr "crwdns69957:0crwdne69957:0"
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid ""
+#~ "Returns the sum of input tensor "
+#~ "along given axis. If axis is a "
+#~ "list of dimensions, reduce over all "
+#~ "of them."
+#~ msgstr "返回在给定轴 ``axis`` 上 ``inp`` 张量每一行的和。如果给定的轴是一个维度列表，则规约所有维度。"
+
+#~ msgid "input tensor."
+#~ msgstr "输入张量。"
+
+#~ msgid ""
+#~ "dimension to reduce. If None, all "
+#~ "dimensions will be reduced. Default: "
+#~ "None"
+#~ msgstr "要进行规约的维度。如果设置为 None，则所有的维度都将规约。默认：None"
+
+#~ msgid "whether the output tensor has axis retained or not. Default: False"
+#~ msgstr "输出张量是否保留了轴 *axis* 。默认：False"
+
+#~ msgid "output tensor."
+#~ msgstr "输出张量。"
 
