@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 07:07\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,267 +14,267 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/graphsurgeon.po\n"
-"X-Crowdin-File-ID: 2866\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/tools/graphsurgeon.po\n"
+"X-Crowdin-File-ID: 9897\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:5
 msgid "图手术操作指南"
-msgstr "crwdns46058:0crwdne46058:0"
+msgstr "crwdns116349:0crwdne116349:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:9
 msgid "图手术相关 API 在 :py:mod:`megengine.utils.network` 中。 需要先通过 :ref:`trace <trace>` 和 :ref:`dump <dump>` 得到导出后的 MegEngine 模型， 如果需要对保存的模型进行修改（保存 opr/var 的名字），建议 :py:meth:`~.trace.dump` 时加上选项："
-msgstr "crwdns46060:0:ref:crwdnd46060:0:ref:crwdne46060:0"
+msgstr "crwdns116351:0:ref:crwdnd116351:0:ref:crwdne116351:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:18
 msgid "使用 Network 加载/保存模型"
-msgstr "crwdns46062:0crwdne46062:0"
+msgstr "crwdns116353:0crwdne116353:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:20
 msgid "相关的定义和实现在 :py:class:`~.Network` 类，其中："
-msgstr "crwdns46064:0crwdne46064:0"
+msgstr "crwdns116355:0crwdne116355:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:22
 msgid "模型的加载使用 :py:meth:`.Network.load` 接口，参数 ``model_path`` 指模型路径，``outspec`` 指加载 varnode 依赖的子图"
-msgstr "crwdns46066:0crwdne46066:0"
+msgstr "crwdns116357:0crwdne116357:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:23
 msgid "模型的保存使用 :py:meth:`.Network.dump` 接口，与 :py:class:`~.trace` 的 :py:meth:`~.trace.dump` 接口基本一致，可以指定 ``optimize_for_inference`` 选项， 会 dump 模型输出节点（ ``Network.output_vars`` ）依赖的计算图"
-msgstr "crwdns46068:0crwdne46068:0"
+msgstr "crwdns116359:0crwdne116359:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:26
 msgid "假设 ``xxx.mge`` 的实现如下："
-msgstr "crwdns46070:0crwdne46070:0"
+msgstr "crwdns116361:0crwdne116361:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:34
 msgid "则可以参考下面的例子进行加载和保存："
-msgstr "crwdns46072:0crwdne46072:0"
+msgstr "crwdns116363:0crwdne116363:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:52
 msgid "使用 Nodefilter 查找 Node"
-msgstr "crwdns46074:0crwdne46074:0"
+msgstr "crwdns116365:0crwdne116365:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:54
 msgid "通过调用 :py:class:`~.NodeFilter` 类中的实现，可以按一定条件对计算图中的 VarNode/OpNode 进行查找。"
-msgstr "crwdns46076:0crwdne46076:0"
+msgstr "crwdns116367:0crwdne116367:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:56
 msgid "NodeFilter 提供了按类型、名字，是否以某个 VarNode 作为输入等条件进行查找的功能："
-msgstr "crwdns46078:0crwdne46078:0"
+msgstr "crwdns116369:0crwdne116369:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:58
 msgid "按类型：:py:meth:`.NodeFilter.type` ``(cls)`` , 查找类型是 ``cls`` 的 Node"
-msgstr "crwdns46080:0crwdne46080:0"
+msgstr "crwdns116371:0crwdne116371:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:59
 msgid "按名字：:py:meth:`.NodeFilter.name` ``(name)`` , 查找名字为 ``name`` 的 Node, 可以是 UNIX 正则表达式（如 ``*bias`` ）"
-msgstr "crwdns46082:0crwdne46082:0"
+msgstr "crwdns116373:0crwdne116373:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:60
 msgid "按输入：:py:meth:`.NodeFilter.has_input` ``(var)`` , 查找以 ``var`` 为输入的 Node"
-msgstr "crwdns46084:0crwdne46084:0"
+msgstr "crwdns116375:0crwdne116375:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:62
 msgid "NodeFilter 还支持将返回结果变成列表/字典/单个 Node 类型（默认返回 NodeFilter），方便后续操作："
-msgstr "crwdns46086:0crwdne46086:0"
+msgstr "crwdns116377:0crwdne116377:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:64
 msgid ":py:meth:`.NodeFilter.as_list` : 返回 Node 列表"
-msgstr "crwdns46088:0crwdne46088:0"
+msgstr "crwdns116379:0crwdne116379:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:65
 msgid ":py:meth:`.NodeFilter.as_dict` : 返回 Node 名字和 Node 组成的字典"
-msgstr "crwdns46090:0crwdne46090:0"
+msgstr "crwdns116381:0crwdne116381:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:66
 msgid ":py:meth:`.NodeFilter.as_unique` : 如果查找到的 Node 只有一个，直接返回该 Node, 否则报错"
-msgstr "crwdns46092:0crwdne46092:0"
+msgstr "crwdns116383:0crwdne116383:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:67
 msgid ":py:meth:`.NodeFilter.as_count` : 返回查找到 Node 的数量"
-msgstr "crwdns46094:0crwdne46094:0"
+msgstr "crwdns116385:0crwdne116385:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:69
 msgid "此外，在 Network 中提供了一些 opr/var 的 Nodefilter 用于在计算图中查找节点："
-msgstr "crwdns46096:0crwdne46096:0"
+msgstr "crwdns116387:0crwdne116387:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:71
 msgid ":py:meth:`.Network.opr_filter` : 所有 opr 的 Nodefilter"
-msgstr "crwdns46098:0crwdne46098:0"
+msgstr "crwdns116389:0crwdne116389:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:72
 msgid ":py:meth:`.Network.var_filter` : 所有 var 的 Nodefilter"
-msgstr "crwdns46100:0crwdne46100:0"
+msgstr "crwdns116391:0crwdne116391:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:73
 msgid ":py:meth:`.Network.params_filter` : 所有的 ImmutalbeTensor opr (parameter provider) 的 Nodefilter, ImmutalbeTensor 为模型提供参数。"
-msgstr "crwdns46102:0crwdne46102:0"
+msgstr "crwdns116393:0crwdne116393:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:74
 msgid ":py:meth:`.Network.data_providers_filter` : 所有 Host2DeviceCopy opr (data provider) 的 Nodefilter, Host2DeviceCopy 为模型提供输入。"
-msgstr "crwdns46104:0crwdne46104:0"
+msgstr "crwdns116395:0crwdne116395:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:76
 msgid "对应地，Network 中提供了常见的按条件查询的 API， 其中 ``unique=True`` 表示按若该条件只能查到一个 Node，返回该 Node. 而当 ``unique=False`` 时，返回一个 Node 列表："
-msgstr "crwdns46106:0crwdne46106:0"
+msgstr "crwdns116397:0crwdne116397:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:79
 msgid "按类型查找 OpNode: :py:meth:`.Network.get_opr_by_type` ``(oprcls, unique=True)``"
-msgstr "crwdns46108:0crwdne46108:0"
+msgstr "crwdns116399:0crwdne116399:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:81
 msgid "等价于 :py:meth:`.Network.opr_filter`. :py:meth:`~.NodeFilter.type` ``(oprcls).``:py:meth:`~.NodeFilter.as_unique`/:py:meth:`~.NodeFilter.as_list`"
-msgstr "crwdns46110:0crwdne46110:0"
+msgstr "crwdns116401:0crwdne116401:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:83
 msgid "按名字查找 OpNode: :py:meth:`.Network.get_opr_by_name` ``(name, unique=True)``"
-msgstr "crwdns46112:0crwdne46112:0"
+msgstr "crwdns116403:0crwdne116403:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:85
 msgid "等价于 :py:meth:`.Network.opr_filter`. :py:meth:`~.NodeFilter.name` ``(name).``:py:meth:`~.NodeFilter.as_unique`/:py:meth:`~.NodeFilter.as_list`"
-msgstr "crwdns46114:0crwdne46114:0"
+msgstr "crwdns116405:0crwdne116405:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:87
 msgid "按名字查找 VarNode: :py:meth:`.Network.get_var_by_name` ``(name, unique=True)``"
-msgstr "crwdns46116:0crwdne46116:0"
+msgstr "crwdns116407:0crwdne116407:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:89
 msgid "等价于 :py:meth:`.Network.var_filter`. :py:meth:`~.NodeFilter.name` ``(name).``:py:meth:`~.NodeFilter.as_unique`/:py:meth:`~.NodeFilter.as_list`"
-msgstr "crwdns46118:0crwdne46118:0"
+msgstr "crwdns116409:0crwdne116409:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:91
 msgid ":py:meth:`.Network.get_var_receive_oprs` ``(var)`` , 获取以 var 为输入的 OpNode"
-msgstr "crwdns46120:0crwdne46120:0"
+msgstr "crwdns116411:0crwdne116411:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:92
 msgid ":py:meth:`.Network.get_dep_oprs` ``(var)`` , 获取 var 依赖的所有 opr（即得到 var 计算结果所需的所有 opr）"
-msgstr "crwdns46122:0crwdne46122:0"
+msgstr "crwdns116413:0crwdne116413:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:95
 msgid "一些使用示例"
-msgstr "crwdns46124:0crwdne46124:0"
+msgstr "crwdns116415:0crwdne116415:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:126
 msgid "修改模型的方法"
-msgstr "crwdns46126:0crwdne46126:0"
+msgstr "crwdns116417:0crwdne116417:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:129
 msgid "替换节点"
-msgstr "crwdns46128:0crwdne46128:0"
+msgstr "crwdns116419:0crwdne116419:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:131
 msgid "我们可以通过替换 OpNode/VarNode 来修改图结构："
-msgstr "crwdns46130:0crwdne46130:0"
+msgstr "crwdns116421:0crwdne116421:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:133
 msgid ":py:meth:`.Network.replace_vars` ``(repl_dict)`` / :py:meth:`.Network.replace_oprs` ``(repl_dict)`` , 其中 ``repl_dict`` 存储由 被替换节点、新节点 组成的字典，该方法将图中的旧节点替换为新节点。"
-msgstr "crwdns46132:0crwdne46132:0"
+msgstr "crwdns116423:0crwdne116423:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:135
 msgid ":py:meth:`.Network.add_dep_oprs` ``(*vars)`` , 把 ``vars`` 依赖的 mgb OperatorNode/VarNode 转换成 Network 的 OpNode/VarNode 添加到图中，返回值是 ``var`` 对应的 Network VarNode."
-msgstr "crwdns46134:0crwdne46134:0"
+msgstr "crwdns116425:0crwdne116425:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:138
 msgid "下面的例子通过 ``replace_vars/replace_oprs`` 将 ``(a+b)*2`` 修改为 ``relu(a*b)*2`` ："
-msgstr "crwdns46136:0crwdne46136:0"
+msgstr "crwdns116427:0crwdne116427:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:169
 msgid "添加新的参数/输入"
-msgstr "crwdns46138:0crwdne46138:0"
+msgstr "crwdns116429:0crwdne116429:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:171
 msgid "通常分为以下两种情况："
-msgstr "crwdns46140:0crwdne46140:0"
+msgstr "crwdns116431:0crwdne116431:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:173
 msgid "通过 :py:meth:`.Network.make_const` 产生一个 ImmutableTensor Opr， 返回该 opr 的输出 varnode 作为 parameter"
-msgstr "crwdns46142:0crwdne46142:0"
+msgstr "crwdns116433:0crwdne116433:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:174
 msgid "通过 :py:meth:`.Network.make_input_node` 产生一个 Host2DeviceCopy Opr,  返回该 opr 输出 varnode 作为 input"
-msgstr "crwdns46144:0crwdne46144:0"
+msgstr "crwdns116435:0crwdne116435:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:176
 msgid "比如将 ``(a+b)*2`` 修改为 ``(a+3)*2`` :"
-msgstr "crwdns46146:0crwdne46146:0"
+msgstr "crwdns116437:0crwdne116437:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:190
 msgid "或者将 ``(a+b)*2`` 修改为 ``(a+b)*c`` :"
-msgstr "crwdns46148:0crwdne46148:0"
+msgstr "crwdns116439:0crwdne116439:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:201
 msgid "添加/删除输出节点"
-msgstr "crwdns46150:0crwdne46150:0"
+msgstr "crwdns116441:0crwdne116441:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:203
 msgid "由于网络在 :py:meth:`~.trace.dump` 时只会将 ``output_vars`` 列表中的 varnode 所依赖的 opnode/varnode 保存到 .mge 文件中， 因此需要提供一些方法对 ``output_vars`` 列表进行修改："
-msgstr "crwdns46152:0crwdne46152:0"
+msgstr "crwdns116443:0crwdne116443:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:206
 msgid ":py:meth:`.Network.add_output` ``(*vars)``  : 将某些 varnode 添加到网络输出节点列表 ``output_vars`` 中"
-msgstr "crwdns46154:0crwdne46154:0"
+msgstr "crwdns116445:0crwdne116445:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:207
 msgid ":py:meth:`.Network.remove_output` ``(*vars)`` : 将某些 varnode 从网络输出节点列表 ``output_vars`` 中移除"
-msgstr "crwdns46156:0crwdne46156:0"
+msgstr "crwdns116447:0crwdne116447:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:209
 msgid "例如将 ``(a+b)*2`` 修改为 ``relu((a+b)*2)``"
-msgstr "crwdns46158:0crwdne46158:0"
+msgstr "crwdns116449:0crwdne116449:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:225
 msgid "修改 Opr 名字"
-msgstr "crwdns46160:0crwdne46160:0"
+msgstr "crwdns116451:0crwdne116451:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:230
 msgid ":py:meth:`.Network.modify_opr_names` ``(modifier)``"
-msgstr "crwdns46162:0crwdne46162:0"
+msgstr "crwdns116453:0crwdne116453:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:227
 msgid "批量修改 opr 名字： 其中 ``modifier`` 可以是字符串/函数——"
-msgstr "crwdns46164:0crwdne46164:0"
+msgstr "crwdns116455:0crwdne116455:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:229
 msgid "当 ``modifier`` 是字符串 ``s`` 时，会在所有 opr 原有名字前添加 ``\"s.\"`` 前缀"
-msgstr "crwdns46166:0crwdne46166:0"
+msgstr "crwdns116457:0crwdne116457:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:230
 msgid "如果 ``modifier`` 是函数，该函数接收原有名字做参数，返回新名字"
-msgstr "crwdns46168:0crwdne46168:0"
+msgstr "crwdns116459:0crwdne116459:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:233
 msgid "修改 Batch Size"
-msgstr "crwdns46170:0crwdne46170:0"
+msgstr "crwdns116461:0crwdne116461:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:235
 msgid ":py:meth:`.Network.reset_batch_size` ``(batchsize, blacklist)``"
-msgstr "crwdns46172:0crwdne46172:0"
+msgstr "crwdns116463:0crwdne116463:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:235
 msgid "修改所有输入节点（Host2DeviceCopy）的 ``batchsize`` ，在 ``blacklist`` 内的节点不会被修改。"
-msgstr "crwdns46174:0crwdne46174:0"
+msgstr "crwdns116465:0crwdne116465:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:238
 msgid "模型修改示例"
-msgstr "crwdns46176:0crwdne46176:0"
+msgstr "crwdns116467:0crwdne116467:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:240
 msgid "下面的代码使用 :py:class:`~.trace` 构造静态图，并在原模型输出上添加 :py:meth:`~.warp_perspective` 变换："
-msgstr "crwdns46178:0crwdne46178:0"
+msgstr "crwdns116469:0crwdne116469:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:289
 msgid ":py:class:`megengine.tensor.Tensor` 只用于动态图，不能与 VarNode 混用， 例如 Tensor 与 VarNode 相互赋值，functional API 同时接收 Tensor 和 VarNode 作为输入等。 对应地，向计算图中添加常量可以使用 :py:meth:`.Network.make_const` ``(data)`` ，不能使用 ``megengine.tensor(data)`` ; 添加新输入可以使用 :py:meth:`.Network.make_input_node` ."
-msgstr "crwdns46180:0crwdne46180:0"
+msgstr "crwdns116471:0crwdne116471:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:294
 msgid "向 ``.mge`` 模型的计算图中添加新 opr 可以使用 megengine functional API. functional API 接 收mgb VarNode 作为输入时会向 VarNode 所属计算图插入 opr，返回该 opr 输出的 mgb VarNode"
-msgstr "crwdns46182:0crwdne46182:0"
+msgstr "crwdns116473:0crwdne116473:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:297
 msgid "目前 Network 提供的 make_const make_input_node, 各类查找 VarNode API 返回值类型为 network_node.VarNode (network_node.VarNode 中的 var 属性是mgb VarNode)，因此使用 Network API 获取 network_node.VarNode 后， 如果需要传给 functional 造计算图，需要手动调用 ``.var`` 后再传给 functional （具体可参考上述.mge模型修改示例）。 近期会添加 functional API 直接接收 Network.VarNode 的支持。"
-msgstr "crwdns46184:0crwdne46184:0"
+msgstr "crwdns116475:0crwdne116475:0"
 
 #: ../../source/user-guide/tools/graphsurgeon.rst:302
 msgid "目前  network_node.VarNode  不支持 array method（不支持 + - * / 等操作符 和 advance indexing)/. 遇到 VarNode 不支持的操作（例如advance indexing），可以考虑用 trace + 动态图 构造出静态图， 把该静态图拼接到原模型上。近期会为network_node.VarNode 加上 arraymethodmixin."
-msgstr "crwdns46186:0crwdne46186:0"
+msgstr "crwdns116477:0crwdne116477:0"
 
