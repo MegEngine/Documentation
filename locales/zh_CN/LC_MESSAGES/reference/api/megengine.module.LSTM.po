@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-04 16:51+0800\n"
-"PO-Revision-Date: 2023-04-11 05:45\n"
+"PO-Revision-Date: 2023-04-21 09:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -14,13 +14,13 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.LSTM.po\n"
-"X-Crowdin-File-ID: 8498\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.LSTM.po\n"
+"X-Crowdin-File-ID: 9511\n"
 "Language: zh_CN\n"
 
 #: ../../source/reference/api/megengine.module.LSTM.rst:5
 msgid "LSTM"
-msgstr "LSTM"
+msgstr ""
 
 #: megengine.module.rnn.LSTM:1 of
 msgid "Applies a multi-layer long short-term memory LSTM to an input sequence."
@@ -39,14 +39,7 @@ msgid "\\begin{array}{ll} \\\\\n"
 "    c_t = f_t \\odot c_{t-1} + i_t \\odot g_t \\\\\n"
 "    h_t = o_t \\odot \\tanh(c_t) \\\\\n"
 "\\end{array}\n\n"
-msgstr "\\begin{array}{ll} \\\\\n"
-"    i_t = \\sigma(W_{ii} x_t + b_{ii} + W_{hi} h_{t-1} + b_{hi}) \\\\\n"
-"    f_t = \\sigma(W_{if} x_t + b_{if} + W_{hf} h_{t-1} + b_{hf}) \\\\\n"
-"    g_t = \\tanh(W_{ig} x_t + b_{ig} + W_{hg} h_{t-1} + b_{hg}) \\\\\n"
-"    o_t = \\sigma(W_{io} x_t + b_{io} + W_{ho} h_{t-1} + b_{ho}) \\\\\n"
-"    c_t = f_t \\odot c_{t-1} + i_t \\odot g_t \\\\\n"
-"    h_t = o_t \\odot \\tanh(c_t) \\\\\n"
-"\\end{array}\n\n"
+msgstr ""
 
 #: megengine.module.rnn.LSTM:18 of
 msgid "where :math:`h_t` is the hidden state at time `t`, :math:`c_t` is the cell state at time `t`, :math:`x_t` is the input at time `t`, :math:`h_{t-1}` is the hidden state of the layer at time `t-1` or the initial hidden state at time `0`, and :math:`i_t`, :math:`f_t`, :math:`g_t`, :math:`o_t` are the input, forget, cell, and output gates, respectively. :math:`\\sigma` is the sigmoid function, and :math:`\\odot` is the Hadamard product."
@@ -62,7 +55,7 @@ msgstr "如果指定 ``proj_size > 0``，将使用带投影的LSTM。这将以�
 
 #: megengine.module.rnn.LSTM of
 msgid "参数"
-msgstr "参数"
+msgstr ""
 
 #: megengine.module.rnn.LSTM:38 of
 msgid "The number of expected features in the input `x`"
@@ -98,7 +91,7 @@ msgstr "如果 ``> 0``，将为LSTM设置相应大小的投影。默认值：0"
 
 #: megengine.module.rnn.LSTM:79 of
 msgid "Inputs: input, (h_0, c_0)"
-msgstr "Inputs: input, (h_0, c_0)"
+msgstr ""
 
 #: megengine.module.rnn.LSTM:57 of
 msgid "**input**: tensor of shape :math:`(L, N, H_{in})` when ``batch_first=False`` or :math:`(N, L, H_{in})` when ``batch_first=True`` containing the features of the input sequence.  The input can also be a packed variable length sequence. See :func:`torch.nn.utils.rnn.pack_padded_sequence` or :func:`torch.nn.utils.rnn.pack_sequence` for details."
@@ -125,18 +118,11 @@ msgid "\\begin{aligned}\n"
 "    H_{cell} ={} & \\text{hidden\\_size} \\\\\n"
 "    H_{out} ={} & \\text{proj\\_size if } \\text{proj\\_size}>0 \\text{ otherwise hidden\\_size} \\\\\n"
 "\\end{aligned}\n\n"
-msgstr "\\begin{aligned}\n"
-"    N ={} & \\text{batch size} \\\\\n"
-"    L ={} & \\text{sequence length} \\\\\n"
-"    D ={} & 2 \\text{ if bidirectional=True otherwise } 1 \\\\\n"
-"    H_{in} ={} & \\text{input\\_size} \\\\\n"
-"    H_{cell} ={} & \\text{hidden\\_size} \\\\\n"
-"    H_{out} ={} & \\text{proj\\_size if } \\text{proj\\_size}>0 \\text{ otherwise hidden\\_size} \\\\\n"
-"\\end{aligned}\n\n"
+msgstr ""
 
 #: megengine.module.rnn.LSTM:90 of
 msgid "Outputs: output, (h_n, c_n)"
-msgstr "Outputs: output, (h_n, c_n)"
+msgstr ""
 
 #: megengine.module.rnn.LSTM:82 of
 msgid "**output**: tensor of shape :math:`(L, N, D * H_{out})` when ``batch_first=False`` or :math:`(N, L, D * H_{out})` when ``batch_first=True`` containing the output features `(h_t)` from the last layer of the LSTM, for each `t`. If a :class:`torch.nn.utils.rnn.PackedSequence` has been given as the input, the output will also be a packed sequence."
@@ -152,7 +138,7 @@ msgstr "**c_n**：形状为 :math:`(D *\\text{num\\_layers}, N, H_{cell})`，包
 
 #: megengine.module.rnn.LSTM:93 of
 msgid "实际案例"
-msgstr "实际案例"
+msgstr ""
 
 #: megengine.module.rnn.LSTM:107 of
 msgid "Outputs:"
