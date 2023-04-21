@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:27\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,99 +14,99 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/lite/cpp-basic.po\n"
-"X-Crowdin-File-ID: 8207\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/deployment/lite/cpp-basic.po\n"
+"X-Crowdin-File-ID: 10003\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:5
 msgid "MegEngine Lite C++ 基础功能介绍"
-msgstr "crwdns86477:0crwdne86477:0"
+msgstr "crwdns120675:0crwdne120675:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:9
 msgid "在CPU上做推理的一个例子"
-msgstr "crwdns86479:0crwdne86479:0"
+msgstr "crwdns120677:0crwdne120677:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:10
 msgid "接下来，我们将逐步讲解一个使用MegEngine Lite在CPU上做推理的简单例子，即：:src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``basic_load_from_path()`` 函数。"
-msgstr "crwdns86481:0:src:crwdne86481:0"
+msgstr "crwdns120679:0:src:crwdne120679:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:14
 msgid "1. 一些配置"
-msgstr "crwdns86483:0crwdne86483:0"
+msgstr "crwdns120681:0crwdne120681:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:16
 msgid "首先需要配置Log的级别，**LiteLogLevel** 一共有 **DEBUG**、**INFO**、**WARN** 和 **ERROR** 四个级别，其中 **DEBUG** 级别会把最细致的信息作为log显示在屏幕。此外，模型文件和输入数据的路径也要设定。对应代码如下："
-msgstr "crwdns86485:0crwdne86485:0"
+msgstr "crwdns120683:0crwdne120683:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:26
 msgid "2. 加载模型"
-msgstr "crwdns86487:0crwdne86487:0"
+msgstr "crwdns120685:0crwdne120685:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:28
 msgid "模型文件将被作为参数，传给 **Network** 类的 ``load_model`` 方法。**Network** 类包含了加载、初始化、推理模型和显示模型信息的功能。详情请参考 :src:`network.h <lite/include/lite/network.h>`"
-msgstr "crwdns86489:0:src:crwdne86489:0"
+msgstr "crwdns120687:0:src:crwdne120687:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:37
 msgid "3. 加载输入数据"
-msgstr "crwdns86491:0crwdne86491:0"
+msgstr "crwdns120689:0crwdne120689:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:39
 msgid "加载前，先要构建 **Tensor** 实体，需要注意与之相关的 **LiteBackend** 、 **LiteDeviceType** Enum和 **Layout** 类。 **Layout** 类的实体是 **Tensor** 类的成员之一，用于描述 **Tensor** 的维度和数据类型，而 **LiteBackend** 、 **LiteDeviceType** 的实现如下："
-msgstr "crwdns86493:0crwdne86493:0"
+msgstr "crwdns120691:0crwdne120691:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:61
 msgid "本例中，输入数据是从某npy文件加载进来的，具体的加载方式详见 :src:`main.cpp <lite/example/main.cpp>` 中关于 ``parse_npy()`` 函数的实现。本例通过 ``parse_npy()`` 加载数据并构建src_tensor。然后把src_tensor的数据拷贝到network的输入tensor中。"
-msgstr "crwdns86495:0:src:crwdne86495:0"
+msgstr "crwdns120693:0:src:crwdne120693:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:86
 msgid "4. 推理"
-msgstr "crwdns86497:0crwdne86497:0"
+msgstr "crwdns120695:0crwdne120695:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:88
 msgid "网络的推理是通过调用 **Network** 的 ``forward()`` 方法和 ``wait()`` 方法完成的。如果想记录运行时间，可以使用 **lite\\:\\:Timer** 。本例中相关代码如下："
-msgstr "crwdns86499:0crwdne86499:0"
+msgstr "crwdns120697:0crwdne120697:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:108
 msgid "5. 获取输出数据"
-msgstr "crwdns86501:0crwdne86501:0"
+msgstr "crwdns120699:0crwdne120699:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:110
 msgid "推理完成后，网络的输出数据可通过 **Network** 的 ``get_output_tensor()`` 函数获取。具体用法可参看 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``output_info()`` 函数代码。"
-msgstr "crwdns86503:0:src:crwdne86503:0"
+msgstr "crwdns120701:0:src:crwdne120701:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:115
 msgid "对于在N卡设备上的推理"
-msgstr "crwdns86505:0crwdne86505:0"
+msgstr "crwdns120703:0crwdne120703:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:117
 msgid "如果用N卡设备做推理，需要在上面例子的基础上稍作修改：把输入Tensor需要构造为 **LiteDeviceType\\:\\:LITE_CUDA** 类型。即 ``load_from_path_run_cuda()`` 函数中的如下部分（完整代码在 :src:`basic.cpp <lite/example/mge/basic.cpp>` 里）："
-msgstr "crwdns86507:0:src:crwdne86507:0"
+msgstr "crwdns120705:0:src:crwdne120705:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:130
 msgid "对于支持OpenCL的后端设备上的推理"
-msgstr "crwdns86509:0crwdne86509:0"
+msgstr "crwdns120707:0crwdne120707:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:132
 msgid "在以OpenCL为后端的设备上，有两种加载并推理模型的方式："
-msgstr "crwdns86511:0crwdne86511:0"
+msgstr "crwdns120709:0crwdne120709:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:134
 msgid "首次推理的同时搜索最优算法并将搜索结果存为文件（ ``load_from_path_use_opencl_tuning()`` 函数）"
-msgstr "crwdns86513:0crwdne86513:0"
+msgstr "crwdns120711:0crwdne120711:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:136
 msgid "以算法搜索结果文件中的算法推理模型（ ``load_from_path_run_opencl_cache_and_policy()`` 函数）。"
-msgstr "crwdns86515:0crwdne86515:0"
+msgstr "crwdns120713:0crwdne120713:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:138
 msgid "前者首次推理的速度较慢，可以看做是为后者做的准备。后者的运行效率才是更贴近工程应用水平的。两者的详细实现都在文件 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中。"
-msgstr "crwdns86517:0:src:crwdne86517:0"
+msgstr "crwdns120715:0:src:crwdne120715:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:143
 msgid "用异步执行模式进行推理"
-msgstr "crwdns86519:0crwdne86519:0"
+msgstr "crwdns120717:0crwdne120717:0"
 
 #: ../../source/user-guide/deployment/lite/cpp-basic.rst:145
 msgid "实现在 :src:`basic.cpp <lite/example/mge/basic.cpp>` 中的 ``async_forward()`` 函数 。用户通过接口注册异步回调函数将设置 Network 的 Forward 模式为异步执行模式，目前异步执行模式只有在 CPU 和 CUDA 10.0 以上才支持，在inference时异步模式，主线程可以在工作线程正在执行计算的同时做一些其他的运算，避免长时间等待，但是在一些单核处理器上没有收益。"
-msgstr "crwdns86521:0:src:crwdne86521:0"
+msgstr "crwdns120719:0:src:crwdne120719:0"
 
