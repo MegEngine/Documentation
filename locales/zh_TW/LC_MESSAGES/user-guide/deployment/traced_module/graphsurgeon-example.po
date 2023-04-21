@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:27\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,79 +14,79 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/traced_module/graphsurgeon-example.po\n"
-"X-Crowdin-File-ID: 8201\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/deployment/traced_module/graphsurgeon-example.po\n"
+"X-Crowdin-File-ID: 9997\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:5
 msgid "图手术 Example"
-msgstr "crwdns86311:0crwdne86311:0"
+msgstr "crwdns120509:0crwdne120509:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:8
 msgid "为模型添加前后处理"
-msgstr "crwdns86313:0crwdne86313:0"
+msgstr "crwdns120511:0crwdne120511:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:10
 msgid "TracedModule 可以被反复的 trace，因此在加前后处理时，推荐以新写一个 Module 的形式给模型加前后处理。"
-msgstr "crwdns86315:0crwdne86315:0"
+msgstr "crwdns120513:0crwdne120513:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:12
 msgid "在 Module 里加前后处理"
-msgstr "crwdns86317:0crwdne86317:0"
+msgstr "crwdns120515:0crwdne120515:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:73
 msgid "当然也可以用图手术的方式添加前后处理，最终效果是一样的。"
-msgstr "crwdns86319:0crwdne86319:0"
+msgstr "crwdns120517:0crwdne120517:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:75
 msgid "图手术加前后处理"
-msgstr "crwdns86321:0crwdne86321:0"
+msgstr "crwdns120519:0crwdne120519:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:137
 msgid "把一些常量吸收到卷积里"
-msgstr "crwdns86323:0crwdne86323:0"
+msgstr "crwdns120521:0crwdne120521:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:139
 msgid "对于一些基于 anchor 的检测算法，经常会在卷积的输出后，对卷积结果乘 ``stride`` 或除 ``anchor_size``，在推理部署时，可以将这些常量吸收到卷积里，基于 TracedModule 可以较容易的实现这些转换, 如下面的例子。"
-msgstr "crwdns86325:0crwdne86325:0"
+msgstr "crwdns120523:0crwdne120523:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:141
 msgid "吸常量"
-msgstr "crwdns86327:0crwdne86327:0"
+msgstr "crwdns120525:0crwdne120525:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:207
 msgid "将一些 OP 转换为 fp16"
-msgstr "crwdns86329:0crwdne86329:0"
+msgstr "crwdns120527:0crwdne120527:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:209
 msgid "对于一些计算量特别大的全连接层，会占用较多的存储资源，可以通过将其转换为 fp16 计算减少其占用的资源, 如下面的例子。"
-msgstr "crwdns86331:0crwdne86331:0"
+msgstr "crwdns120529:0crwdne120529:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:211
 msgid "转 fp16"
-msgstr "crwdns86333:0crwdne86333:0"
+msgstr "crwdns120531:0crwdne120531:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:281
 msgid "通过 InternalGraph  确定数据流向"
-msgstr "crwdns86335:0crwdne86335:0"
+msgstr "crwdns120533:0crwdne120533:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:283
 msgid "在量化训练时，常常会对 concat 的输入做某些约束，通过 TracedModule 可以轻易的找到这些 concat 的输入是来自于哪个内置的 function 或 Module 的输出，如下面的例子。"
-msgstr "crwdns86337:0crwdne86337:0"
+msgstr "crwdns120535:0crwdne120535:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:285
 msgid "find inputs"
-msgstr "crwdns86339:0crwdne86339:0"
+msgstr "crwdns120537:0crwdne120537:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:334
 msgid "Conv 和 BN 融合"
-msgstr "crwdns86341:0crwdne86341:0"
+msgstr "crwdns120539:0crwdne120539:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:336
 msgid "在 推理 或 量化训练 时，常常需要将 Conv 和 Bn 融合到一起，基于 TracedModule 的 Graph 可以找到满足融合条件的 Conv 和 Bn，并以图手术的方式将其融合，如下面的例子。"
-msgstr "crwdns86343:0crwdne86343:0"
+msgstr "crwdns120541:0crwdne120541:0"
 
 #: ../../source/user-guide/deployment/traced_module/graphsurgeon-example.rst:338
 msgid "fuse bn"
-msgstr "crwdns86345:0crwdne86345:0"
+msgstr "crwdns120543:0crwdne120543:0"
 
