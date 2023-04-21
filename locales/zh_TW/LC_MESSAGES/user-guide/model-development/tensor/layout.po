@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:26\n"
+"PO-Revision-Date: 2023-04-21 09:36\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,363 +14,363 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/tensor/layout.po\n"
-"X-Crowdin-File-ID: 8143\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/tensor/layout.po\n"
+"X-Crowdin-File-ID: 9935\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:5
 msgid "Tensor 内存布局"
-msgstr "crwdns83873:0crwdne83873:0"
+msgstr "crwdns117875:0crwdne117875:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:8
 msgid "这一部分内容属于底层细节，在绝大多数情景下用户不需要了解这些背后的设计。 如果你希望成为 MegEngine 的核心开发者，了解底层细节将很有帮助，更多内容请参考开发者指南；"
-msgstr "crwdns83875:0crwdne83875:0"
+msgstr "crwdns117877:0crwdne117877:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:10
 msgid "相关的代码实现在： :src:`dnn/include/megdnn/basic_types.h` - ``megdnn::TensorLayout``."
-msgstr "crwdns83877:0:src:crwdne83877:0"
+msgstr "crwdns117879:0:src:crwdne117879:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:14
 msgid "NumPy 对 ndarray 内存布局的解释： `Internal memory layout of an ndarray <https://numpy.org/doc/stable/reference/arrays.ndarray.html#internal-memory-layout-of-an-ndarray>`_"
-msgstr "crwdns83879:0crwdne83879:0"
+msgstr "crwdns117881:0crwdne117881:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:19
 msgid "Tensor 值如何存储在内存中"
-msgstr "crwdns83881:0crwdne83881:0"
+msgstr "crwdns117883:0crwdne117883:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:21
 msgid "一个 :py:class:`~.Tensor` 类的实例由一维连续的计算机内存段组成。"
-msgstr "crwdns83883:0crwdne83883:0"
+msgstr "crwdns117885:0crwdne117885:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:23
 msgid "结合 :ref:`tensor-indexing` 机制，可以将值映射到内存块中对应元素的位置， 而索引可以变化的范围由 Tensor 的 :ref:`形状 <tensor-shape>` 属性指定。 每个元素占用多少个字节以及如何解释这些字节由 Tensor 的 :ref:`数据类型 <tensor-dtype>` 属性指定。"
-msgstr "crwdns83885:0:ref:crwdnd83885:0:ref:crwdnd83885:0:ref:crwdne83885:0"
+msgstr "crwdns117887:0:ref:crwdnd117887:0:ref:crwdnd117887:0:ref:crwdne117887:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:27
 msgid "一段内存本质上是连续的，有许多不同的方案可以将 N 维 Tensor 数组的项排列在一维块中。 根据排列顺序的区别，又可以分为行主序和列主序两种风格，下面我们以最简单的 2 维情况进行举例："
-msgstr "crwdns83887:0crwdne83887:0"
+msgstr "crwdns117889:0crwdne117889:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:36
 msgid "上图分别使用行主序和列主序进行索引："
-msgstr "crwdns83889:0crwdne83889:0"
+msgstr "crwdns117891:0crwdne117891:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:38
 msgid "其中 :math:`a_{11} \\ldots a_{33}` 代表九个元素各自的值；"
-msgstr "crwdns83891:0:math:crwdnd83891:0{11}crwdnd83891:0{33}crwdne83891:0"
+msgstr "crwdns117893:0:math:crwdnd117893:0{11}crwdnd117893:0{33}crwdne117893:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:39
 msgid "偏移量和索引之间有着明显的关系。"
-msgstr "crwdns83893:0crwdne83893:0"
+msgstr "crwdns117895:0crwdne117895:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:41
 msgid "图片来自 `Row- and column-major order <https://en.wikipedia.org/wiki/Row-_and_column-major_order>`_"
-msgstr "crwdns83895:0crwdne83895:0"
+msgstr "crwdns117897:0crwdne117897:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:43
 msgid "这个 2 维 Tensor 中的元素实际上可以由一维连续的内存块分别进行映射："
-msgstr "crwdns83897:0crwdne83897:0"
+msgstr "crwdns117899:0crwdne117899:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:48
 msgid "Offset"
-msgstr "crwdns83899:0crwdne83899:0"
+msgstr "crwdns117901:0crwdne117901:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:49
 msgid "Access"
-msgstr "crwdns83901:0crwdne83901:0"
+msgstr "crwdns117903:0crwdne117903:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:50
 msgid "Value"
-msgstr "crwdns83903:0crwdne83903:0"
+msgstr "crwdns117905:0crwdne117905:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:51
 msgid "0"
-msgstr "crwdns83905:0crwdne83905:0"
+msgstr "crwdns117907:0crwdne117907:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:52
 msgid "a[0][0]"
-msgstr "crwdns83907:0[0]crwdnd83907:0[0]crwdne83907:0"
+msgstr "crwdns117909:0[0]crwdnd117909:0[0]crwdne117909:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:53
 msgid "a11"
-msgstr "crwdns83909:0crwdne83909:0"
+msgstr "crwdns117911:0crwdne117911:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:54
 msgid "1"
-msgstr "crwdns83911:0crwdne83911:0"
+msgstr "crwdns117913:0crwdne117913:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:55
 msgid "a[0][1]"
-msgstr "crwdns83913:0[0]crwdnd83913:0[1]crwdne83913:0"
+msgstr "crwdns117915:0[0]crwdnd117915:0[1]crwdne117915:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:56
 msgid "a12"
-msgstr "crwdns83915:0crwdne83915:0"
+msgstr "crwdns117917:0crwdne117917:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:57
 msgid "2"
-msgstr "crwdns83917:0crwdne83917:0"
+msgstr "crwdns117919:0crwdne117919:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:58
 msgid "a[0][2]"
-msgstr "crwdns83919:0[0]crwdnd83919:0[2]crwdne83919:0"
+msgstr "crwdns117921:0[0]crwdnd117921:0[2]crwdne117921:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:59
 msgid "a13"
-msgstr "crwdns83921:0crwdne83921:0"
+msgstr "crwdns117923:0crwdne117923:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:60
 msgid "3"
-msgstr "crwdns83923:0crwdne83923:0"
+msgstr "crwdns117925:0crwdne117925:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:61
 msgid "a[1][0]"
-msgstr "crwdns83925:0[1]crwdnd83925:0[0]crwdne83925:0"
+msgstr "crwdns117927:0[1]crwdnd117927:0[0]crwdne117927:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:62
 msgid "a21"
-msgstr "crwdns83927:0crwdne83927:0"
+msgstr "crwdns117929:0crwdne117929:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:63
 msgid "4"
-msgstr "crwdns83929:0crwdne83929:0"
+msgstr "crwdns117931:0crwdne117931:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:64
 msgid "a[1][1]"
-msgstr "crwdns83931:0[1]crwdnd83931:0[1]crwdne83931:0"
+msgstr "crwdns117933:0[1]crwdnd117933:0[1]crwdne117933:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:65
 msgid "a22"
-msgstr "crwdns83933:0crwdne83933:0"
+msgstr "crwdns117935:0crwdne117935:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:66
 msgid "5"
-msgstr "crwdns83935:0crwdne83935:0"
+msgstr "crwdns117937:0crwdne117937:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:67
 msgid "a[1][2]"
-msgstr "crwdns83937:0[1]crwdnd83937:0[2]crwdne83937:0"
+msgstr "crwdns117939:0[1]crwdnd117939:0[2]crwdne117939:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:68
 msgid "a23"
-msgstr "crwdns83939:0crwdne83939:0"
+msgstr "crwdns117941:0crwdne117941:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:69
 msgid "6"
-msgstr "crwdns83941:0crwdne83941:0"
+msgstr "crwdns117943:0crwdne117943:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:70
 msgid "a[2][0]"
-msgstr "crwdns83943:0[2]crwdnd83943:0[0]crwdne83943:0"
+msgstr "crwdns117945:0[2]crwdnd117945:0[0]crwdne117945:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:71
 msgid "a31"
-msgstr "crwdns83945:0crwdne83945:0"
+msgstr "crwdns117947:0crwdne117947:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:72
 msgid "7"
-msgstr "crwdns83947:0crwdne83947:0"
+msgstr "crwdns117949:0crwdne117949:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:73
 msgid "a[2][1]"
-msgstr "crwdns83949:0[2]crwdnd83949:0[1]crwdne83949:0"
+msgstr "crwdns117951:0[2]crwdnd117951:0[1]crwdne117951:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:74
 msgid "a32"
-msgstr "crwdns83951:0crwdne83951:0"
+msgstr "crwdns117953:0crwdne117953:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:75
 msgid "8"
-msgstr "crwdns83953:0crwdne83953:0"
+msgstr "crwdns117955:0crwdne117955:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:76
 msgid "a[2][2]"
-msgstr "crwdns83955:0[2]crwdnd83955:0[2]crwdne83955:0"
+msgstr "crwdns117957:0[2]crwdnd117957:0[2]crwdne117957:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:77
 msgid "a33"
-msgstr "crwdns83957:0crwdne83957:0"
+msgstr "crwdns117959:0crwdne117959:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:80
 msgid "这里以 C 风格所用的行主序进行举例。"
-msgstr "crwdns83959:0crwdne83959:0"
+msgstr "crwdns117961:0crwdne117961:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:82
 msgid "MegEngine 和 NumPy 一样灵活，支持任何跨步索引方案，这里需要提到一个概念：步幅（Strides）。"
-msgstr "crwdns83961:0crwdne83961:0"
+msgstr "crwdns117963:0crwdne117963:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:87
 msgid "Tensor 的步幅"
-msgstr "crwdns83963:0crwdne83963:0"
+msgstr "crwdns117965:0crwdne117965:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:91
 msgid "NumPy 的 ndarray 具有 :py:attr:`~numpy.ndarray.strides` 属性（MegEngine 中也存在着这一概念，但没有提供接口）。"
-msgstr "crwdns83965:0crwdne83965:0"
+msgstr "crwdns117967:0crwdne117967:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:95
 msgid "Tensor 的步幅 ``strides`` 是一个元组，告诉我们遍历 Tensor 元素时要在每个维度中步进（step）的字节数； 或者可以理解成在某个轴上索引元素时，单位刻度代表的内存范围， 即必须在内存中跳过多少字节才能沿某个轴移动到下一个位置。 这个属性通常不需要由用户进行修改。"
-msgstr "crwdns83967:0crwdne83967:0"
+msgstr "crwdns117969:0crwdne117969:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:101
 msgid "以 2 维情况为例"
-msgstr "crwdns83969:0crwdne83969:0"
+msgstr "crwdns117971:0crwdne117971:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:103
 msgid "想象有这样一个由 32 位（4 字节）整型元素组成的 Tensor:"
-msgstr "crwdns83971:0crwdne83971:0"
+msgstr "crwdns117973:0crwdne117973:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:108
 msgid "该 Tensor 中的元素一个接一个地存储在内存中（称为连续内存块），占据 40 个字节。 我们必须跳过 4 个字节才能移动到下一列，但必须跳过 20 个字节才能到达下一行的相同位置。 因此，``x`` 的步幅为 ``(20, 4)``."
-msgstr "crwdns83973:0crwdne83973:0"
+msgstr "crwdns117975:0crwdne117975:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:112
 msgid "我们用 :math:`s^{\\text {row }}` 表示行主序得到的步幅，则有 :math:`s_0^{\\text {row }} = 4 \\times 5 = 20`, :math:`s_1^{\\text {row }} = 4`."
-msgstr "crwdns83975:0:math:crwdnd83975:0{row }crwdnd83975:0:math:crwdnd83975:0{row }crwdnd83975:0:math:crwdnd83975:0{row }crwdne83975:0"
+msgstr "crwdns117977:0:math:crwdnd117977:0{row }crwdnd117977:0:math:crwdnd117977:0{row }crwdnd117977:0:math:crwdnd117977:0{row }crwdne117977:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:114
 msgid "借助 :math:`s^{\\text {row }}` 来计算，对应地 ``x[1][2]`` （对应值为 :math:`7` ）位置元素的字节偏移量为 :math:`1 \\times 20 + 2 \\times 4 = 28` ."
-msgstr "crwdns83977:0:math:crwdnd83977:0{row }crwdnd83977:0[1]crwdnd83977:0[2]crwdnd83977:0:math:crwdnd83977:0:math:crwdne83977:0"
+msgstr "crwdns117979:0:math:crwdnd117979:0{row }crwdnd117979:0[1]crwdnd117979:0[2]crwdnd117979:0:math:crwdnd117979:0:math:crwdne117979:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:117
 msgid "推广到一般情况"
-msgstr "crwdns83979:0crwdne83979:0"
+msgstr "crwdns117981:0crwdne117981:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:119
 msgid "更一般的情况，对于形状为 ``shape`` 的一个 N 维 Tensor, 其步幅 :math:`s^{\\text {row }}` 计算公式如下："
-msgstr "crwdns83981:0:math:crwdnd83981:0{row }crwdne83981:0"
+msgstr "crwdns117983:0:math:crwdnd117983:0{row }crwdne117983:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:121
 msgid "s_{k}^{\\text {row }}=\\text { itemsize } \\prod_{j=k+1}^{N-1} d_{j}"
-msgstr "crwdns83983:0{k}crwdnd83983:0{row }crwdnd83983:0{ itemsize }crwdnd83983:0{N-1}crwdnd83983:0{j}crwdne83983:0"
+msgstr "crwdns117985:0{k}crwdnd117985:0{row }crwdnd117985:0{ itemsize }crwdnd117985:0{N-1}crwdnd117985:0{j}crwdne117985:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:125
 msgid "其中 :math:`\\text {itemsize}` 取决于 ``dtype``, 而 :math:`d_{j}=\\text { self.shape }[j]` ."
-msgstr "crwdns83985:0:math:crwdnd83985:0{itemsize}crwdnd83985:0:math:crwdnd83985:0{j}crwdnd83985:0{ self.shape }crwdnd83985:0[j]crwdne83985:0"
+msgstr "crwdns117987:0:math:crwdnd117987:0{itemsize}crwdnd117987:0:math:crwdnd117987:0{j}crwdnd117987:0{ self.shape }crwdnd117987:0[j]crwdne117987:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:127
 msgid "索引为 :math:`T[n_0, n_1, \\ldots , n_{N-1}]` 元素的字节偏移量为："
-msgstr "crwdns83987:0:math:crwdnd83987:0{N-1}crwdne83987:0"
+msgstr "crwdns117989:0:math:crwdnd117989:0{N-1}crwdne117989:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:129
 msgid "n_{\\text {offset }}=\\sum_{k=0}^{N-1} s_{k} n_{k}"
-msgstr "crwdns83989:0{offset }crwdnd83989:0{N-1}crwdnd83989:0{k}crwdnd83989:0{k}crwdne83989:0"
+msgstr "crwdns117991:0{offset }crwdnd117991:0{N-1}crwdnd117991:0{k}crwdnd117991:0{k}crwdne117991:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:134
 msgid "步幅概念的用途"
-msgstr "crwdns83991:0crwdne83991:0"
+msgstr "crwdns117993:0crwdne117993:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:138
 msgid "对于一些改变形状的 Tensor 操作，我们可以通过修改步幅来避免实际进行内存的拷贝。"
-msgstr "crwdns83993:0crwdne83993:0"
+msgstr "crwdns117995:0crwdne117995:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:143
 msgid "format介绍"
-msgstr "crwdns83995:0crwdne83995:0"
+msgstr "crwdns117997:0crwdne117997:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:145
 msgid "​在深度学习框架中，如下图所示，通用的神经网络特征图用4维数组组成，然而对于计算机而言，数据的存储只能是线性的，因此不同的数据排布（format）方式，会显著影响计算性能，其中针对GPU的特点，Megengine采用的数据排布方式有：NCHW、NHWC、NCHW4、NCHW32、NCHW64和CHWN4等等。"
-msgstr "crwdns83997:0crwdne83997:0"
+msgstr "crwdns117999:0crwdne117999:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:147
 msgid "为更好的说明不同format的具体含义，下图列举了128个tensor的逻辑结构。其中N、H、W和C分别为："
-msgstr "crwdns83999:0crwdne83999:0"
+msgstr "crwdns118001:0crwdne118001:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:149
 msgid "N：Batch。表示图片的批次，此处为2；"
-msgstr "crwdns84001:0crwdne84001:0"
+msgstr "crwdns118003:0crwdne118003:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:150
 msgid "H：Height。表示图片的高，此处为3；"
-msgstr "crwdns84003:0crwdne84003:0"
+msgstr "crwdns118005:0crwdne118005:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:151
 msgid "W：Weight。表示图片的宽，此处为3；"
-msgstr "crwdns84005:0crwdne84005:0"
+msgstr "crwdns118007:0crwdne118007:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:152
 msgid "C：Channel。表示图片的通道数，此处为64。"
-msgstr "crwdns84007:0crwdne84007:0"
+msgstr "crwdns118009:0crwdne118009:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:157
 msgid "NCHW 和 NHWC"
-msgstr "crwdns84009:0crwdne84009:0"
+msgstr "crwdns118011:0crwdne118011:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:159
 #: ../../source/user-guide/model-development/tensor/layout.rst:179
 #: ../../source/user-guide/model-development/tensor/layout.rst:203
 msgid "**排布方式**"
-msgstr "crwdns84011:0crwdne84011:0"
+msgstr "crwdns118013:0crwdne118013:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:161
 msgid "对于计算机而言，数据的存储只能是线性的，其中 NCHW 和 NHWC 最为常用，下图列举了 NCHW 和 NHWC 的物理存储结构："
-msgstr "crwdns84013:0crwdne84013:0"
+msgstr "crwdns118015:0crwdne118015:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:165
 msgid "对于 NCHW 而言，优先存储W维度，之后按照H、C和N分别存储，因此按照顺序从0000一直存储到1151；"
-msgstr "crwdns84015:0crwdne84015:0"
+msgstr "crwdns118017:0crwdne118017:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:167
 msgid "对于 NHWC 而言，优先存储C维度，因此优先存储0000、0009一直到1143，之后继续按照W、H和N分别存储，存储0001、0010等；"
-msgstr "crwdns84017:0crwdne84017:0"
+msgstr "crwdns118019:0crwdne118019:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:169
 #: ../../source/user-guide/model-development/tensor/layout.rst:192
 #: ../../source/user-guide/model-development/tensor/layout.rst:210
 msgid "**特性**"
-msgstr "crwdns84019:0crwdne84019:0"
+msgstr "crwdns118021:0crwdne118021:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:172
 msgid "对于\"NCHW\" 而言，其同一个通道的像素值连续排布，更适合那些需要对 **每个通道单独做运算** 的操作，比如\"MaxPooling\"。"
-msgstr "crwdns84021:0crwdne84021:0"
+msgstr "crwdns118023:0crwdne118023:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:173
 msgid "对于\"NHWC\"而言，其不同通道中的同一位置元素顺序存储，因此更适合那些需要对 **不同通道的同一像素做某种运算** 的操作，比如“Conv”。"
-msgstr "crwdns84023:0crwdne84023:0"
+msgstr "crwdns118025:0crwdne118025:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:176
 msgid "NCHWX"
-msgstr "crwdns84025:0crwdne84025:0"
+msgstr "crwdns118027:0crwdne118027:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:177
 msgid "[Batch, Channels/X, Height, Width, X=4，32或64]"
-msgstr "crwdns84027:0crwdne84027:0"
+msgstr "crwdns118029:0crwdne118029:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:181
 msgid "由于典型的卷积神经网络随着层数的增加，其特征图在下采样后的长和宽逐渐减小， 但是channel数随着卷积的filter的个数不断增大是越来越大的，经常会出现channel数为128，256等很深的特征图。 这些很深的特征图与filter数很多的卷积层进行运算的运算量很大。 为了充分利用有限的矩阵计算单元，进行了Channel维度的拆分是很有必要的。Megengine根据不同数据结构特点，分别对Channel维进行了Channel/4，Channel/32和Channel/64的拆分， 下图为NCHWX的物理存储结构。"
-msgstr "crwdns84029:0crwdne84029:0"
+msgstr "crwdns118031:0crwdne118031:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:189
 msgid "NCHWX最先存储的都是Channel维，不同点在于因为X的不同，优先存储的Channel个数不同，NCHW4 优先存储4个channel维，此处为0000、0009、0018和0027，之后继续按照W、H、C和N进行存，此处继续存0001、0010等； NCHW32和NCHW64类似，不过优先存储的分别为32个channel和64个channel，之后继续按照W、H、C和N进行存。"
-msgstr "crwdns84031:0crwdne84031:0"
+msgstr "crwdns118033:0crwdne118033:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:195
 msgid "​更好的适配SIMT，其中NCHW4可以针对int8数据类型，利用CUDA的dp4a模块进行计算，而NCHW32和NCHW64分别针对int8和int4数据类型，更好的利用CUDA的tensorcore计算单元进行计算；"
-msgstr "crwdns84033:0crwdne84033:0"
+msgstr "crwdns118035:0crwdne118035:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:196
 msgid "对cache更友好，减少cache miss；"
-msgstr "crwdns84035:0crwdne84035:0"
+msgstr "crwdns118037:0crwdne118037:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:197
 msgid "易进行padding，减少边界分支判断，代码逻辑简单。"
-msgstr "crwdns84037:0crwdne84037:0"
+msgstr "crwdns118039:0crwdne118039:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:200
 msgid "CHWN4"
-msgstr "crwdns84039:0crwdne84039:0"
+msgstr "crwdns118041:0crwdne118041:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:201
 msgid "为了更好的适配cuda的dp4a和tensorcore处理单元，引入了CHWN4。"
-msgstr "crwdns84041:0crwdne84041:0"
+msgstr "crwdns118043:0crwdne118043:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:208
 msgid "CHWN4优先存储Channel维，存储4个数，0000、0009、0018和0027之后，沿着N维，直接存0576到0603，之后在沿W维和H维，存0001和0010等。"
-msgstr "crwdns84043:0crwdne84043:0"
+msgstr "crwdns118045:0crwdne118045:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:213
 msgid "相较于NCHWX，可以更好的利用dp4a和tensorcore处理单元，不需要layout转换；"
-msgstr "crwdns84045:0crwdne84045:0"
+msgstr "crwdns118047:0crwdne118047:0"
 
 #: ../../source/user-guide/model-development/tensor/layout.rst:214
 msgid "此外依然具有对cache友好，及易进行padding的优点。"
-msgstr "crwdns84047:0crwdne84047:0"
+msgstr "crwdns118049:0crwdne118049:0"
 
