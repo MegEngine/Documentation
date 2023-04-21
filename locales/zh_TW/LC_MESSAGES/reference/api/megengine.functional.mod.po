@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:23\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:19\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,60 +11,165 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.mod.po\n"
-"X-Crowdin-File-ID: 2220\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.mod.po\n"
+"X-Crowdin-File-ID: 9181\n"
 
 #: ../../source/reference/api/megengine.functional.mod.rst:2
 msgid "megengine.functional.mod"
-msgstr "crwdns31518:0crwdne31518:0"
+msgstr "crwdns101183:0crwdne101183:0"
 
 #: megengine.functional.elemwise.mod:1 of
-msgid "Returns the remainder of division for each element ``x_i`` of the input tensor ``x`` and the respective element ``y_i`` of the input tensor ``y``."
-msgstr "crwdns93474:0crwdne93474:0"
+msgid "Element-wise :math:`\\operatorname{mod}(x, y)` function."
+msgstr "crwdns101185:0:math:crwdnd101185:0{mod}crwdne101185:0"
 
-#: megengine.functional.elemwise.mod:4 of
+#: megengine.functional.elemwise.mod:3 of
+msgid "Returns the remainder of division for each element :math:`x_i` of the input tensor :math:`x` and the respective element :math:`y_i` of the input tensor :math:`y`."
+msgstr "crwdns101187:0:math:crwdnd101187:0:math:crwdnd101187:0:math:crwdnd101187:0:math:crwdne101187:0"
+
+#: megengine.functional.elemwise.mod:8 of
+#, python-format
+msgid "In general, similar to Python’s % operator, this function is not recommended for floating-point operands as semantics do not follow IEEE 754. That this function is specified to accept floating-point operands is primarily for reasons of backward compatibility."
+msgstr "crwdns101189:0crwdne101189:0"
+
+#: megengine.functional.elemwise.mod:10 of
 msgid "``mod`` is an alias of ``remainder`` in NumPy."
-msgstr "crwdns93476:0crwdne93476:0"
+msgstr "crwdns101191:0crwdne101191:0"
 
-#: megengine.functional.elemwise.mod:6 of
+#: megengine.functional.elemwise.mod:12 of
 msgid ":func:`~.div` / :func:`~.floor_div`"
-msgstr "crwdns93478:0:func:crwdnd93478:0:func:crwdne93478:0"
+msgstr "crwdns101193:0:func:crwdnd101193:0:func:crwdne101193:0"
 
 #: megengine.functional.elemwise.mod of
 msgid "参数"
-msgstr "crwdns93480:0crwdne93480:0"
+msgstr "crwdns101195:0crwdne101195:0"
 
-#: megengine.functional.elemwise.mod:9 of
+#: megengine.functional.elemwise.mod:15 of
 msgid "dividend input tensor. Should have a numeric data type."
-msgstr "crwdns93482:0crwdne93482:0"
+msgstr "crwdns101197:0crwdne101197:0"
 
-#: megengine.functional.elemwise.mod:11 of
-msgid "divisor input tensor. Must be compatible with ``x`` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
-msgstr "crwdns93484:0:ref:crwdne93484:0"
+#: megengine.functional.elemwise.mod:17 of
+msgid "divisor input tensor. Must be compatible with :math:`x` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
+msgstr "crwdns101199:0:math:crwdnd101199:0:ref:crwdne101199:0"
 
 #: megengine.functional.elemwise.mod of
 msgid "返回类型"
-msgstr "crwdns93486:0crwdne93486:0"
+msgstr "crwdns101201:0crwdne101201:0"
 
-#: megengine.functional.elemwise.mod:13 of
+#: megengine.functional.elemwise.mod:19 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr "crwdns93488:0crwdne93488:0"
+msgstr "crwdns101203:0crwdne101203:0"
 
 #: megengine.functional.elemwise.mod of
 msgid "返回"
-msgstr "crwdns93490:0crwdne93490:0"
+msgstr "crwdns101205:0crwdne101205:0"
 
-#: megengine.functional.elemwise.mod:14 of
+#: megengine.functional.elemwise.mod:20 of
 msgid "A tensor containing the element-wise results. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
-msgstr "crwdns93492:0:ref:crwdne93492:0"
+msgstr "crwdns101207:0:ref:crwdne101207:0"
 
-#: megengine.functional.elemwise.mod:17 of
+#: megengine.functional.elemwise.mod:23 of
+msgid "Special cases"
+msgstr "crwdns101209:0crwdne101209:0"
+
+#: megengine.functional.elemwise.mod:25 of
+msgid "For floating-point operands,"
+msgstr "crwdns101211:0crwdne101211:0"
+
+#: megengine.functional.elemwise.mod:27 of
+msgid "If either :math:`x_i` or :math:`y_i` is ``NaN``, the result is ``NaN``."
+msgstr "crwdns101213:0:math:crwdnd101213:0:math:crwdne101213:0"
+
+#: megengine.functional.elemwise.mod:28 of
+msgid "If :math:`x_i` is either ``+infinity`` or ``-infinity`` and :math:`y_i` is either ``+infinity`` or ``-infinity``, the result is ``NaN``."
+msgstr "crwdns101215:0:math:crwdnd101215:0:math:crwdne101215:0"
+
+#: megengine.functional.elemwise.mod:29 of
+msgid "If :math:`x_i` is either ``+0`` or ``-0`` and :math:`y_i` is either ``+0`` or ``-0``, the result is ``NaN``."
+msgstr "crwdns101217:0:math:crwdnd101217:0:math:crwdne101217:0"
+
+#: megengine.functional.elemwise.mod:30 of
+msgid "If :math:`x_i` is ``+0`` and :math:`y_i` is greater than 0, the result is ``+0``."
+msgstr "crwdns101219:0:math:crwdnd101219:0:math:crwdne101219:0"
+
+#: megengine.functional.elemwise.mod:31 of
+msgid "If :math:`x_i` is ``-0`` and :math:`y_i` is greater than 0, the result is ``+0``."
+msgstr "crwdns101221:0:math:crwdnd101221:0:math:crwdne101221:0"
+
+#: megengine.functional.elemwise.mod:32 of
+msgid "If :math:`x_i` is ``+0`` and :math:`y_i` is less than 0, the result is ``-0``."
+msgstr "crwdns101223:0:math:crwdnd101223:0:math:crwdne101223:0"
+
+#: megengine.functional.elemwise.mod:33 of
+msgid "If :math:`x_i` is ``-0`` and :math:`y_i` is less than 0, the result is ``-0``."
+msgstr "crwdns101225:0:math:crwdnd101225:0:math:crwdne101225:0"
+
+#: megengine.functional.elemwise.mod:34 of
+msgid "If :math:`x_i` is greater than ``0`` and :math:`y_i` is ``+0``, the result is ``NaN``."
+msgstr "crwdns101227:0:math:crwdnd101227:0:math:crwdne101227:0"
+
+#: megengine.functional.elemwise.mod:35 of
+msgid "If :math:`x_i` is greater than ``0`` and :math:`y_i` is ``-0``, the result is ``NaN``."
+msgstr "crwdns101229:0:math:crwdnd101229:0:math:crwdne101229:0"
+
+#: megengine.functional.elemwise.mod:36 of
+msgid "If :math:`x_i` is less than ``0`` and :math:`y_i` is ``+0``, the result is ``NaN``."
+msgstr "crwdns101231:0:math:crwdnd101231:0:math:crwdne101231:0"
+
+#: megengine.functional.elemwise.mod:37 of
+msgid "If :math:`x_i` is less than ``0`` and :math:`y_i` is ``-0``, the result is ``NaN``."
+msgstr "crwdns101233:0:math:crwdnd101233:0:math:crwdne101233:0"
+
+#: megengine.functional.elemwise.mod:38 of
+msgid "If :math:`x_i` is ``+infinity`` and :math:`y_i` is a positive (i.e., greater than 0) finite number, the result is ``NaN``."
+msgstr "crwdns101235:0:math:crwdnd101235:0:math:crwdne101235:0"
+
+#: megengine.functional.elemwise.mod:39 of
+msgid "If :math:`x_i` is ``+infinity`` and :math:`y_i` is a negative (i.e., less than 0) finite number, the result is ``NaN``."
+msgstr "crwdns101237:0:math:crwdnd101237:0:math:crwdne101237:0"
+
+#: megengine.functional.elemwise.mod:40 of
+msgid "If :math:`x_i` is ``-infinity`` and :math:`y_i` is a positive (i.e., greater than 0) finite number, the result is ``NaN``."
+msgstr "crwdns101239:0:math:crwdnd101239:0:math:crwdne101239:0"
+
+#: megengine.functional.elemwise.mod:41 of
+msgid "If :math:`x_i` is ``-infinity`` and :math:`y_i` is a negative (i.e., less than 0) finite number, the result is ``NaN``."
+msgstr "crwdns101241:0:math:crwdnd101241:0:math:crwdne101241:0"
+
+#: megengine.functional.elemwise.mod:42 of
+msgid "If :math:`x_i` is a positive (i.e., greater than ``0``) finite number and :math:`y_i` is ``+infinity``, the result is :math:`x_i`. (note: this result matches Python behavior.)"
+msgstr "crwdns101243:0:math:crwdnd101243:0:math:crwdnd101243:0:math:crwdne101243:0"
+
+#: megengine.functional.elemwise.mod:44 of
+msgid "If :math:`x_i` is a positive (i.e., greater than ``0``) finite number and :math:`y_i` is ``-infinity``, the result is :math:`y_i`. (note: this result matches Python behavior.)"
+msgstr "crwdns101245:0:math:crwdnd101245:0:math:crwdnd101245:0:math:crwdne101245:0"
+
+#: megengine.functional.elemwise.mod:46 of
+msgid "If :math:`x_i` is a negative (i.e., less than ``0``) finite number and :math:`y_i` is ``+infinity``, the result is :math:`y_i`. (note: this results matches Python behavior.)"
+msgstr "crwdns101247:0:math:crwdnd101247:0:math:crwdnd101247:0:math:crwdne101247:0"
+
+#: megengine.functional.elemwise.mod:48 of
+msgid "If :math:`x_i` is a negative (i.e., less than ``0``) finite number and :math:`y_i` is ``-infinity``, the result is :math:`x_i`. (note: this result matches Python behavior.)"
+msgstr "crwdns101249:0:math:crwdnd101249:0:math:crwdnd101249:0:math:crwdne101249:0"
+
+#: megengine.functional.elemwise.mod:50 of
+msgid "In the remaining cases, the result must match that of the Python ``%`` operator."
+msgstr "crwdns101251:0crwdne101251:0"
+
+#: megengine.functional.elemwise.mod:53 of
 msgid "实际案例"
-msgstr "crwdns93494:0crwdne93494:0"
+msgstr "crwdns101253:0crwdne101253:0"
+
+#: megengine.functional.elemwise.mod:57 of
+msgid "Element-wise mod:"
+msgstr "crwdns101255:0crwdne101255:0"
+
+#: megengine.functional.elemwise.mod:64 of
+msgid "Broadcasting:"
+msgstr "crwdns101257:0crwdne101257:0"
 
 #~ msgid "Element-wise `remainder of division`."
 #~ msgstr "返回逐元素相除所得的余数。"
