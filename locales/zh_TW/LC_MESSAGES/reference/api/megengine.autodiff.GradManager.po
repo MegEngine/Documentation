@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 01:33\n"
+"PO-Revision-Date: 2023-04-21 09:12\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,137 +15,137 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.autodiff.GradManager.po\n"
-"X-Crowdin-File-ID: 6588\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.autodiff.GradManager.po\n"
+"X-Crowdin-File-ID: 8871\n"
 
 #: ../../source/reference/api/megengine.autodiff.GradManager.rst:5
 msgid "GradManager"
-msgstr "crwdns88711:0crwdne88711:0"
+msgstr "crwdns98133:0crwdne98133:0"
 
 #: megengine.autodiff.grad_manager.GradManager:1 of
 msgid "GradManager computes gradients or more generally, vector-Jacobian product, by reverse mode automatic differentiation (a.k.a. back propagation)."
-msgstr "crwdns61506:0crwdne61506:0"
+msgstr "crwdns98135:0crwdne98135:0"
 
 #: megengine.autodiff.grad_manager.GradManager:4 of
 msgid "Reverse mode autodiff normally reuses many intermediate tensors for best computation efficiency. In a read-eval-print-loop (REPL) environment however, it is impossible to known how the user would take gradients later thus which tensors to keep. To solve this problem, the user must somehow declare beforehand which gradient could possibly be taken. With GradManager, users are required to call the :meth:`attach` method on a tensor if they want to take gradients with respect to it later. Furthermore, any computation on a tensor before it is attached is completely ignored from the autodiff perspective, so :meth:`attach` must be called before any computation that needs differentiation."
-msgstr "crwdns61508:0:meth:crwdnd61508:0:meth:crwdne61508:0"
+msgstr "crwdns98137:0:meth:crwdnd98137:0:meth:crwdne98137:0"
 
 #: megengine.autodiff.grad_manager.GradManager:13 of
 msgid "For example, the following symbolic differentiation code"
-msgstr "crwdns61510:0crwdne61510:0"
+msgstr "crwdns98139:0crwdne98139:0"
 
 #: megengine.autodiff.grad_manager.GradManager:22 of
 msgid "can be rewriten using GradManager for REPL environment as"
-msgstr "crwdns61512:0crwdne61512:0"
+msgstr "crwdns98141:0crwdne98141:0"
 
 #: megengine.autodiff.grad_manager.GradManager:34 of
 msgid "A more realistic example of training a neural network would be like"
-msgstr "crwdns61514:0crwdne61514:0"
+msgstr "crwdns98143:0crwdne98143:0"
 
 #: megengine.autodiff.grad_manager.GradManager:47 of
 msgid "You can also use ``record()`` and ``release()`` method instead of ``with`` context:"
-msgstr "crwdns61516:0crwdne61516:0"
+msgstr "crwdns98145:0crwdne98145:0"
 
 #: megengine.autodiff.grad_manager.GradManager:62 of
 msgid "For your convenience, GradManager may (not must) be reused. As shown in the examples, you only need to attach a tensor once and GradManager will remember it afterwards. However, a single GradManager can record only one computation history at a time. To run multiple differentiations simultaneously or perform high order differentiation, create as many GradManager as you need."
-msgstr "crwdns61518:0crwdne61518:0"
+msgstr "crwdns98147:0crwdne98147:0"
 
 #: megengine.autodiff.grad_manager.GradManager:70 of
 msgid "Mutable tensors introduce ambiguities when doing symbolic differentiation: which version of the tensor are we referring to? For attached tensors, GradManager resolves this ambiguity by \"snapshoting\" them on first encounter, either on :meth:`record` (or entering with statement) if tensor is attached before :meth:`record`, or on :meth:`attach` if GradManager is already recording. Attached tensors will then be interpreted as their snapshotted version for differentiation purpose. The same ambiguity on the first parameter of :meth:`backward` is simply resolved by using the latest version."
-msgstr "crwdns61520:0:meth:crwdnd61520:0:meth:crwdnd61520:0:meth:crwdnd61520:0:meth:crwdne61520:0"
+msgstr "crwdns98149:0:meth:crwdnd98149:0:meth:crwdnd98149:0:meth:crwdnd98149:0:meth:crwdne98149:0"
 
 #: megengine.autodiff.grad_manager.GradManager:78 of
 msgid "Typically, in data parallel, we would like to average the gradients across processes. Users will finally get the averaged gradients if an \"AllReduce\" callback is registered as follows:"
-msgstr "crwdns61522:0crwdne61522:0"
+msgstr "crwdns98151:0crwdne98151:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:1 of
 msgid "Instruct GradManager to track operations on tensors, so that gradients with respect to those tensors could be evaluated later."
-msgstr "crwdns61528:0crwdne61528:0"
+msgstr "crwdns98153:0crwdne98153:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:4 of
 msgid ":meth:`attach` also accepts a list of callbacks, which will be called with the tensor and its gradient during :meth:`backward`. The signature of callbacks should look like:"
-msgstr "crwdns88713:0:meth:crwdnd88713:0:meth:crwdne88713:0"
+msgstr "crwdns98155:0:meth:crwdnd98155:0:meth:crwdne98155:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:15 of
 msgid ":meth:`attach` calls with overlapping tensors will result in their callbacks concatenated, independently for each tensor. For example,"
-msgstr "crwdns88715:0:meth:crwdne88715:0"
+msgstr "crwdns98157:0:meth:crwdne98157:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:23 of
 msgid "is equivalent to"
-msgstr "crwdns88717:0crwdne88717:0"
+msgstr "crwdns98159:0crwdne98159:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:30 of
 msgid "The effect of :meth:`attach` will persist across multiple uses of the GradManager. When reusing a GradManager, it is likely a mistake to call :meth:`attach` on the same set of tensors and callbacks repeatedly, which may grow the callback list indefinitely."
-msgstr "crwdns88719:0:meth:crwdnd88719:0:meth:crwdne88719:0"
+msgstr "crwdns98161:0:meth:crwdnd98161:0:meth:crwdne98161:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:36 of
 msgid "When reusing a GradManager, it is sometimes desirable to attach temporary tensors each time, e.g. for computing gradients of inputs of a neural network. GradManager tries to accommodate such usages by holding weak references to attached tensors. Most of the times, this should be enough to prevent resource leak. Unfortunately, there are still some pitfalls left:"
-msgstr "crwdns88721:0crwdne88721:0"
+msgstr "crwdns98163:0crwdne98163:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:42 of
 msgid "Callbacks should not hold strong references, directly or indirectly, to attached tensors. Any strong reference, including those from callbacks, will prevent garbage collection (even by the cycle collector!) of a attached tensor, until the GradManager object is garbage collected."
-msgstr "crwdns88723:0crwdne88723:0"
+msgstr "crwdns98165:0crwdne98165:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:47 of
 msgid "Please also note that GradManager might hold additional strong references to attached tensors when it is in use. This note only covers potential resource leaks across multiple uses of a GradManager, which is unrelated to whether resources is timely released within a single use."
-msgstr "crwdns88725:0crwdne88725:0"
+msgstr "crwdns98167:0crwdne98167:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach
 #: megengine.autodiff.grad_manager.GradManager.backward of
 msgid "参数"
-msgstr "crwdns88727:0crwdne88727:0"
+msgstr "crwdns98169:0crwdne98169:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:53 of
 msgid "tensor or list of tensors to track"
-msgstr "crwdns88729:0crwdne88729:0"
+msgstr "crwdns98171:0crwdne98171:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attach:54 of
 msgid "callback or list of callbacks"
-msgstr "crwdns88731:0crwdne88731:0"
+msgstr "crwdns98173:0crwdne98173:0"
 
 #: megengine.autodiff.grad_manager.GradManager.attached_tensors:1 of
 msgid "Return attached tensor list from :meth:`attach`."
-msgstr "crwdns68427:0:meth:crwdne68427:0"
+msgstr "crwdns98175:0:meth:crwdne98175:0"
 
 #: megengine.autodiff.grad_manager.GradManager.backward:1 of
 msgid "Compute gradients (or vector-Jacobian product) for all attached tensors, accumulate to corresponding .grad attribute, and release resources along the way."
-msgstr "crwdns61532:0crwdne61532:0"
+msgstr "crwdns98177:0crwdne98177:0"
 
 #: megengine.autodiff.grad_manager.GradManager.backward:4 of
 msgid ":meth:`backward` computes the vector-Jacobian product :math:`dx_j = \\sum_{i} dy_i J_{ij}` where :math:`J_{ij} = ∂y_i/∂x_j` is the Jacobian matrix between vector variables :math:`y` and :math:`x`, with all vectors involved represented as a list of tensors, in the sense of direct sums (or flatten-and-concatenate). :math:`y` and :math:`dy` are passed as the first and second parameter respectively, whereas :math:`x` is directly taken from the list of all attached tensors. The result :math:`dx` is also not returned. Instead, it is directly accumulated into the .grad attribute of matching attached tensors (a.k.a. :math:`x`). This can be done unambiguously since :math:`dx` as a list of tensors has the same structure as :math:`x`."
-msgstr "crwdns88733:0:meth:crwdnd88733:0:math:crwdnd88733:0{i}crwdnd88733:0{ij}crwdnd88733:0:math:crwdnd88733:0{ij}crwdnd88733:0:math:crwdnd88733:0:math:crwdnd88733:0:math:crwdnd88733:0:math:crwdnd88733:0:math:crwdnd88733:0:math:crwdnd88733:0:math:crwdnd88733:0:math:crwdnd88733:0:math:crwdne88733:0"
+msgstr "crwdns98179:0:meth:crwdnd98179:0:math:crwdnd98179:0{i}crwdnd98179:0{ij}crwdnd98179:0:math:crwdnd98179:0{ij}crwdnd98179:0:math:crwdnd98179:0:math:crwdnd98179:0:math:crwdnd98179:0:math:crwdnd98179:0:math:crwdnd98179:0:math:crwdnd98179:0:math:crwdnd98179:0:math:crwdnd98179:0:math:crwdne98179:0"
 
 #: megengine.autodiff.grad_manager.GradManager.backward:14 of
 msgid "If :math:`y` is a scalar and :math:`dy` is chosen to be 1, the vector-Jacobian product yield gradient of :math:`y` with repect to :math:`x` as a special case. In that case, you will be able to omit the :math:`dy` parameter and :meth:`backward` will automatically use 1 for it and compute the gradient."
-msgstr "crwdns88735:0:math:crwdnd88735:0:math:crwdnd88735:0:math:crwdnd88735:0:math:crwdnd88735:0:math:crwdnd88735:0:meth:crwdne88735:0"
+msgstr "crwdns98181:0:math:crwdnd98181:0:math:crwdnd98181:0:math:crwdnd98181:0:math:crwdnd98181:0:math:crwdnd98181:0:meth:crwdne98181:0"
 
 #: megengine.autodiff.grad_manager.GradManager.backward:19 of
 msgid ":meth:`backward` consumes all resources held by this GradManager and releases them in the process of this call. When the call successfully finishes, the GradManager will be put back to an inactive state."
-msgstr "crwdns88737:0:meth:crwdne88737:0"
+msgstr "crwdns98183:0:meth:crwdne98183:0"
 
 #: megengine.autodiff.grad_manager.GradManager.backward:24 of
 msgid "tensor or list of tensors"
-msgstr "crwdns88739:0crwdne88739:0"
+msgstr "crwdns98185:0crwdne98185:0"
 
 #: megengine.autodiff.grad_manager.GradManager.backward:26 of
 msgid "tensor or list of tensors. Defaults to 1 if y is scalar"
-msgstr "crwdns88741:0crwdne88741:0"
+msgstr "crwdns98187:0crwdne98187:0"
 
 #: megengine.autodiff.grad_manager.GradManager.record:1 of
 msgid "Start recording operations"
-msgstr "crwdns61536:0crwdne61536:0"
+msgstr "crwdns98189:0crwdne98189:0"
 
 #: megengine.autodiff.grad_manager.GradManager.record:3 of
 msgid "After this call, you will be able to call :meth:`backward`."
-msgstr "crwdns88743:0:meth:crwdne88743:0"
+msgstr "crwdns98191:0:meth:crwdne98191:0"
 
 #: megengine.autodiff.grad_manager.GradManager.release:1 of
 msgid "Stop recording operations and release resources kept for gradient computation"
-msgstr "crwdns61540:0crwdne61540:0"
+msgstr "crwdns98193:0crwdne98193:0"
 
 #: megengine.autodiff.grad_manager.GradManager.release:3 of
 msgid "After this call, you will not be able to call :meth:`backward`."
-msgstr "crwdns88745:0:meth:crwdne88745:0"
+msgstr "crwdns98195:0:meth:crwdne98195:0"
 
 #~ msgid "megengine.autodiff.GradManager"
 #~ msgstr ""
