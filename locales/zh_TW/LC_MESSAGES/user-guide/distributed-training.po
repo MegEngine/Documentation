@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 10:50+0800\n"
-"PO-Revision-Date: 2021-07-07 18:42\n"
+"PO-Revision-Date: 2023-04-21 09:34\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,228 +15,228 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/distributed-training.po\n"
-"X-Crowdin-File-ID: 2846\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/distributed-training.po\n"
+"X-Crowdin-File-ID: 9867\n"
 
 #: ../../source/user-guide/distributed-training.rst:5
 msgid "分布式训练（Distributed Training）"
-msgstr "crwdns61352:0crwdne61352:0"
+msgstr "crwdns115149:0crwdne115149:0"
 
 #: ../../source/user-guide/distributed-training.rst:7
 msgid "本章我们将介绍如何在 MegEngine 中高效地利用多 GPU 进行分布式训练。 分布式训练是指同时利用一台或者多台机器上的 GPU 进行并行计算。 在深度学习领域，最常见的并行计算方式是在数据层面进行的， 即每个 GPU 各自负责一部分数据，并需要跑通整个训练和推理流程。 这种方式叫做 **数据并行** 。"
-msgstr "crwdns45262:0crwdne45262:0"
+msgstr "crwdns115151:0crwdne115151:0"
 
 #: ../../source/user-guide/distributed-training.rst:13
 msgid "目前 MegEngine 开放的接口支持单机多卡和多机多卡的数据并行方式。"
-msgstr "crwdns45264:0crwdne45264:0"
+msgstr "crwdns115153:0crwdne115153:0"
 
 #: ../../source/user-guide/distributed-training.rst:17
 msgid "单机多卡"
-msgstr "crwdns45266:0crwdne45266:0"
+msgstr "crwdns115155:0crwdne115155:0"
 
 #: ../../source/user-guide/distributed-training.rst:19
 msgid "单机多卡是最为常用的方式，比如单机四卡、单机八卡，足以支持我们完成大部分模型的训练。"
-msgstr "crwdns45268:0crwdne45268:0"
+msgstr "crwdns115157:0crwdne115157:0"
 
 #: ../../source/user-guide/distributed-training.rst:21
 msgid "本节我们按照以下顺序进行介绍："
-msgstr "crwdns45270:0crwdne45270:0"
+msgstr "crwdns115159:0crwdne115159:0"
 
 #: ../../source/user-guide/distributed-training.rst:23
 #: ../../source/user-guide/distributed-training.rst:27
 msgid "如何启动一个单机多卡的训练"
-msgstr "crwdns45272:0crwdne45272:0"
+msgstr "crwdns115161:0crwdne115161:0"
 
 #: ../../source/user-guide/distributed-training.rst:24
 msgid "如何在多进程环境中将模型保存与加载"
-msgstr "crwdns45278:0crwdne45278:0"
+msgstr "crwdns115163:0crwdne115163:0"
 
 #: ../../source/user-guide/distributed-training.rst:29
 msgid "我们提供了一个单机多卡的启动器。代码示例："
-msgstr "crwdns45280:0crwdne45280:0"
+msgstr "crwdns115165:0crwdne115165:0"
 
 #: ../../source/user-guide/distributed-training.rst:104
 msgid "和单卡训练相比，单机多卡的训练代码只有几行代码的不同"
-msgstr "crwdns64416:0crwdne64416:0"
+msgstr "crwdns115167:0crwdne115167:0"
 
 #: ../../source/user-guide/distributed-training.rst:106
 msgid "@dist.launcher"
-msgstr "crwdns64418:0crwdne64418:0"
+msgstr "crwdns115169:0crwdne115169:0"
 
 #: ../../source/user-guide/distributed-training.rst:107
 msgid "dist.bcast_list_(params)"
-msgstr "crwdns64420:0crwdne64420:0"
+msgstr "crwdns115171:0crwdne115171:0"
 
 #: ../../source/user-guide/distributed-training.rst:108
 msgid "gm.attach(params, callbacks=[dist.make_allreduce_cb(\"sum\")])"
-msgstr "crwdns64422:0crwdne64422:0"
+msgstr "crwdns115173:0crwdne115173:0"
 
 #: ../../source/user-guide/distributed-training.rst:110
 msgid "下面我会逐一解释这几句话分别有什么含义"
-msgstr "crwdns64424:0crwdne64424:0"
+msgstr "crwdns115175:0crwdne115175:0"
 
 #: ../../source/user-guide/distributed-training.rst:116
 msgid ":class:`~.distributed.launcher` 将一个 function 包装成一个多进程运行的 function (默认根据机器上的 device 数量开启多进程)， 每个进程会在最开始根据 rank 设定默认 deivce, 假如是一台 8 卡机器，那么就会开启 8 个进程，rank 分别为 0 到 8 ，device 为 gpu0 到 gpu7."
-msgstr "crwdns45282:0:class:crwdne45282:0"
+msgstr "crwdns115177:0:class:crwdne115177:0"
 
 #: ../../source/user-guide/distributed-training.rst:123
 msgid ":func:`~.distributed.bcast_list_` 用于同步各个进程之间的参数，默认在全局范围（所有计算设备）同步，可以设置group参数在特定的group之间同步"
-msgstr "crwdns64426:0:func:crwdne64426:0"
+msgstr "crwdns115179:0:func:crwdne115179:0"
 
 #: ../../source/user-guide/distributed-training.rst:127
 msgid "注意，有些情况下不仅要同步参数，还需要同步统计量，比如 :class:`~module.BatchNorm2d` 的均值和方差统计量"
-msgstr "crwdns64428:0:class:crwdne64428:0"
+msgstr "crwdns115181:0:class:crwdne115181:0"
 
 #: ../../source/user-guide/distributed-training.rst:133
 msgid "在数据并行的情况下，由于每张卡只负责一部分数据，所以求导之后只会有部分导数， 在GradManager中注册对于梯度的回调函数，在对应参数的导数求完之后， 做一个 :func:`~.distributed.all_reduce_sum` 操作进行全局求和，这样同步各个计算设备的导数来保证参数更新的一致性"
-msgstr "crwdns64430:0:func:crwdne64430:0"
+msgstr "crwdns115183:0:func:crwdne115183:0"
 
 #: ../../source/user-guide/distributed-training.rst:139
 msgid "在 :class:`~.data.dataloader.DataLoader` 内部对多机训练有特殊支持，会自动给每个进程分配不重叠的数据进行训练，所以在数据供给方面没有做特殊处理， 如果没有使用 :class:`~.data.dataloader.DataLoader` ，则需要自己手动给不同 rank 的设备分配不重叠的数据进行训练 就像下面这样"
-msgstr "crwdns64432:0:class:crwdnd64432:0:class:crwdne64432:0"
+msgstr "crwdns115185:0:class:crwdnd115185:0:class:crwdne115185:0"
 
 #: ../../source/user-guide/distributed-training.rst:154
 msgid "模型保存与加载"
-msgstr "crwdns45296:0crwdne45296:0"
+msgstr "crwdns115187:0crwdne115187:0"
 
 #: ../../source/user-guide/distributed-training.rst:156
 msgid "在 MegEngine 中，依赖于上面提到的状态同步机制，我们保持了各个进程状态的一致， 因此可以很容易地实现模型的保存和加载。"
-msgstr "crwdns45298:0crwdne45298:0"
+msgstr "crwdns115189:0crwdne115189:0"
 
 #: ../../source/user-guide/distributed-training.rst:159
 msgid "对于加载，我们只要在主进程（rank 0 进程）中加载模型参数， 然后调用 :func:`~.distributed.bcast_list_` 对各个进程的参数进行同步，就保持了各个进程的状态一致。"
-msgstr "crwdns45300:0:func:crwdne45300:0"
+msgstr "crwdns115191:0:func:crwdne115191:0"
 
 #: ../../source/user-guide/distributed-training.rst:162
 msgid "对于保存，由于我们在梯度计算中插入了 callback 函数对各个进程的梯度进行累加， 所以我们进行参数更新后的参数还是一致的，可以直接保存。"
-msgstr "crwdns45302:0crwdne45302:0"
+msgstr "crwdns115193:0crwdne115193:0"
 
 #: ../../source/user-guide/distributed-training.rst:165
 msgid "可以参考以下示例代码实现："
-msgstr "crwdns45304:0crwdne45304:0"
+msgstr "crwdns115195:0crwdne115195:0"
 
 #: ../../source/user-guide/distributed-training.rst:198
 msgid "多机多卡"
-msgstr "crwdns45318:0crwdne45318:0"
+msgstr "crwdns115197:0crwdne115197:0"
 
 #: ../../source/user-guide/distributed-training.rst:200
 msgid "在 MegEngine 中，我们能很方便地将上面单机多卡的代码修改为多机多卡， 只需修改传给 :class:`~.megengine.distributed.launcher` 的参数就可以进行多机多卡训练，其他部分和单机多卡一样。"
-msgstr "crwdns64434:0:class:crwdne64434:0"
+msgstr "crwdns115199:0:class:crwdne115199:0"
 
 #: ../../source/user-guide/distributed-training.rst:211
 msgid "参数含义"
-msgstr "crwdns64436:0crwdne64436:0"
+msgstr "crwdns115201:0crwdne115201:0"
 
 #: ../../source/user-guide/distributed-training.rst:217
 msgid "参数名"
-msgstr "crwdns64438:0crwdne64438:0"
+msgstr "crwdns115203:0crwdne115203:0"
 
 #: ../../source/user-guide/distributed-training.rst:218
 msgid "数据类型"
-msgstr "crwdns64440:0crwdne64440:0"
+msgstr "crwdns115205:0crwdne115205:0"
 
 #: ../../source/user-guide/distributed-training.rst:219
 msgid "实际含义"
-msgstr "crwdns64442:0crwdne64442:0"
+msgstr "crwdns115207:0crwdne115207:0"
 
 #: ../../source/user-guide/distributed-training.rst:220
 msgid "world_size"
-msgstr "crwdns64444:0crwdne64444:0"
+msgstr "crwdns115209:0crwdne115209:0"
 
 #: ../../source/user-guide/distributed-training.rst:221
 #: ../../source/user-guide/distributed-training.rst:224
 #: ../../source/user-guide/distributed-training.rst:227
 #: ../../source/user-guide/distributed-training.rst:233
 msgid "int"
-msgstr "crwdns64446:0crwdne64446:0"
+msgstr "crwdns115211:0crwdne115211:0"
 
 #: ../../source/user-guide/distributed-training.rst:222
 msgid "训练的用到的总卡数"
-msgstr "crwdns64448:0crwdne64448:0"
+msgstr "crwdns115213:0crwdne115213:0"
 
 #: ../../source/user-guide/distributed-training.rst:223
 msgid "n_gpus"
-msgstr "crwdns64450:0crwdne64450:0"
+msgstr "crwdns115215:0crwdne115215:0"
 
 #: ../../source/user-guide/distributed-training.rst:225
 msgid "运行时这台物理机的卡数"
-msgstr "crwdns64452:0crwdne64452:0"
+msgstr "crwdns115217:0crwdne115217:0"
 
 #: ../../source/user-guide/distributed-training.rst:226
 msgid "rank_start"
-msgstr "crwdns64454:0crwdne64454:0"
+msgstr "crwdns115219:0crwdne115219:0"
 
 #: ../../source/user-guide/distributed-training.rst:228
 msgid "这台机器的 rank 起始值"
-msgstr "crwdns64456:0crwdne64456:0"
+msgstr "crwdns115221:0crwdne115221:0"
 
 #: ../../source/user-guide/distributed-training.rst:229
 msgid "master_ip"
-msgstr "crwdns64458:0crwdne64458:0"
+msgstr "crwdns115223:0crwdne115223:0"
 
 #: ../../source/user-guide/distributed-training.rst:230
 msgid "str"
-msgstr "crwdns64460:0crwdne64460:0"
+msgstr "crwdns115225:0crwdne115225:0"
 
 #: ../../source/user-guide/distributed-training.rst:231
 msgid "rank 0 所在机器的 IP 地址"
-msgstr "crwdns64462:0crwdne64462:0"
+msgstr "crwdns115227:0crwdne115227:0"
 
 #: ../../source/user-guide/distributed-training.rst:232
 msgid "port"
-msgstr "crwdns64464:0crwdne64464:0"
+msgstr "crwdns115229:0crwdne115229:0"
 
 #: ../../source/user-guide/distributed-training.rst:234
 msgid "分布式训练 master server 使用的端口号"
-msgstr "crwdns64466:0crwdne64466:0"
+msgstr "crwdns115231:0crwdne115231:0"
 
 #: ../../source/user-guide/distributed-training.rst:237
 msgid "流水线并行"
-msgstr "crwdns64468:0crwdne64468:0"
+msgstr "crwdns115233:0crwdne115233:0"
 
 #: ../../source/user-guide/distributed-training.rst:239
 msgid "在 MegEngine 中，也支持流水线的方式来做训练。"
-msgstr "crwdns64470:0crwdne64470:0"
+msgstr "crwdns115235:0crwdne115235:0"
 
 #: ../../source/user-guide/distributed-training.rst:241
 msgid "最简单的流水线并行就是把一个模型拆分成上下两个部分来做，在 MegEngine 中可以简单的实现。"
-msgstr "crwdns64472:0crwdne64472:0"
+msgstr "crwdns115237:0crwdne115237:0"
 
 #: ../../source/user-guide/distributed-training.rst:243
 msgid "下面是一个简单的例子来展示怎么写一个流水线的训练："
-msgstr "crwdns64474:0crwdne64474:0"
+msgstr "crwdns115239:0crwdne115239:0"
 
 #: ../../source/user-guide/distributed-training.rst:295
 msgid "常见问题"
-msgstr "crwdns45332:0crwdne45332:0"
+msgstr "crwdns115241:0crwdne115241:0"
 
 #: ../../source/user-guide/distributed-training.rst:297
 msgid "Q：为什么在多机多卡训练开始前还正常，进入多卡训练之后就报错 ``cuda init error`` ?"
-msgstr "crwdns64476:0crwdne64476:0"
+msgstr "crwdns115243:0crwdne115243:0"
 
 #: ../../source/user-guide/distributed-training.rst:299
 msgid "A：请确保在进入多机多卡训练之前主进程没有进行 cuda 相关操作，cuda 在已经初始化的状态下进行 fork 操作会导致 fork 的进程中 cuda 不可用， 参考 `这里 <https://stackoverflow.com/questions/22950047/cuda-initialization-error-after-fork>`_ . 建议用 numpy 数组作为输入输出来使用 launcher 包装的函数。"
-msgstr "crwdns64478:0crwdne64478:0"
+msgstr "crwdns115245:0crwdne115245:0"
 
 #: ../../source/user-guide/distributed-training.rst:302
 msgid "Q：为什么我自己用 :py:mod:`multiprocessing` 写多机多卡训练总是卡住？"
-msgstr "crwdns64480:0crwdne64480:0"
+msgstr "crwdns115247:0crwdne115247:0"
 
 #: ../../source/user-guide/distributed-training.rst:304
 msgid "A：可以在函数结束前调用 :func:`~.distributed.group_barrier` 来避免卡死的情况"
-msgstr "crwdns64482:0:func:crwdne64482:0"
+msgstr "crwdns115249:0:func:crwdne115249:0"
 
 #: ../../source/user-guide/distributed-training.rst:306
 msgid "在 MegEngine 中，为了保证性能，会异步执行相应的 cuda kernel，所以当 python 代码执行完毕时，相应的 kernel 执行还没有结束。"
-msgstr "crwdns45342:0crwdne45342:0"
+msgstr "crwdns115251:0crwdne115251:0"
 
 #: ../../source/user-guide/distributed-training.rst:307
 msgid "为了保证 kernel 全部执行完毕，MegEngine 初始化时在 :py:mod:`atexit` 里注册了全局的同步，但是 multiprocess 默认的 fork 模式在进程退出的时候，不会执行 :py:mod:`atexit` 注册的函数，导致 kernel 没有执行完。"
-msgstr "crwdns45344:0crwdne45344:0"
+msgstr "crwdns115253:0crwdne115253:0"
 
 #: ../../source/user-guide/distributed-training.rst:308
 msgid "如果有进程间需要通信的算子，而又有几个进程提前退出，那么剩下的进程就会一直等待其他进程导致卡死（如果你某个进程比如 rank0 需要取参数的值）。"
-msgstr "crwdns45346:0crwdne45346:0"
+msgstr "crwdns115255:0crwdne115255:0"
 
 #~ msgid "分布式训练"
 #~ msgstr "Distributed training"
