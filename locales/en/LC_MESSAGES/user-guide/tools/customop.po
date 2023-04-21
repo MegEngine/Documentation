@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2023-04-11 05:58\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -15,8 +15,8 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/customop.po\n"
-"X-Crowdin-File-ID: 8079\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/tools/customop.po\n"
+"X-Crowdin-File-ID: 9895\n"
 
 #: ../../source/user-guide/tools/customop.rst:5
 msgid "自定义算子（Custom Op）"
@@ -92,7 +92,7 @@ msgstr "When we write our own Custom Op's related attribute derivation function,
 
 #: ../../source/user-guide/tools/customop.rst:153
 msgid "**Device**"
-msgstr "**Device**"
+msgstr ""
 
 #: ../../source/user-guide/tools/customop.rst:155
 msgid "目前 Custom Op 支持的 ``Device`` 支持的设备类型包括 ``x86`` 和 ``cuda``. 我们可以像使用字符串的方式去使用它，下面是几个 ``Device`` 的使用案例。"
@@ -104,7 +104,7 @@ msgstr "And Custom Op also provides a default behavior for the derivation of the
 
 #: ../../source/user-guide/tools/customop.rst:169
 msgid "**DType**"
-msgstr "**DType**"
+msgstr ""
 
 #: ../../source/user-guide/tools/customop.rst:171
 msgid "目前 Custom Op 支持的 ``DType`` 支持的设备类型包括 ``float16``，``bfloat16``，``float32``，``uint8``，``int8``，``int16``，``uint16``，``int32``， 以及四种量化类型``qint8``，``quint8``，``qint16``，``qint32``.其中 ``quint8`` 是非对称量化数据类型，而其他三者是对称量化数据类型。 我们也可以像使用字符串的方式去使用它，下面是几个 ``DType`` 的使用案例。"
@@ -116,7 +116,7 @@ msgstr "Similar to ``Device``, Custom Op also provides a default behavior for th
 
 #: ../../source/user-guide/tools/customop.rst:192
 msgid "**Shape**"
-msgstr "**Shape**"
+msgstr ""
 
 #: ../../source/user-guide/tools/customop.rst:194
 msgid "在 Custom Op 中我们可以以类似于 vector 或 C++ 原生数组的方式去构建和使用 ``Shape``，下面是几个 ``Shape`` 的使用案例。"
@@ -140,7 +140,7 @@ msgstr "The same Custom Op calculation function has no return value. The functio
 
 #: ../../source/user-guide/tools/customop.rst:222
 msgid "**Tensor**"
-msgstr "**Tensor**"
+msgstr ""
 
 #: ../../source/user-guide/tools/customop.rst:224
 msgid "Custom Op中的 ``Tensor`` 可以视为数据（``data``）以及数据的属性（即上面 ``Device``，``DType``，``Shape``）的集合。 我们可以用下面的代码去获取 ``Tensor`` 的相关信息："
@@ -184,7 +184,7 @@ msgstr "The last thing that needs to be emphasized is that, in order to facilita
 
 #: ../../source/user-guide/tools/customop.rst:275
 msgid "**Param**"
-msgstr "**Param**"
+msgstr ""
 
 #: ../../source/user-guide/tools/customop.rst:277
 msgid "``Param`` 用于记录 Custom Op 的一些非 ``Tensor`` 的输入，比如卷积中的 padding，stride 等等。 其实际上是一个 ``map``，其 ``key`` 为 ``std::string`` 类型，表示某个 ``param`` 元素的名字, 而 ``value`` 为 ``ParamVal`` 类型，这个类可视为一个支持有限类型的 Any. 通过下面的代码可以简单的展示 ``ParamVal`` 的一些特性："
