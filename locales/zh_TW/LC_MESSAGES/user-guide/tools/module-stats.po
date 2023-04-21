@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 07:07\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,131 +14,131 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/module-stats.po\n"
-"X-Crowdin-File-ID: 2872\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/tools/module-stats.po\n"
+"X-Crowdin-File-ID: 9903\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/tools/module-stats.rst:5
 msgid "参数量/计算量统计与可视化"
-msgstr "crwdns46402:0crwdne46402:0"
+msgstr "crwdns116693:0crwdne116693:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:7
 msgid "有时候我们经常需要统计模型的参数量和计算量，目前的实现方式有两种："
-msgstr "crwdns46404:0crwdne46404:0"
+msgstr "crwdns116695:0crwdne116695:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:9
 msgid "基于 :py:mod:`~.module` 的实现——"
-msgstr "crwdns46406:0crwdne46406:0"
+msgstr "crwdns116697:0crwdne116697:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:11
 msgid "优点：可以在 Python 代码中嵌入调用，随时可以看统计信息"
-msgstr "crwdns46408:0crwdne46408:0"
+msgstr "crwdns116699:0crwdne116699:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:12
 msgid "缺点：只能统计 :py:mod:`~.module` 的信息，无法统计 :py:mod:`~.functional` 的调用"
-msgstr "crwdns46410:0crwdne46410:0"
+msgstr "crwdns116701:0crwdne116701:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:14
 msgid "基于 :py:meth:`~.trace.dump` 的实现——"
-msgstr "crwdns46412:0crwdne46412:0"
+msgstr "crwdns116703:0crwdne116703:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:16
 msgid "优点：可以覆盖所有的算子"
-msgstr "crwdns46414:0crwdne46414:0"
+msgstr "crwdns116705:0crwdne116705:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:17
 msgid "缺点：需要先进行 :py:meth:`~.trace.dump` 操作"
-msgstr "crwdns46416:0crwdne46416:0"
+msgstr "crwdns116707:0crwdne116707:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:20
 msgid "基于 module 的统计"
-msgstr "crwdns46418:0crwdne46418:0"
+msgstr "crwdns116709:0crwdne116709:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:22
 msgid "实现在 :py:func:`~.module_stats` 中, 可以支持 float32/qat/qint8 模型的统计，使用方式很简单："
-msgstr "crwdns46420:0crwdne46420:0"
+msgstr "crwdns116711:0crwdne116711:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:41
 msgid "可以通过 ``log_params`` 和 ``log_flops`` 参数来控制是否输出 parameter 和 flops 细节信息，返回总的参数量和计算量。"
-msgstr "crwdns46422:0crwdne46422:0"
+msgstr "crwdns116713:0crwdne116713:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:44
 msgid "基于 dump 图的可视化与统计"
-msgstr "crwdns46424:0crwdne46424:0"
+msgstr "crwdns116715:0crwdne116715:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:46
 msgid "基于 Python Graph 的图结构解析功能实现："
-msgstr "crwdns46426:0crwdne46426:0"
+msgstr "crwdns116717:0crwdne116717:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:48
 msgid "输入 mge 格式的 dump 模型路径以及 log 存储目录"
-msgstr "crwdns46428:0crwdne46428:0"
+msgstr "crwdns116719:0crwdne116719:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:49
 msgid "可将图结构信息存成 TensorBoard 可读的格式。"
-msgstr "crwdns46430:0crwdne46430:0"
+msgstr "crwdns116721:0crwdne116721:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:52
 msgid "命令行调用"
-msgstr "crwdns46432:0crwdne46432:0"
+msgstr "crwdns116723:0crwdne116723:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:58
 msgid "其中各个参数说明如下："
-msgstr "crwdns46434:0crwdne46434:0"
+msgstr "crwdns116725:0crwdne116725:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:61
 msgid "``./resnet18.mge`` （第一个参数）"
-msgstr "crwdns46436:0crwdne46436:0"
+msgstr "crwdns116727:0crwdne116727:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:61
 msgid "**必填参数** ，指定模型文件名。"
-msgstr "crwdns46438:0crwdne46438:0"
+msgstr "crwdns116729:0crwdne116729:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:64
 msgid "``./log`` （第二个参数）"
-msgstr "crwdns46440:0crwdne46440:0"
+msgstr "crwdns116731:0crwdne116731:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:64
 msgid "**必填参数** ，指定 log 存储目录。"
-msgstr "crwdns46442:0crwdne46442:0"
+msgstr "crwdns116733:0crwdne116733:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:67
 msgid "``--log_flops``"
-msgstr "crwdns46444:0crwdne46444:0"
+msgstr "crwdns116735:0crwdne116735:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:67
 msgid "指定当前屏打印出 FLOPs 信息。"
-msgstr "crwdns46446:0crwdne46446:0"
+msgstr "crwdns116737:0crwdne116737:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:70
 msgid "``--log_params``"
-msgstr "crwdns46448:0crwdne46448:0"
+msgstr "crwdns116739:0crwdne116739:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:70
 msgid "指定当前屏打印出 Parameters 信息。"
-msgstr "crwdns46450:0crwdne46450:0"
+msgstr "crwdns116741:0crwdne116741:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:73
 msgid "Python 中调用"
-msgstr "crwdns46452:0crwdne46452:0"
+msgstr "crwdns116743:0crwdne116743:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:75
 msgid "以下代码等效于上方的命令行调用方式："
-msgstr "crwdns46454:0crwdne46454:0"
+msgstr "crwdns116745:0crwdne116745:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:87
 msgid "进行可视化"
-msgstr "crwdns46456:0crwdne46456:0"
+msgstr "crwdns116747:0crwdne116747:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:89
 msgid "完成上面的步骤后，再在对应目录（例子中为 ``./log`` ）启动 tensorboard, 即可在本机打开 tensorboard 进程："
-msgstr "crwdns46458:0crwdne46458:0"
+msgstr "crwdns116749:0crwdne116749:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:97
 msgid "TensorBoard 的安装和使用请参考 `TensorBoard 官网 <https://www.tensorflow.org/tensorboard>`_ 。"
-msgstr "crwdns46460:0crwdne46460:0"
+msgstr "crwdns116751:0crwdne116751:0"
 
 #: ../../source/user-guide/tools/module-stats.rst:99
 msgid "如果启动服务器为远程 ssh 登陆，可用以下命令映射端口到本地（可使用 sshconfig 中的服务器名缩写）："
-msgstr "crwdns46462:0crwdne46462:0"
+msgstr "crwdns116753:0crwdne116753:0"
 
