@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:23\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:19\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,56 +11,76 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.mean.po\n"
-"X-Crowdin-File-ID: 2212\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.mean.po\n"
+"X-Crowdin-File-ID: 9175\n"
 
 #: ../../source/reference/api/megengine.functional.mean.rst:2
 msgid "megengine.functional.mean"
-msgstr "crwdns31442:0crwdne31442:0"
+msgstr "crwdns101101:0crwdne101101:0"
 
 #: megengine.functional.math.mean:1 of
-msgid "Returns the mean value of input tensor along given axis. If axis is a list of dimensions, reduce over all of them."
-msgstr "crwdns31444:0crwdne31444:0"
+msgid "Calculates the mean of tensor elements over a given axis (or axes)."
+msgstr "crwdns101103:0crwdne101103:0"
 
 #: megengine.functional.math.mean of
 msgid "参数"
-msgstr "crwdns31446:0crwdne31446:0"
+msgstr "crwdns101105:0crwdne101105:0"
+
+#: megengine.functional.math.mean:4 of
+msgid "input tensor. Should have a numeric data type."
+msgstr "crwdns101107:0crwdne101107:0"
 
 #: megengine.functional.math.mean:6 of
-msgid "input tensor."
-msgstr "crwdns31448:0crwdne31448:0"
-
-#: megengine.functional.math.mean:8 of
-msgid "dimension to reduce. If None, all dimensions will be reduced. Default: None"
-msgstr "crwdns31450:0crwdne31450:0"
+msgid "axis or axes along which means must be computed. By default, the mean must be computed over the entire tensor. If a sequence of integers, means must be computed over multiple axes."
+msgstr "crwdns101109:0crwdne101109:0"
 
 #: megengine.functional.math.mean:10 of
-msgid "whether the output tensor has axis retained or not. Default: False"
-msgstr "crwdns31452:0crwdne31452:0"
+msgid "if ``True``, the reduced axes (dimensions) must be included in the result as singleton dimensions, and, accordingly, the result must be compatible with the input tensor (see :ref:`broadcasting-rule`). Otherwise, if ``False``, the reduced axes (dimensions) must not be included in the result."
+msgstr "crwdns101111:0:ref:crwdne101111:0"
 
 #: megengine.functional.math.mean of
 msgid "返回类型"
-msgstr "crwdns69183:0crwdne69183:0"
+msgstr "crwdns101113:0crwdne101113:0"
 
-#: megengine.functional.math.mean:12 of
+#: megengine.functional.math.mean:14 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr "crwdns69185:0crwdne69185:0"
+msgstr "crwdns101115:0crwdne101115:0"
 
 #: megengine.functional.math.mean of
 msgid "返回"
-msgstr "crwdns31458:0crwdne31458:0"
+msgstr "crwdns101117:0crwdne101117:0"
 
-#: megengine.functional.math.mean:13 of
-msgid "output tensor."
-msgstr "crwdns31460:0crwdne31460:0"
+#: megengine.functional.math.mean:15 of
+msgid "if the mean was computed over the entire tensor, a zero-dimensional tensor containing the mean; otherwise, a non-zero-dimensional tensor containing the means. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
+msgstr "crwdns101119:0:ref:crwdne101119:0"
 
-#: megengine.functional.math.mean:16 of
+#: megengine.functional.math.mean:19 of
+msgid "Special Cases"
+msgstr "crwdns101121:0crwdne101121:0"
+
+#: megengine.functional.math.mean:21 of
+msgid "Let ``N`` equal the number of elements over which to compute the mean."
+msgstr "crwdns101123:0crwdne101123:0"
+
+#: megengine.functional.math.mean:23 of
+msgid "If ``N`` is 0, the mean is ``NaN``."
+msgstr "crwdns101125:0crwdne101125:0"
+
+#: megengine.functional.math.mean:24 of
+msgid "If :math:`x_i` is ``NaN``, the mean is ``NaN`` (i.e., ``NaN`` values propagate)."
+msgstr "crwdns101127:0:math:crwdne101127:0"
+
+#: megengine.functional.math.mean:27 of
 msgid "实际案例"
-msgstr "crwdns69187:0crwdne69187:0"
+msgstr "crwdns101129:0crwdne101129:0"
+
+#: megengine.functional.math.mean:35 of
+msgid "Along an axis:"
+msgstr "crwdns101131:0crwdne101131:0"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
@@ -73,4 +93,26 @@ msgstr "crwdns69187:0crwdne69187:0"
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid ""
+#~ "Returns the mean value of input "
+#~ "tensor along given axis. If axis "
+#~ "is a list of dimensions, reduce "
+#~ "over all of them."
+#~ msgstr "返回在给定轴 ``axis`` 上 ``inp`` 张量每一行的平均值。如果给定的轴是一个维度列表，则规约所有维度。"
+
+#~ msgid "input tensor."
+#~ msgstr "输入张量。"
+
+#~ msgid ""
+#~ "dimension to reduce. If None, all "
+#~ "dimensions will be reduced. Default: "
+#~ "None"
+#~ msgstr "要进行规约的维度。如果设置为 None，则所有的维度都将规约。默认：None"
+
+#~ msgid "whether the output tensor has axis retained or not. Default: False"
+#~ msgstr "输出张量是否保留了轴 *axis* 。默认：False"
+
+#~ msgid "output tensor."
+#~ msgstr "输出张量。"
 
