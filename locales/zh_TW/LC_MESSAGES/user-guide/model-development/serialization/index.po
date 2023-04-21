@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-04-19 12:45\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,216 +15,216 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/serialization/index.po\n"
-"X-Crowdin-File-ID: 8175\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/serialization/index.po\n"
+"X-Crowdin-File-ID: 9969\n"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:5
 msgid "保存与加载模型（S&L）"
-msgstr "crwdns87701:0crwdne87701:0"
+msgstr "crwdns119163:0crwdne119163:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:7
 msgid "在模型开发的过程中，我们经常会遇到需要保存（Save）和加载（Load）模型的情况，例如："
-msgstr "crwdns87703:0crwdne87703:0"
+msgstr "crwdns119165:0crwdne119165:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:9
 msgid "为了避免不可抗力导致的训练中断，需要养成模型每训练一定时期（Epoch）就进行保存的好习惯；"
-msgstr "crwdns87705:0crwdne87705:0"
+msgstr "crwdns119167:0crwdne119167:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:10
 msgid "同时如果训练时间过长，可能会导致模型在训练数据集上过拟合，因此需要保存多个检查点，取最优结果；"
-msgstr "crwdns87707:0crwdne87707:0"
+msgstr "crwdns119169:0crwdne119169:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:11
 msgid "某些情况下，我们需要加载预训练模型的参数和其它必需信息，恢复训练或进行微调..."
-msgstr "crwdns87709:0crwdne87709:0"
+msgstr "crwdns119171:0crwdne119171:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:13
 msgid "在 MegEngine 中对 Python 自带的 :mod:`pickle` 模块进行了封装， 来实现对 Python 对象结构（如 Module 对象）的二进制序列化和反序列化。 其中需要被我们熟知的核心接口为 :func:`megengine.save` 和 :func:`megengine.load`:"
-msgstr "crwdns87711:0:mod:crwdnd87711:0:func:crwdnd87711:0:func:crwdne87711:0"
+msgstr "crwdns119173:0:mod:crwdnd119173:0:func:crwdnd119173:0:func:crwdne119173:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:20
 msgid "上述语法非常简明直观地对整个 ``model`` 模型进行了保存和加载，但这并不是推荐做法。 更加推荐的做法是保存和加载 ``state_dict`` 对象，或使用检查点（Checkpoint）技术。 接下来将对上面的内容做更加具体的解释，并提供一些情景下保存和加载模型的最佳实践。 你可以略过已经熟悉的概念，直接跳转到所需的用例代码展示。"
-msgstr "crwdns87713:0crwdne87713:0"
+msgstr "crwdns119175:0crwdne119175:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:27
 msgid ":ref:`save-load-entire-model`"
-msgstr "crwdns87715:0:ref:crwdne87715:0"
+msgstr "crwdns119177:0:ref:crwdne119177:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:28
 msgid "任何情况下都不推荐 ❌"
-msgstr "crwdns87717:0crwdne87717:0"
+msgstr "crwdns119179:0crwdne119179:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:29
 msgid ":ref:`save-load-model-state-dict`"
-msgstr "crwdns87719:0:ref:crwdne87719:0"
+msgstr "crwdns119181:0:ref:crwdne119181:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:30
 msgid "适用于推理 ✅ 不满足恢复训练要求 😅"
-msgstr "crwdns87721:0crwdne87721:0"
+msgstr "crwdns119183:0crwdne119183:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:31
 msgid ":ref:`save-load-checkpoint`"
-msgstr "crwdns87723:0:ref:crwdne87723:0"
+msgstr "crwdns119185:0:ref:crwdne119185:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:32
 msgid "适用于推理或恢复训练 💡"
-msgstr "crwdns87725:0crwdne87725:0"
+msgstr "crwdns119187:0crwdne119187:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:33
 msgid ":ref:`dump-traced-model` （Dump）"
-msgstr "crwdns87727:0:ref:crwdne87727:0"
+msgstr "crwdns119189:0:ref:crwdne119189:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:34
 msgid "适用于推理，且追求高性能部署 🚀"
-msgstr "crwdns87729:0crwdne87729:0"
+msgstr "crwdns119191:0crwdne119191:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:38
 msgid "使用 ``pickle`` 模块时，相应术语也叫做封存（pickling）和解封（unpickling）。"
-msgstr "crwdns87731:0crwdne87731:0"
+msgstr "crwdns119193:0crwdne119193:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:40
 msgid "pickle 模块与协议的兼容"
-msgstr "crwdns87733:0crwdne87733:0"
+msgstr "crwdns119195:0crwdne119195:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:43
 msgid "由于不同版本的 Python 之间 ``pickle`` 模块使用的 `数据流格式 <https://docs.python.org/3/library/pickle.html#data-stream-format>`_ 协议可能不同， 因此可能会出现高版本 Python 保存的 MegEngine 模型在低版本 Python 无法加载的情况。这里提供两种解决思路："
-msgstr "crwdns87735:0crwdne87735:0"
+msgstr "crwdns119197:0crwdne119197:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:48
 msgid "在调用 :func:`megengine.save` 时，通过参数 ``pickle_protocol`` 指定兼容性较强的版本（比如第 4 版）;"
-msgstr "crwdns87737:0:func:crwdne87737:0"
+msgstr "crwdns119199:0:func:crwdne119199:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:49
 msgid "接口 :func:`megengine.save` 和 :func:`megengine.load` 都支持传入 ``pickle_module`` 参数， 从而使用指定的 ``pickle`` 模块，比如安装并使用 `pickle5 <https://pypi.org/project/pickle5/>`_ 来代替 Python 内置的 ``pickle`` 模块："
-msgstr "crwdns87739:0:func:crwdnd87739:0:func:crwdne87739:0"
+msgstr "crwdns119201:0:func:crwdnd119201:0:func:crwdne119201:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:55
 msgid "pickle 模块并不安全！"
-msgstr "crwdns87741:0crwdne87741:0"
+msgstr "crwdns119203:0crwdne119203:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:58
 msgid "不坏好意的人可以通过构建恶意的 ``pickle`` 数据来在解封时执行任意代码；"
-msgstr "crwdns87743:0crwdne87743:0"
+msgstr "crwdns119205:0crwdne119205:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:59
 msgid "因此绝对不要对不信任来源的数据和可能被篡改过的数据进行解封。"
-msgstr "crwdns87745:0crwdne87745:0"
+msgstr "crwdns119207:0crwdne119207:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:62
 msgid "下面是我们用于举例的 ``ConvNet`` 模型："
-msgstr "crwdns87747:0crwdne87747:0"
+msgstr "crwdns119209:0crwdne119209:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:96
 msgid "保存/加载整个模型"
-msgstr "crwdns87749:0crwdne87749:0"
+msgstr "crwdns119211:0crwdne119211:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:98
 #: ../../source/user-guide/model-development/serialization/index.rst:123
 #: ../../source/user-guide/model-development/serialization/index.rst:190
 msgid "保存："
-msgstr "crwdns87751:0crwdne87751:0"
+msgstr "crwdns119213:0crwdne119213:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:102
 #: ../../source/user-guide/model-development/serialization/index.rst:127
 #: ../../source/user-guide/model-development/serialization/index.rst:202
 msgid "加载："
-msgstr "crwdns87753:0crwdne87753:0"
+msgstr "crwdns119215:0crwdne119215:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:109
 msgid "我们不推荐使用这种方法的原因在于 ``pickle`` 本身的局限性：对于特定的类，如用户自己设计的一个 ``ConvNet`` 模型类， ``pickle`` 在保存该模型时不会序列化模型类本身，而是会将该类与包含其定义的源码的路径绑定，如 ``project/model.py``. 在加载模型时， ``pickle`` 需要用到此路径。因此如果在后续的开发过程中，你对项目进行了重构 （比如将 ``model.py`` 进行了重命名），将导致执行模型加载的步骤时失败。"
-msgstr "crwdns87755:0crwdne87755:0"
+msgstr "crwdns119217:0crwdne119217:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:116
 msgid "如果你依旧使用这种方法加载模型并尝试进行推理，记得先调用 ``model.eval()`` 切换到评估模式。"
-msgstr "crwdns87757:0crwdne87757:0"
+msgstr "crwdns119219:0crwdne119219:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:121
 msgid "保存/加载模型状态字典"
-msgstr "crwdns87759:0crwdne87759:0"
+msgstr "crwdns119221:0crwdne119221:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:133
 msgid "当保存一个仅用作推理的模型时，必须进行的处理是保存模型中学得的参数（Learned parameters）。 相较于保存整个模型，更加推荐保存模型的状态字典 ``state_dict``, 在后续恢复模型时将更加灵活。"
-msgstr "crwdns87761:0crwdne87761:0"
+msgstr "crwdns119223:0crwdne119223:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:138
 msgid "相较于加载整个模型的做法，此时 ``megengine.load()`` 得到的结果是一个状态字典对象， 因此还需要通过 ``model.load_state_dict()`` 方法进一步将状态字典加载到模型中， 不能够使用 ``model = megengine.load(PATH)``; 另一种常见的错误用法是直接 ``model.load_state_dict(PATH)``, 注意必须先通过 ``megengine.load()`` 反序列化得到状态字典，再传递给 ``model.load_state_dict()`` 方法；"
-msgstr "crwdns87763:0crwdne87763:0"
+msgstr "crwdns119225:0crwdne119225:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:142
 msgid "加载状态字典成功后，记得调用 ``model.eval()`` 将模型切换到评估模式。"
-msgstr "crwdns87765:0crwdne87765:0"
+msgstr "crwdns119227:0crwdne119227:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:146
 msgid "通常我们约定使用 ``.pkl`` 文件扩展名保存模型，如 ``mge_checkpoint_xxx.pkl`` 形式。"
-msgstr "crwdns91762:0crwdne91762:0"
+msgstr "crwdns119229:0crwdne119229:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:148
 msgid "注意 ``.pkl`` 与 ``.mge`` 文件的区别"
-msgstr "crwdns91764:0crwdne91764:0"
+msgstr "crwdns119231:0crwdne119231:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:151
 msgid "``.mge`` 文件通常是 MegEngine 模型经过 :ref:`dump` 得到的文件，用于推理部署。"
-msgstr "crwdns91766:0:ref:crwdne91766:0"
+msgstr "crwdns119233:0:ref:crwdne119233:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:154
 msgid "什么是状态字典"
-msgstr "crwdns87769:0crwdne87769:0"
+msgstr "crwdns119235:0crwdne119235:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:156
 msgid "由于使用 ``pickle`` 直接 :ref:`save-load-entire-model` 时存在受到路径影响的局限性， 我们则需要考虑使用原生的 Python 数据结构来记录模型内部的状态信息，方便进行序列化和反序列化。 在 :ref:`module-design` 中，我们提到了每个 Module 有一个状态字典成员， 记录着模型内部的 Tensor 信息（即 :ref:`parameter-and-buffer` ）："
-msgstr "crwdns87771:0:ref:crwdnd87771:0:ref:crwdnd87771:0:ref:crwdne87771:0"
+msgstr "crwdns119237:0:ref:crwdnd119237:0:ref:crwdnd119237:0:ref:crwdne119237:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:172
 msgid "状态字典是一个简单的 Python 字典对象，因此可以借助 ``pickle`` 轻松地保存和加载。"
-msgstr "crwdns87773:0crwdne87773:0"
+msgstr "crwdns119239:0crwdne119239:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:177
 msgid "每个优化器 ``Optimzer`` 也有一个状态字典，其中包含有关优化器状态的信息，以及使用的超参数； 如果后续有恢复模型并且继续训练的需求，仅保存模型的状态字典是不行的 —— 我们同时还需要保存优化器的状态字典等信息，即下面提到的 “检查点” 技术。"
-msgstr "crwdns87775:0crwdne87775:0"
+msgstr "crwdns119241:0crwdne119241:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:183
 msgid "关于状态字典的进一步解释： :ref:`module-state-dict` / :ref:`optimizer-state-dict`"
-msgstr "crwdns87777:0:ref:crwdnd87777:0:ref:crwdne87777:0"
+msgstr "crwdns119243:0:ref:crwdnd119243:0:ref:crwdne119243:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:188
 msgid "保存/加载检查点"
-msgstr "crwdns87779:0crwdne87779:0"
+msgstr "crwdns119245:0crwdne119245:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:219
 msgid "保存检查点是为了能够恢复到和训练时一致的状态： 需要恢复的不仅仅是 :ref:`module-state-dict` ，:ref:`optimizer-state-dict`. 根据实际需求，还可以记录训练时达到的 ``epoch`` 以及最新的 ``loss`` 信息。"
-msgstr "crwdns87781:0:ref:crwdnd87781:0:ref:crwdne87781:0"
+msgstr "crwdns119247:0:ref:crwdnd119247:0:ref:crwdne119247:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:222
 msgid "加载检查点后，根据是希望继续训练，还是用作推理来设置模型为训练或评估模式。"
-msgstr "crwdns87783:0crwdne87783:0"
+msgstr "crwdns119249:0crwdne119249:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:226
 msgid "相较于仅保存模型的状态字典，保存完整检查点会占据比较多的硬盘空间。 因此如果你十分确定以后只需要进行模型推理时，可以不必保存检查点。 亦或者设定不同的保存频率，例如每 10 个 Epochs 保存一次状态字典， 每 100 个 Epochs 保存一次完整的检查点，这取决于你的实际需求。"
-msgstr "crwdns87785:0crwdne87785:0"
+msgstr "crwdns119251:0crwdne119251:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:233
 msgid "参考官方 ResNet 模型中如何保存和加载检查点："
-msgstr "crwdns87787:0crwdne87787:0"
+msgstr "crwdns119253:0crwdne119253:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:235
 msgid ":models:`official/vision/classification/resnet`"
-msgstr "crwdns87789:0:models:crwdne87789:0"
+msgstr "crwdns119255:0:models:crwdne119255:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:237
 msgid "在 ``train/test/inference.py`` 可找到相关接口。"
-msgstr "crwdns87791:0crwdne87791:0"
+msgstr "crwdns119257:0crwdne119257:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:242
 msgid "导出静态图模型"
-msgstr "crwdns87793:0crwdne87793:0"
+msgstr "crwdns119259:0crwdne119259:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:244
 msgid "为了将最终训练好的模型部署到生产环境，模型开发的最后一步需要导出静态图模型："
-msgstr "crwdns87795:0crwdne87795:0"
+msgstr "crwdns119261:0crwdne119261:0"
 
 #: ../../source/user-guide/model-development/serialization/index.rst:267
 msgid "更加具体的解释请参考： :ref:`dump` 。"
-msgstr "crwdns87797:0:ref:crwdne87797:0"
+msgstr "crwdns119263:0:ref:crwdne119263:0"
 
 #~ msgid "模型（参数）的保存与加载"
 #~ msgstr "Saving and loading of models (parameters)"
