@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:13\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:38\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,152 +11,153 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/pylite/network.po\n"
-"X-Crowdin-File-ID: 8440\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/pylite/network.po\n"
+"X-Crowdin-File-ID: 10025\n"
 
 #: ../../source/reference/pylite/network.rst:6
 msgid "megenginelite.network"
-msgstr "crwdns92938:0crwdne92938:0"
+msgstr "crwdns121115:0crwdne121115:0"
 
 #: megenginelite.network.LiteOptions:1 of
 msgid "the inference options which can optimize the network forwarding performance"
-msgstr "crwdns94964:0crwdne94964:0"
+msgstr "crwdns121117:0crwdne121117:0"
 
 #: megenginelite.network.LiteConfig megenginelite.network.LiteIO
 #: megenginelite.network.LiteNetworkIO megenginelite.network.LiteOptions of
 msgid "变量"
-msgstr "crwdns94966:0crwdne94966:0"
+msgstr "crwdns121119:0crwdne121119:0"
 
 #: megenginelite.network.LiteOptions:4 of
 msgid "is the option which optimize the inference performance with processing the weights of the network ahead"
-msgstr "crwdns94968:0crwdne94968:0"
+msgstr "crwdns121121:0crwdne121121:0"
 
 #: megenginelite.network.LiteOptions:7 of
 msgid "fuse preprocess patten, like astype + pad_channel + dimshuffle"
-msgstr "crwdns94970:0crwdne94970:0"
+msgstr "crwdns121123:0crwdne121123:0"
 
 #: megenginelite.network.LiteOptions:10 of
 msgid "whether only to perform non-computing tasks (like memory allocation and queue initialization) for next exec. This will be reset to false when the graph is executed."
-msgstr "crwdns94972:0crwdne94972:0"
+msgstr "crwdns121125:0crwdne121125:0"
 
 #: megenginelite.network.LiteOptions:14 of
 msgid "Disable var sanity check on the first run. Var sanity check is enabled on the first-time execution by default, and can be used to find some potential memory access errors in the operator"
-msgstr "crwdns94974:0crwdne94974:0"
+msgstr "crwdns121127:0crwdne121127:0"
 
 #: megenginelite.network.LiteOptions:18 of
 msgid "used to reduce memory usage and improve performance since some static inference data structures can be omitted and some operators can be compute before forwarding"
-msgstr "crwdns94976:0crwdne94976:0"
+msgstr "crwdns121129:0crwdne121129:0"
 
 #: megenginelite.network.LiteOptions:22 of
 msgid "force dynamic allocate memory for all vars"
-msgstr "crwdns94978:0crwdne94978:0"
+msgstr "crwdns121131:0crwdne121131:0"
 
 #: megenginelite.network.LiteOptions:24 of
 msgid "force dynamic allocate memory for output tensor which are used as the input of CallbackCaller Operator"
-msgstr "crwdns94980:0crwdne94980:0"
+msgstr "crwdns121133:0crwdne121133:0"
 
 #: megenginelite.network.LiteOptions:27 of
 msgid "do not re-profile to select best implement algo when input shape changes (use previous algo)"
-msgstr "crwdns94982:0crwdne94982:0"
+msgstr "crwdns121135:0crwdne121135:0"
 
 #: megenginelite.network.LiteOptions:30 of
-msgid "Execute supported operators with JIT (support MLIR, NVRTC). Can only be used on Nvidia GPUs and X86 CPU, this value indicates JIT level:  level 1: for JIT execute with basic elemwise operator  level 2: for JIT execute elemwise and reduce operators"
-msgstr "crwdns94984:0crwdne94984:0"
+msgid "Execute supported operators with JIT, please check with MGB_JIT_BACKEND for more details, this value indicates JIT level:  level 1: for JIT execute with basic elemwise operator  level 2: for JIT execute elemwise and reduce operators"
+msgstr "crwdns121137:0crwdne121137:0"
 
 #: megenginelite.network.LiteOptions:30 of
-msgid "Execute supported operators with JIT (support MLIR, NVRTC). Can only be used on Nvidia GPUs and X86 CPU, this value indicates JIT level:"
-msgstr "crwdns94986:0crwdne94986:0"
+msgid "Execute supported operators with JIT, please check with MGB_JIT_BACKEND for more details, this value indicates JIT level:"
+msgstr "crwdns121139:0crwdne121139:0"
 
 #: megenginelite.network.LiteOptions:33 of
 msgid "level 1: for JIT execute with basic elemwise operator"
-msgstr "crwdns94988:0crwdne94988:0"
+msgstr "crwdns121141:0crwdne121141:0"
 
 #: megenginelite.network.LiteOptions:35 of
 msgid "level 2: for JIT execute elemwise and reduce operators"
-msgstr "crwdns94990:0crwdne94990:0"
+msgstr "crwdns121143:0crwdne121143:0"
 
 #: megenginelite.network.LiteOptions:37 of
 msgid "flags to optimize the inference performance with record the kernel tasks in first run, hereafter the inference all need is to execute the recorded tasks.  level = 0 means the normal inference  level = 1 means use record inference  level = 2 means record inference with free the extra memory"
-msgstr "crwdns94992:0crwdne94992:0"
+msgstr "crwdns121145:0crwdne121145:0"
 
 #: megenginelite.network.LiteOptions:37 of
 msgid "flags to optimize the inference performance with record the kernel tasks in first run, hereafter the inference all need is to execute the recorded tasks."
-msgstr "crwdns94994:0crwdne94994:0"
+msgstr "crwdns121147:0crwdne121147:0"
 
 #: megenginelite.network.LiteOptions:41 of
 msgid "level = 0 means the normal inference"
-msgstr "crwdns94996:0crwdne94996:0"
+msgstr "crwdns121149:0crwdne121149:0"
 
 #: megenginelite.network.LiteOptions:43 of
 msgid "level = 1 means use record inference"
-msgstr "crwdns94998:0crwdne94998:0"
+msgstr "crwdns121151:0crwdne121151:0"
 
 #: megenginelite.network.LiteOptions:45 of
 msgid "level = 2 means record inference with free the extra memory"
-msgstr "crwdns95000:0crwdne95000:0"
+msgstr "crwdns121153:0crwdne121153:0"
 
 #: megenginelite.network.LiteOptions:48 of
 msgid "network optimization level:  0: disable  1: level-1: inplace arith transformations during graph construction  2: level-2: level-1, plus global optimization before graph compiling  3: also enable JIT"
-msgstr "crwdns95002:0crwdne95002:0"
+msgstr "crwdns121155:0crwdne121155:0"
 
 #: megenginelite.network.LiteOptions:48 of
 msgid "network optimization level:"
-msgstr "crwdns95004:0crwdne95004:0"
+msgstr "crwdns121157:0crwdne121157:0"
 
 #: megenginelite.network.LiteOptions:50 of
 msgid "0: disable"
-msgstr "crwdns95006:0crwdne95006:0"
+msgstr "crwdns121159:0crwdne121159:0"
 
 #: megenginelite.network.LiteOptions:52 of
 msgid "1: level-1: inplace arith transformations during graph construction"
-msgstr "crwdns95008:0crwdne95008:0"
+msgstr "crwdns121161:0crwdne121161:0"
 
 #: megenginelite.network.LiteOptions:54 of
 msgid "2: level-2: level-1, plus global optimization before graph compiling"
-msgstr "crwdns95010:0crwdne95010:0"
+msgstr "crwdns121163:0crwdne121163:0"
 
 #: megenginelite.network.LiteOptions:56 of
 msgid "3: also enable JIT"
-msgstr "crwdns95012:0crwdne95012:0"
+msgstr "crwdns121165:0crwdne121165:0"
 
 #: megenginelite.network.LiteOptions:58 of
 msgid "level of dispatch on separate threads for different comp_node.  0: do not perform async dispatch  1: dispatch async if there are more than one comp node with limited queue  mask 0b10: async if there are multiple comp nodes with  mask 0b100: always async"
-msgstr "crwdns95014:0crwdne95014:0"
+msgstr "crwdns121167:0crwdne121167:0"
 
 #: megenginelite.network.LiteOptions:58 of
 msgid "level of dispatch on separate threads for different comp_node."
-msgstr "crwdns95016:0crwdne95016:0"
+msgstr "crwdns121169:0crwdne121169:0"
 
 #: megenginelite.network.LiteOptions:60 of
 msgid "0: do not perform async dispatch"
-msgstr "crwdns95018:0crwdne95018:0"
+msgstr "crwdns121171:0crwdne121171:0"
 
 #: megenginelite.network.LiteOptions:62 of
 msgid "1: dispatch async if there are more than one comp node with limited queue"
-msgstr "crwdns95020:0crwdne95020:0"
+msgstr "crwdns121173:0crwdne121173:0"
 
 #: megenginelite.network.LiteOptions:64 of
 msgid "mask 0b10: async if there are multiple comp nodes with"
-msgstr "crwdns95022:0crwdne95022:0"
+msgstr "crwdns121175:0crwdne121175:0"
 
 #: megenginelite.network.LiteOptions:66 of
 msgid "mask 0b100: always async"
-msgstr "crwdns95024:0crwdne95024:0"
+msgstr "crwdns121177:0crwdne121177:0"
 
-#: megenginelite.network.LiteConfig:23 megenginelite.network.LiteIO:29
+#: megenginelite.network.LiteConfig:25 megenginelite.network.LiteIO:29
 #: megenginelite.network.LiteNetwork:4 megenginelite.network.LiteNetworkIO:10
 #: megenginelite.network.LiteOptions:70 of
 msgid "实际案例"
-msgstr "crwdns95026:0crwdne95026:0"
+msgstr "crwdns121179:0crwdne121179:0"
 
 #: ../../docstring megenginelite.network.LiteConfig.auto_optimize_inference:1
 #: megenginelite.network.LiteConfig.backend:1
 #: megenginelite.network.LiteConfig.device_id:1
 #: megenginelite.network.LiteConfig.device_type:1
+#: megenginelite.network.LiteConfig.discrete_input_name:1
 #: megenginelite.network.LiteConfig.has_compression:1
 #: megenginelite.network.LiteConfig.options:1
 #: megenginelite.network.LiteIO.config_layout:1
@@ -183,103 +184,108 @@ msgstr "crwdns95026:0crwdne95026:0"
 #: megenginelite.network.LiteOptions.var_sanity_check_first_run:1
 #: megenginelite.network.LiteOptions.weight_preprocess:1 of
 msgid "Structure/Union member"
-msgstr "crwdns92942:0crwdne92942:0"
+msgstr "crwdns121181:0crwdne121181:0"
 
 #: megenginelite.network.LiteConfig:1 of
 msgid "Configuration when load and compile a network"
-msgstr "crwdns95028:0crwdne95028:0"
+msgstr "crwdns121183:0crwdne121183:0"
 
 #: megenginelite.network.LiteConfig:3 of
 msgid "flag whether the model is compressed, the compress method is stored in the model"
-msgstr "crwdns95030:0crwdne95030:0"
+msgstr "crwdns121185:0crwdne121185:0"
 
 #: megenginelite.network.LiteConfig:6 of
 msgid "configure the device id of a network"
-msgstr "crwdns95032:0crwdne95032:0"
+msgstr "crwdns121187:0crwdne121187:0"
 
 #: megenginelite.network.LiteConfig:8 of
 msgid "configure the device type of a network"
-msgstr "crwdns95034:0crwdne95034:0"
+msgstr "crwdns121189:0crwdne121189:0"
 
 #: megenginelite.network.LiteConfig:10 of
 msgid "configure the inference backend of a network, now only support megengine"
-msgstr "crwdns95036:0crwdne95036:0"
+msgstr "crwdns121191:0crwdne121191:0"
 
 #: megenginelite.network.LiteConfig:13 of
 msgid "is the bare model encryption method name, bare model is not packed with json information, this encryption method name is useful to decrypt the encrypted bare model"
-msgstr "crwdns95038:0crwdne95038:0"
+msgstr "crwdns121193:0crwdne121193:0"
 
 #: megenginelite.network.LiteConfig:17 of
 msgid "configuration of Options"
-msgstr "crwdns95040:0crwdne95040:0"
+msgstr "crwdns121195:0crwdne121195:0"
 
 #: megenginelite.network.LiteConfig:19 of
 msgid "lite will detect the device information add set the options heuristically"
-msgstr "crwdns95042:0crwdne95042:0"
+msgstr "crwdns121197:0crwdne121197:0"
+
+#: megenginelite.network.LiteConfig:21 of
+msgid "configure which input is composed of discrete multiple tensors"
+msgstr "crwdns121199:0crwdne121199:0"
 
 #: megenginelite.network.LiteIO:1 of
 msgid "config the network input and output item, the input and output tensor information will describe there"
-msgstr "crwdns95044:0crwdne95044:0"
+msgstr "crwdns121201:0crwdne121201:0"
 
 #: megenginelite.network.LiteIO:4 of
 msgid "the tensor name in the graph corresponding to the IO is_host: Used to mark where the input tensor comes from and where the output tensor will copy to, if is_host is true, the input is from host and output copy to host, otherwise in device. Sometimes the input is from device and output no need copy to host, default is true."
-msgstr "crwdns95046:0crwdne95046:0"
+msgstr "crwdns121203:0crwdne121203:0"
 
 #: megenginelite.network.LiteIO:10 of
 msgid "The IO type, it can be SHAPE or VALUE, when SHAPE is set, the input or output tensor value is invaid, only shape will be set, default is VALUE"
-msgstr "crwdns95048:0crwdne95048:0"
+msgstr "crwdns121205:0crwdne121205:0"
 
 #: megenginelite.network.LiteIO:13 of
 msgid "The layout of the config from user, if other layout is set before forward or get after forward, this layout will by pass. if no other layout is set before forward, this layout will work. if this layout is no set, the model will forward with its origin layout. if in output, it will used to check."
-msgstr "crwdns95050:0crwdne95050:0"
+msgstr "crwdns121207:0crwdne121207:0"
 
 #: megenginelite.network.LiteIO:22 of
 msgid "if other layout is set to input tensor before forwarding, this layout will not work"
-msgstr "crwdns95052:0crwdne95052:0"
+msgstr "crwdns121209:0crwdne121209:0"
 
 #: megenginelite.network.LiteIO:24 of
 msgid "if no layout is set before forwarding, the model will forward with its origin layout"
-msgstr "crwdns95054:0crwdne95054:0"
+msgstr "crwdns121211:0crwdne121211:0"
 
 #: megenginelite.network.LiteIO:26 of
 msgid "if layout is set in output tensor, it will used to check whether the layout computed from the network is correct"
-msgstr "crwdns95056:0crwdne95056:0"
+msgstr "crwdns121213:0crwdne121213:0"
 
 #: megenginelite.network.LiteIO.name:1 of
 msgid "get the name of IO item"
-msgstr "crwdns95058:0crwdne95058:0"
+msgstr "crwdns121215:0crwdne121215:0"
 
 #: megenginelite.network.LiteNetworkIO:1 of
 msgid "the input and output information when load the network for user the NetworkIO will remain in the network until the network is destroyed."
-msgstr "crwdns95060:0crwdne95060:0"
+msgstr "crwdns121217:0crwdne121217:0"
 
 #: megenginelite.network.LiteNetworkIO:4 of
 msgid "The all input tensors information that will configure to the network"
-msgstr "crwdns95062:0crwdne95062:0"
+msgstr "crwdns121219:0crwdne121219:0"
 
 #: megenginelite.network.LiteNetworkIO:6 of
 msgid "The all output tensors information that will configure to the network"
-msgstr "crwdns95064:0crwdne95064:0"
+msgstr "crwdns121221:0crwdne121221:0"
 
 #: megenginelite.network.LiteNetworkIO.add_input:1 of
 msgid "add input information into LiteNetworkIO"
-msgstr "crwdns95066:0crwdne95066:0"
+msgstr "crwdns121223:0crwdne121223:0"
 
 #: megenginelite.network.LiteNetworkIO.add_output:1 of
 msgid "add output information into LiteNetworkIO"
-msgstr "crwdns95068:0crwdne95068:0"
+msgstr "crwdns121225:0crwdne121225:0"
 
 #: megenginelite.network.LiteNetwork:1 of
 msgid "the network to load a model and forward"
-msgstr "crwdns92964:0crwdne92964:0"
+msgstr "crwdns121227:0crwdne121227:0"
 
 #: megenginelite.network.LiteNetwork.async_with_callback:1 of
 msgid "set the network forwarding in async mode and set the AsyncCallback callback function"
-msgstr "crwdns95070:0crwdne95070:0"
+msgstr "crwdns121229:0crwdne121229:0"
 
 #: megenginelite.network.LiteNetwork.async_with_callback
 #: megenginelite.network.LiteNetwork.dump_layout_transform_model
 #: megenginelite.network.LiteNetwork.enable_profile_performance
+#: megenginelite.network.LiteNetwork.get_discrete_tensor
 #: megenginelite.network.LiteNetwork.get_input_name
 #: megenginelite.network.LiteNetwork.get_io_tensor
 #: megenginelite.network.LiteNetwork.get_output_name
@@ -293,21 +299,22 @@ msgstr "crwdns95070:0crwdne95070:0"
 #: megenginelite.network.LiteNetwork.share_runtime_memroy
 #: megenginelite.network.LiteNetwork.share_weights_with of
 msgid "参数"
-msgstr "crwdns95072:0crwdne95072:0"
+msgstr "crwdns121231:0crwdne121231:0"
 
 #: megenginelite.network.LiteNetwork.async_with_callback:4
 #: megenginelite.network.LiteNetwork.set_finish_callback:5
 #: megenginelite.network.LiteNetwork.set_start_callback:5 of
 msgid "the callback to set for network"
-msgstr "crwdns95074:0crwdne95074:0"
+msgstr "crwdns121233:0crwdne121233:0"
 
 #: megenginelite.network.LiteNetwork.device_id:1 of
 msgid "get the device id"
-msgstr "crwdns92966:0crwdne92966:0"
+msgstr "crwdns121235:0crwdne121235:0"
 
 #: megenginelite.network.LiteNetwork.device_id
 #: megenginelite.network.LiteNetwork.get_all_input_name
 #: megenginelite.network.LiteNetwork.get_all_output_name
+#: megenginelite.network.LiteNetwork.get_discrete_tensor
 #: megenginelite.network.LiteNetwork.get_input_name
 #: megenginelite.network.LiteNetwork.get_io_tensor
 #: megenginelite.network.LiteNetwork.get_output_name
@@ -315,208 +322,228 @@ msgstr "crwdns92966:0crwdne92966:0"
 #: megenginelite.network.LiteNetwork.stream_id
 #: megenginelite.network.LiteNetwork.threads_number of
 msgid "返回"
-msgstr "crwdns95076:0crwdne95076:0"
+msgstr "crwdns121237:0crwdne121237:0"
 
 #: megenginelite.network.LiteNetwork.device_id:3 of
 msgid "the device id of current network used"
-msgstr "crwdns95078:0crwdne95078:0"
+msgstr "crwdns121239:0crwdne121239:0"
 
 #: megenginelite.network.LiteNetwork.dump_layout_transform_model:1 of
 msgid "dump network after global layout transform optimization to the specific path"
-msgstr "crwdns95080:0crwdne95080:0"
+msgstr "crwdns121241:0crwdne121241:0"
 
 #: megenginelite.network.LiteNetwork.dump_layout_transform_model:4 of
 msgid "the file path to dump model"
-msgstr "crwdns95082:0crwdne95082:0"
+msgstr "crwdns121243:0crwdne121243:0"
 
 #: megenginelite.network.LiteNetwork.enable_cpu_inplace_mode:1 of
 msgid "set cpu forward in inplace mode with which cpu forward only create one thread"
-msgstr "crwdns95084:0crwdne95084:0"
+msgstr "crwdns121245:0crwdne121245:0"
 
 #: megenginelite.network.LiteNetwork.enable_cpu_inplace_mode:4
 #: megenginelite.network.LiteNetwork.use_tensorrt:3 of
 msgid "this must be set before the network loaded"
-msgstr "crwdns95086:0crwdne95086:0"
+msgstr "crwdns121247:0crwdne121247:0"
 
 #: megenginelite.network.LiteNetwork.enable_global_layout_transform:1 of
 msgid "set global layout transform optimization for network, global layout optimization can auto determine the layout of every operator in the network by profile, thus it can improve the performance of the network forwarding"
-msgstr "crwdns95088:0crwdne95088:0"
+msgstr "crwdns121249:0crwdne121249:0"
 
 #: megenginelite.network.LiteNetwork.enable_profile_performance:1 of
 msgid "enable get the network performance profiled information and save into given file"
-msgstr "crwdns95090:0crwdne95090:0"
+msgstr "crwdns121251:0crwdne121251:0"
 
 #: megenginelite.network.LiteNetwork.enable_profile_performance:3 of
 msgid "the file to save profile information"
-msgstr "crwdns95092:0crwdne95092:0"
+msgstr "crwdns121253:0crwdne121253:0"
 
 #: megenginelite.network.LiteNetwork.extra_configure:1 of
 msgid "Extra Configuration to the network."
-msgstr "crwdns95094:0crwdne95094:0"
+msgstr "crwdns121255:0crwdne121255:0"
 
 #: megenginelite.network.LiteNetwork.forward:1 of
 msgid "forward the network with filled input data and fill the output data to the output tensor"
-msgstr "crwdns95096:0crwdne95096:0"
+msgstr "crwdns121257:0crwdne121257:0"
 
 #: megenginelite.network.LiteNetwork.get_all_input_name:1 of
 msgid "get all the input tensor name in the network"
-msgstr "crwdns92970:0crwdne92970:0"
+msgstr "crwdns121259:0crwdne121259:0"
 
 #: megenginelite.network.LiteNetwork.get_all_input_name:3 of
 msgid "the names of all input tesor in the network"
-msgstr "crwdns95098:0crwdne95098:0"
+msgstr "crwdns121261:0crwdne121261:0"
 
 #: megenginelite.network.LiteNetwork.get_all_output_name:1 of
 msgid "get all the output tensor name in the network"
-msgstr "crwdns92972:0crwdne92972:0"
+msgstr "crwdns121263:0crwdne121263:0"
 
 #: megenginelite.network.LiteNetwork.get_all_output_name:3 of
 msgid "the names of all output tesor in the network"
-msgstr "crwdns95100:0crwdne95100:0"
+msgstr "crwdns121265:0crwdne121265:0"
+
+#: megenginelite.network.LiteNetwork.get_discrete_tensor:1 of
+msgid "get the n_idx'th tensor in the network input tensors whose input consists of discrete multiple tensors and tensor name is name"
+msgstr "crwdns121267:0crwdne121267:0"
+
+#: megenginelite.network.LiteNetwork.get_discrete_tensor:4 of
+msgid "the name of input tensor"
+msgstr "crwdns121269:0crwdne121269:0"
+
+#: megenginelite.network.LiteNetwork.get_discrete_tensor:5 of
+msgid "the tensor index"
+msgstr "crwdns121271:0crwdne121271:0"
+
+#: megenginelite.network.LiteNetwork.get_discrete_tensor:6 of
+msgid "the type of LiteTensor, this is useful to separate input tensor with the same name"
+msgstr "crwdns121273:0crwdne121273:0"
+
+#: megenginelite.network.LiteNetwork.get_discrete_tensor:8 of
+msgid "the tensors with given name and type"
+msgstr "crwdns121275:0crwdne121275:0"
 
 #: megenginelite.network.LiteNetwork.get_input_name:1 of
 msgid "get the input name by the index in the network"
-msgstr "crwdns92974:0crwdne92974:0"
+msgstr "crwdns121277:0crwdne121277:0"
 
 #: megenginelite.network.LiteNetwork.get_input_name:3 of
 msgid "the index of the input name"
-msgstr "crwdns95102:0crwdne95102:0"
+msgstr "crwdns121279:0crwdne121279:0"
 
 #: megenginelite.network.LiteNetwork.get_input_name:5 of
 msgid "the name of input tesor with given index"
-msgstr "crwdns95104:0crwdne95104:0"
+msgstr "crwdns121281:0crwdne121281:0"
 
 #: megenginelite.network.LiteNetwork.get_io_tensor:1 of
 msgid "get input or output tensor by its name"
-msgstr "crwdns92976:0crwdne92976:0"
+msgstr "crwdns121283:0crwdne121283:0"
 
 #: megenginelite.network.LiteNetwork.get_io_tensor:3 of
 msgid "the name of io tensor"
-msgstr "crwdns95106:0crwdne95106:0"
+msgstr "crwdns121285:0crwdne121285:0"
 
 #: megenginelite.network.LiteNetwork.get_io_tensor:4 of
 msgid "the type of LiteTensor, this is useful to separate input or output tensor with the same name"
-msgstr "crwdns95108:0crwdne95108:0"
+msgstr "crwdns121287:0crwdne121287:0"
 
 #: megenginelite.network.LiteNetwork.get_io_tensor:6 of
 msgid "the tensor with given name and type"
-msgstr "crwdns95110:0crwdne95110:0"
+msgstr "crwdns121289:0crwdne121289:0"
 
 #: megenginelite.network.LiteNetwork.get_output_name:1 of
 msgid "get the output name by the index in the network"
-msgstr "crwdns92978:0crwdne92978:0"
+msgstr "crwdns121291:0crwdne121291:0"
 
 #: megenginelite.network.LiteNetwork.get_output_name:3 of
 msgid "the index of the output name"
-msgstr "crwdns95112:0crwdne95112:0"
+msgstr "crwdns121293:0crwdne121293:0"
 
 #: megenginelite.network.LiteNetwork.get_output_name:5 of
 msgid "the name of output tesor with given index"
-msgstr "crwdns95114:0crwdne95114:0"
+msgstr "crwdns121295:0crwdne121295:0"
 
 #: megenginelite.network.LiteNetwork.get_static_memory_alloc_info:1 of
 msgid "get static peak memory info showed by Graph visualization"
-msgstr "crwdns95116:0crwdne95116:0"
+msgstr "crwdns121297:0crwdne121297:0"
 
 #: megenginelite.network.LiteNetwork.get_static_memory_alloc_info:3 of
 msgid "the directory to save information log"
-msgstr "crwdns95118:0crwdne95118:0"
+msgstr "crwdns121299:0crwdne121299:0"
 
 #: megenginelite.network.LiteNetwork.io_bin_dump:1 of
 msgid "dump all input/output tensor of all operators to the output file, in binary format, user can use this function to debug compute error"
-msgstr "crwdns95120:0crwdne95120:0"
+msgstr "crwdns121301:0crwdne121301:0"
 
 #: megenginelite.network.LiteNetwork.io_bin_dump:4 of
 msgid "the binary file directory"
-msgstr "crwdns95122:0crwdne95122:0"
+msgstr "crwdns121303:0crwdne121303:0"
 
 #: megenginelite.network.LiteNetwork.io_txt_dump:1 of
 msgid "dump all input/output tensor of all operators to the output file, in txt format, user can use this function to debug compute error"
-msgstr "crwdns95124:0crwdne95124:0"
+msgstr "crwdns121305:0crwdne121305:0"
 
 #: megenginelite.network.LiteNetwork.io_txt_dump:4 of
 msgid "the txt file"
-msgstr "crwdns95126:0crwdne95126:0"
+msgstr "crwdns121307:0crwdne121307:0"
 
 #: megenginelite.network.LiteNetwork.is_cpu_inplace_mode:1 of
 msgid "whether the network run in cpu inpalce mode"
-msgstr "crwdns92980:0crwdne92980:0"
+msgstr "crwdns121309:0crwdne121309:0"
 
 #: megenginelite.network.LiteNetwork.is_cpu_inplace_mode:3 of
 msgid "if use inpalce mode return True, else return False"
-msgstr "crwdns95128:0crwdne95128:0"
+msgstr "crwdns121311:0crwdne121311:0"
 
 #: megenginelite.network.LiteNetwork.load:1 of
 msgid "load network from given path"
-msgstr "crwdns95130:0crwdne95130:0"
+msgstr "crwdns121313:0crwdne121313:0"
 
 #: megenginelite.network.LiteNetwork.set_finish_callback:1 of
 msgid "when the network finish forward, the callback will be called, the finish_callback with param mapping from LiteIO to the corresponding LiteTensor"
-msgstr "crwdns92982:0crwdne92982:0"
+msgstr "crwdns121315:0crwdne121315:0"
 
 #: megenginelite.network.LiteNetwork.set_network_algo_policy:1 of
 msgid "set the network algorithm search policy for fast-run"
-msgstr "crwdns95132:0crwdne95132:0"
+msgstr "crwdns121317:0crwdne121317:0"
 
 #: megenginelite.network.LiteNetwork.set_network_algo_policy:3 of
 msgid "the batch size used by fastrun, Non-zero value means that fastrun use this batch size regardless of the batch size of the model. Zero means fastrun use batch size of the model"
-msgstr "crwdns95134:0crwdne95134:0"
+msgstr "crwdns121319:0crwdne121319:0"
 
 #: megenginelite.network.LiteNetwork.set_network_algo_policy:7 of
 msgid "if the content of each input batch is binary equal,whether the content of each output batch is promised to be equal"
-msgstr "crwdns95136:0crwdne95136:0"
+msgstr "crwdns121321:0crwdne121321:0"
 
 #: megenginelite.network.LiteNetwork.set_network_algo_workspace_limit:1 of
 msgid "set the opr workspace limitation in the target network, some opr maybe use large of workspace to get good performance, set workspace limitation can save memory but may influence the performance"
-msgstr "crwdns95138:0crwdne95138:0"
+msgstr "crwdns121323:0crwdne121323:0"
 
 #: megenginelite.network.LiteNetwork.set_network_algo_workspace_limit:5 of
 msgid "the byte size of workspace limitation"
-msgstr "crwdns95140:0crwdne95140:0"
+msgstr "crwdns121325:0crwdne121325:0"
 
 #: megenginelite.network.LiteNetwork.set_start_callback:1 of
 msgid "when the network start forward, the callback will be called, the start_callback with param mapping from LiteIO to the corresponding LiteTensor"
-msgstr "crwdns92992:0crwdne92992:0"
+msgstr "crwdns121327:0crwdne121327:0"
 
 #: megenginelite.network.LiteNetwork.share_runtime_memroy:1 of
 msgid "share runtime memory with the srouce network"
-msgstr "crwdns92994:0crwdne92994:0"
+msgstr "crwdns121329:0crwdne121329:0"
 
 #: megenginelite.network.LiteNetwork.share_runtime_memroy:3 of
 msgid "the network to share runtime memory"
-msgstr "crwdns95142:0crwdne95142:0"
+msgstr "crwdns121331:0crwdne121331:0"
 
 #: megenginelite.network.LiteNetwork.share_weights_with:1 of
 msgid "share weights with the loaded network"
-msgstr "crwdns92996:0crwdne92996:0"
+msgstr "crwdns121333:0crwdne121333:0"
 
 #: megenginelite.network.LiteNetwork.share_weights_with:3 of
 msgid "the network to share weights"
-msgstr "crwdns95144:0crwdne95144:0"
+msgstr "crwdns121335:0crwdne121335:0"
 
 #: megenginelite.network.LiteNetwork.stream_id:1 of
 msgid "get the stream id"
-msgstr "crwdns92998:0crwdne92998:0"
+msgstr "crwdns121337:0crwdne121337:0"
 
 #: megenginelite.network.LiteNetwork.stream_id:3 of
 msgid "the value of stream id set for detwork"
-msgstr "crwdns95146:0crwdne95146:0"
+msgstr "crwdns121339:0crwdne121339:0"
 
 #: megenginelite.network.LiteNetwork.threads_number:1 of
 msgid "get the thread number of the netwrok"
-msgstr "crwdns93000:0crwdne93000:0"
+msgstr "crwdns121341:0crwdne121341:0"
 
 #: megenginelite.network.LiteNetwork.threads_number:3 of
 msgid "the number of thread set in the network"
-msgstr "crwdns95148:0crwdne95148:0"
+msgstr "crwdns121343:0crwdne121343:0"
 
 #: megenginelite.network.LiteNetwork.use_tensorrt:1 of
 msgid "use TensorRT"
-msgstr "crwdns95150:0crwdne95150:0"
+msgstr "crwdns121345:0crwdne121345:0"
 
 #: megenginelite.network.LiteNetwork.wait:1 of
 msgid "wait until forward finish in sync model"
-msgstr "crwdns95152:0crwdne95152:0"
+msgstr "crwdns121347:0crwdne121347:0"
 
 #~ msgid "the inference options will be used to config a network"
 #~ msgstr ""
@@ -615,5 +642,23 @@ msgstr "crwdns95152:0crwdne95152:0"
 #~ msgstr ""
 
 #~ msgid "Note: this must be set before the network loaded"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Execute supported operators with JIT "
+#~ "(support MLIR, NVRTC). Can only be "
+#~ "used on Nvidia GPUs and X86 CPU,"
+#~ " this value indicates JIT level:  "
+#~ "level 1: for JIT execute with "
+#~ "basic elemwise operator  level 2: for"
+#~ " JIT execute elemwise and reduce "
+#~ "operators"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Execute supported operators with JIT "
+#~ "(support MLIR, NVRTC). Can only be "
+#~ "used on Nvidia GPUs and X86 CPU,"
+#~ " this value indicates JIT level:"
 #~ msgstr ""
 
