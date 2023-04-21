@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-09-07 10:11\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:23\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,56 +11,60 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.var.po\n"
-"X-Crowdin-File-ID: 8396\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.var.po\n"
+"X-Crowdin-File-ID: 9371\n"
 
 #: ../../source/reference/api/megengine.functional.var.rst:2
 msgid "megengine.functional.var"
-msgstr "crwdns91232:0crwdne91232:0"
+msgstr "crwdns103573:0crwdne103573:0"
 
 #: megengine.functional.math.var:1 of
-msgid "Returns the variance value of input tensor along given axis. If axis is a list of dimensions, reduce over all of them."
-msgstr "crwdns91234:0crwdne91234:0"
+msgid "Calculates the variance of tensor elements over a given axis (or axes)."
+msgstr "crwdns103575:0crwdne103575:0"
 
 #: megengine.functional.math.var of
 msgid "参数"
-msgstr "crwdns91236:0crwdne91236:0"
+msgstr "crwdns103577:0crwdne103577:0"
+
+#: megengine.functional.math.var:4 of
+msgid "input tensor. Should have a numeric data type."
+msgstr "crwdns103579:0crwdne103579:0"
 
 #: megengine.functional.math.var:6 of
-msgid "input tensor."
-msgstr "crwdns91238:0crwdne91238:0"
-
-#: megengine.functional.math.var:8 of
-msgid "dimension to reduce. If None, all dimensions will be reduced. Default: None"
-msgstr "crwdns91240:0crwdne91240:0"
+msgid "axis or axes along which variances must be computed. By default, the variance must be computed over the entire tensor. If a sequence of integers, variances must be computed over multiple axes."
+msgstr "crwdns103581:0crwdne103581:0"
 
 #: megengine.functional.math.var:10 of
-msgid "whether the output tensor has axis retained or not. Default: False"
-msgstr "crwdns91242:0crwdne91242:0"
+msgid "if ``True``, the reduced axes (dimensions) must be included in the result as singleton dimensions, and, accordingly, the result must be compatible with the input tensor (see :ref:`broadcasting-rule`). Otherwise, if ``False``, the reduced axes (dimensions) must not be included in the result."
+msgstr "crwdns103583:0:ref:crwdne103583:0"
 
 #: megengine.functional.math.var of
 msgid "返回类型"
-msgstr "crwdns91244:0crwdne91244:0"
+msgstr "crwdns103585:0crwdne103585:0"
 
-#: megengine.functional.math.var:12 of
+#: megengine.functional.math.var:14 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr "crwdns91246:0crwdne91246:0"
+msgstr "crwdns103587:0crwdne103587:0"
 
 #: megengine.functional.math.var of
 msgid "返回"
-msgstr "crwdns91248:0crwdne91248:0"
+msgstr "crwdns103589:0crwdne103589:0"
 
-#: megengine.functional.math.var:13 of
-msgid "output tensor."
-msgstr "crwdns91250:0crwdne91250:0"
+#: megengine.functional.math.var:15 of
+msgid "if the variance was computed over the entire tensor, a zero-dimensional tensor containing the variance; otherwise, a non-zero-dimensional tensor containing the variances. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
+msgstr "crwdns103591:0:ref:crwdne103591:0"
 
-#: megengine.functional.math.var:16 of
+#: megengine.functional.math.var:21 of
+msgid "The variance is the average of the squared deviations from the mean, i.e., ``var = mean(x)``, where ``x = abs(a - a.mean())**2``."
+msgstr "crwdns103593:0crwdne103593:0"
+
+#: megengine.functional.math.var:25 of
 msgid "实际案例"
-msgstr "crwdns91252:0crwdne91252:0"
+msgstr "crwdns103595:0crwdne103595:0"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
@@ -73,4 +77,26 @@ msgstr "crwdns91252:0crwdne91252:0"
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid ""
+#~ "Returns the variance value of input "
+#~ "tensor along given axis. If axis "
+#~ "is a list of dimensions, reduce "
+#~ "over all of them."
+#~ msgstr "返回在给定轴 ``axis`` 上 ``inp`` 张量每一行的方差。如果给定的轴是一个维度列表，则规约所有维度。"
+
+#~ msgid "input tensor."
+#~ msgstr "输入张量。"
+
+#~ msgid ""
+#~ "dimension to reduce. If None, all "
+#~ "dimensions will be reduced. Default: "
+#~ "None"
+#~ msgstr "要进行规约的维度。如果设置为 None，则所有的维度都将规约。默认：None"
+
+#~ msgid "whether the output tensor has axis retained or not. Default: False"
+#~ msgstr "输出张量是否保留了轴 *axis* 。默认：False"
+
+#~ msgid "output tensor."
+#~ msgstr "输出张量。"
 
