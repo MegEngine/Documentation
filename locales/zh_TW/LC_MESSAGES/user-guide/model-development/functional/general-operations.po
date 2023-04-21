@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-12-13 15:10\n"
+"PO-Revision-Date: 2023-04-21 09:36\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,88 +15,88 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/functional/general-operations.po\n"
-"X-Crowdin-File-ID: 8149\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/functional/general-operations.po\n"
+"X-Crowdin-File-ID: 9941\n"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:5
 msgid "如何用 Tenosr 进行科学运算"
-msgstr "crwdns84195:0crwdne84195:0"
+msgstr "crwdns118197:0crwdne118197:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:7
 msgid "可以通过 ``megengine.functional.xxx`` 形式调用的 API 被认为是通用 Tensor 运算， 负责提供常见的科学运算接口，该部分的 API 设计尽可能地向 NumPy API 靠拢。 所有的 API 都可以在 :ref:`general-tensor-operations` 中找到。"
-msgstr "crwdns84197:0:ref:crwdne84197:0"
+msgstr "crwdns118199:0:ref:crwdne118199:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:11
 msgid "根据对 Tensor 形状的要求和影响，我们又可以把这些运算分为以下几大类："
-msgstr "crwdns84199:0crwdne84199:0"
+msgstr "crwdns118201:0crwdne118201:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:13
 msgid ":ref:`element-wise-operations`"
-msgstr "crwdns84201:0:ref:crwdne84201:0"
+msgstr "crwdns118203:0:ref:crwdne118203:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:14
 msgid ":ref:`reduction-operations`"
-msgstr "crwdns84203:0:ref:crwdne84203:0"
+msgstr "crwdns118205:0:ref:crwdne118205:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:18
 msgid "并不是所有的 NumPy 中的计算接口都有提供对应的 MegEngine 实现，但在处理数据时， 你可以选择先调用 NumPy 实现获得 ndarray, 然后 :ref:`create-tensor-from-ndarray` ；"
-msgstr "crwdns84205:0:ref:crwdne84205:0"
+msgstr "crwdns118207:0:ref:crwdne118207:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:20
 msgid "如果你不理解一些 API 的使用方法，可以查询 NumPy 中关于对应 API 用法的介绍。"
-msgstr "crwdns84207:0crwdne84207:0"
+msgstr "crwdns118209:0crwdne118209:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:25
 msgid "元素级别运算（Element-wise）"
-msgstr "crwdns84209:0crwdne84209:0"
+msgstr "crwdns118211:0crwdne118211:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:27
 msgid "元素级别运算是 Tensor 运算中最常见的一大类，根据操作数的区别， 它既可以指对 Tensor 中每个位置的元素进行相同的运算（即一元运算）， 也可以指在不同的 Tensor 之间的对应元素逐个进行相互运算（即二元或更多元运算）， 这些运算自身又可以根据运算性质简略地区分为："
-msgstr "crwdns84211:0crwdne84211:0"
+msgstr "crwdns118213:0crwdne118213:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:32
 msgid "算术运算 （加减乘除等，参考 :ref:`arithmetic-operations` ）"
-msgstr "crwdns84213:0:ref:crwdne84213:0"
+msgstr "crwdns118215:0:ref:crwdne118215:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:33
 msgid "三角函数与反三角函数（参考 :ref:`trigonometric-functions` 与 :ref:`hyperbolic-functions` ）"
-msgstr "crwdns84215:0:ref:crwdnd84215:0:ref:crwdne84215:0"
+msgstr "crwdns118217:0:ref:crwdnd118217:0:ref:crwdne118217:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:34
 msgid "位运算（参考 :ref:`bit-operations` ）"
-msgstr "crwdns84217:0:ref:crwdne84217:0"
+msgstr "crwdns118219:0:ref:crwdne118219:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:35
 msgid "逻辑运算（参考 :ref:`logic-functions` ）"
-msgstr "crwdns84219:0:ref:crwdne84219:0"
+msgstr "crwdns118221:0:ref:crwdne118221:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:37
 msgid "在神经网络运算中，也有许多运算是元素级别的，比如激活函数 :py:func:`~.relu` 等。"
-msgstr "crwdns84221:0crwdne84221:0"
+msgstr "crwdns118223:0crwdne118223:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:40
 msgid "元素级别的含义"
-msgstr "crwdns84223:0crwdne84223:0"
+msgstr "crwdns118225:0crwdne118225:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:42
 msgid "如果两个元素在各自的 Tensor 内占据着相同的位置，那么我们可以称这两个元素是对应的， 其中元素的位置由用于定位每个元素的 :ref:`索引 <access-tensor-element>` 确定。 我们用下面两个 Tensor ``a`` 和 ``b`` 作为例子："
-msgstr "crwdns84225:0:ref:crwdne84225:0"
+msgstr "crwdns118227:0:ref:crwdne118227:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:49
 msgid "我们使用相同的索引 ``[0][0]`` 去获取分别获取两个 Tensor 中的元素："
-msgstr "crwdns84227:0[0]crwdnd84227:0[0]crwdne84227:0"
+msgstr "crwdns118229:0[0]crwdnd118229:0[0]crwdne118229:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:57
 msgid "可以发现，``a`` 中值为 1 的元素对应着 ``b`` 中值为 9 的元素。其它 3 个位置的元素也分别对应。"
-msgstr "crwdns84229:0crwdne84229:0"
+msgstr "crwdns118231:0crwdne118231:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:61
 msgid "对应关系由相同的索引定义，它表明了 Tensor 之间必须具有相同的形状才能进行元素间操作。"
-msgstr "crwdns84231:0crwdne84231:0"
+msgstr "crwdns118233:0crwdne118233:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:63
 msgid "以加法为例子，我们可以当作是两个矩阵之间进行了矩阵加法："
-msgstr "crwdns84233:0crwdne84233:0"
+msgstr "crwdns118235:0crwdne118235:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:65
 msgid "\\begin{bmatrix}\n"
@@ -111,23 +111,23 @@ msgid "\\begin{bmatrix}\n"
 "     10 & 10 \\\\\n"
 " 10 & 10\n"
 "\\end{bmatrix}"
-msgstr "crwdns84235:0{bmatrix}crwdnd84235:0{bmatrix}crwdnd84235:0{bmatrix}crwdnd84235:0{bmatrix}crwdnd84235:0{bmatrix}crwdnd84235:0{bmatrix}crwdne84235:0"
+msgstr "crwdns118237:0{bmatrix}crwdnd118237:0{bmatrix}crwdnd118237:0{bmatrix}crwdnd118237:0{bmatrix}crwdnd118237:0{bmatrix}crwdnd118237:0{bmatrix}crwdne118237:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:86
 msgid "并不是形状完全相同的两个 Tensor 之间才能够进行元素级别的运算， 如果两个 Tensor 的形状相互 “兼容”，则可以 :ref:`广播（Broadcast） <tensor-broadcasting>` 至相同的形状进行运算。 这个机制让 Tensor 计算变得非常灵活。"
-msgstr "crwdns84237:0:ref:crwdne84237:0"
+msgstr "crwdns118239:0:ref:crwdne118239:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:92
 msgid "人们也用 Component-wise / Point-wise 等术语来指代元素级别的运算。"
-msgstr "crwdns84239:0crwdne84239:0"
+msgstr "crwdns118241:0crwdne118241:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:95
 msgid "与矩阵运算的对比"
-msgstr "crwdns84241:0crwdne84241:0"
+msgstr "crwdns118243:0crwdne118243:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:97
 msgid "与 ``+`` 类似，使用 ``*`` 可以用来计算矩阵的对应元素相乘，也叫哈达玛积（Hadamard product）："
-msgstr "crwdns84243:0crwdne84243:0"
+msgstr "crwdns118245:0crwdne118245:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:99
 msgid "\\begin{bmatrix}\n"
@@ -142,57 +142,57 @@ msgid "\\begin{bmatrix}\n"
 "     9 & 16 \\\\\n"
 " 21 & 24\n"
 "\\end{bmatrix}"
-msgstr "crwdns84245:0{bmatrix}crwdnd84245:0{bmatrix}crwdnd84245:0{bmatrix}crwdnd84245:0{bmatrix}crwdnd84245:0{bmatrix}crwdnd84245:0{bmatrix}crwdne84245:0"
+msgstr "crwdns118247:0{bmatrix}crwdnd118247:0{bmatrix}crwdnd118247:0{bmatrix}crwdnd118247:0{bmatrix}crwdnd118247:0{bmatrix}crwdnd118247:0{bmatrix}crwdne118247:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:123
 msgid "**不同的框架和库对于一些运算符的定义不同。** 在 Matlab 中使用 ``.*`` 和 ``.^`` 表示元素级别的乘法和乘方， 使用 ``*`` 和 ``^`` 表示矩阵乘法和乘方，参考官网解释： `Array vs. Matrix Operations <https://www.mathworks.com/help/matlab/matlab_prog/array-vs-matrix-operations.html>`_"
-msgstr "crwdns84247:0crwdne84247:0"
+msgstr "crwdns118249:0crwdne118249:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:127
 msgid "一些人会将 ``*`` 误认为是矩阵乘法 :py:func:`~.matmul` , 实际上在 MegEngine 中矩阵乘法对应的运算符是 ``@`` ."
-msgstr "crwdns84249:0crwdne84249:0"
+msgstr "crwdns118251:0crwdne118251:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:133
 msgid "它对应于 :py:mod:`functional` 模块中提供的 :py:func:`~.matmul` 接口："
-msgstr "crwdns84251:0crwdne84251:0"
+msgstr "crwdns118253:0crwdne118253:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:141
 msgid "更多与线性代数有关的运算，请参考 :ref:`linear-algebra-functions` ."
-msgstr "crwdns84253:0:ref:crwdne84253:0"
+msgstr "crwdns118255:0:ref:crwdne118255:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:146
 msgid "归约运算（Reduction）"
-msgstr "crwdns87613:0crwdne87613:0"
+msgstr "crwdns118257:0crwdne118257:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:150
 msgid "归约运算能够减少一个 Tensor 中元素的数量。"
-msgstr "crwdns84257:0crwdne84257:0"
+msgstr "crwdns118259:0crwdne118259:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:152
 msgid "我们可以理解成统计意义上的降维（Dimensionality reduction）。"
-msgstr "crwdns84259:0crwdne84259:0"
+msgstr "crwdns118261:0crwdne118261:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:154
 msgid "一个最简单的例子是对 Tensor 中的元素求和，使用 :py:func:`~.sum` 接口："
-msgstr "crwdns84261:0crwdne84261:0"
+msgstr "crwdns118263:0crwdne118263:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:163
 msgid "可以看到，我们对一个形状为 ``(2, 3)`` 的 Tensor 求和后得到了一个 0 维 Tensor."
-msgstr "crwdns84263:0crwdne84263:0"
+msgstr "crwdns118265:0crwdne118265:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:167
 msgid "归约运算并不总是将输入 Tensor 归约为具有单个元素的 0 维 Tensor. 在传入 ``axis`` 参数且不为 `None` 时，则可以要求沿着轴进行规约，参考 :ref:`axis-argument` ；"
-msgstr "crwdns84265:0:ref:crwdne84265:0"
+msgstr "crwdns118267:0:ref:crwdne118267:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:169
 msgid "我们也可以通过设置参数 ``keepdims=True`` 来保持归约运算前后的维度不变。"
-msgstr "crwdns84267:0crwdne84267:0"
+msgstr "crwdns118269:0crwdne118269:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:173
 msgid "常见的 Tensor 归约运算还有：:py:func:`~.prod` / :py:func:`~.mean` 等， 可在 :ref:`statistical-functions` 中找到相关 API 和例程。"
-msgstr "crwdns84269:0:ref:crwdne84269:0"
+msgstr "crwdns118271:0:ref:crwdne118271:0"
 
 #: ../../source/user-guide/model-development/functional/general-operations.rst:175
 msgid "想要了解更多关于规约的知识，可以参考维基百科中对 `Reduction operator <https://en.wikipedia.org/wiki/Reduction_operator>`_ 的解释。"
-msgstr "crwdns84271:0crwdne84271:0"
+msgstr "crwdns118273:0crwdne118273:0"
 
