@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 07:07\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,285 +14,285 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/profiler.po\n"
-"X-Crowdin-File-ID: 2856\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/profiler.po\n"
+"X-Crowdin-File-ID: 9885\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/profiler.rst:5
 msgid "模型性能分析（Profiler）"
-msgstr "crwdns45534:0crwdne45534:0"
+msgstr "crwdns115821:0crwdne115821:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:9
 msgid "由于实现限制，:ref:`动态图与静态图 <dynamic-and-static-graph>` 下的 Profiler 接口并不一致， 侧重点也不相同，下面将分别介绍。"
-msgstr "crwdns45536:0:ref:crwdne45536:0"
+msgstr "crwdns115823:0:ref:crwdne115823:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:13
 msgid "动态图下的性能分析"
-msgstr "crwdns45538:0crwdne45538:0"
+msgstr "crwdns115825:0crwdne115825:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:14
 msgid "假设我们写好了一份动态图代码，其中训练部分代码如下："
-msgstr "crwdns45540:0crwdne45540:0"
+msgstr "crwdns115827:0crwdne115827:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:27
 #: ../../source/user-guide/model-development/profiler.rst:148
 msgid "生成性能数据"
-msgstr "crwdns45542:0crwdne45542:0"
+msgstr "crwdns115829:0crwdne115829:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:30
 msgid "挂载 Profiler 会拖慢模型的运行速度（大概在 8% 左右）。"
-msgstr "crwdns45544:0crwdne45544:0"
+msgstr "crwdns115831:0crwdne115831:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:32
 msgid "想要使用 Profiler 生成性能数据，存在两种写法（任选其一即可）："
-msgstr "crwdns45546:0crwdne45546:0"
+msgstr "crwdns115833:0crwdne115833:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:34
 msgid "使用 :py:data:`~megengine.utils.profiler.profile` 装饰器 （profile 是 Profiler 别名）"
-msgstr "crwdns45548:0crwdne45548:0"
+msgstr "crwdns115835:0crwdne115835:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:35
 msgid "使用 with :py:class:`~.utils.profiler.Profiler` 语法"
-msgstr "crwdns45550:0crwdne45550:0"
+msgstr "crwdns115837:0crwdne115837:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:37
 msgid "示例代码如下："
-msgstr "crwdns45552:0crwdne45552:0"
+msgstr "crwdns115839:0crwdne115839:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:63
 msgid "这样在每次进到对应代码块里时，MegEngine 会对区域里的代码单独做一次 Profiling."
-msgstr "crwdns45554:0crwdne45554:0"
+msgstr "crwdns115841:0crwdne115841:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:65
 msgid "代码跑完后，将会在运行目录下生成 ``JSON`` 文件，用于接下来的性能分析。"
-msgstr "crwdns45556:0crwdne45556:0"
+msgstr "crwdns115843:0crwdne115843:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:68
 msgid "参数说明"
-msgstr "crwdns45558:0crwdne45558:0"
+msgstr "crwdns115845:0crwdne115845:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:70
 msgid ":py:class:`~.utils.profiler.Profiler` 的构造函数支持如下参数："
-msgstr "crwdns45560:0crwdne45560:0"
+msgstr "crwdns115847:0crwdne115847:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:73
 msgid "``path``"
-msgstr "crwdns45562:0crwdne45562:0"
+msgstr "crwdns115849:0crwdne115849:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:73
 msgid "数据的存储路径前缀，默认为 ``profile``, 后面将自动加上 ``.chrome_timeline.json`` 后缀。"
-msgstr "crwdns45564:0crwdne45564:0"
+msgstr "crwdns115851:0crwdne115851:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:88
 msgid "``topic``"
-msgstr "crwdns45566:0crwdne45566:0"
+msgstr "crwdns115853:0crwdne115853:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:76
 msgid "接受预设的主题组合，Profiler 将只记录对应的信息，默认为 ``OPERATOR|SCOPE`` . 可选配置如下："
-msgstr "crwdns45568:0crwdne45568:0"
+msgstr "crwdns115855:0crwdne115855:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:78
 msgid "``ALL``: 包含下面所有主题"
-msgstr "crwdns45570:0crwdne45570:0"
+msgstr "crwdns115857:0crwdne115857:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:79
 msgid "``OPERATOR``: 记录算子执行时间以及算子参数"
-msgstr "crwdns45572:0crwdne45572:0"
+msgstr "crwdns115859:0crwdne115859:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:80
 msgid "``TENSOR_LIFETIME``: 记录 Tensor 的生命周期"
-msgstr "crwdns45574:0crwdne45574:0"
+msgstr "crwdns115861:0crwdne115861:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:81
 msgid "``SYNC``: 记录内部线程之间的同步事件"
-msgstr "crwdns45576:0crwdne45576:0"
+msgstr "crwdns115863:0crwdne115863:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:82
 msgid "``SCOPE``: 记录 module forward 前后的边界（类似调用栈形式）"
-msgstr "crwdns45578:0crwdne45578:0"
+msgstr "crwdns115865:0crwdne115865:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:83
 msgid "``MEMORY``: 记录显存使用情况"
-msgstr "crwdns45580:0crwdne45580:0"
+msgstr "crwdns115867:0crwdne115867:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:84
 msgid "``SHAPE_INFER``: 记录模型运行过程中 shape 推导的情况"
-msgstr "crwdns45582:0crwdne45582:0"
+msgstr "crwdns115869:0crwdne115869:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:88
 msgid "尽量避免使用 ``ALL``, 越多的配置将带来越大的 Profiling 开销。"
-msgstr "crwdns45584:0crwdne45584:0"
+msgstr "crwdns115871:0crwdne115871:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:91
 msgid "``align_time``"
-msgstr "crwdns45586:0crwdne45586:0"
+msgstr "crwdns115873:0crwdne115873:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:91
 msgid "将输出时间从相对变成绝对，方便对比多个 ``JSON`` 文件，默认为 ``True``."
-msgstr "crwdns45588:0crwdne45588:0"
+msgstr "crwdns115875:0crwdne115875:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:94
 msgid "``show_operator_name``"
-msgstr "crwdns45590:0crwdne45590:0"
+msgstr "crwdns115877:0crwdne115877:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:94
 msgid "是否显示算子类型名称，默认为 ``True``. 设置为 ``False`` 则所有算子均显示为 ``Operator``."
-msgstr "crwdns45592:0crwdne45592:0"
+msgstr "crwdns115879:0crwdne115879:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:97
 #: ../../source/user-guide/model-development/profiler.rst:179
 msgid "分析性能数据"
-msgstr "crwdns45594:0crwdne45594:0"
+msgstr "crwdns115881:0crwdne115881:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:98
 msgid "可以使用 `Chrome Performance <https://developer.chrome.com/docs/devtools/evaluate-performance/>`_ 工具加载上一步生成的 ``JSON`` 文件："
-msgstr "crwdns45596:0crwdne45596:0"
+msgstr "crwdns115883:0crwdne115883:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:101
 msgid "打开 `Chrome 浏览器 <https://www.google.com/intl/zh-CN/chrome/>`_ ；"
-msgstr "crwdns45598:0crwdne45598:0"
+msgstr "crwdns115885:0crwdne115885:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:102
 msgid "按下 ``F12`` （更多工具->开发者工具）打开开发者工具页面；"
-msgstr "crwdns45600:0crwdne45600:0"
+msgstr "crwdns115887:0crwdne115887:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:103
 msgid "切换到 Performance 标签，点击 ⬆️  （load profile） 按钮加载数据。"
-msgstr "crwdns45602:0crwdne45602:0"
+msgstr "crwdns115889:0crwdne115889:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:105
 msgid "此时可以在窗口里看到数个线程，每个线程中都有一群堆叠的色块（代表着事件）。 横坐标是时间轴，色块的左右边缘即是事件的起始与终止时间。 纵坐标代表事件所属的线程（其中 channel 为 python 主线程）。 例如，当我们在模型源代码里的 ``self.conv1(x)`` 被执行时， channel 线程上会有一个对应的 ``conv1`` 块，而其他线程上同样的 ``conv1`` 块会滞后一些。 而 worker 的主要工作是发送 kernel, 而真正执行计算的是 gpu  线程。 gpu 线程上的事件密度明显比 channel 和 worker 高。"
-msgstr "crwdns45604:0crwdne45604:0"
+msgstr "crwdns115891:0crwdne115891:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:115
 msgid "一般来说，GPU 线程越繁忙，说明模型的 GPU 利用率越高。"
-msgstr "crwdns45606:0crwdne45606:0"
+msgstr "crwdns115893:0crwdne115893:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:116
 msgid "频繁使用 :py:meth:`.Tensor.shape` , :py:meth:`.Tensor.numpy` 操作都可能导致需要做数据同步，降低 GPU 的利用率。"
-msgstr "crwdns45608:0crwdne45608:0"
+msgstr "crwdns115895:0crwdne115895:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:119
 msgid "以下操作会在 Performance 界面里默认以色块的形式呈现："
-msgstr "crwdns45610:0crwdne45610:0"
+msgstr "crwdns115897:0crwdne115897:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:121
 msgid ":py:meth:`.GradManager.backward`"
-msgstr "crwdns45612:0crwdne45612:0"
+msgstr "crwdns115899:0crwdne115899:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:122
 msgid ":py:meth:`.Optimizer.step`"
-msgstr "crwdns45614:0crwdne45614:0"
+msgstr "crwdns115901:0crwdne115901:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:123
 msgid ":py:meth:`.Optimizer.clear_grad`"
-msgstr "crwdns45616:0crwdne45616:0"
+msgstr "crwdns115903:0crwdne115903:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:124
 msgid ":py:meth:`.Module.forward`"
-msgstr "crwdns45618:0crwdne45618:0"
+msgstr "crwdns115905:0crwdne115905:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:126
 msgid "通过观察色块的长度，便可以得到对应操作的运行时间，从而评估模型的性能瓶颈。 特别地，在 worker 与 gpu 线程上，还能看到 op 级别的（细粒度）事件。 比如，诸如 ``z = x + y`` 的表达式，在 channel 上看不到信息， 但是在 gpu 线程上一般会有一个对应的 op 被记录下来，名字一般是 ``Elemwise``."
-msgstr "crwdns45620:0crwdne45620:0"
+msgstr "crwdns115907:0crwdne115907:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:133
 msgid "静态图下的性能分析"
-msgstr "crwdns45622:0crwdne45622:0"
+msgstr "crwdns115909:0crwdne115909:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:134
 msgid "假设我们写好了一份静态图代码，其中训练部分代码如下："
-msgstr "crwdns45624:0crwdne45624:0"
+msgstr "crwdns115911:0crwdne115911:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:149
 msgid "只需要在 :py:class:`~.jit.trace` 接口中传入 ``profiling=True``, 然后再调用 :py:meth:`~.trace.get_profile` 方法即可得到性能数据。"
-msgstr "crwdns45626:0crwdne45626:0"
+msgstr "crwdns115913:0crwdne115913:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:152
 msgid "修改后的代码如下："
-msgstr "crwdns45628:0crwdne45628:0"
+msgstr "crwdns115915:0crwdne115915:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:174
 msgid "这样我们将获得一个 ``JSON`` 文件，可用于下面的性能分析。"
-msgstr "crwdns45630:0crwdne45630:0"
+msgstr "crwdns115917:0crwdne115917:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:180
 msgid "在前一步中保存的 ``JSON`` 文件可以使用 MegEngine 在 ``tools`` 目录下提供的 ``profile_analyze.py`` 脚本进行分析，示例代码如下："
-msgstr "crwdns45632:0crwdne45632:0"
+msgstr "crwdns115919:0crwdne115919:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:197
 msgid "输出将是一张表格，每列的含义如下："
-msgstr "crwdns45634:0crwdne45634:0"
+msgstr "crwdns115921:0crwdne115921:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:200
 msgid "``device self time``"
-msgstr "crwdns45636:0crwdne45636:0"
+msgstr "crwdns115923:0crwdne115923:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:200
 msgid "算子在计算设备上（例如 GPU ）的运行时间"
-msgstr "crwdns45638:0crwdne45638:0"
+msgstr "crwdns115925:0crwdne115925:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:203
 msgid "``cumulative``"
-msgstr "crwdns45640:0crwdne45640:0"
+msgstr "crwdns115927:0crwdne115927:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:203
 msgid "累加前面所有算子的时间"
-msgstr "crwdns45642:0crwdne45642:0"
+msgstr "crwdns115929:0crwdne115929:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:206
 msgid "``operator info``"
-msgstr "crwdns45644:0crwdne45644:0"
+msgstr "crwdns115931:0crwdne115931:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:206
 msgid "打印算子的基本信息"
-msgstr "crwdns45646:0crwdne45646:0"
+msgstr "crwdns115933:0crwdne115933:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:209
 msgid "``computation``"
-msgstr "crwdns45648:0crwdne45648:0"
+msgstr "crwdns115935:0crwdne115935:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:209
 msgid "算子需要的浮点数操作数目"
-msgstr "crwdns45650:0crwdne45650:0"
+msgstr "crwdns115937:0crwdne115937:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:212
 msgid "``FLOPS``"
-msgstr "crwdns45652:0crwdne45652:0"
+msgstr "crwdns115939:0crwdne115939:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:212
 msgid "算子每秒执行的浮点操作数目，由 ``computation`` 除以 ``device self time`` 并转换单位得到"
-msgstr "crwdns45654:0crwdne45654:0"
+msgstr "crwdns115941:0crwdne115941:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:215
 msgid "``memory``"
-msgstr "crwdns45656:0crwdne45656:0"
+msgstr "crwdns115943:0crwdne115943:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:215
 msgid "算子使用的存储（例如 GPU 显存）大小"
-msgstr "crwdns45658:0crwdne45658:0"
+msgstr "crwdns115945:0crwdne115945:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:218
 msgid "``bandwidth``"
-msgstr "crwdns45660:0crwdne45660:0"
+msgstr "crwdns115947:0crwdne115947:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:218
 msgid "算子的带宽，由 ``memory`` 除以 ``device self time`` 并转换单位得到"
-msgstr "crwdns45662:0crwdne45662:0"
+msgstr "crwdns115949:0crwdne115949:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:221
 msgid "``in_shapes``"
-msgstr "crwdns45664:0crwdne45664:0"
+msgstr "crwdns115951:0crwdne115951:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:221
 msgid "算子输入张量的形状"
-msgstr "crwdns45666:0crwdne45666:0"
+msgstr "crwdns115953:0crwdne115953:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:224
 msgid "``out_shapes``"
-msgstr "crwdns45668:0crwdne45668:0"
+msgstr "crwdns115955:0crwdne115955:0"
 
 #: ../../source/user-guide/model-development/profiler.rst:224
 msgid "算子输出张量的形状"
-msgstr "crwdns45670:0crwdne45670:0"
+msgstr "crwdns115957:0crwdne115957:0"
 
