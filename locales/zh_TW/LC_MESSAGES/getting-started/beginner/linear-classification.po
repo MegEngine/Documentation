@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:13\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:34\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,196 +11,196 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/linear-classification.po\n"
-"X-Crowdin-File-ID: 8382\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/getting-started/beginner/linear-classification.po\n"
+"X-Crowdin-File-ID: 9849\n"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:5
 msgid "MegEngine 实现线性分类"
-msgstr "crwdns89288:0crwdne89288:0"
+msgstr "crwdns112367:0crwdne112367:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:6
 msgid "本教程涉及的内容"
-msgstr "crwdns89290:0crwdne89290:0"
+msgstr "crwdns112369:0crwdne112369:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:9
 msgid "对计算机视觉领域的图像编码有一个基础认知，了解机器学习中的分类任务；"
-msgstr "crwdns89292:0crwdne89292:0"
+msgstr "crwdns112371:0crwdne112371:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:10
 msgid "思考线性回归模型经过什么样的变化，可用于解决分类任务，以及该采取什么样的评估指标；"
-msgstr "crwdns89294:0crwdne89294:0"
+msgstr "crwdns112373:0crwdne112373:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:11
 msgid "根据前面的介绍，使用 MegEngine 实现线性分类器，完成 MNIST 手写数字分类任务。"
-msgstr "crwdns89296:0crwdne89296:0"
+msgstr "crwdns112375:0crwdne112375:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:13
 msgid "可视化操作"
-msgstr "crwdns89298:0crwdne89298:0"
+msgstr "crwdns112377:0crwdne112377:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:16
 msgid "本教程中进行了一些数据可视化操作，如果你没有 `Matplotlib <https://matplotlib.org/stable/index.html>`_ 的使用经验，则只需关注输出结果。"
-msgstr "crwdns89300:0crwdne89300:0"
+msgstr "crwdns112379:0crwdne112379:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:20
 msgid "获取原始数据集"
-msgstr "crwdns89302:0crwdne89302:0"
+msgstr "crwdns112381:0crwdne112381:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:22
 msgid "在上一个教程中，我们使用了 Scikit-learn 中的接口来获取加利福尼亚住房数据， 并提到许多 Python 库和框架会封装好获取一些数据集的接口，方便用户调用。 MegEngine 也不例外，在 :mod:`.data.dataset` 模块中，可以 :ref:`megengine-dataset` 来获取原始数据集，如本次教程所需用到的 :class:`~.MNIST` 数据集。"
-msgstr "crwdns89304:0:mod:crwdnd89304:0:ref:crwdnd89304:0:class:crwdne89304:0"
+msgstr "crwdns112383:0:mod:crwdnd112383:0:ref:crwdnd112383:0:class:crwdne112383:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:37
 msgid "和上个教程中得到的数据格式不同，这里得到的是已经划分好的训练集 ``train_dataset`` 和测试集 ``test_dataset``, 且均已经封装成了 MegEngine 中可提供给 :class:`~.DataLoader` 的 :class:`~.Dataset` 类型（具体的介绍可参考 :ref:`dataset-guide` ）。 其中的每个元素是由单个样本 :math:`X_i` 和标记 :math:`y_i` 组成的元组 :math:`(X_i, y_i)` ："
-msgstr "crwdns89306:0:class:crwdnd89306:0:class:crwdnd89306:0:ref:crwdnd89306:0:math:crwdnd89306:0:math:crwdnd89306:0:math:crwdne89306:0"
+msgstr "crwdns112385:0:class:crwdnd112385:0:class:crwdnd112385:0:ref:crwdnd112385:0:math:crwdnd112385:0:math:crwdnd112385:0:math:crwdne112385:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:45
 msgid "为了方便进行接下来的讨论，我们这里特意地将训练数据的样本和标签拆分出来："
-msgstr "crwdns89308:0crwdne89308:0"
+msgstr "crwdns112387:0crwdne112387:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:56
 msgid "统计训练样本的均值和标准差信息，用于数据预处理时进行归一化："
-msgstr "crwdns89310:0crwdne89310:0"
+msgstr "crwdns112389:0crwdne112389:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:64
 msgid "对于 MNIST 这样的经典数据集，通常在数据集主页会提供这些统计信息， 或可以借助搜索引擎在网络上找到其它人已经统计好的数据。"
-msgstr "crwdns89312:0crwdne89312:0"
+msgstr "crwdns112391:0crwdne112391:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:68
 msgid "了解数据集信息"
-msgstr "crwdns89314:0crwdne89314:0"
+msgstr "crwdns112393:0crwdne112393:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:70
 msgid "回忆一下，在上一个教程中，我们的住房样本数据（未拆分前）形状为 :math:`(20640, 8)`, 表示一共有 20640 个样本，每个样本具有 8 个属性值，也可以说是特征向量的维度为 8. 而这里训练数据的形状是 :math:`(60000, 28, 28, 1)`, 如果 60000 是训练样本的总数，那么后面的 :math:`(28, 28, 1)` 形状又代表什么呢？"
-msgstr "crwdns89316:0:math:crwdnd89316:0:math:crwdnd89316:0:math:crwdne89316:0"
+msgstr "crwdns112395:0:math:crwdnd112395:0:math:crwdnd112395:0:math:crwdne112395:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:77
 msgid "查询 `MNIST 官网主页 <http://yann.lecun.com/exdb/mnist/>`_ :footcite:p:`lecun2010mnist` 介绍信息可知： 手写数字数据集中包含 60,000 张训练图像和 10,000 张测试图像，每张图片是 28x28 像素的灰度图。 Google 提供了一个叫做 `Know Your Data <https://knowyourdata.withgoogle.com/>`_ 的网站，能够以可视化的方式帮助我们了解一些经典公开数据集， 包括此处用到的 `MNIST 数据集 <https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dataset=mnist>`_ 。"
-msgstr "crwdns89318:0crwdne89318:0"
+msgstr "crwdns112397:0crwdne112397:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:85
 msgid "标记 :math:`y \\in \\left\\{ 0, 1, \\ldots , 9 \\right\\}` 是离散的数值， 与上一个教程中的样本标记值（房价） :math:`y \\in \\mathbb R` 不一样。"
-msgstr "crwdns89320:0:math:crwdnd89320:0:math:crwdne89320:0"
+msgstr "crwdns112399:0:math:crwdnd112399:0:math:crwdne112399:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:88
 msgid "运行下面的可视化代码，可以帮助你对数据有一个直观的理解（目前不用理解代码实现）："
-msgstr "crwdns89322:0crwdne89322:0"
+msgstr "crwdns112401:0crwdne112401:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:114
 msgid "在不少的公开可获取的数据集中，数据集的提供者已经为使用者划分好了训练集和测试集。 但我们在上一个教程中提到了，我们至少还应提供一个验证集来避免在训练集上过拟合。 而在实际实践时，对这样的数据集会出现许多奇怪的划分情况，以我们已有的 MNIST 训练集与测试集为例："
-msgstr "crwdns89324:0crwdne89324:0"
+msgstr "crwdns112403:0crwdne112403:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:118
 msgid "如果我们将训练集中的 60000 个样本按照 5:1 的比例进一步划分成训练集和验证集。 这样的处理方式和上一个教程中一致，此时测试集负责模拟将来的生产环境中 “不可预知的” 数据，只用一次；"
-msgstr "crwdns89326:0crwdne89326:0"
+msgstr "crwdns112405:0crwdne112405:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:121
 msgid "如果我们将当前测试集中的 10000 个样本按照 1:1 的比例进一步划分成验证集和测试集，则有不同的含义。 这种做法的出发点是： “验证集” 应当是对 “测试集” 的模拟，应当尽量和测试集保持同一分布。 比如在机器学习竞赛中，提供给选手的测试集 :math:`T_a` 可能就是从原本的测试集 :math:`T` 中划分出来的一部分， 在公榜排名中给出的是在 :math:`T_a` 上的成绩，而最终的排名将在真正的测试集 :math:`T_b` 进行。"
-msgstr "crwdns89328:0:math:crwdnd89328:0:math:crwdnd89328:0:math:crwdnd89328:0:math:crwdne89328:0"
+msgstr "crwdns112407:0:math:crwdnd112407:0:math:crwdnd112407:0:math:crwdnd112407:0:math:crwdne112407:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:126
 msgid "如果我们在这里并不对训练集和测试集进行进一步划分，而是每经过一轮训练，在已有的测试集上进行验证， 即意味着这个测试集其实起到的是验证集的作用。那么真实的测试集在哪里呢？ 来自于我们的生产环境，毕竟测试集的定义本就是 “不可提前预知” 的数据，很多时候无法提前获取。"
-msgstr "crwdns89330:0crwdne89330:0"
+msgstr "crwdns112409:0crwdne112409:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:130
 msgid "总而言之，数据集的划分策略更多取决于我们能够获得的数据是什么样的，是否与将来使用情景下的数据分布一致。 测试集和验证集这两个术语的意义经常被混用（或者相互指代），因此最简单的判断方法是看用途。 需要确保的是：在模型训练的过程中，及时地验证模型性能是不可缺少的过程。"
-msgstr "crwdns89332:0crwdne89332:0"
+msgstr "crwdns112411:0crwdne112411:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:134
 msgid "在本教程中，将 MNIST 测试集视作验证集，即每完成一轮参数更新后，将评估模型在测试集上的性能。"
-msgstr "crwdns89334:0crwdne89334:0"
+msgstr "crwdns112413:0crwdne112413:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:137
 msgid "非结构化数据：图片"
-msgstr "crwdns89336:0crwdne89336:0"
+msgstr "crwdns112415:0crwdne112415:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:139
 msgid "加利福利亚住房数据集中，我们描述住房特征时可以用特征向量 :math:`\\mathrm{x} \\in \\mathbb{R}^d` 来进行表示。 整个数据集可以借助二维表格（矩阵）来进行表达和存储，我们称这样的数据叫做结构化数据（Structured data）。 而在现实生活中，人类更容易接触和理解的是非结构化数据（Unstructured data），比如视频、音频、图片等等..."
-msgstr "crwdns89338:0:math:crwdnd89338:0{x}crwdnd89338:0{R}crwdne89338:0"
+msgstr "crwdns112417:0:math:crwdnd112417:0{x}crwdnd112417:0{R}crwdne112417:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:143
 msgid "计算机如何理解、表达和存储这样的数据呢？本教程将以 MNIST 中的手写数字图片样本为例进行说明："
-msgstr "crwdns89340:0crwdne89340:0"
+msgstr "crwdns112419:0crwdne112419:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:152
 msgid "MNIST 数据集中的图像均为位图图像（Bitmap），也叫光栅图像、栅格图像，与矢量图的概念相对； 每张图由许多被称作像素（Pixel, 即图像元素 Pictrue element）的点组成。 我们取出一张标记为 3 的图片样本 ``X_train[idx]`` 进行观察，发现其高度（Height）和宽度（Weight）均为 28 个像素， 与单个样本的形状 :math:`(28, 28, 1)` 对应；最后一个维度表示通道（Channel）数量， 由于 MNIST 中的图片为灰度图，因此通道数为 1. 对于 RGB 颜色制式的彩图，其通道数则为 3，我们会在下一个教程中看到这样的数据。"
-msgstr "crwdns89342:0[idx]crwdnd89342:0:math:crwdne89342:0"
+msgstr "crwdns112421:0[idx]crwdnd112421:0:math:crwdne112421:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:159
 msgid "现在让我们将这张灰度图进行 3 维可视化，以助于培养直觉理解："
-msgstr "crwdns89344:0crwdne89344:0"
+msgstr "crwdns112423:0crwdne112423:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:173
 msgid "在灰度图中，每个像素值用 0（黑色）~ 255（白色）进行表示，即一个 int8 所能表示的范围。"
-msgstr "crwdns89346:0crwdne89346:0"
+msgstr "crwdns112425:0crwdne112425:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:175
 msgid "我们通常称呼 :math:`(60000, 28, 28, 1)` 这样的数据为 NHWC 布局，在后面我们会看到更多的布局形式。"
-msgstr "crwdns89348:0:math:crwdne89348:0"
+msgstr "crwdns112427:0:math:crwdne112427:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:178
 msgid "图片特征的简单处理"
-msgstr "crwdns89350:0crwdne89350:0"
+msgstr "crwdns112429:0crwdne112429:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:180
 msgid "不同类型数据之间特征的区别"
-msgstr "crwdns89352:0crwdne89352:0"
+msgstr "crwdns112431:0crwdne112431:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:182
 msgid "在上一个教程中，线性模型的单样本输入是一个特征向量 :math:`\\mathrm{x} \\in \\mathbb{R}^d`;"
-msgstr "crwdns89354:0:math:crwdnd89354:0{x}crwdnd89354:0{R}crwdne89354:0"
+msgstr "crwdns112433:0:math:crwdnd112433:0{x}crwdnd112433:0{R}crwdne112433:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:183
 msgid "而此处 MNSIT 数据集中的图片 :math:`\\mathsf{I}` 的特征空间为 :math:`\\mathbb{R}^{H \\times W \\times C}`."
-msgstr "crwdns89356:0:math:crwdnd89356:0{I}crwdnd89356:0:math:crwdnd89356:0{R}crwdne89356:0"
+msgstr "crwdns112435:0:math:crwdnd112435:0{I}crwdnd112435:0:math:crwdnd112435:0{R}crwdne112435:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:185
 msgid "想要满足线性模型对输入形状的需求，需要对输入样本的特征进行一定的处理。 最容易简单粗暴地实现 :math:`\\mathbb{R}^{H \\times W \\times C} \\mapsto \\mathbb{R}^d` 而又不丢失各元素数值信息的做法是使用 :func:`~.flatten` 扁平化操作："
-msgstr "crwdns89358:0:math:crwdnd89358:0{R}crwdnd89358:0{R}crwdnd89358:0:func:crwdne89358:0"
+msgstr "crwdns112437:0:math:crwdnd112437:0{R}crwdnd112437:0{R}crwdnd112437:0:func:crwdne112437:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:193
 msgid "原始图像"
-msgstr "crwdns89360:0crwdne89360:0"
+msgstr "crwdns112439:0crwdne112439:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:206
 msgid "Flatten 处理后"
-msgstr "crwdns89362:0crwdne89362:0"
+msgstr "crwdns112441:0crwdne112441:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:218
 msgid "在 MegEngine 中对应的接口为 :meth:`.Tensor.flatten` 或 :func:`.functional.flatten`. 与在上个教程中提到的 :func:`~.expand_dims` 和 :func:`~.squeeze` 操作一样， :func:`~.flatten` 操作也可以通过 :func:`~.reshape` 实现。 但考虑到代码语义，此时应当尽量使用 :func:`~.flatten` 而不是 :func:`~.reshape`."
-msgstr "crwdns89364:0:meth:crwdnd89364:0:func:crwdnd89364:0:func:crwdnd89364:0:func:crwdnd89364:0:func:crwdnd89364:0:func:crwdnd89364:0:func:crwdnd89364:0:func:crwdne89364:0"
+msgstr "crwdns112443:0:meth:crwdnd112443:0:func:crwdnd112443:0:func:crwdnd112443:0:func:crwdnd112443:0:func:crwdnd112443:0:func:crwdnd112443:0:func:crwdnd112443:0:func:crwdne112443:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:223
 msgid "MegEngine 中的扁平化操作可以直接用于多个样本的情况（以便支持向量化计算）："
-msgstr "crwdns89366:0crwdne89366:0"
+msgstr "crwdns112445:0crwdne112445:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:235
 msgid "经过简单处理，就能够把单个样本的线性预测模型和上一个教程中的 :math:`\\hat{y} = \\boldsymbol{w} \\cdot \\boldsymbol{x}+b` 形式相互联系起来了。"
-msgstr "crwdns89368:0:math:crwdnd89368:0{y}crwdnd89368:0{w}crwdnd89368:0{x}crwdne89368:0"
+msgstr "crwdns112447:0:math:crwdnd112447:0{y}crwdnd112447:0{w}crwdnd112447:0{x}crwdne112447:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:239
 msgid "分类任务的输出形式"
-msgstr "crwdns89370:0crwdne89370:0"
+msgstr "crwdns112449:0crwdne112449:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:241
 msgid "在线性回归任务中，我们的预测输出值 :math:`\\hat{y}` 在实数域 :math:`\\mathbb R` 上，是连续的。 而对于分类任务，通常给出的标记是由离散的值组成的集合，比如这里的 :math:`y \\in \\left\\{ 0, 1, \\ldots , 9 \\right\\}`. 此时要怎么样达成模型预测输出和标记形式上的统一呢？"
-msgstr "crwdns89372:0:math:crwdnd89372:0{y}crwdnd89372:0:math:crwdnd89372:0:math:crwdne89372:0"
+msgstr "crwdns112451:0:math:crwdnd112451:0{y}crwdnd112451:0:math:crwdnd112451:0:math:crwdne112451:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:245
 msgid "让我们先简化问题的形式，从最简单的分类情况，即从二分类任务开始讨论。"
-msgstr "crwdns89374:0crwdne89374:0"
+msgstr "crwdns112453:0crwdne112453:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:248
 msgid "二分类任务"
-msgstr "crwdns89376:0crwdne89376:0"
+msgstr "crwdns112455:0crwdne112455:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:250
 msgid "假定我们的手写数字分类任务简化成标记只含有 0 和 1 的情况，即 :math:`y \\in \\left\\{ 0, 1 \\right\\}`. 其中 0 意味着这张图片是手写数字 0, 而 1 意味着这张图片不是手写数字 0. 对于离散的标记，我们可以引入非线性的链接函数 :math:`g(\\cdot)` 来将线性输出映射为类别。 比如，可以将 :math:`f(\\boldsymbol{x})=\\boldsymbol{x} \\cdot \\boldsymbol{w}+b` 的输出以 0 为阈值（Threshold） 进行划分，认为凡是计算结果大于 0 的样本，都代表这张图片是手写数字 0； 而凡是计算结果小于 0 的样本，都代表这张图片不是手写数字 0. 故可以得到这样的预测模型："
-msgstr "crwdns89378:0:math:crwdnd89378:0:math:crwdnd89378:0:math:crwdnd89378:0{x}crwdnd89378:0{x}crwdnd89378:0{w}crwdne89378:0"
+msgstr "crwdns112457:0:math:crwdnd112457:0:math:crwdnd112457:0:math:crwdnd112457:0{x}crwdnd112457:0{x}crwdnd112457:0{w}crwdne112457:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:258
 msgid "\\hat{y}=\\mathbb{I}(f(\\boldsymbol{x})-\\text { threshold })=\n"
@@ -208,99 +208,99 @@ msgid "\\hat{y}=\\mathbb{I}(f(\\boldsymbol{x})-\\text { threshold })=\n"
 "1 & \\text { if } & f(\\boldsymbol{x})>\\text { threshold } \\\\\n"
 "0 & \\text { if } & f(\\boldsymbol{x})<\\text { threshold }\n"
 "\\end{array}\\right."
-msgstr "crwdns89380:0{y}crwdnd89380:0{I}crwdnd89380:0{x}crwdnd89380:0{ threshold }crwdnd89380:0{array}crwdnd89380:0{lll}crwdnd89380:0{ if }crwdnd89380:0{x}crwdnd89380:0{ threshold }crwdnd89380:0{ if }crwdnd89380:0{x}crwdnd89380:0{ threshold }crwdnd89380:0{array}crwdne89380:0"
+msgstr "crwdns112459:0{y}crwdnd112459:0{I}crwdnd112459:0{x}crwdnd112459:0{ threshold }crwdnd112459:0{array}crwdnd112459:0{lll}crwdnd112459:0{ if }crwdnd112459:0{x}crwdnd112459:0{ threshold }crwdnd112459:0{ if }crwdnd112459:0{x}crwdnd112459:0{ threshold }crwdnd112459:0{array}crwdne112459:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:266
 msgid "其中 :math:`\\mathbb I` 是指示函数（也叫示性函数），也是我们这里用到的链接函数，但它并不常用。 原因很多，对于优化问题来说，它的数学性质并不好，不适合被用于梯度下降算法。 对于线性模型的输出 -100 和 -1000, 这种分段函数将二者都决策成标记为 0 的这个类别， 并不能体现出两个样本类内的区别 —— 举例来说，尽管二者都不是 0，但输出为 -1000 的样本应该比输出为 -100 的样本更加不像 0. 前者可能是 1, 后者可能是 6."
-msgstr "crwdns89382:0:math:crwdne89382:0"
+msgstr "crwdns112461:0:math:crwdne112461:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:273
 msgid "在实践中，我们更常使用的链接函数是 Sigmoid 函数 :math:`\\sigma(\\cdot)` (也叫 Logistic 函数)："
-msgstr "crwdns89384:0:math:crwdne89384:0"
+msgstr "crwdns112463:0:math:crwdne112463:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:275
 msgid "\\sigma(x)=\\frac{1}{1+\\exp (-x)}"
-msgstr "crwdns89386:0{1}crwdne89386:0"
+msgstr "crwdns112465:0{1}crwdne112465:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:289
 msgid "其中 :math:`\\exp`  指以自然常数 :math:`e` 为底的指数函数："
-msgstr "crwdns89388:0:math:crwdnd89388:0:math:crwdne89388:0"
+msgstr "crwdns112467:0:math:crwdnd112467:0:math:crwdne112467:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:295
 msgid "Logistic 是比利时数学家 Pierre François Verhulst 在 1844 或 1845 年在研究人口增长的关系时命名的， 和 Sigmoid 一样指代 S 形函数：起初阶段大致是指数增长；然后随着开始变得饱和，增加变慢最后，达到成熟时增加停止。以下是 Verhulst 对命名的解释："
-msgstr "crwdns89390:0crwdne89390:0"
+msgstr "crwdns112469:0crwdne112469:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:298
 msgid "Verhulst writes \"We will give the name logistic [logistique] to the curve\" (1845 p.8). Though he does not explain this choice, there is a connection with the logarithmic basis of the function. Logarithm was coined by John Napier (1550-1617) from Greek logos (ratio, proportion, reckoning) and arithmos (number). Logistic comes from the Greek logistikos (computational). In the 1700's, logarithmic and logistic were synonymous. Since computation is needed to predict the supplies an army requires, logistics has come to be also used for the movement and supply of troops."
-msgstr "crwdns89392:0[logistique]crwdne89392:0"
+msgstr "crwdns112471:0[logistique]crwdne112471:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:305
 msgid "Berkson coined logit (pronouced \"low-jit\") in 1944 as a contraction of logistic unit to indicate the unit of measurement (J. Amer. Stat. Soc. 39:357-365). Georg Rasch derives logit as a contraction of logistic transform (1980, p.80). Ben Wright derives logit as a contraction of log-odds unit. Logit is also used to characterize the logistic function in the way that probit (probability unit, coined by Chester Bliss about 1934), characterizes the cumulative normal function."
-msgstr "crwdns89394:0crwdne89394:0"
+msgstr "crwdns112473:0crwdne112473:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:311
 msgid "Sigmoid 的反函数是 Logit 函数，即 :math:`\\text{logit}(p) = \\log(\\frac{p}{1-p})`, 有 :math:`\\sigma (\\text{logit}(p))=p`. 根据 Sigmoid 能够将实数映射到概率的特性，很容易发现 Logit 能够将概率映射到实数。"
-msgstr "crwdns89396:0:math:crwdnd89396:0{logit}crwdnd89396:0{p}crwdnd89396:0{1-p}crwdnd89396:0:math:crwdnd89396:0{logit}crwdne89396:0"
+msgstr "crwdns112475:0:math:crwdnd112475:0{logit}crwdnd112475:0{p}crwdnd112475:0{1-p}crwdnd112475:0:math:crwdnd112475:0{logit}crwdne112475:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:314
 msgid "选择 Sigmoid 的另一原因是它从信息论角度具有良好的数学解释（本教程中不会具体介绍）， 可以根据最大熵（Maximum entroy）原则从伯努利分布和广义线性模型的假设下推导得出。 使用了 Sigmoid / Logistic 函数的模型也被我们称为 Logistic 回归模型（LR 模型）。 很多地方将其翻译为 “逻辑回归”，这就和将 Robustness 翻译成 “鲁棒性” 一样迷惑， 从数学性质上看更适合翻译为对数几率回归。"
-msgstr "crwdns89398:0crwdne89398:0"
+msgstr "crwdns112477:0crwdne112477:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:320
 msgid "在本教程中将不对这个 Logistic 术语进行翻译。"
-msgstr "crwdns89400:0crwdne89400:0"
+msgstr "crwdns112479:0crwdne112479:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:322
 msgid "我们发现，对于二分类任务，Sigmoid 函数具有以下的优点："
-msgstr "crwdns89402:0crwdne89402:0"
+msgstr "crwdns112481:0crwdne112481:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:324
 msgid "易于求导：:math:`\\sigma^{\\prime}(x)=\\sigma(x)(1-\\sigma(x))`"
-msgstr "crwdns89404:0:math:crwdne89404:0"
+msgstr "crwdns112483:0:math:crwdne112483:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:325
 msgid "将线性计算部分的输出映射到了 :math:`(0, 1)` 范围内，且可以表示成概率。"
-msgstr "crwdns89406:0:math:crwdne89406:0"
+msgstr "crwdns112485:0:math:crwdne112485:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:327
 msgid "我们可使用如下形式表示将样本 :math:`\\mathrm{x}` 的标签预测为某分类的概率（这里假定为 1）："
-msgstr "crwdns89408:0:math:crwdnd89408:0{x}crwdne89408:0"
+msgstr "crwdns112487:0:math:crwdnd112487:0{x}crwdne112487:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:329
 msgid "p(y=1 \\mid \\boldsymbol{x})=\\sigma(f(\\boldsymbol{x}))=\\frac{1}{1+\\exp (-f(\\boldsymbol{x}))}"
-msgstr "crwdns89410:0{x}crwdnd89410:0{x}crwdnd89410:0{1}crwdnd89410:0{x}crwdne89410:0"
+msgstr "crwdns112489:0{x}crwdnd112489:0{x}crwdnd112489:0{1}crwdnd112489:0{x}crwdne112489:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:333
 msgid "继续使用我们上面给出的例子：对于线性模型的输出, 经过 Sigmoid 函数的映射后， :math:`\\sigma(-1000)` 比 :math:`\\sigma(-100)` 要更加接近 0，表示前者不是 0 的概率要更高一些。 这就使得不同的样本预测结果之间的区别能够得到有效的体现。 与此同时，对于已经正确分类的样本，Sigmoid 函数不鼓励将线性模型的输出范围拉得过大，收益不明显。"
-msgstr "crwdns89412:0:math:crwdnd89412:0:math:crwdne89412:0"
+msgstr "crwdns112491:0:math:crwdnd112491:0:math:crwdne112491:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:340
 msgid "二分类 Logistic 回归最终的输出只有一个值，表示预测为某基类的概率。 接下来我们将介绍多分类 Logistic 回归（Multinational Logistic Regression）。"
-msgstr "crwdns89414:0crwdne89414:0"
+msgstr "crwdns112493:0crwdne112493:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:344
 msgid "多分类任务"
-msgstr "crwdns89416:0crwdne89416:0"
+msgstr "crwdns112495:0crwdne112495:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:346
 msgid "将分类模型的输出转换为对目标类别的概率表示，是非常常见（但不唯一）的处理思路。 Logistic 回归中最终的输出只有一个概率 :math:`p`, 代表预测为某分类的概率； 另一个分类上的概率可以直接使用 :math:`1-p` 进行表示。 推广到多分类任务，我们如何将线性模型的输出转换为在多个类别上的概率预测？"
-msgstr "crwdns89418:0:math:crwdnd89418:0:math:crwdne89418:0"
+msgstr "crwdns112497:0:math:crwdnd112497:0:math:crwdne112497:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:351
 msgid "对标记进行 One-hot 编码"
-msgstr "crwdns89420:0crwdne89420:0"
+msgstr "crwdns112499:0crwdne112499:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:353
 msgid "细心的读者可能已经注意到了这一点，MNIST 数据集中的标记均为标量。 因此需要做一些额外的处理，使其变成多分类上的概率向量，常见的做法是使用 One-hot 编码。 例如某两张手写数字样本的对应标记为 3 和 5, 使用 One-hot 编码 （对应接口为 :func:`.functional.nn.one_hot` ）将得到如下表示："
-msgstr "crwdns89422:0:func:crwdne89422:0"
+msgstr "crwdns112501:0:func:crwdne112501:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:370
 msgid "经过这样的处理，每个样本的标记就变成了一个 10 分类的概率向量，可与模型预测输出进行比较。"
-msgstr "crwdns89424:0crwdne89424:0"
+msgstr "crwdns112503:0crwdne112503:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:372
 msgid "回忆一下线性回归的形式，对于单个样本 :math:`\\boldsymbol x \\in \\mathbb{R}^d`, 借助于权重向量 :math:`\\boldsymbol{w} \\in \\mathbb{R}^d` 和偏置 :math:`b`, 可以得到一个线性输出 :math:`\\boldsymbol {w} \\cdot \\boldsymbol {x} + b`, 现在我们可以将这个输出看作是预测当前样本是某个分类的得分 :math:`s`, 或者说预测为该分类的可信度。 对于 :math:`c` 分类任务，我们希望得到 :math:`c` 个这样的得分，因此可以借助矩阵运算的形式实现："
-msgstr "crwdns89426:0:math:crwdnd89426:0{R}crwdnd89426:0:math:crwdnd89426:0{w}crwdnd89426:0{R}crwdnd89426:0:math:crwdnd89426:0:math:crwdnd89426:0{w}crwdnd89426:0{x}crwdnd89426:0:math:crwdnd89426:0:math:crwdnd89426:0:math:crwdne89426:0"
+msgstr "crwdns112505:0:math:crwdnd112505:0{R}crwdnd112505:0:math:crwdnd112505:0{w}crwdnd112505:0{R}crwdnd112505:0:math:crwdnd112505:0:math:crwdnd112505:0{w}crwdnd112505:0{x}crwdnd112505:0:math:crwdnd112505:0:math:crwdnd112505:0:math:crwdne112505:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:378
 msgid "\\left[\\begin{array}{c}\n"
@@ -324,285 +324,281 @@ msgid "\\left[\\begin{array}{c}\n"
 "\\left[\\begin{array}{c}\n"
 "s_{1} \\\\ s_{2} \\\\ \\vdots \\\\ s_{c}\n"
 "\\end{array}\\right]"
-msgstr "crwdns89428:0{array}crwdnd89428:0{c}crwdnd89428:0{w}crwdnd89428:0{1}crwdnd89428:0{T}crwdnd89428:0{w}crwdnd89428:0{2}crwdnd89428:0{T}crwdnd89428:0{w}crwdnd89428:0{c}crwdnd89428:0{T}crwdnd89428:0{array}crwdnd89428:0{array}crwdnd89428:0{c}crwdnd89428:0{1}crwdnd89428:0{2}crwdnd89428:0{d}crwdnd89428:0{array}crwdnd89428:0{array}crwdnd89428:0{c}crwdnd89428:0{1}crwdnd89428:0{2}crwdnd89428:0{c}crwdnd89428:0{array}crwdnd89428:0{array}crwdnd89428:0{c}crwdnd89428:0{w}crwdnd89428:0{1}crwdnd89428:0{T}crwdnd89428:0{x}crwdnd89428:0{w}crwdnd89428:0{2}crwdnd89428:0{T}crwdnd89428:0{x}crwdnd89428:0{w}crwdnd89428:0{c}crwdnd89428:0{T}crwdnd89428:0{x}crwdnd89428:0{array}crwdnd89428:0{array}crwdnd89428:0{c}crwdnd89428:0{1}crwdnd89428:0{2}crwdnd89428:0{c}crwdnd89428:0{array}crwdne89428:0"
+msgstr "crwdns112507:0{array}crwdnd112507:0{c}crwdnd112507:0{w}crwdnd112507:0{1}crwdnd112507:0{T}crwdnd112507:0{w}crwdnd112507:0{2}crwdnd112507:0{T}crwdnd112507:0{w}crwdnd112507:0{c}crwdnd112507:0{T}crwdnd112507:0{array}crwdnd112507:0{array}crwdnd112507:0{c}crwdnd112507:0{1}crwdnd112507:0{2}crwdnd112507:0{d}crwdnd112507:0{array}crwdnd112507:0{array}crwdnd112507:0{c}crwdnd112507:0{1}crwdnd112507:0{2}crwdnd112507:0{c}crwdnd112507:0{array}crwdnd112507:0{array}crwdnd112507:0{c}crwdnd112507:0{w}crwdnd112507:0{1}crwdnd112507:0{T}crwdnd112507:0{x}crwdnd112507:0{w}crwdnd112507:0{2}crwdnd112507:0{T}crwdnd112507:0{x}crwdnd112507:0{w}crwdnd112507:0{c}crwdnd112507:0{T}crwdnd112507:0{x}crwdnd112507:0{array}crwdnd112507:0{array}crwdnd112507:0{c}crwdnd112507:0{1}crwdnd112507:0{2}crwdnd112507:0{c}crwdnd112507:0{array}crwdne112507:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:402
 msgid "注意：为了方便理解，这里写成了线性代数中矩阵运算的形式，实际计算时未必一定要将向量提升为矩阵。"
-msgstr "crwdns89430:0crwdne89430:0"
+msgstr "crwdns112509:0crwdne112509:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:404
 msgid "我们简单验证一下输出的得分是否是一个 10 维向量（利用上一个教程中 矩阵@向量 运算）："
-msgstr "crwdns89432:0crwdne89432:0"
+msgstr "crwdns112511:0crwdne112511:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:419
 msgid "我们可以直观理解成，一个 :math:`d` 维特征向量，经过一个权重矩阵变换加偏置后能够得到一个 :math:`c` 维得分向量。"
-msgstr "crwdns89434:0:math:crwdnd89434:0:math:crwdne89434:0"
+msgstr "crwdns112513:0:math:crwdnd112513:0:math:crwdne112513:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:421
 msgid "Sigmoid 函数能够将单个输出从实数域 :math:`\\mathbb R` 映射到概率区间 :math:`(0,1)` ， 对于得分向量。如果每个类得分都应用 Sigmoid 函数，的确会得到多个概率值，但问题在于这样得到的概率值之和不为 1. 需要寻找其它做法。"
-msgstr "crwdns89436:0:math:crwdnd89436:0:math:crwdne89436:0"
+msgstr "crwdns112515:0:math:crwdnd112515:0:math:crwdne112515:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:425
 msgid "最容易想到的做法是学习 One-hot 表示，将最大值处 （对应接口 :func:`.functional.argmax` ） 的概率设置成 1, 其它位置统统设置成 0. 如 :math:`(10, -10, 30, 20)` 变成 :math:`(0, 0, 1, 0)`. :math:`\\operatorname{Argmax}` 这种做法属于硬分类，和之前在二分类任务中看到的示性函数 :math:`\\mathbb I(\\cdot )` 存在着同样的问题：数学性质比较差；无法体现类内、类间样本的区别... 等等。"
-msgstr "crwdns89438:0:func:crwdnd89438:0:math:crwdnd89438:0:math:crwdnd89438:0:math:crwdnd89438:0{Argmax}crwdnd89438:0:math:crwdne89438:0"
+msgstr "crwdns112517:0:func:crwdnd112517:0:math:crwdnd112517:0:math:crwdnd112517:0:math:crwdnd112517:0{Argmax}crwdnd112517:0:math:crwdne112517:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:430
 msgid "在多分类任务中，比较常用的是 :math:`\\operatorname{Softmax}` 函数（对应接口 :func:`.functional.nn.softmax` ）："
-msgstr "crwdns89440:0:math:crwdnd89440:0{Softmax}crwdnd89440:0:func:crwdne89440:0"
+msgstr "crwdns112519:0:math:crwdnd112519:0{Softmax}crwdnd112519:0:func:crwdne112519:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:432
 msgid "p(y=c \\mid \\boldsymbol{x})\n"
 "=\\operatorname{Softmax}\\left(s_{c}\\right)\n"
 "=\\frac{\\exp s_{c}}{\\sum_{i} \\exp s_{i}}"
-msgstr "crwdns89442:0{x}crwdnd89442:0{Softmax}crwdnd89442:0{c}crwdnd89442:0{c}crwdnd89442:0{i}crwdnd89442:0{i}crwdne89442:0"
+msgstr "crwdns112521:0{x}crwdnd112521:0{Softmax}crwdnd112521:0{c}crwdnd112521:0{c}crwdnd112521:0{i}crwdnd112521:0{i}crwdne112521:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:438
 msgid "可以理解成我们对多个类上的得分经过指数归一化后得到了目标分类概率值，我们通常称为 Logits;"
-msgstr "crwdns89444:0crwdne89444:0"
+msgstr "crwdns112523:0crwdne112523:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:439
 msgid "这种指数形式的归一化具有一些优点：相较均值归一化，具有“马太效应”，我们认为较大的原始值在归一化后得到的概率值也应该更大； 顾名思义，相较于硬分类 :math:`\\operatorname{Argmax}` 要软（Soft）一些，可以体现类内、类间样本预测值的区别； 有利于找到 Top-k 个分类候选项，即前 :math:`k` 大概率的分类，有利于用作评估模型性能。"
-msgstr "crwdns89446:0:math:crwdnd89446:0{Argmax}crwdnd89446:0:math:crwdne89446:0"
+msgstr "crwdns112525:0:math:crwdnd112525:0{Argmax}crwdnd112525:0:math:crwdne112525:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:447
 msgid "到这里，我们已经能够让我们的模型基于输入样本，输出在目标类别上进行预测的概率向量了。"
-msgstr "crwdns89448:0crwdne89448:0"
+msgstr "crwdns112527:0crwdne112527:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:450
 msgid "分类任务的优化目标"
-msgstr "crwdns89450:0crwdne89450:0"
+msgstr "crwdns112529:0crwdne112529:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:452
 msgid "我们已经得到了模型在多分类上预测的概率向量 :math:`\\hat{\\boldsymbol{y}}`, 也对真实标记通过使用 One-hot 编码得到了概率向量 :math:`\\boldsymbol{y}`. 二者各表示一种概率分布。我们的优化目标是，让预测值和真实标记尽可能地接近，需设计合适的损失函数。"
-msgstr "crwdns89452:0:math:crwdnd89452:0{y}crwdnd89452:0:math:crwdnd89452:0{y}crwdne89452:0"
+msgstr "crwdns112531:0:math:crwdnd112531:0{y}crwdnd112531:0:math:crwdnd112531:0{y}crwdne112531:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:456
 msgid "信息论中的相对熵与交叉熵"
-msgstr "crwdns89454:0crwdne89454:0"
+msgstr "crwdns112533:0crwdne112533:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:458
 msgid "在信息论中，如果对同一个随机变量 :math:`x` 有两个单独的概率分布 :math:`p(x)` 和 :math:`q(x)`, 可以用相对熵（KL 散度）来表示两个分布之间的差异："
-msgstr "crwdns89456:0:math:crwdnd89456:0:math:crwdnd89456:0:math:crwdne89456:0"
+msgstr "crwdns112535:0:math:crwdnd112535:0:math:crwdnd112535:0:math:crwdne112535:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:461
 msgid "\\begin{aligned}\n"
 "\\mathrm{KL}(p \\| q) &=-\\int p(x) \\ln q(x) d x-\\left(-\\int p(x) \\ln p(x) d x\\right) \\\\\n"
 "&=H(p, q)-H(p)\n"
 "\\end{aligned}"
-msgstr "crwdns89458:0{aligned}crwdnd89458:0{KL}crwdnd89458:0{aligned}crwdne89458:0"
+msgstr "crwdns112537:0{aligned}crwdnd112537:0{KL}crwdnd112537:0{aligned}crwdne112537:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:468
 msgid "相对熵的特点是，两个概率分布完全相同时，其值为零。二者分布之间的差异越大，相对熵值越大。"
-msgstr "crwdns89460:0crwdne89460:0"
+msgstr "crwdns112539:0crwdne112539:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:470
 msgid "这与我们希望 “设计一个损失函数，可用来评估当前预测得到的概率分布 :math:`q(x)` 与真实标记的概率分布 :math:`p(x)` 之间差异” 的目的不谋而合。 且由于训练过程中样本标记不会变化，其概率分布 :math:`p(x)` 是确定的常数， 则上式中的 :math:`H(p)` 值不会随着训练样本的变化而改变，也不会影响梯度计算，所以可省略。"
-msgstr "crwdns89462:0:math:crwdnd89462:0:math:crwdnd89462:0:math:crwdnd89462:0:math:crwdne89462:0"
+msgstr "crwdns112541:0:math:crwdnd112541:0:math:crwdnd112541:0:math:crwdnd112541:0:math:crwdne112541:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:475
 msgid "剩下的 :math:`H(p, q)` 部分则被定义为我们常用的交叉熵（Cross Entropy, CE）， 用我们现在的例子中的离散概率值来表示则为："
-msgstr "crwdns89464:0:math:crwdne89464:0"
+msgstr "crwdns112543:0:math:crwdne112543:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:478
 msgid "\\ell_{\\mathrm{CE}}=H(\\boldsymbol{y}, \\hat{\\boldsymbol{y}})=-\\sum_{i=1}^{c} y_{i} \\ln \\hat{y}_{i}"
-msgstr "crwdns89466:0{CE}crwdnd89466:0{y}crwdnd89466:0{y}crwdnd89466:0{c}crwdnd89466:0{i}crwdnd89466:0{y}crwdnd89466:0{i}crwdne89466:0"
+msgstr "crwdns112545:0{CE}crwdnd112545:0{y}crwdnd112545:0{y}crwdnd112545:0{c}crwdnd112545:0{i}crwdnd112545:0{y}crwdnd112545:0{i}crwdne112545:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:482
 msgid "这即是分类任务经常使用的损失函数，对应 MegEngine 中的 :func:`.functional.nn.cross_entropy` 接口。"
-msgstr "crwdns89468:0:func:crwdne89468:0"
+msgstr "crwdns112547:0:func:crwdne112547:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:486
 msgid "MegEngine 中的 :func:`~.cross_entropy` 接口是考虑到实际使用情景而设计的："
-msgstr "crwdns89470:0:func:crwdne89470:0"
+msgstr "crwdns112549:0:func:crwdne112549:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:488
 msgid "默认会对标记值进行 One-hot 编码，不需要用户手动地提前处理好；"
-msgstr "crwdns89472:0crwdne89472:0"
+msgstr "crwdns112551:0crwdne112551:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:489
 msgid "默认会先进行 Softmax 计算转换成类别概率值（即 ``with_logits=True`` ）。"
-msgstr "crwdns89474:0crwdne89474:0"
+msgstr "crwdns112553:0crwdne112553:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:491
 msgid "因此在写模型代码时，会发现不需要用到 :func:`~.one_hot` 和 :func:`~.softmax` 接口。"
-msgstr "crwdns89476:0:func:crwdnd89476:0:func:crwdne89476:0"
+msgstr "crwdns112555:0:func:crwdnd112555:0:func:crwdne112555:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:493
 msgid "作为演示，下面展示三种预测值与真实值计算得到交叉熵损失的情况："
-msgstr "crwdns89478:0crwdne89478:0"
+msgstr "crwdns112557:0crwdne112557:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:516
 msgid "分类任务的评估指标"
-msgstr "crwdns89480:0crwdne89480:0"
+msgstr "crwdns112559:0crwdne112559:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:518
 msgid "在回归问题中常用的评估指标有 MAE, MSE 等等，但它们并不适用于分类任务。"
-msgstr "crwdns89482:0crwdne89482:0"
+msgstr "crwdns112561:0crwdne112561:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:520
 msgid "在本教程中，我们将引入准确率（Accuracy）作为手写数字图像分类的评估指标。 其定义如下：被分类正确的样本数占所有样本数的比例。 例如 10000 个样本中，如果有 6000 个样本被正确分类， 则我们说当前分类器的准确率为 0.6, 换算成百分比也即 60%."
-msgstr "crwdns89484:0crwdne89484:0"
+msgstr "crwdns112563:0crwdne112563:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:525
 msgid "对于模型预测得到的多分类上的多个输出，我们通常用 :func:`~.argmax` 接口将最大的位置处所对应的标记作为预测分类，与真实的标记进行比较 （如果是批样本的向量化实现，通常需要指定 ``axis`` 参数）："
-msgstr "crwdns89486:0:func:crwdne89486:0"
+msgstr "crwdns112565:0:func:crwdne112565:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:538
 msgid "对于在多个样本上得到的输出，我们可以借助 ``==`` 运算进行判断，以 5 个样本上预测结果为例："
-msgstr "crwdns89488:0crwdne89488:0"
+msgstr "crwdns112567:0crwdne112567:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:545
 msgid "这时借助 :func:`~.functional.sum` 接口，就能得到正确分类的样本数："
-msgstr "crwdns89490:0:func:crwdne89490:0"
+msgstr "crwdns112569:0:func:crwdne112569:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:550
 msgid "在我们训练线性分类器的过程中，每经过一轮训练， 都可以检测一下当前分类器在训练样本和测试样本上的分类准确率，作为模型性能的评估手段。 如果经过多轮训练，训练集上的准确率不断上升，而测试集上的准确率开始下降，则表明可能过拟合了。"
-msgstr "crwdns89492:0crwdne89492:0"
+msgstr "crwdns112571:0crwdne112571:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:556
 msgid "准确率不是分类任务唯一的评估指标，我们会在后面的教程中接触到更多评估指标。"
-msgstr "crwdns89494:0crwdne89494:0"
+msgstr "crwdns112573:0crwdne112573:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:557
 msgid "MegEngine 中还提供了 :func:`~.topk_accuracy` 来计算 Top-k 准确率， 而本教程中为了演示计算过程（对应 ``k=1`` 的情况），没有直接使用这个接口。"
-msgstr "crwdns89496:0:func:crwdne89496:0"
+msgstr "crwdns112575:0:func:crwdne112575:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:561
 msgid "练习：线性分类器"
-msgstr "crwdns89498:0crwdne89498:0"
+msgstr "crwdns112577:0crwdne112577:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:563
 msgid "结合前面提到的所有概念，现在我们使用 MegEngine 对线性分类器进行完整的实现："
-msgstr "crwdns89500:0crwdne89500:0"
+msgstr "crwdns112579:0crwdne112579:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:565
 msgid "可对照着上一个教程的流程进行相应环节代码的改动，体会一下整个逻辑；"
-msgstr "crwdns89502:0crwdne89502:0"
+msgstr "crwdns112581:0crwdne112581:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:566
 msgid "再次注意，在本教程中将 MNIST 提供的测试集当做验证集进行使用（虽然名为 ``test`` ）；"
-msgstr "crwdns89504:0crwdne89504:0"
+msgstr "crwdns112583:0crwdne112583:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:567
 msgid "对批块的数据，记得使用向量化实现来代替在单个样本上的 for 循环实现。"
-msgstr "crwdns89506:0crwdne89506:0"
+msgstr "crwdns112585:0crwdne112585:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:571
 msgid "经过 5 轮训练，通常会得到一个正确率在 92% 左右的线性分类器。"
-msgstr "crwdns89508:0crwdne89508:0"
+msgstr "crwdns112587:0crwdne112587:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:575
 msgid "本教程的对应源码： :docs:`examples/beginner/linear-classification.py`"
-msgstr "crwdns89510:0:docs:crwdne89510:0"
+msgstr "crwdns112589:0:docs:crwdne112589:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:578
 msgid "总结：数据的流动"
-msgstr "crwdns89512:0crwdne89512:0"
+msgstr "crwdns112591:0crwdne112591:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:580
 msgid "到目前为止，我们用线性模型完成了直线拟合、房价预测和手写数字识别任务，是时候进行一次对比了。"
-msgstr "crwdns89514:0crwdne89514:0"
+msgstr "crwdns112593:0crwdne112593:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:585
 msgid "任务名"
-msgstr "crwdns89516:0crwdne89516:0"
+msgstr "crwdns112595:0crwdne112595:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:586
 msgid "前向计算（单样本）"
-msgstr "crwdns89518:0crwdne89518:0"
+msgstr "crwdns112597:0crwdne112597:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:587
 msgid "损失函数"
-msgstr "crwdns89520:0crwdne89520:0"
+msgstr "crwdns112599:0crwdne112599:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:588
 msgid "评估指标"
-msgstr "crwdns89522:0crwdne89522:0"
+msgstr "crwdns112601:0crwdne112601:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:590
 msgid "拟合直线"
-msgstr "crwdns89524:0crwdne89524:0"
+msgstr "crwdns112603:0crwdne112603:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:591
 msgid ":math:`x \\in \\mathbb{R} \\stackrel{w,b}{\\mapsto} y \\in \\mathbb{R}`"
-msgstr "crwdns89526:0:math:crwdnd89526:0{R}crwdnd89526:0{w,b}crwdnd89526:0{R}crwdne89526:0"
+msgstr "crwdns112605:0:math:crwdnd112605:0{R}crwdnd112605:0{w,b}crwdnd112605:0{R}crwdne112605:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:592
 #: ../../source/getting-started/beginner/linear-classification.rst:597
 msgid "MSE"
-msgstr "crwdns89528:0crwdne89528:0"
+msgstr "crwdns112607:0crwdne112607:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:593
 msgid "观察拟合度"
-msgstr "crwdns89530:0crwdne89530:0"
+msgstr "crwdns112609:0crwdne112609:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:595
 msgid "房价预测"
-msgstr "crwdns89532:0crwdne89532:0"
+msgstr "crwdns112611:0crwdne112611:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:596
 msgid ":math:`\\boldsymbol{x} \\in \\mathbb{R}^{d} \\stackrel{\\boldsymbol{w},b}{\\mapsto} y \\in \\mathbb{R}`"
-msgstr "crwdns89534:0:math:crwdnd89534:0{x}crwdnd89534:0{R}crwdnd89534:0{d}crwdnd89534:0{w}crwdnd89534:0{R}crwdne89534:0"
+msgstr "crwdns112613:0:math:crwdnd112613:0{x}crwdnd112613:0{R}crwdnd112613:0{d}crwdnd112613:0{w}crwdnd112613:0{R}crwdne112613:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:598
 msgid "MAE"
-msgstr "crwdns89536:0crwdne89536:0"
+msgstr "crwdns112615:0crwdne112615:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:600
 msgid "手写数字识别"
-msgstr "crwdns89538:0crwdne89538:0"
+msgstr "crwdns112617:0crwdne112617:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:601
 msgid ":math:`\\boldsymbol{x} \\in \\mathbb{R}^{d} \\stackrel{W,\\boldsymbol{b}}{\\mapsto} \\boldsymbol{y} \\in \\mathbb{R}^{c}`"
-msgstr "crwdns89540:0:math:crwdnd89540:0{x}crwdnd89540:0{R}crwdnd89540:0{d}crwdnd89540:0{b}crwdnd89540:0{y}crwdnd89540:0{R}crwdnd89540:0{c}crwdne89540:0"
+msgstr "crwdns112619:0:math:crwdnd112619:0{x}crwdnd112619:0{R}crwdnd112619:0{d}crwdnd112619:0{b}crwdnd112619:0{y}crwdnd112619:0{R}crwdnd112619:0{c}crwdne112619:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:602
 msgid "CE"
-msgstr "crwdns89542:0crwdne89542:0"
+msgstr "crwdns112621:0crwdne112621:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:603
 msgid "Accuracy"
-msgstr "crwdns89544:0crwdne89544:0"
+msgstr "crwdns112623:0crwdne112623:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:606
 msgid "注：默认图片信息已经展平为向量， 即 :math:`\\mathsf{I} \\in \\mathbb{R}^{H \\times W \\times C} \\stackrel{\\operatorname{flatten}}{\\mapsto} \\boldsymbol{x} \\in \\mathbb{R}^{d}`"
-msgstr "crwdns89546:0:math:crwdnd89546:0{I}crwdnd89546:0{R}crwdnd89546:0{flatten}crwdnd89546:0{x}crwdnd89546:0{R}crwdnd89546:0{d}crwdne89546:0"
+msgstr "crwdns112625:0:math:crwdnd112625:0{I}crwdnd112625:0{R}crwdnd112625:0{flatten}crwdnd112625:0{x}crwdnd112625:0{R}crwdnd112625:0{d}crwdne112625:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:610
 msgid "在用 MegEngine 进行实现时，我们需要关注单个样本数据在整个计算图中的流动， 尤其需要关注 Tensor 形状的变化（本质上这些都是线性代数中常见的变换）， 这其实就是我们的机器学习模型进行设计的过程，除了线性模型本身， 整个机器学习流程还需要设计合适的损失函数，选定科学的评估指标。"
-msgstr "crwdns89548:0crwdne89548:0"
+msgstr "crwdns112627:0crwdne112627:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:615
 msgid "在其它方面，几个任务的做法都是一致的，比如对于批大小的数据使用向量化实现来加速， 采取的都是梯度下降算法来对模型中的参数进行迭代优化，都需要及时评估模型性能... 希望你对这些步骤已经有了更加深刻的了解。"
-msgstr "crwdns89550:0crwdne89550:0"
+msgstr "crwdns112629:0crwdne112629:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:619
 msgid "看来线性模型就能搞定一切？"
-msgstr "crwdns89552:0crwdne89552:0"
+msgstr "crwdns112631:0crwdne112631:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:621
 msgid "答案是否定的。由于这几个教程中数据集都过于简单， 因此即使使用最简单的线性模型来训练，最终也能取得比较不错的效果。 在下一个教程中，我们将选用更加复杂的数据集（相较于 MNIST 只复杂了一些些）， 同样是分类任务，看线性模型是否依旧那么强大。"
-msgstr "crwdns89554:0crwdne89554:0"
+msgstr "crwdns112633:0crwdne112633:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:627
 msgid "拓展材料"
-msgstr "crwdns89556:0crwdne89556:0"
+msgstr "crwdns112635:0crwdne112635:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:631
 msgid "请尝试去了解一下 K 近邻（K nearest neighbor, KNN）算法与支撑向量机（Support vector machine, SVM）算法， 并尝试用 MegEngine 进行具体实现，一个比较好的参考材料是 CS231n 课程。 比如用 SVM 完成本教程中的手写数字分类任务，你会发现模型的预测输出不一定需要表示为概率； 用 KNN 完成手写数字分类，你更会惊讶地发现它不需要创建模型，也不需要进行训练！ 那么代价是什么呢？进阶地，你可以对比不同的机器学习算法，看看彼此之间的优劣和适用情景。"
-msgstr "crwdns89558:0crwdne89558:0"
+msgstr "crwdns112637:0crwdne112637:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:640
 msgid "对于二分类 :math:`y \\in \\{0, 1\\}` 的情况，使用 Softmax 将退化成 Sigmoid. 请尝试证明。"
-msgstr "crwdns89560:0:math:crwdne89560:0"
+msgstr "crwdns112639:0:math:crwdne112639:0"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:643
 msgid "参考文献"
-msgstr "crwdns89562:0crwdne89562:0"
-
-#: ../../source/getting-started/beginner/linear-classification.rst:648
-msgid "Yann LeCun, Corinna Cortes, and CJ Burges. Mnist handwritten digit database. ATT Labs [Online]. Available: http://yann.lecun.com/exdb/mnist, 2010."
-msgstr "crwdns94564:0[Online]crwdne94564:0"
+msgstr "crwdns112641:0crwdne112641:0"
 
 #~ msgid ""
 #~ "Yann LeCun, Corinna Cortes, and CJ "
@@ -610,8 +606,4 @@ msgstr "crwdns94564:0[Online]crwdne94564:0"
 #~ "ATT Labs [Online]. Available: "
 #~ "http://yann.lecun.com/exdb/mnist, 2010."
 #~ msgstr ""
-#~ "Yann LeCun, Corinna Cortes, and CJ "
-#~ "Burges. Mnist handwritten digit database. "
-#~ "ATT Labs [Online]. Available: "
-#~ "http://yann.lecun.com/exdb/mnist, 2010."
 
