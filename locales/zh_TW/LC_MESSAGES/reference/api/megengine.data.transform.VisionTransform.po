@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:22\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:14\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,40 +11,76 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.data.transform.VisionTransform.po\n"
-"X-Crowdin-File-ID: 1992\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.data.transform.VisionTransform.po\n"
+"X-Crowdin-File-ID: 8963\n"
 
 #: ../../source/reference/api/megengine.data.transform.VisionTransform.rst:5
 msgid "VisionTransform"
-msgstr "crwdns88855:0crwdne88855:0"
+msgstr "crwdns98785:0crwdne98785:0"
 
 #: megengine.data.transform.vision.transform.VisionTransform:1 of
 msgid "Base class of all transforms used in computer vision. Calling logic: apply_batch() -> apply() -> _apply_image() and other _apply_*() method. If you want to implement a self-defined transform method for image, rewrite _apply_image method in subclass."
-msgstr "crwdns29628:0crwdne29628:0"
+msgstr "crwdns98787:0crwdne98787:0"
 
 #: megengine.data.transform.vision.transform.VisionTransform of
 msgid "参数"
-msgstr "crwdns29630:0crwdne29630:0"
+msgstr "crwdns98789:0crwdne98789:0"
 
 #: megengine.data.transform.vision.transform.VisionTransform:6 of
 msgid "input type order. Input is a tuple containing different structures, order is used to specify the order of structures. For example, if your input is (image, boxes) type, then the ``order`` should be (\"image\", \"boxes\"). Current available strings and data type are describe below:  * \"image\": input image, with shape of `(H, W, C)`. * \"coords\": coordinates, with shape of `(N, 2)`. * \"boxes\": bounding boxes, with shape of `(N, 4)`, \"xyxy\" format,   the 1st \"xy\" represents top left point of a box,   the 2nd \"xy\" represents right bottom point. * \"mask\": map used for segmentation, with shape of `(H, W, 1)`. * \"keypoints\": keypoints with shape of `(N, K, 3)`, N for number of instances,   and K for number of keypoints in one instance. The first two dimensions   of last axis is coordinate of keypoints and the the 3rd dimension is   the label of keypoints. * \"polygons\": a sequence containing numpy arrays, its length is the number of instances.   Each numpy array represents polygon coordinate of one instance. * \"category\": categories for some data type. For example, \"image_category\"   means category of the input image and \"boxes_category\" means categories of   bounding boxes. * \"info\": information for images such as image shapes and image path."
-msgstr "crwdns68655:0crwdne68655:0"
+msgstr "crwdns98791:0crwdne98791:0"
+
+#: megengine.data.transform.vision.transform.VisionTransform:6 of
+msgid "input type order. Input is a tuple containing different structures, order is used to specify the order of structures. For example, if your input is (image, boxes) type, then the ``order`` should be (\"image\", \"boxes\"). Current available strings and data type are describe below:"
+msgstr "crwdns98793:0crwdne98793:0"
+
+#: megengine.data.transform.vision.transform.VisionTransform:11 of
+msgid "\"image\": input image, with shape of `(H, W, C)`."
+msgstr "crwdns98795:0crwdne98795:0"
+
+#: megengine.data.transform.vision.transform.VisionTransform:12 of
+msgid "\"coords\": coordinates, with shape of `(N, 2)`."
+msgstr "crwdns98797:0crwdne98797:0"
+
+#: megengine.data.transform.vision.transform.VisionTransform:13 of
+msgid "\"boxes\": bounding boxes, with shape of `(N, 4)`, \"xyxy\" format, the 1st \"xy\" represents top left point of a box, the 2nd \"xy\" represents right bottom point."
+msgstr "crwdns98799:0crwdne98799:0"
+
+#: megengine.data.transform.vision.transform.VisionTransform:16 of
+msgid "\"mask\": map used for segmentation, with shape of `(H, W, 1)`."
+msgstr "crwdns98801:0crwdne98801:0"
+
+#: megengine.data.transform.vision.transform.VisionTransform:17 of
+msgid "\"keypoints\": keypoints with shape of `(N, K, 3)`, N for number of instances, and K for number of keypoints in one instance. The first two dimensions of last axis is coordinate of keypoints and the the 3rd dimension is the label of keypoints."
+msgstr "crwdns98803:0crwdne98803:0"
+
+#: megengine.data.transform.vision.transform.VisionTransform:21 of
+msgid "\"polygons\": a sequence containing numpy arrays, its length is the number of instances. Each numpy array represents polygon coordinate of one instance."
+msgstr "crwdns98805:0crwdne98805:0"
+
+#: megengine.data.transform.vision.transform.VisionTransform:23 of
+msgid "\"category\": categories for some data type. For example, \"image_category\" means category of the input image and \"boxes_category\" means categories of bounding boxes."
+msgstr "crwdns98807:0crwdne98807:0"
+
+#: megengine.data.transform.vision.transform.VisionTransform:26 of
+msgid "\"info\": information for images such as image shapes and image path."
+msgstr "crwdns98809:0crwdne98809:0"
 
 #: megengine.data.transform.vision.transform.VisionTransform:28 of
 msgid "You can also customize your data types only if you implement the corresponding _apply_*() methods, otherwise ``NotImplementedError`` will be raised."
-msgstr "crwdns29652:0crwdne29652:0"
+msgstr "crwdns98811:0crwdne98811:0"
 
 #: megengine.data.transform.vision.transform.VisionTransform.apply:1 of
 msgid "Apply transform on single input data."
-msgstr "crwdns29662:0crwdne29662:0"
+msgstr "crwdns98813:0crwdne98813:0"
 
 #: megengine.data.transform.vision.transform.VisionTransform.apply_batch:1 of
 msgid "Apply transform on batch input data."
-msgstr "crwdns29666:0crwdne29666:0"
+msgstr "crwdns98815:0crwdne98815:0"
 
 #~ msgid "基类：:class:`megengine.data.transform.meta_transform.Transform`"
 #~ msgstr "基类：:class:`megengine.data.transform.meta_transform.Transform`"
