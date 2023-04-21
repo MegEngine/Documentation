@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-04-11 05:59\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -15,8 +15,8 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/quantization/basic-concept.po\n"
-"X-Crowdin-File-ID: 8183\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/quantization/basic-concept.po\n"
+"X-Crowdin-File-ID: 9977\n"
 
 #: ../../source/user-guide/model-development/quantization/basic-concept.rst:5
 msgid "量化方案原理讲解"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/basic-concept.rst:20
 msgid "$$x_{int} = round(x/s) + z$$ $$x_{Q} = clamp(0,255,x_{int})$$"
-msgstr "$$x_{int} = round(x/s) + z$$ $$x_{Q} = clamp(0,255,x_{int})$$"
+msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/basic-concept.rst:23
 msgid "其中$s$为scale，也叫步长，是个浮点数。$z$为零点，即浮点数中的0，是个定点数。 $$scale = (x_{max} - x_{min}) / 255$$ $$z = round(0 - x_{min}) / 255$$"
@@ -100,11 +100,7 @@ msgid "\\begin{aligned}\n"
 "   x_{int} &= round(x/s) \\\\\n"
 "   x_{Q} &= clamp(-128,127,x_{int})\n"
 "\\end{aligned}"
-msgstr "\\begin{aligned}\n"
-"   scale &= max(abs(x_{min}), abs(x_{max})) / 127 \\\\\n"
-"   x_{int} &= round(x/s) \\\\\n"
-"   x_{Q} &= clamp(-128,127,x_{int})\n"
-"\\end{aligned}"
+msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/basic-concept.rst:70
 msgid "出于利用更快的SIMD实现的目的，我们会把卷积的weight的定点范围表示成(-127,127)，对应的反量化操作为"
@@ -112,7 +108,7 @@ msgstr "For the purpose of using faster SIMD implementation, we will express the
 
 #: ../../source/user-guide/model-development/quantization/basic-concept.rst:72
 msgid "$$ x_{float} = x_{Q}*s $$"
-msgstr "$$ x_{float} = x_{Q}*s $$"
+msgstr ""
 
 #: ../../source/user-guide/model-development/quantization/basic-concept.rst:76
 msgid "由此可见，对称均匀量化的量化和反量化操作会更加的便捷一些 除此之外还有随机均匀量化等别的量化手段，因为大部分情况下我们都采用对称均匀量化，这里不再展开描述。"
