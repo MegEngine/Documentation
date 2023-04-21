@@ -2,201 +2,205 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:26\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:36\n"
 "Last-Translator: \n"
+"Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/tensor/device.po\n"
-"X-Crowdin-File-ID: 8131\n"
-"Language: zh_TW\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/tensor/device.po\n"
+"X-Crowdin-File-ID: 9923\n"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:5
 msgid "Tensor 所在设备"
-msgstr "crwdns83091:0crwdne83091:0"
+msgstr "crwdns117041:0crwdne117041:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:9
 msgid "通常用图形处理单元（GPU）代替中央处理单元（CPU）作为训练时的主要计算设备。 （ :ref:`解释 <why-use-gpu>` ）"
-msgstr "crwdns83093:0:ref:crwdne83093:0"
+msgstr "crwdns117043:0:ref:crwdne117043:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:11
 msgid "默认情况下，MegEngine 会自动使用当前可用的最快设备（xpux）， **无需额外进行人为的指定。**"
-msgstr "crwdns83095:0crwdne83095:0"
+msgstr "crwdns117045:0crwdne117045:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:16
 msgid "其中 ``xpu`` 表示 ``gpu`` 或者 ``cpu``, 后面的 ``x`` 表示编号（如果有多个设备），默认从 0 开始。"
-msgstr "crwdns83097:0crwdne83097:0"
+msgstr "crwdns117047:0crwdne117047:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:18
 msgid "在未检测到 GPU 设备的机器上，MegEngine 首次生成 Tensor 时，将进行一次提醒，如下所示："
-msgstr "crwdns83099:0crwdne83099:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:26
-msgid "对于日常的 MegEngine 使用情景，我们不需要关注冒号 ``:`` 后面编号的含义。"
-msgstr "crwdns83101:0crwdne83101:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:29
-msgid "设备相关接口"
-msgstr "crwdns83103:0crwdne83103:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:31
-msgid "以下是比较常用的几个接口："
-msgstr "crwdns83105:0crwdne83105:0"
+msgstr "crwdns117049:0crwdne117049:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:33
+msgid "对于日常的 MegEngine 使用情景，我们不需要关注冒号 ``:`` 后面编号的含义。'"
+msgstr "crwdns117051:0crwdne117051:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:36
+msgid "设备相关接口"
+msgstr "crwdns117053:0crwdne117053:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:38
+msgid "以下是比较常用的几个接口："
+msgstr "crwdns117055:0crwdne117055:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:40
 msgid "我们可以通过 :py:func:`~.get_default_device` 获得默认的计算节点；"
-msgstr "crwdns83107:0crwdne83107:0"
+msgstr "crwdns117057:0crwdne117057:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:34
+#: ../../source/user-guide/model-development/tensor/device.rst:41
 msgid "我们可以通过 :py:func:`~.set_default_device` 设置默认的计算节点；"
-msgstr "crwdns83109:0crwdne83109:0"
+msgstr "crwdns117059:0crwdne117059:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:35
+#: ../../source/user-guide/model-development/tensor/device.rst:42
 msgid "如果想要将 Tensor 拷贝到指定的计算设备，可以使用 :py:func:`~.copy` ."
-msgstr "crwdns83111:0crwdne83111:0"
+msgstr "crwdns117061:0crwdne117061:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:37
+#: ../../source/user-guide/model-development/tensor/device.rst:44
 msgid "借助这些接口，我们可以有选择地在 CPU 上或 GPU 上进行 Tensor 计算。比如指定为 CPU:"
-msgstr "crwdns83113:0crwdne83113:0"
+msgstr "crwdns117063:0crwdne117063:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:45
+#: ../../source/user-guide/model-development/tensor/device.rst:54
+msgid "由于指定了设备为 CPU, 则不会出现加载 CUDA 驱动失败的提醒。"
+msgstr "crwdns117065:0crwdne117065:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:58
 msgid "可在 :ref:`device` 页面找到所有可调用的 API;"
-msgstr "crwdns83115:0:ref:crwdne83115:0"
+msgstr "crwdns117067:0:ref:crwdne117067:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:46
+#: ../../source/user-guide/model-development/tensor/device.rst:59
 msgid "与设备相关的概念还有： :ref:`distributed-guide` 。"
-msgstr "crwdns83117:0:ref:crwdne83117:0"
+msgstr "crwdns117069:0:ref:crwdne117069:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:49
+#: ../../source/user-guide/model-development/tensor/device.rst:62
 msgid "支持 GPU 设备和软件平台"
-msgstr "crwdns83119:0crwdne83119:0"
+msgstr "crwdns117071:0crwdne117071:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:51
+#: ../../source/user-guide/model-development/tensor/device.rst:64
 msgid "想要在 MegEngine 计算时利用 GPU 设备，用户无需进行额外的编码。框架将在底层替用户进行主流 GPU 软件平台接口的调用。 因此用户可以专注于神经网络结构的设计，选择相信由框架在背后完成的性能优化工作。 但如果一名用户想要成为 MegEngine 核心开发者或拓展 MegEngine 功能，则需要了解相关背景知识。"
-msgstr "crwdns83121:0crwdne83121:0"
+msgstr "crwdns117073:0crwdne117073:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:57
+#: ../../source/user-guide/model-development/tensor/device.rst:70
 msgid "MegEngine 默认支持当前主流的 `Nvidia GPU 设备 <https://developer.nvidia.com/cuda-gpus#compute>`_ （Compute Capability 5.2~8.0），如果你的 Nvidia GPU 设备不在支持的 Compute Capability 范围内， 或需要使用支持 AMD GPU 的 MegEngine, 则需要 :ref:`build-from-source` ，否则会触发即时编译，或直接报错。"
-msgstr "crwdns83123:0:ref:crwdne83123:0"
+msgstr "crwdns117075:0:ref:crwdne117075:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:63
+#: ../../source/user-guide/model-development/tensor/device.rst:76
 msgid "感兴趣的用户可阅读下面的解释，略过这些部分的阅读不会影响 MegEngine 的基础使用。"
-msgstr "crwdns83125:0crwdne83125:0"
+msgstr "crwdns117077:0crwdne117077:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:66
+#: ../../source/user-guide/model-development/tensor/device.rst:79
 msgid "Nvidia GPU 和 CUDA"
-msgstr "crwdns83127:0crwdne83127:0"
+msgstr "crwdns117079:0crwdne117079:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:67
+#: ../../source/user-guide/model-development/tensor/device.rst:80
 msgid "`Nvidia <https://en.wikipedia.org/wiki/Nvidia>`_ 是一家设计 GPU 的技术公司，他们创建了 CUDA 软件平台与自家的 GPU 硬件配对， 使开发人员可以更轻松地构建使用 Nvidia GPU 的并行处理能力加速计算的软件。 即 Nvidia GPU 是支持并行计算的硬件，而 CUDA 是为开发人员提供 API 的软件层。 开发人员通过下载 CUDA 工具包来使用它，该工具包附带了专门的库，如 cuDNN, 即 CUDA 深度神经网络库。"
-msgstr "crwdns83129:0crwdne83129:0"
+msgstr "crwdns117081:0crwdne117081:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:75
+#: ../../source/user-guide/model-development/tensor/device.rst:88
 msgid "可以通过 `NVIDIA System Management Interface <https://developer.nvidia.com/nvidia-system-management-interface>`_ (nvidia-smi) 帮助管理和监控 NVIDIA GPU 设备；"
-msgstr "crwdns83131:0crwdne83131:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:77
-msgid "可以使用环境变量 ``CUDA_VISIBLE_DEVICES`` 来限制 CUDA 应用程序看到的设备。 （ `官方博客 <https://developer.nvidia.com/zh-cn/blog/cuda-pro-tip-control-gpu-visibility-cuda_visible_devices/>`_ ）"
-msgstr "crwdns83133:0crwdne83133:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:81
-msgid "AMD GPU 和 ROCm"
-msgstr "crwdns83135:0crwdne83135:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:82
-msgid "`Advanced Micro Devices <https://en.wikipedia.org/wiki/Advanced_Micro_Devices>`_ （AMD） 是一家半导体公司，主要产品包括微处理器、主板芯片组、嵌入式处理器和图形处理器。 他们提供了 ROCm 软件平台与自家的 GPU 硬件配对，其 API 设计与 CUDA 十分类似。"
-msgstr "crwdns83137:0crwdne83137:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:89
-msgid "为何需要使用 GPU 训练？"
-msgstr "crwdns83139:0crwdne83139:0"
+msgstr "crwdns117083:0crwdne117083:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:90
-msgid "在回答这个问题前，我们需要了解什么是 `并行计算 <https://en.wikipedia.org/wiki/Parallel_computing>`_ （Parallel computing）—— 并行计算是一种计算类型，可将其中的计算分解成能够同时进行的较小独立计算，然后将计算结果进行重新组合或同步，得到原始计算的结果。"
-msgstr "crwdns83141:0crwdne83141:0"
+msgid "可以使用环境变量 ``CUDA_VISIBLE_DEVICES`` 来限制 CUDA 应用程序看到的设备。 （ `官方博客 <https://developer.nvidia.com/zh-cn/blog/cuda-pro-tip-control-gpu-visibility-cuda_visible_devices/>`_ ）"
+msgstr "crwdns117085:0crwdne117085:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:97
-msgid "串行计算"
-msgstr "crwdns83143:0crwdne83143:0"
+#: ../../source/user-guide/model-development/tensor/device.rst:94
+msgid "AMD GPU 和 ROCm"
+msgstr "crwdns117087:0crwdne117087:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:95
+msgid "`Advanced Micro Devices <https://en.wikipedia.org/wiki/Advanced_Micro_Devices>`_ （AMD） 是一家半导体公司，主要产品包括微处理器、主板芯片组、嵌入式处理器和图形处理器。 他们提供了 ROCm 软件平台与自家的 GPU 硬件配对，其 API 设计与 CUDA 十分类似。"
+msgstr "crwdns117089:0crwdne117089:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:102
+msgid "为何需要使用 GPU 训练？"
+msgstr "crwdns117091:0crwdne117091:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:103
+msgid "在回答这个问题前，我们需要了解什么是 `并行计算 <https://en.wikipedia.org/wiki/Parallel_computing>`_ （Parallel computing）—— 并行计算是一种计算类型，可将其中的计算分解成能够同时进行的较小独立计算，然后将计算结果进行重新组合或同步，得到原始计算的结果。"
+msgstr "crwdns117093:0crwdne117093:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:110
+msgid "串行计算"
+msgstr "crwdns117095:0crwdne117095:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:116
 msgid "并行计算"
-msgstr "crwdns83145:0crwdne83145:0"
+msgstr "crwdns117097:0crwdne117097:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:108
+#: ../../source/user-guide/model-development/tensor/device.rst:121
 msgid "`图形计算单元 <https://en.wikipedia.org/wiki/Graphics_processing_unit>`_ （Graphics processing unit, GPU） 是一种擅长处理特定（Specialized）类型计算的装置，而 `中央处理单元 <https://en.wikipedia.org/wiki/Central_processing_unit>`_ （Central processing unit , CPU） 被设计用来处理一般（General）的计算。虽然 CPU 能够胜任各种复杂的计算操作情景， 但 GPU 高度并行的结构设计使它们在处理并行计算时比 CPU 更加高效。"
-msgstr "crwdns83147:0crwdne83147:0"
+msgstr "crwdns117099:0crwdne117099:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:114
+#: ../../source/user-guide/model-development/tensor/device.rst:127
 msgid "一个更大的任务可以分解成的任务数量也取决于特定硬件上包含的核心（Kernel）数量。 核心是在给定处理器内实际执行计算的单元，CPU 通常有四个、八个或十六个内核，而 GPU 可能有数千个。"
-msgstr "crwdns83149:0crwdne83149:0"
+msgstr "crwdns117101:0crwdne117101:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:117
+#: ../../source/user-guide/model-development/tensor/device.rst:130
 msgid "因此我们可以得出结论："
-msgstr "crwdns83151:0crwdne83151:0"
+msgstr "crwdns117103:0crwdne117103:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:119
+#: ../../source/user-guide/model-development/tensor/device.rst:132
 msgid "最适合使用 GPU 解决的任务是可以并行完成的任务。"
-msgstr "crwdns83153:0crwdne83153:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:120
-msgid "如果计算可以并行完成，我们就可以使用并行编程方法和 GPU 来加速我们的计算。"
-msgstr "crwdns83155:0crwdne83155:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:122
-msgid "使用 GPU 不一定会更快！"
-msgstr "crwdns83157:0crwdne83157:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:125
-msgid "GPU 可以很好地处理能够分解为许多更小的任务的任务，但如果计算任务已经很小，那么将任务移到 GPU 上可能不会有太多收益。 因此将相对较小的计算任务转移到 GPU 不一定能获得显著的提速，甚至有可能变慢。"
-msgstr "crwdns83159:0crwdne83159:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:128
-msgid "另外，将数据从 CPU 移动到 GPU 的成本很高，如果计算任务很简单，整体速度反而可能变慢。"
-msgstr "crwdns83161:0crwdne83161:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:131
-msgid "神经网络计算中的并行性"
-msgstr "crwdns83163:0crwdne83163:0"
+msgstr "crwdns117105:0crwdne117105:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:133
-msgid "在神经网络中存在着大量的可并行计算任务，其中一些类型属于 `Embarrassingly parallel <https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_ , 即各个独立的线程之间都表现得很难为情，不愿意和其它线程进行交流。 实际上它描述的是各个线程在不进行交流的情况下，也能够独立地完成并行计算任务。 从语义上看，这样的并行计算是容易的、完美的、甚至令人愉悦的。"
-msgstr "crwdns83165:0crwdne83165:0"
+msgid "如果计算可以并行完成，我们就可以使用并行编程方法和 GPU 来加速我们的计算。"
+msgstr "crwdns117107:0crwdne117107:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:139
-msgid "一个典型的例子是 —— 卷积（Convolution）运算。"
-msgstr "crwdns83167:0crwdne83167:0"
+#: ../../source/user-guide/model-development/tensor/device.rst:135
+msgid "使用 GPU 不一定会更快！"
+msgstr "crwdns117109:0crwdne117109:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:138
+msgid "GPU 可以很好地处理能够分解为许多更小的任务的任务，但如果计算任务已经很小，那么将任务移到 GPU 上可能不会有太多收益。 因此将相对较小的计算任务转移到 GPU 不一定能获得显著的提速，甚至有可能变慢。"
+msgstr "crwdns117111:0crwdne117111:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:141
+msgid "另外，将数据从 CPU 移动到 GPU 的成本很高，如果计算任务很简单，整体速度反而可能变慢。"
+msgstr "crwdns117113:0crwdne117113:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:144
-msgid "以上图为例子，图中的蓝色部分（底部）表示输入通道，蓝色部分上的阴影表示 :math:`3 \\times 3` 卷积核， 绿色部分（顶部）表示输出通道。对于蓝色输入通道上的每个位置，都会进行卷积运算， 即将蓝色输入通道的阴影部分映射到绿色输出通道的相应阴影部分。"
-msgstr "crwdns83169:0:math:crwdne83169:0"
+msgid "神经网络计算中的并行性"
+msgstr "crwdns117115:0crwdne117115:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:148
-msgid "这些计算一个接一个地依次发生，但每个计算都独立于其它计算，即不依赖于其它计算的结果；"
-msgstr "crwdns83171:0crwdne83171:0"
-
-#: ../../source/user-guide/model-development/tensor/device.rst:149
-msgid "因此所有这些独立的计算都可以在 GPU 上并行地进行，最终生成整个输出通道。"
-msgstr "crwdns83173:0crwdne83173:0"
+#: ../../source/user-guide/model-development/tensor/device.rst:146
+msgid "在神经网络中存在着大量的可并行计算任务，其中一些类型属于 `Embarrassingly parallel <https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_ , 即各个独立的线程之间都表现得很难为情，不愿意和其它线程进行交流。 实际上它描述的是各个线程在不进行交流的情况下，也能够独立地完成并行计算任务。 从语义上看，这样的并行计算是容易的、完美的、甚至令人愉悦的。"
+msgstr "crwdns117117:0crwdne117117:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:152
-msgid "GPGPU 计算"
-msgstr "crwdns83175:0crwdne83175:0"
+msgid "一个典型的例子是 —— 卷积（Convolution）运算。"
+msgstr "crwdns117119:0crwdne117119:0"
 
-#: ../../source/user-guide/model-development/tensor/device.rst:154
-msgid "GPU 一开始被用来加速计算机图形学中的特定计算，因此被命名为 “图形处理单元”。 但近年来，出现了更多种类的并行任务。正如我们所见，其中一项任务是深度学习。 深度学习以及许多其他使用并行编程技术的科学计算任务正在催生一种称为通用 GPU 计算 （ `general purpose GPU computing <https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units>`_ , GPGPU）的新型编程模型。"
-msgstr "crwdns83177:0crwdne83177:0"
+#: ../../source/user-guide/model-development/tensor/device.rst:157
+msgid "以上图为例子，图中的蓝色部分（底部）表示输入通道，蓝色部分上的阴影表示 :math:`3 \\times 3` 卷积核， 绿色部分（顶部）表示输出通道。对于蓝色输入通道上的每个位置，都会进行卷积运算， 即将蓝色输入通道的阴影部分映射到绿色输出通道的相应阴影部分。"
+msgstr "crwdns117121:0:math:crwdne117121:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:161
+msgid "这些计算一个接一个地依次发生，但每个计算都独立于其它计算，即不依赖于其它计算的结果；"
+msgstr "crwdns117123:0crwdne117123:0"
 
 #: ../../source/user-guide/model-development/tensor/device.rst:162
+msgid "因此所有这些独立的计算都可以在 GPU 上并行地进行，最终生成整个输出通道。"
+msgstr "crwdns117125:0crwdne117125:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:165
+msgid "GPGPU 计算"
+msgstr "crwdns117127:0crwdne117127:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:167
+msgid "GPU 一开始被用来加速计算机图形学中的特定计算，因此被命名为 “图形处理单元”。 但近年来，出现了更多种类的并行任务。正如我们所见，其中一项任务是深度学习。 深度学习以及许多其他使用并行编程技术的科学计算任务正在催生一种称为通用 GPU 计算 （ `general purpose GPU computing <https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units>`_ , GPGPU）的新型编程模型。"
+msgstr "crwdns117129:0crwdne117129:0"
+
+#: ../../source/user-guide/model-development/tensor/device.rst:175
 msgid "GPGPU 计算更常被称为 GPU 计算或加速计算，因为在 GPU 上执行各种任务变得越来越普遍。"
-msgstr "crwdns83179:0crwdne83179:0"
+msgstr "crwdns117131:0crwdne117131:0"
 
 #~ msgid "内容正在建设中..."
 #~ msgstr ""
