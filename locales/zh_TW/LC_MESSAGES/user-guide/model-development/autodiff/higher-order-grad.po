@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:12\n"
+"PO-Revision-Date: 2023-04-21 09:36\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,55 +14,55 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/autodiff/higher-order-grad.po\n"
-"X-Crowdin-File-ID: 8520\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/autodiff/higher-order-grad.po\n"
+"X-Crowdin-File-ID: 9961\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:4
 msgid "Autodiff 高阶使用"
-msgstr "crwdns94310:0crwdne94310:0"
+msgstr "crwdns119027:0crwdne119027:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:6
 msgid "v1.5 开始，MegEngine 提供了实验性的高阶微分支持，允许多个GradManager进行协作。使用场景介绍如下。 你可以利用这个特性， 实现高阶微分、前向微分和多个一阶微分"
-msgstr "crwdns94312:0crwdne94312:0"
+msgstr "crwdns119029:0crwdne119029:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:10
 msgid "高阶微分"
-msgstr "crwdns94314:0crwdne94314:0"
+msgstr "crwdns119031:0crwdne119031:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:12
 msgid "对于 :py:class:`~.GradManager` 来说，它只关心并如实的记录在启用范围内的全部 Tensor 计算操作，并不会区分这个 Tensor 是通过 forward 计算得到还是另一个 :py:class:`~.GradManager` 求导得到（即求导器可以对 x.grad 再次进行求导）。 通过嵌套两层 :py:class:`~.GradManager` ，我们可以实现求二阶导的效果。"
-msgstr "crwdns94316:0crwdne94316:0"
+msgstr "crwdns119033:0crwdne119033:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:43
 msgid "从外部gm的视角来看，它并不关心求导对象是在 backward 阶段产生还是从 forward 阶段产生的，只要是在 gm scope 内的计算都会被记录下来，如下图所示。"
-msgstr "crwdns94318:0crwdne94318:0"
+msgstr "crwdns119035:0crwdne119035:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:69
 msgid "求二阶导时，需要注意嵌套顺序"
-msgstr "crwdns94320:0crwdne94320:0"
+msgstr "crwdns119037:0crwdne119037:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:71
 msgid "我们调换 ``gm`` 与 ``gm2`` 的顺序，可以看到，在 ``gm.backward()`` 之后， ``x.grad`` 为空，也就是说 ``gm`` 没有求出 ``x`` 对 ``x.grad`` 的梯度。这是因为此时 ``gm`` 被放在内层，无法观测到 ``gm2.backward`` 这个行为。因此在 ``gm`` 眼里 ``x.grad`` 就好似凭空产生的（和 ``x.grad = Tensor(3)`` 一样），当然无法对其求导。"
-msgstr "crwdns94322:0crwdne94322:0"
+msgstr "crwdns119039:0crwdne119039:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:95
 msgid "多次反向微分来模拟前向微分"
-msgstr "crwdns94324:0crwdne94324:0"
+msgstr "crwdns119041:0crwdne119041:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:128
 msgid "求两个一阶导"
-msgstr "crwdns94326:0crwdne94326:0"
+msgstr "crwdns119043:0crwdne119043:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:130
 msgid "如果你希望在一次计算中，分别对不同的一批参数求导，那么你可以使用 ``gm | gm2`` 的写法，可分别求两个一阶导。 和 ``with gm: with gm2`` 写法相比，可以在不求高阶导的形式下节省一点代码，此外这两种写法其实语义上有微妙的差别： ``gm | gm2`` 中两个求导器是平等的（没有内外层之分），自然也是相互不可见的，有时可以避免一些意料之外的行为。"
-msgstr "crwdns94328:0crwdne94328:0"
+msgstr "crwdns119045:0crwdne119045:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:150
 msgid "此时两个 :py:class:`~.GradManager` 观测到的内容如下所示："
-msgstr "crwdns94330:0crwdne94330:0"
+msgstr "crwdns119047:0crwdne119047:0"
 
 #: ../../source/user-guide/model-development/autodiff/higher-order-grad.rst:174
 msgid "``gm | gm2`` 中两个求导器是平等的（没有内外层之分），相互是不可见的。因此，在下面的代码中由于 ``gm2`` 对 ``gm`` 不可见，导致无法求出 ``x`` 对于 ``x_grad`` 的梯度。"
-msgstr "crwdns94332:0crwdne94332:0"
+msgstr "crwdns119049:0crwdne119049:0"
 
