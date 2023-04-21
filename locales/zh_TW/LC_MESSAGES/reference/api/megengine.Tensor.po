@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:22\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:11\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,284 +11,296 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.Tensor.po\n"
-"X-Crowdin-File-ID: 1890\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.Tensor.po\n"
+"X-Crowdin-File-ID: 8827\n"
 
 #: ../../source/reference/api/megengine.Tensor.rst:2
 msgid "megengine.Tensor"
-msgstr "crwdns28348:0crwdne28348:0"
+msgstr "crwdns97821:0crwdne97821:0"
 
 #: megengine.tensor.Tensor:1 of
 msgid "A tensor object represents a multidimensional, homogeneous array of fixed-size items."
-msgstr "crwdns28352:0crwdne28352:0"
+msgstr "crwdns97823:0crwdne97823:0"
 
 #: megengine.tensor.Tensor:3 of
 msgid "Tensor is the primary MegEngine data structure. Data type(dtype) describes the format of each element, such as ``float32``, ``int8`` and so on, see :ref:`tensor-dtype` for more details. It is similar to :class:`numpy.ndarray` but not the same in the design. For example, GPU devices can be used to store Tensors and execute calculations in MegEngine. The concept of `view <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_ does not exist in MegEngine so indexing and other behaviors might be different with NumPy. All manipulations and operations on/between Tensors could be found in the :mod:`~.megengine.functional` module. Keep in mind that they are **not in-place**, a new Tensor will always be returned and the original data will remain constant."
-msgstr "crwdns93206:0:ref:crwdnd93206:0:class:crwdnd93206:0:mod:crwdne93206:0"
+msgstr "crwdns97825:0:ref:crwdnd97825:0:class:crwdnd97825:0:mod:crwdne97825:0"
 
 #: megengine.tensor.Tensor:14 of
 msgid "For more information, refer to the :ref:`tensor-guide` topic."
-msgstr "crwdns93208:0:ref:crwdne93208:0"
+msgstr "crwdns97827:0:ref:crwdne97827:0"
 
 #: megengine.tensor.Tensor of
 msgid "参数"
-msgstr "crwdns28354:0crwdne28354:0"
+msgstr "crwdns97829:0crwdne97829:0"
 
 #: megengine.tensor.Tensor:17 of
 msgid "The data used for construcing Tensor. Tensor could be constructed from a Python :class:`list` / :class:`tuple` or sequence; a NumPy :class:`~.numpy.ndarray` data structure; MegEngine builtin methods and so on. Refer to :ref:`tensor-creation` for more details."
-msgstr "crwdns93210:0:class:crwdnd93210:0:class:crwdnd93210:0:class:crwdnd93210:0:ref:crwdne93210:0"
+msgstr "crwdns97831:0:class:crwdnd97831:0:class:crwdnd97831:0:class:crwdnd97831:0:ref:crwdne97831:0"
 
 #: megengine.tensor.Tensor:23 of
 msgid "The data type of returned Tensor. Infer from ``data`` if not specified."
-msgstr "crwdns93212:0crwdne93212:0"
+msgstr "crwdns97833:0crwdne97833:0"
 
 #: megengine.tensor.Tensor:26 of
 msgid "The desired device of returned Tensor. Uses :func:`get_default_device` if not specified."
-msgstr "crwdns28360:0:func:crwdne28360:0"
+msgstr "crwdns97835:0:func:crwdne97835:0"
 
 #: megengine.tensor.Tensor:29 of
 msgid "Whether make it a ``ImutableTensor`` in tracing mode, refer to :class:`.jit.trace`."
-msgstr "crwdns93214:0:class:crwdne93214:0"
+msgstr "crwdns97837:0:class:crwdne97837:0"
 
 #: megengine.tensor.Tensor:31 of
 msgid "Whether cache it for memory sharing."
-msgstr "crwdns28364:0crwdne28364:0"
+msgstr "crwdns97839:0crwdne97839:0"
 
 #: megengine.tensor.Tensor:33 of
 msgid "Used to improve convenience in graph operation on dumped model."
-msgstr "crwdns28366:0crwdne28366:0"
+msgstr "crwdns97841:0crwdne97841:0"
 
 #: megengine.tensor.Tensor:35 of
 msgid "Used to indicate which memory format Tensor uses. It will not affect actual memory order or stride, but may affect some operators related to indexing and dimension. Only support \"default\", \"nchw\" and \"nhwc\"."
-msgstr "crwdns93216:0crwdne93216:0"
+msgstr "crwdns97843:0crwdne97843:0"
 
 #: megengine.tensor.Tensor:40 of
 msgid "There are some methods like :meth:`~.Tensor.reshape` / :meth:`~.Tensor.flatten` / :meth:`~.Tensor.transpose` / :meth:`~.Tensor.min` / :meth:`~.Tensor.max` / :meth:`~.Tensor.mean` / :meth:`~.Tensor.sum` / :meth:`~.Tensor.prod` implemented in ``Tensor`` class for convenience and historical reasons. But other methods implemented in the :mod:`~.megengine.functional` module will not be added here anymore, it is hard for maintaining and too many candidates will affect code completion experience."
-msgstr "crwdns93218:0:meth:crwdnd93218:0:meth:crwdnd93218:0:meth:crwdnd93218:0:meth:crwdnd93218:0:meth:crwdnd93218:0:meth:crwdnd93218:0:meth:crwdnd93218:0:meth:crwdnd93218:0:mod:crwdne93218:0"
+msgstr "crwdns97845:0:meth:crwdnd97845:0:meth:crwdnd97845:0:meth:crwdnd97845:0:meth:crwdnd97845:0:meth:crwdnd97845:0:meth:crwdnd97845:0:meth:crwdnd97845:0:meth:crwdnd97845:0:mod:crwdne97845:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:11
 msgid "Attributes"
-msgstr "crwdns28434:0crwdne28434:0"
+msgstr "crwdns97847:0crwdne97847:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`T <megengine.Tensor.T>`\\"
-msgstr "crwdns91822:0crwdne91822:0"
+msgstr "crwdns97849:0crwdne97849:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "alias of :attr:`~.Tensor.transpose`."
-msgstr "crwdns28438:0:attr:crwdne28438:0"
+msgstr "crwdns97851:0:attr:crwdne97851:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`device <megengine.Tensor.device>`\\"
-msgstr "crwdns91824:0crwdne91824:0"
+msgstr "crwdns97853:0crwdne97853:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a string represents the device a :class:`~.Tensor` storaged on."
-msgstr "crwdns28444:0:class:crwdne28444:0"
+msgstr "crwdns97855:0:class:crwdne97855:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`dmap_callback <megengine.Tensor.dmap_callback>`\\"
-msgstr "crwdns91826:0crwdne91826:0"
+msgstr "crwdns97857:0crwdne97857:0"
+
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
+msgid "callback for device mapping, see :func:`~.load`."
+msgstr "crwdns97859:0:func:crwdne97859:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`dtype <megengine.Tensor.dtype>`\\"
-msgstr "crwdns91828:0crwdne91828:0"
+msgstr "crwdns97861:0crwdne97861:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a :class:`numpy.dtype` object represents the data type of a :class:`~.Tensor`."
-msgstr "crwdns28450:0:class:crwdnd28450:0:class:crwdne28450:0"
+msgstr "crwdns97863:0:class:crwdnd97863:0:class:crwdne97863:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`format <megengine.Tensor.format>`\\"
-msgstr "crwdns93220:0crwdne93220:0"
-
-#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>
-msgid "rtype"
-msgstr "crwdns93222:0crwdne93222:0"
+msgstr "crwdns97865:0crwdne97865:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
-msgid ":py:class:`str`"
-msgstr "crwdns93224:0crwdne93224:0"
+msgid "Returns a string represents the :ref:`memory format <format-introduction>` of a :class:`~.Tensor`."
+msgstr "crwdns97867:0:ref:crwdnd97867:0:class:crwdne97867:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`grad <megengine.Tensor.grad>`\\"
-msgstr "crwdns91830:0crwdne91830:0"
+msgstr "crwdns97869:0crwdne97869:0"
+
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
+msgid "gradient of this tensor, see :mod:`~.autodiff`."
+msgstr "crwdns97871:0:mod:crwdne97871:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`name <megengine.Tensor.name>`\\"
-msgstr "crwdns91832:0crwdne91832:0"
+msgstr "crwdns97873:0crwdne97873:0"
+
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
+msgid "Returns a string represents the name of a :class:`~.Tensor`."
+msgstr "crwdns97875:0:class:crwdne97875:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`ndim <megengine.Tensor.ndim>`\\"
-msgstr "crwdns91834:0crwdne91834:0"
+msgstr "crwdns97877:0crwdne97877:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns the number of dimensions of self :class:`~.Tensor`."
-msgstr "crwdns28458:0:class:crwdne28458:0"
+msgstr "crwdns97879:0:class:crwdne97879:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`qparams <megengine.Tensor.qparams>`\\"
-msgstr "crwdns91836:0crwdne91836:0"
+msgstr "crwdns97881:0crwdne97881:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a :class:`~.QParams` object containing quantization params of a :class:`~.Tensor`."
-msgstr "crwdns28462:0:class:crwdnd28462:0:class:crwdne28462:0"
+msgstr "crwdns97883:0:class:crwdnd97883:0:class:crwdne97883:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`requires_grad <megengine.Tensor.requires_grad>`\\"
-msgstr "crwdns91838:0crwdne91838:0"
+msgstr "crwdns97885:0crwdne97885:0"
+
+#: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
+msgid "Returns a bool indicates whether the :class:`~.Tensor` requires gradient."
+msgstr "crwdns97887:0:class:crwdne97887:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`shape <megengine.Tensor.shape>`\\"
-msgstr "crwdns91840:0crwdne91840:0"
+msgstr "crwdns97889:0crwdne97889:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns a :class:`tuple` or a :class:`~.Tensor` represents tensor dimensions."
-msgstr "crwdns28468:0:class:crwdnd28468:0:class:crwdne28468:0"
+msgstr "crwdns97891:0:class:crwdnd97891:0:class:crwdne97891:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`size <megengine.Tensor.size>`\\"
-msgstr "crwdns91842:0crwdne91842:0"
+msgstr "crwdns97893:0crwdne97893:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid "Returns the size of the self :class:`~.Tensor`."
-msgstr "crwdns28472:0:class:crwdne28472:0"
+msgstr "crwdns97895:0:class:crwdne97895:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:57
 msgid "Methods"
-msgstr "crwdns28368:0crwdne28368:0"
+msgstr "crwdns97897:0crwdne97897:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`astype <megengine.Tensor.astype>`\\ \\(dtype\\)"
-msgstr "crwdns91844:0crwdne91844:0"
+msgstr "crwdns97899:0crwdne97899:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns a :class:`Tensor` with the same data and number of elements with the specified :attr:`~.Tensor.dtype`."
-msgstr "crwdns28376:0:class:crwdnd28376:0:attr:crwdne28376:0"
+msgstr "crwdns97901:0:class:crwdnd97901:0:attr:crwdne97901:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`detach <megengine.Tensor.detach>`\\ \\(\\)"
-msgstr "crwdns91846:0crwdne91846:0"
+msgstr "crwdns97903:0crwdne97903:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns a new :class:`~.Tensor`, detached from the current graph."
-msgstr "crwdns28380:0:class:crwdne28380:0"
+msgstr "crwdns97905:0:class:crwdne97905:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`flatten <megengine.Tensor.flatten>`\\ \\(\\)"
-msgstr "crwdns91848:0crwdne91848:0"
+msgstr "crwdns97907:0crwdne97907:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.flatten`."
-msgstr "crwdns28384:0:func:crwdne28384:0"
+msgstr "crwdns97909:0:func:crwdne97909:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`graph <megengine.Tensor.graph>`\\"
-msgstr "crwdns93226:0crwdne93226:0"
+msgstr "crwdns97911:0crwdne97911:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`item <megengine.Tensor.item>`\\ \\(\\*args\\)"
-msgstr "crwdns91850:0crwdne91850:0"
+msgstr "crwdns97913:0crwdne97913:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns the value of this :class:`~.Tensor` as a standard Python :class:`numbers.Number`."
-msgstr "crwdns28388:0:class:crwdnd28388:0:class:crwdne28388:0"
+msgstr "crwdns97915:0:class:crwdnd97915:0:class:crwdne97915:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`max <megengine.Tensor.max>`\\ \\(\\[axis\\, keepdims\\]\\)"
-msgstr "crwdns91852:0crwdne91852:0"
+msgstr "crwdns97917:0crwdne97917:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.max`."
-msgstr "crwdns93228:0:func:crwdne93228:0"
+msgstr "crwdns97919:0:func:crwdne97919:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`mean <megengine.Tensor.mean>`\\ \\(\\[axis\\, keepdims\\]\\)"
-msgstr "crwdns91854:0crwdne91854:0"
+msgstr "crwdns97921:0crwdne97921:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.mean`."
-msgstr "crwdns93230:0:func:crwdne93230:0"
+msgstr "crwdns97923:0:func:crwdne97923:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`min <megengine.Tensor.min>`\\ \\(\\[axis\\, keepdims\\]\\)"
-msgstr "crwdns91856:0crwdne91856:0"
+msgstr "crwdns97925:0crwdne97925:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.min`."
-msgstr "crwdns93232:0:func:crwdne93232:0"
+msgstr "crwdns97927:0:func:crwdne97927:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`numpy <megengine.Tensor.numpy>`\\ \\(\\)"
-msgstr "crwdns91858:0crwdne91858:0"
+msgstr "crwdns97929:0crwdne97929:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns self :class:`~.Tensor` as a :class:`numpy.ndarray`."
-msgstr "crwdns28404:0:class:crwdnd28404:0:class:crwdne28404:0"
+msgstr "crwdns97931:0:class:crwdnd97931:0:class:crwdne97931:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`prod <megengine.Tensor.prod>`\\ \\(\\[axis\\, keepdims\\]\\)"
-msgstr "crwdns91860:0crwdne91860:0"
+msgstr "crwdns97933:0crwdne97933:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.prod`."
-msgstr "crwdns93234:0:func:crwdne93234:0"
+msgstr "crwdns97935:0:func:crwdne97935:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`reset_zero <megengine.Tensor.reset_zero>`\\ \\(\\)"
-msgstr "crwdns91862:0crwdne91862:0"
+msgstr "crwdns97937:0crwdne97937:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`reshape <megengine.Tensor.reshape>`\\ \\(\\*args\\)"
-msgstr "crwdns91864:0crwdne91864:0"
+msgstr "crwdns97939:0crwdne97939:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.reshape`."
-msgstr "crwdns28414:0:func:crwdne28414:0"
+msgstr "crwdns97941:0:func:crwdne97941:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`set_value <megengine.Tensor.set_value>`\\ \\(value\\)"
-msgstr "crwdns91866:0crwdne91866:0"
+msgstr "crwdns97943:0crwdne97943:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`sum <megengine.Tensor.sum>`\\ \\(\\[axis\\, keepdims\\]\\)"
-msgstr "crwdns91868:0crwdne91868:0"
+msgstr "crwdns97945:0crwdne97945:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.sum`."
-msgstr "crwdns93236:0:func:crwdne93236:0"
+msgstr "crwdns97947:0:func:crwdne97947:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`to <megengine.Tensor.to>`\\ \\(device\\, \\*\\[\\, \\_borrow\\]\\)"
-msgstr "crwdns93238:0crwdne93238:0"
+msgstr "crwdns97949:0crwdne97949:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Copy self :class:`~.Tensor` to specified device."
-msgstr "crwdns28424:0:class:crwdne28424:0"
+msgstr "crwdns97951:0:class:crwdne97951:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`tolist <megengine.Tensor.tolist>`\\ \\(\\)"
-msgstr "crwdns91872:0crwdne91872:0"
+msgstr "crwdns97953:0crwdne97953:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Returns the tensor as a (nested) list."
-msgstr "crwdns28428:0crwdne28428:0"
+msgstr "crwdns97955:0crwdne97955:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`transpose <megengine.Tensor.transpose>`\\ \\(\\*args\\)"
-msgstr "crwdns91874:0crwdne91874:0"
+msgstr "crwdns97957:0crwdne97957:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "See :func:`~.transpose`."
-msgstr "crwdns28432:0:func:crwdne28432:0"
+msgstr "crwdns97959:0:func:crwdne97959:0"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid ":py:obj:`var <megengine.Tensor.var>`\\"
-msgstr "crwdns93240:0crwdne93240:0"
+msgstr "crwdns97961:0crwdne97961:0"
 
 #~ msgid ""
 #~ "基类：:class:`Tensor`, "
@@ -342,4 +354,10 @@ msgstr "crwdns93240:0crwdne93240:0"
 #~ "the input tensor in the given "
 #~ "dimension ``axis``."
 #~ msgstr "返回当前张量在给定轴上所有元素求和后的结果。"
+
+#~ msgid "rtype"
+#~ msgstr "rtype"
+
+#~ msgid ":py:class:`str`"
+#~ msgstr ":py:class:`str`"
 
