@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:12\n"
+"PO-Revision-Date: 2023-04-21 09:38\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,20 +15,20 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/pylite/utils.po\n"
-"X-Crowdin-File-ID: 8446\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/pylite/utils.po\n"
+"X-Crowdin-File-ID: 10031\n"
 
 #: ../../source/reference/pylite/utils.rst:6
 msgid "megenginelite.utils"
-msgstr "crwdns93066:0crwdne93066:0"
+msgstr "crwdns121479:0crwdne121479:0"
 
 #: megenginelite.utils.TensorBatchCollector:1 of
 msgid "A tensor utils is used to collect many single batch tensor to a multi batch size tensor, when the multi batch size tensor collect finish, the result tensor can be get and send to the model input for forwarding."
-msgstr "crwdns95252:0crwdne95252:0"
+msgstr "crwdns121481:0crwdne121481:0"
 
 #: megenginelite.utils.TensorBatchCollector:5 of
 msgid "when collect single batch tensor, the single batch tensor is no need in the same device_type and device_id with the result tensor, however the dtype must match and the shape must match except the highest dimension."
-msgstr "crwdns95254:0crwdne95254:0"
+msgstr "crwdns121483:0crwdne121483:0"
 
 #: megenginelite.utils.TensorBatchCollector
 #: megenginelite.utils.TensorBatchCollector.collect
@@ -36,80 +36,80 @@ msgstr "crwdns95254:0crwdne95254:0"
 #: megenginelite.utils.TensorBatchCollector.collect_id
 #: megenginelite.utils.TensorBatchCollector.free of
 msgid "参数"
-msgstr "crwdns95256:0crwdne95256:0"
+msgstr "crwdns121485:0crwdne121485:0"
 
 #: megenginelite.utils.TensorBatchCollector:9 of
 msgid "the multi batch size tensor shape, After collection, the result tensor shape."
-msgstr "crwdns95258:0crwdne95258:0"
+msgstr "crwdns121487:0crwdne121487:0"
 
 #: megenginelite.utils.TensorBatchCollector:11 of
 msgid "the datatype of the single batch tensor and the result tensor, default value is LiteDataType.LITE_INT8."
-msgstr "crwdns95260:0crwdne95260:0"
+msgstr "crwdns121489:0crwdne121489:0"
 
 #: megenginelite.utils.TensorBatchCollector:14 of
 msgid "the target device type the result tensor will allocate, default value is LiteDeviceType.LITE_CUDA."
-msgstr "crwdns95262:0crwdne95262:0"
+msgstr "crwdns121491:0crwdne121491:0"
 
 #: megenginelite.utils.TensorBatchCollector:17 of
 msgid "the device id the result tensor will allocate, default 0."
-msgstr "crwdns95264:0crwdne95264:0"
+msgstr "crwdns121493:0crwdne121493:0"
 
 #: megenginelite.utils.TensorBatchCollector:18 of
 msgid "Whether the memory is pinned memory, refer to CUDA pinned memory, default False."
-msgstr "crwdns95266:0crwdne95266:0"
+msgstr "crwdns121495:0crwdne121495:0"
 
 #: megenginelite.utils.TensorBatchCollector:20 of
 msgid "the result tensor, user can also create the multi batch size tensor and then create the TensorBatchColletor, if tensor is not None, all the member, such as shape, dtype, device_type, device_id, is_pinned_host will get from the tensor, if the tensor is None and the result tensor will create by the TensorBatchCollector, default is None."
-msgstr "crwdns95268:0crwdne95268:0"
+msgstr "crwdns121497:0crwdne121497:0"
 
 #: megenginelite.utils.TensorBatchCollector:30 of
 msgid "when collect tensor, the single batch tensor or array shape must match the result tensor shape except the batch size dimension (the highest dimension)"
-msgstr "crwdns95270:0crwdne95270:0"
+msgstr "crwdns121499:0crwdne121499:0"
 
 #: megenginelite.utils.TensorBatchCollector:34 of
 msgid "实际案例"
-msgstr "crwdns95272:0crwdne95272:0"
+msgstr "crwdns121501:0crwdne121501:0"
 
 #: megenginelite.utils.TensorBatchCollector.collect:1 of
 msgid "Collect a single batch through an array and store the array data to an empty batch, the empty batch is the front batch id in free list."
-msgstr "crwdns95274:0crwdne95274:0"
+msgstr "crwdns121503:0crwdne121503:0"
 
 #: megenginelite.utils.TensorBatchCollector.collect:4
 #: megenginelite.utils.TensorBatchCollector.collect_by_ctypes:5 of
 msgid "an array maybe LiteTensor or numpy ndarray, the shape must match the result tensor shape except the highest dimension"
-msgstr "crwdns95276:0crwdne95276:0"
+msgstr "crwdns121505:0crwdne121505:0"
 
 #: megenginelite.utils.TensorBatchCollector.collect_by_ctypes:1 of
 msgid "Collect a single batch through an ctypes memory buffer and store the ctypes memory data to an empty batch, the empty batch is the front batch id in free list."
-msgstr "crwdns95278:0crwdne95278:0"
+msgstr "crwdns121507:0crwdne121507:0"
 
 #: megenginelite.utils.TensorBatchCollector.collect_id:1 of
 msgid "Collect a single batch through an array and store the array data to the specific batch_id."
-msgstr "crwdns95280:0crwdne95280:0"
+msgstr "crwdns121509:0crwdne121509:0"
 
 #: megenginelite.utils.TensorBatchCollector.collect_id:4 of
 msgid "an array maybe LiteTensor or numpy ndarray, the shape of array must match the result tensor shape except the highest dimension."
-msgstr "crwdns95282:0crwdne95282:0"
+msgstr "crwdns121511:0crwdne121511:0"
 
 #: megenginelite.utils.TensorBatchCollector.collect_id:7 of
 msgid "the batch id to store the array data to the result tensor, if the batch_id has already collected, a warning will generate."
-msgstr "crwdns95284:0crwdne95284:0"
+msgstr "crwdns121513:0crwdne121513:0"
 
 #: megenginelite.utils.TensorBatchCollector.free:1 of
 msgid "free the batch ids in the indexes, after the batch id is freed, it can be collected again without warning."
-msgstr "crwdns95286:0crwdne95286:0"
+msgstr "crwdns121515:0crwdne121515:0"
 
 #: megenginelite.utils.TensorBatchCollector.free:4 of
 msgid "a list of to be freed batch id"
-msgstr "crwdns95288:0crwdne95288:0"
+msgstr "crwdns121517:0crwdne121517:0"
 
 #: megenginelite.utils.TensorBatchCollector.get:1 of
 msgid "After finish collection, get the result tensor"
-msgstr "crwdns95290:0crwdne95290:0"
+msgstr "crwdns121519:0crwdne121519:0"
 
 #: megenginelite.utils.TensorBatchCollector.to_numpy:1 of
 msgid "Convert the result tensor to a numpy ndarray"
-msgstr "crwdns95292:0crwdne95292:0"
+msgstr "crwdns121521:0crwdne121521:0"
 
 #~ msgid "this is a tensor utils to collect subtensor in batch continuous"
 #~ msgstr ""
