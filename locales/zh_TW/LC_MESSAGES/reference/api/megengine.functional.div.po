@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:23\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:17\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,156 +11,168 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.div.po\n"
-"X-Crowdin-File-ID: 2116\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.div.po\n"
+"X-Crowdin-File-ID: 9101\n"
 
 #: ../../source/reference/api/megengine.functional.div.rst:2
 msgid "megengine.functional.div"
-msgstr "crwdns30680:0crwdne30680:0"
+msgstr "crwdns100135:0crwdne100135:0"
 
 #: megengine.functional.elemwise.div:1 of
+msgid "Element-wise division."
+msgstr "crwdns100137:0crwdne100137:0"
+
+#: megengine.functional.elemwise.div:3 of
 msgid "Calculates the division for each element :math:`x_i` of the input tensor :math:`x` with the respective element :math:`y_i` of the input tensor :math:`y`."
-msgstr "crwdns93326:0:math:crwdnd93326:0:math:crwdnd93326:0:math:crwdnd93326:0:math:crwdne93326:0"
+msgstr "crwdns100139:0:math:crwdnd100139:0:math:crwdnd100139:0:math:crwdnd100139:0:math:crwdne100139:0"
 
 #: megengine.functional.elemwise.div of
 msgid "参数"
-msgstr "crwdns93328:0crwdne93328:0"
-
-#: megengine.functional.elemwise.div:4 of
-msgid "dividend input tensor. Should have a numeric data type."
-msgstr "crwdns93330:0crwdne93330:0"
+msgstr "crwdns100141:0crwdne100141:0"
 
 #: megengine.functional.elemwise.div:6 of
-msgid "divisor input tensor. Must be compatible with ``x``` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
-msgstr "crwdns93332:0:ref:crwdne93332:0"
+msgid "dividend input tensor. Should have a numeric data type."
+msgstr "crwdns100143:0crwdne100143:0"
+
+#: megengine.functional.elemwise.div:8 of
+msgid "divisor input tensor. Must be compatible with :math:`x`` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
+msgstr "crwdns100145:0:math:crwdnd100145:0:ref:crwdne100145:0"
 
 #: megengine.functional.elemwise.div of
 msgid "返回类型"
-msgstr "crwdns93334:0crwdne93334:0"
+msgstr "crwdns100147:0crwdne100147:0"
 
-#: megengine.functional.elemwise.div:8 of
+#: megengine.functional.elemwise.div:10 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr "crwdns93336:0crwdne93336:0"
+msgstr "crwdns100149:0crwdne100149:0"
 
 #: megengine.functional.elemwise.div of
 msgid "返回"
-msgstr "crwdns93338:0crwdne93338:0"
-
-#: megengine.functional.elemwise.div:9 of
-msgid "A tensor containing the element-wise results. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
-msgstr "crwdns93340:0:ref:crwdne93340:0"
+msgstr "crwdns100151:0crwdne100151:0"
 
 #: megengine.functional.elemwise.div:11 of
+msgid "A tensor containing the element-wise results. The returned tensor must have a data type determined by :ref:`dtype-promotion`."
+msgstr "crwdns100153:0:ref:crwdne100153:0"
+
+#: megengine.functional.elemwise.div:14 of
 msgid "Special cases"
-msgstr "crwdns93342:0crwdne93342:0"
-
-#: megengine.functional.elemwise.div:13 of
-msgid "For floating-point operands,"
-msgstr "crwdns93344:0crwdne93344:0"
-
-#: megengine.functional.elemwise.div:15 of
-msgid "If either :math:`x` or :math:`y` is ``NaN``, the result is ``NaN``."
-msgstr "crwdns93346:0:math:crwdnd93346:0:math:crwdne93346:0"
+msgstr "crwdns100155:0crwdne100155:0"
 
 #: megengine.functional.elemwise.div:16 of
-msgid "If :math:`x` is either ``+infinity`` or ``-infinity`` and :math:`y` is either ``+infinity`` or ``-infinity``, the result is ``NaN``."
-msgstr "crwdns93348:0:math:crwdnd93348:0:math:crwdne93348:0"
-
-#: megengine.functional.elemwise.div:17 of
-msgid "If :math:`x` is either ``+0`` or ``-0`` and :math:`y` is either ``+0`` or ``-0``, the result is ``NaN``."
-msgstr "crwdns93350:0:math:crwdnd93350:0:math:crwdne93350:0"
+msgid "For floating-point operands,"
+msgstr "crwdns100157:0crwdne100157:0"
 
 #: megengine.functional.elemwise.div:18 of
-msgid "If :math:`x` is ``+0`` and :math:`y` is greater than ``0``, the result is ``+0``."
-msgstr "crwdns93352:0:math:crwdnd93352:0:math:crwdne93352:0"
+msgid "If either :math:`x` or :math:`y` is ``NaN``, the result is ``NaN``."
+msgstr "crwdns100159:0:math:crwdnd100159:0:math:crwdne100159:0"
 
 #: megengine.functional.elemwise.div:19 of
-msgid "If :math:`x` is ``-0`` and :math:`y` is greater than ``0``, the result is ``-0``."
-msgstr "crwdns93354:0:math:crwdnd93354:0:math:crwdne93354:0"
+msgid "If :math:`x` is either ``+infinity`` or ``-infinity`` and :math:`y` is either ``+infinity`` or ``-infinity``, the result is ``NaN``."
+msgstr "crwdns100161:0:math:crwdnd100161:0:math:crwdne100161:0"
 
 #: megengine.functional.elemwise.div:20 of
-msgid "If :math:`x` is ``+0`` and :math:`y` is less than ``0``, the result is ``-0``."
-msgstr "crwdns93356:0:math:crwdnd93356:0:math:crwdne93356:0"
+msgid "If :math:`x` is either ``+0`` or ``-0`` and :math:`y` is either ``+0`` or ``-0``, the result is ``NaN``."
+msgstr "crwdns100163:0:math:crwdnd100163:0:math:crwdne100163:0"
 
 #: megengine.functional.elemwise.div:21 of
-msgid "If :math:`x` is ``-0`` and :math:`y` is less than ``0``, the result is ``+0``."
-msgstr "crwdns93358:0:math:crwdnd93358:0:math:crwdne93358:0"
+msgid "If :math:`x` is ``+0`` and :math:`y` is greater than ``0``, the result is ``+0``."
+msgstr "crwdns100165:0:math:crwdnd100165:0:math:crwdne100165:0"
 
 #: megengine.functional.elemwise.div:22 of
-msgid "If :math:`x` is greater than ``0`` and :math:`y` is ``+0``, the result is ``+infinity``."
-msgstr "crwdns93360:0:math:crwdnd93360:0:math:crwdne93360:0"
+msgid "If :math:`x` is ``-0`` and :math:`y` is greater than ``0``, the result is ``-0``."
+msgstr "crwdns100167:0:math:crwdnd100167:0:math:crwdne100167:0"
 
 #: megengine.functional.elemwise.div:23 of
-msgid "If :math:`x` is greater than ``0`` and :math:`y` is ``-0``, the result is ``-infinity``."
-msgstr "crwdns93362:0:math:crwdnd93362:0:math:crwdne93362:0"
+msgid "If :math:`x` is ``+0`` and :math:`y` is less than ``0``, the result is ``-0``."
+msgstr "crwdns100169:0:math:crwdnd100169:0:math:crwdne100169:0"
 
 #: megengine.functional.elemwise.div:24 of
-msgid "If :math:`x` is less than ``0`` and :math:`y` is ``+0``, the result is ``-infinity``."
-msgstr "crwdns93364:0:math:crwdnd93364:0:math:crwdne93364:0"
+msgid "If :math:`x` is ``-0`` and :math:`y` is less than ``0``, the result is ``+0``."
+msgstr "crwdns100171:0:math:crwdnd100171:0:math:crwdne100171:0"
 
 #: megengine.functional.elemwise.div:25 of
-msgid "If :math:`x` is less than ``0`` and :math:`y` is ``-0``, the result is ``+infinity``."
-msgstr "crwdns93366:0:math:crwdnd93366:0:math:crwdne93366:0"
+msgid "If :math:`x` is greater than ``0`` and :math:`y` is ``+0``, the result is ``+infinity``."
+msgstr "crwdns100173:0:math:crwdnd100173:0:math:crwdne100173:0"
 
 #: megengine.functional.elemwise.div:26 of
-msgid "If :math:`x` is ``+infinity`` and :math:`y` is a positive (i.e., greater than ``0``) finite number, the result is ``+infinity``."
-msgstr "crwdns93368:0:math:crwdnd93368:0:math:crwdne93368:0"
+msgid "If :math:`x` is greater than ``0`` and :math:`y` is ``-0``, the result is ``-infinity``."
+msgstr "crwdns100175:0:math:crwdnd100175:0:math:crwdne100175:0"
 
 #: megengine.functional.elemwise.div:27 of
-msgid "If :math:`x` is ``+infinity`` and :math:`y` is a negative (i.e., less than ``0``) finite number, the result is ``-infinity``."
-msgstr "crwdns93370:0:math:crwdnd93370:0:math:crwdne93370:0"
+msgid "If :math:`x` is less than ``0`` and :math:`y` is ``+0``, the result is ``-infinity``."
+msgstr "crwdns100177:0:math:crwdnd100177:0:math:crwdne100177:0"
 
 #: megengine.functional.elemwise.div:28 of
-msgid "If :math:`x` is ``-infinity`` and :math:`y` is a positive (i.e., greater than ``0``) finite number, the result is ``-infinity``."
-msgstr "crwdns93372:0:math:crwdnd93372:0:math:crwdne93372:0"
+msgid "If :math:`x` is less than ``0`` and :math:`y` is ``-0``, the result is ``+infinity``."
+msgstr "crwdns100179:0:math:crwdnd100179:0:math:crwdne100179:0"
 
 #: megengine.functional.elemwise.div:29 of
-msgid "If :math:`x` is ``-infinity`` and :math:`y` is a negative (i.e., less than ``0``) finite number, the result is ``+infinity``."
-msgstr "crwdns93374:0:math:crwdnd93374:0:math:crwdne93374:0"
+msgid "If :math:`x` is ``+infinity`` and :math:`y` is a positive (i.e., greater than ``0``) finite number, the result is ``+infinity``."
+msgstr "crwdns100181:0:math:crwdnd100181:0:math:crwdne100181:0"
 
 #: megengine.functional.elemwise.div:30 of
-msgid "If :math:`x` is a positive (i.e., greater than ``0``) finite number and :math:`y` is ``+infinity``, the result is ``+0``."
-msgstr "crwdns93376:0:math:crwdnd93376:0:math:crwdne93376:0"
+msgid "If :math:`x` is ``+infinity`` and :math:`y` is a negative (i.e., less than ``0``) finite number, the result is ``-infinity``."
+msgstr "crwdns100183:0:math:crwdnd100183:0:math:crwdne100183:0"
 
 #: megengine.functional.elemwise.div:31 of
-msgid "If :math:`x` is a positive (i.e., greater than ``0``) finite number and :math:`y` is ``-infinity``, the result is ``-0``."
-msgstr "crwdns93378:0:math:crwdnd93378:0:math:crwdne93378:0"
+msgid "If :math:`x` is ``-infinity`` and :math:`y` is a positive (i.e., greater than ``0``) finite number, the result is ``-infinity``."
+msgstr "crwdns100185:0:math:crwdnd100185:0:math:crwdne100185:0"
 
 #: megengine.functional.elemwise.div:32 of
-msgid "If :math:`x` is a negative (i.e., less than ``0``) finite number and :math:`y` is ``+infinity``, the result is ``-0``."
-msgstr "crwdns93380:0:math:crwdnd93380:0:math:crwdne93380:0"
+msgid "If :math:`x` is ``-infinity`` and :math:`y` is a negative (i.e., less than ``0``) finite number, the result is ``+infinity``."
+msgstr "crwdns100187:0:math:crwdnd100187:0:math:crwdne100187:0"
 
 #: megengine.functional.elemwise.div:33 of
-msgid "If :math:`x` is a negative (i.e., less than ``0``) finite number and :math:`y` is ``-infinity``, the result is ``+0``."
-msgstr "crwdns93382:0:math:crwdnd93382:0:math:crwdne93382:0"
+msgid "If :math:`x` is a positive (i.e., greater than ``0``) finite number and :math:`y` is ``+infinity``, the result is ``+0``."
+msgstr "crwdns100189:0:math:crwdnd100189:0:math:crwdne100189:0"
 
 #: megengine.functional.elemwise.div:34 of
-msgid "If :math:`x` and :math:`y` have the same mathematical sign and are both nonzero finite numbers, the result has a positive mathematical sign."
-msgstr "crwdns93384:0:math:crwdnd93384:0:math:crwdne93384:0"
+msgid "If :math:`x` is a positive (i.e., greater than ``0``) finite number and :math:`y` is ``-infinity``, the result is ``-0``."
+msgstr "crwdns100191:0:math:crwdnd100191:0:math:crwdne100191:0"
 
 #: megengine.functional.elemwise.div:35 of
-msgid "If :math:`x` and :math:`y` have different mathematical signs and are both nonzero finite numbers, the result has a negative mathematical sign."
-msgstr "crwdns93386:0:math:crwdnd93386:0:math:crwdne93386:0"
+msgid "If :math:`x` is a negative (i.e., less than ``0``) finite number and :math:`y` is ``+infinity``, the result is ``-0``."
+msgstr "crwdns100193:0:math:crwdnd100193:0:math:crwdne100193:0"
 
 #: megengine.functional.elemwise.div:36 of
+msgid "If :math:`x` is a negative (i.e., less than ``0``) finite number and :math:`y` is ``-infinity``, the result is ``+0``."
+msgstr "crwdns100195:0:math:crwdnd100195:0:math:crwdne100195:0"
+
+#: megengine.functional.elemwise.div:37 of
+msgid "If :math:`x` and :math:`y` have the same mathematical sign and are both nonzero finite numbers, the result has a positive mathematical sign."
+msgstr "crwdns100197:0:math:crwdnd100197:0:math:crwdne100197:0"
+
+#: megengine.functional.elemwise.div:38 of
+msgid "If :math:`x` and :math:`y` have different mathematical signs and are both nonzero finite numbers, the result has a negative mathematical sign."
+msgstr "crwdns100199:0:math:crwdnd100199:0:math:crwdne100199:0"
+
+#: megengine.functional.elemwise.div:39 of
 msgid "In the remaining cases, where neither ``-infinity``, ``+0``, ``-0``, nor ``NaN`` is involved, the quotient must be computed and rounded to the nearest representable value according to IEEE 754-2019 and a supported rounding mode. If the magnitude is too large to represent, the operation overflows and the result is an infinity of appropriate mathematical sign. If the magnitude is too small to represent, the operation underflows and the result is a zero of appropriate mathematical sign."
-msgstr "crwdns93388:0crwdne93388:0"
+msgstr "crwdns100201:0crwdne100201:0"
 
-#: megengine.functional.elemwise.div:40 of
+#: megengine.functional.elemwise.div:46 of
 msgid "The ``/`` operator can be used as a shorthand for ``div`` on tensors."
-msgstr "crwdns93390:0crwdne93390:0"
+msgstr "crwdns100203:0crwdne100203:0"
 
-#: megengine.functional.elemwise.div:44 of
+#: megengine.functional.elemwise.div:50 of
 msgid "In Python, ``//`` is the floor division operator and ``/`` is the true division operator. See :func:`~.functional.floor_div`"
-msgstr "crwdns93392:0:func:crwdne93392:0"
+msgstr "crwdns100205:0:func:crwdne100205:0"
 
-#: megengine.functional.elemwise.div:48 of
+#: megengine.functional.elemwise.div:54 of
 msgid "实际案例"
-msgstr "crwdns93394:0crwdne93394:0"
+msgstr "crwdns100207:0crwdne100207:0"
+
+#: megengine.functional.elemwise.div:58 of
+msgid "Element-wise division:"
+msgstr "crwdns100209:0crwdne100209:0"
+
+#: megengine.functional.elemwise.div:66 of
+msgid "Broadcasting:"
+msgstr "crwdns100211:0crwdne100211:0"
 
 #~ msgid "Element-wise `(x / y)`."
 #~ msgstr "逐元素相除。"
