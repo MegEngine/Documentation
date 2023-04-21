@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-12-13 13:32\n"
+"PO-Revision-Date: 2023-04-21 09:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,87 +14,87 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/lite/pylite-advanced.po\n"
-"X-Crowdin-File-ID: 8211\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/deployment/lite/pylite-advanced.po\n"
+"X-Crowdin-File-ID: 10009\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:5
 msgid "MegEngine Lite Python 进阶实例"
-msgstr "crwdns86551:0crwdne86551:0"
+msgstr "crwdns120775:0crwdne120775:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:7
 msgid "Lite 的 Python 封装将随着 Lite 一起开源。"
-msgstr "crwdns86553:0crwdne86553:0"
+msgstr "crwdns120777:0crwdne120777:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:10
 msgid "Python 推理接口"
-msgstr "crwdns86555:0crwdne86555:0"
+msgstr "crwdns120779:0crwdne120779:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:12
 msgid "Lite 的 python 封装里主要有两个类：**LiteTensor** 和 **LiteNetwork** 。"
-msgstr "crwdns86557:0crwdne86557:0"
+msgstr "crwdns120781:0crwdne120781:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:15
 msgid "LiteTensor"
-msgstr "crwdns86559:0crwdne86559:0"
+msgstr "crwdns120783:0crwdne120783:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:17
 msgid "**LiteTensor** 提供了用户对数据的操作接口，提供了接口包括:"
-msgstr "crwdns86561:0crwdne86561:0"
+msgstr "crwdns120785:0crwdne120785:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:19
 msgid "``fill_zero()``: 将tensor的内存设置为全0"
-msgstr "crwdns86563:0crwdne86563:0"
+msgstr "crwdns120787:0crwdne120787:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:20
 msgid "``share_memory_with()``: 可以和其他 **LiteTensor** 的共享内存"
-msgstr "crwdns86565:0crwdne86565:0"
+msgstr "crwdns120789:0crwdne120789:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:21
 msgid "``copy_from()``: 从其他 **LiteTensor** 中copy数据到自身内存中"
-msgstr "crwdns86567:0crwdne86567:0"
+msgstr "crwdns120791:0crwdne120791:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:22
 msgid "``reshape()``: 改变该 **LiteTensor** 的shape，内存数据保持不变"
-msgstr "crwdns86569:0crwdne86569:0"
+msgstr "crwdns120793:0crwdne120793:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:23
 msgid "``slice()``: 对该 **LiteTensor** 中的数据进行切片，需要分别指定每一维切片的start，end，和step。"
-msgstr "crwdns86571:0crwdne86571:0"
+msgstr "crwdns120795:0crwdne120795:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:24
 msgid "``set_data_by_share()``: 调用之后使得该 **LiteTensor** 中的内存共享自输入的array的内存，输入的array必须是numpy的ndarray，并且tensor在CPU上"
-msgstr "crwdns86573:0crwdne86573:0"
+msgstr "crwdns120797:0crwdne120797:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:25
 msgid "``set_data_by_copy()``: 该 **LiteTensor** 将会从输入的data中copy数据，data可以是list和numpy的ndarray，需要保证data的数据量不超过tensor的容量，tensor在CPU上"
-msgstr "crwdns86575:0crwdne86575:0"
+msgstr "crwdns120799:0crwdne120799:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:26
 msgid "``to_numpy()``: 将该 **LiteTensor** 中数据copy到numpy的array中，返回给用户，如果是非连续的 **LiteTensor** ，如slice出来的，将copy到连续的numpy array中，该接口主要数为了debug，有性能问题。"
-msgstr "crwdns86577:0crwdne86577:0"
+msgstr "crwdns120801:0crwdne120801:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:28
 msgid "对 **LiteTensor** 赋值，请参考："
-msgstr "crwdns86579:0crwdne86579:0"
+msgstr "crwdns120803:0crwdne120803:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:68
 msgid "让多个 **LiteTensor** 共享同一块内存数据，请参考："
-msgstr "crwdns86581:0crwdne86581:0"
+msgstr "crwdns120805:0crwdne120805:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:106
 msgid "LiteNetwork"
-msgstr "crwdns86583:0crwdne86583:0"
+msgstr "crwdns120807:0crwdne120807:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:108
 msgid "**LiteNetwork** 主要为用户提供模型载入，运行等功能。"
-msgstr "crwdns86585:0crwdne86585:0"
+msgstr "crwdns120809:0crwdne120809:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:110
 msgid "以CPU为后端的模型载入、运行，请参考："
-msgstr "crwdns86587:0crwdne86587:0"
+msgstr "crwdns120811:0crwdne120811:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-advanced.rst:187
 msgid "以CUDA为后端，使用device内存作为模型输入，需要在构造network候配置config和IO信息。请参考："
-msgstr "crwdns86589:0crwdne86589:0"
+msgstr "crwdns120813:0crwdne120813:0"
 
