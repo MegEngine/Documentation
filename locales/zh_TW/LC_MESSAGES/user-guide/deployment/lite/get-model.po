@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 01:34\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,71 +14,71 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/lite/get-model.po\n"
-"X-Crowdin-File-ID: 8379\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/deployment/lite/get-model.po\n"
+"X-Crowdin-File-ID: 10005\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:5
 msgid "获得用于 MegEngine Lite 推理的模型"
-msgstr "crwdns88423:0crwdne88423:0"
+msgstr "crwdns120721:0crwdne120721:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:6
 msgid "MegEngine 训练时候使用的动态图进行训练，当模型训练完成之后，需要将动态图转化为静态图，才能在 MegEngine Lite 中进行推理。目前有两种方法可以从 训练的模型转换到推理模型："
-msgstr "crwdns88425:0crwdne88425:0"
+msgstr "crwdns120723:0crwdne120723:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:9
 msgid "使用 trace_module 方式：通过 MegEngine 的 :ref:`Traced Module <traced_module-guide>` 将动态图转换为 traced_module IR，在这个 IR 基础上可以进行图手术等，参考 :ref:`graphsurgeon-example`，最后再转化为可以在 MegEngine Lite 上运行的静态图模型。"
-msgstr "crwdns88427:0:ref:crwdnd88427:0:ref:crwdne88427:0"
+msgstr "crwdns120725:0:ref:crwdnd120725:0:ref:crwdne120725:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:10
 msgid "直接 dump 方式：通过使用 MegEngine 的 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 功能将动态图转为静态图。"
-msgstr "crwdns88429:0:class:crwdnd88429:0:meth:crwdne88429:0"
+msgstr "crwdns120727:0:class:crwdnd120727:0:meth:crwdne120727:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:12
 msgid "如下图所示："
-msgstr "crwdns88431:0crwdne88431:0"
+msgstr "crwdns120729:0crwdne120729:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:26
 msgid "使用 trace_module 方式"
-msgstr "crwdns88433:0crwdne88433:0"
+msgstr "crwdns120731:0crwdne120731:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:27
 msgid "参考 :ref:`quick-start` ，下面是对 `模型中心 <https://megengine.org.cn/model-hub>`_ 已经训练好的 resnet18 转换为 trace_module ，然后再 dump 成为 MegEngine Lite 可以加载的静态模型的示例。"
-msgstr "crwdns88435:0:ref:crwdne88435:0"
+msgstr "crwdns120733:0:ref:crwdne120733:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:57
 msgid "上面代码完成了如下步骤："
-msgstr "crwdns88437:0crwdne88437:0"
+msgstr "crwdns120735:0crwdne120735:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:59
 msgid "首先通过从 MegEngine 的 `模型中心 <https://megengine.org.cn/model-hub>`_ 下载了 ``resnet18`` 的预训练模型， **用户可以用自己预训练的模型代替** 。"
-msgstr "crwdns88439:0crwdne88439:0"
+msgstr "crwdns120737:0crwdne120737:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:60
 msgid "将 resnet18 转换为 ``trace_module`` 的模型 ``traced_resnet``，用户可以在 ``traced_resnet`` 中做一些图手术以及模型转换，图手术参考 :ref:`graphsurgeon-example`，模型转换参考 `mgeconvert <https://github.com/megengine/mgeconvert>`_ ， **上面的示例没有做任何图手术和模型转换** 。"
-msgstr "crwdns88441:0:ref:crwdne88441:0"
+msgstr "crwdns120739:0:ref:crwdne120739:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:61
 msgid "将 ``traced_resnet`` 通过 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 将模型序列化到文件 ``resnet18.mge`` 中。"
-msgstr "crwdns88443:0:class:crwdnd88443:0:meth:crwdne88443:0"
+msgstr "crwdns120741:0:class:crwdnd120741:0:meth:crwdne120741:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:65
 msgid "如果需要 dump 自己的模型而不是 `模型中心 <https://megengine.org.cn/model-hub>`_ 的模型，这时候可以通过 MegEngine 中 :ref:`serialization-guide` 来加载和序列化已经训练好的模型，然后替换上面的 ``resnet`` 即可。"
-msgstr "crwdns88445:0:ref:crwdne88445:0"
+msgstr "crwdns120743:0:ref:crwdne120743:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:69
 msgid "直接 dump 的方式"
-msgstr "crwdns88447:0crwdne88447:0"
+msgstr "crwdns120745:0crwdne120745:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:70
 msgid "直接 dump 过程比上面使用 ``trace_module`` 方式仅仅少了转换为 trace_module 的过程，省掉这个过程，将牺牲掉对模型做图手术和模型转换的能力，参考下面的示例。"
-msgstr "crwdns88449:0crwdne88449:0"
+msgstr "crwdns120747:0crwdne120747:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:96
 msgid "上面代码将从 `模型中心 <https://megengine.org.cn/model-hub>`_ 下载 ``shufflenet_v2_x1_0`` 模型并 进行 :class:`~.jit.trace` 和 :meth:`~.trace.dump` 完成从动态图模型到静态图模型装换。"
-msgstr "crwdns88451:0:class:crwdnd88451:0:meth:crwdne88451:0"
+msgstr "crwdns120749:0:class:crwdnd120749:0:meth:crwdne120749:0"
 
 #: ../../source/user-guide/deployment/lite/get-model.rst:101
 msgid "同样如果需要 dump 自己的模型而不是 `模型中心 <https://megengine.org.cn/model-hub>`_ 的模型，这时可以通过 MegEngine 中 :ref:`serialization-guide` 来加载已经训练好的模型，或者使用 :ref:`Traced Module <traced_module-guide>` 中的方法得到模型，然后替换上面的 ``net`` 即可。"
-msgstr "crwdns88453:0:ref:crwdnd88453:0:ref:crwdne88453:0"
+msgstr "crwdns120751:0:ref:crwdnd120751:0:ref:crwdne120751:0"
 
