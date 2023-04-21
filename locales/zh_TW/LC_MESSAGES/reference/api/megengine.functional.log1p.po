@@ -2,27 +2,102 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 09:01\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:18\n"
 "Last-Translator: \n"
-"Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
+"Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.log1p.po\n"
-"X-Crowdin-File-ID: 2176\n"
-"X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.log1p.po\n"
+"X-Crowdin-File-ID: 9155\n"
 
 #: ../../source/reference/api/megengine.functional.log1p.rst:2
 msgid "megengine.functional.log1p"
-msgstr "crwdns31078:0crwdne31078:0"
+msgstr "crwdns100843:0crwdne100843:0"
 
 #: megengine.functional.elemwise.log1p:1 of
-msgid "Element-wise `log(x+1) (base e)`."
-msgstr "crwdns31080:0crwdne31080:0"
+msgid "Element-wise :math:`\\log(1 + x)` function."
+msgstr "crwdns100845:0:math:crwdne100845:0"
+
+#: megengine.functional.elemwise.log1p:3 of
+msgid "Calculates an approximation to :math:`\\log(1 + x)`:"
+msgstr "crwdns100847:0:math:crwdne100847:0"
+
+#: megengine.functional.elemwise.log1p:5 of
+msgid "y_i = \\log(1 + x_i)"
+msgstr "crwdns100849:0crwdne100849:0"
+
+#: megengine.functional.elemwise.log1p:9 of
+msgid "where log refers to the natural (base :math:`e`) logarithm, for each element :math:`x_i` of the input tensor :math:`x`."
+msgstr "crwdns100851:0:math:crwdnd100851:0:math:crwdnd100851:0:math:crwdne100851:0"
+
+#: megengine.functional.elemwise.log1p:12 of
+msgid "This function has domain ``[-1, +infinity]`` and codomain ``[-infinity, +infinity]``."
+msgstr "crwdns100853:0crwdne100853:0"
+
+#: megengine.functional.elemwise.log1p of
+msgid "参数"
+msgstr "crwdns100855:0crwdne100855:0"
+
+#: megengine.functional.elemwise.log1p:14 of
+msgid "input tensor. Should have a floating-point data type."
+msgstr "crwdns100857:0crwdne100857:0"
+
+#: megengine.functional.elemwise.log1p of
+msgid "返回"
+msgstr "crwdns100859:0crwdne100859:0"
+
+#: megengine.functional.elemwise.log1p:16 of
+msgid "a tensor containing the evaluated result for each element in :math:`x`. The returned tensor must have a floating-point data type determined by :ref:`dtype-promotion`."
+msgstr "crwdns100861:0:math:crwdnd100861:0:ref:crwdne100861:0"
+
+#: megengine.functional.elemwise.log1p:21 of
+msgid "This function is more accurate than :math:`\\log(1+x)` for small values of input. See FDLIBM, or some other IEEE 754-2019 compliant mathematical library, for a potential reference implementation."
+msgstr "crwdns100863:0:math:crwdne100863:0"
+
+#: megengine.functional.elemwise.log1p:25 of
+msgid "Special cases"
+msgstr "crwdns100865:0crwdne100865:0"
+
+#: megengine.functional.elemwise.log1p:27 of
+msgid "For floating-point operands,"
+msgstr "crwdns100867:0crwdne100867:0"
+
+#: megengine.functional.elemwise.log1p:29 of
+msgid "If :math:`x_i` is ``NaN``, the result is ``NaN``."
+msgstr "crwdns100869:0:math:crwdne100869:0"
+
+#: megengine.functional.elemwise.log1p:30 of
+msgid "If :math:`x_i` is less than ``-1``, the result is ``NaN``."
+msgstr "crwdns100871:0:math:crwdne100871:0"
+
+#: megengine.functional.elemwise.log1p:31 of
+msgid "If :math:`x_i` is ``-1``, the result is ``-infinity``."
+msgstr "crwdns100873:0:math:crwdne100873:0"
+
+#: megengine.functional.elemwise.log1p:32 of
+msgid "If :math:`x_i` is ``-0``, the result is ``-0``."
+msgstr "crwdns100875:0:math:crwdne100875:0"
+
+#: megengine.functional.elemwise.log1p:33 of
+msgid "If :math:`x_i` is ``+0``, the result is ``+0``."
+msgstr "crwdns100877:0:math:crwdne100877:0"
+
+#: megengine.functional.elemwise.log1p:34 of
+msgid "If :math:`x_i` is ``+infinity``, the result is ``+infinity``."
+msgstr "crwdns100879:0:math:crwdne100879:0"
+
+#: megengine.functional.elemwise.log1p:37 of
+msgid "实际案例"
+msgstr "crwdns100881:0crwdne100881:0"
+
+#~ msgid "Element-wise `log(x+1) (base e)`."
+#~ msgstr "逐元素计算 `(x+1)` 以 `e` 为底的对数。"
 
