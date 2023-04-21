@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-04-11 06:00\n"
+"PO-Revision-Date: 2023-04-21 09:34\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -15,8 +15,8 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/linear-classification.po\n"
-"X-Crowdin-File-ID: 8382\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/getting-started/beginner/linear-classification.po\n"
+"X-Crowdin-File-ID: 9849\n"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:5
 msgid "MegEngine 实现线性分类"
@@ -208,11 +208,7 @@ msgid "\\hat{y}=\\mathbb{I}(f(\\boldsymbol{x})-\\text { threshold })=\n"
 "1 & \\text { if } & f(\\boldsymbol{x})>\\text { threshold } \\\\\n"
 "0 & \\text { if } & f(\\boldsymbol{x})<\\text { threshold }\n"
 "\\end{array}\\right."
-msgstr "\\hat{y}=\\mathbb{I}(f(\\boldsymbol{x})-\\text { threshold })=\n"
-"\\left\\{\\begin{array}{lll}\n"
-"1 & \\text { if } & f(\\boldsymbol{x})>\\text { threshold } \\\\\n"
-"0 & \\text { if } & f(\\boldsymbol{x})<\\text { threshold }\n"
-"\\end{array}\\right."
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:266
 msgid "其中 :math:`\\mathbb I` 是指示函数（也叫示性函数），也是我们这里用到的链接函数，但它并不常用。 原因很多，对于优化问题来说，它的数学性质并不好，不适合被用于梯度下降算法。 对于线性模型的输出 -100 和 -1000, 这种分段函数将二者都决策成标记为 0 的这个类别， 并不能体现出两个样本类内的区别 —— 举例来说，尽管二者都不是 0，但输出为 -1000 的样本应该比输出为 -100 的样本更加不像 0. 前者可能是 1, 后者可能是 6."
@@ -224,7 +220,7 @@ msgstr "In practice, the link function we use more often is the Sigmoid function
 
 #: ../../source/getting-started/beginner/linear-classification.rst:275
 msgid "\\sigma(x)=\\frac{1}{1+\\exp (-x)}"
-msgstr "\\sigma(x)=\\frac{1}{1+\\exp (-x)}"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:289
 msgid "其中 :math:`\\exp`  指以自然常数 :math:`e` 为底的指数函数："
@@ -240,7 +236,7 @@ msgstr "Verhulst writes \"We will give the name logistic [logistique] to the cur
 
 #: ../../source/getting-started/beginner/linear-classification.rst:305
 msgid "Berkson coined logit (pronouced \"low-jit\") in 1944 as a contraction of logistic unit to indicate the unit of measurement (J. Amer. Stat. Soc. 39:357-365). Georg Rasch derives logit as a contraction of logistic transform (1980, p.80). Ben Wright derives logit as a contraction of log-odds unit. Logit is also used to characterize the logistic function in the way that probit (probability unit, coined by Chester Bliss about 1934), characterizes the cumulative normal function."
-msgstr "Berkson coined logit (pronouced \"low-jit\") in 1944 as a contraction of logistic unit to indicate the unit of measurement (J. Amer. Stat. Soc. 39:357-365). Georg Rasch derives logit as a contraction of logistic transform (1980, p.80). Ben Wright derives logit as a contraction of log-odds unit. Logit is also used to characterize the logistic function in the way that probit (probability unit, coined by Chester Bliss about 1934), characterizes the cumulative normal function."
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:311
 msgid "Sigmoid 的反函数是 Logit 函数，即 :math:`\\text{logit}(p) = \\log(\\frac{p}{1-p})`, 有 :math:`\\sigma (\\text{logit}(p))=p`. 根据 Sigmoid 能够将实数映射到概率的特性，很容易发现 Logit 能够将概率映射到实数。"
@@ -272,7 +268,7 @@ msgstr "We can express the probability of predicting the label of sample :math:`
 
 #: ../../source/getting-started/beginner/linear-classification.rst:329
 msgid "p(y=1 \\mid \\boldsymbol{x})=\\sigma(f(\\boldsymbol{x}))=\\frac{1}{1+\\exp (-f(\\boldsymbol{x}))}"
-msgstr "p(y=1 \\mid \\boldsymbol{x})=\\sigma(f(\\boldsymbol{x}))=\\frac{1}{1+\\exp (-f(\\boldsymbol{x}))}"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:333
 msgid "继续使用我们上面给出的例子：对于线性模型的输出, 经过 Sigmoid 函数的映射后， :math:`\\sigma(-1000)` 比 :math:`\\sigma(-100)` 要更加接近 0，表示前者不是 0 的概率要更高一些。 这就使得不同的样本预测结果之间的区别能够得到有效的体现。 与此同时，对于已经正确分类的样本，Sigmoid 函数不鼓励将线性模型的输出范围拉得过大，收益不明显。"
@@ -378,9 +374,7 @@ msgstr "In multi-classification tasks, the more commonly used function is :math:
 msgid "p(y=c \\mid \\boldsymbol{x})\n"
 "=\\operatorname{Softmax}\\left(s_{c}\\right)\n"
 "=\\frac{\\exp s_{c}}{\\sum_{i} \\exp s_{i}}"
-msgstr "p(y=c \\mid \\boldsymbol{x})\n"
-"=\\operatorname{Softmax}\\left(s_{c}\\right)\n"
-"=\\frac{\\exp s_{c}}{\\sum_{i} \\exp s_{i}}"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:438
 msgid "可以理解成我们对多个类上的得分经过指数归一化后得到了目标分类概率值，我们通常称为 Logits;"
@@ -434,7 +428,7 @@ msgstr "The remaining :math:`H(p, q)` part is defined as our commonly used cross
 
 #: ../../source/getting-started/beginner/linear-classification.rst:478
 msgid "\\ell_{\\mathrm{CE}}=H(\\boldsymbol{y}, \\hat{\\boldsymbol{y}})=-\\sum_{i=1}^{c} y_{i} \\ln \\hat{y}_{i}"
-msgstr "\\ell_{\\mathrm{CE}}=H(\\boldsymbol{y}, \\hat{\\boldsymbol{y}})=-\\sum_{i=1}^{c} y_{i} \\ln \\hat{y}_{i}"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:482
 msgid "这即是分类任务经常使用的损失函数，对应 MegEngine 中的 :func:`.functional.nn.cross_entropy` 接口。"
@@ -554,12 +548,12 @@ msgstr "Fit straight line"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:591
 msgid ":math:`x \\in \\mathbb{R} \\stackrel{w,b}{\\mapsto} y \\in \\mathbb{R}`"
-msgstr ":math:`x \\in \\mathbb{R} \\stackrel{w,b}{\\mapsto} y \\in \\mathbb{R}`"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:592
 #: ../../source/getting-started/beginner/linear-classification.rst:597
 msgid "MSE"
-msgstr "MSE"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:593
 msgid "观察拟合度"
@@ -571,11 +565,11 @@ msgstr "house price forecast"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:596
 msgid ":math:`\\boldsymbol{x} \\in \\mathbb{R}^{d} \\stackrel{\\boldsymbol{w},b}{\\mapsto} y \\in \\mathbb{R}`"
-msgstr ":math:`\\boldsymbol{x} \\in \\mathbb{R}^{d} \\stackrel{\\boldsymbol{w},b}{\\mapsto} y \\in \\mathbb{R}`"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:598
 msgid "MAE"
-msgstr "MAE"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:600
 msgid "手写数字识别"
@@ -583,15 +577,15 @@ msgstr "Handwritten Digit Recognition"
 
 #: ../../source/getting-started/beginner/linear-classification.rst:601
 msgid ":math:`\\boldsymbol{x} \\in \\mathbb{R}^{d} \\stackrel{W,\\boldsymbol{b}}{\\mapsto} \\boldsymbol{y} \\in \\mathbb{R}^{c}`"
-msgstr ":math:`\\boldsymbol{x} \\in \\mathbb{R}^{d} \\stackrel{W,\\boldsymbol{b}}{\\mapsto} \\boldsymbol{y} \\in \\mathbb{R}^{c}`"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:602
 msgid "CE"
-msgstr "CE"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:603
 msgid "Accuracy"
-msgstr "Accuracy"
+msgstr ""
 
 #: ../../source/getting-started/beginner/linear-classification.rst:606
 msgid "注：默认图片信息已经展平为向量， 即 :math:`\\mathsf{I} \\in \\mathbb{R}^{H \\times W \\times C} \\stackrel{\\operatorname{flatten}}{\\mapsto} \\boldsymbol{x} \\in \\mathbb{R}^{d}`"
