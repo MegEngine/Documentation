@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-12 09:02+0800\n"
-"PO-Revision-Date: 2021-07-07 18:42\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,58 +15,58 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/runtimeopr.po\n"
-"X-Crowdin-File-ID: 2874\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/tools/runtimeopr.po\n"
+"X-Crowdin-File-ID: 9905\n"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:5
 msgid "RuntimeOpr 使用说明"
-msgstr "crwdns46464:0crwdne46464:0"
+msgstr "crwdns116755:0crwdne116755:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:7
 msgid "RuntimeOpr 指通过 MegEngine 将其它硬件厂商支持的离线模型作为一个算子嵌入到 MegEngine Graph 中。"
-msgstr "crwdns61410:0crwdne61410:0"
+msgstr "crwdns116757:0crwdne116757:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:11
 msgid "包含 RuntimeOpr 的模型无法通过 :py:func:`megengine.save` 保存权重， 只能通过 :py:meth:`.trace.dump` 直接保存为模型。用法见 :ref:`runtimeopr-dump` 。"
-msgstr "crwdns46468:0:ref:crwdne46468:0"
+msgstr "crwdns116759:0:ref:crwdne116759:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:14
 msgid "目前支持 RuntimeOpr 的类型有 TensorRT、Atlas 和 Cambricon 三种， 包含 RuntimeOpr 的模型需要在对应的硬件平台上才能执行推理任务。 下面以 Atlas 为例展示用法（TensorRT、Cambricon 的接口与之类似）："
-msgstr "crwdns46470:0crwdne46470:0"
+msgstr "crwdns116761:0crwdne116761:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:19
 msgid "模型只包含一个 RuntimeOpr"
-msgstr "crwdns46472:0crwdne46472:0"
+msgstr "crwdns116763:0crwdne116763:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:37
 msgid "硬件厂商的模型文件需要以字节流形式打开"
-msgstr "crwdns46474:0crwdne46474:0"
+msgstr "crwdns116765:0crwdne116765:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:38
 msgid "RuntimeOpr 输入的所属设备应该是该类设备，本例中 inp 的 device 为 “atlas0”"
-msgstr "crwdns46476:0crwdne46476:0"
+msgstr "crwdns116767:0crwdne116767:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:41
 msgid "RuntimeOpr 作为模型的一部分"
-msgstr "crwdns46478:0crwdne46478:0"
+msgstr "crwdns116769:0crwdne116769:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:69
 msgid "在 RuntimeOpr 前后必须使用 :py:func:`~.copy` 把 Tensor 从 CPU 拷贝到 Atlas, 或者从 Atlas 拷贝到 CPU, 不然会因为 CompNode 不符合规范而报错；"
-msgstr "crwdns46480:0crwdne46480:0"
+msgstr "crwdns116771:0crwdne116771:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:71
 msgid "如果需要转变数据类型，请在 CPU 上完成（参考上面的代码）；"
-msgstr "crwdns46482:0crwdne46482:0"
+msgstr "crwdns116773:0crwdne116773:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:72
 msgid "只能从 CPU 拷贝到其他设备或者反之，各类设备之间不能直接拷贝，比如 GPU 到 Atlas."
-msgstr "crwdns46484:0crwdne46484:0"
+msgstr "crwdns116775:0crwdne116775:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:77
 msgid "序列化与反序列化"
-msgstr "crwdns46486:0crwdne46486:0"
+msgstr "crwdns116777:0crwdne116777:0"
 
 #: ../../source/user-guide/tools/runtimeopr.rst:78
 msgid "参考下面的代码："
-msgstr "crwdns46488:0crwdne46488:0"
+msgstr "crwdns116779:0crwdne116779:0"
 
