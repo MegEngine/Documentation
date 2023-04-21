@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-09-07 10:08\n"
+"PO-Revision-Date: 2023-04-21 09:25\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,80 +15,80 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.BatchNorm2d.po\n"
-"X-Crowdin-File-ID: 2370\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.BatchNorm2d.po\n"
+"X-Crowdin-File-ID: 9471\n"
 
 #: ../../source/reference/api/megengine.module.BatchNorm2d.rst:5
 msgid "BatchNorm2d"
-msgstr "crwdns88983:0crwdne88983:0"
+msgstr "crwdns104299:0crwdne104299:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:1 of
 msgid "Applies Batch Normalization over a 4D tensor."
-msgstr "crwdns33316:0crwdne33316:0"
+msgstr "crwdns104301:0crwdne104301:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:3 of
 msgid "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta"
-msgstr "crwdns62972:0{E}crwdnd62972:0[x]crwdnd62972:0{Var}crwdnd62972:0[x]crwdne62972:0"
+msgstr "crwdns104303:0{E}crwdnd104303:0[x]crwdnd104303:0{Var}crwdnd104303:0[x]crwdne104303:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:7 of
 msgid "The mean and standard-deviation are calculated per-dimension over the mini-batches and :math:`\\gamma` and :math:`\\beta` are learnable parameter vectors."
-msgstr "crwdns62974:0:math:crwdnd62974:0:math:crwdne62974:0"
+msgstr "crwdns104305:0:math:crwdnd104305:0:math:crwdne104305:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:11 of
 msgid "By default, during training this layer keeps running estimates of its computed mean and variance, which are then used for normalization during evaluation. The running estimates are kept with a default :attr:`momentum` of 0.9."
-msgstr "crwdns33322:0:attr:crwdne33322:0"
+msgstr "crwdns104307:0:attr:crwdne104307:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:16 of
 msgid "If :attr:`track_running_stats` is set to ``False``, this layer will not keep running estimates, batch statistics is used during evaluation time instead."
-msgstr "crwdns33324:0:attr:crwdne33324:0"
+msgstr "crwdns104309:0:attr:crwdne104309:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:20 of
 msgid "Because the Batch Normalization is done over the `C` dimension, computing statistics on `(N, H, W)` slices, it's common terminology to call this Spatial Batch Normalization."
-msgstr "crwdns33328:0crwdne33328:0"
+msgstr "crwdns104311:0crwdne104311:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:26 of
 msgid "The update formula for ``running_mean`` and ``running_var`` (taking ``running_mean`` as an example) is"
-msgstr "crwdns87961:0crwdne87961:0"
+msgstr "crwdns104313:0crwdne104313:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:28 of
 msgid "\\textrm{running_mean} = \\textrm{momentum} \\times \\textrm{running_mean} + (1 - \\textrm{momentum}) \\times \\textrm{batch_mean}"
-msgstr "crwdns87963:0{running_mean}crwdnd87963:0{momentum}crwdnd87963:0{running_mean}crwdnd87963:0{momentum}crwdnd87963:0{batch_mean}crwdne87963:0"
+msgstr "crwdns104315:0{running_mean}crwdnd104315:0{momentum}crwdnd104315:0{running_mean}crwdnd104315:0{momentum}crwdnd104315:0{batch_mean}crwdne104315:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:32 of
 msgid "which could be defined differently in other frameworks. Most notably, ``momentum`` of 0.1 in PyTorch is equivalent to ``mementum`` of 0.9 here."
-msgstr "crwdns87965:0crwdne87965:0"
+msgstr "crwdns104317:0crwdne104317:0"
 
 #: megengine.module.batchnorm.BatchNorm2d of
 msgid "参数"
-msgstr "crwdns62976:0crwdne62976:0"
+msgstr "crwdns104319:0crwdne104319:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:35 of
 msgid "usually :math:`C` from an input of shape :math:`(N, C, H, W)` or the highest ranked dimension of an input less than 4D."
-msgstr "crwdns33332:0:math:crwdnd33332:0:math:crwdne33332:0"
+msgstr "crwdns104321:0:math:crwdnd104321:0:math:crwdne104321:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:38 of
 msgid "a value added to the denominator for numerical stability. Default: 1e-5"
-msgstr "crwdns33334:0crwdne33334:0"
+msgstr "crwdns104323:0crwdne104323:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:40 of
 msgid "the value used for the ``running_mean`` and ``running_var`` computation. Default: 0.9"
-msgstr "crwdns33336:0crwdne33336:0"
+msgstr "crwdns104325:0crwdne104325:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:42 of
 msgid "a boolean value that when set to True, this module has learnable affine parameters. Default: True"
-msgstr "crwdns33338:0crwdne33338:0"
+msgstr "crwdns104327:0crwdne104327:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:44 of
 msgid "when set to True, this module tracks the running mean and variance. When set to False, this module does not track such statistics and always uses batch statistics in both training and eval modes. Default: True"
-msgstr "crwdns33340:0crwdne33340:0"
+msgstr "crwdns104329:0crwdne104329:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:48 of
 msgid "when set to True, this module does not update the running mean and variance, and uses the running mean and variance instead of the batch mean and batch variance to normalize the input. The parameter takes effect only when the module is initilized with track_running_stats as True. Default: False"
-msgstr "crwdns33342:0crwdne33342:0"
+msgstr "crwdns104331:0crwdne104331:0"
 
 #: megengine.module.batchnorm.BatchNorm2d:55 of
 msgid "实际案例"
-msgstr "crwdns70719:0crwdne70719:0"
+msgstr "crwdns104333:0crwdne104333:0"
 
 #~ msgid "基类：:class:`megengine.module.batchnorm._BatchNorm`"
 #~ msgstr "基类：:class:`megengine.module.batchnorm._BatchNorm`"
