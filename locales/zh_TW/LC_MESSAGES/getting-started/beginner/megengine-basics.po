@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:13\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:34\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,676 +11,672 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/megengine-basics.po\n"
-"X-Crowdin-File-ID: 8377\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/getting-started/beginner/megengine-basics.po\n"
+"X-Crowdin-File-ID: 9855\n"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:5
 msgid "MegEngine 基础概念"
-msgstr "crwdns88103:0crwdne88103:0"
+msgstr "crwdns113347:0crwdne113347:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:7
 msgid "本教程涉及的内容"
-msgstr "crwdns88105:0crwdne88105:0"
+msgstr "crwdns113349:0crwdne113349:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:10
 msgid "介绍 MegEngine 的基本数据结构 :class:`~.Tensor` 以及 :mod:`~.functional` 模块中的基础运算操作；"
-msgstr "crwdns88107:0:class:crwdnd88107:0:mod:crwdne88107:0"
+msgstr "crwdns113351:0:class:crwdnd113351:0:mod:crwdne113351:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:11
 msgid "介绍计算图的有关概念，实践深度学习中前向传播、反向传播和参数更新的基本流程；"
-msgstr "crwdns88109:0crwdne88109:0"
+msgstr "crwdns113353:0crwdne113353:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:12
 msgid "根据前面的介绍，分别使用 NumPy 和 MegEngine 完成一个简单的直线拟合任务。"
-msgstr "crwdns88111:0crwdne88111:0"
+msgstr "crwdns113355:0crwdne113355:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:14
 msgid "学习的过程中应避开完美主义"
-msgstr "crwdns88113:0crwdne88113:0"
+msgstr "crwdns113357:0crwdne113357:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:17
 msgid "请以完成教程目标为首要任务进行学习，MegEngine 教程中会充斥着许多的拓展解释和链接，这些内容往往不是必需品。 通常它们是为学有余力的同学，亦或者基础过于薄弱的同学而准备的，如果你遇到一些不是很清楚的地方， 不妨试着先将整个教程看完，代码跑完，再回头补充那些需要的知识。"
-msgstr "crwdns88115:0crwdne88115:0"
+msgstr "crwdns113359:0crwdne113359:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:22
 msgid "基础数据结构：张量"
-msgstr "crwdns88117:0crwdne88117:0"
+msgstr "crwdns113361:0crwdne113361:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:28
 msgid "MegEngine 中提供了一种名为 “张量” （ :py:class:`~.Tensor` ）的数据结构， 区别于数学中的定义，其概念与 NumPy_  :footcite:p:`harris2020array` 中的 :py:class:`~numpy.ndarray` 更加相似，即多维数组。 真实世界中的很多非结构化的数据，如文字、图片、音频、视频等，都可以抽象成 Tensor 的形式进行表达。 我们所提到的 Tensor 的概念往往是其它更具体概念的概括（或者说推广）："
-msgstr "crwdns88119:0crwdne88119:0"
+msgstr "crwdns113363:0crwdne113363:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:34
 msgid "数学"
-msgstr "crwdns88121:0crwdne88121:0"
+msgstr "crwdns113365:0crwdne113365:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:34
 msgid "计算机科学"
-msgstr "crwdns88123:0crwdne88123:0"
+msgstr "crwdns113367:0crwdne113367:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:34
 msgid "几何概念"
-msgstr "crwdns88125:0crwdne88125:0"
+msgstr "crwdns113369:0crwdne113369:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:34
 msgid "具象化例子"
-msgstr "crwdns88127:0crwdne88127:0"
+msgstr "crwdns113371:0crwdne113371:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:36
 msgid "标量（scalar）"
-msgstr "crwdns88129:0crwdne88129:0"
+msgstr "crwdns113373:0crwdne113373:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:36
 msgid "数字（number）"
-msgstr "crwdns88131:0crwdne88131:0"
+msgstr "crwdns113375:0crwdne113375:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:36
 msgid "点"
-msgstr "crwdns88133:0crwdne88133:0"
+msgstr "crwdns113377:0crwdne113377:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:36
 msgid "得分、概率"
-msgstr "crwdns88135:0crwdne88135:0"
+msgstr "crwdns113379:0crwdne113379:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:37
 msgid "向量（vector）"
-msgstr "crwdns88137:0crwdne88137:0"
+msgstr "crwdns113381:0crwdne113381:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:37
 msgid "数组（array）"
-msgstr "crwdns88139:0crwdne88139:0"
+msgstr "crwdns113383:0crwdne113383:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:37
 msgid "线"
-msgstr "crwdns88141:0crwdne88141:0"
+msgstr "crwdns113385:0crwdne113385:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:37
 msgid "列表"
-msgstr "crwdns88143:0crwdne88143:0"
+msgstr "crwdns113387:0crwdne113387:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:38
 msgid "矩阵（matrix）"
-msgstr "crwdns88145:0crwdne88145:0"
+msgstr "crwdns113389:0crwdne113389:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:38
 msgid "2 维数组（2d-array）"
-msgstr "crwdns88147:0crwdne88147:0"
+msgstr "crwdns113391:0crwdne113391:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:38
 msgid "面"
-msgstr "crwdns88149:0crwdne88149:0"
+msgstr "crwdns113393:0crwdne113393:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:38
 msgid "Excel 表格"
-msgstr "crwdns88151:0crwdne88151:0"
+msgstr "crwdns113395:0crwdne113395:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:39
 msgid "3 维张量"
-msgstr "crwdns88153:0crwdne88153:0"
+msgstr "crwdns113397:0crwdne113397:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:39
 msgid "3 维数组（3d-array）"
-msgstr "crwdns88155:0crwdne88155:0"
+msgstr "crwdns113399:0crwdne113399:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:39
 msgid "体"
-msgstr "crwdns88157:0crwdne88157:0"
+msgstr "crwdns113401:0crwdne113401:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:39
 msgid "RGB 图片"
-msgstr "crwdns88159:0crwdne88159:0"
+msgstr "crwdns113403:0crwdne113403:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:40
 msgid "..."
-msgstr "crwdns88161:0crwdne88161:0"
+msgstr "crwdns113405:0crwdne113405:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:41
 msgid "n 维张量"
-msgstr "crwdns88163:0crwdne88163:0"
+msgstr "crwdns113407:0crwdne113407:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:41
 msgid "n 维数组（nd-array）"
-msgstr "crwdns88165:0crwdne88165:0"
+msgstr "crwdns113409:0crwdne113409:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:41
 msgid "高维空间"
-msgstr "crwdns88167:0crwdne88167:0"
+msgstr "crwdns113411:0crwdne113411:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:44
 msgid "以一个 2x3 的矩阵（2 维张量）为例，在 MegEngine 中用嵌套的 Python 列表初始化 Tensor:"
-msgstr "crwdns88169:0crwdne88169:0"
+msgstr "crwdns113413:0crwdne113413:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:50
 msgid "它的基本属性有 :attr:`.Tensor.ndim`, :attr:`.Tensor.shape`, :attr:`.Tensor.dtype`, :attr:`.Tensor.device` 等。"
-msgstr "crwdns88171:0:attr:crwdnd88171:0:attr:crwdnd88171:0:attr:crwdnd88171:0:attr:crwdne88171:0"
+msgstr "crwdns113415:0:attr:crwdnd113415:0:attr:crwdnd113415:0:attr:crwdnd113415:0:attr:crwdne113415:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:52
 msgid "我们可以基于 Tensor 数据结构，进行各式各样的科学计算；"
-msgstr "crwdns88173:0crwdne88173:0"
+msgstr "crwdns113417:0crwdne113417:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:53
 msgid "Tensor 也是神经网络编程时所用的主要数据结构，网络的输入、输出和转换都使用 Tensor 表示。"
-msgstr "crwdns88175:0crwdne88175:0"
+msgstr "crwdns113419:0crwdne113419:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:59
 msgid "与 NumPy 的区别之处在于，MegEngine 还支持利用 GPU 设备进行更加高效的计算。 当 GPU 和 CPU 设备都可用时，MegEngine 将优先使用 GPU 作为默认计算设备，无需用户进行手动设定。 另外 MegEngine 还支持自动微分（Autodiff）等特性，我们将在后续教程适当的环节进行介绍。"
-msgstr "crwdns88177:0crwdne88177:0"
+msgstr "crwdns113421:0crwdne113421:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:63
 msgid "如果你完全没有 NumPy 使用经验"
-msgstr "crwdns88179:0crwdne88179:0"
+msgstr "crwdns113423:0crwdne113423:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:66
 msgid "可以参考 :ref:`tensor-guide` 中的介绍, 或者先查看 NumPy_ 官网文档和教程；"
-msgstr "crwdns88181:0:ref:crwdne88181:0"
+msgstr "crwdns113425:0:ref:crwdne113425:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:67
 msgid "其它比较不错的补充材料还有 CS231n 的 《 `Python Numpy Tutorial (with Jupyter and Colab) <https://cs231n.github.io/python-numpy-tutorial/>`_ 》。"
-msgstr "crwdns88183:0crwdne88183:0"
+msgstr "crwdns113427:0crwdne113427:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:72
 msgid "Tensor 操作与计算"
-msgstr "crwdns88185:0crwdne88185:0"
+msgstr "crwdns113429:0crwdne113429:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:74
 msgid "与 NumPy 的多维数组一样，Tensor 可以用标准算数运算符进行逐元素（Element-wise）的加减乘除等运算："
-msgstr "crwdns88187:0crwdne88187:0"
+msgstr "crwdns113431:0crwdne113431:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:91
 msgid ":class:`~.Tensor` 类中提供了一些比较常见的方法，比如 :meth:`.Tensor.reshape` 方法， 可以用来改变 Tensor 的形状（该操作不会改变 Tensor 元素总数目以及各个元素的值）："
-msgstr "crwdns88189:0:class:crwdnd88189:0:meth:crwdne88189:0"
+msgstr "crwdns113433:0:class:crwdnd113433:0:meth:crwdne113433:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:99
 msgid "但通常我们会 :ref:`functional-guide`, 例如使用 :func:`.functional.reshape` 来改变形状："
-msgstr "crwdns88191:0:ref:crwdnd88191:0:func:crwdne88191:0"
+msgstr "crwdns113435:0:ref:crwdnd113435:0:func:crwdne113435:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:108
 msgid "一个常见误区是，初学者会认为调用 ``a.reshape()`` 后 ``a`` 自身的形状会发生改变。 事实上并非如此，在 MegEngine 中绝大部分操作都不是原地（In-place）操作， 这意味着通常调用这些接口将会返回一个新的 Tensor, 而不会对原本的 Tensor 进行更改。"
-msgstr "crwdns88193:0crwdne88193:0"
+msgstr "crwdns113437:0crwdne113437:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:114
 msgid "在 :mod:`~.functional` 模块中提供了更多的算子（Operator），并按照使用情景对命名空间进行了划分， 目前我们只需要接触这些最基本的算子即可，将来会接触到专门用于神经网络编程的算子。"
-msgstr "crwdns88195:0:mod:crwdne88195:0"
+msgstr "crwdns113439:0:mod:crwdne113439:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:118
 msgid "理解计算图"
-msgstr "crwdns88197:0crwdne88197:0"
+msgstr "crwdns113441:0crwdne113441:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:122
 msgid "MegEngine 是基于计算图（Computing Graph）的深度神经网络学习框架；"
-msgstr "crwdns88199:0crwdne88199:0"
+msgstr "crwdns113443:0crwdne113443:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:123
 msgid "在深度学习领域，任何复杂的深度神经网络模型本质上都可以用一个计算图表示出来。"
-msgstr "crwdns88201:0crwdne88201:0"
+msgstr "crwdns113445:0crwdne113445:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:125
 msgid "我们先通过一个简单的数学表达式 :math:`y=w*x+b` 作为例子，来介绍计算图的基本概念："
-msgstr "crwdns88203:0:math:crwdne88203:0"
+msgstr "crwdns113447:0:math:crwdne113447:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:129
 msgid "MegEngine 中 Tensor 为数据节点, Operator 为计算节点"
-msgstr "crwdns88205:0crwdne88205:0"
+msgstr "crwdns113449:0crwdne113449:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:131
 msgid "从输入数据到输出数据之间的节点依赖关系可以构成一张有向无环图（DAG），其中有："
-msgstr "crwdns88207:0crwdne88207:0"
+msgstr "crwdns113451:0crwdne113451:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:133
 msgid "数据节点：如输入数据 :math:`x`, 参数 :math:`w` 和 :math:`b`, 中间结果 :math:`p`, 以及最终输出 :math:`y`;"
-msgstr "crwdns88209:0:math:crwdnd88209:0:math:crwdnd88209:0:math:crwdnd88209:0:math:crwdnd88209:0:math:crwdne88209:0"
+msgstr "crwdns113453:0:math:crwdnd113453:0:math:crwdnd113453:0:math:crwdnd113453:0:math:crwdnd113453:0:math:crwdne113453:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:134
 msgid "计算节点：如图中的 :math:`*` 和 :math:`+` 分别代表乘法和加法两种算子，根据给定的输入计算输出；"
-msgstr "crwdns88211:0:math:crwdnd88211:0:math:crwdne88211:0"
+msgstr "crwdns113455:0:math:crwdnd113455:0:math:crwdne113455:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:135
 msgid "有向边：表示了数据的流向，体现了数据节点和计算节点之间的前后依赖关系。"
-msgstr "crwdns88213:0crwdne88213:0"
+msgstr "crwdns113457:0crwdne113457:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:137
 msgid "有了计算图这一表示形式，我们可以对前向传播和反向传播的过程有更加直观的理解。"
-msgstr "crwdns88215:0crwdne88215:0"
+msgstr "crwdns113459:0crwdne113459:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:141
 msgid "根据模型的定义进行前向计算得到输出，在上面的例子中即是 ——"
-msgstr "crwdns88217:0crwdne88217:0"
+msgstr "crwdns113461:0crwdne113461:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:143
 msgid "输入数据 :math:`x` 和参数 :math:`w` 经过乘法运算得到中间结果 :math:`p`;"
-msgstr "crwdns88219:0:math:crwdnd88219:0:math:crwdnd88219:0:math:crwdne88219:0"
+msgstr "crwdns113463:0:math:crwdnd113463:0:math:crwdnd113463:0:math:crwdne113463:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:144
 msgid "中间结果 :math:`p` 和参数 :math:`b` 经过加法运算得到输出结果 :math:`y`;"
-msgstr "crwdns88221:0:math:crwdnd88221:0:math:crwdnd88221:0:math:crwdne88221:0"
+msgstr "crwdns113465:0:math:crwdnd113465:0:math:crwdnd113465:0:math:crwdne113465:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:145
 msgid "对于更加复杂的计算图结构，其前向计算的依赖关系本质上就是一个拓扑排序。"
-msgstr "crwdns88223:0crwdne88223:0"
+msgstr "crwdns113467:0crwdne113467:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:149
 msgid "根据需要优化的目标（这里我们简单假定为 :math:`y`），通过链式求导法则， 求出模型中所有参数所对应的梯度，在上面的例子中即计算 :math:`\\nabla y(w, b)`, 由偏导 :math:`\\frac{\\partial y}{\\partial w}` 和 :math:`\\frac{\\partial y}{\\partial b}` 组成。"
-msgstr "crwdns88225:0:math:crwdnd88225:0:math:crwdnd88225:0:math:crwdnd88225:0:math:crwdne88225:0"
+msgstr "crwdns113469:0:math:crwdnd113469:0:math:crwdnd113469:0:math:crwdnd113469:0:math:crwdne113469:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:153
 msgid "这一小节会使用到微积分知识，可以借助互联网上的一些资料进行快速学习/复习："
-msgstr "crwdns90484:0crwdne90484:0"
+msgstr "crwdns113471:0crwdne113471:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:155
 msgid "3Blue1Brown - `微积分的本质 [Bilibili] <https://space.bilibili.com/88461692/channel/seriesdetail?sid=1528931>`_ / `Essence of calculus [YouTube] <https://youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr>`_"
-msgstr "crwdns90486:0[Bilibili]crwdnd90486:0[YouTube]crwdne90486:0"
+msgstr "crwdns113473:0[Bilibili]crwdnd113473:0[YouTube]crwdne113473:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:159
 msgid "例如，为了得到上图中 :math:`y` 关于参数 :math:`w` 的偏导，反向传播的过程如下图所示："
-msgstr "crwdns88227:0:math:crwdnd88227:0:math:crwdne88227:0"
+msgstr "crwdns113475:0:math:crwdnd113475:0:math:crwdne113475:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:163
 msgid "首先有 :math:`y=p+b`, 因此有 :math:`\\frac{\\partial y}{\\partial p}=1`;"
-msgstr "crwdns88229:0:math:crwdnd88229:0:math:crwdne88229:0"
+msgstr "crwdns113477:0:math:crwdnd113477:0:math:crwdne113477:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:164
 msgid "继续反向传播，有 :math:`p=w*x`, 因此有 :math:`\\frac{\\partial p}{\\partial w}=x`;"
-msgstr "crwdns88231:0:math:crwdnd88231:0:math:crwdne88231:0"
+msgstr "crwdns113479:0:math:crwdnd113479:0:math:crwdne113479:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:165
 msgid "根据链式法则有 :math:`\\frac{\\partial y}{\\partial w}=\\frac{\\partial y}{\\partial p} \\cdot \\frac{\\partial p}{\\partial w}=1 \\cdot x`, 因此最终求出 :math:`y` 关于参数 :math:`w` 的偏导为 :math:`x`."
-msgstr "crwdns88233:0:math:crwdnd88233:0:math:crwdnd88233:0:math:crwdnd88233:0:math:crwdne88233:0"
+msgstr "crwdns113481:0:math:crwdnd113481:0:math:crwdnd113481:0:math:crwdnd113481:0:math:crwdne113481:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:168
 msgid "求得的梯度也会是一个 Tensor, 将在下一步参数优化中被使用。"
-msgstr "crwdns88235:0crwdne88235:0"
+msgstr "crwdns113483:0crwdne113483:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:172
 msgid "常见的做法是使用梯度下降法对参数进行更新，在上面的例子中即对 :math:`w` 和 :math:`b` 的值做更新。 我们用一个例子帮助你理解梯度下降的核心思路：假设你现在迷失于一个山谷中，需要寻找有人烟的村庄，我们的目标是最低的平原点 （那儿有人烟的概率是最大的）。采取梯度下降的策略，则要求我们每次都环顾四周，看哪个方向是最陡峭的； 然后沿着梯度的负方向向下迈出一步，循环执行上面的步骤，我们认为这样能更快地下山。"
-msgstr "crwdns88237:0:math:crwdnd88237:0:math:crwdne88237:0"
+msgstr "crwdns113485:0:math:crwdnd113485:0:math:crwdne113485:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:177
 msgid "我们每完成一次参数的更新，便说明对参数进行了一次迭代（Iteration），训练模型时往往会有多次迭代。"
-msgstr "crwdns88239:0crwdne88239:0"
+msgstr "crwdns113487:0crwdne113487:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:179
 msgid "如果你还不清楚梯度下降能取得什么样的效果，没有关系，本教程末尾会有更加直观的任务实践。 你也可以在互联网上查阅更多解释梯度下降算法的资料。"
-msgstr "crwdns88241:0crwdne88241:0"
+msgstr "crwdns113489:0crwdne113489:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:197
 msgid "自动微分与参数优化"
-msgstr "crwdns88243:0crwdne88243:0"
+msgstr "crwdns113491:0crwdne113491:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:199
 msgid "不难发现，有了链式法则，要做到计算梯度并不困难。但我们上述演示的计算图仅仅是一个非常简单的运算， 当我们使用复杂的模型时，抽象出的计算图结构也会变得更加复杂，如果此时再去手动地根据链式法则计算梯度， 整个过程将变得异常枯燥无聊，而且这对粗心的朋友来说极其不友好，谁也不希望因为某一步算错导致进入漫长的 Debug 阶段。 MegEngine 作为深度学习框架的另一特性是支持了自动微分，即自动地完成反传过程中根据链式法则去推导参数梯度的过程。 与此同时，也提供了方便进行参数优化的相应接口。"
-msgstr "crwdns88245:0crwdne88245:0"
+msgstr "crwdns113493:0crwdne113493:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:206
 msgid "Tensor 梯度与梯度管理器"
-msgstr "crwdns88247:0crwdne88247:0"
+msgstr "crwdns113495:0crwdne113495:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:208
 msgid "在 MegEngine 中，每个 :class:`~.Tensor` 都具备 :attr:`.Tensor.grad` 这一属性，即梯度（Gradient）的缩写。"
-msgstr "crwdns88249:0:class:crwdnd88249:0:attr:crwdne88249:0"
+msgstr "crwdns113497:0:class:crwdnd113497:0:attr:crwdne113497:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:213
 msgid "然而上面的用法并不正确，默认情况下 Tensor 计算时不会计算和记录梯度信息。"
-msgstr "crwdns88251:0crwdne88251:0"
+msgstr "crwdns113499:0crwdne113499:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:215
 msgid "我们需要用到梯度管理器 :class:`~.GradManager` 来完成相关操作："
-msgstr "crwdns88253:0:class:crwdne88253:0"
+msgstr "crwdns113501:0:class:crwdne113501:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:217
 msgid "使用 :meth:`.GradManager.attach` 来绑定需要计算梯度的参数；"
-msgstr "crwdns88255:0:meth:crwdne88255:0"
+msgstr "crwdns113503:0:meth:crwdne113503:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:218
 msgid "使用 ``with`` 关键字，配合记录整个前向计算的过程，形成计算图；"
-msgstr "crwdns88257:0crwdne88257:0"
+msgstr "crwdns113505:0crwdne113505:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:219
 msgid "调用 :meth:`.GradManager.backward` 即可自动进行反向传播（过程中进行了自动微分）。"
-msgstr "crwdns88259:0:meth:crwdne88259:0"
+msgstr "crwdns113507:0:meth:crwdne113507:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:231
 msgid "这时可以看到参数 :math:`w` 和 :math:`b` 对应的梯度（前面计算过了 :math:`\\frac{\\partial y}{\\partial w} = x = 2.0` ）："
-msgstr "crwdns88261:0:math:crwdnd88261:0:math:crwdnd88261:0:math:crwdne88261:0"
+msgstr "crwdns113509:0:math:crwdnd113509:0:math:crwdnd113509:0:math:crwdne113509:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:238
 msgid "值得注意的是， :meth:`.GradManager.backward` 计算梯度时的做法是累加而不是替换，如果接着执行："
-msgstr "crwdns88263:0:meth:crwdne88263:0"
+msgstr "crwdns113511:0:meth:crwdne113511:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:247
 msgid "可以发现此时参数 :math:`w` 的梯度是 4 而不是 2, 这是因为新的梯度和旧的梯度进行了累加。"
-msgstr "crwdns88265:0:math:crwdne88265:0"
+msgstr "crwdns113513:0:math:crwdne113513:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:251
 msgid "想要了解更多细节，可以参考 :ref:`autodiff-guide` 。"
-msgstr "crwdns88267:0:ref:crwdne88267:0"
+msgstr "crwdns113515:0:ref:crwdne113515:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:254
 msgid "参数（Parameter）"
-msgstr "crwdns88269:0crwdne88269:0"
+msgstr "crwdns113517:0crwdne113517:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:256
 msgid "你可能注意到了这样一个细节：我们在前面的介绍中，使用参数（Parameter）来称呼 :math:`w` 和 :math:`b`. 因为与输入数据 :math:`x` 不同，它们是需要在模型训练过程中被优化更新的变量。 在 MegEngine 中有 :class:`~.Parameter` 类专门和 :class:`~.Tensor` 进行区分，但它本质上是一种特殊的张量。 因此梯度管理器也支持维护计算过程中 :class:`~.Parameter` 的梯度信息。"
-msgstr "crwdns88271:0:math:crwdnd88271:0:math:crwdnd88271:0:math:crwdnd88271:0:class:crwdnd88271:0:class:crwdnd88271:0:class:crwdne88271:0"
+msgstr "crwdns113519:0:math:crwdnd113519:0:math:crwdnd113519:0:math:crwdnd113519:0:class:crwdnd113519:0:class:crwdnd113519:0:class:crwdne113519:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:281
 msgid ":class:`~.Parameter` 和 :class:`~.Tensor` 的区别主要体现在参数优化这一步，在下一小节会进行介绍。"
-msgstr "crwdns88273:0:class:crwdnd88273:0:class:crwdne88273:0"
+msgstr "crwdns113521:0:class:crwdnd113521:0:class:crwdne113521:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:283
 msgid "在前面我们已知了参数 :math:`w` 和它对应的梯度 :math:`w.grad`, 执行一次梯度下降的逻辑非常简单："
-msgstr "crwdns88275:0:math:crwdnd88275:0:math:crwdne88275:0"
+msgstr "crwdns113523:0:math:crwdnd113523:0:math:crwdne113523:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:285
 msgid "w = w - lr * w.grad"
-msgstr "crwdns88277:0crwdne88277:0"
+msgstr "crwdns113525:0crwdne113525:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:289
 msgid "对每个参数都执行一样的操作。这里引入了一个超参数：学习率（Learning rate），控制每次参数更新的幅度。 不同的参数在更新时可以使用不同的学习率，甚至同样的参数在下一次更新时也可以改变学习率， 但是为了便于初期的学习和理解，我们在教程中将使用一致的学习率。"
-msgstr "crwdns88279:0crwdne88279:0"
+msgstr "crwdns113527:0crwdne113527:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:294
 msgid "优化器（Optimizer）"
-msgstr "crwdns88281:0crwdne88281:0"
+msgstr "crwdns113529:0crwdne113529:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:296
 msgid "MegEngine 的 :mod:`~.optimizer` 模块提供了基于各种常见优化策略的优化器，如 :class:`~.SGD` 和 :class:`~.Adam` 等。 它们的基类是 :class:`~.Optimizer`，其中 :class:`~.SGD` 对应随机梯度下降算法，也是本教程中将会用到的优化器。"
-msgstr "crwdns88283:0:mod:crwdnd88283:0:class:crwdnd88283:0:class:crwdnd88283:0:class:crwdnd88283:0:class:crwdne88283:0"
+msgstr "crwdns113531:0:mod:crwdnd113531:0:class:crwdnd113531:0:class:crwdnd113531:0:class:crwdnd113531:0:class:crwdne113531:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:314
 msgid "调用 :meth:`.Optimizer.step` 进行一次参数更新，调用 :meth:`.Optimizer.clear_grad` 可以清空 :attr:`.Tensor.grad`."
-msgstr "crwdns88285:0:meth:crwdnd88285:0:meth:crwdnd88285:0:attr:crwdne88285:0"
+msgstr "crwdns113533:0:meth:crwdnd113533:0:meth:crwdnd113533:0:attr:crwdne113533:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:319
 msgid "许多初学者容易忘记在新一轮的参数更新时清空梯度，导致得到了不正确的结果。"
-msgstr "crwdns88287:0crwdne88287:0"
+msgstr "crwdns113535:0crwdne113535:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:323
 msgid ":class:`~.Optimizer` 接受的输入类型必须是 :class:`~.Parameter` 而非 :class:`~.Tensor`, 否则报错。"
-msgstr "crwdns88289:0:class:crwdnd88289:0:class:crwdnd88289:0:class:crwdne88289:0"
+msgstr "crwdns113537:0:class:crwdnd113537:0:class:crwdnd113537:0:class:crwdne113537:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:331
 msgid "想要了解更多细节，可以参考 :ref:`optimizer-guide` 。"
-msgstr "crwdns88291:0:ref:crwdne88291:0"
+msgstr "crwdns113539:0:ref:crwdne113539:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:334
 msgid "优化目标的选取"
-msgstr "crwdns88293:0crwdne88293:0"
+msgstr "crwdns113541:0crwdne113541:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:336
 msgid "想要提升模型的预测效果，我们需要有一个合适的优化目标。"
-msgstr "crwdns88295:0crwdne88295:0"
+msgstr "crwdns113543:0crwdne113543:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:338
 msgid "但请注意，上面用于举例的表达式仅用于理解计算图， 其输出值 :math:`y` 往往并不是实际需要被优化的对象， 它仅仅是模型的输出，单纯地优化这个值没有任何意义。"
-msgstr "crwdns88297:0:math:crwdne88297:0"
+msgstr "crwdns113545:0:math:crwdne113545:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:342
 msgid "那么我们要如何去评估一个模型预测性能的好坏呢？ 核心原则是： **犯错越少，表现越好。**"
-msgstr "crwdns90488:0crwdne90488:0"
+msgstr "crwdns113547:0crwdne113547:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:344
 msgid "通常而言，我们需要优化的目标被称为损失（Loss），用来度量模型的输出值和实际结果之间的差异。 如果能够将损失优化到尽可能地低，就意味着模型在当前数据上的预测效果越好。 目前我们可以认为，一个在当前数据集上表现良好的模型，也能够对新输入的数据产生不错的预测效果。"
-msgstr "crwdns88301:0crwdne88301:0"
+msgstr "crwdns113549:0crwdne113549:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:348
 msgid "这样的描述或许有些抽象，让我们直接通过实践来进行理解。"
-msgstr "crwdns88303:0crwdne88303:0"
+msgstr "crwdns113551:0crwdne113551:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:351
 msgid "练习：拟合一条直线"
-msgstr "crwdns88305:0crwdne88305:0"
+msgstr "crwdns113553:0crwdne113553:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:353
 msgid "假设你得到了数据集 :math:`\\mathcal{D}=\\{ (x_i, y_i) \\}`, 其中 :math:`i \\in \\{1, \\ldots, 100 \\}`, 希望将来给出输入 :math:`x`, 能够预测出合适的 :math:`y` 值。"
-msgstr "crwdns90490:0:math:crwdnd90490:0{D}crwdnd90490:0:math:crwdnd90490:0:math:crwdnd90490:0:math:crwdne90490:0"
+msgstr "crwdns113555:0:math:crwdnd113555:0{D}crwdnd113555:0:math:crwdnd113555:0:math:crwdnd113555:0:math:crwdne113555:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:358
 msgid "下面是随机生成这些数据点的代码实现："
-msgstr "crwdns88309:0crwdne88309:0"
+msgstr "crwdns113557:0crwdne113557:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:377
 msgid "可以发现数据点是基于直线 :math:`y = 5.0 * x + 2.0` 加上一些随机噪声生成的。"
-msgstr "crwdns88311:0:math:crwdne88311:0"
+msgstr "crwdns113559:0:math:crwdne113559:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:379
 msgid "但是在本教程中，我们应当假设自己没有这样的上帝视角， 所能获得的仅仅是这些数据点的坐标，并不知道理想情况下的 :math:`w=5.0` 以及 :math:`b=2.0`, 只能通过已有的数据去迭代更新参数。 通过损失或者其它的手段来判断最终模型的好坏（比如直线的拟合程度）， 在后续教程中会向你展示更加科学的做法。"
-msgstr "crwdns88313:0:math:crwdnd88313:0:math:crwdne88313:0"
+msgstr "crwdns113561:0:math:crwdnd113561:0:math:crwdne113561:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:391
 msgid "通过可视化分析发现（如上图）：这些点的分布很适合用一条直线 :math:`f(x) = w * x + b` 去进行拟合。"
-msgstr "crwdns88315:0:math:crwdne88315:0"
+msgstr "crwdns113563:0:math:crwdne113563:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:396
 msgid "所有的样本点的横坐标 :math:`x` 经过我们的模型后会得到一个预测输出 :math:`\\hat{y} = f(x)`."
-msgstr "crwdns88317:0:math:crwdnd88317:0:math:crwdnd88317:0{y}crwdne88317:0"
+msgstr "crwdns113565:0:math:crwdnd113565:0:math:crwdnd113565:0{y}crwdne113565:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:398
 msgid "在本教程中，我们将采取的梯度下降策略是批梯度下降（Batch Gradient Descent）, 即每次迭代时都将在所有数据点上进行预测的损失累积起来得到整体损失后求平均，以此作为优化目标去计算梯度和优化参数。 这样的好处是可以避免噪声数据点带来的干扰，每次更新参数时会朝着整体更加均衡的方向去优化。 以及从计算效率角度来看，可以充分利用一种叫做 **向量化（Vectorization）** 的特性，节约时间（拓展材料中进行了验证）。"
-msgstr "crwdns88319:0crwdne88319:0"
+msgstr "crwdns113567:0crwdne113567:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:404
 msgid "设计与实现损失函数"
-msgstr "crwdns88321:0crwdne88321:0"
+msgstr "crwdns113569:0crwdne113569:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:406
 msgid "对于这样的模型，如何度量输出值 :math:`\\hat{y} = f(x)` 与真实值 :math:`y` 之间的损失 :math:`l` 呢？ 请顺着下面的思路进行思考："
-msgstr "crwdns88323:0:math:crwdnd88323:0{y}crwdnd88323:0:math:crwdnd88323:0:math:crwdne88323:0"
+msgstr "crwdns113571:0:math:crwdnd113571:0{y}crwdnd113571:0:math:crwdnd113571:0:math:crwdne113571:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:409
 msgid "最容易想到的做法是直接计算误差（Error），即对每个 :math:`(x_i, y_i)` 和 :math:`\\hat{y_i}` 有 :math:`l_i = l(\\hat{y_i},y_i) = \\hat{y_i} - y_i`."
-msgstr "crwdns88325:0:math:crwdnd88325:0:math:crwdnd88325:0{y_i}crwdnd88325:0:math:crwdnd88325:0{y_i}crwdnd88325:0{y_i}crwdne88325:0"
+msgstr "crwdns113573:0:math:crwdnd113573:0:math:crwdnd113573:0{y_i}crwdnd113573:0:math:crwdnd113573:0{y_i}crwdnd113573:0{y_i}crwdne113573:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:412
 msgid "这样的想法很自然，问题在于对于回归问题，上述形式得到的损失 :math:`l_i` 是有正有负的， 在我们计算平均损失 :math:`l = \\frac{1}{n} \\sum_{i}^{n} （\\hat{y_i} - y_i)` 时会将一些正负值进行抵消， 比如对于 :math:`y_1 = 50, \\hat{y_1} = 100` 和 :math:`y2 = 50, \\hat{y_2} = 0`, 得到的平均损失为 :math:`l = \\frac{1}{2} \\big( (100 - 50) + (0 - 50) \\big) = 0`, 这并不是我们想要的效果。"
-msgstr "crwdns88327:0:math:crwdnd88327:0:math:crwdnd88327:0{1}crwdnd88327:0{n}crwdnd88327:0{i}crwdnd88327:0{n}crwdnd88327:0{y_i}crwdnd88327:0:math:crwdnd88327:0{y_1}crwdnd88327:0:math:crwdnd88327:0{y_2}crwdnd88327:0:math:crwdnd88327:0{1}crwdnd88327:0{2}crwdne88327:0"
+msgstr "crwdns113575:0:math:crwdnd113575:0:math:crwdnd113575:0{1}crwdnd113575:0{n}crwdnd113575:0{i}crwdnd113575:0{n}crwdnd113575:0{y_i}crwdnd113575:0:math:crwdnd113575:0{y_1}crwdnd113575:0:math:crwdnd113575:0{y_2}crwdnd113575:0:math:crwdnd113575:0{1}crwdnd113575:0{2}crwdne113575:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:417
 msgid "我们希望单个样本上的误差应该是可累积的，因此它需要是正值，同时方便后续计算。"
-msgstr "crwdns88329:0crwdne88329:0"
+msgstr "crwdns113577:0crwdne113577:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:419
 msgid "可以尝试的改进是使用平均绝对误差（Mean Absolute Error, MAE）: :math:`l = \\frac{1}{n} \\sum_{i}^{n} |\\hat{y_i} - y_i|`"
-msgstr "crwdns88331:0:math:crwdnd88331:0{1}crwdnd88331:0{n}crwdnd88331:0{i}crwdnd88331:0{n}crwdnd88331:0{y_i}crwdne88331:0"
+msgstr "crwdns113579:0:math:crwdnd113579:0{1}crwdnd113579:0{n}crwdnd113579:0{i}crwdnd113579:0{n}crwdnd113579:0{y_i}crwdne113579:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:421
 msgid "但注意到，我们优化模型使用的是梯度下降法，这要求目标函数（即损失函数）尽可能地连续可导，且易于求导和计算。 因此我们在回归问题中更常见的损失函数是平均平方误差（Mean Squared Error, MSE）:"
-msgstr "crwdns88333:0crwdne88333:0"
+msgstr "crwdns113581:0crwdne113581:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:424
 msgid "l = \\frac{1}{n} \\sum_{i}^{n} (\\hat{y_i} - y_i)^2"
-msgstr "crwdns88335:0{1}crwdnd88335:0{n}crwdnd88335:0{i}crwdnd88335:0{n}crwdnd88335:0{y_i}crwdne88335:0"
+msgstr "crwdns113583:0{1}crwdnd113583:0{n}crwdnd113583:0{i}crwdnd113583:0{n}crwdnd113583:0{y_i}crwdne113583:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:430
 msgid "一些机器学习课程中可能会为了方便求导时抵消掉平方带来的系数 2，在前面乘上 :math:`\\frac{1}{2}`, 本教程中没有这样做（因为 MegEngine 支持自动求导，可以和手动求导过程的代码进行对比）；"
-msgstr "crwdns88337:0:math:crwdnd88337:0{1}crwdnd88337:0{2}crwdne88337:0"
+msgstr "crwdns113585:0:math:crwdnd113585:0{1}crwdnd113585:0{2}crwdne113585:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:433
 msgid "另外我们可以从概率统计视角解释为何选用 MSE 作为损失函数： 假定误差满足平均值 :math:`\\mu = 0` 的正态分布，那么 MSE 就是对参数的极大似然估计。 详细的解释可以看 CS229 的 `讲义 <https://see.stanford.edu/materials/aimlcs229/cs229-notes1.pdf>`_ 。"
-msgstr "crwdns88339:0:math:crwdne88339:0"
+msgstr "crwdns113587:0:math:crwdne113587:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:438
 msgid "如果你不了解上面这几点细节，不用担心，这不会影响到我们完成本教程的任务。"
-msgstr "crwdns88341:0crwdne88341:0"
+msgstr "crwdns113589:0crwdne113589:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:440
 msgid "我们假定现在通过模型得到了 4 个样本上的预测结果 ``pred``, 现在来计算它与真实值 ``real`` 之间的 MSE 损失："
-msgstr "crwdns88343:0crwdne88343:0"
+msgstr "crwdns113591:0crwdne113591:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:448
 msgid "在 MegEngine 中对常见的损失函数也进行了封装，这里我们可以使用 :func:`~.nn.square_loss`:"
-msgstr "crwdns88345:0:func:crwdne88345:0"
+msgstr "crwdns113593:0:func:crwdne113593:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:454
 msgid "注意：由于损失函数（Loss function）是深度学习中提出的概念，因此相关接口应当通过 :mod:`.functional.nn` 调用。"
-msgstr "crwdns88347:0:mod:crwdne88347:0"
+msgstr "crwdns113595:0:mod:crwdne113595:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:458
 msgid "如果你不理解上面的操作，请参考 :ref:`element-wise-operations` 或浏览对应的 API 文档；"
-msgstr "crwdns88349:0:ref:crwdne88349:0"
+msgstr "crwdns113597:0:ref:crwdne113597:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:459
 msgid "更多的常见损失函数，可以在 :ref:`loss-functions` 找到。"
-msgstr "crwdns88351:0:ref:crwdne88351:0"
+msgstr "crwdns113599:0:ref:crwdne113599:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:462
 msgid "完整代码实现"
-msgstr "crwdns88353:0crwdne88353:0"
+msgstr "crwdns113601:0crwdne113601:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:464
 msgid "我们同时给出 NumPy 实现和 MegEngine 实现作为对比："
-msgstr "crwdns88355:0crwdne88355:0"
+msgstr "crwdns113603:0crwdne113603:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:466
 msgid "在 NumPy 实现中需要手动推导 :math:`\\frac{\\partial l}{\\partial w}` 与 :math:`\\frac{\\partial l}{\\partial b}`, 而在 MegEngine 中只需要调用 ``gm.backward(loss)`` 即可;"
-msgstr "crwdns88357:0:math:crwdnd88357:0:math:crwdne88357:0"
+msgstr "crwdns113605:0:math:crwdnd113605:0:math:crwdne113605:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:468
 msgid "输入数据 :math:`x` 是形状为 :math:`(100,)` 的向量（1 维数组）， 与标量 :math:`w` 和 :math:`b` 进行运算时，后者会广播到相同的形状，再进行计算。 这样利用了向量化的特性，计算效率更高，相关细节可以参考 :ref:`tensor-broadcasting` 。"
-msgstr "crwdns88359:0:math:crwdnd88359:0:math:crwdnd88359:0:math:crwdnd88359:0:math:crwdnd88359:0:ref:crwdne88359:0"
+msgstr "crwdns113607:0:math:crwdnd113607:0:math:crwdnd113607:0:math:crwdnd113607:0:math:crwdnd113607:0:ref:crwdne113607:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:477
 msgid "NumPy"
-msgstr "crwdns88361:0crwdne88361:0"
+msgstr "crwdns113609:0crwdne113609:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:518
 msgid "MegEngine"
-msgstr "crwdns88363:0crwdne88363:0"
+msgstr "crwdns113611:0crwdne113611:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:555
 msgid "二者应该会得到一样的输出。"
-msgstr "crwdns88365:0crwdne88365:0"
+msgstr "crwdns113613:0crwdne113613:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:557
 msgid "由于我们使用的是批梯度下降策略，每次迭代（Iteration）都是基于所有数据计算得到的平均损失和梯度进行的。 为了进行多次迭代，我们要重复多趟（Epochs）训练（把数据完整过一遍，称为完成一个 Epoch 的训练）。 而在批梯度下降策略下，每趟训练参数只会更新一个 Iter, 后面我们会遇到一个 Epoch 迭代多次的情况， 这些术语在深度学习领域的交流中非常常见，会在后续的教程中被反复提到。"
-msgstr "crwdns88367:0crwdne88367:0"
+msgstr "crwdns113615:0crwdne113615:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:562
 msgid "可以发现，经过 5 趟训练（经给定任务 T过 5 次迭代），我们的损失在不断地下降，参数 :math:`w` 和 :math:`b` 也在不断变化。"
-msgstr "crwdns88369:0:math:crwdnd88369:0:math:crwdne88369:0"
+msgstr "crwdns113617:0:math:crwdnd113617:0:math:crwdne113617:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:572
 msgid "通过一些可视化手段，可以直观地看到我们的直线拟合程度还是很不错的。"
-msgstr "crwdns88371:0crwdne88371:0"
+msgstr "crwdns113619:0crwdne113619:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:576
 msgid "这是我们 MegEngine 之旅的一小步，我们已经成功地用 MegEngine 完成了直线拟合的任务！"
-msgstr "crwdns88373:0crwdne88373:0"
+msgstr "crwdns113621:0crwdne113621:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:580
 msgid "本教程的对应源码： :docs:`examples/beginner/megengine-basic-fit-line.py`"
-msgstr "crwdns88375:0:docs:crwdne88375:0"
+msgstr "crwdns113623:0:docs:crwdne113623:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:583
 msgid "总结：一元线性回归"
-msgstr "crwdns88377:0crwdne88377:0"
+msgstr "crwdns113625:0crwdne113625:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:585
 msgid "我们尝试用专业的术语来定义：回归分析只涉及到两个变量的，称一元回归分析。 如果只有一个自变量 :math:`X`, 而且因变量 :math:`Y` 和自变量 :math:`X` 之间的数量变化关系呈近似线性关系， 就可以建立一元线性回归方程，由自变量 :math:`X` 的值来预测因变量 :math:`Y` 的值，这就是一元线性回归预测。 一元线性回归模型 :math:`y_{i}=\\alpha+\\beta x_{i}+\\varepsilon_{i}` 是最简单的机器学习模型，非常适合入门。 其中随机扰动项 :math:`\\varepsilon_{i}` 是无法直接观测的随机变量，也即我们上面生成数据时引入的噪声。 我们根据观察已有的数据点去学习出 :math:`w` 和 :math:`b`, 得到了样本回归方程 :math:`\\hat{y}_{i}= wx_{i}+b` 作为一元线性回归预测模型。"
-msgstr "crwdns90492:0:math:crwdnd90492:0:math:crwdnd90492:0:math:crwdnd90492:0:math:crwdnd90492:0:math:crwdnd90492:0:math:crwdnd90492:0{i}crwdnd90492:0{i}crwdnd90492:0{i}crwdnd90492:0:math:crwdnd90492:0{i}crwdnd90492:0:math:crwdnd90492:0:math:crwdnd90492:0:math:crwdnd90492:0{y}crwdnd90492:0{i}crwdnd90492:0{i}crwdne90492:0"
+msgstr "crwdns113627:0:math:crwdnd113627:0:math:crwdnd113627:0:math:crwdnd113627:0:math:crwdnd113627:0:math:crwdnd113627:0:math:crwdnd113627:0{i}crwdnd113627:0{i}crwdnd113627:0{i}crwdnd113627:0:math:crwdnd113627:0{i}crwdnd113627:0:math:crwdnd113627:0:math:crwdnd113627:0:math:crwdnd113627:0{y}crwdnd113627:0{i}crwdnd113627:0{i}crwdne113627:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:593
 msgid "一元线性回归方程的参数估计通常会用到最小平方法（也叫最小二乘法，Least squares method） 求解正规方程的形式去求得解析解（Closed-form expression），本教程不会介绍这种做法； 我们这里选择的方法是使用梯度下降法去迭代优化调参， 一是为了展示 MegEngine 中的基本功能如 :class:`~.GradManager` 和 :class:`~.Optimizer` 的使用， 二是为了以后能够更自然地对神经网络这样的非线性模型进行参数优化，届时最小二乘法将不再适用。"
-msgstr "crwdns90494:0:class:crwdnd90494:0:class:crwdne90494:0"
+msgstr "crwdns113629:0:class:crwdnd113629:0:class:crwdne113629:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:599
 msgid "这时候可以提及 Tom Mitchell 在 《 `Machine Learning <http://www.cs.cmu.edu/~tom/mlbook.html>`_ :footcite:p:`10.5555/541177`》 一书中对 “机器学习” 的定义："
-msgstr "crwdns88381:0crwdne88381:0"
+msgstr "crwdns113631:0crwdne113631:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:603
 msgid "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E."
-msgstr "crwdns88383:0crwdne88383:0"
+msgstr "crwdns113633:0crwdne113633:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:607
 msgid "如果一个计算机程序能够根据经验 E 提升在某类任务 T 上的性能 P, 则我们说程序从经验 E 中进行了学习。"
-msgstr "crwdns88385:0crwdne88385:0"
+msgstr "crwdns113635:0crwdne113635:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:610
 msgid "在本教程中，我们的任务 T 是尝试拟合一条直线，经验 E 来自于我们已有的数据点， 根据数据点的分布，我们自然而然地想到了选择一元线性模型来预测输出， 我们评估模型好坏（性能 P）时用到了 MSE 损失作为目标函数，并用梯度下降算法来优化损失。 在下一个教程中，我们将接触到多元线性回归模型，并对机器学习的概念有更加深刻的认识。 在此之前，你可能需要花费一些时间去消化吸收已经出现的知识，多多练习。"
-msgstr "crwdns90496:0crwdne90496:0"
+msgstr "crwdns113637:0crwdne113637:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:616
 msgid "任务，模型与优化算法"
-msgstr "crwdns88389:0crwdne88389:0"
+msgstr "crwdns113639:0crwdne113639:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:618
 msgid "机器学习领域有着非常多种类的模型，优化算法也并非只有梯度下降这一种。 我们在后面的教程中会接触到多元线性回归模型、以及线性分类模型， 从线性模型过渡到深度学习中的全连接神经网络模型； 不同的模型适用于不同的机器学习任务，因此模型选择很重要。 深度学习中使用的模型被称为神经网络，神经网络的魅力之一在于： 它能够被应用于许多任务，并且有时候能取得比传统机器学习模型好很多的效果。 但它模型结构并不复杂，优化模型的流程和本教程大同小异。 回忆一下，任何神经网络模型都能够表达成计算图，而我们已经初窥其奥妙。"
-msgstr "crwdns90498:0crwdne90498:0"
+msgstr "crwdns113641:0crwdne113641:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:627
 msgid "尝试调整超参数"
-msgstr "crwdns88393:0crwdne88393:0"
+msgstr "crwdns113643:0crwdne113643:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:629
 msgid "我们提到了一些概念如超参数（Hyperparameter），超参数是需要人为进行设定，通常无法由模型自己学得的参数。 你或许已经发现了，我们在每次迭代参数 :math:`w` 和 :math:`b` 时，使用的是同样的学习率。 经过 5 次迭代后，参数 :math:`w` 已经距离理想情况很接近了，而参数 :math:`b` 还需继续更新。 尝试改变 `lr` 的值，或者增加训练的 `Epoch` 数，看损失值能否进一步地降低。"
-msgstr "crwdns88395:0:math:crwdnd88395:0:math:crwdnd88395:0:math:crwdnd88395:0:math:crwdne88395:0"
+msgstr "crwdns113645:0:math:crwdnd113645:0:math:crwdnd113645:0:math:crwdnd113645:0:math:crwdne113645:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:634
 msgid "损失越低，一定意味着越好吗？"
-msgstr "crwdns88397:0crwdne88397:0"
+msgstr "crwdns113647:0crwdne113647:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:636
 msgid "既然我们选择了将损失作为优化目标，理想情况下我们的模型应该拟合现有数据中尽可能多的个点来降低损失。 但局限之处在于，我们得到的这些点始终是训练数据，对于一个机器学习任务， 我们可能会在训练模型时使用数据集 A, 而在实际使用模型时用到了来自现实世界的数据集 B. 在这种时候，将训练模型时的损失优化到极致反而可能会导致过拟合（Overfitting）。"
-msgstr "crwdns88399:0crwdne88399:0"
+msgstr "crwdns113649:0crwdne113649:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:643
 msgid "Christopher M Bishop `Pattern Recognition and Machine Learning <https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf>`_ :footcite:p:`10.5555/1162264` - Figure 1.4"
-msgstr "crwdns88401:0crwdne88401:0"
+msgstr "crwdns113651:0crwdne113651:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:647
 msgid "上图中的数据点分布其实来自于三角函数加上一些噪声，我们选择多项式回归模型并进行优化， 希望多项式曲线能够尽可能拟合数据点。可以发现当迭代次数过多时，会出现最后一张图的情况。 这个时候虽然在现有数据点上的拟合程度达到了百分百（损失为 0），但对于新输入的数据， 其预测性能可能还不如早期的训练情况。因此，不能光靠训练过程中的损失函数来作为模型性能的评估指标。"
-msgstr "crwdns88403:0crwdne88403:0"
+msgstr "crwdns113653:0crwdne113653:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:652
 msgid "我们在后续的教程中，会给出更加科学的解决方案。"
-msgstr "crwdns88405:0crwdne88405:0"
+msgstr "crwdns113655:0crwdne113655:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:655
 msgid "拓展材料"
-msgstr "crwdns88407:0crwdne88407:0"
+msgstr "crwdns113657:0crwdne113657:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:659
 msgid "在 NumPy 内部，向量化运算的速度是优于 for 循环的，我们很容易验证这一点："
-msgstr "crwdns88409:0crwdne88409:0"
+msgstr "crwdns113659:0crwdne113659:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:689
 msgid "背后是利用 SIMD 进行数据并行，互联网上有非常多博客详细地进行了解释，推荐阅读："
-msgstr "crwdns88411:0crwdne88411:0"
+msgstr "crwdns113661:0crwdne113661:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:691
 msgid "`Why is vectorization, faster in general, than loops? <https://stackoverflow.com/questions/35091979/why-is-vectorization-faster-in-general-than-loops>`_"
-msgstr "crwdns88413:0crwdne88413:0"
+msgstr "crwdns113663:0crwdne113663:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:693
 msgid "`Nuts and Bolts of NumPy Optimization Part 1: Understanding Vectorization and Broadcasting <https://blog.paperspace.com/numpy-optimization-vectorization-and-broadcasting/>`_"
-msgstr "crwdns88415:0crwdne88415:0"
+msgstr "crwdns113665:0crwdne113665:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:696
 msgid "同样地，向量化的代码在 MegEngine 中也会比 for 循环写法更快，尤其是利用 GPU 并行计算时。"
-msgstr "crwdns88417:0crwdne88417:0"
+msgstr "crwdns113667:0crwdne113667:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:700
 msgid "Scikit-learn 是非常有名的 Python 机器学习库，里面实现了许多经典机器学习算法。 在 Scikit-learn 的模型选择文档中，给出了解释模型欠拟合和过拟合的代码："
-msgstr "crwdns90500:0crwdne90500:0"
+msgstr "crwdns113669:0crwdne113669:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:703
 msgid "https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html"
-msgstr "crwdns90502:0crwdne90502:0"
+msgstr "crwdns113671:0crwdne113671:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:705
 msgid "感兴趣的读者可以借此去了解一下 Scikit-learn, 我们在下一个教程中会用到它提供的数据集接口。"
-msgstr "crwdns90504:0crwdne90504:0"
+msgstr "crwdns113673:0crwdne113673:0"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:708
 msgid "参考文献"
-msgstr "crwdns88419:0crwdne88419:0"
-
-#: ../../source/getting-started/beginner/megengine-basics.rst:710
-msgid "Charles R. Harris, K. Jarrod Millman, Stéfan J. van der Walt, Ralf Gommers, Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor, Sebastian Berg, Nathaniel J. Smith, Robert Kern, Matti Picus, Stephan Hoyer, Marten H. van Kerkwijk, Matthew Brett, Allan Haldane, Jaime Fernández del Río, Mark Wiebe, Pearu Peterson, Pierre Gérard-Marchant, Kevin Sheppard, Tyler Reddy, Warren Weckesser, Hameer Abbasi, Christoph Gohlke, and Travis E. Oliphant. Array programming with NumPy. Nature, 585(7825):357–362, September 2020. URL: https://doi.org/10.1038/s41586-020-2649-2, doi:10.1038/s41586-020-2649-2.Thomas M. Mitchell. Machine Learning. McGraw-Hill, Inc., USA, 1 edition, 1997. ISBN 0070428077.Christopher M. Bishop. Pattern Recognition and Machine Learning (Information Science and Statistics). Springer-Verlag, Berlin, Heidelberg, 2006. ISBN 0387310738."
-msgstr "crwdns94566:0crwdne94566:0"
+msgstr "crwdns113675:0crwdne113675:0"
 
 #~ msgid "那么我们要如何去评估一个模型预测性能的好坏呢？ 核心原则是： **犯错越少，也就越好。**"
 #~ msgstr ""
@@ -732,26 +728,4 @@ msgstr "crwdns94566:0crwdne94566:0"
 #~ " Science and Statistics). Springer-Verlag,"
 #~ " Berlin, Heidelberg, 2006. ISBN 0387310738."
 #~ msgstr ""
-#~ "Charles R. Harris, K. Jarrod Millman,"
-#~ " Stéfan J. van der Walt, Ralf "
-#~ "Gommers, Pauli Virtanen, David Cournapeau, "
-#~ "Eric Wieser, Julian Taylor, Sebastian "
-#~ "Berg, Nathaniel J. Smith, Robert Kern,"
-#~ " Matti Picus, Stephan Hoyer, Marten "
-#~ "H. van Kerkwijk, Matthew Brett, Allan"
-#~ " Haldane, Jaime Fernández del Río, "
-#~ "Mark Wiebe, Pearu Peterson, Pierre "
-#~ "Gérard-Marchant, Kevin Sheppard, Tyler "
-#~ "Reddy, Warren Weckesser, Hameer Abbasi, "
-#~ "Christoph Gohlke, and Travis E. "
-#~ "Oliphant. Array programming with NumPy. "
-#~ "Nature, 585(7825):357–362, September 2020. "
-#~ "URL: https://doi.org/10.1038/s41586-020-2649-2, "
-#~ "doi:10.1038/s41586-020-2649-2.Thomas M. Mitchell. "
-#~ "Machine Learning. McGraw-Hill, Inc., "
-#~ "USA, 1 edition, 1997. ISBN 0070428077."
-#~ " Christopher M. Bishop. Pattern Recognition"
-#~ " and Machine Learning (Information Science"
-#~ " and Statistics). Springer-Verlag, Berlin,"
-#~ " Heidelberg, 2006 . ISBN 0387310738."
 
