@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:24\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:18\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,26 +11,57 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.logaddexp.po\n"
-"X-Crowdin-File-ID: 8221\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.logaddexp.po\n"
+"X-Crowdin-File-ID: 9157\n"
 
 #: ../../source/reference/api/megengine.functional.logaddexp.rst:2
 msgid "megengine.functional.logaddexp"
-msgstr "crwdns86713:0crwdne86713:0"
+msgstr "crwdns100883:0crwdne100883:0"
 
 #: megengine.functional.elemwise.logaddexp:1 of
-msgid "Element-wise `numerically stable log(exp(x) + exp(y)`."
-msgstr "crwdns93472:0crwdne93472:0"
+msgid "Element-wise :math:`\\log(e^x + e^y)` function."
+msgstr "crwdns100885:0:math:crwdne100885:0"
+
+#: megengine.functional.elemwise.logaddexp:3 of
+msgid "This function is useful in statistics where the calculated probabilities of events may be so small as to exceed the range of normal floating point numbers. In such cases the logarithm of the calculated probability is stored. This function allows adding probabilities stored in such a fashion."
+msgstr "crwdns100887:0crwdne100887:0"
+
+#: megengine.functional.elemwise.logaddexp of
+msgid "参数"
+msgstr "crwdns100889:0crwdne100889:0"
+
+#: megengine.functional.elemwise.logaddexp:9 of
+msgid "input tensor. Should have a floating-point data type."
+msgstr "crwdns100891:0crwdne100891:0"
+
+#: megengine.functional.elemwise.logaddexp:11 of
+msgid "input tensor. Must be compatible with :math:`x`` (see :ref:`broadcasting-rule` ). Should have a floating-point data type."
+msgstr "crwdns100893:0:math:crwdnd100893:0:ref:crwdne100893:0"
 
 #: megengine.functional.elemwise.logaddexp of
 msgid "返回类型"
-msgstr "crwdns86717:0crwdne86717:0"
+msgstr "crwdns100895:0crwdne100895:0"
 
-#: megengine.functional.elemwise.logaddexp:4 of
+#: megengine.functional.elemwise.logaddexp:13 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr "crwdns86719:0crwdne86719:0"
+msgstr "crwdns100897:0crwdne100897:0"
+
+#: megengine.functional.elemwise.logaddexp of
+msgid "返回"
+msgstr "crwdns100899:0crwdne100899:0"
+
+#: megengine.functional.elemwise.logaddexp:14 of
+msgid "a tensor containing the evaluated result for each element in :math:`x` and :math:`y`. The returned tensor must have a floating-point data type determined by :ref:`dtype-promotion`."
+msgstr "crwdns100901:0:math:crwdnd100901:0:math:crwdnd100901:0:ref:crwdne100901:0"
+
+#: megengine.functional.elemwise.logaddexp:18 of
+msgid "实际案例"
+msgstr "crwdns100903:0crwdne100903:0"
+
+#~ msgid "Element-wise `numerically stable log(exp(x) + exp(y)`."
+#~ msgstr "逐元素数值稳定的 `log(exp(x) + exp(y))`。"
 
