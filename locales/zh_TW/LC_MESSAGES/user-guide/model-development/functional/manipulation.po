@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 04:48\n"
+"PO-Revision-Date: 2023-04-21 09:36\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,405 +15,405 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/functional/manipulation.po\n"
-"X-Crowdin-File-ID: 8153\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/functional/manipulation.po\n"
+"X-Crowdin-File-ID: 9945\n"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:5
 msgid "如何对 Tensor 进行操作"
-msgstr "crwdns84289:0crwdne84289:0"
+msgstr "crwdns118297:0crwdne118297:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:7
 msgid "这个文档将展示如何使用 :py:mod:`functional` 中的接口对已经存在的 Tensor 进行操作。"
-msgstr "crwdns84291:0crwdne84291:0"
+msgstr "crwdns118299:0crwdne118299:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:9
 msgid ":ref:`reshaping-tensor` （例如 :py:func:`~.reshape`, :py:func:`~.flatten` 和 :py:func:`~.transpose` ）"
-msgstr "crwdns84293:0:ref:crwdne84293:0"
+msgstr "crwdns118301:0:ref:crwdne118301:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:10
 msgid ":ref:`squeeze-and-unsqueeze` （使用 :py:func:`~.expand_dims` 增加维度，使用 :py:func:`~.squeeze` 降低维度）"
-msgstr "crwdns84295:0:ref:crwdne84295:0"
+msgstr "crwdns118303:0:ref:crwdne118303:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:11
 msgid ":ref:`tensor-broadcasting` （使用 :py:func:`~.broadcast_to` 按照规则对 Tensor 进行扩充 ）"
-msgstr "crwdns84297:0:ref:crwdne84297:0"
+msgstr "crwdns118305:0:ref:crwdne118305:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:12
 msgid ":ref:`tensor-manipulation-miscs` （Tensor 的多变一与一变多等操作）"
-msgstr "crwdns84299:0:ref:crwdne84299:0"
+msgstr "crwdns118307:0:ref:crwdne118307:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:13
 msgid "更多 API 请直接参考 :ref:`manipulation` ."
-msgstr "crwdns84301:0:ref:crwdne84301:0"
+msgstr "crwdns118309:0:ref:crwdne118309:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:15
 msgid "这些操作的相同点是：没有基于 Tensor 的数值进行计算，往往改变的是 Tensor 的形状。"
-msgstr "crwdns84303:0crwdne84303:0"
+msgstr "crwdns118311:0crwdne118311:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:19
 msgid "由于 :ref:`tensor-shape` 蕴含着太多核心的信息，因此我们操作 Tensor 时需要额外关注形状的变化；"
-msgstr "crwdns84305:0:ref:crwdne84305:0"
+msgstr "crwdns118313:0:ref:crwdne118313:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:20
 msgid "一些对 Tensor 的操作需要指定沿着轴进行，如果不清楚轴的概念，请参考 :ref:`tensor-axes` 。"
-msgstr "crwdns84307:0:ref:crwdne84307:0"
+msgstr "crwdns118315:0:ref:crwdne118315:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:24
 msgid "使用 :py:func:`~.functional.copy` 或 :py:meth:`.Tensor.to` 可以得到位于指定 :ref:`所在设备 <tensor-device>` 的 Tensor;"
-msgstr "crwdns84309:0:ref:crwdne84309:0"
+msgstr "crwdns118317:0:ref:crwdne118317:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:25
 msgid "使用 :py:meth:`.Tensor.astype` 可以改变 Tensor 的 :ref:`数据类型 <tensor-dtype>` ；"
-msgstr "crwdns84311:0:ref:crwdne84311:0"
+msgstr "crwdns118319:0:ref:crwdne118319:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:26
 msgid "使用 :py:meth:`.Tensor.item`, :py:meth:`.Tensor.tolist`, :py:meth:`.Tensor.numpy` 可以将 Tensor 转化成其它数据结构。"
-msgstr "crwdns84313:0crwdne84313:0"
+msgstr "crwdns118321:0crwdne118321:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:28
 msgid "更多内置方法请参考 :py:class:`Tensor` API 文档。"
-msgstr "crwdns84315:0crwdne84315:0"
+msgstr "crwdns118323:0crwdne118323:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:32
 msgid "MegEngine 中的计算都是非原地（inplace）进行的，返回新 Tensor, 但原始的 Tensor 并没有改变。"
-msgstr "crwdns84317:0crwdne84317:0"
+msgstr "crwdns118325:0crwdne118325:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:39
 msgid "可以发现调用 :py:meth:`.Tensor.reshape` 将得到 ``a`` 改变形状后的 Tensor, 但 ``a`` 自身没有变化："
-msgstr "crwdns84319:0crwdne84319:0"
+msgstr "crwdns118327:0crwdne118327:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:46
 msgid "一些操作的背后并没有实际产生数据拷贝，想要了解底层逻辑，可以参考 :ref:`tensor-layout` 。"
-msgstr "crwdns84321:0:ref:crwdne84321:0"
+msgstr "crwdns118329:0:ref:crwdne118329:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:51
 msgid "通过重塑来改变形状"
-msgstr "crwdns84323:0crwdne84323:0"
+msgstr "crwdns118331:0crwdne118331:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:53
 msgid "重塑的特点是不会改变原 Tensor 中的数据，但会得到一个给定新形状的 Tensor."
-msgstr "crwdns84325:0crwdne84325:0"
+msgstr "crwdns118333:0crwdne118333:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:55
 msgid ":py:func:`~.reshape` 可能是最重要的对 Tensor 的操作，设我们现在有这样一个 Tensor:"
-msgstr "crwdns84327:0crwdne84327:0"
+msgstr "crwdns118335:0crwdne118335:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:65
 msgid "通过 :py:func:`~.reshape` 我们可以在不改变 ``size`` 属性的情况下改变 ``shape``:"
-msgstr "crwdns84329:0crwdne84329:0"
+msgstr "crwdns118337:0crwdne118337:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:72
 msgid "``reshape`` 的目标形状中支持存在一个值为 ``-1`` 的轴，其真实值将根据 ``size`` 自动地推导出来："
-msgstr "crwdns84331:0crwdne84331:0"
+msgstr "crwdns118339:0crwdne118339:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:87
 msgid ":py:func:`~.flatten` 操作将对起点轴 ``start_axis`` 到终点轴 ``end_axis`` 的子张量进行展平，等同于特定形式的 ``reshape``:"
-msgstr "crwdns84333:0crwdne84333:0"
+msgstr "crwdns118341:0crwdne118341:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:96
 msgid "而 :py:func:`~.transpose` 将根据给定的模版 ``pattern`` 来改变形状："
-msgstr "crwdns84335:0crwdne84335:0"
+msgstr "crwdns118343:0crwdne118343:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:105
 msgid "上面的例程中将原本排序为 ``(0, 1, 2)`` 的轴变为了 ``(1, 2, 0)`` 顺序。"
-msgstr "crwdns84337:0crwdne84337:0"
+msgstr "crwdns118345:0crwdne118345:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:109
 msgid "更多使用细节说明请参考对应的 API 文档；"
-msgstr "crwdns84339:0crwdne84339:0"
+msgstr "crwdns118347:0crwdne118347:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:110
 msgid "这类 API 在 :py:class:`Tensor` 中都提供了对应的内置方法实现 ——"
-msgstr "crwdns84341:0crwdne84341:0"
+msgstr "crwdns118349:0crwdne118349:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:111
 msgid ":py:meth:`.Tensor.reshape` / :py:meth:`.Tensor.flatten` / :py:meth:`.Tensor.transpose`"
-msgstr "crwdns84343:0crwdne84343:0"
+msgstr "crwdns118351:0crwdne118351:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:116
 msgid "对 Tensor 进行升维和降维"
-msgstr "crwdns84345:0crwdne84345:0"
+msgstr "crwdns118353:0crwdne118353:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:118
 msgid "改变 Tensor 形状的另一个方法是增加它的维度，或者删除冗余的维度。 一些时候，我们用挤压（Squeeze）来称呼删除维度的操作，用解压（Unsqueeze）来称呼添加维度的操作。 显然，升维或者降维都不会改变一个 Tensor 中元素的个数，这与重塑 Tensor 的特点比较相似。"
-msgstr "crwdns84347:0crwdne84347:0"
+msgstr "crwdns118355:0crwdne118355:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:122
 msgid "使用 :py:func:`~.expand_dims` 增加维度时，需要指定所在轴的位置："
-msgstr "crwdns84349:0crwdne84349:0"
+msgstr "crwdns118357:0crwdne118357:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:134
 msgid "如上所示，对于一个 1 维 Tensor, 在 ``axis=0`` 的位置增加维度，则原 Tensor 中的元素将位于 ``axis=1`` 维度； 在 ``axis=1`` 的位置增加维度，则原 Tensor 中的元素将位于 ``axis=0`` 维度。"
-msgstr "crwdns84351:0crwdne84351:0"
+msgstr "crwdns118359:0crwdne118359:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:139
 msgid "虽然使用 :py:func:`~.reshape` 可以达到一样的效果："
-msgstr "crwdns84353:0crwdne84353:0"
+msgstr "crwdns118361:0crwdne118361:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:146
 msgid "但我们应当尽可能使用语义明确的接口。"
-msgstr "crwdns84355:0crwdne84355:0"
+msgstr "crwdns118363:0crwdne118363:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:149
 msgid "增加新的维度"
-msgstr "crwdns84357:0crwdne84357:0"
+msgstr "crwdns118365:0crwdne118365:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:151
 msgid "增加维度的逻辑很简单，新 Tensor 从 ``axis=0`` 开始判断，如果该维度是 :py:func:`~.expand_dims` 得到的，则该新增维度的轴长度为 1. 如果该维度并不在需要新增维度的位置上，则按照原 Tensor 的形状逐个维度进行填充。举例如下："
-msgstr "crwdns84359:0crwdne84359:0"
+msgstr "crwdns118367:0crwdne118367:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:159
 msgid "对于 2 维 Tensor ``a``, 我们想要在 ``axis=1`` 的位置添加一个维度。从 ``axis=0`` 开始排列新 Tensor, 由于 ``0`` 并不在增加维度的范围内， 因此新 Tensor 的 ``axis=0`` 维度将由 ``a`` 的第 0 维进行填充（即例子中长度为 2 的维度）； 接下来排列新 Tensor 中 ``axis=1`` 的位置，该位置是新增的维度，因此对应位置轴长度为 1. 新增维度后，原 Tensor 中后续的维度（这里是长度为 2 的维度）将直接接在当前新 Tensor 维度后面，最终得到形状 ``(2, 1, 3)`` 的 Tensor."
-msgstr "crwdns84361:0crwdne84361:0"
+msgstr "crwdns118369:0crwdne118369:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:164
 msgid ":py:func:`~.expand_dims` 还支持一次性新增多个维度，规则与上面描述的一致："
-msgstr "crwdns84363:0crwdne84363:0"
+msgstr "crwdns118371:0crwdne118371:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:178
 msgid "使用 :py:func:`~.expand_dims` 新增维度时要注意范围，不能超出原 Tensor 的维数 ``ndim`` 与新增维数之和："
-msgstr "crwdns84365:0crwdne84365:0"
+msgstr "crwdns118373:0crwdne118373:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:185
 msgid "在上面的例子中，原 Tensor 维数 ``ndim`` 为 2, 如果新增一个维度，最终新 Tensor 的维数应该是 3. 新增的轴应该满足 ``0 <= axis <= 2``, 上面给出的 3 已经超出了所能表达的维度范围。"
-msgstr "crwdns84367:0crwdne84367:0"
+msgstr "crwdns118375:0crwdne118375:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:189
 msgid "去除冗余的维度"
-msgstr "crwdns84369:0crwdne84369:0"
+msgstr "crwdns118377:0crwdne118377:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:191
 msgid "与 :py:func:`~.expand_dims` 相反的操作是 :py:func:`~.squeeze`, 能够去掉 Tensor 中轴长度为 1 的维度："
-msgstr "crwdns84371:0crwdne84371:0"
+msgstr "crwdns118379:0crwdne118379:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:198
 msgid "默认 :py:func:`~.squeeze` 将移除掉所有轴长度为 1 的维度，也可以通过 ``axis`` 指定性移除："
-msgstr "crwdns84373:0crwdne84373:0"
+msgstr "crwdns118381:0crwdne118381:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:207
 msgid "同样地，:py:func:`~.squeeze` 支持一次性去除多个指定的维度："
-msgstr "crwdns84375:0crwdne84375:0"
+msgstr "crwdns118383:0crwdne118383:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:214
 msgid "使用 :py:func:`~.squeeze` 去除维度时要注意轴长度，只能去掉轴长度为 1 的冗余维度。"
-msgstr "crwdns90508:0crwdne90508:0"
+msgstr "crwdns118385:0crwdne118385:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:219
 msgid "对 Tensor 进行广播"
-msgstr "crwdns84379:0crwdne84379:0"
+msgstr "crwdns118387:0crwdne118387:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:223
 msgid "MegEngine 的广播机制与 NumPy `Broadcasting <https://numpy.org/doc/stable/user/basics.broadcasting.html>`_ 一致，这里使用一样的代码与配图；"
-msgstr "crwdns84381:0crwdne84381:0"
+msgstr "crwdns118389:0crwdne118389:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:224
 msgid "在进行 :ref:`element-wise-operations` 时，会尝试进行广播使得输入 Tensor 的形状一致；"
-msgstr "crwdns84383:0:ref:crwdne84383:0"
+msgstr "crwdns118391:0:ref:crwdne118391:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:225
 msgid "我们可以使用 :py:func:`~.broadcast_to` 将 Tensor 广播至指定的形状。"
-msgstr "crwdns84385:0crwdne84385:0"
+msgstr "crwdns118393:0crwdne118393:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:229
 msgid "本小节示例图形来自 NumPy 文档，生成它们的源代码参考自： `astroML <http://www.astroml.org/book_figures/appendix/fig_broadcast_visual.html>`_"
-msgstr "crwdns84387:0crwdne84387:0"
+msgstr "crwdns118395:0crwdne118395:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:231
 msgid "类似的扩充 Tensor 形状的 API 有：:py:func:`~.repeat` / :py:func:`~.tile`"
-msgstr "crwdns84389:0crwdne84389:0"
+msgstr "crwdns118397:0crwdne118397:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:233
 msgid "术语 “广播” 描述了 MegEngine 在算术运算期间如何处理具有不同形状的 Tensor 对象。 出于某些原因，在运算时需要让较小的 Tensor 基于较大的 Tensor 进行广播，使得它们具有兼容的形状。 广播机制可以避免制作不必要的数据拷贝，使得一些算法的实现变得更加高效（参考 :ref:`tensor-layout` ）。"
-msgstr "crwdns84391:0:ref:crwdne84391:0"
+msgstr "crwdns118399:0:ref:crwdne118399:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:237
 msgid "Tensor 之间经常进行逐个元素的运算，在最简单的情况下，两个 Tensor 具有完全相同的形状："
-msgstr "crwdns84393:0crwdne84393:0"
+msgstr "crwdns118401:0crwdne118401:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:244
 msgid "当两个 Tensor 的形状不一致，但满足广播的条件时，则会先广播至一样的形状，再进行运算。"
-msgstr "crwdns84395:0crwdne84395:0"
+msgstr "crwdns118403:0crwdne118403:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:246
 msgid "最简单的广播示例发生在将 Tensor 和标量的元素级别运算中："
-msgstr "crwdns84397:0crwdne84397:0"
+msgstr "crwdns118405:0crwdne118405:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:253
 msgid "结果等同于前面的例子，其中 ``b`` 是一个标量。我们可以想象成，在算术运算期间， 标量 ``b`` 被 *拉伸（Stretch）*  成一个形状与 ``a`` 相同的 Tensor, 此时 ``b`` 中的新元素只是原始标量元素的副本。 但这里的拉伸只是概念上的类比，MegEngine 的 Tensor 内部存在着一些机制， 可以统一使用原始的标量值，而无需发生实际的数据拷贝； 这些机制也使得广播行为更具有内存和计算效率。"
-msgstr "crwdns84399:0crwdne84399:0"
+msgstr "crwdns118407:0crwdne118407:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:263
 msgid "在最简单的广播示例中，标量 ``b`` 被拉伸为与 ``a`` 形状相同的数组，因此这些形状兼容逐个元素的乘法。"
-msgstr "crwdns84401:0crwdne84401:0"
+msgstr "crwdns118409:0crwdne118409:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:265
 msgid "我们可以通过使用 :py:func:`~.broadcast_to` 来人为地对 Tensor 进行广播，同样以 ``b`` 为例："
-msgstr "crwdns84403:0crwdne84403:0"
+msgstr "crwdns118411:0crwdne118411:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:274
 msgid "MegEngine 中要求 :py:mod:`functional` API 输入数据为 Tensor, 因此这里的传给 ``broadcast_to`` 的标量实际上是一个 0 维 Tensor. 在使用 ``*`` 等算术运算时没有这样的限制，因此无需将输入提前转化为 Tensor."
-msgstr "crwdns84405:0crwdne84405:0"
+msgstr "crwdns118413:0crwdne118413:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:281
 msgid "广播机制与规则"
-msgstr "crwdns84407:0crwdne84407:0"
+msgstr "crwdns118415:0crwdne118415:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:285
 msgid "在对两个 Tensor 进行运算时，MegEngine 从它们的形状最右边的元素开始逐个向左比较。 当两个维度兼容时（指对应轴长度相等，或者其中一个值为 1），则能够进行相应的运算。"
-msgstr "crwdns84409:0crwdne84409:0"
+msgstr "crwdns118417:0crwdne118417:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:288
 msgid "如果无法满足这些条件，则会抛出异常，表明 Tensor 之间的形状不兼容："
-msgstr "crwdns84411:0crwdne84411:0"
+msgstr "crwdns118419:0crwdne118419:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:296
 msgid "广播规则并没有要求进行运算的 Tensor 具有相同的维数 ``ndim``."
-msgstr "crwdns84413:0crwdne84413:0"
+msgstr "crwdns118421:0crwdne118421:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:298
 msgid "例如，如果你有一个 256 x 256 x 3 的 RGB 值 Tensor, 并且想用不同的值缩放图像中的每种颜色，则可以将图像乘以具有 3 个值的一维 Tensor."
-msgstr "crwdns84415:0crwdne84415:0"
+msgstr "crwdns118423:0crwdne118423:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:303
 msgid "Image"
-msgstr "crwdns84417:0crwdne84417:0"
+msgstr "crwdns118425:0crwdne118425:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:304
 #: ../../source/user-guide/model-development/functional/manipulation.rst:314
 #: ../../source/user-guide/model-development/functional/manipulation.rst:336
 msgid "(3d array)"
-msgstr "crwdns84419:0crwdne84419:0"
+msgstr "crwdns118427:0crwdne118427:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:305
 #: ../../source/user-guide/model-development/functional/manipulation.rst:306
 #: ../../source/user-guide/model-development/functional/manipulation.rst:315
 #: ../../source/user-guide/model-development/functional/manipulation.rst:316
 msgid "256 x"
-msgstr "crwdns84421:0crwdne84421:0"
+msgstr "crwdns118429:0crwdne118429:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:307
 #: ../../source/user-guide/model-development/functional/manipulation.rst:312
 #: ../../source/user-guide/model-development/functional/manipulation.rst:317
 msgid "3"
-msgstr "crwdns84423:0crwdne84423:0"
+msgstr "crwdns118431:0crwdne118431:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:308
 msgid "Scale"
-msgstr "crwdns84425:0crwdne84425:0"
+msgstr "crwdns118433:0crwdne118433:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:309
 msgid "(1d array)"
-msgstr "crwdns84427:0crwdne84427:0"
+msgstr "crwdns118435:0crwdne118435:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:313
 #: ../../source/user-guide/model-development/functional/manipulation.rst:341
 msgid "Result"
-msgstr "crwdns84429:0crwdne84429:0"
+msgstr "crwdns118437:0crwdne118437:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:325
 msgid "在下面这个例子中，Tensor ``a`` 和 ``b`` 都具有长度为 1 的轴，这些轴在广播操作中扩展为更大的尺寸。"
-msgstr "crwdns84431:0crwdne84431:0"
+msgstr "crwdns118439:0crwdne118439:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:329
 msgid "A"
-msgstr "crwdns84433:0crwdne84433:0"
+msgstr "crwdns118441:0crwdne118441:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:330
 #: ../../source/user-guide/model-development/functional/manipulation.rst:342
 msgid "(4d array)"
-msgstr "crwdns84435:0crwdne84435:0"
+msgstr "crwdns118443:0crwdne118443:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:331
 #: ../../source/user-guide/model-development/functional/manipulation.rst:343
 msgid "8 x"
-msgstr "crwdns84437:0crwdne84437:0"
+msgstr "crwdns118445:0crwdne118445:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:332
 #: ../../source/user-guide/model-development/functional/manipulation.rst:339
 msgid "1 x"
-msgstr "crwdns84439:0crwdne84439:0"
+msgstr "crwdns118447:0crwdne118447:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:333
 msgid "6"
-msgstr "crwdns84441:0crwdne84441:0"
+msgstr "crwdns118449:0crwdne118449:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:334
 msgid "1"
-msgstr "crwdns84443:0crwdne84443:0"
+msgstr "crwdns118451:0crwdne118451:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:335
 msgid "B"
-msgstr "crwdns84445:0crwdne84445:0"
+msgstr "crwdns118453:0crwdne118453:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:338
 #: ../../source/user-guide/model-development/functional/manipulation.rst:344
 msgid "7 x"
-msgstr "crwdns84447:0crwdne84447:0"
+msgstr "crwdns118455:0crwdne118455:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:340
 #: ../../source/user-guide/model-development/functional/manipulation.rst:346
 msgid "5"
-msgstr "crwdns84449:0crwdne84449:0"
+msgstr "crwdns118457:0crwdne118457:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:345
 msgid "6 x"
-msgstr "crwdns84451:0crwdne84451:0"
+msgstr "crwdns118459:0crwdne118459:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:355
 msgid "更多广播可视化例子"
-msgstr "crwdns84453:0crwdne84453:0"
+msgstr "crwdns118461:0crwdne118461:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:357
 msgid "下面这个例子展示了 2 维 Tensor 和 1 维 Tensor 之间的加法运算："
-msgstr "crwdns84455:0crwdne84455:0"
+msgstr "crwdns118463:0crwdne118463:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:370
 msgid "如下图所示，``b`` 经过广播后将添加到 ``a`` 的每一行。"
-msgstr "crwdns84457:0crwdne84457:0"
+msgstr "crwdns118465:0crwdne118465:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:375
 msgid "如果 1 维 Tensor 元素的数量与 2 维 Tensor 的列数相匹配，则它们相加会导致广播。"
-msgstr "crwdns84459:0crwdne84459:0"
+msgstr "crwdns118467:0crwdne118467:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:380
 msgid "如果两个 Tensor 的尾部维度不兼容时，广播失败，无法进行元素级别的运算。"
-msgstr "crwdns84461:0crwdne84461:0"
+msgstr "crwdns118469:0crwdne118469:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:385
 msgid "对 Tensor 进行拼接、切分"
-msgstr "crwdns84463:0crwdne84463:0"
+msgstr "crwdns118471:0crwdne118471:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:387
 msgid "另一类常见的 Tensor 操作是将多个 Tensor 拼成一个 Tensor, 或者是将一个 Tensor 拆成多个 Tensor."
-msgstr "crwdns84465:0crwdne84465:0"
+msgstr "crwdns118473:0crwdne118473:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:390
 msgid ":py:func:`~.concat`"
-msgstr "crwdns84467:0crwdne84467:0"
+msgstr "crwdns118475:0crwdne118475:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:390
 msgid "沿着已经存在的轴连接 Tensor 序列。"
-msgstr "crwdns84469:0crwdne84469:0"
+msgstr "crwdns118477:0crwdne118477:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:393
 msgid ":py:func:`~.stack`"
-msgstr "crwdns84471:0crwdne84471:0"
+msgstr "crwdns118479:0crwdne118479:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:393
 msgid "沿着新的轴连接 Tensor 序列。"
-msgstr "crwdns84473:0crwdne84473:0"
+msgstr "crwdns118481:0crwdne118481:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:396
 msgid ":py:func:`~.split`"
-msgstr "crwdns84475:0crwdne84475:0"
+msgstr "crwdns118483:0crwdne118483:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:396
 msgid "将 Tensor 切分成多个相同大小的子 Tensor."
-msgstr "crwdns84477:0crwdne84477:0"
+msgstr "crwdns118485:0crwdne118485:0"
 
 #: ../../source/user-guide/model-development/functional/manipulation.rst:398
 msgid "更多的接口和详细使用说明请参考 :ref:`manipulation` API 文档。"
-msgstr "crwdns84479:0:ref:crwdne84479:0"
+msgstr "crwdns118487:0:ref:crwdne118487:0"
 
 #~ msgid "Tensor 操作"
 #~ msgstr ""
