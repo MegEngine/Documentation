@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-04-11 06:00\n"
+"PO-Revision-Date: 2023-04-21 09:34\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -15,8 +15,8 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/megengine-basics.po\n"
-"X-Crowdin-File-ID: 8377\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/getting-started/beginner/megengine-basics.po\n"
+"X-Crowdin-File-ID: 9855\n"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:5
 msgid "MegEngine 基础概念"
@@ -136,7 +136,7 @@ msgstr "RGB pictures"
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:40
 msgid "..."
-msgstr "..."
+msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:41
 msgid "n 维张量"
@@ -376,7 +376,7 @@ msgstr "In the front we know the parameter :math:`w` and its corresponding gradi
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:285
 msgid "w = w - lr * w.grad"
-msgstr "w = w - lr * w.grad"
+msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:289
 msgid "对每个参数都执行一样的操作。这里引入了一个超参数：学习率（Learning rate），控制每次参数更新的幅度。 不同的参数在更新时可以使用不同的学习率，甚至同样的参数在下一次更新时也可以改变学习率， 但是为了便于初期的学习和理解，我们在教程中将使用一致的学习率。"
@@ -492,7 +492,7 @@ msgstr "But note that we use gradient descent to optimize the model, which requi
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:424
 msgid "l = \\frac{1}{n} \\sum_{i}^{n} (\\hat{y_i} - y_i)^2"
-msgstr "l = \\frac{1}{n} \\sum_{i}^{n} (\\hat{y_i} - y_i)^2"
+msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:430
 msgid "一些机器学习课程中可能会为了方便求导时抵消掉平方带来的系数 2，在前面乘上 :math:`\\frac{1}{2}`, 本教程中没有这样做（因为 MegEngine 支持自动求导，可以和手动求导过程的代码进行对比）；"
@@ -544,11 +544,11 @@ msgstr "Input data :math:`x` is a vector (1D array) of shape :math:`(100,)`, whe
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:477
 msgid "NumPy"
-msgstr "NumPy"
+msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:518
 msgid "MegEngine"
-msgstr "MegEngine"
+msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:555
 msgid "二者应该会得到一样的输出。"
@@ -592,7 +592,7 @@ msgstr "At this time, you can refer to Tom Mitchell's definition of \"machine le
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:603
 msgid "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E."
-msgstr "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E."
+msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:607
 msgid "如果一个计算机程序能够根据经验 E 提升在某类任务 T 上的性能 P, 则我们说程序从经验 E 中进行了学习。"
@@ -628,7 +628,7 @@ msgstr "Since we have chosen the loss as the optimization objective, ideally our
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:643
 msgid "Christopher M Bishop `Pattern Recognition and Machine Learning <https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf>`_ :footcite:p:`10.5555/1162264` - Figure 1.4"
-msgstr "Christopher M Bishop `Pattern Recognition and Machine Learning <https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf>`_ :footcite:p:`10.5555/1162264` - Figure 1.4"
+msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:647
 msgid "上图中的数据点分布其实来自于三角函数加上一些噪声，我们选择多项式回归模型并进行优化， 希望多项式曲线能够尽可能拟合数据点。可以发现当迭代次数过多时，会出现最后一张图的情况。 这个时候虽然在现有数据点上的拟合程度达到了百分百（损失为 0），但对于新输入的数据， 其预测性能可能还不如早期的训练情况。因此，不能光靠训练过程中的损失函数来作为模型性能的评估指标。"
@@ -652,11 +652,11 @@ msgstr "Behind it is the use of SIMD for data parallelism. There are many blogs 
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:691
 msgid "`Why is vectorization, faster in general, than loops? <https://stackoverflow.com/questions/35091979/why-is-vectorization-faster-in-general-than-loops>`_"
-msgstr "`Why is vectorization, faster in general, than loops? <https://stackoverflow.com/questions/35091979/why-is-vectorization-faster-in-general-than-loops>`_"
+msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:693
 msgid "`Nuts and Bolts of NumPy Optimization Part 1: Understanding Vectorization and Broadcasting <https://blog.paperspace.com/numpy-optimization-vectorization-and-broadcasting/>`_"
-msgstr "`Nuts and Bolts of NumPy Optimization Part 1: Understanding Vectorization and Broadcasting <https://blog.paperspace.com/numpy-optimization-vectorization-and-broadcasting/>`_"
+msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:696
 msgid "同样地，向量化的代码在 MegEngine 中也会比 for 循环写法更快，尤其是利用 GPU 并行计算时。"
@@ -668,7 +668,7 @@ msgstr "Scikit-learn is a very well-known Python machine learning library that i
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:703
 msgid "https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html"
-msgstr "https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html"
+msgstr ""
 
 #: ../../source/getting-started/beginner/megengine-basics.rst:705
 msgid "感兴趣的读者可以借此去了解一下 Scikit-learn, 我们在下一个教程中会用到它提供的数据集接口。"
