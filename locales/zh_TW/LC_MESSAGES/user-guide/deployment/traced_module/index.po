@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:27\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,83 +14,83 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/traced_module/index.po\n"
-"X-Crowdin-File-ID: 8203\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/deployment/traced_module/index.po\n"
+"X-Crowdin-File-ID: 9999\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:6
 msgid "TracedModule 发版方案"
-msgstr "crwdns86347:0crwdne86347:0"
+msgstr "crwdns120545:0crwdne120545:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:17
 msgid "TracedModule 是什么"
-msgstr "crwdns86349:0crwdne86349:0"
+msgstr "crwdns120547:0crwdne120547:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:19
 msgid "TracedModule 是基于 MegEngine 的发版方案。"
-msgstr "crwdns86351:0crwdne86351:0"
+msgstr "crwdns120549:0crwdne120549:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:21
 msgid "TracedModule 由一个普通的 Module 通过 :py:func:`~.trace_module` 方法转换得到，仅由 MegEngine 的数据结构而构成，可脱离用户源代码被训练、序列化以及反序列化、以及图手术。"
-msgstr "crwdns86353:0crwdne86353:0"
+msgstr "crwdns120551:0crwdne120551:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:23
 msgid "相比于普通的 Module, 它有如下特性:"
-msgstr "crwdns86355:0crwdne86355:0"
+msgstr "crwdns120553:0crwdne120553:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:25
 msgid "拥有 graph 属性，graph 描述了 TracedModule 计算过程，可通过修改 graph 来改变计算过程（即 :py:meth:`.TracedModule.forward` 通过解析 :py:attr:`.TracedMoudle.graph` 执行）；"
-msgstr "crwdns86357:0crwdne86357:0"
+msgstr "crwdns120555:0crwdne120555:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:26
 msgid "可序列化（pickle）到文件中，即使在没有模型源码的环境中也可被正确 load（普通 Module 的序列化文件脱离模型源码后无法 load 回来）。"
-msgstr "crwdns86359:0crwdne86359:0"
+msgstr "crwdns120557:0crwdne120557:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:28
 msgid "TracedModule 发版方案的优点:"
-msgstr "crwdns86361:0crwdne86361:0"
+msgstr "crwdns120559:0crwdne120559:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:30
 msgid "graph 基于 MegEngine 内置的 Module 和 function 构建，OP 粒度粗；"
-msgstr "crwdns86363:0crwdne86363:0"
+msgstr "crwdns120561:0crwdne120561:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:31
 msgid "图手术直观，可直接查看 graph ，了解修改后的 graph 是否与预期一致；"
-msgstr "crwdns86365:0crwdne86365:0"
+msgstr "crwdns120563:0crwdne120563:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:32
 msgid "基于动态图，调试方便，所见即所得。"
-msgstr "crwdns86367:0crwdne86367:0"
+msgstr "crwdns120565:0crwdne120565:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:35
 msgid "TracedModule 发版流程"
-msgstr "crwdns86369:0crwdne86369:0"
+msgstr "crwdns120567:0crwdne120567:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:40
 msgid "step1: 模型训练阶段"
-msgstr "crwdns86371:0crwdne86371:0"
+msgstr "crwdns120569:0crwdne120569:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:42
 msgid "使用 MegEngine 来训练模型，模型基于 Module 构建。此时可直接将模型（Module） 转为 TracedModule 训练。"
-msgstr "crwdns86373:0crwdne86373:0"
+msgstr "crwdns120571:0crwdne120571:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:43
 msgid "将模型（Module 或 TracedModule）转为 TracedModule，并通过 pickle 将模型序列化到文件中。"
-msgstr "crwdns86375:0crwdne86375:0"
+msgstr "crwdns120573:0crwdne120573:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:45
 msgid "step2: 模型发版阶段"
-msgstr "crwdns86377:0crwdne86377:0"
+msgstr "crwdns120575:0crwdne120575:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:47
 msgid "在无模型源码的环境中 pickle.load 第一步中序列化的 TracedModule 模型。"
-msgstr "crwdns86379:0crwdne86379:0"
+msgstr "crwdns120577:0crwdne120577:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:48
 msgid "如果需要对模型进行图手术、后量化等操作，可直接对模型进行修改，此时模型依然在动态图模式下运行，所见即所得。"
-msgstr "crwdns86381:0crwdne86381:0"
+msgstr "crwdns120579:0crwdne120579:0"
 
 #: ../../source/user-guide/deployment/traced_module/index.rst:49
 msgid "当真正确定最终要发版的模型后，可直接通过 :ref:`trace <trace>` & :ref:`dump <dump>` 转为 c++ 模型进行部署。转换为其他框架模型的转换工具正在开发中，敬请期待。"
-msgstr "crwdns86383:0:ref:crwdnd86383:0:ref:crwdne86383:0"
+msgstr "crwdns120581:0:ref:crwdnd120581:0:ref:crwdne120581:0"
 
