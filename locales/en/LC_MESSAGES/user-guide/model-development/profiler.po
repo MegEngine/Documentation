@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2023-04-11 05:54\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/profiler.po\n"
-"X-Crowdin-File-ID: 2856\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/profiler.po\n"
+"X-Crowdin-File-ID: 9885\n"
 "Language: en_US\n"
 
 #: ../../source/user-guide/model-development/profiler.rst:5
@@ -77,7 +77,7 @@ msgstr "The constructor of :py:class:`~.utils.profiler.Profiler` supports the fo
 
 #: ../../source/user-guide/model-development/profiler.rst:73
 msgid "``path``"
-msgstr "``path``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:73
 msgid "数据的存储路径前缀，默认为 ``profile``, 后面将自动加上 ``.chrome_timeline.json`` 后缀。"
@@ -85,7 +85,7 @@ msgstr "The data storage path prefix, the default is ``profile``, and the suffix
 
 #: ../../source/user-guide/model-development/profiler.rst:88
 msgid "``topic``"
-msgstr "``topic``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:76
 msgid "接受预设的主题组合，Profiler 将只记录对应的信息，默认为 ``OPERATOR|SCOPE`` . 可选配置如下："
@@ -133,7 +133,7 @@ msgstr "Change the output time from relative to absolute, which is convenient fo
 
 #: ../../source/user-guide/model-development/profiler.rst:94
 msgid "``show_operator_name``"
-msgstr "``show_operator_name``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:94
 msgid "是否显示算子类型名称，默认为 ``True``. 设置为 ``False`` 则所有算子均显示为 ``Operator``."
@@ -178,19 +178,19 @@ msgstr "The following operations will be presented in the form of color blocks b
 
 #: ../../source/user-guide/model-development/profiler.rst:121
 msgid ":py:meth:`.GradManager.backward`"
-msgstr ":py:meth:`.GradManager.backward`"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:122
 msgid ":py:meth:`.Optimizer.step`"
-msgstr ":py:meth:`.Optimizer.step`"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:123
 msgid ":py:meth:`.Optimizer.clear_grad`"
-msgstr ":py:meth:`.Optimizer.clear_grad`"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:124
 msgid ":py:meth:`.Module.forward`"
-msgstr ":py:meth:`.Module.forward`"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:126
 msgid "通过观察色块的长度，便可以得到对应操作的运行时间，从而评估模型的性能瓶颈。 特别地，在 worker 与 gpu 线程上，还能看到 op 级别的（细粒度）事件。 比如，诸如 ``z = x + y`` 的表达式，在 channel 上看不到信息， 但是在 gpu 线程上一般会有一个对应的 op 被记录下来，名字一般是 ``Elemwise``."
@@ -226,7 +226,7 @@ msgstr "The output will be a table, the meaning of each column is as follows："
 
 #: ../../source/user-guide/model-development/profiler.rst:200
 msgid "``device self time``"
-msgstr "``device self time``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:200
 msgid "算子在计算设备上（例如 GPU ）的运行时间"
@@ -234,7 +234,7 @@ msgstr "The running time of the operator on the computing device (such as GPU)"
 
 #: ../../source/user-guide/model-development/profiler.rst:203
 msgid "``cumulative``"
-msgstr "``cumulative``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:203
 msgid "累加前面所有算子的时间"
@@ -242,7 +242,7 @@ msgstr "Accumulate the time of all previous operators"
 
 #: ../../source/user-guide/model-development/profiler.rst:206
 msgid "``operator info``"
-msgstr "``operator info``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:206
 msgid "打印算子的基本信息"
@@ -250,7 +250,7 @@ msgstr "Print the basic information of the operator"
 
 #: ../../source/user-guide/model-development/profiler.rst:209
 msgid "``computation``"
-msgstr "``computation``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:209
 msgid "算子需要的浮点数操作数目"
@@ -258,7 +258,7 @@ msgstr "The number of floating-point operations required by the operator"
 
 #: ../../source/user-guide/model-development/profiler.rst:212
 msgid "``FLOPS``"
-msgstr "``FLOPS``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:212
 msgid "算子每秒执行的浮点操作数目，由 ``computation`` 除以 ``device self time`` 并转换单位得到"
@@ -266,7 +266,7 @@ msgstr "The number of floating-point operations performed by the operator per se
 
 #: ../../source/user-guide/model-development/profiler.rst:215
 msgid "``memory``"
-msgstr "``memory``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:215
 msgid "算子使用的存储（例如 GPU 显存）大小"
@@ -274,7 +274,7 @@ msgstr "The size of storage (such as GPU memory) used by the operator"
 
 #: ../../source/user-guide/model-development/profiler.rst:218
 msgid "``bandwidth``"
-msgstr "``bandwidth``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:218
 msgid "算子的带宽，由 ``memory`` 除以 ``device self time`` 并转换单位得到"
@@ -282,7 +282,7 @@ msgstr "The bandwidth of the operator is obtained by dividing ``memory`` by ``de
 
 #: ../../source/user-guide/model-development/profiler.rst:221
 msgid "``in_shapes``"
-msgstr "``in_shapes``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:221
 msgid "算子输入张量的形状"
@@ -290,7 +290,7 @@ msgstr "The shape of the operator input tensor"
 
 #: ../../source/user-guide/model-development/profiler.rst:224
 msgid "``out_shapes``"
-msgstr "``out_shapes``"
+msgstr ""
 
 #: ../../source/user-guide/model-development/profiler.rst:224
 msgid "算子输出张量的形状"
