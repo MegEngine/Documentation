@@ -1,16 +1,15 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-25 01:18+0000\n"
-"PO-Revision-Date: 2023-04-25 01:27\n"
+"PO-Revision-Date: 2023-04-25 08:42\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
@@ -24,52 +23,20 @@ msgid "使用 Data 构建输入 Pipeline"
 msgstr "Use Data to build the input pipeline"
 
 #: ../../source/user-guide/model-development/data/index.rst:7
-msgid ""
-"MegEngine 中的 :py:mod:`data` 子包提供了用于处理数据（数据集）的原语， 其中 "
-":py:class:`megengine.data.DataLoader` 被用于加载批数据，本质上将用于生成一个可迭代的对象， 负责从 "
-":py:class:`~.Dataset` 描述的数据集中返回批量大小（即 ``batch_size`` ）的数据。 简而言之， "
-"``Dataset`` 告诉 ``DataLoader`` 如何将单个样本加载到内存中， 而 ``DataLoader`` "
-"负责按照给定的配置获取分批的数据，方便进行后续训练和测试。"
-msgstr ""
-"The :py:mod:`data` sub-package in MegEngine provides primitives for "
-"processing data (data sets), among which "
-":py:class:`megengine.data.DataLoader` is used to load batch data, "
-"essentially Used to generate an iterable object, responsible for "
-"returning the batch size (ie ``batch_size``) data from the data set "
-"described by :py:class:`~.Dataset`. In short, ``Dataset`` tells "
-"``DataLoader`` how to load a single sample into the memory, and "
-"``DataLoader`` is responsible for obtaining data in batches according to "
-"a given configuration, which is convenient for subsequent training and "
-"testing."
+msgid "MegEngine 中的 :py:mod:`data` 子包提供了用于处理数据（数据集）的原语， 其中 :py:class:`megengine.data.DataLoader` 被用于加载批数据，本质上将用于生成一个可迭代的对象， 负责从 :py:class:`~.Dataset` 描述的数据集中返回批量大小（即 ``batch_size`` ）的数据。 简而言之， ``Dataset`` 告诉 ``DataLoader`` 如何将单个样本加载到内存中， 而 ``DataLoader`` 负责按照给定的配置获取分批的数据，方便进行后续训练和测试。"
+msgstr "The :py:mod:`data` sub-package in MegEngine provides primitives for processing data (data sets), among which :py:class:`megengine.data.DataLoader` is used to load batch data, essentially Used to generate an iterable object, responsible for returning the batch size (ie ``batch_size``) data from the data set described by :py:class:`~.Dataset`. In short, ``Dataset`` tells ``DataLoader`` how to load a single sample into the memory, and ``DataLoader`` is responsible for obtaining data in batches according to a given configuration, which is convenient for subsequent training and testing."
 
 #: ../../source/user-guide/model-development/data/index.rst:19
-msgid ""
-"上面的介绍中隐藏了一些细节， 实际上 ``DataLoader`` 负责调用所有与数据加载相关的逻辑， "
-"包括但不限于：获取下一批数据索引、将数据加载到内存、收集批数据以及多线程数据加载等等... 这些步骤对应的功能由 ``data`` "
-"模块内其它不同的组件（如 ``Sampler``, ``Transform`` 等）进行实现。"
-msgstr ""
-"Some details are hidden in the above introduction. In fact, "
-"``DataLoader'' is responsible for calling all the logic related to data "
-"loading, including but not limited to：get the next batch of data indexes,"
-" load data into memory, collect batch data, and multithreading. Data "
-"loading, etc... The functions corresponding to these steps are "
-"implemented by other different components in the ``data`` module (such as"
-" ``Sampler``, ``Transform``, etc.)."
+msgid "上面的介绍中隐藏了一些细节， 实际上 ``DataLoader`` 负责调用所有与数据加载相关的逻辑， 包括但不限于：获取下一批数据索引、将数据加载到内存、收集批数据以及多线程数据加载等等... 这些步骤对应的功能由 ``data`` 模块内其它不同的组件（如 ``Sampler``, ``Transform`` 等）进行实现。"
+msgstr "Some details are hidden in the above introduction. In fact, ``DataLoader'' is responsible for calling all the logic related to data loading, including but not limited to：get the next batch of data indexes, load data into memory, collect batch data, and multithreading. Data loading, etc... The functions corresponding to these steps are implemented by other different components in the ``data`` module (such as ``Sampler``, ``Transform``, etc.)."
 
 #: ../../source/user-guide/model-development/data/index.rst:23
 msgid "如果你想要更加正确 & 高效地构建输入 Pipeline, 建议阅读完当前章节的所有内容。"
-msgstr ""
-"If you want to construct the input pipeline more correctly & efficiently,"
-" it is recommended to read all the contents of the current chapter."
+msgstr "If you want to construct the input pipeline more correctly & efficiently, it is recommended to read all the contents of the current chapter."
 
 #: ../../source/user-guide/model-development/data/index.rst:27
-msgid ""
-"该部分功能的主体设计与 PyTorch 提供的 `torch.utils.data "
-"<https://pytorch.org/docs/stable/data.html>`_ 类似。"
-msgstr ""
-"Design of the main body portion and function PyTorch provided "
-"torch.utils.data ` <https://pytorch.org/docs/stable/data.html>` _ the "
-"like."
+msgid "该部分功能的主体设计与 PyTorch 提供的 `torch.utils.data <https://pytorch.org/docs/stable/data.html>`_ 类似。"
+msgstr "Design of the main body portion and function PyTorch provided torch.utils.data ` <https://pytorch.org/docs/stable/data.html>` _ the like."
 
 #: ../../source/user-guide/model-development/data/index.rst:33
 msgid "使用 DataLoader 加载数据"
@@ -81,15 +48,11 @@ msgstr "The signature of the :py:class:`~.DataLoader` class is as follows："
 
 #: ../../source/user-guide/model-development/data/index.rst:41
 msgid "一些选项可在 :py:class:`~.DataLoader` 初始化时进行灵活配置，我们将着重介绍："
-msgstr ""
-"Some options can be flexibly configured during initialization of "
-":py:class:`~.DataLoader`, we will focus on："
+msgstr "Some options can be flexibly configured during initialization of :py:class:`~.DataLoader`, we will focus on："
 
 #: ../../source/user-guide/model-development/data/index.rst:53
 msgid "以模型训练为例，在 MegEngine 中输入数据的 Pipeline 为："
-msgstr ""
-"Take model training as an example, the Pipeline of the input data in "
-"MegEngine is："
+msgstr "Take model training as an example, the Pipeline of the input data in MegEngine is："
 
 #: ../../source/user-guide/model-development/data/index.rst:55
 msgid "创建一个 Dataset 对象；"
@@ -105,9 +68,7 @@ msgstr "Create a DataLoader object;"
 
 #: ../../source/user-guide/model-development/data/index.rst:58
 msgid "迭代这个 DataLoader 对象，将数据分批加载到模型中进行训练；"
-msgstr ""
-"Iterate this DataLoader object and load the data into the model in "
-"batches for training;"
+msgstr "Iterate this DataLoader object and load the data into the model in batches for training;"
 
 #: ../../source/user-guide/model-development/data/index.rst:60
 msgid "每当我们向 DataLoader 索要一批数据时，DataLoader 将从 Sampler 获得下一批数据的索引， 根据 Dataset 提供的 ``__getitem__`` 方法将对应的数据逐个加载到内存， 加载进来的数据可以通过指定的 Transform 做一些处理，再通过 Collator 将单独的数据组织成批数据。 以上为单进程的情况，DataLoader 也支持多进程加载以提升数据加载处理速度。 我们可以通过设置 :py:class:`~.DataLoader` 的 ``worker`` 参数来决定具体要开启的子进程的数量。 一般来说 ``worker`` 数量越多，数据加载处理的速度会越快。不过如果 ``worker`` 数过多， 并大大超出了系统中 cpu 的数量，这些子进程可能会存在竞争 cpu 资源的情况，反而导致效率的降低。 一般来说，我们建议根据系统中 cpu 的数量设置 ``worker`` 的值。 比如在一台 64 cpu, 8 gpu 的机器上，预期中每个 gpu 会对应 8 个 cpu, 那么我们在使用时对应的把 ``worker`` 数设置在 8 左右就是个不错的选择。"
@@ -115,15 +76,11 @@ msgstr ""
 
 #: ../../source/user-guide/model-development/data/index.rst:71
 msgid "同理，模型的验证和测试也可以使用各自的 DataLoader 完成数据部分的加载。"
-msgstr ""
-"Similarly, the verification and testing of the model can also use the "
-"respective DataLoader to complete the loading of the data part."
+msgstr "Similarly, the verification and testing of the model can also use the respective DataLoader to complete the loading of the data part."
 
 #: ../../source/user-guide/model-development/data/index.rst:75
 msgid "如果不自定义以上配置，用户应当清楚在默认情况下 DataLoader 的处理逻辑。"
-msgstr ""
-"If you do not customize the above configuration, users should be aware of"
-" the processing logic of DataLoader by default."
+msgstr "If you do not customize the above configuration, users should be aware of the processing logic of DataLoader by default."
 
 #: ../../source/user-guide/model-development/data/index.rst:80
 msgid "举例：加载图像分类数据"
@@ -151,21 +108,15 @@ msgstr "Note that in the above code, we also use ``Sampler'' to determine the da
 
 #: ../../source/user-guide/model-development/data/index.rst:156
 msgid "现在我们已经创建了数据加载器并准备好训练！例如像这样："
-msgstr ""
-"Now we have created the data loader and ready to train! For example like "
-"this："
+msgstr "Now we have created the data loader and ready to train! For example like this："
 
 #: ../../source/user-guide/model-development/data/index.rst:174
 msgid "成功地获取到批数据后，关于模型如何训练和测试的后续流程就不在这里介绍了。"
-msgstr ""
-"After successfully obtaining the batch of data, the follow-up process on "
-"how to train and test the model is not introduced here."
+msgstr "After successfully obtaining the batch of data, the follow-up process on how to train and test the model is not introduced here."
 
 #: ../../source/user-guide/model-development/data/index.rst:178
 msgid "在 MegEngine 新手入门板块中提供了完整的基于 MNIST 和 CIFAR10 数据集的模型训练与测试教程；"
-msgstr ""
-"A complete model training and testing tutorial based on MNIST and CIFAR10"
-" data sets is provided in the entry section of MegEngine novice;"
+msgstr "A complete model training and testing tutorial based on MNIST and CIFAR10 data sets is provided in the entry section of MegEngine novice;"
 
 #: ../../source/user-guide/model-development/data/index.rst:179
 msgid "在 MegEngine 官方模型库 `Models <https://github.com/MegEngine/Models>`_ 中可以找到更多参考代码。"
