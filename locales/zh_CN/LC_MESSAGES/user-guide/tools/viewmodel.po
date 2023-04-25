@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.13\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-25 01:18+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
+
+#: ../../source/user-guide/tools/viewmodel.rst:5
+msgid "MegEngine 模型可视化"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:7
+msgid ""
+"借助 `Netron平台 <https://github.com/lutzroeder/netron>`_ ，我们可以查看 MegEngine "
+"训练出的模型网络结构。Netron 是一种用于神经网络、深度学习和机器学习模型的可视化工具，它可以在 Linux、Windows 和 Mac "
+"上跨平台运行，并且支持多种框架和格式。在2022年8月，我们将 MegEngine 集成在了此平台上，目前 Netron 已支持 "
+"MegEngine 模型的 TracedModule 及 C++ 计算图两种结构："
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:9
+msgid "TracedModule 格式:"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:11
+msgid "Netron 版本：6.0.0 及以上版本，为了保证最优体验效果，Netron 建议使用最新版本"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:12
+msgid ""
+"保存 TracedModule 模型文件时需要用 .tm 作为文件后缀，推荐使用 megengine.save 和 megengine.load "
+"保存和加载 TracedModule"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:13
+msgid ""
+"因为 tm 格式的模型有很多子 module "
+"，为了让大家更好的了解他们之间的链接关系，所以在做可视化展示时，各子图是全部展开的，以一张图来完整展示模型结构"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:15
+msgid "C++ 格式:"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:17
+msgid "Netron 版本：6.5.3 及以上版本，为了保证最优体验效果，Netron 建议使用最新版本"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:18
+msgid "MegEngine 版本：v1.10.0 及以上"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:21
+msgid "使用 Netron 进行 MegEngine 模型可视化"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:22
+msgid ""
+".tm 模型获取可参考 `快速上手Traced Module "
+"<https://www.megengine.org.cn/doc/stable/zh/user-guide/model-"
+"development/traced_module/quick-start.html>`_ , .mge 模型获取可参考 `获得用于 "
+"MegEngine Lite 推理的模型 <https://www.megengine.org.cn/doc/stable/zh/user-"
+"guide/deployment/lite/get-model.html>`_ 。 以.tm 模型为例，获取到模型后有三种方式可视化此模型。"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:26
+msgid "在线网站"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:27
+msgid ""
+"netron 作者很贴心地做了一个 `在线demo网站 <https://netron.app>`_ "
+"，可以直接上传模型文件查看可视化结果，能够得到完整的模型结构图，并点击查看每层结构的细节参数。"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:30
+msgid "Python Server"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:31
+msgid ""
+"将 netron 作为 python 库进行安装，在 python 代码调用 netron 库来载入模型进行可视化。可以通过``pip "
+"install netron`` 进行安装。 在命令行输入："
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:38
+msgid "点击回车，会生成地址，浏览器打开该地址，就出现我们训练的模型可视图了。"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:40
+msgid "或者新建一个modelView.py文件，代码如下："
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:48
+msgid "随后运行modelView.py文件，生成地址，浏览器打开该地址，就出现我们训练的模型可视图了。"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:51
+msgid "使用 Netron 客户端"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:52
+msgid ""
+"以软件的方式安装netron，地址见 `Netron官方github "
+"<https://github.com/lutzroeder/netron>`_ "
+"，下载对应mac或windows对应版本的nerton软件，打开软件运行即可；"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:59
+msgid "可视化效果"
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:60
+msgid ".tm 模型："
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:65
+msgid ".mge 模型："
+msgstr ""
+
+#: ../../source/user-guide/tools/viewmodel.rst:70
+msgid "这里提供给大家 `示例模型 <https://github.com/lutzroeder/netron/issues/607>`_  供大家练习。"
+msgstr ""
+

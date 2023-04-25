@@ -1,29 +1,27 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-04-11 05:45\n"
+"POT-Creation-Date: 2023-04-25 01:18+0000\n"
+"PO-Revision-Date: 2023-04-11 05:45+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/pylite/network.po\n"
-"X-Crowdin-File-ID: 8440\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/pylite/network.rst:6
 msgid "megenginelite.network"
 msgstr "megenginelite.network"
 
 #: megenginelite.network.LiteOptions:1 of
-msgid "the inference options which can optimize the network forwarding performance"
+msgid ""
+"the inference options which can optimize the network forwarding "
+"performance"
 msgstr "推理优化选项用于提升推理性能"
 
 #: megenginelite.network.LiteConfig megenginelite.network.LiteIO
@@ -32,7 +30,9 @@ msgid "变量"
 msgstr "变量"
 
 #: megenginelite.network.LiteOptions:4 of
-msgid "is the option which optimize the inference performance with processing the weights of the network ahead"
+msgid ""
+"is the option which optimize the inference performance with processing "
+"the weights of the network ahead"
 msgstr "推理优化选项用于模型权重预处理"
 
 #: megenginelite.network.LiteOptions:7 of
@@ -40,15 +40,24 @@ msgid "fuse preprocess patten, like astype + pad_channel + dimshuffle"
 msgstr "融合预处理模式，如融合astype + pad_channel + dimshuffle"
 
 #: megenginelite.network.LiteOptions:10 of
-msgid "whether only to perform non-computing tasks (like memory allocation and queue initialization) for next exec. This will be reset to false when the graph is executed."
+msgid ""
+"whether only to perform non-computing tasks (like memory allocation and "
+"queue initialization) for next exec. This will be reset to false when the"
+" graph is executed."
 msgstr "是否进行预热，只执行如内存分配，队列初始化等非计算任务，下次执行时会被设为false"
 
 #: megenginelite.network.LiteOptions:14 of
-msgid "Disable var sanity check on the first run. Var sanity check is enabled on the first-time execution by default, and can be used to find some potential memory access errors in the operator"
+msgid ""
+"Disable var sanity check on the first run. Var sanity check is enabled on"
+" the first-time execution by default, and can be used to find some "
+"potential memory access errors in the operator"
 msgstr "初次运行时不进行合理性检查，变量合理性检查在初次执行时默认进行，可以用来发现一些潜在的内存访问错误"
 
 #: megenginelite.network.LiteOptions:18 of
-msgid "used to reduce memory usage and improve performance since some static inference data structures can be omitted and some operators can be compute before forwarding"
+msgid ""
+"used to reduce memory usage and improve performance since some static "
+"inference data structures can be omitted and some operators can be "
+"compute before forwarding"
 msgstr "用于减少内存使用以提升性能，部分静态推理数据以及算子可以在真正推理之前执行"
 
 #: megenginelite.network.LiteOptions:22 of
@@ -56,19 +65,31 @@ msgid "force dynamic allocate memory for all vars"
 msgstr "所有变量强制进行动态内存分配"
 
 #: megenginelite.network.LiteOptions:24 of
-msgid "force dynamic allocate memory for output tensor which are used as the input of CallbackCaller Operator"
+msgid ""
+"force dynamic allocate memory for output tensor which are used as the "
+"input of CallbackCaller Operator"
 msgstr "对作为 CallbackCaller 输入tensor的输出tensor强制进行动态内存分配"
 
 #: megenginelite.network.LiteOptions:27 of
-msgid "do not re-profile to select best implement algo when input shape changes (use previous algo)"
+msgid ""
+"do not re-profile to select best implement algo when input shape changes "
+"(use previous algo)"
 msgstr "当输入shape发生变化时不重新profile 选择最优算法(使用之前的算法)"
 
 #: megenginelite.network.LiteOptions:30 of
-msgid "Execute supported operators with JIT, please check with MGB_JIT_BACKEND for more details, this value indicates JIT level:  level 1: for JIT execute with basic elemwise operator  level 2: for JIT execute elemwise and reduce operators"
-msgstr "执行支持JIT的算子，查看MGB_JIT_BACKEND获取更多细节，JIT的等级有以下含义：等级1: JIT 执行基本的elemwise 算子 等级2: JIT 执行 elemwise 以及reduce 算子"
+msgid ""
+"Execute supported operators with JIT, please check with MGB_JIT_BACKEND "
+"for more details, this value indicates JIT level:  level 1: for JIT "
+"execute with basic elemwise operator  level 2: for JIT execute elemwise "
+"and reduce operators"
+msgstr ""
+"执行支持JIT的算子，查看MGB_JIT_BACKEND获取更多细节，JIT的等级有以下含义：等级1: JIT 执行基本的elemwise 算子 "
+"等级2: JIT 执行 elemwise 以及reduce 算子"
 
 #: megenginelite.network.LiteOptions:30 of
-msgid "Execute supported operators with JIT, please check with MGB_JIT_BACKEND for more details, this value indicates JIT level:"
+msgid ""
+"Execute supported operators with JIT, please check with MGB_JIT_BACKEND "
+"for more details, this value indicates JIT level:"
 msgstr "执行支持JIT的算子，查看MGB_JIT_BACKEND获取更多细节，JIT的等级有以下含义："
 
 #: megenginelite.network.LiteOptions:33 of
@@ -80,11 +101,20 @@ msgid "level 2: for JIT execute elemwise and reduce operators"
 msgstr "等级2: JIT 执行 elemwise 以及reduce 算子"
 
 #: megenginelite.network.LiteOptions:37 of
-msgid "flags to optimize the inference performance with record the kernel tasks in first run, hereafter the inference all need is to execute the recorded tasks.  level = 0 means the normal inference  level = 1 means use record inference  level = 2 means record inference with free the extra memory"
-msgstr "首次运行时记录kernel 任务, 然后后面的推理只会执行记录的kernel 任务， level = 0为基本推理  level = 1 为记录kernel任务的推理， level = 2为记录kernel任务并优化内存使用的推理"
+msgid ""
+"flags to optimize the inference performance with record the kernel tasks "
+"in first run, hereafter the inference all need is to execute the recorded"
+" tasks.  level = 0 means the normal inference  level = 1 means use record"
+" inference  level = 2 means record inference with free the extra memory"
+msgstr ""
+"首次运行时记录kernel 任务, 然后后面的推理只会执行记录的kernel 任务， level = 0为基本推理  level = 1 "
+"为记录kernel任务的推理， level = 2为记录kernel任务并优化内存使用的推理"
 
 #: megenginelite.network.LiteOptions:37 of
-msgid "flags to optimize the inference performance with record the kernel tasks in first run, hereafter the inference all need is to execute the recorded tasks."
+msgid ""
+"flags to optimize the inference performance with record the kernel tasks "
+"in first run, hereafter the inference all need is to execute the recorded"
+" tasks."
 msgstr "首次运行时记录kernel 任务, 然后后面的推理只会执行记录的kernel 任务"
 
 #: megenginelite.network.LiteOptions:41 of
@@ -100,7 +130,10 @@ msgid "level = 2 means record inference with free the extra memory"
 msgstr "level = 2为记录kernel任务并优化内存使用的推理"
 
 #: megenginelite.network.LiteOptions:48 of
-msgid "network optimization level:  0: disable  1: level-1: inplace arith transformations during graph construction  2: level-2: level-1, plus global optimization before graph compiling  3: also enable JIT"
+msgid ""
+"network optimization level:  0: disable  1: level-1: inplace arith "
+"transformations during graph construction  2: level-2: level-1, plus "
+"global optimization before graph compiling  3: also enable JIT"
 msgstr "模型优化级别： 等级 0: 不优化 等级 1: 图构建时进行原地算数运算转换  等级2: 等级1加上图编译前的全局优化  等级3: 等级2加上JIT"
 
 #: megenginelite.network.LiteOptions:48 of
@@ -124,8 +157,14 @@ msgid "3: also enable JIT"
 msgstr "等级3: 等级2加上JIT"
 
 #: megenginelite.network.LiteOptions:58 of
-msgid "level of dispatch on separate threads for different comp_node.  0: do not perform async dispatch  1: dispatch async if there are more than one comp node with limited queue  mask 0b10: async if there are multiple comp nodes with  mask 0b100: always async"
-msgstr "分配不同计算节点到不同线程上的等级：0: 不进行异步分配 1: 当有多个具有有限队列计算节点时进行异步分配，掩码 0b10: 有多个计算节点时进行异步计算，掩码 0b100: 总是进行异步计算"
+msgid ""
+"level of dispatch on separate threads for different comp_node.  0: do not"
+" perform async dispatch  1: dispatch async if there are more than one "
+"comp node with limited queue  mask 0b10: async if there are multiple comp"
+" nodes with  mask 0b100: always async"
+msgstr ""
+"分配不同计算节点到不同线程上的等级：0: 不进行异步分配 1: 当有多个具有有限队列计算节点时进行异步分配，掩码 0b10: "
+"有多个计算节点时进行异步计算，掩码 0b100: 总是进行异步计算"
 
 #: megenginelite.network.LiteOptions:58 of
 msgid "level of dispatch on separate threads for different comp_node."
@@ -191,7 +230,9 @@ msgid "Configuration when load and compile a network"
 msgstr "模型加载运行时的配置参数"
 
 #: megenginelite.network.LiteConfig:3 of
-msgid "flag whether the model is compressed, the compress method is stored in the model"
+msgid ""
+"flag whether the model is compressed, the compress method is stored in "
+"the model"
 msgstr "模型是否进行权重压缩的标志，压缩方法注册在模型中"
 
 #: megenginelite.network.LiteConfig:6 of
@@ -207,7 +248,10 @@ msgid "configure the inference backend of a network, now only support megengine"
 msgstr "配置模型推理后端，目前只支持MegEngine"
 
 #: megenginelite.network.LiteConfig:13 of
-msgid "is the bare model encryption method name, bare model is not packed with json information, this encryption method name is useful to decrypt the encrypted bare model"
+msgid ""
+"is the bare model encryption method name, bare model is not packed with "
+"json information, this encryption method name is useful to decrypt the "
+"encrypted bare model"
 msgstr "裸模型加密方法，用于解密模型时用，裸模型指没有集成json信息的模型 "
 
 #: megenginelite.network.LiteConfig:17 of
@@ -223,31 +267,58 @@ msgid "configure which input is composed of discrete multiple tensors"
 msgstr "配置哪个输入是由多个分散的tensor组成"
 
 #: megenginelite.network.LiteIO:1 of
-msgid "config the network input and output item, the input and output tensor information will describe there"
+msgid ""
+"config the network input and output item, the input and output tensor "
+"information will describe there"
 msgstr "配置模型输入输出内容，输入输出相关信息在这里描述"
 
 #: megenginelite.network.LiteIO:4 of
-msgid "the tensor name in the graph corresponding to the IO is_host: Used to mark where the input tensor comes from and where the output tensor will copy to, if is_host is true, the input is from host and output copy to host, otherwise in device. Sometimes the input is from device and output no need copy to host, default is true."
-msgstr "计算图中相关IO的tensor 名称，is_host：用于标记输入输出tensor所在位置，当为true时，表明输入或输出tensor在host上，否则在device上。主要用于输入输出tesnor 数据同步过程"
+msgid ""
+"the tensor name in the graph corresponding to the IO is_host: Used to "
+"mark where the input tensor comes from and where the output tensor will "
+"copy to, if is_host is true, the input is from host and output copy to "
+"host, otherwise in device. Sometimes the input is from device and output "
+"no need copy to host, default is true."
+msgstr ""
+"计算图中相关IO的tensor "
+"名称，is_host：用于标记输入输出tensor所在位置，当为true时，表明输入或输出tensor在host上，否则在device上。主要用于输入输出tesnor"
+" 数据同步过程"
 
 #: megenginelite.network.LiteIO:10 of
-msgid "The IO type, it can be SHAPE or VALUE, when SHAPE is set, the input or output tensor value is invaid, only shape will be set, default is VALUE"
-msgstr " IO 类型, 其值可以是 Shape 或 Value, 当为 Shape 时, 输入输出tensor的值是无效的，只会设置输入输出tesnor的shape, 默认值是 Value"
+msgid ""
+"The IO type, it can be SHAPE or VALUE, when SHAPE is set, the input or "
+"output tensor value is invaid, only shape will be set, default is VALUE"
+msgstr ""
+" IO 类型, 其值可以是 Shape 或 Value, 当为 Shape 时, "
+"输入输出tensor的值是无效的，只会设置输入输出tesnor的shape, 默认值是 Value"
 
 #: megenginelite.network.LiteIO:13 of
-msgid "The layout of the config from user, if other layout is set before forward or get after forward, this layout will by pass. if no other layout is set before forward, this layout will work. if this layout is no set, the model will forward with its origin layout. if in output, it will used to check."
-msgstr "用户配置layout: 在推理之行前后设置了其他layout, 该layout会被忽略，若没有设置其他layout，该layout 起作用。若该layout 也没有设置，推理会采用默认layout 推理并检查输出layout"
+msgid ""
+"The layout of the config from user, if other layout is set before forward"
+" or get after forward, this layout will by pass. if no other layout is "
+"set before forward, this layout will work. if this layout is no set, the "
+"model will forward with its origin layout. if in output, it will used to "
+"check."
+msgstr ""
+"用户配置layout: 在推理之行前后设置了其他layout, 该layout会被忽略，若没有设置其他layout，该layout "
+"起作用。若该layout 也没有设置，推理会采用默认layout 推理并检查输出layout"
 
 #: megenginelite.network.LiteIO:22 of
-msgid "if other layout is set to input tensor before forwarding, this layout will not work"
+msgid ""
+"if other layout is set to input tensor before forwarding, this layout "
+"will not work"
 msgstr "如果前向推理执行前输入tensor被设置成了其他layout，这里的layout 不会生效"
 
 #: megenginelite.network.LiteIO:24 of
-msgid "if no layout is set before forwarding, the model will forward with its origin layout"
+msgid ""
+"if no layout is set before forwarding, the model will forward with its "
+"origin layout"
 msgstr "如果前向推理执行前没有设置任何layout，模型推理时会选择原始的layout"
 
 #: megenginelite.network.LiteIO:26 of
-msgid "if layout is set in output tensor, it will used to check whether the layout computed from the network is correct"
+msgid ""
+"if layout is set in output tensor, it will used to check whether the "
+"layout computed from the network is correct"
 msgstr "如果这里设置了输出 tensor layout， 该layout 会被用于检查模型网络计算得到的layout的正确性"
 
 #: megenginelite.network.LiteIO.name:1 of
@@ -255,7 +326,9 @@ msgid "get the name of IO item"
 msgstr "获取 IO 名称"
 
 #: megenginelite.network.LiteNetworkIO:1 of
-msgid "the input and output information when load the network for user the NetworkIO will remain in the network until the network is destroyed."
+msgid ""
+"the input and output information when load the network for user the "
+"NetworkIO will remain in the network until the network is destroyed."
 msgstr "用户加载模型时的输入输出信息，NetworkIO会保留到模型释放之前"
 
 #: megenginelite.network.LiteNetworkIO:4 of
@@ -279,7 +352,9 @@ msgid "the network to load a model and forward"
 msgstr "加载或推理的模型网络"
 
 #: megenginelite.network.LiteNetwork.async_with_callback:1 of
-msgid "set the network forwarding in async mode and set the AsyncCallback callback function"
+msgid ""
+"set the network forwarding in async mode and set the AsyncCallback "
+"callback function"
 msgstr "设置模型推理为异步模式并设置异步回调函数"
 
 #: megenginelite.network.LiteNetwork.async_with_callback
@@ -329,7 +404,9 @@ msgid "the device id of current network used"
 msgstr "模型当前使用的device ID"
 
 #: megenginelite.network.LiteNetwork.dump_layout_transform_model:1 of
-msgid "dump network after global layout transform optimization to the specific path"
+msgid ""
+"dump network after global layout transform optimization to the specific "
+"path"
 msgstr "全局图优化后保存模型到指定文件"
 
 #: megenginelite.network.LiteNetwork.dump_layout_transform_model:4 of
@@ -337,7 +414,9 @@ msgid "the file path to dump model"
 msgstr "需要保存的模型文件路径"
 
 #: megenginelite.network.LiteNetwork.enable_cpu_inplace_mode:1 of
-msgid "set cpu forward in inplace mode with which cpu forward only create one thread"
+msgid ""
+"set cpu forward in inplace mode with which cpu forward only create one "
+"thread"
 msgstr "设置推理cpu为inplace模式，这时只会创建一个线程进行推理"
 
 #: megenginelite.network.LiteNetwork.enable_cpu_inplace_mode:4
@@ -346,11 +425,17 @@ msgid "this must be set before the network loaded"
 msgstr "必须在模型加载前设置"
 
 #: megenginelite.network.LiteNetwork.enable_global_layout_transform:1 of
-msgid "set global layout transform optimization for network, global layout optimization can auto determine the layout of every operator in the network by profile, thus it can improve the performance of the network forwarding"
+msgid ""
+"set global layout transform optimization for network, global layout "
+"optimization can auto determine the layout of every operator in the "
+"network by profile, thus it can improve the performance of the network "
+"forwarding"
 msgstr "设置模型全局图优化，全局图优化可以通过profile自动选择最优的layout,提升模型推理性能"
 
 #: megenginelite.network.LiteNetwork.enable_profile_performance:1 of
-msgid "enable get the network performance profiled information and save into given file"
+msgid ""
+"enable get the network performance profiled information and save into "
+"given file"
 msgstr "获取模型profile 信息并保存到指定文件"
 
 #: megenginelite.network.LiteNetwork.enable_profile_performance:3 of
@@ -362,7 +447,9 @@ msgid "Extra Configuration to the network."
 msgstr "模型其他配置信息"
 
 #: megenginelite.network.LiteNetwork.forward:1 of
-msgid "forward the network with filled input data and fill the output data to the output tensor"
+msgid ""
+"forward the network with filled input data and fill the output data to "
+"the output tensor"
 msgstr "使用指定输入执行模型推理并获取相应输出"
 
 #: megenginelite.network.LiteNetwork.get_all_input_name:1 of
@@ -382,7 +469,9 @@ msgid "the names of all output tesor in the network"
 msgstr "模型输出tensor名称"
 
 #: megenginelite.network.LiteNetwork.get_discrete_tensor:1 of
-msgid "get the n_idx'th tensor in the network input tensors whose input consists of discrete multiple tensors and tensor name is name"
+msgid ""
+"get the n_idx'th tensor in the network input tensors whose input consists"
+" of discrete multiple tensors and tensor name is name"
 msgstr "获取模型中输入tensor中第n_idx个, 输入tesnor由多个同名tensor 组成"
 
 #: megenginelite.network.LiteNetwork.get_discrete_tensor:4 of
@@ -394,7 +483,9 @@ msgid "the tensor index"
 msgstr "输入tensor 索引"
 
 #: megenginelite.network.LiteNetwork.get_discrete_tensor:6 of
-msgid "the type of LiteTensor, this is useful to separate input tensor with the same name"
+msgid ""
+"the type of LiteTensor, this is useful to separate input tensor with the "
+"same name"
 msgstr "LiteTensor 类型，在输入tesnor同名时起作用"
 
 #: megenginelite.network.LiteNetwork.get_discrete_tensor:8 of
@@ -422,7 +513,9 @@ msgid "the name of io tensor"
 msgstr " io tensor的名称"
 
 #: megenginelite.network.LiteNetwork.get_io_tensor:4 of
-msgid "the type of LiteTensor, this is useful to separate input or output tensor with the same name"
+msgid ""
+"the type of LiteTensor, this is useful to separate input or output tensor"
+" with the same name"
 msgstr "LiteTensor 类型，在输入tesnor同名时起作用"
 
 #: megenginelite.network.LiteNetwork.get_io_tensor:6 of
@@ -450,7 +543,9 @@ msgid "the directory to save information log"
 msgstr "保存信息log所在目录"
 
 #: megenginelite.network.LiteNetwork.io_bin_dump:1 of
-msgid "dump all input/output tensor of all operators to the output file, in binary format, user can use this function to debug compute error"
+msgid ""
+"dump all input/output tensor of all operators to the output file, in "
+"binary format, user can use this function to debug compute error"
 msgstr "以二进制形式保存所有算子的输入输出tensor, 用户可以通过这个函数debug 计算错误"
 
 #: megenginelite.network.LiteNetwork.io_bin_dump:4 of
@@ -458,7 +553,9 @@ msgid "the binary file directory"
 msgstr "二进制文件所在目录"
 
 #: megenginelite.network.LiteNetwork.io_txt_dump:1 of
-msgid "dump all input/output tensor of all operators to the output file, in txt format, user can use this function to debug compute error"
+msgid ""
+"dump all input/output tensor of all operators to the output file, in txt "
+"format, user can use this function to debug compute error"
 msgstr "以文本形式保存所有算子的输入输出tensor, 用户可以通过这个函数debug 计算错误"
 
 #: megenginelite.network.LiteNetwork.io_txt_dump:4 of
@@ -474,11 +571,15 @@ msgid "if use inpalce mode return True, else return False"
 msgstr "使用inpalce时返回True, 不使用时返回False"
 
 #: megenginelite.network.LiteNetwork.load:1 of
-msgid "load network from given path"
+#, fuzzy
+msgid "load network from given file or file object"
 msgstr "从指定路径加载模型"
 
 #: megenginelite.network.LiteNetwork.set_finish_callback:1 of
-msgid "when the network finish forward, the callback will be called, the finish_callback with param mapping from LiteIO to the corresponding LiteTensor"
+msgid ""
+"when the network finish forward, the callback will be called, the "
+"finish_callback with param mapping from LiteIO to the corresponding "
+"LiteTensor"
 msgstr "模型推理结束时调用该回调函数，带参的 finish_callback 会映射LiteIO到相关LiteTensor"
 
 #: megenginelite.network.LiteNetwork.set_network_algo_policy:1 of
@@ -486,23 +587,38 @@ msgid "set the network algorithm search policy for fast-run"
 msgstr "设置fast-run的算法搜索策略"
 
 #: megenginelite.network.LiteNetwork.set_network_algo_policy:3 of
-msgid "the batch size used by fastrun, Non-zero value means that fastrun use this batch size regardless of the batch size of the model. Zero means fastrun use batch size of the model"
-msgstr "fast-run用到的 batch 大小，当该值大于0时，fast-run会忽略模型本来的batch大小而使用该值，当该值为0时，使用模型默认的batch"
+msgid ""
+"the batch size used by fastrun, Non-zero value means that fastrun use "
+"this batch size regardless of the batch size of the model. Zero means "
+"fastrun use batch size of the model"
+msgstr ""
+"fast-run用到的 batch 大小，当该值大于0时，fast-"
+"run会忽略模型本来的batch大小而使用该值，当该值为0时，使用模型默认的batch"
 
 #: megenginelite.network.LiteNetwork.set_network_algo_policy:7 of
-msgid "if the content of each input batch is binary equal,whether the content of each output batch is promised to be equal"
+msgid ""
+"if the content of each input batch is binary equal,whether the content of"
+" each output batch is promised to be equal"
 msgstr "当输入batch 的内容完全相同时，输出batch内容是否如约定完全相等"
 
 #: megenginelite.network.LiteNetwork.set_network_algo_workspace_limit:1 of
-msgid "set the opr workspace limitation in the target network, some opr maybe use large of workspace to get good performance, set workspace limitation can save memory but may influence the performance"
-msgstr "设置目标模型算子运行所需的workspace 极限，因为部分算子会使用较大的workspace来提升性能，设置workspace 极限可以节省内存但可能会对性能有影响"
+msgid ""
+"set the opr workspace limitation in the target network, some opr maybe "
+"use large of workspace to get good performance, set workspace limitation "
+"can save memory but may influence the performance"
+msgstr ""
+"设置目标模型算子运行所需的workspace 极限，因为部分算子会使用较大的workspace来提升性能，设置workspace "
+"极限可以节省内存但可能会对性能有影响"
 
 #: megenginelite.network.LiteNetwork.set_network_algo_workspace_limit:5 of
 msgid "the byte size of workspace limitation"
 msgstr "workspace 极限字节大小"
 
 #: megenginelite.network.LiteNetwork.set_start_callback:1 of
-msgid "when the network start forward, the callback will be called, the start_callback with param mapping from LiteIO to the corresponding LiteTensor"
+msgid ""
+"when the network start forward, the callback will be called, the "
+"start_callback with param mapping from LiteIO to the corresponding "
+"LiteTensor"
 msgstr "模型推理前，该回调函数被调用，带参的start_callback映射LiteIO到对应LiteTensor"
 
 #: megenginelite.network.LiteNetwork.share_runtime_memroy:1 of

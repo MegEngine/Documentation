@@ -1,34 +1,52 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-04-11 05:45\n"
+"POT-Creation-Date: 2023-04-25 01:18+0000\n"
+"PO-Revision-Date: 2023-04-11 05:45+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.Tensor.po\n"
-"X-Crowdin-File-ID: 1890\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.Tensor.rst:2
 msgid "megengine.Tensor"
 msgstr "megengine.Tensor"
 
 #: megengine.tensor.Tensor:1 of
-msgid "A tensor object represents a multidimensional, homogeneous array of fixed-size items."
+msgid ""
+"A tensor object represents a multidimensional, homogeneous array of "
+"fixed-size items."
 msgstr "一个张量对象表示固定大小元素的多维同构数组。"
 
 #: megengine.tensor.Tensor:3 of
-msgid "Tensor is the primary MegEngine data structure. Data type(dtype) describes the format of each element, such as ``float32``, ``int8`` and so on, see :ref:`tensor-dtype` for more details. It is similar to :class:`numpy.ndarray` but not the same in the design. For example, GPU devices can be used to store Tensors and execute calculations in MegEngine. The concept of `view <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_ does not exist in MegEngine so indexing and other behaviors might be different with NumPy. All manipulations and operations on/between Tensors could be found in the :mod:`~.megengine.functional` module. Keep in mind that they are **not in-place**, a new Tensor will always be returned and the original data will remain constant."
-msgstr "张量（Tensor）是 MegEngine 中所主要使用的数据结构。数据类型（dype）负责描述其中每个元素的表示形式，如 ``float32``, ``int8`` 等等，参考 :ref:`tensor-dtype` 了解更多细节。Tensor 在设计上与 NumPy 中的 :class:`numpy.ndarray` 很相似但又不尽一致。例如，在 MegEngine 中可以使用 GPU 设备来存储 Tensor 和执行计算，而 NumPy 却不行。另外在 MegEngine 中没有 `view <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_ （视图）的概念，因此在索引元素时其行为可能与 NumPy 不同。所有的 Tensor 操作和 Tensor 间的运算都可以在 :mod:`~.megengine.functional` 中被找到，牢记这些行为都是 **非原地的** ，它们的结果往往是返回一个新 Tensor, 而旧 Tensor 没有任何变化。"
+msgid ""
+"Tensor is the primary MegEngine data structure. Data type(dtype) "
+"describes the format of each element, such as ``float32``, ``int8`` and "
+"so on, see :ref:`tensor-dtype` for more details. It is similar to "
+":class:`numpy.ndarray` but not the same in the design. For example, GPU "
+"devices can be used to store Tensors and execute calculations in "
+"MegEngine. The concept of `view "
+"<https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_"
+" does not exist in MegEngine so indexing and other behaviors might be "
+"different with NumPy. All manipulations and operations on/between Tensors"
+" could be found in the :mod:`~.megengine.functional` module. Keep in mind"
+" that they are **not in-place**, a new Tensor will always be returned and"
+" the original data will remain constant."
+msgstr ""
+"张量（Tensor）是 MegEngine 中所主要使用的数据结构。数据类型（dype）负责描述其中每个元素的表示形式，如 "
+"``float32``, ``int8`` 等等，参考 :ref:`tensor-dtype` 了解更多细节。Tensor 在设计上与 NumPy"
+" 中的 :class:`numpy.ndarray` 很相似但又不尽一致。例如，在 MegEngine 中可以使用 GPU 设备来存储 "
+"Tensor 和执行计算，而 NumPy 却不行。另外在 MegEngine 中没有 `view "
+"<https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_"
+" （视图）的概念，因此在索引元素时其行为可能与 NumPy 不同。所有的 Tensor 操作和 Tensor 间的运算都可以在 "
+":mod:`~.megengine.functional` 中被找到，牢记这些行为都是 **非原地的** ，它们的结果往往是返回一个新 "
+"Tensor, 而旧 Tensor 没有任何变化。"
 
 #: megengine.tensor.Tensor:14 of
 msgid "For more information, refer to the :ref:`tensor-guide` topic."
@@ -39,19 +57,30 @@ msgid "参数"
 msgstr "参数"
 
 #: megengine.tensor.Tensor:17 of
-msgid "The data used for construcing Tensor. Tensor could be constructed from a Python :class:`list` / :class:`tuple` or sequence; a NumPy :class:`~.numpy.ndarray` data structure; MegEngine builtin methods and so on. Refer to :ref:`tensor-creation` for more details."
-msgstr "用来构造 Tensor 的数据。Tensor 可以从以下数据构造： Python :class:`list` / :class:`tuple` 或序列；NumPy 的 :class:`~.numpy.ndarray` 数据结构; MegEngine 内置的方法... 等等。参考 :ref:`tensor-creation` 了解更多细节。"
+msgid ""
+"The data used for construcing Tensor. Tensor could be constructed from a "
+"Python :class:`list` / :class:`tuple` or sequence; a NumPy "
+":class:`~.numpy.ndarray` data structure; MegEngine builtin methods and so"
+" on. Refer to :ref:`tensor-creation` for more details."
+msgstr ""
+"用来构造 Tensor 的数据。Tensor 可以从以下数据构造： Python :class:`list` / :class:`tuple` "
+"或序列；NumPy 的 :class:`~.numpy.ndarray` 数据结构; MegEngine 内置的方法... 等等。参考 :ref"
+":`tensor-creation` 了解更多细节。"
 
 #: megengine.tensor.Tensor:23 of
 msgid "The data type of returned Tensor. Infer from ``data`` if not specified."
 msgstr "返回 Tensor 的数据类型。如未指定，则将从给定的 ``data`` 进行推断。"
 
 #: megengine.tensor.Tensor:26 of
-msgid "The desired device of returned Tensor. Uses :func:`get_default_device` if not specified."
+msgid ""
+"The desired device of returned Tensor. Uses :func:`get_default_device` if"
+" not specified."
 msgstr "张量的所在设备。如果没有特别指定则为 :func:`get_default_device` 返回值。"
 
 #: megengine.tensor.Tensor:29 of
-msgid "Whether make it a ``ImutableTensor`` in tracing mode, refer to :class:`.jit.trace`."
+msgid ""
+"Whether make it a ``ImutableTensor`` in tracing mode, refer to "
+":class:`.jit.trace`."
 msgstr "是否要将它变成追溯（Tracing）模式下的 ``ImutableTensor``, 参考 :class:`.jit.trace` 接口的说明。"
 
 #: megengine.tensor.Tensor:31 of
@@ -63,12 +92,31 @@ msgid "Used to improve convenience in graph operation on dumped model."
 msgstr "张量的名字可用来简化存储的模型上的图操作。"
 
 #: megengine.tensor.Tensor:35 of
-msgid "Used to indicate which memory format Tensor uses. It will not affect actual memory order or stride, but may affect some operators related to indexing and dimension. Only support \"default\", \"nchw\" and \"nhwc\"."
-msgstr "用于表明当前 Tensor 所使用的内存布局格式。它不会影响到实际的内存排布或步长设定，但有可能影响到一些与索引和维度计算有关的算子。当前仅支持设置为 \"default\", \"nchw\" 或 \"nhwc\"."
+msgid ""
+"Used to indicate which memory format Tensor uses. It will not affect "
+"actual memory order or stride, but may affect some operators related to "
+"indexing and dimension. Only support \"default\", \"nchw\" and \"nhwc\"."
+msgstr ""
+"用于表明当前 Tensor "
+"所使用的内存布局格式。它不会影响到实际的内存排布或步长设定，但有可能影响到一些与索引和维度计算有关的算子。当前仅支持设置为 "
+"\"default\", \"nchw\" 或 \"nhwc\"."
 
 #: megengine.tensor.Tensor:40 of
-msgid "There are some methods like :meth:`~.Tensor.reshape` / :meth:`~.Tensor.flatten` / :meth:`~.Tensor.transpose` / :meth:`~.Tensor.min` / :meth:`~.Tensor.max` / :meth:`~.Tensor.mean` / :meth:`~.Tensor.sum` / :meth:`~.Tensor.prod` implemented in ``Tensor`` class for convenience and historical reasons. But other methods implemented in the :mod:`~.megengine.functional` module will not be added here anymore, it is hard for maintaining and too many candidates will affect code completion experience."
-msgstr "一些方法形如 :meth:`~.Tensor.reshape` / :meth:`~.Tensor.flatten` / :meth:`~.Tensor.transpose` / :meth:`~.Tensor.min` / :meth:`~.Tensor.max` / :meth:`~.Tensor.mean` / :meth:`~.Tensor.sum` / :meth:`~.Tensor.prod` 被实现在了 ``Tensor`` 类中，这是出于方便和一些历史原因。但其它的存在于 :mod:`~.megengine.functional` 模块中的方法则不会被添加到类方法中，这会导致代码难以维护，且太多的候选项将影响到代码补全。"
+msgid ""
+"There are some methods like :meth:`~.Tensor.reshape` / "
+":meth:`~.Tensor.flatten` / :meth:`~.Tensor.transpose` / "
+":meth:`~.Tensor.min` / :meth:`~.Tensor.max` / :meth:`~.Tensor.mean` / "
+":meth:`~.Tensor.sum` / :meth:`~.Tensor.prod` implemented in ``Tensor`` "
+"class for convenience and historical reasons. But other methods "
+"implemented in the :mod:`~.megengine.functional` module will not be added"
+" here anymore, it is hard for maintaining and too many candidates will "
+"affect code completion experience."
+msgstr ""
+"一些方法形如 :meth:`~.Tensor.reshape` / :meth:`~.Tensor.flatten` / "
+":meth:`~.Tensor.transpose` / :meth:`~.Tensor.min` / :meth:`~.Tensor.max` "
+"/ :meth:`~.Tensor.mean` / :meth:`~.Tensor.sum` / :meth:`~.Tensor.prod` "
+"被实现在了 ``Tensor`` 类中，这是出于方便和一些历史原因。但其它的存在于 :mod:`~.megengine.functional` "
+"模块中的方法则不会被添加到类方法中，这会导致代码难以维护，且太多的候选项将影响到代码补全。"
 
 #: ../../source/reference/api/megengine.Tensor.rst:11
 msgid "Attributes"
@@ -103,7 +151,9 @@ msgid ":py:obj:`dtype <megengine.Tensor.dtype>`\\"
 msgstr ":py:obj:`dtype <megengine.Tensor.dtype>`\\"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
-msgid "Returns a :class:`numpy.dtype` object represents the data type of a :class:`~.Tensor`."
+msgid ""
+"Returns a :class:`numpy.dtype` object represents the data type of a "
+":class:`~.Tensor`."
 msgstr "返回一个 :class:`numpy.dtype` 对象，表示当前 :class:`~.Tensor` 的数据类型。"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
@@ -111,8 +161,12 @@ msgid ":py:obj:`format <megengine.Tensor.format>`\\"
 msgstr ":py:obj:`format <megengine.Tensor.format>`\\"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
-msgid "Returns a string represents the :ref:`memory format <format-introduction>` of a :class:`~.Tensor`."
-msgstr "返回一个表示 :class:`~.Tensor` 的 :ref:`memory format <format-introduction>` 的字符串。"
+msgid ""
+"Returns a string represents the :ref:`memory format <format-"
+"introduction>` of a :class:`~.Tensor`."
+msgstr ""
+"返回一个表示 :class:`~.Tensor` 的 :ref:`memory format <format-introduction>` "
+"的字符串。"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
 msgid ":py:obj:`grad <megengine.Tensor.grad>`\\"
@@ -143,7 +197,9 @@ msgid ":py:obj:`qparams <megengine.Tensor.qparams>`\\"
 msgstr ":py:obj:`qparams <megengine.Tensor.qparams>`\\"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
-msgid "Returns a :class:`~.QParams` object containing quantization params of a :class:`~.Tensor`."
+msgid ""
+"Returns a :class:`~.QParams` object containing quantization params of a "
+":class:`~.Tensor`."
 msgstr "返回一个 :class:`~.QParams` 对象，其中包含当前 :class:`~.Tensor` 的量化参数。"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
@@ -159,7 +215,9 @@ msgid ":py:obj:`shape <megengine.Tensor.shape>`\\"
 msgstr ":py:obj:`shape <megengine.Tensor.shape>`\\"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
-msgid "Returns a :class:`tuple` or a :class:`~.Tensor` represents tensor dimensions."
+msgid ""
+"Returns a :class:`tuple` or a :class:`~.Tensor` represents tensor "
+"dimensions."
 msgstr "返回一个 :class:`tuple` 或 :class:`~.Tensor`,  表示当前张量的维度信息。"
 
 #: ../../source/reference/api/megengine.Tensor.rst:55:<autosummary>:1
@@ -179,7 +237,9 @@ msgid ":py:obj:`astype <megengine.Tensor.astype>`\\ \\(dtype\\)"
 msgstr ":py:obj:`astype <megengine.Tensor.astype>`\\ \\(dtype\\)"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
-msgid "Returns a :class:`Tensor` with the same data and number of elements with the specified :attr:`~.Tensor.dtype`."
+msgid ""
+"Returns a :class:`Tensor` with the same data and number of elements with "
+"the specified :attr:`~.Tensor.dtype`."
 msgstr "返回一个含有完全相同的数据和元素数目，但是数据类型被 :attr:`~.Tensor.dtype` 指定的新 :class:`Tensor`. "
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
@@ -191,7 +251,10 @@ msgid "Returns a new :class:`~.Tensor`, detached from the current graph."
 msgstr "返回一个与当前图解绑后的新 :class:`~.Tensor` ."
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
-msgid ":py:obj:`flatten <megengine.Tensor.flatten>`\\ \\(\\)"
+#, fuzzy
+msgid ""
+":py:obj:`flatten <megengine.Tensor.flatten>`\\ \\(\\[start\\_axis\\, "
+"end\\_axis\\]\\)"
 msgstr ":py:obj:`flatten <megengine.Tensor.flatten>`\\ \\(\\)"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
@@ -207,7 +270,9 @@ msgid ":py:obj:`item <megengine.Tensor.item>`\\ \\(\\*args\\)"
 msgstr ":py:obj:`item <megengine.Tensor.item>`\\ \\(\\*args\\)"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
-msgid "Returns the value of this :class:`~.Tensor` as a standard Python :class:`numbers.Number`."
+msgid ""
+"Returns the value of this :class:`~.Tensor` as a standard Python "
+":class:`numbers.Number`."
 msgstr "以标准 Python :class:`numbers.Number` 类型返回当前 :class:`~.Tensor` 元素的值。"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
@@ -275,8 +340,12 @@ msgid "See :func:`~.sum`."
 msgstr "参考 :func:`~.sum`."
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
-msgid ":py:obj:`to <megengine.Tensor.to>`\\ \\(device\\, \\*\\[\\, \\_borrow\\]\\)"
-msgstr ":py:obj:`to <megengine.Tensor.to>`\\ \\(device\\, \\*\\[\\, \\_borrow\\]\\)"
+msgid ""
+":py:obj:`to <megengine.Tensor.to>`\\ \\(device\\, \\*\\[\\, "
+"\\_borrow\\]\\)"
+msgstr ""
+":py:obj:`to <megengine.Tensor.to>`\\ \\(device\\, \\*\\[\\, "
+"\\_borrow\\]\\)"
 
 #: ../../source/reference/api/megengine.Tensor.rst:114:<autosummary>:1
 msgid "Copy self :class:`~.Tensor` to specified device."

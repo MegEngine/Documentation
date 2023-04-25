@@ -1,30 +1,30 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2023-04-11 05:58\n"
+"POT-Creation-Date: 2023-04-25 01:18+0000\n"
+"PO-Revision-Date: 2023-04-11 05:58+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.traced_module.traced_module.InternalGraph.po\n"
-"X-Crowdin-File-ID: 8041\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:5
 msgid "InternalGraph"
 msgstr "InternalGraph"
 
 #: megengine.traced_module.traced_module.InternalGraph:1 of
-msgid "``InternalGraph`` is the main data structure used in the TracedModule. It is used to represent the execution procedure of Module's forward method."
-msgstr "``InternalGraph`` 是 TracedModule 中使用的主要数据结构。它用来表示 Module 的 forward 方法的执行过程。"
+msgid ""
+"``InternalGraph`` is the main data structure used in the TracedModule. It"
+" is used to represent the execution procedure of Module's forward method."
+msgstr ""
+"``InternalGraph`` 是 TracedModule 中使用的主要数据结构。它用来表示 Module 的 forward "
+"方法的执行过程。"
 
 #: megengine.traced_module.traced_module.InternalGraph:4
 #: megengine.traced_module.traced_module.InternalGraph.add_output_node:7
@@ -32,9 +32,14 @@ msgstr "``InternalGraph`` 是 TracedModule 中使用的主要数据结构。它�
 msgid "For example, the following code"
 msgstr "例如，下面的代码"
 
-#: megengine.traced_module.traced_module.InternalGraph:28 of
-msgid "Will produce the following ``InternalGraph``::"
+#: megengine.traced_module.traced_module.InternalGraph:29 of
+#, fuzzy
+msgid "Will produce the following ``InternalGraph``:"
 msgstr "将生成以下 ``InternalGraph``::"
+
+#: megengine.traced_module.traced_module.InternalGraph:29 of
+msgid "print(traced_module.graph)"
+msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.add_input_node:1 of
 msgid "Add an input node to the graph."
@@ -70,7 +75,9 @@ msgid "the dtype of the new input Node. Default: float32"
 msgstr "新输入 Node 的 dtype 。默认值：float32"
 
 #: megengine.traced_module.traced_module.InternalGraph.add_input_node:11 of
-msgid "the name of the new input Node. When the name is used in the graph, a suffix will be added to it."
+msgid ""
+"the name of the new input Node. When the name is used in the graph, a "
+"suffix will be added to it."
 msgstr "新输入 Node 的名字。当图中使用该名字时，如果重名将为其添加后缀。"
 
 #: megengine.traced_module.traced_module.InternalGraph.add_output_node:1 of
@@ -78,8 +85,13 @@ msgid "Add an output node to the Graph."
 msgstr "向计算图中添加一个输出节点。"
 
 #: megengine.traced_module.traced_module.InternalGraph.add_output_node:3 of
-msgid "The Graph output will become a ``tuple`` after calling ``add_output_node``. The first element of the ``tuple`` is the original output, and the second is the ``node``."
-msgstr "调用 ``add_output_node`` 后，图形输出将变成一个 ``tuple`` 。``tuple`` 的第一个元素是原始输出，第二个元素是 ``node`` 。"
+msgid ""
+"The Graph output will become a ``tuple`` after calling "
+"``add_output_node``. The first element of the ``tuple`` is the original "
+"output, and the second is the ``node``."
+msgstr ""
+"调用 ``add_output_node`` 后，图形输出将变成一个 ``tuple`` 。``tuple`` "
+"的第一个元素是原始输出，第二个元素是 ``node`` 。"
 
 #: megengine.traced_module.traced_module.InternalGraph.add_output_node:31
 #: megengine.traced_module.traced_module.InternalGraph.reset_outputs:34 of
@@ -233,7 +245,9 @@ msgid "The full name of the ``Node`` can be obtained by the following code"
 msgstr "``Node`` 的全名可以通过下面的代码获得"
 
 #: megengine.traced_module.traced_module.InternalGraph.get_node_by_name:15 of
-msgid "a string in glob syntax that can contain ``?`` and ``*`` to match a single or arbitrary characters."
+msgid ""
+"a string in glob syntax that can contain ``?`` and ``*`` to match a "
+"single or arbitrary characters."
 msgstr "一个在 glob 语法中可以包含 ``?`` 和 ``*`` 来匹配单个或任意字符的字符串。"
 
 #: megengine.traced_module.traced_module.InternalGraph.get_node_by_name:18 of
@@ -263,15 +277,21 @@ msgid "Initialize the trace mode and insertion position."
 msgstr "初始化 trace 模式和插入位置。"
 
 #: megengine.traced_module.traced_module.InternalGraph.insert_exprs:3 of
-msgid "When used within a 'with' statement, this will temporary set the trace mode and then restore normal mode when the with statement exits::"
+msgid ""
+"When used within a 'with' statement, this will temporary set the trace "
+"mode and then restore normal mode when the with statement exits::"
 msgstr "当在 with 语句中使用时，将临时设置 trace 模式，然后在with语句退出时恢复正常模式："
 
 #: megengine.traced_module.traced_module.InternalGraph.insert_exprs:11 of
-msgid "the ``expr`` after which to insert. If None, the insertion position will be automatically set based on the input node."
+msgid ""
+"the ``expr`` after which to insert. If None, the insertion position will "
+"be automatically set based on the input node."
 msgstr "在哪个 ``expr`` 之后插入。如果为None，插入位置将根据输入节点自动设置。"
 
 #: megengine.traced_module.traced_module.InternalGraph.insert_exprs:14 of
-msgid "A resource manager that will initialize trace mode on ``__enter__`` and restore normal mode on ``__exit__``."
+msgid ""
+"A resource manager that will initialize trace mode on ``__enter__`` and "
+"restore normal mode on ``__exit__``."
 msgstr "一个资源管理器，它将在 ``__enter__`` 里初始化 trace 模式，并在 ``__exit__`` 里恢复正常模式。"
 
 #: megengine.traced_module.traced_module.InternalGraph.name:1 of
@@ -296,7 +316,9 @@ msgid "Get the list of output Nodes of this graph."
 msgstr "获取此计算图的输出节点列表。"
 
 #: megengine.traced_module.traced_module.InternalGraph.qualname:1 of
-msgid "Get the `qualname` of this graph. The `qualname` can be used to get the submodule from the traced Module or Module."
+msgid ""
+"Get the `qualname` of this graph. The `qualname` can be used to get the "
+"submodule from the traced Module or Module."
 msgstr "获取此计算图的 `qualname` 。`qualname` 可以用来从被跟踪的模块或普通模块中获取子模块。"
 
 #: megengine.traced_module.traced_module.InternalGraph.qualname:5 of
@@ -316,7 +338,9 @@ msgid "Reset the output Nodes of the graph."
 msgstr "重置计算图的输出节点。"
 
 #: megengine.traced_module.traced_module.InternalGraph.reset_outputs:5 of
-msgid "This method only supports resetting the output of graphs that do not have a parent graph."
+msgid ""
+"This method only supports resetting the output of graphs that do not have"
+" a parent graph."
 msgstr "此方法只支持重置没有父图的计算图的输出。"
 
 #: megengine.traced_module.traced_module.InternalGraph.reset_outputs:8 of

@@ -1,29 +1,27 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2023-04-11 05:58\n"
+"POT-Creation-Date: 2023-04-25 01:18+0000\n"
+"PO-Revision-Date: 2023-04-11 05:58+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.traced_module.traced_module.InternalGraph.po\n"
-"X-Crowdin-File-ID: 8041\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.traced_module.traced_module.InternalGraph.rst:5
 msgid "InternalGraph"
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph:1 of
-msgid "``InternalGraph`` is the main data structure used in the TracedModule. It is used to represent the execution procedure of Module's forward method."
+msgid ""
+"``InternalGraph`` is the main data structure used in the TracedModule. It"
+" is used to represent the execution procedure of Module's forward method."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph:4
@@ -32,8 +30,12 @@ msgstr ""
 msgid "For example, the following code"
 msgstr ""
 
-#: megengine.traced_module.traced_module.InternalGraph:28 of
-msgid "Will produce the following ``InternalGraph``::"
+#: megengine.traced_module.traced_module.InternalGraph:29 of
+msgid "Will produce the following ``InternalGraph``:"
+msgstr ""
+
+#: megengine.traced_module.traced_module.InternalGraph:29 of
+msgid "print(traced_module.graph)"
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.add_input_node:1 of
@@ -70,7 +72,9 @@ msgid "the dtype of the new input Node. Default: float32"
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.add_input_node:11 of
-msgid "the name of the new input Node. When the name is used in the graph, a suffix will be added to it."
+msgid ""
+"the name of the new input Node. When the name is used in the graph, a "
+"suffix will be added to it."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.add_output_node:1 of
@@ -78,7 +82,10 @@ msgid "Add an output node to the Graph."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.add_output_node:3 of
-msgid "The Graph output will become a ``tuple`` after calling ``add_output_node``. The first element of the ``tuple`` is the original output, and the second is the ``node``."
+msgid ""
+"The Graph output will become a ``tuple`` after calling "
+"``add_output_node``. The first element of the ``tuple`` is the original "
+"output, and the second is the ``node``."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.add_output_node:31
@@ -233,7 +240,9 @@ msgid "The full name of the ``Node`` can be obtained by the following code"
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.get_node_by_name:15 of
-msgid "a string in glob syntax that can contain ``?`` and ``*`` to match a single or arbitrary characters."
+msgid ""
+"a string in glob syntax that can contain ``?`` and ``*`` to match a "
+"single or arbitrary characters."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.get_node_by_name:18 of
@@ -263,15 +272,21 @@ msgid "Initialize the trace mode and insertion position."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.insert_exprs:3 of
-msgid "When used within a 'with' statement, this will temporary set the trace mode and then restore normal mode when the with statement exits::"
+msgid ""
+"When used within a 'with' statement, this will temporary set the trace "
+"mode and then restore normal mode when the with statement exits::"
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.insert_exprs:11 of
-msgid "the ``expr`` after which to insert. If None, the insertion position will be automatically set based on the input node."
+msgid ""
+"the ``expr`` after which to insert. If None, the insertion position will "
+"be automatically set based on the input node."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.insert_exprs:14 of
-msgid "A resource manager that will initialize trace mode on ``__enter__`` and restore normal mode on ``__exit__``."
+msgid ""
+"A resource manager that will initialize trace mode on ``__enter__`` and "
+"restore normal mode on ``__exit__``."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.name:1 of
@@ -296,7 +311,9 @@ msgid "Get the list of output Nodes of this graph."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.qualname:1 of
-msgid "Get the `qualname` of this graph. The `qualname` can be used to get the submodule from the traced Module or Module."
+msgid ""
+"Get the `qualname` of this graph. The `qualname` can be used to get the "
+"submodule from the traced Module or Module."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.qualname:5 of
@@ -316,7 +333,9 @@ msgid "Reset the output Nodes of the graph."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.reset_outputs:5 of
-msgid "This method only supports resetting the output of graphs that do not have a parent graph."
+msgid ""
+"This method only supports resetting the output of graphs that do not have"
+" a parent graph."
 msgstr ""
 
 #: megengine.traced_module.traced_module.InternalGraph.reset_outputs:8 of
@@ -461,5 +480,8 @@ msgstr ""
 #~ ":obj:`reset_outputs "
 #~ "<megengine.traced_module.traced_module.InternalGraph.reset_outputs>`\\"
 #~ " \\(outputs\\)"
+#~ msgstr ""
+
+#~ msgid "Will produce the following ``InternalGraph``::"
 #~ msgstr ""
 

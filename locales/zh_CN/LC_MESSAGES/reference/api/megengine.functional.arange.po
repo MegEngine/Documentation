@@ -1,33 +1,34 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-04-11 05:47\n"
+"POT-Creation-Date: 2023-04-25 01:18+0000\n"
+"PO-Revision-Date: 2023-04-11 05:47+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.arange.po\n"
-"X-Crowdin-File-ID: 2042\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.functional.arange.rst:2
 msgid "megengine.functional.arange"
 msgstr "megengine.functional.arange"
 
 #: megengine.functional.tensor.arange:1 of
-msgid "Returns evenly spaced values within the half-open interval ``[start, stop)`` as a one-dimensional tensor."
+msgid ""
+"Returns evenly spaced values within the half-open interval ``[start, "
+"stop)`` as a one-dimensional tensor."
 msgstr "返回半开区间 [start, stop) 内均匀间隔的值组成的1维Tensor。"
 
 #: megengine.functional.tensor.arange:5 of
-msgid "This function cannot guarantee that the interval does not include the stop value in those cases where step is not an integer and floating-point rounding errors affect the length of the output tensor."
+msgid ""
+"This function cannot guarantee that the interval does not include the "
+"stop value in those cases where step is not an integer and floating-point"
+" rounding errors affect the length of the output tensor."
 msgstr "step 不是整数且浮点舍入误差影响了输出Tensor长度的情况下，本函数无法保证区间中不包含 stop 值。"
 
 #: megengine.functional.tensor.arange of
@@ -35,20 +36,30 @@ msgid "参数"
 msgstr "参数"
 
 #: megengine.functional.tensor.arange:9 of
-msgid "if ``stop`` is specified, the start of interval (inclusive); otherwise, the end of the interval (exclusive). If ``stop`` is not specified, the default starting value is ``0``."
-msgstr "如果 ``stop`` 被指定了， 该值表示区间的开始(区间包含该值)；否则该值表示区间的结束(区间不包含该值)。如果 ``stop`` 没有被指定， 默认的区间开始值是 ``0``。"
+msgid ""
+"if ``stop`` is specified, the start of interval (inclusive); otherwise, "
+"the end of the interval (exclusive). If ``stop`` is not specified, the "
+"default starting value is ``0``."
+msgstr ""
+"如果 ``stop`` 被指定了， 该值表示区间的开始(区间包含该值)；否则该值表示区间的结束(区间不包含该值)。如果 ``stop`` "
+"没有被指定， 默认的区间开始值是 ``0``。"
 
 #: megengine.functional.tensor.arange:13 of
 msgid "the end of the interval."
 msgstr "区间的终点"
 
 #: megengine.functional.tensor.arange:16 of
-msgid "the distance between two adjacent elements ( ``out[i+1] - out[i]`` ). Must not be 0 ; may be negative, this results i an empty tensor if stop >= start ."
-msgstr "两个相邻元素之间的距离 ( ``out[i+1] - out[i]`` ). 不能为0但可以为负数，如果为负数且stop>=start, 则结果是一个空张量"
+msgid ""
+"the distance between two adjacent elements ( ``out[i+1] - out[i]`` ). "
+"Must not be 0 ; may be negative, this results i an empty tensor if stop "
+">= start ."
+msgstr ""
+"两个相邻元素之间的距离 ( ``out[i+1] - out[i]`` ). 不能为0但可以为负数，如果为负数且stop>=start, "
+"则结果是一个空张量"
 
 #: megengine.functional.tensor.arange of
-msgid "Keyword Arguments"
-msgstr "关键字参数"
+msgid "关键字参数"
+msgstr ""
 
 #: megengine.functional.tensor.arange:20 of
 msgid "output tensor data type."
@@ -75,15 +86,22 @@ msgid "返回"
 msgstr "返回"
 
 #: megengine.functional.tensor.arange:28 of
-msgid "A one-dimensional tensor containing evenly spaced values.  The length of the output tensor must be ``ceil((stop-start)/step)`` if ``stop - start`` and ``step`` have the same sign, and length 0 otherwise."
-msgstr "由均匀间隔的值组成的1维tensor。在 ``stop - start`` 和 ``step`` 符号相同时输出 tensor 的长度是 ``ceil((stop-start)/step)``，其它情况下是0。"
+msgid ""
+"A one-dimensional tensor containing evenly spaced values.  The length of "
+"the output tensor must be ``ceil((stop-start)/step)`` if ``stop - start``"
+" and ``step`` have the same sign, and length 0 otherwise."
+msgstr ""
+"由均匀间隔的值组成的1维tensor。在 ``stop - start`` 和 ``step`` 符号相同时输出 tensor 的长度是 "
+"``ceil((stop-start)/step)``，其它情况下是0。"
 
 #: megengine.functional.tensor.arange:28 of
 msgid "A one-dimensional tensor containing evenly spaced values."
 msgstr "由均匀间隔的值组成的1维tensor。"
 
 #: megengine.functional.tensor.arange:30 of
-msgid "The length of the output tensor must be ``ceil((stop-start)/step)`` if ``stop - start`` and ``step`` have the same sign, and length 0 otherwise."
+msgid ""
+"The length of the output tensor must be ``ceil((stop-start)/step)`` if "
+"``stop - start`` and ``step`` have the same sign, and length 0 otherwise."
 msgstr "在 stop - start 和 step 符号相同时输出 tensor 的长度是 ceil((stop-start)/step)，其它情况下是0。"
 
 #: megengine.functional.tensor.arange:34 of
@@ -124,7 +142,7 @@ msgstr "实际案例"
 #~ msgstr "输出："
 
 #~ msgid "Keyword Arguments"
-#~ msgstr ""
+#~ msgstr "关键字参数"
 
 #~ msgid "A one-dimensional tensor containing evenly spaced values."
 #~ msgstr "由均匀间隔的值组成的1维tensor。"
