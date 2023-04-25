@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 10:52+0800\n"
-"PO-Revision-Date: 2021-11-12 01:27\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,103 +14,103 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/optimizer/advanced-parameter-optimization.po\n"
-"X-Crowdin-File-ID: 8171\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/optimizer/advanced-parameter-optimization.po\n"
+"X-Crowdin-File-ID: 9965\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:5
 msgid "参数优化进阶配置"
-msgstr "crwdns85051:0crwdne85051:0"
+msgstr "crwdns119083:0crwdne119083:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:7
 msgid "假定网络使用如下优化器进行训练："
-msgstr "crwdns85053:0crwdne85053:0"
+msgstr "crwdns119085:0crwdne119085:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:17
 msgid "这个优化器对所有参数都使用同一学习速率进行优化，本章将介绍如何做到对不同的参数采用不同的学习速率。"
-msgstr "crwdns85055:0crwdne85055:0"
+msgstr "crwdns119087:0crwdne119087:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:21
 msgid "不同参数使用不同的学习速率"
-msgstr "crwdns85057:0crwdne85057:0"
+msgstr "crwdns119089:0crwdne119089:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:23
 msgid ":class:`~.megengine.optimizer.Optimizer` 支持将网络的参数进行分组， 不同的参数组可以采用不同的学习速率进行训练。 一个参数组由一个字典表示，这个字典中有"
-msgstr "crwdns85059:0:class:crwdne85059:0"
+msgstr "crwdns119091:0:class:crwdne119091:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:26
 msgid "``'params': param_list`` ，用来指定参数组包含的参数。此键值对必须有。"
-msgstr "crwdns85061:0crwdne85061:0"
+msgstr "crwdns119093:0crwdne119093:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:28
 msgid "``'lr': learning_rate`` ，用来指定此参数组的学习速率。此键值对有时可省略，省略后参数组的学习速率由优化器指定。"
-msgstr "crwdns85063:0crwdne85063:0"
+msgstr "crwdns119095:0crwdne119095:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:30
 msgid "所有待优化参数组的字典会组成一个列表作为 :class:`~.megengine.optimizer.Optimizer` 实例化时的第一个参数传入。"
-msgstr "crwdns85065:0:class:crwdne85065:0"
+msgstr "crwdns119097:0:class:crwdne119097:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:32
 msgid "为了更好的说明参数组，我们首先使用 :class:`~.megengine.module.Module` 提供的 :meth:`~.megengine.module.Module.named_parameters` 函数来对网络参数进行分组。 这个函数返回一个包含网络所有参数并且以参数名字为键、参数变量为值的字典："
-msgstr "crwdns85067:0:class:crwdnd85067:0:meth:crwdne85067:0"
+msgstr "crwdns119099:0:class:crwdnd119099:0:meth:crwdne119099:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:54
 msgid "根据参数的名字我们可以将 ``LeNet`` 中所有卷积的参数分为一组，所有全连接层的参数分为另一组："
-msgstr "crwdns85069:0crwdne85069:0"
+msgstr "crwdns119101:0crwdne119101:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:67
 msgid "分组后即可根据下述代码对不同参数组设置不同的学习速率："
-msgstr "crwdns85071:0crwdne85071:0"
+msgstr "crwdns119103:0crwdne119103:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:82
 msgid "优化器中设置的参数组列表对应于 :attr:`~.megengine.Optimizer.param_groups` 属性。 我们可以通过其获取不同参数组的学习速率。"
-msgstr "crwdns85073:0:attr:crwdne85073:0"
+msgstr "crwdns119105:0:attr:crwdne119105:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:97
 msgid "训练中对学习速率的更改"
-msgstr "crwdns85075:0crwdne85075:0"
+msgstr "crwdns119107:0crwdne119107:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:99
 msgid "MegEngine 也支持在训练过程中对学习速率进行修改，比如部分参数训练到一定程度后就不再需要优化， 此时将对应参数组的学习速率设为零即可。我们修改训练代码进行示例说明。 修改后的训练代码总共训练四个epoch，我们会在第二个epoch结束时将所有全连接层参数的学习速率置零， 并在每个epoch当中输出 ``LeNet`` 中全连接层的部分参数值以显示是否被更新。"
-msgstr "crwdns85077:0crwdne85077:0"
+msgstr "crwdns119109:0crwdne119109:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:132
 msgid "从输出可以看到在学习速率设为0之前参数值是在不断更新的，但是在设为0之后参数值就不再变化。"
-msgstr "crwdns85079:0crwdne85079:0"
+msgstr "crwdns119111:0crwdne119111:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:134
 msgid "同时多数网络在训练当中会不断减小学习速率，如下代码展示了 MegEngine 是如何在训练过程中线性减小学习速率的："
-msgstr "crwdns85081:0crwdne85081:0"
+msgstr "crwdns119113:0crwdne119113:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:147
 msgid "不同参数使用不同的优化器"
-msgstr "crwdns85083:0crwdne85083:0"
+msgstr "crwdns119115:0crwdne119115:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:149
 msgid "对于不同的参数，也可以使用不同的优化器对它们分别优化。 对参数的梯度置零（ :meth:`~.megengine.optimizer.Optimizer.clear_grad` ） 和更新（ :meth:`~.megengine.optimizer.Optimizer.step` ）操作， 如果所有优化器都是同时进行的，可以定义一个 ``MultipleOptimizer`` 类。 在初始化时声明多个不同的优化器，在调用置零函数和更新函数时对所有优化器执行对应操作。"
-msgstr "crwdns85085:0:meth:crwdnd85085:0:meth:crwdne85085:0"
+msgstr "crwdns119117:0:meth:crwdnd119117:0:meth:crwdne119117:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:169
 msgid "假设想用 :class:`~.megengine.optimizer.SGD` 优化所有卷积参数， 用 :class:`~.megengine.optimizer.adam.Adam` 优化所有全连接层参数。 可以按照如下方式定义优化器，不需要改变训练代码就可以达到不同的参数使用不同的优化器优化的效果。"
-msgstr "crwdns85087:0:class:crwdnd85087:0:class:crwdne85087:0"
+msgstr "crwdns119119:0:class:crwdnd119119:0:class:crwdne119119:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:179
 msgid "如果不同的参数梯度置零和更新不是同时进行的，你只需要定义多个优化器，在不同的时间调用对应的函数即可。"
-msgstr "crwdns85089:0crwdne85089:0"
+msgstr "crwdns119121:0crwdne119121:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:182
 msgid "固定部分参数不优化"
-msgstr "crwdns85091:0crwdne85091:0"
+msgstr "crwdns119123:0crwdne119123:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:184
 msgid "除了将不训练的参数分为一组并将学习速率设为零外， MegEngine 还提供了其他途径来固定参数不进行优化： 仅将需要优化的参数与求导器和优化器绑定即可。 如下代码所示，仅对 ``LeNet`` 中的卷积参数进行优化："
-msgstr "crwdns85093:0crwdne85093:0"
+msgstr "crwdns119125:0crwdne119125:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:207
 msgid "下述代码将上面的设置加入到了具体训练当中，能够更加直观的看到各个参数的梯度差异："
-msgstr "crwdns85095:0crwdne85095:0"
+msgstr "crwdns119127:0crwdne119127:0"
 
 #: ../../source/user-guide/model-development/optimizer/advanced-parameter-optimization.rst:247
 msgid "从输出可以看到除了卷积参数有梯度外其余参数均没有梯度也就不会更新。"
-msgstr "crwdns85097:0crwdne85097:0"
+msgstr "crwdns119129:0crwdne119129:0"
 

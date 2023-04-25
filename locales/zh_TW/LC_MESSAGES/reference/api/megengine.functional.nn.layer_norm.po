@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 12:16\n"
+"POT-Creation-Date: 2023-04-25 01:18+0000\n"
+"PO-Revision-Date: 2023-04-25 01:27\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,46 +11,68 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.nn.layer_norm.po\n"
-"X-Crowdin-File-ID: 8225\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.nn.layer_norm.po\n"
+"X-Crowdin-File-ID: 9237\n"
 
 #: ../../source/reference/api/megengine.functional.nn.layer_norm.rst:2
 msgid "megengine.functional.nn.layer\\_norm"
-msgstr "crwdns86751:0crwdne86751:0"
+msgstr "crwdns101969:0crwdne101969:0"
 
 #: megengine.functional.nn.layer_norm:1 of
-msgid "Applies layer normalization to the input. Support tensor of any shape as input. Reference: https://arxiv.org/pdf/1803.08494.pdf."
-msgstr "crwdns86753:0crwdne86753:0"
+msgid "Applies layer normalization to the input."
+msgstr "crwdns121607:0crwdne121607:0"
+
+#: megengine.functional.nn.layer_norm:3 of
+msgid "Refer to :class:`~.LayerNorm` for more information."
+msgstr "crwdns121609:0:class:crwdne121609:0"
 
 #: megengine.functional.nn.layer_norm of
 msgid "参数"
-msgstr "crwdns86755:0crwdne86755:0"
+msgstr "crwdns101973:0crwdne101973:0"
 
-#: megengine.functional.nn.layer_norm:5 of
+#: megengine.functional.nn.layer_norm:6 of
 msgid "input tensor."
-msgstr "crwdns86757:0crwdne86757:0"
+msgstr "crwdns101975:0crwdne101975:0"
 
-#: megengine.functional.nn.layer_norm:7 of
-msgid "the shape that you want to be normalizated"
-msgstr "crwdns86759:0crwdne86759:0"
+#: megengine.functional.nn.layer_norm:8 of
+msgid "the shape that you want to be normalizated See :attr:`normalized_shape` in :class:`~.LayerNorm`."
+msgstr "crwdns121611:0:attr:crwdnd121611:0:class:crwdne121611:0"
 
-#: megengine.functional.nn.layer_norm:9 of
-msgid "whether to use weight and bias"
-msgstr "crwdns86761:0crwdne86761:0"
+#: megengine.functional.nn.layer_norm:11 of
+msgid "whether to use learnable affine parameters (weight, bias)"
+msgstr "crwdns121613:0crwdne121613:0"
 
-#: megengine.functional.nn.layer_norm:11 megengine.functional.nn.layer_norm:13
-#: of
-msgid "must not be None when the affine is true"
-msgstr "crwdns86763:0crwdne86763:0"
+#: megengine.functional.nn.layer_norm:13 of
+msgid "scaling tensor in the learnable affine parameters. See :math:`\\gamma` in :class:`~.LayerNorm`."
+msgstr "crwdns121615:0:math:crwdnd121615:0:class:crwdne121615:0"
 
-#: megengine.functional.nn.layer_norm:15 of
+#: megengine.functional.nn.layer_norm:16 of
+msgid "bias tensor in the learnable affine parameters. See :math:`\\beta` in :class:`~.LayerNorm`."
+msgstr "crwdns121617:0:math:crwdnd121617:0:class:crwdne121617:0"
+
+#: megengine.functional.nn.layer_norm:19 of
 msgid "a value added to the denominator for numerical stability. Default: 1e-5"
-msgstr "crwdns86767:0crwdne86767:0"
+msgstr "crwdns101983:0crwdne101983:0"
 
 #~ msgid "must not be None when the bias is true"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "Applies layer normalization to the "
+#~ "input. Support tensor of any shape "
+#~ "as input. Reference: "
+#~ "https://arxiv.org/pdf/1803.08494.pdf."
+#~ msgstr ""
+#~ "``channel`` 方向做归一化，算 chw 的均值，细节请参考: "
+#~ "https://arxiv.org/pdf/1803.08494.pdf。"
+
+#~ msgid "whether to use weight and bias"
+#~ msgstr "布尔值，当设为 True，给该层添加可学习的仿射变换参数。"
+
+#~ msgid "must not be None when the affine is true"
+#~ msgstr "weight 和 bias Tensor, 如果 affine 为 True, 则此 Tensor 不能为空。"
 

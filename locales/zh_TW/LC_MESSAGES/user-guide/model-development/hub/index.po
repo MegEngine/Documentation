@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-12-13 15:10\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,148 +15,148 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/hub/index.po\n"
-"X-Crowdin-File-ID: 8177\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/hub/index.po\n"
+"X-Crowdin-File-ID: 9971\n"
 
 #: ../../source/user-guide/model-development/hub/index.rst:5
 msgid "使用 Hub 发布和加载预训练模型"
-msgstr "crwdns85135:0crwdne85135:0"
+msgstr "crwdns119265:0crwdne119265:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:7
 msgid "借助于 MegEngine 提供的 :mod:`~.hub` 模块，研究人员能够很方便地："
-msgstr "crwdns87615:0:mod:crwdne87615:0"
+msgstr "crwdns119267:0:mod:crwdne119267:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:9
 msgid "通过添加一个 ``hubconf.py`` 文件，对自己开源在 GitHub 或 GitLab 上的预训练模型进行发布；"
-msgstr "crwdns87617:0crwdne87617:0"
+msgstr "crwdns119269:0crwdne119269:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:10
 msgid "通过 :func:`megengine.hub.load` 接口加载其他研究人员发布的预训练模型，有利于进行研究结果的复现；"
-msgstr "crwdns87619:0:func:crwdne87619:0"
+msgstr "crwdns119271:0:func:crwdne119271:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:11
 msgid "加载完成的预训练模型还可以用作迁移学习的微调，或是进行预测。"
-msgstr "crwdns87621:0crwdne87621:0"
+msgstr "crwdns119273:0crwdne119273:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:13
 msgid "这一小节将以 `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ 系列模型为例子，展示模型的发布和加载流程。"
-msgstr "crwdns87623:0crwdne87623:0"
+msgstr "crwdns119275:0crwdne119275:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:18
 msgid "此处的 “预训练模型” 包括 1. 模型的定义 2. 预训练权重。"
-msgstr "crwdns87625:0crwdne87625:0"
+msgstr "crwdns119277:0crwdne119277:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:20
 msgid "相较于使用 :meth:`.Module.load_state_dict` 和 :func:`megengine.load` 反序列化并加载模型的状态字典， :func:`megengine.hub.load` 还能够在此之前替用户完成加载模型定义的过程（根据 ``hubconf.py`` ）， 加载后的模型也可被用于 :ref:`dump` ，进而用于高性能的推理部署情景。"
-msgstr "crwdns87627:0:meth:crwdnd87627:0:func:crwdnd87627:0:func:crwdnd87627:0:ref:crwdne87627:0"
+msgstr "crwdns119279:0:meth:crwdnd119279:0:func:crwdnd119279:0:func:crwdnd119279:0:ref:crwdne119279:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:26
 msgid "Hub 的相关功能也可以用作内部 Git 服务器，需在使用相关接口时配置相应的参数。"
-msgstr "crwdns87629:0crwdne87629:0"
+msgstr "crwdns119281:0crwdne119281:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:30
 msgid "MegEngine 官网上提供了 `模型中心 <https://megengine.org.cn/model-hub>`_ 板块， 基于旷视研究院领先的深度学习算法，提供满足多业务场景的预训练模型。 实际上即对官方模型库 Models 添加了 :models:`hubconf.py` 配置。 如果你希望将自己的研究模型发布到 MegEngine 官方的模型中心，请参考 `Hub <https://github.com/MegEngine/Hub>`_ 存储库的 README 文件。"
-msgstr "crwdns87631:0:models:crwdne87631:0"
+msgstr "crwdns119283:0:models:crwdne119283:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:37
 msgid "发布预训练模型"
-msgstr "crwdns87633:0crwdne87633:0"
+msgstr "crwdns119285:0crwdne119285:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:39
 msgid "在 ``hubconf.py`` 文件中，需要将提供至少一个入口点（Entrypoint），形式如下："
-msgstr "crwdns87635:0crwdne87635:0"
+msgstr "crwdns119287:0crwdne119287:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:47
 msgid "调用入口点时，通常返回一个模型 ( M.Module ), 也可以是其他希望通过 Hub 加载的对象；"
-msgstr "crwdns87637:0crwdne87637:0"
+msgstr "crwdns119289:0crwdne119289:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:48
 msgid "加载模型时 ``*args`` 和 ``**kwargs`` 参数将被传递给真正的可调用对象；"
-msgstr "crwdns87639:0crwdne87639:0"
+msgstr "crwdns119291:0crwdne119291:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:49
 msgid "入口点的文档字符串会在调用 :func:`.hub.help` 接口时显示。"
-msgstr "crwdns87641:0:func:crwdne87641:0"
+msgstr "crwdns119293:0:func:crwdne119293:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:52
 msgid "提供入口点"
-msgstr "crwdns87643:0crwdne87643:0"
+msgstr "crwdns119295:0crwdne119295:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:54
 msgid "以官方 `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ 模型为例， 模型定义文件在 :models:`official/vision/classification/resnet/model.py`."
-msgstr "crwdns87645:0:models:crwdne87645:0"
+msgstr "crwdns119297:0:models:crwdne119297:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:64
 msgid "我们在 ``hubconf.py`` 中可以这样实现一个入口点："
-msgstr "crwdns87647:0crwdne87647:0"
+msgstr "crwdns119299:0crwdne119299:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:74
 msgid "不过由于 ResNet 的 ``model.py`` 中已经对 ``resnet18``, ``resnet34``, ``resnet50``, ``resnet101``, ``resnet152`` 等常见的网络结构按照 Hub 风格进行了定义，因此实际的 :models:`hubconf.py` 中只需要进行导入它们即可："
-msgstr "crwdns87649:0:models:crwdne87649:0"
+msgstr "crwdns119301:0:models:crwdne119301:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:87
 msgid "提供预训练权重"
-msgstr "crwdns87651:0crwdne87651:0"
+msgstr "crwdns119303:0crwdne119303:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:89
 msgid "通过给入口点添加 :class:`.hub.pretrained` 装饰器，来标识预训练权重的 URL 地址："
-msgstr "crwdns87653:0:class:crwdne87653:0"
+msgstr "crwdns119305:0:class:crwdne119305:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:98
 msgid "当被装饰的函数具有参数 ``pretrained=True`` 时，调用时将自动下载并对返回的模型填入预训练的权重；"
-msgstr "crwdns87655:0crwdne87655:0"
+msgstr "crwdns119307:0crwdne119307:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:99
 msgid "预训练权重可以存在于 Git 存储库中，对于开源在 GitHub / GitLab 的项目， 需要考虑预训练权重的体积整体大小以及用户的下载条件，可根据实际情况判断 —— 选择将预训练权重附加和模型放在一起发布，还是放在其它位置（比如网盘、OSS 等）。"
-msgstr "crwdns87657:0crwdne87657:0"
+msgstr "crwdns119309:0crwdne119309:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:104
 msgid "加载预训练模型"
-msgstr "crwdns87659:0crwdne87659:0"
+msgstr "crwdns119311:0crwdne119311:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:106
 msgid "通过 :func:`.hub.list` 接口可以列举出指定的 GitHub 库中 ``hubconf.py`` 中提供的预训练模型入口。"
-msgstr "crwdns87661:0:func:crwdne87661:0"
+msgstr "crwdns119313:0:func:crwdne119313:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:108
 msgid "例如运行下面这个命令，可以找到 GitHub 的 MegEngine/Models 库中所有发布的预训练模型："
-msgstr "crwdns87663:0crwdne87663:0"
+msgstr "crwdns119315:0crwdne119315:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:119
 msgid "假定我们需要的是 ``resnet18`` 预训练模型，使用 :func:`.hub.help` 接口，可以查看对应入口点的文档字符串信息："
-msgstr "crwdns87665:0:func:crwdne87665:0"
+msgstr "crwdns119317:0:func:crwdne119317:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:124
 msgid "只需要使用 :func:`.hub.load` 接口，便可以一次性地完成对应预训练模型的加载："
-msgstr "crwdns87667:0:func:crwdne87667:0"
+msgstr "crwdns119319:0:func:crwdne119319:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:131
 msgid "在推理之前，记得调用 ``model.eval()`` 将模型切换到评估模式。"
-msgstr "crwdns87669:0crwdne87669:0"
+msgstr "crwdns119321:0crwdne119321:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:135
 msgid "默认情况下， 将从 GitHub 对应存储库的 master 分支进行 ``hubconf.py`` 等文件的拉取："
-msgstr "crwdns87671:0crwdne87671:0"
+msgstr "crwdns119323:0crwdne119323:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:137
 msgid "可通过形如 ``megengine/models:dev`` 的形式指定到 dev 分支名（或标签名）；"
-msgstr "crwdns87673:0crwdne87673:0"
+msgstr "crwdns119325:0crwdne119325:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:138
 msgid "可通过设置 ``git_host`` 参数，选择使用指定的 Git 服务器；"
-msgstr "crwdns87675:0crwdne87675:0"
+msgstr "crwdns119327:0crwdne119327:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:139
 msgid "可通过设置 ``commit`` 参数，选择使用指定的 commit 位置；"
-msgstr "crwdns87677:0crwdne87677:0"
+msgstr "crwdns119329:0crwdne119329:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:140
 msgid "可通过设置 ``protocol`` 参数，选择获取代码仓库时所用的协议。"
-msgstr "crwdns87679:0crwdne87679:0"
+msgstr "crwdns119331:0crwdne119331:0"
 
 #: ../../source/user-guide/model-development/hub/index.rst:142
 msgid "通常情况下，无需进行额外设置，可以从公开的 GitHub 库以 HTTPS 协议进行 Clone. 如果进行了具体配置（如使用了内部 Git 服务器），请确保你有对应代码仓库的访问权限。"
-msgstr "crwdns87681:0crwdne87681:0"
+msgstr "crwdns119333:0crwdne119333:0"
 
 #~ msgid "内容正在建设中..."
 #~ msgstr "The content is under construction..."

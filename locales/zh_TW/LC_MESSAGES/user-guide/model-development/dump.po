@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 07:07\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,143 +14,143 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/dump.po\n"
-"X-Crowdin-File-ID: 2854\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/dump.po\n"
+"X-Crowdin-File-ID: 9881\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/dump.rst:5
 msgid "导出序列化模型文件（Dump）"
-msgstr "crwdns45466:0crwdne45466:0"
+msgstr "crwdns115731:0crwdne115731:0"
 
 #: ../../source/user-guide/model-development/dump.rst:9
 msgid "序列化操作依赖于 :py:class:`~.jit.trace` 进行的 :ref:`将动态图转为静态图 <trace>` 操作；"
-msgstr "crwdns45468:0:ref:crwdne45468:0"
+msgstr "crwdns115733:0:ref:crwdne115733:0"
 
 #: ../../source/user-guide/model-development/dump.rst:10
 msgid "与此同时，需要在 :py:class:`~.jit.trace` 中指定 ``capture_as_const = True`` 以将参数固化下来。"
-msgstr "crwdns45470:0crwdne45470:0"
+msgstr "crwdns115735:0crwdne115735:0"
 
 #: ../../source/user-guide/model-development/dump.rst:12
 msgid "考虑到推理部署需求，使用 :py:meth:`~.jit.trace.dump`, 即可将训练好的模型序列化到一个文件或文件对象中："
-msgstr "crwdns45472:0crwdne45472:0"
+msgstr "crwdns115737:0crwdne115737:0"
 
 #: ../../source/user-guide/model-development/dump.rst:14
 msgid "我们以 `ResNet50 <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ 为例子，参考代码片段如下："
-msgstr "crwdns45474:0crwdne45474:0"
+msgstr "crwdns115739:0crwdne115739:0"
 
 #: ../../source/user-guide/model-development/dump.rst:39
 msgid "执行脚本，并完成模型转换后，我们就获得了 MegEngine C++ API 可识别的预训练模型文件 ``resnet50.mge`` ."
-msgstr "crwdns45476:0crwdne45476:0"
+msgstr "crwdns115741:0crwdne115741:0"
 
 #: ../../source/user-guide/model-development/dump.rst:42
 msgid "Dump 常用参数说明"
-msgstr "crwdns45478:0crwdne45478:0"
+msgstr "crwdns115743:0crwdne115743:0"
 
 #: ../../source/user-guide/model-development/dump.rst:44
 msgid "使用 :meth:`~.jit.trace.dump` 时，可传入多个参数，其中最常用的有如下两个："
-msgstr "crwdns45480:0:meth:crwdne45480:0"
+msgstr "crwdns115745:0:meth:crwdne115745:0"
 
 #: ../../source/user-guide/model-development/dump.rst:48
 msgid "``arg_names``"
-msgstr "crwdns45482:0crwdne45482:0"
+msgstr "crwdns115747:0crwdne115747:0"
 
 #: ../../source/user-guide/model-development/dump.rst:47
 msgid "在序列化的时候统一设置模型输入 Tensor 的名字。由于不同的模型的差异，会导致输入 Tensor 的名字千差万别。 为了减少理解和使用难度，可使用此参数统一设置模型输入为诸如 ``arg_0``, ``arg_1``, ..."
-msgstr "crwdns45484:0crwdne45484:0"
+msgstr "crwdns115749:0crwdne115749:0"
 
 #: ../../source/user-guide/model-development/dump.rst:53
 msgid "``optimize_for_inference``"
-msgstr "crwdns45486:0crwdne45486:0"
+msgstr "crwdns115751:0crwdne115751:0"
 
 #: ../../source/user-guide/model-development/dump.rst:51
 msgid "训练出的模型往往在部署时不能发挥最优的性能， 而我们提供 ``optimize_for_inference`` 来保证序列化出的模型是经特定优化的。 详细的键值参数可见下方的 :ref:`optimieze-for-inference-options` ."
-msgstr "crwdns45488:0:ref:crwdne45488:0"
+msgstr "crwdns115753:0:ref:crwdne115753:0"
 
 #: ../../source/user-guide/model-development/dump.rst:57
 msgid "``optimize_for_inference`` 参数默认是 ``True`` ， 所以即使不给任何键值优化参数，仍然会做一些基础的优化操作， 这会导致序列化出来的模型相较之前的定义有细微的差别。"
-msgstr "crwdns45490:0crwdne45490:0"
+msgstr "crwdns115755:0crwdne115755:0"
 
 #: ../../source/user-guide/model-development/dump.rst:64
 msgid "推理优化选项表"
-msgstr "crwdns45492:0crwdne45492:0"
+msgstr "crwdns115757:0crwdne115757:0"
 
 #: ../../source/user-guide/model-development/dump.rst:67
 msgid "``--enable-io16xc32``"
-msgstr "crwdns45494:0crwdne45494:0"
+msgstr "crwdns115759:0crwdne115759:0"
 
 #: ../../source/user-guide/model-development/dump.rst:67
 msgid "采用 float16 作为算子之间的数据传输类型，使用 float32 作为计算类型。"
-msgstr "crwdns45496:0crwdne45496:0"
+msgstr "crwdns115761:0crwdne115761:0"
 
 #: ../../source/user-guide/model-development/dump.rst:70
 msgid "``--enable-ioc16``"
-msgstr "crwdns45498:0crwdne45498:0"
+msgstr "crwdns115763:0crwdne115763:0"
 
 #: ../../source/user-guide/model-development/dump.rst:70
 msgid "采用 float16 作为算子之间的数据传输类型以及计算类型。"
-msgstr "crwdns45500:0crwdne45500:0"
+msgstr "crwdns115765:0crwdne115765:0"
 
 #: ../../source/user-guide/model-development/dump.rst:73
 msgid "``--enable-fuse-conv-bias-nonlinearity``"
-msgstr "crwdns45502:0crwdne45502:0"
+msgstr "crwdns115767:0crwdne115767:0"
 
 #: ../../source/user-guide/model-development/dump.rst:73
 msgid "是否融合 conv+bias+nonlinearity。"
-msgstr "crwdns45504:0crwdne45504:0"
+msgstr "crwdns115769:0crwdne115769:0"
 
 #: ../../source/user-guide/model-development/dump.rst:76
 msgid "``--enalbe-hwcd4``"
-msgstr "crwdns45506:0crwdne45506:0"
+msgstr "crwdns115771:0crwdne115771:0"
 
 #: ../../source/user-guide/model-development/dump.rst:76
 msgid "采用 hwcd4 数据布局。"
-msgstr "crwdns45508:0crwdne45508:0"
+msgstr "crwdns115773:0crwdne115773:0"
 
 #: ../../source/user-guide/model-development/dump.rst:79
 msgid "``--enable-nchw88``"
-msgstr "crwdns45510:0crwdne45510:0"
+msgstr "crwdns115775:0crwdne115775:0"
 
 #: ../../source/user-guide/model-development/dump.rst:79
 msgid "采用 nchw88 数据布局。"
-msgstr "crwdns45512:0crwdne45512:0"
+msgstr "crwdns115777:0crwdne115777:0"
 
 #: ../../source/user-guide/model-development/dump.rst:82
 msgid "``--enable-nchw44``"
-msgstr "crwdns45514:0crwdne45514:0"
+msgstr "crwdns115779:0crwdne115779:0"
 
 #: ../../source/user-guide/model-development/dump.rst:82
 msgid "采用 nchw44 数据布局。"
-msgstr "crwdns45516:0crwdne45516:0"
+msgstr "crwdns115781:0crwdne115781:0"
 
 #: ../../source/user-guide/model-development/dump.rst:85
 msgid "``--enable-nchw44-dot``"
-msgstr "crwdns45518:0crwdne45518:0"
+msgstr "crwdns115783:0crwdne115783:0"
 
 #: ../../source/user-guide/model-development/dump.rst:85
 msgid "采用 nchw44_dot 数据布局。"
-msgstr "crwdns45520:0crwdne45520:0"
+msgstr "crwdns115785:0crwdne115785:0"
 
 #: ../../source/user-guide/model-development/dump.rst:88
 msgid "``--enable-nchw32``"
-msgstr "crwdns45522:0crwdne45522:0"
+msgstr "crwdns115787:0crwdne115787:0"
 
 #: ../../source/user-guide/model-development/dump.rst:88
 msgid "采用 nchw32 数据布局。"
-msgstr "crwdns45524:0crwdne45524:0"
+msgstr "crwdns115789:0crwdne115789:0"
 
 #: ../../source/user-guide/model-development/dump.rst:91
 msgid "``--enable-chwn4``"
-msgstr "crwdns45526:0crwdne45526:0"
+msgstr "crwdns115791:0crwdne115791:0"
 
 #: ../../source/user-guide/model-development/dump.rst:91
 msgid "采用 chwn4 数据布局。"
-msgstr "crwdns45528:0crwdne45528:0"
+msgstr "crwdns115793:0crwdne115793:0"
 
 #: ../../source/user-guide/model-development/dump.rst:94
 msgid "``--enable-fuse-conv-bias-with-z``"
-msgstr "crwdns45530:0crwdne45530:0"
+msgstr "crwdns115795:0crwdne115795:0"
 
 #: ../../source/user-guide/model-development/dump.rst:94
 msgid "仅在使用 GPU 平台下可用，把 conv，bias (elemwise add)，z(elemwise add) 融合成一个算子。"
-msgstr "crwdns45532:0crwdne45532:0"
+msgstr "crwdns115797:0crwdne115797:0"
 

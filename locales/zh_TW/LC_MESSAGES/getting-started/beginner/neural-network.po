@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:13\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:34\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,104 +11,104 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/neural-network.po\n"
-"X-Crowdin-File-ID: 8388\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/getting-started/beginner/neural-network.po\n"
+"X-Crowdin-File-ID: 9863\n"
 
 #: ../../source/getting-started/beginner/neural-network.rst:5
 msgid "MegEngine 实现神经网络"
-msgstr "crwdns90120:0crwdne90120:0"
+msgstr "crwdns114673:0crwdne114673:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:6
 msgid "本教程涉及的内容"
-msgstr "crwdns90122:0crwdne90122:0"
+msgstr "crwdns114675:0crwdne114675:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:9
 msgid "思考线性模型的局限性，考虑如何解决线性不可分问题，引出 “激活函数” 的概念；"
-msgstr "crwdns90124:0crwdne90124:0"
+msgstr "crwdns114677:0crwdne114677:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:10
 msgid "对神经元（Neural）以及全连接（Fully connected）网络模型结构有一个基本理解；"
-msgstr "crwdns90126:0crwdne90126:0"
+msgstr "crwdns114679:0crwdne114679:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:11
 msgid "接触到不同的参数初始化策略，学会使用 :mod:`~.module` 模块提升模型设计效率；"
-msgstr "crwdns90128:0:mod:crwdne90128:0"
+msgstr "crwdns114681:0:mod:crwdne114681:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:12
 msgid "根据前面的介绍，使用 MegEngine 实现两层全连接神经网络，完成 Fashion-MNIST 图片分类任务。"
-msgstr "crwdns90130:0crwdne90130:0"
+msgstr "crwdns114683:0crwdne114683:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:15
 msgid "获取原始数据集"
-msgstr "crwdns90132:0crwdne90132:0"
+msgstr "crwdns114685:0crwdne114685:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:17
 msgid "在上一个教程中，我们使用了 MegEngine 的 :mod:`.data.dataset` 模块来获取 :class:`~.MNIST` 数据集， 并使用线性分类器取得了超过 90% 的分类准确率。接下来我们将在与之类似的 Fashion-MNIST 数据集上， 使用完全一样的模型结构和优化策略，看线性模型是否依旧能取得一样出色的效果。"
-msgstr "crwdns90134:0:mod:crwdnd90134:0:class:crwdne90134:0"
+msgstr "crwdns114687:0:mod:crwdnd114687:0:class:crwdne114687:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:21
 msgid "通常经过 5 轮训练，使用线性分类器（Logistic 回归模型）在 Fashion-MNIST 上能达到 83% 的准确率。"
-msgstr "crwdns90136:0crwdne90136:0"
+msgstr "crwdns114689:0crwdne114689:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:25
 msgid "`Fashion-MNIST <https://github.com/zalandoresearch/fashion-mnist>`_ :footcite:p:`xiao2017` 是一个替代MNIST手写数字集的图像数据集。它是由 Zalando（一家德国的时尚科技公司）旗下的研究部门提供。 其涵盖了来自 10 种类别的共 7 万个不同商品的正面图片。Fashion-MNIST 的大小、格式和训练集/测试集划分与原始的 MNIST 完全一致。 60000/10000的 训练测试数据划分，28x28 的灰度图片。你可以直接用它来测试你的机器学习和深度学习算法性能， 且 **不需要** 改动任何的代码。"
-msgstr "crwdns90138:0crwdne90138:0"
+msgstr "crwdns114691:0crwdne114691:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:31
 msgid "这一部分的源码可以在 :docs:`examples/beginner/linear-classification-fashion.py` 找到，区别在于："
-msgstr "crwdns90140:0:docs:crwdne90140:0"
+msgstr "crwdns114693:0:docs:crwdne114693:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:33
 msgid "MegEngine 在 :mod:`.data.dataset` 模块提供了 :class:`~.MNIST` 接口，而 Fashion-MNIST 需要手动下载；"
-msgstr "crwdns90142:0:mod:crwdnd90142:0:class:crwdne90142:0"
+msgstr "crwdns114695:0:mod:crwdnd114695:0:class:crwdne114695:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:34
 msgid "借助下面的 ``load_mnist`` 函数得到 ndarray 格式的数据集，需要借助 :class:`~.ArrayDataset` 进行封装。"
-msgstr "crwdns90144:0:class:crwdne90144:0"
+msgstr "crwdns114697:0:class:crwdne114697:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:38
 msgid "可以借助下面的代码直接对比两个源码文件之间的区别："
-msgstr "crwdns90146:0crwdne90146:0"
+msgstr "crwdns114699:0crwdne114699:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:45
 msgid "这样的结果相较于人类水平其实并不算理想，我们需要设计出更好的机器学习模型。"
-msgstr "crwdns90148:0crwdne90148:0"
+msgstr "crwdns114701:0crwdne114701:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:48
 msgid "线性模型的局限性"
-msgstr "crwdns90150:0crwdne90150:0"
+msgstr "crwdns114703:0crwdne114703:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:50
 msgid "线性模型比较简单，因此也存在着诸多局限性。 比如处理分类问题时，其生成的决策边界是一个超平面， 这意味着理想情况下，样本点在特征空间中是线性可分的。 最典型的反例是，它无法解决异或（XOR）运算问题："
-msgstr "crwdns90152:0crwdne90152:0"
+msgstr "crwdns114705:0crwdne114705:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:59
 msgid "四个样本组成的数据集"
-msgstr "crwdns90154:0crwdne90154:0"
+msgstr "crwdns114707:0crwdne114707:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:64
 msgid "输入 :math:`\\boldsymbol{x}_i`"
-msgstr "crwdns90156:0:math:crwdnd90156:0{x}crwdne90156:0"
+msgstr "crwdns114709:0:math:crwdnd114709:0{x}crwdne114709:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:65
 msgid "特征 :math:`x_{i1}`"
-msgstr "crwdns90158:0:math:crwdnd90158:0{i1}crwdne90158:0"
+msgstr "crwdns114711:0:math:crwdnd114711:0{i1}crwdne114711:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:66
 msgid "特征 :math:`x_{i2}`"
-msgstr "crwdns90160:0:math:crwdnd90160:0{i2}crwdne90160:0"
+msgstr "crwdns114713:0:math:crwdnd114713:0{i2}crwdne114713:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:67
 msgid "输出 :math:`y_i`"
-msgstr "crwdns90162:0:math:crwdne90162:0"
+msgstr "crwdns114715:0:math:crwdne114715:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:69
 msgid ":math:`\\boldsymbol{x}_1`"
-msgstr "crwdns90164:0:math:crwdnd90164:0{x}crwdne90164:0"
+msgstr "crwdns114717:0:math:crwdnd114717:0{x}crwdne114717:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:70
 #: ../../source/getting-started/beginner/neural-network.rst:71
@@ -117,11 +117,11 @@ msgstr "crwdns90164:0:math:crwdnd90164:0{x}crwdne90164:0"
 #: ../../source/getting-started/beginner/neural-network.rst:79
 #: ../../source/getting-started/beginner/neural-network.rst:84
 msgid "0"
-msgstr "crwdns90166:0crwdne90166:0"
+msgstr "crwdns114719:0crwdne114719:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:73
 msgid ":math:`\\boldsymbol{x}_2`"
-msgstr "crwdns90168:0:math:crwdnd90168:0{x}crwdne90168:0"
+msgstr "crwdns114721:0:math:crwdnd114721:0{x}crwdne114721:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:75
 #: ../../source/getting-started/beginner/neural-network.rst:76
@@ -130,335 +130,331 @@ msgstr "crwdns90168:0:math:crwdnd90168:0{x}crwdne90168:0"
 #: ../../source/getting-started/beginner/neural-network.rst:82
 #: ../../source/getting-started/beginner/neural-network.rst:83
 msgid "1"
-msgstr "crwdns90170:0crwdne90170:0"
+msgstr "crwdns114723:0crwdne114723:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:77
 msgid ":math:`\\boldsymbol{x}_3`"
-msgstr "crwdns90172:0:math:crwdnd90172:0{x}crwdne90172:0"
+msgstr "crwdns114725:0:math:crwdnd114725:0{x}crwdne114725:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:81
 msgid ":math:`\\boldsymbol{x}_4`"
-msgstr "crwdns90174:0:math:crwdnd90174:0{x}crwdne90174:0"
+msgstr "crwdns114727:0:math:crwdnd114727:0{x}crwdne114727:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:87
 msgid "二维空间表示"
-msgstr "crwdns90176:0crwdne90176:0"
+msgstr "crwdns114729:0crwdne114729:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:91
 msgid "由于数据线性不可分，我们找不到这样一个线性决策边界，能够将这两类样本很好地分隔开。"
-msgstr "crwdns90178:0crwdne90178:0"
+msgstr "crwdns114731:0crwdne114731:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:93
 msgid "我们即将从线性模型过渡到神经网络模型，你会发现一切早已悄然发生。"
-msgstr "crwdns90180:0crwdne90180:0"
+msgstr "crwdns114733:0crwdne114733:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:97
 msgid "引入非线性因素"
-msgstr "crwdns90182:0crwdne90182:0"
+msgstr "crwdns114735:0crwdne114735:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:99
 msgid "回忆一下，在上一个教程中，我们的线性分类器在前向计算时会有一个将线性预测映射到概率值的操作（链接函数）。 由于这一步计算对模型中样本的决策边界并没有影响，因此我们依旧可以认为这是广义线性模型（更术语的解释是， 我们对观测到的样本假设依旧服从某个指数族分布，本教程不会介绍太多的数学细节）。"
-msgstr "crwdns90184:0crwdne90184:0"
+msgstr "crwdns114737:0crwdne114737:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:103
 msgid "是时候告诉你一个秘密了：线性模型本身其实可以被看做是最简单的单层神经网络！"
-msgstr "crwdns90186:0crwdne90186:0"
+msgstr "crwdns114739:0crwdne114739:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:108
 msgid "如果将 MNIST 图片样本展平后的特征向量 :math:`\\boldsymbol{x}` 看作是输入层（Input Layer）， 那么对于二分类问题，我们可以当做这里有一个神经元，负责完成线性预测 :math:`z=\\boldsymbol{w}^T \\boldsymbol{x} + b` 和链接函数 :math:`a=\\sigma(z)` 相关的计算。 在二分类问题中，输出层（Output Layer）只要一个神经元就可以完成工作，多分类问题则需要多个神经元。"
-msgstr "crwdns90188:0:math:crwdnd90188:0{x}crwdnd90188:0:math:crwdnd90188:0{w}crwdnd90188:0{x}crwdnd90188:0:math:crwdne90188:0"
+msgstr "crwdns114741:0:math:crwdnd114741:0{x}crwdnd114741:0:math:crwdnd114741:0{w}crwdnd114741:0{x}crwdnd114741:0:math:crwdne114741:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:115
 msgid "大脑的基本计算单元是神经元（Neuron）。在人类神经系统中可以发现大约 860 亿个神经元， 它们与大约 :math:`10^{14}` ~ :math:`10^{15}` 个突触（Synapses）相连。 下图显示了生物神经元（左）和常见数学模型（右）的示例。 每个神经元从其树突（Dendrites）接收输入信号，并沿其唯一的轴突（Axon）产生输出信号。 轴突最终分支出来并通过突触连接到其它神经元的突触。在神经元计算模型中， 沿着轴突传播的信号（如 :math:`x_0` ）将基于突触的突触强度（如 :math:`w_0` ） 与其它神经元的树突进行乘法交互（如 :math:`w_0 x_0`）。突触强度（也就是权重 :math:`w` ） 是可学习的，且可以控制一个神经元对另一个神经元的影响程度（以及可以控制方向， 比如正权重代表兴奋，负权重代表抑制）。在基本模型中，树突将信号传递到细胞体，信号在细胞体中相加。 如果最终之和高于某个阈值，那么神经元将会 **激活（Activation）** ，向其轴突输出一个峰值信号。"
-msgstr "crwdns90190:0:math:crwdnd90190:0{14}crwdnd90190:0:math:crwdnd90190:0{15}crwdnd90190:0:math:crwdnd90190:0:math:crwdnd90190:0:math:crwdnd90190:0:math:crwdne90190:0"
+msgstr "crwdns114743:0:math:crwdnd114743:0{14}crwdnd114743:0:math:crwdnd114743:0{15}crwdnd114743:0:math:crwdnd114743:0:math:crwdnd114743:0:math:crwdnd114743:0:math:crwdne114743:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:128
 msgid "*（注：本段解释和图片引用自 CS231n 讲义中的* `部分材料 <https://cs231n.github.io/neural-networks-1/>`_ *。）*"
-msgstr "crwdns90192:0crwdne90192:0"
+msgstr "crwdns114745:0crwdne114745:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:132
 msgid "对于多分类问题，单层的神经网络结构显示如下（这里假定输入数据特征维度为 16）："
-msgstr "crwdns90194:0crwdne90194:0"
+msgstr "crwdns114747:0crwdne114747:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:136
 msgid "图中输出层中的每个神经元都需要完成线性计算与非线性的映射。"
-msgstr "crwdns90196:0crwdne90196:0"
+msgstr "crwdns114749:0crwdne114749:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:138
 msgid "*（注：本图片使用* `NN SVG <multilayer perceptron>`_ *制作生成。）*"
-msgstr "crwdns90198:0crwdne90198:0"
+msgstr "crwdns114751:0crwdne114751:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:141
 msgid "激活函数与隐藏层"
-msgstr "crwdns90200:0crwdne90200:0"
+msgstr "crwdns114753:0crwdne114753:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:143
 msgid "在神经元计算模型中，非线性函数被称为激活函数（Activation function）， 历史上常被使用的激活函数即我们见过的 Sigmoid 函数 :math:`\\sigma(\\cdot)`. 这给我们带来了启发，激活函数是非线性的，这也意味着通过多个神经元突触之间的连接，给我们的计算模型引入了非线性。 我们可以通过引入一个隐藏层（Hidden Layer）来做到这一点："
-msgstr "crwdns90202:0:math:crwdne90202:0"
+msgstr "crwdns114755:0:math:crwdne114755:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:150
 msgid "隐藏层中带有 12 个神经元，每个神经元需要负责进行相应的非线性计算，决定是否激活。"
-msgstr "crwdns90204:0crwdne90204:0"
+msgstr "crwdns114757:0crwdne114757:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:152
 msgid "我们来规范一下术语，在神经网络模型中，上面的神经网络被称为 2 层全连接神经网络。 输入层是样本特征，不发生实际计算，因此不算入模型层数。 隐藏层可以有多个，每层的神经元个数需要人为设定。 由于线性层的神经元是与上一层的所有输入完全连接在一起的，因此也叫做全连接层（Full connected layer, FC Layer）。 正是因为在全连接层后面加上激活函数，借此让神经网络具有了非线性计算的能力。"
-msgstr "crwdns90206:0crwdne90206:0"
+msgstr "crwdns114759:0crwdne114759:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:158
 msgid "使用 MegEngine 来模拟一下这个计算过程，直觉感受一下（这里只关注形状变化）："
-msgstr "crwdns90208:0crwdne90208:0"
+msgstr "crwdns114761:0crwdne114761:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:177
 msgid "在 MegEngine 中，常见的非线性激活函数被实现在 :mod:`.functional.nn` 模块中。 由于神经网络中可能存在着大量的非线性计算，又不像分类器一样要求输出映射到概率区间， 因此更加常用的激活函数是 :func:`~.relu` 函数等，全称修正线性单元（Rectified linear unit，ReLU）。 相较于 :func:`~.sigmoid` 函数，它有着计算和求导简单的特点，又满足非线性计算的特性要求。 更加具体的解释，可以查看不同激活函数的 API 文档。"
-msgstr "crwdns90210:0:mod:crwdnd90210:0:func:crwdnd90210:0:func:crwdne90210:0"
+msgstr "crwdns114763:0:mod:crwdnd114763:0:func:crwdnd114763:0:func:crwdne114763:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:183
 msgid "深度学习领域，有许多针对激活函数的研究和设计，在本教程中方便起见，均使用 ReLU 激活函数。"
-msgstr "crwdns90212:0crwdne90212:0"
+msgstr "crwdns114765:0crwdne114765:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:186
 msgid "多层神经网络"
-msgstr "crwdns90214:0crwdne90214:0"
+msgstr "crwdns114767:0crwdne114767:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:188
 msgid "除了激活函数的选用，定义全连接神经网络的步骤主要在设计隐藏层层数和每层神经元的个数。"
-msgstr "crwdns90216:0crwdne90216:0"
+msgstr "crwdns114769:0crwdne114769:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:190
 msgid "我们可以通过堆叠更多的隐藏层，使得模型具有更强的学习能力和表达能力。 从这个角度来看，线性模型中的变换（准确来说是仿射变换，但在这里我们强调的是非线性和线性的区别） 不论如何叠加，最终都可以用等效的变换来表示，即矩阵运算中 :math:`C=AB` 的形式。 尽管我们通过激活函数引入了非线性，但问题也随之出现了："
-msgstr "crwdns90218:0:math:crwdne90218:0"
+msgstr "crwdns114771:0:math:crwdne114771:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:195
 msgid "我们需要对更多的模型参数进行管理，本教程中会给出 MegEngine 中的解决方案；"
-msgstr "crwdns90220:0crwdne90220:0"
+msgstr "crwdns114773:0crwdne114773:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:196
 msgid "神经网络模型理论上可以逼近任意函数，使用更深的网络通常意味着更强的近似能力。 但我们不能胡乱设计，还需要对模型中的参数量（计算量）以及模型最终的性能之间进行权衡取舍。"
-msgstr "crwdns90222:0crwdne90222:0"
+msgstr "crwdns114775:0crwdne114775:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:201
 msgid "目前接触到的这种仅由全连接层（与激活函数）组成神经网络模型架构， 在某些材料中也被称为多层感知机（Multilayer perceptron, MLP）。 其出发点是针对感知机算法进行改进，进而得到了 MLP. 二者实质上指代相同。 我们解决二分类问题使用的是 Logistic 回归，因此没有采用感知机这种称呼。"
-msgstr "crwdns90224:0crwdne90224:0"
+msgstr "crwdns114777:0crwdne114777:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:207
 msgid "随机初始化策略"
-msgstr "crwdns90226:0crwdne90226:0"
+msgstr "crwdns114779:0crwdne114779:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:209
 msgid "我们需要注意到全连接层的一些特点，比如层中的每一个神经元都会与前一层中所有输入进行运算。 回忆一下，我们在介绍线性模型时，提到了模型中的参数将从一个初始值不断地进行迭代优化， 并且采取了最简单的初始化策略，全零初始化，即将模型中所有参数的值初始化为 0. 这种做法在单层模型输出 + 损失函数的情况下是有效的，但对多层神经网络而言将导致问题。"
-msgstr "crwdns90228:0crwdne90228:0"
+msgstr "crwdns114781:0crwdne114781:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:214
 msgid "假设我们将隐藏层中的所有神经元参数初始化为零，这其实意味着所有的神经元都在做同样的事情："
-msgstr "crwdns90230:0crwdne90230:0"
+msgstr "crwdns114783:0crwdne114783:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:216
 msgid "前向计算时，由于前一层的输入是同样的，因此同一层的神经元的前向计算的输出都将一样;"
-msgstr "crwdns90232:0crwdne90232:0"
+msgstr "crwdns114785:0crwdne114785:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:217
 msgid "经过激活函数时，由于激活函数 ReLU 没有随机性，因此也会得到同样的输出，并传给下一层；"
-msgstr "crwdns90234:0crwdne90234:0"
+msgstr "crwdns114787:0crwdne114787:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:218
 msgid "反向计算时，所有的参数将得到同样的梯度，在学习率一致的情况下，参数更新后也是一致的。"
-msgstr "crwdns90236:0crwdne90236:0"
+msgstr "crwdns114789:0crwdne114789:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:220
 msgid "这就导致全连接层中的所有神经元都在做一样的事情，表达能力大大减弱。解决办法是，使用随机初始化策略。"
-msgstr "crwdns90238:0crwdne90238:0"
+msgstr "crwdns114791:0crwdne114791:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:222
 msgid "MegEngine 生成随机数据"
-msgstr "crwdns90240:0crwdne90240:0"
+msgstr "crwdns114793:0crwdne114793:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:224
 msgid "在 MegEngine 中提供了 :mod:`~.megengine.random` 模块来随机生成 Tensor 数据："
-msgstr "crwdns90242:0:mod:crwdne90242:0"
+msgstr "crwdns114795:0:mod:crwdne114795:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:238
 msgid "其中 :func:`.random.seed` 可以设置一个随机种子，方便在一些情况下复现随机状态。 我们借助 :func:`~.random.normal` 接口从标准正态分布（均值为 0, 标准差为 1） 中随机生成了形状为 :math:`(3, 3)` 的 Tensor."
-msgstr "crwdns90244:0:func:crwdnd90244:0:func:crwdnd90244:0:math:crwdne90244:0"
+msgstr "crwdns114797:0:func:crwdnd114797:0:func:crwdnd114797:0:math:crwdne114797:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:244
 msgid "假定我们需要在原来线性分类模型的基础上加入一层神经元个数为 256 的隐藏层："
-msgstr "crwdns90246:0crwdne90246:0"
+msgstr "crwdns114799:0crwdne114799:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:266
 msgid "可以明显地感受到，当模型结构变得越来越复杂时，代码中将充斥着大量的重复性内容。"
-msgstr "crwdns90248:0crwdne90248:0"
+msgstr "crwdns114801:0crwdne114801:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:268
 msgid "作为一个深度学习框架，MegEngine 自然需要提供一种方便的做法，来对模型进行设计。"
-msgstr "crwdns90250:0crwdne90250:0"
+msgstr "crwdns114803:0crwdne114803:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:271
 msgid "使用 Module 定义模型"
-msgstr "crwdns90252:0crwdne90252:0"
+msgstr "crwdns114805:0crwdne114805:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:274
 msgid "本教程这一小节的介绍比较精简，完整内容请参考 :ref:`module-guide` 。"
-msgstr "crwdns90254:0:ref:crwdne90254:0"
+msgstr "crwdns114807:0:ref:crwdne114807:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:276
 msgid "MegEngine 中的 :mod:`~.module` 模块为神经网络模型中的结构提供了一类抽象机制， 一切均为 :class:`~.module.Module` 类，除了为常见模块实现了默认的随机初始化策略外， 并提供了常见的方法（如即将介绍的 :meth:`.Module.parameters` ）。 这样可以方便用户专注于设计网络结构，从重复的参数初始化和管理方式等细节中解脱出来。"
-msgstr "crwdns90256:0:mod:crwdnd90256:0:class:crwdnd90256:0:meth:crwdne90256:0"
+msgstr "crwdns114809:0:mod:crwdnd114809:0:class:crwdnd114809:0:meth:crwdne114809:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:281
 msgid "例如对于像 :func:`~.matmul` 这样的线性层运算，可以使用 :class:`~.module.Linear` 进行表示："
-msgstr "crwdns90258:0:func:crwdnd90258:0:class:crwdne90258:0"
+msgstr "crwdns114811:0:func:crwdnd114811:0:class:crwdne114811:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:290
 msgid "可以发现 ``fc`` 模块中有着对应形状的权重（Weight）和偏置（Bias）参数，且自动完成了初始化。"
-msgstr "crwdns90260:0crwdne90260:0"
+msgstr "crwdns114813:0crwdne114813:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:298
 msgid "查阅 API 文档可知，对于输入的样本 :math:`x`, 计算过程是 :math:`y=xW^T+b`."
-msgstr "crwdns90262:0:math:crwdnd90262:0:math:crwdne90262:0"
+msgstr "crwdns114815:0:math:crwdnd114815:0:math:crwdne114815:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:300
 msgid "简单验证一下 :class:`~.module.Linear` 的运算结果，与 :func:`~.matmul` 得到的结果是一致的（在浮点误差范围内）："
-msgstr "crwdns90264:0:class:crwdnd90264:0:func:crwdne90264:0"
+msgstr "crwdns114817:0:class:crwdnd114817:0:func:crwdne114817:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:332
 msgid ":class:`~.module.Linear` 作为内置的 :class:`~.module.Module`, 我们不需要人为地初始化， 该过程在其对应的 ``__init__`` 方法中已经实现，也允许被用户自己的实现覆盖掉。 一些常见的初始化策略在 :mod:`.module.init` 模块中进行了提供，在本教程中不会进行具体介绍。"
-msgstr "crwdns90266:0:class:crwdnd90266:0:class:crwdnd90266:0__init__crwdnd90266:0:mod:crwdne90266:0"
+msgstr "crwdns114819:0:class:crwdnd114819:0:class:crwdnd114819:0__init__crwdnd114819:0:mod:crwdne114819:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:336
 msgid "Module 允许像搭积木一样进行嵌套实现，因此在本教程中的全连接神经网络可以这样实现："
-msgstr "crwdns90268:0crwdne90268:0"
+msgstr "crwdns114821:0crwdne114821:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:338
 msgid "所有网络结构都源自基类 ``M.Module``. 在构造函数中，一定要先调用 ``super().__init__()``."
-msgstr "crwdns90270:0__init__crwdne90270:0"
+msgstr "crwdns114823:0__init__crwdne114823:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:339
 msgid "在构造函数中，声明要使用的所有层/模块；"
-msgstr "crwdns90272:0crwdne90272:0"
+msgstr "crwdns114825:0crwdne114825:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:340
 msgid "在 ``forward`` 函数中，定义模型将如何运行，从输入到输出。"
-msgstr "crwdns90274:0crwdne90274:0"
+msgstr "crwdns114827:0crwdne114827:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:355
 msgid "可以借助 :meth:`.Module.parameters` 得到模型的参数的迭代器，提供给梯度管理器和优化器："
-msgstr "crwdns90276:0:meth:crwdne90276:0"
+msgstr "crwdns114829:0:meth:crwdne114829:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:361
 msgid "练习：前馈神经网络"
-msgstr "crwdns90278:0crwdne90278:0"
+msgstr "crwdns114831:0crwdne114831:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:363
 msgid "前馈神经网络是一种最简单的神经网络，各神经元分层排列，每个神经元只与前一层的神经元相连。 接收前一层的输出，并输出给下一层，各层间没有反馈。是应用最广泛、发展最迅速的人工神经网络之一。"
-msgstr "crwdns90280:0crwdne90280:0"
+msgstr "crwdns114833:0crwdne114833:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:366
 msgid "简而言之，前馈神经网络中除了全连接层 :class:`~.module.Linear` 不再含有其它类型的结构， 让我们用 MegEngine 进行实现："
-msgstr "crwdns90282:0:class:crwdne90282:0"
+msgstr "crwdns114835:0:class:crwdne114835:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:373
 msgid "本教程的对应源码： :docs:`examples/beginner/neural-network.py`"
-msgstr "crwdns90284:0:docs:crwdne90284:0"
+msgstr "crwdns114837:0:docs:crwdne114837:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:376
 msgid "经过 5 轮训练，通常会得到一个正确率超过 83% （线性分类器）的神经网络模型。 在本教程中我们仅仅希望证明模型中引入非线性能具有更好的表达能力和预测性能， 因此没有花时间再去调整超参数并继续优化我们的模型。 Fashion-MNIST 数据集官方维护了一个 `基准测试 <http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/>`_ 结果， 可以发现其中有使用 MLPClassifier 得到的测试结果，能达到 87.7%. 我们可以根据相关模型的说明，进行模型和实验结果的复现，得到性能相当的神经网络模型。"
-msgstr "crwdns90286:0crwdne90286:0"
+msgstr "crwdns114839:0crwdne114839:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:384
 msgid "实际上，我们从接触到神经网络模型的那一刻开始，就已经开始进入 “调参（Tuning hyperparameters）” 模式了。 神经网络模型需要正确的代码和超参数设计，才能够取得非常好的效果。 对于刚刚接触到神经网络的 MegEngine 初学者，多尝试多编码是最推荐的提升手段。 在旷视科技研究院内部将训练一个模型的过程称为 “炼丹”，如今这个词已成为行业黑话。 在完成 MegEngine 入门教程的过程中，其实就是在积累最基本的炼丹经验。"
-msgstr "crwdns90288:0crwdne90288:0"
+msgstr "crwdns114841:0crwdne114841:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:391
 msgid "总结：再探计算图"
-msgstr "crwdns90290:0crwdne90290:0"
+msgstr "crwdns114843:0crwdne114843:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:393
 msgid "我们在第一篇教程中提到过计算图，现在来回忆一下："
-msgstr "crwdns90292:0crwdne90292:0"
+msgstr "crwdns114845:0crwdne114845:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:395
 msgid "MegEngine 是基于计算图（Computing Graph）的深度神经网络学习框架；"
-msgstr "crwdns90294:0crwdne90294:0"
+msgstr "crwdns114847:0crwdne114847:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:396
 msgid "在深度学习领域，任何复杂的深度神经网络模型本质上都可以用一个计算图表示出来。"
-msgstr "crwdns90296:0crwdne90296:0"
+msgstr "crwdns114849:0crwdne114849:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:398
 msgid "当我们运行本教程中的神经网络模型训练代码时，在脑海中可以去做进一步的想象， 将这个全连接神经网络表达成计算图，应该是什么样的？ 我们在可视化一个神经网络模型结构时，通常关注的是数据节点的变化过程， 但计算图中的计算节点，或者说算子（Operator），也十分关键。 假定我们的算子只能为 :func:`~.functional.matmul` / :class:`~.module.Linear` 这样的线性运算， 那么模型对输入数据的形状也会产生限制，它必须表达成一个特征向量（即 1-d 张量）。 当我们面临更加复杂的数据表征形式，比如 RGB 3 通道的彩色图片，继续使用全连接神经网络还能奏效吗？"
-msgstr "crwdns90298:0:func:crwdnd90298:0:class:crwdne90298:0"
+msgstr "crwdns114851:0:func:crwdnd114851:0:class:crwdne114851:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:406
 msgid "我们在下个教程中会进行实验，接触到 CIFAR 10 彩色图片数据集，并看看全连接网络能否奏效。 届时我们会引入一种新的算子（暂时先保持神秘），发现设计神经网络其实就像搭积木一样，会有很多种不同的有效结构， 它们适用于不同的情景，而在设计算子时，一些传统领域的知识有时会很有帮助。"
-msgstr "crwdns90300:0crwdne90300:0"
+msgstr "crwdns114853:0crwdne114853:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:411
 msgid "拓展材料"
-msgstr "crwdns90302:0crwdne90302:0"
+msgstr "crwdns114855:0crwdne114855:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:415
 msgid "我们借助过可视化的形式去理解了计算机视觉中灰度图的基本表示。 可视化是我们理解数据，甚至是理解一门新知识、新概念的有效辅助手段。 我相信你已经理解了包括 “全连接神经网络（多层感知机）” 、 “梯度下降” 、“反向传播” 在内的深度学习基本概念， 而 3Blue1Brown 的视频可以作为非常好的补充："
-msgstr "crwdns90304:0crwdne90304:0"
+msgstr "crwdns114857:0crwdne114857:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:428
 msgid "更多 3Blue1Brown 的深度学习视频"
-msgstr "crwdns90306:0crwdne90306:0"
+msgstr "crwdns114859:0crwdne114859:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:430
 msgid "`深度学习之神经网络的结构 <https://www.bilibili.com/video/BV1bx411M7Zx>`_"
-msgstr "crwdns90308:0crwdne90308:0"
+msgstr "crwdns114861:0crwdne114861:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:431
 msgid "`深度学习之梯度下降法 <https://www.bilibili.com/video/BV1Ux411j7ri>`_"
-msgstr "crwdns90310:0crwdne90310:0"
+msgstr "crwdns114863:0crwdne114863:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:432
 msgid "`深度学习之直观理解反向传播 <https://www.bilibili.com/video/BV16x411V7Qg>`_"
-msgstr "crwdns90312:0crwdne90312:0"
+msgstr "crwdns114865:0crwdne114865:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:436
 msgid "`MNIST <https://www.kaggle.com/c/digit-recognizer/>`_ 和 `FashionMNIST <https://www.kaggle.com/zalando-research/fashionmnist>`_ 这样的经典数据集在 Kaggle 上也有提供，你可以尝试使用 MegEngine 实现全连接神经网络模型， 尝试调整模型结构（层数、每层神经元个数）和超参数（学习率、训练轮数等等）， 尽你所能地在这两个数据集上将准确率百分比点刷高，感受一下炼丹的魅力。"
-msgstr "crwdns90314:0crwdne90314:0"
+msgstr "crwdns114867:0crwdne114867:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:442
 msgid "Kaggle 中也有许多其它人公开写好的代码，是非常不错的学习和借鉴材料。 你可能会看到一些人使用了另一种叫做 “卷积神经网络” 的模型取得了更好的效果， 这就是我们将会在下一个教程中接触到的新内容。"
-msgstr "crwdns90316:0crwdne90316:0"
+msgstr "crwdns114869:0crwdne114869:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:448
 msgid "你可能在很多材料中听说过对人工智能发展历史的介绍，里面一定会提到人工智能的几次寒冬。"
-msgstr "crwdns90318:0crwdne90318:0"
+msgstr "crwdns114871:0crwdne114871:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:450
 msgid "“感知机无法解决异或问题！” 这就是一次历史的转折点。"
-msgstr "crwdns90320:0crwdne90320:0"
+msgstr "crwdns114873:0crwdne114873:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:452
 msgid "感知机（Perceptron）这是一种在 1950 年代末和 1960 年代初开发出的人工神经网络， 心理学家 Frank Rosenblatt 在 1957 年发布了第一个 “感知机” 模型， Marvin Minsky 和 Seymour Papert 在 1969 年出版了《感知器：计算几何导论》以作纪念。 但在这本书中对感知机做出了悲观预测，它甚至无法解决最简单的分类（异或）问题！ 这导致了当时的人工智能研究方向发生了转变，导致了 1980 年代的人工智能的冬天。"
-msgstr "crwdns90322:0crwdne90322:0"
+msgstr "crwdns114875:0crwdne114875:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:458
 msgid "尝试一下，设计出一个最简单的 XOR 神经网络模型，要求能够完全正确地得到输出。"
-msgstr "crwdns90324:0crwdne90324:0"
+msgstr "crwdns114877:0crwdne114877:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:460
 msgid "*（注：有兴趣的话，可以去了解一下人工智能的发展历史，一些纪录片和文章相当引人入胜。）*"
-msgstr "crwdns90326:0crwdne90326:0"
+msgstr "crwdns114879:0crwdne114879:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:464
 msgid "学习一个东西的最有效的办法之一是亲自去实现它（哪怕是 Naive 版本），有难度，也更花时间。"
-msgstr "crwdns90328:0crwdne90328:0"
+msgstr "crwdns114881:0crwdne114881:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:466
 msgid "你可以尝试完全使用 NumPy 实现一个全连接神经网络（Kaggle 平台上有许多这样的例子）， 不用太复杂，两层就可以了。你可以选择参考 MegEngine 中已有的设计进行实现，也可以完全自由发挥。 不要求实现自动微分系统，可以手动地将各个算子的 ``backward`` 逻辑实现出来； 也不要求利用 GPU 进行加速（毕竟需要额外学习许多知识，比如 Nvidia 的 CUDA 编程）。"
-msgstr "crwdns90330:0crwdne90330:0"
+msgstr "crwdns114883:0crwdne114883:0"
 
 #: ../../source/getting-started/beginner/neural-network.rst:472
 msgid "参考文献"
-msgstr "crwdns90332:0crwdne90332:0"
-
-#: ../../source/getting-started/beginner/neural-network.rst:477
-msgid "Han Xiao, Kashif Rasul, and Roland Vollgraf. Fashion-mnist: a novel image dataset for benchmarking machine learning algorithms. 2017. arXiv:cs.LG/1708.07747."
-msgstr "crwdns94570:0crwdne94570:0"
+msgstr "crwdns114885:0crwdne114885:0"
 
 #~ msgid ""
 #~ "Han Xiao, Kashif Rasul, and Roland "
@@ -466,8 +462,4 @@ msgstr "crwdns94570:0crwdne94570:0"
 #~ " dataset for benchmarking machine learning"
 #~ " algorithms. 2017. arXiv:cs.LG/1708.07747."
 #~ msgstr ""
-#~ "Han Xiao, Kashif Rasul, and Roland "
-#~ "Vollgraf. Fashion-mnist: a novel image"
-#~ " dataset for benchmarking machine learning"
-#~ " algorithms. 2017. arXiv:cs.LG/1708.07747."
 

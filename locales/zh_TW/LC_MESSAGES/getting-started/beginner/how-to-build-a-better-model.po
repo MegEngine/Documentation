@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 01:33\n"
+"PO-Revision-Date: 2023-04-21 09:34\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,520 +15,520 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/how-to-build-a-better-model.po\n"
-"X-Crowdin-File-ID: 7056\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/getting-started/beginner/how-to-build-a-better-model.po\n"
+"X-Crowdin-File-ID: 9843\n"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:9
 msgid "构建更好的模型：神经网络"
-msgstr "crwdns64126:0crwdne64126:0"
+msgstr "crwdns111649:0crwdne111649:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:12
 msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/7237>`__"
-msgstr "crwdns66556:0crwdne66556:0"
+msgstr "crwdns111651:0crwdne111651:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:16
 msgid "image0"
-msgstr "crwdns64130:0crwdne64130:0"
+msgstr "crwdns111653:0crwdne111653:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:12
 msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/how-to-build-a-better-model.ipynb>`__"
-msgstr "crwdns66558:0crwdne66558:0"
+msgstr "crwdns111655:0crwdne111655:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:17
 msgid "image1"
-msgstr "crwdns64134:0crwdne64134:0"
+msgstr "crwdns111657:0crwdne111657:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:28
 msgid "我们已经对机器学习的基础流程有了一定的印象，并尝试用线性模型分别在 “新手级别” 的房价回归和手写数字分类任务上取得了不错的效果。"
-msgstr "crwdns64136:0crwdne64136:0"
+msgstr "crwdns111659:0crwdne111659:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:30
 msgid "打怪升级的道路还在继续，我们的任务依旧是图像分类，但本次教程较之前又确实有所不同："
-msgstr "crwdns64138:0crwdne64138:0"
+msgstr "crwdns111661:0crwdne111661:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:32
 msgid "我们将回收上一个教程埋下的伏笔，了解另一个计算机视觉领域的经典数据集 CIFAR10, 一起看看数据特征的变化会带来什么样的挑战；"
-msgstr "crwdns64140:0crwdne64140:0"
+msgstr "crwdns111663:0crwdne111663:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:33
 msgid "我们还将开动脑筋，分析已有局面，尝试去构建更好的模型——"
-msgstr "crwdns64142:0crwdne64142:0"
+msgstr "crwdns111665:0crwdne111665:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:35
 msgid "思路一：改变模型的结构，这意味着我们要认知到线性模型在结构上的局限性；"
-msgstr "crwdns64144:0crwdne64144:0"
+msgstr "crwdns111667:0crwdne111667:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:36
 msgid "思路二：改变特征提取的方式，此时我们更多地要从数据的角度去思考，看看传统计算机视觉方法带来了什么样的启发；"
-msgstr "crwdns64146:0crwdne64146:0"
+msgstr "crwdns111669:0crwdne111669:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:38
 msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
-msgstr "crwdns66997:0crwdne66997:0"
+msgstr "crwdns111671:0crwdne111671:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:80
 msgid "接下来，我们将先了解一下这次要使用到的经典数据集：\\ `CIFAR-10 数据集 <https://www.cs.toronto.edu/~kriz/cifar.html>`__\\ 。"
-msgstr "crwdns64152:0crwdne64152:0"
+msgstr "crwdns111673:0crwdne111673:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:83
 msgid "CIFAR-10 数据集"
-msgstr "crwdns64154:0crwdne64154:0"
+msgstr "crwdns111675:0crwdne111675:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:85
 msgid "CIFAR-10 数据集包含共计 10 个类别的 60000 张 32x32 彩色图像，每个类别包含 6000 个图像，对应有 50000 张训练图像和 10000 张测试图像。"
-msgstr "crwdns64156:0crwdne64156:0"
+msgstr "crwdns111677:0crwdne111677:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:87
 msgid "同样地，在 MegEngine 的 dataset 模块中内置了 CIFAR-10 数据集的相关接口，方便初学者进行相关调用："
-msgstr "crwdns64158:0crwdne64158:0"
+msgstr "crwdns111679:0crwdne111679:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:147
 msgid "以训练集为例，你最终将得到一个长度为 50000 的 ``train_dataset`` 列表，其中的每个元素是一个包含样本和标签的元组："
-msgstr "crwdns64160:0crwdne64160:0"
+msgstr "crwdns111681:0crwdne111681:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:193
 msgid "为了方便理解，我们这里选择将数据集拆分为样本和标签，处理成 Numpy 的 ndarray 格式："
-msgstr "crwdns64162:0crwdne64162:0"
+msgstr "crwdns111683:0crwdne111683:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:235
 msgid "经过上面的整理，我们得到了训练数据 ``train_data`` 和对应的标签 ``train_label``:"
-msgstr "crwdns64164:0crwdne64164:0"
+msgstr "crwdns111685:0crwdne111685:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:237
 msgid "可以发现此时的训练数据的形状是 :math:`(50000, 32, 32, 3)`, 分别对应数据量（Number）、高度（Height）、宽度（Width）和通道数（Channel），简记为 NHWC；"
-msgstr "crwdns64166:0:math:crwdne64166:0"
+msgstr "crwdns111687:0:math:crwdne111687:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:238
 msgid "你应该发现了，MNIST 数据集中的通道数为 1, 均为灰度图；而 CIFAR-10 数据集的通道数为 3, 数据集中的图像是彩色的；通道数和颜色之间有什么关系呢？"
-msgstr "crwdns64168:0crwdne64168:0"
+msgstr "crwdns111689:0crwdne111689:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:250
 msgid "理解彩色图像数据"
-msgstr "crwdns64170:0crwdne64170:0"
+msgstr "crwdns111691:0crwdne111691:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:252
 msgid "我们先尝试对数据进行随机抽样，并进行可视化显示："
-msgstr "crwdns64172:0crwdne64172:0"
+msgstr "crwdns111693:0crwdne111693:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:299
 msgid "挑选出一张图片（下方的 idx 可修改），进行可视化："
-msgstr "crwdns64174:0crwdne64174:0"
+msgstr "crwdns111695:0crwdne111695:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:331
 msgid "你是否会觉得有一些奇怪，为什么这张图片的颜色给人感觉有些奇怪呢？"
-msgstr "crwdns64176:0crwdne64176:0"
+msgstr "crwdns111697:0crwdne111697:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:333
 msgid "出于历史原因， OpenCV(cv2) 图像库默认使用 BGR 的颜色通道，而不是一般约定的 RGB 格式。"
-msgstr "crwdns64178:0crwdne64178:0"
+msgstr "crwdns111699:0crwdne111699:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:334
 msgid "这就导致当 ``plt.imgshow()`` 尝试以 RGB 顺序去读取一张 BGR 格式的图片时，显示的内容会不如预期。"
-msgstr "crwdns64180:0crwdne64180:0"
+msgstr "crwdns111701:0crwdne111701:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:335
 msgid "好在 ``cv2`` 中也提供了 ``cvtColor`` 功能，能够改变图像的通道排序。"
-msgstr "crwdns64182:0crwdne64182:0"
+msgstr "crwdns111703:0crwdne111703:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:337
 msgid "如果你使用过老前辈级别的深度学习框架 `Caffe <https://caffe.berkeleyvision.org/>`__, 应该会对此颇有感触。在 MegEngine 的 ``funtional.vision`` 模块中也实现了 ``cvt_color``, 区别在于要求输入的数据类型是 Tensor, 毕竟 MegEngine 不是计算机视觉库，\\ ``funtional`` 模块中的接口是为 Tensor 操作而设计的。"
-msgstr "crwdns64184:0crwdne64184:0"
+msgstr "crwdns111705:0crwdne111705:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:369
 msgid "我们可以分别对三个颜色通道进行可视化（下面的代码看不懂也没关系，看图）："
-msgstr "crwdns64186:0crwdne64186:0"
+msgstr "crwdns111707:0crwdne111707:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:418
 msgid "数字图像基础和背后的历史知识可有趣啦，一时半会儿也讲不完。在这次的教程中，我们目前只需要明白："
-msgstr "crwdns64188:0crwdne64188:0"
+msgstr "crwdns111709:0crwdne111709:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:420
 msgid "可见光谱中的大部分颜色可以由三种基本色光按不同的比例混合而成，这三种基本色光的颜色就是红、绿、 蓝三原色光。"
-msgstr "crwdns64190:0crwdne64190:0"
+msgstr "crwdns111711:0crwdne111711:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:421
 msgid "这意味着相较于灰度图，RGB 图中的每个像素都是由 :math:`3` 个在 :math:`[0, 256)` 的值进行颜色组合表示的，对应十六进制范围 ``#000000`` ~ ``#FFFFFF``."
-msgstr "crwdns68237:0:math:crwdnd68237:0:math:crwdne68237:0"
+msgstr "crwdns111713:0:math:crwdnd111713:0:math:crwdne111713:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:423
 msgid "不妨先自己想一想，这样的数据给我们带来了什么样的挑战？线性模型存在着什么样的局限性，我们又该如何去解决它们。"
-msgstr "crwdns64194:0crwdne64194:0"
+msgstr "crwdns111715:0crwdne111715:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:435
 msgid "更复杂的计算图结构"
-msgstr "crwdns64196:0crwdne64196:0"
+msgstr "crwdns111717:0crwdne111717:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:437
 msgid "我们曾提到任何一个神经网络结构都可以用计算图来表示，而在神经网络中应该有非常多的节点（神经元），以下图为例："
-msgstr "crwdns64198:0crwdne64198:0"
+msgstr "crwdns111719:0crwdne111719:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:439
 msgid "|linear-classifier-nn.svg|"
-msgstr "crwdns64200:0crwdne64200:0"
+msgstr "crwdns111721:0crwdne111721:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:454
 msgid "linear-classifier-nn.svg"
-msgstr "crwdns64202:0crwdne64202:0"
+msgstr "crwdns111723:0crwdne111723:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:441
 msgid "上图中的左图可以表示一张 :math:`4\\times 4` 的单通道图像经过线性分类器输出 10 个值的过程——只有输入和输出两层，似乎和 “深度” 学习没什么关系。"
-msgstr "crwdns64204:0:math:crwdne64204:0"
+msgstr "crwdns111725:0:math:crwdne111725:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:443
 msgid "输入层（Input layer）：顾名思义，即我们在一开始输入模型的数据，比如被展平后的灰度图像，每个像素数据点就是输入层的一个神经元；"
-msgstr "crwdns64206:0crwdne64206:0"
+msgstr "crwdns111727:0crwdne111727:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:444
 msgid "输出层（Output layer）：对于二分类任务，输出一个概率值，可以用一个神经元来表示；对于多分类任务，则需要用多个神经元表示；"
-msgstr "crwdns64208:0crwdne64208:0"
+msgstr "crwdns111729:0crwdne111729:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:445
 msgid "假设我们现在希望有一个更多层的网络结构——"
-msgstr "crwdns64210:0crwdne64210:0"
+msgstr "crwdns111731:0crwdne111731:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:447
 msgid "此时需要引入中间层，隐含在输入和输出之间，因此通常也称为隐藏层（Hidden layer）；"
-msgstr "crwdns64212:0crwdne64212:0"
+msgstr "crwdns111733:0crwdne111733:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:448
 msgid "在不做任何处理的情况下，每一层的输入都会是上一层线性函数的输出。"
-msgstr "crwdns64214:0crwdne64214:0"
+msgstr "crwdns111735:0crwdne111735:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:450
 msgid "但请注意，如果仅仅是简单堆叠神经元之间的全连接层的话，将导致网络最终的输出依旧是输入特征值的线性组合。"
-msgstr "crwdns64216:0crwdne64216:0"
+msgstr "crwdns111737:0crwdne111737:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:452
 msgid "仅用语言描述可能有些抽象，我们用代码验证一下："
-msgstr "crwdns64218:0crwdne64218:0"
+msgstr "crwdns111739:0crwdne111739:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:514
 msgid "上面的例子展示了：在假定模型参数已经训练收敛的情况下，单层的线性模型和双层的线性模型有着一样的预测效果（显然，更多层也一样）。"
-msgstr "crwdns64220:0crwdne64220:0"
+msgstr "crwdns111741:0crwdne111741:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:516
 msgid "对于双层模型，\\ :math:`\\hat{y} = W2 \\cdot (W1 \\cdot \\mathbf{x} + b1) + b2`, 其中 :math:`W1, W2, b1, b2` 是最终学得的参数；"
-msgstr "crwdns64222:0:math:crwdnd64222:0{y}crwdnd64222:0{x}crwdnd64222:0:math:crwdne64222:0"
+msgstr "crwdns111743:0:math:crwdnd111743:0{y}crwdnd111743:0{x}crwdnd111743:0:math:crwdne111743:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:517
 msgid "对于单层模型，\\ :math:`\\hat{y} = W \\cdot x + b`, 其中 :math:`W, b` 是最终学得的参数；"
-msgstr "crwdns64224:0:math:crwdnd64224:0{y}crwdnd64224:0:math:crwdne64224:0"
+msgstr "crwdns111745:0:math:crwdnd111745:0{y}crwdnd111745:0:math:crwdne111745:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:518
 msgid "真相是，在理想情况下，我们最终学到的参数将满足 :math:`W = W2 \\cdot W1`, :math:`b = W2 \\cdot b1 + b2`, 因此两个模型预测能力一致。"
-msgstr "crwdns64226:0:math:crwdnd64226:0:math:crwdne64226:0"
+msgstr "crwdns111747:0:math:crwdnd111747:0:math:crwdne111747:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:520
 msgid "可见线性层的叠加不但没有带来预测效果上的变化，还额外引入了更多需要被学习和优化的参数，加大了训练过程中的计算量。"
-msgstr "crwdns64228:0crwdne64228:0"
+msgstr "crwdns111749:0crwdne111749:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:532
 msgid "非线性激活函数"
-msgstr "crwdns64230:0crwdne64230:0"
+msgstr "crwdns111751:0crwdne111751:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:534
 msgid "人们期望神经网络可以模拟任意的函数，而线性模型表达能力不够，因此光靠线性计算是不足以解决问题；"
-msgstr "crwdns64232:0crwdne64232:0"
+msgstr "crwdns111753:0crwdne111753:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:535
 msgid "受到生物学启发，人脑神经元的树突多呈树状分支，它可接受刺激并将冲动传向胞体；"
-msgstr "crwdns64234:0crwdne64234:0"
+msgstr "crwdns111755:0crwdne111755:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:536
 msgid "为了模拟这一机制，人们需要向神经网络模型中引入非线性因素作为“刺激”。"
-msgstr "crwdns64236:0crwdne64236:0"
+msgstr "crwdns111757:0crwdne111757:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:538
 msgid "回忆一下，在二分类任务中常常会使用 Sigmoid 函数作为决策函数进行分类，这是我们对它的第一印象。"
-msgstr "crwdns64238:0crwdne64238:0"
+msgstr "crwdns111759:0crwdne111759:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:540
 msgid "但仔细想想，Sigmoid 函数将前面的线性计算所得到的输出以 **非线性** 的形式映射到了 :math:`(0, 1)` 区间，这个特性可以给我们带来什么启发呢？"
-msgstr "crwdns64240:0:math:crwdne64240:0"
+msgstr "crwdns111761:0:math:crwdne111761:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:575
 msgid "这显然让人联想到，Sigmoid 函数非常适合用来当作神经网络中的激活函数，给整个模型引入非线性。"
-msgstr "crwdns64242:0crwdne64242:0"
+msgstr "crwdns111763:0crwdne111763:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:577
 msgid "MegEngine 中实现了非常多常见的非线性激活函数，至于究竟选取哪一个激活函数，亦或是设计新的激活函数来使用，没有特别的规定。"
-msgstr "crwdns64244:0crwdne64244:0"
+msgstr "crwdns111765:0crwdne111765:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:579
 msgid "将激活函数加在每一层的线性计算之后，这一改动使得神经网络模型理论上可以逼近任意的非线性模型。"
-msgstr "crwdns64246:0crwdne64246:0"
+msgstr "crwdns111767:0crwdne111767:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:582
 msgid "前馈神经网络"
-msgstr "crwdns64248:0crwdne64248:0"
+msgstr "crwdns111769:0crwdne111769:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:584
 msgid "前馈神经网络（Feedforward neural network）是一种最简单的人工神经网络（ANN），完全由全连接层构成。除了输入节点，每个节点都是一个带有非线性激活函数的神经元（或称处理单元），克服了感知器不能对线性不可分数据进行识别的弱点。这里我们需要提到一个术语 “多层感知机”（Multilayer perceptron, 简称 MLP），它的使用有些含糊不清：有的时候被模糊地认为是前馈神经网络的指代；有时严格指代由多层感知器（类似二分类阈值进行激活）所组成的网络。为了避免歧义，我们在本次教程中只使用 “前馈神经网络” 这种说法，但你应该知道 MLP 在具体的上下文中的指代。"
-msgstr "crwdns64250:0crwdne64250:0"
+msgstr "crwdns111771:0crwdne111771:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:587
 msgid "我们现在就可以尝试写出一个糙版本的前馈神经网络，在 MNIST 数据集上进行测试："
-msgstr "crwdns64252:0crwdne64252:0"
+msgstr "crwdns111773:0crwdne111773:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:782
 msgid "我们欣喜地发现，经过 5 个周期的学习，我们的预测精度已经超过了单层的线性分类模型。"
-msgstr "crwdns64254:0crwdne64254:0"
+msgstr "crwdns111775:0crwdne111775:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:784
 msgid "你可能已经注意到了一些细节（有一些相当关键！）："
-msgstr "crwdns64256:0crwdne64256:0"
+msgstr "crwdns111777:0crwdne111777:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:786
 msgid "使用全连接层时，每层的参数量是非常大的，这会导致很大的计算和时间开销；"
-msgstr "crwdns64258:0crwdne64258:0"
+msgstr "crwdns111779:0crwdne111779:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:787
 msgid "隐藏层神经元个数也是需要人为设计的超参数，并且直接影响到整个网络模型的参数总量；"
-msgstr "crwdns66999:0crwdne66999:0"
+msgstr "crwdns111781:0crwdne111781:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:788
 msgid "**我们的参数初始化选择了随机初始化而不是零初始化策略，** 这是为什么呢？（你可以改回零初始化试试看）"
-msgstr "crwdns67001:0crwdne67001:0"
+msgstr "crwdns111783:0crwdne111783:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:789
 msgid "我们还对输入的数据进行了归一化处理，原始值位于 :math:`(0, 255)`, 归一化后统一到 :math:`(0,1)`;"
-msgstr "crwdns64264:0:math:crwdnd64264:0:math:crwdne64264:0"
+msgstr "crwdns111785:0:math:crwdnd111785:0:math:crwdne111785:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:790
 msgid "我们选用的激活函数似乎并不是 Sigmoid, 而是一个叫做 ReLU 的家伙。"
-msgstr "crwdns64266:0crwdne64266:0"
+msgstr "crwdns111787:0crwdne111787:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:792
 msgid "**请尝试修改各种超参数或网络的隐藏层数，看看会得到什么不同的结果。**"
-msgstr "crwdns64268:0crwdne64268:0"
+msgstr "crwdns111789:0crwdne111789:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:795
 msgid "请停下来看看这个"
-msgstr "crwdns64270:0crwdne64270:0"
+msgstr "crwdns111791:0crwdne111791:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:797
 msgid "有了前面的理论和实践积累，现在是时候对神经网络的基本结构有更加直观而清晰的认知了。"
-msgstr "crwdns64272:0crwdne64272:0"
+msgstr "crwdns111793:0crwdne111793:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:799
 msgid "我强烈推荐你看一看这个系列的视频作为阶段性的总结，绝对会受益匪浅："
-msgstr "crwdns64274:0crwdne64274:0"
+msgstr "crwdns111795:0crwdne111795:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:817
 msgid "`3Blue1Brown 深度学习之神经网络的结构 <https://www.bilibili.com/video/BV1bx411M7Zx>`__ (对于当前教程而言，这个视频是必须观看的)"
-msgstr "crwdns64276:0crwdne64276:0"
+msgstr "crwdns111797:0crwdne111797:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:818
 msgid "`3Blue1Brown 深度学习之梯度下降法 <https://www.bilibili.com/video/BV1Ux411j7ri>`__"
-msgstr "crwdns64278:0crwdne64278:0"
+msgstr "crwdns111799:0crwdne111799:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:819
 msgid "`3Blue1Brown 深度学习之直观理解反向传播 <https://www.bilibili.com/video/BV16x411V7Qg?p=1>`__"
-msgstr "crwdns64280:0crwdne64280:0"
+msgstr "crwdns111801:0crwdne111801:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:820
 msgid "`3Blue1Brown 深度学习之反向传播的微积分原理 <https://www.bilibili.com/video/BV16x411V7Qg?p=2>`__"
-msgstr "crwdns64282:0crwdne64282:0"
+msgstr "crwdns111803:0crwdne111803:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:822
 msgid "完整看完第一个视频后，你应该能回答 “为什么要用 ReLU 代替 Sigmoid 作为激活函数” 这个问题了。"
-msgstr "crwdns64284:0crwdne64284:0"
+msgstr "crwdns111805:0crwdne111805:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:824
 msgid "而当你将所有的视频看完，你也能更加深刻地体会到 Optimizer 和 GradManager 的魅力～"
-msgstr "crwdns66560:0crwdne66560:0"
+msgstr "crwdns111807:0crwdne111807:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:836
 msgid "更巧妙的计算图算子"
-msgstr "crwdns64286:0crwdne64286:0"
+msgstr "crwdns111809:0crwdne111809:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:838
 msgid "我们在上一小节没有测试前馈神经网络在 CIFAR10 数据集上的效果，你可以自己修改代码测试一下，但预测精度恐怕仍不容乐观。究竟是哪个环节出问题了呢？"
-msgstr "crwdns64288:0crwdne64288:0"
+msgstr "crwdns111811:0crwdne111811:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:840
 msgid "回顾一下计算图的基本结构，其中有数据节点（数据和参数）和计算节点（算子）；"
-msgstr "crwdns64290:0crwdne64290:0"
+msgstr "crwdns111813:0crwdne111813:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:841
 msgid "前馈神经网络的隐藏层设计可看作是对图结构的宏观调整，而参数的初始化策略也可以被人为控制；"
-msgstr "crwdns64292:0crwdne64292:0"
+msgstr "crwdns111815:0crwdne111815:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:842
 msgid "全连接神经网络的各个层之间使用的均为线性算子，我们似乎忽略了算子对整个模型预测性能所带来的影响。"
-msgstr "crwdns66562:0crwdne66562:0"
+msgstr "crwdns111817:0crwdne111817:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:854
 msgid "从传统领域知识中学习"
-msgstr "crwdns64296:0crwdne64296:0"
+msgstr "crwdns111819:0crwdne111819:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:856
 msgid "如今深度学习能够在很多领域大放异彩，离不开其与传统领域知识的结合。"
-msgstr "crwdns64298:0crwdne64298:0"
+msgstr "crwdns111821:0crwdne111821:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:858
 msgid "在数字图像处理领域（准确来说是数字信号处理领域），存在着一种名为 “卷积” （Convolution）的操作；"
-msgstr "crwdns64300:0crwdne64300:0"
+msgstr "crwdns111823:0crwdne111823:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:859
 msgid "以下面的代码为例子，对于左边的原图，我们定义了两个 :math:`3\\times3` 卷积核（Filter）对原图进行卷积运算；"
-msgstr "crwdns64302:0:math:crwdne64302:0"
+msgstr "crwdns111825:0:math:crwdne111825:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:860
 msgid "可以理解成对于原图中的每个像素，都根据卷积核中给定的参数对周围九宫格的像素值进行加权求和，作为更新后的像素值。"
-msgstr "crwdns64304:0crwdne64304:0"
+msgstr "crwdns111827:0crwdne111827:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:910
 msgid "背后的细节我们暂时不用深究，直观上给人的感觉是：\\ **卷积运算能够对原始图像的空间信息加以利用。**"
-msgstr "crwdns64306:0crwdne64306:0"
+msgstr "crwdns111829:0crwdne111829:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:912
 msgid "我们在处理图像的时候，使用了 Flatten 算子将一张图片中的像素展平成一个特征向量，结果效果不佳。"
-msgstr "crwdns64308:0crwdne64308:0"
+msgstr "crwdns111831:0crwdne111831:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:914
 msgid "有了对卷积的基本了解，这自然地启发我们在神经网络模型中定义一种卷积算子，来作为对图像特征的处理方式。"
-msgstr "crwdns64310:0crwdne64310:0"
+msgstr "crwdns111833:0crwdne111833:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:917
 msgid "在 MegEngine 中使用卷积计算"
-msgstr "crwdns66564:0crwdne66564:0"
+msgstr "crwdns111835:0crwdne111835:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:919
 msgid "在 MegEngine 的 ``funtional.nn`` 模块中，实现了卷积相关的算子，我们以 ``funtional.nn.conv2d`` 为例子："
-msgstr "crwdns64314:0crwdne64314:0"
+msgstr "crwdns111837:0crwdne111837:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:921
 msgid "假设有一张 :math:`5 \\times 5` 大小的 2D 单通道图像 ``input_2d``, 像素值分别为 :math:`0` 到 :math:`24`;"
-msgstr "crwdns64316:0:math:crwdnd64316:0:math:crwdnd64316:0:math:crwdne64316:0"
+msgstr "crwdns111839:0:math:crwdnd111839:0:math:crwdnd111839:0:math:crwdne111839:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:922
 msgid "我们定义了 :math:`3 \\times 3` 大小的卷积核 ``filter_2d`` 并应用在这张原始图像上，得到了输出图像 ``output_2d`` ;"
-msgstr "crwdns64318:0:math:crwdne64318:0"
+msgstr "crwdns111841:0:math:crwdne111841:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:923
 msgid "从原始图像中值为 :math:`6` 至 :math:`18` 的像素，对应值都更新为其上下左右像素值之和（即原始值的 4 倍，对应 :math:`24` 到 :math:`72`\\ ）。"
-msgstr "crwdns64320:0:math:crwdnd64320:0:math:crwdnd64320:0:math:crwdnd64320:0:math:crwdne64320:0"
+msgstr "crwdns111843:0:math:crwdnd111843:0:math:crwdnd111843:0:math:crwdnd111843:0:math:crwdne111843:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:984
 msgid "相信你又有了新的疑惑——由于图像边缘的像素存在着 “没有邻居” 的情况，导致卷积计算后舍弃了这些原本位于边缘的像素点，直观来看图像的形状似乎 “小了一圈”，这个情况不是我们所希望的。处理办法是，在计算卷积操作时，先给边缘像素周围补上一圈像素（最常见的操作是补值为 0 的像素点），这样在进行卷积计算的时候，就能利用上原图中的所有像素信息了："
-msgstr "crwdns64322:0crwdne64322:0"
+msgstr "crwdns111845:0crwdne111845:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1049
 msgid "用到了卷积算子的神经网络又被人们称为 “卷积神经网络”（Convolutional Neural Network, CNN），从结构上看，它也是前馈神经网络的一种。卷积神经网络常用于计算机视觉领域，上面的 ``padding`` 操作也是计算机视觉中常见的图像处理手段，常见的一起搭配使用的算子还有 ``max_pooling``, 可以认为是一种降采样策略，从采样区域内选择最大值进行保留，从而改变了整个长宽比："
-msgstr "crwdns67003:0crwdne67003:0"
+msgstr "crwdns111847:0crwdne111847:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1103
 msgid "不过我们的教程目前还不打算涉及到太多关于计算机视觉相关的内容，因此不打算进行更多这方面的解释。我们需要关注的是："
-msgstr "crwdns67005:0crwdne67005:0"
+msgstr "crwdns111849:0crwdne111849:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1105
 msgid "相较于简单粗暴的 ``flatten`` 操作， ``conv`` 操作更能够利用图像的空间局部信息；"
-msgstr "crwdns64326:0crwdne64326:0"
+msgstr "crwdns111851:0crwdne111851:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1106
 msgid "卷积核中的参数其实和全连接层中的参数类似，都是 “可学习的” ，这意味着我们可以使用深度学习框架来优化卷积神经网络模型；"
-msgstr "crwdns64328:0crwdne64328:0"
+msgstr "crwdns111853:0crwdne111853:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1107
 msgid "但请注意：\\ **与卷积有关的算子，需要在计算的过程中需要关注不同层形状的变化，否则容易由于形状对不上导致程序报错。**"
-msgstr "crwdns66568:0crwdne66568:0"
+msgstr "crwdns111855:0crwdne111855:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1110
 msgid "Functional 卷积神经网络"
-msgstr "crwdns67007:0crwdne67007:0"
+msgstr "crwdns111857:0crwdne111857:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1112
 msgid "结合前面提到的知识，现在我们将构建一个多层的卷积神经网络模型！"
-msgstr "crwdns64334:0crwdne64334:0"
+msgstr "crwdns111859:0crwdne111859:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1114
 msgid "由于 MegEngine 默认 Tensor 的数据排布是 :math:`(N,C,H,W)` 格式，而我们的 CIFAR10 数据集图片是 :math:`(N,H,W,C)` 格式，所以我们在下面的代码中进行了对应的预处理："
-msgstr "crwdns67009:0:math:crwdnd67009:0:math:crwdne67009:0"
+msgstr "crwdns111861:0:math:crwdnd111861:0:math:crwdne111861:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1289
 msgid "可以看到，经过 100 个周期的训练，这个简陋的模型在 CIFAR10 图片分类上已经能够达到接近 60% 的预测准确率。"
-msgstr "crwdns67011:0crwdne67011:0"
+msgstr "crwdns111863:0crwdne111863:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1291
 msgid "实际上，我们这里定义的模型结构是非常经典的 `LeNet <http://yann.lecun.com/exdb/lenet/>`__\\ ，只是一些实现细节略有不同；"
-msgstr "crwdns67013:0crwdne67013:0"
+msgstr "crwdns111865:0crwdne111865:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1292
 msgid "由于模型变复杂，我们开始计算训练用时，选择每 10 个 epoch 输出一次 Log 信息；"
-msgstr "crwdns67015:0crwdne67015:0"
+msgstr "crwdns111867:0crwdne111867:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1293
 msgid "想象一下，如果没有使用 GPU 的话，那将花掉非常多的时间来进行模型训练；"
-msgstr "crwdns67017:0crwdne67017:0"
+msgstr "crwdns111869:0crwdne111869:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1294
 msgid "这只是我们对卷积神经网络模型的初体验，我们会慢慢地接触到更多的经典模型！"
-msgstr "crwdns64346:0crwdne64346:0"
+msgstr "crwdns111871:0crwdne111871:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1306
 msgid "总结回顾"
-msgstr "crwdns64376:0crwdne64376:0"
+msgstr "crwdns111873:0crwdne111873:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1308
 msgid "基于线性模型的局限性，我们从不同的角度出发尝试对模型进行了改进，最终取得了不错的效果："
-msgstr "crwdns64378:0crwdne64378:0"
+msgstr "crwdns111875:0crwdne111875:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1310
 msgid "模型结构变得更加复杂，由单层变成多层，为了解决非线性可分问题，我们引入了激活函数这一概念，最终认识了什么是前馈神经网络；"
-msgstr "crwdns64380:0crwdne64380:0"
+msgstr "crwdns111877:0crwdne111877:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1311
 msgid "模型算子变得更加精妙，我们借助对传统计算机视觉领域的卷积操作的了解，将隐藏层由简单的全连接层升级成卷积层，卷积神经网络便诞生了。"
-msgstr "crwdns64382:0crwdne64382:0"
+msgstr "crwdns111879:0crwdne111879:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1313
 msgid "接下来请在脑中尝试构建出一张完整的计算图，再次回想一下神经网络学习的整个过程："
-msgstr "crwdns64384:0crwdne64384:0"
+msgstr "crwdns111881:0crwdne111881:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1315
 msgid "我们将数据集中的样本经过处理后变为 Tensor 格式，每个样本作为输入层的各个神经节点，开始在图中流动；"
-msgstr "crwdns64386:0crwdne64386:0"
+msgstr "crwdns111883:0crwdne111883:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1316
 msgid "在隐藏层中有着许许多多的计算节点，连接着不同节点之间的是需要被学习和优化的参数，也被叫做权重；"
-msgstr "crwdns64388:0crwdne64388:0"
+msgstr "crwdns111885:0crwdne111885:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1317
 msgid "前向传播往往会经历特征提取和计算的过程，最终我们会根据任务类型来设计一个损失函数，用来评估训练过程中的模型表现；"
-msgstr "crwdns64390:0crwdne64390:0"
+msgstr "crwdns111887:0crwdne111887:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1318
 msgid "反向传播就好像一层层的浪花，根据链式法则去一层一层地计算当前层梯度，然后更新参数，又将梯度信息传给下一层…"
-msgstr "crwdns88457:0crwdne88457:0"
+msgstr "crwdns111889:0crwdne111889:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1330
 msgid "问题思考"
-msgstr "crwdns64394:0crwdne64394:0"
+msgstr "crwdns111891:0crwdne111891:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1332
 msgid "到目前为止，我们一直都在使用 MegEngine 的 ``functional`` 模块中的算子来定义我们的模型，一些问题已经初见端倪："
-msgstr "crwdns64350:0crwdne64350:0"
+msgstr "crwdns111893:0crwdne111893:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1334
 msgid "当模型结构开始变得越来越复杂，计算图结构的代码组织工作会变得非常繁杂；"
-msgstr "crwdns67019:0crwdne67019:0"
+msgstr "crwdns111895:0crwdne111895:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1335
 msgid "依赖 ``functional`` 的定义方式不够灵活，难以精细控制，更难以进行拓展，对业务不友好。"
-msgstr "crwdns66572:0crwdne66572:0"
+msgstr "crwdns111897:0crwdne111897:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1337
 msgid "深度学习框架已经为用户简化了梯度的自动求导和参数优化等流程，自然也可以提供一种更加方便的模式来定义我们的模型。"
-msgstr "crwdns64356:0crwdne64356:0"
+msgstr "crwdns111899:0crwdne111899:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1339
 msgid "工欲善其事，必先利其器。在下一个教程中，我们将接触到一种更加灵活高效的模型构建方式，这是我们与其它开发者进行沟通的桥梁。"
-msgstr "crwdns66574:0crwdne66574:0"
+msgstr "crwdns111901:0crwdne111901:0"
 
 #: ../../source/getting-started/beginner/how-to-build-a-better-model.ipynb:1341
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
-msgstr "crwdns64412:0crwdne64412:0"
+msgstr "crwdns111903:0crwdne111903:0"
 
 #~ msgid "我们将接触除了 ``functional`` 之外的另外一种更加优雅的搭建网络模型的方式，即使用 ``module`` 模块。"
 #~ msgstr ""

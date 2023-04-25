@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2022-09-02 12:12\n"
+"PO-Revision-Date: 2023-04-21 09:21\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,64 +15,64 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.nn.remap.po\n"
-"X-Crowdin-File-ID: 7145\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.nn.remap.po\n"
+"X-Crowdin-File-ID: 9271\n"
 
 #: ../../source/reference/api/megengine.functional.nn.remap.rst:2
 msgid "megengine.functional.nn.remap"
-msgstr "crwdns69553:0crwdne69553:0"
+msgstr "crwdns102243:0crwdne102243:0"
 
 #: megengine.functional.vision.remap:1 of
 msgid "Applies remap transformation to batched 2D images. Remap is an operation that relocates pixels in a image to another location in a new image."
-msgstr "crwdns94674:0crwdne94674:0"
+msgstr "crwdns102245:0crwdne102245:0"
 
 #: megengine.functional.vision.remap:3 of
 msgid "The input images are transformed to the output images by the tensor ``map_xy``. The output's H and W are same as ``map_xy``'s H and W."
-msgstr "crwdns94676:0crwdne94676:0"
+msgstr "crwdns102247:0crwdne102247:0"
 
 #: megengine.functional.vision.remap of
 msgid "参数"
-msgstr "crwdns69559:0crwdne69559:0"
+msgstr "crwdns102249:0crwdne102249:0"
 
 #: megengine.functional.vision.remap:7 of
 msgid "input image, its shape represents ``[b, c, in_h, in_w]``."
-msgstr "crwdns94678:0crwdne94678:0"
+msgstr "crwdns102251:0crwdne102251:0"
 
 #: megengine.functional.vision.remap:9 of
 msgid "transformation matrix, its shape shoule be ``[b, o_h, o_w, 2]``. The shape of output is determined by o_h and o_w. For each element in output, its value is determined by inp and ``map_xy``. ``map_xy[..., 0]`` and ``map_xy[..., 1]`` are the positions of the current element in inp, respectively. Therefore, their ranges are ``[0, in_w - 1]`` and ``[0, in_h - 1]``."
-msgstr "crwdns94680:0crwdne94680:0"
+msgstr "crwdns102253:0crwdne102253:0"
 
 #: megengine.functional.vision.remap:14 of
 msgid "pixel extrapolation method. Default: \"replicate\". Currently also support \"constant\", \"reflect\", \"reflect_101\", \"wrap\". \"replicate\": repeatedly fills the edge pixel values of the duplicate image, expanding the new boundary pixel values with the edge pixel values. \"constant\": fills the edges of the image with a fixed numeric value."
-msgstr "crwdns93574:0crwdne93574:0"
+msgstr "crwdns102255:0crwdne102255:0"
 
 #: megengine.functional.vision.remap:19 of
 msgid "value used in case of a constant border. Default: 0"
-msgstr "crwdns69567:0crwdne69567:0"
+msgstr "crwdns102257:0crwdne102257:0"
 
 #: megengine.functional.vision.remap:21 of
 msgid "interpolation methods. Default: \"linear\". Currently also support \"nearest\" mode."
-msgstr "crwdns91934:0crwdne91934:0"
+msgstr "crwdns102259:0crwdne102259:0"
 
 #: megengine.functional.vision.remap of
 msgid "返回类型"
-msgstr "crwdns69571:0crwdne69571:0"
+msgstr "crwdns102261:0crwdne102261:0"
 
 #: megengine.functional.vision.remap:23 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr "crwdns69573:0crwdne69573:0"
+msgstr "crwdns102263:0crwdne102263:0"
 
 #: megengine.functional.vision.remap of
 msgid "返回"
-msgstr "crwdns69575:0crwdne69575:0"
+msgstr "crwdns102265:0crwdne102265:0"
 
 #: megengine.functional.vision.remap:24 of
 msgid "output tensor. [b, c, o_h, o_w]"
-msgstr "crwdns94682:0crwdne94682:0"
+msgstr "crwdns102267:0crwdne102267:0"
 
 #: megengine.functional.vision.remap:27 of
 msgid "实际案例"
-msgstr "crwdns69579:0crwdne69579:0"
+msgstr "crwdns102269:0crwdne102269:0"
 
 #~ msgid "batch, oh, ow, 2) transformation matrix"
 #~ msgstr "变换矩阵。 变化矩阵的shape是[批数, 输出高度, 输出宽度]。"

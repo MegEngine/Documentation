@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 09:02\n"
+"POT-Creation-Date: 2023-04-25 01:18+0000\n"
+"PO-Revision-Date: 2023-04-25 01:27\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,20 +11,64 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.GroupNorm.po\n"
-"X-Crowdin-File-ID: 2398\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.GroupNorm.po\n"
+"X-Crowdin-File-ID: 9505\n"
 
 #: ../../source/reference/api/megengine.module.GroupNorm.rst:5
 msgid "GroupNorm"
-msgstr "crwdns89023:0crwdne89023:0"
+msgstr "crwdns104647:0crwdne104647:0"
 
 #: megengine.module.normalization.GroupNorm:1 of
-msgid "Simple implementation of GroupNorm. Only support 4d tensor now. Reference: https://arxiv.org/pdf/1803.08494.pdf."
-msgstr "crwdns34864:0crwdne34864:0"
+msgid "Applies Group Normalization over a mini-batch of inputs Refer to `Group Normalization <https://arxiv.org/abs/1803.08494>`__"
+msgstr "crwdns121635:0crwdne121635:0"
+
+#: megengine.module.normalization.GroupNorm:4 of
+msgid "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta\n\n"
+msgstr "crwdns121637:0{E}crwdnd121637:0[x]crwdnd121637:0{Var}crwdnd121637:0[x]crwdne121637:0"
+
+#: megengine.module.normalization.GroupNorm:7 of
+msgid "The mean and standard-deviation are calculated separately over the each group. :math:`\\\\gamma` and :math:`\\\\beta` are learnable affine transform parameters of attr:`num_channels` if :attr:`affine` is ``True``."
+msgstr "crwdns121639:0:math:crwdnd121639:0:math:crwdnd121639:0:attr:crwdne121639:0"
+
+#: megengine.module.normalization.GroupNorm of
+msgid "参数"
+msgstr "crwdns121641:0crwdne121641:0"
+
+#: megengine.module.normalization.GroupNorm:11 of
+msgid "number of groups that divided from channels."
+msgstr "crwdns121643:0crwdne121643:0"
+
+#: megengine.module.normalization.GroupNorm:13 of
+msgid "number of channels expected in input"
+msgstr "crwdns121645:0crwdne121645:0"
+
+#: megengine.module.normalization.GroupNorm:15 of
+msgid "a value added to the denominator for numerical stability. Default: 1e-5"
+msgstr "crwdns121647:0crwdne121647:0"
+
+#: megengine.module.normalization.GroupNorm:16 of
+msgid "this module has learnable affine parameters (weight, bias) when affine is set to be True."
+msgstr "crwdns121649:0crwdne121649:0"
+
+#: megengine.module.normalization.GroupNorm:20 of
+msgid "Shape:"
+msgstr "crwdns121651:0crwdne121651:0"
+
+#: megengine.module.normalization.GroupNorm:19 of
+msgid "Input: :math:`(N, C, H, W)` (now only support NCHW format tensor)"
+msgstr "crwdns121653:0:math:crwdne121653:0"
+
+#: megengine.module.normalization.GroupNorm:20 of
+msgid "Output: :math:`(N, C, H, W)` (same shape as input)"
+msgstr "crwdns121655:0:math:crwdne121655:0"
+
+#: megengine.module.normalization.GroupNorm:23 of
+msgid "实际案例"
+msgstr "crwdns121657:0crwdne121657:0"
 
 #~ msgid "基类：:class:`megengine.module.module.Module`"
 #~ msgstr "基类：:class:`megengine.module.module.Module`"
@@ -308,4 +352,12 @@ msgstr "crwdns34864:0crwdne34864:0"
 
 #~ msgid "Sets all parameters' grads to zero"
 #~ msgstr "将所有参数的梯度置0。"
+
+#~ msgid ""
+#~ "Simple implementation of GroupNorm. Only "
+#~ "support 4d tensor now. Reference: "
+#~ "https://arxiv.org/pdf/1803.08494.pdf."
+#~ msgstr ""
+#~ "``GroupNorm`` "
+#~ "的简单实现。当前仅支持四维张量。参考文献：https://arxiv.org/pdf/1803.08494.pdf。"
 

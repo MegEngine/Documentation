@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:24\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,70 +15,70 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/amp/index.po\n"
-"X-Crowdin-File-ID: 8187\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/amp/index.po\n"
+"X-Crowdin-File-ID: 9981\n"
 
 #: ../../source/user-guide/model-development/amp/index.rst:5
 msgid "自动混合精度（AMP）"
-msgstr "crwdns85605:0crwdne85605:0"
+msgstr "crwdns119741:0crwdne119741:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:12
 msgid "混合精度（Mix Precision）训练是指在训练时，对网络不同的部分采用不同的数值精度，对追求速度的算子（比如 conv、matmul）可以用较低精度（比如 float16）从而获得明显的性能提升，而对其它更看重精度的算子（比如 log、softmax）则保留较高的精度（比如 float32）。"
-msgstr "crwdns85607:0crwdne85607:0"
+msgstr "crwdns119743:0crwdne119743:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:14
 msgid "得益于 NVIDIA TensorCore 的存在（需要 Volta, Turing, Ampere 架构 GPU），对于 conv、matmul 占比较多的网络，混合精度训练一般能使网络整体的训练速度有较大的提升（2-3X）。"
-msgstr "crwdns93146:0crwdne93146:0"
+msgstr "crwdns119745:0crwdne119745:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:17
 msgid "接口介绍"
-msgstr "crwdns85611:0crwdne85611:0"
+msgstr "crwdns119747:0crwdne119747:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:19
 msgid "在 MegEngine 中，使用 :class:`~.amp.autocast` 接口可以实现对网络中相关 op 数据类型的自动转换："
-msgstr "crwdns85613:0:class:crwdne85613:0"
+msgstr "crwdns119749:0:class:crwdne119749:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:34
 msgid "上面样例中是把 :class:`~.amp.autocast` 作为 context manager 使用，也可以使用装饰器的写法："
-msgstr "crwdns85615:0:class:crwdne85615:0"
+msgstr "crwdns119751:0:class:crwdne119751:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:46
 msgid "或者使用单独的开关："
-msgstr "crwdns85617:0crwdne85617:0"
+msgstr "crwdns119753:0crwdne119753:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:56
 msgid "在开启 autocast 后，网络中间结果的数值类型会变成 float16，其对应的梯度自然也是 float16。而由于 float16 的数值范围比 float32 要小，所以如果遇到特别小的数（比如 loss、gradient），float16 就难以精确表达，这时候一般需要进行梯度放缩（Gradient Scaling）。做法是对网络的 loss 进行放大，从而使反向传播时网络中间结果对应的梯度也得到相同的放大，减少精度的损失，而梯度反传到参数时，仍会是 float32 的类型，在等比缩小之后，并不会影响参数的更新。"
-msgstr "crwdns85619:0crwdne85619:0"
+msgstr "crwdns119755:0crwdne119755:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:58
 msgid "在 MegEngine 中使用梯度放缩，可以通过 :class:`~.amp.GradScaler` 接口进行。"
-msgstr "crwdns85621:0:class:crwdne85621:0"
+msgstr "crwdns119757:0:class:crwdne119757:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:84
 msgid "上面的样例中，通过替换 ``gm.backward(loss)`` 为 ``scaler.backward(gm, loss)``，可以实现对 loss、gradient 的自动放缩，实际上包含三个步骤："
-msgstr "crwdns85623:0crwdne85623:0"
+msgstr "crwdns119759:0crwdne119759:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:86
 msgid "修改 :meth:`.GradManager.backward` 的 ``dy`` 参数，使从 loss 反传的梯度都乘以一个常数 ``scale_factor``；"
-msgstr "crwdns85625:0:meth:crwdne85625:0"
+msgstr "crwdns119761:0:meth:crwdne119761:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:87
 msgid "调用 :meth:`.GradScaler.unscale` 对 :meth:`.GradManager.attached_tensors` 的梯度进行修改，乘以 ``scale_factor`` 的倒数；"
-msgstr "crwdns85627:0:meth:crwdnd85627:0:meth:crwdne85627:0"
+msgstr "crwdns119763:0:meth:crwdnd119763:0:meth:crwdne119763:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:88
 msgid "调用 :meth:`.GradScaler.update` ，更新内部统计量，以及视情况更新 ``scale_factor`` 。"
-msgstr "crwdns85629:0:meth:crwdne85629:0"
+msgstr "crwdns119765:0:meth:crwdne119765:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:90
 msgid "所以如果需要更加精细的操作，比如累积多个 iter 的梯度，那么可以使用以下等价形式："
-msgstr "crwdns85631:0crwdne85631:0"
+msgstr "crwdns119767:0crwdne119767:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:108
 msgid "我们可以形象地把上面两种方式分别称为自动挡和手动挡。"
-msgstr "crwdns85633:0crwdne85633:0"
+msgstr "crwdns119769:0crwdne119769:0"
 
 #: ../../source/user-guide/model-development/amp/index.rst:110
 msgid "通过以上接口，就可以在无需修改模型代码的条件下，只修改训练代码实现混合精度训练，大幅提升网络的训练速度了。"
-msgstr "crwdns85635:0crwdne85635:0"
+msgstr "crwdns119771:0crwdne119771:0"
 

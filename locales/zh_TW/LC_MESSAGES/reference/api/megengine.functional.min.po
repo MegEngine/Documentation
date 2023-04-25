@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:23\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:19\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,56 +11,68 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.min.po\n"
-"X-Crowdin-File-ID: 2216\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.min.po\n"
+"X-Crowdin-File-ID: 9177\n"
 
 #: ../../source/reference/api/megengine.functional.min.rst:2
 msgid "megengine.functional.min"
-msgstr "crwdns31490:0crwdne31490:0"
+msgstr "crwdns101133:0crwdne101133:0"
 
 #: megengine.functional.math.min:1 of
-msgid "Returns the min value of input tensor along given axis. If axis is a list of dimensions, reduce over all of them."
-msgstr "crwdns31492:0crwdne31492:0"
+msgid "Calculates the minimum of tensor elements over a given axis (or axes)."
+msgstr "crwdns101135:0crwdne101135:0"
 
 #: megengine.functional.math.min of
 msgid "参数"
-msgstr "crwdns31494:0crwdne31494:0"
+msgstr "crwdns101137:0crwdne101137:0"
+
+#: megengine.functional.math.min:4 of
+msgid "input tensor. Should have a numeric data type."
+msgstr "crwdns101139:0crwdne101139:0"
 
 #: megengine.functional.math.min:6 of
-msgid "input tensor."
-msgstr "crwdns31496:0crwdne31496:0"
-
-#: megengine.functional.math.min:8 of
-msgid "dimension to reduce. If None, all dimensions will be reduced. Default: None"
-msgstr "crwdns31498:0crwdne31498:0"
+msgid "axis or axes along which minimums must be computed. By default, the minimum must be computed over the entire tensor. If a sequence of integers, minimums must be computed over multiple axes."
+msgstr "crwdns101141:0crwdne101141:0"
 
 #: megengine.functional.math.min:10 of
-msgid "whether the output tensor has axis retained or not. Default: False"
-msgstr "crwdns31500:0crwdne31500:0"
+msgid "if ``True``, the reduced axes (dimensions) must be included in the result as singleton dimensions, and, accordingly, the result must be compatible with the input tensor (see :ref:`broadcasting-rule`). Otherwise, if ``False``, the reduced axes (dimensions) must not be included in the result."
+msgstr "crwdns101143:0:ref:crwdne101143:0"
 
 #: megengine.functional.math.min of
 msgid "返回类型"
-msgstr "crwdns69189:0crwdne69189:0"
+msgstr "crwdns101145:0crwdne101145:0"
 
-#: megengine.functional.math.min:12 of
+#: megengine.functional.math.min:14 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr "crwdns69191:0crwdne69191:0"
+msgstr "crwdns101147:0crwdne101147:0"
 
 #: megengine.functional.math.min of
 msgid "返回"
-msgstr "crwdns31506:0crwdne31506:0"
+msgstr "crwdns101149:0crwdne101149:0"
 
-#: megengine.functional.math.min:13 of
-msgid "output tensor."
-msgstr "crwdns31508:0crwdne31508:0"
+#: megengine.functional.math.min:15 of
+msgid "if the minimum was computed over the entire tensor, a zero-dimensional tensor containing the minimum; otherwise, a non-zero-dimensional tensor containing the minimums."
+msgstr "crwdns101151:0crwdne101151:0"
 
-#: megengine.functional.math.min:16 of
+#: megengine.functional.math.min:18 of
+msgid "Special Cases"
+msgstr "crwdns101153:0crwdne101153:0"
+
+#: megengine.functional.math.min:20 of
+msgid "If :math:`x_i` is ``NaN``, the minimum is ``NaN`` (i.e., ``NaN`` values propagate)."
+msgstr "crwdns101155:0:math:crwdne101155:0"
+
+#: megengine.functional.math.min:23 of
 msgid "实际案例"
-msgstr "crwdns69193:0crwdne69193:0"
+msgstr "crwdns101157:0crwdne101157:0"
+
+#: megengine.functional.math.min:28 of
+msgid "Along an axis:"
+msgstr "crwdns101159:0crwdne101159:0"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
@@ -73,4 +85,26 @@ msgstr "crwdns69193:0crwdne69193:0"
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid ""
+#~ "Returns the min value of input "
+#~ "tensor along given axis. If axis "
+#~ "is a list of dimensions, reduce "
+#~ "over all of them."
+#~ msgstr "返回在给定轴 ``axis`` 上 ``inp`` 张量每一行的最小值。如果给定的轴是一个维度列表，则规约所有维度。"
+
+#~ msgid "input tensor."
+#~ msgstr "输入张量。"
+
+#~ msgid ""
+#~ "dimension to reduce. If None, all "
+#~ "dimensions will be reduced. Default: "
+#~ "None"
+#~ msgstr "要进行规约的维度。如果设置为 None，则所有的维度都将规约。默认：None"
+
+#~ msgid "whether the output tensor has axis retained or not. Default: False"
+#~ msgstr "输出张量是否保留了轴 *axis* 。默认：False"
+
+#~ msgid "output tensor."
+#~ msgstr "输出张量。"
 

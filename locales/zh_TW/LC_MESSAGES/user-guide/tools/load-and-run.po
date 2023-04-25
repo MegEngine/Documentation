@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-26 12:37+0800\n"
-"PO-Revision-Date: 2021-12-13 15:37\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,258 +15,258 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/tools/load-and-run.po\n"
-"X-Crowdin-File-ID: 2870\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/tools/load-and-run.po\n"
+"X-Crowdin-File-ID: 9901\n"
 
 #: ../../source/user-guide/tools/load-and-run.rst:5
 msgid "如何使用 Load and Run（C++）"
-msgstr "crwdns46276:0crwdne46276:0"
+msgstr "crwdns116567:0crwdne116567:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:7
 msgid "Load and Run （简称 LAR）是 MegEngine 中的加载并运行模型的工具，具有以下功能："
-msgstr "crwdns46278:0crwdne46278:0"
+msgstr "crwdns116569:0crwdne116569:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:9
 msgid "编译出对应各个平台的二进制文件，可对比相同模型的速度；"
-msgstr "crwdns46280:0crwdne46280:0"
+msgstr "crwdns116571:0crwdne116571:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:10
 msgid "测试验证不同模型优化方法的效果（直接执行 ``./load_and_run`` 显示相应帮助文档）；"
-msgstr "crwdns46282:0crwdne46282:0"
+msgstr "crwdns116573:0crwdne116573:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:14
 msgid "目前发布的版本我们开放了对 CPU（x86, x64, ARM, ARMv8.2）和 GPU（CUDA）平台的支持。"
-msgstr "crwdns46284:0crwdne46284:0"
+msgstr "crwdns116575:0crwdne116575:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:15
 msgid "如二进制文件体积较大不利于使用，可选择使用 Load and Run 的 :ref:`Python 版本 <load-and-run-py>` 。"
-msgstr "crwdns46286:0:ref:crwdne46286:0"
+msgstr "crwdns116577:0:ref:crwdne116577:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:18
 msgid "编译 Load and Run"
-msgstr "crwdns46288:0crwdne46288:0"
+msgstr "crwdns116579:0crwdne116579:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:20
 msgid "我们以 x86 和 ARM 交叉编译为例进行说明："
-msgstr "crwdns46290:0crwdne46290:0"
+msgstr "crwdns116581:0crwdne116581:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:23
 msgid "Linux x86 平台编译"
-msgstr "crwdns46292:0crwdne46292:0"
+msgstr "crwdns116583:0crwdne116583:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:31
 msgid "编译完成后，我们可以在 ``build/lite/load_and_run`` 目录找到 ``load_and_run`` ."
-msgstr "crwdns86685:0crwdne86685:0"
+msgstr "crwdns116585:0crwdne116585:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:34
 msgid "Linux 交叉编译 ARM 版本"
-msgstr "crwdns46296:0crwdne46296:0"
+msgstr "crwdns116587:0crwdne116587:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:37
 msgid "请确保你的机器上已经设置好了 Android 所需开发环境："
-msgstr "crwdns46298:0crwdne46298:0"
+msgstr "crwdns116589:0crwdne116589:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:39
 msgid "到 Android 的官网下载 `NDK <https://developer.android.com/ndk/downloads>`_ 及相关工具， 这里推荐 android-ndk-r21 以上的版本；"
-msgstr "crwdns46300:0crwdne46300:0"
+msgstr "crwdns116591:0crwdne116591:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:41
 msgid "在 BASH 中设置 NDK_ROOT 环境变量：``export NDK_ROOT=ndk_dir``"
-msgstr "crwdns46302:0crwdne46302:0"
+msgstr "crwdns116593:0crwdne116593:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:43
 msgid "在 Ubuntu (16.04/18.04) 用以下脚本进行 ARM-Android 的交叉编译："
-msgstr "crwdns46304:0crwdne46304:0"
+msgstr "crwdns116595:0crwdne116595:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:49
 msgid "编译完成后，我们可以在 ``build_dir/android/arm64-v8a/release/install/bin/load_and_run`` 目录下找到编译生成的可执行文件 ``load_and_run`` . 查看脚本源码可以了解更多选项的设置方法。"
-msgstr "crwdns46306:0crwdne46306:0"
+msgstr "crwdns116597:0crwdne116597:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:54
 msgid "上面的脚本默认没有开启 ARMv8.2-A+DotProd 的新指令集支持， 如果在一些支持的设备（如 Cortex-A76 等），可以开启相关选项："
-msgstr "crwdns46308:0crwdne46308:0"
+msgstr "crwdns116599:0crwdne116599:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:61
 msgid ":ref:`量化模型 <quantization-guide>` 推荐开启 ARMv8.2+DotProd 支持， 能够充分利用 DotProd 指令集硬件加速。"
-msgstr "crwdns67893:0:ref:crwdne67893:0"
+msgstr "crwdns116601:0:ref:crwdne116601:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:65
 msgid "使用 Load and Run"
-msgstr "crwdns46312:0crwdne46312:0"
+msgstr "crwdns116603:0crwdne116603:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:68
 msgid "使用之前，需要先将模型文件的输入、:ref:`Dump <dump>` 出的预训练模型文件和 load_and_run (以及依赖 ``.so`` 的文件) 传到手机，并设置好环境变量 ``LD_LIBRARY_PATH`` . 示例代码如下："
-msgstr "crwdns46314:0:ref:crwdne46314:0"
+msgstr "crwdns116605:0:ref:crwdne116605:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:80
 msgid "举例说明，使用 Load and Run 的基础语法如下:"
-msgstr "crwdns46316:0crwdne46316:0"
+msgstr "crwdns116607:0crwdne116607:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:86
 msgid "其中有几个基础参数："
-msgstr "crwdns46318:0crwdne46318:0"
+msgstr "crwdns116609:0crwdne116609:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:89
 msgid "``net``"
-msgstr "crwdns46320:0crwdne46320:0"
+msgstr "crwdns116611:0crwdne116611:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:89
 msgid "指定 mge graph 路径，例子中为 ``./model.mge``."
-msgstr "crwdns46322:0crwdne46322:0"
+msgstr "crwdns116613:0crwdne116613:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:94
 msgid "``--input INPUT_DATA``"
-msgstr "crwdns46324:0crwdne46324:0"
+msgstr "crwdns116615:0crwdne116615:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:92
 msgid "指定用作输入的 inputs data 路径，例子中为 ``./data.npy``."
-msgstr "crwdns46326:0crwdne46326:0"
+msgstr "crwdns116617:0crwdne116617:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:94
 msgid "输入格式支持 ``.ppm/.pgm/.json/.npy`` 等文件格式和命令行。"
-msgstr "crwdns46328:0crwdne46328:0"
+msgstr "crwdns116619:0crwdne116619:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:97
 msgid "``--iter ITER``"
-msgstr "crwdns46330:0crwdne46330:0"
+msgstr "crwdns116621:0crwdne116621:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:97
 msgid "正式运行测速的迭代数，例子中为 ``10``."
-msgstr "crwdns46332:0crwdne46332:0"
+msgstr "crwdns116623:0crwdne116623:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:100
 msgid "进阶参数设置"
-msgstr "crwdns46334:0crwdne46334:0"
+msgstr "crwdns116625:0crwdne116625:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:105
 msgid "平台相关 Layout 优化"
-msgstr "crwdns46336:0crwdne46336:0"
+msgstr "crwdns116627:0crwdne116627:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:109
 msgid "``--enable-nchw44``"
-msgstr "crwdns46338:0crwdne46338:0"
+msgstr "crwdns116629:0crwdne116629:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:108
 msgid "目前 MegEngine 的网络是 NCHW 的 Layout, 但是这种 Layout 不利于充分利用 SIMD 特性，且边界处理异常复杂。 为此我们针对 ARM 开发了 NCHW44 的 Layout."
-msgstr "crwdns46340:0crwdne46340:0"
+msgstr "crwdns116631:0crwdne116631:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:112
 msgid "``--enable-nchw88``"
-msgstr "crwdns46342:0crwdne46342:0"
+msgstr "crwdns116633:0crwdne116633:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:112
 msgid "如上所述，对于 x86 AVX 下，我们同样定义了 NCHW88 的 Layout 优化。"
-msgstr "crwdns46344:0crwdne46344:0"
+msgstr "crwdns116635:0crwdne116635:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:117
 msgid "开启 fastrun 模式"
-msgstr "crwdns46346:0crwdne46346:0"
+msgstr "crwdns116637:0crwdne116637:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:119
 msgid "目前在 MegEngine 中，针对某些算子存在很多种不同的算法 （如 conv 存在 direct, winograd 或者 im2col 等算法）， 而这些算法在不同的 shape 或者不同的硬件平台上，其性能表现差别极大， 导致很难写出一个有效的搜索算法，在执行时选择到最快的执行方式。 为此在 MegEngine 中集成了 fastrun 模式， **在执行模型的时候会将每个算子的可选所有算法都执行一遍，然后选择一个最优的算法记录下来。** 整体来讲大概有 10% 的性能提速。"
-msgstr "crwdns46348:0crwdne46348:0"
+msgstr "crwdns116639:0crwdne116639:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:127
 msgid "使用 fastrun 一般分为两个阶段，**需要顺序执行。**"
-msgstr "crwdns46350:0crwdne46350:0"
+msgstr "crwdns116641:0crwdne116641:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:129
 msgid "搜参阶段："
-msgstr "crwdns46352:0crwdne46352:0"
+msgstr "crwdns116643:0crwdne116643:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:132
 msgid "``--fast-run --fast-run-algo-policy CACHE_FILE``"
-msgstr "crwdns86687:0crwdne86687:0"
+msgstr "crwdns116645:0crwdne116645:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:132
 msgid "开启 fastrun 模式，同时将输出的结果存储到一个 cache 文件中"
-msgstr "crwdns46356:0crwdne46356:0"
+msgstr "crwdns116647:0crwdne116647:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:134
 msgid "运行阶段："
-msgstr "crwdns46360:0crwdne46360:0"
+msgstr "crwdns116649:0crwdne116649:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:138
 msgid "``--fast-run-algo-policy CACHE_FILE``"
-msgstr "crwdns46362:0crwdne46362:0"
+msgstr "crwdns116651:0crwdne116651:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:137
 msgid "执行阶段: 带上之前的 cache 文件再次执行"
-msgstr "crwdns46364:0crwdne46364:0"
+msgstr "crwdns116653:0crwdne116653:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:141
 msgid "正确性验证"
-msgstr "crwdns46366:0crwdne46366:0"
+msgstr "crwdns116655:0crwdne116655:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:143
 msgid "MegEngine 内置了多种正确性验证的方法，方便检查网络计算正确性。"
-msgstr "crwdns46368:0crwdne46368:0"
+msgstr "crwdns116657:0crwdne116657:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:146
 msgid "dump 输出结果"
-msgstr "crwdns46370:0crwdne46370:0"
+msgstr "crwdns116659:0crwdne116659:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:148
 msgid "``--bin-out-dump``"
-msgstr "crwdns46372:0crwdne46372:0"
+msgstr "crwdns116661:0crwdne116661:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:148
 msgid "在指定的文件夹内保存输出结果，可以用 load-and-run 在目标设备上跑数据集"
-msgstr "crwdns46374:0crwdne46374:0"
+msgstr "crwdns116663:0crwdne116663:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:150
 msgid "使用方式如下："
-msgstr "crwdns46376:0crwdne46376:0"
+msgstr "crwdns116665:0crwdne116665:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:157
 msgid "然后可以在 python 里打开输出文件："
-msgstr "crwdns46378:0crwdne46378:0"
+msgstr "crwdns116667:0crwdne116667:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:167
 msgid "dump 每层结果"
-msgstr "crwdns46380:0crwdne46380:0"
+msgstr "crwdns116669:0crwdne116669:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:168
 msgid "我们很多时候会遇到这种情况，就是模型输出结果不对， 这个时候就需要打出网络每一层的结果作比对，看看是哪一层导致。 目前有两种展现方式，一个是 ``io-dump``, 另一个是 ``bin-io-dump``."
-msgstr "crwdns46382:0crwdne46382:0"
+msgstr "crwdns116671:0crwdne116671:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:172
 msgid "为了对比结果，需要假定一个平台结果为 ``ground-truth`` ， 下面假定以 x86 的结果为 ``ground-truth`` ，验证 x86 和 CUDA 上的误差产生的原因 （下面会使用 ``host_build.sh`` 编译出来的 ``load_and_run`` 来演示）。"
-msgstr "crwdns46384:0crwdne46384:0"
+msgstr "crwdns116673:0crwdne116673:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:176
 msgid "文本形式对比结果："
-msgstr "crwdns46386:0crwdne46386:0"
+msgstr "crwdns116675:0crwdne116675:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:184
 msgid "文档形式只是显示了部分信息，比如 Tensor 的前几个输出结果，整个 Tensor 的平均值、标准差之类， 如果需要具体到哪个值错误，需要用 ``bin-io-dump`` 会将每一层的结果都输出到一个文件。"
-msgstr "crwdns46388:0crwdne46388:0"
+msgstr "crwdns116677:0crwdne116677:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:187
 msgid "raw 形式对比结果："
-msgstr "crwdns46390:0crwdne46390:0"
+msgstr "crwdns116679:0crwdne116679:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:197
 msgid "如何进行性能调优"
-msgstr "crwdns46392:0crwdne46392:0"
+msgstr "crwdns116681:0crwdne116681:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:199
 msgid "Load and Run 支持传入 ``--profile`` 参数："
-msgstr "crwdns46394:0crwdne46394:0"
+msgstr "crwdns116683:0crwdne116683:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:202
 msgid "``--profile PROFILE``"
-msgstr "crwdns46396:0crwdne46396:0"
+msgstr "crwdns116685:0crwdne116685:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:202
 msgid "记录信息并将结果的 ``JSON`` 内容写到 ``PROFILE`` 文件路径中"
-msgstr "crwdns46398:0crwdne46398:0"
+msgstr "crwdns116687:0crwdne116687:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:204
 msgid "该 ``PROFILE`` 文件可后续用于 :ref:`profile-analyze` 。"
-msgstr "crwdns46400:0:ref:crwdne46400:0"
+msgstr "crwdns116689:0:ref:crwdne116689:0"
 
 #: ../../source/user-guide/tools/load-and-run.rst:206
 msgid "load and run 还有很多丰富的配置选项，可以通过 ``--help`` 查看更多功能"
-msgstr "crwdns86689:0crwdne86689:0"
+msgstr "crwdns116691:0crwdne116691:0"
 

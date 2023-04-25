@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:23\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:21\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,56 +11,103 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.norm.po\n"
-"X-Crowdin-File-ID: 2228\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.norm.po\n"
+"X-Crowdin-File-ID: 9299\n"
 
 #: ../../source/reference/api/megengine.functional.norm.rst:2
 msgid "megengine.functional.norm"
-msgstr "crwdns31558:0crwdne31558:0"
+msgstr "crwdns102579:0crwdne102579:0"
 
 #: megengine.functional.math.norm:1 of
-msgid "Calculates ``p``-norm of input tensor along given axis."
-msgstr "crwdns31560:0crwdne31560:0"
+msgid "Calculates the norm of tensor elements over a given axis."
+msgstr "crwdns102581:0crwdne102581:0"
+
+#: megengine.functional.math.norm:3 of
+msgid "This function is able to return different matrix norms, or one of an infinite number of vector norms (described below), depending on the value of the ord parameter."
+msgstr "crwdns102583:0crwdne102583:0"
 
 #: megengine.functional.math.norm of
 msgid "参数"
-msgstr "crwdns31562:0crwdne31562:0"
-
-#: megengine.functional.math.norm:5 of
-msgid "input tensor."
-msgstr "crwdns31564:0crwdne31564:0"
+msgstr "crwdns102585:0crwdne102585:0"
 
 #: megengine.functional.math.norm:7 of
-msgid "power of value applied to inp. Default: 2"
-msgstr "crwdns31566:0crwdne31566:0"
+msgid "input tensor. Should have a numeric data type."
+msgstr "crwdns102587:0crwdne102587:0"
 
 #: megengine.functional.math.norm:9 of
-msgid "dimension to reduce. If None, input must be a vector. Default: None"
-msgstr "crwdns31568:0crwdne31568:0"
+msgid "Order of the norm (see table under Notes). If not specified, the default is 2."
+msgstr "crwdns102589:0crwdne102589:0"
 
-#: megengine.functional.math.norm:10 of
-msgid "whether the output tensor has axis retained or not. Default: False"
-msgstr "crwdns31570:0crwdne31570:0"
+#: megengine.functional.math.norm:11 of
+msgid "Axis along which to compute vector norms. If axis is an integer, it specifies the axis of inp along which to compute the vector norms."
+msgstr "crwdns102591:0crwdne102591:0"
+
+#: megengine.functional.math.norm:13 of
+msgid "If this is set to ``True``, the axes which are normed over are left in the result as dimensions with size one."
+msgstr "crwdns102593:0crwdne102593:0"
 
 #: megengine.functional.math.norm of
 msgid "返回"
-msgstr "crwdns31572:0crwdne31572:0"
+msgstr "crwdns102595:0crwdne102595:0"
 
-#: megengine.functional.math.norm:12 of
-msgid "output tensor."
-msgstr "crwdns31574:0crwdne31574:0"
+#: megengine.functional.math.norm:16 of
+msgid "Norm of the matrix or vector(s)."
+msgstr "crwdns102597:0crwdne102597:0"
 
-#: megengine.functional.math.norm:15 of
+#: megengine.functional.math.norm:20 of
+msgid "Now the following norms can be calculated:"
+msgstr "crwdns102599:0crwdne102599:0"
+
+#: megengine.functional.math.norm:22 of
+msgid "inf: norm-:math:`\\infty` (maximum of absolute values)."
+msgstr "crwdns102601:0:math:crwdne102601:0"
+
+#: megengine.functional.math.norm:23 of
+msgid "-inf: norm-:math:`-\\infty` (minimum of absolute values)."
+msgstr "crwdns102603:0:math:crwdne102603:0"
+
+#: megengine.functional.math.norm:24 of
+msgid "2: 2-norm (largest singluar value)."
+msgstr "crwdns102605:0crwdne102605:0"
+
+#: megengine.functional.math.norm:26 of
+msgid "The Frobenius norm is given by to ``sum(abs(x)**ord)**(1./ord)``:"
+msgstr "crwdns102607:0crwdne102607:0"
+
+#: megengine.functional.math.norm:28 of
+msgid "\\|A\\|_F=\\left[\\sum_{i, j} a b s\\left(a_{i, j}\\right)^2\\right]^{1 / 2}"
+msgstr "crwdns102609:0{i, j}crwdnd102609:0{i, j}crwdne102609:0"
+
+#: megengine.functional.math.norm:32 of
+msgid ":func:`numpy.linalg.norm` / :func:`~.functional.normalize`"
+msgstr "crwdns102611:0:func:crwdnd102611:0:func:crwdne102611:0"
+
+#: megengine.functional.math.norm:35 of
 msgid "实际案例"
-msgstr "crwdns69829:0crwdne69829:0"
+msgstr "crwdns102613:0crwdne102613:0"
 
 #~ msgid "Examples:"
 #~ msgstr "例如："
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid "input tensor."
+#~ msgstr "输入张量。"
+
+#~ msgid "power of value applied to inp. Default: 2"
+#~ msgstr "对 ``inp`` 进行 ``p`` 次幂计算. 默认：2"
+
+#~ msgid "dimension to reduce. If None, input must be a vector. Default: None"
+#~ msgstr "要进行规约的维度。如果设置为 None，则所有的维度都将被规约。默认：None"
+
+#~ msgid "whether the output tensor has axis retained or not. Default: False"
+#~ msgstr "输出张量是否保留了轴 *axis* 。默认：False"
+
+#~ msgid "output tensor."
+#~ msgstr "输出张量。"
 

@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-25 01:18+0000\n"
-"PO-Revision-Date: 2023-04-11 05:51+0000\n"
+"PO-Revision-Date: 2023-04-25 01:27\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -13,31 +13,26 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.InstanceNorm.po\n"
+"X-Crowdin-File-ID: 9509\n"
 
 #: ../../source/reference/api/megengine.module.InstanceNorm.rst:5
 msgid "InstanceNorm"
 msgstr ""
 
 #: megengine.module.normalization.InstanceNorm:1 of
-msgid ""
-"Applies Instance Normalization over a mini-batch of inputs Refer to "
-"`Instance Normalization <https://arxiv.org/abs/1607.08022>`__"
+msgid "Applies Instance Normalization over a mini-batch of inputs Refer to `Instance Normalization <https://arxiv.org/abs/1607.08022>`__"
 msgstr ""
 
 #: megengine.module.normalization.InstanceNorm:4 of
-msgid ""
-"y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * "
-"\\gamma + \\beta\n"
-"\n"
+msgid "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta\n\n"
 msgstr ""
 
 #: megengine.module.normalization.InstanceNorm:7 of
-msgid ""
-"The mean and standard-deviation are calculated per-dimension separately "
-"for each object in a mini-batch. :math:`\\\\gamma` and :math:`\\\\beta` "
-"are learnable affine transform parameters of attr:`num_channels` if "
-":attr:`affine` is ``True``. Note that InstanceNorm equals using GroupNorm"
-" with num_groups = num_channels."
+msgid "The mean and standard-deviation are calculated per-dimension separately for each object in a mini-batch. :math:`\\\\gamma` and :math:`\\\\beta` are learnable affine transform parameters of attr:`num_channels` if :attr:`affine` is ``True``. Note that InstanceNorm equals using GroupNorm with num_groups = num_channels."
 msgstr ""
 
 #: megengine.module.normalization.InstanceNorm of
@@ -53,9 +48,7 @@ msgid "a value added to the denominator for numerical stability. Default: 1e-5"
 msgstr ""
 
 #: megengine.module.normalization.InstanceNorm:15 of
-msgid ""
-"this module has learnable affine parameters (weight, bias) when affine is"
-" set to be True."
+msgid "this module has learnable affine parameters (weight, bias) when affine is set to be True."
 msgstr ""
 
 #: megengine.module.normalization.InstanceNorm:19 of
@@ -366,4 +359,8 @@ msgstr ""
 #~ "InstanceNorm equals using GroupNome with "
 #~ "num_groups=num_channels."
 #~ msgstr ""
+#~ "``InstanceNorm`` "
+#~ "的简单实现。当前仅支持四维张量。参考文献：https://arxiv.org/abs/1607.08022。 请注意当 "
+#~ "`num_groups=num_channels` 时 ``InstanceNorm`` 与 "
+#~ "``GroupNorm`` 等价。"
 

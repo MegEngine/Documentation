@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-25 01:18+0000\n"
-"PO-Revision-Date: 2023-04-11 05:53+0000\n"
+"PO-Revision-Date: 2023-04-25 01:27\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -13,6 +13,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/module.po\n"
+"X-Crowdin-File-ID: 9805\n"
 
 #: ../../source/reference/module.rst:6
 msgid "megengine.module"
@@ -273,9 +278,7 @@ msgid ":py:obj:`GroupNorm <megengine.module.GroupNorm>`"
 msgstr ""
 
 #: ../../source/reference/module.rst:101:<autosummary>:1
-msgid ""
-"Applies Group Normalization over a mini-batch of inputs Refer to `Group "
-"Normalization <https://arxiv.org/abs/1803.08494>`__"
+msgid "Applies Group Normalization over a mini-batch of inputs Refer to `Group Normalization <https://arxiv.org/abs/1803.08494>`__"
 msgstr ""
 
 #: ../../source/reference/module.rst:101:<autosummary>:1
@@ -283,9 +286,7 @@ msgid ":py:obj:`InstanceNorm <megengine.module.InstanceNorm>`"
 msgstr ""
 
 #: ../../source/reference/module.rst:101:<autosummary>:1
-msgid ""
-"Applies Instance Normalization over a mini-batch of inputs Refer to "
-"`Instance Normalization <https://arxiv.org/abs/1607.08022>`__"
+msgid "Applies Instance Normalization over a mini-batch of inputs Refer to `Instance Normalization <https://arxiv.org/abs/1607.08022>`__"
 msgstr ""
 
 #: ../../source/reference/module.rst:101:<autosummary>:1
@@ -293,9 +294,7 @@ msgid ":py:obj:`LayerNorm <megengine.module.LayerNorm>`"
 msgstr ""
 
 #: ../../source/reference/module.rst:101:<autosummary>:1
-msgid ""
-"Applies Layer Normalization over a mini-batch of inputs Refer to `Layer "
-"Normalization <https://arxiv.org/pdf/1607.06450v1.pdf>`_"
+msgid "Applies Layer Normalization over a mini-batch of inputs Refer to `Layer Normalization <https://arxiv.org/pdf/1607.06450v1.pdf>`_"
 msgstr ""
 
 #: ../../source/reference/module.rst:101:<autosummary>:1
@@ -1363,10 +1362,12 @@ msgstr ""
 
 #~ msgid "Simple implementation of GroupNorm."
 #~ msgstr ""
+#~ "对于GroupNorm的简单实现。将Channel方向分Group，然后每个Group内做归一化，算(C//G) "
+#~ "Hw的均值；这样与Batchsize无关，不受其约束"
 
 #~ msgid "Simple implementation of InstanceNorm."
-#~ msgstr ""
+#~ msgstr "InstanceNorm的简单实现。对Channel内做归一化，算H*W的均值，用在风格化迁移；因为在图像风格化中，生成结果主要依赖于某个图像实例，所以对整个Batch归一化不适合图像风格化中，因而对HW做归一化。可以加速模型收敛，并且保持每个图像实例之间的独立。"
 
 #~ msgid "Simple implementation of LayerNorm."
-#~ msgstr ""
+#~ msgstr "层归一化的简单实现，对于Channel方向做归一化，算CHW的均值，主要对RNN作用明显。"
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-09-07 10:08\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:23\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,56 +11,60 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.std.po\n"
-"X-Crowdin-File-ID: 2284\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.std.po\n"
+"X-Crowdin-File-ID: 9349\n"
 
 #: ../../source/reference/api/megengine.functional.std.rst:2
 msgid "megengine.functional.std"
-msgstr "crwdns31992:0crwdne31992:0"
+msgstr "crwdns103259:0crwdne103259:0"
 
 #: megengine.functional.math.std:1 of
-msgid "Returns the standard deviation of input tensor along given axis. If axis is a list of dimensions, reduce over all of them."
-msgstr "crwdns31994:0crwdne31994:0"
+msgid "Calculates the standard deviation of tensor elements over a given axis (or axes)."
+msgstr "crwdns103261:0crwdne103261:0"
 
 #: megengine.functional.math.std of
 msgid "参数"
-msgstr "crwdns31996:0crwdne31996:0"
+msgstr "crwdns103263:0crwdne103263:0"
+
+#: megengine.functional.math.std:4 of
+msgid "input tensor. Should have a numeric data type."
+msgstr "crwdns103265:0crwdne103265:0"
 
 #: megengine.functional.math.std:6 of
-msgid "input tensor."
-msgstr "crwdns31998:0crwdne31998:0"
-
-#: megengine.functional.math.std:8 of
-msgid "dimension to reduce. If None, all dimensions will be reduced. Default: None"
-msgstr "crwdns32000:0crwdne32000:0"
+msgid "axis or axes along which standard deviations must be computed. By default, the standard deviation must be computed over the entire tensor. If a sequence of integers, standard deviations must be computed over multiple axes."
+msgstr "crwdns103267:0crwdne103267:0"
 
 #: megengine.functional.math.std:10 of
-msgid "whether the output tensor has axis retained or not. Default: False"
-msgstr "crwdns32002:0crwdne32002:0"
+msgid "if ``True``, the reduced axes (dimensions) must be included in the result as singleton dimensions, and, accordingly, the result must be compatible with the input tensor (see :ref:`broadcasting-rule`). Otherwise, if ``False``, the reduced axes (dimensions) must not be included in the result."
+msgstr "crwdns103269:0:ref:crwdne103269:0"
 
 #: megengine.functional.math.std of
 msgid "返回类型"
-msgstr "crwdns69941:0crwdne69941:0"
+msgstr "crwdns103271:0crwdne103271:0"
 
-#: megengine.functional.math.std:12 of
+#: megengine.functional.math.std:14 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr "crwdns69943:0crwdne69943:0"
+msgstr "crwdns103273:0crwdne103273:0"
 
 #: megengine.functional.math.std of
 msgid "返回"
-msgstr "crwdns32008:0crwdne32008:0"
+msgstr "crwdns103275:0crwdne103275:0"
 
-#: megengine.functional.math.std:13 of
-msgid "output tensor."
-msgstr "crwdns32010:0crwdne32010:0"
+#: megengine.functional.math.std:15 of
+msgid "if the standard deviation was computed over the entire tensor, a zero-dimensional tensor containing the standard deviation; otherwise, a non-zero-dimensional tensor containing the standard deviations."
+msgstr "crwdns103277:0crwdne103277:0"
 
-#: megengine.functional.math.std:16 of
+#: megengine.functional.math.std:20 of
+msgid "The standard deviation is the square root of the average of the squared deviations from the mean, i.e., ``std = sqrt(mean(x))``, where ``x = abs(a - a.mean())**2``."
+msgstr "crwdns103279:0crwdne103279:0"
+
+#: megengine.functional.math.std:24 of
 msgid "实际案例"
-msgstr "crwdns69945:0crwdne69945:0"
+msgstr "crwdns103281:0crwdne103281:0"
 
 #~ msgid ":py:class:`~megengine.tensor.Tensor`"
 #~ msgstr ":py:class:`~megengine.tensor.Tensor`"
@@ -73,4 +77,26 @@ msgstr "crwdns69945:0crwdne69945:0"
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid ""
+#~ "Returns the standard deviation of input"
+#~ " tensor along given axis. If axis "
+#~ "is a list of dimensions, reduce "
+#~ "over all of them."
+#~ msgstr "返回在给定轴 ``axis`` 上 ``inp`` 张量每一行的标准差。如果给定的轴是一个维度列表，则规约所有维度。"
+
+#~ msgid "input tensor."
+#~ msgstr "输入张量。"
+
+#~ msgid ""
+#~ "dimension to reduce. If None, all "
+#~ "dimensions will be reduced. Default: "
+#~ "None"
+#~ msgstr "要进行规约的维度。如果设置为 None，则所有的维度都将规约。默认：None"
+
+#~ msgid "whether the output tensor has axis retained or not. Default: False"
+#~ msgstr "输出张量是否保留了轴 *axis* 。默认：False"
+
+#~ msgid "output tensor."
+#~ msgstr "输出张量。"
 

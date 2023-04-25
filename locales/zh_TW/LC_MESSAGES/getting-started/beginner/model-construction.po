@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 01:33\n"
+"PO-Revision-Date: 2023-04-21 09:34\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,936 +15,936 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/model-construction.po\n"
-"X-Crowdin-File-ID: 7062\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/getting-started/beginner/model-construction.po\n"
+"X-Crowdin-File-ID: 9857\n"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:9
 msgid "使用 Module 构造模型结构"
-msgstr "crwdns64748:0crwdne64748:0"
+msgstr "crwdns113677:0crwdne113677:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:12
 msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/#>`__"
-msgstr "crwdns64750:0crwdne64750:0"
+msgstr "crwdns113679:0crwdne113679:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:27
 msgid "image0"
-msgstr "crwdns64752:0crwdne64752:0"
+msgstr "crwdns113681:0crwdne113681:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:12
 msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/model-construction.ipynb>`__"
-msgstr "crwdns64754:0crwdne64754:0"
+msgstr "crwdns113683:0crwdne113683:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:28
 msgid "image1"
-msgstr "crwdns64756:0crwdne64756:0"
+msgstr "crwdns113685:0crwdne113685:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:16
 msgid "在本次教程中，你将会学习到在实际开发中我们更加常用的 ``Module`` 建模方式与工程化技巧，通过实现几个比 LeNet 更复杂的经典 CNN 模型结构，感受一下其优点。"
-msgstr "crwdns67317:0crwdne67317:0"
+msgstr "crwdns113687:0crwdne113687:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:18
 msgid "我们将尝试使用面向对象的思想，通过自定义 ``Module`` 类来构建 LeNet 模型，并灵活地取得内部结构信息，同时完成对 ``Parameters`` 的相关处理；"
-msgstr "crwdns67319:0crwdne67319:0"
+msgstr "crwdns113689:0crwdne113689:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:19
 msgid "我们将接触到 AlexNet, VGGNet 和 GoogLeNet 三种经典的模型结构，并学会一些实用的编码技巧；"
-msgstr "crwdns64762:0crwdne64762:0"
+msgstr "crwdns113691:0crwdne113691:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:20
 msgid "我们还将了解到如何保存和加载我们的模型，有利于在不同的设备上进行训练和迁移；"
-msgstr "crwdns64764:0crwdne64764:0"
+msgstr "crwdns113693:0crwdne113693:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:21
 msgid "与此同时，我们的代码将逐渐变得工程化，这有利于将来我们写出可读性、可维护性更好的代码，也方便我们阅读其它开源的模型代码文件。"
-msgstr "crwdns64766:0crwdne64766:0"
+msgstr "crwdns113695:0crwdne113695:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:23
 msgid "与之前的教程不同，这次的教程需要你 **花费更多的时间去理解不同的代码** ，将抽象的概念变为具体的代码实践。"
-msgstr "crwdns67321:0crwdne67321:0"
+msgstr "crwdns113697:0crwdne113697:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:25
 msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
-msgstr "crwdns67323:0crwdne67323:0"
+msgstr "crwdns113699:0crwdne113699:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:78
 msgid "神经网络中的模块（Module）"
-msgstr "crwdns64772:0crwdne64772:0"
+msgstr "crwdns113701:0crwdne113701:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:80
 msgid "在神经网络模型中，经常存在着许多非常相似的结构，比如全连接的前馈神经网络中，每个层都是线性层。而在卷积神经网络中，卷积层、池化层也非常常见。"
-msgstr "crwdns64774:0crwdne64774:0"
+msgstr "crwdns113703:0crwdne113703:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:82
 msgid "与 ``add()``, ``sub()``\\ … 等通用的 ``functional`` 算子不同，网络层结构中通常存在着需要被管理的参数 ``Parameter``, 包括初始化和更新等操作；"
-msgstr "crwdns88481:0crwdne88481:0"
+msgstr "crwdns113705:0crwdne113705:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:83
 msgid "我们此前一直关注于“单个”的概念，即计算图中的“单个”计算节点/数据节点，神经网络中“单个”神经元/层… 现在我们需要想一想复杂规模下的情景；"
-msgstr "crwdns88483:0crwdne88483:0"
+msgstr "crwdns113707:0crwdne113707:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:84
 msgid "当模型结构变得越来越复杂，如果依旧通过枚举的方式来初始化和绑定参数，依靠 ``funtional`` API 写出完整的结构，代码非常不优雅，且和工程化的理念不符；"
-msgstr "crwdns67329:0crwdne67329:0"
+msgstr "crwdns113709:0crwdne113709:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:86
 msgid "我们构建神经网络所需的主要组件是层（Layer），最好能够提供一种足够的抽象机制，方便用户进行模型定义和参数管理，复用相似的结构。"
-msgstr "crwdns67331:0crwdne67331:0"
+msgstr "crwdns113711:0crwdne113711:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:88
 msgid "为此，MegEngine 拓展出了 ``Module`` 类，这意味着我们需要使用到一些面向对象编程（OOP）的思想。"
-msgstr "crwdns67333:0crwdne67333:0"
+msgstr "crwdns113713:0crwdne113713:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:90
 msgid "``Module`` 类实现在 ``megengine.module`` 子包中，让我们先进行导入，并且使用 ``M`` 作为别名："
-msgstr "crwdns67335:0crwdne67335:0"
+msgstr "crwdns113715:0crwdne113715:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:132
 msgid "``Module`` 类是所有的神经网络层的基类，我们提到 ``Module`` 类时，通常指代的是这个基类；"
-msgstr "crwdns67337:0crwdne67337:0"
+msgstr "crwdns113717:0crwdne113717:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:133
 msgid "``Module`` 类本身是一个抽象类，在我们定义的模型中无法被直接使用；"
-msgstr "crwdns67339:0crwdne67339:0"
+msgstr "crwdns113719:0crwdne113719:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:134
 msgid "MegEngine 中实现的所有层都继承了 ``Module`` 基类中的内置方法，并且对其进行了相应的拓展；"
-msgstr "crwdns67341:0crwdne67341:0"
+msgstr "crwdns113721:0crwdne113721:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:136
 msgid "我们需要建立这样一个观念，一个神经网络模型可以由多个小的层（Layer）级别的 ``Module`` 构成，与此同时它的子结构（甚至是它本身）也可以被视作是一个大的 ``Module``."
-msgstr "crwdns67343:0crwdne67343:0"
+msgstr "crwdns113723:0crwdne113723:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:147
 msgid "这种感觉有点类似于玩乐高积木，最基础的积木块总是定义好的，但我们总是可以参照着一些模版拼出更加复杂的结构，这个结构本身也可以作为更大结构的一部分，而你是设计蓝图的工程师。"
-msgstr "crwdns67345:0crwdne67345:0"
+msgstr "crwdns113725:0crwdne113725:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:149
 msgid "积木从哪儿来呢？除了 ``Module`` 基类，我们可以在 ``megengine.module`` 子包中找到更多常见层的实现："
-msgstr "crwdns67347:0crwdne67347:0"
+msgstr "crwdns113727:0crwdne113727:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:151
 msgid "与 ``functional.conv2d`` 对应的层是 ``module.Conv2d``;"
-msgstr "crwdns67349:0crwdne67349:0"
+msgstr "crwdns113729:0crwdne113729:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:152
 msgid "与 ``functional.linear`` 对应的层是 ``module.Linear``;"
-msgstr "crwdns67351:0crwdne67351:0"
+msgstr "crwdns113731:0crwdne113731:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:153
 msgid "可以发现二者命名十分相似，通常我们总是能够在 ``module`` 中找到与 ``funtional`` 对应的算子。"
-msgstr "crwdns67353:0crwdne67353:0"
+msgstr "crwdns113733:0crwdne113733:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:155
 msgid "接下来我们需要做的是搭积木，在自定义我们的神经网络模型时，需要注意以下细节："
-msgstr "crwdns67355:0crwdne67355:0"
+msgstr "crwdns113735:0crwdne113735:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:157
 msgid "每一个神经网络模型都需要继承自 ``Module`` 基类并且调用\\ ``super().__init__()``;"
-msgstr "crwdns64786:0__init__crwdne64786:0"
+msgstr "crwdns113737:0__init__crwdne113737:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:158
 msgid "我们需要在 ``__init__`` 构造函数中定义模块结构，也可以做一些其它初始化处理（后面会看到）；"
-msgstr "crwdns67357:0__init__crwdne67357:0"
+msgstr "crwdns113739:0__init__crwdne113739:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:159
 msgid "我们需要定义 ``forward`` 方法，在里面实现前向传播的计算过程；"
-msgstr "crwdns67359:0crwdne67359:0"
+msgstr "crwdns113741:0crwdne113741:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:160
 msgid "显然，由于 MegEngine 中实现了自动求导机制，我们不需要对 ``backward()`` 方法进行实现。"
-msgstr "crwdns64792:0crwdne64792:0"
+msgstr "crwdns113743:0crwdne113743:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:162
 msgid "我们现在就来改写 LeNet 模型，这样能对刚才提到的概念有一个更加直观的理解："
-msgstr "crwdns67361:0crwdne67361:0"
+msgstr "crwdns113745:0crwdne113745:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:199
 msgid "在 LeNet 内部发生了什么呢？目前我们需要知道："
-msgstr "crwdns67363:0crwdne67363:0"
+msgstr "crwdns113747:0crwdne113747:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:201
 msgid "LeNet 模型内部的每一层（如 ``conv1``\\ ）也是一个 ``Module``, 在它们的内部各自封装好了 ``forward`` 实现和需要用到的参数；"
-msgstr "crwdns67365:0crwdne67365:0"
+msgstr "crwdns113749:0crwdne113749:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:202
 msgid "每层的参数可以随着 LeNet 模型在训练过程中学习而更新，这也是我们将这些层指定为 ``LeNet`` 类内属性的原因。"
-msgstr "crwdns67367:0crwdne67367:0"
+msgstr "crwdns113751:0crwdne113751:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:255
 msgid "我们可以对 LeNet 中的子 ``Module`` 成员进行修改替换，但这是比较进阶的处理方式，目前我们只需对此保有概念即可。"
-msgstr "crwdns67369:0crwdne67369:0"
+msgstr "crwdns113753:0crwdne113753:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:258
 msgid "使用 Sequential 顺序容器"
-msgstr "crwdns64794:0crwdne64794:0"
+msgstr "crwdns113755:0crwdne113755:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:260
 msgid "在 MegEngine 中也提供了 ``Module`` 的有序容器 ``Sequential``, 一种用法如下："
-msgstr "crwdns67371:0crwdne67371:0"
+msgstr "crwdns113757:0crwdne113757:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:316
 msgid "你应该发现了，我们可以直接使用 ``Sequential`` 定义的模型处理数据，而无需在内部指定 ``forward()`` 流程，因为在序列定义时即决定了前向传播的顺序。"
-msgstr "crwdns68197:0crwdne68197:0"
+msgstr "crwdns113759:0crwdne113759:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:318
 msgid "接下来我们用 ``Sequential`` 组合来实现 LeNet 模型："
-msgstr "crwdns68199:0crwdne68199:0"
+msgstr "crwdns113761:0crwdne113761:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:320
 msgid "由于是 ``Module`` 容器，对内部元素类型有要求，因此 ``relu`` 等算子也存在着 ``ReLU`` 这样的 ``Module`` 实现；"
-msgstr "crwdns67377:0crwdne67377:0"
+msgstr "crwdns113763:0crwdne113763:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:321
 msgid "默认情况下，\\ ``Sequential`` 将以 :math:`0, 1, 2, 3, \\ldots` 顺序对内部的 ``Module`` 进行命名；"
-msgstr "crwdns67379:0:math:crwdne67379:0"
+msgstr "crwdns113765:0:math:crwdne113765:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:322
 msgid "注意我们这里的代码有些不一样，我们将模型整理了 ``features`` 和 ``classifier`` 两个部分，"
-msgstr "crwdns67381:0crwdne67381:0"
+msgstr "crwdns113767:0crwdne113767:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:420
 msgid "另一种用法是使用 OrderedDict 定义，这样内部的 ``Module`` 可具有指定的名字："
-msgstr "crwdns67383:0crwdne67383:0"
+msgstr "crwdns113769:0crwdne113769:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:520
 msgid "``Sequential`` 除了本身可以用来定义模型之外，它还可以用来快速包装可被复用的模型结构，我们在 VGG 等模型中会见到更加高级的用法。"
-msgstr "crwdns67385:0crwdne67385:0"
+msgstr "crwdns113771:0crwdne113771:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:532
 msgid "Module 内置方法"
-msgstr "crwdns64800:0crwdne64800:0"
+msgstr "crwdns113773:0crwdne113773:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:534
 msgid "光看上面提到的用法，似乎感受不到太多 ``module`` 实现模型结构相较于 ``funtional`` 的优势。"
-msgstr "crwdns67387:0crwdne67387:0"
+msgstr "crwdns113775:0crwdne113775:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:536
 msgid "接下来才是重头戏，我们将介绍 ``Module`` 类中经常被使用到的方法："
-msgstr "crwdns67389:0crwdne67389:0"
+msgstr "crwdns113777:0crwdne113777:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:538
 msgid "``modules()``: 返回一个可迭代对象，可以遍历当前模块中的所有模块，包括其本身;"
-msgstr "crwdns64806:0crwdne64806:0"
+msgstr "crwdns113779:0crwdne113779:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:539
 msgid "``named_modules()``: 返回一个可迭代对象，可以遍历当前模块包括自身在内的 ``key`` 与 ``Module`` 键值对，其中 ``key`` 是从当前模块到各子模块的点路径。"
-msgstr "crwdns67391:0crwdne67391:0"
+msgstr "crwdns113781:0crwdne113781:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:540
 msgid "``parameters()``: 返回一个可迭代对象，遍历当前模块中的所有 ``Parameter``;"
-msgstr "crwdns64810:0crwdne64810:0"
+msgstr "crwdns113783:0crwdne113783:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:541
 msgid "``named_parameters()``: 返回一个可迭代对象，可以遍历当前模块中 ``key`` 与 ``Parameter`` 组成的键值对。其中 ``key`` 是从模块到 ``Parameter`` 的点路径。"
-msgstr "crwdns67393:0crwdne67393:0"
+msgstr "crwdns113785:0crwdne113785:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:542
 msgid "``state_dict()``: 返回一个有序字典，其键值对是每个网络层和其对应的参数。"
-msgstr "crwdns64814:0crwdne64814:0"
+msgstr "crwdns113787:0crwdne113787:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:544
 msgid "``Module`` 可以直接作为 Python List 或者 Dict 等数据结构中的元素进行组合使用，一个父 ``Module`` 会自动地将子 ``Module`` 中存在的 ``Parameter`` 进行注册。"
-msgstr "crwdns67395:0crwdne67395:0"
+msgstr "crwdns113789:0crwdne113789:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:546
 msgid "除此以外还提供了 ``buffers()``, ``children()`` 等方法，通过在文档中搜索和阅读 Module API, 可以了解更多细节。"
-msgstr "crwdns64816:0crwdne64816:0"
+msgstr "crwdns113791:0crwdne113791:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:549
 msgid "modules() 与 named_modules()"
-msgstr "crwdns88485:0crwdne88485:0"
+msgstr "crwdns113793:0crwdne113793:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:551
 msgid "我们首先看一下使用 ``module`` 方式实现的 LeNet 结构中存在着哪些模块："
-msgstr "crwdns64820:0crwdne64820:0"
+msgstr "crwdns113795:0crwdne113795:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:615
 msgid "parameters() 与 named_parameters（）"
-msgstr "crwdns88487:0crwdne88487:0"
+msgstr "crwdns113797:0crwdne113797:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:617
 msgid "接下来我们需要关注一下模型中的参数（具体来说是权重 ``weight`` 和偏置 ``bias``\\ ）："
-msgstr "crwdns64826:0crwdne64826:0"
+msgstr "crwdns113799:0crwdne113799:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:676
 msgid "这意味着，我们既可以借助 ``parameters()`` 完成整体性的操作，也可以根据 ``name`` 进行精细化的处理。"
-msgstr "crwdns64828:0crwdne64828:0"
+msgstr "crwdns113801:0crwdne113801:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:678
 msgid "比如，我们可以通过添加一些 ``if`` 逻辑来对满足规则的参数进行操作（作为演示，下面的代码中仅做了 ``print`` 操作）："
-msgstr "crwdns68201:0crwdne68201:0"
+msgstr "crwdns113803:0crwdne113803:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:726
 msgid "更常见的使用情景是，我们可以在定义求导器和优化器时，非常方便地对所有参数进行绑定："
-msgstr "crwdns64832:0crwdne64832:0"
+msgstr "crwdns113805:0crwdne113805:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:749
 msgid "使用 state_dict() 获取信息"
-msgstr "crwdns88489:0crwdne88489:0"
+msgstr "crwdns113807:0crwdne113807:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:760
 msgid "调用 ``Module.state_dict()`` 将返回一个有序字典，因此我们可以先看看内部的键有什么："
-msgstr "crwdns67397:0crwdne67397:0"
+msgstr "crwdns113809:0crwdne113809:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:803
 msgid "很自然地，我们可以通过 ``state_dict()['name']`` 的形式来获取某一层的参数信息："
-msgstr "crwdns64838:0crwdne64838:0"
+msgstr "crwdns113811:0crwdne113811:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:846
 msgid "我们也可以通过使用 ``named_parameters()`` 来取得同样的效果，但显然这样做比较麻烦，效率也比较低："
-msgstr "crwdns64840:0crwdne64840:0"
+msgstr "crwdns113813:0crwdne113813:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:896
 msgid "另外，在 ``Optimizer`` 中也提供了 ``state_dict()`` 方法，可以用来获取学习率等超参数信息，这在需要保存和加载状态信息时能派上用场。"
-msgstr "crwdns67399:0crwdne67399:0"
+msgstr "crwdns113815:0crwdne113815:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:899
 msgid "如何实现共享参数"
-msgstr "crwdns64846:0crwdne64846:0"
+msgstr "crwdns113817:0crwdne113817:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:910
 msgid "有时候我们需要对模型的相同结构部分参数进行共享，实现起来也很简单："
-msgstr "crwdns64848:0crwdne64848:0"
+msgstr "crwdns113819:0crwdne113819:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:912
 msgid "由于 ``Parameters`` 其实就是一个 ``Tensor`` 的子类，如果要共享某一层的参数，只需要在 ``Module`` 类的 ``forward()`` 函数里多次调用这个层；"
-msgstr "crwdns67401:0crwdne67401:0"
+msgstr "crwdns113821:0crwdne113821:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:913
 msgid "使用 ``Sequantial`` 多次传入同一个 ``Module`` 对象，也可以实现参数的共享（我们这里没有进行举例）。"
-msgstr "crwdns67403:0crwdne67403:0"
+msgstr "crwdns113823:0crwdne113823:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1020
 msgid "可以发现，对于 ``shared_net`` 和 ``sequential_shared_net``, 虽然实际进行了四次线性层运算，但显示出的模型结构却只有一层，表明参数进行了共享。"
-msgstr "crwdns64852:0crwdne64852:0"
+msgstr "crwdns113825:0crwdne113825:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1022
 msgid "现在请你思考一下，对于共享的参数，反向传播的更新策略是什么样的呢？（你可以通过编码验证自己的想法）"
-msgstr "crwdns64854:0crwdne64854:0"
+msgstr "crwdns113827:0crwdne113827:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1024
 msgid "对于一些进阶的参数处理情景（比如训练过程中对学习率的更改、固定部分参数不优化等等），可以参考 MegEngine 用户指南。"
-msgstr "crwdns67405:0crwdne67405:0"
+msgstr "crwdns113829:0crwdne113829:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1036
 msgid "Module 参数初始化"
-msgstr "crwdns64860:0crwdne64860:0"
+msgstr "crwdns113831:0crwdne113831:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1038
 msgid "敏锐的你或许已经注意到了：我们在上面进行了 ``Module`` 参数的初始化操作，接下来我们将介绍为此而设计的 ``init`` 子模块。"
-msgstr "crwdns64862:0crwdne64862:0"
+msgstr "crwdns113833:0crwdne113833:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1040
 msgid "在 ``module`` 模块中，实现了 ``init`` 子模块，即初始化（Initialization）模块，里面包含着常见的初始化方式："
-msgstr "crwdns64864:0crwdne64864:0"
+msgstr "crwdns113835:0crwdne113835:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1042
 msgid "``init.zeros_()``: 0 值初始化"
-msgstr "crwdns64866:0crwdne64866:0"
+msgstr "crwdns113837:0crwdne113837:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1043
 msgid "``init.ones_()``: 1 值初始化"
-msgstr "crwdns64868:0crwdne64868:0"
+msgstr "crwdns113839:0crwdne113839:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1044
 msgid "``init.fill_()``: 根据给定值进行初始化"
-msgstr "crwdns64870:0crwdne64870:0"
+msgstr "crwdns113841:0crwdne113841:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1097
 msgid "除此以外还实现了一些统计学意义上的随机初始化策略，如 ``init.uniform_()``, ``init.normal_`` 等。"
-msgstr "crwdns64872:0crwdne64872:0"
+msgstr "crwdns113843:0crwdne113843:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1099
 msgid "我们在这里不进行过多的说明，你可以通过查看 ``Module.init`` API 文档以了解更多细节。"
-msgstr "crwdns64874:0crwdne64874:0"
+msgstr "crwdns113845:0crwdne113845:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1111
 msgid "默认初始化策略"
-msgstr "crwdns64876:0crwdne64876:0"
+msgstr "crwdns113847:0crwdne113847:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1113
 msgid "我们曾经提到，神经网络模型的参数使用全零初始化不是一个好策略，只是目前我们还没有解释原因。"
-msgstr "crwdns68203:0crwdne68203:0"
+msgstr "crwdns113849:0crwdne113849:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1115
 msgid "常见 ``Module`` 的基类实现中会有一个默认的参数初始化策略："
-msgstr "crwdns67407:0crwdne67407:0"
+msgstr "crwdns113851:0crwdne113851:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1117
 msgid "比如 ``Conv1d`` 和 ``Conv2d`` 其实都继承自 ``_ConvNd``, 而在 ``_ConvNd`` 的 ``__init__()`` 方法中进行了参数初始化；"
-msgstr "crwdns64880:0__init__crwdne64880:0"
+msgstr "crwdns113853:0__init__crwdne113853:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1118
 msgid "阅读下面的部分源代码，你会发现 ``Linear`` 也采用了与 ``_ConvNd`` 类似的默认初始化策略；"
-msgstr "crwdns64882:0crwdne64882:0"
+msgstr "crwdns113855:0crwdne113855:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1172
 msgid "阅读源代码是我们了解程序本质的好方法——源码面前，了无秘密。"
-msgstr "crwdns67409:0crwdne67409:0"
+msgstr "crwdns113857:0crwdne113857:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1174
 msgid "通过阅读 MegEngine 的源代码，能帮助我们更好地使用该框架，甚至拓展开发出自己想要的功能，这不失为一种提升自己的方式。"
-msgstr "crwdns67411:0crwdne67411:0"
+msgstr "crwdns113859:0crwdne113859:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1186
 msgid "自定义初始化策略"
-msgstr "crwdns64890:0crwdne64890:0"
+msgstr "crwdns113861:0crwdne113861:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1188
 msgid "在实际的模型设计中，默认的初始化策略可能无法满足需求，因此总会有需要自己定义初始化策略的时候。"
-msgstr "crwdns67413:0crwdne67413:0"
+msgstr "crwdns113863:0crwdne113863:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1190
 msgid "我们重新定义一个 ``CustomInitLeNet`` 类，并且在里面完成自定义初始化策略的设置："
-msgstr "crwdns64894:0crwdne64894:0"
+msgstr "crwdns113865:0crwdne113865:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1246
 msgid "我们可以直观地感受到，上面的代码根据 ``module`` 的类型对 ``Conv2d`` 和 ``Linear`` 层进行了区分，采取了不同的初始化策略。 针对参数是 ``weight`` 还是 ``bias``, 所执行的初始化策略也有所不同。"
-msgstr "crwdns67415:0crwdne67415:0"
+msgstr "crwdns113867:0crwdne113867:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1248
 msgid "究竟什么样的初始化策略是最优的呢？目前不用搞清楚背后的原因，我们只需要明白通过 ``module`` 和方式来定义模型，比 ``funtional`` 更加灵活高效。"
-msgstr "crwdns64900:0crwdne64900:0"
+msgstr "crwdns113869:0crwdne113869:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1260
 msgid "经典 CNN 结构实现"
-msgstr "crwdns64902:0crwdne64902:0"
+msgstr "crwdns113871:0crwdne113871:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1262
 msgid "研究和工程人员所需要具备的一个重要能力是将通过实验想法转变为现实进行验证，有了 ``Module`` 这样强有力的工具，我们要能够做到将想到的模型结构进行高效的实现。但正所谓巧妇难为无米之炊，想要一下子蹦出一个有意思的模型结构是比较困难的。为了避免工程能力成为自己的短板，目前我们需要积累更多的神经网络模型设计的代码经验，一种有效的方式就是根据已有的经典科研文献中的网络模型结构进行实现，学习更多的代码范式，这样在将来才能够放飞自我的想象力。"
-msgstr "crwdns67417:0crwdne67417:0"
+msgstr "crwdns113873:0crwdne113873:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1264
 msgid "接下来我们要趁热打铁，借助对 ``Module`` 的基本认知，尝试了解一些经典的 CNN 代码实现。"
-msgstr "crwdns67419:0crwdne67419:0"
+msgstr "crwdns113875:0crwdne113875:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1267
 msgid "深层卷积神经网络 AlexNet"
-msgstr "crwdns64906:0crwdne64906:0"
+msgstr "crwdns113877:0crwdne113877:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1269
 msgid "LeNet 通过引入卷积运算成功证明了 CNN 模型的有效性，但是其网络结构比较浅，简单的模型在面对复杂任务的时候容易力不从心。"
-msgstr "crwdns64908:0crwdne64908:0"
+msgstr "crwdns113879:0crwdne113879:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1271
 msgid "接下来，我们利用 ``Module`` 来实现一个比 LeNet 更加深的卷积神经网络模型结构，常被称为 `AlexNet <https://paperswithcode.com/method/alexnet>`__:"
-msgstr "crwdns67421:0crwdne67421:0"
+msgstr "crwdns113881:0crwdne113881:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1273
 msgid "**注意输入数据的区别：** 原始的 AlexNet 论文将模型使用于 ImageNet 数据集，而我们打算将模型用于 CIFAR10 数据集；"
-msgstr "crwdns67423:0crwdne67423:0"
+msgstr "crwdns113883:0crwdne113883:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1274
 msgid "由于不同数据集输入的数据形状不一致，我们如果想要使用 AlexNet 在 CIFAR10 上进行训练，则需要做一些适应性的变化；"
-msgstr "crwdns64914:0crwdne64914:0"
+msgstr "crwdns113885:0crwdne113885:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1276
 msgid "一种思路是我们即将采用的：在 ``Dataloader`` 中对输入图片进行 ``Resize`` 预处理，比如将原本 :math:`32 \\times 32` 的图片缩放成 :math:`224 \\times 224` 的图片；"
-msgstr "crwdns68205:0:math:crwdnd68205:0:math:crwdne68205:0"
+msgstr "crwdns113887:0:math:crwdnd113887:0:math:crwdne113887:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1277
 msgid "另外一种思路是，我们按照输入为 CIFAR10 数据的形状去修改 AlexNet 各层的参数（感兴趣的话可以自己试一下）；"
-msgstr "crwdns64918:0crwdne64918:0"
+msgstr "crwdns113889:0crwdne113889:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1279
 msgid "对应地，分类的数量也要从原本 ImageNet 数据集的 :math:`1000` 修改为 CIFAR10 数据集的 :math:`10` 类。"
-msgstr "crwdns67427:0:math:crwdnd67427:0:math:crwdne67427:0"
+msgstr "crwdns113891:0:math:crwdnd113891:0:math:crwdne113891:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1334
 msgid "AlexNet 模型中还引入了 Dropout 的概念，我们会在下个教程中描述它的作用。"
-msgstr "crwdns67429:0crwdne67429:0"
+msgstr "crwdns113893:0crwdne113893:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1346
 msgid "使用重复层级结构的 VGGNet"
-msgstr "crwdns64926:0crwdne64926:0"
+msgstr "crwdns113895:0crwdne113895:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1348
 msgid "我们已经将模型结构显式地分为了特征提取部分 ``feature`` 和线性分类 ``classifier`` 部分。但有的时候我们会遇到这样一种情况："
-msgstr "crwdns67431:0crwdne67431:0"
+msgstr "crwdns113897:0crwdne113897:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1350
 msgid "除了超参数的多次调整与尝试之外，我还想要微调特征提取的逻辑，比如仅改变 ``Conv2d->ReLU->MaxPool2d`` 子结构重复的次数；"
-msgstr "crwdns64932:0crwdne64932:0"
+msgstr "crwdns113899:0crwdne113899:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1351
 msgid "问题在于，这些模块的 ``channel`` 参数在不同的层之间会发生变化，因此不能直接进行封装；"
-msgstr "crwdns67433:0crwdne67433:0"
+msgstr "crwdns113901:0crwdne113901:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1352
 msgid "我们不希望每次都要重新定义整个模型的代码，最好能够有一种技巧对相似的子模块进行重复的利用。"
-msgstr "crwdns64936:0crwdne64936:0"
+msgstr "crwdns113903:0crwdne113903:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1354
 msgid "在 VGGNet 中，通过使用循环和子程序，实现了对结构的高效重复，值得我们学习和参考："
-msgstr "crwdns64938:0crwdne64938:0"
+msgstr "crwdns113905:0crwdne113905:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1400
 msgid "在上面的代码中实现了最基本的 ``VGG`` 类（为了简洁表示，我们省去了参数初始化的代码）。"
-msgstr "crwdns67435:0crwdne67435:0"
+msgstr "crwdns113907:0crwdne113907:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1402
 msgid "请欣赏下面一段代码，尝试看出其作用："
-msgstr "crwdns64942:0crwdne64942:0"
+msgstr "crwdns113909:0crwdne113909:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1446
 msgid "可以发现在 ``make_layers`` 中产生的序列会是 ``Conv2d(->BatchNorm2d)->ReLU->MaxPool2d`` 的重复；"
-msgstr "crwdns64946:0crwdne64946:0"
+msgstr "crwdns113911:0crwdne113911:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1447
 msgid "它通过变量 ``v`` 的在 ``cfg`` 中的循环来将当前的 ``out_channels`` 更新为下一步的 ``in_channels``."
-msgstr "crwdns64948:0crwdne64948:0"
+msgstr "crwdns113913:0crwdne113913:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1449
 msgid "这样我们能够很方便地得到层数不同但结构设计相似的 VGG 模型："
-msgstr "crwdns64950:0crwdne64950:0"
+msgstr "crwdns113915:0crwdne113915:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1481
 msgid "你可以尝试把这些不同的 VGG 结构 ``print`` 出来看看。"
-msgstr "crwdns67437:0crwdne67437:0"
+msgstr "crwdns113917:0crwdne113917:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1493
 msgid "使用重复块状结构的 GoogLeNet"
-msgstr "crwdns64952:0crwdne64952:0"
+msgstr "crwdns113919:0crwdne113919:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1495
 msgid "AlexNet 和 VGGNet 都是在基于 LeNet 的背景下，选择对模型层数进行加深，试图取得更好的效果。"
-msgstr "crwdns64954:0crwdne64954:0"
+msgstr "crwdns113921:0crwdne113921:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1497
 msgid "现在我们将要介绍由 Google 提出的 `GoogLeNet(Inception) <https://paperswithcode.com/method/googlenet>`__ 模型结构，看其如何处理多分支的块状结构。"
-msgstr "crwdns67439:0crwdne67439:0"
+msgstr "crwdns113923:0crwdne113923:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1499
 msgid "注意：我们不会在这里实现完整的模型，仅仅关注其设计的 Inception Block."
-msgstr "crwdns64958:0crwdne64958:0"
+msgstr "crwdns113925:0crwdne113925:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1501
 msgid "|inception|"
-msgstr "crwdns64960:0crwdne64960:0"
+msgstr "crwdns113927:0crwdne113927:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1514
 msgid "inception"
-msgstr "crwdns64962:0crwdne64962:0"
+msgstr "crwdns113929:0crwdne113929:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1503
 msgid "如上图所示（图片来自 `原论文 <https://research.google.com/pubs/archive/43022.pdf>`__\\ ），Inception 块由 :math:`4` 条分支（Branch）组成："
-msgstr "crwdns64964:0:math:crwdne64964:0"
+msgstr "crwdns113931:0:math:crwdne113931:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1505
 msgid "前三条分支使用大小为 :math:`1 \\times 1` 、\\ :math:`3 \\times 3` 和 :math:`5 \\times 5` 的卷积层，负责从不同空间大小中提取信息；"
-msgstr "crwdns64966:0:math:crwdnd64966:0:math:crwdnd64966:0:math:crwdne64966:0"
+msgstr "crwdns113933:0:math:crwdnd113933:0:math:crwdnd113933:0:math:crwdne113933:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1506
 msgid "中间的两条分支在输入上执行 :math:`1 \\times 1` 卷积，以减少通道数，从而降低模型的复杂性；"
-msgstr "crwdns64968:0:math:crwdne64968:0"
+msgstr "crwdns113935:0:math:crwdne113935:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1507
 msgid "第四条分支使用 :math:`3 \\times3` 最大池化层，然后使用 :math:`1 \\times 1` 卷积层来改变通道数。"
-msgstr "crwdns67441:0:math:crwdnd67441:0:math:crwdne67441:0"
+msgstr "crwdns113937:0:math:crwdnd113937:0:math:crwdne113937:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1508
 msgid "最后我们将每条分支的输出在 :math:`N, C, H, W` 的 :math:`C` 维度上拼接，构成 Inception 块的输出。"
-msgstr "crwdns64972:0:math:crwdnd64972:0:math:crwdne64972:0"
+msgstr "crwdns113939:0:math:crwdnd113939:0:math:crwdne113939:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1510
 msgid "与 VGG 的区别在于，在 Inception 块中，通常调整的超参数是每层输出通道的数量。"
-msgstr "crwdns64974:0crwdne64974:0"
+msgstr "crwdns113941:0crwdne113941:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1512
 msgid "我们的任务不在于理解当前模型设计的优点，而是要 “看图说话”，实现出 Inception 块结构："
-msgstr "crwdns64976:0crwdne64976:0"
+msgstr "crwdns113943:0crwdne113943:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1598
 msgid "在完整的 GoogLeNet 中多次使用了 Inception 块来作为整体模型结构的一部分，这种将采用多分支以及重复结构抽象为块（Block）的思路值得我们借鉴。"
-msgstr "crwdns64978:0crwdne64978:0"
+msgstr "crwdns113945:0crwdne113945:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1610
 msgid "深度学习代码的组织形式"
-msgstr "crwdns64980:0crwdne64980:0"
+msgstr "crwdns113947:0crwdne113947:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1612
 msgid "通常在一份工程化的代码中，我们会以带参数的命令行的形式来运行 ``.py`` 脚本。"
-msgstr "crwdns67443:0crwdne67443:0"
+msgstr "crwdns113949:0crwdne113949:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1614
 msgid "例如你在阅读 MegEngine 官方提供的 `Models <https://github.com/MegEngine/Models>`__ 模型库代码时，可能会看到这样的目录结构："
-msgstr "crwdns67445:0crwdne67445:0"
+msgstr "crwdns113951:0crwdne113951:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1628
 msgid "顾名思义，不同的 ``.py`` 脚本文件负责机器学习流水线中不同的环节（必要的情况下它们会变成单独的子包）："
-msgstr "crwdns67447:0crwdne67447:0"
+msgstr "crwdns113953:0crwdne113953:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1630
 msgid "README: 说明文件，告诉用户如何使用里面的代码；"
-msgstr "crwdns64986:0crwdne64986:0"
+msgstr "crwdns113955:0crwdne113955:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1631
 msgid "config: 里面通常会存放一些配置加载脚本，以及各种推荐配置文件；"
-msgstr "crwdns67449:0crwdne67449:0"
+msgstr "crwdns113957:0crwdne113957:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1632
 msgid "data: 数据集的获取和预处理，最终满足传入模型的格式；"
-msgstr "crwdns64988:0crwdne64988:0"
+msgstr "crwdns113959:0crwdne113959:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1633
 msgid "model: 定义你的模型结构；"
-msgstr "crwdns67451:0crwdne67451:0"
+msgstr "crwdns113961:0crwdne113961:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1634
 msgid "train: 模型的训练代码，用于训练数据集；"
-msgstr "crwdns67453:0crwdne67453:0"
+msgstr "crwdns113963:0crwdne113963:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1635
 msgid "test: 模型的测试代码，用于测试数据集；"
-msgstr "crwdns67455:0crwdne67455:0"
+msgstr "crwdns113965:0crwdne113965:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1636
 msgid "inference: 模型的推理代码，用于实际数据，比如你自己的一张图片。"
-msgstr "crwdns64996:0crwdne64996:0"
+msgstr "crwdns113967:0crwdne113967:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1638
 msgid "一个比较好的例子是 MegEngine/Models 中官方实现的 `ResNet <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`__."
-msgstr "crwdns67457:0crwdne67457:0"
+msgstr "crwdns113969:0crwdne113969:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1640
 msgid "当然了，不是所有基于深度学习框架的库都组织成这种形式，关键是当你见到它们的时候，要能快速反应过来不同的模块负责做什么样的事情。"
-msgstr "crwdns67459:0crwdne67459:0"
+msgstr "crwdns113971:0crwdne113971:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1643
 msgid "args 配置项"
-msgstr "crwdns65016:0crwdne65016:0"
+msgstr "crwdns113973:0crwdne113973:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1645
 msgid "在调试模型的过程中，我们需要频繁地改变超参数的值以尝试得到最优的配置，甚至会用原始的表格来记录不同的配置组合所取得的效果。"
-msgstr "crwdns67461:0crwdne67461:0"
+msgstr "crwdns113975:0crwdne113975:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1647
 msgid "而到目前为止，为了便于交互式学习，我们都是通过 Jupyter Notebook 的形式（\\ ``.ipynb`` 格式文件）来交互式地修改每个单元格中的代码；"
-msgstr "crwdns67463:0crwdne67463:0"
+msgstr "crwdns113977:0crwdne113977:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1648
 msgid "重新运行某个单元格，可以使得新的配置生效；重新跑整个代码也行——但这并不是实际的工程项目中我们会采取的做法。"
-msgstr "crwdns67465:0crwdne67465:0"
+msgstr "crwdns113979:0crwdne113979:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1649
 msgid "如果你点开了 ResNet 模型的 ``train.py`` 源代码，就会发现我们会借助 ``argparse`` 模块，使用命令行的形式将参数传入程序中。"
-msgstr "crwdns67467:0crwdne67467:0"
+msgstr "crwdns113981:0crwdne113981:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1651
 msgid "在本次教程中，我们可以假设通过命令行传递的参数跑到了 ``args`` 对象中，看其如何发挥作用。"
-msgstr "crwdns67469:0crwdne67469:0"
+msgstr "crwdns113983:0crwdne113983:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1686
 msgid "用一个简单的例子进行说明，我们在获取数据集的时候，就可以利用到 ``args.datapath``, ``args.train_bs``, ``args.test_bs`` 作为参数："
-msgstr "crwdns65020:0crwdne65020:0"
+msgstr "crwdns113985:0crwdne113985:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1735
 msgid "对一些常见功能进行适当的封装，通过参数进行具体配置的控制，将更有利于进行代码复用。"
-msgstr "crwdns67471:0crwdne67471:0"
+msgstr "crwdns113987:0crwdne113987:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1737
 msgid "随着我们阅读过的代码越来越多，我们也会见到更多工程化的代码设计，这些经验将极大提升我们的开发效率。"
-msgstr "crwdns67473:0crwdne67473:0"
+msgstr "crwdns113989:0crwdne113989:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1740
 msgid "Module 模型训练和测试"
-msgstr "crwdns67475:0crwdne67475:0"
+msgstr "crwdns113991:0crwdne113991:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1742
 msgid "需要注意的是，使用 ``Module`` 建模得到的模型 ``model`` 可以分为训练和测试两种模式："
-msgstr "crwdns67477:0crwdne67477:0"
+msgstr "crwdns113993:0crwdne113993:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1744
 msgid "这是因为一些神经网络算子的行为在不同的模式下也需要不同（尽管我们目前可能还没有用到这些算子）；"
-msgstr "crwdns65034:0crwdne65034:0"
+msgstr "crwdns113995:0crwdne113995:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1745
 msgid "默认情况下启用训练模式 ``model.train()``, 但在进行模型测试时，需要执行 ``model.eval()`` 切换到测试/评估模式。"
-msgstr "crwdns65036:0crwdne65036:0"
+msgstr "crwdns113997:0crwdne113997:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1747
 msgid "我们以 AlexNet 为例来测试一下最终的效果："
-msgstr "crwdns67479:0crwdne67479:0"
+msgstr "crwdns113999:0crwdne113999:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1836
 msgid "注意到以下细节："
-msgstr "crwdns67481:0crwdne67481:0"
+msgstr "crwdns114001:0crwdne114001:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1838
 msgid "相较于简单的 LeNet 模型，我们训练更复杂的模型时，单个 epoch 的时间显著地增加了；"
-msgstr "crwdns67483:0crwdne67483:0"
+msgstr "crwdns114003:0crwdne114003:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1839
 msgid "在第一个 epoch 的训练后，loss 已经比 LeNet 模型训练 10 个 eopch 要低；"
-msgstr "crwdns67485:0crwdne67485:0"
+msgstr "crwdns114005:0crwdne114005:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1840
 msgid "与此同时，我们训练 10 个 epoch 就已经超过了 LeNet 训练 100 个 epoch 的效果；"
-msgstr "crwdns67487:0crwdne67487:0"
+msgstr "crwdns114007:0crwdne114007:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1841
 msgid "如果使用更多的时间来训练，loss 值还能继续降低，但是我们也要避免产生过拟合现象。"
-msgstr "crwdns67489:0crwdne67489:0"
+msgstr "crwdns114009:0crwdne114009:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1843
 msgid "实际上细心的话你会发现，我们这里使用了 Adam 优化器来代替 SGD, 以使得模型能够更快地收敛。为什么呢？"
-msgstr "crwdns67491:0crwdne67491:0"
+msgstr "crwdns114011:0crwdne114011:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1845
 msgid "我们在这个教程中留下了诸多疑点，这些都是关于模型训练方面的经验和技巧，我们会在下一个教程中统一进行解释。"
-msgstr "crwdns68207:0crwdne68207:0"
+msgstr "crwdns114013:0crwdne114013:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1847
 msgid "现在我们来测试下模型预测的效果："
-msgstr "crwdns68209:0crwdne68209:0"
+msgstr "crwdns114015:0crwdne114015:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1902
 msgid "我们在这里仅对不同模型的效果进行了简单的对比，实际上这样的对照不够严谨（没有严格地控制变量），仅仅是为了让你感受复杂模型的有效性。"
-msgstr "crwdns67495:0crwdne67495:0"
+msgstr "crwdns114017:0crwdne114017:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1904
 msgid "你可以再多多调教我们的 AlexNet 模型，看能否达到更高的精度。"
-msgstr "crwdns67497:0crwdne67497:0"
+msgstr "crwdns114019:0crwdne114019:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1906
 msgid "我们经常会在科研文献中看到一个模型在某个 Benchmark 上所取得的最优效果，前沿论文的实验结果通常能达到当前最优（State-of-the-art, SOTA），也容易被后来居上；"
-msgstr "crwdns67499:0crwdne67499:0"
+msgstr "crwdns114021:0crwdne114021:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1907
 msgid "这通常研究人员需要花费很多的时间和精力去选取合适的超参数，或者对模型结构进行精细的设计和调整，找到最好效果的模型作为实验结果，“刷点”行为在深度学习领域十分常见；"
-msgstr "crwdns67501:0crwdne67501:0"
+msgstr "crwdns114023:0crwdne114023:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1908
 msgid "但我们在分享自己实验结果的同时，也需要讲究实验的可复现性（Reproducibility），如果一篇深度学习领域论文的实验结果无法被他人复现，则其真实性容易受到质疑。"
-msgstr "crwdns67503:0crwdne67503:0"
+msgstr "crwdns114025:0crwdne114025:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1910
 msgid "有了不错的模型，是不是已经开始有分享给别人使用的冲动了呢？接下来我们就将学习如何保存和加载模型。"
-msgstr "crwdns67505:0crwdne67505:0"
+msgstr "crwdns114027:0crwdne114027:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1922
 msgid "模型保存与加载"
-msgstr "crwdns65042:0crwdne65042:0"
+msgstr "crwdns114029:0crwdne114029:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1924
 msgid "到目前为止，我们一直在关注如何实现并且训练好一个模型。但我们有时需要把训练好的（模型）参数以文件的形式存储在硬盘上，以供后续使用，比如："
-msgstr "crwdns65044:0crwdne65044:0"
+msgstr "crwdns114031:0crwdne114031:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1926
 msgid "你预计需要训练超过 1000 个 epoch 的模型，但时间不足，你希望能够将途中模型参数临时保存起来，下次有时间再继续基于保存的参数进行训练；"
-msgstr "crwdns67507:0crwdne67507:0"
+msgstr "crwdns114033:0crwdne114033:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1927
 msgid "你有充足的时间，但是训练太久容易导致过拟合，因此需要每训练一段时间就保存好当前的模型，根据最终的测试效果选出最优的模型；"
-msgstr "crwdns65048:0crwdne65048:0"
+msgstr "crwdns114035:0crwdne114035:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1928
 msgid "你需要将训练的模型部署到其它的设备上进行使用（这是另外的使用情景，我们在当前系列的教程中不会接触到）…"
-msgstr "crwdns88491:0crwdne88491:0"
+msgstr "crwdns114037:0crwdne114037:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1930
 msgid "最简单的办法是，使用 MegEngine 中提供的 ``save`` 和 ``load`` 接口，我们以最简单的 ``Tensor`` 进行举例："
-msgstr "crwdns65052:0crwdne65052:0"
+msgstr "crwdns114039:0crwdne114039:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1975
 msgid "在上面的代码执行过程中 ``megengine.save()`` 负责把对象保存成磁盘文件，而 ``megengine.load()`` 负责从文件中加载用 ``save()`` 所保存的对象。"
-msgstr "crwdns65054:0crwdne65054:0"
+msgstr "crwdns114041:0crwdne114041:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1977
 msgid "文件的后缀名其实可以随意选取，比如 ``.mge``, ``.megengine``, ``.pkl``\\ … 等，关键是要让使用的人从后缀名中能判断出加载方式。"
-msgstr "crwdns88493:0crwdne88493:0"
+msgstr "crwdns114043:0crwdne114043:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1979
 msgid "我们回顾一下教程开始提到的一个知识点，在每个 ``Module``/``Optimizer`` 对象中，都提供了 ``state_dict()`` 方法来获取内部的状态信息："
-msgstr "crwdns65058:0crwdne65058:0"
+msgstr "crwdns114045:0crwdne114045:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1981
 msgid "``Module`` 的 ``state_dict()`` 获取到的是一个有序字典，其键值对是每个网络层和其对应的参数；"
-msgstr "crwdns65060:0crwdne65060:0"
+msgstr "crwdns114047:0crwdne114047:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:1982
 msgid "``Optimizer`` 的 ``state_dict()`` 获取到的是无序字典，内部有包含优化器参数的 ``param_groups`` 和 ``state`` 信息。"
-msgstr "crwdns65062:0crwdne65062:0"
+msgstr "crwdns114049:0crwdne114049:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2025
 msgid "根据我们 ``save()`` 和 ``load()`` 思路的不同，也导致有好几种不同的处理方式。"
-msgstr "crwdns67513:0crwdne67513:0"
+msgstr "crwdns114051:0crwdne114051:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2028
 msgid "保存和加载状态字典"
-msgstr "crwdns67515:0crwdne67515:0"
+msgstr "crwdns114053:0crwdne114053:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2030
 msgid "即保存模型的 ``state_dict()``. 这是比较推荐的做法。但是注意："
-msgstr "crwdns67517:0crwdne67517:0"
+msgstr "crwdns114055:0crwdne114055:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2032
 msgid "**在进行预测之前，必须调用 ``.eval()`` 将一些算子设置成验证状态，** 否则会生成前后不一致的预测结果（经常有人忘记这一点）；"
-msgstr "crwdns67519:0crwdne67519:0"
+msgstr "crwdns114057:0crwdne114057:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2033
 msgid "由于我们保存的是 ``state_dict()``, 在加载时也需要调用模型对应的 ``load_state_dict()`` 方法；"
-msgstr "crwdns67521:0crwdne67521:0"
+msgstr "crwdns114059:0crwdne114059:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2034
 msgid "``load_state_dict()`` 方法必须传入一个状态字典，而不是对象的保存路径，也就是说必须先调用 ``load()``, 然后再调用该方法。"
-msgstr "crwdns67523:0crwdne67523:0"
+msgstr "crwdns114061:0crwdne114061:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2062
 msgid "加载后的模型可以继续用于训练或者直接用于预测，这里我们测试一下这个刚加载进来的模型，结果应该与之前保存的模型精度完全一致。"
-msgstr "crwdns65074:0crwdne65074:0"
+msgstr "crwdns114063:0crwdne114063:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2103
 msgid "保存和加载整个模型"
-msgstr "crwdns67525:0crwdne67525:0"
+msgstr "crwdns114065:0crwdne114065:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2105
 msgid "你也可以选择将整个模型进行保存："
-msgstr "crwdns67527:0crwdne67527:0"
+msgstr "crwdns114067:0crwdne114067:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2147
 msgid "这种做法简单粗暴，缺点在于序列化后的数据只适用于特定模型结构，无法做进一步的处理；"
-msgstr "crwdns67529:0crwdne67529:0"
+msgstr "crwdns114069:0crwdne114069:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2150
 msgid "使用检查点（Checkpoint）"
-msgstr "crwdns65084:0crwdne65084:0"
+msgstr "crwdns114071:0crwdne114071:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2152
 msgid "我们知道了 ``model`` 和 ``optimizer`` 都能够提供 ``state_dict`` 信息，因此一种更加精细的做法是将它们和更多的信息组合起来存储："
-msgstr "crwdns67531:0crwdne67531:0"
+msgstr "crwdns114073:0crwdne114073:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2164
 msgid "这样在加载使用的时候，我们就能够利用更多已经保存下来的信息："
-msgstr "crwdns65088:0crwdne65088:0"
+msgstr "crwdns114075:0crwdne114075:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2177
 msgid "将来你会在一些工程化的代码中看到这样的用法，状态信息非常重要，请及时保存，以免丢失。"
-msgstr "crwdns67533:0crwdne67533:0"
+msgstr "crwdns114077:0crwdne114077:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2189
 msgid "总结回顾"
-msgstr "crwdns65092:0crwdne65092:0"
+msgstr "crwdns114079:0crwdne114079:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2191
 msgid "MegEngine 中的 ``Module`` 类为开发者提供了足够程度的抽象，使得我们能够灵活高效地实现各种神经网络的模型结构："
-msgstr "crwdns67535:0crwdne67535:0"
+msgstr "crwdns114081:0crwdne114081:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2193
 msgid "我们能够借助 ``Module.parameters()`` 方法，快速地获取所有参数的迭代，并且作为 Optimizer 和 GradManager 的输入参数统一管理；"
-msgstr "crwdns65096:0crwdne65096:0"
+msgstr "crwdns114083:0crwdne114083:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2194
 msgid "通过 ``Module.init`` 子模块，模型参数的初始化变得十分简单，我们也能够用自己的逻辑对各层的参数、权重进行更加精细的初始化策略控制；"
-msgstr "crwdns65098:0crwdne65098:0"
+msgstr "crwdns114085:0crwdne114085:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2195
 msgid "通过 ``megengine.save()`` 和 ``megengine.load()`` 可以方便地完成状态信息的保存和加载，\\ ``state_dict`` 信息可以灵活组合使用。"
-msgstr "crwdns65100:0crwdne65100:0"
+msgstr "crwdns114087:0crwdne114087:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2197
 msgid "与此同时，我们也接触到了一些超出深度学习框架服务范围的编程知识，见识到了更多的经典 CNN 结构设计："
-msgstr "crwdns67537:0crwdne67537:0"
+msgstr "crwdns114089:0crwdne114089:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2199
 msgid "AlexNet: 将卷积神经网络的层数加深，在 CIFAR10 分类任务上取得了更好的效果；"
-msgstr "crwdns65104:0crwdne65104:0"
+msgstr "crwdns114091:0crwdne114091:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2200
 msgid "VGGNet: 利用循环和子程序，可以高效地“配置”出不同类型的 VGG11, VGG13, VGG16, VGG19 模型结构；"
-msgstr "crwdns65106:0crwdne65106:0"
+msgstr "crwdns114093:0crwdne114093:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2201
 msgid "GoogLeNet: 除了不断地加深神经网络的深度，我们也可以像搭积木一样将整个模型看作是由不同的 “块” 组成的大网络。"
-msgstr "crwdns65108:0crwdne65108:0"
+msgstr "crwdns114095:0crwdne114095:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2203
 msgid "尽管这些模型主要被用在计算机视觉分类相关的应用上，但其中发展出的设计思想，希望能够给你带来一些启发。"
-msgstr "crwdns65110:0crwdne65110:0"
+msgstr "crwdns114097:0crwdne114097:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2205
 msgid "在工程化方面，我们见识到了标准的深度学习工程模型代码长什么样子，这有利于我们将来去阅读其他人复现好的模型代码，或者是将自己的代码组织得更加优雅。"
-msgstr "crwdns67539:0crwdne67539:0"
+msgstr "crwdns114099:0crwdne114099:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2207
 msgid "另外我们在举例的过程中提到了 ResNet, 这是再经典不过的 CNN 模型了！当你能够自己实现完整的 ResNet 中 ``model.py`` 内部的各种结构时，即意味着你可以从初学者教程“毕业”，以后遇到奇怪的模型结构也能游刃有余。"
-msgstr "crwdns67541:0crwdne67541:0"
+msgstr "crwdns114101:0crwdne114101:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2209
 msgid "不过心急吃不了热豆腐，在抵达这个小目标之前，我们还有一段路要走。"
-msgstr "crwdns67543:0crwdne67543:0"
+msgstr "crwdns114103:0crwdne114103:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2221
 msgid "问题思考"
-msgstr "crwdns65114:0crwdne65114:0"
+msgstr "crwdns114105:0crwdne114105:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2223
 msgid "我们在这个教程中引入了许多新的概念没有解释，比如什么是 ``Dropout`` 算子，什么又是 ``BatchNorm2d`` 算子？"
-msgstr "crwdns67545:0crwdne67545:0"
+msgstr "crwdns114107:0crwdne114107:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2225
 msgid "以及我们一直都没有解释为什么神经网络模型不应该使用零值初始化策略。如果你始终留有疑惑，这是件好事，耐心完成后面的教程，终究会守得云开见月明。"
-msgstr "crwdns67547:0crwdne67547:0"
+msgstr "crwdns114109:0crwdne114109:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2228
 msgid "大模型即是正义？"
-msgstr "crwdns67549:0crwdne67549:0"
+msgstr "crwdns114111:0crwdne114111:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2230
 msgid "CIFAR10 图片预测的准确率还有很大的提升空间，是不是意味着只要不断加大模型的深度/宽度，让它变得更复杂，加上精细的超参数调整，就总是能够取得更好的效果呢？"
-msgstr "crwdns65118:0crwdne65118:0"
+msgstr "crwdns114113:0crwdne114113:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2232
 msgid "你是否思考过这样一个明显的问题：VGG 论文中设计出了 VGG11, VGG13, VGG16, VGG19… 为什么不搞出一个 VGG100 模型呢？直接 VGG6666 岂不是无敌？"
-msgstr "crwdns88495:0crwdne88495:0"
+msgstr "crwdns114115:0crwdne114115:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2234
 msgid "一个比较直接的原因是，大模型的计算量更大，训练起来的时间成本和经济成本也更高，耗电也多（我们需要有环保意识）；"
-msgstr "crwdns65122:0crwdne65122:0"
+msgstr "crwdns114117:0crwdne114117:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2235
 msgid "我们在处理机器学习任务时，不但要考虑精度，还要考虑速度——比如与目标检测/追踪有关的应用就很在意推理时的速度；"
-msgstr "crwdns65124:0crwdne65124:0"
+msgstr "crwdns114119:0crwdne114119:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2236
 msgid "实际上，不使用 VGG6666 模型的背后还有着其他的原因，我们在下个教程中将进行解释。"
-msgstr "crwdns65126:0crwdne65126:0"
+msgstr "crwdns114121:0crwdne114121:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2238
 msgid "这个教程中也给你留下了一个挑战，我们没有完整地写出 GoogLeNet 模型，请你试试能否独立地实现出 GoogLeNet, 甚至是整个 Inception Net 系列的网络结构。"
-msgstr "crwdns65128:0crwdne65128:0"
+msgstr "crwdns114123:0crwdne114123:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2241
 msgid "知其然，知其所以然"
-msgstr "crwdns67551:0crwdne67551:0"
+msgstr "crwdns114125:0crwdne114125:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2243
 msgid "如果你尝试自己训练过上面的几个模型，修改过不同的超参数方案组合，还可能会遇到如下一些情况："
-msgstr "crwdns65130:0crwdne65130:0"
+msgstr "crwdns114127:0crwdne114127:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2245
 msgid "我的 Loss 在训练几个 epoch 之后就不下降了，有时甚至从来没有下降过！"
-msgstr "crwdns65132:0crwdne65132:0"
+msgstr "crwdns114129:0crwdne114129:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2246
 msgid "我的 Loss 从第一个 epoch 开始就显示为 NaN, 发生什么事了？"
-msgstr "crwdns65134:0crwdne65134:0"
+msgstr "crwdns114131:0crwdne114131:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2247
 msgid "训练一个 epoch 的成本比之前高了很多，寻找合适的超参数会花掉很多时间…"
-msgstr "crwdns88497:0crwdne88497:0"
+msgstr "crwdns114133:0crwdne114133:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2249
 msgid "除此以外，在不改变模型结构的情况下，我们还在代码中进行了一些修改，比如我们改变了超参数，对输入数据进行了预处理，模型参数使用了除零值之外其它的初始化策略。这些修改背后的直觉是什么，当我们需要用神经网络解决不同的任务时，有没有什么经验可循？对于这些深度学习炼丹老师傅们再熟悉不过的一些 “玄学” 现象，如果能分析出问题背后可能的原因，一定会很有成就感。"
-msgstr "crwdns67553:0crwdne67553:0"
+msgstr "crwdns114135:0crwdne114135:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2251
 msgid "对于深度学习初学者来说，经典论文的复现是一个比较有趣的练习方式，我们在介绍 AlexNet 和 VGGNet 时给出了 `Paper with Code <https://paperswithcode.com/>`__ 的网站链接，里面是一个巨大的宝库。你可以尝试参照着一些其他人复现过的模型代码，实现自己的 MegEngine 版本，看看是否能达到一样的效果，我们鼓励你以开源的方式将它们分享出来。最有效的实践方式就是：多看，多写，多想。我们在接下来的教程中，将会一起探索一些炼丹玄学现象背后的原因，总结出一些神经网络模型训练中的常见技巧。"
-msgstr "crwdns67555:0crwdne67555:0"
+msgstr "crwdns114137:0crwdne114137:0"
 
 #: ../../source/getting-started/beginner/model-construction.ipynb:2253
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
-msgstr "crwdns65144:0crwdne65144:0"
+msgstr "crwdns114139:0crwdne114139:0"
 
 #~ msgid ""
 #~ "在 MegEngine 中提供了 ``module`` 模块，实现了包括 "

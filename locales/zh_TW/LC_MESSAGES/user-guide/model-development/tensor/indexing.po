@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:26\n"
+"PO-Revision-Date: 2023-04-21 09:36\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,143 +14,143 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/tensor/indexing.po\n"
-"X-Crowdin-File-ID: 8141\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/tensor/indexing.po\n"
+"X-Crowdin-File-ID: 9933\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:5
 msgid "Tensor 元素索引"
-msgstr "crwdns83723:0crwdne83723:0"
+msgstr "crwdns117725:0crwdne117725:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:9
 msgid "阅读这部分内容前，你需要知道如何 :ref:`access-tensor-element` 以及 :ref:`tensor-slice` 。"
-msgstr "crwdns83725:0:ref:crwdnd83725:0:ref:crwdne83725:0"
+msgstr "crwdns117727:0:ref:crwdnd117727:0:ref:crwdne117727:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:13
 msgid "以下是本小节提到的相关内容速记："
-msgstr "crwdns83727:0crwdne83727:0"
+msgstr "crwdns117729:0crwdne117729:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:15
 msgid "MegEngine 中切片将返回新的对象（而不是共用同一片内存），切片操作不会降低 Tensor 维度；"
-msgstr "crwdns83729:0crwdne83729:0"
+msgstr "crwdns117731:0crwdne117731:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:16
 msgid "多维 Tensor 的索引语法形如 ``a[i, j]``, 也支持切片语法形如 ``a[i:j, p:q]``;"
-msgstr "crwdns83731:0crwdne83731:0"
+msgstr "crwdns117733:0crwdne117733:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:17
 msgid "可以使用省略符 ``...`` 来自动填充完整切片到剩余维度，比如 ``a[i, ...]`` 等同于 ``a[i, :, :]``."
-msgstr "crwdns83733:0crwdne83733:0"
+msgstr "crwdns117735:0crwdne117735:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:20
 msgid "和 NumPy 索引对比"
-msgstr "crwdns83735:0crwdne83735:0"
+msgstr "crwdns117737:0crwdne117737:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:21
 msgid "NumPy 用户请注意！"
-msgstr "crwdns83737:0crwdne83737:0"
+msgstr "crwdns117739:0crwdne117739:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:24
 msgid "不能将 NumPy 中存在的一些概念和设计直接应用于 MegEngine."
-msgstr "crwdns83739:0crwdne83739:0"
+msgstr "crwdns117741:0crwdne117741:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:28
 msgid "在 MegEngine 中，想要 :ref:`access-tensor-element` ，可以使用标准的 ``x[obj]`` 语法。 看上去一切都和 NumPy 很相似，后者的官方文档中也对 :class:`~.numpy.ndarray` 的各种索引方式都 `进行了解释 <https://numpy.org/doc/stable/reference/arrays.indexing.html>`_ 。 但 MegEngine 的 Tensor 实现和 NumPy 还是略有不同，如果不清楚某些细节，可能无法对一些现象做出解释。"
-msgstr "crwdns83741:0:ref:crwdnd83741:0[obj]crwdnd83741:0:class:crwdne83741:0"
+msgstr "crwdns117743:0:ref:crwdnd117743:0[obj]crwdnd117743:0:class:crwdne117743:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:35
 msgid "索引得到的对象不同"
-msgstr "crwdns83743:0crwdne83743:0"
+msgstr "crwdns117745:0crwdne117745:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:41
 #: ../../source/user-guide/model-development/tensor/indexing.rst:108
 msgid "MegEngine"
-msgstr "crwdns83745:0crwdne83745:0"
+msgstr "crwdns117747:0crwdne117747:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:50
 #: ../../source/user-guide/model-development/tensor/indexing.rst:115
 msgid "NumPy"
-msgstr "crwdns83747:0crwdne83747:0"
+msgstr "crwdns117749:0crwdne117749:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:59
 msgid "出现这种情况的原因是，在 NumPy 中使用索引时，得到的是原数组的 `视图（View） <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html>`_ 。 改变视图中的元素，原始数组中的元素也会发生变化 —— 这是很多 NumPy 用户初学时容易困扰的地方。 而在 MegEngine 中没有视图 ``view`` 这一属性， 通过索引或切片得到的元素或子 Tensor 和原 Tensor 占用的是不同的内存区域。"
-msgstr "crwdns83749:0crwdne83749:0"
+msgstr "crwdns117751:0crwdne117751:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:65
 msgid "在其它地方的一些设计，二者还是一致的，接下来我们将进行介绍。"
-msgstr "crwdns83751:0crwdne83751:0"
+msgstr "crwdns117753:0crwdne117753:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:70
 msgid "切片索引不会降低维度"
-msgstr "crwdns83753:0crwdne83753:0"
+msgstr "crwdns117755:0crwdne117755:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:72
 msgid "MegEngine 和 NumPy 在进行切片时，都不会改变对象 :ref:`tensor-ndim` ："
-msgstr "crwdns83755:0:ref:crwdne83755:0"
+msgstr "crwdns117757:0:ref:crwdne117757:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:82
 msgid "整个过程中，切片得到的都是一个 ``ndim=2`` 的 Tensor."
-msgstr "crwdns83757:0crwdne83757:0"
+msgstr "crwdns117759:0crwdne117759:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:84
 msgid "执行 ``M[1:2]`` 得到的结果是 ``[[4, 5, 6]]`` 而不是 ``[4, 5, 6]``."
-msgstr "crwdns83759:0crwdne83759:0"
+msgstr "crwdns117761:0crwdne117761:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:85
 msgid "对 ``[[4, 5, 6]]`` 进行 ``[0:1]`` 切片，得到的还是 ``[[4, 5, 6]]``."
-msgstr "crwdns83761:0crwdne83761:0"
+msgstr "crwdns117763:0crwdne117763:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:87
 msgid "错误的理解思路可能是这样的："
-msgstr "crwdns83763:0crwdne83763:0"
+msgstr "crwdns117765:0crwdne117765:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:89
 msgid "执行 ``M[1:2]`` 得到的结果是 ``[4, 5, 6]``. —— 错！切片不会降维！"
-msgstr "crwdns83765:0crwdne83765:0"
+msgstr "crwdns117767:0crwdne117767:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:90
 msgid "对 ``[4, 5, 6]`` 进行 ``[0:1]`` 切片，得到的是 ``4``. —— 降维了，因此也不对！"
-msgstr "crwdns83767:0crwdne83767:0"
+msgstr "crwdns117769:0crwdne117769:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:94
 msgid "切片的作用是从整体中取出一部分，因此不会产生降低维度的行为。"
-msgstr "crwdns83769:0crwdne83769:0"
+msgstr "crwdns117771:0crwdne117771:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:95
 msgid "如果你希望切片操作后能去冗余的维度，可以使用 :func:`~.squeeze` ."
-msgstr "crwdns83771:0:func:crwdne83771:0"
+msgstr "crwdns117773:0:func:crwdne117773:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:100
 msgid "都可以使用数组索引"
-msgstr "crwdns83773:0crwdne83773:0"
+msgstr "crwdns117775:0crwdne117775:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:102
 msgid "实际上除了切片索引，我们还可以使用整数数组进行索引得到特定位置的元素，以一维情况为例："
-msgstr "crwdns83775:0crwdne83775:0"
+msgstr "crwdns117777:0crwdne117777:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:122
 msgid "索引数组的长度对应了被索引的元素的个数，在一些情况下这种机制十分有帮助。"
-msgstr "crwdns83777:0crwdne83777:0"
+msgstr "crwdns117779:0crwdne117779:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:124
 msgid "此时 NumPy 将不会生成原始数组的视图，与 MegEngine 的逻辑一致。"
-msgstr "crwdns83779:0crwdne83779:0"
+msgstr "crwdns117781:0crwdne117781:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:128
 msgid "注意语法细节，一些用户容易将整数数组索引写成如下形式："
-msgstr "crwdns83781:0crwdne83781:0"
+msgstr "crwdns117783:0crwdne117783:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:134
 msgid "实际上这是对 Tensor 的 n 个维度分别进行索引的语法。引出了下一小节的解释 ——"
-msgstr "crwdns83783:0crwdne83783:0"
+msgstr "crwdns117785:0crwdne117785:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:139
 msgid "在多个维度进行索引"
-msgstr "crwdns83785:0crwdne83785:0"
+msgstr "crwdns117787:0crwdne117787:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:141
 msgid "以下面这个由矩阵（2 维数组） :math:`M` 表示的 Tensor 为例："
-msgstr "crwdns83787:0:math:crwdne83787:0"
+msgstr "crwdns117789:0:math:crwdne117789:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:143
 msgid "M =\n"
@@ -161,59 +161,59 @@ msgid "M =\n"
 "\\end{bmatrix}\n"
 "\\quad\n"
 "M_{(1,2)} = 6"
-msgstr "crwdns83789:0{bmatrix}crwdnd83789:0{blue}crwdnd83789:0{6}crwdnd83789:0{bmatrix}crwdne83789:0"
+msgstr "crwdns117791:0{bmatrix}crwdnd117791:0{blue}crwdnd117791:0{6}crwdnd117791:0{bmatrix}crwdne117791:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:154
 msgid "虽然我们可以使用 ``M[1][2]`` 这样的语法得到 6 这个值，但效率并不高（参考 :ref:`access-tensor-element` 的解释）。"
-msgstr "crwdns83791:0[1]crwdnd83791:0[2]crwdnd83791:0:ref:crwdne83791:0"
+msgstr "crwdns117793:0[1]crwdnd117793:0[2]crwdnd117793:0:ref:crwdne117793:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:158
 msgid "Python 的内置序列类型都是一维的，因此只支持单向索引，但对于具备多维属性的 Tensor, 可以在多个维度直接进行索引 （或者是 :ref:`在多个维度进行切片 <multi-dim-slicing>` ，后面会进行举例）， 使用 ``,`` 作为维度之间的分隔，上面的例子则可用 ``M[1, 2]`` 访问元素，而没有必要使用多个方括号 ``M[1][2]`` ."
-msgstr "crwdns83793:0:ref:crwdnd83793:0[1]crwdnd83793:0[2]crwdne83793:0"
+msgstr "crwdns117795:0:ref:crwdnd117795:0[1]crwdnd117795:0[2]crwdne117795:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:161
 msgid "感兴趣的用户可以了解试着背后的细节：在 Python 中要正确处理这种形式的 ``[]`` 运算符， 对象的特殊方法 ``__getitem__`` 和 ``__setitem__`` 需要以元组的形式来接受传入的索引。 也即是说如果要得到 ``M[i, j]`` 的值，Python 实际上会调用 ``M.__getitem__((i, j))`` ."
-msgstr "crwdns83795:0__getitem__crwdnd83795:0__setitem__crwdnd83795:0__getitem__crwdne83795:0"
+msgstr "crwdns117797:0__getitem__crwdnd117797:0__setitem__crwdnd117797:0__getitem__crwdne117797:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:169
 msgid "可以理解成，在第 0 轴索引值为 1，第 1 轴索引值为 2 的位置去直接访问元素。"
-msgstr "crwdns83797:0crwdne83797:0"
+msgstr "crwdns117799:0crwdne117799:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:171
 msgid "推广到一般情况，在访问 n 维 Tensor （假定为 :math:`T` ）的特定某个元素时，可以使用如下语法："
-msgstr "crwdns83799:0:math:crwdne83799:0"
+msgstr "crwdns117801:0:math:crwdne117801:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:173
 msgid "T_{[i_1, i_2, \\ldots i_n]}"
-msgstr "crwdns83801:0crwdne83801:0"
+msgstr "crwdns117803:0crwdne117803:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:177
 msgid "即我们要提供 :math:`i_1, i_2, \\ldots ,i_n` 共 n 个索引值，此时不需要层层降维索引，而是直接得到对应元素。"
-msgstr "crwdns83803:0:math:crwdne83803:0"
+msgstr "crwdns117805:0:math:crwdne117805:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:179
 msgid "如果提供的索引数组个数不足 n, 则需要了解 :ref:`default-indexing` 。"
-msgstr "crwdns83805:0:ref:crwdne83805:0"
+msgstr "crwdns117807:0:ref:crwdne117807:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:184
 msgid "在多个维度进行切片"
-msgstr "crwdns83807:0crwdne83807:0"
+msgstr "crwdns117809:0crwdne117809:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:187
 msgid "在某个维度上进行索引，除了索引特定元素以外，还可以进行切片操作，来获取特定部分元素。"
-msgstr "crwdns83809:0crwdne83809:0"
+msgstr "crwdns117811:0crwdne117811:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:189
 msgid "既然我们可以在多个维度进行索引，自然地，我们可以从多个维度进行切片；"
-msgstr "crwdns83811:0crwdne83811:0"
+msgstr "crwdns117813:0crwdne117813:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:190
 msgid "问题在于，用户容易忽视 :ref:`slice-will-not-reduce-dim` 这一特点，尤其是和多个 ``[]`` 使用时。"
-msgstr "crwdns83813:0:ref:crwdne83813:0"
+msgstr "crwdns117815:0:ref:crwdne117815:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:192
 msgid "现在需要从下面这个 2 维 Tensor 中切出蓝色部分的元素："
-msgstr "crwdns83815:0crwdne83815:0"
+msgstr "crwdns117817:0crwdne117817:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:194
 msgid "M =\n"
@@ -222,15 +222,15 @@ msgid "M =\n"
 "     \\color{blue}{4} & \\color{blue}{5} & 6 \\\\\n"
 "     \\color{blue}{7} & \\color{blue}{8} & 9 \\\\\n"
 "\\end{bmatrix}"
-msgstr "crwdns83817:0{bmatrix}crwdnd83817:0{blue}crwdnd83817:0{4}crwdnd83817:0{blue}crwdnd83817:0{5}crwdnd83817:0{blue}crwdnd83817:0{7}crwdnd83817:0{blue}crwdnd83817:0{8}crwdnd83817:0{bmatrix}crwdne83817:0"
+msgstr "crwdns117819:0{bmatrix}crwdnd117819:0{blue}crwdnd117819:0{4}crwdnd117819:0{blue}crwdnd117819:0{5}crwdnd117819:0{blue}crwdnd117819:0{7}crwdnd117819:0{blue}crwdnd117819:0{8}crwdnd117819:0{bmatrix}crwdne117819:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:203
 msgid "一些人会写成 ``M[1:3][0:2]`` , 此时将得到非预期结果："
-msgstr "crwdns83819:0crwdne83819:0"
+msgstr "crwdns117821:0crwdne117821:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:209
 msgid "这是因为 ``[]`` 操作是顺序进行解释的，它背后的逻辑顺序是："
-msgstr "crwdns83821:0crwdne83821:0"
+msgstr "crwdns117823:0crwdne117823:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:211
 msgid "\\begin{bmatrix}\n"
@@ -255,23 +255,23 @@ msgid "\\begin{bmatrix}\n"
 "     4 & 5 & 6 \\\\\n"
 "     7 & 8 & 9 \\\\\n"
 "\\end{bmatrix}"
-msgstr "crwdns83823:0{bmatrix}crwdnd83823:0{bmatrix}crwdnd83823:0{1:3}crwdnd83823:0{bmatrix}crwdnd83823:0{bmatrix}crwdnd83823:0{bmatrix}crwdnd83823:0{bmatrix}crwdnd83823:0{0:2}crwdnd83823:0{bmatrix}crwdnd83823:0{bmatrix}crwdne83823:0"
+msgstr "crwdns117825:0{bmatrix}crwdnd117825:0{bmatrix}crwdnd117825:0{1:3}crwdnd117825:0{bmatrix}crwdnd117825:0{bmatrix}crwdnd117825:0{bmatrix}crwdnd117825:0{bmatrix}crwdnd117825:0{0:2}crwdnd117825:0{bmatrix}crwdnd117825:0{bmatrix}crwdne117825:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:246
 msgid "由于切片操作并不会降低维度，所以上面的写法等于每次都在 axis=0 进行切片。"
-msgstr "crwdns83825:0crwdne83825:0"
+msgstr "crwdns117827:0crwdne117827:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:250
 msgid "如果你不清楚 axis 的概念，可以参考 :ref:`tensor-axes` 。"
-msgstr "crwdns83827:0:ref:crwdne83827:0"
+msgstr "crwdns117829:0:ref:crwdne117829:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:252
 msgid "正确的做法是像 :ref:`multi-dim-indexing` 一样，使用 ``,`` 对维度进行区分："
-msgstr "crwdns83829:0:ref:crwdne83829:0"
+msgstr "crwdns117831:0:ref:crwdne117831:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:258
 msgid "可以理解成在第 0 轴使用 ``1:3`` 切片，在第 1 轴使用 ``0:2`` 切片，求它们的交集："
-msgstr "crwdns83831:0crwdne83831:0"
+msgstr "crwdns117833:0crwdne117833:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:260
 msgid "\\begin{bmatrix}\n"
@@ -293,81 +293,81 @@ msgid "\\begin{bmatrix}\n"
 "     \\color{blue}{4} & \\color{blue}{5} & 6 \\\\\n"
 "     \\color{blue}{7} & \\color{blue}{8} & 9 \\\\\n"
 "\\end{bmatrix}"
-msgstr "crwdns83833:0{bmatrix}crwdnd83833:0{red}crwdnd83833:0{4}crwdnd83833:0{red}crwdnd83833:0{5}crwdnd83833:0{red}crwdnd83833:0{6}crwdnd83833:0{red}crwdnd83833:0{7}crwdnd83833:0{red}crwdnd83833:0{8}crwdnd83833:0{red}crwdnd83833:0{9}crwdnd83833:0{bmatrix}crwdnd83833:0{1:3}crwdnd83833:0{bmatrix}crwdnd83833:0{green}crwdnd83833:0{1}crwdnd83833:0{green}crwdnd83833:0{2}crwdnd83833:0{green}crwdnd83833:0{4}crwdnd83833:0{green}crwdnd83833:0{5}crwdnd83833:0{green}crwdnd83833:0{7}crwdnd83833:0{green}crwdnd83833:0{8}crwdnd83833:0{bmatrix}crwdnd83833:0{0:2}crwdnd83833:0{bmatrix}crwdnd83833:0{blue}crwdnd83833:0{4}crwdnd83833:0{blue}crwdnd83833:0{5}crwdnd83833:0{blue}crwdnd83833:0{7}crwdnd83833:0{blue}crwdnd83833:0{8}crwdnd83833:0{bmatrix}crwdne83833:0"
+msgstr "crwdns117835:0{bmatrix}crwdnd117835:0{red}crwdnd117835:0{4}crwdnd117835:0{red}crwdnd117835:0{5}crwdnd117835:0{red}crwdnd117835:0{6}crwdnd117835:0{red}crwdnd117835:0{7}crwdnd117835:0{red}crwdnd117835:0{8}crwdnd117835:0{red}crwdnd117835:0{9}crwdnd117835:0{bmatrix}crwdnd117835:0{1:3}crwdnd117835:0{bmatrix}crwdnd117835:0{green}crwdnd117835:0{1}crwdnd117835:0{green}crwdnd117835:0{2}crwdnd117835:0{green}crwdnd117835:0{4}crwdnd117835:0{green}crwdnd117835:0{5}crwdnd117835:0{green}crwdnd117835:0{7}crwdnd117835:0{green}crwdnd117835:0{8}crwdnd117835:0{bmatrix}crwdnd117835:0{0:2}crwdnd117835:0{bmatrix}crwdnd117835:0{blue}crwdnd117835:0{4}crwdnd117835:0{blue}crwdnd117835:0{5}crwdnd117835:0{blue}crwdnd117835:0{7}crwdnd117835:0{blue}crwdnd117835:0{8}crwdnd117835:0{bmatrix}crwdne117835:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:282
 msgid "推广到一般情况，在访问 n 维 Tensor （假定为 :math:`T` ）的特定部分的元素时，要求使用如下语法："
-msgstr "crwdns83835:0:math:crwdne83835:0"
+msgstr "crwdns117837:0:math:crwdne117837:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:284
 msgid "T_{[s_1, s_2, \\ldots s_n]}"
-msgstr "crwdns83837:0crwdne83837:0"
+msgstr "crwdns117839:0crwdne117839:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:288
 msgid "即我们要提供 :math:`s_1, s_2, \\ldots ,s_n` 共 n 个切片，每个切片针对特定第维度。"
-msgstr "crwdns83839:0:math:crwdne83839:0"
+msgstr "crwdns117841:0:math:crwdne117841:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:290
 msgid "如果提供的切片个数不足 n, 则需要了解 :ref:`default-indexing` 。"
-msgstr "crwdns83841:0:ref:crwdne83841:0"
+msgstr "crwdns117843:0:ref:crwdne117843:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:294
 msgid "多维切片时， ``x[obj]`` 内部的 ``obj`` 由给定的不同维度的切片组成。"
-msgstr "crwdns83843:0[obj]crwdne83843:0"
+msgstr "crwdns117845:0[obj]crwdne117845:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:298
 msgid "对于 ``ndim`` 特别大的 Tensor （假设超过 1000 维）， 有些时候我们只想对某一个轴进行索引， 或进行特定操作，此时我们可以使用 :py:func:`~.functional.gather` 或 :py:func:`~.functional.scatter`"
-msgstr "crwdns83845:0crwdne83845:0"
+msgstr "crwdns117847:0crwdne117847:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:300
 msgid "这两个方法分别对应于 :py:func:`numpy.take_along_axis` 和 :py:func:`numpy.put_along_axis`"
-msgstr "crwdns83847:0crwdne83847:0"
+msgstr "crwdns117849:0crwdne117849:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:305
 msgid "多维切片时使用省略符号"
-msgstr "crwdns83849:0crwdne83849:0"
+msgstr "crwdns117851:0crwdne117851:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:307
 msgid "在对 Tensor 进行多维切片时，允许对部分不做切片的维度进行省略（Ellipsis）表示。 它的正确写法是三个英语句号 ``...`` 而不是 Unicode 码位 U+2026 表示的半个省略号 ``…`` . Python 解析器会将 ``...`` 看作是一个符号，就像 ``start:end:step`` 符号可以表示切片对象一样， 省略符号其实是 `Ellipsis <https://docs.python.org/dev/library/constants.html#Ellipsis>`_ 对象的别名，用于尽可能地在该位置插入尽可能多的完整切片 ``:`` 以将切片语法拓展到所有维度。"
-msgstr "crwdns83851:0crwdne83851:0"
+msgstr "crwdns117853:0crwdne117853:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:313
 msgid "举个例子，如果 ``T`` 是一个 4 维 Tensor, 那么则有："
-msgstr "crwdns83853:0crwdne83853:0"
+msgstr "crwdns117855:0crwdne117855:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:315
 msgid "``T[i, ...]`` 是 ``T[i, :, :, :]`` 的缩写；"
-msgstr "crwdns83855:0crwdne83855:0"
+msgstr "crwdns117857:0crwdne117857:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:316
 msgid "``T[..., i]`` 是 ``T[:, :, :, i]`` 的缩写；"
-msgstr "crwdns83857:0crwdne83857:0"
+msgstr "crwdns117859:0crwdne117859:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:317
 msgid "``T[i, ..., j]`` 是 ``T[i, :, :, j]`` 的缩写。"
-msgstr "crwdns83859:0crwdne83859:0"
+msgstr "crwdns117861:0crwdne117861:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:322
 msgid "多维索引的缺省情况"
-msgstr "crwdns83861:0crwdne83861:0"
+msgstr "crwdns117863:0crwdne117863:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:324
 msgid "如果索引一个多维 Tensor 时给定的索引数少于实际的维数 ``ndim``, 将得到一个子 Tensor:"
-msgstr "crwdns83863:0crwdne83863:0"
+msgstr "crwdns117865:0crwdne117865:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:333
 msgid "此时其它维度的元素将被完整地保留，等同于使用 ``:`` 作为缺省维度的默认索引；"
-msgstr "crwdns83865:0crwdne83865:0"
+msgstr "crwdns117867:0crwdne117867:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:334
 msgid "根据给定的明确索引数，得到的子 Tensor 维度个数将对应地减少。"
-msgstr "crwdns83867:0crwdne83867:0"
+msgstr "crwdns117869:0crwdne117869:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:339
 msgid "高级索引方式"
-msgstr "crwdns83869:0crwdne83869:0"
+msgstr "crwdns117871:0crwdne117871:0"
 
 #: ../../source/user-guide/model-development/tensor/indexing.rst:343
 msgid "参考 `NumPy Advanced Indexing <https://numpy.org/doc/stable/reference/arrays.indexing.html#integer-array-indexing>`_ ."
-msgstr "crwdns83871:0crwdne83871:0"
+msgstr "crwdns117873:0crwdne117873:0"
 

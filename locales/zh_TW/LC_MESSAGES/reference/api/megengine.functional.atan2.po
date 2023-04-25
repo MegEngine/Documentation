@@ -2,27 +2,99 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 08:58\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:16\n"
 "Last-Translator: \n"
-"Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
+"Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.atan2.po\n"
-"X-Crowdin-File-ID: 2056\n"
-"X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.functional.atan2.po\n"
+"X-Crowdin-File-ID: 9047\n"
 
 #: ../../source/reference/api/megengine.functional.atan2.rst:2
 msgid "megengine.functional.atan2"
-msgstr "crwdns30104:0crwdne30104:0"
+msgstr "crwdns99479:0crwdne99479:0"
 
 #: megengine.functional.elemwise.atan2:1 of
-msgid "Element-wise `2-argument arctangent`."
-msgstr "crwdns30106:0crwdne30106:0"
+msgid "Element-wise :math:`\\arctan(\\frac{y}{x})` function."
+msgstr "crwdns99481:0:math:crwdnd99481:0{y}crwdnd99481:0{x}crwdne99481:0"
+
+#: megengine.functional.elemwise.atan2:3 of
+msgid "Calculates an approximation to the inverse tangent for each element :math:`x_i` of the input tensor :math:`x` with the respective element :math:`y_i` of the input tensor :math:`y`."
+msgstr "crwdns99483:0:math:crwdnd99483:0:math:crwdnd99483:0:math:crwdnd99483:0:math:crwdne99483:0"
+
+#: megengine.functional.elemwise.atan2 of
+msgid "参数"
+msgstr "crwdns99485:0crwdne99485:0"
+
+#: megengine.functional.elemwise.atan2:6 of
+msgid "first input tensor whose elements correspond to the dividend. Should have a numeric data type."
+msgstr "crwdns99487:0crwdne99487:0"
+
+#: megengine.functional.elemwise.atan2:7 of
+msgid "second input tensor whose elements correspond to the divisor. Must be compatible with `x` (see :ref:`broadcasting-rule` ). Should have a numeric data type."
+msgstr "crwdns99489:0:ref:crwdne99489:0"
+
+#: megengine.functional.elemwise.atan2 of
+msgid "返回"
+msgstr "crwdns99491:0crwdne99491:0"
+
+#: megengine.functional.elemwise.atan2:10 of
+msgid "a tensor containing the inverse tangent of each element in :math:`y/x`."
+msgstr "crwdns99493:0:math:crwdne99493:0"
+
+#: megengine.functional.elemwise.atan2:12 of
+msgid "Special cases"
+msgstr "crwdns99495:0crwdne99495:0"
+
+#: megengine.functional.elemwise.atan2:14 of
+msgid "``atan2`` is identical to the ``atan2`` function of the underlying C library. The following special values are defined in the C standard:"
+msgstr "crwdns99497:0crwdne99497:0"
+
+#: megengine.functional.elemwise.atan2:17 of
+msgid "For floating-point operands,"
+msgstr "crwdns99499:0crwdne99499:0"
+
+#: megengine.functional.elemwise.atan2:19 of
+msgid "if :math:`y` is `+/-0`` and :math:`x` is ``+0``, the result is ``+/-0``."
+msgstr "crwdns99501:0:math:crwdnd99501:0:math:crwdne99501:0"
+
+#: megengine.functional.elemwise.atan2:20 of
+msgid "if :math:`y` is ``+/-0`` and :math:`x` is ``-0``, the result is ``+/-π``."
+msgstr "crwdns99503:0:math:crwdnd99503:0:math:crwdne99503:0"
+
+#: megengine.functional.elemwise.atan2:21 of
+msgid "if :math:`y` is greater than ``0`` and :math:`x` is ``+/-infinity``, the result is ``+0/+π``."
+msgstr "crwdns99505:0:math:crwdnd99505:0:math:crwdne99505:0"
+
+#: megengine.functional.elemwise.atan2:22 of
+msgid "if :math:`y` is less than ``0`` and :math:`x` is ``+/-infinity``, the result is ``-0/-π``."
+msgstr "crwdns99507:0:math:crwdnd99507:0:math:crwdne99507:0"
+
+#: megengine.functional.elemwise.atan2:23 of
+msgid "if :math:`y` is ``+/-infinity`and :math:`x` is ``+infinity``, tge result is ``+/-(π/4)``."
+msgstr "crwdns99509:0:math:crwdnd99509:0:math:crwdne99509:0"
+
+#: megengine.functional.elemwise.atan2:24 of
+msgid "if :math:`y` is ``+/-infinity`and :math:`x` is ``-infinity``, tge result is ``+/-(3π/4)``."
+msgstr "crwdns99511:0:math:crwdnd99511:0:math:crwdne99511:0"
+
+#: megengine.functional.elemwise.atan2:26 of
+msgid "Note that ``+0`` and ``-0`` are distinct floating point numbers, as are ``+inf`` and ``-inf``."
+msgstr "crwdns99513:0crwdne99513:0"
+
+#: megengine.functional.elemwise.atan2:29 of
+msgid "实际案例"
+msgstr "crwdns99515:0crwdne99515:0"
+
+#: megengine.functional.elemwise.atan2:33 of
+msgid "Element-wise inverse tangent:"
+msgstr "crwdns99517:0crwdne99517:0"
 

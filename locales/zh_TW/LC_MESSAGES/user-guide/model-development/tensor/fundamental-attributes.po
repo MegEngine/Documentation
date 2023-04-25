@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:26\n"
+"PO-Revision-Date: 2023-04-21 09:36\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,188 +14,188 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/tensor/fundamental-attributes.po\n"
-"X-Crowdin-File-ID: 8137\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/tensor/fundamental-attributes.po\n"
+"X-Crowdin-File-ID: 9929\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:5
 msgid "Rank, Axes 与 Shape 属性"
-msgstr "crwdns83331:0crwdne83331:0"
+msgstr "crwdns117333:0crwdne117333:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:9
 msgid "秩（Rank），轴（Axes）和形状（Shape）是 Tensor 数据结构最基本的属性。"
-msgstr "crwdns83333:0crwdne83333:0"
+msgstr "crwdns117335:0crwdne117335:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:11
 msgid "我们需要密切关注这三个属性之间的关系，它们也会影响到我们 :ref:`索引元素 <access-tensor-element>` 的具体方式。"
-msgstr "crwdns83335:0:ref:crwdne83335:0"
+msgstr "crwdns117337:0:ref:crwdne117337:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:12
 msgid "如果你对于这些基本属性的概念不是很清楚，将影响你对于 :ref:`tensor-manipulation` 的理解。"
-msgstr "crwdns83337:0:ref:crwdne83337:0"
+msgstr "crwdns117339:0:ref:crwdne117339:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:17
 msgid "Tensor 的秩"
-msgstr "crwdns83339:0crwdne83339:0"
+msgstr "crwdns117341:0crwdne117341:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:19
 msgid "Tensor 的秩（Rank）指 Tensor 的维数（维度的数量，the number of dimensions）。"
-msgstr "crwdns83341:0crwdne83341:0"
+msgstr "crwdns117343:0crwdne117343:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:23
 msgid "也有人使用阶（Order）和度（Degree）来指代 Tensor 维度的数量，此时概念等同于秩。"
-msgstr "crwdns83343:0crwdne83343:0"
+msgstr "crwdns117345:0crwdne117345:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:24
 msgid "如果你学习过线性代数，可能接触了矩阵的秩的定义，例如 :py:func:`numpy.linalg.matrix_rank`. 你可能也见过有人用非常复杂的概念对张量的秩进行了严谨的数学描述... 或许已被不同的说法搞得云里雾里。 但是在深度学习领域，让我们保持简单，**秩可以表示一个 Tensor 维度的数量，仅此而已。**"
-msgstr "crwdns83345:0crwdne83345:0"
+msgstr "crwdns117347:0crwdne117347:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:28
 msgid "如果我们说这儿有一个秩为 2 的（rank-2）Tensor，这等同于下面这些表述："
-msgstr "crwdns83347:0crwdne83347:0"
+msgstr "crwdns117349:0crwdne117349:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:30
 msgid "我们有一个矩阵（Matrix）"
-msgstr "crwdns83349:0crwdne83349:0"
+msgstr "crwdns117351:0crwdne117351:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:31
 msgid "我们有一个 2 维数组（2d-array）"
-msgstr "crwdns83351:0crwdne83351:0"
+msgstr "crwdns117353:0crwdne117353:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:32
 msgid "我们有一个 2 维张量（2d-tensor）"
-msgstr "crwdns83353:0crwdne83353:0"
+msgstr "crwdns117355:0crwdne117355:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:37
 msgid "维度的个数"
-msgstr "crwdns83355:0crwdne83355:0"
+msgstr "crwdns117357:0crwdne117357:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:39
 msgid "但在 MegEngine 中并没有为 Tensor 设计 ``rank`` 这个属性，而是使用了字面上更容易理解的 :py:attr:`~.Tensor.ndim`, 即 `the number of dimensions` 的缩写。这也是 NumPy 中用来表示多维数组 :py:class:`~numpy.ndarray` 维度的数量所设计的属性。"
-msgstr "crwdns83357:0crwdne83357:0"
+msgstr "crwdns117359:0crwdne117359:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:52
 msgid "当你听到别人提到某个 Tensor 的秩时，在深度学习的语义下，你应该意识到他/她此时指代的是维数。 一种可能性是，这是一名使用过 TensorFlow 框架的用户，已经习惯了用秩来描述维度的数量。"
-msgstr "crwdns83359:0crwdne83359:0"
+msgstr "crwdns117361:0crwdne117361:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:55
 msgid "好了，接下来我们能够忘记 ``rank`` 这种说法，用 ``ndim`` 进行交流了。"
-msgstr "crwdns83361:0crwdne83361:0"
+msgstr "crwdns117363:0crwdne117363:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:59
 msgid "在 MegEngine 中为 Tensor 提供了 :py:attr:`~.Tensor.ndim` 属性，用来表示维度的数量。"
-msgstr "crwdns83363:0crwdne83363:0"
+msgstr "crwdns117365:0crwdne117365:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:60
 msgid "Tensor 的 ``ndim`` 属性的值对应我们常说的 “一个 n 维张量” 时中的 ``n``. 它告诉我们想要从当前这个 Tensor 中访问特定元素时所需索引（Indices）的个数。 （参考 :ref:`access-tensor-element`）"
-msgstr "crwdns83365:0:ref:crwdne83365:0"
+msgstr "crwdns117367:0:ref:crwdne117367:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:66
 msgid "NumPy 中对于维数的定义请参考 :py:attr:`numpy.ndarray.ndim`."
-msgstr "crwdns83367:0crwdne83367:0"
+msgstr "crwdns117369:0crwdne117369:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:71
 msgid "Tensor 的轴"
-msgstr "crwdns83369:0crwdne83369:0"
+msgstr "crwdns117371:0crwdne117371:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:73
 msgid "Tensor 的维数 `ndim` 可以引出另一个相关的概念——轴（Axes）。"
-msgstr "crwdns83371:0crwdne83371:0"
+msgstr "crwdns117373:0crwdne117373:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:75
 msgid "一维 Tensor 只有一个轴，索引其中的元素就好像在刻度为单位 Tensor 长度的尺子上找到特定的位置；"
-msgstr "crwdns83373:0crwdne83373:0"
+msgstr "crwdns117375:0crwdne117375:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:76
 msgid "在笛卡尔平面坐标系中，存在着 :math:`X, Y` 轴，想要知道平面中某个点的位置，就需要知道坐标 :math:`(x, y)`."
-msgstr "crwdns83375:0:math:crwdnd83375:0:math:crwdne83375:0"
+msgstr "crwdns117377:0:math:crwdnd117377:0:math:crwdne117377:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:77
 msgid "同样地，想要知道三维空间中的一个点，就需要知道坐标 :math:`(x, y, z)`, 推广到更高维也是如此。"
-msgstr "crwdns83377:0:math:crwdne83377:0"
+msgstr "crwdns117379:0:math:crwdne117379:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:83
 msgid "二维平面坐标系"
-msgstr "crwdns83379:0crwdne83379:0"
+msgstr "crwdns117381:0crwdne117381:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:88
 msgid "via `Cartesian coordinate system <https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`_"
-msgstr "crwdns83381:0crwdne83381:0"
+msgstr "crwdns117383:0crwdne117383:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:91
 msgid "三维空间坐标系"
-msgstr "crwdns83383:0crwdne83383:0"
+msgstr "crwdns117385:0crwdne117385:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:96
 msgid "via `Three-dimensional_space <https://en.wikipedia.org/wiki/Three-dimensional_space>`_"
-msgstr "crwdns83385:0crwdne83385:0"
+msgstr "crwdns117387:0crwdne117387:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:100
 msgid "借助坐标系，高维空间中的任何一点 :math:`P` 都可以用向量来表示（其起点在原点，终点在点 :math:`P` ）。"
-msgstr "crwdns83387:0:math:crwdnd83387:0:math:crwdne83387:0"
+msgstr "crwdns117389:0:math:crwdnd117389:0:math:crwdne117389:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:102
 msgid "以 3 维空间为例，如果点 :math:`P` 的向量是 :math:`\\mathbf{r}`, 直角坐标是 :math:`(x, y, z)`, 那么："
-msgstr "crwdns83389:0:math:crwdnd83389:0:math:crwdnd83389:0{r}crwdnd83389:0:math:crwdne83389:0"
+msgstr "crwdns117391:0:math:crwdnd117391:0:math:crwdnd117391:0{r}crwdnd117391:0:math:crwdne117391:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:104
 msgid "\\mathbf{r}=\n"
 "x {\\color{red}\\hat{\\mathbf{i}}} +\n"
 "y {\\color{green}\\hat{\\mathbf{j}}} +\n"
 "z {\\color{blue}\\hat{\\mathbf{k}}}"
-msgstr "crwdns83391:0{r}crwdnd83391:0{red}crwdnd83391:0{i}crwdnd83391:0{green}crwdnd83391:0{j}crwdnd83391:0{blue}crwdnd83391:0{k}crwdne83391:0"
+msgstr "crwdns117393:0{r}crwdnd117393:0{red}crwdnd117393:0{i}crwdnd117393:0{green}crwdnd117393:0{j}crwdnd117393:0{blue}crwdnd117393:0{k}crwdne117393:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:111
 msgid "其中单位向量 :math:`\\hat{\\mathbf{i}}, \\hat{\\mathbf{j}}, \\hat{\\mathbf{k}}` 分别指向 :math:`X, Y, Z` 轴的正无穷方向。 与 Tensor 索引特定元素类似，整个过程就像是沿着轴从原点位置出发开始寻找该维度的坐标，接着前往下一个轴..."
-msgstr "crwdns83393:0:math:crwdnd83393:0{i}crwdnd83393:0{j}crwdnd83393:0{k}crwdnd83393:0:math:crwdne83393:0"
+msgstr "crwdns117395:0:math:crwdnd117395:0{i}crwdnd117395:0{j}crwdnd117395:0{k}crwdnd117395:0:math:crwdne117395:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:114
 msgid "同样地，对于一个高维 Tensor, 我们可以借助轴的概念，用来表明 Tensor 某个维度可操作的方向。"
-msgstr "crwdns83395:0crwdne83395:0"
+msgstr "crwdns117397:0crwdne117397:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:116
 msgid "对初学者来说，Tensor 的轴是最难理解的概念之一，你需要明白："
-msgstr "crwdns83397:0crwdne83397:0"
+msgstr "crwdns117399:0crwdne117399:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:118
 msgid "轴的方向（Direction）"
-msgstr "crwdns83399:0crwdne83399:0"
+msgstr "crwdns117401:0crwdne117401:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:121
 msgid "一个轴的方向代表对应维度的索引进行变化的方向。"
-msgstr "crwdns83401:0crwdne83401:0"
+msgstr "crwdns117403:0crwdne117403:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:123
 msgid "轴的长度（Length）"
-msgstr "crwdns83403:0crwdne83403:0"
+msgstr "crwdns117405:0crwdne117405:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:126
 msgid "一个轴的长度决定对应维度能够进行索引的范围。"
-msgstr "crwdns83405:0crwdne83405:0"
+msgstr "crwdns117407:0crwdne117407:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:128
 msgid "轴的命名与索引顺序的关系"
-msgstr "crwdns83407:0crwdne83407:0"
+msgstr "crwdns117409:0crwdne117409:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:131
 msgid "在访问 n 维 Tensor 的特定某个元素时，需要进行 n 次索引，每次索引其实就是在一个轴上找坐标。 轴的命名与索引的顺序有关，首先被索引的维度是第 0 轴 ``axis=0``, 往内一层是第 1 轴 ``axis=1``, 依此类推..."
-msgstr "crwdns83409:0crwdne83409:0"
+msgstr "crwdns117411:0crwdne117411:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:134
 msgid "沿着轴（Along the axis）"
-msgstr "crwdns83411:0crwdne83411:0"
+msgstr "crwdns117413:0crwdne117413:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:137
 msgid "在一些 Tensor 计算中，我们经常会看到需要指定 ``axis`` 参数，表明沿着指定轴计算。 这意味着在对应轴的方向上所能取得的所有元素都需要参与计算。"
-msgstr "crwdns83413:0crwdne83413:0"
+msgstr "crwdns117415:0crwdne117415:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:142
 msgid "Axes 是 Axis 的复数形式，前者通常指代多个轴，后者通常指代单条轴。"
-msgstr "crwdns83415:0crwdne83415:0"
+msgstr "crwdns117417:0crwdne117417:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:144
 msgid "让我们从最简单的情况开始，观察下面这个由矩阵（2 维数组） :math:`M` 表示的 Tensor:"
-msgstr "crwdns83417:0:math:crwdne83417:0"
+msgstr "crwdns117419:0:math:crwdne117419:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:146
 msgid "M =\n"
@@ -204,53 +204,53 @@ msgid "M =\n"
 "     5 & 6  & 7  & 8\\\\\n"
 "     9 & 10 & 11 & 12\\\\\n"
 "\\end{bmatrix}"
-msgstr "crwdns83419:0{bmatrix}crwdnd83419:0{bmatrix}crwdne83419:0"
+msgstr "crwdns117421:0{bmatrix}crwdnd117421:0{bmatrix}crwdne117421:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:155
 msgid "当我们说这个 Tensor 有 2 个维度时，等价于在说这个 Tensor 有两个轴（Axes）："
-msgstr "crwdns83421:0crwdne83421:0"
+msgstr "crwdns117423:0crwdne117423:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:157
 msgid "第 0 轴 ``axis=0`` 的方向即矩阵的行（Row）索引变化的方向；"
-msgstr "crwdns83423:0crwdne83423:0"
+msgstr "crwdns117425:0crwdne117425:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:158
 msgid "第 1 轴 ``axis=1`` 的方向即矩阵的列（Column）索引变化的方向；"
-msgstr "crwdns83425:0crwdne83425:0"
+msgstr "crwdns117427:0crwdne117427:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:163
 msgid "上图来自于一篇解释 `NumPy Axes <https://www.sharpsightlabs.com/blog/numpy-axes-explained/>`_ 的文章（NumPy 多维数组的 Axes 概念与 MegEngine Tensor 一致）。"
-msgstr "crwdns83427:0crwdne83427:0"
+msgstr "crwdns117429:0crwdne117429:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:166
 msgid "实际编程时，上面这个 Tensor 通常是这样构造的："
-msgstr "crwdns83429:0crwdne83429:0"
+msgstr "crwdns117431:0crwdne117431:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:179
 msgid "Tensor 的轴是一个抽象的概念，它不是一个单独的属性，通常是操作某些 Tensor 时的参数。"
-msgstr "crwdns83431:0crwdne83431:0"
+msgstr "crwdns117433:0crwdne117433:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:184
 msgid "使用 axis 作为参数"
-msgstr "crwdns83433:0crwdne83433:0"
+msgstr "crwdns117435:0crwdne117435:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:186
 msgid "有了轴的概念，我们便可以定义一些沿着轴的操作，比如求和 :py:func:`~.functional.sum` :"
-msgstr "crwdns83435:0crwdne83435:0"
+msgstr "crwdns117437:0crwdne117437:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:192
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:208
 msgid "沿着 ``axis=0`` 方向"
-msgstr "crwdns83437:0crwdne83437:0"
+msgstr "crwdns117439:0crwdne117439:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:197
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:223
 msgid "沿着 ``axis=1`` 方向"
-msgstr "crwdns83439:0crwdne83439:0"
+msgstr "crwdns117441:0crwdne117441:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:202
 msgid "我们看看这个过程中究竟发生了什么："
-msgstr "crwdns83441:0crwdne83441:0"
+msgstr "crwdns117443:0crwdne117443:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:210
 msgid "M =\n"
@@ -263,7 +263,7 @@ msgid "M =\n"
 "\\begin{bmatrix}\n"
 "    15 & \\color{red}{18}  & \\color{green}{21}  & \\color{blue}{24}\n"
 "\\end{bmatrix}"
-msgstr "crwdns83443:0{bmatrix}crwdnd83443:0{red}crwdnd83443:0{2}crwdnd83443:0{green}crwdnd83443:0{3}crwdnd83443:0{blue}crwdnd83443:0{4}crwdnd83443:0{red}crwdnd83443:0{6}crwdnd83443:0{green}crwdnd83443:0{7}crwdnd83443:0{blue}crwdnd83443:0{8}crwdnd83443:0{red}crwdnd83443:0{10}crwdnd83443:0{green}crwdnd83443:0{11}crwdnd83443:0{blue}crwdnd83443:0{12}crwdnd83443:0{bmatrix}crwdnd83443:0{bmatrix}crwdnd83443:0{red}crwdnd83443:0{18}crwdnd83443:0{green}crwdnd83443:0{21}crwdnd83443:0{blue}crwdnd83443:0{24}crwdnd83443:0{bmatrix}crwdne83443:0"
+msgstr "crwdns117445:0{bmatrix}crwdnd117445:0{red}crwdnd117445:0{2}crwdnd117445:0{green}crwdnd117445:0{3}crwdnd117445:0{blue}crwdnd117445:0{4}crwdnd117445:0{red}crwdnd117445:0{6}crwdnd117445:0{green}crwdnd117445:0{7}crwdnd117445:0{blue}crwdnd117445:0{8}crwdnd117445:0{red}crwdnd117445:0{10}crwdnd117445:0{green}crwdnd117445:0{11}crwdnd117445:0{blue}crwdnd117445:0{12}crwdnd117445:0{bmatrix}crwdnd117445:0{bmatrix}crwdnd117445:0{red}crwdnd117445:0{18}crwdnd117445:0{green}crwdnd117445:0{21}crwdnd117445:0{blue}crwdnd117445:0{24}crwdnd117445:0{bmatrix}crwdne117445:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:225
 msgid "M =\n"
@@ -276,47 +276,47 @@ msgid "M =\n"
 "\\begin{bmatrix}\n"
 "    \\color{red}{10} \\\\ \\color{green}{26} \\\\ \\color{blue}{42}\n"
 "\\end{bmatrix}"
-msgstr "crwdns83445:0{bmatrix}crwdnd83445:0{red}crwdnd83445:0{red}crwdnd83445:0{red}crwdnd83445:0{red}crwdnd83445:0{green}crwdnd83445:0{green}crwdnd83445:0{green}crwdnd83445:0{green}crwdnd83445:0{blue}crwdnd83445:0{blue}crwdnd83445:0{blue}crwdnd83445:0{blue}crwdnd83445:0{bmatrix}crwdnd83445:0{bmatrix}crwdnd83445:0{red}crwdnd83445:0{10}crwdnd83445:0{green}crwdnd83445:0{26}crwdnd83445:0{blue}crwdnd83445:0{42}crwdnd83445:0{bmatrix}crwdne83445:0"
+msgstr "crwdns117447:0{bmatrix}crwdnd117447:0{red}crwdnd117447:0{red}crwdnd117447:0{red}crwdnd117447:0{red}crwdnd117447:0{green}crwdnd117447:0{green}crwdnd117447:0{green}crwdnd117447:0{green}crwdnd117447:0{blue}crwdnd117447:0{blue}crwdnd117447:0{blue}crwdnd117447:0{blue}crwdnd117447:0{bmatrix}crwdnd117447:0{bmatrix}crwdnd117447:0{red}crwdnd117447:0{10}crwdnd117447:0{green}crwdnd117447:0{26}crwdnd117447:0{blue}crwdnd117447:0{42}crwdnd117447:0{bmatrix}crwdne117447:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:238
 msgid "我们将位于同一个 ``axis`` 方向上的元素用颜色进行了区分，来更好地理解沿着轴计算的本质。 在进行类似 ``sum()`` 这样的统计性质的计算（多个数据统计得到单个统计值）时， ``axis`` 参数将控制对哪个/哪些轴上的元素进行聚合（Aggregat），或者说折叠（Collapse）。"
-msgstr "crwdns83447:0crwdne83447:0"
+msgstr "crwdns117449:0crwdne117449:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:242
 msgid "实际上，计算后的返回的 Tensor 的 ``ndim`` 已经由 2 变成了 1."
-msgstr "crwdns83449:0crwdne83449:0"
+msgstr "crwdns117451:0crwdne117451:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:254
 msgid "更多统计性质的计算请参考 :py:func:`~.functional.prod`, :py:func:`~.functional.mean`, :py:func:`~.functional.min`, :py:func:`~.functional.max`, :py:func:`~.functional.var`, :py:func:`~.functional.std` ..."
-msgstr "crwdns83451:0crwdne83451:0"
+msgstr "crwdns117453:0crwdne117453:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:260
 msgid "这种对某个轴上的元素进行统计，使得 Tensor 维数减少的操作也叫做 :ref:`reduction-operations` 。"
-msgstr "crwdns83453:0:ref:crwdne83453:0"
+msgstr "crwdns117455:0:ref:crwdne117455:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:261
 msgid "Tensor 的拼接、拓展等操作也可以指定在特定的轴上进行，参考 :ref:`tensor-manipulation` 。"
-msgstr "crwdns83455:0:ref:crwdne83455:0"
+msgstr "crwdns117457:0:ref:crwdne117457:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:265
 msgid "``ndim`` 为 3 的 Tensor 进行沿轴操作时，可以借助空间坐标系中存在的 :math:`X, Y, Z` 坐标轴理解；"
-msgstr "crwdns83457:0:math:crwdne83457:0"
+msgstr "crwdns117459:0:math:crwdne117459:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:266
 msgid "更高维 Tensor 的沿轴操作不好借助视觉想象，我们可以通过元素索引的角度来理解， :math:`T_{[a_0][a_1]\\ldots [a_{n-1}]}` 中的 :math:`i \\in [0, n)` 轴方向即对应索引 :math:`a_i` 变化的方向。"
-msgstr "crwdns83459:0:math:crwdnd83459:0[a_0]crwdnd83459:0[a_1]crwdnd83459:0{n-1}crwdnd83459:0:math:crwdnd83459:0:math:crwdne83459:0"
+msgstr "crwdns117461:0:math:crwdnd117461:0[a_0]crwdnd117461:0[a_1]crwdnd117461:0{n-1}crwdnd117461:0:math:crwdnd117461:0:math:crwdne117461:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:272
 msgid "理解轴的长度"
-msgstr "crwdns83461:0crwdne83461:0"
+msgstr "crwdns117463:0crwdne117463:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:274
 msgid "Tensor 的轴具有长度，可以理解成当前维度的索引个数。"
-msgstr "crwdns83463:0crwdne83463:0"
+msgstr "crwdns117465:0crwdne117465:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:276
 msgid "我们可以通过 Python 内置的 :py:func:`len` 来获取一个 Tensor 在第 0 轴的长度， 如果取出第 0 轴的某个子 Tensor, 对它使用 ``len()`` 则可以获得子 Tensor 在第 0 轴的长度， 对应于原 Tensor 在第 1 轴的长度。"
-msgstr "crwdns83465:0crwdne83465:0"
+msgstr "crwdns117467:0crwdne117467:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:280
 msgid "M_{3 \\times 4} =\n"
@@ -329,115 +329,115 @@ msgid "M_{3 \\times 4} =\n"
 "\\begin{bmatrix}\n"
 "     1 & 2  & 3  & 4\n"
 "\\end{bmatrix}"
-msgstr "crwdns83467:0{bmatrix}crwdnd83467:0{blue}crwdnd83467:0{blue}crwdnd83467:0{blue}crwdnd83467:0{blue}crwdnd83467:0{bmatrix}crwdnd83467:0[0]crwdnd83467:0{bmatrix}crwdnd83467:0{bmatrix}crwdne83467:0"
+msgstr "crwdns117469:0{bmatrix}crwdnd117469:0{blue}crwdnd117469:0{blue}crwdnd117469:0{blue}crwdnd117469:0{blue}crwdnd117469:0{bmatrix}crwdnd117469:0[0]crwdnd117469:0{bmatrix}crwdnd117469:0{bmatrix}crwdne117469:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:293
 msgid "以 :math:`M` 为例，它在第 0 轴的长度为 3, 在第 1 轴的长度为 4."
-msgstr "crwdns83469:0:math:crwdne83469:0"
+msgstr "crwdns117471:0:math:crwdne117471:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:302
 msgid "通过 ``len()`` 和索引，我们总是能获得想要知道的特定轴的长度，但这样不够直观。"
-msgstr "crwdns83471:0crwdne83471:0"
+msgstr "crwdns117473:0crwdne117473:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:304
 msgid "Tensor 的秩告诉我们它具有多少个轴，而每个轴的长度引出了一个非常重要的概念——形状（Shape）。"
-msgstr "crwdns83473:0crwdne83473:0"
+msgstr "crwdns117475:0crwdne117475:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:309
 msgid "Tensor 的形状"
-msgstr "crwdns83475:0crwdne83475:0"
+msgstr "crwdns117477:0crwdne117477:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:311
 msgid "Tensor 具有形状 :py:attr:`~.Tensor.shape` 属性，它是一个元组 :py:class:`tuple`, 元组中的每个元素描述了对应维度的轴的长度。"
-msgstr "crwdns83477:0crwdne83477:0"
+msgstr "crwdns117479:0crwdne117479:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:319
 msgid ":math:`M` 的形状 :math:`(3, 4)` 告诉我们非常多的信息："
-msgstr "crwdns83479:0:math:crwdnd83479:0:math:crwdne83479:0"
+msgstr "crwdns117481:0:math:crwdnd117481:0:math:crwdne117481:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:321
 msgid ":math:`M` 是一个秩为 2 的 Tensor, 也即 2 维 Tensor, 对应有两个轴；"
-msgstr "crwdns83481:0:math:crwdne83481:0"
+msgstr "crwdns117483:0:math:crwdne117483:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:322
 msgid "第 0 轴有 3 个索引值可用，第 1 轴有 4 个索引值可用。"
-msgstr "crwdns83483:0crwdne83483:0"
+msgstr "crwdns117485:0crwdne117485:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:324
 msgid "Tensor 还具备名为 :py:attr:`~.Tensor.size` 的属性，用来表示 Tensor 中元素的个数："
-msgstr "crwdns83485:0crwdne83485:0"
+msgstr "crwdns117487:0crwdne117487:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:332
 msgid "我们借助下面这张图，将这几个 Tensor 基础属性的关系直观地展示出来："
-msgstr "crwdns83487:0crwdne83487:0"
+msgstr "crwdns117489:0crwdne117489:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:339
 msgid "0 维 Tensor 的形状为 ``()``, 需要区分它和只有一个元素的 1 维 Tensor 的区别："
-msgstr "crwdns83489:0crwdne83489:0"
+msgstr "crwdns117491:0crwdne117491:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:349
 msgid "注意 “向量”、“行向量”、“列向量” 的区别："
-msgstr "crwdns83491:0crwdne83491:0"
+msgstr "crwdns117493:0crwdne117493:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:351
 msgid "1 维 Tensor 是一个向量，没有二维空间中行与列的区别；"
-msgstr "crwdns83493:0crwdne83493:0"
+msgstr "crwdns117495:0crwdne117495:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:352
 msgid "行向量或列向量通常指形状为 :math:`(n,1)` 或 :math:`(1,n)` 的 2 维 Tensor（矩阵）"
-msgstr "crwdns83495:0:math:crwdnd83495:0:math:crwdne83495:0"
+msgstr "crwdns117497:0:math:crwdnd117497:0:math:crwdne117497:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:367
 msgid "知道了形状信息，我们就可以推导出其它基础的属性值；"
-msgstr "crwdns83497:0crwdne83497:0"
+msgstr "crwdns117499:0crwdne117499:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:368
 msgid "我们在进行 Tensor 有关的计算时，尤其需要关注形状的变化。"
-msgstr "crwdns83499:0crwdne83499:0"
+msgstr "crwdns117501:0crwdne117501:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:373
 msgid "接下来：更多的 Tensor 属性"
-msgstr "crwdns83501:0crwdne83501:0"
+msgstr "crwdns117503:0crwdne117503:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:374
 msgid "掌握 Tensor 的基本属性后，我们便可以了解 :ref:`tensor-manipulation` ，或者了解 :ref:`tensor-indexing` 。"
-msgstr "crwdns83503:0:ref:crwdnd83503:0:ref:crwdne83503:0"
+msgstr "crwdns117505:0:ref:crwdnd117505:0:ref:crwdne117505:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:376
 msgid "MegEngine 中实现的 Tensor 还具备有更多的属性，它们与 MegEngine 所支持的功能有关 ——"
-msgstr "crwdns83505:0crwdne83505:0"
+msgstr "crwdns117507:0crwdne117507:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:381
 msgid ":py:attr:`.Tensor.dtype`"
-msgstr "crwdns83507:0crwdne83507:0"
+msgstr "crwdns117509:0crwdne117509:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:381
 msgid "另外一个 NumPy 多维数组也具备的属性是数据类型，请参考 :ref:`tensor-dtype` 了解细节。"
-msgstr "crwdns83509:0:ref:crwdne83509:0"
+msgstr "crwdns117511:0:ref:crwdne117511:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:384
 msgid ":py:attr:`.Tensor.device`"
-msgstr "crwdns83511:0crwdne83511:0"
+msgstr "crwdns117513:0crwdne117513:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:384
 msgid "Tensor 可以在不同的设备上进行计算，比如 GPU/CPU 等，请参考 :ref:`tensor-device` 。"
-msgstr "crwdns83513:0:ref:crwdne83513:0"
+msgstr "crwdns117515:0:ref:crwdne117515:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:387
 msgid ":py:attr:`.Tensor.grad`"
-msgstr "crwdns83515:0crwdne83515:0"
+msgstr "crwdns117517:0crwdne117517:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:387
 msgid "Tensor 的梯度是神经网络编程中很重要的一个属性，在反向传播的过程中被频繁使用。"
-msgstr "crwdns83517:0crwdne83517:0"
+msgstr "crwdns117519:0crwdne117519:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:389
 msgid "The N-dimensional array ( :class:`~numpy.ndarray` )"
-msgstr "crwdns83519:0:class:crwdne83519:0"
+msgstr "crwdns117521:0:class:crwdne117521:0"
 
 #: ../../source/user-guide/model-development/tensor/fundamental-attributes.rst:390
 msgid "通过 NumPy 官方文档了解与多维数组有关的知识，与 MegEngine 的 Tensor 联想对比。"
-msgstr "crwdns83521:0crwdne83521:0"
+msgstr "crwdns117523:0crwdne117523:0"
 
 #~ msgid "同样地，对于一个高维 Tensor, 我们可以借助轴（Axes）的概念，用来表明 Tensor 某个维度可操作的方向。"
 #~ msgstr ""

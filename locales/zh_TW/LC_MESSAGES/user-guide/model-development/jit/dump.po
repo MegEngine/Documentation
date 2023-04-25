@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-04-19 12:45\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,178 +15,178 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/jit/dump.po\n"
-"X-Crowdin-File-ID: 8191\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/jit/dump.po\n"
+"X-Crowdin-File-ID: 9987\n"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:5
 msgid "导出序列化模型文件（Dump）"
-msgstr "crwdns85763:0crwdne85763:0"
+msgstr "crwdns119933:0crwdne119933:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:9
 msgid "序列化操作依赖于 :py:class:`~.jit.trace` 进行的 :ref:`将动态图转为静态图 <trace>` 操作；"
-msgstr "crwdns85765:0:ref:crwdne85765:0"
+msgstr "crwdns119935:0:ref:crwdne119935:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:10
 msgid "与此同时，需要在 :py:class:`~.jit.trace` 中指定 ``capture_as_const = True`` 以将参数固化下来。"
-msgstr "crwdns85767:0crwdne85767:0"
+msgstr "crwdns119937:0crwdne119937:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:12
 msgid "考虑到推理部署需求，使用 :py:meth:`~.jit.trace.dump`, 即可将训练好的模型序列化到一个文件或文件对象中："
-msgstr "crwdns85769:0crwdne85769:0"
+msgstr "crwdns119939:0crwdne119939:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:14
 msgid "我们以使用 `ResNet50 <https://github.com/MegEngine/Models/tree/master/official/vision/classification/resnet>`_ 的预训练模型为例子，参考代码片段如下："
-msgstr "crwdns91698:0crwdne91698:0"
+msgstr "crwdns119941:0crwdne119941:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:39
 msgid "执行脚本，并完成模型转换后，我们就获得了 MegEngine C++ API 可识别的预训练模型文件 ``resnet50.mge`` ."
-msgstr "crwdns85773:0crwdne85773:0"
+msgstr "crwdns119943:0crwdne119943:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:42
 msgid "Dump 常用参数说明"
-msgstr "crwdns85775:0crwdne85775:0"
+msgstr "crwdns119945:0crwdne119945:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:44
 msgid "使用 :meth:`~.jit.trace.dump` 时，可传入多个参数，其中最常用的有如下两个："
-msgstr "crwdns85777:0:meth:crwdne85777:0"
+msgstr "crwdns119947:0:meth:crwdne119947:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:48
 msgid "``arg_names``"
-msgstr "crwdns85779:0crwdne85779:0"
+msgstr "crwdns119949:0crwdne119949:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:47
 msgid "在序列化的时候统一设置模型输入 Tensor 的名字。由于不同的模型的差异，会导致输入 Tensor 的名字千差万别。 为了减少理解和使用难度，可使用此参数统一设置模型输入为诸如 ``arg_0``, ``arg_1``, ..."
-msgstr "crwdns85781:0crwdne85781:0"
+msgstr "crwdns119951:0crwdne119951:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:53
 msgid "``optimize_for_inference``"
-msgstr "crwdns85783:0crwdne85783:0"
+msgstr "crwdns119953:0crwdne119953:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:51
 msgid "训练出的模型往往在部署时不能发挥最优的性能， 而我们提供 ``optimize_for_inference`` 来保证序列化出的模型是经特定优化的。 详细的键值参数可见下方的 :ref:`optimieze-for-inference-options` ."
-msgstr "crwdns85785:0:ref:crwdne85785:0"
+msgstr "crwdns119955:0:ref:crwdne119955:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:57
 msgid "``optimize_for_inference`` 参数默认是 ``True`` ， 所以即使不给任何键值优化参数，仍然会做一些基础的优化操作， 这会导致序列化出来的模型相较之前的定义有细微的差别。"
-msgstr "crwdns85787:0crwdne85787:0"
+msgstr "crwdns119957:0crwdne119957:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:62
 msgid "Dump 带有测试数据的模型文件"
-msgstr "crwdns87683:0crwdne87683:0"
+msgstr "crwdns119959:0crwdne119959:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:64
 msgid "使用 :meth:`~.jit.trace.dump` 时，设置如下参数："
-msgstr "crwdns87685:0:meth:crwdne87685:0"
+msgstr "crwdns119961:0:meth:crwdne119961:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:75
 msgid "``input_data``"
-msgstr "crwdns87687:0crwdne87687:0"
+msgstr "crwdns119963:0crwdne119963:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:67
 msgid "这是一个字符串列表，列表中的每个字符串都代表一组测试数据。"
-msgstr "crwdns87689:0crwdne87689:0"
+msgstr "crwdns119965:0crwdne119965:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:69
 msgid "字符串支持三种格式："
-msgstr "crwdns87691:0crwdne87691:0"
+msgstr "crwdns119967:0crwdne119967:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:71
 msgid "``var0:file0;var1:file1...`` 指定每个输入变量对应的文件名。文件可以是能被 opencv 加载的图片，也可以是 numpy.ndarray 的 pickle 文件。如果只有一个输入，输入的变量名可以省略。"
-msgstr "crwdns87693:0crwdne87693:0"
+msgstr "crwdns119969:0crwdne119969:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:73
 msgid "``var0:#rand(min, max, shape);var1:#rand...`` 指定每个输入变量的数据随机生成方式，形状是 ``shape``，值域是 ``[min, max)``。例如 ``rand(0, 255)``, ``rand(0, 255, 1, 3, 224, 224)`` 或 ``#rand(0, 255, 1, ...)`` （其中 ``...`` 表示 shape 的剩余部分）。如果形状没有被指定，就会使用网络中输入张量的形状。如果只有一个输入，输入的变量名可以省略。"
-msgstr "crwdns87695:0crwdne87695:0"
+msgstr "crwdns119971:0crwdne119971:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:75
 msgid "``@filename`` 指定输入文件名，文件中的每一行都是一个符合上面两种格式的字符串。"
-msgstr "crwdns87697:0crwdne87697:0"
+msgstr "crwdns119973:0crwdne119973:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:77
 msgid "更多相关的参数设置，请参考 :meth:`~.jit.trace.dump`."
-msgstr "crwdns87699:0:meth:crwdne87699:0"
+msgstr "crwdns119975:0:meth:crwdne119975:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:82
 msgid "推理优化选项表"
-msgstr "crwdns85789:0crwdne85789:0"
+msgstr "crwdns119977:0crwdne119977:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:85
 msgid "``--enable-io16xc32``"
-msgstr "crwdns85791:0crwdne85791:0"
+msgstr "crwdns119979:0crwdne119979:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:85
 msgid "采用 float16 作为算子之间的数据传输类型，使用 float32 作为计算类型。"
-msgstr "crwdns85793:0crwdne85793:0"
+msgstr "crwdns119981:0crwdne119981:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:88
 msgid "``--enable-ioc16``"
-msgstr "crwdns85795:0crwdne85795:0"
+msgstr "crwdns119983:0crwdne119983:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:88
 msgid "采用 float16 作为算子之间的数据传输类型以及计算类型。"
-msgstr "crwdns85797:0crwdne85797:0"
+msgstr "crwdns119985:0crwdne119985:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:91
 msgid "``--enable-fuse-conv-bias-nonlinearity``"
-msgstr "crwdns85799:0crwdne85799:0"
+msgstr "crwdns119987:0crwdne119987:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:91
 msgid "是否融合 conv+bias+nonlinearity。"
-msgstr "crwdns85801:0crwdne85801:0"
+msgstr "crwdns119989:0crwdne119989:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:94
 msgid "``--enalbe-hwcd4``"
-msgstr "crwdns85803:0crwdne85803:0"
+msgstr "crwdns119991:0crwdne119991:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:94
 msgid "采用 hwcd4 数据布局。"
-msgstr "crwdns85805:0crwdne85805:0"
+msgstr "crwdns119993:0crwdne119993:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:97
 msgid "``--enable-nchw88``"
-msgstr "crwdns85807:0crwdne85807:0"
+msgstr "crwdns119995:0crwdne119995:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:97
 msgid "采用 nchw88 数据布局。"
-msgstr "crwdns85809:0crwdne85809:0"
+msgstr "crwdns119997:0crwdne119997:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:100
 msgid "``--enable-nchw44``"
-msgstr "crwdns85811:0crwdne85811:0"
+msgstr "crwdns119999:0crwdne119999:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:100
 msgid "采用 nchw44 数据布局。"
-msgstr "crwdns85813:0crwdne85813:0"
+msgstr "crwdns120001:0crwdne120001:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:103
 msgid "``--enable-nchw44-dot``"
-msgstr "crwdns85815:0crwdne85815:0"
+msgstr "crwdns120003:0crwdne120003:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:103
 msgid "采用 nchw44_dot 数据布局。"
-msgstr "crwdns85817:0crwdne85817:0"
+msgstr "crwdns120005:0crwdne120005:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:106
 msgid "``--enable-nchw32``"
-msgstr "crwdns85819:0crwdne85819:0"
+msgstr "crwdns120007:0crwdne120007:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:106
 msgid "采用 nchw32 数据布局。"
-msgstr "crwdns85821:0crwdne85821:0"
+msgstr "crwdns120009:0crwdne120009:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:109
 msgid "``--enable-chwn4``"
-msgstr "crwdns85823:0crwdne85823:0"
+msgstr "crwdns120011:0crwdne120011:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:109
 msgid "采用 chwn4 数据布局。"
-msgstr "crwdns85825:0crwdne85825:0"
+msgstr "crwdns120013:0crwdne120013:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:112
 msgid "``--enable-fuse-conv-bias-with-z``"
-msgstr "crwdns85827:0crwdne85827:0"
+msgstr "crwdns120015:0crwdne120015:0"
 
 #: ../../source/user-guide/model-development/jit/dump.rst:112
 msgid "仅在使用 GPU 平台下可用，把 conv，bias (elemwise add)，z(elemwise add) 融合成一个算子。"
-msgstr "crwdns85829:0crwdne85829:0"
+msgstr "crwdns120017:0crwdne120017:0"
 

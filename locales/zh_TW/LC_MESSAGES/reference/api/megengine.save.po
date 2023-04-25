@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-04-19 12:45\n"
+"POT-Creation-Date: 2022-12-24 23:51+0800\n"
+"PO-Revision-Date: 2023-04-21 09:31\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,41 +11,93 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.save.po\n"
-"X-Crowdin-File-ID: 2646\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.save.po\n"
+"X-Crowdin-File-ID: 9733\n"
 
 #: ../../source/reference/api/megengine.save.rst:2
 msgid "megengine.save"
-msgstr "crwdns41062:0crwdne41062:0"
+msgstr "crwdns106397:0crwdne106397:0"
 
 #: megengine.serialization.save:1 of
-msgid "Save an object to disk file."
-msgstr "crwdns41064:0crwdne41064:0"
+msgid "Save an object to disk file. The saved object must be a :class:`~.module.Module`, :attr:`.Module.state_dict` or :attr:`.Optimizer.state_dict`. See :ref:`serialization-guide` for more details."
+msgstr "crwdns106399:0:class:crwdnd106399:0:attr:crwdnd106399:0:attr:crwdnd106399:0:ref:crwdne106399:0"
 
 #: megengine.serialization.save of
 msgid "参数"
-msgstr "crwdns41066:0crwdne41066:0"
-
-#: megengine.serialization.save:3 of
-msgid "object to save. Only ``module`` or ``state_dict`` are allowed."
-msgstr "crwdns41068:0crwdne41068:0"
-
-#: megengine.serialization.save:4 of
-msgid "a string of file name or a text file object to which ``obj`` is saved to."
-msgstr "crwdns41070:0crwdne41070:0"
-
-#: megengine.serialization.save:5 of
-msgid "Default: ``pickle``."
-msgstr "crwdns41072:0crwdne41072:0"
+msgstr "crwdns106401:0crwdne106401:0"
 
 #: megengine.serialization.save:6 of
-msgid "Default: ``pickle.DEFAULT_PROTOCOL``."
-msgstr "crwdns92018:0crwdne92018:0"
+msgid "object to be saved."
+msgstr "crwdns106403:0crwdne106403:0"
+
+#: megengine.serialization.save:7 of
+msgid "a string of file name or a text file object to which ``obj`` is saved to."
+msgstr "crwdns106405:0crwdne106405:0"
+
+#: megengine.serialization.save:8 of
+msgid "the module to use for pickling."
+msgstr "crwdns106407:0crwdne106407:0"
+
+#: megengine.serialization.save:9 of
+msgid "the protocol to use for pickling."
+msgstr "crwdns106409:0crwdne106409:0"
+
+#: megengine.serialization.save:11 of
+msgid "If you are using MegEngine with different Python versions"
+msgstr "crwdns106411:0crwdne106411:0"
+
+#: megengine.serialization.save:14 of
+msgid "Different Python version may use different DEFAULT/HIGHEST pickle protocol. If you want to :func:`~megengine.load` the saved object in another Python version, please make sure you have used the same protocol."
+msgstr "crwdns106413:0:func:crwdne106413:0"
+
+#: megengine.serialization.save:18 of
+msgid "You can select to use ``pickle`` module directly"
+msgstr "crwdns106415:0crwdne106415:0"
+
+#: megengine.serialization.save:20 of
+msgid "This interface is a wrapper of :func:`pickle.dump`. If you want to use ``pickle``, See :py:mod:`pickle` for more information about how to set ``pickle_protocol``:"
+msgstr "crwdns106417:0:func:crwdne106417:0"
+
+#: megengine.serialization.save:23 of
+msgid ":py:data:`pickle.HIGHEST_PROTOCOL` - the highest protocol version available."
+msgstr "crwdns106419:0crwdne106419:0"
+
+#: megengine.serialization.save:24 of
+msgid ":py:data:`pickle.DEFAULT_PROTOCOL` - the default protocol version used for pickling."
+msgstr "crwdns106421:0crwdne106421:0"
+
+#: megengine.serialization.save:27 of
+msgid "实际案例"
+msgstr "crwdns106423:0crwdne106423:0"
+
+#: megengine.serialization.save:28 of
+msgid "If you want to save object in a higher protocol version which current version Python not support, you can install other pickle module instead of the build-in one. Take ``pickle5`` as an example:"
+msgstr "crwdns106425:0crwdne106425:0"
+
+#: megengine.serialization.save:34 of
+msgid "It's a backport of the pickle 5 protocol (PEP 574) and other pickle changes. So you can use it to save object in pickle 5 protocol and load it in Python 3.8+."
+msgstr "crwdns106427:0crwdne106427:0"
+
+#: megengine.serialization.save:37 of
+msgid "Or you can use ``pickle5`` in this way (only used with this interface)："
+msgstr "crwdns106429:0crwdne106429:0"
 
 #~ msgid "Default: ``pickle.HIGHEST_PROTOCOL``."
 #~ msgstr "默认值： ``pickle.HIGHEST_PROTOCOL``"
+
+#~ msgid "Save an object to disk file."
+#~ msgstr "把对象保存成磁盘文件。"
+
+#~ msgid "object to save. Only ``module`` or ``state_dict`` are allowed."
+#~ msgstr "要保存的对象。只支持 ``module`` 和 ``state_dict`` 。"
+
+#~ msgid "Default: ``pickle``."
+#~ msgstr "默认值： ``pickle``"
+
+#~ msgid "Default: ``pickle.DEFAULT_PROTOCOL``."
+#~ msgstr "默认值：``pickle.DEFAULT_PROTOCOL``"
 

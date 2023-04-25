@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-25 01:18+0000\n"
-"PO-Revision-Date: 2023-04-11 05:59+0000\n"
+"PO-Revision-Date: 2023-04-25 01:27\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -13,6 +13,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/data/index.po\n"
+"X-Crowdin-File-ID: 9951\n"
 
 #: ../../source/user-guide/model-development/data/index.rst:6
 msgid "使用 Data 构建输入 Pipeline"
@@ -77,15 +82,7 @@ msgid "迭代这个 DataLoader 对象，将数据分批加载到模型中进行�
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/index.rst:60
-msgid ""
-"每当我们向 DataLoader 索要一批数据时，DataLoader 将从 Sampler 获得下一批数据的索引， 根据 Dataset 提供的"
-" ``__getitem__`` 方法将对应的数据逐个加载到内存， 加载进来的数据可以通过指定的 Transform 做一些处理，再通过 "
-"Collator 将单独的数据组织成批数据。 以上为单进程的情况，DataLoader 也支持多进程加载以提升数据加载处理速度。 我们可以通过设置"
-" :py:class:`~.DataLoader` 的 ``worker`` 参数来决定具体要开启的子进程的数量。 一般来说 ``worker``"
-" 数量越多，数据加载处理的速度会越快。不过如果 ``worker`` 数过多， 并大大超出了系统中 cpu 的数量，这些子进程可能会存在竞争 "
-"cpu 资源的情况，反而导致效率的降低。 一般来说，我们建议根据系统中 cpu 的数量设置 ``worker`` 的值。 比如在一台 64 "
-"cpu, 8 gpu 的机器上，预期中每个 gpu 会对应 8 个 cpu, 那么我们在使用时对应的把 ``worker`` 数设置在 8 "
-"左右就是个不错的选择。"
+msgid "每当我们向 DataLoader 索要一批数据时，DataLoader 将从 Sampler 获得下一批数据的索引， 根据 Dataset 提供的 ``__getitem__`` 方法将对应的数据逐个加载到内存， 加载进来的数据可以通过指定的 Transform 做一些处理，再通过 Collator 将单独的数据组织成批数据。 以上为单进程的情况，DataLoader 也支持多进程加载以提升数据加载处理速度。 我们可以通过设置 :py:class:`~.DataLoader` 的 ``worker`` 参数来决定具体要开启的子进程的数量。 一般来说 ``worker`` 数量越多，数据加载处理的速度会越快。不过如果 ``worker`` 数过多， 并大大超出了系统中 cpu 的数量，这些子进程可能会存在竞争 cpu 资源的情况，反而导致效率的降低。 一般来说，我们建议根据系统中 cpu 的数量设置 ``worker`` 的值。 比如在一台 64 cpu, 8 gpu 的机器上，预期中每个 gpu 会对应 8 个 cpu, 那么我们在使用时对应的把 ``worker`` 数设置在 8 左右就是个不错的选择。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/index.rst:71
@@ -105,10 +102,7 @@ msgid "下面我们以加载图像分类数据的基本流程作为简单举例 
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/index.rst:84
-msgid ""
-"假设图像数据按照一定的规则放置于同一目录下（通常数据集主页会对目录组织和文件命名规则进行介绍）。 要创建对应的数据加载器，首先需要一个继承自 "
-":py:class:`~.Dataset` 的类。 虽然对于 NumPy ndarray 数据，MegEngine 中提供了 "
-":py:class:`~.ArrayDataset` 实现。 但更标准的做法应当是创建一个自定义的数据集："
+msgid "假设图像数据按照一定的规则放置于同一目录下（通常数据集主页会对目录组织和文件命名规则进行介绍）。 要创建对应的数据加载器，首先需要一个继承自 :py:class:`~.Dataset` 的类。 虽然对于 NumPy ndarray 数据，MegEngine 中提供了 :py:class:`~.ArrayDataset` 实现。 但更标准的做法应当是创建一个自定义的数据集："
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/index.rst:123
@@ -116,16 +110,11 @@ msgid "要获取示例图像，可以创建一个数据集对象，并将示例�
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/index.rst:131
-msgid ""
-"现在我们已经预先创建了能够返回一个样本及其标签的类 ``CustomImageDataset``, 但仅依赖 ``Dataset`` "
-"本身还无法实现自动分批、乱序、并行等功能； 我们必须接着创建 ``DataLoader``, 它通过其它的参数配置项围绕这个类“包装”， "
-"可以按照我们的要求从数据集类中返回整批样本。"
+msgid "现在我们已经预先创建了能够返回一个样本及其标签的类 ``CustomImageDataset``, 但仅依赖 ``Dataset`` 本身还无法实现自动分批、乱序、并行等功能； 我们必须接着创建 ``DataLoader``, 它通过其它的参数配置项围绕这个类“包装”， 可以按照我们的要求从数据集类中返回整批样本。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/index.rst:152
-msgid ""
-"注意到在上面的代码中，我们还用到了 ``Sampler`` 来决定数据加载（抽样）顺序， 用到了 ``Transform`` "
-"来对加载后的数据进行一些变换处理，这还不是全部可配置项， 在后续小节我们会进行更加详细的介绍。"
+msgid "注意到在上面的代码中，我们还用到了 ``Sampler`` 来决定数据加载（抽样）顺序， 用到了 ``Transform`` 来对加载后的数据进行一些变换处理，这还不是全部可配置项， 在后续小节我们会进行更加详细的介绍。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/index.rst:156
@@ -141,9 +130,7 @@ msgid "在 MegEngine 新手入门板块中提供了完整的基于 MNIST 和 CIF
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/index.rst:179
-msgid ""
-"在 MegEngine 官方模型库 `Models <https://github.com/MegEngine/Models>`_ "
-"中可以找到更多参考代码。"
+msgid "在 MegEngine 官方模型库 `Models <https://github.com/MegEngine/Models>`_ 中可以找到更多参考代码。"
 msgstr ""
 
 #~ msgid ""
@@ -153,4 +140,18 @@ msgstr ""
 #~ "做一些处理，再通过 Collator 将单独的数据组织成批数据。 "
 #~ "以上为单进程的情况，DataLoader 也支持多进程加载，支持多个 Worker 同时加载数据。"
 #~ msgstr ""
+#~ "Whenever we ask for a batch of "
+#~ "data from the DataLoader, the DataLoader"
+#~ " will obtain the index of the "
+#~ "next batch of data from the "
+#~ "Sampler, and load the corresponding data"
+#~ " into the memory one by "
+#~ "one__getitem__Transform does some processing, "
+#~ "and then organizes individual data into"
+#~ " batches of data through Collator. "
+#~ "The above is a single-process "
+#~ "situation. DataLoader also supports multi-"
+#~ "process loading and supports multiple "
+#~ "workers to load data at the same"
+#~ " time."
 

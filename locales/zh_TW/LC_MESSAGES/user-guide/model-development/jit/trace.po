@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-04-19 12:45\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,184 +15,184 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/jit/trace.po\n"
-"X-Crowdin-File-ID: 8195\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/jit/trace.po\n"
+"X-Crowdin-File-ID: 9991\n"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:5
 msgid "将动态图转为静态图（Trace）"
-msgstr "crwdns85835:0crwdne85835:0"
+msgstr "crwdns120073:0crwdne120073:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:9
 msgid "一般的模型开发阶段推荐用动态图，容易进行调试。"
-msgstr "crwdns91752:0crwdne91752:0"
+msgstr "crwdns120075:0crwdne120075:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:14
 msgid "使用 trace 装饰器"
-msgstr "crwdns85865:0crwdne85865:0"
+msgstr "crwdns120077:0crwdne120077:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:16
 msgid "MegEngine 提供了很方便的动静态图转换的方法，几乎无需代码改动即可实现转换。"
-msgstr "crwdns85867:0crwdne85867:0"
+msgstr "crwdns120079:0crwdne120079:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:18
 msgid "假设我们写好了一份动态图代码，其中训练部分代码如下："
-msgstr "crwdns85869:0crwdne85869:0"
+msgstr "crwdns120081:0crwdne120081:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:39
 msgid "我们可以通过以下三步将上面的动态图转换为静态图："
-msgstr "crwdns85871:0crwdne85871:0"
+msgstr "crwdns120083:0crwdne120083:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:41
 msgid "将循环内的前向计算、反向传播和参数优化代码提取成单独的函数，如下面例子中的 ``train_func()`` ；"
-msgstr "crwdns91754:0crwdne91754:0"
+msgstr "crwdns120085:0crwdne120085:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:42
 msgid "将网络所需输入作为训练函数的参数，并返回任意你需要的结果（如输出结果、损失函数值等）；"
-msgstr "crwdns91756:0crwdne91756:0"
+msgstr "crwdns120087:0crwdne120087:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:43
 msgid "用 :py:mod:`~.jit` 模块中的 :py:class:`~.jit.trace` 装饰器来装饰这个函数，将其中的代码变为静态图代码。"
-msgstr "crwdns85877:0crwdne85877:0"
+msgstr "crwdns120089:0crwdne120089:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:45
 msgid "修改后的代码如下："
-msgstr "crwdns85879:0crwdne85879:0"
+msgstr "crwdns120091:0crwdne120091:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:71
 msgid "对于上述代码，我们作进一步的解释："
-msgstr "crwdns85881:0crwdne85881:0"
+msgstr "crwdns120093:0crwdne120093:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:73
 msgid "``jit`` ： 即时编译 （Just-in-time compilation）的缩写，这里作为整个静态图相关模块的名字。"
-msgstr "crwdns85883:0crwdne85883:0"
+msgstr "crwdns120095:0crwdne120095:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:74
 msgid "``trace`` ：得到静态图的一种方式，直译为 “追溯”， 含义为通过追溯输出（比如损失值、预测值）所依赖的网络结构，得到整体的计算图，再进行编译。"
-msgstr "crwdns85885:0crwdne85885:0"
+msgstr "crwdns120097:0crwdne120097:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:76
 msgid "参数列表 ： ``trace`` 在编译静态图时会根据传入参数是位置参数还是关键字参数来采取不同的处理方式。 其中位置参数用于传入网络的输入如数据和标签，关键字参数用于传入其它变量，如网络和优化器等。"
-msgstr "crwdns85887:0crwdne85887:0"
+msgstr "crwdns120099:0crwdne120099:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:82
 msgid "trace 进阶设置"
-msgstr "crwdns85889:0crwdne85889:0"
+msgstr "crwdns120101:0crwdne120101:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:87
 msgid "指定静态图构造方式"
-msgstr "crwdns85891:0crwdne85891:0"
+msgstr "crwdns120103:0crwdne120103:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:89
 msgid "MegEngine 在编译静态图时有 “动态构造” 和 “静态构造” 两种模式（默认使用前者）。"
-msgstr "crwdns85893:0crwdne85893:0"
+msgstr "crwdns120105:0crwdne120105:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:91
 msgid "在绝大部分情况下，两种模式下构造出的静态图并没有区别，使用中也没有分别。"
-msgstr "crwdns85895:0crwdne85895:0"
+msgstr "crwdns120107:0crwdne120107:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:93
 msgid "我们可以指定 ``symbolic`` 参数来指定构造方式，示例代码如下:"
-msgstr "crwdns85897:0crwdne85897:0"
+msgstr "crwdns120109:0crwdne120109:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:103
 msgid "设置为 True 表示 “静态构造” 或者 “根据符号构造” ——"
-msgstr "crwdns85899:0crwdne85899:0"
+msgstr "crwdns120111:0crwdne120111:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:105
 msgid "**原理：** 此时，计算图中的所有数据节点（即张量）被视为符号（即 ``symbolic`` ）。 它们仅仅作为占位符（Placeholder），不产生实际的内存分配，也没有实际的值。 此时计算图的编译过程完全取决于计算图的结构，而不取决于张量的具体值，是真正的 “静态”。"
-msgstr "crwdns85901:0crwdne85901:0"
+msgstr "crwdns120113:0crwdne120113:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:108
 msgid "**优点：** 始终高效，能充分利用静态图的内存优化。"
-msgstr "crwdns85903:0crwdne85903:0"
+msgstr "crwdns120115:0crwdne120115:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:109
 msgid "**缺点：** 如果网络中包含了需要运行时动态信息才能计算的条件语句，将会失败。"
-msgstr "crwdns85905:0crwdne85905:0"
+msgstr "crwdns120117:0crwdne120117:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:111
 msgid "设置为 False 表示 “动态构造” 或者 “根据值构造” ——"
-msgstr "crwdns85907:0crwdne85907:0"
+msgstr "crwdns120119:0crwdne120119:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:113
 msgid "**原理：** 被装饰的函数在第一次被调用时会根据输入的数据执行一次计算构建出一个动态图。 接着将这个动态图会被编译静态图。此后该函数的所有调用都会运行这个静态图，而不再依赖调用时输入的值。 此种模式可以视为 “动态构建第一次，此后静态运行”。"
-msgstr "crwdns85909:0crwdne85909:0"
+msgstr "crwdns120121:0crwdne120121:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:116
 msgid "**优点：** 根据第一次运行时信息的不同，可以构建出不同的静态图。"
-msgstr "crwdns85911:0crwdne85911:0"
+msgstr "crwdns120123:0crwdne120123:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:117
 msgid "**缺点：** 由于第一次的运行在动态图模式下，无法利用静态图的内存优化，通常会耗费更大的内存。 这可能导致本来在静态图模式下可以运行的网络，在第一次运行时由于内存不够而失败。"
-msgstr "crwdns85913:0crwdne85913:0"
+msgstr "crwdns120125:0crwdne120125:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:122
 msgid "在动态构造模式（设置为 False）下，如果条件语句出现在循环语句内，在循环的第一次执行中构造出的静态图将固定不再改变 （即使在循环的后续执行中，该条件语句的结果发生了变化）"
-msgstr "crwdns85915:0crwdne85915:0"
+msgstr "crwdns120127:0crwdne120127:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:128
 msgid "将参数固定以便导出"
-msgstr "crwdns85917:0crwdne85917:0"
+msgstr "crwdns120129:0crwdne120129:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:130
 msgid "有的时候我们希望将一些参数（比如卷积层的卷积核等）固化下来，因此需要指定 ``capture_as_const = True`` :"
-msgstr "crwdns85919:0crwdne85919:0"
+msgstr "crwdns120131:0crwdne120131:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:142
 msgid "如果想要使用 :py:meth:`~.jit.trace.dump` 导出模型序列化文件并进行后续处理， 则必须在 :py:class:`~.jit.trace` 时固定参数。"
-msgstr "crwdns85921:0crwdne85921:0"
+msgstr "crwdns120133:0crwdne120133:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:148
 msgid "减少访存操作实现加速"
-msgstr "crwdns85935:0crwdne85935:0"
+msgstr "crwdns120135:0crwdne120135:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:150
 msgid "通常，模型中不仅含有计算受限的操作，还含有一些访存受限操作（如 Elemwsie ）. MegEngine 内嵌了 Codegen 优化机制，它可以在运行时将模型中多个操作融合起来， 并生成可以在目标机器上运行的代码，以此减少访存操作从而达到加速的目的。"
-msgstr "crwdns85937:0crwdne85937:0"
+msgstr "crwdns120137:0crwdne120137:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:156
 msgid "我们在 :class:`~.trace` 接口中传入 ``symbolic=True, opt_level=3``, 即可打开 Codegen 优化；"
-msgstr "crwdns91758:0:class:crwdne91758:0"
+msgstr "crwdns120139:0:class:crwdne120139:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:157
 msgid "关于 ``symbolic`` 参数的说明，请参考 :ref:`symbolic` 。"
-msgstr "crwdns85941:0:ref:crwdne85941:0"
+msgstr "crwdns120141:0:ref:crwdne120141:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:159
 msgid "MegEngine 的 Codegen 目前集成了三种后端，分别是 NVRTC, HALIDE 和 MLIR. 其中 NVRTC 和 HALIDE 仅支持在 GPU 上使用，MLIR 则同时支持 GPU 和 CPU, 不同的后端生成代码的策略有所不同，所以运行效率也各异。 我们可以通过设置 ``MGB_JIT_BACKEND`` 环境变量来改变 Codegen 的后端，例如："
-msgstr "crwdns91760:0crwdne91760:0"
+msgstr "crwdns120143:0crwdne120143:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:168
 msgid "该环境变量在 NVIDIA GPU 环境下可取的值为 NVRTC, HALIDE 和 MLIR, 默认值为 HALIDE."
-msgstr "crwdns85947:0crwdne85947:0"
+msgstr "crwdns120145:0crwdne120145:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:170
 msgid "对于 CPU, 目前暂时仅支持 MLIR 后端。"
-msgstr "crwdns85949:0crwdne85949:0"
+msgstr "crwdns120147:0crwdne120147:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:174
 msgid "如果想要使用 MLIR 后端, 需要单独编译 MegEngine. 在使用 CMake 时换成如下命令："
-msgstr "crwdns85951:0crwdne85951:0"
+msgstr "crwdns120149:0crwdne120149:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:180
 msgid "然后设置如下的环境变量："
-msgstr "crwdns85953:0crwdne85953:0"
+msgstr "crwdns120151:0crwdne120151:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:189
 msgid "指定代码不被转换"
-msgstr "crwdns85955:0crwdne85955:0"
+msgstr "crwdns120153:0crwdne120153:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:191
 msgid "使用 :py:func:`~.exclude_from_trace` ，其中的代码不会被 trace, 且允许访问静态区域的 :py:class:`~megengine.Tensor` ."
-msgstr "crwdns85957:0crwdne85957:0"
+msgstr "crwdns120155:0crwdne120155:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:193
 msgid "示例代码如下："
-msgstr "crwdns85959:0crwdne85959:0"
+msgstr "crwdns120157:0crwdne120157:0"
 
 #: ../../source/user-guide/model-development/jit/trace.rst:211
 msgid "输出为："
-msgstr "crwdns85961:0crwdne85961:0"
+msgstr "crwdns120159:0crwdne120159:0"
 
 #~ msgid ""
 #~ "亚线性内存优化技术的直观好处是能节省显存，换来更大的 Batch size, "

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2022-08-05 09:24\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,75 +14,75 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/amp/nhwc.po\n"
-"X-Crowdin-File-ID: 8448\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/amp/nhwc.po\n"
+"X-Crowdin-File-ID: 9983\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:5
 msgid "使用 NHWC 格式进一步提速"
-msgstr "crwdns93072:0crwdne93072:0"
+msgstr "crwdns119773:0crwdne119773:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:9
 msgid "该功能目前仍不完善，支持的模型种类有限，欢迎积极反馈遇到的问题~"
-msgstr "crwdns93074:0crwdne93074:0"
+msgstr "crwdns119775:0crwdne119775:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:11
 msgid "在 :ref:`amp-guide` 文档中，我们介绍了基础的 AMP 加速功能，这是一种代价低、效果好的训练速度提升方法，在大部分卷积神经网络上都能有可观的作用。本文则会在此基础上介绍一种代价稍高、限制更大，但效果能更好的提速方法。"
-msgstr "crwdns93076:0:ref:crwdne93076:0"
+msgstr "crwdns119777:0:ref:crwdne119777:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:13
 msgid "我们知道目前在训练大部分视觉领域的卷积神经网络时，输入都是 NCHW 格式的， 然而在推理部署时，往往会采用 NHWC、NHWCD4 等等完全不同的输入格式，这是因为硬件和软件算法层面都能从这些格式上获得更多的性能加速。所以我们为什么不能在训练时也用上这些格式呢？"
-msgstr "crwdns93078:0crwdne93078:0"
+msgstr "crwdns119779:0crwdne119779:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:15
 msgid "目前已经较为成熟的方案是采用 NHWC 代替 NCHW 成为训练时的内存格式进行计算，一方面需要对模型做的改动比较小，一方面性能的提升效果也足够不错，在 fp16 AMP 的基础上一般能再获得 22% 以上的性能提升 [1]_。"
-msgstr "crwdns93080:0[1]crwdne93080:0"
+msgstr "crwdns119781:0[1]crwdne119781:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:17
 msgid "https://pytorch.org/tutorials/intermediate/memory_format_tutorial.html"
-msgstr "crwdns93082:0crwdne93082:0"
+msgstr "crwdns119783:0crwdne119783:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:20
 msgid "接口介绍"
-msgstr "crwdns93084:0crwdne93084:0"
+msgstr "crwdns119785:0crwdne119785:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:22
 msgid "在接口使用上其实非常简单，主要需要做两件事："
-msgstr "crwdns93086:0crwdne93086:0"
+msgstr "crwdns119787:0crwdne119787:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:24
 msgid "将模型的 NCHW 输入转换成 NHWC 格式；"
-msgstr "crwdns93088:0crwdne93088:0"
+msgstr "crwdns119789:0crwdne119789:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:25
 msgid "将模型中可以使用 NHWC 加速的 Module 的参数从 NCHW 转换成 NHWC。"
-msgstr "crwdns93090:0crwdne93090:0"
+msgstr "crwdns119791:0crwdne119791:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:27
 msgid "具体来说相比原先的 AMP 用法，需要多修改两条语句："
-msgstr "crwdns93092:0crwdne93092:0"
+msgstr "crwdns119793:0crwdne119793:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:47
 msgid "后面的训练部分和基础的 AMP 用法没有区别："
-msgstr "crwdns93094:0crwdne93094:0"
+msgstr "crwdns119795:0crwdne119795:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:62
 msgid "在实际计算时，会根据算子输入 Tensor 的 format 类型做相应的处理，并给输出加上正确的 format，从而使得网络能一步步始终使用 NHWC 格式进行计算。"
-msgstr "crwdns93096:0crwdne93096:0"
+msgstr "crwdns119797:0crwdne119797:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:64
 msgid "目前已知的问题主要有："
-msgstr "crwdns93098:0crwdne93098:0"
+msgstr "crwdns119799:0crwdne119799:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:66
 msgid "网络中如果存在把 Tensor 变为 numpy 数组再计算的中间过程，会导致 format 信息丢失，进而影响后续的计算过程；"
-msgstr "crwdns93100:0crwdne93100:0"
+msgstr "crwdns119801:0crwdne119801:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:67
 msgid "NHWC 格式在部分网络中可能存在计算卡死的现象，还在修复中。"
-msgstr "crwdns93102:0crwdne93102:0"
+msgstr "crwdns119803:0crwdne119803:0"
 
 #: ../../source/user-guide/model-development/amp/nhwc.rst:69
 msgid "如果你在使用中有什么疑问或者发现一些具体的错误样例，欢迎提 `issue <https://github.com/MegEngine/MegEngine/issues>`_ ~"
-msgstr "crwdns93104:0crwdne93104:0"
+msgstr "crwdns119805:0crwdne119805:0"
 

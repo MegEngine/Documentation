@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 04:18\n"
+"PO-Revision-Date: 2023-04-21 09:30\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,48 +15,48 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.quantization.QConfig.po\n"
-"X-Crowdin-File-ID: 2576\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.quantization.QConfig.po\n"
+"X-Crowdin-File-ID: 9677\n"
 
 #: ../../source/reference/api/megengine.quantization.QConfig.rst:5
 msgid "QConfig"
-msgstr "crwdns90822:0crwdne90822:0"
+msgstr "crwdns105933:0crwdne105933:0"
 
 #: megengine.quantization.qconfig.QConfig:1 of
 msgid "A config class indicating how to do quantize toward :class:`~.QATModule` 's ``activation`` and ``weight``. See :meth:`~.QATModule.set_qconfig` for detail usage."
-msgstr "crwdns78723:0:class:crwdnd78723:0:meth:crwdne78723:0"
+msgstr "crwdns105935:0:class:crwdnd105935:0:meth:crwdne105935:0"
 
 #: megengine.quantization.qconfig.QConfig of
 msgid "参数"
-msgstr "crwdns39694:0crwdne39694:0"
+msgstr "crwdns105937:0crwdne105937:0"
 
 #: megengine.quantization.qconfig.QConfig:4 of
 msgid "interface to instantiate an :class:`~.Observer` indicating how to collect scales and zero_point of wegiht."
-msgstr "crwdns39696:0:class:crwdne39696:0"
+msgstr "crwdns105939:0:class:crwdne105939:0"
 
 #: megengine.quantization.qconfig.QConfig:6 of
 msgid "similar to ``weight_observer`` but toward activation."
-msgstr "crwdns39698:0crwdne39698:0"
+msgstr "crwdns105941:0crwdne105941:0"
 
 #: megengine.quantization.qconfig.QConfig:7 of
 msgid "interface to instantiate a :class:`~.quantization.fake_quant.FakeQuantize` indicating how to do fake_quant calculation."
-msgstr "crwdns90824:0:class:crwdne90824:0"
+msgstr "crwdns105943:0:class:crwdne105943:0"
 
 #: megengine.quantization.qconfig.QConfig:9 of
 msgid "similar to ``weight_fake_quant`` but toward activation."
-msgstr "crwdns39702:0crwdne39702:0"
+msgstr "crwdns105945:0crwdne105945:0"
 
 #: megengine.quantization.qconfig.QConfig:12 of
 msgid "实际案例"
-msgstr "crwdns78725:0crwdne78725:0"
+msgstr "crwdns105947:0crwdne105947:0"
 
 #: megengine.quantization.qconfig.QConfig:23 of
 msgid "Each parameter is a ``class`` rather than an instance. And we recommand using ``functools.partial`` to add initialization parameters of the ``class``, so that don't need to provide parameters in :meth:`~.QATModule.set_qconfig`."
-msgstr "crwdns39706:0:meth:crwdne39706:0"
+msgstr "crwdns105949:0:meth:crwdne105949:0"
 
 #: megengine.quantization.qconfig.QConfig:27 of
 msgid "Usually we choose narrow version dtype (like ``qint8_narrow``) for weight related paramters and normal version for activation related ones. For the result of multiplication and addition as ``a * b + c * d``, if four variables are all -128 of dtype ``qint8``, then the result will be ``2^15`` and cause overflow. Weights are commonly calculated in this way, so need to narrow qmin to -127."
-msgstr "crwdns39708:0crwdne39708:0"
+msgstr "crwdns105951:0crwdne105951:0"
 
 #~ msgid "基类：:class:`megengine.quantization.qconfig.QConfig`"
 #~ msgstr "基类：:class:`megengine.quantization.qconfig.QConfig`"

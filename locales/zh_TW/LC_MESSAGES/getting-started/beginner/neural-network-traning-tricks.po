@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 01:33\n"
+"PO-Revision-Date: 2023-04-21 09:34\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,536 +15,536 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/getting-started/beginner/neural-network-traning-tricks.po\n"
-"X-Crowdin-File-ID: 7064\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/getting-started/beginner/neural-network-traning-tricks.po\n"
+"X-Crowdin-File-ID: 9861\n"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:9
 msgid "神经网络训练技巧"
-msgstr "crwdns65146:0crwdne65146:0"
+msgstr "crwdns114409:0crwdne114409:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:12
 msgid "|image0| `在 MegStudio 运行 <https://studio.brainpp.com/project/#>`__"
-msgstr "crwdns65148:0crwdne65148:0"
+msgstr "crwdns114411:0crwdne114411:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:22
 msgid "image0"
-msgstr "crwdns65150:0crwdne65150:0"
+msgstr "crwdns114413:0crwdne114413:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:12
 msgid "|image1| `查看源文件 <https://github.com/MegEngine/Documentation/blob/main/source/getting-started/beginner/neural-network-traning-tricks.ipynb>`__"
-msgstr "crwdns65152:0crwdne65152:0"
+msgstr "crwdns114415:0crwdne114415:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:23
 msgid "image1"
-msgstr "crwdns65154:0crwdne65154:0"
+msgstr "crwdns114417:0crwdne114417:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:16
 msgid "通过引入（卷积）神经网络模型，我们在 CIFAR-10 图片分类任务上已经能够达到 60% 左右的分类准确率。但是，探索从未停止！"
-msgstr "crwdns67557:0crwdne67557:0"
+msgstr "crwdns114419:0crwdne114419:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:18
 msgid "在本次的教程中，我们会接触到神经网络模型训练过程中的部分常见技巧，并尝试对其原理做出一定的解释。"
-msgstr "crwdns67559:0crwdne67559:0"
+msgstr "crwdns114421:0crwdne114421:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:20
 msgid "请先运行下面的代码，检验你的环境中是否已经安装好 MegEngine（\\ `安装教程 <https://megengine.org.cn/doc/stable/zh/user-guide/install/>`__\\ ）："
-msgstr "crwdns67561:0crwdne67561:0"
+msgstr "crwdns114423:0crwdne114423:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:76
 msgid "数据预处理"
-msgstr "crwdns68211:0crwdne68211:0"
+msgstr "crwdns114425:0crwdne114425:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:78
 msgid "在机器学习领域，由于不同的机器学习算法和模型对于数据中的信息利用程度不同（回想一下线性分类器和 CNN 分类器），因此我们需要利用数据领域相关的知识使机器学习算法达到最佳性能，即进行特征工程（Feature Engineering），利用特征来对原始数据来进行更好的表达。机器学习坊间传闻着这一句话：“数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已”。（可以查看 Kaggle 提供的 `特征工程教程 <https://www.kaggle.com/learn/feature-engineering>`__ ）我们在之前教程的 AlexNet 模型代码中也存在着 ``feature`` 和 ``classifier`` 两部分，可以认为前半部分是在利用深度学习模型进行特征的提取和处理，而后半部分是传统的分类器。实际上，在将数据真正输入到深度学习模型之前，我们还可以提前进行一定程度的预处理。"
-msgstr "crwdns68213:0crwdne68213:0"
+msgstr "crwdns114427:0crwdne114427:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:81
 msgid "我们在上一个教程中，利用 MegEngine 中的 ``data.transform.Resize`` 实现了对 CIFAR-10 输入数据形状的缩放，使之可以满足原本用于 ImageNet 的模型对输入形状的要求。图片形状的缩放属于数据预处理方式的一种，存在着包括双线性插值采样在内的不同算法实现。除了改变数据的形状，我们也可以直接对特征值进行一定的处理，比较常见的一种做法是特征缩放。"
-msgstr "crwdns67567:0crwdne67567:0"
+msgstr "crwdns114429:0crwdne114429:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:84
 msgid "特征缩放"
-msgstr "crwdns68215:0crwdne68215:0"
+msgstr "crwdns114431:0crwdne114431:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:86
 msgid "特征缩放通常指将给定数据集的不同特征转换为相似的尺度，一些机器学习算法对于这样的预处理方式有着较强的依赖。"
-msgstr "crwdns67571:0crwdne67571:0"
+msgstr "crwdns114433:0crwdne114433:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:88
 msgid "回忆一下我们的一元线性回归模型 :math:`y = w \\cdot x + b` 进行参数学习的过程，通常 :math:`w` 总是能更快地比 :math:`b` 先接近理想值，这是为什么呢？"
-msgstr "crwdns67573:0:math:crwdnd67573:0:math:crwdnd67573:0:math:crwdne67573:0"
+msgstr "crwdns114435:0:math:crwdnd114435:0:math:crwdnd114435:0:math:crwdne114435:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:90
 msgid "在进行梯度下降时，我们对于不同的参数 :math:`w` 和 :math:`b`, 使用了相同的学习率 ``lr``\\ ；"
-msgstr "crwdns67575:0:math:crwdnd67575:0:math:crwdne67575:0"
+msgstr "crwdns114437:0:math:crwdnd114437:0:math:crwdne114437:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:91
 msgid "但是由于输入特征在尺度上的差异（一个是 :math:`x`, 一个是常数 :math:`1` ），影响到了实际更新的步长。"
-msgstr "crwdns67577:0:math:crwdnd67577:0:math:crwdne67577:0"
+msgstr "crwdns114439:0:math:crwdnd114439:0:math:crwdne114439:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:93
 msgid "再比如我们进行波士顿房价预测时，假设一个特征 :math:`x_1` 指代房屋面积，范围是 :math:`(500, 5000)`; 另一个特征 :math:`x_2` 是房间数量，范围是 :math:`(1, 10)`."
-msgstr "crwdns67579:0:math:crwdnd67579:0:math:crwdnd67579:0:math:crwdnd67579:0:math:crwdne67579:0"
+msgstr "crwdns114441:0:math:crwdnd114441:0:math:crwdnd114441:0:math:crwdnd114441:0:math:crwdne114441:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:95
 msgid "很显然，如果要进行房价预测，理想中最终得到的 :math:`w_1` 和 :math:`w_2` 可能会在不同的数量级；"
-msgstr "crwdns67581:0:math:crwdnd67581:0:math:crwdne67581:0"
+msgstr "crwdns114443:0:math:crwdnd114443:0:math:crwdne114443:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:96
 msgid "在进行前向计算时，由于 :math:`x_1` 和 :math:`x_2` 的尺度差异，其对于最终线性输出的结果影响能力差异巨大；"
-msgstr "crwdns67583:0:math:crwdnd67583:0:math:crwdne67583:0"
+msgstr "crwdns114445:0:math:crwdnd114445:0:math:crwdne114445:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:97
 msgid "不同特征 :math:`x_1` 和 :math:`x_2` 的量纲（或者说尺度范围）差异，也会直接地影响到对应参数的梯度更新幅度。"
-msgstr "crwdns67585:0:math:crwdnd67585:0:math:crwdne67585:0"
+msgstr "crwdns114447:0:math:crwdnd114447:0:math:crwdne114447:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:99
 msgid "如果我们能够按照一定的规则，将不同特征的值都缩放到相同的范围，比如 :math:`(0, 1)`, 就能够避免尺度不同带来的影响。"
-msgstr "crwdns67587:0:math:crwdne67587:0"
+msgstr "crwdns114449:0:math:crwdne114449:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:111
 msgid "与梯度下降算法的关系"
-msgstr "crwdns67589:0crwdne67589:0"
+msgstr "crwdns114451:0crwdne114451:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:113
 msgid "借助下面这张图，我们能进行更加直观的理解。\\ **具有相似尺度的特征在进行梯度更新时步伐一致，可以帮助梯度下降更快地收敛到最小值** ："
-msgstr "crwdns67591:0crwdne67591:0"
+msgstr "crwdns114453:0crwdne114453:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:115
 msgid "|normalization|"
-msgstr "crwdns67593:0crwdne67593:0"
+msgstr "crwdns114455:0crwdne114455:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:139
 msgid "normalization"
-msgstr "crwdns67595:0crwdne67595:0"
+msgstr "crwdns114457:0crwdne114457:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:117
 msgid "上图来自《\\ `Gradient Descent Algorithm and Its Variants <https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3>`__\\ 》，我们可以看出："
-msgstr "crwdns67597:0crwdne67597:0"
+msgstr "crwdns114459:0crwdne114459:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:119
 msgid "这是一个等高线图，我们可以理解成横轴和纵轴是参数 :math:`w` 和 :math:`b` , 高度表示损失，理想情况下，我们需要往中间的最低点做梯度下降；"
-msgstr "crwdns67599:0:math:crwdnd67599:0:math:crwdne67599:0"
+msgstr "crwdns114461:0:math:crwdnd114461:0:math:crwdne114461:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:120
 msgid "如果特征的分布是不标准（不均匀）的，随着参数的更新，最优的梯度下降方向将变得越来越“窄”；"
-msgstr "crwdns67601:0crwdne67601:0"
+msgstr "crwdns114463:0crwdne114463:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:121
 msgid "假设每次都进行同等步长的梯度下降，左图容易导致走出一个 Z 字形状，相较于右图达到收敛需要更多的更新次数。"
-msgstr "crwdns67603:0crwdne67603:0"
+msgstr "crwdns114465:0crwdne114465:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:123
 msgid "特征缩放的具体处理方式有很多种，我们将着重关注其中一种情况（感兴趣的读者可自行进行这方面知识的拓展）。"
-msgstr "crwdns67605:0crwdne67605:0"
+msgstr "crwdns114467:0crwdne114467:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:125
 msgid "比如，对于由图片组成的数据集（比如 CIFAR10），我们可以进行 z-score normalization 处理："
-msgstr "crwdns67607:0crwdne67607:0"
+msgstr "crwdns114469:0crwdne114469:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:127
 msgid "将每个图像的像素点首先减去所有图像均值的像素点 ``mean``, 然后再除以标准差 ``std``;"
-msgstr "crwdns67609:0crwdne67609:0"
+msgstr "crwdns114471:0crwdne114471:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:128
 msgid "这样可以保证所有的图像分布都相似，也就是在训练的时候更容易收敛；"
-msgstr "crwdns67611:0crwdne67611:0"
+msgstr "crwdns114473:0crwdne114473:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:129
 msgid "但是需要注意，不同图像数据集的 ``mean`` 和 ``std`` 是不一样的，通常需要进行统计；"
-msgstr "crwdns67613:0crwdne67613:0"
+msgstr "crwdns114475:0crwdne114475:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:130
 msgid "对于具有多通道的图像，我们通常会针对每个通道去计算不同的 ``mean`` 和 ``std`` 值。"
-msgstr "crwdns67615:0crwdne67615:0"
+msgstr "crwdns114477:0crwdne114477:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:132
 msgid "MegEngine 的 ``functional`` 模块中，提供 ``mean()``, ``std()`` 等常见的统计方法，有助于计算。"
-msgstr "crwdns67617:0crwdne67617:0"
+msgstr "crwdns114479:0crwdne114479:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:134
 msgid "MegEngine 的 ``data.transform`` 模块中，提供了 ``Normalize`` 方法，我们在下面就会看到如何使用。"
-msgstr "crwdns67619:0crwdne67619:0"
+msgstr "crwdns114481:0crwdne114481:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:136
 msgid "在机器学习领域，还有着更多的对数据进行预处理的方法，比如 PCA 和白化等等；"
-msgstr "crwdns67621:0crwdne67621:0"
+msgstr "crwdns114483:0crwdne114483:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:137
 msgid "有些时候一些复杂的处理需要借助其它的框架和脚本来完成，比如机器学习库 Scikit-Learn 提供了\\ `预处理教程 <https://scikit-learn.org/stable/modules/preprocessing.html>`__ 和对应实现 。"
-msgstr "crwdns67623:0crwdne67623:0"
+msgstr "crwdns114485:0crwdne114485:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:151
 msgid "数据增广"
-msgstr "crwdns68217:0crwdne68217:0"
+msgstr "crwdns114487:0crwdne114487:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:153
 msgid "在 MegEngine 的 ``data.transfrom`` 模块中，还提供了非常多的常见数据处理接口以供使用，一种有效的用途是用作数据增广（Data Augmentation）。"
-msgstr "crwdns67627:0crwdne67627:0"
+msgstr "crwdns114489:0crwdne114489:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:155
 msgid "深度学习之所以有效，除了 “模型” 和 “算法” 之外，离不开 “数据” 的帮助；"
-msgstr "crwdns67629:0crwdne67629:0"
+msgstr "crwdns114491:0crwdne114491:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:156
 msgid "我们喂入神经网络数据的数量多少和质量好坏，将会对最终模型的预测效果产生影响。"
-msgstr "crwdns67631:0crwdne67631:0"
+msgstr "crwdns114493:0crwdne114493:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:158
 msgid "简单来说，如果可以对位置、视角、大小、照明等不同情况下的图片进行稳健的分类，则说明神经网络模型具备这些方面的不变性，前提是它需要 “见多识广”。 自然地，想要训练出足够好的模型，就需要喂入足够好的数据，这意味着我们需要对数据进行一定程度的增强，让模型能够得到更加充分的锻炼。 数据增广操作可以在机器学习 Pipeline 不同的位置执行，我们有两种思路："
-msgstr "crwdns67633:0crwdne67633:0"
+msgstr "crwdns114495:0crwdne114495:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:160
 msgid "线下增强（Offline augmentation）：即事先执行好所有转换，等同于对整个数据集提前处理。这种方法适用于规模比较小的数据集，因为它实质上会增大数据集的规模；"
-msgstr "crwdns67635:0crwdne67635:0"
+msgstr "crwdns114497:0crwdne114497:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:161
 msgid "线上增强（Online augmentation）：即在当前 Batch 的数据喂入模型之前进行转换，这种操作可以避免数据规模爆炸带来的负面影响。"
-msgstr "crwdns67637:0crwdne67637:0"
+msgstr "crwdns114499:0crwdne114499:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:163
 msgid "使用 MegEngine 的 ``data.transform`` 模块对数据进行增强，即采用了上述第二种策略。"
-msgstr "crwdns67639:0crwdne67639:0"
+msgstr "crwdns114501:0crwdne114501:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:165
 msgid "下面我们将以图片数据为例，展示一下常见的增强操作："
-msgstr "crwdns67641:0crwdne67641:0"
+msgstr "crwdns114503:0crwdne114503:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:214
 msgid "我们仅对图片数据的特征进行了一些处理，而对应的标签无需做出改变，如你所见，上面变换后的图片仍然能分辨出是柴犬图。"
-msgstr "crwdns67643:0crwdne67643:0"
+msgstr "crwdns114505:0crwdne114505:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:216
 msgid "需要提醒的是，MegEngine 的图像处理接口底层调用了 OpenCV, 而不是 PIL 库。"
-msgstr "crwdns67645:0crwdne67645:0"
+msgstr "crwdns114507:0crwdne114507:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:228
 msgid "使用 Compose 组合处理"
-msgstr "crwdns67647:0crwdne67647:0"
+msgstr "crwdns114509:0crwdne114509:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:230
 msgid "我们还可以使用 ``transform.Compose`` 来组合一些已有的变化，比如同时进行水平和垂直的翻转："
-msgstr "crwdns67649:0crwdne67649:0"
+msgstr "crwdns114511:0crwdne114511:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:268
 msgid "与 Dataloader 结合使用"
-msgstr "crwdns67651:0crwdne67651:0"
+msgstr "crwdns114513:0crwdne114513:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:270
 msgid "这些操作还可以结合在 ``Dataloader`` 中对成批的数据使用，调用起来非常方便："
-msgstr "crwdns67653:0crwdne67653:0"
+msgstr "crwdns114515:0crwdne114515:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:291
 msgid "我们在之前的教程中已经见过了类似的用法，因此不再赘述。"
-msgstr "crwdns67655:0crwdne67655:0"
+msgstr "crwdns114517:0crwdne114517:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:293
 msgid "你也可以将更多常见的数据增强功能实现到 MegEngine 中（欢迎成为 ``data.transform`` 贡献者～）。"
-msgstr "crwdns67657:0crwdne67657:0"
+msgstr "crwdns114519:0crwdne114519:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:305
 msgid "正则化（Regularization）"
-msgstr "crwdns67747:0crwdne67747:0"
+msgstr "crwdns114521:0crwdne114521:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:307
 msgid "我们之前在设计深度学习优化的目标函数时，主要在意的是模型的预测输出和实际标签值之间的差异，这种差异通常叫做“经验损失”，即我们设计了一个损失函数，来计算当前模型在指定任务处理经验上的匮乏。但我们也慢慢地发现了，除了预测的精度以外，我们也需要关照模型训练过程中收敛的速度，以及计算量等等因素；与此同时，我们还需要避免产生过拟合的现象。"
-msgstr "crwdns67749:0crwdne67749:0"
+msgstr "crwdns114523:0crwdne114523:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:309
 msgid "|over-fitting|"
-msgstr "crwdns67751:0crwdne67751:0"
+msgstr "crwdns114525:0crwdne114525:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:326
 msgid "over-fitting"
-msgstr "crwdns67753:0crwdne67753:0"
+msgstr "crwdns114527:0crwdne114527:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:311
 msgid "上图是一个多项式模型的拟合程度对比，分别对应欠拟合、拟合良好以及过拟合的情况；"
-msgstr "crwdns67755:0crwdne67755:0"
+msgstr "crwdns114529:0crwdne114529:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:312
 msgid "尽管我们可以通过各种技巧极限优化模型在训练集上的经验损失，但我们的目的之一是让模型具有较好的泛化能力；"
-msgstr "crwdns67757:0crwdne67757:0"
+msgstr "crwdns114531:0crwdne114531:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:313
 msgid "实际上，右边的过拟合模型的最终得到的权重分配差异可能会非常的夸张…"
-msgstr "crwdns88499:0crwdne88499:0"
+msgstr "crwdns114533:0crwdne114533:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:315
 msgid "越是复杂的模型，越是容易出现过拟合现象。我们可以通过正则化技术引入“结构损失”，通过加入惩罚项，对模型的参数大小进行限制，来达到避免过拟合的效果。"
-msgstr "crwdns67761:0crwdne67761:0"
+msgstr "crwdns114535:0crwdne114535:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:317
 msgid "比如最常见的 L2 正则化，向目标函数中添加了 :math:`\\lambda \\|w\\|_{2}^{2}` 项，这鼓励网络中使用尽可能小的参数 :math:`w`, 其中 :math:`\\lambda` 是惩罚系数。"
-msgstr "crwdns67763:0:math:crwdnd67763:0{2}crwdnd67763:0{2}crwdnd67763:0:math:crwdnd67763:0:math:crwdne67763:0"
+msgstr "crwdns114537:0:math:crwdnd114537:0{2}crwdnd114537:0{2}crwdnd114537:0:math:crwdnd114537:0:math:crwdne114537:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:319
 msgid "具体的原理和梯度求导到一些数学方面的细节，这不是我们当前关注的目标，我们需要留有这样一个概念："
-msgstr "crwdns67765:0crwdne67765:0"
+msgstr "crwdns114539:0crwdne114539:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:321
 msgid "L2 regularization 也被称作 weight decay(权重衰减），它能够有效约束参数的大小，避免过拟合；"
-msgstr "crwdns67767:0crwdne67767:0"
+msgstr "crwdns114541:0crwdne114541:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:322
 msgid "在常见的优化器比如 ``SGD`` 中提供了 ``weight_decay`` 参数，用来制定权重衰减因子（惩罚系数）的比例。"
-msgstr "crwdns68219:0crwdne68219:0"
+msgstr "crwdns114543:0crwdne114543:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:324
 msgid "除了对模型的参数进行限制以外，使用 `Dropout <https://jmlr.org/papers/v15/srivastava14a.html>`__ 层也是一种不错的思路：通过按照设定的概率 :math:`p` 来随机地丢掉一些神经元，从而减少模型的复杂度。在进行模型评估时我们不需要进行 Dropout 操作，因此如果你的模型中使用到了 Dropout 层却没有设置 ``model.eval()``, 可能会得到和预期不一致的结果。"
-msgstr "crwdns68221:0:math:crwdne68221:0"
+msgstr "crwdns114545:0:math:crwdne114545:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:338
 msgid "随机初始化"
-msgstr "crwdns67659:0crwdne67659:0"
+msgstr "crwdns114547:0crwdne114547:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:340
 msgid "我们在学习 ``module`` 模块的时候接触过了许多不同的权重初始化策略，也了解了如何去自定义初始化策略。问题是：为什么要这样做？"
-msgstr "crwdns67661:0crwdne67661:0"
+msgstr "crwdns114549:0crwdne114549:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:342
 msgid "现在一起来思考一下，全连接神经网络使用零初始化策略时，具体发生了什么："
-msgstr "crwdns67663:0crwdne67663:0"
+msgstr "crwdns114551:0crwdne114551:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:344
 msgid "在同一个线性层中，每个神经元都接受了前一层所有神经元的输出作为输入；"
-msgstr "crwdns67665:0crwdne67665:0"
+msgstr "crwdns114553:0crwdne114553:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:345
 msgid "如果该层的每个神经元都采用了相同的初始化策略，这意味着当前层每个神经元进行的计算是完全一致的；"
-msgstr "crwdns67667:0crwdne67667:0"
+msgstr "crwdns114555:0crwdne114555:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:346
 msgid "同样地，如果有多个线性层，下一层的每个神经元会将当前层这些完全一致的输出都作为自己的输入…"
-msgstr "crwdns88501:0crwdne88501:0"
+msgstr "crwdns114557:0crwdne114557:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:348
 msgid "通常模型的结构是固定的，采用梯度下降这种确定性优化算法时，意味着在前向传播和反向传播的过程中，每个隐含层内部的相邻神经元都在做完全相同的计算和更新，做了大量的重复劳动。 这与我们希望不同的神经元能学到不同的特征信息，或起到不同的表征作用的想法相违背， “世界上没有完全相同的两片树叶”，神经网络模型中也不应该有作用完全一样的神经元。 因此，我们必须采用随机初始化策略，来“打破”原有的对称性。"
-msgstr "crwdns67671:0crwdne67671:0"
+msgstr "crwdns114559:0crwdne114559:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:351
 msgid "什么是科学的初始化方式？"
-msgstr "crwdns67673:0crwdne67673:0"
+msgstr "crwdns114561:0crwdne114561:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:353
 msgid "**如何进行“随机”才是最有效的呢？** 通常我们会假设数据的分布具备一定的概率先验，从统计的视角设计出有意义的初始化策略，比如让初始化的参数满足均匀分布、或者是正态分布。"
-msgstr "crwdns67675:0crwdne67675:0"
+msgstr "crwdns114563:0crwdne114563:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:354
 msgid "**随机初始化的值范围又该如何选定呢？** 如果设置得太大或太小，将会导致梯度出现爆炸或者消失的情况，在反向传播时无法很好地向后流动。为了确定合适的初始化方式，研究人员提出了 ``xavier`` 和 ``msra`` 等初始化策略，并被广泛实践（想要了解原理的话可以去阅读对应的论文）。"
-msgstr "crwdns67677:0crwdne67677:0"
+msgstr "crwdns114565:0crwdne114565:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:356
 msgid "在 MegEngine 的 ``module.init`` 模块中，实现了这些常见的初始化策略："
-msgstr "crwdns67679:0crwdne67679:0"
+msgstr "crwdns114567:0crwdne114567:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:358
 msgid "``megengine.module.init.xavier_uniform_``"
-msgstr "crwdns67681:0crwdne67681:0"
+msgstr "crwdns114569:0crwdne114569:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:359
 msgid "``megengine.module.init.xavier_normal_``"
-msgstr "crwdns67683:0crwdne67683:0"
+msgstr "crwdns114571:0crwdne114571:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:360
 msgid "``megengine.module.init.msra_uniform_``"
-msgstr "crwdns67685:0crwdne67685:0"
+msgstr "crwdns114573:0crwdne114573:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:361
 msgid "``megengine.module.init.msra_normal_``"
-msgstr "crwdns67687:0crwdne67687:0"
+msgstr "crwdns114575:0crwdne114575:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:363
 msgid "我们无法证明哪一种初始化策略一定是最优的，直到目前为止，提出更通用更好用的初始化策略依旧是一项艰巨的任务。"
-msgstr "crwdns67689:0crwdne67689:0"
+msgstr "crwdns114577:0crwdne114577:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:365
 msgid "好消息是，接下来我们将介绍 Batch Normalization, 从某种意义上来说，它可以减少我们对参数初始化的依赖。"
-msgstr "crwdns67691:0crwdne67691:0"
+msgstr "crwdns114579:0crwdne114579:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:377
 msgid "Batch Normalization"
-msgstr "crwdns67693:0crwdne67693:0"
+msgstr "crwdns114581:0crwdne114581:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:379
 msgid "在本次教程的一开始，提到了可以通过 ``data.transform.Normalize`` 对输入数据进行预处理，对加速模型收敛很有帮助。"
-msgstr "crwdns67695:0crwdne67695:0"
+msgstr "crwdns114583:0crwdne114583:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:381
 msgid "回忆一下在 MegEngine 中采取的 mini-batch 梯度下降策略："
-msgstr "crwdns67697:0crwdne67697:0"
+msgstr "crwdns114585:0crwdne114585:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:383
 msgid "把数据分为若干个 mini-batch，每个 mini-batch 的数据共同决定了本次梯度的方向，在参数更新时减少了随机性；"
-msgstr "crwdns67699:0crwdne67699:0"
+msgstr "crwdns114587:0crwdne114587:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:384
 msgid "另一方面因为 batch size 与整个数据集的规模相比小了很多，因此计算量也下降了很多，这样可以避免训练时爆掉内存。"
-msgstr "crwdns67701:0crwdne67701:0"
+msgstr "crwdns114589:0crwdne114589:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:386
 msgid "这个思路也可以运用在神经网络的训练过程中，即我们在进行一层前向计算后，对 mini-batch 的数据进行一次 ``Normalization``, 用来重新调整数据分布。"
-msgstr "crwdns67703:0crwdne67703:0"
+msgstr "crwdns114591:0crwdne114591:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:388
 msgid "回忆一下，在 VGG 系列模型中可根据 Conv2d(->BatchNorm2d)->ReLU->MaxPool2d 的区别将模型分为带 BN 的版本和不带 BN 的版本。"
-msgstr "crwdns67705:0crwdne67705:0"
+msgstr "crwdns114593:0crwdne114593:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:390
 msgid "对于 CNN 模型，BN 的操作是分别在各个特征维度之间进行的，也就是说各个通道 :math:`C` 分别进行 Batch Normalization 操作。"
-msgstr "crwdns67707:0:math:crwdne67707:0"
+msgstr "crwdns114595:0:math:crwdne114595:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:392
 msgid "在使用 BN 的情况下，即使一开始的权重初始化策略很糟糕，也能够通过各层之间的 BN 操作来重新调整，因此减少了对其的依赖；"
-msgstr "crwdns68223:0crwdne68223:0"
+msgstr "crwdns114597:0crwdne114597:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:393
 msgid "BN 还能够让损失更快地收敛，这意味着我们可以设置一个比较大的学习率，在较短的时间内取得不错的训练效果；"
-msgstr "crwdns67711:0crwdne67711:0"
+msgstr "crwdns114599:0crwdne114599:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:394
 msgid "由于 BN 使用了 Batch 规模的数据进行统一的标准化，一定程度上加强了训练出的模型的泛化能力；"
-msgstr "crwdns67713:0crwdne67713:0"
+msgstr "crwdns114601:0crwdne114601:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:395
 msgid "批数据和全量数据的均值和方差存在着差异，如果想要发挥出 Batch Normalization 的优势，Batch size 的值不能设置得过小。"
-msgstr "crwdns67715:0crwdne67715:0"
+msgstr "crwdns114603:0crwdne114603:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:397
 msgid "实际上 BN 的工程化实现可能会复杂一些，对其原理的解释也存在着多种角度。"
-msgstr "crwdns68225:0crwdne68225:0"
+msgstr "crwdns114605:0crwdne114605:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:399
 msgid "对比前面教程实现的 AlexNet 模型，我们尝试加上 BN 层看看效果："
-msgstr "crwdns68227:0crwdne68227:0"
+msgstr "crwdns114607:0crwdne114607:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:461
 msgid "我们看看超参数一致的情况下，加入 BN 能够提升到什么样的效果："
-msgstr "crwdns67719:0crwdne67719:0"
+msgstr "crwdns114609:0crwdne114609:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:492
 msgid "在预处理环节，我们使用从 CIFAR10 数据集统计得到的 ``mean`` 和 ``std`` 值："
-msgstr "crwdns67721:0crwdne67721:0"
+msgstr "crwdns114611:0crwdne114611:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:597
 msgid "可以发现，BN 层的计算量还是比较大的，但在第一个 epoch, 得到的 loss 便降低到了 0.05 以下!"
-msgstr "crwdns67723:0crwdne67723:0"
+msgstr "crwdns114613:0crwdne114613:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:599
 msgid "我们指 BN 层能够加速模型的收敛，并不意味着在训练的速度和计算量上进行了优化，而是从特征层面进行了更加科学的处理；"
-msgstr "crwdns67725:0crwdne67725:0"
+msgstr "crwdns114615:0crwdne114615:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:600
 msgid "使用越复杂的模型时，随着单个 epoch 的基础训练用时增加，我们越能够意识到 BN 层带来的好处。"
-msgstr "crwdns67727:0crwdne67727:0"
+msgstr "crwdns114617:0crwdne114617:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:602
 msgid "接下来我们再看看加入 BN 的 AlexNet 在测试数据上的表现："
-msgstr "crwdns67729:0crwdne67729:0"
+msgstr "crwdns114619:0crwdne114619:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:604
 msgid "需要注意的是，在使用训练好的模型进行测试时，Batch size 的设置不一定一致，使用 BN 层的机制需要有些变化；"
-msgstr "crwdns67731:0crwdne67731:0"
+msgstr "crwdns114621:0crwdne114621:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:605
 msgid "这也是我们使用 ``model.eval()`` 进行设置的原因，可以防止训练时使用的 ``mean``, ``std`` 统计特性产生变化。"
-msgstr "crwdns67733:0crwdne67733:0"
+msgstr "crwdns114623:0crwdne114623:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:679
 msgid "可以发现，BN 对于原始模型效果的提升还是比较明显的。"
-msgstr "crwdns67735:0crwdne67735:0"
+msgstr "crwdns114625:0crwdne114625:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:681
 msgid "继 BN 后，发展出了一些适用于不同情况下的 Normalization 的变种，在 MegEngine 中对这些经典的 Normalization 都进行了实现："
-msgstr "crwdns67737:0crwdne67737:0"
+msgstr "crwdns114627:0crwdne114627:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:683
 msgid "``megengine.module.GroupNorm``"
-msgstr "crwdns67739:0crwdne67739:0"
+msgstr "crwdns114629:0crwdne114629:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:684
 msgid "``megengine.module.InstanceNorm``"
-msgstr "crwdns67741:0crwdne67741:0"
+msgstr "crwdns114631:0crwdne114631:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:685
 msgid "``megengine.module.LayerNorm``"
-msgstr "crwdns67743:0crwdne67743:0"
+msgstr "crwdns114633:0crwdne114633:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:687
 msgid "我们不会在这里介绍不同 Normalization 的区别和使用情景，读原始论文是一种更加推荐的了解方式。"
-msgstr "crwdns67745:0crwdne67745:0"
+msgstr "crwdns114635:0crwdne114635:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:699
 msgid "总结回顾"
-msgstr "crwdns67773:0crwdne67773:0"
+msgstr "crwdns114637:0crwdne114637:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:701
 msgid "在本次教程中，我们提到了训练神经网络模型中常见的训练技巧（但这些绝不是全部！）。"
-msgstr "crwdns67775:0crwdne67775:0"
+msgstr "crwdns114639:0crwdne114639:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:703
 msgid "相较于关注具体有哪些技巧，我更希望你能了解为什么需要使用它们，即在训练的时候需要关注哪些问题？"
-msgstr "crwdns67777:0crwdne67777:0"
+msgstr "crwdns114641:0crwdne114641:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:705
 msgid "核心指标是预测效果与泛化能力，首先你需要证明你设计的模型是有效的，这是一切的大前提；"
-msgstr "crwdns67779:0crwdne67779:0"
+msgstr "crwdns114643:0crwdne114643:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:706
 msgid "其次我们需要关注训练时的速度，我们希望模型能够快速有效地收敛。"
-msgstr "crwdns68229:0crwdne68229:0"
+msgstr "crwdns114645:0crwdne114645:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:708
 msgid "在不断探索的过程中，我们不断发现问题，并尝试逐个击破。"
-msgstr "crwdns68231:0crwdne68231:0"
+msgstr "crwdns114647:0crwdne114647:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:710
 msgid "相信总有一天，你也能够发现深度学习新的有效思路，成为整个领域的热门选择。"
-msgstr "crwdns68233:0crwdne68233:0"
+msgstr "crwdns114649:0crwdne114649:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:722
 msgid "问题思考"
-msgstr "crwdns67785:0crwdne67785:0"
+msgstr "crwdns114651:0crwdne114651:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:733
 msgid "到目前为止，我们一直在通过入门教程来培养自己对于深度学习常见概念和框架使用的基本直觉，一切 “似乎存在着捷径”。"
-msgstr "crwdns67787:0crwdne67787:0"
+msgstr "crwdns114653:0crwdne114653:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:735
 msgid "仅仅停留在会用的层面就够了吗？在特定的情景下或许可以。慢慢地你会发现，这些直觉并不能给我们带来一种安全感。"
-msgstr "crwdns67789:0crwdne67789:0"
+msgstr "crwdns114655:0crwdne114655:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:737
 msgid "许多概念和有效实践背后都有着科学研究和实验做理论支撑，为了搞清楚细节，阅读论文、问答、博客、论坛是有必要的；"
-msgstr "crwdns67791:0crwdne67791:0"
+msgstr "crwdns114657:0crwdne114657:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:738
 msgid "深度学习的可解释性仍然是一个正在被探索的领域，因此我们需要对一切现象背后的本质抱有好奇心；"
-msgstr "crwdns67793:0crwdne67793:0"
+msgstr "crwdns114659:0crwdne114659:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:739
 msgid "拥有扎实的理论基础和工程能力，是支持我们不断向前的主要动力。"
-msgstr "crwdns67795:0crwdne67795:0"
+msgstr "crwdns114661:0crwdne114661:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:741
 msgid "另外，在深度学习模型越来越复杂的情况下，为了方便我们的开发，我们经常需要实现一些辅助功能，比如："
-msgstr "crwdns67797:0crwdne67797:0"
+msgstr "crwdns114663:0crwdne114663:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:743
 msgid "在模型训练的过程中进行交叉验证，使用一些策略来决定何时停止训练；"
-msgstr "crwdns67799:0crwdne67799:0"
+msgstr "crwdns114665:0crwdne114665:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:744
 msgid "使用更高级的管理工具来让你的机器学习工作流程更有效率；"
-msgstr "crwdns67801:0crwdne67801:0"
+msgstr "crwdns114667:0crwdne114667:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:746
 msgid "这些功能可能已经超出了 MegEngine 的服务范畴，不过你完全可以基于 MegEngine 开发出属于你自己领域的深度学习库～"
-msgstr "crwdns67803:0crwdne67803:0"
+msgstr "crwdns114669:0crwdne114669:0"
 
 #: ../../source/getting-started/beginner/neural-network-traning-tricks.ipynb:748
 msgid "深度学习，简单开发。我们鼓励你在实践中不断思考，并启发自己去探索直觉性或理论性的解释。"
-msgstr "crwdns67805:0crwdne67805:0"
+msgstr "crwdns114671:0crwdne114671:0"
 
 #~ msgid "数据预处理"
 #~ msgstr "Data preprocessing"

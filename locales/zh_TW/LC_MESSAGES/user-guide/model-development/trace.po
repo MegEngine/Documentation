@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-15 19:44+0800\n"
-"PO-Revision-Date: 2021-04-20 07:07\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,255 +14,255 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/trace.po\n"
-"X-Crowdin-File-ID: 2858\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/trace.po\n"
+"X-Crowdin-File-ID: 9889\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/trace.rst:5
 msgid "将动态图转为静态图（Trace）"
-msgstr "crwdns45672:0crwdne45672:0"
+msgstr "crwdns115971:0crwdne115971:0"
 
 #: ../../source/user-guide/model-development/trace.rst:9
 msgid "一般的模型训练中推荐用动态图，只有在有必要的情况下才编译静态图。（ :ref:`直接跳转到用法 <trace>` ）"
-msgstr "crwdns45674:0:ref:crwdne45674:0"
+msgstr "crwdns115973:0:ref:crwdne115973:0"
 
 #: ../../source/user-guide/model-development/trace.rst:14
 msgid "动态图和静态图"
-msgstr "crwdns45676:0crwdne45676:0"
+msgstr "crwdns115975:0crwdne115975:0"
 
 #: ../../source/user-guide/model-development/trace.rst:16
 msgid "MegEngine 默认使用 **动态计算图** ，其核心特点是计算图的构建和计算同时发生（Define by run）。"
-msgstr "crwdns45678:0crwdne45678:0"
+msgstr "crwdns115977:0crwdne115977:0"
 
 #: ../../source/user-guide/model-development/trace.rst:18
 msgid "**原理：** 在计算图中定义一个 :py:class:`~megengine.Tensor` 时，其值就已经被计算且确定了。"
-msgstr "crwdns45680:0crwdne45680:0"
+msgstr "crwdns115979:0crwdne115979:0"
 
 #: ../../source/user-guide/model-development/trace.rst:19
 msgid "**优点：** 这种模式在调试模型时较为方便，能够实时得到中间结果的值。"
-msgstr "crwdns45682:0crwdne45682:0"
+msgstr "crwdns115981:0crwdne115981:0"
 
 #: ../../source/user-guide/model-development/trace.rst:20
 msgid "**缺点：** 但是由于所有节点都需要被保存，这就导致我们难以对整个计算图进行优化。"
-msgstr "crwdns45684:0crwdne45684:0"
+msgstr "crwdns115983:0crwdne115983:0"
 
 #: ../../source/user-guide/model-development/trace.rst:22
 msgid "MegEngine 也支持 **静态计算图** 模式，将计算图的构建和实际计算分开（Define and run）。"
-msgstr "crwdns45686:0crwdne45686:0"
+msgstr "crwdns115985:0crwdne115985:0"
 
 #: ../../source/user-guide/model-development/trace.rst:24
 msgid "**原理：** 在构建阶段，MegEngine 根据完整的计算流程对原始的计算图进行优化和调整， 得到更省内存和计算量更少的计算图，这个过程称之为 “编译” 。编译之后图的结构不再改变，也就是所谓的 “静态” 。 在计算阶段，MegEngine 根据输入数据执行编译好的计算图得到计算结果。"
-msgstr "crwdns45688:0crwdne45688:0"
+msgstr "crwdns115987:0crwdne115987:0"
 
 #: ../../source/user-guide/model-development/trace.rst:27
 msgid "**优点：** 静态图相比起动态图，对全局的信息掌握更丰富，可做的优化也会更多。"
-msgstr "crwdns45690:0crwdne45690:0"
+msgstr "crwdns115989:0crwdne115989:0"
 
 #: ../../source/user-guide/model-development/trace.rst:28
 msgid "**缺点：** 但中间过程对于用户来说是个黑盒，无法像动态图一样随时拿到中间计算结果。"
-msgstr "crwdns45692:0crwdne45692:0"
+msgstr "crwdns115991:0crwdne115991:0"
 
 #: ../../source/user-guide/model-development/trace.rst:30
 msgid "通过浏览本小节末尾的 :ref:`trace-advanced-setting` 部分，你可以了解到静态图的更多使用情景。"
-msgstr "crwdns45694:0:ref:crwdne45694:0"
+msgstr "crwdns115993:0:ref:crwdne115993:0"
 
 #: ../../source/user-guide/model-development/trace.rst:35
 msgid "静态图编译优化举例"
-msgstr "crwdns45696:0crwdne45696:0"
+msgstr "crwdns115995:0crwdne115995:0"
 
 #: ../../source/user-guide/model-development/trace.rst:37
 msgid "下面我们举例说明静态图编译过程中可能进行的内存和计算优化："
-msgstr "crwdns45698:0crwdne45698:0"
+msgstr "crwdns115997:0crwdne115997:0"
 
 #: ../../source/user-guide/model-development/trace.rst:42
 msgid "在上图左侧的计算图中，为了存储 ``x``, ``w``, ``p``,  ``b``, ``y`` 五个变量， 动态图需要 40 个字节（假设每个变量占用 8 字节的内存）。 在静态图中，由于我们只需要知道结果 ``y``, 可以让 ``y`` 复用中间变量 ``p`` 的内存， 实现 “原地”（Inplace）修改。这样，静态图所占用的内存就减少为 32 个字节。"
-msgstr "crwdns45700:0crwdne45700:0"
+msgstr "crwdns115999:0crwdne115999:0"
 
 #: ../../source/user-guide/model-development/trace.rst:50
 msgid "使用 trace 装饰器"
-msgstr "crwdns45702:0crwdne45702:0"
+msgstr "crwdns116001:0crwdne116001:0"
 
 #: ../../source/user-guide/model-development/trace.rst:52
 msgid "MegEngine 提供了很方便的动静态图转换的方法，几乎无需代码改动即可实现转换。"
-msgstr "crwdns45704:0crwdne45704:0"
+msgstr "crwdns116003:0crwdne116003:0"
 
 #: ../../source/user-guide/model-development/trace.rst:54
 msgid "假设我们写好了一份动态图代码，其中训练部分代码如下："
-msgstr "crwdns45706:0crwdne45706:0"
+msgstr "crwdns116005:0crwdne116005:0"
 
 #: ../../source/user-guide/model-development/trace.rst:75
 msgid "我们可以通过以下三步将上面的动态图转换为静态图："
-msgstr "crwdns45708:0crwdne45708:0"
+msgstr "crwdns116007:0crwdne116007:0"
 
 #: ../../source/user-guide/model-development/trace.rst:77
 msgid "将循环内的网络计算和优化代码提取成一个单独的训练函数，如下面例子中的 ``train_func()`` ；"
-msgstr "crwdns45710:0crwdne45710:0"
+msgstr "crwdns116009:0crwdne116009:0"
 
 #: ../../source/user-guide/model-development/trace.rst:78
 msgid "将网络所需输入作为训练函数的参数，并返回任意你需要的结果（如计算图的结果和损失函数值）；"
-msgstr "crwdns45712:0crwdne45712:0"
+msgstr "crwdns116011:0crwdne116011:0"
 
 #: ../../source/user-guide/model-development/trace.rst:79
 msgid "用 :py:mod:`~.jit` 模块中的 :py:class:`~.jit.trace` 装饰器来装饰这个函数，将其中的代码变为静态图代码。"
-msgstr "crwdns45714:0crwdne45714:0"
+msgstr "crwdns116013:0crwdne116013:0"
 
 #: ../../source/user-guide/model-development/trace.rst:81
 msgid "修改后的代码如下："
-msgstr "crwdns45716:0crwdne45716:0"
+msgstr "crwdns116015:0crwdne116015:0"
 
 #: ../../source/user-guide/model-development/trace.rst:107
 msgid "对于上述代码，我们作进一步的解释："
-msgstr "crwdns45718:0crwdne45718:0"
+msgstr "crwdns116017:0crwdne116017:0"
 
 #: ../../source/user-guide/model-development/trace.rst:109
 msgid "``jit`` ： 即时编译 （Just-in-time compilation）的缩写，这里作为整个静态图相关模块的名字。"
-msgstr "crwdns45720:0crwdne45720:0"
+msgstr "crwdns116019:0crwdne116019:0"
 
 #: ../../source/user-guide/model-development/trace.rst:110
 msgid "``trace`` ：得到静态图的一种方式，直译为 “追溯”， 含义为通过追溯输出（比如损失值、预测值）所依赖的网络结构，得到整体的计算图，再进行编译。"
-msgstr "crwdns45722:0crwdne45722:0"
+msgstr "crwdns116021:0crwdne116021:0"
 
 #: ../../source/user-guide/model-development/trace.rst:112
 msgid "参数列表 ： ``trace`` 在编译静态图时会根据传入参数是位置参数还是关键字参数来采取不同的处理方式。 其中位置参数用于传入网络的输入如数据和标签，关键字参数用于传入其它变量，如网络和优化器等。"
-msgstr "crwdns45724:0crwdne45724:0"
+msgstr "crwdns116023:0crwdne116023:0"
 
 #: ../../source/user-guide/model-development/trace.rst:118
 msgid "trace 进阶设置"
-msgstr "crwdns45726:0crwdne45726:0"
+msgstr "crwdns116025:0crwdne116025:0"
 
 #: ../../source/user-guide/model-development/trace.rst:123
 msgid "指定静态图构造方式"
-msgstr "crwdns45728:0crwdne45728:0"
+msgstr "crwdns116027:0crwdne116027:0"
 
 #: ../../source/user-guide/model-development/trace.rst:125
 msgid "MegEngine 在编译静态图时有 “动态构造” 和 “静态构造” 两种模式（默认使用前者）。"
-msgstr "crwdns45730:0crwdne45730:0"
+msgstr "crwdns116029:0crwdne116029:0"
 
 #: ../../source/user-guide/model-development/trace.rst:127
 msgid "在绝大部分情况下，两种模式下构造出的静态图并没有区别，使用中也没有分别。"
-msgstr "crwdns45732:0crwdne45732:0"
+msgstr "crwdns116031:0crwdne116031:0"
 
 #: ../../source/user-guide/model-development/trace.rst:129
 msgid "我们可以指定 ``symbolic`` 参数来指定构造方式，示例代码如下:"
-msgstr "crwdns45734:0crwdne45734:0"
+msgstr "crwdns116033:0crwdne116033:0"
 
 #: ../../source/user-guide/model-development/trace.rst:139
 msgid "设置为 True 表示 “静态构造” 或者 “根据符号构造” ——"
-msgstr "crwdns45736:0crwdne45736:0"
+msgstr "crwdns116035:0crwdne116035:0"
 
 #: ../../source/user-guide/model-development/trace.rst:141
 msgid "**原理：** 此时，计算图中的所有数据节点（即张量）被视为符号（即 ``symbolic`` ）。 它们仅仅作为占位符（Placeholder），不产生实际的内存分配，也没有实际的值。 此时计算图的编译过程完全取决于计算图的结构，而不取决于张量的具体值，是真正的 “静态”。"
-msgstr "crwdns45738:0crwdne45738:0"
+msgstr "crwdns116037:0crwdne116037:0"
 
 #: ../../source/user-guide/model-development/trace.rst:144
 msgid "**优点：** 始终高效，能充分利用静态图的内存优化。"
-msgstr "crwdns45740:0crwdne45740:0"
+msgstr "crwdns116039:0crwdne116039:0"
 
 #: ../../source/user-guide/model-development/trace.rst:145
 msgid "**缺点：** 如果网络中包含了需要运行时动态信息才能计算的条件语句，将会失败。"
-msgstr "crwdns45742:0crwdne45742:0"
+msgstr "crwdns116041:0crwdne116041:0"
 
 #: ../../source/user-guide/model-development/trace.rst:147
 msgid "设置为 False 表示 “动态构造” 或者 “根据值构造” ——"
-msgstr "crwdns45744:0crwdne45744:0"
+msgstr "crwdns116043:0crwdne116043:0"
 
 #: ../../source/user-guide/model-development/trace.rst:149
 msgid "**原理：** 被装饰的函数在第一次被调用时会根据输入的数据执行一次计算构建出一个动态图。 接着将这个动态图会被编译静态图。此后该函数的所有调用都会运行这个静态图，而不再依赖调用时输入的值。 此种模式可以视为 “动态构建第一次，此后静态运行”。"
-msgstr "crwdns45746:0crwdne45746:0"
+msgstr "crwdns116045:0crwdne116045:0"
 
 #: ../../source/user-guide/model-development/trace.rst:152
 msgid "**优点：** 根据第一次运行时信息的不同，可以构建出不同的静态图。"
-msgstr "crwdns45748:0crwdne45748:0"
+msgstr "crwdns116047:0crwdne116047:0"
 
 #: ../../source/user-guide/model-development/trace.rst:153
 msgid "**缺点：** 由于第一次的运行在动态图模式下，无法利用静态图的内存优化，通常会耗费更大的内存。 这可能导致本来在静态图模式下可以运行的网络，在第一次运行时由于内存不够而失败。"
-msgstr "crwdns45750:0crwdne45750:0"
+msgstr "crwdns116049:0crwdne116049:0"
 
 #: ../../source/user-guide/model-development/trace.rst:158
 msgid "在动态构造模式（设置为 False）下，如果条件语句出现在循环语句内，在循环的第一次执行中构造出的静态图将固定不再改变 （即使在循环的后续执行中，该条件语句的结果发生了变化）"
-msgstr "crwdns45752:0crwdne45752:0"
+msgstr "crwdns116051:0crwdne116051:0"
 
 #: ../../source/user-guide/model-development/trace.rst:164
 msgid "将参数固定以便导出"
-msgstr "crwdns45754:0crwdne45754:0"
+msgstr "crwdns116053:0crwdne116053:0"
 
 #: ../../source/user-guide/model-development/trace.rst:166
 msgid "有的时候我们希望将一些参数（比如卷积层的卷积核等）固化下来，因此需要指定 ``capture_as_const = True`` :"
-msgstr "crwdns45756:0crwdne45756:0"
+msgstr "crwdns116055:0crwdne116055:0"
 
 #: ../../source/user-guide/model-development/trace.rst:178
 msgid "如果想要使用 :py:meth:`~.jit.trace.dump` 导出模型序列化文件并进行后续处理， 则必须在 :py:class:`~.jit.trace` 时固定参数。"
-msgstr "crwdns45758:0crwdne45758:0"
+msgstr "crwdns116057:0crwdne116057:0"
 
 #: ../../source/user-guide/model-development/trace.rst:184
 msgid "亚线性内（显）存优化"
-msgstr "crwdns45760:0crwdne45760:0"
+msgstr "crwdns116059:0crwdne116059:0"
 
 #: ../../source/user-guide/model-development/trace.rst:186
 msgid "亚线性内存优化技术的直观好处是能节省显存，换来更大的 Batch size, 但在编译计算图和训练模型时有少量的额外时间开销（以时间换空间）。 其基本原理是：基于 `Gradient Checkpointing <https://arxiv.org/abs/1604.06174>`_ 算法， 通过事先搜索最优的计算图节点作为前向传播和反向传播检查点（checkpoints），省去其它中间结果存储。"
-msgstr "crwdns45762:0crwdne45762:0"
+msgstr "crwdns116061:0crwdne116061:0"
 
 #: ../../source/user-guide/model-development/trace.rst:191
 msgid "用户在编译静态图时使用 :class:`~.jit.SublinearMemoryConfig` 设置 :class:`~.jit.trace` 的参数 ``sublinear_memory_config`` ，就可以打开亚线性内存优化："
-msgstr "crwdns45764:0:class:crwdnd45764:0:class:crwdne45764:0"
+msgstr "crwdns116063:0:class:crwdnd116063:0:class:crwdne116063:0"
 
 #: ../../source/user-guide/model-development/trace.rst:204
 msgid "经过测试，在 2080Ti GPU （显存容量为 11GB 左右）训练 ResNet50 模型， 不使用亚线性内存优化，可用的 ``batch_size`` 最大为 100 左右； 使用亚线性内存优化，可用的 ``batch_size`` 最大为 200 左右，效果十分明显。"
-msgstr "crwdns45766:0crwdne45766:0"
+msgstr "crwdns116065:0crwdne116065:0"
 
 #: ../../source/user-guide/model-development/trace.rst:211
 msgid "减少访存操作实现加速"
-msgstr "crwdns45768:0crwdne45768:0"
+msgstr "crwdns116067:0crwdne116067:0"
 
 #: ../../source/user-guide/model-development/trace.rst:213
 msgid "通常，模型中不仅含有计算受限的操作，还含有一些访存受限操作（如 Elemwsie ）. MegEngine 内嵌了 Codegen 优化机制，它可以在运行时将模型中多个操作融合起来， 并生成可以在目标机器上运行的代码，以此减少访存操作从而达到加速的目的。"
-msgstr "crwdns45770:0crwdne45770:0"
+msgstr "crwdns116069:0crwdne116069:0"
 
 #: ../../source/user-guide/model-development/trace.rst:219
 msgid "我们在 :class:`~.trace` 接口中传入 ``symbolic=True, opt_level=3``, 即可打开 Codegen 优化。"
-msgstr "crwdns45772:0:class:crwdne45772:0"
+msgstr "crwdns116071:0:class:crwdne116071:0"
 
 #: ../../source/user-guide/model-development/trace.rst:221
 msgid "关于 ``symbolic`` 参数的说明，请参考 :ref:`symbolic` 。"
-msgstr "crwdns45774:0:ref:crwdne45774:0"
+msgstr "crwdns116073:0:ref:crwdne116073:0"
 
 #: ../../source/user-guide/model-development/trace.rst:223
 msgid "MegEngine 的 Codegen 目前集成了三种后端，分别是 NVRTC, HALIDE 和 MLIR. 其中 NVRTC 和 HALIDE 仅支持在 GPU 上使用，MLIR 则同时支持 GPU 和 CPU, 不同的后端生成代码的策略有所不同，所以运行效率也各异。"
-msgstr "crwdns45776:0crwdne45776:0"
+msgstr "crwdns116075:0crwdne116075:0"
 
 #: ../../source/user-guide/model-development/trace.rst:227
 msgid "我们可以通过设置 ``MGB_JIT_BACKEND`` 环境变量来改变 Codegen 的后端，例如："
-msgstr "crwdns45778:0crwdne45778:0"
+msgstr "crwdns116077:0crwdne116077:0"
 
 #: ../../source/user-guide/model-development/trace.rst:233
 msgid "该环境变量在 NVIDIA GPU 环境下可取的值为 NVRTC, HALIDE 和 MLIR, 默认值为 HALIDE."
-msgstr "crwdns45780:0crwdne45780:0"
+msgstr "crwdns116079:0crwdne116079:0"
 
 #: ../../source/user-guide/model-development/trace.rst:235
 msgid "对于 CPU, 目前暂时仅支持 MLIR 后端。"
-msgstr "crwdns45782:0crwdne45782:0"
+msgstr "crwdns116081:0crwdne116081:0"
 
 #: ../../source/user-guide/model-development/trace.rst:239
 msgid "如果想要使用 MLIR 后端, 需要单独编译 MegEngine. 在使用 CMake 时换成如下命令："
-msgstr "crwdns45784:0crwdne45784:0"
+msgstr "crwdns116083:0crwdne116083:0"
 
 #: ../../source/user-guide/model-development/trace.rst:245
 msgid "然后设置如下的环境变量："
-msgstr "crwdns45786:0crwdne45786:0"
+msgstr "crwdns116085:0crwdne116085:0"
 
 #: ../../source/user-guide/model-development/trace.rst:254
 msgid "指定代码不被转换"
-msgstr "crwdns45788:0crwdne45788:0"
+msgstr "crwdns116087:0crwdne116087:0"
 
 #: ../../source/user-guide/model-development/trace.rst:256
 msgid "使用 :py:func:`~.exclude_from_trace` ，其中的代码不会被 trace, 且允许访问静态区域的 :py:class:`~megengine.Tensor` ."
-msgstr "crwdns45790:0crwdne45790:0"
+msgstr "crwdns116089:0crwdne116089:0"
 
 #: ../../source/user-guide/model-development/trace.rst:258
 msgid "示例代码如下："
-msgstr "crwdns45792:0crwdne45792:0"
+msgstr "crwdns116091:0crwdne116091:0"
 
 #: ../../source/user-guide/model-development/trace.rst:276
 msgid "输出为："
-msgstr "crwdns45794:0crwdne45794:0"
+msgstr "crwdns116093:0crwdne116093:0"
 

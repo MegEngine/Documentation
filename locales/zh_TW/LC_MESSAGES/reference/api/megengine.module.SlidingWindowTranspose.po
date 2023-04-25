@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-14 16:12+0800\n"
-"PO-Revision-Date: 2022-02-17 04:44\n"
+"PO-Revision-Date: 2023-04-21 09:27\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,64 +15,64 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.SlidingWindowTranspose.po\n"
-"X-Crowdin-File-ID: 7473\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.SlidingWindowTranspose.po\n"
+"X-Crowdin-File-ID: 9551\n"
 
 #: ../../source/reference/api/megengine.module.SlidingWindowTranspose.rst:5
 msgid "SlidingWindowTranspose"
-msgstr "crwdns90688:0crwdne90688:0"
+msgstr "crwdns105145:0crwdne105145:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:1 of
 msgid "Opposite opration of SlidingWindow, sum over the sliding windows on the corresponding input location. Given an input of the size :math:`(N, C,  IH, IW, window_h, window_w)` and :attr:`output_size`, the output shape would be :math:`(N, C, output\\_size_{h}, output\\_size_{w})` and the arguments must satisfy"
-msgstr "crwdns74983:0:math:crwdnd74983:0:attr:crwdnd74983:0:math:crwdnd74983:0{h}crwdnd74983:0{w}crwdne74983:0"
+msgstr "crwdns105147:0:math:crwdnd105147:0:attr:crwdnd105147:0:math:crwdnd105147:0{h}crwdnd105147:0{w}crwdne105147:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:7 of
 msgid "\\text{IH} = \\lfloor \\frac{\\text{output_size}_{h} + 2 * \\text{padding}_{h} -\n"
 "\\text{dilation}_{h} * (\\text{kernel_size}_{h} - 1) - 1}{\\text{stride}_{h}} + 1 \\rfloor\n\n"
-msgstr "crwdns74985:0{IH}crwdnd74985:0{output_size}crwdnd74985:0{h}crwdnd74985:0{padding}crwdnd74985:0{h}crwdnd74985:0{dilation}crwdnd74985:0{h}crwdnd74985:0{kernel_size}crwdnd74985:0{h}crwdnd74985:0{stride}crwdnd74985:0{h}crwdne74985:0"
+msgstr "crwdns105149:0{IH}crwdnd105149:0{output_size}crwdnd105149:0{h}crwdnd105149:0{padding}crwdnd105149:0{h}crwdnd105149:0{dilation}crwdnd105149:0{h}crwdnd105149:0{kernel_size}crwdnd105149:0{h}crwdnd105149:0{stride}crwdnd105149:0{h}crwdne105149:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:11 of
 msgid "\\text{IW} = \\lfloor \\frac{\\text{output_size}_{w} + 2 * \\text{padding}_{w} -\n"
 "\\text{dilation}_{w} * (\\text{kernel_size}_{w} - 1) - 1}{\\text{stride}_{w}} + 1 \\rfloor\n\n"
-msgstr "crwdns74987:0{IW}crwdnd74987:0{output_size}crwdnd74987:0{w}crwdnd74987:0{padding}crwdnd74987:0{w}crwdnd74987:0{dilation}crwdnd74987:0{w}crwdnd74987:0{kernel_size}crwdnd74987:0{w}crwdnd74987:0{stride}crwdnd74987:0{w}crwdne74987:0"
+msgstr "crwdns105151:0{IW}crwdnd105151:0{output_size}crwdnd105151:0{w}crwdnd105151:0{padding}crwdnd105151:0{w}crwdnd105151:0{dilation}crwdnd105151:0{w}crwdnd105151:0{kernel_size}crwdnd105151:0{w}crwdnd105151:0{stride}crwdnd105151:0{w}crwdne105151:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:15 of
 msgid "For each output location, we have:"
-msgstr "crwdns74989:0crwdne74989:0"
+msgstr "crwdns105153:0crwdne105153:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:17 of
 msgid "\\text{out}_{n, c, oh, ow} = \\sum_{n,c,oh,ow=location(n, c, ih, iw, wh, ww)}\\text{src}_{n, c, ih, iw, wh, ww}\n\n"
-msgstr "crwdns74991:0{out}crwdnd74991:0{src}crwdne74991:0"
+msgstr "crwdns105155:0{out}crwdnd105155:0{src}crwdne105155:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:20 of
 msgid "\\text{location}(n, c, ih, iw, wh, ww) &= (n, c, oh+wh, ow+ww) \\\\\n"
 "\\text{where } & oh=-pad_h+ih \\times stride_h + (wh-1) \\times (dilation_h-1) \\\\\n"
 "               & ow=-pad_w+iw \\times stride_w + (ww-1) \\times (dilation_w-1)\n\n"
-msgstr "crwdns74993:0{location}crwdnd74993:0{where }crwdne74993:0"
+msgstr "crwdns105157:0{location}crwdnd105157:0{where }crwdne105157:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose of
 msgid "参数"
-msgstr "crwdns74995:0crwdne74995:0"
+msgstr "crwdns105159:0crwdne105159:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:26 of
 msgid "the size of the output tensor."
-msgstr "crwdns74997:0crwdne74997:0"
+msgstr "crwdns105161:0crwdne105161:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:28 of
 msgid "the size of the window to take a max over."
-msgstr "crwdns74999:0crwdne74999:0"
+msgstr "crwdns105163:0crwdne105163:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:30 of
 msgid "implicit zero padding to be added on both sides. Default: 0"
-msgstr "crwdns75001:0crwdne75001:0"
+msgstr "crwdns105165:0crwdne105165:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:32 of
 msgid "the stride of the window. Default: 1"
-msgstr "crwdns75003:0crwdne75003:0"
+msgstr "crwdns105167:0crwdne105167:0"
 
 #: megengine.module.sliding_window.SlidingWindowTranspose:34 of
 msgid "the dilation of the window. Default: 1"
-msgstr "crwdns75005:0crwdne75005:0"
+msgstr "crwdns105169:0crwdne105169:0"
 
 #~ msgid "Example:"
 #~ msgstr ""

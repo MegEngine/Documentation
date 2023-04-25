@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2021-11-12 01:27\n"
+"PO-Revision-Date: 2023-04-21 09:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -14,71 +14,71 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/lite/pylite-basic.po\n"
-"X-Crowdin-File-ID: 8213\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/deployment/lite/pylite-basic.po\n"
+"X-Crowdin-File-ID: 10011\n"
 "Language: zh_TW\n"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:5
 msgid "MegEngine Lite Python 基础实例"
-msgstr "crwdns86591:0crwdne86591:0"
+msgstr "crwdns120815:0crwdne120815:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:9
 msgid "在CPU上做推理的一个例子"
-msgstr "crwdns86593:0crwdne86593:0"
+msgstr "crwdns120817:0crwdne120817:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:11
 msgid "接下来，我们将逐步讲解一个使用MegEngine Lite Python在CPU上做推理的简单例子。"
-msgstr "crwdns86595:0crwdne86595:0"
+msgstr "crwdns120819:0crwdne120819:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:15
 msgid "0. 准备输入数据和模型文件"
-msgstr "crwdns86597:0crwdne86597:0"
+msgstr "crwdns120821:0crwdne120821:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:17
 msgid "示例代码如下："
-msgstr "crwdns86599:0crwdne86599:0"
+msgstr "crwdns120823:0crwdne120823:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:37
 msgid "在本例中，输入数据为 *input_data.npy* ，模型文件为 *shufflenet.mge* ，这两个文件存放在 :src:`/lite/test/resource/lite` 目录下，但需要通过通过 *git lfs pull* 来获得。"
-msgstr "crwdns86601:0:src:crwdne86601:0"
+msgstr "crwdns120825:0:src:crwdne120825:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:40
 msgid "1. 加载模型"
-msgstr "crwdns86603:0crwdne86603:0"
+msgstr "crwdns120827:0crwdne120827:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:42
 msgid "模型文件将被作为参数，传给 **LiteNetwork** 的 ``load`` 函数，以构建一个 **LiteNetwork** 实体。模型加载后，即可拿到模型所有输入、输出的名字，以及输入Tensor的一些信息。"
-msgstr "crwdns86605:0crwdne86605:0"
+msgstr "crwdns120829:0crwdne120829:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:46
 msgid "输出Tensor的对应信息需要在模型执行过推理之后才能拿到。"
-msgstr "crwdns86607:0crwdne86607:0"
+msgstr "crwdns120831:0crwdne120831:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:69
 msgid "2. 加载输入数据"
-msgstr "crwdns86609:0crwdne86609:0"
+msgstr "crwdns120833:0crwdne120833:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:71
 msgid "通过 ``get_io_tensor()`` 接口，获取指定的 **LiteTensor** 实体，然后用 ``set_data_by_copy()`` 把numpy数据拷贝给该 **LiteTensor**："
-msgstr "crwdns86611:0crwdne86611:0"
+msgstr "crwdns120835:0crwdne120835:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:85
 msgid "**LiteTensor** 获取数据的方式除了 ``set_data_by_copy()`` 之外，还有 ``share_memory_with()``,  ``copy_from()`` 等。详情请参考 :ref:`pylite-advanced`"
-msgstr "crwdns86613:0:ref:crwdne86613:0"
+msgstr "crwdns120837:0:ref:crwdne120837:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:89
 msgid "3. 推理"
-msgstr "crwdns86615:0crwdne86615:0"
+msgstr "crwdns120839:0crwdne120839:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:91
 msgid "利用 **LiteNetwork** 的 ``forward()`` 和 ``wait()`` 接口完成网络的推理，相关代码如下："
-msgstr "crwdns86617:0crwdne86617:0"
+msgstr "crwdns120841:0crwdne120841:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:104
 msgid "4. 获取输出数据"
-msgstr "crwdns86619:0crwdne86619:0"
+msgstr "crwdns120843:0crwdne120843:0"
 
 #: ../../source/user-guide/deployment/lite/pylite-basic.rst:106
 msgid "推理完成后，网络的输出Tensor便可以通过 **LiteNetwork** 的 ``get_io_tensor()`` 函数获取。**LiteTensor** 的 ``to_numpy()`` 接口可以把 **LiteTensor** 的数据转存为numpy数据的形式，具体代码演示如下："
-msgstr "crwdns86621:0crwdne86621:0"
+msgstr "crwdns120845:0crwdne120845:0"
 

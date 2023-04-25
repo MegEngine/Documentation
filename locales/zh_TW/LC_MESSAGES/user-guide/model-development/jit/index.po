@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2022-04-19 12:45\n"
+"PO-Revision-Date: 2023-04-21 09:37\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,116 +15,116 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/model-development/jit/index.po\n"
-"X-Crowdin-File-ID: 8193\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/jit/index.po\n"
+"X-Crowdin-File-ID: 9989\n"
 
 #: ../../source/user-guide/model-development/jit/index.rst:5
 msgid "即时编译（JIT）"
-msgstr "crwdns85831:0crwdne85831:0"
+msgstr "crwdns120019:0crwdne120019:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:7
 msgid "我们在 :ref:`megengine-basics` 这篇教程中曾提到过这样一个概念："
-msgstr "crwdns91700:0:ref:crwdne91700:0"
+msgstr "crwdns120021:0:ref:crwdne120021:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:9
 msgid "*“在深度学习领域，任何复杂的深度神经网络模型本质上都可以用一个计算图表示出来。”*"
-msgstr "crwdns91702:0crwdne91702:0"
+msgstr "crwdns120023:0crwdne120023:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:13
 msgid "MegEngine 中 Tensor 为数据节点, Operator 为计算节点"
-msgstr "crwdns91704:0crwdne91704:0"
+msgstr "crwdns120025:0crwdne120025:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:19
 msgid "在默认情况下，MegEngine 中的指令将像 Python 之类的解释型语言一样，动态地解释执行。 我们将这种执行模式称为 “动态图” 模式，此时完整的计算图信息其实并不存在； 而与之相对的是 “静态图” 模式，在执行之前能够拿到完整的计算图结构， 能够根据全局图信息进行一定的优化，加快执行速度。"
-msgstr "crwdns91706:0crwdne91706:0"
+msgstr "crwdns120027:0crwdne120027:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:24
 msgid "在 MegEngine 中，通过使用即时编译技术（JIT），将动态图编译成静态图，并支持序列化。"
-msgstr "crwdns91708:0crwdne91708:0"
+msgstr "crwdns120029:0crwdne120029:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:32
 msgid "接下来的内容将对相关概念和原理进行一定的解释，不了解这些细节并不影响基本使用。"
-msgstr "crwdns91710:0crwdne91710:0"
+msgstr "crwdns120031:0crwdne120031:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:37
 msgid "动态图 Vs. 静态图"
-msgstr "crwdns91712:0crwdne91712:0"
+msgstr "crwdns120033:0crwdne120033:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:43
 msgid "动态图"
-msgstr "crwdns91714:0crwdne91714:0"
+msgstr "crwdns120035:0crwdne120035:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:45
 msgid "MegEngine 默认使用 **动态计算图** ，其核心特点是计算图的构建和计算同时发生（Define by run）。"
-msgstr "crwdns91716:0crwdne91716:0"
+msgstr "crwdns120037:0crwdne120037:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:47
 msgid "**原理：** 在计算图中定义一个 :py:class:`~megengine.Tensor` 时，其值就已经被计算且确定了。"
-msgstr "crwdns91718:0crwdne91718:0"
+msgstr "crwdns120039:0crwdne120039:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:48
 msgid "**优点：** 这种模式在调试模型时较为方便，能够实时得到中间结果的值。"
-msgstr "crwdns91720:0crwdne91720:0"
+msgstr "crwdns120041:0crwdne120041:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:49
 msgid "**缺点：** 但是由于所有节点都需要被保存，这就导致我们难以对整个计算图进行优化。"
-msgstr "crwdns91722:0crwdne91722:0"
+msgstr "crwdns120043:0crwdne120043:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:51
 msgid "借助即时编译技术，MegEngine 中的动态图可通过 :class:`~.jit.trace` 接口转换成静态图。"
-msgstr "crwdns91724:0:class:crwdne91724:0"
+msgstr "crwdns120045:0:class:crwdne120045:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:54
 msgid "静态图"
-msgstr "crwdns91726:0crwdne91726:0"
+msgstr "crwdns120047:0crwdne120047:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:56
 msgid "MegEngine 也支持 **静态计算图** 模式，将计算图的构建和实际计算分开（Define and run）。"
-msgstr "crwdns91728:0crwdne91728:0"
+msgstr "crwdns120049:0crwdne120049:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:58
 msgid "**原理：** 在构建阶段，MegEngine 根据完整的计算流程对原始的计算图进行优化和调整， 得到更省内存和计算量更少的计算图，这个过程称之为 “编译” 。编译之后图的结构不再改变，也就是所谓的 “静态” 。 在计算阶段，MegEngine 根据输入数据执行编译好的计算图得到计算结果。"
-msgstr "crwdns91730:0crwdne91730:0"
+msgstr "crwdns120051:0crwdne120051:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:61
 msgid "**优点：** 静态图相比起动态图，对全局的信息掌握更丰富，可做的优化也会更多。"
-msgstr "crwdns91732:0crwdne91732:0"
+msgstr "crwdns120053:0crwdne120053:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:62
 msgid "**缺点：** 但中间过程对于用户来说是个黑盒，无法像动态图一样随时拿到中间计算结果。"
-msgstr "crwdns91734:0crwdne91734:0"
+msgstr "crwdns120055:0crwdne120055:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:65
 msgid "什么是即时编译"
-msgstr "crwdns91736:0crwdne91736:0"
+msgstr "crwdns120057:0crwdne120057:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:67
 msgid "即时编译（Just-in-time compilation）是源自编译（Compiling）中的概念。"
-msgstr "crwdns91738:0crwdne91738:0"
+msgstr "crwdns120059:0crwdne120059:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:69
 msgid "以传统的 C/C++ 语言为例，我们写完代码之后， 一般会通过编译器编译生成可执行文件，然后再执行该可执行文件获得执行结果。 如果我们将从源代码编译生成可执行文件袋过称为 build 阶段， 将执行可执行文件叫做 runtime 阶段的话，JIT 是没有 build 阶段的，只存在于 runtime 阶段。 JIT 一般被用在解释执行的语言如 Python 中，JIT 会在代码执行的过程中检测热点函数（HotSpot）， 随后对热点函数进行重编译，下次运行时遇到热点函数则直接执行编译结果即可。这样做可以显著加快代码执行的速度。"
-msgstr "crwdns91740:0crwdne91740:0"
+msgstr "crwdns120061:0crwdne120061:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:78
 msgid "维基百科： `Just-in-time compilation <https://en.wikipedia.org/wiki/Just-in-time_compilation>`_"
-msgstr "crwdns91742:0crwdne91742:0"
+msgstr "crwdns120063:0crwdne120063:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:84
 msgid "静态图编译优化举例"
-msgstr "crwdns91744:0crwdne91744:0"
+msgstr "crwdns120065:0crwdne120065:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:86
 msgid "下面我们举例说明静态图编译过程中可能进行的内存和计算优化："
-msgstr "crwdns91746:0crwdne91746:0"
+msgstr "crwdns120067:0crwdne120067:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:91
 msgid "在上图左侧的计算图中，为了存储 ``x``, ``w``, ``p``,  ``b``, ``y`` 五个变量， 动态图需要 40 个字节（假设每个变量占用 8 字节的内存）。 在静态图中，由于我们只需要知道结果 ``y``, 可以让 ``y`` 复用中间变量 ``p`` 的内存， 实现 “原地”（Inplace）修改。这样，静态图所占用的内存就减少为 32 个字节。"
-msgstr "crwdns91748:0crwdne91748:0"
+msgstr "crwdns120069:0crwdne120069:0"
 
 #: ../../source/user-guide/model-development/jit/index.rst:98
 msgid "更多相关解释可参考 MegEngine 官方博客 《 `JIT in MegEngine <https://megengine.org.cn/blog/jit-in-megengine>`_ 》"
-msgstr "crwdns91750:0crwdne91750:0"
+msgstr "crwdns120071:0crwdne120071:0"
 
 #~ msgid "内容正在建设中..."
 #~ msgstr "The content is under construction..."

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2021-12-29 09:02\n"
+"POT-Creation-Date: 2023-04-25 01:18+0000\n"
+"PO-Revision-Date: 2023-04-25 01:27\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,20 +11,60 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.InstanceNorm.po\n"
-"X-Crowdin-File-ID: 2402\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.InstanceNorm.po\n"
+"X-Crowdin-File-ID: 9509\n"
 
 #: ../../source/reference/api/megengine.module.InstanceNorm.rst:5
 msgid "InstanceNorm"
-msgstr "crwdns89027:0crwdne89027:0"
+msgstr "crwdns104655:0crwdne104655:0"
 
 #: megengine.module.normalization.InstanceNorm:1 of
-msgid "Simple implementation of InstanceNorm. Only support 4d tensor now. Reference: https://arxiv.org/abs/1607.08022. Note that InstanceNorm equals using GroupNome with num_groups=num_channels."
-msgstr "crwdns35038:0crwdne35038:0"
+msgid "Applies Instance Normalization over a mini-batch of inputs Refer to `Instance Normalization <https://arxiv.org/abs/1607.08022>`__"
+msgstr "crwdns121659:0crwdne121659:0"
+
+#: megengine.module.normalization.InstanceNorm:4 of
+msgid "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta\n\n"
+msgstr "crwdns121661:0{E}crwdnd121661:0[x]crwdnd121661:0{Var}crwdnd121661:0[x]crwdne121661:0"
+
+#: megengine.module.normalization.InstanceNorm:7 of
+msgid "The mean and standard-deviation are calculated per-dimension separately for each object in a mini-batch. :math:`\\\\gamma` and :math:`\\\\beta` are learnable affine transform parameters of attr:`num_channels` if :attr:`affine` is ``True``. Note that InstanceNorm equals using GroupNorm with num_groups = num_channels."
+msgstr "crwdns121663:0:math:crwdnd121663:0:math:crwdnd121663:0:attr:crwdne121663:0"
+
+#: megengine.module.normalization.InstanceNorm of
+msgid "参数"
+msgstr "crwdns121665:0crwdne121665:0"
+
+#: megengine.module.normalization.InstanceNorm:12 of
+msgid "number of channels expected in input"
+msgstr "crwdns121667:0crwdne121667:0"
+
+#: megengine.module.normalization.InstanceNorm:14 of
+msgid "a value added to the denominator for numerical stability. Default: 1e-5"
+msgstr "crwdns121669:0crwdne121669:0"
+
+#: megengine.module.normalization.InstanceNorm:15 of
+msgid "this module has learnable affine parameters (weight, bias) when affine is set to be True."
+msgstr "crwdns121671:0crwdne121671:0"
+
+#: megengine.module.normalization.InstanceNorm:19 of
+msgid "Shape:"
+msgstr "crwdns121673:0crwdne121673:0"
+
+#: megengine.module.normalization.InstanceNorm:18 of
+msgid "Input: :math:`(N, C, H, W)` (now only support NCHW format tensor)"
+msgstr "crwdns121675:0:math:crwdne121675:0"
+
+#: megengine.module.normalization.InstanceNorm:19 of
+msgid "Output: :math:`(N, C, H, W)` (same shape as input)"
+msgstr "crwdns121677:0:math:crwdne121677:0"
+
+#: megengine.module.normalization.InstanceNorm:22 of
+msgid "实际案例"
+msgstr "crwdns121679:0crwdne121679:0"
 
 #~ msgid "基类：:class:`megengine.module.module.Module`"
 #~ msgstr "基类：:class:`megengine.module.module.Module`"
@@ -310,4 +350,16 @@ msgstr "crwdns35038:0crwdne35038:0"
 
 #~ msgid "Sets all parameters' grads to zero"
 #~ msgstr "将所有参数的梯度置0。"
+
+#~ msgid ""
+#~ "Simple implementation of InstanceNorm. Only"
+#~ " support 4d tensor now. Reference: "
+#~ "https://arxiv.org/abs/1607.08022. Note that "
+#~ "InstanceNorm equals using GroupNome with "
+#~ "num_groups=num_channels."
+#~ msgstr ""
+#~ "``InstanceNorm`` "
+#~ "的简单实现。当前仅支持四维张量。参考文献：https://arxiv.org/abs/1607.08022。 请注意当 "
+#~ "`num_groups=num_channels` 时 ``InstanceNorm`` 与 "
+#~ "``GroupNorm`` 等价。"
 

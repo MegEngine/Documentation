@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 20:45+0800\n"
-"PO-Revision-Date: 2021-12-13 13:43\n"
+"PO-Revision-Date: 2023-04-21 09:35\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -15,192 +15,192 @@ msgstr ""
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /[MegEngine.Documentation] main/locales/en/LC_MESSAGES/user-guide/deployment/midout.po\n"
-"X-Crowdin-File-ID: 2864\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/deployment/midout.po\n"
+"X-Crowdin-File-ID: 9893\n"
 
 #: ../../source/user-guide/deployment/midout.rst:5
 msgid "减少二进制文件体积"
-msgstr "crwdns45954:0crwdne45954:0"
+msgstr "crwdns116143:0crwdne116143:0"
 
 #: ../../source/user-guide/deployment/midout.rst:7
 msgid "midout 是 MegEngine 中用来减小生成的二进制文件体积的工具，有助于在空间受限的设备上部署应用。 midout 通过记录模型推理时用到的 opr 和执行流，使用 ``if(0)`` 关闭未被记录的代码段后重新编译， 利用 ``-ffunction-sections -fdata-sections -Wl,--gc-sections -flto`` 链接参数，可以大幅度减少静态链接的可执行文件的大小。 现在基于 MegEngine 提供模型验证工具 :ref:`Load and Run <load-and-run>` , 展示怎样在某 AArch64 架构的 Android 端上裁剪 MegEngine 库。"
-msgstr "crwdns87555:0:ref:crwdne87555:0"
+msgstr "crwdns116145:0:ref:crwdne116145:0"
 
 #: ../../source/user-guide/deployment/midout.rst:14
 msgid "编译静态链接的 load_and_run"
-msgstr "crwdns45958:0crwdne45958:0"
+msgstr "crwdns116147:0crwdne116147:0"
 
 #: ../../source/user-guide/deployment/midout.rst:16
 msgid "端上裁剪 MegEngine 库需要一个静态连接 MegEngine 的可执行程序，编译方法详见 load-and-run 的编译部分。 稍有不同的是编译时需要先设置 load_and_run 静态链接 MegEngine."
-msgstr "crwdns45960:0crwdne45960:0"
+msgstr "crwdns116149:0crwdne116149:0"
 
 #: ../../source/user-guide/deployment/midout.rst:23
 msgid "查看一下 load_and_run 的大小："
-msgstr "crwdns45964:0crwdne45964:0"
+msgstr "crwdns116151:0crwdne116151:0"
 
 #: ../../source/user-guide/deployment/midout.rst:30
 msgid "此时 load_and_run 大小超过 20MB. load_and_run 的执行，请参考下文“代码执行”部分。"
-msgstr "crwdns45966:0crwdne45966:0"
+msgstr "crwdns116153:0crwdne116153:0"
 
 #: ../../source/user-guide/deployment/midout.rst:33
 msgid "裁剪 load_and_run"
-msgstr "crwdns45968:0crwdne45968:0"
+msgstr "crwdns116155:0crwdne116155:0"
 
 #: ../../source/user-guide/deployment/midout.rst:35
 msgid "MegEngine 的裁剪可以从两方面进行："
-msgstr "crwdns45970:0crwdne45970:0"
+msgstr "crwdns116157:0crwdne116157:0"
 
 #: ../../source/user-guide/deployment/midout.rst:37
 msgid "通过opr 裁剪。在 dump 模型时，可以同时将模型用到的 opr 信息以 json 文件的形式输出， midout 在编译期裁掉没有被模型使用到的所有 opr."
-msgstr "crwdns45972:0crwdne45972:0"
+msgstr "crwdns116159:0crwdne116159:0"
 
 #: ../../source/user-guide/deployment/midout.rst:39
 msgid "通过 trace 流裁剪。运行一次模型推理，根据代码的执行流生成 trace 文件， 通过trace文件，在二次编译时将没有执行的代码段裁剪掉。"
-msgstr "crwdns45974:0crwdne45974:0"
+msgstr "crwdns116161:0crwdne116161:0"
 
 #: ../../source/user-guide/deployment/midout.rst:42
 msgid "整个裁剪过程分为两个步骤："
-msgstr "crwdns45976:0crwdne45976:0"
+msgstr "crwdns116163:0crwdne116163:0"
 
 #: ../../source/user-guide/deployment/midout.rst:44
 msgid "第一步，dump 模型，获得模型 opr 信息；通过一次推理，获得 trace 文件。"
-msgstr "crwdns45978:0crwdne45978:0"
+msgstr "crwdns116165:0crwdne116165:0"
 
 #: ../../source/user-guide/deployment/midout.rst:45
 msgid "第二步，使用MegEngine的头文件生成工具 ``tools/gen_header_for_bin_reduce.py`` 将 opr 信息和 trace 文件作为输入， 生成 ``src/bin_reduce_cmake.h`` CMake 会自动维护这个文件，用户无需关心。 当然也可以单独使用模型 opr 信息或是 trace 文件来生成 ``src/bin_reduce_cmake.h`` ， 单独使用 opr 信息时，默认保留所有 kernel，单独使用 trace 文件时，默认保留所有 opr."
-msgstr "crwdns87557:0crwdne87557:0"
+msgstr "crwdns116167:0crwdne116167:0"
 
 #: ../../source/user-guide/deployment/midout.rst:51
 msgid "dump 模型获得 opr 类型名称"
-msgstr "crwdns45982:0crwdne45982:0"
+msgstr "crwdns116169:0crwdne116169:0"
 
 #: ../../source/user-guide/deployment/midout.rst:53
 msgid "一个模型通常不会用到所有的opr，根据模型使用的opr，可以裁掉那些模型没有使用的 opr. 在转换模型时，我们可以通过如下方式获得模型的 opr 信息。 使用 ``megengine.jit.trace.dump`` 准备模型时，设置 ``strip_info_file`` 参数。"
-msgstr "crwdns87559:0crwdne87559:0"
+msgstr "crwdns116171:0crwdne116171:0"
 
 #: ../../source/user-guide/deployment/midout.rst:61
 msgid "执行完毕后，会生成 ``resnet50.mge`` 和 ``resnet50.mge.json`` . 查看这个 JSON 文件，它记录了模型用到的 opr 名称。"
-msgstr "crwdns45986:0crwdne45986:0"
+msgstr "crwdns116173:0crwdne116173:0"
 
 #: ../../source/user-guide/deployment/midout.rst:69
 msgid "执行模型获得 trace 文件"
-msgstr "crwdns45988:0crwdne45988:0"
+msgstr "crwdns116175:0crwdne116175:0"
 
 #: ../../source/user-guide/deployment/midout.rst:71
 msgid "基于 trace 的裁剪需要通过一次推理获得模型的执行 trace 文件。具体步骤如下："
-msgstr "crwdns45990:0crwdne45990:0"
+msgstr "crwdns116177:0crwdne116177:0"
 
 #: ../../source/user-guide/deployment/midout.rst:73
 msgid "CMake 构建时，打开 ``MGE_WITH_MIDOUT_PROFILE`` 开关，编译 load_and_run："
-msgstr "crwdns45992:0crwdne45992:0"
+msgstr "crwdns116179:0crwdne116179:0"
 
 #: ../../source/user-guide/deployment/midout.rst:79
 msgid "编译完成后，将 ``build_dir/android/arm64-v8a/Release/install/bin`` 下的 ``load_and_run`` 推至设备并执行："
-msgstr "crwdns45994:0crwdne45994:0"
+msgstr "crwdns116181:0crwdne116181:0"
 
 #: ../../source/user-guide/deployment/midout.rst:85
 msgid "得到如下输出："
-msgstr "crwdns45996:0crwdne45996:0"
+msgstr "crwdns116183:0crwdne116183:0"
 
 #: ../../source/user-guide/deployment/midout.rst:110
 msgid "注意到执行模型后，生成了 ``midout_trace.20717`` 文件，该文件记录了模型在底层执行了哪些 kernel."
-msgstr "crwdns45998:0crwdne45998:0"
+msgstr "crwdns116185:0crwdne116185:0"
 
 #: ../../source/user-guide/deployment/midout.rst:112
 msgid "生成 ``src/bin_reduce_cmake.h`` 并再次编译 load_and_run："
-msgstr "crwdns87561:0crwdne87561:0"
+msgstr "crwdns116187:0crwdne116187:0"
 
 #: ../../source/user-guide/deployment/midout.rst:114
 msgid "将生成的 ``midout_trace.20717`` 拷贝至本地， 使用上文提到的头文件生成工具 ``gen_header_for_bin_reduce.py`` 生成 ``src/bin_reduce_cmake.h`` ."
-msgstr "crwdns87563:0crwdne87563:0"
+msgstr "crwdns116189:0crwdne116189:0"
 
 #: ../../source/user-guide/deployment/midout.rst:123
 msgid "编译完成后，检查 load_and_run 的大小, 注意 MGE_WITH_MINIMUM_SIZE 不是非必须的，加上它 size 会更小，但同时会关闭一些编译选项："
-msgstr "crwdns87565:0crwdne87565:0"
+msgstr "crwdns116191:0crwdne116191:0"
 
 #: ../../source/user-guide/deployment/midout.rst:130
 msgid "此时 load_and_run 的大小减小到 2MB 多。推到设备上运行，得到如下输出："
-msgstr "crwdns46008:0crwdne46008:0"
+msgstr "crwdns116193:0crwdne116193:0"
 
 #: ../../source/user-guide/deployment/midout.rst:155
 msgid "可以看到模型依然正常运行，并且运行速度正常。"
-msgstr "crwdns46010:0crwdne46010:0"
+msgstr "crwdns116195:0crwdne116195:0"
 
 #: ../../source/user-guide/deployment/midout.rst:158
 msgid "使用裁剪后的 load_and_run"
-msgstr "crwdns46012:0crwdne46012:0"
+msgstr "crwdns116197:0crwdne116197:0"
 
 #: ../../source/user-guide/deployment/midout.rst:160
 msgid "想要裁剪前后的应用能够正常运行，需要保证裁剪前后两次推理使用同样的命令行参数。 如果使用上文裁剪的 load_and_fun 的 fast-run功能（详见 :ref:`load-and-run` ）。"
-msgstr "crwdns46014:0:ref:crwdne46014:0"
+msgstr "crwdns116199:0:ref:crwdne116199:0"
 
 #: ../../source/user-guide/deployment/midout.rst:167
 msgid "可能得到如下输出："
-msgstr "crwdns46016:0crwdne46016:0"
+msgstr "crwdns116201:0crwdne116201:0"
 
 #: ../../source/user-guide/deployment/midout.rst:178
 msgid "这是因为程序运行到了已经被裁剪掉的函数中，未被记录在 trace 文件中的函数的实现已经被替换成 ``trap()`` . 如果想要裁剪与 fast-run 配合使用，需要按如下流程获得 trace 文件："
-msgstr "crwdns46018:0crwdne46018:0"
+msgstr "crwdns116203:0crwdne116203:0"
 
 #: ../../source/user-guide/deployment/midout.rst:181
 msgid "开启 fast-run 模式，执行未裁剪的 load_and_run 获得 ``.cache`` 文件，注意本次执行生成的 trace 应该被丢弃："
-msgstr "crwdns46020:0crwdne46020:0"
+msgstr "crwdns116205:0crwdne116205:0"
 
 #: ../../source/user-guide/deployment/midout.rst:187
 msgid "使用 ``.cache`` 文件，执行 load_and_run 获得 trace 文件："
-msgstr "crwdns46022:0crwdne46022:0"
+msgstr "crwdns116207:0crwdne116207:0"
 
 #: ../../source/user-guide/deployment/midout.rst:193
 msgid "如上节，将 trace 文件拷贝回本机，生成 ``src/bin_reduce_cmake.h`` ，再次编译 load_and_run 并推至设备。"
-msgstr "crwdns87567:0crwdne87567:0"
+msgstr "crwdns116209:0crwdne116209:0"
 
 #: ../../source/user-guide/deployment/midout.rst:195
 msgid "使用裁剪后的 load_and_run 的 fast-run 功能，执行同 2 的命令，得到如下输出："
-msgstr "crwdns46026:0crwdne46026:0"
+msgstr "crwdns116211:0crwdne116211:0"
 
 #: ../../source/user-guide/deployment/midout.rst:221
 msgid "使用其他 load_and_run 提供的功能也是如此，想要裁剪前后的应用能够正常运行， 需要保证裁剪前后两次推理使用同样的命令行参数。"
-msgstr "crwdns46028:0crwdne46028:0"
+msgstr "crwdns116213:0crwdne116213:0"
 
 #: ../../source/user-guide/deployment/midout.rst:225
 msgid "多个模型合并裁剪"
-msgstr "crwdns46030:0crwdne46030:0"
+msgstr "crwdns116215:0crwdne116215:0"
 
 #: ../../source/user-guide/deployment/midout.rst:226
 msgid "多个模型的合并裁剪与单个模型流程相同。 ``gen_header_for_bin_reduce.py`` 接受多个输入。 假设有模型 A 与模型 B, 已经获得 ``A.mge.json`` , ``B.mge.json`` 以及 ``A.trace`` , ``B.trace`` . 执行："
-msgstr "crwdns46032:0crwdne46032:0"
+msgstr "crwdns116217:0crwdne116217:0"
 
 #: ../../source/user-guide/deployment/midout.rst:234
 msgid "裁剪基于 MegEngine 的应用"
-msgstr "crwdns46048:0crwdne46048:0"
+msgstr "crwdns116219:0crwdne116219:0"
 
 #: ../../source/user-guide/deployment/midout.rst:236
 msgid "可以通过如下几种方式集成 MegEngine，对应的裁剪方法相差无几："
-msgstr "crwdns46050:0crwdne46050:0"
+msgstr "crwdns116221:0crwdne116221:0"
 
 #: ../../source/user-guide/deployment/midout.rst:238
 msgid "参照 ``CMakeLists.txt`` ，将应用集成到整个 MegEngine 的工程。 假设已经将 ``app.cpp`` 集成到 MegEngine ，那么会编译出静态链接 MegEngine 的可执行程序 ``app`` . 只需要按照上文中裁剪 load_and_run 的流程裁剪 ``app`` 即可。"
-msgstr "crwdns46052:0crwdne46052:0"
+msgstr "crwdns116223:0crwdne116223:0"
 
 #: ../../source/user-guide/deployment/midout.rst:241
 msgid "可能一个应用想要通过静态库集成 MegEngine。此时需要获得一个裁剪过的 ``libmegengine.a`` . 可以依然使用 load_and_run 运行模型获得 trace 文件， 生成 ``src/bin_reduce_cmake.h`` ，并二次编译获得裁剪过的 ``libmegengine.a`` . 此时，用户使用自己编写的构建脚本构建应用程序，并静态链接 ``libmegengine.a`` ， 加上链接参数 ``-flto=full -ffunction-sections -fdata-sections -Wl,--gc-sections`` . 即可得到裁剪过的基于 MegEngine 的应用。"
-msgstr "crwdns87569:0crwdne87569:0"
+msgstr "crwdns116225:0crwdne116225:0"
 
 #: ../../source/user-guide/deployment/midout.rst:246
 msgid "上述流程亦可以用于 ``libmegengine.so`` 的裁剪，但是动态库的裁剪效果远不及静态库。 原因在于 libmegengine.so 没有做符号隐藏，因此链接器不会进行激进的优化。"
-msgstr "crwdns87571:0crwdne87571:0"
+msgstr "crwdns116227:0crwdne116227:0"
 
 #: ../../source/user-guide/deployment/midout.rst:248
 msgid "经过上述流程，同样会在 build_dir 目录生成 liblite_shared.so, 此库裁剪力度和app裁剪效果相当，推荐这种方式。"
-msgstr "crwdns87573:0crwdne87573:0"
+msgstr "crwdns116229:0crwdne116229:0"
 
 #: ../../source/user-guide/deployment/midout.rst:249
 msgid "经过上述流程，同样会在 build_dir 目录生成 liblite_static_all_in_one.a, 此库裁剪力度和app裁剪效果相当，也推荐这种方式, 同样需要在自己集成的构建系统加上链接参数 ``-flto=full -ffunction-sections -fdata-sections -Wl,--gc-sections``"
-msgstr "crwdns87575:0crwdne87575:0"
+msgstr "crwdns116231:0crwdne116231:0"
 
 #: ../../source/user-guide/deployment/midout.rst:251
 msgid "所有基于静态库集成的地方， 如果输出是一个动态库， 则需要自己维护最终目标的符号隐藏，才能达到最佳裁剪效果， 为了方便， 强烈建议直接集成 liblite_shared.so."
-msgstr "crwdns87577:0crwdne87577:0"
+msgstr "crwdns116233:0crwdne116233:0"
 
 #~ msgid "否则，MegEngine 会自动编译成动态库。然后执行："
 #~ msgstr ""

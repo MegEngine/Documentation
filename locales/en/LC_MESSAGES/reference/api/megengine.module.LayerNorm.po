@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-25 01:18+0000\n"
-"PO-Revision-Date: 2023-04-11 05:51+0000\n"
+"PO-Revision-Date: 2023-04-25 01:27\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -13,32 +13,26 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.LayerNorm.po\n"
+"X-Crowdin-File-ID: 9515\n"
 
 #: ../../source/reference/api/megengine.module.LayerNorm.rst:5
 msgid "LayerNorm"
 msgstr ""
 
 #: megengine.module.normalization.LayerNorm:1 of
-msgid ""
-"Applies Layer Normalization over a mini-batch of inputs Refer to `Layer "
-"Normalization <https://arxiv.org/pdf/1607.06450v1.pdf>`_"
+msgid "Applies Layer Normalization over a mini-batch of inputs Refer to `Layer Normalization <https://arxiv.org/pdf/1607.06450v1.pdf>`_"
 msgstr ""
 
 #: megengine.module.normalization.LayerNorm:4 of
-msgid ""
-"y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * "
-"\\gamma + \\beta\n"
-"\n"
+msgid "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta\n\n"
 msgstr ""
 
 #: megengine.module.normalization.LayerNorm:7 of
-msgid ""
-"The mean and standard-deviation are calculated separately over the last "
-"certain number dimensions which have to be of the shape specified by "
-":attr:`normalized_shape`. :math:`\\\\gamma` and :math:`\\\\beta` are "
-"learnable affine transform parameters of :attr:`normalized_shape` if "
-":attr:`affine` is ``True``. The standard-deviation is calculated via the "
-"biased estimator."
+msgid "The mean and standard-deviation are calculated separately over the last certain number dimensions which have to be of the shape specified by :attr:`normalized_shape`. :math:`\\\\gamma` and :math:`\\\\beta` are learnable affine transform parameters of :attr:`normalized_shape` if :attr:`affine` is ``True``. The standard-deviation is calculated via the biased estimator."
 msgstr ""
 
 #: megengine.module.normalization.LayerNorm of
@@ -46,12 +40,7 @@ msgid "参数"
 msgstr ""
 
 #: megengine.module.normalization.LayerNorm:14 of
-msgid ""
-"input shape from an expected input of size size :math:`[*, "
-"normalized\\_shape[0], normalized\\_shape[1], ..., "
-"normalized\\_shape[-1]]`. If it is a single integer, this module will "
-"normalize over the last dimension which is expected to be of that "
-"specific size."
+msgid "input shape from an expected input of size size :math:`[*, normalized\\_shape[0], normalized\\_shape[1], ..., normalized\\_shape[-1]]`. If it is a single integer, this module will normalize over the last dimension which is expected to be of that specific size."
 msgstr ""
 
 #: megengine.module.normalization.LayerNorm:19 of
@@ -59,9 +48,7 @@ msgid "a value added to the denominator for numerical stability. Default: 1e-5"
 msgstr ""
 
 #: megengine.module.normalization.LayerNorm:20 of
-msgid ""
-"this module has learnable affine parameters (weight, bias) when affine is"
-" set to be True."
+msgid "this module has learnable affine parameters (weight, bias) when affine is set to be True."
 msgstr ""
 
 #: megengine.module.normalization.LayerNorm:24 of
@@ -366,4 +353,6 @@ msgstr ""
 #~ " tensor of any shape as input. "
 #~ "Reference: https://arxiv.org/pdf/1803.08494.pdf."
 #~ msgstr ""
+#~ "对 LayerNorm 的简单实现。支持任意形状的输入 "
+#~ "Tensor。参考文献：https://arxiv.org/pdf/1803.08494.pdf"
 
