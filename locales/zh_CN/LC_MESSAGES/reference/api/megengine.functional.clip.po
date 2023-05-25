@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:16\n"
+"PO-Revision-Date: 2023-05-11 13:04\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.functional.clip.rst:2
 msgid "megengine.functional.clip"
-msgstr ""
+msgstr "megengine.functional.clip"
 
 #: megengine.functional.elemwise.clip:1 of
 msgid "Element-wise clipping function."
@@ -36,7 +36,11 @@ msgid "y_i = \\begin{cases}\n"
 "    x_i & \\text{if } \\text{lower} \\leq x_i \\leq \\text{upper} \\\\\n"
 "    \\text{upper} & \\text{if } x_i > \\text{upper}\n"
 "\\end{cases}"
-msgstr ""
+msgstr "y_i = \\begin{cases}\n"
+"    \\text{lower} & \\text{if } x_i < \\text{lower} \\\\\n"
+"    x_i & \\text{if } \\text{lower} \\leq x_i \\leq \\text{upper} \\\\\n"
+"    \\text{upper} & \\text{if } x_i > \\text{upper}\n"
+"\\end{cases}"
 
 #: megengine.functional.elemwise.clip:15 of
 msgid "Equivalent to ``F.minimum(upper, np.maximum(x, upper))`` right now."
@@ -44,7 +48,7 @@ msgstr "目前等价于 ``F.minimum(upper, np.maximum(x, upper))`` 。"
 
 #: megengine.functional.elemwise.clip of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.functional.elemwise.clip:18 of
 msgid "The input tensor."
@@ -76,15 +80,15 @@ msgstr "如果 ``lower`` 大于 ```upper`` ，那么结果与 ``clip(Tensor(), u
 
 #: megengine.functional.elemwise.clip of
 msgid "返回类型"
-msgstr ""
+msgstr "返回类型"
 
 #: megengine.functional.elemwise.clip:29 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
-msgstr ""
+msgstr ":py:class:`~megengine.tensor.Tensor`"
 
 #: megengine.functional.elemwise.clip of
 msgid "返回"
-msgstr ""
+msgstr "返回"
 
 #: megengine.functional.elemwise.clip:30 of
 msgid "output clamped tensor. The result must have a data type determined by :ref:`dtype-promotion`."
