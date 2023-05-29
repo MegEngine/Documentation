@@ -119,6 +119,33 @@ Map-style
   <class 'tuple'> 2
   (3, 32, 32)
 
+:py:class:`~.dataset.ConcatDataset`
+   由多个数据集组成的数据集。
+   这个数据集用于将多个映射式(map-style)组合为一个新的数据集。
+
+   下面的代码展示了如何将多个 ``ArrayDataset`` 组合成一个 ``ConcatDataset`` 数据集： 
+
+   .. code-block:: python
+
+      import numpy as np
+      from megengine.data.dataset import ArrayDataset， ConcatDataset
+
+      data1 = np.random.randint(0, 255, size=(100, 3, 32, 32), dtype=np.uint8)
+      data2 = np.random.randint(0, 255, size=(100, 3, 32, 32), dtype=np.uint8)
+      label1 = np.random.randint(0, 10, size=(100,), dtype=int)
+      label2 = np.random.randint(0, 10, size=(100,), dtype=int)
+      
+      dataset1 = ArrayDataset(data1, label1)
+      dataset2 = ArrayDataset(data2, label2)
+      dataset = ConcatDataset([dataset1, dataset2])
+
+   >>> print(len(dataset))
+   >>> print(type(dataset[0]), len(dataset[0])) 
+   >>> print(dataset[0][0].shape)
+   200
+   <class 'tuple'> 2
+   (3, 32, 32)
+
 .. _iterable-style-dataset:
 	
 Iterable-style

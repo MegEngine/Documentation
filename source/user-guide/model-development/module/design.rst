@@ -225,6 +225,23 @@ NestedNet(
   (linear): Linear(in_features=3, out_features=2, bias=True)
 )
 
+共享 Module 参数
+~~~~~~~~~~~~~~~~
+当 ``Module`` 较复杂时，我们可以让两个 ``Module`` 共享一部分 ``Parameter`` ,
+来达到如根据 BP 算法更新的 Tensor时, 只需要更新一份参数的需求。
+我们可以基于 ``Parameter`` 名字找到目标参数，通过直接赋值的方式来实现 ``Module`` 间共享。
+
+.. code-block:: python
+
+   nested_net = NestedNet()
+   base_net = BaseNet()
+   for name, parameter in base_net.named_parameters():
+      if (name == "linear.weight"):
+         nested_net.base_net.linear.weight = parameter
+      if (name == "linear.bias"):
+         nested_net.base_net.linear.bias = parameter
+
+
 .. _module-train-and-eval:
 
 转换训练与测试状态
