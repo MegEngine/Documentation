@@ -1,29 +1,28 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:36\n"
+"POT-Creation-Date: 2023-07-03 03:42+0000\n"
+"PO-Revision-Date: 2023-04-21 09:36+0000\n"
 "Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/module/design.po\n"
-"X-Crowdin-File-ID: 9957\n"
 "Language: zh_CN\n"
+"Language-Team: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/user-guide/model-development/module/design.rst:5
 msgid "Module 基类概念与接口介绍"
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:9
-msgid "神经网络模型的本质可以回归到一系列关于 Tensor 的计算上来，但仅提供 Functional 还不够方便。 Module （模块）可以看作是对 Functional 中算子组合、封装后的一层抽象。 除了负责定义基本的计算流程，还支持嵌套，提供了对内部 Tensor 的管理、记录整体状态信息、前后钩子处理等功能接口。"
+msgid ""
+"神经网络模型的本质可以回归到一系列关于 Tensor 的计算上来，但仅提供 Functional 还不够方便。 Module （模块）可以看作是对"
+" Functional 中算子组合、封装后的一层抽象。 除了负责定义基本的计算流程，还支持嵌套，提供了对内部 Tensor "
+"的管理、记录整体状态信息、前后钩子处理等功能接口。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:13
@@ -55,7 +54,9 @@ msgid "完整接口信息可以参考 :py:class:`~.module.Module` API 文档；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:24
-msgid "Module 负责模型训练中的 ``forward`` 逻辑，反向传播 ``backward`` 将由 :py:mod:`~.autodiff` 自动完成。"
+msgid ""
+"Module 负责模型训练中的 ``forward`` 逻辑，反向传播 ``backward`` 将由 :py:mod:`~.autodiff` "
+"自动完成。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:29
@@ -67,7 +68,9 @@ msgid "每个 ``Module`` 内维护着一系列重要的成员变量，为了对�
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:33
-msgid "在模型训练过程中根据 BP 算法更新的 Tensor （比如 ``weight`` 和 ``bias`` ） 称为 ``Parameter`` , 即模型的参数；"
+msgid ""
+"在模型训练过程中根据 BP 算法更新的 Tensor （比如 ``weight`` 和 ``bias`` ） 称为 ``Parameter`` ,"
+" 即模型的参数；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:35
@@ -75,7 +78,9 @@ msgid "不需要通过反向传播算法进行更新的 Tensor （比如 BN 中�
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:36
-msgid "可以认为在一个 ``Module`` 中： ``Module.tensors = Module.parameters + Module.buffers``."
+msgid ""
+"可以认为在一个 ``Module`` 中： ``Module.tensors = Module.parameters + "
+"Module.buffers``."
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:38
@@ -87,7 +92,9 @@ msgid "在 ``__init__`` 方法中定义的每个 ``Parameter`` 和 ``Buffer`` �
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:58
-msgid "以 ``Parameter`` 为例，我们可以使用 ``.parameters()`` 和 ``.named_parameters()`` 获取对应的生成器："
+msgid ""
+"以 ``Parameter`` 为例，我们可以使用 ``.parameters()`` 和 ``.named_parameters()`` "
+"获取对应的生成器："
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:76
@@ -103,7 +110,11 @@ msgid "通过这种方式访问的成员是可修改的："
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:91
-msgid "相关接口：:py:meth:`~.module.Module.parameters` / :py:meth:`~.module.Module.named_parameters` / :py:meth:`~.module.Module.buffers` / :py:meth:`~.module.Module.named_buffers`"
+msgid ""
+"相关接口：:py:meth:`~.module.Module.parameters` / "
+":py:meth:`~.module.Module.named_parameters` / "
+":py:meth:`~.module.Module.buffers` / "
+":py:meth:`~.module.Module.named_buffers`"
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:93
@@ -147,11 +158,15 @@ msgid "一个是 ``nested_net.base_net.linear``"
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:157
-msgid "使用 :py:meth:`~.module.Module.children` / :py:meth:`~.module.Module.named_children` 可以获取模块的直接孩子结点；"
+msgid ""
+"使用 :py:meth:`~.module.Module.children` / "
+":py:meth:`~.module.Module.named_children` 可以获取模块的直接孩子结点；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:158
-msgid "使用 :py:meth:`~.module.Module.modules` / :py:meth:`~.module.Module.named_modules` 可以 **递归地** 获取模块所有子结点。"
+msgid ""
+"使用 :py:meth:`~.module.Module.modules` / "
+":py:meth:`~.module.Module.named_modules` 可以 **递归地** 获取模块所有子结点。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:173
@@ -183,7 +198,9 @@ msgid "这样可以仅对 ``bias`` 类型的参数进行一些操作，例如设
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:212
-msgid "参考官方提供的 `Models <https://github.com/MegEngine/Models>`_ 中的各种模型结构代码会加深对 ``Module`` 用法的理解。"
+msgid ""
+"参考官方提供的 `Models <https://github.com/MegEngine/Models>`_ 中的各种模型结构代码会加深对 "
+"``Module`` 用法的理解。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/module/design.rst:216
@@ -194,67 +211,86 @@ msgstr ""
 msgid "模块结构并非不可变的，我们能够对 ``Module`` 内部的子结点进行替换 （但需保证 Tensor 形状能对得上）："
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:231
+#: ../../source/user-guide/model-development/module/design.rst:229
+msgid "共享 Module 参数"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/design.rst:230
+msgid ""
+"当 ``Module`` 较复杂时，我们可以让两个 ``Module`` 共享一部分 ``Parameter`` , 来达到如根据 BP "
+"算法更新的 Tensor时, 只需要更新一份参数的需求。 我们可以基于 ``Parameter`` 名字找到目标参数，通过直接赋值的方式来实现 "
+"``Module`` 间共享。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/module/design.rst:248
 msgid "转换训练与测试状态"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:232
-msgid "我们约定，通过 :py:meth:`~.module.Module.train` 和 :py:meth:`~.module.Module.eval` 两个接口， 可以将 ``Module`` 分别设置为训练和测试状态（初始默认情况下是训练状态）。 这是因为一些已经提供的模块在训练和测试时会有不同的 ``forward`` 行为（如 :py:class:`~.module.BatchNorm2d` ）。"
+#: ../../source/user-guide/model-development/module/design.rst:249
+msgid ""
+"我们约定，通过 :py:meth:`~.module.Module.train` 和 "
+":py:meth:`~.module.Module.eval` 两个接口， 可以将 ``Module`` "
+"分别设置为训练和测试状态（初始默认情况下是训练状态）。 这是因为一些已经提供的模块在训练和测试时会有不同的 ``forward`` 行为（如 "
+":py:class:`~.module.BatchNorm2d` ）。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:238
+#: ../../source/user-guide/model-development/module/design.rst:255
 msgid "如果在测试模型时忘记转换状态，会导致得到非预期的结果；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:239
+#: ../../source/user-guide/model-development/module/design.rst:256
 msgid "在切换模块训练和测试状态时，会同步调整其所有子模块的状态，参考 :ref:`nested-module` 。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:244
+#: ../../source/user-guide/model-development/module/design.rst:261
 msgid "Module 状态字典"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:246
+#: ../../source/user-guide/model-development/module/design.rst:263
 msgid "在前面的小节，我们介绍了模块中的 Tensor 可分为 :ref:`parameter-and-buffer` 两种："
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:258
-msgid "实际上，每个模块还有着一个状态字典 ``STATE_DICT`` 成员。可通过 :py:meth:`~.module.Module.state_dict` 获取："
+#: ../../source/user-guide/model-development/module/design.rst:275
+msgid ""
+"实际上，每个模块还有着一个状态字典 ``STATE_DICT`` 成员。可通过 "
+":py:meth:`~.module.Module.state_dict` 获取："
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:263
+#: ../../source/user-guide/model-development/module/design.rst:280
 msgid "``STATE_DICT`` 中保存着所有可学习的 Tensor, 即不仅仅是 ``Parameter``, 同时还有 ``Buffer``."
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:265
+#: ../../source/user-guide/model-development/module/design.rst:282
 msgid "我们可以通过 ``.state_dict()['key']`` 的形式来进行访问字典中的信息："
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:270
+#: ../../source/user-guide/model-development/module/design.rst:287
 msgid "看上去与直接访问成员没有什么用途上的区别，但是 ——"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:274
+#: ../../source/user-guide/model-development/module/design.rst:291
 msgid "Module 状态字典中 ``value`` 存放的数据结构类型为 ``numpy.ndarray``, 且是只读的。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:281
-msgid "通过 :py:meth:`~.module.Module.load_state_dict` 我们可以加载 ``Module`` 状态字典，常用于模型训练过程的保存与加载。"
+#: ../../source/user-guide/model-development/module/design.rst:298
+msgid ""
+"通过 :py:meth:`~.module.Module.load_state_dict` 我们可以加载 ``Module`` "
+"状态字典，常用于模型训练过程的保存与加载。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:283
+#: ../../source/user-guide/model-development/module/design.rst:300
 msgid "``Optimizer`` 中也有用于保存和加载的状态字典，参考 :ref:`optimizer-guide` 。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:284
+#: ../../source/user-guide/model-development/module/design.rst:301
 msgid "关于模型训练过程中保存与加载的最佳实践，请参考 :ref:`serialization-guide` 。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:288
+#: ../../source/user-guide/model-development/module/design.rst:305
 msgid "保存和加载 Module 状态字典时使用 ndarray 而不是 Tensor 结构，这样做是为了保证更好的兼容性。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/module/design.rst:293
+#: ../../source/user-guide/model-development/module/design.rst:310
 msgid "Module 钩子"
 msgstr ""
 

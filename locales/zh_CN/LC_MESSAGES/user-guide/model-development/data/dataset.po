@@ -1,33 +1,37 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:36\n"
+"POT-Creation-Date: 2023-07-03 03:42+0000\n"
+"PO-Revision-Date: 2023-04-21 09:36+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/data/dataset.po\n"
-"X-Crowdin-File-ID: 9949\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/user-guide/model-development/data/dataset.rst:5
 msgid "使用 Dataset 定义数据集"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:6
-msgid "这个世界上的数据集五花八门，并且总是以不同的格式（比如 png, HDF5, npy 等）分布在不同地方， 或许一些数据集的存储和组织形式已经成为了参考标准，但并不是所有数据一开始都用 MegEngine 所支持格式的进行存储， 很多时候需要我们写脚本借助一些库或框架对原始数据进行处理，并且转换成 MegEngine 中可用的数据集对象。"
+msgid ""
+"这个世界上的数据集五花八门，并且总是以不同的格式（比如 png, HDF5, npy 等）分布在不同地方， "
+"或许一些数据集的存储和组织形式已经成为了参考标准，但并不是所有数据一开始都用 MegEngine 所支持格式的进行存储， "
+"很多时候需要我们写脚本借助一些库或框架对原始数据进行处理，并且转换成 MegEngine 中可用的数据集对象。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:10
-msgid "在 :ref:`tensor-creation` 小节中，我们提到了 ndarray 是 Python 数据科学社区中较为通用支持的格式， 因此 MegEngine 中的数据集相关操作均以 NumPy 的 :py:class:`~.numpy.ndarray` 作为处理对象 （此时假设用户已经通过一些途径将原始数据转换成了 ndarray 格式，能够用作后续数据集封装）， 整个过程中数据格式不会自动转换，因此需要注意：后续如果要进行 Tensor 计算时，则需要 :ref:`create-tensor-from-ndarray` 。"
+msgid ""
+"在 :ref:`tensor-creation` 小节中，我们提到了 ndarray 是 Python 数据科学社区中较为通用支持的格式， 因此 "
+"MegEngine 中的数据集相关操作均以 NumPy 的 :py:class:`~.numpy.ndarray` 作为处理对象 "
+"（此时假设用户已经通过一些途径将原始数据转换成了 ndarray 格式，能够用作后续数据集封装）， "
+"整个过程中数据格式不会自动转换，因此需要注意：后续如果要进行 Tensor 计算时，则需要 :ref:`create-tensor-from-"
+"ndarray` 。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:17
@@ -39,7 +43,11 @@ msgid ":py:class:`~.DataLoader` 初始化时必须提供 ``dataset`` 参数，�
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:22
-msgid "MegEngine 中可以 :ref:`megengine-dataset` （如 :py:class:`~.PascalVOC`,  :py:class:`~.ImageNet` 等） 替用户完成一些主流数据集的获取、切分等工作。但一些时候这些实现不能满足需求，或者我们需要使用自己采集和标注好的数据集， 因此在使用 ``DataLoader`` 之前，通常需要将要用到的数据集人为地封装。"
+msgid ""
+"MegEngine 中可以 :ref:`megengine-dataset` （如 :py:class:`~.PascalVOC`,  "
+":py:class:`~.ImageNet` 等） "
+"替用户完成一些主流数据集的获取、切分等工作。但一些时候这些实现不能满足需求，或者我们需要使用自己采集和标注好的数据集， 因此在使用 "
+"``DataLoader`` 之前，通常需要将要用到的数据集人为地封装。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:29
@@ -103,11 +111,16 @@ msgid "这些类不可直接实例化使用，对应类型的数据集必须自�
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:49
-msgid "通常应该尽可能使用 Map-style 的数据集。它提供了查询数据集的大小的方法，更容易打乱，并能够轻松地并行加载。 但 ``MapDataset`` 不太适合输入数据作为流的一部分到达的情况，例如音频或视频源； 或者每个数据点可能是文件的一个子集，该文件太大而无法保存在内存中，因此需要在训练期间进行增量加载。 虽然这些情况可以通过往 Map-style 数据集中加入更复杂的逻辑或在输入时进行额外的预处理来解决， 但也会花掉更多的准备时间，现在有一个更自然的解决方案，即使用 Iterable-style 的 ``StreamDataset`` 作为输入。"
+msgid ""
+"通常应该尽可能使用 Map-style 的数据集。它提供了查询数据集的大小的方法，更容易打乱，并能够轻松地并行加载。 但 "
+"``MapDataset`` 不太适合输入数据作为流的一部分到达的情况，例如音频或视频源； "
+"或者每个数据点可能是文件的一个子集，该文件太大而无法保存在内存中，因此需要在训练期间进行增量加载。 虽然这些情况可以通过往 Map-style "
+"数据集中加入更复杂的逻辑或在输入时进行额外的预处理来解决， 但也会花掉更多的准备时间，现在有一个更自然的解决方案，即使用 Iterable-"
+"style 的 ``StreamDataset`` 作为输入。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:58
-#: ../../source/user-guide/model-development/data/dataset.rst:178
+#: ../../source/user-guide/model-development/data/dataset.rst:205
 msgid "Map-style"
 msgstr ""
 
@@ -116,16 +129,23 @@ msgid ":py:class:`~.dataset.Dataset` （也可被称为 ``MapDataset`` ）"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:61
-msgid "MegEngine 中所有数据集的抽象基类。 对应数据集类型为 Map-style, 即表示从索引/键到数据样例的映射，具有随机访问能力。 例如使用 ``dataset[idx]`` 可以从磁盘上的文件夹中读取到第 ``idx`` 个图像及其相应的标签。 使用时需要实现 ``__getitem__()`` 和 ``__len__()`` 协议。"
+msgid ""
+"MegEngine 中所有数据集的抽象基类。 对应数据集类型为 Map-style, 即表示从索引/键到数据样例的映射，具有随机访问能力。 "
+"例如使用 ``dataset[idx]`` 可以从磁盘上的文件夹中读取到第 ``idx`` 个图像及其相应的标签。 使用时需要实现 "
+"``__getitem__()`` 和 ``__len__()`` 协议。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:66
-#: ../../source/user-guide/model-development/data/dataset.rst:139
+#: ../../source/user-guide/model-development/data/dataset.rst:166
 msgid "下面的代码展示了如何生成一个由 0 到 5 这五个数组成的数据集（不带标签）："
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:91
-msgid "请注意，为了避免在加载大型数据集时试图一次性将数据加载到内存而导致 OOM（Out Of Memory）， 我们建议将实际的数据读取操作实现在 ``__getitem__`` 方法中，而不是 ``__init__`` 方法中， 后者仅记录映射关系中的索引/键内容（可能是文件名或路径组成的列表），这可以极大程度地减少内存占用。 具体的例子可参考 :ref:`load-image-data-example` ；"
+msgid ""
+"请注意，为了避免在加载大型数据集时试图一次性将数据加载到内存而导致 OOM（Out Of Memory）， 我们建议将实际的数据读取操作实现在 "
+"``__getitem__`` 方法中，而不是 ``__init__`` 方法中， "
+"后者仅记录映射关系中的索引/键内容（可能是文件名或路径组成的列表），这可以极大程度地减少内存占用。 具体的例子可参考 :ref:`load-"
+"image-data-example` ；"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:95
@@ -133,7 +153,10 @@ msgid "如果数据规模已经大到了无法将索引等 meta 信息加载进�
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:96
-msgid "但情况并不总是唯一的。如果我们的数据集规模比较小，可以常驻在内存中， 那么就可以考虑在初始化对象时就加载好整个数据集，减少反复从硬盘或其它位置读取数据到内存的次数。 例如在不同的 Epoch 中，同一个样本会被用来训练多次，此时从内存中直接读取会更加高效。"
+msgid ""
+"但情况并不总是唯一的。如果我们的数据集规模比较小，可以常驻在内存中， "
+"那么就可以考虑在初始化对象时就加载好整个数据集，减少反复从硬盘或其它位置读取数据到内存的次数。 例如在不同的 Epoch "
+"中，同一个样本会被用来训练多次，此时从内存中直接读取会更加高效。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:120
@@ -141,99 +164,126 @@ msgid ":py:class:`~.dataset.ArrayDataset`"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:101
-msgid "对 ``Dataset`` 类的进一步封装，适用于 NumPy ndarray 数据，无需实现 ``__getitem__()`` 和 ``__len__()`` 协议。"
+msgid ""
+"对 ``Dataset`` 类的进一步封装，适用于 NumPy ndarray 数据，无需实现 ``__getitem__()`` 和 "
+"``__len__()`` 协议。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/data/dataset.rst:103
-msgid "下面的代码展示了如何生成随机一个具有 100 个样本，每张样本为 32 x 32 像素的 RGB 图片的数据集（标签为随机值） 这也是我们在处理图像时经常遇到的 ``(N, C, H, W)`` 格式："
+msgid ""
+"下面的代码展示了如何生成随机一个具有 100 个样本，每张样本为 32 x 32 像素的 RGB 图片的数据集（标签为随机值） "
+"这也是我们在处理图像时经常遇到的 ``(N, C, H, W)`` 格式："
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:125
-#: ../../source/user-guide/model-development/data/dataset.rst:188
+#: ../../source/user-guide/model-development/data/dataset.rst:147
+msgid ":py:class:`~.dataset.ConcatDataset`"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/dataset.rst:123
+msgid "由多个数据集组成的数据集。 这个数据集用于将多个映射式(map-style)组合为一个新的数据集。"
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/dataset.rst:126
+msgid "下面的代码展示了如何将多个 ``ArrayDataset`` 组合成一个 ``ConcatDataset`` 数据集："
+msgstr ""
+
+#: ../../source/user-guide/model-development/data/dataset.rst:152
+#: ../../source/user-guide/model-development/data/dataset.rst:215
 msgid "Iterable-style"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:170
+#: ../../source/user-guide/model-development/data/dataset.rst:197
 msgid ":py:class:`~.dataset.StreamDataset` （也可被称为 ``IterableDataset`` ）"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:128
-msgid "Iterable-style 数据集，适用于流式数据，即迭代式地访问数据， 例如使用 ``iter(dataset)`` 可以返回从数据库、远程服务器甚至实时生成的日志中读取的数据流， ``DataLoader`` 将使用 ``next`` 来不断获取数据。"
+#: ../../source/user-guide/model-development/data/dataset.rst:155
+msgid ""
+"Iterable-style 数据集，适用于流式数据，即迭代式地访问数据， 例如使用 ``iter(dataset)`` "
+"可以返回从数据库、远程服务器甚至实时生成的日志中读取的数据流， ``DataLoader`` 将使用 ``next`` 来不断获取数据。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:132
+#: ../../source/user-guide/model-development/data/dataset.rst:159
 msgid "这种类型的数据集特别适用于："
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:134
+#: ../../source/user-guide/model-development/data/dataset.rst:161
 msgid "随机读取成本过高，或者数据规模太大，无法支持随机访问的情况；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:135
+#: ../../source/user-guide/model-development/data/dataset.rst:162
 msgid "批量大小情况实际取决于获取数据的情况，即必须根据流数据才能判断当前批是否已经完整。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:137
+#: ../../source/user-guide/model-development/data/dataset.rst:164
 msgid "使用时需要实现 ``__iter__()`` 协议。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:162
+#: ../../source/user-guide/model-development/data/dataset.rst:189
 msgid "显然，流式数据集不支持获取长度以及通过索引值进行随机访问："
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:170
+#: ../../source/user-guide/model-development/data/dataset.rst:197
 msgid "这个例子无法体现 ``StreamDataset`` 加载的真实需求情景，但方便和 ``MapDataset`` 进行对比。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:173
+#: ../../source/user-guide/model-development/data/dataset.rst:200
 msgid "为何设计流式数据集"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:198
-msgid "根据上面的例子可以发现，使用相同的原始 List 数据来生成两种类型的数据集并迭代访问， Map-style 和 Iterable-style 的数据集都能够返回相同的结果，那么区别在哪里呢？ 从高层视角看，每次 ``DataLoader`` 从 Map-style 数据集中返回批数据时， 它都会先对数据索引进行采样得到一批索引 ``idx``, 并使用 ``map_dataset[idx]`` 获得批数据. 相反，对于 Iterable-style 数据集，``DataLoader`` 不断地调用 ``next(it)`` 来顺序获取下一个数据， 直到它获取到一个完整的批次。这也是为什么我们说 Iterable-style 数据集更适合将数据提供给顺序模型。"
+#: ../../source/user-guide/model-development/data/dataset.rst:225
+msgid ""
+"根据上面的例子可以发现，使用相同的原始 List 数据来生成两种类型的数据集并迭代访问， Map-style 和 Iterable-style "
+"的数据集都能够返回相同的结果，那么区别在哪里呢？ 从高层视角看，每次 ``DataLoader`` 从 Map-style 数据集中返回批数据时，"
+" 它都会先对数据索引进行采样得到一批索引 ``idx``, 并使用 ``map_dataset[idx]`` 获得批数据. 相反，对于 "
+"Iterable-style 数据集，``DataLoader`` 不断地调用 ``next(it)`` 来顺序获取下一个数据， "
+"直到它获取到一个完整的批次。这也是为什么我们说 Iterable-style 数据集更适合将数据提供给顺序模型。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:207
+#: ../../source/user-guide/model-development/data/dataset.rst:234
 msgid "参考 :ref:`data-sampler-guide` ，了解如何从样本容量为 N 的数据集中得到长度为 B 的一批索引。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:212
+#: ../../source/user-guide/model-development/data/dataset.rst:239
 msgid "使用已经实现的数据集接口"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:214
-msgid "在 :py:mod:`~.data.dataset` 子模块中，除了提供了一些抽象基类待用户自定义子类进行实现， 还提供了一些基于主流数据集封装好的接口，比如常被用于教学和练习用途的 :py:class:`~.MNIST` 数据集："
+#: ../../source/user-guide/model-development/data/dataset.rst:241
+msgid ""
+"在 :py:mod:`~.data.dataset` 子模块中，除了提供了一些抽象基类待用户自定义子类进行实现， "
+"还提供了一些基于主流数据集封装好的接口，比如常被用于教学和练习用途的 :py:class:`~.MNIST` 数据集："
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:221
-msgid "借助于封装好的接口，我们可以快速的获取 MNIST 数据集的训练集 ``train_set`` 和测试集 ``test_set`` ， 其中 ``download`` 参数可以控制是否要从数据集官方提供的地址进行下载。更多细节请参考 API 文档。"
+#: ../../source/user-guide/model-development/data/dataset.rst:248
+msgid ""
+"借助于封装好的接口，我们可以快速的获取 MNIST 数据集的训练集 ``train_set`` 和测试集 ``test_set`` ， 其中 "
+"``download`` 参数可以控制是否要从数据集官方提供的地址进行下载。更多细节请参考 API 文档。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:226
+#: ../../source/user-guide/model-development/data/dataset.rst:253
 msgid "这些数据集都是从它们自己的官方站点进行下载的，MegEngine 不提供镜像或加速服务。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:230
+#: ../../source/user-guide/model-development/data/dataset.rst:257
 msgid "一些数据集由于许可协议中的规定将不提供原始数据的下载接口（如 :py:class:`~.ImageNet` ），需手动下载；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:231
+#: ../../source/user-guide/model-development/data/dataset.rst:258
 msgid "下载速度受到网络环境和带宽的影响，用户也可以选择使用其它的脚本或工具下载原始数据集；"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:232
+#: ../../source/user-guide/model-development/data/dataset.rst:259
 msgid "这些数据集接口源码是非常不错的参考，对于帮助用户学习如何设计数据集接口会很有帮助。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:237
+#: ../../source/user-guide/model-development/data/dataset.rst:264
 msgid "如何添加新的数据集"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:239
+#: ../../source/user-guide/model-development/data/dataset.rst:266
 msgid "目前 MegEngine 中提供了一些常见的主流数据集接口，也欢迎用户为我们提供更多的接口实现。"
 msgstr ""
 
-#: ../../source/user-guide/model-development/data/dataset.rst:241
+#: ../../source/user-guide/model-development/data/dataset.rst:268
 msgid "但目前我们还没有提供明确的设计规格和要求，因此建议用户先尝试与官方维护人员进行交流。"
 msgstr ""
 
