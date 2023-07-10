@@ -13,6 +13,7 @@ megengine.jit
 
    trace
    exclude_from_trace
+   xla_trace
 
 Trace Config
 ------------
