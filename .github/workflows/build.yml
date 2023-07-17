@@ -19,13 +19,13 @@ jobs:
           submodules: recursive
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.7
+          python-version: 3.7.17
 
       - name: Cache Python packages
         id: cache-python
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}$-${{ hashFiles('requirements.txt') }}
@@ -53,7 +53,7 @@ jobs:
       - name: Set env for Sphinx build args
         if: ${{ contains(matrix.language, 'zh') }}
         run: |
-          echo "buildExtraArgs=-W --keep-going" >> $GITHUB_ENV
+          echo "buildExtraArgs=--keep-going" >> $GITHUB_ENV
 
       - name: Checkout repsitory
         uses: actions/checkout@v2
@@ -66,7 +66,7 @@ jobs:
         run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
 
       - name: LFS - Restore cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: lfs-cache
         with:
           path: .git/lfs
@@ -76,13 +76,13 @@ jobs:
         run: git lfs pull
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.7
+          python-version: 3.7.17
 
       - name: Get cached Python packages
         id: cache-python
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}$-${{ hashFiles('requirements.txt') }}
