@@ -53,6 +53,8 @@ Creation Functions
    ones_like
    full
    full_like
+   complex
+   polar
 
 .. _manipulation:
 
@@ -80,6 +82,8 @@ Manipulation Functions
    tile
    repeat
    roll
+   real
+   imag
 
 .. _arithmetic-operations:
 
