@@ -84,6 +84,7 @@ Manipulation Functions
    roll
    real
    imag
+   cross
 
 .. _arithmetic-operations:
 
