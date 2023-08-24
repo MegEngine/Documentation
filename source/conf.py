@@ -266,7 +266,7 @@ html_theme_options = {
     # Please replace "version-switcher.html" with "current-version.html"
     # These two templates only work in MegEngine forked dev branch
     "navbar_end": ["navbar-icon-links.html", "version-switcher.html"],
-    "collapse_navigation": True,
+    "collapse_navigation": False,
     "use_edit_page_button": True,
     "navigation_with_keys": True,
     "show_prev_next": True,
