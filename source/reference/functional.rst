@@ -229,6 +229,7 @@ Indexing Functions
    scatter
    cond_take
    where
+   non_zero
 
 .. _searching-functions:
 
