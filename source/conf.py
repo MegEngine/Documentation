@@ -75,7 +75,11 @@ elif doc_mode == "FULL":
 project = "MegEngine"
 copyright = f"2020-{datetime.now().year}, The MegEngine Open Source Team"
 author = "The MegEngine Open Source Team"
+<<<<<<< HEAD
 version = "1.13.2"
+=======
+version = "1.13.0"
+>>>>>>> 93ace560d052cb217c5a7aa16ea1e7c4990f82e0
 release = version
 
 # -- Version Check -----------------------------------------------------------
