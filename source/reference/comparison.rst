@@ -1041,10 +1041,10 @@ Convolution Layers
      -
    * - :py:class:`~torch.nn.ConvTranspose2d`
      - :py:class:`~megengine.module.ConvTranspose2d`
-     -
+     - :ref:`差异对比 <comparison-conv-transpose2d>`
    * - :py:class:`~torch.nn.ConvTranspose3d`
      - :py:class:`~megengine.module.ConvTranspose3d`
-     -
+     - :ref:`差异对比 <comparison-conv-transpose3d>`
    * - :py:class:`~torch.nn.LazyConv1d`
      - :ref:`not-implemented`
      -
@@ -1093,7 +1093,7 @@ Pooling layers
      -
    * - :py:class:`~torch.nn.MaxPool2d`
      - :py:class:`~megengine.module.MaxPool2d`
-     -
+     - :ref:`差异对比 <comparison-max-pool2d>`
    * - :py:class:`~torch.nn.MaxPool3d`
      - :ref:`not-implemented`
      -
@@ -1111,7 +1111,7 @@ Pooling layers
      -
    * - :py:class:`~torch.nn.AvgPool2d`
      - :py:class:`~megengine.module.AvgPool2d`
-     -
+     - :ref:`差异对比 <comparison-avg-pool2d>`
    * - :py:class:`~torch.nn.AvgPool3d`
      - :ref:`not-implemented`
      -
@@ -1132,7 +1132,7 @@ Pooling layers
      -
    * - :py:class:`~torch.nn.AdaptiveMaxPool2d`
      - :py:class:`~megengine.module.AdaptiveMaxPool2d`
-     -
+     - :ref:`差异对比 <comparison-adaptive_max_pool2d>`
    * - :py:class:`~torch.nn.AdaptiveMaxPool3d`
      - :ref:`not-implemented`
      -
@@ -1141,7 +1141,7 @@ Pooling layers
      -
    * - :py:class:`~torch.nn.AdaptiveAvgPool2d`
      - :py:class:`~megengine.module.AdaptiveAvgPool2d`
-     -
+     - :ref:`差异对比 <comparison-adaptive_avg_pool2d>`
    * - :py:class:`~torch.nn.AdaptiveAvgPool3d`
      - :ref:`not-implemented`
      -
