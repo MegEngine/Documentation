@@ -353,6 +353,16 @@ Linear functions
 
    linear
 
+.. _multi-head-attention-functions:
+
+multi-head attention functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autosummary::
+   :toctree: api
+   :nosignatures:
+
+   multi_head_attention
+
 .. _dropout-functions:
 
 Dropout functions
