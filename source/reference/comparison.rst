@@ -1212,7 +1212,7 @@ Non-linear Activations
      -
    * - :py:class:`~torch.nn.LeakyReLU`
      - :py:class:`~megengine.module.LeakyReLU`
-     -
+     - :ref:`差异对比 <comparison-leaky-relu>`
    * - :py:class:`~torch.nn.LogSigmoid`
      - :ref:`not-implemented`
      -
@@ -1224,7 +1224,7 @@ Non-linear Activations
      -
    * - :py:class:`~torch.nn.ReLU`
      - :py:class:`~megengine.module.ReLU`
-     -
+     - :ref:`差异对比 <comparison-relu>`
    * - :py:class:`~torch.nn.ReLU6`
      - :ref:`not-implemented`
      -
@@ -1242,7 +1242,7 @@ Non-linear Activations
      -
    * - :py:class:`~torch.nn.Sigmoid`
      - :py:class:`~megengine.module.Sigmoid`
-     -
+     - :ref:`差异对比 <comparison-sigmoid>` 
    * - :py:class:`~torch.nn.SiLU`
      - :py:class:`~megengine.module.SiLU`
      -
@@ -1269,7 +1269,7 @@ Non-linear Activations
      -
    * - :py:class:`~torch.nn.Softmax`
      - :py:class:`~megengine.module.Softmax`
-     -
+     - :ref:`差异对比 <comparison-softmax>`
    * - :py:class:`~torch.nn.Softmax2d`
      - :ref:`not-implemented`
      -
@@ -1324,7 +1324,7 @@ Normalization Layers
      -
    * - :py:class:`~torch.nn.LayerNorm`
      - :py:class:`~megengine.module.LayerNorm`
-     -
+     - :ref:`差异对比 <comparison-layernorm>`
    * - :py:class:`~torch.nn.LocalResponseNorm`
      - :ref:`not-implemented`
      -
