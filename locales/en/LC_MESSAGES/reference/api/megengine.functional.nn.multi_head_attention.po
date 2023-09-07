@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The MegEngine Open Source Team
+# This file is distributed under the same license as the MegEngine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MegEngine 1.13.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-07 03:12+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
+
+#: ../../source/reference/api/megengine.functional.nn.multi_head_attention.rst:2
+msgid "megengine.functional.nn.multi\\_head\\_attention"
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:1 of
+msgid ""
+"Allows the model to jointly attend to information from different "
+"representation subspaces. See `Attention Is All You Need "
+"<https://arxiv.org/abs/1706.03762>`_."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:5 of
+msgid ""
+"\\text{MultiHeadAttn}\\big(q, k, v, W_Q, W_K, W_V, W_O\\big) = "
+"\\sum^{nHeads-1}_{i=0}W_{O,i}h_i\n"
+"\n"
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:8 of
+msgid ""
+"where :math:`h_i=W_{V,i}v \\text{Softmax}\\Big( \\text{smScaler} \\cdot "
+"k^TW^T_{K,i}W_{Q,i}q \\Big),\\text{for }i\\text{ = 0 ... nHeads-1}`."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:10 of
+msgid "See :class:`~.module.MultiHeadAttn` for more details."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:12 of
+msgid ""
+"Note: This API is experimental, and there is a possibility of subsequent "
+"changes."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention of
+msgid "参数"
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:15
+#: megengine.functional.nn.multi_head_attention:18
+#: megengine.functional.nn.multi_head_attention:21 of
+msgid ""
+"map a query and a set of key-value pairs to an output. See \"Attention Is"
+" All You Need\" for more details."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:24 of
+msgid "total dimension of the model."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:26 of
+msgid "parallel attention heads."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:28 of
+msgid "probability of an element to be zeroed, used in attention matrix."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:30 of
+msgid "probability of an element to be zeroed, used in final output."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:32 of
+msgid ""
+"input/output projection weight/bias all in one. The order of arrangement "
+"is: query weight, key weight, value weight, out weight, query bias, key "
+"bias, value bias, out bias, the following parameters will be used to "
+"indicate whether these items exist: qproj_size, kproj_size, vproj_size, "
+"oproj_size, qbias, kbias, vbias, obias. Note: :math:`Y=X@W+B` is used "
+"here instead of :math:`Y=X@W^T+B` in pytorch."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:36 of
+msgid ""
+"indicates the projection size of query weight in io_weight_bias, 0 "
+"indicates disabled query projection and no query projection weight."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:38 of
+msgid ""
+"indicates the projection size of key weight in io_weight_bias, 0 "
+"indicates disabled key projection and no key projection weight."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:40 of
+msgid ""
+"indicates the projection size of value weight in io_weight_bias, 0 "
+"indicates disabled value projection and no value projection weight."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:42 of
+msgid ""
+"indicates the projection size of out weight in io_weight_bias, 0 "
+"indicates disabled output projection and no output projection weight."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:44 of
+msgid ""
+"indicates whether there is a query bias in io_weight_bias, this parameter"
+" is only valid when qproj_size > 0."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:46 of
+msgid ""
+"indicates whether there is a key bias in io_weight_bias, this parameter "
+"is only valid when kproj_size > 0."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:48 of
+msgid ""
+"indicates whether there is a value bias in io_weight_bias, this parameter"
+" is only valid when vproj_size > 0."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:50 of
+msgid ""
+"indicates whether there is a out bias in io_weight_bias, this parameter "
+"is only valid when oproj_size > 0."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:52
+#: megengine.functional.nn.multi_head_attention:55 of
+msgid ""
+"the bias of the key and value sequences to be added at sequence dim. "
+"distinguished from kbias and vbias, bias_kv here is not kbias and vbias "
+"in the linear layer, and bias_kv here will be added to the K and V at "
+"sequence dimensions, where K and V are the matrices of key and value "
+"after projection, and K and V will be used to calculate the attention "
+"matrix. Note: Should be set to None, and configuration of this parameter "
+"is not supported now. The reason is that there is only cudnn "
+"implementation now, and we may try to loosen this option after submitting"
+" the commit that adds MHA proxy implementation."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:58 of
+msgid ""
+"if specified, adds a new batch of zeros to the key and value sequences at"
+" sequence dim. Default: ``False``. Note: should be set to False, and "
+"configuration of this parameter is not supported now. The reason is that "
+"there is only cudnn implementation now, and we may try to loosen this "
+"option after submitting the commit that adds MHA proxy implementation."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:61 of
+msgid ""
+"if specified, a mask of shape :math:`(N, S)` indicating which elements "
+"within ``key`` to ignore for the purpose of attention (i.e. treat as "
+"\"padding\"). For unbatched `query`, shape should be :math:`(S)`. Binary "
+"and float masks are supported. For a binary mask, a ``True`` value "
+"indicates that the corresponding ``key`` value will be ignored for the "
+"purpose of attention. For a float mask, it will be directly added to the "
+"corresponding ``key`` value."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:64 of
+msgid ""
+"2D or 3D mask that prevents attention to certain positions. A 2D mask "
+"will be broadcasted for all the batches while a 3D mask allows to specify"
+" a different mask for the entries of each batch."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:67 of
+msgid ""
+"indicates whether to return the attention weight, which is the output "
+"result of softmax. Default: `False`"
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:69 of
+msgid ""
+"if true, indicates that the returned ``attn_weights`` should be averaged "
+"across heads. Otherwise, ``attn_weights`` are provided separately per "
+"head. Note that this flag only has an effect when ``need_weights=True``. "
+"Default: ``False`` (i.e. average weights across heads)"
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:73 of
+msgid ""
+"if specified, applies a causal mask as attention mask. Default: ``False``"
+" Warning: ``is_causal`` provides a hint that ``attn_mask`` is the causal "
+"mask. Providing incorrect hints can result in incorrect execution, "
+"including forward and backward compatibility."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:76 of
+msgid ""
+"if specified, applies a cudnn style mask as attention mask. Default: "
+"``False`` Note: In the cudnn style, the shape of the attn_mask is "
+":math:`(2, L)`, and the shape of the key_padding_mask is :math:`(2, N)`. "
+"Warning: like is_causal, maybe_cudnn_style_mask provides a hint that "
+"attn_mask and key_padding_mask is a cudnn style mask. Providing incorrect"
+" hints can result in incorrect execution, including forward and backward "
+"compatibility. In addition, if the ``_merge_masks`` function returns "
+"``merge_type=cudnn_style_mask``, please ensure that other conditions are "
+"correct so that it can run the implementation of cudnn, otherwise an "
+"error will be reported."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:80 of
+msgid ""
+"add input query to final output. Note: It is only valid if the input "
+"query is the same as the shape of the output. Should be set to False, and"
+" configuration of this parameter is not supported now. The reason is that"
+" there is only cudnn implementation now, and we may try to loosen this "
+"option after submitting the commit that adds MHA proxy implementation."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:83 of
+msgid "will apply dropout if is ``True``."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:94 of
+msgid "Outputs:"
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:86 of
+msgid ""
+"**out[0]=attn_output** - Attention outputs of shape :math:`(N, L, E)`, "
+"where :math:`L` is the target sequence length, :math:`N` is the batch "
+"size, and :math:`E` is the embedding dimension ``embed_dim``."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:89 of
+msgid ""
+"**out[1]=attn_output_weights** - Only returned when "
+"``need_weights=True``. If ``average_attn_weights=True``, returns "
+"attention weights averaged across heads of shape :math:`(L, S)` when "
+"input is unbatched or :math:`(N, L, S)`, where :math:`N` is the batch "
+"size, :math:`L` is the target sequence length, and :math:`S` is the "
+"source sequence length. If ``average_attn_weights=False``, returns "
+"attention weights per head of shape :math:`(\\text{num\\_heads}, L, S)` "
+"when input is unbatched or :math:`(N * \\text{num\\_heads}, L, S)`."
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:94 of
+msgid ""
+"**out[2]=mask_reversespace** - Used to save the dropout mask needed for "
+"backward propagation.,"
+msgstr ""
+
+#: megengine.functional.nn.multi_head_attention:95 of
+msgid ""
+"**out[3]=othr_reversespace** - Used to save the intermediate results that"
+" need to be used in backward propagation.,"
+msgstr ""
+
