@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-25 01:18+0000\n"
-"PO-Revision-Date: 2023-05-11 11:48\n"
+"POT-Creation-Date: 2023-09-14 06:50+0000\n"
+"PO-Revision-Date: 2023-05-11 11:48+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/data.po\n"
-"X-Crowdin-File-ID: 9779\n"
 
 #: ../../source/reference/data.rst:6
 msgid "megengine.data"
@@ -31,8 +27,9 @@ msgid ":py:obj:`DataLoader <megengine.data.DataLoader>`"
 msgstr ""
 
 #: ../../source/reference/data.rst:18:<autosummary>:1
-msgid "Provides a convenient way to iterate on a given dataset."
-msgstr "可用于在给定数据集上遍历并取得数据。"
+#, fuzzy
+msgid "Data loader."
+msgstr "DataLoader"
 
 #: ../../source/reference/data.rst:23
 msgid "Dataset"
@@ -59,8 +56,10 @@ msgid ":py:obj:`StreamDataset <megengine.data.dataset.StreamDataset>`"
 msgstr ""
 
 #: ../../source/reference/data.rst:32:<autosummary>:1
-msgid "An abstract class for stream data."
-msgstr "适用于流式数据的抽象类。"
+msgid ""
+"All datasets that represent an iterable of data samples should subclass "
+"it."
+msgstr ""
 
 #: ../../source/reference/data.rst:32:<autosummary>:1
 msgid ":py:obj:`ConcatDataset <megengine.data.dataset.ConcatDataset>`"
@@ -83,7 +82,9 @@ msgid ":py:obj:`ImageFolder <megengine.data.dataset.ImageFolder>`"
 msgstr ""
 
 #: ../../source/reference/data.rst:49:<autosummary>:1
-msgid "ImageFolder is a class for loading image data and labels from a organized folder."
+msgid ""
+"ImageFolder is a class for loading image data and labels from a organized"
+" folder."
 msgstr "ImageFolder 是一个类，可有组织地从文件夹中加载图像数据和标签。"
 
 #: ../../source/reference/data.rst:49:<autosummary>:1
@@ -247,12 +248,19 @@ msgid "Composes several transfomations together."
 msgstr "将几个转换组合在一起。"
 
 #: ../../source/reference/data.rst:106:<autosummary>:1
-msgid ":py:obj:`TorchTransformCompose <megengine.data.transform.TorchTransformCompose>`"
+msgid ""
+":py:obj:`TorchTransformCompose "
+"<megengine.data.transform.TorchTransformCompose>`"
 msgstr ""
 
 #: ../../source/reference/data.rst:106:<autosummary>:1
-msgid "Compose class used for transforms in torchvision, only support PIL image, some transforms with tensor in torchvision are not supported, such as Normalize and ToTensor in torchvision."
-msgstr "torchvision 中变换的 Compose 类，仅支持 PIL 图像，但不支持某些torchvision 中张量上的变换，比如 Normalize 和 ToTensor."
+msgid ""
+"Compose class used for transforms in torchvision, only support PIL image,"
+" some transforms with tensor in torchvision are not supported, such as "
+"Normalize and ToTensor in torchvision."
+msgstr ""
+"torchvision 中变换的 Compose 类，仅支持 PIL 图像，但不支持某些torchvision 中张量上的变换，比如 "
+"Normalize 和 ToTensor."
 
 #: ../../source/reference/data.rst:106:<autosummary>:1
 msgid ":py:obj:`ToMode <megengine.data.transform.ToMode>`"
@@ -319,7 +327,9 @@ msgid "Crops the given the input data at the center."
 msgstr "在中心处裁剪给定的输入数据。"
 
 #: ../../source/reference/data.rst:106:<autosummary>:1
-msgid ":py:obj:`RandomHorizontalFlip <megengine.data.transform.RandomHorizontalFlip>`"
+msgid ""
+":py:obj:`RandomHorizontalFlip "
+"<megengine.data.transform.RandomHorizontalFlip>`"
 msgstr ""
 
 #: ../../source/reference/data.rst:106:<autosummary>:1
@@ -351,7 +361,9 @@ msgid "Add random gaussian noise to the input data."
 msgstr "向输入数据添加随机高斯噪声。"
 
 #: ../../source/reference/data.rst:106:<autosummary>:1
-msgid ":py:obj:`BrightnessTransform <megengine.data.transform.BrightnessTransform>`"
+msgid ""
+":py:obj:`BrightnessTransform "
+"<megengine.data.transform.BrightnessTransform>`"
 msgstr ""
 
 #: ../../source/reference/data.rst:106:<autosummary>:1
@@ -359,7 +371,9 @@ msgid "Adjust brightness of the input data."
 msgstr "调整输入数据的亮度。"
 
 #: ../../source/reference/data.rst:106:<autosummary>:1
-msgid ":py:obj:`SaturationTransform <megengine.data.transform.SaturationTransform>`"
+msgid ""
+":py:obj:`SaturationTransform "
+"<megengine.data.transform.SaturationTransform>`"
 msgstr ""
 
 #: ../../source/reference/data.rst:106:<autosummary>:1
@@ -442,4 +456,10 @@ msgstr ""
 
 #~ msgid ":class:`~.Dataset` for MNIST meta data."
 #~ msgstr "适用于 MNIST 元数据的 :class:`~.Dataset` ."
+
+#~ msgid "Provides a convenient way to iterate on a given dataset."
+#~ msgstr "可用于在给定数据集上遍历并取得数据。"
+
+#~ msgid "An abstract class for stream data."
+#~ msgstr "适用于流式数据的抽象类。"
 

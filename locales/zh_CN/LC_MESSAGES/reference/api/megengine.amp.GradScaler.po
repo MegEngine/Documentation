@@ -1,29 +1,27 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-05-11 11:44\n"
+"POT-Creation-Date: 2023-09-14 06:50+0000\n"
+"PO-Revision-Date: 2023-05-11 11:44+0000\n"
 "Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.amp.GradScaler.po\n"
-"X-Crowdin-File-ID: 8855\n"
 "Language: zh_CN\n"
+"Language-Team: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.amp.GradScaler.rst:5
 msgid "GradScaler"
 msgstr "GradScaler"
 
 #: megengine.amp.grad_scaler.GradScaler:1 of
-msgid "A helper class that performs grad scaling to prevent from data overflow in :class:`~.autocast` mode."
+msgid ""
+"A helper class that performs grad scaling to prevent from data overflow "
+"in :class:`~.autocast` mode."
 msgstr "在 :class:`~.autocast` 模式下执行梯度缩放以防止数据溢出的helper类。"
 
 #: megengine.amp.grad_scaler.GradScaler
@@ -33,35 +31,53 @@ msgid "参数"
 msgstr "参数"
 
 #: megengine.amp.grad_scaler.GradScaler:5 of
-msgid "Initial scale factor."
+#, fuzzy
+msgid "initial scale factor."
 msgstr "初始缩放因子。"
 
 #: megengine.amp.grad_scaler.GradScaler:7 of
-msgid "Factor that the scale is multiplied by in actual :meth:`update` stage. If growth_factor is 0, scale_factor will not update."
+#, fuzzy
+msgid ""
+"factor that the scale is multiplied by in actual :meth:`update` stage. If"
+" growth_factor is 0, scale_factor will not update."
 msgstr "在实际 :meth:`update` 阶段 scale 乘以的因子。如果 growth_factor 为0，scale_factor 将不会更新。"
 
 #: megengine.amp.grad_scaler.GradScaler:10 of
-msgid "Factor that the scale is multiplied by when encountering overflow grad."
+#, fuzzy
+msgid "factor that the scale is multiplied by when encountering overflow grad."
 msgstr "遇到梯度溢出时 scale 乘以的因子。"
 
 #: megengine.amp.grad_scaler.GradScaler:13 of
-msgid "The interval between two scale update stages."
+#, fuzzy
+msgid "the interval between two scale update stages."
 msgstr "两个 scale 更新阶段之间的间隔。"
 
-#: megengine.amp.grad_scaler.GradScaler:16 of
+#: megengine.amp.grad_scaler.GradScaler of
+msgid "返回"
+msgstr ""
+
+#: megengine.amp.grad_scaler.GradScaler:15 of
+msgid "gradScaler object."
+msgstr ""
+
+#: megengine.amp.grad_scaler.GradScaler:18 of
 msgid "示例"
 msgstr "示例"
 
-#: megengine.amp.grad_scaler.GradScaler:34 of
-msgid "If need more flexible usage, could split ``scaler.backward`` into three lines:"
+#: megengine.amp.grad_scaler.GradScaler:36 of
+msgid ""
+"If need more flexible usage, could split ``scaler.backward`` into three "
+"lines:"
 msgstr "如果需要更灵活地使用，可以拆分 ``scaler.backward`` 成三行："
 
-#: megengine.amp.grad_scaler.GradScaler:49 of
+#: megengine.amp.grad_scaler.GradScaler:51 of
 msgid "This is useful when need to accumulate grads for multi batches."
 msgstr "可用于为多个 batch 积累梯度。"
 
 #: megengine.amp.grad_scaler.GradScaler.backward:1 of
-msgid "A wrapper of GradManager's :meth:`~.GradManager.backward`, used to scale ``y``'s grad and unscale parameters' grads."
+msgid ""
+"A wrapper of GradManager's :meth:`~.GradManager.backward`, used to scale "
+"``y``'s grad and unscale parameters' grads."
 msgstr ":meth:`~.GradManager.backward` 的包装器，用于缩放 y 的梯度和反缩放参数的梯度。"
 
 #: megengine.amp.grad_scaler.GradScaler.backward:5 of
@@ -73,15 +89,21 @@ msgid "Same as GradManager backward's ``y``."
 msgstr "和 GradManager backward 的 y 一样。"
 
 #: megengine.amp.grad_scaler.GradScaler.backward:9 of
-msgid "Same as GradManager backward's ``dy``. Will be multiplied by ``scale_factor``."
+msgid ""
+"Same as GradManager backward's ``dy``. Will be multiplied by "
+"``scale_factor``."
 msgstr "与 GradManager backward 的 dy 相同。将乘以 ``scale_factor``。"
 
 #: megengine.amp.grad_scaler.GradScaler.backward:12 of
-msgid "Whether do :meth:`unscale` at the same time. Could be ``False`` if needs to accumulate grads."
+msgid ""
+"Whether do :meth:`unscale` at the same time. Could be ``False`` if needs "
+"to accumulate grads."
 msgstr "是否同时进行 :meth:`unscale` 。如果需要累积梯度，可能为 ``False``。"
 
 #: megengine.amp.grad_scaler.GradScaler.backward:15 of
-msgid "Same as :meth:`unscale`'s ``update``. Will be ignored if ``unscale_grad`` is ``False``."
+msgid ""
+"Same as :meth:`unscale`'s ``update``. Will be ignored if ``unscale_grad``"
+" is ``False``."
 msgstr "和 :meth:`unscale` 的 ``update`` 一样。如果 ``unscale_grad`` 为 ``False`` 将被忽略。"
 
 #: megengine.amp.grad_scaler.GradScaler.unscale:1 of
@@ -89,10 +111,14 @@ msgid "Unscale all ``grad_tensors``'s grad."
 msgstr "反缩放所有 ``grad_tensors`` 的梯度。"
 
 #: megengine.amp.grad_scaler.GradScaler.unscale:4 of
-msgid "Tensors needed to unscale grads. Should be all tensors that are affected by ``target`` tensor in GradManager's backward."
+msgid ""
+"Tensors needed to unscale grads. Should be all tensors that are affected "
+"by ``target`` tensor in GradManager's backward."
 msgstr "需要反缩放梯度的张量。应该是所有在 GradManager 反向中受 ``target`` 张量影响的张量。"
 
 #: megengine.amp.grad_scaler.GradScaler.update:1 of
-msgid "Update the scale factor according to whether encountered overflow grad. If ``new_scale`` is provided, internal update mechanism will be ignored."
+msgid ""
+"Update the scale factor according to whether encountered overflow grad. "
+"If ``new_scale`` is provided, internal update mechanism will be ignored."
 msgstr "根据是否遇到梯度溢出来更新 scale 因子。如果提供了new_scale，内部更新机制将被忽略。"
 
