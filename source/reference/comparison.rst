@@ -1399,7 +1399,7 @@ Linear Layers
      -
    * - :py:class:`~torch.nn.Linear`
      - :py:class:`~megengine.module.Linear`
-     -
+     - :ref:`差异对比 <comparison-linear>` 
    * - :py:class:`~torch.nn.Bilinear`
      - :ref:`not-implemented`
      -
@@ -1418,7 +1418,7 @@ Dropout Layers
 
    * - :py:class:`~torch.nn.Dropout`
      - :py:class:`~megengine.module.Dropout`
-     -
+     - :ref:`差异对比 <comparison-dropout>` 
    * - :py:class:`~torch.nn.Dropout1d`
      - :ref:`not-implemented`
      -
@@ -1446,7 +1446,7 @@ Sparse Layers
 
    * - :py:class:`~torch.nn.Embedding`
      - :py:class:`~megengine.module.Embedding`
-     -
+     - :ref:`差异对比 <comparison-embedding>` 
    * - :py:class:`~torch.nn.EmbeddingBag`
      - :ref:`not-implemented`
      -
@@ -1550,7 +1550,7 @@ Vision functions
 
    * - :py:func:`~torch.nn.functional.pixel_shuffle`
      - :py:func:`~megengine.functional.nn.pixel_shuffle`
-     - 
+     - :ref:`差异对比 <comparison-pixel-shuffle>` 
    * - :py:func:`~torch.nn.functional.pixel_unshuffle`
      - :ref:`not-implemented`
      -
