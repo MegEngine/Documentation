@@ -1,29 +1,30 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-14 06:50+0000\n"
-"PO-Revision-Date: 2023-05-11 11:44+0000\n"
+"PO-Revision-Date: 2023-09-21 06:17\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.data.DataLoader.po\n"
+"X-Crowdin-File-ID: 8877\n"
 
 #: ../../source/reference/api/megengine.data.DataLoader.rst:5
 msgid "DataLoader"
 msgstr "DataLoader"
 
 #: megengine.data.dataloader.DataLoader:1 of
-#, fuzzy
-msgid ""
-"Data loader. Combines a dataset and a sampler, and provides a convenient "
-"way to iterate on a given dataset. The process is as follows:"
-msgstr "提供在给定数据集上迭代的方法。整体流程如下:"
+msgid "Data loader. Combines a dataset and a sampler, and provides a convenient way to iterate on a given dataset. The process is as follows:"
+msgstr ""
 
 #: megengine.data.dataloader.DataLoader:13 of
 msgid "See :ref:`data-guide` for more details."
@@ -38,9 +39,7 @@ msgid "dataset from which to load the minibatch."
 msgstr "需要从中分批加载的数据集。"
 
 #: megengine.data.dataloader.DataLoader:18 of
-msgid ""
-"defines the strategy to sample data from the dataset. If ``None``, it "
-"will sequentially sample from the dataset one by one."
+msgid "defines the strategy to sample data from the dataset. If ``None``, it will sequentially sample from the dataset one by one."
 msgstr "定义从数据集上采样数据的策略。如果设为 ``None``，将从数据集中逐个采样"
 
 #: megengine.data.dataloader.DataLoader:21 of
@@ -52,60 +51,35 @@ msgid "defined the merging strategy for a transformed batch."
 msgstr "为处理后的batch数据定义合并策略"
 
 #: megengine.data.dataloader.DataLoader:25 of
-msgid ""
-"the number of sub-process to load, transform and collate the batch. ``0``"
-" means using single-process. Default: 0"
+msgid "the number of sub-process to load, transform and collate the batch. ``0`` means using single-process. Default: 0"
 msgstr "加载、转换和整理批次的子进程数量。 ``0`` 表示使用单进程。 默认：0"
 
 #: megengine.data.dataloader.DataLoader:28 of
-msgid ""
-"if positive, means the timeout value(second) for collecting a batch from "
-"workers. Default: 0"
+msgid "if positive, means the timeout value(second) for collecting a batch from workers. Default: 0"
 msgstr "如果为正，则表示从  worker 那里收集批次的超时值（秒）。 默认：0"
 
 #: megengine.data.dataloader.DataLoader:31 of
-msgid ""
-"whether to enable the preloading strategy of the dataloader. When "
-"enabling, the dataloader will preload one batch to the device memory to "
-"speed up the whole training process."
+msgid "whether to enable the preloading strategy of the dataloader. When enabling, the dataloader will preload one batch to the device memory to speed up the whole training process."
 msgstr "是否启用dataloader的预加载策略。如果启用时，dataloader将预加载一个batch的数据到设备上，以加快整个训练过程"
 
 #: megengine.data.dataloader.DataLoader:34 of
-msgid ""
-"whether to splitting workload across all workers when dataset is "
-"streamdataset and num_workers > 0. When enabling, each worker will "
-"collect data from different dataset in order to speed up the whole "
-"loading process. See ref:`streamdataset-example` for more details"
-msgstr ""
-"当数据集是流数据集（streamdataset）并且 num_workers > "
-"0时，是否将工作负载分配给所有workers。启用时，每个worker将从不同的数据集收集数据，以加快整个加载流程。更多细节请看"
-"：`streamdataset-example`。"
+msgid "whether to splitting workload across all workers when dataset is streamdataset and num_workers > 0. When enabling, each worker will collect data from different dataset in order to speed up the whole loading process. See ref:`streamdataset-example` for more details"
+msgstr "当数据集是流数据集（streamdataset）并且 num_workers > 0时，是否将工作负载分配给所有workers。启用时，每个worker将从不同的数据集收集数据，以加快整个加载流程。更多细节请看：`streamdataset-example`。"
 
 #: megengine.data.dataloader.DataLoader:39 of
 msgid "实际案例"
-msgstr ""
+msgstr "实际案例"
 
 #: megengine.data.dataloader.DataLoader:46 of
 msgid "The effect of enabling preload"
 msgstr "启用预加载功能的后果"
 
 #: megengine.data.dataloader.DataLoader:49 of
-msgid ""
-"All elements in :class:`map`, :class:`list`, and :class:`tuple` will be "
-"converted to :class:`~.Tensor` by preloading, and you will get "
-":class:`~.Tensor` instead of the original Numpy array or Python built-in "
-"data structrure."
-msgstr ""
-"通过预加载功能 :class:`map`，:class:`list`和 :class:`tuple`都将会被转为 "
-":class:`~.Tensor` ，并且最后获得也是 :class:`~.Tensor`而不是numpy数组或python内置数据结构"
+msgid "All elements in :class:`map`, :class:`list`, and :class:`tuple` will be converted to :class:`~.Tensor` by preloading, and you will get :class:`~.Tensor` instead of the original Numpy array or Python built-in data structrure."
+msgstr "通过预加载功能 :class:`map`，:class:`list`和 :class:`tuple`都将会被转为 :class:`~.Tensor` ，并且最后获得也是 :class:`~.Tensor`而不是numpy数组或python内置数据结构"
 
 #: megengine.data.dataloader.DataLoader:51 of
-msgid ""
-"Tensors' host2device copy and device kernel execution will be overlapped,"
-" which will improve the training speed at the cost of **higher device "
-"memory usage** (due to one more batch data on device memory). This "
-"feature saves more time when your NN training time is short or your "
-"machine's host PCIe bandwidth for each device is low."
+msgid "Tensors' host2device copy and device kernel execution will be overlapped, which will improve the training speed at the cost of **higher device memory usage** (due to one more batch data on device memory). This feature saves more time when your NN training time is short or your machine's host PCIe bandwidth for each device is low."
 msgstr "张量的host2device的过程会合设备kernel的执行过程并行起来，以提高训练的速度，代价是**更高的设备内存使用**(由于设备内存上多了一个批处理数据)。当神经网络训练时间较短或机器上每个设备的PCIe带宽较低时，该特性可以节省更多的时间"
 
 #~ msgid "基类：:class:`object`"
