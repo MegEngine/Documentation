@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 21:02+0800\n"
-"PO-Revision-Date: 2023-05-11 11:48\n"
+"PO-Revision-Date: 2023-09-21 06:28\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.SlidingWindow.rst:5
 msgid "SlidingWindow"
-msgstr ""
+msgstr "SlidingWindow"
 
 #: megengine.module.sliding_window.SlidingWindow:1 of
 msgid "Apply a sliding window to input tensor and copy content in the window to corresponding output location. Assume input shape is :math:`(N, C, IH, IW)`, then output shape would be :math:`(N, C, OH, OW, window_h, window_w)` where :math:`(OH, OW)` would be computed from padding, stride, window and :math:`(IH, IW)`, as in convolution. For each output location, we have;"
@@ -30,11 +30,13 @@ msgstr "将滑动窗口应用于input tensor并将窗口中的内容复制到相
 msgid "out_{n, c, oh, ow, wh, ww} &= src_{n, c, ih+wh, iw+ww} \\\\\n"
 "\\text{where } & ih=-pad_h+oh \\times stride_h + (wh-1) \\times (dilation_h-1) \\\\\n"
 "               & iw=-pad_w+ow \\times stride_w + (ww-1) \\times (dilation_w-1)"
-msgstr ""
+msgstr "out_{n, c, oh, ow, wh, ww} &= src_{n, c, ih+wh, iw+ww} \\\\\n"
+"\\text{where } & ih=-pad_h+oh \\times stride_h + (wh-1) \\times (dilation_h-1) \\\\\n"
+"               & iw=-pad_w+ow \\times stride_w + (ww-1) \\times (dilation_w-1)"
 
 #: megengine.module.sliding_window.SlidingWindow of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.sliding_window.SlidingWindow:14 of
 msgid "the size of the window to take a max over."
