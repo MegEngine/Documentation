@@ -1,27 +1,29 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-14 06:50+0000\n"
-"PO-Revision-Date: 2023-04-21 09:12+0000\n"
+"PO-Revision-Date: 2023-09-21 06:17\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.data.DataLoader.po\n"
+"X-Crowdin-File-ID: 8877\n"
 
 #: ../../source/reference/api/megengine.data.DataLoader.rst:5
 msgid "DataLoader"
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:1 of
-msgid ""
-"Data loader. Combines a dataset and a sampler, and provides a convenient "
-"way to iterate on a given dataset. The process is as follows:"
+msgid "Data loader. Combines a dataset and a sampler, and provides a convenient way to iterate on a given dataset. The process is as follows:"
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:13 of
@@ -37,9 +39,7 @@ msgid "dataset from which to load the minibatch."
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:18 of
-msgid ""
-"defines the strategy to sample data from the dataset. If ``None``, it "
-"will sequentially sample from the dataset one by one."
+msgid "defines the strategy to sample data from the dataset. If ``None``, it will sequentially sample from the dataset one by one."
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:21 of
@@ -51,30 +51,19 @@ msgid "defined the merging strategy for a transformed batch."
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:25 of
-msgid ""
-"the number of sub-process to load, transform and collate the batch. ``0``"
-" means using single-process. Default: 0"
+msgid "the number of sub-process to load, transform and collate the batch. ``0`` means using single-process. Default: 0"
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:28 of
-msgid ""
-"if positive, means the timeout value(second) for collecting a batch from "
-"workers. Default: 0"
+msgid "if positive, means the timeout value(second) for collecting a batch from workers. Default: 0"
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:31 of
-msgid ""
-"whether to enable the preloading strategy of the dataloader. When "
-"enabling, the dataloader will preload one batch to the device memory to "
-"speed up the whole training process."
+msgid "whether to enable the preloading strategy of the dataloader. When enabling, the dataloader will preload one batch to the device memory to speed up the whole training process."
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:34 of
-msgid ""
-"whether to splitting workload across all workers when dataset is "
-"streamdataset and num_workers > 0. When enabling, each worker will "
-"collect data from different dataset in order to speed up the whole "
-"loading process. See ref:`streamdataset-example` for more details"
+msgid "whether to splitting workload across all workers when dataset is streamdataset and num_workers > 0. When enabling, each worker will collect data from different dataset in order to speed up the whole loading process. See ref:`streamdataset-example` for more details"
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:39 of
@@ -86,20 +75,11 @@ msgid "The effect of enabling preload"
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:49 of
-msgid ""
-"All elements in :class:`map`, :class:`list`, and :class:`tuple` will be "
-"converted to :class:`~.Tensor` by preloading, and you will get "
-":class:`~.Tensor` instead of the original Numpy array or Python built-in "
-"data structrure."
+msgid "All elements in :class:`map`, :class:`list`, and :class:`tuple` will be converted to :class:`~.Tensor` by preloading, and you will get :class:`~.Tensor` instead of the original Numpy array or Python built-in data structrure."
 msgstr ""
 
 #: megengine.data.dataloader.DataLoader:51 of
-msgid ""
-"Tensors' host2device copy and device kernel execution will be overlapped,"
-" which will improve the training speed at the cost of **higher device "
-"memory usage** (due to one more batch data on device memory). This "
-"feature saves more time when your NN training time is short or your "
-"machine's host PCIe bandwidth for each device is low."
+msgid "Tensors' host2device copy and device kernel execution will be overlapped, which will improve the training speed at the cost of **higher device memory usage** (due to one more batch data on device memory). This feature saves more time when your NN training time is short or your machine's host PCIe bandwidth for each device is low."
 msgstr ""
 
 #~ msgid "基类：:class:`object`"
@@ -179,12 +159,6 @@ msgstr ""
 #~ "表示不同的子进程会处理不同的批次。 默认：False"
 
 #~ msgid ""
-#~ "Provides a convenient way to iterate "
-#~ "on a given dataset. The process is"
-#~ " as follows:"
-#~ msgstr ""
-
-#~ msgid ""
 #~ "DataLoader combines a :class:`~.Dataset` with"
 #~ " :class:`~.Sampler`, :class:`~.Transform` and "
 #~ ":class:`~.Collator`, make it flexible to "
@@ -192,4 +166,8 @@ msgstr ""
 #~ "dataset. See :ref:`data-guide` for more"
 #~ " details."
 #~ msgstr ""
+#~ "DataLoader包含 :class:`~.Dataset` ， "
+#~ ":class:`~.Sampler`, "
+#~ ":class:`~.Transform`和:class:`~.Collator`，能够灵活的从数据集中获得minibatch的数据，更多细节可参考"
+#~ " :ref:`data-guide`"
 
