@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 16:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:26\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-09-21 10:56\n"
 "Last-Translator: \n"
+"Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.LSTMCell.po\n"
 "X-Crowdin-File-ID: 9513\n"
-"Language: zh_TW\n"
 
 #: ../../source/reference/api/megengine.module.LSTMCell.rst:5
 msgid "LSTMCell"
@@ -49,51 +49,75 @@ msgstr "crwdns104723:0crwdne104723:0"
 msgid "The number of expected features in the input `x`"
 msgstr "crwdns104725:0crwdne104725:0"
 
-#: megengine.module.rnn.LSTMCell:19 of
+#: megengine.module.rnn.LSTMCell:20 of
 msgid "The number of features in the hidden state `h`"
 msgstr "crwdns104727:0crwdne104727:0"
 
-#: megengine.module.rnn.LSTMCell:21 of
+#: megengine.module.rnn.LSTMCell:23 of
 msgid "If ``False``, then the layer does not use bias weights `b_ih` and `b_hh`. Default: ``True``"
 msgstr "crwdns104729:0crwdne104729:0"
 
-#: megengine.module.rnn.LSTMCell:31 of
+#: megengine.module.rnn.LSTMCell:36 of
+msgid "Shape:"
+msgstr "crwdns122323:0crwdne122323:0"
+
+#: megengine.module.rnn.LSTMCell:32 of
 msgid "Inputs: input, (h_0, c_0)"
 msgstr "crwdns104731:0crwdne104731:0"
 
-#: megengine.module.rnn.LSTMCell:25 of
-msgid "**input** of shape `(batch, input_size)`: tensor containing input features"
-msgstr "crwdns104733:0crwdne104733:0"
+#: megengine.module.rnn.LSTMCell:29 of
+msgid "input: `(batch, input_size)`. Tensor containing input features. h_0: `(batch, hidden_size)`. Tensor containing the initial hidden state for each element in the batch. c_0: `(batch, hidden_size)`. Tensor containing the initial cell state for each element in the batch. If `(h_0, c_0)` is not provided, both **h_0** and **c_0** default to zero."
+msgstr "crwdns122325:0crwdne122325:0"
 
-#: megengine.module.rnn.LSTMCell:26 of
-msgid "**h_0** of shape `(batch, hidden_size)`: tensor containing the initial hidden state for each element in the batch."
-msgstr "crwdns104735:0crwdne104735:0"
-
-#: megengine.module.rnn.LSTMCell:28 of
-msgid "**c_0** of shape `(batch, hidden_size)`: tensor containing the initial cell state for each element in the batch."
-msgstr "crwdns104737:0crwdne104737:0"
-
-#: megengine.module.rnn.LSTMCell:31 of
-msgid "If `(h_0, c_0)` is not provided, both **h_0** and **c_0** default to zero."
-msgstr "crwdns104739:0crwdne104739:0"
-
-#: megengine.module.rnn.LSTMCell:37 of
+#: megengine.module.rnn.LSTMCell:36 of
 msgid "Outputs: (h_1, c_1)"
 msgstr "crwdns104741:0crwdne104741:0"
 
-#: megengine.module.rnn.LSTMCell:34 of
-msgid "**h_1** of shape `(batch, hidden_size)`: tensor containing the next hidden state for each element in the batch"
-msgstr "crwdns104743:0crwdne104743:0"
+#: megengine.module.rnn.LSTMCell:35 of
+msgid "h_1: `(batch, hidden_size)`. Tensor containing the next hidden state for each element in the batch. c_1: `(batch, hidden_size)`. Tensor containing the next cell state for each element in the batch."
+msgstr "crwdns122327:0crwdne122327:0"
 
-#: megengine.module.rnn.LSTMCell:36 of
-msgid "**c_1** of shape `(batch, hidden_size)`: tensor containing the next cell state for each element in the batch"
-msgstr "crwdns104745:0crwdne104745:0"
-
-#: megengine.module.rnn.LSTMCell:40 of
+#: megengine.module.rnn.LSTMCell:39 of
 msgid "实际案例"
 msgstr "crwdns104747:0crwdne104747:0"
 
-#: megengine.module.rnn.LSTMCell:55 of
+#: megengine.module.rnn.LSTMCell:54 of
 msgid "Outputs:"
 msgstr "crwdns104749:0crwdne104749:0"
+
+#~ msgid ""
+#~ "**input** of shape `(batch, input_size)`: "
+#~ "tensor containing input features"
+#~ msgstr "形状为 `(batch, input_size)` 的**input**：包含输入特征的tensor"
+
+#~ msgid ""
+#~ "**h_0** of shape `(batch, hidden_size)`: "
+#~ "tensor containing the initial hidden "
+#~ "state for each element in the "
+#~ "batch."
+#~ msgstr ""
+#~ "形状为 `(batch, hidden_size)` 的**h_0**：包含batch中每个元素的初始"
+#~ " hidden state 的 tensor."
+
+#~ msgid ""
+#~ "**c_0** of shape `(batch, hidden_size)`: "
+#~ "tensor containing the initial cell state"
+#~ " for each element in the batch."
+#~ msgstr ""
+#~ "形状为 `(batch, hidden_size)` 的**c_0**：包含batch中每个元素的初始"
+#~ " cell state 的 tensor."
+
+#~ msgid ""
+#~ "If `(h_0, c_0)` is not provided, "
+#~ "both **h_0** and **c_0** default to "
+#~ "zero."
+#~ msgstr "若 `(h_0, c_0)` 未提供，**h_0**和**c_0**默认设置为零。"
+
+#~ msgid ""
+#~ "**c_1** of shape `(batch, hidden_size)`: "
+#~ "tensor containing the next cell state"
+#~ " for each element in the batch"
+#~ msgstr ""
+#~ "形状为 `(batch, hidden_size)` 的**c_1**：包含 batch"
+#~ " 中每个元素下一个 cell state 的 tensor."
 
