@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2023-09-21 06:28\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-09-21 10:56\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-CN\n"
@@ -25,6 +25,46 @@ msgstr "PixelShuffle"
 #: megengine.module.pixel_shuffle.PixelShuffle:1 of
 msgid "Rearranges elements in a tensor of shape (*, C x r^2, H, W) to a tensor of shape (*, C, H x r, W x r), where r is an upscale factor, where * is zero or more batch dimensions."
 msgstr "将形状为（*, C x r^2, H, W）的向量中的元素重新排列为形状为（*, C, H x r, W x r） 的向量，其中 r 是一个上采样因子，其中*是零或 batch 的维度。"
+
+#: megengine.module.pixel_shuffle.PixelShuffle:5 of
+msgid "See the paper: `Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network<https://arxiv.org/abs/1609.05158>` for more details."
+msgstr ""
+
+#: megengine.module.pixel_shuffle.PixelShuffle of
+msgid "参数"
+msgstr "参数"
+
+#: megengine.module.pixel_shuffle.PixelShuffle:8 of
+msgid "factor to increase spatial resolution by."
+msgstr ""
+
+#: megengine.module.pixel_shuffle.PixelShuffle:20 of
+msgid "Shape:"
+msgstr "形状："
+
+#: megengine.module.pixel_shuffle.PixelShuffle:12 of
+msgid "input: :math:`(*, C_{in}, H_{in}, W_{in})`, where * is zero or more batch dimensions."
+msgstr ""
+
+#: megengine.module.pixel_shuffle.PixelShuffle:13 of
+msgid "output: :math:`(*, C_{out}, H_{out}, W_{out})`, where:"
+msgstr ""
+
+#: megengine.module.pixel_shuffle.PixelShuffle:18 of
+msgid "\\begin{aligned}"
+msgstr ""
+
+#: megengine.module.pixel_shuffle.PixelShuffle:17 of
+msgid "C_{out} = C_{in} \\div \\text{upscale\\_factor}^2 \\\\ H_{out} = H_{in} \\times \\text{upscale\\_factor} \\\\ W_{out} = W_{in} \\times \\text{upscale\\_factor} \\\\"
+msgstr ""
+
+#: megengine.module.pixel_shuffle.PixelShuffle:20 of
+msgid "\\end{aligned}"
+msgstr ""
+
+#: megengine.module.pixel_shuffle.PixelShuffle:23 of
+msgid "实际案例"
+msgstr "实际案例"
 
 #~ msgid "megengine.module.PixelShuffle"
 #~ msgstr ""
