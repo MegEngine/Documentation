@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-04 16:51+0800\n"
-"PO-Revision-Date: 2023-05-11 10:50\n"
+"PO-Revision-Date: 2023-09-21 06:28\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.RNN.rst:5
 msgid "RNN"
-msgstr ""
+msgstr "RNN"
 
 #: megengine.module.rnn.RNN:1 of
 msgid "Applies a multi-layer Elman RNN with :math:`\\tanh` or :math:`\\text{ReLU}` non-linearity to an input sequence."
@@ -32,7 +32,7 @@ msgstr "针对输入序列的每一个元素，每一层网络做如下计算：
 
 #: megengine.module.rnn.RNN:8 of
 msgid "h_t = \\tanh(W_{ih} x_t + b_{ih} + W_{hh} h_{(t-1)} + b_{hh})\n\n"
-msgstr ""
+msgstr "h_t = \\tanh(W_{ih} x_t + b_{ih} + W_{hh} h_{(t-1)} + b_{hh})\n\n"
 
 #: megengine.module.rnn.RNN:11 of
 msgid "where :math:`h_t` is the hidden state at time `t`, :math:`x_t` is the input at time `t`, and :math:`h_{(t-1)}` is the hidden state of the previous layer at time `t-1` or the initial hidden state at time `0`. If :attr:`nonlinearity` is ``'relu'``, then :math:`\\text{ReLU}` is used instead of :math:`\\tanh`."
@@ -41,7 +41,7 @@ msgstr "其中, :math:`h_t` 是 `t` 时刻的隐藏状态, :math:`x_t` 是 `t` �
 
 #: megengine.module.rnn.RNN of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.rnn.RNN:16 of
 msgid "The number of expected features in the input `x`"
@@ -99,7 +99,13 @@ msgid "\\begin{aligned}\n"
 "    H_{in} ={} & \\text{input\\_size} \\\\\n"
 "    H_{out} ={} & \\text{hidden\\_size}\n"
 "\\end{aligned}\n\n"
-msgstr ""
+msgstr "\\begin{aligned}\n"
+"    N ={} & \\text{batch size} \\\\\n"
+"    L ={} & \\text{sequence length} \\\\\n"
+"    D ={} & 2 \\text{ if bidirectional=True otherwise } 1 \\\\\n"
+"    H_{in} ={} & \\text{input\\_size} \\\\\n"
+"    H_{out} ={} & \\text{hidden\\_size}\n"
+"\\end{aligned}\n\n"
 
 #: megengine.module.rnn.RNN:62 of
 msgid "Outputs: output, h_n"
