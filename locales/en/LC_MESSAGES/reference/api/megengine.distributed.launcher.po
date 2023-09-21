@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2023-04-21 09:15\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-09-21 10:55\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: en\n"
@@ -23,7 +23,7 @@ msgid "launcher"
 msgstr ""
 
 #: megengine.distributed.launcher.launcher:1 of
-msgid "Decorator for launching multiple processes in single-machine multi-gpu training."
+msgid "Decorator for launching multiple processes in single-machine/multi-machine multi-gpu training."
 msgstr ""
 
 #: megengine.distributed.launcher.launcher of
@@ -34,28 +34,32 @@ msgstr ""
 msgid "the function you want to launch in distributed mode."
 msgstr ""
 
-#: megengine.distributed.launcher.launcher:4 of
-msgid "how many devices each node."
-msgstr ""
-
 #: megengine.distributed.launcher.launcher:5 of
-msgid "how many devices totally."
-msgstr ""
-
-#: megengine.distributed.launcher.launcher:6 of
-msgid "start number for rank."
-msgstr ""
-
-#: megengine.distributed.launcher.launcher:7 of
-msgid "ip address for master node (where the rank 0 is)."
+msgid "how many devices each node. If ``n_gpus`` is None,  ``n_gpus`` will be the device count of current node. Default: None."
 msgstr ""
 
 #: megengine.distributed.launcher.launcher:8 of
-msgid "server port for distributed server."
+msgid "how many devices totally. If ``world_size`` is None, ``world_size`` will be ``n_gpus``. Default: None."
 msgstr ""
 
-#: megengine.distributed.launcher.launcher:9 of
-msgid "set default collective communication backend."
+#: megengine.distributed.launcher.launcher:11 of
+msgid "the start rank number in current node. For single-machine multi-gpu training, rank_start should be ``0``. For multi-machine training, ``rank_start`` of Machine ``i`` should be ``i * n_gpus``. Default: 0"
+msgstr ""
+
+#: megengine.distributed.launcher.launcher:14 of
+msgid "ip address for master node (where the rank 0 is placed). Default: \"localhost\"."
+msgstr ""
+
+#: megengine.distributed.launcher.launcher:16 of
+msgid "server port for distributed server. Default: 0."
+msgstr ""
+
+#: megengine.distributed.launcher.launcher:18 of
+msgid "set default collective communication backend. ``backend`` should be \"nccl\" or \"rccl\". Default: \"nccl\"."
+msgstr ""
+
+#: megengine.distributed.launcher.launcher:22 of
+msgid "Examples of distributed training using ``launcher`` decorator can be found in :ref:`_distributed-guide`"
 msgstr ""
 
 #~ msgid "基类：:class:`object`"
@@ -81,4 +85,13 @@ msgstr ""
 
 #~ msgid "Methods"
 #~ msgstr "方法"
+
+#~ msgid "how many devices each node."
+#~ msgstr "每个节点多少个设备。"
+
+#~ msgid "how many devices totally."
+#~ msgstr "总共多少个设备。"
+
+#~ msgid "start number for rank."
+#~ msgstr "机器上 rank 开始的数字。"
 
