@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:26\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-09-21 10:55\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
@@ -46,43 +46,86 @@ msgstr "crwdns104535:0crwdne104535:0"
 msgid "number of input channels."
 msgstr "crwdns104537:0crwdne104537:0"
 
-#: megengine.module.conv.ConvTranspose3d:15 of
+#: megengine.module.conv.ConvTranspose3d:16 of
 msgid "number of output channels."
 msgstr "crwdns104539:0crwdne104539:0"
 
-#: megengine.module.conv.ConvTranspose3d:17 of
+#: megengine.module.conv.ConvTranspose3d:19 of
 msgid "size of weight on spatial dimensions. If ``kernel_size`` is an :class:`int`, the actual kernel size would be ``(kernel_size, kernel_size, kernel_size)``."
 msgstr "crwdns104541:0:class:crwdne104541:0"
 
-#: megengine.module.conv.ConvTranspose3d:21 of
-msgid "stride of the 3D convolution operation. Default: 1"
-msgstr "crwdns104543:0crwdne104543:0"
+#: megengine.module.conv.ConvTranspose3d:24 of
+msgid "stride of the 3D convolution operation. Default: 1."
+msgstr "crwdns122243:0crwdne122243:0"
 
-#: megengine.module.conv.ConvTranspose3d:23 of
-msgid "size of the paddings added to the input on all sides of its spatial dimensions. Only zero-padding is supported. Default: 0"
-msgstr "crwdns104545:0crwdne104545:0"
+#: megengine.module.conv.ConvTranspose3d:27 of
+msgid "size of the paddings added to the input on all sides of its spatial dimensions. Only zero-padding is supported. Default: 0."
+msgstr "crwdns122245:0crwdne122245:0"
 
-#: megengine.module.conv.ConvTranspose3d:26 of
-msgid "size of paddings appended to output. Default: 0"
-msgstr "crwdns104547:0crwdne104547:0"
+#: megengine.module.conv.ConvTranspose3d:31 of
+msgid "size of paddings appended to output. Default: 0."
+msgstr "crwdns122247:0crwdne122247:0"
 
-#: megengine.module.conv.ConvTranspose3d:28 of
-msgid "dilation of the 3D convolution operation. Default: 1"
-msgstr "crwdns104549:0crwdne104549:0"
+#: megengine.module.conv.ConvTranspose3d:34 of
+msgid "dilation of the 3D convolution operation. Default: 1."
+msgstr "crwdns122249:0crwdne122249:0"
 
-#: megengine.module.conv.ConvTranspose3d:30 of
-msgid "number of groups into which the input and output channels are divided, so as to perform a ``grouped convolution``. When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by groups, and the shape of weight should be ``(groups, in_channels // groups, out_channels // groups, depth, height, width)``. Default: 1"
-msgstr "crwdns104551:0crwdne104551:0"
+#: megengine.module.conv.ConvTranspose3d:37 of
+msgid "number of groups into which the input and output channels are divided, so as to perform a ``grouped convolution``. When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by groups, and the shape of weight should be ``(groups, in_channels // groups, out_channels // groups, depth, height, width)``. Default: 1."
+msgstr "crwdns122251:0crwdne122251:0"
 
-#: megengine.module.conv.ConvTranspose3d:36 of
-msgid "wether to add a bias onto the result of convolution. Default: True"
-msgstr "crwdns104553:0crwdne104553:0"
+#: megengine.module.conv.ConvTranspose3d:44 of
+msgid "wether to add a bias onto the result of convolution. Default: True."
+msgstr "crwdns122253:0crwdne122253:0"
 
-#: megengine.module.conv.ConvTranspose3d:40 of
+#: megengine.module.conv.ConvTranspose3d:59 of
+msgid "Shape:"
+msgstr "crwdns122255:0crwdne122255:0"
+
+#: megengine.module.conv.ConvTranspose3d:48 of
+msgid "Input: :math:`(N, C_{in}, D_{in}, H_{in}, W_{in})` or :math:`(C_{in}, D_{in}, H_{in}, W_{in})`"
+msgstr "crwdns122257:0:math:crwdnd122257:0{in}crwdnd122257:0{in}crwdnd122257:0{in}crwdnd122257:0{in}crwdnd122257:0:math:crwdnd122257:0{in}crwdnd122257:0{in}crwdnd122257:0{in}crwdnd122257:0{in}crwdne122257:0"
+
+#: megengine.module.conv.ConvTranspose3d:49 of
+msgid "Output: :math:`(N, C_{out}, D_{out}, H_{out}, W_{out})` or :math:`(C_{out}, D_{out}, H_{out}, W_{out})`, where"
+msgstr "crwdns122259:0:math:crwdnd122259:0{out}crwdnd122259:0{out}crwdnd122259:0{out}crwdnd122259:0{out}crwdnd122259:0:math:crwdnd122259:0{out}crwdnd122259:0{out}crwdnd122259:0{out}crwdnd122259:0{out}crwdne122259:0"
+
+#: megengine.module.conv.ConvTranspose3d:52 of
+msgid "D_{out} = (D_{in} - 1) \\times \\text{stride}[0] - 2 \\times \\text{padding}[0] + \\text{dilation}[0]\n"
+"          \\times (\\text{kernel\\_size}[0] - 1) + \\text{output\\_padding}[0] + 1\n\n"
+msgstr "crwdns122261:0{out}crwdnd122261:0{in}crwdnd122261:0{stride}crwdnd122261:0[0]crwdnd122261:0{padding}crwdnd122261:0[0]crwdnd122261:0{dilation}crwdnd122261:0[0]crwdnd122261:0[0]crwdnd122261:0[0]crwdne122261:0"
+
+#: megengine.module.conv.ConvTranspose3d:55 of
+msgid "H_{out} = (H_{in} - 1) \\times \\text{stride}[1] - 2 \\times \\text{padding}[1] + \\text{dilation}[1]\n"
+"          \\times (\\text{kernel\\_size}[1] - 1) + \\text{output\\_padding}[1] + 1\n\n"
+msgstr "crwdns122263:0{out}crwdnd122263:0{in}crwdnd122263:0{stride}crwdnd122263:0[1]crwdnd122263:0{padding}crwdnd122263:0[1]crwdnd122263:0{dilation}crwdnd122263:0[1]crwdnd122263:0[1]crwdnd122263:0[1]crwdne122263:0"
+
+#: megengine.module.conv.ConvTranspose3d:58 of
+msgid "W_{out} = (W_{in} - 1) \\times \\text{stride}[2] - 2 \\times \\text{padding}[2] + \\text{dilation}[2]\n"
+"          \\times (\\text{kernel\\_size}[2] - 1) + \\text{output\\_padding}[2] + 1\n\n"
+msgstr "crwdns122265:0{out}crwdnd122265:0{in}crwdnd122265:0{stride}crwdnd122265:0[2]crwdnd122265:0{padding}crwdnd122265:0[2]crwdnd122265:0{dilation}crwdnd122265:0[2]crwdnd122265:0[2]crwdnd122265:0[2]crwdne122265:0"
+
+#: megengine.module.conv.ConvTranspose3d of
+msgid "返回"
+msgstr "crwdns122267:0crwdne122267:0"
+
+#: megengine.module.conv.ConvTranspose3d:61 of
+msgid "module. The instance of the ``ConvTranspose3d`` module."
+msgstr "crwdns122269:0crwdne122269:0"
+
+#: megengine.module.conv.ConvTranspose3d of
+msgid "返回类型"
+msgstr "crwdns122271:0crwdne122271:0"
+
+#: megengine.module.conv.ConvTranspose3d:65 of
+msgid "实际案例"
+msgstr "crwdns122273:0crwdne122273:0"
+
+#: megengine.module.conv.ConvTranspose3d:76 of
 msgid "``weight`` usually has shape ``(in_channels, out_channels, depth, height, width)`` ."
 msgstr "crwdns104555:0crwdne104555:0"
 
-#: megengine.module.conv.ConvTranspose3d:41 of
+#: megengine.module.conv.ConvTranspose3d:77 of
 msgid "``bias`` usually has shape ``(1, out_channels, *1)``"
 msgstr "crwdns104557:0crwdne104557:0"
 
