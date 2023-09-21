@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2023-05-11 13:04\n"
+"PO-Revision-Date: 2023-09-21 06:23\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.functional.nn.logsoftmax.rst:2
 msgid "megengine.functional.nn.logsoftmax"
-msgstr ""
+msgstr "megengine.functional.nn.logsoftmax"
 
 #: megengine.functional.nn.logsoftmax:1 of
 msgid "Applies the :math:`\\log(\\text{softmax}(x))` function to an n-dimensional input tensor. The :math:`\\text{logsoftmax}(x)` formulation can be simplified as:"
@@ -28,7 +28,7 @@ msgstr "对一个n维的输入张量做 :math:`\\log(\\text{softmax}(x))` 函数
 
 #: megengine.functional.nn.logsoftmax:4 of
 msgid "\\text{logsoftmax}(x_{i}) = \\log(\\frac{\\exp(x_i) }{ \\sum_j \\exp(x_j)} )\n\n"
-msgstr ""
+msgstr "\\text{logsoftmax}(x_{i}) = \\log(\\frac{\\exp(x_i) }{ \\sum_j \\exp(x_j)} )\n\n"
 
 #: megengine.functional.nn.logsoftmax:7 of
 msgid "For numerical stability the implementation follows this transformation:"
@@ -39,7 +39,10 @@ msgid "\\text{logsoftmax}(x)\n"
 "= \\log (\\frac{\\exp (x)}{\\sum_{i}(\\exp (x_{i}))})\n"
 "= x - \\log (\\sum_{i}(\\exp (x_{i})))\n"
 "= x - \\text{logsumexp}(x)\n\n"
-msgstr ""
+msgstr "\\text{logsoftmax}(x)\n"
+"= \\log (\\frac{\\exp (x)}{\\sum_{i}(\\exp (x_{i}))})\n"
+"= x - \\log (\\sum_{i}(\\exp (x_{i})))\n"
+"= x - \\text{logsumexp}(x)\n\n"
 
 #: megengine.functional.nn.logsoftmax:16 of
 msgid "实际案例"
@@ -47,7 +50,7 @@ msgstr "实际案例"
 
 #: megengine.functional.nn.logsoftmax of
 msgid "返回类型"
-msgstr ""
+msgstr "返回类型"
 
 #: megengine.functional.nn.logsoftmax:25 of
 msgid ":py:class:`~megengine.tensor.Tensor`"
