@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2023-04-21 09:25\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-04-21 09:25+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.AdaptiveMaxPool2d.po\n"
-"X-Crowdin-File-ID: 9463\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.module.AdaptiveMaxPool2d.rst:5
 msgid "AdaptiveMaxPool2d"
@@ -27,19 +23,27 @@ msgid "Applies a 2D max adaptive pooling over an input."
 msgstr ""
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:3 of
-msgid "For instance, given an input of the size :math:`(N, C, H, W)` and an output shape :math:`(OH, OW)`, this layer generates the output of the size :math:`(N, C, OH, OW)` through a process described as:"
+msgid ""
+"For instance, given an input of the size :math:`(N, C, H, W)` and an "
+"output shape :math:`(OH, OW)`, this layer generates the output of the "
+"size :math:`(N, C, OH, OW)` through a process described as:"
 msgstr ""
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:7 of
-msgid "\\begin{aligned}\n"
-"    out(N_i, C_j, h, w) ={} & \\max_{m=0, \\ldots, kH-1} \\max_{n=0, \\ldots, kW-1}\n"
+msgid ""
+"\\begin{aligned}\n"
+"    out(N_i, C_j, h, w) ={} & \\max_{m=0, \\ldots, kH-1} \\max_{n=0, "
+"\\ldots, kW-1}\n"
 "        \\text{input}(N_i, C_j, \\text{stride[0]} \\times h + m,\n"
 "        \\text{stride[1]} \\times w + n)\n"
-"\\end{aligned}\n\n"
+"\\end{aligned}\n"
+"\n"
 msgstr ""
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:14 of
-msgid "``kernel_size`` and ``stride`` can be inferred from input shape and out shape:"
+msgid ""
+"``kernel_size`` and ``stride`` can be inferred from input shape and out "
+"shape:"
 msgstr ""
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:16 of
@@ -54,7 +58,43 @@ msgstr ""
 msgid "kernel_size: (IH - (OH - 1) * stride_h, IW - (OW - 1) * stride_w)"
 msgstr ""
 
+#: megengine.module.adaptive_pooling.AdaptiveMaxPool2d of
+msgid "参数"
+msgstr ""
+
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:21 of
+msgid ""
+"the target output shape of the image of the form Height * Width. Can be "
+"tuple (H, W) or a single H for a square image H * H."
+msgstr ""
+
+#: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:28 of
+msgid "Shape:"
+msgstr ""
+
+#: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:26 of
+msgid "Input: :math:`(N, C, H_{in}, W_{in})` or :math:`(C, H_{in}, W_{in})`."
+msgstr ""
+
+#: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:27 of
+msgid ""
+"Output: :math:`(N, C, H_{out}, W_{out})` or :math:`(C, H_{out}, "
+"W_{out})`, where :math:`(H_{out}, W_{out})=\\text{output\\_shape}`."
+msgstr ""
+
+#: megengine.module.adaptive_pooling.AdaptiveMaxPool2d of
+msgid "返回"
+msgstr ""
+
+#: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:30 of
+msgid "module. The instance of the ``AdaptiveMaxPool2d`` module."
+msgstr ""
+
+#: megengine.module.adaptive_pooling.AdaptiveMaxPool2d of
+msgid "返回类型"
+msgstr ""
+
+#: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:34 of
 msgid "实际案例"
 msgstr ""
 

@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 16:51+0800\n"
-"PO-Revision-Date: 2023-05-11 10:50\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-05-11 10:50+0000\n"
 "Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.RNNCell.po\n"
-"X-Crowdin-File-ID: 9539\n"
 "Language: zh_CN\n"
+"Language-Team: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.module.RNNCell.rst:5
 msgid "RNNCell"
@@ -39,62 +35,87 @@ msgid "参数"
 msgstr ""
 
 #: megengine.module.rnn.RNNCell:10 of
-msgid "The number of expected features in the input `x`"
+#, fuzzy
+msgid "The number of expected features in the input `x`."
 msgstr "输入 `x` 应该具有的特征数量"
 
-#: megengine.module.rnn.RNNCell:12 of
-msgid "The number of features in the hidden state `h`"
+#: megengine.module.rnn.RNNCell:13 of
+#, fuzzy
+msgid "The number of features in the hidden state `h`."
 msgstr "隐藏状态 `h` 所包含的特征数量"
 
-#: megengine.module.rnn.RNNCell:14 of
-msgid "If ``False``, then the layer does not use bias weights `b_ih` and `b_hh`. Default: ``True``"
+#: megengine.module.rnn.RNNCell:16 of
+#, fuzzy
+msgid ""
+"If ``False``, then the layer does not use bias weights `b_ih` and `b_hh`."
+" Default: ``True``."
 msgstr "如果为 ``False`` ，那么这一层不会使用偏置权重 `b_ih` 和 `b_hh` 。默认值： ``True``"
 
-#: megengine.module.rnn.RNNCell:17 of
-msgid "The non-linearity to use. Can be either ``'tanh'`` or ``'relu'``. Default: ``'tanh'``"
+#: megengine.module.rnn.RNNCell:19 of
+msgid ""
+"The non-linearity to use. Can be either ``'tanh'`` or ``'relu'``. "
+"Default: ``'tanh'``"
 msgstr "需要使用的非线性函数。可以是 ``'tanh'`` 或 ``'relu'`` 。默认值： ``'tanh'``"
 
-#: megengine.module.rnn.RNNCell:23 of
+#: megengine.module.rnn.RNNCell:27 of
+msgid "Shape:"
+msgstr "形状："
+
+#: megengine.module.rnn.RNNCell:24 of
 msgid "Inputs: input, hidden"
 msgstr "输入：input，hidden"
 
-#: megengine.module.rnn.RNNCell:20 of
-msgid "**input** of shape `(batch, input_size)`: tensor containing input features"
-msgstr "**input** 形状为 `(batch, input_size)` ：包含输入特征的张量"
-
-#: megengine.module.rnn.RNNCell:21 of
-msgid "**hidden** of shape `(batch, hidden_size)`: tensor containing the initial hidden state for each element in the batch. Defaults to zero if not provided."
+#: megengine.module.rnn.RNNCell:24 of
+#, fuzzy
+msgid ""
+"input: `(batch, input_size)`. Tensor containing input features. hidden: "
+"`(batch, hidden_size)`. Tensor containing the initial hidden state for "
+"each element in the batch. Defaults to zero if not provided."
 msgstr "**hidden** 形状为 `(batch, hidden_size)` ：包含批中每个元素的初始隐藏状态的张量。如果没有提供则默认为零。"
 
 #: megengine.module.rnn.RNNCell:27 of
 msgid "Outputs: h'"
 msgstr "输出： h'"
 
-#: megengine.module.rnn.RNNCell:26 of
-msgid "**h'** of shape `(batch, hidden_size)`: tensor containing the next hidden state for each element in the batch"
+#: megengine.module.rnn.RNNCell:27 of
+#, fuzzy
+msgid ""
+"h': `(batch, hidden_size)`. Tensor containing the next hidden state for "
+"each element in the batch."
 msgstr "**h'** 形状为 `(batch, hidden_size)` ：包含批中每个元素的下一隐藏状态的张量"
 
-#: megengine.module.rnn.RNNCell:37 of
-msgid "Shape:"
-msgstr "形状："
-
 #: megengine.module.rnn.RNNCell:30 of
-msgid "Input1: :math:`(N, H_{in})` tensor containing input features where :math:`H_{in}` = `input_size`"
-msgstr "输入1： :math:`(N, H_{in})` 包含输入特征的张量其中 :math:`H_{in}` = `input_size`"
-
-#: megengine.module.rnn.RNNCell:32 of
-msgid "Input2: :math:`(N, H_{out})` tensor containing the initial hidden state for each element in the batch where :math:`H_{out}` = `hidden_size` Defaults to zero if not provided."
-msgstr "输入2： :math:`(N, H_{out})` 包含批中每一元素的初始隐藏状态的张量其中 :math:`H_{out}` = `hidden_size` 如果没有提供则默认为零。"
-
-#: megengine.module.rnn.RNNCell:35 of
-msgid "Output: :math:`(N, H_{out})` tensor containing the next hidden state for each element in the batch"
-msgstr "输出： :math:`(N, H_{out})` 包含批中每一元素的下一隐藏状态的张量"
-
-#: megengine.module.rnn.RNNCell:40 of
 msgid "实际案例"
 msgstr "实际案例"
 
-#: megengine.module.rnn.RNNCell:53 of
+#: megengine.module.rnn.RNNCell:43 of
 msgid "Outputs:"
 msgstr "输出："
+
+#~ msgid ""
+#~ "**input** of shape `(batch, input_size)`: "
+#~ "tensor containing input features"
+#~ msgstr "**input** 形状为 `(batch, input_size)` ：包含输入特征的张量"
+
+#~ msgid ""
+#~ "Input1: :math:`(N, H_{in})` tensor containing"
+#~ " input features where :math:`H_{in}` = "
+#~ "`input_size`"
+#~ msgstr "输入1： :math:`(N, H_{in})` 包含输入特征的张量其中 :math:`H_{in}` = `input_size`"
+
+#~ msgid ""
+#~ "Input2: :math:`(N, H_{out})` tensor containing"
+#~ " the initial hidden state for each"
+#~ " element in the batch where "
+#~ ":math:`H_{out}` = `hidden_size` Defaults to"
+#~ " zero if not provided."
+#~ msgstr ""
+#~ "输入2： :math:`(N, H_{out})` 包含批中每一元素的初始隐藏状态的张量其中 "
+#~ ":math:`H_{out}` = `hidden_size` 如果没有提供则默认为零。"
+
+#~ msgid ""
+#~ "Output: :math:`(N, H_{out})` tensor containing"
+#~ " the next hidden state for each "
+#~ "element in the batch"
+#~ msgstr "输出： :math:`(N, H_{out})` 包含批中每一元素的下一隐藏状态的张量"
 

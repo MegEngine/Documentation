@@ -1,34 +1,100 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2023-04-21 09:25\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-04-21 09:25+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.BatchNorm1d.po\n"
-"X-Crowdin-File-ID: 9469\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.module.BatchNorm1d.rst:5
 msgid "BatchNorm1d"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm1d:1 of
-msgid "Applies Batch Normalization over a 2D/3D tensor."
+#, fuzzy
+msgid "Applies Batch Normalization over a 2D or 3D input."
 msgstr "在2D/3D张量上进行批标准化（batch normalization）。"
 
 #: megengine.module.batchnorm.BatchNorm1d:3 of
-msgid "Refer to :class:`~.BatchNorm2d` for more information."
-msgstr "参见 :class:`~.BatchNorm2d` 以获取更多信息。"
+msgid ""
+"y = \\frac{x - \\mathrm{E}[x]}{\\sqrt{\\mathrm{Var}[x] + \\epsilon}} * "
+"\\gamma + \\beta"
+msgstr ""
+
+#: megengine.module.batchnorm.BatchNorm1d:7 of
+msgid ""
+"The mean and standard-deviation are calculated per-dimension over the "
+"mini-batches and :math:`\\gamma` and :math:`\\beta` are learnable "
+"parameter vectors of size `C` (where `C` is the number of features or "
+"channels of the input). By default, the elements of :math:`\\gamma` are "
+"set to 1 and the elements of :math:`\\beta` are set to 0. The standard-"
+"deviation is calculated via the biased estimator, equivalent to "
+"`torch.var(input, unbiased=False)`."
+msgstr ""
+
+#: megengine.module.batchnorm.BatchNorm1d:13 of
+msgid ""
+"By default, during training this layer keeps running estimates of its "
+"computed mean and variance, which are then used for normalization during "
+"evaluation. The running estimates are kept with a default "
+":attr:`momentum` of 0.9."
+msgstr ""
+
+#: megengine.module.batchnorm.BatchNorm1d:18 of
+msgid ""
+"If :attr:`track_running_stats` is set to ``False``, this layer then does "
+"not keep running estimates, and batch statistics are instead used during "
+"evaluation time as well."
+msgstr ""
+
+#: megengine.module.batchnorm.BatchNorm1d:22 of
+msgid ""
+"Because the Batch Normalization is done over the `C` dimension, computing"
+" statistics on `(N, L)` slices, it's common terminology to call this "
+"Temporal Batch Normalization."
+msgstr ""
+
+#: megengine.module.batchnorm.BatchNorm1d:27 of
+msgid ""
+"The update formula for ``running_mean`` and ``running_var`` (taking "
+"``running_mean`` as an example) is"
+msgstr ""
+
+#: megengine.module.batchnorm.BatchNorm1d:29 of
+msgid ""
+"\\textrm{running_mean} = \\textrm{momentum} \\times "
+"\\textrm{running_mean} + (1 - \\textrm{momentum}) \\times "
+"\\textrm{batch_mean}"
+msgstr ""
+
+#: megengine.module.batchnorm.BatchNorm1d:33 of
+msgid ""
+"which could be defined differently in other frameworks. Most notably, "
+"``momentum`` of 0.1 in PyTorch is equivalent to ``mementum`` of 0.9 here."
+msgstr ""
+
+#: megengine.module.batchnorm.BatchNorm1d:38 of
+msgid "Shape:"
+msgstr ""
+
+#: megengine.module.batchnorm.BatchNorm1d:37 of
+msgid ""
+"Input: :math:`(N, C)` or :math:`(N, C, L)`, where :math:`N` is the batch "
+"size, :math:`C` is the number of features or channels, and :math:`L` is "
+"the sequence length"
+msgstr ""
+
+#: megengine.module.batchnorm.BatchNorm1d:39 of
+msgid "Output: :math:`(N, C)` or :math:`(N, C, L)` (same shape as input)"
+msgstr ""
 
 #~ msgid "基类：:class:`megengine.module.batchnorm._BatchNorm`"
 #~ msgstr "基类：:class:`megengine.module.batchnorm._BatchNorm`"
@@ -327,4 +393,7 @@ msgstr "参见 :class:`~.BatchNorm2d` 以获取更多信息。"
 
 #~ msgid "Sets all parameters' grads to zero"
 #~ msgstr "将所有参数的梯度置0。"
+
+#~ msgid "Refer to :class:`~.BatchNorm2d` for more information."
+#~ msgstr "参见 :class:`~.BatchNorm2d` 以获取更多信息。"
 

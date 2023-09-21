@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:26\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-04-21 09:26+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.ConvTranspose2d.po\n"
-"X-Crowdin-File-ID: 9487\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.module.ConvTranspose2d.rst:5
 msgid "ConvTranspose2d"
@@ -27,11 +23,17 @@ msgid "Applies a 2D transposed convolution over an input tensor."
 msgstr "对输入张量进行二维转置卷积。"
 
 #: megengine.module.conv.ConvTranspose2d:3 of
-msgid "This module is also known as a deconvolution or a fractionally-strided convolution. :class:`ConvTranspose2d` can be seen as the gradient of :class:`Conv2d` operation with respect to its input."
+msgid ""
+"This module is also known as a deconvolution or a fractionally-strided "
+"convolution. :class:`ConvTranspose2d` can be seen as the gradient of "
+":class:`Conv2d` operation with respect to its input."
 msgstr "该模块也称为反卷积或微步卷积。 :class:`ConvTranspose2d` 可以看作是 :class:`Conv2d` 操作对自身输入的梯度。"
 
 #: megengine.module.conv.ConvTranspose2d:7 of
-msgid "Convolution usually reduces the size of input, while transposed convolution works the opposite way, transforming a smaller input to a larger output while preserving the connectivity pattern."
+msgid ""
+"Convolution usually reduces the size of input, while transposed "
+"convolution works the opposite way, transforming a smaller input to a "
+"larger output while preserving the connectivity pattern."
 msgstr "卷积通常降低了输入的大小，而转置卷积工作方式完全相反，在相同的连接方式下，它对较小的输入进行放大来输出。"
 
 #: megengine.module.conv.ConvTranspose2d of
@@ -42,47 +44,136 @@ msgstr ""
 msgid "number of input channels."
 msgstr "输入数据中的通道数。"
 
-#: megengine.module.conv.ConvTranspose2d:14 of
+#: megengine.module.conv.ConvTranspose2d:15 of
 msgid "number of output channels."
 msgstr "输出数据中的通道数。"
 
-#: megengine.module.conv.ConvTranspose2d:16 of
-msgid "size of weight on spatial dimensions. If ``kernel_size`` is an :class:`int`, the actual kernel size would be ``(kernel_size, kernel_size)``."
-msgstr "空间维度上的权重大小。如果kernel_size 是一个 :class:`int`, 实际的kernel大小为 ``(kernel_size, kernel_size)``."
+#: megengine.module.conv.ConvTranspose2d:18 of
+msgid ""
+"size of weight on spatial dimensions. If ``kernel_size`` is an "
+":class:`int`, the actual kernel size would be ``(kernel_size, "
+"kernel_size)``."
+msgstr ""
+"空间维度上的权重大小。如果kernel_size 是一个 :class:`int`, 实际的kernel大小为 ``(kernel_size, "
+"kernel_size)``."
 
-#: megengine.module.conv.ConvTranspose2d:20 of
-msgid "stride of the 2D convolution operation. Default: 1"
+#: megengine.module.conv.ConvTranspose2d:23 of
+#, fuzzy
+msgid "stride of the 2D convolution operation. Default: 1."
 msgstr "二维卷积运算的步长。默认：1"
 
-#: megengine.module.conv.ConvTranspose2d:22 of
-msgid "size of the paddings added to the input on both sides of its spatial dimensions. Only zero-padding is supported. Default: 0"
+#: megengine.module.conv.ConvTranspose2d:26 of
+#, fuzzy
+msgid ""
+"size of the paddings added to the input on both sides of its spatial "
+"dimensions. Only zero-padding is supported. Default: 0."
 msgstr "输入数据空域维度两侧的填充（padding）大小。仅支持填充0值。默认：0"
 
-#: megengine.module.conv.ConvTranspose2d:25 of
-msgid "size of paddings appended to output. Default: 0"
+#: megengine.module.conv.ConvTranspose2d:30 of
+#, fuzzy
+msgid "size of paddings appended to output. Default: 0."
 msgstr "输出的padding size，默认：0"
 
-#: megengine.module.conv.ConvTranspose2d:27 of
-msgid "dilation of the 2D convolution operation. Default: 1"
+#: megengine.module.conv.ConvTranspose2d:33 of
+#, fuzzy
+msgid "dilation of the 2D convolution operation. Default: 1."
 msgstr "二维卷积运算的空洞（dilation）。默认：1"
 
-#: megengine.module.conv.ConvTranspose2d:29 of
-msgid "number of groups into which the input and output channels are divided, so as to perform a ``grouped convolution``. When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by groups, and the shape of weight should be ``(groups, in_channels // groups, out_channels // groups, height, width)``. Default: 1"
-msgstr "输入输出的通道被划分的组的数量, 以便执行 ``grouped convolution``。当 ``groups`` 不为 1, ``in_channels`` 和 ``out_channels`` 必须能被``groups``整除, 并且weight的shape应该是``(groups, in_channels // groups, out_channels // groups, height, width)``. 默认值: 1"
+#: megengine.module.conv.ConvTranspose2d:36 of
+#, fuzzy
+msgid ""
+"number of groups into which the input and output channels are divided, so"
+" as to perform a ``grouped convolution``. When ``groups`` is not 1, "
+"``in_channels`` and ``out_channels`` must be divisible by groups, and the"
+" shape of weight should be ``(groups, in_channels // groups, out_channels"
+" // groups, height, width)``. Default: 1."
+msgstr ""
+"输入输出的通道被划分的组的数量, 以便执行 ``grouped convolution``。当 ``groups`` 不为 1, "
+"``in_channels`` 和 ``out_channels`` 必须能被``groups``整除, "
+"并且weight的shape应该是``(groups, in_channels // groups, out_channels // "
+"groups, height, width)``. 默认值: 1"
 
-#: megengine.module.conv.ConvTranspose2d:35 of
-msgid "wether to add a bias onto the result of convolution. Default: True conv_mode: Supports `cross_correlation`. Default: `cross_correlation`"
-msgstr "是否给卷积的结果添加bias。默认: True conv_mode: 支持 `cross_correlation`。默认: `cross_correlation`"
-
-#: megengine.module.conv.ConvTranspose2d:38 of
-msgid "When set to \"default\", no special requirements will be placed on the precision of intermediate results. When set to \"float32\", \"float32\" would be used for accumulator and intermediate result, but only effective when input and output are of float16 dtype."
-msgstr "当设置 \"default\" 时, 不会对中间结果的精度有特殊要求。当设置 \"float32\" 时, \"float32\" 将被用作中间结果的累加器, 但是只有当输入和输出的dtype是float16时有效。"
-
-#: megengine.module.conv.ConvTranspose2d:45 of
-msgid "``weight`` usually has shape ``(in_channels, out_channels, height, width)`` , if groups is not 1, shape will be ``(groups, in_channels // groups, out_channels // groups, height, width)``"
-msgstr "``weight`` 的shape通常是 ``(in_channels, out_channels, height, width)`` , 如果groups 不为 1, shape 将是 ``(groups, in_channels // groups, out_channels // groups, height, width)``"
+#: megengine.module.conv.ConvTranspose2d:43 of
+#, fuzzy
+msgid ""
+"wether to add a bias onto the result of convolution. Default: True "
+"conv_mode: Supports `cross_correlation`. Default: `cross_correlation`."
+msgstr ""
+"是否给卷积的结果添加bias。默认: True conv_mode: 支持 `cross_correlation`。默认: "
+"`cross_correlation`"
 
 #: megengine.module.conv.ConvTranspose2d:47 of
+#, fuzzy
+msgid ""
+"When set to \"default\", no special requirements will be placed on the "
+"precision of intermediate results. When set to \"float32\", \"float32\" "
+"would be used for accumulator and intermediate result, but only effective"
+" when input and output are of float16 dtype. Default: 'default'."
+msgstr ""
+"当设置 \"default\" 时, 不会对中间结果的精度有特殊要求。当设置 \"float32\" 时, \"float32\" "
+"将被用作中间结果的累加器, 但是只有当输入和输出的dtype是float16时有效。"
+
+#: megengine.module.conv.ConvTranspose2d:62 of
+msgid "Shape:"
+msgstr ""
+
+#: megengine.module.conv.ConvTranspose2d:54 of
+msgid ""
+"Input: :math:`(N, C_{in}, H_{in}, W_{in})` or :math:`(C_{in}, H_{in}, "
+"W_{in})`"
+msgstr ""
+
+#: megengine.module.conv.ConvTranspose2d:55 of
+msgid ""
+"Output: :math:`(N, C_{out}, H_{out}, W_{out})` or :math:`(C_{out}, "
+"H_{out}, W_{out})`, where"
+msgstr ""
+
+#: megengine.module.conv.ConvTranspose2d:57 of
+msgid ""
+"H_{out} = (H_{in} - 1) \\times \\text{stride}[0] - 2 \\times "
+"\\text{padding}[0] + \\text{dilation}[0]\n"
+"          \\times (\\text{kernel\\_size}[0] - 1) + "
+"\\text{output\\_padding}[0] + 1\n"
+"\n"
+msgstr ""
+
+#: megengine.module.conv.ConvTranspose2d:60 of
+msgid ""
+"W_{out} = (W_{in} - 1) \\times \\text{stride}[1] - 2 \\times "
+"\\text{padding}[1] + \\text{dilation}[1]\n"
+"          \\times (\\text{kernel\\_size}[1] - 1) + "
+"\\text{output\\_padding}[1] + 1\n"
+"\n"
+msgstr ""
+
+#: megengine.module.conv.ConvTranspose2d of
+msgid "返回"
+msgstr ""
+
+#: megengine.module.conv.ConvTranspose2d:64 of
+msgid "module. The instance of the ``ConvTranspose2d`` module."
+msgstr ""
+
+#: megengine.module.conv.ConvTranspose2d of
+msgid "返回类型"
+msgstr ""
+
+#: megengine.module.conv.ConvTranspose2d:68 of
+msgid "实际案例"
+msgstr ""
+
+#: megengine.module.conv.ConvTranspose2d:79 of
+msgid ""
+"``weight`` usually has shape ``(in_channels, out_channels, height, "
+"width)`` , if groups is not 1, shape will be ``(groups, in_channels // "
+"groups, out_channels // groups, height, width)``"
+msgstr ""
+"``weight`` 的shape通常是 ``(in_channels, out_channels, height, width)`` , "
+"如果groups 不为 1, shape 将是 ``(groups, in_channels // groups, out_channels //"
+" groups, height, width)``"
+
+#: megengine.module.conv.ConvTranspose2d:81 of
 msgid "``bias`` usually has shape ``(1, out_channels, *1)``"
 msgstr "``bias`` 的shape通常为 ``(1, out_channels, *1)``"
 

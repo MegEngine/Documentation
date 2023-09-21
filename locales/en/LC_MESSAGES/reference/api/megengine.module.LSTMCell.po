@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 16:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:26\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-04-21 09:26+0000\n"
 "Last-Translator: \n"
-"Language-Team: English\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.LSTMCell.po\n"
-"X-Crowdin-File-ID: 9513\n"
 "Language: en_US\n"
+"Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.module.LSTMCell.rst:5
 msgid "LSTMCell"
@@ -27,7 +23,8 @@ msgid "A long short-term memory (LSTM) cell."
 msgstr ""
 
 #: megengine.module.rnn.LSTMCell:3 of
-msgid "\\begin{array}{ll}\n"
+msgid ""
+"\\begin{array}{ll}\n"
 "i = \\sigma(W_{ii} x + b_{ii} + W_{hi} h + b_{hi}) \\\\\n"
 "f = \\sigma(W_{if} x + b_{if} + W_{hf} h + b_{hf}) \\\\\n"
 "g = \\tanh(W_{ig} x + b_{ig} + W_{hg} h + b_{hg}) \\\\\n"
@@ -38,7 +35,9 @@ msgid "\\begin{array}{ll}\n"
 msgstr ""
 
 #: megengine.module.rnn.LSTMCell:14 of
-msgid "where :math:`\\sigma` is the sigmoid function, and :math:`*` is the Hadamard product."
+msgid ""
+"where :math:`\\sigma` is the sigmoid function, and :math:`*` is the "
+"Hadamard product."
 msgstr ""
 
 #: megengine.module.rnn.LSTMCell of
@@ -49,51 +48,85 @@ msgstr ""
 msgid "The number of expected features in the input `x`"
 msgstr ""
 
-#: megengine.module.rnn.LSTMCell:19 of
+#: megengine.module.rnn.LSTMCell:20 of
 msgid "The number of features in the hidden state `h`"
 msgstr ""
 
-#: megengine.module.rnn.LSTMCell:21 of
-msgid "If ``False``, then the layer does not use bias weights `b_ih` and `b_hh`. Default: ``True``"
-msgstr ""
-
-#: megengine.module.rnn.LSTMCell:31 of
-msgid "Inputs: input, (h_0, c_0)"
-msgstr ""
-
-#: megengine.module.rnn.LSTMCell:25 of
-msgid "**input** of shape `(batch, input_size)`: tensor containing input features"
-msgstr ""
-
-#: megengine.module.rnn.LSTMCell:26 of
-msgid "**h_0** of shape `(batch, hidden_size)`: tensor containing the initial hidden state for each element in the batch."
-msgstr ""
-
-#: megengine.module.rnn.LSTMCell:28 of
-msgid "**c_0** of shape `(batch, hidden_size)`: tensor containing the initial cell state for each element in the batch."
-msgstr ""
-
-#: megengine.module.rnn.LSTMCell:31 of
-msgid "If `(h_0, c_0)` is not provided, both **h_0** and **c_0** default to zero."
-msgstr ""
-
-#: megengine.module.rnn.LSTMCell:37 of
-msgid "Outputs: (h_1, c_1)"
-msgstr ""
-
-#: megengine.module.rnn.LSTMCell:34 of
-msgid "**h_1** of shape `(batch, hidden_size)`: tensor containing the next hidden state for each element in the batch"
+#: megengine.module.rnn.LSTMCell:23 of
+msgid ""
+"If ``False``, then the layer does not use bias weights `b_ih` and `b_hh`."
+" Default: ``True``"
 msgstr ""
 
 #: megengine.module.rnn.LSTMCell:36 of
-msgid "**c_1** of shape `(batch, hidden_size)`: tensor containing the next cell state for each element in the batch"
+msgid "Shape:"
 msgstr ""
 
-#: megengine.module.rnn.LSTMCell:40 of
+#: megengine.module.rnn.LSTMCell:32 of
+msgid "Inputs: input, (h_0, c_0)"
+msgstr ""
+
+#: megengine.module.rnn.LSTMCell:29 of
+msgid ""
+"input: `(batch, input_size)`. Tensor containing input features. h_0: "
+"`(batch, hidden_size)`. Tensor containing the initial hidden state for "
+"each element in the batch. c_0: `(batch, hidden_size)`. Tensor containing"
+" the initial cell state for each element in the batch. If `(h_0, c_0)` is"
+" not provided, both **h_0** and **c_0** default to zero."
+msgstr ""
+
+#: megengine.module.rnn.LSTMCell:36 of
+msgid "Outputs: (h_1, c_1)"
+msgstr ""
+
+#: megengine.module.rnn.LSTMCell:35 of
+msgid ""
+"h_1: `(batch, hidden_size)`. Tensor containing the next hidden state for "
+"each element in the batch. c_1: `(batch, hidden_size)`. Tensor containing"
+" the next cell state for each element in the batch."
+msgstr ""
+
+#: megengine.module.rnn.LSTMCell:39 of
 msgid "实际案例"
 msgstr ""
 
-#: megengine.module.rnn.LSTMCell:55 of
+#: megengine.module.rnn.LSTMCell:54 of
 msgid "Outputs:"
 msgstr ""
+
+#~ msgid ""
+#~ "**input** of shape `(batch, input_size)`: "
+#~ "tensor containing input features"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**h_0** of shape `(batch, hidden_size)`: "
+#~ "tensor containing the initial hidden "
+#~ "state for each element in the "
+#~ "batch."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**c_0** of shape `(batch, hidden_size)`: "
+#~ "tensor containing the initial cell state"
+#~ " for each element in the batch."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If `(h_0, c_0)` is not provided, "
+#~ "both **h_0** and **c_0** default to "
+#~ "zero."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**h_1** of shape `(batch, hidden_size)`: "
+#~ "tensor containing the next hidden state"
+#~ " for each element in the batch"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**c_1** of shape `(batch, hidden_size)`: "
+#~ "tensor containing the next cell state"
+#~ " for each element in the batch"
+#~ msgstr ""
 

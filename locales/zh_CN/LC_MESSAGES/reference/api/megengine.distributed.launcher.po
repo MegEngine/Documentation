@@ -1,29 +1,28 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2023-05-11 11:45\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-05-11 11:45+0000\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.distributed.launcher.po\n"
-"X-Crowdin-File-ID: 9003\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../source/reference/api/megengine.distributed.launcher.rst:5
 msgid "launcher"
 msgstr "发射器(launcher)"
 
 #: megengine.distributed.launcher.launcher:1 of
-msgid "Decorator for launching multiple processes in single-machine multi-gpu training."
+#, fuzzy
+msgid ""
+"Decorator for launching multiple processes in single-machine/multi-"
+"machine multi-gpu training."
 msgstr "在单机多卡环境下启动多个进程进行训练的装饰器。"
 
 #: megengine.distributed.launcher.launcher of
@@ -34,29 +33,49 @@ msgstr "参数"
 msgid "the function you want to launch in distributed mode."
 msgstr "你想要在分布式模式下启动的函数。"
 
-#: megengine.distributed.launcher.launcher:4 of
-msgid "how many devices each node."
-msgstr "每个节点多少个设备。"
-
 #: megengine.distributed.launcher.launcher:5 of
-msgid "how many devices totally."
-msgstr "总共多少个设备。"
-
-#: megengine.distributed.launcher.launcher:6 of
-msgid "start number for rank."
-msgstr "机器上 rank 开始的数字。"
-
-#: megengine.distributed.launcher.launcher:7 of
-msgid "ip address for master node (where the rank 0 is)."
-msgstr "主节点的IP地址（即 rank 0 所在的机器）。"
+msgid ""
+"how many devices each node. If ``n_gpus`` is None,  ``n_gpus`` will be "
+"the device count of current node. Default: None."
+msgstr ""
 
 #: megengine.distributed.launcher.launcher:8 of
-msgid "server port for distributed server."
+msgid ""
+"how many devices totally. If ``world_size`` is None, ``world_size`` will "
+"be ``n_gpus``. Default: None."
+msgstr ""
+
+#: megengine.distributed.launcher.launcher:11 of
+msgid ""
+"the start rank number in current node. For single-machine multi-gpu "
+"training, rank_start should be ``0``. For multi-machine training, "
+"``rank_start`` of Machine ``i`` should be ``i * n_gpus``. Default: 0"
+msgstr ""
+
+#: megengine.distributed.launcher.launcher:14 of
+#, fuzzy
+msgid ""
+"ip address for master node (where the rank 0 is placed). Default: "
+"\"localhost\"."
+msgstr "主节点的IP地址（即 rank 0 所在的机器）。"
+
+#: megengine.distributed.launcher.launcher:16 of
+#, fuzzy
+msgid "server port for distributed server. Default: 0."
 msgstr "分布式客户端的端口。"
 
-#: megengine.distributed.launcher.launcher:9 of
-msgid "set default collective communication backend."
+#: megengine.distributed.launcher.launcher:18 of
+#, fuzzy
+msgid ""
+"set default collective communication backend. ``backend`` should be "
+"\"nccl\" or \"rccl\". Default: \"nccl\"."
 msgstr "设置默认的集群通信后端。"
+
+#: megengine.distributed.launcher.launcher:22 of
+msgid ""
+"Examples of distributed training using ``launcher`` decorator can be "
+"found in :ref:`_distributed-guide`"
+msgstr ""
 
 #~ msgid "基类：:class:`object`"
 #~ msgstr "基类：:class:`object`"
@@ -81,4 +100,13 @@ msgstr "设置默认的集群通信后端。"
 
 #~ msgid "Methods"
 #~ msgstr "方法"
+
+#~ msgid "how many devices each node."
+#~ msgstr "每个节点多少个设备。"
+
+#~ msgid "how many devices totally."
+#~ msgstr "总共多少个设备。"
+
+#~ msgid "start number for rank."
+#~ msgstr "机器上 rank 开始的数字。"
 
