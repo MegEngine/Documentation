@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 23:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:26\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-09-21 10:55\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
@@ -42,47 +42,85 @@ msgstr "crwdns104499:0crwdne104499:0"
 msgid "number of input channels."
 msgstr "crwdns104501:0crwdne104501:0"
 
-#: megengine.module.conv.ConvTranspose2d:14 of
+#: megengine.module.conv.ConvTranspose2d:15 of
 msgid "number of output channels."
 msgstr "crwdns104503:0crwdne104503:0"
 
-#: megengine.module.conv.ConvTranspose2d:16 of
+#: megengine.module.conv.ConvTranspose2d:18 of
 msgid "size of weight on spatial dimensions. If ``kernel_size`` is an :class:`int`, the actual kernel size would be ``(kernel_size, kernel_size)``."
 msgstr "crwdns104505:0:class:crwdne104505:0"
 
-#: megengine.module.conv.ConvTranspose2d:20 of
-msgid "stride of the 2D convolution operation. Default: 1"
-msgstr "crwdns104507:0crwdne104507:0"
+#: megengine.module.conv.ConvTranspose2d:23 of
+msgid "stride of the 2D convolution operation. Default: 1."
+msgstr "crwdns122211:0crwdne122211:0"
 
-#: megengine.module.conv.ConvTranspose2d:22 of
-msgid "size of the paddings added to the input on both sides of its spatial dimensions. Only zero-padding is supported. Default: 0"
-msgstr "crwdns104509:0crwdne104509:0"
+#: megengine.module.conv.ConvTranspose2d:26 of
+msgid "size of the paddings added to the input on both sides of its spatial dimensions. Only zero-padding is supported. Default: 0."
+msgstr "crwdns122213:0crwdne122213:0"
 
-#: megengine.module.conv.ConvTranspose2d:25 of
-msgid "size of paddings appended to output. Default: 0"
-msgstr "crwdns104511:0crwdne104511:0"
+#: megengine.module.conv.ConvTranspose2d:30 of
+msgid "size of paddings appended to output. Default: 0."
+msgstr "crwdns122215:0crwdne122215:0"
 
-#: megengine.module.conv.ConvTranspose2d:27 of
-msgid "dilation of the 2D convolution operation. Default: 1"
-msgstr "crwdns104513:0crwdne104513:0"
+#: megengine.module.conv.ConvTranspose2d:33 of
+msgid "dilation of the 2D convolution operation. Default: 1."
+msgstr "crwdns122217:0crwdne122217:0"
 
-#: megengine.module.conv.ConvTranspose2d:29 of
-msgid "number of groups into which the input and output channels are divided, so as to perform a ``grouped convolution``. When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by groups, and the shape of weight should be ``(groups, in_channels // groups, out_channels // groups, height, width)``. Default: 1"
-msgstr "crwdns104515:0crwdne104515:0"
+#: megengine.module.conv.ConvTranspose2d:36 of
+msgid "number of groups into which the input and output channels are divided, so as to perform a ``grouped convolution``. When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by groups, and the shape of weight should be ``(groups, in_channels // groups, out_channels // groups, height, width)``. Default: 1."
+msgstr "crwdns122219:0crwdne122219:0"
 
-#: megengine.module.conv.ConvTranspose2d:35 of
-msgid "wether to add a bias onto the result of convolution. Default: True conv_mode: Supports `cross_correlation`. Default: `cross_correlation`"
-msgstr "crwdns104517:0crwdne104517:0"
+#: megengine.module.conv.ConvTranspose2d:43 of
+msgid "wether to add a bias onto the result of convolution. Default: True conv_mode: Supports `cross_correlation`. Default: `cross_correlation`."
+msgstr "crwdns122221:0crwdne122221:0"
 
-#: megengine.module.conv.ConvTranspose2d:38 of
-msgid "When set to \"default\", no special requirements will be placed on the precision of intermediate results. When set to \"float32\", \"float32\" would be used for accumulator and intermediate result, but only effective when input and output are of float16 dtype."
-msgstr "crwdns104519:0crwdne104519:0"
+#: megengine.module.conv.ConvTranspose2d:47 of
+msgid "When set to \"default\", no special requirements will be placed on the precision of intermediate results. When set to \"float32\", \"float32\" would be used for accumulator and intermediate result, but only effective when input and output are of float16 dtype. Default: 'default'."
+msgstr "crwdns122223:0crwdne122223:0"
 
-#: megengine.module.conv.ConvTranspose2d:45 of
+#: megengine.module.conv.ConvTranspose2d:62 of
+msgid "Shape:"
+msgstr "crwdns122225:0crwdne122225:0"
+
+#: megengine.module.conv.ConvTranspose2d:54 of
+msgid "Input: :math:`(N, C_{in}, H_{in}, W_{in})` or :math:`(C_{in}, H_{in}, W_{in})`"
+msgstr "crwdns122227:0:math:crwdnd122227:0{in}crwdnd122227:0{in}crwdnd122227:0{in}crwdnd122227:0:math:crwdnd122227:0{in}crwdnd122227:0{in}crwdnd122227:0{in}crwdne122227:0"
+
+#: megengine.module.conv.ConvTranspose2d:55 of
+msgid "Output: :math:`(N, C_{out}, H_{out}, W_{out})` or :math:`(C_{out}, H_{out}, W_{out})`, where"
+msgstr "crwdns122229:0:math:crwdnd122229:0{out}crwdnd122229:0{out}crwdnd122229:0{out}crwdnd122229:0:math:crwdnd122229:0{out}crwdnd122229:0{out}crwdnd122229:0{out}crwdne122229:0"
+
+#: megengine.module.conv.ConvTranspose2d:57 of
+msgid "H_{out} = (H_{in} - 1) \\times \\text{stride}[0] - 2 \\times \\text{padding}[0] + \\text{dilation}[0]\n"
+"          \\times (\\text{kernel\\_size}[0] - 1) + \\text{output\\_padding}[0] + 1\n\n"
+msgstr "crwdns122231:0{out}crwdnd122231:0{in}crwdnd122231:0{stride}crwdnd122231:0[0]crwdnd122231:0{padding}crwdnd122231:0[0]crwdnd122231:0{dilation}crwdnd122231:0[0]crwdnd122231:0[0]crwdnd122231:0[0]crwdne122231:0"
+
+#: megengine.module.conv.ConvTranspose2d:60 of
+msgid "W_{out} = (W_{in} - 1) \\times \\text{stride}[1] - 2 \\times \\text{padding}[1] + \\text{dilation}[1]\n"
+"          \\times (\\text{kernel\\_size}[1] - 1) + \\text{output\\_padding}[1] + 1\n\n"
+msgstr "crwdns122233:0{out}crwdnd122233:0{in}crwdnd122233:0{stride}crwdnd122233:0[1]crwdnd122233:0{padding}crwdnd122233:0[1]crwdnd122233:0{dilation}crwdnd122233:0[1]crwdnd122233:0[1]crwdnd122233:0[1]crwdne122233:0"
+
+#: megengine.module.conv.ConvTranspose2d of
+msgid "返回"
+msgstr "crwdns122235:0crwdne122235:0"
+
+#: megengine.module.conv.ConvTranspose2d:64 of
+msgid "module. The instance of the ``ConvTranspose2d`` module."
+msgstr "crwdns122237:0crwdne122237:0"
+
+#: megengine.module.conv.ConvTranspose2d of
+msgid "返回类型"
+msgstr "crwdns122239:0crwdne122239:0"
+
+#: megengine.module.conv.ConvTranspose2d:68 of
+msgid "实际案例"
+msgstr "crwdns122241:0crwdne122241:0"
+
+#: megengine.module.conv.ConvTranspose2d:79 of
 msgid "``weight`` usually has shape ``(in_channels, out_channels, height, width)`` , if groups is not 1, shape will be ``(groups, in_channels // groups, out_channels // groups, height, width)``"
 msgstr "crwdns104521:0crwdne104521:0"
 
-#: megengine.module.conv.ConvTranspose2d:47 of
+#: megengine.module.conv.ConvTranspose2d:81 of
 msgid "``bias`` usually has shape ``(1, out_channels, *1)``"
 msgstr "crwdns104523:0crwdne104523:0"
 
