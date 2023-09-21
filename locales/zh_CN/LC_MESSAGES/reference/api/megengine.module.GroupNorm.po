@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-25 01:18+0000\n"
-"PO-Revision-Date: 2023-05-11 10:50\n"
+"PO-Revision-Date: 2023-09-21 06:27\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,31 +20,31 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.GroupNorm.rst:5
 msgid "GroupNorm"
-msgstr ""
+msgstr "GroupNorm"
 
 #: megengine.module.normalization.GroupNorm:1 of
 msgid "Applies Group Normalization over a mini-batch of inputs Refer to `Group Normalization <https://arxiv.org/abs/1803.08494>`__"
-msgstr ""
+msgstr "对一个mini-batch的输入数据应用 Group Normalization 参考 `Group Normalization <https://arxiv.org/abs/1803.08494>`__"
 
 #: megengine.module.normalization.GroupNorm:4 of
 msgid "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta\n\n"
-msgstr ""
+msgstr "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta\n\n"
 
 #: megengine.module.normalization.GroupNorm:7 of
 msgid "The mean and standard-deviation are calculated separately over the each group. :math:`\\\\gamma` and :math:`\\\\beta` are learnable affine transform parameters of attr:`num_channels` if :attr:`affine` is ``True``."
-msgstr ""
+msgstr "均值和标准差是每个分组分别计算得到的。如果 :attr:`affine` 为 ``True`` :math:`\\\\gamma`和 :math:`\\\\beta` 是attr:`num_channels` 的可学习的仿射变换参数 。"
 
 #: megengine.module.normalization.GroupNorm of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.normalization.GroupNorm:11 of
 msgid "number of groups that divided from channels."
-msgstr ""
+msgstr "channel维度划分的组数。"
 
 #: megengine.module.normalization.GroupNorm:13 of
 msgid "number of channels expected in input"
-msgstr ""
+msgstr "期望的输入通道数。"
 
 #: megengine.module.normalization.GroupNorm:15 of
 msgid "a value added to the denominator for numerical stability. Default: 1e-5"
@@ -52,7 +52,7 @@ msgstr "添加到分母的单个值，增加数值稳定性。默认：1e-5"
 
 #: megengine.module.normalization.GroupNorm:16 of
 msgid "this module has learnable affine parameters (weight, bias) when affine is set to be True."
-msgstr ""
+msgstr "affine设置为True时，该module有可学习的仿射参数\\(weight， bias\\)。"
 
 #: megengine.module.normalization.GroupNorm:20 of
 msgid "Shape:"
@@ -60,11 +60,11 @@ msgstr "形状："
 
 #: megengine.module.normalization.GroupNorm:19 of
 msgid "Input: :math:`(N, C, H, W)` (now only support NCHW format tensor)"
-msgstr ""
+msgstr "Input: :math:`(N, C, H, W)` \\( 目前只支持NCHW格式的tensor\\)"
 
 #: megengine.module.normalization.GroupNorm:20 of
 msgid "Output: :math:`(N, C, H, W)` (same shape as input)"
-msgstr ""
+msgstr "Output: :math:`(N, C, H, W)` \\(与输入形状相同 \\)"
 
 #: megengine.module.normalization.GroupNorm:23 of
 msgid "实际案例"
