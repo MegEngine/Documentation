@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-04 16:51+0800\n"
-"PO-Revision-Date: 2023-05-11 10:50\n"
+"PO-Revision-Date: 2023-09-21 06:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.LSTMCell.rst:5
 msgid "LSTMCell"
-msgstr ""
+msgstr "LSTMCell"
 
 #: megengine.module.rnn.LSTMCell:1 of
 msgid "A long short-term memory (LSTM) cell."
@@ -35,7 +35,14 @@ msgid "\\begin{array}{ll}\n"
 "c' = f * c + i * g \\\\\n"
 "h' = o * \\tanh(c') \\\\\n"
 "\\end{array}"
-msgstr ""
+msgstr "\\begin{array}{ll}\n"
+"i = \\sigma(W_{ii} x + b_{ii} + W_{hi} h + b_{hi}) \\\\\n"
+"f = \\sigma(W_{if} x + b_{if} + W_{hf} h + b_{hf}) \\\\\n"
+"g = \\tanh(W_{ig} x + b_{ig} + W_{hg} h + b_{hg}) \\\\\n"
+"o = \\sigma(W_{io} x + b_{io} + W_{ho} h + b_{ho}) \\\\\n"
+"c' = f * c + i * g \\\\\n"
+"h' = o * \\tanh(c') \\\\\n"
+"\\end{array}"
 
 #: megengine.module.rnn.LSTMCell:14 of
 msgid "where :math:`\\sigma` is the sigmoid function, and :math:`*` is the Hadamard product."
@@ -43,7 +50,7 @@ msgstr "其中，:math:`\\sigma`是 sigmoid 函数， :math:`*` 是 Hadamard 积
 
 #: megengine.module.rnn.LSTMCell of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.rnn.LSTMCell:17 of
 msgid "The number of expected features in the input `x`"
@@ -59,7 +66,7 @@ msgstr "如果 ``False``，那么该层不使用偏置权重 `b_ih` 和 `b_hh`�
 
 #: megengine.module.rnn.LSTMCell:31 of
 msgid "Inputs: input, (h_0, c_0)"
-msgstr ""
+msgstr "Inputs: input, (h_0, c_0)"
 
 #: megengine.module.rnn.LSTMCell:25 of
 msgid "**input** of shape `(batch, input_size)`: tensor containing input features"
