@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-26 13:50+0800\n"
-"PO-Revision-Date: 2023-05-11 10:50\n"
+"PO-Revision-Date: 2023-09-21 06:26\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/reference/api/megengine.module.AdaptiveMaxPool2d.rst:5
 msgid "AdaptiveMaxPool2d"
-msgstr ""
+msgstr "AdaptiveMaxPool2d"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:1 of
 msgid "Applies a 2D max adaptive pooling over an input."
@@ -36,7 +36,11 @@ msgid "\\begin{aligned}\n"
 "        \\text{input}(N_i, C_j, \\text{stride[0]} \\times h + m,\n"
 "        \\text{stride[1]} \\times w + n)\n"
 "\\end{aligned}\n\n"
-msgstr ""
+msgstr "\\begin{aligned}\n"
+"    out(N_i, C_j, h, w) ={} & \\max_{m=0, \\ldots, kH-1} \\max_{n=0, \\ldots, kW-1}\n"
+"        \\text{input}(N_i, C_j, \\text{stride[0]} \\times h + m,\n"
+"        \\text{stride[1]} \\times w + n)\n"
+"\\end{aligned}\n\n"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:14 of
 msgid "``kernel_size`` and ``stride`` can be inferred from input shape and out shape:"
@@ -44,15 +48,15 @@ msgstr "``kernel_size`` 和 ``stride`` 可以从输入输出的形状推断："
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:16 of
 msgid "padding: (0, 0)"
-msgstr ""
+msgstr "padding: (0, 0)"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:17 of
 msgid "stride: (floor(IH / OH), floor(IW / OW))"
-msgstr ""
+msgstr "stride: (floor(IH / OH), floor(IW / OW))"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:18 of
 msgid "kernel_size: (IH - (OH - 1) * stride_h, IW - (OW - 1) * stride_w)"
-msgstr ""
+msgstr "kernel_size: (IH - (OH - 1) * stride_h, IW - (OW - 1) * stride_w)"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:21 of
 msgid "实际案例"
