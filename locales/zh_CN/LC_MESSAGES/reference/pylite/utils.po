@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-25 01:18+0000\n"
-"PO-Revision-Date: 2023-05-11 10:51\n"
+"PO-Revision-Date: 2023-09-21 06:37\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -20,15 +20,15 @@ msgstr ""
 
 #: ../../source/reference/pylite/utils.rst:6
 msgid "megenginelite.utils"
-msgstr ""
+msgstr "megenginelite.utils"
 
 #: megenginelite.utils.TensorBatchCollector:1 of
 msgid "A tensor utils is used to collect many single batch tensor to a multi batch size tensor, when the multi batch size tensor collect finish, the result tensor can be get and send to the model input for forwarding."
-msgstr ""
+msgstr "张量小工具用于收集诸多单批量张量并合并成一个多批量张量，当多批量张量生成时，其结果会被用于模型输入进行前向推理"
 
 #: megenginelite.utils.TensorBatchCollector:5 of
 msgid "when collect single batch tensor, the single batch tensor is no need in the same device_type and device_id with the result tensor, however the dtype must match and the shape must match except the highest dimension."
-msgstr ""
+msgstr "当收集单批量张量时， 这些张量必须与结果张量具有同样的设备类型和设备ID, 而且张量的数据类型和除过最高维之外的shape 也必须匹配"
 
 #: megenginelite.utils.TensorBatchCollector
 #: megenginelite.utils.TensorBatchCollector.collect
@@ -37,35 +37,35 @@ msgstr ""
 #: megenginelite.utils.TensorBatchCollector.free
 #: megenginelite.utils.TensorBatchCollector.get_tensor_at of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megenginelite.utils.TensorBatchCollector:9 of
 msgid "the multi batch size tensor shape, After collection, the result tensor shape."
-msgstr ""
+msgstr "多批次张量的形状，合成后结果张量的形状"
 
 #: megenginelite.utils.TensorBatchCollector:11 of
 msgid "the datatype of the single batch tensor and the result tensor, default value is LiteDataType.LITE_INT8."
-msgstr ""
+msgstr "单批次数据和结果张量的数据类型，默认为LiteDataType.LITE_INT8."
 
 #: megenginelite.utils.TensorBatchCollector:14 of
 msgid "the target device type the result tensor will allocate, default value is LiteDeviceType.LITE_CUDA."
-msgstr ""
+msgstr "结果张量分配内存的目标设备类型，默认为LiteDeviceType.LITE_CUDA"
 
 #: megenginelite.utils.TensorBatchCollector:17 of
 msgid "the device id the result tensor will allocate, default 0."
-msgstr ""
+msgstr "结果张量待分配内存的设备ID，默认为0"
 
 #: megenginelite.utils.TensorBatchCollector:18 of
 msgid "Whether the memory is pinned memory, refer to CUDA pinned memory, default False."
-msgstr ""
+msgstr "分配内存是否为页锁定内存，参考CUDA页锁定内存，默认为False"
 
 #: megenginelite.utils.TensorBatchCollector:20 of
 msgid "the result tensor, user can also create the multi batch size tensor and then create the TensorBatchColletor, if tensor is not None, all the member, such as shape, dtype, device_type, device_id, is_pinned_host will get from the tensor, if the tensor is None and the result tensor will create by the TensorBatchCollector, default is None."
-msgstr ""
+msgstr "结果张量，用户也可以先创建一个多批次张量然后再创建TensorBatchColletor， 当张量不为None 时， 诸如shape, dtype, device_type, device_id, is_pinned_host等参数都从tensor获取，当张量为None时， 结果张量用TensorBatchCollector创建，默认为None"
 
 #: megenginelite.utils.TensorBatchCollector:30 of
 msgid "when collect tensor, the single batch tensor or array shape must match the result tensor shape except the batch size dimension (the highest dimension)"
-msgstr ""
+msgstr "当收集张量时，单批次的张量或数组形状除过批次所在维度（最高维度）外必须和结果张量的形状匹配"
 
 #: megenginelite.utils.TensorBatchCollector:34 of
 msgid "实际案例"
@@ -73,52 +73,52 @@ msgstr "实际案例"
 
 #: megenginelite.utils.TensorBatchCollector.collect:1 of
 msgid "Collect a single batch through an array and store the array data to an empty batch, the empty batch is the front batch id in free list."
-msgstr ""
+msgstr "收集数组中的单批次数据并将其存储为空批次，该空批次是释放列表前面的batch id"
 
 #: megenginelite.utils.TensorBatchCollector.collect:4
 #: megenginelite.utils.TensorBatchCollector.collect_by_ctypes:5 of
 msgid "an array maybe LiteTensor or numpy ndarray, the shape must match the result tensor shape except the highest dimension"
-msgstr ""
+msgstr "LiteTensor 或 numpy ndarray类型的数组，其形状除过最高维外必须和结果张量的形状相匹配"
 
 #: megenginelite.utils.TensorBatchCollector.collect_by_ctypes:1 of
 msgid "Collect a single batch through an ctypes memory buffer and store the ctypes memory data to an empty batch, the empty batch is the front batch id in free list."
-msgstr ""
+msgstr "收集ctypes 类型的内存buffer中的单批次数据并将对应数据存储到某个空batch， 该空batch是释放列表前面的batch id"
 
 #: megenginelite.utils.TensorBatchCollector.collect_id:1 of
 msgid "Collect a single batch through an array and store the array data to the specific batch_id."
-msgstr ""
+msgstr "收集某个数组的单批次并将数组数据存储为某个特定batch_id"
 
 #: megenginelite.utils.TensorBatchCollector.collect_id:4 of
 msgid "an array maybe LiteTensor or numpy ndarray, the shape of array must match the result tensor shape except the highest dimension."
-msgstr ""
+msgstr "LiteTensor 或 numpy ndarray的数组，该数组的形状 除过最高维外必须和结果张量的形状一致"
 
 #: megenginelite.utils.TensorBatchCollector.collect_id:7 of
 msgid "the batch id to store the array data to the result tensor, if the batch_id has already collected, a warning will generate."
-msgstr ""
+msgstr "需要存数组数据到结果tensor的索引，如果batch_id已经被收集过了，会生成一个警告"
 
 #: megenginelite.utils.TensorBatchCollector.free:1 of
 msgid "free the batch ids in the indexes, after the batch id is freed, it can be collected again without warning."
-msgstr ""
+msgstr "释放 indexes里面的批次ID, 当某个批次id释放后，对应tensor 可以无警告的被再次收集"
 
 #: megenginelite.utils.TensorBatchCollector.free:4 of
 msgid "a list of to be freed batch id"
-msgstr ""
+msgstr "需要释放的批次id 列表"
 
 #: megenginelite.utils.TensorBatchCollector.get:1 of
 msgid "After finish collection, get the result tensor"
-msgstr ""
+msgstr "合成后，获取结果张量"
 
 #: megenginelite.utils.TensorBatchCollector.get_tensor_at:1 of
 msgid "get the tensor from the internal big tensor by the idx, make sure the idx is not freed, return the tensor"
-msgstr ""
+msgstr "使用索引获取内部大张量的某个张量，确保idx没有被释放，返回一个张量"
 
 #: megenginelite.utils.TensorBatchCollector.get_tensor_at:4 of
 msgid "the tensor index in the internal big tensor"
-msgstr ""
+msgstr "内部大张量的张量索引"
 
 #: megenginelite.utils.TensorBatchCollector.to_numpy:1 of
 msgid "Convert the result tensor to a numpy ndarray"
-msgstr ""
+msgstr "结果张量转换为numpy的ndarray"
 
 #~ msgid "this is a tensor utils to collect subtensor in batch continuous"
 #~ msgstr ""
