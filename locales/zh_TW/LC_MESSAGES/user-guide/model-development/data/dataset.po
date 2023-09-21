@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-19 16:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:36\n"
+"POT-Creation-Date: 2023-07-03 03:42+0000\n"
+"PO-Revision-Date: 2023-09-21 06:35\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
@@ -107,7 +107,7 @@ msgid "通常应该尽可能使用 Map-style 的数据集。它提供了查询�
 msgstr "crwdns118581:0crwdne118581:0"
 
 #: ../../source/user-guide/model-development/data/dataset.rst:58
-#: ../../source/user-guide/model-development/data/dataset.rst:178
+#: ../../source/user-guide/model-development/data/dataset.rst:205
 msgid "Map-style"
 msgstr "crwdns118583:0crwdne118583:0"
 
@@ -120,7 +120,7 @@ msgid "MegEngine 中所有数据集的抽象基类。 对应数据集类型为 M
 msgstr "crwdns118587:0[idx]crwdnd118587:0__getitem__crwdnd118587:0__len__crwdne118587:0"
 
 #: ../../source/user-guide/model-development/data/dataset.rst:66
-#: ../../source/user-guide/model-development/data/dataset.rst:139
+#: ../../source/user-guide/model-development/data/dataset.rst:166
 msgid "下面的代码展示了如何生成一个由 0 到 5 这五个数组成的数据集（不带标签）："
 msgstr "crwdns118589:0crwdne118589:0"
 
@@ -148,92 +148,104 @@ msgstr "crwdns118599:0__getitem__crwdnd118599:0__len__crwdne118599:0"
 msgid "下面的代码展示了如何生成随机一个具有 100 个样本，每张样本为 32 x 32 像素的 RGB 图片的数据集（标签为随机值） 这也是我们在处理图像时经常遇到的 ``(N, C, H, W)`` 格式："
 msgstr "crwdns118601:0crwdne118601:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:125
-#: ../../source/user-guide/model-development/data/dataset.rst:188
+#: ../../source/user-guide/model-development/data/dataset.rst:147
+msgid ":py:class:`~.dataset.ConcatDataset`"
+msgstr "crwdns122041:0crwdne122041:0"
+
+#: ../../source/user-guide/model-development/data/dataset.rst:123
+msgid "由多个数据集组成的数据集。 这个数据集用于将多个映射式(map-style)组合为一个新的数据集。"
+msgstr "crwdns122043:0crwdne122043:0"
+
+#: ../../source/user-guide/model-development/data/dataset.rst:126
+msgid "下面的代码展示了如何将多个 ``ArrayDataset`` 组合成一个 ``ConcatDataset`` 数据集："
+msgstr "crwdns122045:0crwdne122045:0"
+
+#: ../../source/user-guide/model-development/data/dataset.rst:152
+#: ../../source/user-guide/model-development/data/dataset.rst:215
 msgid "Iterable-style"
 msgstr "crwdns118603:0crwdne118603:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:170
+#: ../../source/user-guide/model-development/data/dataset.rst:197
 msgid ":py:class:`~.dataset.StreamDataset` （也可被称为 ``IterableDataset`` ）"
 msgstr "crwdns118605:0crwdne118605:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:128
+#: ../../source/user-guide/model-development/data/dataset.rst:155
 msgid "Iterable-style 数据集，适用于流式数据，即迭代式地访问数据， 例如使用 ``iter(dataset)`` 可以返回从数据库、远程服务器甚至实时生成的日志中读取的数据流， ``DataLoader`` 将使用 ``next`` 来不断获取数据。"
 msgstr "crwdns118607:0crwdne118607:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:132
+#: ../../source/user-guide/model-development/data/dataset.rst:159
 msgid "这种类型的数据集特别适用于："
 msgstr "crwdns118609:0crwdne118609:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:134
+#: ../../source/user-guide/model-development/data/dataset.rst:161
 msgid "随机读取成本过高，或者数据规模太大，无法支持随机访问的情况；"
 msgstr "crwdns118611:0crwdne118611:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:135
+#: ../../source/user-guide/model-development/data/dataset.rst:162
 msgid "批量大小情况实际取决于获取数据的情况，即必须根据流数据才能判断当前批是否已经完整。"
 msgstr "crwdns118613:0crwdne118613:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:137
+#: ../../source/user-guide/model-development/data/dataset.rst:164
 msgid "使用时需要实现 ``__iter__()`` 协议。"
 msgstr "crwdns118615:0__iter__crwdne118615:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:162
+#: ../../source/user-guide/model-development/data/dataset.rst:189
 msgid "显然，流式数据集不支持获取长度以及通过索引值进行随机访问："
 msgstr "crwdns118617:0crwdne118617:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:170
+#: ../../source/user-guide/model-development/data/dataset.rst:197
 msgid "这个例子无法体现 ``StreamDataset`` 加载的真实需求情景，但方便和 ``MapDataset`` 进行对比。"
 msgstr "crwdns118619:0crwdne118619:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:173
+#: ../../source/user-guide/model-development/data/dataset.rst:200
 msgid "为何设计流式数据集"
 msgstr "crwdns118621:0crwdne118621:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:198
+#: ../../source/user-guide/model-development/data/dataset.rst:225
 msgid "根据上面的例子可以发现，使用相同的原始 List 数据来生成两种类型的数据集并迭代访问， Map-style 和 Iterable-style 的数据集都能够返回相同的结果，那么区别在哪里呢？ 从高层视角看，每次 ``DataLoader`` 从 Map-style 数据集中返回批数据时， 它都会先对数据索引进行采样得到一批索引 ``idx``, 并使用 ``map_dataset[idx]`` 获得批数据. 相反，对于 Iterable-style 数据集，``DataLoader`` 不断地调用 ``next(it)`` 来顺序获取下一个数据， 直到它获取到一个完整的批次。这也是为什么我们说 Iterable-style 数据集更适合将数据提供给顺序模型。"
 msgstr "crwdns118623:0[idx]crwdne118623:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:207
+#: ../../source/user-guide/model-development/data/dataset.rst:234
 msgid "参考 :ref:`data-sampler-guide` ，了解如何从样本容量为 N 的数据集中得到长度为 B 的一批索引。"
 msgstr "crwdns118625:0:ref:crwdne118625:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:212
+#: ../../source/user-guide/model-development/data/dataset.rst:239
 msgid "使用已经实现的数据集接口"
 msgstr "crwdns118627:0crwdne118627:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:214
+#: ../../source/user-guide/model-development/data/dataset.rst:241
 msgid "在 :py:mod:`~.data.dataset` 子模块中，除了提供了一些抽象基类待用户自定义子类进行实现， 还提供了一些基于主流数据集封装好的接口，比如常被用于教学和练习用途的 :py:class:`~.MNIST` 数据集："
 msgstr "crwdns118629:0crwdne118629:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:221
+#: ../../source/user-guide/model-development/data/dataset.rst:248
 msgid "借助于封装好的接口，我们可以快速的获取 MNIST 数据集的训练集 ``train_set`` 和测试集 ``test_set`` ， 其中 ``download`` 参数可以控制是否要从数据集官方提供的地址进行下载。更多细节请参考 API 文档。"
 msgstr "crwdns118631:0crwdne118631:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:226
+#: ../../source/user-guide/model-development/data/dataset.rst:253
 msgid "这些数据集都是从它们自己的官方站点进行下载的，MegEngine 不提供镜像或加速服务。"
 msgstr "crwdns118633:0crwdne118633:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:230
+#: ../../source/user-guide/model-development/data/dataset.rst:257
 msgid "一些数据集由于许可协议中的规定将不提供原始数据的下载接口（如 :py:class:`~.ImageNet` ），需手动下载；"
 msgstr "crwdns118635:0crwdne118635:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:231
+#: ../../source/user-guide/model-development/data/dataset.rst:258
 msgid "下载速度受到网络环境和带宽的影响，用户也可以选择使用其它的脚本或工具下载原始数据集；"
 msgstr "crwdns118637:0crwdne118637:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:232
+#: ../../source/user-guide/model-development/data/dataset.rst:259
 msgid "这些数据集接口源码是非常不错的参考，对于帮助用户学习如何设计数据集接口会很有帮助。"
 msgstr "crwdns118639:0crwdne118639:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:237
+#: ../../source/user-guide/model-development/data/dataset.rst:264
 msgid "如何添加新的数据集"
 msgstr "crwdns118641:0crwdne118641:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:239
+#: ../../source/user-guide/model-development/data/dataset.rst:266
 msgid "目前 MegEngine 中提供了一些常见的主流数据集接口，也欢迎用户为我们提供更多的接口实现。"
 msgstr "crwdns118643:0crwdne118643:0"
 
-#: ../../source/user-guide/model-development/data/dataset.rst:241
+#: ../../source/user-guide/model-development/data/dataset.rst:268
 msgid "但目前我们还没有提供明确的设计规格和要求，因此建议用户先尝试与官方维护人员进行交流。"
 msgstr "crwdns118645:0crwdne118645:0"
 
