@@ -1318,7 +1318,7 @@ Normalization Layers
      -
    * - :py:class:`~torch.nn.InstanceNorm2d`
      - :py:class:`~megengine.module.InstanceNorm`
-     -
+     - :ref:`差异对比 <comparison-instance-norm>`
    * - :py:class:`~torch.nn.InstanceNorm3d`
      - :ref:`not-implemented`
      -
@@ -1343,19 +1343,19 @@ Recurrent Layers
      -
    * - :py:class:`~torch.nn.RNN`
      - :py:class:`~megengine.module.RNN`
-     -
+     - :ref:`差异对比 <comparison-rnn>`
    * - :py:class:`~torch.nn.LSTM`
      - :py:class:`~megengine.module.LSTM`
-     -
+     - :ref:`差异对比 <comparison-lstm>`
    * - :py:class:`~torch.nn.GRU`
      - :ref:`not-implemented`
      -
    * - :py:class:`~torch.nn.RNNCell`
      - :py:class:`~megengine.module.RNNCell`
-     -
+     - :ref:`差异对比 <comparison-rnn-cell>`
    * - :py:class:`~torch.nn.LSTMCell`
      - :py:class:`~megengine.module.LSTMCell`
-     -
+     - :ref:`差异对比 <comparison-lstm-cell>`
    * - :py:class:`~torch.nn.GRUCell`
      - :ref:`not-implemented`
      -
