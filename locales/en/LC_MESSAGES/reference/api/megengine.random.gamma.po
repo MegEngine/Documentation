@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 16:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:31\n"
+"POT-Creation-Date: 2023-09-25 02:39+0000\n"
+"PO-Revision-Date: 2023-09-25 02:46\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: en\n"
@@ -40,7 +40,7 @@ msgid "where :math:`\\Gamma(k)` is the gamma function,"
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma:12 of
-msgid "\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k>0.\n\n"
+msgid "\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k \\quad \\text{is positive integer}.\n\n"
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma of
@@ -48,34 +48,38 @@ msgid "参数"
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma:16 of
-msgid "the shape parameter (sometimes designated \"k\") of the distribution. Must be non-negative."
+msgid "the shape parameter (sometimes designated \"k\") of the distribution. Must be positive."
 msgstr ""
 
-#: megengine.random.rng.RNG.gamma:19 of
-msgid "the scale parameter (sometimes designated \"theta\") of the distribution. Must be non-negative. Default: 1"
+#: megengine.random.rng.RNG.gamma:20 of
+msgid "the scale parameter (sometimes designated \"theta\") of the distribution. Must be positive. Default: 1."
 msgstr ""
 
-#: megengine.random.rng.RNG.gamma:22 of
-msgid "the size of output tensor. If shape and scale are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If shape or scale is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(shape, scale).shape`. The broadcast rules are consistent with `numpy.broadcast`. Default: None"
+#: megengine.random.rng.RNG.gamma:24 of
+msgid "the size of output tensor. If shape and scale are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If shape or scale is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(shape, scale).shape`. The broadcast rules are consistent with `numpy.broadcast`. Default: None."
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma of
 msgid "返回"
 msgstr ""
 
-#: megengine.random.rng.RNG.gamma:27 of
-msgid "the output tensor."
+#: megengine.random.rng.RNG.gamma:30 of
+msgid "tensor. The random variable with Gamma distribution."
 msgstr ""
 
-#: megengine.random.rng.RNG.gamma:30 of
+#: megengine.random.rng.RNG.gamma of
+msgid "返回类型"
+msgstr ""
+
+#: megengine.random.rng.RNG.gamma:34 of
 msgid "实际案例"
 msgstr ""
 
-#: megengine.random.rng.RNG.gamma:48 of
+#: megengine.random.rng.RNG.gamma:52 of
 msgid "[[7.73875117e-02, 6.06766164e-01],"
 msgstr ""
 
-#: megengine.random.rng.RNG.gamma:49 of
+#: megengine.random.rng.RNG.gamma:53 of
 msgid "[1.22881927e+01, 8.13445740e+01]]], dtype=float32)"
 msgstr ""
 
@@ -98,4 +102,7 @@ msgstr ""
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid "the output tensor."
+#~ msgstr "输出张量"
 
