@@ -15,15 +15,15 @@ ConvTranspose3d 差异对比
         in_channels,
         out_channels,
         kernel_size,
-			stride=1,
-			padding=0,
+	stride=1,
+	padding=0,
         output_padding=0,
-			groups=1,
-			bias=True,
-			dilation=1,
-			padding_mode=‘zeros’,
-			device=None,
-			dtype=None
+	groups=1,
+	bias=True,
+	dilation=1,
+	padding_mode=‘zeros’,
+	device=None,
+	dtype=None
      )
 
   更多请查看 :py:class:`torch.nn.ConvTranspose3d`.
@@ -36,18 +36,18 @@ ConvTranspose3d 差异对比
   .. code-block:: python
 
      megengine.module.ConvTranspose3d(
-			in_channels,
+	in_channels,
         out_channels,
         kernel_size,
-			stride=1,
-			padding=0,
+	stride=1,
+	padding=0,
         output_padding=0,
-			dilation=1,
-			groups=1,
-			bias=True,
+	dilation=1,
+	groups=1,
+	bias=True,
         conv_mode=’cross_correlation’
-			compute_mode=‘default’
- 			** kwargs
+	compute_mode=‘default’
+ 	** kwargs
      )
 
   更多请查看 :py:class:`megengine.module.ConvTranspose3d`.
@@ -73,17 +73,18 @@ MegEngine 中包含  ``conv_mode`` 参数，PyTorch 中无此参数，该参数�
     import megengine
     import torch
 
-   # 定义输入张量
-    input_tensor = torch.randn(1, 3, 128, 64, 64)
+    # 定义输入张量
+    input_tensor1 = torch.randn(1, 3, 128, 64, 64)
+    input_tensor2 = megengine.random.normal(size=(1,3,64,64))
 
     # 使用MegEngine的ConvTranspose3d
-    me_conv_transpose = megengine.nn.ConvTranspose3d(in_channels=3, out_channels=64, kernel_size=3, stride=2, padding=1)
-    me_output = me_conv_transpose(input_tensor.astype(me.float32))
+    me_conv_transpose = megengine.module.ConvTranspose3d(in_channels=3, out_channels=64, kernel_size=3, stride=2, padding=1)
+    me_output = me_conv_transpose(input_tensor2.astype(me.float32))
 
     # 使用PyTorch的ConvTranspose3d
     torch_conv_transpose = torch .nn.ConvTranspose3d(in_channels=3, out_channels=64, kernel_size=3, stride=2, padding=1)
-    torch_output = torch_conv_transpose(input_tensor)
+    torch_output = torch_conv_transpose(input_tensor1)
 
     # 打印输出结果
     print("MegEngine output:", me_output.numpy())
-    print("PyTorch output:", torch_output.detach().numpy())
+    print("PyTorch output:", torch_output.numpy())

@@ -61,35 +61,17 @@ Pytorch 中的 ``num_features`` 对应 MegEngine 中的 ``num_channels``,表示�
 用法相似：
 .. code-block:: python
 
- 
-    import megengine as mge  
-    import torch  
-    import torch.nn as nn  
-  
-    # MegEngine 实例化  
-    mge.set_default_config(dtype=mge.float32)  
-    mge_instance_norm = mge.nn.InstanceNorm2d(num_features=64)  
-  
-    # PyTorch 实例化  
-    torch_instance_norm = nn.InstanceNorm2d(64)  
-  
-    # 创建随机输入张量  
-    input_tensor = mge.randn((32, 64, 32, 32))  
-    torch_input_tensor = torch.randn(32, 64, 32, 32)  
-  
-    # 在 MegEngine 中使用 Instance Norm 2D  
-    mge_output = mge_instance_norm(input_tensor)  
-  
-    # 在 PyTorch 中使用 Instance Norm 2D  
-    torch_output = torch_instance_norm(torch_input_tensor)  
-  
-    # 打印输出张量的形状  
-    print("MegEngine output shape:", mge_output.shape)  
-    print("PyTorch output shape:", torch_output.shape)
+    import torch
 
+    m = torch.nn.Linear(20, 30)
+    input = torch.randn(128, 20)
+    output = m(input)
 
+.. code-block:: python
 
+    import megengine
 
-
-
+    m = megengine.module.Linear(20, 30)
+    input = megengine.random.normal(size=(128,20))
+    output = m(input)
  

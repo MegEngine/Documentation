@@ -53,9 +53,9 @@ pad
     x1 = megengine.tensor([[1, 2, 3], [4, 5, 6]])  
   
     # 对张量进行边界填充  
-    y1 = megengine.nn.pad(x, pad_width=((0, 1), (0, 1)), mode=“constant”，constant_val=0)  
+    y1 = megengine.module.pad(x1, pad_width=((0, 1), (0, 1)), mode=“constant”，constant_val=0)  
 
-    print(y.numpy())
+    print(y1.numpy())
 
 
 
