@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"POT-Creation-Date: 2023-09-25 02:39+0000\n"
 "PO-Revision-Date: 2023-04-21 09:31+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
@@ -39,10 +39,10 @@ msgstr ""
 msgid "the device of generated tensor. Default: None"
 msgstr ""
 
-#: megengine.random.rng.RNG:9 megengine.random.rng.RNG.beta:28
-#: megengine.random.rng.RNG.gamma:30 megengine.random.rng.RNG.normal:14
-#: megengine.random.rng.RNG.permutation:14 megengine.random.rng.RNG.poisson:21
-#: megengine.random.rng.RNG.shuffle:11 megengine.random.rng.RNG.uniform:13 of
+#: megengine.random.rng.RNG:9 megengine.random.rng.RNG.beta:32
+#: megengine.random.rng.RNG.gamma:34 megengine.random.rng.RNG.normal:18
+#: megengine.random.rng.RNG.permutation:14 megengine.random.rng.RNG.poisson:24
+#: megengine.random.rng.RNG.shuffle:11 megengine.random.rng.RNG.uniform:17 of
 msgid "实际案例"
 msgstr ""
 
@@ -75,19 +75,19 @@ msgid ""
 msgstr ""
 
 #: megengine.random.rng.RNG.beta:17 of
-msgid "the alpha parameter of the distribution. Must be non-negative."
+msgid "the alpha parameter of the distribution. Must be positive."
 msgstr ""
 
-#: megengine.random.rng.RNG.beta:19 of
-msgid "the beta parameter of the distribution. Must be non-negative."
+#: megengine.random.rng.RNG.beta:20 of
+msgid "the beta parameter of the distribution. Must be positive."
 msgstr ""
 
-#: megengine.random.rng.RNG.beta:21 of
+#: megengine.random.rng.RNG.beta:23 of
 msgid ""
 "the size of output tensor. If alpha and beta are scalars and given size "
 "is, e.g., `(m, n)`, then the output shape is `(m, n)`. If alpha or beta "
 "is a Tensor and given size is, e.g., `(m, n)`, then the output shape is "
-"`(m, n) + broadcast(alpha, beta).shape`."
+"`(m, n) + broadcast(alpha, beta).shape`. Default: None."
 msgstr ""
 
 #: megengine.random.rng.RNG.beta megengine.random.rng.RNG.gamma
@@ -97,17 +97,21 @@ msgstr ""
 msgid "返回"
 msgstr ""
 
-#: megengine.random.rng.RNG.beta:25 megengine.random.rng.RNG.gamma:27
-#: megengine.random.rng.RNG.normal:11 megengine.random.rng.RNG.poisson:18
-#: megengine.random.rng.RNG.uniform:10 of
-msgid "the output tensor."
+#: megengine.random.rng.RNG.beta:28 of
+msgid "tensor. The random variable with Beta distribution."
 msgstr ""
 
-#: megengine.random.rng.RNG.beta:46 of
+#: megengine.random.rng.RNG.beta megengine.random.rng.RNG.gamma
+#: megengine.random.rng.RNG.normal megengine.random.rng.RNG.poisson
+#: megengine.random.rng.RNG.uniform of
+msgid "返回类型"
+msgstr ""
+
+#: megengine.random.rng.RNG.beta:50 of
 msgid "[[0.0682759 , 0.04448463],"
 msgstr ""
 
-#: megengine.random.rng.RNG.beta:47 of
+#: megengine.random.rng.RNG.beta:51 of
 msgid "[0.97733796, 0.19206746]]], dtype=float32)"
 msgstr ""
 
@@ -127,36 +131,41 @@ msgstr ""
 
 #: megengine.random.rng.RNG.gamma:12 of
 msgid ""
-"\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k>0.\n"
+"\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k \\quad \\text{is "
+"positive integer}.\n"
 "\n"
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma:16 of
 msgid ""
 "the shape parameter (sometimes designated \"k\") of the distribution. "
-"Must be non-negative."
+"Must be positive."
 msgstr ""
 
-#: megengine.random.rng.RNG.gamma:19 of
+#: megengine.random.rng.RNG.gamma:20 of
 msgid ""
 "the scale parameter (sometimes designated \"theta\") of the distribution."
-" Must be non-negative. Default: 1"
+" Must be positive. Default: 1."
 msgstr ""
 
-#: megengine.random.rng.RNG.gamma:22 of
+#: megengine.random.rng.RNG.gamma:24 of
 msgid ""
 "the size of output tensor. If shape and scale are scalars and given size "
 "is, e.g., `(m, n)`, then the output shape is `(m, n)`. If shape or scale "
 "is a Tensor and given size is, e.g., `(m, n)`, then the output shape is "
 "`(m, n) + broadcast(shape, scale).shape`. The broadcast rules are "
-"consistent with `numpy.broadcast`. Default: None"
+"consistent with `numpy.broadcast`. Default: None."
 msgstr ""
 
-#: megengine.random.rng.RNG.gamma:48 of
+#: megengine.random.rng.RNG.gamma:30 of
+msgid "tensor. The random variable with Gamma distribution."
+msgstr ""
+
+#: megengine.random.rng.RNG.gamma:52 of
 msgid "[[7.73875117e-02, 6.06766164e-01],"
 msgstr ""
 
-#: megengine.random.rng.RNG.gamma:49 of
+#: megengine.random.rng.RNG.gamma:53 of
 msgid "[1.22881927e+01, 8.13445740e+01]]], dtype=float32)"
 msgstr ""
 
@@ -165,17 +174,21 @@ msgid "Random variable with Gaussian distribution :math:`N(\\mu, \\sigma)`."
 msgstr ""
 
 #: megengine.random.rng.RNG.normal:4 of
-msgid "the mean or expectation of the distribution. Default: 0"
+msgid "the mean or expectation of the distribution. Default: 0."
 msgstr ""
 
-#: megengine.random.rng.RNG.normal:6 of
+#: megengine.random.rng.RNG.normal:7 of
 msgid ""
 "the standard deviation of the distribution (variance = :math:`\\sigma ^ "
-"2`). Default: 1"
+"2`). Default: 1."
 msgstr ""
 
-#: megengine.random.rng.RNG.normal:9 megengine.random.rng.RNG.uniform:8 of
-msgid "the size of output tensor. Default: None"
+#: megengine.random.rng.RNG.normal:11 megengine.random.rng.RNG.uniform:10 of
+msgid "the size of output tensor. Default: None."
+msgstr ""
+
+#: megengine.random.rng.RNG.normal:14 of
+msgid "tensor. The random variable with Gaussian distribution."
 msgstr ""
 
 #: megengine.random.rng.RNG.permutation:2 of
@@ -222,10 +235,10 @@ msgid ""
 msgstr ""
 
 #: megengine.random.rng.RNG.poisson:12 of
-msgid "the lambda parameter of the distribution. Must be non-negative."
+msgid "the lambda parameter of the distribution. Must be positive."
 msgstr ""
 
-#: megengine.random.rng.RNG.poisson:14 of
+#: megengine.random.rng.RNG.poisson:15 of
 msgid ""
 "the size of output tensor. If lam is a scalar and given size is, e.g., "
 "`(m, n)`, then the output shape is `(m, n)`. If lam is a Tensor with "
@@ -233,19 +246,23 @@ msgid ""
 "is `(m, n, k, v)`. Default: None."
 msgstr ""
 
-#: megengine.random.rng.RNG.poisson:38 of
-msgid "[[ 5.,  2.],"
-msgstr ""
-
-#: megengine.random.rng.RNG.poisson:38 of
-msgid "[10., 10.]],"
-msgstr ""
-
-#: megengine.random.rng.RNG.poisson:40 of
-msgid "[[ 1.,  2.],"
+#: megengine.random.rng.RNG.poisson:20 of
+msgid "tensor. The random variable with Poisson distribution."
 msgstr ""
 
 #: megengine.random.rng.RNG.poisson:41 of
+msgid "[[ 5.,  2.],"
+msgstr ""
+
+#: megengine.random.rng.RNG.poisson:41 of
+msgid "[10., 10.]],"
+msgstr ""
+
+#: megengine.random.rng.RNG.poisson:43 of
+msgid "[[ 1.,  2.],"
+msgstr ""
+
+#: megengine.random.rng.RNG.poisson:44 of
 msgid "[ 8., 10.]]]], dtype=float32)"
 msgstr ""
 
@@ -265,15 +282,19 @@ msgid "None."
 msgstr ""
 
 #: megengine.random.rng.RNG.uniform:1 of
-msgid "Random variable with uniform distribution $U(0, 1)$."
+msgid "Random variable with uniform distribution :math:`U(low, high)`."
 msgstr ""
 
 #: megengine.random.rng.RNG.uniform:4 of
-msgid "lower range. Default: 0"
+msgid "lower range. Default: 0."
 msgstr ""
 
-#: megengine.random.rng.RNG.uniform:6 of
-msgid "upper range. Default: 1"
+#: megengine.random.rng.RNG.uniform:7 of
+msgid "upper range. Default: 1."
+msgstr ""
+
+#: megengine.random.rng.RNG.uniform:13 of
+msgid "tensor. The random variable with uniform distribution."
 msgstr ""
 
 #~ msgid ""
@@ -346,4 +367,78 @@ msgstr ""
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid "the alpha parameter of the distribution. Must be non-negative."
+#~ msgstr ""
+
+#~ msgid "the beta parameter of the distribution. Must be non-negative."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "the size of output tensor. If "
+#~ "alpha and beta are scalars and "
+#~ "given size is, e.g., `(m, n)`, "
+#~ "then the output shape is `(m, n)`."
+#~ " If alpha or beta is a Tensor"
+#~ " and given size is, e.g., `(m, "
+#~ "n)`, then the output shape is `(m,"
+#~ " n) + broadcast(alpha, beta).shape`."
+#~ msgstr ""
+
+#~ msgid "the output tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k>0.\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "the shape parameter (sometimes designated "
+#~ "\"k\") of the distribution. Must be "
+#~ "non-negative."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "the scale parameter (sometimes designated "
+#~ "\"theta\") of the distribution. Must be"
+#~ " non-negative. Default: 1"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "the size of output tensor. If "
+#~ "shape and scale are scalars and "
+#~ "given size is, e.g., `(m, n)`, "
+#~ "then the output shape is `(m, n)`."
+#~ " If shape or scale is a Tensor"
+#~ " and given size is, e.g., `(m, "
+#~ "n)`, then the output shape is `(m,"
+#~ " n) + broadcast(shape, scale).shape`. The"
+#~ " broadcast rules are consistent with "
+#~ "`numpy.broadcast`. Default: None"
+#~ msgstr ""
+
+#~ msgid "the mean or expectation of the distribution. Default: 0"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "the standard deviation of the "
+#~ "distribution (variance = :math:`\\sigma ^ "
+#~ "2`). Default: 1"
+#~ msgstr ""
+
+#~ msgid "the size of output tensor. Default: None"
+#~ msgstr ""
+
+#~ msgid "the lambda parameter of the distribution. Must be non-negative."
+#~ msgstr ""
+
+#~ msgid "Random variable with uniform distribution $U(0, 1)$."
+#~ msgstr ""
+
+#~ msgid "lower range. Default: 0"
+#~ msgstr ""
+
+#~ msgid "upper range. Default: 1"
+#~ msgstr ""
 
