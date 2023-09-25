@@ -6,12 +6,12 @@ Pad 差异对比
 
 .. panels::
 
-  torch.nn.functional.Embedding
+  torch.nn.Embedding
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   .. code-block:: python
 
-     torch.nn.functional.Embedding(
+     torch.nn.Embedding(
         num_embeddings,
         embedding_dim,
         padding_idx=None,
@@ -25,7 +25,7 @@ Pad 差异对比
         dtype=None
      )
 
-  更多请查看 :py:class:`torch.nn.functional.Embedding`.
+  更多请查看 :py:class:`torch.nn.Embedding`.
 
   ---
 
@@ -73,5 +73,22 @@ initial_weight
 ~~~~~~~~~~~~
 MegEngine ``initial_weight`` 参数该模块的可学习权重，形状为(num_embeddings, embedding_dim) ，PyTorch 中无此参数。
 
+.. code-block::: python
+    
 
- 
+    import megengine
+    import numpy as np
+    embedding = MegEngine.module.Embedding(10, 3)
+    input = megengine.tensor([[1, 2, 4, 5], [4, 3, 2, 9]]，dtype=np.int32))
+    embedding(input)
+
+
+.. code-block::: python
+    
+
+    import torch
+
+    input = torch.tensor([[1, 2, 4, 5], [4, 3, 2, 9]])
+    # an embedding matrix containing 10 tensors of size 3
+    embedding_matrix = torch.rand(10, 3)
+    torch.nn.embedding(input, embedding_matrix)

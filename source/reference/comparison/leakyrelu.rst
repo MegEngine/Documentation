@@ -53,11 +53,12 @@ Pytorch 中的 inplace 参数表示在不更改变量的内存地址的情况下
     x2 = megengine.tensor([-1.0, 0.0, 1.0, 2.0]) 
 
     # 创建一个 LeakyReLU 激活函数对象  
-    leakyrelu = nn.LeakyReLU(negative_slope=0.1) 
+    leakyrelu_torch = torch.nn.LeakyReLU(negative_slope=0.1)
+    leakyrelu_meg = megengine.module.LeakyReLU(negative_slope=0.1) 
   
     # 在张量上应用 LeakyReLU 函数  
-    y1 = leakyrelu(x1) 
-    y2 = megengine.leakyrelu(x2)   
+    y1 = leakyrelu_torch(x1) 
+    y2 = leakyrelu_meg(x2)   
   
       
 

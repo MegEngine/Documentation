@@ -47,16 +47,17 @@ AdaptiveAvgPool2d 差异对比
     import torch 
 
     # 定义输入张量 
-    input_tensor = torch.randn(1, 3, 64, 64) 
-
+    input_tensor1 = torch.randn(1, 3, 64, 64) 
+    input_tensor2 = megengine.random.normal(size=(1,3,64,64))
+    
     # 使用MegEngine的AdaptiveAvgPool2d 
-    me_pool = megengine.nn.AdaptiveAvgPool2d((32, 32)) 
-    me_output = me_pool(input_tensor.astype(me.float32)) 
+    me_pool = megengine.module.AdaptiveAvgPool2d((32, 32)) 
+    me_output = me_pool(input_tensor2.astype(me.float32)) 
 
     # 使用PyTorch的AdaptiveAvgPool2d 
     torch_pool = torch.nn.AdaptiveAvgPool2d((32, 32)) 
-    torch_output = torch_pool(input_tensor) 
+    torch_output = torch_pool(input_tensor1) 
 
     # 打印输出结果 
     print("MegEngine output:", me_output.numpy()) 
-    print("PyTorch output:", torch_output.detach().numpy())
+    print("PyTorch output:", torch_output.numpy())

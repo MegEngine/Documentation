@@ -46,10 +46,14 @@ Softmax 差异对比
     # 创建一个张量  
     x1 = torch.tensor([-1.0, 0.0, 1.0])  
     x2 = megengine.tensor([-1.0, 0.0, 1.0])  
+
+    # 创建一个softmax 激活函数对象
+    softmax_torch = torch.nn.Softmax(dim=0)
+    softmax_meg = megengine.module.Softmax(axis=0)
   
     # 在张量上应用softmax函数  
-    y1 = torch.softmax(x1, dim=0) 
-    y2 = megengine.softmax(x2, axis=0)   
+    y1 = softmax_torch(x1) 
+    y2 = softmax_meg(x2)   
   
       
 
