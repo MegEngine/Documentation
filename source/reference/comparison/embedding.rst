@@ -88,7 +88,8 @@ MegEngine ``initial_weight`` 参数该模块的可学习权重，形状为(num_e
 
     import torch
 
+    embedding = torch.nn.Embedding(10, 3)
     input = torch.tensor([[1, 2, 4, 5], [4, 3, 2, 9]])
-    # an embedding matrix containing 10 tensors of size 3
-    embedding_matrix = torch.rand(10, 3)
     torch.nn.embedding(input, embedding_matrix)
+    embedding(input)
+
