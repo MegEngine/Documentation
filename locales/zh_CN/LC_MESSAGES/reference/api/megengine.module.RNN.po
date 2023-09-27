@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-21 10:50+0000\n"
-"PO-Revision-Date: 2023-09-21 10:56\n"
+"PO-Revision-Date: 2023-09-27 07:18\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -45,35 +45,35 @@ msgstr "参数"
 
 #: megengine.module.rnn.RNN:15 of
 msgid "The number of expected features in the input `x`."
-msgstr ""
+msgstr "输入 `x` 中特征的数量。"
 
 #: megengine.module.rnn.RNN:17 of
 msgid "The number of features in the hidden state `h`."
-msgstr ""
+msgstr "隐藏状态 `h` 中的特征数量。"
 
 #: megengine.module.rnn.RNN:19 of
 msgid "Number of recurrent layers. E.g., setting ``num_layers=2`` would mean stacking two RNNs together to form a `stacked RNN`, with the second RNN taking in outputs of the first RNN and computing the final results. Default: 1."
-msgstr ""
+msgstr "循环层的数量。比如设置 ``num_layers=2`` 将会叠加两层循环神经网络，其中第二层的循环神经网络以第一层的循环神经网络的输出作为输入并计算最终的结果。默认值：1。"
 
 #: megengine.module.rnn.RNN:24 of
 msgid "The non-linearity to use. Can be either ``'tanh'`` or ``'relu'``. Default: ``'tanh'``."
-msgstr ""
+msgstr "非线性层。可以是 ``'tanh'`` 或者 ``'relu'``。默认值：``'tanh'``。"
 
 #: megengine.module.rnn.RNN:26 of
 msgid "If ``False``, then the layer does not use bias weights `b_ih` and `b_hh`. Default: ``True``."
-msgstr ""
+msgstr "如果为``False``，则这一层不使用偏置权值 `b_ih` 和 `b_hh`。默认值：``True``。"
 
 #: megengine.module.rnn.RNN:29 of
 msgid "If ``True``, then the input and output tensors are provided as `(batch, seq, feature)` instead of `(seq, batch, feature)`. Note that this does not apply to hidden or cell states. See the Inputs/Outputs sections below for details.  Default: ``False``."
-msgstr ""
+msgstr "如果 ``True``，则输入和输出张量的形状将是 `(batch, seq, feature)`，而不是 `(seq, batch, feature)`。需要注意的是，这不适用于 hidden 或 cell state。更多详细信息，请参阅下面的输入/输出部分。默认值：``False ``。"
 
 #: megengine.module.rnn.RNN:34 of
 msgid "If non-zero, introduces a `Dropout` layer on the outputs of each RNN layer except the last layer, with dropout probability equal to :attr:`dropout`. Default: 0."
-msgstr ""
+msgstr "如果不是零，则在除最后一层之外的每个 RNN 层的输出上引入 `Dropout` 层，dropout rate 通过 :attr:`dropout` 设置。默认值：0。"
 
 #: megengine.module.rnn.RNN:38 of
 msgid "If ``True``, becomes a bidirectional RNN. Default: ``False``."
-msgstr ""
+msgstr "如果 ``True``，则变为双向 RNN。默认值：``False ``。"
 
 #: megengine.module.rnn.RNN:63 of
 msgid "Shape:"
@@ -85,7 +85,7 @@ msgstr "输入: input, h_0"
 
 #: megengine.module.rnn.RNN:43 of
 msgid "input: :math:`(L, N, H_{in})` when ``batch_first=False`` or :math:`(N, L, H_{in})`"
-msgstr ""
+msgstr "输入：如果 ``batch_first=False``，则为 :math:`(L, N, H_{in})`，否则 :math:`(N, L, H_{in})`。"
 
 #: megengine.module.rnn.RNN:44 of
 msgid "when ``batch_first=True``. Containing the features of the input sequence."
