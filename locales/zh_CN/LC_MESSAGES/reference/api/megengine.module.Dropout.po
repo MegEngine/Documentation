@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-21 10:50+0000\n"
-"PO-Revision-Date: 2023-09-21 10:55\n"
+"PO-Revision-Date: 2023-09-27 08:39\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,7 +24,7 @@ msgstr "Dropout"
 
 #: megengine.module.dropout.Dropout:1 of
 msgid "Randomly sets some elements of inputs to zeros with the probability :math:`drop\\_prob` during training. Commonly used in large networks for regularization and prevent overfitting, see `Improving Neural Networks by Preventing Co-Adaptation of Feature Detectors<https://arxiv.org/abs/1207.0580>`. Note that we perform dropout only during training, we also rescale(multiply) the output tensor by :math:`\\frac{1}{1 - drop\\_prob}`. During inference :class:`~.Dropout` is equal to :class:`~.module.identity.Identity`."
-msgstr ""
+msgstr "随机将输入的某些元素设置为零，概率为 :math:`drop\\_prob`。在大型网络中通常用于正则化和防止过拟合，阅读 `Improving Neural Networks by Preventing Co-Adaptation of Feature Detectors<https://arxiv.org/abs/1207.0580>` 可以获取更多信息。请注意，dropout 仅在训练期间使用。dropout 的输出结果会乘以 :math:`\\frac{1}{1 - drop\\_prob}` 进行缩放。推理时 :class:`~.Dropout` 等价于 :class:`~.module.identity.Identity`。"
 
 #: megengine.module.dropout.Dropout of
 msgid "参数"
@@ -32,7 +32,7 @@ msgstr "参数"
 
 #: megengine.module.dropout.Dropout:6 of
 msgid "The probability to drop (set to zero) each single element. Default: 0.0"
-msgstr ""
+msgstr "丢弃 (设置为零) 每个单个元素的概率。默认值：0.0。"
 
 #: megengine.module.dropout.Dropout:11 of
 msgid "Shape:"
@@ -40,11 +40,11 @@ msgstr "形状："
 
 #: megengine.module.dropout.Dropout:10 of
 msgid "input: `(*)`. Input can be of any shape."
-msgstr ""
+msgstr "input: `(*)`，输入可以是任何形状。"
 
 #: megengine.module.dropout.Dropout:11 of
 msgid "output: `(*)`. Output is of the same shape as input."
-msgstr ""
+msgstr "output: `(*)`，输出与输入的形状一样。"
 
 #: megengine.module.dropout.Dropout:14 of
 msgid "实际案例"
