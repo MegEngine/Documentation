@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-21 10:50+0000\n"
-"PO-Revision-Date: 2023-09-21 10:55\n"
+"PO-Revision-Date: 2023-09-27 08:39\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -24,7 +24,7 @@ msgstr "发射器(launcher)"
 
 #: megengine.distributed.launcher.launcher:1 of
 msgid "Decorator for launching multiple processes in single-machine/multi-machine multi-gpu training."
-msgstr ""
+msgstr "用于在单机/多机中多gpu训练时启动多个进程的装饰器。"
 
 #: megengine.distributed.launcher.launcher of
 msgid "参数"
@@ -36,31 +36,31 @@ msgstr "你想要在分布式模式下启动的函数。"
 
 #: megengine.distributed.launcher.launcher:5 of
 msgid "how many devices each node. If ``n_gpus`` is None,  ``n_gpus`` will be the device count of current node. Default: None."
-msgstr ""
+msgstr "每个节点有多少设备。如果 ``n_gpus`` 是None， ``n_gpus`` 将是当前节点的设备计数。默认值为None。"
 
 #: megengine.distributed.launcher.launcher:8 of
 msgid "how many devices totally. If ``world_size`` is None, ``world_size`` will be ``n_gpus``. Default: None."
-msgstr ""
+msgstr "总共有多少个设备。如果``world_size``是None，``world_size``将为``n_gpus``。默认值为None。"
 
 #: megengine.distributed.launcher.launcher:11 of
 msgid "the start rank number in current node. For single-machine multi-gpu training, rank_start should be ``0``. For multi-machine training, ``rank_start`` of Machine ``i`` should be ``i * n_gpus``. Default: 0"
-msgstr ""
+msgstr "当前节点的rank号。对于单机多gpu情况的训练，rank_start应为``0``。对于多机器训练，机器``i``的``rank_start``应为 ``i * n_gpus``。默认值为0。"
 
 #: megengine.distributed.launcher.launcher:14 of
 msgid "ip address for master node (where the rank 0 is placed). Default: \"localhost\"."
-msgstr ""
+msgstr "主节点的IP地址。默认值为\"localhost\"。"
 
 #: megengine.distributed.launcher.launcher:16 of
 msgid "server port for distributed server. Default: 0."
-msgstr ""
+msgstr "分布式服务器的端口号。默认值为0。"
 
 #: megengine.distributed.launcher.launcher:18 of
 msgid "set default collective communication backend. ``backend`` should be \"nccl\" or \"rccl\". Default: \"nccl\"."
-msgstr ""
+msgstr "设置默认的集成通信后算。``backend``应该是\"nccl\"或者是\"rccl\"。默认是\"nccl\"。"
 
 #: megengine.distributed.launcher.launcher:22 of
 msgid "Examples of distributed training using ``launcher`` decorator can be found in :ref:`_distributed-guide`"
-msgstr ""
+msgstr "使用``launcher``装饰器的分布式训练示例可以在 :ref:`_distributed-guide`中找到。"
 
 #~ msgid "基类：:class:`object`"
 #~ msgstr "基类：:class:`object`"
