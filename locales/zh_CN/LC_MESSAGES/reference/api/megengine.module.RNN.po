@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-21 10:50+0000\n"
-"PO-Revision-Date: 2023-09-27 07:18\n"
+"PO-Revision-Date: 2023-09-27 08:39\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -89,15 +89,15 @@ msgstr "输入：如果 ``batch_first=False``，则为 :math:`(L, N, H_{in})`，
 
 #: megengine.module.rnn.RNN:44 of
 msgid "when ``batch_first=True``. Containing the features of the input sequence."
-msgstr ""
+msgstr "输入序列的特征。"
 
 #: megengine.module.rnn.RNN:46 of
 msgid "h_0: :math:`(D * \\text{num\\_layers}, N, H_{out})`. Containing the initial hidden"
-msgstr ""
+msgstr "h_0: :math:`(D * \\text{num\\_layers}, N, H_{out})`. 初始的 hidden state。"
 
 #: megengine.module.rnn.RNN:46 of
 msgid "state for each element in the batch. Defaults to zeros if not provided."
-msgstr ""
+msgstr "批处理中每个元素的状态。如果未提供，则默认为零。"
 
 #: megengine.module.rnn.RNN:48 of
 msgid "where:"
@@ -125,15 +125,15 @@ msgstr "输出: output, h_n"
 
 #: megengine.module.rnn.RNN:60 of
 msgid "output: :math:`(L, N, D * H_{out})` when ``batch_first=False`` or :math:`(N, L, D * H_{out})` when ``batch_first=True``."
-msgstr ""
+msgstr "output: 如果 ``batch_first=False`` 则为 :math:`(L, N, D * H_{out})`，否则为 :math:`(N, L, D * H_{out})` 。"
 
 #: megengine.module.rnn.RNN:61 of
 msgid "Containing the output features `(h_t)` from the last layer of the RNN, for each `t`."
-msgstr ""
+msgstr "用于每个时刻 `t`，RNN 的最后一层的输出特征 `(h_t)`。"
 
 #: megengine.module.rnn.RNN:62 of
 msgid "h_n: :math:`(D * \\text{num\\_layers}, N, H_{out})`. Containing the final hidden state for each element in the batch."
-msgstr ""
+msgstr "h_n: :math:`(D * \\text{num\\_layers}, N, H_{out})`。是每个 batch 中最终的 hidden state。"
 
 #: megengine.module.rnn.RNN:66 of
 msgid "实际案例"
