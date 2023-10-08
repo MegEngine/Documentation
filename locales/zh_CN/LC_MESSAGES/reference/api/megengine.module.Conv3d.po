@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-25 02:39+0000\n"
-"PO-Revision-Date: 2023-09-28 06:29\n"
+"PO-Revision-Date: 2023-10-08 05:05\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
@@ -46,7 +46,7 @@ msgstr "当 `groups == in_channels` 且 `out_channels == K * in_channels` ，其
 
 #: megengine.module.conv.Conv3d:19 of
 msgid "In other words, for an input of size :math:`(N, C_{\\text{in}}, T_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`, a depthwise convolution with a depthwise multiplier `K`, can be constructed by arguments :math:`(in\\_channels=C_{\\text{in}}, out\\_channels=C_{\\text{in}} \\times K, ..., groups=C_{\\text{in}})`."
-msgstr ""
+msgstr "换言之，对于大小为 :math:`(N, C_{\\text{in}}, T_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})` 的输入，depthwise multiplier 为 `K` 的 depthwise 卷积可以通过参数 :math:`(in\\_channels=C_{\\text{in}}, out\\_channels=C_{\\text{in}} \\times K, ..., groups=C_{\\text{in}})` 构造。"
 
 #: megengine.module.conv.Conv3d of
 msgid "参数"
@@ -78,7 +78,7 @@ msgstr "3D 卷积操作的扩充数。默认值： 1。"
 
 #: megengine.module.conv.Conv3d:45 of
 msgid "number of groups into which the input and output channels are divided, so as to perform a ``grouped convolution``. When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by ``groups``, and the shape of weight should be ``(groups, out_channel // groups, in_channels // groups, depth, height, width)``. Default: 1."
-msgstr ""
+msgstr "在进行”分组卷积“时，对输入输出通道的分组数量。当 groups 不是 1 时，in_channels 和 out_channels 必须可被 groups 整除，卷积核权重的形状将会是 （groups, out_channel // groups, in_channels // groups, depth, height, width）。默认值：1。"
 
 #: megengine.module.conv.Conv3d:52 of
 msgid "whether to add a bias onto the result of convolution. Default: True."
@@ -94,7 +94,7 @@ msgstr "形状："
 
 #: megengine.module.conv.Conv3d:59 of
 msgid "``input``: :math:`(N, C_{\\text{in}}, T_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`. ``output``: :math:`(N, C_{\\text{out}}, T_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})`."
-msgstr ""
+msgstr "输入: :math:`(N, C_{\\text{in}}, T_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`。输出: :math:`(N, C_{\\text{out}}, T_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})`。"
 
 #: megengine.module.conv.Conv3d:64 of
 msgid "``weight`` usually has shape ``(out_channels, in_channels, depth, height, width)`` , if groups is not 1, shape will be ``(groups, out_channels // groups, in_channels // groups, depth, height, width)``"
@@ -110,7 +110,7 @@ msgstr "返回"
 
 #: megengine.module.conv.Conv3d:68 of
 msgid "module. The instance of the ``Conv3d`` module."
-msgstr ""
+msgstr "module。\"Conv3d\" module 的实例。"
 
 #: megengine.module.conv.Conv3d of
 msgid "返回类型"
