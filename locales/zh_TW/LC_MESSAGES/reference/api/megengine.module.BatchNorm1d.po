@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-28 09:14+0000\n"
-"PO-Revision-Date: 2023-04-21 09:25\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-09-21 10:55\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
@@ -23,12 +23,52 @@ msgid "BatchNorm1d"
 msgstr "crwdns104293:0crwdne104293:0"
 
 #: megengine.module.batchnorm.BatchNorm1d:1 of
-msgid "Applies Batch Normalization over a 2D/3D tensor."
-msgstr "crwdns104295:0crwdne104295:0"
+msgid "Applies Batch Normalization over a 2D or 3D input."
+msgstr "crwdns122181:0crwdne122181:0"
 
 #: megengine.module.batchnorm.BatchNorm1d:3 of
-msgid "Refer to :class:`~.BatchNorm2d` for more information."
-msgstr "crwdns104297:0:class:crwdne104297:0"
+msgid "y = \\frac{x - \\mathrm{E}[x]}{\\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta"
+msgstr "crwdns122183:0{E}crwdnd122183:0[x]crwdnd122183:0{Var}crwdnd122183:0[x]crwdne122183:0"
+
+#: megengine.module.batchnorm.BatchNorm1d:7 of
+msgid "The mean and standard-deviation are calculated per-dimension over the mini-batches and :math:`\\gamma` and :math:`\\beta` are learnable parameter vectors of size `C` (where `C` is the number of features or channels of the input). By default, the elements of :math:`\\gamma` are set to 1 and the elements of :math:`\\beta` are set to 0. The standard-deviation is calculated via the biased estimator, equivalent to `torch.var(input, unbiased=False)`."
+msgstr "crwdns122185:0:math:crwdnd122185:0:math:crwdnd122185:0:math:crwdnd122185:0:math:crwdne122185:0"
+
+#: megengine.module.batchnorm.BatchNorm1d:13 of
+msgid "By default, during training this layer keeps running estimates of its computed mean and variance, which are then used for normalization during evaluation. The running estimates are kept with a default :attr:`momentum` of 0.9."
+msgstr "crwdns122187:0:attr:crwdne122187:0"
+
+#: megengine.module.batchnorm.BatchNorm1d:18 of
+msgid "If :attr:`track_running_stats` is set to ``False``, this layer then does not keep running estimates, and batch statistics are instead used during evaluation time as well."
+msgstr "crwdns122189:0:attr:crwdne122189:0"
+
+#: megengine.module.batchnorm.BatchNorm1d:22 of
+msgid "Because the Batch Normalization is done over the `C` dimension, computing statistics on `(N, L)` slices, it's common terminology to call this Temporal Batch Normalization."
+msgstr "crwdns122191:0crwdne122191:0"
+
+#: megengine.module.batchnorm.BatchNorm1d:27 of
+msgid "The update formula for ``running_mean`` and ``running_var`` (taking ``running_mean`` as an example) is"
+msgstr "crwdns122193:0crwdne122193:0"
+
+#: megengine.module.batchnorm.BatchNorm1d:29 of
+msgid "\\textrm{running_mean} = \\textrm{momentum} \\times \\textrm{running_mean} + (1 - \\textrm{momentum}) \\times \\textrm{batch_mean}"
+msgstr "crwdns122195:0{running_mean}crwdnd122195:0{momentum}crwdnd122195:0{running_mean}crwdnd122195:0{momentum}crwdnd122195:0{batch_mean}crwdne122195:0"
+
+#: megengine.module.batchnorm.BatchNorm1d:33 of
+msgid "which could be defined differently in other frameworks. Most notably, ``momentum`` of 0.1 in PyTorch is equivalent to ``mementum`` of 0.9 here."
+msgstr "crwdns122197:0crwdne122197:0"
+
+#: megengine.module.batchnorm.BatchNorm1d:38 of
+msgid "Shape:"
+msgstr "crwdns122199:0crwdne122199:0"
+
+#: megengine.module.batchnorm.BatchNorm1d:37 of
+msgid "Input: :math:`(N, C)` or :math:`(N, C, L)`, where :math:`N` is the batch size, :math:`C` is the number of features or channels, and :math:`L` is the sequence length"
+msgstr "crwdns122201:0:math:crwdnd122201:0:math:crwdnd122201:0:math:crwdnd122201:0:math:crwdnd122201:0:math:crwdne122201:0"
+
+#: megengine.module.batchnorm.BatchNorm1d:39 of
+msgid "Output: :math:`(N, C)` or :math:`(N, C, L)` (same shape as input)"
+msgstr "crwdns122203:0:math:crwdnd122203:0:math:crwdne122203:0"
 
 #~ msgid "基类：:class:`megengine.module.batchnorm._BatchNorm`"
 #~ msgstr "基类：:class:`megengine.module.batchnorm._BatchNorm`"
@@ -327,4 +367,7 @@ msgstr "crwdns104297:0:class:crwdne104297:0"
 
 #~ msgid "Sets all parameters' grads to zero"
 #~ msgstr "将所有参数的梯度置0。"
+
+#~ msgid "Refer to :class:`~.BatchNorm2d` for more information."
+#~ msgstr "参见 :class:`~.BatchNorm2d` 以获取更多信息。"
 

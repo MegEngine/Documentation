@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-21 10:50+0000\n"
-"PO-Revision-Date: 2023-04-21 09:26+0000\n"
+"PO-Revision-Date: 2023-09-21 10:56\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.MaxPool2d.po\n"
+"X-Crowdin-File-ID: 9525\n"
 
 #: ../../source/reference/api/megengine.module.MaxPool2d.rst:5
 msgid "MaxPool2d"
@@ -23,27 +27,19 @@ msgid "Applies a 2D max pooling over an input."
 msgstr ""
 
 #: megengine.module.pooling.MaxPool2d:3 of
-msgid ""
-"For instance, given an input of the size :`(N, C, H_{\\text{in}}, "
-"W_{\\text{in}})` and :attr:`kernel_size` :math:`(kH, kW)`, this layer "
-"generates the output of the size :math:`(N, C, H_{\\text{out}}, "
-"W_{\\text{out}})` through a process described as:"
+msgid "For instance, given an input of the size :`(N, C, H_{\\text{in}}, W_{\\text{in}})` and :attr:`kernel_size` :math:`(kH, kW)`, this layer generates the output of the size :math:`(N, C, H_{\\text{out}}, W_{\\text{out}})` through a process described as:"
 msgstr ""
 
 #: megengine.module.pooling.MaxPool2d:7 of
-msgid ""
-"\\begin{aligned}\n"
-"    out(N_i, C_j, h, w) ={} & \\max_{m=0, \\ldots, kH-1} \\max_{n=0, "
-"\\ldots, kW-1}\n"
+msgid "\\begin{aligned}\n"
+"    out(N_i, C_j, h, w) ={} & \\max_{m=0, \\ldots, kH-1} \\max_{n=0, \\ldots, kW-1}\n"
 "        \\text{input}(N_i, C_j, \\text{stride[0]} \\times h + m,\n"
 "        \\text{stride[1]} \\times w + n)\n"
 "\\end{aligned}"
 msgstr ""
 
 #: megengine.module.pooling.MaxPool2d:15 of
-msgid ""
-"If :attr:`padding` is non-zero, then the input is implicitly zero-padded "
-"on both sides for :attr:`padding` number of points."
+msgid "If :attr:`padding` is non-zero, then the input is implicitly zero-padded on both sides for :attr:`padding` number of points."
 msgstr ""
 
 #: megengine.module.pooling.MaxPool2d of
@@ -71,27 +67,17 @@ msgid "Input: :math:`(N, C, H_{in}, W_{in})` or :math:`(C, H_{in}, W_{in})`"
 msgstr ""
 
 #: megengine.module.pooling.MaxPool2d:30 of
-msgid ""
-"Output: :math:`(N, C, H_{out}, W_{out})` or :math:`(C, H_{out}, "
-"W_{out})`, where"
+msgid "Output: :math:`(N, C, H_{out}, W_{out})` or :math:`(C, H_{out}, W_{out})`, where"
 msgstr ""
 
 #: megengine.module.pooling.MaxPool2d:32 of
-msgid ""
-"H_{out} = \\left\\lfloor\\frac{H_{in} + 2 * \\text{padding[0]} - "
-"\\text{dilation[0]}\n"
-"      \\times (\\text{kernel\\_size[0]} - 1) - 1}{\\text{stride[0]}} + "
-"1\\right\\rfloor\n"
-"\n"
+msgid "H_{out} = \\left\\lfloor\\frac{H_{in} + 2 * \\text{padding[0]} - \\text{dilation[0]}\n"
+"      \\times (\\text{kernel\\_size[0]} - 1) - 1}{\\text{stride[0]}} + 1\\right\\rfloor\n\n"
 msgstr ""
 
 #: megengine.module.pooling.MaxPool2d:36 of
-msgid ""
-"W_{out} = \\left\\lfloor\\frac{W_{in} + 2 * \\text{padding[1]} - "
-"\\text{dilation[1]}\n"
-"      \\times (\\text{kernel\\_size[1]} - 1) - 1}{\\text{stride[1]}} + "
-"1\\right\\rfloor\n"
-"\n"
+msgid "W_{out} = \\left\\lfloor\\frac{W_{in} + 2 * \\text{padding[1]} - \\text{dilation[1]}\n"
+"      \\times (\\text{kernel\\_size[1]} - 1) - 1}{\\text{stride[1]}} + 1\\right\\rfloor\n\n"
 msgstr ""
 
 #: megengine.module.pooling.MaxPool2d of

@@ -1,95 +1,69 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-21 10:50+0000\n"
-"PO-Revision-Date: 2023-04-21 09:25+0000\n"
+"PO-Revision-Date: 2023-09-27 10:56\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.BatchNorm1d.po\n"
+"X-Crowdin-File-ID: 9469\n"
 
 #: ../../source/reference/api/megengine.module.BatchNorm1d.rst:5
 msgid "BatchNorm1d"
-msgstr ""
+msgstr "BatchNorm1d"
 
 #: megengine.module.batchnorm.BatchNorm1d:1 of
-#, fuzzy
 msgid "Applies Batch Normalization over a 2D or 3D input."
-msgstr "在2D/3D张量上进行批标准化（batch normalization）。"
+msgstr "在2维或3维的输入上应用批归一化操作"
 
 #: megengine.module.batchnorm.BatchNorm1d:3 of
-msgid ""
-"y = \\frac{x - \\mathrm{E}[x]}{\\sqrt{\\mathrm{Var}[x] + \\epsilon}} * "
-"\\gamma + \\beta"
+msgid "y = \\frac{x - \\mathrm{E}[x]}{\\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm1d:7 of
-msgid ""
-"The mean and standard-deviation are calculated per-dimension over the "
-"mini-batches and :math:`\\gamma` and :math:`\\beta` are learnable "
-"parameter vectors of size `C` (where `C` is the number of features or "
-"channels of the input). By default, the elements of :math:`\\gamma` are "
-"set to 1 and the elements of :math:`\\beta` are set to 0. The standard-"
-"deviation is calculated via the biased estimator, equivalent to "
-"`torch.var(input, unbiased=False)`."
+msgid "The mean and standard-deviation are calculated per-dimension over the mini-batches and :math:`\\gamma` and :math:`\\beta` are learnable parameter vectors of size `C` (where `C` is the number of features or channels of the input). By default, the elements of :math:`\\gamma` are set to 1 and the elements of :math:`\\beta` are set to 0. The standard-deviation is calculated via the biased estimator, equivalent to `torch.var(input, unbiased=False)`."
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm1d:13 of
-msgid ""
-"By default, during training this layer keeps running estimates of its "
-"computed mean and variance, which are then used for normalization during "
-"evaluation. The running estimates are kept with a default "
-":attr:`momentum` of 0.9."
-msgstr ""
+msgid "By default, during training this layer keeps running estimates of its computed mean and variance, which are then used for normalization during evaluation. The running estimates are kept with a default :attr:`momentum` of 0.9."
+msgstr "默认在训练过程中，该层持续估计其计算的均值和方差，随后在评估过程中用于标准化。运行中的估计保持默认的 :attr:`momentum` 值 0.9。"
 
 #: megengine.module.batchnorm.BatchNorm1d:18 of
-msgid ""
-"If :attr:`track_running_stats` is set to ``False``, this layer then does "
-"not keep running estimates, and batch statistics are instead used during "
-"evaluation time as well."
+msgid "If :attr:`track_running_stats` is set to ``False``, this layer then does not keep running estimates, and batch statistics are instead used during evaluation time as well."
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm1d:22 of
-msgid ""
-"Because the Batch Normalization is done over the `C` dimension, computing"
-" statistics on `(N, L)` slices, it's common terminology to call this "
-"Temporal Batch Normalization."
+msgid "Because the Batch Normalization is done over the `C` dimension, computing statistics on `(N, L)` slices, it's common terminology to call this Temporal Batch Normalization."
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm1d:27 of
-msgid ""
-"The update formula for ``running_mean`` and ``running_var`` (taking "
-"``running_mean`` as an example) is"
-msgstr ""
+msgid "The update formula for ``running_mean`` and ``running_var`` (taking ``running_mean`` as an example) is"
+msgstr "``running_mean`` 和 ``running_var`` 的更新公式如下（以 ``running_mean`` 为例）："
 
 #: megengine.module.batchnorm.BatchNorm1d:29 of
-msgid ""
-"\\textrm{running_mean} = \\textrm{momentum} \\times "
-"\\textrm{running_mean} + (1 - \\textrm{momentum}) \\times "
-"\\textrm{batch_mean}"
-msgstr ""
+msgid "\\textrm{running_mean} = \\textrm{momentum} \\times \\textrm{running_mean} + (1 - \\textrm{momentum}) \\times \\textrm{batch_mean}"
+msgstr "\\textrm{running_mean} = \\textrm{momentum} \\times \\textrm{running_mean} + (1 - \\textrm{momentum}) \\times \\textrm{batch_mean}"
 
 #: megengine.module.batchnorm.BatchNorm1d:33 of
-msgid ""
-"which could be defined differently in other frameworks. Most notably, "
-"``momentum`` of 0.1 in PyTorch is equivalent to ``mementum`` of 0.9 here."
-msgstr ""
+msgid "which could be defined differently in other frameworks. Most notably, ``momentum`` of 0.1 in PyTorch is equivalent to ``mementum`` of 0.9 here."
+msgstr "可能细节上和其它框架部完全一致。值得注意的是，在 PyTorch 中的 ``momentum`` 如果为 0.1，则在 MegEngine 中对应 0.9。"
 
 #: megengine.module.batchnorm.BatchNorm1d:38 of
 msgid "Shape:"
-msgstr ""
+msgstr "形状："
 
 #: megengine.module.batchnorm.BatchNorm1d:37 of
-msgid ""
-"Input: :math:`(N, C)` or :math:`(N, C, L)`, where :math:`N` is the batch "
-"size, :math:`C` is the number of features or channels, and :math:`L` is "
-"the sequence length"
+msgid "Input: :math:`(N, C)` or :math:`(N, C, L)`, where :math:`N` is the batch size, :math:`C` is the number of features or channels, and :math:`L` is the sequence length"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm1d:39 of

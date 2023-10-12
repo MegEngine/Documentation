@@ -1,75 +1,58 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-21 10:50+0000\n"
-"PO-Revision-Date: 2023-05-11 10:50+0000\n"
+"PO-Revision-Date: 2023-09-27 10:56\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.LayerNorm.po\n"
+"X-Crowdin-File-ID: 9515\n"
 
 #: ../../source/reference/api/megengine.module.LayerNorm.rst:5
 msgid "LayerNorm"
-msgstr ""
+msgstr "LayerNorm"
 
 #: megengine.module.normalization.LayerNorm:1 of
-msgid ""
-"Applies Layer Normalization over a mini-batch of inputs Refer to `Layer "
-"Normalization <https://arxiv.org/pdf/1607.06450v1.pdf>`_"
-msgstr ""
+msgid "Applies Layer Normalization over a mini-batch of inputs Refer to `Layer Normalization <https://arxiv.org/pdf/1607.06450v1.pdf>`_"
+msgstr "在小批量输入上使用 层间归一化，参考`Layer Normalization <https://arxiv.org/pdf/1607.06450v1.pdf>`_"
 
 #: megengine.module.normalization.LayerNorm:4 of
-msgid ""
-"y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * "
-"\\gamma + \\beta\n"
-"\n"
-msgstr ""
+msgid "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta\n\n"
+msgstr "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta"
 
 #: megengine.module.normalization.LayerNorm:7 of
-msgid ""
-"The mean and standard-deviation are calculated separately over the last "
-"certain number dimensions which have to be of the shape specified by "
-":attr:`normalized_shape`. :math:`\\\\gamma` and :math:`\\\\beta` are "
-"learnable affine transform parameters of :attr:`normalized_shape` if "
-":attr:`affine` is ``True``. The standard-deviation is calculated via the "
-"biased estimator."
-msgstr ""
+msgid "The mean and standard-deviation are calculated separately over the last certain number dimensions which have to be of the shape specified by :attr:`normalized_shape`. :math:`\\\\gamma` and :math:`\\\\beta` are learnable affine transform parameters of :attr:`normalized_shape` if :attr:`affine` is ``True``. The standard-deviation is calculated via the biased estimator."
+msgstr "均值和标准差是在:attr:`normalized_shape` 给出的shape的特定的最后几维上计算的， :math:`\\\\gamma` 和 :math:`\\\\beta` 是:attr:`normalized_shape` 的可学习的仿射变换参数，当 :attr:`affine` 为 ``True``时， 标准差也会在偏差估计时计算"
 
 #: megengine.module.normalization.LayerNorm:16 of
-msgid ""
-"Unlike Batch Normalization and Instance Normalization, which applies "
-"scalar scale and bias for each entire channel/plane, Layer Normalization "
-"applies per-element scale and bias."
-msgstr ""
+msgid "Unlike Batch Normalization and Instance Normalization, which applies scalar scale and bias for each entire channel/plane, Layer Normalization applies per-element scale and bias."
+msgstr "不同于批归一化与实例归一化那样为整个通道/平面使用同样的缩放和偏移，层归一化对每个元素独立指定缩放/偏移"
 
 #: megengine.module.normalization.LayerNorm of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.normalization.LayerNorm:20 of
-msgid ""
-"input shape from an expected input of size size :math:`[*, "
-"normalized\\_shape[0], normalized\\_shape[1], ..., "
-"normalized\\_shape[-1]]`. If it is a single integer, this module will "
-"normalize over the last dimension which is expected to be of that "
-"specific size."
-msgstr ""
+msgid "input shape from an expected input of size size :math:`[*, normalized\\_shape[0], normalized\\_shape[1], ..., normalized\\_shape[-1]]`. If it is a single integer, this module will normalize over the last dimension which is expected to be of that specific size."
+msgstr "来自形如 :math:`[*, normalized\\_shape[0], normalized\\_shape[1], ..., normalized\\_shape[-1]]` 期望的输入shape ，当其为单个整数时， 该模块会在指定的特殊shape的最后一维上进行归一化"
 
 #: megengine.module.normalization.LayerNorm:25 of
 msgid "a value added to the denominator for numerical stability. Default: 1e-5"
 msgstr "添加到分母的单个值，增加数值稳定性。默认：1e-5"
 
 #: megengine.module.normalization.LayerNorm:26 of
-msgid ""
-"this module has learnable affine parameters (weight, bias) when affine is"
-" set to be True."
-msgstr ""
+msgid "this module has learnable affine parameters (weight, bias) when affine is set to be True."
+msgstr "当参数 affine为 True时， 该模块有可学习的仿射变换参数（权重和偏移量）"
 
 #: megengine.module.normalization.LayerNorm:30 of
 msgid "Shape:"
@@ -77,11 +60,11 @@ msgstr "形状："
 
 #: megengine.module.normalization.LayerNorm:29 of
 msgid "Input: :math:`(N, *)` (2-D, 3-D, 4-D or 5-D tensor)"
-msgstr ""
+msgstr "输入: :math:`(N, *)` (2-D, 3-D, 4-D or 5-D 张量)"
 
 #: megengine.module.normalization.LayerNorm:30 of
 msgid "Output: :math:`(N, *)` (same shape as input)"
-msgstr ""
+msgstr "输出: :math:`(N, *)` (shape与输入相同)"
 
 #: megengine.module.normalization.LayerNorm:33 of
 msgid "实际案例"

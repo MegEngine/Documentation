@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 16:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:31\n"
+"POT-Creation-Date: 2023-09-25 02:39+0000\n"
+"PO-Revision-Date: 2023-09-25 02:46\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
@@ -41,10 +41,10 @@ msgstr "crwdns106143:0crwdne106143:0"
 msgid "the device of generated tensor. Default: None"
 msgstr "crwdns106145:0crwdne106145:0"
 
-#: megengine.random.rng.RNG:9 megengine.random.rng.RNG.beta:28
-#: megengine.random.rng.RNG.gamma:30 megengine.random.rng.RNG.normal:14
-#: megengine.random.rng.RNG.permutation:14 megengine.random.rng.RNG.poisson:21
-#: megengine.random.rng.RNG.shuffle:9 megengine.random.rng.RNG.uniform:13 of
+#: megengine.random.rng.RNG:9 megengine.random.rng.RNG.beta:32
+#: megengine.random.rng.RNG.gamma:34 megengine.random.rng.RNG.normal:18
+#: megengine.random.rng.RNG.permutation:14 megengine.random.rng.RNG.poisson:24
+#: megengine.random.rng.RNG.shuffle:11 megengine.random.rng.RNG.uniform:17 of
 msgid "实际案例"
 msgstr "crwdns106147:0crwdne106147:0"
 
@@ -71,34 +71,39 @@ msgid "\\mathrm{~B}(\\alpha, \\beta)=\\int_{0}^{1} t^{\\alpha-1}(1-t)^{\\beta-1}
 msgstr "crwdns106157:0{0}crwdnd106157:0{1}crwdne106157:0"
 
 #: megengine.random.rng.RNG.beta:17 of
-msgid "the alpha parameter of the distribution. Must be non-negative."
-msgstr "crwdns106159:0crwdne106159:0"
+msgid "the alpha parameter of the distribution. Must be positive."
+msgstr "crwdns122687:0crwdne122687:0"
 
-#: megengine.random.rng.RNG.beta:19 of
-msgid "the beta parameter of the distribution. Must be non-negative."
-msgstr "crwdns106161:0crwdne106161:0"
+#: megengine.random.rng.RNG.beta:20 of
+msgid "the beta parameter of the distribution. Must be positive."
+msgstr "crwdns122689:0crwdne122689:0"
 
-#: megengine.random.rng.RNG.beta:21 of
-msgid "the size of output tensor. If alpha and beta are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If alpha or beta is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(alpha, beta).shape`."
-msgstr "crwdns106163:0crwdne106163:0"
+#: megengine.random.rng.RNG.beta:23 of
+msgid "the size of output tensor. If alpha and beta are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If alpha or beta is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(alpha, beta).shape`. Default: None."
+msgstr "crwdns122691:0crwdne122691:0"
 
 #: megengine.random.rng.RNG.beta megengine.random.rng.RNG.gamma
 #: megengine.random.rng.RNG.normal megengine.random.rng.RNG.permutation
-#: megengine.random.rng.RNG.poisson megengine.random.rng.RNG.uniform of
+#: megengine.random.rng.RNG.poisson megengine.random.rng.RNG.shuffle
+#: megengine.random.rng.RNG.uniform of
 msgid "返回"
 msgstr "crwdns106165:0crwdne106165:0"
 
-#: megengine.random.rng.RNG.beta:25 megengine.random.rng.RNG.gamma:27
-#: megengine.random.rng.RNG.normal:11 megengine.random.rng.RNG.permutation:11
-#: megengine.random.rng.RNG.poisson:18 megengine.random.rng.RNG.uniform:10 of
-msgid "the output tensor."
-msgstr "crwdns106167:0crwdne106167:0"
+#: megengine.random.rng.RNG.beta:28 of
+msgid "tensor. The random variable with Beta distribution."
+msgstr "crwdns122693:0crwdne122693:0"
 
-#: megengine.random.rng.RNG.beta:46 of
+#: megengine.random.rng.RNG.beta megengine.random.rng.RNG.gamma
+#: megengine.random.rng.RNG.normal megengine.random.rng.RNG.poisson
+#: megengine.random.rng.RNG.uniform of
+msgid "返回类型"
+msgstr "crwdns122695:0crwdne122695:0"
+
+#: megengine.random.rng.RNG.beta:50 of
 msgid "[[0.0682759 , 0.04448463],"
 msgstr "crwdns106169:0crwdne106169:0"
 
-#: megengine.random.rng.RNG.beta:47 of
+#: megengine.random.rng.RNG.beta:51 of
 msgid "[0.97733796, 0.19206746]]], dtype=float32)"
 msgstr "crwdns106171:0crwdne106171:0"
 
@@ -116,26 +121,30 @@ msgid "where :math:`\\Gamma(k)` is the gamma function,"
 msgstr "crwdns106177:0:math:crwdne106177:0"
 
 #: megengine.random.rng.RNG.gamma:12 of
-msgid "\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k>0.\n\n"
-msgstr "crwdns106179:0{ for }crwdne106179:0"
+msgid "\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k \\quad \\text{is positive integer}.\n\n"
+msgstr "crwdns122697:0{ for }crwdnd122697:0{is positive integer}crwdne122697:0"
 
 #: megengine.random.rng.RNG.gamma:16 of
-msgid "the shape parameter (sometimes designated \"k\") of the distribution. Must be non-negative."
-msgstr "crwdns106181:0crwdne106181:0"
+msgid "the shape parameter (sometimes designated \"k\") of the distribution. Must be positive."
+msgstr "crwdns122699:0crwdne122699:0"
 
-#: megengine.random.rng.RNG.gamma:19 of
-msgid "the scale parameter (sometimes designated \"theta\") of the distribution. Must be non-negative. Default: 1"
-msgstr "crwdns106183:0crwdne106183:0"
+#: megengine.random.rng.RNG.gamma:20 of
+msgid "the scale parameter (sometimes designated \"theta\") of the distribution. Must be positive. Default: 1."
+msgstr "crwdns122701:0crwdne122701:0"
 
-#: megengine.random.rng.RNG.gamma:22 of
-msgid "the size of output tensor. If shape and scale are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If shape or scale is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(shape, scale).shape`. The broadcast rules are consistent with `numpy.broadcast`. Default: None"
-msgstr "crwdns106185:0crwdne106185:0"
+#: megengine.random.rng.RNG.gamma:24 of
+msgid "the size of output tensor. If shape and scale are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If shape or scale is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(shape, scale).shape`. The broadcast rules are consistent with `numpy.broadcast`. Default: None."
+msgstr "crwdns122703:0crwdne122703:0"
 
-#: megengine.random.rng.RNG.gamma:48 of
+#: megengine.random.rng.RNG.gamma:30 of
+msgid "tensor. The random variable with Gamma distribution."
+msgstr "crwdns122705:0crwdne122705:0"
+
+#: megengine.random.rng.RNG.gamma:52 of
 msgid "[[7.73875117e-02, 6.06766164e-01],"
 msgstr "crwdns106187:0crwdne106187:0"
 
-#: megengine.random.rng.RNG.gamma:49 of
+#: megengine.random.rng.RNG.gamma:53 of
 msgid "[1.22881927e+01, 8.13445740e+01]]], dtype=float32)"
 msgstr "crwdns106189:0crwdne106189:0"
 
@@ -144,16 +153,20 @@ msgid "Random variable with Gaussian distribution :math:`N(\\mu, \\sigma)`."
 msgstr "crwdns106191:0:math:crwdne106191:0"
 
 #: megengine.random.rng.RNG.normal:4 of
-msgid "the mean or expectation of the distribution. Default: 0"
-msgstr "crwdns106193:0crwdne106193:0"
+msgid "the mean or expectation of the distribution. Default: 0."
+msgstr "crwdns122707:0crwdne122707:0"
 
-#: megengine.random.rng.RNG.normal:6 of
-msgid "the standard deviation of the distribution (variance = :math:`\\sigma ^ 2`). Default: 1"
-msgstr "crwdns106195:0:math:crwdne106195:0"
+#: megengine.random.rng.RNG.normal:7 of
+msgid "the standard deviation of the distribution (variance = :math:`\\sigma ^ 2`). Default: 1."
+msgstr "crwdns122709:0:math:crwdne122709:0"
 
-#: megengine.random.rng.RNG.normal:9 megengine.random.rng.RNG.uniform:8 of
-msgid "the size of output tensor. Default: None"
-msgstr "crwdns106197:0crwdne106197:0"
+#: megengine.random.rng.RNG.normal:11 megengine.random.rng.RNG.uniform:10 of
+msgid "the size of output tensor. Default: None."
+msgstr "crwdns122711:0crwdne122711:0"
+
+#: megengine.random.rng.RNG.normal:14 of
+msgid "tensor. The random variable with Gaussian distribution."
+msgstr "crwdns122713:0crwdne122713:0"
 
 #: megengine.random.rng.RNG.permutation:2 of
 msgid "Randomly permute a sequence, or return a permuted range."
@@ -171,6 +184,10 @@ msgstr "crwdns106203:0:math:crwdnd106203:0:math:crwdne106203:0"
 msgid "the output data type when ``n`` is an integer. int32, int16 and float32 are supported. Default: int32"
 msgstr "crwdns106205:0crwdne106205:0"
 
+#: megengine.random.rng.RNG.permutation:11 of
+msgid "The output tensor."
+msgstr "crwdns122563:0crwdne122563:0"
+
 #: megengine.random.rng.RNG.poisson:1 of
 msgid "Random variable with poisson distribution :math:`\\operatorname{Poisson}(\\lambda)`."
 msgstr "crwdns106207:0:math:crwdnd106207:0{Poisson}crwdne106207:0"
@@ -184,26 +201,30 @@ msgid "where k is the number of occurrences :math:`({\\displaystyle k=0,1,2...})
 msgstr "crwdns106211:0:math:crwdne106211:0"
 
 #: megengine.random.rng.RNG.poisson:12 of
-msgid "the lambda parameter of the distribution. Must be non-negative."
-msgstr "crwdns106213:0crwdne106213:0"
+msgid "the lambda parameter of the distribution. Must be positive."
+msgstr "crwdns122715:0crwdne122715:0"
 
-#: megengine.random.rng.RNG.poisson:14 of
+#: megengine.random.rng.RNG.poisson:15 of
 msgid "the size of output tensor. If lam is a scalar and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If lam is a Tensor with shape `(k, v)` and given size is, e.g., `(m, n)`, then the output shape is `(m, n, k, v)`. Default: None."
 msgstr "crwdns106215:0crwdne106215:0"
 
-#: megengine.random.rng.RNG.poisson:38 of
+#: megengine.random.rng.RNG.poisson:20 of
+msgid "tensor. The random variable with Poisson distribution."
+msgstr "crwdns122717:0crwdne122717:0"
+
+#: megengine.random.rng.RNG.poisson:41 of
 msgid "[[ 5.,  2.],"
 msgstr "crwdns106217:0crwdne106217:0"
 
-#: megengine.random.rng.RNG.poisson:38 of
+#: megengine.random.rng.RNG.poisson:41 of
 msgid "[10., 10.]],"
 msgstr "crwdns106219:0crwdne106219:0"
 
-#: megengine.random.rng.RNG.poisson:40 of
+#: megengine.random.rng.RNG.poisson:43 of
 msgid "[[ 1.,  2.],"
 msgstr "crwdns106221:0crwdne106221:0"
 
-#: megengine.random.rng.RNG.poisson:41 of
+#: megengine.random.rng.RNG.poisson:44 of
 msgid "[ 8., 10.]]]], dtype=float32)"
 msgstr "crwdns106223:0crwdne106223:0"
 
@@ -215,17 +236,25 @@ msgstr "crwdns106225:0crwdne106225:0"
 msgid "input tensor."
 msgstr "crwdns106227:0crwdne106227:0"
 
+#: megengine.random.rng.RNG.shuffle:8 of
+msgid "None."
+msgstr "crwdns122565:0crwdne122565:0"
+
 #: megengine.random.rng.RNG.uniform:1 of
-msgid "Random variable with uniform distribution $U(0, 1)$."
-msgstr "crwdns106229:0$Ucrwdne106229:0"
+msgid "Random variable with uniform distribution :math:`U(low, high)`."
+msgstr "crwdns122719:0:math:crwdne122719:0"
 
 #: megengine.random.rng.RNG.uniform:4 of
-msgid "lower range. Default: 0"
-msgstr "crwdns106231:0crwdne106231:0"
+msgid "lower range. Default: 0."
+msgstr "crwdns122721:0crwdne122721:0"
 
-#: megengine.random.rng.RNG.uniform:6 of
-msgid "upper range. Default: 1"
-msgstr "crwdns106233:0crwdne106233:0"
+#: megengine.random.rng.RNG.uniform:7 of
+msgid "upper range. Default: 1."
+msgstr "crwdns122723:0crwdne122723:0"
+
+#: megengine.random.rng.RNG.uniform:13 of
+msgid "tensor. The random variable with uniform distribution."
+msgstr "crwdns122725:0crwdne122725:0"
 
 #~ msgid ""
 #~ "Generates a random permutation of "
@@ -297,4 +326,7 @@ msgstr "crwdns106233:0crwdne106233:0"
 
 #~ msgid "Outputs:"
 #~ msgstr "输出："
+
+#~ msgid "the output tensor."
+#~ msgstr "输出张量"
 

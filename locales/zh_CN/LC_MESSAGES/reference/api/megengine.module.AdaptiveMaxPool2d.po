@@ -1,100 +1,94 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-21 10:50+0000\n"
-"PO-Revision-Date: 2023-05-11 10:50+0000\n"
+"PO-Revision-Date: 2023-09-25 10:23\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.AdaptiveMaxPool2d.po\n"
+"X-Crowdin-File-ID: 9463\n"
 
 #: ../../source/reference/api/megengine.module.AdaptiveMaxPool2d.rst:5
 msgid "AdaptiveMaxPool2d"
-msgstr ""
+msgstr "AdaptiveMaxPool2d"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:1 of
 msgid "Applies a 2D max adaptive pooling over an input."
 msgstr "对输入数据进行 2D 最大池化。"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:3 of
-msgid ""
-"For instance, given an input of the size :math:`(N, C, H, W)` and an "
-"output shape :math:`(OH, OW)`, this layer generates the output of the "
-"size :math:`(N, C, OH, OW)` through a process described as:"
-msgstr ""
-"例如，给定形状为 :math:`(N, C, H, W)` 的输入以及输出形状 :math:`(OH, OW)` ，该层产生形状为 "
-":math:`(N, C, OH, OW)` 的输出。生成过程描述如下："
+msgid "For instance, given an input of the size :math:`(N, C, H, W)` and an output shape :math:`(OH, OW)`, this layer generates the output of the size :math:`(N, C, OH, OW)` through a process described as:"
+msgstr "例如，给定形状为 :math:`(N, C, H, W)` 的输入以及输出形状 :math:`(OH, OW)` ，该层产生形状为 :math:`(N, C, OH, OW)` 的输出。生成过程描述如下："
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:7 of
-msgid ""
-"\\begin{aligned}\n"
-"    out(N_i, C_j, h, w) ={} & \\max_{m=0, \\ldots, kH-1} \\max_{n=0, "
-"\\ldots, kW-1}\n"
+msgid "\\begin{aligned}\n"
+"    out(N_i, C_j, h, w) ={} & \\max_{m=0, \\ldots, kH-1} \\max_{n=0, \\ldots, kW-1}\n"
 "        \\text{input}(N_i, C_j, \\text{stride[0]} \\times h + m,\n"
 "        \\text{stride[1]} \\times w + n)\n"
-"\\end{aligned}\n"
-"\n"
-msgstr ""
+"\\end{aligned}\n\n"
+msgstr "\\begin{aligned}\n"
+"    out(N_i, C_j, h, w) ={} & \\max_{m=0, \\ldots, kH-1} \\max_{n=0, \\ldots, kW-1}\n"
+"        \\text{input}(N_i, C_j, \\text{stride[0]} \\times h + m,\n"
+"        \\text{stride[1]} \\times w + n)\n"
+"\\end{aligned}\n\n"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:14 of
-msgid ""
-"``kernel_size`` and ``stride`` can be inferred from input shape and out "
-"shape:"
+msgid "``kernel_size`` and ``stride`` can be inferred from input shape and out shape:"
 msgstr "``kernel_size`` 和 ``stride`` 可以从输入输出的形状推断："
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:16 of
 msgid "padding: (0, 0)"
-msgstr ""
+msgstr "padding: (0, 0)"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:17 of
 msgid "stride: (floor(IH / OH), floor(IW / OW))"
-msgstr ""
+msgstr "stride: (floor(IH / OH), floor(IW / OW))"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:18 of
 msgid "kernel_size: (IH - (OH - 1) * stride_h, IW - (OW - 1) * stride_w)"
-msgstr ""
+msgstr "kernel_size: (IH - (OH - 1) * stride_h, IW - (OW - 1) * stride_w)"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:21 of
-msgid ""
-"the target output shape of the image of the form Height * Width. Can be "
-"tuple (H, W) or a single H for a square image H * H."
-msgstr ""
+msgid "the target output shape of the image of the form Height * Width. Can be tuple (H, W) or a single H for a square image H * H."
+msgstr "图像的目标输出形状, 格式为 ``Height * Width ``。对于正方形图像 H*H，可以是元组(H, W) 或单个H。"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:28 of
 msgid "Shape:"
-msgstr ""
+msgstr "形状："
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:26 of
 msgid "Input: :math:`(N, C, H_{in}, W_{in})` or :math:`(C, H_{in}, W_{in})`."
-msgstr ""
+msgstr "输入: :math:`(N, C, H_{in}, W_{in})` 或者:math:`(C, H_{in}, W_{in})`。"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:27 of
-msgid ""
-"Output: :math:`(N, C, H_{out}, W_{out})` or :math:`(C, H_{out}, "
-"W_{out})`, where :math:`(H_{out}, W_{out})=\\text{output\\_shape}`."
-msgstr ""
+msgid "Output: :math:`(N, C, H_{out}, W_{out})` or :math:`(C, H_{out}, W_{out})`, where :math:`(H_{out}, W_{out})=\\text{output\\_shape}`."
+msgstr "输出: :math:`(N, C, H_{out}, W_{out})` 或者:math:`(C, H_{out}, W_{out})`，当:math:`(H_{out}, W_{out})=\\text{output\\_shape}`。"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d of
 msgid "返回"
-msgstr ""
+msgstr "返回"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:30 of
 msgid "module. The instance of the ``AdaptiveMaxPool2d`` module."
-msgstr ""
+msgstr "模型。 ``AdaptiveMaxPool2d`` 模型实例。"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d of
 msgid "返回类型"
-msgstr ""
+msgstr "返回类型"
 
 #: megengine.module.adaptive_pooling.AdaptiveMaxPool2d:34 of
 msgid "实际案例"

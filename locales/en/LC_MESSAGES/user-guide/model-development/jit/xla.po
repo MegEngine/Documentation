@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020-2023, The MegEngine Open Source Team
-# This file is distributed under the same license as the MegEngine package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MegEngine 1.13\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 10:16+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2023-09-21 06:37\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/jit/xla.po\n"
+"X-Crowdin-File-ID: 10057\n"
+"Language: en_US\n"
 
 #: ../../source/user-guide/model-development/jit/xla.rst:5
 msgid "使用 XLA 作为编译后端加速模型训练"
@@ -38,9 +39,7 @@ msgid "XLA 编译后端"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/xla.rst:16
-msgid ""
-"`XLA <https://github.com/openxla/xla>`_ 是 google 推出的可用于模型训练加速的编译器。 "
-"MegEngine 接入了 XLA 编译器用于提高训练性能。"
+msgid "`XLA <https://github.com/openxla/xla>`_ 是 google 推出的可用于模型训练加速的编译器。 MegEngine 接入了 XLA 编译器用于提高训练性能。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/xla.rst:18
@@ -68,10 +67,7 @@ msgid "mge_xlalib 安装命令如下："
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/xla.rst:38
-msgid ""
-"XLA 编译器的使用方式与 MegEngine graph runtime 自带编译器类似， 需要用MegEngine提供的装饰器 "
-"(xla_trace) 对训练函数进行包装。 函数执行第一遍时会记录算子执行序列，以捕获静态图。 后续执行会把静态图用XLA编译， 并调用编译好的"
-" XLA executable 加速训练过程。"
+msgid "XLA 编译器的使用方式与 MegEngine graph runtime 自带编译器类似， 需要用MegEngine提供的装饰器 (xla_trace) 对训练函数进行包装。 函数执行第一遍时会记录算子执行序列，以捕获静态图。 后续执行会把静态图用XLA编译， 并调用编译好的 XLA executable 加速训练过程。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/xla.rst:42
@@ -79,10 +75,7 @@ msgid "由于 xla_trace 实现和 XLA 编译器自身的特性， 目前该功�
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/xla.rst:44
-msgid ""
-"所有（非常量的）外部 Tensor /包含外部 Tensor 的对象（如 Module， "
-"Optimizer等）需要作为被装饰器包装的训练函数的参数传入。外部 Tensor 指所有不是由 Op 计算产生的 "
-"Tensor（对应静态图中的输入节点）。"
+msgid "所有（非常量的）外部 Tensor /包含外部 Tensor 的对象（如 Module， Optimizer等）需要作为被装饰器包装的训练函数的参数传入。外部 Tensor 指所有不是由 Op 计算产生的 Tensor（对应静态图中的输入节点）。"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/xla.rst:45
@@ -106,10 +99,7 @@ msgid "您可以使用 jit.xla_trace 装饰器对需要加速的函数进行包�
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/xla.rst:88
-msgid ""
-"当模型训练迭代（Iteration）完全静态的情况下， 您也可以使用 jit.xla_trace 装饰器将训练迭代全部交由XLA执行。 需要将 "
-"optimizer， module 作为train_func 参数传入，同时 train_func 中需包含包含模型前向、 反向 、 "
-"参数更新等代码， 代码示例如下："
+msgid "当模型训练迭代（Iteration）完全静态的情况下， 您也可以使用 jit.xla_trace 装饰器将训练迭代全部交由XLA执行。 需要将 optimizer， module 作为train_func 参数传入，同时 train_func 中需包含包含模型前向、 反向 、 参数更新等代码， 代码示例如下："
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/xla.rst:122
@@ -117,9 +107,6 @@ msgid "使用 partial_trace 装饰器"
 msgstr ""
 
 #: ../../source/user-guide/model-development/jit/xla.rst:124
-msgid ""
-"模型训练迭代中存在动态执行逻辑的情况下， 无法将整个计算交由 XLA 执行。 这种情况下可以使用 jit.patrial_trace "
-"装饰器对其中静态的部分进行加速。 被 partial_trace 包装部分的前向/反向会使用 XLA 执行, 其他部分仍由 MegEngine "
-"执行。 代码示例如下："
+msgid "模型训练迭代中存在动态执行逻辑的情况下， 无法将整个计算交由 XLA 执行。 这种情况下可以使用 jit.patrial_trace 装饰器对其中静态的部分进行加速。 被 partial_trace 包装部分的前向/反向会使用 XLA 执行, 其他部分仍由 MegEngine 执行。 代码示例如下："
 msgstr ""
 

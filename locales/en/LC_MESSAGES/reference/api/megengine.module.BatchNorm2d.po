@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-21 10:50+0000\n"
-"PO-Revision-Date: 2023-04-21 09:25+0000\n"
+"PO-Revision-Date: 2023-09-21 10:55\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.BatchNorm2d.po\n"
+"X-Crowdin-File-ID: 9471\n"
 
 #: ../../source/reference/api/megengine.module.BatchNorm2d.rst:5
 msgid "BatchNorm2d"
@@ -23,57 +27,35 @@ msgid "Applies Batch Normalization over a 4D tensor."
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:3 of
-msgid ""
-"y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * "
-"\\gamma + \\beta"
+msgid "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:7 of
-msgid ""
-"The mean and standard-deviation are calculated per-dimension over the "
-"mini-batches and :math:`\\gamma` and :math:`\\beta` are learnable "
-"parameter vectors."
+msgid "The mean and standard-deviation are calculated per-dimension over the mini-batches and :math:`\\gamma` and :math:`\\beta` are learnable parameter vectors."
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:11 of
-msgid ""
-"By default, during training this layer keeps running estimates of its "
-"computed mean and variance, which are then used for normalization during "
-"evaluation. The running estimates are kept with a default "
-":attr:`momentum` of 0.9."
+msgid "By default, during training this layer keeps running estimates of its computed mean and variance, which are then used for normalization during evaluation. The running estimates are kept with a default :attr:`momentum` of 0.9."
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:16 of
-msgid ""
-"If :attr:`track_running_stats` is set to ``False``, this layer will not "
-"keep running estimates, batch statistics is used during evaluation time "
-"instead."
+msgid "If :attr:`track_running_stats` is set to ``False``, this layer will not keep running estimates, batch statistics is used during evaluation time instead."
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:20 of
-msgid ""
-"Because the Batch Normalization is done over the `C` dimension, computing"
-" statistics on `(N, H, W)` slices, it's common terminology to call this "
-"Spatial Batch Normalization."
+msgid "Because the Batch Normalization is done over the `C` dimension, computing statistics on `(N, H, W)` slices, it's common terminology to call this Spatial Batch Normalization."
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:26 of
-msgid ""
-"The update formula for ``running_mean`` and ``running_var`` (taking "
-"``running_mean`` as an example) is"
+msgid "The update formula for ``running_mean`` and ``running_var`` (taking ``running_mean`` as an example) is"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:28 of
-msgid ""
-"\\textrm{running_mean} = \\textrm{momentum} \\times "
-"\\textrm{running_mean} + (1 - \\textrm{momentum}) \\times "
-"\\textrm{batch_mean}"
+msgid "\\textrm{running_mean} = \\textrm{momentum} \\times \\textrm{running_mean} + (1 - \\textrm{momentum}) \\times \\textrm{batch_mean}"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:32 of
-msgid ""
-"which could be defined differently in other frameworks. Most notably, "
-"``momentum`` of 0.1 in PyTorch is equivalent to ``mementum`` of 0.9 here."
+msgid "which could be defined differently in other frameworks. Most notably, ``momentum`` of 0.1 in PyTorch is equivalent to ``mementum`` of 0.9 here."
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d of
@@ -81,9 +63,7 @@ msgid "参数"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:35 of
-msgid ""
-"usually :math:`C` from an input of shape :math:`(N, C, H, W)` or the "
-"highest ranked dimension of an input less than 4D."
+msgid "usually :math:`C` from an input of shape :math:`(N, C, H, W)` or the highest ranked dimension of an input less than 4D."
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:38 of
@@ -91,31 +71,19 @@ msgid "a value added to the denominator for numerical stability. Default: 1e-5"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:40 of
-msgid ""
-"the value used for the ``running_mean`` and ``running_var`` computation. "
-"Default: 0.9"
+msgid "the value used for the ``running_mean`` and ``running_var`` computation. Default: 0.9"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:42 of
-msgid ""
-"a boolean value that when set to True, this module has learnable affine "
-"parameters. Default: True"
+msgid "a boolean value that when set to True, this module has learnable affine parameters. Default: True"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:44 of
-msgid ""
-"when set to True, this module tracks the running mean and variance. When "
-"set to False, this module does not track such statistics and always uses "
-"batch statistics in both training and eval modes. Default: True"
+msgid "when set to True, this module tracks the running mean and variance. When set to False, this module does not track such statistics and always uses batch statistics in both training and eval modes. Default: True"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:48 of
-msgid ""
-"when set to True, this module does not update the running mean and "
-"variance, and uses the running mean and variance instead of the batch "
-"mean and batch variance to normalize the input. The parameter takes "
-"effect only when the module is initilized with track_running_stats as "
-"True. Default: False"
+msgid "when set to True, this module does not update the running mean and variance, and uses the running mean and variance instead of the batch mean and batch variance to normalize the input. The parameter takes effect only when the module is initilized with track_running_stats as True. Default: False"
 msgstr ""
 
 #: megengine.module.batchnorm.BatchNorm2d:56 of

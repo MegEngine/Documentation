@@ -1,22 +1,26 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-25 02:39+0000\n"
-"PO-Revision-Date: 2023-05-11 11:48+0000\n"
+"PO-Revision-Date: 2023-09-25 06:42\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.random.RNG.po\n"
+"X-Crowdin-File-ID: 9713\n"
 
 #: ../../source/reference/api/megengine.random.RNG.rst:5
 msgid "RNG"
-msgstr ""
+msgstr "RNG"
 
 #: megengine.random.rng.RNG:1 of
 msgid ":class:`RNG` exposes a number of methods for generating random numbers."
@@ -27,12 +31,10 @@ msgstr ":class:`RNG` 公开了一些生成随机数的方法。"
 #: megengine.random.rng.RNG.permutation megengine.random.rng.RNG.poisson
 #: megengine.random.rng.RNG.shuffle megengine.random.rng.RNG.uniform of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.random.rng.RNG:4 of
-msgid ""
-"random seed used to initialize the pseudo-random number generator. "
-"Default: None"
+msgid "random seed used to initialize the pseudo-random number generator. Default: None"
 msgstr "用于初始化伪随机数生成器的随机种子。默认值：None"
 
 #: megengine.random.rng.RNG:6 of
@@ -47,9 +49,7 @@ msgid "实际案例"
 msgstr "实际案例"
 
 #: megengine.random.rng.RNG.beta:1 of
-msgid ""
-"Random variable with Beta distribution "
-":math:`\\operatorname{Beta}(\\alpha, \\beta)`."
+msgid "Random variable with Beta distribution :math:`\\operatorname{Beta}(\\alpha, \\beta)`."
 msgstr "服从贝塔分布 :math:`\\operatorname{Beta}(\\alpha, \\beta)` 的随机变量。"
 
 #: megengine.random.rng.RNG.beta:3 megengine.random.rng.RNG.gamma:3
@@ -58,43 +58,30 @@ msgid "The corresponding probability density function is"
 msgstr "对应的概率密度函数为"
 
 #: megengine.random.rng.RNG.beta:5 of
-msgid ""
-"p(x)=\\frac{1}{\\mathrm{~B}(\\alpha, \\beta)} "
-"x^{\\alpha-1}(1-x)^{\\beta-1}\n"
+msgid "p(x)=\\frac{1}{\\mathrm{~B}(\\alpha, \\beta)} x^{\\alpha-1}(1-x)^{\\beta-1}\n"
 "\\quad \\text { for } \\alpha, \\beta>0,"
-msgstr ""
+msgstr "p(x)=\\frac{1}{\\mathrm{~B}(\\alpha, \\beta)} x^{\\alpha-1}(1-x)^{\\beta-1}\n"
+"\\quad \\text { for } \\alpha, \\beta>0,"
 
 #: megengine.random.rng.RNG.beta:10 of
 msgid "where :math:`\\mathrm{~B}(\\alpha, \\beta)` is the beta function,"
 msgstr "其中 :math:`\\mathrm{~B}(\\alpha, \\beta)` 是 Beta 函数，"
 
 #: megengine.random.rng.RNG.beta:12 of
-msgid ""
-"\\mathrm{~B}(\\alpha, \\beta)=\\int_{0}^{1} t^{\\alpha-1}(1-t)^{\\beta-1}"
-" d t."
-msgstr ""
+msgid "\\mathrm{~B}(\\alpha, \\beta)=\\int_{0}^{1} t^{\\alpha-1}(1-t)^{\\beta-1} d t."
+msgstr "\\mathrm{~B}(\\alpha, \\beta)=\\int_{0}^{1} t^{\\alpha-1}(1-t)^{\\beta-1} d t."
 
 #: megengine.random.rng.RNG.beta:17 of
-#, fuzzy
 msgid "the alpha parameter of the distribution. Must be positive."
-msgstr "分布的 alpha 参数。必须是非负数。"
+msgstr "分布的 alpha 参数。必须是正的。"
 
 #: megengine.random.rng.RNG.beta:20 of
-#, fuzzy
 msgid "the beta parameter of the distribution. Must be positive."
-msgstr "分布的 beta 参数。必须是非负数。"
+msgstr "分布的 beta 参数。必须是正的。"
 
 #: megengine.random.rng.RNG.beta:23 of
-#, fuzzy
-msgid ""
-"the size of output tensor. If alpha and beta are scalars and given size "
-"is, e.g., `(m, n)`, then the output shape is `(m, n)`. If alpha or beta "
-"is a Tensor and given size is, e.g., `(m, n)`, then the output shape is "
-"`(m, n) + broadcast(alpha, beta).shape`. Default: None."
-msgstr ""
-"输出向量的大小。如果 alpha 和 beta 是标量，例如给定大小为 `(m, n)`，则输出形状为 `(m, n)`。如果 alpha 或 "
-"beta 是一个向量，例如给定的大小是 `(m, n)` ，那么输出形状是 `(m, n) + broadcast(alpha, "
-"beta).shape`."
+msgid "the size of output tensor. If alpha and beta are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If alpha or beta is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(alpha, beta).shape`. Default: None."
+msgstr "输出张量的大小。如果 alpha 和 beta 是标量，并且给定大小为，例如`(m, n)`，则输出形状为`(m, n)`。如果alpha或beta是一个张量，并且给定的大小是`(m, n)`，那么输出形状是 `(m, n) + broadcast(alpha, beta).shape`。默认值: 空。"
 
 #: megengine.random.rng.RNG.beta megengine.random.rng.RNG.gamma
 #: megengine.random.rng.RNG.normal megengine.random.rng.RNG.permutation
@@ -104,200 +91,147 @@ msgid "返回"
 msgstr "返回"
 
 #: megengine.random.rng.RNG.beta:28 of
-#, fuzzy
 msgid "tensor. The random variable with Beta distribution."
-msgstr "服从均匀分布 $U(0, 1)$ 的随机变量"
+msgstr "张量。具有Beta分布的随机变量。"
 
 #: megengine.random.rng.RNG.beta megengine.random.rng.RNG.gamma
 #: megengine.random.rng.RNG.normal megengine.random.rng.RNG.poisson
 #: megengine.random.rng.RNG.uniform of
-#, fuzzy
 msgid "返回类型"
-msgstr "返回"
+msgstr "返回类型"
 
 #: megengine.random.rng.RNG.beta:50 of
 msgid "[[0.0682759 , 0.04448463],"
-msgstr ""
+msgstr "[[0.0682759 , 0.04448463],"
 
 #: megengine.random.rng.RNG.beta:51 of
 msgid "[0.97733796, 0.19206746]]], dtype=float32)"
-msgstr ""
+msgstr "[0.97733796, 0.19206746]]], dtype=float32)"
 
 #: megengine.random.rng.RNG.gamma:1 of
 msgid "Random variable with Gamma distribution :math:`\\Gamma(k, \\theta)`."
 msgstr "服从伽玛分布 :math:`\\Gamma(k, \\theta)` 的随机变量。"
 
 #: megengine.random.rng.RNG.gamma:5 of
-msgid ""
-"p(x)=x^{k-1} \\frac{e^{-x / \\theta}}{\\theta^{k} \\Gamma(k)}\n"
+msgid "p(x)=x^{k-1} \\frac{e^{-x / \\theta}}{\\theta^{k} \\Gamma(k)}\n"
 "\\quad \\text { for } x>0 \\quad k, \\theta>0,"
-msgstr ""
+msgstr "p(x)=x^{k-1} \\frac{e^{-x / \\theta}}{\\theta^{k} \\Gamma(k)}\n"
+"\\quad \\text { for } x>0 \\quad k, \\theta>0,"
 
 #: megengine.random.rng.RNG.gamma:10 of
 msgid "where :math:`\\Gamma(k)` is the gamma function,"
 msgstr "其中 :math:`\\Gamma(k)` 是 gamma 函数，"
 
 #: megengine.random.rng.RNG.gamma:12 of
-#, fuzzy
-msgid ""
-"\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k \\quad \\text{is "
-"positive integer}.\n"
-"\n"
-msgstr ""
-"\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k>0.  \n"
-"\n"
+msgid "\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k \\quad \\text{is positive integer}.\n\n"
+msgstr "\\Gamma(k)=(k-1) !  \\quad \\text { for } \\quad k \\quad \\text{is positive integer}.\n\n"
 
 #: megengine.random.rng.RNG.gamma:16 of
-#, fuzzy
-msgid ""
-"the shape parameter (sometimes designated \"k\") of the distribution. "
-"Must be positive."
-msgstr "分布的形状参数（有时称为“k”）。必须是非负数。"
+msgid "the shape parameter (sometimes designated \"k\") of the distribution. Must be positive."
+msgstr "分布的形状参数(有时称为“k”)。必须是正的。"
 
 #: megengine.random.rng.RNG.gamma:20 of
-#, fuzzy
-msgid ""
-"the scale parameter (sometimes designated \"theta\") of the distribution."
-" Must be positive. Default: 1."
-msgstr "分布的尺度参数（有时称为“theta”）。必须是非负数。默认值：1"
+msgid "the scale parameter (sometimes designated \"theta\") of the distribution. Must be positive. Default: 1."
+msgstr "分布的 scale 参数(有时称为“θ”)。一定是积极的。默认值: 1。"
 
 #: megengine.random.rng.RNG.gamma:24 of
-#, fuzzy
-msgid ""
-"the size of output tensor. If shape and scale are scalars and given size "
-"is, e.g., `(m, n)`, then the output shape is `(m, n)`. If shape or scale "
-"is a Tensor and given size is, e.g., `(m, n)`, then the output shape is "
-"`(m, n) + broadcast(shape, scale).shape`. The broadcast rules are "
-"consistent with `numpy.broadcast`. Default: None."
-msgstr ""
-"输出向量的大小。如果 shape 和 scale 是标量，例如给定大小为 `(m, n)`，则输出形状为 `(m, n)`。如果 shape 和 "
-"scale 是一个向量，例如给定的大小是`(m, n)` ，那么输出形状是 `(m, n) + broadcast(shape, "
-"scale).shape`. 广播规则与 `numpy.broadcast` 一致。默认值：None"
+msgid "the size of output tensor. If shape and scale are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If shape or scale is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(shape, scale).shape`. The broadcast rules are consistent with `numpy.broadcast`. Default: None."
+msgstr "输出张量的大小。如果形状和尺度都是标量，并且给定的尺寸是，例如，`(m, n)`，那么输出形状是`(m, n)`。如果shape或scale是一个张量，并且给定的大小是，例如`(m, n)`，那么输出形状是`(m, n) + broadcast(shape, scale).shape`。广播规则与`numpy.broadcast`一致。默认值: None。"
 
 #: megengine.random.rng.RNG.gamma:30 of
-#, fuzzy
 msgid "tensor. The random variable with Gamma distribution."
-msgstr "服从均匀分布 $U(0, 1)$ 的随机变量"
+msgstr "张量。具有Gamma分布的随机变量。"
 
 #: megengine.random.rng.RNG.gamma:52 of
 msgid "[[7.73875117e-02, 6.06766164e-01],"
-msgstr ""
+msgstr "[[7.73875117e-02, 6.06766164e-01],"
 
 #: megengine.random.rng.RNG.gamma:53 of
 msgid "[1.22881927e+01, 8.13445740e+01]]], dtype=float32)"
-msgstr ""
+msgstr "[1.22881927e+01, 8.13445740e+01]]], dtype=float32)"
 
 #: megengine.random.rng.RNG.normal:1 of
 msgid "Random variable with Gaussian distribution :math:`N(\\mu, \\sigma)`."
 msgstr "服从高斯分布的随机变量 :math:`N(\\mu, \\sigma)`"
 
 #: megengine.random.rng.RNG.normal:4 of
-#, fuzzy
 msgid "the mean or expectation of the distribution. Default: 0."
-msgstr "分布的均值或期望。默认值：0"
+msgstr "分布的均值或期望。默认值: 0。"
 
 #: megengine.random.rng.RNG.normal:7 of
-#, fuzzy
-msgid ""
-"the standard deviation of the distribution (variance = :math:`\\sigma ^ "
-"2`). Default: 1."
-msgstr "分布的标准差（方差= :math:`\\sigma ^ 2` ）。默认值：1"
+msgid "the standard deviation of the distribution (variance = :math:`\\sigma ^ 2`). Default: 1."
+msgstr "分布的标准差(方差=:math:`\\sigma ^ 2`)。默认值: 1。"
 
 #: megengine.random.rng.RNG.normal:11 megengine.random.rng.RNG.uniform:10 of
-#, fuzzy
 msgid "the size of output tensor. Default: None."
-msgstr "输出向量的大小。默认值：None"
+msgstr "输出张量的大小。默认值: None。"
 
 #: megengine.random.rng.RNG.normal:14 of
-#, fuzzy
 msgid "tensor. The random variable with Gaussian distribution."
-msgstr "服从高斯分布的随机变量 :math:`N(\\mu, \\sigma)`"
+msgstr "张量。具有高斯分布的随机变量。"
 
 #: megengine.random.rng.RNG.permutation:2 of
 msgid "Randomly permute a sequence, or return a permuted range."
 msgstr "打乱一个张量，或者返回给定范围的随机张量"
 
 #: megengine.random.rng.RNG.permutation:2 of
-msgid ""
-"If ``n`` is a multi-dimensional tensor, it is only shuffled along its "
-"first index."
+msgid "If ``n`` is a multi-dimensional tensor, it is only shuffled along its first index."
 msgstr "如果 n 是一个张量，只会沿着第一个轴打乱"
 
 #: megengine.random.rng.RNG.permutation:5 of
-msgid ""
-"If ``n`` is an integer, random permutation of integers from :math:`0` to "
-":math:`n - 1`. If ``n`` is an tensor, make a copy and shuffle the "
-"elements randomly."
+msgid "If ``n`` is an integer, random permutation of integers from :math:`0` to :math:`n - 1`. If ``n`` is an tensor, make a copy and shuffle the elements randomly."
 msgstr "如果 n 是一个整数，会返回 0 到 n-1 的一个随机张量。如果 n 是一个张量会返回一个新的打乱后的张量"
 
 #: megengine.random.rng.RNG.permutation:8 of
-msgid ""
-"the output data type when ``n`` is an integer. int32, int16 and float32 "
-"are supported. Default: int32"
+msgid "the output data type when ``n`` is an integer. int32, int16 and float32 are supported. Default: int32"
 msgstr "当 n 为整数时返回张量设置的类型。支持 int32，int16 和 float32，默认为 int32"
 
 #: megengine.random.rng.RNG.permutation:11 of
-#, fuzzy
 msgid "The output tensor."
-msgstr "输出张量"
+msgstr "输出张量。"
 
 #: megengine.random.rng.RNG.poisson:1 of
-msgid ""
-"Random variable with poisson distribution "
-":math:`\\operatorname{Poisson}(\\lambda)`."
+msgid "Random variable with poisson distribution :math:`\\operatorname{Poisson}(\\lambda)`."
 msgstr "服从泊松分布 :math:`\\operatorname{Poisson}(\\lambda)` 的随机变量。"
 
 #: megengine.random.rng.RNG.poisson:5 of
 msgid "f(k ; \\lambda)=\\frac{\\lambda^{k} e^{-\\lambda}}{k !},"
-msgstr ""
+msgstr "f(k ; \\lambda)=\\frac{\\lambda^{k} e^{-\\lambda}}{k !},"
 
 #: megengine.random.rng.RNG.poisson:9 of
-msgid ""
-"where k is the number of occurrences :math:`({\\displaystyle "
-"k=0,1,2...})`."
+msgid "where k is the number of occurrences :math:`({\\displaystyle k=0,1,2...})`."
 msgstr "其中 k 是出现的次数 :math:`({\\displaystyle k=0,1,2...})` 。"
 
 #: megengine.random.rng.RNG.poisson:12 of
-#, fuzzy
 msgid "the lambda parameter of the distribution. Must be positive."
-msgstr "分布的 lamda 参数。必须是非负数。"
+msgstr "分布的lambda参数。必须是正的。"
 
 #: megengine.random.rng.RNG.poisson:15 of
-msgid ""
-"the size of output tensor. If lam is a scalar and given size is, e.g., "
-"`(m, n)`, then the output shape is `(m, n)`. If lam is a Tensor with "
-"shape `(k, v)` and given size is, e.g., `(m, n)`, then the output shape "
-"is `(m, n, k, v)`. Default: None."
-msgstr ""
-"输出向量的大小。如果 lam 是标量，例如给定大小为 `(m, n)`，则输出形状为 `(m, n)`。如果 lam 是一个向量，例如给定的大小是"
-" `(m, n)` ，那么输出形状是 `(m, n, k, v)`. 默认值：None"
+msgid "the size of output tensor. If lam is a scalar and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If lam is a Tensor with shape `(k, v)` and given size is, e.g., `(m, n)`, then the output shape is `(m, n, k, v)`. Default: None."
+msgstr "输出向量的大小。如果 lam 是标量，例如给定大小为 `(m, n)`，则输出形状为 `(m, n)`。如果 lam 是一个向量，例如给定的大小是 `(m, n)` ，那么输出形状是 `(m, n, k, v)`. 默认值：None"
 
 #: megengine.random.rng.RNG.poisson:20 of
-#, fuzzy
 msgid "tensor. The random variable with Poisson distribution."
-msgstr "服从均匀分布 $U(0, 1)$ 的随机变量"
+msgstr "张量。服从泊松分布的随机变量。"
 
 #: megengine.random.rng.RNG.poisson:41 of
 msgid "[[ 5.,  2.],"
-msgstr ""
+msgstr "[[ 5.,  2.],"
 
 #: megengine.random.rng.RNG.poisson:41 of
 msgid "[10., 10.]],"
-msgstr ""
+msgstr "[10., 10.]],"
 
 #: megengine.random.rng.RNG.poisson:43 of
 msgid "[[ 1.,  2.],"
-msgstr ""
+msgstr "[[ 1.,  2.],"
 
 #: megengine.random.rng.RNG.poisson:44 of
 msgid "[ 8., 10.]]]], dtype=float32)"
-msgstr ""
+msgstr "[ 8., 10.]]]], dtype=float32)"
 
 #: megengine.random.rng.RNG.shuffle:1 of
-msgid ""
-"Modify a sequence in-place by shuffling its contents. This function only "
-"shuffles the Tensor along the first axis of a multi-dimensional Tensor. "
-"The order of sub-Tensors is changed but their contents remains the same."
+msgid "Modify a sequence in-place by shuffling its contents. This function only shuffles the Tensor along the first axis of a multi-dimensional Tensor. The order of sub-Tensors is changed but their contents remains the same."
 msgstr "打乱张量的内容原地修改张量。这个函数只是沿着第一个轴打乱张量。张量顺序改变但不改变值"
 
 #: megengine.random.rng.RNG.shuffle:6 of
@@ -306,27 +240,23 @@ msgstr "输入张量。"
 
 #: megengine.random.rng.RNG.shuffle:8 of
 msgid "None."
-msgstr ""
+msgstr "None."
 
 #: megengine.random.rng.RNG.uniform:1 of
-#, fuzzy
 msgid "Random variable with uniform distribution :math:`U(low, high)`."
-msgstr "服从均匀分布 $U(0, 1)$ 的随机变量"
+msgstr "均匀分布 :math:`U(low, high)` 的随机变量。"
 
 #: megengine.random.rng.RNG.uniform:4 of
-#, fuzzy
 msgid "lower range. Default: 0."
-msgstr "下界。默认值：0"
+msgstr "下限。默认值: 0。"
 
 #: megengine.random.rng.RNG.uniform:7 of
-#, fuzzy
 msgid "upper range. Default: 1."
-msgstr "上界。默认值：1"
+msgstr "上限。默认值: 1。"
 
 #: megengine.random.rng.RNG.uniform:13 of
-#, fuzzy
 msgid "tensor. The random variable with uniform distribution."
-msgstr "服从均匀分布 $U(0, 1)$ 的随机变量"
+msgstr "张量。均匀分布的随机变量。"
 
 #~ msgid ""
 #~ "Generates a random permutation of "

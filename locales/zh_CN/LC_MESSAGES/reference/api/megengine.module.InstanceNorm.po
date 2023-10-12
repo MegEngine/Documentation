@@ -1,62 +1,54 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-12 00:54+0000\n"
-"PO-Revision-Date: 2023-05-11 10:50+0000\n"
+"PO-Revision-Date: 2023-09-27 10:56\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.InstanceNorm.po\n"
+"X-Crowdin-File-ID: 9509\n"
 
 #: ../../source/reference/api/megengine.module.InstanceNorm.rst:5
 msgid "InstanceNorm"
-msgstr ""
+msgstr "InstanceNorm"
 
 #: megengine.module.normalization.InstanceNorm:1 of
-msgid ""
-"Applies Instance Normalization over a mini-batch of inputs Refer to "
-"`Instance Normalization <https://arxiv.org/abs/1607.08022>`__"
-msgstr ""
+msgid "Applies Instance Normalization over a mini-batch of inputs Refer to `Instance Normalization <https://arxiv.org/abs/1607.08022>`__"
+msgstr "在一批数据上应用实例归一化操作。可参考 `Instance Normalization <https://arxiv.org/abs/1607.08022>`__"
 
 #: megengine.module.normalization.InstanceNorm:4 of
-msgid ""
-"y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * "
-"\\gamma + \\beta\n"
-"\n"
-msgstr ""
+msgid "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta\n\n"
+msgstr "y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta"
 
 #: megengine.module.normalization.InstanceNorm:7 of
-msgid ""
-"The mean and standard-deviation are calculated per-dimension separately "
-"for each object in a mini-batch. :math:`\\\\gamma` and :math:`\\\\beta` "
-"are learnable affine transform parameters of attr:`num_channels` if "
-":attr:`affine` is ``True``. Note that InstanceNorm equals using GroupNorm"
-" with num_groups = num_channels."
-msgstr ""
+msgid "The mean and standard-deviation are calculated per-dimension separately for each object in a mini-batch. :math:`\\\\gamma` and :math:`\\\\beta` are learnable affine transform parameters of attr:`num_channels` if :attr:`affine` is ``True``. Note that InstanceNorm equals using GroupNorm with num_groups = num_channels."
+msgstr "每个小批量的输入均值和标准差是单独算的， :math:`\\\\gamma` 和 :math:`\\\\beta` 是属性 :`num_channels` 可学习的仿射变换参数， 当属性`affine` 为``True``时，注意， InstanceNorm 等效于 num_groups = num_channels 的 GroupNorm"
 
 #: megengine.module.normalization.InstanceNorm of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.normalization.InstanceNorm:12 of
 msgid "number of channels expected in input"
-msgstr ""
+msgstr "输入期望的通道数"
 
 #: megengine.module.normalization.InstanceNorm:14 of
 msgid "a value added to the denominator for numerical stability. Default: 1e-5"
 msgstr "添加到分母的单个值，增加数值稳定性。默认：1e-5"
 
 #: megengine.module.normalization.InstanceNorm:15 of
-msgid ""
-"this module has learnable affine parameters (weight, bias) when affine is"
-" set to be True."
-msgstr ""
+msgid "this module has learnable affine parameters (weight, bias) when affine is set to be True."
+msgstr "该模块有可学习的仿射变换参数(权重和偏移量)， 当参数affine设置为True时"
 
 #: megengine.module.normalization.InstanceNorm:19 of
 msgid "Shape:"
@@ -64,11 +56,11 @@ msgstr "形状："
 
 #: megengine.module.normalization.InstanceNorm:18 of
 msgid "Input: :math:`(N, C, H, W)` (now only support NCHW format tensor)"
-msgstr ""
+msgstr "输入: :math:`(N, C, H, W)` （目前只支持 NCHW格式的tensor）"
 
 #: megengine.module.normalization.InstanceNorm:19 of
 msgid "Output: :math:`(N, C, H, W)` (same shape as input)"
-msgstr ""
+msgstr "输出: :math:`(N, C, H, W)` （shape 与输入相同）"
 
 #: megengine.module.normalization.InstanceNorm:22 of
 msgid "实际案例"

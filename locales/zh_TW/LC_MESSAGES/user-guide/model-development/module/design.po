@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 21:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:36\n"
+"POT-Creation-Date: 2023-07-03 03:42+0000\n"
+"PO-Revision-Date: 2023-09-21 06:35\n"
 "Last-Translator: \n"
+"Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/module/design.po\n"
 "X-Crowdin-File-ID: 9957\n"
-"Language: zh_TW\n"
 
 #: ../../source/user-guide/model-development/module/design.rst:5
 msgid "Module 基类概念与接口介绍"
@@ -194,67 +194,75 @@ msgstr "crwdns118933:0crwdne118933:0"
 msgid "模块结构并非不可变的，我们能够对 ``Module`` 内部的子结点进行替换 （但需保证 Tensor 形状能对得上）："
 msgstr "crwdns118935:0crwdne118935:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:231
+#: ../../source/user-guide/model-development/module/design.rst:229
+msgid "共享 Module 参数"
+msgstr "crwdns122047:0crwdne122047:0"
+
+#: ../../source/user-guide/model-development/module/design.rst:230
+msgid "当 ``Module`` 较复杂时，我们可以让两个 ``Module`` 共享一部分 ``Parameter`` , 来达到如根据 BP 算法更新的 Tensor时, 只需要更新一份参数的需求。 我们可以基于 ``Parameter`` 名字找到目标参数，通过直接赋值的方式来实现 ``Module`` 间共享。"
+msgstr "crwdns122049:0crwdne122049:0"
+
+#: ../../source/user-guide/model-development/module/design.rst:248
 msgid "转换训练与测试状态"
 msgstr "crwdns118937:0crwdne118937:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:232
+#: ../../source/user-guide/model-development/module/design.rst:249
 msgid "我们约定，通过 :py:meth:`~.module.Module.train` 和 :py:meth:`~.module.Module.eval` 两个接口， 可以将 ``Module`` 分别设置为训练和测试状态（初始默认情况下是训练状态）。 这是因为一些已经提供的模块在训练和测试时会有不同的 ``forward`` 行为（如 :py:class:`~.module.BatchNorm2d` ）。"
 msgstr "crwdns118939:0crwdne118939:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:238
+#: ../../source/user-guide/model-development/module/design.rst:255
 msgid "如果在测试模型时忘记转换状态，会导致得到非预期的结果；"
 msgstr "crwdns118941:0crwdne118941:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:239
+#: ../../source/user-guide/model-development/module/design.rst:256
 msgid "在切换模块训练和测试状态时，会同步调整其所有子模块的状态，参考 :ref:`nested-module` 。"
 msgstr "crwdns118943:0:ref:crwdne118943:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:244
+#: ../../source/user-guide/model-development/module/design.rst:261
 msgid "Module 状态字典"
 msgstr "crwdns118945:0crwdne118945:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:246
+#: ../../source/user-guide/model-development/module/design.rst:263
 msgid "在前面的小节，我们介绍了模块中的 Tensor 可分为 :ref:`parameter-and-buffer` 两种："
 msgstr "crwdns118947:0:ref:crwdne118947:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:258
+#: ../../source/user-guide/model-development/module/design.rst:275
 msgid "实际上，每个模块还有着一个状态字典 ``STATE_DICT`` 成员。可通过 :py:meth:`~.module.Module.state_dict` 获取："
 msgstr "crwdns118949:0crwdne118949:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:263
+#: ../../source/user-guide/model-development/module/design.rst:280
 msgid "``STATE_DICT`` 中保存着所有可学习的 Tensor, 即不仅仅是 ``Parameter``, 同时还有 ``Buffer``."
 msgstr "crwdns118951:0crwdne118951:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:265
+#: ../../source/user-guide/model-development/module/design.rst:282
 msgid "我们可以通过 ``.state_dict()['key']`` 的形式来进行访问字典中的信息："
 msgstr "crwdns118953:0crwdne118953:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:270
+#: ../../source/user-guide/model-development/module/design.rst:287
 msgid "看上去与直接访问成员没有什么用途上的区别，但是 ——"
 msgstr "crwdns118955:0crwdne118955:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:274
+#: ../../source/user-guide/model-development/module/design.rst:291
 msgid "Module 状态字典中 ``value`` 存放的数据结构类型为 ``numpy.ndarray``, 且是只读的。"
 msgstr "crwdns118957:0crwdne118957:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:281
+#: ../../source/user-guide/model-development/module/design.rst:298
 msgid "通过 :py:meth:`~.module.Module.load_state_dict` 我们可以加载 ``Module`` 状态字典，常用于模型训练过程的保存与加载。"
 msgstr "crwdns118959:0crwdne118959:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:283
+#: ../../source/user-guide/model-development/module/design.rst:300
 msgid "``Optimizer`` 中也有用于保存和加载的状态字典，参考 :ref:`optimizer-guide` 。"
 msgstr "crwdns118961:0:ref:crwdne118961:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:284
+#: ../../source/user-guide/model-development/module/design.rst:301
 msgid "关于模型训练过程中保存与加载的最佳实践，请参考 :ref:`serialization-guide` 。"
 msgstr "crwdns118963:0:ref:crwdne118963:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:288
+#: ../../source/user-guide/model-development/module/design.rst:305
 msgid "保存和加载 Module 状态字典时使用 ndarray 而不是 Tensor 结构，这样做是为了保证更好的兼容性。"
 msgstr "crwdns118965:0crwdne118965:0"
 
-#: ../../source/user-guide/model-development/module/design.rst:293
+#: ../../source/user-guide/model-development/module/design.rst:310
 msgid "Module 钩子"
 msgstr "crwdns118967:0crwdne118967:0"
 

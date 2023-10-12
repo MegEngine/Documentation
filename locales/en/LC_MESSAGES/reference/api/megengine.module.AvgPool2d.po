@@ -1,18 +1,22 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-21 10:50+0000\n"
-"PO-Revision-Date: 2023-04-21 09:25+0000\n"
+"PO-Revision-Date: 2023-09-21 10:55\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.AvgPool2d.po\n"
+"X-Crowdin-File-ID: 9465\n"
 
 #: ../../source/reference/api/megengine.module.AvgPool2d.rst:5
 msgid "AvgPool2d"
@@ -23,25 +27,16 @@ msgid "Applies a 2D average pooling over an input."
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d:3 of
-msgid ""
-"For instance, given an input of the size :math:`(N, C, H_{\\text{in}}, "
-"W_{\\text{in}})` and :attr:`kernel_size` :math:`(kH, kW)`, this layer "
-"generates the output of the size :math:`(N, C, H_{\\text{out}}, "
-"W_{\\text{out}})` through a process described as:"
+msgid "For instance, given an input of the size :math:`(N, C, H_{\\text{in}}, W_{\\text{in}})` and :attr:`kernel_size` :math:`(kH, kW)`, this layer generates the output of the size :math:`(N, C, H_{\\text{out}}, W_{\\text{out}})` through a process described as:"
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d:7 of
-msgid ""
-"out(N_i, C_j, h, w)  = \\frac{1}{kH * kW} \\sum_{m=0}^{kH-1} "
-"\\sum_{n=0}^{kW-1}\n"
-"                       input(N_i, C_j, stride[0] \\times h + m, stride[1]"
-" \\times w + n)"
+msgid "out(N_i, C_j, h, w)  = \\frac{1}{kH * kW} \\sum_{m=0}^{kH-1} \\sum_{n=0}^{kW-1}\n"
+"                       input(N_i, C_j, stride[0] \\times h + m, stride[1] \\times w + n)"
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d:12 of
-msgid ""
-"If :attr:`padding` is non-zero, then the input is implicitly zero-padded "
-"on both sides for :attr:`padding` number of points."
+msgid "If :attr:`padding` is non-zero, then the input is implicitly zero-padded on both sides for :attr:`padding` number of points."
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d of
@@ -61,10 +56,7 @@ msgid "implicit zero padding to be added on both sides.Default: 0."
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d:25 of
-msgid ""
-"whether to include the padding values while calculating the average, set "
-"to \"average\" will do counting. Default: "
-"\"average_count_exclude_padding\""
+msgid "whether to include the padding values while calculating the average, set to \"average\" will do counting. Default: \"average_count_exclude_padding\""
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d:40 of
@@ -76,23 +68,17 @@ msgid "Input: :math:`(N, C, H_{in}, W_{in})` or :math:`(C, H_{in}, W_{in})`."
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d:32 of
-msgid ""
-"Output: :math:`(N, C, H_{out}, W_{out})` or :math:`(C, H_{out}, "
-"W_{out})`, where"
+msgid "Output: :math:`(N, C, H_{out}, W_{out})` or :math:`(C, H_{out}, W_{out})`, where"
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d:34 of
-msgid ""
-"H_{out} = \\left\\lfloor\\frac{H_{in}  + 2 \\times \\text{padding}[0] -\n"
-"  \\text{kernel\\_size}[0]}{\\text{stride}[0]} + 1\\right\\rfloor\n"
-"\n"
+msgid "H_{out} = \\left\\lfloor\\frac{H_{in}  + 2 \\times \\text{padding}[0] -\n"
+"  \\text{kernel\\_size}[0]}{\\text{stride}[0]} + 1\\right\\rfloor\n\n"
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d:38 of
-msgid ""
-"W_{out} = \\left\\lfloor\\frac{W_{in}  + 2 \\times \\text{padding}[1] -\n"
-"  \\text{kernel\\_size}[1]}{\\text{stride}[1]} + 1\\right\\rfloor\n"
-"\n"
+msgid "W_{out} = \\left\\lfloor\\frac{W_{in}  + 2 \\times \\text{padding}[1] -\n"
+"  \\text{kernel\\_size}[1]}{\\text{stride}[1]} + 1\\right\\rfloor\n\n"
 msgstr ""
 
 #: megengine.module.pooling.AvgPool2d of

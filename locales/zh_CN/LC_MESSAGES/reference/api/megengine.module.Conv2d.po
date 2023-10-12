@@ -1,53 +1,44 @@
-
 msgid ""
 msgstr ""
-"Project-Id-Version:  megengine\n"
+"Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-25 02:39+0000\n"
-"PO-Revision-Date: 2023-05-11 10:50+0000\n"
+"PO-Revision-Date: 2023-10-08 05:05\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.Conv2d.po\n"
+"X-Crowdin-File-ID: 9477\n"
 
 #: ../../source/reference/api/megengine.module.Conv2d.rst:5
 msgid "Conv2d"
-msgstr ""
+msgstr "Conv2d"
 
 #: megengine.module.conv.Conv2d:1 of
 msgid "Applies a 2D convolution over an input tensor."
 msgstr "对输入张量进行二维卷积"
 
 #: megengine.module.conv.Conv2d:3 of
-msgid ""
-"For instance, given an input of the size :math:`(N, C_{\\text{in}}, H, "
-"W)`, this layer generates an output of the size :math:`(N, "
-"C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` through the process "
-"described as below:"
-msgstr ""
-"例如, 给定一个大小为 :math:`(N, C_{\\text{in}}, H, W)` 的输入, 该层通过下述过程产生一个大小为 "
-":math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` 的输出。"
+msgid "For instance, given an input of the size :math:`(N, C_{\\text{in}}, H, W)`, this layer generates an output of the size :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` through the process described as below:"
+msgstr "例如, 给定一个大小为 :math:`(N, C_{\\text{in}}, H, W)` 的输入, 该层通过下述过程产生一个大小为 :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` 的输出。"
 
 #: megengine.module.conv.Conv2d:8 of
-msgid ""
-"\\text{out}(N_i, C_{\\text{out}_j}) = \\text{bias}(C_{\\text{out}_j}) +\n"
-"\\sum_{k = 0}^{C_{\\text{in}} - 1} \\text{weight}(C_{\\text{out}_j}, k) "
-"\\star \\text{input}(N_i, k)\n"
-"\n"
-msgstr ""
+msgid "\\text{out}(N_i, C_{\\text{out}_j}) = \\text{bias}(C_{\\text{out}_j}) +\n"
+"\\sum_{k = 0}^{C_{\\text{in}} - 1} \\text{weight}(C_{\\text{out}_j}, k) \\star \\text{input}(N_i, k)\n\n"
+msgstr "\\text{out}(N_i, C_{\\text{out}_j}) = \\text{bias}(C_{\\text{out}_j}) +\n"
+"\\sum_{k = 0}^{C_{\\text{in}} - 1} \\text{weight}(C_{\\text{out}_j}, k) \\star \\text{input}(N_i, k)\n\n"
 
 #: megengine.module.conv.Conv2d:12 of
-msgid ""
-"where :math:`\\star` is the valid 2D cross-correlation operator, "
-":math:`N` is batch size, :math:`C` denotes number of channels, :math:`H` "
-"is height of input planes in pixels, and :math:`W` is width in pixels."
-msgstr ""
-"其中 :math:`\\star` 是有效的2D互相关运算; :math:`N` 是批大小; :math:`C` 表示通道数; :math:`H`"
-" 是以像素为单位输入平面的高度; :math:`W` 是以像素为单位的平面宽度。"
+msgid "where :math:`\\star` is the valid 2D cross-correlation operator, :math:`N` is batch size, :math:`C` denotes number of channels, :math:`H` is height of input planes in pixels, and :math:`W` is width in pixels."
+msgstr "其中 :math:`\\star` 是有效的2D互相关运算; :math:`N` 是批大小; :math:`C` 表示通道数; :math:`H` 是以像素为单位输入平面的高度; :math:`W` 是以像素为单位的平面宽度。"
 
 #: megengine.module.conv.Conv2d:17 of
 msgid "In general, output feature maps' shapes can be inferred as follows:"
@@ -55,59 +46,35 @@ msgstr "通常，输出的特征图的形状可以被下面的方式推导出来
 
 #: megengine.module.conv.Conv2d:19 of
 msgid "input: :math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`"
-msgstr ""
+msgstr "input: :math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`"
 
 #: megengine.module.conv.Conv2d:21 of
-msgid ""
-"output: :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` "
-"where"
-msgstr ""
-"output: :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` "
-"在此式中"
+msgid "output: :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` where"
+msgstr "output: :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})` 在此式中"
 
 #: megengine.module.conv.Conv2d:23 of
-msgid ""
-"\\text{H}_{out} = \\lfloor \\frac{\\text{H}_{in} + 2 * \\text{padding[0]}"
-" -\n"
-"\\text{dilation[0]} * (\\text{kernel_size[0]} - 1) - "
-"1}{\\text{stride[0]}} + 1 \\rfloor\n"
-"\n"
-msgstr ""
+msgid "\\text{H}_{out} = \\lfloor \\frac{\\text{H}_{in} + 2 * \\text{padding[0]} -\n"
+"\\text{dilation[0]} * (\\text{kernel_size[0]} - 1) - 1}{\\text{stride[0]}} + 1 \\rfloor\n\n"
+msgstr "\\text{H}_{out} = \\lfloor \\frac{\\text{H}_{in} + 2 * \\text{padding[0]} -\n"
+"\\text{dilation[0]} * (\\text{kernel_size[0]} - 1) - 1}{\\text{stride[0]}} + 1 \\rfloor\n\n"
 
 #: megengine.module.conv.Conv2d:27 of
-msgid ""
-"\\text{W}_{out} = \\lfloor \\frac{\\text{W}_{in} + 2 * \\text{padding[1]}"
-" -\n"
-"\\text{dilation[1]} * (\\text{kernel_size[1]} - 1) - "
-"1}{\\text{stride[1]}} + 1 \\rfloor\n"
-"\n"
-msgstr ""
+msgid "\\text{W}_{out} = \\lfloor \\frac{\\text{W}_{in} + 2 * \\text{padding[1]} -\n"
+"\\text{dilation[1]} * (\\text{kernel_size[1]} - 1) - 1}{\\text{stride[1]}} + 1 \\rfloor\n\n"
+msgstr "\\text{W}_{out} = \\lfloor \\frac{\\text{W}_{in} + 2 * \\text{padding[1]} -\n"
+"\\text{dilation[1]} * (\\text{kernel_size[1]} - 1) - 1}{\\text{stride[1]}} + 1 \\rfloor\n\n"
 
 #: megengine.module.conv.Conv2d:31 of
-msgid ""
-"When `groups == in_channels` and `out_channels == K * in_channels`, where"
-" K is a positive integer, this operation is also known as depthwise "
-"convolution."
-msgstr ""
-"当 `groups == in_channels` 且 `out_channels == K * in_channels` ，其中 K "
-"是正整数，该操作也被称为深度方向卷积（depthwise convolution）。"
+msgid "When `groups == in_channels` and `out_channels == K * in_channels`, where K is a positive integer, this operation is also known as depthwise convolution."
+msgstr "当 `groups == in_channels` 且 `out_channels == K * in_channels` ，其中 K 是正整数，该操作也被称为深度方向卷积（depthwise convolution）。"
 
 #: megengine.module.conv.Conv2d:35 of
-#, fuzzy
-msgid ""
-"In other words, for an input of size :math:`(N, C_{\\text{in}}, "
-"H_{\\text{in}}, W_{\\text{in}})`, a depthwise convolution with a "
-"depthwise multiplier `K`, can be constructed by arguments "
-":math:`(in\\_channels=C_{\\text{in}}, out\\_channels=C_{\\text{in}} "
-"\\times K, ..., groups=C_{\\text{in}})`."
-msgstr ""
-"换言之, 对于大小为 :math:`(N, C_{in}, H_{in}, W_{in})`的输入, 一个乘数为 `K` 的 depthwise "
-"卷积, 可以通过参数构造:math:`(in\\_channels=C_{in}, out\\_channels=C_{in} \\times "
-"K, ..., groups=C_{in})`."
+msgid "In other words, for an input of size :math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`, a depthwise convolution with a depthwise multiplier `K`, can be constructed by arguments :math:`(in\\_channels=C_{\\text{in}}, out\\_channels=C_{\\text{in}} \\times K, ..., groups=C_{\\text{in}})`."
+msgstr "换言之，对于大小为 :math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})` 的输入，depthwise multiplier 为 `K` 的 depthwise 卷积可以通过参数 :math:`(in\\_channels=C_{\\text{in}}, out\\_channels=C_{\\text{in}} \\times K, ..., groups=C_{\\text{in}})` 构造。"
 
 #: megengine.module.conv.Conv2d of
 msgid "参数"
-msgstr ""
+msgstr "参数"
 
 #: megengine.module.conv.Conv2d:40 of
 msgid "number of input channels."
@@ -118,96 +85,56 @@ msgid "number of output channels."
 msgstr "输出数据中的通道数。"
 
 #: megengine.module.conv.Conv2d:46 of
-msgid ""
-"size of weight on spatial dimensions. If kernel_size is an :class:`int`, "
-"the actual kernel size would be ``(kernel_size, kernel_size)``."
-msgstr ""
-"空间维度上的权重大小。如果kernel_size 是一个 :class:`int`, 实际的kernel大小为 ``(kernel_size, "
-"kernel_size)``."
+msgid "size of weight on spatial dimensions. If kernel_size is an :class:`int`, the actual kernel size would be ``(kernel_size, kernel_size)``."
+msgstr "空间维度上的权重大小。如果kernel_size 是一个 :class:`int`, 实际的kernel大小为 ``(kernel_size, kernel_size)``."
 
 #: megengine.module.conv.Conv2d:51 of
-#, fuzzy
 msgid "stride of the 2D convolution operation. Default: 1."
-msgstr "二维卷积运算的步长。默认：1"
+msgstr "2D 卷积操作的步长。默认值：1。"
 
 #: megengine.module.conv.Conv2d:54 of
-#, fuzzy
-msgid ""
-"size of the paddings added to the input on both sides of its spatial "
-"dimensions. Default: 0."
-msgstr "在空间维度两侧进行填充的宽度。默认值：0"
+msgid "size of the paddings added to the input on both sides of its spatial dimensions. Default: 0."
+msgstr "在输入的空间维度进行填充的宽度。默认值：0。"
 
 #: megengine.module.conv.Conv2d:58 of
-#, fuzzy
 msgid "dilation of the 2D convolution operation. Default: 1."
-msgstr "二维卷积运算的空洞（dilation）。默认：1"
+msgstr "2D 卷积操作的扩充数。默认值： 1。"
 
 #: megengine.module.conv.Conv2d:61 of
-#, fuzzy
-msgid ""
-"number of groups into which the input and output channels are divided, so"
-" as to perform a ``grouped convolution``. When ``groups`` is not 1, "
-"``in_channels`` and ``out_channels`` must be divisible by ``groups``, and"
-" the shape of weight should be ``(groups, out_channel // groups, "
-"in_channels // groups, height, width)``. Default: 1."
-msgstr ""
-"在进行“分组卷积”时，对输入输出通道的分组数量。当 ``groups`` 不是 1 时，``in_channels`` 和 "
-"``out_channels`` 必须可被 ``groups`` 整除，卷积核权重的形状将会是 ``(groups, out_channel //"
-" groups, in_channels // groups, kernel_size)``。默认值：1"
+msgid "number of groups into which the input and output channels are divided, so as to perform a ``grouped convolution``. When ``groups`` is not 1, ``in_channels`` and ``out_channels`` must be divisible by ``groups``, and the shape of weight should be ``(groups, out_channel // groups, in_channels // groups, height, width)``. Default: 1."
+msgstr "在进行”分组卷积“时，对输入输出通道的分组数量。当 groups 不是 1 时，in_channels 和 out_channels 必须可被 groups 整除，卷积核权重的形状将会是 （groups, out_channel // groups, in_channels // groups, height, width）。默认值：1。"
 
 #: megengine.module.conv.Conv2d:68 of
-#, fuzzy
 msgid "whether to add a bias onto the result of convolution. Default: True."
-msgstr "是否将偏置（bias）加入卷积的结果中。默认：True"
+msgstr "是否将偏置（bias）加入卷积的结果中。默认值：True。"
 
 #: megengine.module.conv.Conv2d:71 of
-#, fuzzy
 msgid "supports `cross_correlation`. Default: `cross_correlation`."
-msgstr "支持 `cross_correlation`. 默认: `cross_correlation`"
+msgstr "支持 `cross_correlation` 。默认值：`cross_correlation` 。"
 
 #: megengine.module.conv.Conv2d:74 of
-#, fuzzy
-msgid ""
-"when set to \"default\", no special requirements will be placed on the "
-"precision of intermediate results. When set to \"float32\", \"float32\" "
-"would be used for accumulator and intermediate result, but only effective"
-" when input and output are of float16 dtype. Default: `default`."
-msgstr ""
-"当设置 \"default\" 时, 不会对中间结果的精度有特殊要求。当设置 \"float32\" 时, \"float32\" "
-"将被用作中间结果的累加器, 但是只有当输入和输出的dtype是float16时有效。"
+msgid "when set to \"default\", no special requirements will be placed on the precision of intermediate results. When set to \"float32\", \"float32\" would be used for accumulator and intermediate result, but only effective when input and output are of float16 dtype. Default: `default`."
+msgstr "当设置 \"default\" 时，不会对中间结果的精度有特殊要求。当设置 \"float32\" 时，\"float32\" 将被用作中间结果和累加器，但是只有当输入和输出的 dtype 是 float16 时有效。默认值：\"default\"。"
 
 #: megengine.module.conv.Conv2d:80 of
-msgid ""
-"\"zeros\", \"reflect\" or \"replicate\". Default: \"zeros\". Refer to "
-":class:`~.module.padding.Pad` for more information."
-msgstr ""
-"\"zeros\", \"reflect\" 或者 \"replicate\"。默认值：\"zeros\"。更多信息参考 "
-":class:`~.module.padding.Pad` 。"
+msgid "\"zeros\", \"reflect\" or \"replicate\". Default: \"zeros\". Refer to :class:`~.module.padding.Pad` for more information."
+msgstr "\"zeros\", \"reflect\" 或者 \"replicate\"。默认值：\"zeros\"。更多信息参考 :class:`~.module.padding.Pad` 。"
 
 #: megengine.module.conv.Conv2d:86 of
 msgid "Shape:"
-msgstr ""
+msgstr "形状："
 
 #: megengine.module.conv.Conv2d:85 of
-msgid ""
-"``input``: :math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`. "
-"``output``: :math:`(N, C_{\\text{out}}, H_{\\text{out}}, "
-"W_{\\text{out}})`."
-msgstr ""
+msgid "``input``: :math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`. ``output``: :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})`."
+msgstr "输入: :math:`(N, C_{\\text{in}}, H_{\\text{in}}, W_{\\text{in}})`。输出: :math:`(N, C_{\\text{out}}, H_{\\text{out}}, W_{\\text{out}})`。"
 
 #: megengine.module.conv.Conv2d:90 of
-msgid ""
-"``weight`` usually has shape ``(out_channels, in_channels, height, "
-"width)`` ,"
+msgid "``weight`` usually has shape ``(out_channels, in_channels, height, width)`` ,"
 msgstr "``weight`` 的shape通常为 ``(out_channels, in_channels, height, width)`` ,"
 
 #: megengine.module.conv.Conv2d:91 of
-msgid ""
-"if groups is not 1, shape will be ``(groups, out_channels // groups, "
-"in_channels // groups, height, width)``"
-msgstr ""
-"如果 groups 不为 1, shape 应该是 ``(groups, out_channels // groups, in_channels "
-"// groups, height, width)``"
+msgid "if groups is not 1, shape will be ``(groups, out_channels // groups, in_channels // groups, height, width)``"
+msgstr "如果 groups 不为 1, shape 应该是 ``(groups, out_channels // groups, in_channels // groups, height, width)``"
 
 #: megengine.module.conv.Conv2d:92 of
 msgid "``bias`` usually has shape ``(1, out_channels, *1)``"
@@ -215,15 +142,15 @@ msgstr "``bias`` 的shape通常为 ``(1, out_channels, *1)``"
 
 #: megengine.module.conv.Conv2d of
 msgid "返回"
-msgstr ""
+msgstr "返回"
 
 #: megengine.module.conv.Conv2d:94 of
 msgid "module. The instance of the ``Conv2d`` module."
-msgstr ""
+msgstr "module。\"Conv2d\" module 的实例。"
 
 #: megengine.module.conv.Conv2d of
 msgid "返回类型"
-msgstr ""
+msgstr "返回类型"
 
 #: megengine.module.conv.Conv2d:98 of
 msgid "实际案例"

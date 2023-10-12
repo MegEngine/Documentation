@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: megengine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-20 10:16+0000\n"
+"PO-Revision-Date: 2023-09-21 06:37\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Traditional\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-File: /dev/locales/en/LC_MESSAGES/user-guide/model-development/jit/xla.po\n"
+"X-Crowdin-File-ID: 10057\n"
+"Language: zh_TW\n"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:5
+msgid "使用 XLA 作为编译后端加速模型训练"
+msgstr "crwdns122051:0crwdne122051:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:9
+msgid "XLA 作为 jit 后端目前属于实验特性，可能存在一些 bug"
+msgstr "crwdns122053:0crwdne122053:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:10
+msgid "算子支持还不完备，可能存在部分算子不支持/算子 lowering 不正确的问题"
+msgstr "crwdns122055:0crwdne122055:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:11
+msgid "相关接口不稳定， 后续版本可能会有 API 变动"
+msgstr "crwdns122057:0crwdne122057:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:15
+msgid "XLA 编译后端"
+msgstr "crwdns122059:0crwdne122059:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:16
+msgid "`XLA <https://github.com/openxla/xla>`_ 是 google 推出的可用于模型训练加速的编译器。 MegEngine 接入了 XLA 编译器用于提高训练性能。"
+msgstr "crwdns122061:0crwdne122061:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:18
+msgid "在 MegEngine 中使用 XLA 编译器需要用户安装 mge_xlalib 包。"
+msgstr "crwdns122063:0crwdne122063:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:22
+msgid "仅支持在 MegEngine 1.13 及以上版本使用 XLA 编译后端。"
+msgstr "crwdns122065:0crwdne122065:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:23
+msgid "安装的 mge_xlalib 包的 cuda 版本需要与用户使用的 MegEngine 包相同。"
+msgstr "crwdns122067:0crwdne122067:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:24
+msgid "mge_xlalib 目前支持的 python 版本是 3.8 到 3.10， cuda 版本是 11.1 11.4 11.8 。"
+msgstr "crwdns122069:0crwdne122069:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:25
+msgid "mge_xlalib cuda 11.8 加速效果最好， cuda 11.1 由于 cudnn 版本较低 XLA 加速效果较差。"
+msgstr "crwdns122071:0crwdne122071:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:27
+msgid "mge_xlalib 安装命令如下："
+msgstr "crwdns122073:0crwdne122073:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:38
+msgid "XLA 编译器的使用方式与 MegEngine graph runtime 自带编译器类似， 需要用MegEngine提供的装饰器 (xla_trace) 对训练函数进行包装。 函数执行第一遍时会记录算子执行序列，以捕获静态图。 后续执行会把静态图用XLA编译， 并调用编译好的 XLA executable 加速训练过程。"
+msgstr "crwdns122075:0crwdne122075:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:42
+msgid "由于 xla_trace 实现和 XLA 编译器自身的特性， 目前该功能的使用还有如下限制："
+msgstr "crwdns122077:0crwdne122077:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:44
+msgid "所有（非常量的）外部 Tensor /包含外部 Tensor 的对象（如 Module， Optimizer等）需要作为被装饰器包装的训练函数的参数传入。外部 Tensor 指所有不是由 Op 计算产生的 Tensor（对应静态图中的输入节点）。"
+msgstr "crwdns122079:0crwdne122079:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:45
+msgid "由于 XLA 目前对动态 Shape 支持较差，需要保证所有外部 Tensor 的 Shape 是固定的。"
+msgstr "crwdns122081:0crwdne122081:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:46
+msgid "需要用户保证被 trace 函数是静态的（函数不会在输入不同时执行不同的分支）。"
+msgstr "crwdns122083:0crwdne122083:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:49
+msgid "具体使用示例见 :ref:`xla_trace` 和 :ref:`partial_trace`"
+msgstr "crwdns122085:0:ref:crwdnd122085:0:ref:crwdne122085:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:55
+msgid "使用 xla_trace 装饰器"
+msgstr "crwdns122087:0crwdne122087:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:57
+msgid "您可以使用 jit.xla_trace 装饰器对需要加速的函数进行包装， 代码示例如下。"
+msgstr "crwdns122089:0crwdne122089:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:88
+msgid "当模型训练迭代（Iteration）完全静态的情况下， 您也可以使用 jit.xla_trace 装饰器将训练迭代全部交由XLA执行。 需要将 optimizer， module 作为train_func 参数传入，同时 train_func 中需包含包含模型前向、 反向 、 参数更新等代码， 代码示例如下："
+msgstr "crwdns122091:0crwdne122091:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:122
+msgid "使用 partial_trace 装饰器"
+msgstr "crwdns122093:0crwdne122093:0"
+
+#: ../../source/user-guide/model-development/jit/xla.rst:124
+msgid "模型训练迭代中存在动态执行逻辑的情况下， 无法将整个计算交由 XLA 执行。 这种情况下可以使用 jit.patrial_trace 装饰器对其中静态的部分进行加速。 被 partial_trace 包装部分的前向/反向会使用 XLA 执行, 其他部分仍由 MegEngine 执行。 代码示例如下："
+msgstr "crwdns122095:0crwdne122095:0"
+

@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 16:51+0800\n"
-"PO-Revision-Date: 2023-04-21 09:26\n"
+"POT-Creation-Date: 2023-09-21 10:50+0000\n"
+"PO-Revision-Date: 2023-09-21 10:56\n"
 "Last-Translator: \n"
+"Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Crowdin-Project: megengine\n"
 "X-Crowdin-Project-ID: 450980\n"
 "X-Crowdin-Language: zh-TW\n"
 "X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.LSTM.po\n"
 "X-Crowdin-File-ID: 9511\n"
-"Language: zh_TW\n"
 
 #: ../../source/reference/api/megengine.module.LSTM.rst:5
 msgid "LSTM"
@@ -26,11 +26,11 @@ msgstr "crwdns104659:0crwdne104659:0"
 msgid "Applies a multi-layer long short-term memory LSTM to an input sequence."
 msgstr "crwdns104661:0crwdne104661:0"
 
-#: megengine.module.rnn.LSTM:5 of
+#: megengine.module.rnn.LSTM:3 of
 msgid "For each element in the input sequence, each layer computes the following function:"
 msgstr "crwdns104663:0crwdne104663:0"
 
-#: megengine.module.rnn.LSTM:8 of
+#: megengine.module.rnn.LSTM:6 of
 msgid "\\begin{array}{ll} \\\\\n"
 "    i_t = \\sigma(W_{ii} x_t + b_{ii} + W_{hi} h_{t-1} + b_{hi}) \\\\\n"
 "    f_t = \\sigma(W_{if} x_t + b_{if} + W_{hf} h_{t-1} + b_{hf}) \\\\\n"
@@ -41,75 +41,87 @@ msgid "\\begin{array}{ll} \\\\\n"
 "\\end{array}\n\n"
 msgstr "crwdns104665:0{array}crwdnd104665:0{ll}crwdnd104665:0{ii}crwdnd104665:0{ii}crwdnd104665:0{hi}crwdnd104665:0{t-1}crwdnd104665:0{hi}crwdnd104665:0{if}crwdnd104665:0{if}crwdnd104665:0{hf}crwdnd104665:0{t-1}crwdnd104665:0{hf}crwdnd104665:0{ig}crwdnd104665:0{ig}crwdnd104665:0{hg}crwdnd104665:0{t-1}crwdnd104665:0{hg}crwdnd104665:0{io}crwdnd104665:0{io}crwdnd104665:0{ho}crwdnd104665:0{t-1}crwdnd104665:0{ho}crwdnd104665:0{t-1}crwdnd104665:0{array}crwdne104665:0"
 
-#: megengine.module.rnn.LSTM:18 of
+#: megengine.module.rnn.LSTM:16 of
 msgid "where :math:`h_t` is the hidden state at time `t`, :math:`c_t` is the cell state at time `t`, :math:`x_t` is the input at time `t`, :math:`h_{t-1}` is the hidden state of the layer at time `t-1` or the initial hidden state at time `0`, and :math:`i_t`, :math:`f_t`, :math:`g_t`, :math:`o_t` are the input, forget, cell, and output gates, respectively. :math:`\\sigma` is the sigmoid function, and :math:`\\odot` is the Hadamard product."
 msgstr "crwdns104667:0:math:crwdnd104667:0:math:crwdnd104667:0:math:crwdnd104667:0:math:crwdnd104667:0{t-1}crwdnd104667:0:math:crwdnd104667:0:math:crwdnd104667:0:math:crwdnd104667:0:math:crwdnd104667:0:math:crwdnd104667:0:math:crwdne104667:0"
 
-#: megengine.module.rnn.LSTM:25 of
+#: megengine.module.rnn.LSTM:23 of
 msgid "In a multilayer LSTM, the input :math:`x^{(l)}_t` of the :math:`l` -th layer (:math:`l >= 2`) is the hidden state :math:`h^{(l-1)}_t` of the previous layer multiplied by dropout :math:`\\delta^{(l-1)}_t` where each :math:`\\delta^{(l-1)}_t` is a Bernoulli random variable which is :math:`0` with probability :attr:`dropout`."
 msgstr "crwdns104669:0:math:crwdnd104669:0:math:crwdnd104669:0:math:crwdnd104669:0:math:crwdnd104669:0:math:crwdnd104669:0:math:crwdnd104669:0:math:crwdnd104669:0:attr:crwdne104669:0"
 
-#: megengine.module.rnn.LSTM:30 of
-msgid "If ``proj_size > 0`` is specified, LSTM with projections will be used. This changes the LSTM cell in the following way. First, the dimension of :math:`h_t` will be changed from ``hidden_size`` to ``proj_size`` (dimensions of :math:`W_{hi}` will be changed accordingly). Second, the output hidden state of each layer will be multiplied by a learnable projection matrix: :math:`h_t = W_{hr}h_t`. Note that as a consequence of this, the output of LSTM network will be of different shape as well. See Inputs/Outputs sections below for exact dimensions of all variables. You can find more details in https://arxiv.org/abs/1402.1128."
-msgstr "crwdns104671:0:math:crwdnd104671:0:math:crwdnd104671:0{hi}crwdnd104671:0:math:crwdnd104671:0{hr}crwdne104671:0"
+#: megengine.module.rnn.LSTM:28 of
+msgid "If ``proj_size > 0`` is specified, LSTM with projections will be used. This changes the LSTM cell in the following way. First, the dimension of :math:`h_t` will be changed from ``hidden_size`` to ``proj_size`` (dimensions of :math:`W_{hi}` will be changed accordingly). Second, the output hidden state of each layer will be multiplied by a learnable projection matrix: :math:`h_t = W_{hr}h_t`. Note that as a consequence of this, the output of LSTM network will be of different shape as well. See Inputs/Outputs sections below for exact dimensions of all variables. You can find more details in `Long Short-Term Memory Based Recurrent Neural Network Architectures for Large Vocabulary Speech Recognition<https://arxiv.org/abs/1402.1128>`."
+msgstr "crwdns122287:0:math:crwdnd122287:0:math:crwdnd122287:0{hi}crwdnd122287:0:math:crwdnd122287:0{hr}crwdne122287:0"
 
 #: megengine.module.rnn.LSTM of
 msgid "参数"
 msgstr "crwdns104673:0crwdne104673:0"
 
 #: megengine.module.rnn.LSTM:38 of
-msgid "The number of expected features in the input `x`"
-msgstr "crwdns104675:0crwdne104675:0"
-
-#: megengine.module.rnn.LSTM:39 of
-msgid "The number of features in the hidden state `h`"
-msgstr "crwdns104677:0crwdne104677:0"
+msgid "The number of expected features in the input `x`."
+msgstr "crwdns122289:0crwdne122289:0"
 
 #: megengine.module.rnn.LSTM:40 of
-msgid "Number of recurrent layers. E.g., setting ``num_layers=2`` would mean stacking two LSTMs together to form a `stacked LSTM`, with the second LSTM taking in outputs of the first LSTM and computing the final results. Default: 1"
-msgstr "crwdns104679:0crwdne104679:0"
+msgid "The number of features in the hidden state `h`."
+msgstr "crwdns122291:0crwdne122291:0"
 
-#: megengine.module.rnn.LSTM:44 of
-msgid "If ``False``, then the layer does not use bias weights `b_ih` and `b_hh`. Default: ``True``"
-msgstr "crwdns104681:0crwdne104681:0"
+#: megengine.module.rnn.LSTM:42 of
+msgid "Number of recurrent layers. E.g., setting ``num_layers=2`` would mean stacking two LSTMs together to form a `stacked LSTM`, with the second LSTM taking in outputs of the first LSTM and computing the final results. Default: 1."
+msgstr "crwdns122293:0crwdne122293:0"
 
-#: megengine.module.rnn.LSTM:46 of
-msgid "If ``True``, then the input and output tensors are provided as `(batch, seq, feature)` instead of `(seq, batch, feature)`. Note that this does not apply to hidden or cell states. See the Inputs/Outputs sections below for details.  Default: ``False``"
-msgstr "crwdns104683:0crwdne104683:0"
+#: megengine.module.rnn.LSTM:47 of
+msgid "If ``False``, then the layer does not use bias weights `b_ih` and `b_hh`. Default: ``True``."
+msgstr "crwdns122295:0crwdne122295:0"
 
 #: megengine.module.rnn.LSTM:50 of
-msgid "If non-zero, introduces a `Dropout` layer on the outputs of each LSTM layer except the last layer, with dropout probability equal to :attr:`dropout`. Default: 0"
-msgstr "crwdns104685:0:attr:crwdne104685:0"
+msgid "If ``True``, then the input and output tensors are provided as `(batch, seq, feature)` instead of `(seq, batch, feature)`. Note that this does not apply to hidden or cell states. See the Inputs/Outputs sections below for details.  Default: ``False``."
+msgstr "crwdns122297:0crwdne122297:0"
 
-#: megengine.module.rnn.LSTM:53 of
-msgid "If ``True``, becomes a bidirectional LSTM. Default: ``False``"
-msgstr "crwdns104687:0crwdne104687:0"
+#: megengine.module.rnn.LSTM:55 of
+msgid "If non-zero, introduces a `Dropout` layer on the outputs of each LSTM layer except the last layer, with dropout probability equal to :attr:`dropout`. Default: 0."
+msgstr "crwdns122299:0:attr:crwdne122299:0"
 
-#: megengine.module.rnn.LSTM:54 of
-msgid "If ``> 0``, will use LSTM with projections of corresponding size. Default: 0"
-msgstr "crwdns104689:0crwdne104689:0"
+#: megengine.module.rnn.LSTM:59 of
+msgid "If ``True``, becomes a bidirectional LSTM. Default: ``False``."
+msgstr "crwdns122301:0crwdne122301:0"
 
-#: megengine.module.rnn.LSTM:79 of
+#: megengine.module.rnn.LSTM:61 of
+msgid "If ``> 0``, will use LSTM with projections of corresponding size. Default: 0."
+msgstr "crwdns122303:0crwdne122303:0"
+
+#: megengine.module.rnn.LSTM:89 of
+msgid "Shape:"
+msgstr "crwdns122305:0crwdne122305:0"
+
+#: megengine.module.rnn.LSTM:83 of
 msgid "Inputs: input, (h_0, c_0)"
 msgstr "crwdns104691:0crwdne104691:0"
 
-#: megengine.module.rnn.LSTM:57 of
-msgid "**input**: tensor of shape :math:`(L, N, H_{in})` when ``batch_first=False`` or :math:`(N, L, H_{in})` when ``batch_first=True`` containing the features of the input sequence.  The input can also be a packed variable length sequence. See :func:`torch.nn.utils.rnn.pack_padded_sequence` or :func:`torch.nn.utils.rnn.pack_sequence` for details."
-msgstr "crwdns104693:0:math:crwdnd104693:0{in}crwdnd104693:0:math:crwdnd104693:0{in}crwdnd104693:0:func:crwdnd104693:0:func:crwdne104693:0"
+#: megengine.module.rnn.LSTM:66 of
+msgid "input: :math:`(L, N, H_{in})` when ``batch_first=False`` or :math:`(N, L, H_{in})` when ``batch_first=True``."
+msgstr "crwdns122307:0:math:crwdnd122307:0{in}crwdnd122307:0:math:crwdnd122307:0{in}crwdne122307:0"
 
-#: megengine.module.rnn.LSTM:62 of
-msgid "**h_0**: tensor of shape :math:`(D * \\text{num\\_layers}, N, H_{out})` containing the initial hidden state for each element in the batch. Defaults to zeros if (h_0, c_0) is not provided."
-msgstr "crwdns104695:0:math:crwdnd104695:0{out}crwdne104695:0"
+#: megengine.module.rnn.LSTM:67 of
+msgid "Containing the features of the input sequence."
+msgstr "crwdns122309:0crwdne122309:0"
 
-#: megengine.module.rnn.LSTM:65 of
-msgid "**c_0**: tensor of shape :math:`(D * \\text{num\\_layers}, N, H_{cell})` containing the initial cell state for each element in the batch. Defaults to zeros if (h_0, c_0) is not provided."
-msgstr "crwdns104697:0:math:crwdnd104697:0{cell}crwdne104697:0"
+#: megengine.module.rnn.LSTM:68 of
+msgid "h_0: :math:`(D * \\text{num\\_layers}, N, H_{out})`. Containing the initial hidden"
+msgstr "crwdns122311:0:math:crwdnd122311:0{out}crwdne122311:0"
 
-#: megengine.module.rnn.LSTM:69 of
+#: megengine.module.rnn.LSTM:69 megengine.module.rnn.LSTM:71 of
+msgid "state for each element in the batch. Defaults to zeros if (h_0, c_0) is not provided."
+msgstr "crwdns122313:0crwdne122313:0"
+
+#: megengine.module.rnn.LSTM:71 of
+msgid "c_0: :math:`(D * \\text{num\\_layers}, N, H_{cell})`. Containing the initial cell"
+msgstr "crwdns122315:0:math:crwdnd122315:0{cell}crwdne122315:0"
+
+#: megengine.module.rnn.LSTM:73 of
 msgid "where:"
 msgstr "crwdns104699:0crwdne104699:0"
 
-#: megengine.module.rnn.LSTM:71 of
+#: megengine.module.rnn.LSTM:75 of
 msgid "\\begin{aligned}\n"
 "    N ={} & \\text{batch size} \\\\\n"
 "    L ={} & \\text{sequence length} \\\\\n"
@@ -120,27 +132,76 @@ msgid "\\begin{aligned}\n"
 "\\end{aligned}\n\n"
 msgstr "crwdns104701:0{aligned}crwdnd104701:0{batch size}crwdnd104701:0{sequence length}crwdnd104701:0{in}crwdnd104701:0{cell}crwdnd104701:0{out}crwdnd104701:0{aligned}crwdne104701:0"
 
-#: megengine.module.rnn.LSTM:90 of
+#: megengine.module.rnn.LSTM:89 of
 msgid "Outputs: output, (h_n, c_n)"
 msgstr "crwdns104703:0crwdne104703:0"
 
-#: megengine.module.rnn.LSTM:82 of
-msgid "**output**: tensor of shape :math:`(L, N, D * H_{out})` when ``batch_first=False`` or :math:`(N, L, D * H_{out})` when ``batch_first=True`` containing the output features `(h_t)` from the last layer of the LSTM, for each `t`. If a :class:`torch.nn.utils.rnn.PackedSequence` has been given as the input, the output will also be a packed sequence."
-msgstr "crwdns104705:0:math:crwdnd104705:0{out}crwdnd104705:0:math:crwdnd104705:0{out}crwdnd104705:0:class:crwdne104705:0"
+#: megengine.module.rnn.LSTM:86 of
+msgid "output: :math:`(L, N, D * H_{out})` when ``batch_first=False`` or :math:`(N, L, D * H_{out})` when ``batch_first=True``."
+msgstr "crwdns122317:0:math:crwdnd122317:0{out}crwdnd122317:0:math:crwdnd122317:0{out}crwdne122317:0"
 
 #: megengine.module.rnn.LSTM:87 of
-msgid "**h_n**: tensor of shape :math:`(D * \\text{num\\_layers}, N, H_{out})` containing the final hidden state for each element in the batch."
-msgstr "crwdns104707:0:math:crwdnd104707:0{out}crwdne104707:0"
+msgid "Containing the output features `(h_t)` from the last layer of the LSTM, for each `t`."
+msgstr "crwdns122319:0crwdne122319:0"
 
-#: megengine.module.rnn.LSTM:89 of
-msgid "**c_n**: tensor of shape :math:`(D * \\text{num\\_layers}, N, H_{cell})` containing the final cell state for each element in the batch."
-msgstr "crwdns104709:0:math:crwdnd104709:0{cell}crwdne104709:0"
+#: megengine.module.rnn.LSTM:88 of
+msgid "h_n: :math:`(D * \\text{num\\_layers}, N, H_{out})`. Containing the final hidden state for each element in the batch. c_n: :math:`(D * \\text{num\\_layers}, N, H_{cell})`. Containing the final cell state for each element in the batch."
+msgstr "crwdns122321:0:math:crwdnd122321:0{out}crwdnd122321:0:math:crwdnd122321:0{cell}crwdne122321:0"
 
-#: megengine.module.rnn.LSTM:93 of
+#: megengine.module.rnn.LSTM:92 of
 msgid "实际案例"
 msgstr "crwdns104711:0crwdne104711:0"
 
-#: megengine.module.rnn.LSTM:107 of
+#: megengine.module.rnn.LSTM:106 of
 msgid "Outputs:"
 msgstr "crwdns104713:0crwdne104713:0"
+
+#~ msgid ""
+#~ "**input**: tensor of shape :math:`(L, N,"
+#~ " H_{in})` when ``batch_first=False`` or "
+#~ ":math:`(N, L, H_{in})` when "
+#~ "``batch_first=True`` containing the features "
+#~ "of the input sequence.  The input "
+#~ "can also be a packed variable "
+#~ "length sequence. See "
+#~ ":func:`torch.nn.utils.rnn.pack_padded_sequence` or "
+#~ ":func:`torch.nn.utils.rnn.pack_sequence` for details."
+#~ msgstr ""
+#~ "**input**：当 ``batch_first=False`` 时，形状为 :math:`(L,"
+#~ " N, H_{in})` 的tensor；当 ``batch_first=True`` "
+#~ "时，形状为:math:`(N, L, H_{in})` "
+#~ "的tensor，该tensor包含输入序列的特征。 输入也可以是一个打包的可变长度序列。详见 "
+#~ ":func:`torch.nn.utils.rnn.pack_padded_sequence` 或 "
+#~ ":func:`torch.nn.utils.rnn.pack_sequence`."
+
+#~ msgid ""
+#~ "**h_0**: tensor of shape :math:`(D * "
+#~ "\\text{num\\_layers}, N, H_{out})` containing "
+#~ "the initial hidden state for each "
+#~ "element in the batch. Defaults to "
+#~ "zeros if (h_0, c_0) is not "
+#~ "provided."
+#~ msgstr ""
+#~ "**h_0**：包含 batch 中每个元素的初始 hidden state "
+#~ "的形状为 :math:`(D *\\text{num\\_layers}, N, "
+#~ "H_{out})` 的 tensor. 如果没有提供（h_0, c_0），则默认为零。"
+
+#~ msgid ""
+#~ "**output**: tensor of shape :math:`(L, "
+#~ "N, D * H_{out})` when "
+#~ "``batch_first=False`` or :math:`(N, L, D "
+#~ "* H_{out})` when ``batch_first=True`` "
+#~ "containing the output features `(h_t)` "
+#~ "from the last layer of the LSTM,"
+#~ " for each `t`. If a "
+#~ ":class:`torch.nn.utils.rnn.PackedSequence` has been "
+#~ "given as the input, the output "
+#~ "will also be a packed sequence."
+#~ msgstr ""
+#~ "**output**：当 ``batch_first=False`` 时，形状为 :math:`(L,"
+#~ " N, D * H_{out})` 的tensor；当 "
+#~ "``batch_first=True`` 时，形状为 :math:`(N, L, D "
+#~ "* H_{out})` 的tensor，该tensor包含LSTM最后一层的关于每个 `t` "
+#~ "的输出特征 `(h_t)`。如果一个 "
+#~ ":class:`torch.nn.utils.rnn.PackedSequence` 被作为输入，输出也将是一个打包序列。"
 
