@@ -41,5 +41,5 @@ MegEngine 中 ``drop_prob`` 参数对应 PyTorch 中的 ``p`` 参数，表示每
 
 inplace
 ~~~~~~~~~~~~~
-PyTorch 中 ``inplace`` 参数，表示在不更改变量的内存地址的情况下，直接修改变量的值，MegEngine 中无此参数，一般对网络训练结果影响不大。
+PyTorch 中 ``inplace`` 参数，表示是否要原地操作，默认不开启，MegEngine 中无此参数，一般对网络训练结果影响不大。
 

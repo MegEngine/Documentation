@@ -51,7 +51,7 @@ Pad 差异对比
 
 padding_idx
 ~~~~~~~~~~~~
-PyTorch ``padding_idx`` 参数表示在此区间内的参数及对应的梯度将会以 0 进行填充，MegEngine 中暂不支持，需要设置为 None。
+PyTorch ``padding_idx`` 参数表示在此区间内的参数及对应的梯度将会以 0 进行填充，MegEngine 中暂不支持，需要设置为 None，非 None 的情况会被 assert。
 
 max_norm
 ~~~~~~~~~~~~
@@ -71,7 +71,7 @@ PyTorch ``sparse`` 参数表示是否使用稀疏更新，MegEngine 无此参数
 
 initial_weight
 ~~~~~~~~~~~~
-MegEngine ``initial_weight`` 参数该模块的可学习权重，形状为(num_embeddings, embedding_dim) ，PyTorch 中无此参数。
+MegEngine ``initial_weight`` 初始化该模块的可学习权重，形状为(num_embeddings, embedding_dim) ，PyTorch 中无此参数。
 
 .. code-block::: python
     

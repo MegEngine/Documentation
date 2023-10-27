@@ -39,24 +39,20 @@ InstanceNorm 差异对比
   更多请查看 :py:class:`megengine.module.InstanceNorm`.
 
 
-使用差异
---------
-Pytorch 支持 Instance Normalization1d（对输入的最后一维算均值和方差），Instance Normalization2d，Instance Normalization3d（将输入的后三维（即除了batchsize维和channel维）合并在一起算均值和方差）；MegEngine 仅提供对 2d 即 4 维输入数据（N,C,H,W）的支持。两者均要求输入输出的维度保持一致。
-
 参数差异
 --------
 
 track_running_stats
 ~~~~~~~~~~~~~~~~~~~
-Pytorch 中存在 ``track_running_stats`` 参数，当此参数为 True 时，在训练时会始终记录并更新（通过动量方法更新）全局的均值和方差，在测试时可以用这个均值和方差来归一化（可以理解为这个均值和方差是所有训练样本的均值和方差，是全局的，对整个样本集的统计信息的描述更加准确一些）；当此参数为 False 时，不记录更新全局的均值和方差，如此的话，测试时用 batch 的测试数据本身的样本和方差来归一化。MegEngine 中无此参数。
+Pytorch 中存在 ``track_running_stats`` 参数，当此参数为 True 时，在训练时会始终记录并更新（通过动量方法更新）全局的均值和方差，在测试时可以用这个均值和方差来归一化当前batch的输入（可以理解为这个均值和方差是所有训练样本的均值和方差，是全局的，对整个样本集的统计信息的描述更加准确一些）；当此参数为 False 时，不记录更新全局的均值和方差，如此的话，测试时用 batch 的测试数据本身的样本和方差来归一化。MegEngine 中无此参数。
 
 momentum
 ~~~~~~~~~~
-Pytorch 中存在 ``momentum`` 参数，在 ``track_running_stats`` 为 True 时， ``momentum`` 是训练过程中对均值和方差进行动量更新的动量参数，在 ``track_running_stats`` 为 False 时， ``momentum`` 不起作用。MegEngine 中无此参数。
+Pytorch 中存在 ``momentum`` 参数，在 ``track_running_stats`` 为 True 时， ``momentum`` 是训练过程中对均值和方差进行动量更新的超参参；在 ``track_running_stats`` 为 False 时， ``momentum`` 不起作用。MegEngine 中无此参数。
 
 
 
-Pytorch 中的 ``num_features`` 对应 MegEngine 中的 ``num_channels``,表示通道数
+Pytorch 中的 ``num_features`` 对应 MegEngine 中的 ``num_channels``,表示通道数。
 
 用法相似：
 .. code-block:: python

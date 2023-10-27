@@ -39,7 +39,7 @@ LeakyRelu 差异对比
 inplace
 ~~~~~~~~~~~~
 
-Pytorch 中的 inplace 参数表示在不更改变量的内存地址的情况下，直接修改变量的值，MegEngine 无此参数。
+Pytorch 中的 inplace 参数表示是否要原地操作，默认不开启，MegEngine 无此参数。
 
 
 
