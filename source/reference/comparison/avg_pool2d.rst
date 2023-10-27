@@ -48,12 +48,12 @@ mode 参数
    
 ceil_mode 参数
 ~~~~~~~~~~~~~~~
-PyTorch 中有 ``ceil_mode`` 参数，MegEngine 无此参数，此参数通过计算公式达到便于控制 output 的尺寸，当输出后的图像大小不满足 output 输出为整数时，此参数可以不用 padding，用此参数向上或者向下取整。MegEngine 可以通过手动增加 padding 控制 output，如果输出不为整数，则默认自动向下自动取整。
+PyTorch 中有 ``ceil_mode`` 参数，MegEngine 无此参数，此参数通过计算公式达到便于控制 output 的尺寸，当输出后的图像大小不满足 output 输出为整数时，此参数可以不用 padding，用此参数向上或者向下取整。MegEngine 则通过手动增加 padding 控制 output，如果输出不为整数，则自动向下取整。
 
 
 divisor_override 参数
 ~~~~~~~~~~~~~~~~~~~~~~
-PyTorch 中有 divisor_override 参数，MegEngine 无此参数，该参数的目的是可以控制求期望时的分母，将结果缩放/扩大，MenEgngine 可以通过 avg_pool2d 后面乘一个系数达到相同的效果。
+PyTorch 中有 divisor_override 参数，MegEngine 无此参数，该参数的目的是可以控制求期望时的分母，将结果缩放/扩大，MenEgngine 中 无此参数。
 
 .. code-block:: python
 

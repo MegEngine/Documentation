@@ -52,7 +52,7 @@ AdaptiveAvgPool2d 差异对比
     
     # 使用MegEngine的AdaptiveAvgPool2d 
     me_pool = megengine.module.AdaptiveAvgPool2d((32, 32)) 
-    me_output = me_pool(input_tensor2.astype(me.float32)) 
+    me_output = me_pool(input_tensor2.astype(megengine.float32)) 
 
     # 使用PyTorch的AdaptiveAvgPool2d 
     torch_pool = torch.nn.AdaptiveAvgPool2d((32, 32)) 
