@@ -21,7 +21,7 @@ ConvTranspose2d 差异对比
 	groups=1,
 	bias=True,
 	dilation=1,
-	padding_mode=‘zeros’,
+	padding_mode='zeros',
 	device=None,
 	dtype=None
      )
@@ -45,8 +45,8 @@ ConvTranspose2d 差异对比
 	dilation=1,
 	groups=1,
 	bias=True,
-        conv_mode=’cross_correlation’
-	compute_mode=‘default’
+        conv_mode='cross_correlation',
+	compute_mode='default',
  	** kwargs
      )
 

@@ -67,11 +67,11 @@ MegEngine 中 ``compute_mode`` 参数，该参数用于指定计算模式，默�
     import megengine.module as M  
   
     # 定义权重矩阵和偏置项  
-    weight = megengine.randn((10, 5))  # 假设输入有10个特征，输出有5个特征  
-    bias = megengine.randn((5,))  # 偏置项的大小与输出特征的数量相同  
+    weight = megengine.random.normal(size=(10,5))
+    bias = megengine.random.normal(size=(5))
   
     # 定义输入数据  
-    input = megengine.randn((3, 10))  # 假设有3个样本，每个样本有10个特征  
+    input = megengine.random.normal(size=(3, 10))  # 假设有3个样本，每个样本有10个特征  
   
     # 创建线性层实例  
     linear_layer = M.Linear(10, 5, bias=True)  

@@ -37,7 +37,7 @@ BatchNorm 差异对比
          affine=True,
          track_running_stats=True, 
          freeze=False,
-         **kwargs
+         ** kwargs
      )
 
   更多请查看 :py:class:`megengine.module.BatchNorm2d`.

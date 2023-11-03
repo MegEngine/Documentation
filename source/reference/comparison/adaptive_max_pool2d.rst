@@ -52,6 +52,7 @@ return_indices 参数
 
     import megengine 
     import torch 
+    import numpy as np
 
     # 定义输入张量 
     input_tensor1 = torch.randn(1, 3, 64, 64) 
@@ -59,7 +60,7 @@ return_indices 参数
 
     # 使用MegEngine的AdaptiveMaxPool2d 
     me_pool = megengine.module.AdaptiveMaxPool2d((32, 32)) 
-    me_output = me_pool(input_tensor2.astype(megengine.float32)) 
+    me_output = me_pool(input_tensor2.astype(np.float32)) 
 
     # 使用PyTorch的AdaptiveMaxPool2d 
     torch_pool = torch.nn.AdaptiveMaxPool2d((32, 32)) 

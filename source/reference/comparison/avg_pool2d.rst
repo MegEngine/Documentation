@@ -33,7 +33,7 @@ Avg_Pool2d 差异对比
          kernel_size, 
          stride=None, 
          padding=0, 
-         mode='average_count_exclude_padding'
+         mode='average_count_exclude_padding',
          ** kwargs
      )
 
@@ -59,6 +59,7 @@ PyTorch 中有 divisor_override 参数，MegEngine 无此参数，该参数的�
 
     import megengine
     import torch
+    import numpy as np
 
     # 定义输入张量
     input_tensor1 = torch.randn(1, 3, 64, 64)
@@ -66,7 +67,7 @@ PyTorch 中有 divisor_override 参数，MegEngine 无此参数，该参数的�
 
     # 使用MegEngine的avg_pool2d
     me_pool = megengine.module.AvgPool2d(kernel_size=2, stride=2)
-    me_output = me_pool(input_tensor2.astype(me.float32))
+    me_output = me_pool(input_tensor2.astype(np.float32))
 
     # 使用PyTorch的avg_pool2d
     torch_pool = torch.nn.AvgPool2d(kernel_size=2, stride=2)
