@@ -12,7 +12,7 @@ LeakyRelu 差异对比
   .. code-block:: python
 
      torch.nn.LeakyRelu(
-        negative_slope=0.01
+        negative_slope=0.01,
         inplace=False
      )
 
@@ -26,7 +26,7 @@ LeakyRelu 差异对比
   .. code-block:: python
 
      megengine.module.LeakyRelu(
-        negative_slope=0.01
+        negative_slope=0.01,
         ** kwargs
      )
 

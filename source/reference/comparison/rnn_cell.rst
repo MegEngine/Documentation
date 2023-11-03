@@ -15,7 +15,7 @@ RNN 差异对比
         input_size,
         hidden_size,
         bias=True,
-        nonlinearity=‘tanh’,
+        nonlinearity='tanh',
         device=None,
         dtype=None
      )
@@ -33,7 +33,7 @@ RNN 差异对比
         input_size,
         hidden_size,
         bias=True,
-        nonlinearity=‘tanh’
+        nonlinearity='tanh'
    )
 
   更多请查看 :py:class:`megengine.module.RNNCell`.

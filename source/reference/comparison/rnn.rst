@@ -35,7 +35,7 @@ RNN 差异对比
         input_size,
         hidden_size,
         num_layers=1,
-        nonlinearity=tanh,
+        nonlinearity='tanh',
         bias=True,
         batch_first=False,
         drop=0,

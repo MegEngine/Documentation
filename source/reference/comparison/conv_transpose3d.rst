@@ -21,7 +21,7 @@ ConvTranspose3d 差异对比
 	groups=1,
 	bias=True,
 	dilation=1,
-	padding_mode=‘zeros’,
+	padding_mode='zeros',
 	device=None,
 	dtype=None
      )
@@ -45,8 +45,8 @@ ConvTranspose3d 差异对比
 	dilation=1,
 	groups=1,
 	bias=True,
-        conv_mode=’cross_correlation’
-	compute_mode=‘default’
+        conv_mode='cross_correlation'
+	compute_mode='default'
  	** kwargs
      )
 
@@ -72,14 +72,14 @@ MegEngine 中包含  ``conv_mode`` 参数，PyTorch 中无此参数，该参数�
 
     import megengine
     import torch
-
+    import numpy as np
     # 定义输入张量
     input_tensor1 = torch.randn(1, 3, 128, 64, 64)
     input_tensor2 = megengine.random.normal(size=(1,3,64,64))
 
     # 使用MegEngine的ConvTranspose3d
     me_conv_transpose = megengine.module.ConvTranspose3d(in_channels=3, out_channels=64, kernel_size=3, stride=2, padding=1)
-    me_output = me_conv_transpose(input_tensor2.astype(me.float32))
+    me_output = me_conv_transpose(input_tensor2.astype(np.float32))
 
     # 使用PyTorch的ConvTranspose3d
     torch_conv_transpose = torch .nn.ConvTranspose3d(in_channels=3, out_channels=64, kernel_size=3, stride=2, padding=1)

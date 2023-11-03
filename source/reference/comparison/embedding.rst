@@ -78,8 +78,9 @@ MegEngine ``initial_weight`` 初始化该模块的可学习权重，形状为(nu
 
     import megengine
     import numpy as np
-    embedding = MegEngine.module.Embedding(10, 3)
-    input = megengine.tensor([[1, 2, 4, 5], [4, 3, 2, 9]]，dtype=np.int32))
+
+    embedding = megengine.module.Embedding(10, 3)
+    input = megengine.tensor([[1, 2, 4, 5], [4, 3, 2, 9]], dtype=np.int32)
     embedding(input)
 
 

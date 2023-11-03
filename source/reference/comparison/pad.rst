@@ -14,7 +14,7 @@ Pad 差异对比
      torch.nn.functional.pad(
         input,
         pad,
-        mode=‘constant’
+        mode='constant',
         value=None
      )
 
@@ -29,7 +29,7 @@ Pad 差异对比
 
      megengine.module.Pad(
         pad_width,
-        mode=‘constant’
+        mode='constant',
         constant_val=0.0
 			
      )
@@ -53,7 +53,7 @@ pad
     x1 = megengine.tensor([[1, 2, 3], [4, 5, 6]])  
   
     # 对张量进行边界填充  
-    y1 = megengine.module.pad(x1, pad_width=((0, 1), (0, 1)), mode=“constant”，constant_val=0)  
+    y1 = megengine.module.Pad(x1, pad_width=((0, 1), (0, 1)), mode='constant', constant_val=0)  
 
     print(y1.numpy())
 

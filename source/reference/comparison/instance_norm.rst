@@ -54,20 +54,4 @@ Pytorch 中存在 ``momentum`` 参数，在 ``track_running_stats`` 为 True 时
 
 Pytorch 中的 ``num_features`` 对应 MegEngine 中的 ``num_channels``,表示通道数。
 
-用法相似：
-.. code-block:: python
-
-    import torch
-
-    m = torch.nn.Linear(20, 30)
-    input = torch.randn(128, 20)
-    output = m(input)
-
-.. code-block:: python
-
-    import megengine
-
-    m = megengine.module.Linear(20, 30)
-    input = megengine.random.normal(size=(128,20))
-    output = m(input)
  

@@ -57,6 +57,7 @@ PyTorch 中有 ceil_mode 参数，MegEngine 无此参数，该参数为 True 时
 .. code-block:: python
     import megengine 
     import torch 
+    import numpy as np
 
     # 定义输入张量 
     input_tensor1 = torch.randn(1, 3, 64, 64) 
@@ -64,7 +65,7 @@ PyTorch 中有 ceil_mode 参数，MegEngine 无此参数，该参数为 True 时
 
     # 使用MegEngine的max_pool2d 
     me_pool = megengine.module.MaxPool2d(kernel_size=2, stride=2) 
-    me_output = me_pool(input_tensor2.astype(me.float32)) 
+    me_output = me_pool(input_tensor2.astype(np.float32)) 
 
     # 使用PyTorch的max_pool2d 
     torch_pool = torch.nn.MaxPool2d(kernel_size=2, stride=2) 
