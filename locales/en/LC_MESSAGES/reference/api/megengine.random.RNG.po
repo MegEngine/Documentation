@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-25 02:39+0000\n"
-"PO-Revision-Date: 2023-09-25 02:46\n"
+"POT-Creation-Date: 2023-11-10 07:01+0000\n"
+"PO-Revision-Date: 2023-11-10 07:05\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
@@ -42,9 +42,10 @@ msgid "the device of generated tensor. Default: None"
 msgstr ""
 
 #: megengine.random.rng.RNG:9 megengine.random.rng.RNG.beta:32
-#: megengine.random.rng.RNG.gamma:34 megengine.random.rng.RNG.normal:18
-#: megengine.random.rng.RNG.permutation:14 megengine.random.rng.RNG.poisson:24
-#: megengine.random.rng.RNG.shuffle:11 megengine.random.rng.RNG.uniform:17 of
+#: megengine.random.rng.RNG.exponential:16 megengine.random.rng.RNG.gamma:34
+#: megengine.random.rng.RNG.normal:18 megengine.random.rng.RNG.permutation:14
+#: megengine.random.rng.RNG.poisson:24 megengine.random.rng.RNG.shuffle:11
+#: megengine.random.rng.RNG.uniform:17 of
 msgid "实际案例"
 msgstr ""
 
@@ -82,10 +83,10 @@ msgstr ""
 msgid "the size of output tensor. If alpha and beta are scalars and given size is, e.g., `(m, n)`, then the output shape is `(m, n)`. If alpha or beta is a Tensor and given size is, e.g., `(m, n)`, then the output shape is `(m, n) + broadcast(alpha, beta).shape`. Default: None."
 msgstr ""
 
-#: megengine.random.rng.RNG.beta megengine.random.rng.RNG.gamma
-#: megengine.random.rng.RNG.normal megengine.random.rng.RNG.permutation
-#: megengine.random.rng.RNG.poisson megengine.random.rng.RNG.shuffle
-#: megengine.random.rng.RNG.uniform of
+#: megengine.random.rng.RNG.beta megengine.random.rng.RNG.exponential
+#: megengine.random.rng.RNG.gamma megengine.random.rng.RNG.normal
+#: megengine.random.rng.RNG.permutation megengine.random.rng.RNG.poisson
+#: megengine.random.rng.RNG.shuffle megengine.random.rng.RNG.uniform of
 msgid "返回"
 msgstr ""
 
@@ -105,6 +106,22 @@ msgstr ""
 
 #: megengine.random.rng.RNG.beta:51 of
 msgid "[0.97733796, 0.19206746]]], dtype=float32)"
+msgstr ""
+
+#: megengine.random.rng.RNG.exponential:1 of
+msgid "Random variable with exponential distribution :math:`\\operatorname{Exponential}(\\lambda)`. The corresponding probability density function is .. math::"
+msgstr ""
+
+#: megengine.random.rng.RNG.exponential:5 of
+msgid "for x > 0 and 0 elsewhere. where`rate = lambda`. :type rate: :py:data:`~typing.Union`\\[:py:class:`float`, :py:class:`~megengine.tensor.Tensor`] :param rate: the lambda parameter of the distribution. Must be non-negative. rate = 1 / scale of the distribution. :type size: :py:data:`~typing.Optional`\\[:py:class:`~typing.Iterable`\\[:py:class:`int`]] :param size: the size of output tensor. If scale is a scalar and given size is, e.g., `(m, n)`,"
+msgstr ""
+
+#: megengine.random.rng.RNG.exponential:10 of
+msgid "then the output shape is `(m, n)`. If scale is a Tensor with shape `(k, v)` and given size is, e.g., `(m, n)`, then the output shape is `(m, n, k, v)`. Default: None."
+msgstr ""
+
+#: megengine.random.rng.RNG.exponential:13 of
+msgid "the output tensor."
 msgstr ""
 
 #: megengine.random.rng.RNG.gamma:1 of
