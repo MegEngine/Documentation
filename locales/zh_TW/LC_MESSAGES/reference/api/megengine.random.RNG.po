@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-10 07:01+0000\n"
-"PO-Revision-Date: 2023-11-10 07:05\n"
+"POT-Creation-Date: 2023-11-16 00:55+0000\n"
+"PO-Revision-Date: 2023-11-16 01:06\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
 "Language-Team: Chinese Traditional\n"
@@ -27,9 +27,10 @@ msgid ":class:`RNG` exposes a number of methods for generating random numbers."
 msgstr "crwdns106139:0:class:crwdne106139:0"
 
 #: megengine.random.rng.RNG megengine.random.rng.RNG.beta
-#: megengine.random.rng.RNG.gamma megengine.random.rng.RNG.normal
-#: megengine.random.rng.RNG.permutation megengine.random.rng.RNG.poisson
-#: megengine.random.rng.RNG.shuffle megengine.random.rng.RNG.uniform of
+#: megengine.random.rng.RNG.gamma megengine.random.rng.RNG.multinomial
+#: megengine.random.rng.RNG.normal megengine.random.rng.RNG.permutation
+#: megengine.random.rng.RNG.poisson megengine.random.rng.RNG.shuffle
+#: megengine.random.rng.RNG.uniform of
 msgid "参数"
 msgstr "crwdns106141:0crwdne106141:0"
 
@@ -43,9 +44,9 @@ msgstr "crwdns106145:0crwdne106145:0"
 
 #: megengine.random.rng.RNG:9 megengine.random.rng.RNG.beta:32
 #: megengine.random.rng.RNG.exponential:16 megengine.random.rng.RNG.gamma:34
-#: megengine.random.rng.RNG.normal:18 megengine.random.rng.RNG.permutation:14
-#: megengine.random.rng.RNG.poisson:24 megengine.random.rng.RNG.shuffle:11
-#: megengine.random.rng.RNG.uniform:17 of
+#: megengine.random.rng.RNG.multinomial:25 megengine.random.rng.RNG.normal:18
+#: megengine.random.rng.RNG.permutation:14 megengine.random.rng.RNG.poisson:24
+#: megengine.random.rng.RNG.shuffle:11 megengine.random.rng.RNG.uniform:17 of
 msgid "实际案例"
 msgstr "crwdns106147:0crwdne106147:0"
 
@@ -84,9 +85,10 @@ msgid "the size of output tensor. If alpha and beta are scalars and given size i
 msgstr "crwdns122691:0crwdne122691:0"
 
 #: megengine.random.rng.RNG.beta megengine.random.rng.RNG.exponential
-#: megengine.random.rng.RNG.gamma megengine.random.rng.RNG.normal
-#: megengine.random.rng.RNG.permutation megengine.random.rng.RNG.poisson
-#: megengine.random.rng.RNG.shuffle megengine.random.rng.RNG.uniform of
+#: megengine.random.rng.RNG.gamma megengine.random.rng.RNG.multinomial
+#: megengine.random.rng.RNG.normal megengine.random.rng.RNG.permutation
+#: megengine.random.rng.RNG.poisson megengine.random.rng.RNG.shuffle
+#: megengine.random.rng.RNG.uniform of
 msgid "返回"
 msgstr "crwdns106165:0crwdne106165:0"
 
@@ -120,7 +122,8 @@ msgstr "crwdns122780:0crwdne122780:0"
 msgid "then the output shape is `(m, n)`. If scale is a Tensor with shape `(k, v)` and given size is, e.g., `(m, n)`, then the output shape is `(m, n, k, v)`. Default: None."
 msgstr "crwdns122782:0crwdne122782:0"
 
-#: megengine.random.rng.RNG.exponential:13 of
+#: megengine.random.rng.RNG.exponential:13
+#: megengine.random.rng.RNG.multinomial:22 of
 msgid "the output tensor."
 msgstr "crwdns122784:0crwdne122784:0"
 
@@ -164,6 +167,39 @@ msgstr "crwdns106187:0crwdne106187:0"
 #: megengine.random.rng.RNG.gamma:53 of
 msgid "[1.22881927e+01, 8.13445740e+01]]], dtype=float32)"
 msgstr "crwdns106189:0crwdne106189:0"
+
+#: megengine.random.rng.RNG.multinomial:1 of
+msgid "Random variable with multinomial distribution :math:`\\operatorname{Mulitnomial}(p)`."
+msgstr "crwdns122786:0:math:crwdnd122786:0{Mulitnomial}crwdne122786:0"
+
+#: megengine.random.rng.RNG.multinomial:3 of
+msgid "The corresponding probability mass function is"
+msgstr "crwdns122788:0crwdne122788:0"
+
+#: megengine.random.rng.RNG.multinomial:5 of
+msgid "f(x_1,...,x_k;n,p_1,...,p_k)=\\left\\{\n"
+"        \\begin{aligned}\n"
+"    \\frac{n!}{x_1!...x_k!}p^{x_1}_1 \\times ... \\times p^{x_k}_k  & , & {\\textstyle \\sum_{i=1}^{k}x_i=n}  \\\\\n"
+"    0 & , & otherwise\n"
+"        \\end{aligned}\n"
+"    \\right.,\n\n"
+msgstr "crwdns122790:0{aligned}crwdnd122790:0{x_1}crwdnd122790:0{x_k}crwdnd122790:0{k}crwdnd122790:0{aligned}crwdne122790:0"
+
+#: megengine.random.rng.RNG.multinomial:13 of
+msgid "where :math:`p_1,...,p_k` are the probabilities and :math:`x_1,...,x_k` are the numbers of occurrences :math:`({\\displaystyle k=0,1,2...})`."
+msgstr "crwdns122792:0:math:crwdnd122792:0:math:crwdnd122792:0:math:crwdne122792:0"
+
+#: megengine.random.rng.RNG.multinomial:16 of
+msgid "the probability tensor or weight tensor. Must be non-negative and each rows must have a non-zero sum."
+msgstr "crwdns122794:0crwdne122794:0"
+
+#: megengine.random.rng.RNG.multinomial:18 of
+msgid "the number of samples. Must be positive."
+msgstr "crwdns122796:0crwdne122796:0"
+
+#: megengine.random.rng.RNG.multinomial:20 of
+msgid "whether to draw samples with replacement or not. Defautl: False."
+msgstr "crwdns122798:0crwdne122798:0"
 
 #: megengine.random.rng.RNG.normal:1 of
 msgid "Random variable with Gaussian distribution :math:`N(\\mu, \\sigma)`."
