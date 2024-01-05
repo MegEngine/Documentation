@@ -142,7 +142,9 @@ Vision Layers
    :nosignatures:
 
    PixelShuffle
-
+   Remap
+   GaussianBlur
+   
 .. autosummary::
    :toctree: api
    :nosignatures:
