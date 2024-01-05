@@ -30,5 +30,5 @@ megengine.random
    beta
    gamma
    poisson
-
+   exponential
 
