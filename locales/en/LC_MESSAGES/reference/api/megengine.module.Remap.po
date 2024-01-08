@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: megengine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-08 01:07+0000\n"
+"PO-Revision-Date: 2024-01-08 01:26\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: megengine\n"
+"X-Crowdin-Project-ID: 450980\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/api/megengine.module.Remap.po\n"
+"X-Crowdin-File-ID: 10060\n"
+"Language: en_US\n"
+
+#: ../../source/reference/api/megengine.module.Remap.rst:5
+msgid "Remap"
+msgstr ""
+
+#: megengine.module.vision.Remap:1 of
+msgid "Applies remap transformation to batched 2D images. Remap is an operation that relocates pixels in a image to another location in a new image."
+msgstr ""
+
+#: megengine.module.vision.Remap:3 of
+msgid "Input format must be nchw."
+msgstr ""
+
+#: megengine.module.vision.Remap:5 of
+msgid "The input images are transformed to the output images by the tensor ``map_1`` and ``map_2``. The output's H and W are same as ``map_1`` and ``map_2``'s H and W."
+msgstr ""
+
+#: megengine.module.vision.Remap:8 of
+msgid "Args: inp: input image, its shape represents ``[b, c, in_h, in_w]``. map_1: transformation matrix, the first map of ethier (x,y) points or just x values."
+msgstr ""
+
+#: megengine.module.vision.Remap:11 of
+msgid "if map_2.size == 0(the map of (x,y)), its shape shoule be ``[b, o_h, o_w, 2]``. The shape of output is determined by o_h and o_w. For each element in output, its value is determined by inp and ``map_xy``. ``map_1[..., 0]`` and ``map_1[..., 1]`` are the positions of the current element in inp, respectively. Therefore, their ranges are ``[0, in_w - 1]`` and ``[0, in_h - 1]``. if map_2.size == map_2.size(the map of(x)), its shape should be ``[b, o_h, o_w]``. it's shape are [``o, in_w-1]``."
+msgstr ""
+
+#: megengine.module.vision.Remap:18 of
+msgid "map_2:"
+msgstr ""
+
+#: megengine.module.vision.Remap:18 of
+msgid "the second map of y values. if map2.size == map_2.size(the map of (y)), its shape should be ``[b, o_h, o_w]``. it's range are [``o, in_h-1]``."
+msgstr ""
+
+#: megengine.module.vision.Remap:20 of
+msgid "interpolation: interpolation methods. Default: \"linear\". Currently also support \"nearest\" mode. borderMode: pixel extrapolation method. Default: \"replicate\". Currently also support \"constant\", \"reflect\", \"reflect_101\", \"wrap\"."
+msgstr ""
+
+#: megengine.module.vision.Remap:22 of
+msgid "\"replicate\": repeatedly fills the edge pixel values of the duplicate image, expanding the new boundary pixel values with the edge pixel values. \"constant\": fills the edges of the image with a fixed numeric value."
+msgstr ""
+
+#: megengine.module.vision.Remap:25 of
+msgid "borderValue: value used in case of a constant border. Default: 0.0"
+msgstr ""
+
+#: megengine.module.vision.Remap of
+msgid "返回"
+msgstr ""
+
+#: megengine.module.vision.Remap:27 of
+msgid "output tensor. [b, c, o_h, o_w]"
+msgstr ""
+
+#: megengine.module.vision.Remap:30 of
+msgid "实际案例"
+msgstr ""
+
