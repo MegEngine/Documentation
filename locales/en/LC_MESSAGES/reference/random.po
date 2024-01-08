@@ -1,22 +1,18 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: megengine\n"
+"Project-Id-Version:  megengine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-25 02:39+0000\n"
-"PO-Revision-Date: 2023-09-25 02:46\n"
+"POT-Creation-Date: 2024-01-08 01:07+0000\n"
+"PO-Revision-Date: 2023-09-25 02:46+0000\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "Language-Team: English\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
-"X-Crowdin-Project: megengine\n"
-"X-Crowdin-Project-ID: 450980\n"
-"X-Crowdin-Language: en\n"
-"X-Crowdin-File: /dev/locales/zh_CN/LC_MESSAGES/reference/random.po\n"
-"X-Crowdin-File-ID: 9811\n"
 
 #: ../../source/reference/random.rst:6
 msgid "megengine.random"
@@ -79,7 +75,9 @@ msgid ":py:obj:`beta <megengine.random.beta>`"
 msgstr ""
 
 #: ../../source/reference/random.rst:34:<autosummary>:1
-msgid "Random variable with Beta distribution :math:`\\operatorname{Beta}(\\alpha, \\beta)`."
+msgid ""
+"Random variable with Beta distribution "
+":math:`\\operatorname{Beta}(\\alpha, \\beta)`."
 msgstr ""
 
 #: ../../source/reference/random.rst:34:<autosummary>:1
@@ -95,7 +93,30 @@ msgid ":py:obj:`poisson <megengine.random.poisson>`"
 msgstr ""
 
 #: ../../source/reference/random.rst:34:<autosummary>:1
-msgid "Random variable with poisson distribution :math:`\\operatorname{Poisson}(\\lambda)`."
+msgid ""
+"Random variable with poisson distribution "
+":math:`\\operatorname{Poisson}(\\lambda)`."
+msgstr ""
+
+#: ../../source/reference/random.rst:34:<autosummary>:1
+msgid ":py:obj:`exponential <megengine.random.exponential>`"
+msgstr ""
+
+#: ../../source/reference/random.rst:34:<autosummary>:1
+msgid ""
+"Random variable with exponential distribution "
+":math:`\\operatorname{Exponential}(\\lambda)`. The corresponding "
+"probability density function is .. math::     f\\left( x;\\lambda "
+"\\right) =\\lambda e^{-\\lambda x} for x > 0 and 0 elsewhere. where`rate "
+"= lambda`. :type rate: :py:data:`~typing.Union`\\[:py:class:`float`, "
+":py:class:`~megengine.tensor.Tensor`] :param rate: the lambda parameter "
+"of the distribution. Must be non-negative. rate = 1 / scale of the "
+"distribution. :type size: "
+":py:data:`~typing.Optional`\\[:py:class:`~typing.Iterable`\\[:py:class:`int`]]"
+" :param size: the size of output tensor. If scale is a scalar and given "
+"size is, e.g., `(m, n)`,              then the output shape is `(m, n)`. "
+"If scale is a Tensor with shape `(k, v)` and given              size is, "
+"e.g., `(m, n)`, then the output shape is `(m, n, k, v)`. Default: None."
 msgstr ""
 
 #~ msgid "随机（Random）"
