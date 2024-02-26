@@ -42,7 +42,7 @@ Max_Pool2d 差异对比
 --------
 
 dilation 参数
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
    Pytorch 中有 ``dilation`` ，MegEngine 中无此参数，该参数用于窗口的元素间隔控制;
    
 return_indices 参数
@@ -55,6 +55,7 @@ ceil_mode 参数
 PyTorch 中有 ceil_mode 参数，MegEngine 无此参数，该参数为 True 时表示在计算输出形状的过程中采用向上取整的操作，为 False 时，采用向下取整。
 
 .. code-block:: python
+
     import megengine 
     import torch 
     import numpy as np
