@@ -70,7 +70,7 @@ sparse
 PyTorch ``sparse`` 参数表示是否使用稀疏更新，MegEngine 无此参数。
 
 initial_weight
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 MegEngine ``initial_weight`` 初始化该模块的可学习权重，形状为(num_embeddings, embedding_dim) ，PyTorch 中无此参数。
 
 .. code-block::: python

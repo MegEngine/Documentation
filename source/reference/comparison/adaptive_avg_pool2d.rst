@@ -36,7 +36,7 @@ AdaptiveAvgPool2d 差异对比
 --------
 
 输入张量的形状
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
    PyTorch 支持 NCHW 或者 CHW 的输入，MegEngine 支持 NCHW 的输入。
    
 
