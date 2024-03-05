@@ -123,7 +123,6 @@ XLA executable 加速训练过程。
 
 模型训练迭代中存在动态执行逻辑的情况下， 无法将整个计算交由 XLA 执行。
 这种情况下可以使用 jit.patrial_trace 装饰器对其中静态的部分进行加速。
-
 被 partial_trace 包装部分的前向/反向会使用 XLA 执行, 其他部分仍由 MegEngine 执行。
 代码示例如下：
 
