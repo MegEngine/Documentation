@@ -69,10 +69,7 @@ MegEngine 快速上手
    调用 MegEngine 中的 :class:`~.MNIST` 接口将从 MNIST 官网下载数据集，MegEngine 不提供镜像或加速服务。
    本质上可以看作是运行了一份单独的 MNIST 数据集获取与处理脚本（你也可以自己编写脚本来搞定这件事）。
 
-   在 `MegStudio <https://studio.brainpp.com/>`_ 平台中提供了 MNIST 数据集镜像，需注意：
 
-   * 在创建项目时选择 MNIST 数据集，将 ``MNIST_DATA_PATH`` 设置为 ``/home/megstudio/dataset/MNIST/``;
-   * 在调用 :class:`~.MNIST` 接口时将 ``download`` 参数设置为 ``False``, 避免再次下载。
 
 准备 DataLoader
 ~~~~~~~~~~~~~~~

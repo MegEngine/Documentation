@@ -32,7 +32,6 @@ MegEngine 可以使用 Python 包管理器 ``pip`` 直接进行安装：
 
    * MegEngine 安装包中集成了使用 GPU 运行代码所需的 CUDA 环境，不用区分 CPU 和 GPU 版。
      如果想要运行 GPU 程序，请确保机器本身配有 GPU 硬件设备并安装好驱动。
-   * 如果你想体验在云端 GPU 算力平台进行深度学习开发的感觉，欢迎访问 `MegStudio <https://studio.brainpp.com/>`_ 平台。
 
 
 接下来做什么
